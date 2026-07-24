@@ -69,7 +69,10 @@ export default function HowItWorksPage() {
         <div className="mx-auto max-w-3xl px-5 py-16 text-center md:px-8">
           <h2 className="text-section">Ready to see it on your territory?</h2>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link href="/projects/" className="btn btn-primary">
+            <Link href="/#demo" className="btn btn-primary">
+              Request Demo
+            </Link>
+            <Link href="/projects/" className="btn btn-outline">
               Browse Georgia projects
             </Link>
             <Link href="/visibility/" className="btn btn-outline">

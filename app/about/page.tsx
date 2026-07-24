@@ -64,12 +64,12 @@ export default function AboutPage() {
             </li>
           </ul>
           <div className="mt-10 flex flex-wrap gap-3">
-            <Link href="/projects/" className="btn btn-primary">
+            <Link href="/#demo" className="btn btn-primary">
+              Request Demo
+            </Link>
+            <Link href="/projects/" className="btn btn-outline">
               Browse Georgia projects
             </Link>
-            <a href="mailto:hello@specindex.ai" className="btn btn-outline">
-              hello@specindex.ai
-            </a>
           </div>
         </div>
       </section>

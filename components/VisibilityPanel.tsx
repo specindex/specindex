@@ -3,16 +3,17 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { Project } from "@/lib/types";
-import { brandMentioned, categoryMatch, formatUsd } from "@/lib/format";
+import { brandMentioned, formatUsd } from "@/lib/format";
+import { getVisibilitySnapshot } from "@/lib/stats";
 import { StatusPill } from "./StatusPill";
 
 const demoBrands = [
-  "Armstrong",
-  "Carrier",
-  "Schlage",
-  "Kohler",
-  "Lutron",
-  "Vitro",
+  { name: "Hilton", category: "HVAC" },
+  { name: "Hyundai", category: "HVAC" },
+  { name: "Costco", category: "refrigeration" },
+  { name: "Virgin Hotels", category: "lighting" },
+  { name: "Master Wall", category: "insulation" },
+  { name: "Evans", category: "dock" },
 ];
 
 type Props = {
@@ -20,19 +21,13 @@ type Props = {
 };
 
 export function VisibilityPanel({ projects }: Props) {
-  const [brand, setBrand] = useState("Lutron");
-  const [category, setCategory] = useState("lighting");
+  const [brand, setBrand] = useState("Hilton");
+  const [category, setCategory] = useState("HVAC");
 
-  const analysis = useMemo(() => {
-    const mentioned = projects.filter((p) => brandMentioned(p, brand));
-    const categoryHits = projects.filter((p) => categoryMatch(p, category));
-    const opportunities = categoryHits.filter((p) => !brandMentioned(p, brand));
-    const rate =
-      projects.length === 0
-        ? 0
-        : Math.round((mentioned.length / projects.length) * 100);
-    return { mentioned, categoryHits, opportunities, rate };
-  }, [projects, brand, category]);
+  const analysis = useMemo(
+    () => getVisibilitySnapshot(projects, brand, category),
+    [projects, brand, category],
+  );
 
   return (
     <div className="space-y-8">
@@ -45,21 +40,24 @@ export function VisibilityPanel({ projects }: Props) {
             value={brand}
             onChange={(e) => setBrand(e.target.value)}
             className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2.5 outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
-            placeholder="e.g. Lutron"
+            placeholder="e.g. Hilton"
           />
           <div className="mt-3 flex flex-wrap gap-2">
             {demoBrands.map((b) => (
               <button
-                key={b}
+                key={b.name}
                 type="button"
-                onClick={() => setBrand(b)}
+                onClick={() => {
+                  setBrand(b.name);
+                  setCategory(b.category);
+                }}
                 className={`rounded-full px-2.5 py-1 text-xs font-medium ${
-                  brand === b
+                  brand === b.name
                     ? "bg-[var(--color-green)] text-white"
                     : "bg-[var(--color-gray-100)] text-[var(--color-gray-600)] hover:bg-[var(--color-gray-200)]"
                 }`}
               >
-                {b}
+                {b.name}
               </button>
             ))}
           </div>
@@ -97,9 +95,9 @@ export function VisibilityPanel({ projects }: Props) {
 
       <ProjectList
         title="Mentioned"
-        subtitle="Explicit brand hits in public coverage / seeded fields (MVP)."
+        subtitle="Brand hits across public coverage and seeded project fields."
         projects={analysis.mentioned}
-        empty={`No mentions yet for ${brand || "this brand"} in the Georgia seed.`}
+        empty={`No mentions yet for ${brand || "this brand"} in the Georgia corpus.`}
       />
       <ProjectList
         title="Opportunity projects"

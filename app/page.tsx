@@ -2,7 +2,8 @@ import Link from "next/link";
 import { ProductMock } from "@/components/marketing/ProductMock";
 import { StatsStrip, DemoSection } from "@/components/marketing/DemoSection";
 import { FAQ } from "@/components/marketing/FAQ";
-import { getProjects } from "@/lib/projects";
+import { getCorpus, getProjects } from "@/lib/projects";
+import { getCountiesInCorpus, getVisibilitySnapshot } from "@/lib/stats";
 
 const faqs = [
   {
@@ -28,7 +29,12 @@ const faqs = [
 ];
 
 export default function HomePage() {
-  const count = getProjects().length;
+  const projects = getProjects();
+  const corpus = getCorpus();
+  const count = projects.length;
+  const recent = corpus.stats?.opened_last_3_months ?? 0;
+  const countyCount = getCountiesInCorpus(projects).length;
+  const hiltonScan = getVisibilitySnapshot(projects, "Hilton", "lighting");
 
   return (
     <>
@@ -46,8 +52,11 @@ export default function HomePage() {
               in conversations before the window closes.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/projects/" className="btn btn-primary">
-                Get a Demo
+              <Link href="/#demo" className="btn btn-primary">
+                Request Demo
+              </Link>
+              <Link href="/projects/" className="btn btn-outline">
+                Browse Georgia projects
               </Link>
               <Link href="/visibility/" className="btn btn-outline">
                 Check brand visibility
@@ -64,9 +73,9 @@ export default function HomePage() {
       <StatsStrip
         stats={[
           { value: `${count}+`, label: "Open commercial projects indexed in Georgia" },
+          { value: `${recent}`, label: "Projects opened or announced in the last 3 months" },
+          { value: `${countyCount}`, label: "Georgia counties with active commercial work" },
           { value: "All trades", label: "HVAC, glazing, flooring, MEP, and more" },
-          { value: "Georgia", label: "Beachhead market — expanding statewide" },
-          { value: "10+ layers", label: "Projects, specs, brands, teams, and sources" },
         ]}
       />
 
@@ -145,8 +154,9 @@ export default function HomePage() {
                 <span className="font-semibold">SpecIndex</span>
               </div>
               <p className="mt-3 leading-relaxed text-[var(--color-gray-700)]">
-                Brand check: Lutron mentioned on 0 of 20 Georgia projects. 8 projects
-                watch lighting — opportunity list ready.
+                Brand check: Hilton mentioned on {hiltonScan.mentioned.length} of {count}{" "}
+                Georgia projects. {hiltonScan.opportunities.length} projects watch lighting
+                without a Hilton mention — opportunity list ready.
               </p>
               <p className="mt-2 text-[var(--color-gray-400)]">9:42 AM</p>
             </div>

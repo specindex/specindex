@@ -3,16 +3,13 @@
 import Link from "next/link";
 import { useMemo, useState, useTransition } from "react";
 import type { Project } from "@/lib/types";
-import { formatSf, formatUsd, typeLabel } from "@/lib/format";
+import { formatDate, formatSf, formatUsd, typeLabel } from "@/lib/format";
+import {
+  getCategoriesInCorpus,
+  getCountiesInCorpus,
+  getStatusesInCorpus,
+} from "@/lib/stats";
 import { StatusPill } from "./StatusPill";
-
-const statuses = [
-  "planning",
-  "design",
-  "permitting",
-  "bidding",
-  "under_construction",
-] as const;
 
 type Props = {
   projects: Project[];
@@ -22,7 +19,13 @@ export function ProjectSearch({ projects }: Props) {
   const [query, setQuery] = useState("");
   const [status, setStatus] = useState<string>("all");
   const [type, setType] = useState<string>("all");
+  const [county, setCounty] = useState<string>("all");
+  const [category, setCategory] = useState<string>("all");
   const [isPending, startTransition] = useTransition();
+
+  const statuses = useMemo(() => getStatusesInCorpus(projects), [projects]);
+  const counties = useMemo(() => getCountiesInCorpus(projects), [projects]);
+  const categories = useMemo(() => getCategoriesInCorpus(projects), [projects]);
 
   const types = useMemo(
     () => Array.from(new Set(projects.map((p) => p.project_type))).sort(),
@@ -34,6 +37,15 @@ export function ProjectSearch({ projects }: Props) {
     return projects.filter((p) => {
       if (status !== "all" && p.status !== status) return false;
       if (type !== "all" && p.project_type !== type) return false;
+      if (county !== "all" && p.county !== county) return false;
+      if (
+        category !== "all" &&
+        !p.competitor_watch.some((item) =>
+          item.toLowerCase().includes(category.toLowerCase()),
+        )
+      ) {
+        return false;
+      }
       if (!q) return true;
       const blob = [
         p.name,
@@ -43,6 +55,7 @@ export function ProjectSearch({ projects }: Props) {
         p.architect,
         p.general_contractor,
         p.description,
+        p.opened_or_announced_date ?? "",
         ...p.key_specs,
         ...p.mentioned_brands,
         ...p.competitor_watch,
@@ -51,7 +64,7 @@ export function ProjectSearch({ projects }: Props) {
         .toLowerCase();
       return blob.includes(q);
     });
-  }, [projects, query, status, type]);
+  }, [projects, query, status, type, county, category]);
 
   return (
     <div>
@@ -68,7 +81,7 @@ export function ProjectSearch({ projects }: Props) {
           placeholder="City, owner, GC, HVAC, glazing, healthcare…"
           className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-4 py-3 text-base outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
         />
-        <div className="mt-4 flex flex-wrap gap-3">
+        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           <select
             value={status}
             onChange={(e) => setStatus(e.target.value)}
@@ -93,12 +106,36 @@ export function ProjectSearch({ projects }: Props) {
               </option>
             ))}
           </select>
-          <p
-            className={`ml-auto self-center text-sm text-[var(--color-gray-600)] ${isPending ? "opacity-60" : ""}`}
+          <select
+            value={county}
+            onChange={(e) => setCounty(e.target.value)}
+            className="rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm"
           >
-            {filtered.length} of {projects.length} projects
-          </p>
+            <option value="all">All counties</option>
+            {counties.map((c) => (
+              <option key={c} value={c}>
+                {c}
+              </option>
+            ))}
+          </select>
+          <select
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            className="rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm"
+          >
+            <option value="all">All product categories</option>
+            {categories.map((c) => (
+              <option key={c} value={c}>
+                {c}
+              </option>
+            ))}
+          </select>
         </div>
+        <p
+          className={`mt-4 text-sm text-[var(--color-gray-600)] ${isPending ? "opacity-60" : ""}`}
+        >
+          {filtered.length} of {projects.length} projects
+        </p>
       </div>
 
       <ul className="mt-6 divide-y divide-[var(--color-border)] rounded-lg border border-[var(--color-border)] bg-white">
@@ -120,6 +157,9 @@ export function ProjectSearch({ projects }: Props) {
                     {project.city}
                     {project.county ? `, ${project.county} County` : ""} ·{" "}
                     {typeLabel(project.project_type)}
+                    {project.opened_or_announced_date
+                      ? ` · ${formatDate(project.opened_or_announced_date)}`
+                      : ""}
                   </p>
                 </div>
                 <div className="text-right text-sm">

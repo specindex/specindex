@@ -19,7 +19,8 @@ export default function ProjectsPage() {
           <p className="text-eyebrow">{corpus.geography}</p>
           <h1 className="mt-3 text-hero">Open commercial projects</h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-[var(--color-gray-600)]">
-            {projects.length} projects indexed · captured {corpus.generated_at}
+            {projects.length} projects indexed · {corpus.stats?.opened_last_3_months ?? 0} with
+            activity in the last 3 months · captured {corpus.generated_at}
           </p>
         </div>
       </div>

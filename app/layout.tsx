@@ -24,6 +24,21 @@ export const metadata: Metadata = {
   description:
     "Search open commercial projects, read specs, see if your brand is mentioned, and compare visibility. Beachhead: Georgia.",
   metadataBase: new URL("https://specindex.ai"),
+  openGraph: {
+    title: "SpecIndex — Specification intelligence for building product manufacturers",
+    description:
+      "Find open Georgia commercial projects where your brand can still win the spec.",
+    url: "https://specindex.ai",
+    siteName: "SpecIndex",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SpecIndex",
+    description:
+      "Specification intelligence for building product manufacturers. Georgia beachhead.",
+  },
 };
 
 export default function RootLayout({

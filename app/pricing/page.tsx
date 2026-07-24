@@ -35,7 +35,7 @@ const plans = [
       "Category opportunity lists",
       "Email alerts (weekly digest)",
     ],
-    cta: "Get a Demo",
+    cta: "Request Demo",
     href: "/#demo",
     highlighted: true,
   },

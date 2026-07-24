@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { StatusPill } from "@/components/StatusPill";
-import { formatSf, formatUsd, typeLabel } from "@/lib/format";
+import { formatDate, formatSf, formatUsd, typeLabel } from "@/lib/format";
 import { getProjectById, getProjectIds } from "@/lib/projects";
 
 type Props = { params: Promise<{ id: string }> };
@@ -54,6 +54,10 @@ export default async function ProjectDetailPage({ params }: Props) {
         <dl className="card grid gap-4 p-6 sm:grid-cols-2 lg:grid-cols-3">
           <Fact label="Estimated value" value={formatUsd(project.estimated_value_usd)} />
           <Fact label="Square footage" value={formatSf(project.square_footage)} />
+          <Fact
+            label="Opened / announced"
+            value={formatDate(project.opened_or_announced_date)}
+          />
           <Fact label="Owner" value={project.owner || "—"} />
           <Fact label="General contractor" value={project.general_contractor || "—"} />
           <Fact label="Architect" value={project.architect || "—"} />
@@ -130,9 +134,12 @@ export default async function ProjectDetailPage({ params }: Props) {
           </section>
         )}
 
-        <div className="mt-12">
+        <div className="mt-12 flex flex-wrap gap-3">
           <Link href="/visibility/" className="btn btn-primary">
             Compare brand visibility
+          </Link>
+          <Link href="/projects/" className="btn btn-outline">
+            Back to all projects
           </Link>
         </div>
       </div>

@@ -20,6 +20,17 @@ export function formatSf(value: number | null | undefined): string {
   return `${new Intl.NumberFormat("en-US").format(value)} SF`;
 }
 
+export function formatDate(value: string | undefined): string {
+  if (!value) return "—";
+  const date = new Date(`${value}T12:00:00`);
+  if (Number.isNaN(date.getTime())) return value;
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  }).format(date);
+}
+
 export function statusLabel(status: string): string {
   return status
     .split("_")

@@ -11,7 +11,7 @@ const useCases = [
   {
     label: "Out of the Box",
     title: "Search open commercial projects",
-    body: "Filter Georgia projects by status, type, city, value, and product category. See what's still open for manufacturer influence — planning through under construction.",
+    body: "Filter Georgia projects by status, type, county, and product category. See what's still open for manufacturer influence — planning through under construction.",
     href: "/projects/",
     cta: "Browse Georgia projects",
   },
