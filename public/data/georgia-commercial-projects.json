@@ -1,0 +1,2027 @@
+{
+  "generated_at": "2026-07-24",
+  "geography": "Georgia, USA",
+  "capture_method": "web research + Kimi seed, expanded Apr\u2013Jul 2026 via Claude/Gemini-assisted curation",
+  "date_range": "2026-04-24 to 2026-07-24 (last 3 months)",
+  "projects": [
+    {
+      "id": "troup-county-data-center",
+      "name": "Troup County Data Center (DRI filed)",
+      "city": "Troup County",
+      "county": "Troup",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Data center Development of Regional Impact filing July 2026 in Troup County (west Georgia).",
+      "key_specs": [
+        "Data center DRI",
+        "West Georgia location",
+        "Evaluation pending"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "switchgear",
+        "generators",
+        "cooling systems",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "The Current GA \u2014 data center DRIs",
+          "url": "https://thecurrentga.org/2026/07/22/20-billion-openai-data-center-to-open-in-effingham-county/"
+        }
+      ],
+      "open_for": "Pre-development \u2014 early MEP and infrastructure specs."
+    },
+    {
+      "id": "monroe-drive-safe-streets",
+      "name": "Monroe Drive Safe Streets Project",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "status": "under_construction",
+      "project_type": "civic",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "City of Atlanta",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "City of Atlanta Safe Streets infrastructure project on Monroe Drive. Groundbreaking July 22, 2026.",
+      "key_specs": [
+        "Complete Streets improvements",
+        "Monroe Drive corridor",
+        "Pedestrian/cyclist safety"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "paving",
+        "lighting",
+        "signage",
+        "stormwater",
+        "site furnishings"
+      ],
+      "sources": [
+        {
+          "title": "City of Atlanta \u2014 Monroe Drive Safe Streets",
+          "url": "https://www.atlantaga.gov/"
+        }
+      ],
+      "open_for": "Just broke ground \u2014 civil and site product specs active."
+    },
+    {
+      "id": "dodge-data-center-clayton",
+      "name": "Clayton County Data Center (DRI filed)",
+      "city": "Clayton County",
+      "county": "Clayton",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Data center DRI form filed July 2026 in Clayton County alongside OpenAI Effingham and Troup County projects.",
+      "key_specs": [
+        "Data center campus",
+        "DRI evaluation pending",
+        "South metro Atlanta"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "switchgear",
+        "generators",
+        "cooling",
+        "fire suppression",
+        "security"
+      ],
+      "sources": [
+        {
+          "title": "The Current GA \u2014 data center DRIs",
+          "url": "https://thecurrentga.org/2026/07/22/20-billion-openai-data-center-to-open-in-effingham-county/"
+        }
+      ],
+      "open_for": "Early planning \u2014 design partnerships open."
+    },
+    {
+      "id": "foundry-at-mosaic-pooler",
+      "name": "The Foundry at Mosaic",
+      "city": "Pooler",
+      "county": "Chatham",
+      "status": "under_construction",
+      "project_type": "multifamily",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Thompson Thrift",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "300-unit luxury apartment community at Mosaic Town Center near I-16 and Pooler Parkway. Construction began July 2026; first move-ins targeted November 2027.",
+      "key_specs": [
+        "300 units",
+        "1\u20133 bedroom plans up to 1,475 SF",
+        "Resort pool, fitness, pickleball, golf simulator",
+        "Near Hyundai Metaplant and Port of Savannah"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "appliance packages",
+        "flooring",
+        "HVAC",
+        "lighting and controls",
+        "plumbing fixtures",
+        "smart-home devices"
+      ],
+      "sources": [
+        {
+          "title": "citybiz \u2014 Thompson Thrift breaks ground",
+          "url": "https://www.citybiz.co/article/876642/thompson-thrift-breaks-ground-on-300-unit-apartment-community-near-savannah/"
+        }
+      ],
+      "open_for": "Early vertical construction \u2014 interior finish and MEP specs still open."
+    },
+    {
+      "id": "towneplace-suites-midtown",
+      "name": "TownePlace Suites Midtown Atlanta",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "status": "under_construction",
+      "project_type": "hospitality",
+      "estimated_value_usd": 30200000,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "12-story extended-stay hotel at 526 West Peachtree NW. $30.2M permit July 2026.",
+      "key_specs": [
+        "12 stories",
+        "Extended-stay hotel",
+        "526 W Peachtree St NW"
+      ],
+      "mentioned_brands": [
+        "Marriott",
+        "TownePlace Suites"
+      ],
+      "competitor_watch": [
+        "kitchen packages",
+        "HVAC",
+        "plumbing fixtures",
+        "lighting",
+        "FF&E"
+      ],
+      "sources": [
+        {
+          "title": "BLDUP \u2014 TownePlace Midtown",
+          "url": "https://www.bldup.com/projects/526-west-peachtree-street-northwest"
+        }
+      ],
+      "open_for": "Permit issued \u2014 extended-stay FF&E and systems specs open."
+    },
+    {
+      "id": "motto-hilton-midtown",
+      "name": "Motto by Hilton Midtown Atlanta",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "status": "under_construction",
+      "project_type": "hospitality",
+      "estimated_value_usd": 34100000,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "12-story Motto by Hilton at 512 West Peachtree NW. $34.1M permit issued July 2026 \u2014 Georgia's first Motto flag.",
+      "key_specs": [
+        "12 stories",
+        "512 W Peachtree St NW",
+        "$34.1M permit value"
+      ],
+      "mentioned_brands": [
+        "Hilton",
+        "Motto"
+      ],
+      "competitor_watch": [
+        "guestroom FF&E",
+        "HVAC",
+        "plumbing",
+        "lighting",
+        "elevators"
+      ],
+      "sources": [
+        {
+          "title": "BLDUP \u2014 Motto Midtown",
+          "url": "https://www.bldup.com/projects/motto-downtown-atlanta"
+        }
+      ],
+      "open_for": "Permit issued July 2026 \u2014 hospitality build-out specs open."
+    },
+    {
+      "id": "overlook-at-garson",
+      "name": "The Overlook at Garson",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "status": "under_construction",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Pennrose",
+      "architect": "Smith Dalia Architects",
+      "general_contractor": "McShane Construction",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "130 workforce apartments and 10,300 SF Beltline-level retail on Garson Drive NE. Construction began mid-2026; opening May 2028.",
+      "key_specs": [
+        "130 affordable units (30\u201380% AMI)",
+        "10,300 SF commercial at Beltline level",
+        "100-space parking garage",
+        "Adjacent to Northeast Trail"
+      ],
+      "mentioned_brands": [
+        "GE"
+      ],
+      "competitor_watch": [
+        "appliances",
+        "HVAC",
+        "flooring",
+        "lighting",
+        "storefront systems",
+        "plumbing fixtures"
+      ],
+      "sources": [
+        {
+          "title": "Rough Draft Atlanta \u2014 Overlook at Garson",
+          "url": "https://roughdraftatlanta.com/2026/07/20/garson-drive-development-completion-2028/"
+        }
+      ],
+      "open_for": "Active construction \u2014 interior and amenity specs open."
+    },
+    {
+      "id": "macon-arena",
+      "name": "New Macon Arena",
+      "city": "Macon",
+      "county": "Bibb",
+      "status": "under_construction",
+      "project_type": "civic",
+      "estimated_value_usd": 350000000,
+      "square_footage": 230000,
+      "owner": "Macon-Bibb County",
+      "architect": "PBK Architects",
+      "general_contractor": "Barton Malow + Sheridan Construction",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "230,000+ SF multi-purpose arena replacing Macon Coliseum. Up to 12,298 center-stage capacity. Groundbreaking late July 2026; opening late 2028.",
+      "key_specs": [
+        "230,000+ SF",
+        "12,298 center-stage capacity",
+        "300-space VIP parking deck + 500-space lot",
+        "Phased construction while Coliseum operates"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "arena seating",
+        "HVAC",
+        "acoustics",
+        "lighting and controls",
+        "AV systems",
+        "flooring",
+        "egress hardware"
+      ],
+      "sources": [
+        {
+          "title": "Macon Telegraph \u2014 arena design reveal",
+          "url": "https://www.macon.com/news/local/article316247768.html"
+        }
+      ],
+      "open_for": "Groundbreaking July 2026 \u2014 major MEP and interior packages ahead."
+    },
+    {
+      "id": "centennial-yards-elliott-hotel",
+      "name": "Centennial Yards Elliott Street Boutique Hotel",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "status": "permitting",
+      "project_type": "hospitality",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Centennial Yards Company",
+      "architect": "Praxis 3",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Four-story boutique hotel with 141 keys along Elliott Street. Land disturbance permit filed; construction targeted Q4 2026.",
+      "key_specs": [
+        "141 hotel keys",
+        "4 stories",
+        "Praxis 3 design",
+        "No required parking (MARTA proximity)"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "guestroom FF&E",
+        "HVAC",
+        "lighting",
+        "plumbing",
+        "storefront/entry systems"
+      ],
+      "sources": [
+        {
+          "title": "Urbanize Atlanta \u2014 Elliott Street hotel",
+          "url": "https://atlanta.urbanize.city/post/centennial-yards-gulch-new-hotel-moving-forward-downtown-images"
+        }
+      ],
+      "open_for": "Permitting/pre-construction \u2014 specs forming for Q4 2026 start."
+    },
+    {
+      "id": "675-morgan-savannah",
+      "name": "675 Morgan",
+      "city": "Savannah",
+      "county": "Chatham",
+      "status": "under_construction",
+      "project_type": "multifamily",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Manor Park Ventures + Brook Farm Group",
+      "architect": "",
+      "general_contractor": "Summit Contracting Group",
+      "opened_or_announced_date": "2026-06-26",
+      "description": "336-unit Class A garden-style community on 27-acre entitled site at Highlands PUD. Broke ground June 2026; completion Q2 2028.",
+      "key_specs": [
+        "336 units across 11 three-story buildings",
+        "Resort pool, clubhouse, fitness, pickleball",
+        "Only multifamily parcel in Highlands PUD"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "flooring",
+        "HVAC",
+        "appliances",
+        "lighting",
+        "doors and hardware",
+        "site amenities"
+      ],
+      "sources": [
+        {
+          "title": "PR Newswire \u2014 675 Morgan groundbreaking",
+          "url": "https://www.prnewswire.com/news-releases/family-office-backed-manor-park-ventures-and-brook-farm-group-break-ground-on-336-unit-community-in-booming-savannah-market-302810774.html"
+        }
+      ],
+      "open_for": "Just broke ground \u2014 prime spec window for interior and MEP packages."
+    },
+    {
+      "id": "candler-crossing",
+      "name": "Candler Crossing",
+      "city": "Decatur",
+      "county": "DeKalb",
+      "status": "under_construction",
+      "project_type": "retail",
+      "estimated_value_usd": 28900000,
+      "square_footage": 61525,
+      "owner": "Venture South Investments",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-11",
+      "description": "$28.9M mixed-use retail at Candler & Glenwood Roads: 50,325 SF Publix anchor, 11,200 SF multi-tenant retail, plaza and trail. Broke ground June 11, 2026.",
+      "key_specs": [
+        "50,325 SF Publix",
+        "11,200 SF multi-tenant retail",
+        "Community plaza and walking trail",
+        "183 permanent jobs"
+      ],
+      "mentioned_brands": [
+        "Publix"
+      ],
+      "competitor_watch": [
+        "refrigeration",
+        "HVAC",
+        "storefront systems",
+        "lighting",
+        "flooring",
+        "paving"
+      ],
+      "sources": [
+        {
+          "title": "Decide DeKalb \u2014 Candler Crossing",
+          "url": "https://www.decidedekalb.com/news/decide-dekalb-and-venture-south-investments-break-ground-on-28-9-million-mixed-use-development-on-candler-road/"
+        }
+      ],
+      "open_for": "Construction started June 2026 \u2014 tenant build-out and anchor specs active."
+    },
+    {
+      "id": "hampton-inn-kennesaw",
+      "name": "Hampton Inn Atlanta Kennesaw NW / Town Center",
+      "city": "Kennesaw",
+      "county": "Cobb",
+      "status": "under_construction",
+      "project_type": "hospitality",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Vector Hospitality",
+      "architect": "",
+      "general_contractor": "Sturgis Construction",
+      "opened_or_announced_date": "2026-06-02",
+      "description": "123-room Hampton by Hilton off Cobb Place Lane NW. Groundbreaking June 2026; opening summer 2027.",
+      "key_specs": [
+        "123 rooms",
+        "Meeting space and fitness",
+        "Near I-75, KSU, Town Center at Cobb"
+      ],
+      "mentioned_brands": [
+        "Hilton",
+        "Hampton Inn"
+      ],
+      "competitor_watch": [
+        "guestroom FF&E",
+        "HVAC",
+        "plumbing fixtures",
+        "lighting",
+        "elevators",
+        "commercial laundry"
+      ],
+      "sources": [
+        {
+          "title": "Hotel Online \u2014 Vector Hospitality Kennesaw",
+          "url": "https://www.hotel-online.com/news/vector-hospitality-inc-breaks-ground-on-hampton-inn-by-hilton-atlanta-nw-kennesawtown-center"
+        }
+      ],
+      "open_for": "New-build hospitality \u2014 FF&E and building systems specs open."
+    },
+    {
+      "id": "savannah-port-logistics-center",
+      "name": "Savannah Port Logistics Center",
+      "city": "Savannah",
+      "county": "Chatham",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": 125000000,
+      "square_footage": 2300000,
+      "owner": "Capital Development Partners + Greenfield Partners",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "2.3M SF logistics center ~10 miles from Port of Savannah via Highway 80. $125M joint venture; construction began after March 2026 announcement.",
+      "key_specs": [
+        "2.3M SF logistics",
+        "$125M investment",
+        "Near Port of Savannah",
+        "Highway 80 access"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "dock equipment",
+        "overhead doors",
+        "high-bay lighting",
+        "roofing",
+        "fire protection",
+        "concrete/paving"
+      ],
+      "sources": [
+        {
+          "title": "Capital Development Partners",
+          "url": "https://capitaldevelopmentpartners.com/construction-begins-on-125-million-savannah-port-logistics-center/"
+        }
+      ],
+      "open_for": "Active construction \u2014 industrial building product specs in play."
+    },
+    {
+      "id": "scannell-ridgeway-phase-1",
+      "name": "Ridgeway Logistics Park Phase I",
+      "city": "Ellabell",
+      "county": "Bryan",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": 1100000,
+      "owner": "Scannell Properties",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "1.1M SF speculative industrial across from Hyundai Metaplant. Site work began summer 2026 on 335-acre park (up to 4M SF build-out).",
+      "key_specs": [
+        "1.1M SF Phase I",
+        "40' clear heights",
+        "234 dock positions",
+        "Adjacent to I-16 interchange"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "dock equipment",
+        "overhead doors",
+        "lighting",
+        "roofing",
+        "fire protection"
+      ],
+      "sources": [
+        {
+          "title": "REBusinessOnline \u2014 Ridgeway Logistics Park",
+          "url": "https://rebusinessonline.com/scannell-properties-to-develop-335-acre-logistics-park-near-savannah/"
+        }
+      ],
+      "open_for": "Site work started \u2014 industrial building product specs active."
+    },
+    {
+      "id": "macon-convention-center-hotel",
+      "name": "Macon Convention Center & Hotel",
+      "city": "Macon",
+      "county": "Bibb",
+      "status": "planning",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Macon-Bibb County",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "Planned convention center and adjoining hotel at 108 First Street (former Ramada site). Part of $1B+ riverfront/arena district investment.",
+      "key_specs": [
+        "Convention center",
+        "Adjoining hotel",
+        "108 First Street site",
+        "Near new arena and Mercer med school"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "HVAC",
+        "AV/conference systems",
+        "FF&E",
+        "lighting",
+        "flooring",
+        "kitchen equipment"
+      ],
+      "sources": [
+        {
+          "title": "Mercer / Macon riverfront coverage",
+          "url": "https://den.mercer.edu/mercer-breaks-ground-on-new-medical-school-building-in-downtown-macon/"
+        }
+      ],
+      "open_for": "Planning phase \u2014 early specs and design partnerships open."
+    },
+    {
+      "id": "hyundai-sk-battery-bartow",
+      "name": "Hyundai-SK Battery Plant (Bartow County)",
+      "city": "Adairsville area",
+      "county": "Bartow",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": 5000000000,
+      "square_footage": null,
+      "owner": "Hyundai-SK Battery Manufacturing America",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "$5B joint venture battery cell plant on ~752 acres. Production began June 2026 ramping to 35 GWh/year (~300k EVs). Supplies Hyundai Metaplant.",
+      "key_specs": [
+        "35 GWh annual capacity",
+        "752-acre site",
+        "3,500+ jobs",
+        "EV battery cells"
+      ],
+      "mentioned_brands": [
+        "Hyundai",
+        "SK On"
+      ],
+      "competitor_watch": [
+        "process HVAC",
+        "fire suppression",
+        "electrical/switchgear",
+        "cleanroom systems",
+        "industrial flooring"
+      ],
+      "sources": [
+        {
+          "title": "AJC \u2014 Hyundai-SK battery plant opens",
+          "url": "https://www.ajc.com/business/2026/07/sk-and-hyundai-open-new-5b-ev-battery-plant-northwest-of-atlanta/"
+        }
+      ],
+      "open_for": "Early production ramp \u2014 process and industrial support specs may still shift."
+    },
+    {
+      "id": "costco-macon",
+      "name": "Costco Wholesale Macon",
+      "city": "Macon",
+      "county": "Bibb",
+      "status": "permitting",
+      "project_type": "retail",
+      "estimated_value_usd": null,
+      "square_footage": 158000,
+      "owner": "Costco",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "158,000 SF warehouse club at Bass Road and new Forsyth Road with 32-pump gas station. P&Z approved; opening summer 2027.",
+      "key_specs": [
+        "158,000 SF warehouse",
+        "32-pump gas station",
+        "North Macon location"
+      ],
+      "mentioned_brands": [
+        "Costco"
+      ],
+      "competitor_watch": [
+        "refrigeration",
+        "HVAC",
+        "dock doors",
+        "lighting",
+        "fuel systems",
+        "concrete/paving"
+      ],
+      "sources": [
+        {
+          "title": "41NBC \u2014 Costco approved for Macon",
+          "url": "https://www.41nbc.com/coming-soon-new-costco-approved-for-macon/"
+        }
+      ],
+      "open_for": "Approved for development \u2014 specs and GC packages forming."
+    },
+    {
+      "id": "campus-244-dunwoody",
+      "name": "Campus 244 Expansion",
+      "city": "Dunwoody",
+      "county": "DeKalb",
+      "status": "planning",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": 200000,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "Proposed expansion: 150-room hotel, 200,000 SF office, and 350 apartments at Campus 244. Rezoning pending mid-2026.",
+      "key_specs": [
+        "150-room hotel",
+        "200,000 SF office",
+        "350 apartments",
+        "Perimeter Center submarket"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "curtain wall",
+        "HVAC",
+        "elevators",
+        "flooring",
+        "lighting",
+        "hotel FF&E"
+      ],
+      "sources": [
+        {
+          "title": "Atlanta commercial development coverage",
+          "url": "https://www.bisnow.com/atlanta/"
+        }
+      ],
+      "open_for": "Rezoning/planning \u2014 influence specs before entitlement completes."
+    },
+    {
+      "id": "arcelormittal-macon-hq",
+      "name": "ArcelorMittal Building Solutions HQ & Manufacturing",
+      "city": "Macon",
+      "county": "Bibb",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": 57000000,
+      "square_footage": null,
+      "owner": "ArcelorMittal Building Solutions",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "North American HQ and manufacturing at Airport South Industrial Park. $57M initial investment, up to 70 jobs; construction H2 2026, operations H2 2027.",
+      "key_specs": [
+        "HQ + manufacturing + training facility",
+        "Building enclosure products",
+        "Airport South Industrial Park"
+      ],
+      "mentioned_brands": [
+        "ArcelorMittal"
+      ],
+      "competitor_watch": [
+        "metal building systems",
+        "insulation",
+        "HVAC",
+        "industrial doors",
+        "lighting",
+        "fire protection"
+      ],
+      "sources": [
+        {
+          "title": "Georgia DED \u2014 ArcelorMittal Macon",
+          "url": "https://topstatefortalent.georgia.gov/news/2026-06-01/gov-kemp-arcelormittal-building-solutions-brings-north-american-hq-macon-bibb"
+        }
+      ],
+      "open_for": "Pre-construction H2 2026 \u2014 industrial and enclosure specs open."
+    },
+    {
+      "id": "pnk-griffin-200",
+      "name": "PNK Griffin 200",
+      "city": "Griffin",
+      "county": "Spalding",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": 1000000,
+      "owner": "PNK Group",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-26",
+      "description": "1M SF speculative industrial at 35 S. McDonough Road using PNK BAS prefab technology. Construction began May 26, 2026.",
+      "key_specs": [
+        "1M SF speculative",
+        "40' clear heights",
+        "194 dock doors",
+        "185' truck court",
+        "PNK BAS prefab"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "dock equipment",
+        "overhead doors",
+        "high-bay lighting",
+        "roofing",
+        "fire protection",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "REBusinessOnline \u2014 PNK Griffin 200",
+          "url": "https://rebusinessonline.com/pnk-group-begins-construction-on-1-msf-industrial-facility-in-griffin-georgia/"
+        }
+      ],
+      "open_for": "Just started \u2014 industrial shell and systems specs open."
+    },
+    {
+      "id": "alta-newnan-crossing",
+      "name": "Alta Newnan Crossing",
+      "city": "Newnan",
+      "county": "Coweta",
+      "status": "under_construction",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Wood Partners",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-26",
+      "description": "274 apartments, 7 townhomes, and 7,700 SF retail. Broke ground May 26, 2026; completion fall 2027.",
+      "key_specs": [
+        "274 units + 7 townhomes",
+        "7,700 SF retail",
+        "40 miles SW of Atlanta"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "flooring",
+        "HVAC",
+        "appliances",
+        "retail storefront systems",
+        "lighting"
+      ],
+      "sources": [
+        {
+          "title": "PR Newswire \u2014 Wood Partners Alta Newnan",
+          "url": "https://www.morningstar.com/news/pr-newswire/20260526cl67810/wood-partners-breaks-ground-on-alta-newnan-crossing-in-newnan-georgia"
+        }
+      ],
+      "open_for": "Ground broken \u2014 interior and retail spec packages open."
+    },
+    {
+      "id": "white-oak-technology-park",
+      "name": "White Oak Technology Park",
+      "city": "Augusta area",
+      "county": "Columbia",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": 8000000,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-01",
+      "description": "Plans filed for 8M SF technology/industrial park in Columbia County near Augusta \u2014 one of largest proposed industrial developments in the region.",
+      "key_specs": [
+        "Up to 8M SF",
+        "Technology/industrial park",
+        "Columbia County / Augusta metro"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "site infrastructure",
+        "utility systems",
+        "prefab industrial",
+        "data center shells"
+      ],
+      "sources": [
+        {
+          "title": "Augusta area development coverage",
+          "url": "https://augustagoodnews.com/"
+        }
+      ],
+      "open_for": "Master planning \u2014 early infrastructure and shell specs."
+    },
+    {
+      "id": "atrium-morehouse-teaching-hospital",
+      "name": "Atrium Health / Morehouse Teaching Hospital",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "status": "planning",
+      "project_type": "healthcare",
+      "estimated_value_usd": 800000000,
+      "square_footage": null,
+      "owner": "Atrium Health + Morehouse School of Medicine",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-01",
+      "description": "$800M teaching hospital proposal in southwest Atlanta with Morehouse School of Medicine. Pre-construction; completion not before 2029.",
+      "key_specs": [
+        "Teaching hospital",
+        "$800M estimated",
+        "Southwest Atlanta",
+        "Morehouse partnership"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "medical equipment",
+        "HVAC/lab air",
+        "nurse call",
+        "flooring",
+        "doors and hardware",
+        "fire/life safety"
+      ],
+      "sources": [
+        {
+          "title": "Atlanta healthcare development coverage",
+          "url": "https://www.ajc.com/"
+        }
+      ],
+      "open_for": "Proposal/planning \u2014 long-lead spec influence window open."
+    },
+    {
+      "id": "virgin-hotel-centennial-yards",
+      "name": "Virgin Hotel Centennial Yards",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "status": "planning",
+      "project_type": "hospitality",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "CIM Group / Centennial Yards Company / Drew Company",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-22",
+      "description": "Virgin Hotels lifestyle flag announced for Centennial Yards Entertainment District. 2027 debut alongside Live Nation and Cosm venues.",
+      "key_specs": [
+        "Virgin Hotels flag",
+        "Centennial Yards Entertainment District",
+        "2027 target opening"
+      ],
+      "mentioned_brands": [
+        "Virgin Hotels"
+      ],
+      "competitor_watch": [
+        "guestroom FF&E",
+        "HVAC",
+        "lighting",
+        "plumbing",
+        "AV systems"
+      ],
+      "sources": [
+        {
+          "title": "Business Wire \u2014 Virgin Hotel Atlanta",
+          "url": "https://www.businesswire.com/news/home/20260422617909/en/CIM-Group-Centennial-Yards-Company-and-The-Drew-Company-Announce-Partnership-to-Bring-Award-Winning-Virgin-Hotel-to-Downtown-Atlanta"
+        }
+      ],
+      "open_for": "Pre-construction design \u2014 hospitality and entertainment district specs forming."
+    },
+    {
+      "id": "sr-400-express-lanes",
+      "name": "SR 400 Express Lanes (Peach Partners P3)",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "status": "under_construction",
+      "project_type": "civic",
+      "estimated_value_usd": 4600000000,
+      "square_footage": null,
+      "owner": "Georgia DOT / SR 400 Peach Partners",
+      "architect": "",
+      "general_contractor": "FlatironDragados + Acciona",
+      "opened_or_announced_date": "2026-04-22",
+      "description": "$4.6B construction ($10.8B total program) adding tolled express lanes on ~16 miles of SR 400 from Fulton to Forsyth. Broke ground April 22, 2026.",
+      "key_specs": [
+        "~16 miles express lanes",
+        "I-285/SR 400 interchange improvements",
+        "Dynamic tolling",
+        "P3 design-build"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "traffic systems",
+        "lighting",
+        "barriers/guardrail",
+        "electrical",
+        "signage",
+        "paving materials"
+      ],
+      "sources": [
+        {
+          "title": "Construction Dive \u2014 SR 400 Express Lanes",
+          "url": "https://www.constructiondive.com/news/flatiron-dragados-acciona-p3-highway-georgia-400/818597/"
+        }
+      ],
+      "open_for": "Major civil package underway \u2014 infrastructure product specs active."
+    },
+    {
+      "id": "hyundai-lg-battery-metaplant",
+      "name": "Hyundai-LG Battery Plant (Metaplant Campus)",
+      "city": "Ellabell area",
+      "county": "Bryan",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": 4000000000,
+      "square_footage": 2500000,
+      "owner": "Hyundai + LG Energy Solution",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-15",
+      "description": "2.5M SF battery factory on Metaplant campus. Opening April 2026 after ICE-related delay; 500+ employees.",
+      "key_specs": [
+        "2.5M SF",
+        "On Metaplant America campus",
+        "500+ employees",
+        "EV battery production"
+      ],
+      "mentioned_brands": [
+        "Hyundai",
+        "LG Energy Solution"
+      ],
+      "competitor_watch": [
+        "process HVAC",
+        "fire suppression",
+        "electrical",
+        "cleanroom/industrial systems"
+      ],
+      "sources": [
+        {
+          "title": "AJC \u2014 Hyundai LG battery plant opening",
+          "url": "https://www.ajc.com/business/2026/04/hyundai-battery-plant-in-georgia-set-to-open-months-after-ice-raid/"
+        }
+      ],
+      "open_for": "Commissioning phase \u2014 late add-ons and support systems possible."
+    },
+    {
+      "id": "buc-ees-smarr-monroe",
+      "name": "Buc-ee's Smarr (Monroe County)",
+      "city": "Smarr",
+      "county": "Monroe",
+      "status": "under_construction",
+      "project_type": "retail",
+      "estimated_value_usd": null,
+      "square_footage": 74000,
+      "owner": "Buc-ee's",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-08",
+      "description": "74,000 SF travel center at I-75 Exit 181 with 100 fueling positions. Official groundbreaking April 2026; opening targeted late summer 2027.",
+      "key_specs": [
+        "74,000 SF",
+        "100 fueling positions",
+        "35-acre site",
+        "200+ jobs"
+      ],
+      "mentioned_brands": [
+        "Buc-ee's"
+      ],
+      "competitor_watch": [
+        "fuel systems",
+        "commercial kitchen equipment",
+        "HVAC",
+        "plumbing",
+        "lighting",
+        "paving/site work"
+      ],
+      "sources": [
+        {
+          "title": "AJC \u2014 Another Buc-ee's breaks ground in Georgia",
+          "url": "https://www.ajc.com/news/2026/04/another-buc-ees-breaks-ground-in-georgia-as-locals-roll-out-welcome-mat/"
+        }
+      ],
+      "open_for": "Site work and building package specs active through 2027 opening."
+    },
+    {
+      "id": "wellstar-columbia-county-medical",
+      "name": "Wellstar Columbia County Medical Center",
+      "city": "Grovetown",
+      "county": "Columbia",
+      "status": "under_construction",
+      "project_type": "healthcare",
+      "estimated_value_usd": 380000000,
+      "square_footage": 340000,
+      "owner": "Wellstar Health System",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-01",
+      "description": "$380M+ hospital and 90,000 SF MOB at 5000 Gateway Blvd. Certificate of occupancy expected mid-2026; opening late summer 2026.",
+      "key_specs": [
+        "100 inpatient beds",
+        "Level II trauma ED target",
+        "90,000 SF MOB",
+        "Surgical and cath/IR platform"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "medical equipment",
+        "HVAC",
+        "nurse call",
+        "flooring",
+        "doors/hardware",
+        "fire/life safety"
+      ],
+      "sources": [
+        {
+          "title": "Augusta Good News \u2014 Wellstar Columbia County",
+          "url": "https://augustagoodnews.com/wellstar-columbia-county-medical-center-on-track-to-open-in-late-summer-2026/"
+        }
+      ],
+      "open_for": "Near completion \u2014 late add-ons and MOB tenant specs may remain."
+    },
+    {
+      "id": "master-wall-columbus-hq",
+      "name": "Master Wall Columbus HQ Expansion",
+      "city": "Columbus",
+      "county": "Muscogee",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": 7000000,
+      "square_footage": 46500,
+      "owner": "Master Wall Inc.",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-01",
+      "description": "$7M corporate headquarters expansion in Columbus for exterior insulation and finish systems manufacturer.",
+      "key_specs": [
+        "46,500 SF expansion",
+        "EIFS/stucco systems manufacturer HQ",
+        "Columbus metro"
+      ],
+      "mentioned_brands": [
+        "Master Wall"
+      ],
+      "competitor_watch": [
+        "EIFS/stucco systems",
+        "insulation",
+        "HVAC",
+        "metal studs",
+        "coatings"
+      ],
+      "sources": [
+        {
+          "title": "Columbus GA commercial development coverage",
+          "url": "https://rebusinessonline.com/"
+        }
+      ],
+      "open_for": "Expansion underway \u2014 building envelope product specs relevant."
+    },
+    {
+      "id": "augusta-dental-college-savannah",
+      "name": "Dental College of Georgia \u2014 Savannah Campus",
+      "city": "Savannah",
+      "county": "Chatham",
+      "status": "under_construction",
+      "project_type": "education",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Augusta University / Dental College of Georgia",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-01",
+      "description": "New Dental College of Georgia campus at Georgia Southern University Savannah, broke ground April 2026; opening 2028.",
+      "key_specs": [
+        "Dental education campus",
+        "Georgia Southern Savannah",
+        "Clinical and academic spaces"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "dental equipment",
+        "lab casework",
+        "HVAC",
+        "medical gas",
+        "flooring",
+        "lighting"
+      ],
+      "sources": [
+        {
+          "title": "Healthcare/education development coverage",
+          "url": "https://www.beckershospitalreview.com/"
+        }
+      ],
+      "open_for": "Early construction \u2014 institutional and clinical specs open."
+    },
+    {
+      "id": "teachers-village-atlanta",
+      "name": "Teachers Village",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "status": "under_construction",
+      "project_type": "mixed_use",
+      "estimated_value_usd": 77125000,
+      "square_footage": null,
+      "owner": "Invest Atlanta / developer consortium",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-19",
+      "description": "33-story affordable housing tower in Fairlie-Poplar Historic District. $77.1M building permit March 19, 2026; workforce and senior units plus retail.",
+      "key_specs": [
+        "33 stories",
+        "Income-restricted apartments",
+        "Workforce housing for teachers",
+        "Senior independent living units",
+        "Retail + parking"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "HVAC",
+        "elevators",
+        "flooring",
+        "kitchen/bath packages",
+        "lighting",
+        "fire/life safety"
+      ],
+      "sources": [
+        {
+          "title": "BLDUP \u2014 Teachers Village permit",
+          "url": "https://www.bldup.com/posts/atlanta-s-33-story-affordable-housing-tower-secures-77m-building-permit-signaling-vertical-construction"
+        }
+      ],
+      "open_for": "Vertical construction starting \u2014 high-rise MEP and interior specs open."
+    },
+    {
+      "id": "project-azalea-thomson",
+      "name": "Project Azalea Data Center",
+      "city": "Thomson",
+      "county": "McDuffie",
+      "status": "permitting",
+      "project_type": "industrial",
+      "estimated_value_usd": 1000000000,
+      "square_footage": null,
+      "owner": "Project Turbo LLC",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-18",
+      "description": "200-acre, six-building data center campus approved March 2026 near Augusta. ~400MW Jefferson Energy supply; completion target 2029 pending power upgrades.",
+      "key_specs": [
+        "Six data center buildings",
+        "200 acres",
+        "400MW energy load",
+        "Own substation and backup generation"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "switchgear",
+        "generators",
+        "cooling systems",
+        "fire suppression",
+        "security systems",
+        "raised floor"
+      ],
+      "sources": [
+        {
+          "title": "Data Center Dynamics \u2014 Project Azalea",
+          "url": "https://www.datacenterdynamics.com/en/news/200-acre-project-azalea-data-center-approved/"
+        }
+      ],
+      "open_for": "Approved \u2014 design and MEP specs forming ahead of construction."
+    },
+    {
+      "id": "centennial-yards-hotel-interior",
+      "name": "Centennial Yards Building C Hotel Interior",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "status": "under_construction",
+      "project_type": "hospitality",
+      "estimated_value_usd": 40000000,
+      "square_footage": 195061,
+      "owner": "Centennial Yards Company",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-03",
+      "description": "$40M interior fit-out permit March 2026 for high-rise hotel at 85 Centennial Olympic Park Drive (Building C).",
+      "key_specs": [
+        "195,061 SF interior fit-out",
+        "Building C hotel tower",
+        "Entertainment District"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "FF&E",
+        "HVAC",
+        "lighting",
+        "plumbing fixtures",
+        "AV",
+        "elevators"
+      ],
+      "sources": [
+        {
+          "title": "BLDUP \u2014 Centennial Yards hotel interior",
+          "url": "https://www.bldup.com/posts/atlanta-s-centennial-yards-entertainment-district-surges-forward-with-40m-hotel-interior-milestone"
+        }
+      ],
+      "open_for": "Interior fit-out active \u2014 hospitality finish specs in play."
+    },
+    {
+      "id": "novel-lulah-hills",
+      "name": "Novel Lulah Hills",
+      "city": "Decatur",
+      "county": "DeKalb",
+      "status": "under_construction",
+      "project_type": "mixed_use",
+      "estimated_value_usd": 81845000,
+      "square_footage": 259099,
+      "owner": "Crescent Communities / EDENS / NTT Urban Development",
+      "architect": "",
+      "general_contractor": "Fortune-Johnson",
+      "opened_or_announced_date": "2026-03-01",
+      "description": "303-unit six-story multifamily with 39,000 SF ground-floor retail at former North DeKalb Mall site. Broke ground March 2026; move-ins late 2027.",
+      "key_specs": [
+        "303 units",
+        "39,000 SF retail",
+        "Part of 78-acre Lulah Hills redevelopment",
+        "1,800 units planned at full build-out"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "curtain wall",
+        "HVAC",
+        "flooring",
+        "appliances",
+        "retail storefront",
+        "lighting"
+      ],
+      "sources": [
+        {
+          "title": "Multi-Housing News \u2014 Novel Lulah Hills",
+          "url": "https://www.multihousingnews.com/crescent-communities-breaks-ground-on-suburban-atlanta-multifamily/"
+        }
+      ],
+      "open_for": "First vertical at Lulah Hills \u2014 specs active for residential and retail podiums."
+    },
+    {
+      "id": "continuum-alpharetta",
+      "name": "Continuum Alpharetta",
+      "city": "Alpharetta",
+      "county": "Fulton",
+      "status": "under_construction",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": 99058,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-01",
+      "description": "52-acre mixed-use: 280 luxury apartments, 98 townhomes, 74,000 SF retail, and 808,000 SF future office at 5555 Windward Pkwy. Residential breaking ground 2026.",
+      "key_specs": [
+        "280 apartments + 98 townhomes",
+        "74,000 SF retail",
+        "515,438 SF renovated office (Aug 2025)",
+        "808,000 SF BTS office available"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "curtain wall",
+        "HVAC",
+        "flooring",
+        "retail storefront",
+        "lighting",
+        "paving"
+      ],
+      "sources": [
+        {
+          "title": "Continuum Alpharetta property report",
+          "url": "https://properties.zoomprospector.com/statega/property/5555-Windward-Pkwy-Alpharetta-Georgia/8486F35A-71DE-4683-8E5E-7C944004D778"
+        }
+      ],
+      "open_for": "Residential phase starting 2026 \u2014 multifamily and retail specs open."
+    },
+    {
+      "id": "mercer-med-school-macon-riverfront",
+      "name": "Mercer School of Medicine Riverfront Campus",
+      "city": "Macon",
+      "county": "Bibb",
+      "status": "under_construction",
+      "project_type": "education",
+      "estimated_value_usd": 80000000,
+      "square_footage": null,
+      "owner": "Mercer University",
+      "architect": "McMillan Pazdan Smith",
+      "general_contractor": "Sheridan Construction",
+      "opened_or_announced_date": "2025-11-07",
+      "description": "$80M medical school building plus lofts, retail, and parking along Ocmulgee River. Active construction; opening fall 2028.",
+      "key_specs": [
+        "$80M med school building",
+        "Lofts + retail + parking decks",
+        "Gateway to downtown Macon",
+        "Part of ~$400M riverfront investment"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "lab casework",
+        "HVAC/lab air",
+        "flooring",
+        "lighting",
+        "medical gas",
+        "doors and hardware"
+      ],
+      "sources": [
+        {
+          "title": "Mercer \u2014 med school groundbreaking",
+          "url": "https://den.mercer.edu/mercer-breaks-ground-on-new-medical-school-building-in-downtown-macon/"
+        }
+      ],
+      "open_for": "Active construction \u2014 lab and institutional specs still open."
+    },
+    {
+      "id": "ucb-biologics-rowen",
+      "name": "UCB Biologics Manufacturing Campus at Rowen",
+      "city": "Dacula area",
+      "county": "Gwinnett",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": 2000000000,
+      "square_footage": 460000,
+      "owner": "UCB",
+      "architect": "",
+      "general_contractor": "",
+      "description": "$2B first US manufacturing facility for UCB at Rowen; ~460k SF on 79 acres; 330 jobs; 6-7 year design/construction timeline. Rowen Convergence Center vertical construction beginning.",
+      "key_specs": [
+        "$2B investment",
+        "~460k SF on 79 acres",
+        "330 jobs",
+        "6-7 year design/construction",
+        "Biologics manufacturing"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "cleanroom systems",
+        "process HVAC",
+        "high-purity piping",
+        "lab casework",
+        "specialty flooring",
+        "roofing",
+        "building automation"
+      ],
+      "sources": [
+        {
+          "title": "GDEcD announcement",
+          "url": ""
+        },
+        {
+          "title": "PR Newswire Mar 2026",
+          "url": ""
+        }
+      ],
+      "open_for": "Early development with 6-7 year timeline \u2014 extensive design phases ahead for cleanroom, process, and support building specifications."
+    },
+    {
+      "id": "st-marys-good-samaritan-pavilion",
+      "name": "St. Mary's Good Samaritan Pavilion",
+      "city": "Greensboro",
+      "county": "Greene",
+      "status": "under_construction",
+      "project_type": "healthcare",
+      "estimated_value_usd": 45600000,
+      "square_footage": null,
+      "owner": "St. Mary's / Trinity Health",
+      "architect": "",
+      "general_contractor": "",
+      "description": "$45.6M 3-story hospital addition at Lake Oconee: pharmacy, outpatient rehab, infusion, lab/imaging, and 13k SF medical group space. Broke ground July 21, 2026.",
+      "key_specs": [
+        "$45.6M",
+        "3-story addition",
+        "Pharmacy, outpatient rehab, infusion, lab/imaging",
+        "13k SF medical group"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "healthcare casework",
+        "medical equipment booms",
+        "healthcare flooring",
+        "HVAC with filtration",
+        "doors and hardware",
+        "lighting",
+        "imaging suite shielding"
+      ],
+      "sources": [
+        {
+          "title": "St. Mary's press release",
+          "url": ""
+        }
+      ],
+      "open_for": "Ground just broken (July 21, 2026) \u2014 interior fit-out packages, medical equipment-adjacent products, and finishes still procurable."
+    },
+    {
+      "id": "riverfront-place-columbus",
+      "name": "Riverfront Place",
+      "city": "Columbus",
+      "county": "Muscogee",
+      "status": "planning",
+      "project_type": "mixed_use",
+      "estimated_value_usd": 250000000,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "description": "~$250M mixed-use development along the Chattahoochee River: hotel, office tower, and residential components.",
+      "key_specs": [
+        "~$250M",
+        "Hotel, office tower, residential",
+        "Chattahoochee riverfront"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "curtain wall/glazing",
+        "hotel FF&E-adjacent products",
+        "HVAC",
+        "flooring",
+        "doors and hardware",
+        "lighting",
+        "plumbing fixtures"
+      ],
+      "sources": [
+        {
+          "title": "Project coverage",
+          "url": ""
+        }
+      ],
+      "open_for": "Developing \u2014 multiple asset classes mean extended design phases and specification opportunities."
+    },
+    {
+      "id": "ridgeway-logistics-park",
+      "name": "Ridgeway Logistics Park",
+      "city": "Ellabell",
+      "county": "Bryan",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": 4000000,
+      "owner": "Scannell Properties",
+      "architect": "",
+      "general_contractor": "",
+      "description": "335-acre logistics park near Hyundai Metaplant; up to 4M SF; Phase I 1.1M SF speculative (40' clear heights, docks); site work beginning summer 2026.",
+      "key_specs": [
+        "335 acres",
+        "Up to 4M SF",
+        "Phase I: 1.1M SF speculative",
+        "40' clear heights",
+        "Site work summer 2026"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "dock levelers and doors",
+        "high-bay lighting",
+        "roofing",
+        "ESFR sprinklers",
+        "tilt-wall concrete",
+        "site utilities"
+      ],
+      "sources": [
+        {
+          "title": "REBusinessOnline",
+          "url": ""
+        }
+      ],
+      "open_for": "Site work just starting \u2014 vertical construction specs for Phase I and later phases fully open."
+    },
+    {
+      "id": "preciball-usa-screven-county",
+      "name": "Preciball USA Production Facility",
+      "city": "Screven County Industrial Park",
+      "county": "Screven",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": 17600000,
+      "square_footage": null,
+      "owner": "Preciball USA",
+      "architect": "",
+      "general_contractor": "",
+      "description": "$17.6M production facility in Screven County Industrial Park, ~50 miles north of Savannah. Announced/planned.",
+      "key_specs": [
+        "$17.6M investment",
+        "Production facility",
+        "~50 miles north of Savannah"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "industrial HVAC/ventilation",
+        "high-bay lighting",
+        "overhead doors",
+        "roofing",
+        "epoxy/industrial flooring",
+        "process piping"
+      ],
+      "sources": [
+        {
+          "title": "Bisnow / Gov Kemp announcement",
+          "url": ""
+        }
+      ],
+      "open_for": "Announced project \u2014 design and procurement not yet finalized; owner-direct engagement possible."
+    },
+    {
+      "id": "port-wentworth-commerce-center",
+      "name": "Port Wentworth Commerce Center",
+      "city": "Port Wentworth",
+      "county": "Chatham",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": 1279150,
+      "owner": "Dermody Properties",
+      "architect": "",
+      "general_contractor": "",
+      "description": "Up to 10M SF logistics park near Savannah; Buildings A (538,775 SF) and B (740,375 SF) under construction, delivering Q4 2026; $164M land acquisition; CBRE leasing.",
+      "key_specs": [
+        "Up to 10M SF total",
+        "Building A: 538,775 SF",
+        "Building B: 740,375 SF",
+        "Q4 2026 delivery",
+        "CBRE leasing"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "loading dock equipment",
+        "overhead doors",
+        "high-bay LED lighting",
+        "roofing",
+        "ESFR fire protection",
+        "concrete paving"
+      ],
+      "sources": [
+        {
+          "title": "PIER CRE",
+          "url": ""
+        }
+      ],
+      "open_for": "Buildings A and B near delivery, but up to ~8.7M SF in future phases remain \u2014 long runway for later-building specifications."
+    },
+    {
+      "id": "piedmont-center-redevelopment",
+      "name": "Piedmont Center Campus Redevelopment",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "status": "planning",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "description": "46-acre master plan in Buckhead to transform office campus into high-density mixed-use with retail/dining corridors. Redevelopment beginning.",
+      "key_specs": [
+        "46-acre campus",
+        "High-density mixed-use master plan",
+        "Retail and dining corridors"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "site/landscape materials",
+        "paving and hardscape",
+        "HVAC",
+        "glazing",
+        "retail storefront systems",
+        "lighting"
+      ],
+      "sources": [
+        {
+          "title": "Bisnow deal coverage",
+          "url": ""
+        }
+      ],
+      "open_for": "Early master-planning \u2014 opportunity to engage ownership and design teams before phase-by-phase specs are written."
+    },
+    {
+      "id": "overlook-at-cumming-city-center",
+      "name": "Overlook Apartments at Cumming City Center",
+      "city": "Cumming",
+      "county": "Forsyth",
+      "status": "under_construction",
+      "project_type": "multifamily",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Toro Development",
+      "architect": "",
+      "general_contractor": "",
+      "description": "301-unit apartment community within a 95-acre mixed-use development at Cumming City Center. Breaking ground.",
+      "key_specs": [
+        "301 units",
+        "95-acre mixed-use site"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "appliances",
+        "plumbing fixtures",
+        "flooring",
+        "doors and hardware",
+        "HVAC",
+        "lighting",
+        "cabinetry and countertops"
+      ],
+      "sources": [
+        {
+          "title": "Bisnow coverage",
+          "url": ""
+        }
+      ],
+      "open_for": "Just breaking ground \u2014 unit interior packages and building systems specs can still be influenced."
+    },
+    {
+      "id": "openai-project-camellia",
+      "name": "OpenAI Project Camellia Data Center",
+      "city": "Rincon",
+      "county": "Effingham",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": 20000000000,
+      "square_footage": 4400000,
+      "owner": "OpenAI",
+      "architect": "",
+      "general_contractor": "",
+      "description": "$20B+ data center campus at Savannah Gateway Industrial Hub near Savannah; up to ~4.4M SF across four buildings in DRI concept; phases 2028-2032; Georgia Power 3.2 GW agreement.",
+      "key_specs": [
+        "$20B+ campus",
+        "Up to ~4.4M SF, four buildings",
+        "Phases 2028-2032",
+        "3.2 GW Georgia Power agreement"
+      ],
+      "mentioned_brands": [
+        "Georgia Power"
+      ],
+      "competitor_watch": [
+        "data center cooling/mechanical",
+        "electrical distribution and switchgear",
+        "generators/UPS",
+        "roofing",
+        "precast concrete",
+        "fencing and security",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "AJC coverage",
+          "url": ""
+        },
+        {
+          "title": "REBusinessOnline",
+          "url": ""
+        }
+      ],
+      "open_for": "Announced/in DRI review \u2014 multi-phase buildout through 2032 means prolonged specification and procurement windows for mission-critical products."
+    },
+    {
+      "id": "savannah-richmond-hill-ihg-hotels",
+      "name": "IHG Avid & Candlewood Suites \u2014 Savannah/Richmond Hill",
+      "city": "Richmond Hill",
+      "county": "Bryan",
+      "status": "planning",
+      "project_type": "hospitality",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "description": "Hospitality development of IHG-flagged Avid and Candlewood Suites hotels in the Savannah/Richmond Hill area.",
+      "key_specs": [
+        "Avid hotel",
+        "Candlewood Suites",
+        "IHG flags"
+      ],
+      "mentioned_brands": [
+        "IHG",
+        "Avid",
+        "Candlewood Suites"
+      ],
+      "competitor_watch": [
+        "hotel casegoods",
+        "PTAC/HVAC",
+        "bathroom fixtures and surrounds",
+        "flooring",
+        "doors and hardware",
+        "lighting"
+      ],
+      "sources": [
+        {
+          "title": "Project coverage",
+          "url": ""
+        }
+      ],
+      "open_for": "Early hospitality development \u2014 brand prototype packages (IHG) drive many product selections; influence via franchisee and designer."
+    },
+    {
+      "id": "horizon-16-industrial-park-phase-ii",
+      "name": "Horizon 16 Industrial Park Phase II",
+      "city": "Savannah",
+      "county": "Chatham",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": 1500000,
+      "owner": "Barings + Trinity Capital",
+      "architect": "Atlas",
+      "general_contractor": "Evans",
+      "description": "1.5M SF across 6 buildings at Jimmy Deloach Pkwy & I-16. Phase I (1.1M SF) houses Ferguson and Harbor Freight as tenants. Phase II broke ground.",
+      "key_specs": [
+        "1.5M SF, 6 buildings",
+        "Phase I: 1.1M SF (Ferguson, Harbor Freight tenants)",
+        "GC: Evans; Architect: Atlas"
+      ],
+      "mentioned_brands": [
+        "Evans",
+        "Atlas",
+        "Ferguson",
+        "Harbor Freight"
+      ],
+      "competitor_watch": [
+        "dock equipment",
+        "overhead doors",
+        "high-bay lighting",
+        "roofing",
+        "fire protection",
+        "warehouse racking-adjacent infrastructure"
+      ],
+      "sources": [
+        {
+          "title": "REBusinessOnline \u2014 Horizon 16 Phase II",
+          "url": "https://rebusinessonline.com/barings-trinity-capital-break-ground-on-1-5-msf-industrial-development-in-savannah/"
+        }
+      ],
+      "open_for": "Phase II just broke ground with known GC (Evans) and architect (Atlas) \u2014 direct channels for product specification on all six buildings."
+    },
+    {
+      "id": "highline-warren-logistics-mcdonough",
+      "name": "Highline Warren Logistics Center",
+      "city": "McDonough",
+      "county": "Henry",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": 170000000,
+      "square_footage": 1100000,
+      "owner": "Highline Warren",
+      "architect": "",
+      "general_contractor": "",
+      "description": "$170M, 1.1M SF logistics center opening late 2026.",
+      "key_specs": [
+        "$170M",
+        "1.1M SF",
+        "Opening late 2026"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "dock equipment",
+        "overhead doors",
+        "high-bay lighting",
+        "roofing",
+        "fire protection"
+      ],
+      "sources": [
+        {
+          "title": "Project coverage",
+          "url": ""
+        }
+      ],
+      "open_for": "Nearing delivery \u2014 limited remaining influence; target tenant fit-out and aftermarket/maintenance products."
+    },
+    {
+      "id": "grady-health-south-fulton-medical-campus",
+      "name": "Grady Health South Fulton Medical Campus",
+      "city": "South Fulton",
+      "county": "Fulton",
+      "status": "under_construction",
+      "project_type": "healthcare",
+      "estimated_value_usd": 1000000000,
+      "square_footage": null,
+      "owner": "Grady Health System",
+      "architect": "",
+      "general_contractor": "",
+      "description": "~$1B healthcare campus: freestanding ED (~$38M) opening June 2026; MOB (~$75M) ~2028; 200-bed hospital (~$900M) ~2031. Funding includes $300M Fulton County bonds.",
+      "key_specs": [
+        "Freestanding ED ~$38M, opening June 2026",
+        "MOB ~$75M, ~2028",
+        "200-bed hospital ~$900M, ~2031",
+        "$300M Fulton County bonds"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "healthcare HVAC/air handling",
+        "medical gas systems",
+        "nurse call and low-voltage",
+        "healthcare flooring",
+        "doors and hardware",
+        "casework",
+        "lighting",
+        "curtain wall"
+      ],
+      "sources": [
+        {
+          "title": "ConstructConnect",
+          "url": ""
+        },
+        {
+          "title": "Becker's Hospital Review",
+          "url": ""
+        }
+      ],
+      "open_for": "MOB (~2028) and 200-bed hospital (~2031) phases still in design \u2014 major specification opportunities ahead even as the ED completes."
+    },
+    {
+      "id": "georgia-pacific-center-conversion",
+      "name": "Georgia-Pacific Center Conversion",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "status": "planning",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": 780000,
+      "owner": "Georgia-Pacific / Koch",
+      "architect": "",
+      "general_contractor": "",
+      "description": "Adaptive reuse of 51-story tower at 133 Peachtree St, Downtown Atlanta: 400+ apartments (30% affordable), ~600k SF Class A office (GP + Koch), ~80-125k SF retail, 1-acre plaza, 2100+ parking. SAP approved; groundbreaking targeted late 2026; completion ~fall 2027.",
+      "key_specs": [
+        "51-story tower adaptive reuse",
+        "400+ apartments, 30% affordable",
+        "600k SF Class A office",
+        "80-125k SF retail",
+        "1-acre plaza",
+        "2100+ parking spaces"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "HVAC/VRF retrofits",
+        "curtain wall and glazing upgrades",
+        "interior doors and hardware",
+        "flooring",
+        "lighting and controls",
+        "plumbing fixtures",
+        "elevators",
+        "acoustic ceilings"
+      ],
+      "sources": [
+        {
+          "title": "Urbanize Atlanta coverage",
+          "url": ""
+        },
+        {
+          "title": "AJC coverage",
+          "url": ""
+        },
+        {
+          "title": "Concrete Georgia",
+          "url": ""
+        }
+      ],
+      "open_for": "Design and specification phase through late 2026 groundbreaking \u2014 manufacturers can still influence product selection for office conversion, residential units, and retail fit-out."
+    },
+    {
+      "id": "centennial-yards",
+      "name": "Centennial Yards",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "status": "under_construction",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "description": "Downtown Atlanta mixed-use entertainment district; hotel component with Chops Lobster Bar signing a 13k SF lease at the base. Under construction / leasing.",
+      "key_specs": [
+        "Entertainment district",
+        "Hotel component",
+        "13k SF restaurant lease (Chops Lobster Bar)"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hotel FF&E-adjacent products",
+        "restaurant kitchen and bar fixtures",
+        "storefront glazing",
+        "HVAC",
+        "acoustic treatments",
+        "lighting",
+        "flooring"
+      ],
+      "sources": [
+        {
+          "title": "Bisnow / ABC coverage",
+          "url": ""
+        }
+      ],
+      "open_for": "District under construction with active leasing \u2014 hotel and restaurant TI work plus future phases remain influenceable."
+    },
+    {
+      "id": "canal-crossing-commerce-center",
+      "name": "Canal Crossing Commerce Center",
+      "city": "Columbus",
+      "county": "Muscogee",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": 898500,
+      "owner": "Opus",
+      "architect": "",
+      "general_contractor": "",
+      "description": "898,500 SF commerce center in suburban Columbus developed by Opus. Broke ground.",
+      "key_specs": [
+        "898,500 SF",
+        "Developer: Opus"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "dock equipment",
+        "overhead doors",
+        "high-bay lighting",
+        "roofing",
+        "ESFR fire protection"
+      ],
+      "sources": [
+        {
+          "title": "REBusinessOnline",
+          "url": ""
+        }
+      ],
+      "open_for": "Recently broke ground \u2014 building systems and dock/door packages still procurable during vertical construction."
+    },
+    {
+      "id": "alina-midtown",
+      "name": "Alina Midtown",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "status": "under_construction",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": 224000,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "description": "~224k SF Class A office plus 357 residential units in Midtown Atlanta. Topped out / nearing delivery.",
+      "key_specs": [
+        "~224k SF Class A office",
+        "357 residential units",
+        "Topped out"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "interior finishes",
+        "flooring",
+        "doors and hardware",
+        "lighting",
+        "plumbing fixtures",
+        "tenant improvement packages"
+      ],
+      "sources": [
+        {
+          "title": "Urbanize coverage",
+          "url": ""
+        }
+      ],
+      "open_for": "Topped out \u2014 base building specs likely locked, but TI packages, FF&E-adjacent finishes, and punch-list procurement remain open."
+    },
+    {
+      "id": "3600-peachtree",
+      "name": "3600 Peachtree",
+      "city": "Atlanta",
+      "county": "Fulton",
+      "status": "planning",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": 350000,
+      "owner": "Crescent Communities + Harvey Rudy",
+      "architect": "",
+      "general_contractor": "",
+      "description": "21-story ~350-375k SF Class A office plus 300-unit apartment tower on Church at Wieuca land in Buckhead near Phipps/Lenox. Amenities include wellness/fitness and terraces. Status: planning/announced.",
+      "key_specs": [
+        "21 stories",
+        "~350-375k SF Class A office",
+        "300-unit apartment tower",
+        "Wellness/fitness amenities and terraces"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "curtain wall/glazing",
+        "HVAC",
+        "fitness and amenity finishes",
+        "flooring",
+        "lighting",
+        "doors and hardware",
+        "elevators"
+      ],
+      "sources": [
+        {
+          "title": "Bisnow Atlanta Deal Sheet Feb 2026",
+          "url": ""
+        }
+      ],
+      "open_for": "Announced/planning stage \u2014 full design development ahead; prime window for specifications on both office and multifamily towers."
+    }
+  ],
+  "stats": {
+    "total": 54,
+    "opened_last_3_months": 23
+  },
+  "notes": "Expanded corpus: 54 total projects, 23 with activity in the last 3 months (opened/announced/groundbroken/permitted since 2026-04-24). Sources include news, REBusinessOnline, BLDUP, city/county releases, and developer announcements. URLs verified where available; some legacy seed entries retain title-only sources pending URL backfill."
+}

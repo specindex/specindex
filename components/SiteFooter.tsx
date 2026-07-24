@@ -1,0 +1,80 @@
+import Link from "next/link";
+
+const product = [
+  { href: "/product/", label: "Use Cases" },
+  { href: "/how-it-works/", label: "How It Works" },
+  { href: "/pricing/", label: "Pricing" },
+  { href: "/projects/", label: "Georgia Projects" },
+  { href: "/visibility/", label: "Brand Visibility" },
+];
+
+const company = [
+  { href: "/about/", label: "About" },
+  { href: "mailto:hello@specindex.ai", label: "Contact" },
+];
+
+export function SiteFooter() {
+  return (
+    <footer className="border-t border-[var(--color-border)] bg-white">
+      <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-4 md:px-8">
+        <div className="md:col-span-1">
+          <div className="flex items-center gap-2">
+            <span className="flex h-8 w-8 items-center justify-center rounded-md bg-[var(--color-green)] text-sm font-bold text-white">
+              S
+            </span>
+            <span className="text-lg font-semibold">SpecIndex</span>
+          </div>
+          <p className="mt-3 max-w-xs text-sm leading-relaxed text-[var(--color-gray-600)]">
+            Specification intelligence for building product manufacturers.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-sm font-semibold text-[var(--color-ink)]">Product</h3>
+          <ul className="mt-4 space-y-2.5">
+            {product.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className="text-sm text-[var(--color-gray-600)] hover:text-[var(--color-ink)]"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-sm font-semibold text-[var(--color-ink)]">Company</h3>
+          <ul className="mt-4 space-y-2.5">
+            {company.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className="text-sm text-[var(--color-gray-600)] hover:text-[var(--color-ink)]"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-sm font-semibold text-[var(--color-ink)]">Beachhead</h3>
+          <p className="mt-4 text-sm leading-relaxed text-[var(--color-gray-600)]">
+            Open commercial projects in Georgia — expanding state by state.
+          </p>
+        </div>
+      </div>
+
+      <div className="border-t border-[var(--color-border)]">
+        <p className="mx-auto max-w-6xl px-5 py-4 text-xs text-[var(--color-gray-400)] md:px-8">
+          © {new Date().getFullYear()} SpecIndex. Project data from public sources; verify
+          before bidding or specifying.
+        </p>
+      </div>
+    </footer>
+  );
+}
