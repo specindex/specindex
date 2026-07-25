@@ -35,6 +35,11 @@ yarn-error.log*
 firebase-debug.log
 firestore-debug.log
 
+# agent tooling caches (local only)
+.agents/
+.claude/
+skills-lock.json
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
