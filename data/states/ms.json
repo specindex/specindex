@@ -1,0 +1,49 @@
+{
+  "state": "MS",
+  "state_name": "Mississippi",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — Mississippi Development Authority, local news.",
+  "projects": [
+    {
+      "id": "ms-edged-columbus-data-center",
+      "name": "Edged Data Center, Lowndes County",
+      "state": "MS",
+      "city": "Columbus",
+      "county": "Lowndes",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Edged Data Centers",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-01",
+      "description": "Edged Data Centers developing hyperscale facility in Lowndes County/Columbus area. Part of Southeast expansion pipeline.",
+      "key_specs": [
+        "Hyperscale data center",
+        "Golden Triangle region",
+        "Edged expansion market"
+      ],
+      "mentioned_brands": [
+        "Edged Data Centers"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "cooling",
+        "generators",
+        "electrical"
+      ],
+      "sources": [
+        {
+          "title": "Edged Southeast expansion, industry coverage",
+          "url": "https://rebusinessonline.com/"
+        }
+      ],
+      "open_for": "Active development. MEP specs."
+    }
+  ],
+  "stats": {
+    "total": 1
+  }
+}

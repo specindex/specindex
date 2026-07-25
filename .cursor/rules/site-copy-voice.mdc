@@ -1,0 +1,50 @@
+---
+description: Writing voice for SpecIndex site copy and project data text
+globs: app/**,components/**,data/**
+alwaysApply: false
+---
+
+# Site Copy Voice
+
+Copy should read like a person in the construction products business wrote it, not
+like a model generated it. The owner audits for this, so treat it as a hard
+requirement rather than a preference.
+
+## Never use em or en dashes
+
+Zero tolerance, in UI copy, metadata, and captured project data. Use a period, a
+comma, a colon, or parentheses. Verify with `grep -r -e '—' -e '–' app components lib out`
+which must return nothing before shipping.
+
+```
+BAD   Coverage is uneven because jurisdictions publish unevenly — a permit record
+      names an owner far more reliably than it names an architect.
+GOOD  Coverage is lumpy because permit records name an owner far more reliably
+      than they name an architect or a contractor.
+```
+
+## Drop the AI tells
+
+- No "It is not X. It is Y." parallel constructions, and no "not just X but Y".
+- No dash appositive to tack on a clause. Start a new sentence.
+- Use contractions: "you're", "doesn't", "isn't", "can't".
+- Prefer plain words: "lumpy" over "uneven", "settled" over "determined",
+  "well after the fact" over "afterward".
+
+```
+BAD   That is not a measurement of their market position, which is very large.
+      It is a measurement of what permits contain.
+GOOD  That says nothing about how much of this market CRH holds, which is a
+      great deal of it. It says what permits contain.
+```
+
+## Stay clear of filmore.ai vocabulary
+
+SpecIndex must not read like a copy of filmore.ai. Never use "air gap",
+"system of action", or "signal" as a noun. Frame the problem as a timing problem
+(the spec window closes before a PO exists), not a data distribution problem.
+
+## Null values
+
+Use "Not reported", never a bare dash, so the reader knows we looked and did not
+find it.

@@ -1,0 +1,845 @@
+{
+  "generated_at": "2026-07-24T05:15:17.389463+00:00",
+  "project_count": 54,
+  "total_documents": 1,
+  "projects_with_documents": 1,
+  "projects_with_errors": 25,
+  "projects_without_urls": 17,
+  "projects": [
+    {
+      "project_id": "troup-county-data-center",
+      "project_name": "Troup County Data Center (DRI filed)",
+      "fetched_at": "2026-07-24T05:14:06.850118+00:00",
+      "sources": [
+        {
+          "url": "https://thecurrentga.org/2026/07/22/20-billion-openai-data-center-to-open-in-effingham-county/",
+          "title": "The Current GA \u2014 data center DRIs",
+          "files": [
+            "source-01.html"
+          ],
+          "final_url": "https://thecurrentga.org/2026/07/22/20-billion-openai-data-center-to-open-in-effingham-county/",
+          "content_type": "text/html; charset=UTF-8"
+        }
+      ],
+      "documents": [],
+      "errors": []
+    },
+    {
+      "project_id": "monroe-drive-safe-streets",
+      "project_name": "Monroe Drive Safe Streets Project",
+      "fetched_at": "2026-07-24T05:14:08.072586+00:00",
+      "sources": [
+        {
+          "url": "https://www.atlantaga.gov/",
+          "title": "City of Atlanta \u2014 Monroe Drive Safe Streets",
+          "files": [],
+          "error": "HTTP 403"
+        }
+      ],
+      "documents": [],
+      "errors": [
+        "https://www.atlantaga.gov/: HTTP 403"
+      ]
+    },
+    {
+      "project_id": "dodge-data-center-clayton",
+      "project_name": "Clayton County Data Center (DRI filed)",
+      "fetched_at": "2026-07-24T05:14:09.092417+00:00",
+      "sources": [
+        {
+          "url": "https://thecurrentga.org/2026/07/22/20-billion-openai-data-center-to-open-in-effingham-county/",
+          "title": "The Current GA \u2014 data center DRIs",
+          "files": [
+            "source-01.html"
+          ],
+          "final_url": "https://thecurrentga.org/2026/07/22/20-billion-openai-data-center-to-open-in-effingham-county/",
+          "content_type": "text/html; charset=UTF-8"
+        }
+      ],
+      "documents": [],
+      "errors": []
+    },
+    {
+      "project_id": "foundry-at-mosaic-pooler",
+      "project_name": "The Foundry at Mosaic",
+      "fetched_at": "2026-07-24T05:14:10.134367+00:00",
+      "sources": [
+        {
+          "url": "https://www.citybiz.co/article/876642/thompson-thrift-breaks-ground-on-300-unit-apartment-community-near-savannah/",
+          "title": "citybiz \u2014 Thompson Thrift breaks ground",
+          "files": [
+            "source-01.html"
+          ],
+          "final_url": "https://www.citybiz.co/article/876642/thompson-thrift-breaks-ground-on-300-unit-apartment-community-near-savannah/",
+          "content_type": "text/html; charset=UTF-8"
+        }
+      ],
+      "documents": [],
+      "errors": []
+    },
+    {
+      "project_id": "towneplace-suites-midtown",
+      "project_name": "TownePlace Suites Midtown Atlanta",
+      "fetched_at": "2026-07-24T05:14:12.360469+00:00",
+      "sources": [
+        {
+          "url": "https://www.bldup.com/projects/526-west-peachtree-street-northwest",
+          "title": "BLDUP \u2014 TownePlace Midtown",
+          "files": [
+            "source-01.html"
+          ],
+          "final_url": "https://www.bldup.com/projects/526-west-peachtree-street-northwest",
+          "content_type": "text/html; charset=utf-8"
+        }
+      ],
+      "documents": [],
+      "errors": []
+    },
+    {
+      "project_id": "motto-hilton-midtown",
+      "project_name": "Motto by Hilton Midtown Atlanta",
+      "fetched_at": "2026-07-24T05:14:13.492184+00:00",
+      "sources": [
+        {
+          "url": "https://www.bldup.com/projects/motto-downtown-atlanta",
+          "title": "BLDUP \u2014 Motto Midtown",
+          "files": [
+            "source-01.html"
+          ],
+          "final_url": "https://www.bldup.com/projects/motto-downtown-atlanta",
+          "content_type": "text/html; charset=utf-8"
+        }
+      ],
+      "documents": [],
+      "errors": []
+    },
+    {
+      "project_id": "overlook-at-garson",
+      "project_name": "The Overlook at Garson",
+      "fetched_at": "2026-07-24T05:14:14.559817+00:00",
+      "sources": [
+        {
+          "url": "https://roughdraftatlanta.com/2026/07/20/garson-drive-development-completion-2028/",
+          "title": "Rough Draft Atlanta \u2014 Overlook at Garson",
+          "files": [
+            "source-01.html"
+          ],
+          "final_url": "https://roughdraftatlanta.com/2026/07/20/garson-drive-development-completion-2028/",
+          "content_type": "text/html; charset=UTF-8"
+        }
+      ],
+      "documents": [],
+      "errors": []
+    },
+    {
+      "project_id": "macon-arena",
+      "project_name": "New Macon Arena",
+      "fetched_at": "2026-07-24T05:14:15.220163+00:00",
+      "sources": [
+        {
+          "url": "https://www.macon.com/news/local/article316247768.html",
+          "title": "Macon Telegraph \u2014 arena design reveal",
+          "files": [],
+          "error": "The read operation timed out"
+        }
+      ],
+      "documents": [],
+      "errors": [
+        "https://www.macon.com/news/local/article316247768.html: The read operation timed out"
+      ]
+    },
+    {
+      "project_id": "centennial-yards-elliott-hotel",
+      "project_name": "Centennial Yards Elliott Street Boutique Hotel",
+      "fetched_at": "2026-07-24T05:14:46.017728+00:00",
+      "sources": [
+        {
+          "url": "https://atlanta.urbanize.city/post/centennial-yards-gulch-new-hotel-moving-forward-downtown-images",
+          "title": "Urbanize Atlanta \u2014 Elliott Street hotel",
+          "files": [
+            "source-01.html"
+          ],
+          "final_url": "https://atlanta.urbanize.city/post/centennial-yards-gulch-new-hotel-moving-forward-downtown-images",
+          "content_type": "text/html; charset=UTF-8"
+        }
+      ],
+      "documents": [],
+      "errors": []
+    },
+    {
+      "project_id": "675-morgan-savannah",
+      "project_name": "675 Morgan",
+      "fetched_at": "2026-07-24T05:14:47.561743+00:00",
+      "sources": [
+        {
+          "url": "https://www.prnewswire.com/news-releases/family-office-backed-manor-park-ventures-and-brook-farm-group-break-ground-on-336-unit-community-in-booming-savannah-market-302810774.html",
+          "title": "PR Newswire \u2014 675 Morgan groundbreaking",
+          "files": [
+            "source-01.html"
+          ],
+          "final_url": "https://www.prnewswire.com/news-releases/family-office-backed-manor-park-ventures-and-brook-farm-group-break-ground-on-336-unit-community-in-booming-savannah-market-302810774.html",
+          "content_type": "text/html; charset=UTF-8"
+        }
+      ],
+      "documents": [],
+      "errors": []
+    },
+    {
+      "project_id": "candler-crossing",
+      "project_name": "Candler Crossing",
+      "fetched_at": "2026-07-24T05:14:48.256836+00:00",
+      "sources": [
+        {
+          "url": "https://www.decidedekalb.com/news/decide-dekalb-and-venture-south-investments-break-ground-on-28-9-million-mixed-use-development-on-candler-road/",
+          "title": "Decide DeKalb \u2014 Candler Crossing",
+          "files": [
+            "source-01.html"
+          ],
+          "final_url": "https://www.decidedekalb.com/news/decide-dekalb-and-venture-south-investments-break-ground-on-28-9-million-mixed-use-development-on-candler-road/",
+          "content_type": "text/html; charset=UTF-8"
+        }
+      ],
+      "documents": [],
+      "errors": []
+    },
+    {
+      "project_id": "hampton-inn-kennesaw",
+      "project_name": "Hampton Inn Atlanta Kennesaw NW / Town Center",
+      "fetched_at": "2026-07-24T05:14:50.361957+00:00",
+      "sources": [
+        {
+          "url": "https://www.hotel-online.com/news/vector-hospitality-inc-breaks-ground-on-hampton-inn-by-hilton-atlanta-nw-kennesawtown-center",
+          "title": "Hotel Online \u2014 Vector Hospitality Kennesaw",
+          "files": [
+            "source-01.html"
+          ],
+          "final_url": "https://www.hotel-online.com/news/vector-hospitality-inc-breaks-ground-on-hampton-inn-by-hilton-atlanta-nw-kennesawtown-center",
+          "content_type": "text/html; charset=utf-8"
+        }
+      ],
+      "documents": [],
+      "errors": []
+    },
+    {
+      "project_id": "savannah-port-logistics-center",
+      "project_name": "Savannah Port Logistics Center",
+      "fetched_at": "2026-07-24T05:14:51.236417+00:00",
+      "sources": [
+        {
+          "url": "https://capitaldevelopmentpartners.com/construction-begins-on-125-million-savannah-port-logistics-center/",
+          "title": "Capital Development Partners",
+          "files": [
+            "source-01.html"
+          ],
+          "final_url": "https://capitaldevelopmentpartners.com/construction-begins-on-125-million-savannah-port-logistics-center/",
+          "content_type": "text/html; charset=UTF-8"
+        }
+      ],
+      "documents": [],
+      "errors": []
+    },
+    {
+      "project_id": "scannell-ridgeway-phase-1",
+      "project_name": "Ridgeway Logistics Park Phase I",
+      "fetched_at": "2026-07-24T05:14:52.490136+00:00",
+      "sources": [
+        {
+          "url": "https://rebusinessonline.com/scannell-properties-to-develop-335-acre-logistics-park-near-savannah/",
+          "title": "REBusinessOnline \u2014 Ridgeway Logistics Park",
+          "files": [
+            "source-01.html"
+          ],
+          "final_url": "https://rebusinessonline.com/scannell-properties-to-develop-335-acre-logistics-park-near-savannah/",
+          "content_type": "text/html; charset=UTF-8"
+        }
+      ],
+      "documents": [],
+      "errors": []
+    },
+    {
+      "project_id": "macon-convention-center-hotel",
+      "project_name": "Macon Convention Center & Hotel",
+      "fetched_at": "2026-07-24T05:14:53.301442+00:00",
+      "sources": [
+        {
+          "url": "https://den.mercer.edu/mercer-breaks-ground-on-new-medical-school-building-in-downtown-macon/",
+          "title": "Mercer / Macon riverfront coverage",
+          "files": [
+            "source-01.html"
+          ],
+          "final_url": "https://den.mercer.edu/mercer-breaks-ground-on-new-medical-school-building-in-downtown-macon/",
+          "content_type": "text/html; charset=UTF-8"
+        }
+      ],
+      "documents": [],
+      "errors": []
+    },
+    {
+      "project_id": "hyundai-sk-battery-bartow",
+      "project_name": "Hyundai-SK Battery Plant (Bartow County)",
+      "fetched_at": "2026-07-24T05:14:54.043740+00:00",
+      "sources": [
+        {
+          "url": "https://www.ajc.com/business/2026/07/sk-and-hyundai-open-new-5b-ev-battery-plant-northwest-of-atlanta/",
+          "title": "AJC \u2014 Hyundai-SK battery plant opens",
+          "files": [
+            "source-01.html"
+          ],
+          "final_url": "https://www.ajc.com/business/2026/07/sk-and-hyundai-open-new-5b-ev-battery-plant-northwest-of-atlanta/",
+          "content_type": "text/html; charset=utf-8"
+        }
+      ],
+      "documents": [],
+      "errors": []
+    },
+    {
+      "project_id": "costco-macon",
+      "project_name": "Costco Wholesale Macon",
+      "fetched_at": "2026-07-24T05:14:54.984494+00:00",
+      "sources": [
+        {
+          "url": "https://www.41nbc.com/coming-soon-new-costco-approved-for-macon/",
+          "title": "41NBC \u2014 Costco approved for Macon",
+          "files": [
+            "source-01.html"
+          ],
+          "final_url": "https://www.41nbc.com/coming-soon-new-costco-approved-for-macon/",
+          "content_type": "text/html; charset=UTF-8"
+        }
+      ],
+      "documents": [
+        {
+          "filename": "doc-01-EEO-annrep-2025.pdf",
+          "url": "https://www.41nbc.com/content/uploads/2025/12/v/i/EEO-annrep-2025.pdf",
+          "content_type": "application/pdf",
+          "size_bytes": 398211
+        }
+      ],
+      "errors": []
+    },
+    {
+      "project_id": "campus-244-dunwoody",
+      "project_name": "Campus 244 Expansion",
+      "fetched_at": "2026-07-24T05:14:57.714317+00:00",
+      "sources": [
+        {
+          "url": "https://www.bisnow.com/atlanta/",
+          "title": "Atlanta commercial development coverage",
+          "files": [
+            "source-01.html"
+          ],
+          "final_url": "https://www.bisnow.com/atlanta/",
+          "content_type": "text/html; charset=UTF-8"
+        }
+      ],
+      "documents": [],
+      "errors": []
+    },
+    {
+      "project_id": "arcelormittal-macon-hq",
+      "project_name": "ArcelorMittal Building Solutions HQ & Manufacturing",
+      "fetched_at": "2026-07-24T05:14:59.194260+00:00",
+      "sources": [
+        {
+          "url": "https://topstatefortalent.georgia.gov/news/2026-06-01/gov-kemp-arcelormittal-building-solutions-brings-north-american-hq-macon-bibb",
+          "title": "Georgia DED \u2014 ArcelorMittal Macon",
+          "files": [
+            "source-01.html"
+          ],
+          "final_url": "https://topstatefortalent.georgia.gov/news/2026-06-01/gov-kemp-arcelormittal-building-solutions-brings-north-american-hq-macon-bibb",
+          "content_type": "text/html; charset=UTF-8"
+        }
+      ],
+      "documents": [],
+      "errors": []
+    },
+    {
+      "project_id": "pnk-griffin-200",
+      "project_name": "PNK Griffin 200",
+      "fetched_at": "2026-07-24T05:15:00.376600+00:00",
+      "sources": [
+        {
+          "url": "https://rebusinessonline.com/pnk-group-begins-construction-on-1-msf-industrial-facility-in-griffin-georgia/",
+          "title": "REBusinessOnline \u2014 PNK Griffin 200",
+          "files": [
+            "source-01.html"
+          ],
+          "final_url": "https://rebusinessonline.com/pnk-group-begins-construction-on-1-msf-industrial-facility-in-griffin-georgia/",
+          "content_type": "text/html; charset=UTF-8"
+        }
+      ],
+      "documents": [],
+      "errors": []
+    },
+    {
+      "project_id": "alta-newnan-crossing",
+      "project_name": "Alta Newnan Crossing",
+      "fetched_at": "2026-07-24T05:15:01.125655+00:00",
+      "sources": [
+        {
+          "url": "https://www.morningstar.com/news/pr-newswire/20260526cl67810/wood-partners-breaks-ground-on-alta-newnan-crossing-in-newnan-georgia",
+          "title": "PR Newswire \u2014 Wood Partners Alta Newnan",
+          "files": [
+            "source-01.html"
+          ],
+          "final_url": "https://www.morningstar.com/news/pr-newswire/20260526cl67810/wood-partners-breaks-ground-on-alta-newnan-crossing-in-newnan-georgia",
+          "content_type": "text/html; charset=UTF-8"
+        }
+      ],
+      "documents": [],
+      "errors": []
+    },
+    {
+      "project_id": "white-oak-technology-park",
+      "project_name": "White Oak Technology Park",
+      "fetched_at": "2026-07-24T05:15:01.802502+00:00",
+      "sources": [
+        {
+          "url": "https://augustagoodnews.com/",
+          "title": "Augusta area development coverage",
+          "files": [],
+          "error": "<urlopen error [SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version (_ssl.c:1129)>"
+        }
+      ],
+      "documents": [],
+      "errors": [
+        "https://augustagoodnews.com/: <urlopen error [SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version (_ssl.c:1129)>"
+      ]
+    },
+    {
+      "project_id": "atrium-morehouse-teaching-hospital",
+      "project_name": "Atrium Health / Morehouse Teaching Hospital",
+      "fetched_at": "2026-07-24T05:15:02.383519+00:00",
+      "sources": [
+        {
+          "url": "https://www.ajc.com/",
+          "title": "Atlanta healthcare development coverage",
+          "files": [
+            "source-01.html"
+          ],
+          "final_url": "https://www.ajc.com/",
+          "content_type": "text/html; charset=utf-8"
+        }
+      ],
+      "documents": [],
+      "errors": []
+    },
+    {
+      "project_id": "virgin-hotel-centennial-yards",
+      "project_name": "Virgin Hotel Centennial Yards",
+      "fetched_at": "2026-07-24T05:15:03.340572+00:00",
+      "sources": [
+        {
+          "url": "https://www.businesswire.com/news/home/20260422617909/en/CIM-Group-Centennial-Yards-Company-and-The-Drew-Company-Announce-Partnership-to-Bring-Award-Winning-Virgin-Hotel-to-Downtown-Atlanta",
+          "title": "Business Wire \u2014 Virgin Hotel Atlanta",
+          "files": [],
+          "error": "HTTP 403"
+        }
+      ],
+      "documents": [],
+      "errors": [
+        "https://www.businesswire.com/news/home/20260422617909/en/CIM-Group-Centennial-Yards-Company-and-The-Drew-Company-Announce-Partnership-to-Bring-Award-Winning-Virgin-Hotel-to-Downtown-Atlanta: HTTP 403"
+      ]
+    },
+    {
+      "project_id": "sr-400-express-lanes",
+      "project_name": "SR 400 Express Lanes (Peach Partners P3)",
+      "fetched_at": "2026-07-24T05:15:04.190329+00:00",
+      "sources": [
+        {
+          "url": "https://www.constructiondive.com/news/flatiron-dragados-acciona-p3-highway-georgia-400/818597/",
+          "title": "Construction Dive \u2014 SR 400 Express Lanes",
+          "files": [
+            "source-01.html"
+          ],
+          "final_url": "https://www.constructiondive.com/news/flatiron-dragados-acciona-p3-highway-georgia-400/818597/",
+          "content_type": "text/html; charset=utf-8"
+        }
+      ],
+      "documents": [],
+      "errors": []
+    },
+    {
+      "project_id": "hyundai-lg-battery-metaplant",
+      "project_name": "Hyundai-LG Battery Plant (Metaplant Campus)",
+      "fetched_at": "2026-07-24T05:15:05.298179+00:00",
+      "sources": [
+        {
+          "url": "https://www.ajc.com/business/2026/04/hyundai-battery-plant-in-georgia-set-to-open-months-after-ice-raid/",
+          "title": "AJC \u2014 Hyundai LG battery plant opening",
+          "files": [
+            "source-01.html"
+          ],
+          "final_url": "https://www.ajc.com/business/2026/04/hyundai-battery-plant-in-georgia-set-to-open-months-after-ice-raid/",
+          "content_type": "text/html; charset=utf-8"
+        }
+      ],
+      "documents": [],
+      "errors": []
+    },
+    {
+      "project_id": "buc-ees-smarr-monroe",
+      "project_name": "Buc-ee's Smarr (Monroe County)",
+      "fetched_at": "2026-07-24T05:15:06.238367+00:00",
+      "sources": [
+        {
+          "url": "https://www.ajc.com/news/2026/04/another-buc-ees-breaks-ground-in-georgia-as-locals-roll-out-welcome-mat/",
+          "title": "AJC \u2014 Another Buc-ee's breaks ground in Georgia",
+          "files": [
+            "source-01.html"
+          ],
+          "final_url": "https://www.ajc.com/news/2026/04/another-buc-ees-breaks-ground-in-georgia-as-locals-roll-out-welcome-mat/",
+          "content_type": "text/html; charset=utf-8"
+        }
+      ],
+      "documents": [],
+      "errors": []
+    },
+    {
+      "project_id": "wellstar-columbia-county-medical",
+      "project_name": "Wellstar Columbia County Medical Center",
+      "fetched_at": "2026-07-24T05:15:07.281076+00:00",
+      "sources": [
+        {
+          "url": "https://augustagoodnews.com/wellstar-columbia-county-medical-center-on-track-to-open-in-late-summer-2026/",
+          "title": "Augusta Good News \u2014 Wellstar Columbia County",
+          "files": [],
+          "error": "<urlopen error [SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version (_ssl.c:1129)>"
+        }
+      ],
+      "documents": [],
+      "errors": [
+        "https://augustagoodnews.com/wellstar-columbia-county-medical-center-on-track-to-open-in-late-summer-2026/: <urlopen error [SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version (_ssl.c:1129)>"
+      ]
+    },
+    {
+      "project_id": "master-wall-columbus-hq",
+      "project_name": "Master Wall Columbus HQ Expansion",
+      "fetched_at": "2026-07-24T05:15:07.830231+00:00",
+      "sources": [
+        {
+          "url": "https://rebusinessonline.com/",
+          "title": "Columbus GA commercial development coverage",
+          "files": [
+            "source-01.html"
+          ],
+          "final_url": "https://rebusinessonline.com/",
+          "content_type": "text/html; charset=UTF-8"
+        }
+      ],
+      "documents": [],
+      "errors": []
+    },
+    {
+      "project_id": "augusta-dental-college-savannah",
+      "project_name": "Dental College of Georgia \u2014 Savannah Campus",
+      "fetched_at": "2026-07-24T05:15:08.577513+00:00",
+      "sources": [
+        {
+          "url": "https://www.beckershospitalreview.com/",
+          "title": "Healthcare/education development coverage",
+          "files": [],
+          "error": "HTTP 403"
+        }
+      ],
+      "documents": [],
+      "errors": [
+        "https://www.beckershospitalreview.com/: HTTP 403"
+      ]
+    },
+    {
+      "project_id": "teachers-village-atlanta",
+      "project_name": "Teachers Village",
+      "fetched_at": "2026-07-24T05:15:09.175940+00:00",
+      "sources": [
+        {
+          "url": "https://www.bldup.com/posts/atlanta-s-33-story-affordable-housing-tower-secures-77m-building-permit-signaling-vertical-construction",
+          "title": "BLDUP \u2014 Teachers Village permit",
+          "files": [
+            "source-01.html"
+          ],
+          "final_url": "https://www.bldup.com/posts/atlanta-s-33-story-affordable-housing-tower-secures-77m-building-permit-signaling-vertical-construction",
+          "content_type": "text/html; charset=utf-8"
+        }
+      ],
+      "documents": [],
+      "errors": []
+    },
+    {
+      "project_id": "project-azalea-thomson",
+      "project_name": "Project Azalea Data Center",
+      "fetched_at": "2026-07-24T05:15:10.289206+00:00",
+      "sources": [
+        {
+          "url": "https://www.datacenterdynamics.com/en/news/200-acre-project-azalea-data-center-approved/",
+          "title": "Data Center Dynamics \u2014 Project Azalea",
+          "files": [],
+          "error": "HTTP 403"
+        }
+      ],
+      "documents": [],
+      "errors": [
+        "https://www.datacenterdynamics.com/en/news/200-acre-project-azalea-data-center-approved/: HTTP 403"
+      ]
+    },
+    {
+      "project_id": "centennial-yards-hotel-interior",
+      "project_name": "Centennial Yards Building C Hotel Interior",
+      "fetched_at": "2026-07-24T05:15:10.886241+00:00",
+      "sources": [
+        {
+          "url": "https://www.bldup.com/posts/atlanta-s-centennial-yards-entertainment-district-surges-forward-with-40m-hotel-interior-milestone",
+          "title": "BLDUP \u2014 Centennial Yards hotel interior",
+          "files": [
+            "source-01.html"
+          ],
+          "final_url": "https://www.bldup.com/posts/atlanta-s-centennial-yards-entertainment-district-surges-forward-with-40m-hotel-interior-milestone",
+          "content_type": "text/html; charset=utf-8"
+        }
+      ],
+      "documents": [],
+      "errors": []
+    },
+    {
+      "project_id": "novel-lulah-hills",
+      "project_name": "Novel Lulah Hills",
+      "fetched_at": "2026-07-24T05:15:11.581289+00:00",
+      "sources": [
+        {
+          "url": "https://www.multihousingnews.com/crescent-communities-breaks-ground-on-suburban-atlanta-multifamily/",
+          "title": "Multi-Housing News \u2014 Novel Lulah Hills",
+          "files": [],
+          "error": "HTTP 403"
+        }
+      ],
+      "documents": [],
+      "errors": [
+        "https://www.multihousingnews.com/crescent-communities-breaks-ground-on-suburban-atlanta-multifamily/: HTTP 403"
+      ]
+    },
+    {
+      "project_id": "continuum-alpharetta",
+      "project_name": "Continuum Alpharetta",
+      "fetched_at": "2026-07-24T05:15:12.389274+00:00",
+      "sources": [
+        {
+          "url": "https://properties.zoomprospector.com/statega/property/5555-Windward-Pkwy-Alpharetta-Georgia/8486F35A-71DE-4683-8E5E-7C944004D778",
+          "title": "Continuum Alpharetta property report",
+          "files": [
+            "source-01.html"
+          ],
+          "final_url": "https://properties.zoomprospector.com/statega/property/5555-Windward-Pkwy-Alpharetta-Georgia/8486F35A-71DE-4683-8E5E-7C944004D778",
+          "content_type": "text/html; charset=utf-8"
+        }
+      ],
+      "documents": [],
+      "errors": []
+    },
+    {
+      "project_id": "mercer-med-school-macon-riverfront",
+      "project_name": "Mercer School of Medicine Riverfront Campus",
+      "fetched_at": "2026-07-24T05:15:13.445802+00:00",
+      "sources": [
+        {
+          "url": "https://den.mercer.edu/mercer-breaks-ground-on-new-medical-school-building-in-downtown-macon/",
+          "title": "Mercer \u2014 med school groundbreaking",
+          "files": [
+            "source-01.html"
+          ],
+          "final_url": "https://den.mercer.edu/mercer-breaks-ground-on-new-medical-school-building-in-downtown-macon/",
+          "content_type": "text/html; charset=UTF-8"
+        }
+      ],
+      "documents": [],
+      "errors": []
+    },
+    {
+      "project_id": "ucb-biologics-rowen",
+      "project_name": "UCB Biologics Manufacturing Campus at Rowen",
+      "fetched_at": "2026-07-24T05:15:14.134909+00:00",
+      "sources": [],
+      "documents": [],
+      "errors": [
+        "no_source_urls"
+      ]
+    },
+    {
+      "project_id": "st-marys-good-samaritan-pavilion",
+      "project_name": "St. Mary's Good Samaritan Pavilion",
+      "fetched_at": "2026-07-24T05:15:14.135204+00:00",
+      "sources": [],
+      "documents": [],
+      "errors": [
+        "no_source_urls"
+      ]
+    },
+    {
+      "project_id": "riverfront-place-columbus",
+      "project_name": "Riverfront Place",
+      "fetched_at": "2026-07-24T05:15:14.135427+00:00",
+      "sources": [],
+      "documents": [],
+      "errors": [
+        "no_source_urls"
+      ]
+    },
+    {
+      "project_id": "ridgeway-logistics-park",
+      "project_name": "Ridgeway Logistics Park",
+      "fetched_at": "2026-07-24T05:15:14.135638+00:00",
+      "sources": [],
+      "documents": [],
+      "errors": [
+        "no_source_urls"
+      ]
+    },
+    {
+      "project_id": "preciball-usa-screven-county",
+      "project_name": "Preciball USA Production Facility",
+      "fetched_at": "2026-07-24T05:15:14.135844+00:00",
+      "sources": [],
+      "documents": [],
+      "errors": [
+        "no_source_urls"
+      ]
+    },
+    {
+      "project_id": "port-wentworth-commerce-center",
+      "project_name": "Port Wentworth Commerce Center",
+      "fetched_at": "2026-07-24T05:15:14.136060+00:00",
+      "sources": [],
+      "documents": [],
+      "errors": [
+        "no_source_urls"
+      ]
+    },
+    {
+      "project_id": "piedmont-center-redevelopment",
+      "project_name": "Piedmont Center Campus Redevelopment",
+      "fetched_at": "2026-07-24T05:15:14.137506+00:00",
+      "sources": [],
+      "documents": [],
+      "errors": [
+        "no_source_urls"
+      ]
+    },
+    {
+      "project_id": "overlook-at-cumming-city-center",
+      "project_name": "Overlook Apartments at Cumming City Center",
+      "fetched_at": "2026-07-24T05:15:14.137794+00:00",
+      "sources": [],
+      "documents": [],
+      "errors": [
+        "no_source_urls"
+      ]
+    },
+    {
+      "project_id": "openai-project-camellia",
+      "project_name": "OpenAI Project Camellia Data Center",
+      "fetched_at": "2026-07-24T05:15:14.138045+00:00",
+      "sources": [],
+      "documents": [],
+      "errors": [
+        "no_source_urls"
+      ]
+    },
+    {
+      "project_id": "savannah-richmond-hill-ihg-hotels",
+      "project_name": "IHG Avid & Candlewood Suites \u2014 Savannah/Richmond Hill",
+      "fetched_at": "2026-07-24T05:15:14.138268+00:00",
+      "sources": [],
+      "documents": [],
+      "errors": [
+        "no_source_urls"
+      ]
+    },
+    {
+      "project_id": "horizon-16-industrial-park-phase-ii",
+      "project_name": "Horizon 16 Industrial Park Phase II",
+      "fetched_at": "2026-07-24T05:15:14.138491+00:00",
+      "sources": [
+        {
+          "url": "https://rebusinessonline.com/barings-trinity-capital-break-ground-on-1-5-msf-industrial-development-in-savannah/",
+          "title": "REBusinessOnline \u2014 Horizon 16 Phase II",
+          "files": [
+            "source-01.html"
+          ],
+          "final_url": "https://rebusinessonline.com/barings-trinity-capital-break-ground-on-1-5-msf-industrial-development-in-savannah/",
+          "content_type": "text/html; charset=UTF-8"
+        }
+      ],
+      "documents": [],
+      "errors": []
+    },
+    {
+      "project_id": "highline-warren-logistics-mcdonough",
+      "project_name": "Highline Warren Logistics Center",
+      "fetched_at": "2026-07-24T05:15:17.387756+00:00",
+      "sources": [],
+      "documents": [],
+      "errors": [
+        "no_source_urls"
+      ]
+    },
+    {
+      "project_id": "grady-health-south-fulton-medical-campus",
+      "project_name": "Grady Health South Fulton Medical Campus",
+      "fetched_at": "2026-07-24T05:15:17.388097+00:00",
+      "sources": [],
+      "documents": [],
+      "errors": [
+        "no_source_urls"
+      ]
+    },
+    {
+      "project_id": "georgia-pacific-center-conversion",
+      "project_name": "Georgia-Pacific Center Conversion",
+      "fetched_at": "2026-07-24T05:15:17.388319+00:00",
+      "sources": [],
+      "documents": [],
+      "errors": [
+        "no_source_urls"
+      ]
+    },
+    {
+      "project_id": "centennial-yards",
+      "project_name": "Centennial Yards",
+      "fetched_at": "2026-07-24T05:15:17.388572+00:00",
+      "sources": [],
+      "documents": [],
+      "errors": [
+        "no_source_urls"
+      ]
+    },
+    {
+      "project_id": "canal-crossing-commerce-center",
+      "project_name": "Canal Crossing Commerce Center",
+      "fetched_at": "2026-07-24T05:15:17.388822+00:00",
+      "sources": [],
+      "documents": [],
+      "errors": [
+        "no_source_urls"
+      ]
+    },
+    {
+      "project_id": "alina-midtown",
+      "project_name": "Alina Midtown",
+      "fetched_at": "2026-07-24T05:15:17.389061+00:00",
+      "sources": [],
+      "documents": [],
+      "errors": [
+        "no_source_urls"
+      ]
+    },
+    {
+      "project_id": "3600-peachtree",
+      "project_name": "3600 Peachtree",
+      "fetched_at": "2026-07-24T05:15:17.389299+00:00",
+      "sources": [],
+      "documents": [],
+      "errors": [
+        "no_source_urls"
+      ]
+    }
+  ]
+}

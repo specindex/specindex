@@ -1,0 +1,170 @@
+{
+  "state": "OK",
+  "state_name": "Oklahoma",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — state economic development, industry news, city announcements.",
+  "projects": [
+    {
+      "id": "ok-google-mayes-county-expansion",
+      "name": "Google Mayes County Data Center Expansion",
+      "state": "OK",
+      "city": "Pryor",
+      "county": "Mayes",
+      "status": "under_construction",
+      "project_type": "data_center",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Google",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "Google continuing expansion at established Mayes County data center campus near Pryor. Ongoing hyperscale build activity in 2026.",
+      "key_specs": [
+        "Existing Google campus",
+        "Mayes County",
+        "Hyperscale expansion"
+      ],
+      "mentioned_brands": [
+        "Google"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "cooling",
+        "generators",
+        "electrical"
+      ],
+      "sources": [
+        {
+          "title": "Google Oklahoma data center market, industry coverage",
+          "url": "https://www.datacenterdynamics.com/"
+        }
+      ],
+      "open_for": "Campus expansion. MEP specs ongoing."
+    },
+    {
+      "id": "ok-rock-creek-entertainment-district",
+      "name": "Rock Creek Entertainment District",
+      "state": "OK",
+      "city": "Norman",
+      "county": "Cleveland",
+      "status": "under_construction",
+      "project_type": "mixed_use",
+      "estimated_value_usd": 1100000000,
+      "square_footage": null,
+      "owner": "University of Oklahoma Foundation / Rainier Development Company",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-12",
+      "description": "Groundbroken $1.1 billion, 269-acre mixed-use development featuring an 8,000-seat multi-purpose arena/performance venue, hotel, retail, restaurant, office, and residential components.",
+      "key_specs": [
+        "269-acre master plan",
+        "8,000-seat performance arena",
+        "$1.1B total development value",
+        "University of Oklahoma athletics home"
+      ],
+      "mentioned_brands": [
+        "Rainier Development Company",
+        "University of Oklahoma"
+      ],
+      "competitor_watch": [
+        "HVAC",
+        "arena seating",
+        "glazing",
+        "lighting",
+        "paving",
+        "foodservice equipment"
+      ],
+      "sources": [
+        {
+          "title": "Rainier Development Company Announces Groundbreaking for $1.1B Rock Creek District",
+          "url": "https://www.normanok.gov/file/33991/download?token=3QR0UEKY"
+        }
+      ],
+      "open_for": "Arena MEP systems, hospitality/retail fit-outs, and master civil infrastructure."
+    },
+    {
+      "id": "ok-mckesson-moore-distribution-center",
+      "name": "McKesson Moore Distribution Center",
+      "state": "OK",
+      "city": "Moore",
+      "county": "Cleveland",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": 179000000,
+      "square_footage": null,
+      "owner": "McKesson",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Groundbroken $179 million pharmaceutical distribution center in Moore, expanding regional healthcare supply chain and logistics capabilities.",
+      "key_specs": [
+        "Pharmaceutical distribution hub",
+        "$179M investment",
+        "Climate-controlled warehouse",
+        "Automated sorting"
+      ],
+      "mentioned_brands": [
+        "McKesson"
+      ],
+      "competitor_watch": [
+        "cold storage HVAC",
+        "dock doors",
+        "switchgear",
+        "conveyors",
+        "high-bay lighting"
+      ],
+      "sources": [
+        {
+          "title": "McKesson breaks ground on $179 million Moore distribution center",
+          "url": "https://www.greateroklahomacity.com/news/2026/07/16/coming-soon/mckesson-breaks-ground-on-179-million-moore-distribution-center/"
+        }
+      ],
+      "open_for": "Pharmaceutical cold chain climate control, material handling, electrical subcontracts."
+    },
+    {
+      "id": "ok-sofidel-port-of-inola-expansion",
+      "name": "Sofidel Port of Inola Plant Expansion",
+      "state": "OK",
+      "city": "Inola",
+      "county": "Rogers",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": 775000000,
+      "square_footage": 1000000,
+      "owner": "Sofidel",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-04",
+      "description": "Groundbroken $775 million, 1 million SF manufacturing expansion at the Port of Inola featuring a Valmet TAD tissue machine and 100,000-pallet automated E80 warehouse.",
+      "key_specs": [
+        "1,000,000 SF expansion",
+        "75,000 tons/yr Valmet TAD tissue machine",
+        "E80 automated warehouse with 100,000 pallet positions",
+        "Laser-guided vehicle (LGV) technology"
+      ],
+      "mentioned_brands": [
+        "Sofidel",
+        "Valmet",
+        "E80"
+      ],
+      "competitor_watch": [
+        "industrial HVAC",
+        "high-bay LED lighting",
+        "overhead cranes",
+        "heavy electrical switchgear",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Sofidel breaks ground on $775M expansion at Port of Inola",
+          "url": "https://ktul.com/news/local/sofidel-breaks-ground-on-775m-expansion-at-port-of-inola-06-04-2026"
+        }
+      ],
+      "open_for": "Heavy industrial electrical, high-bay automated warehouse MEP, process piping."
+    }
+  ],
+  "stats": {
+    "total": 4
+  }
+}

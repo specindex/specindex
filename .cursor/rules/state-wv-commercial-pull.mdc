@@ -1,0 +1,17 @@
+---
+description: West Virginia commercial project capture — read the playbook before any pull
+globs: data/states/wv.json,data/raw/wv-*.json,scripts/pull-wv*.py,docs/states/wv.md
+alwaysApply: false
+---
+
+# West Virginia Commercial Pulls
+
+Before capturing or refreshing West Virginia, read **`docs/states/wv.md`** in full.
+
+After the pull, update that playbook:
+
+1. **What works** and **What failed last time**
+2. **Pull log** with date, source, and outcome
+3. The AUTO header stats (run `python3 scripts/sync-state-playbooks.py --state wv`)
+
+Follow `.cursor/rules/state-data-pull-review.mdc` for the review checklist.

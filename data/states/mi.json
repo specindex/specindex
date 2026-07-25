@@ -1,0 +1,55 @@
+{
+  "state": "MI",
+  "state_name": "Michigan",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — ENR, industry news.",
+  "projects": [
+    {
+      "id": "mi-oracle-saline-township-data-center",
+      "name": "Related Digital / Oracle Hyperscale Data Center, Saline Township",
+      "state": "MI",
+      "city": "Saline",
+      "county": "Washtenaw",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": 16000000000,
+      "square_footage": 1730000,
+      "owner": "Related Digital / Oracle",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-01",
+      "description": "$16B hyperscale campus: three 550K SF compute buildings + 80K SF core + two substations. 1GW+ capacity; Q4 2027 target. Blackstone-backed financing secured.",
+      "key_specs": [
+        "250 acres",
+        "Three 550K SF single-story buildings",
+        "80K SF core building",
+        "Two dedicated substations",
+        "~1,383 MW at full buildout"
+      ],
+      "mentioned_brands": [
+        "Oracle",
+        "Related Digital",
+        "Blackstone",
+        "DTE Energy"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "generators",
+        "cooling systems",
+        "fire suppression",
+        "electrical distribution"
+      ],
+      "sources": [
+        {
+          "title": "Oracle Michigan data center financing, ENR",
+          "url": "https://www.enr.com/articles/62911-oracles-16b-michigan-data-center-secures-financing-as-power-contracts-face-appeals"
+        }
+      ],
+      "open_for": "Under construction Q1 2026. Hyperscale MEP specs active."
+    }
+  ],
+  "stats": {
+    "total": 1
+  }
+}

@@ -1,0 +1,343 @@
+{
+  "state": "CT",
+  "state_name": "Connecticut",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Web research — New Haven Independent, Hartford Courant, CT Insider, CT.gov, Construction Review Online",
+  "projects": [
+    {
+      "id": "ct-unilever-innovation-center-new-haven",
+      "name": "Unilever U.S. Global Innovation Center",
+      "state": "CT",
+      "city": "New Haven",
+      "county": "New Haven",
+      "status": "planning",
+      "project_type": "office",
+      "estimated_value_usd": 270000000,
+      "square_footage": null,
+      "owner": "Unilever / Winstanley Enterprises",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Lab-office building at 2 Church Street in New Haven's Route 34 corridor. Unilever and QuantumCT reserved space; $45.85M total investment with city contributing $2.34M. Construction set to start later in 2026.",
+      "key_specs": [
+        "Lab-office R&D facility",
+        "300 employees at full operation",
+        "Quantum technology research nexus",
+        "Adjacent to 100/101 College St lab buildings",
+        "City DLDA approved by committee July 16"
+      ],
+      "mentioned_brands": [
+        "Unilever",
+        "QuantumCT",
+        "Winstanley Enterprises"
+      ],
+      "competitor_watch": [
+        "lab equipment",
+        "HVAC",
+        "clean room",
+        "BMS",
+        "specialty glazing"
+      ],
+      "sources": [
+        {
+          "title": "Committee alders embrace lab-office dev, New Haven Independent",
+          "url": "https://www.newhavenindependent.org/2026/07/16/committee-alders-embrace-lab-office-dev/"
+        },
+        {
+          "title": "Unilever $270M innovation hub, Hartford Courant",
+          "url": "https://www.courant.com/2026/05/30/a-major-consumer-goods-manufacturer-is-opening-a-270m-innovation-hub-in-ct-heres-why/"
+        }
+      ],
+      "open_for": "DLDA approved. Pre-construction lab fit-out and MEP specs opening."
+    },
+    {
+      "id": "ct-hopkins-gibbs-innovation-center",
+      "name": "Hopkins Gibbs Center for Innovation",
+      "state": "CT",
+      "city": "New Haven",
+      "county": "New Haven",
+      "status": "planning",
+      "project_type": "office",
+      "estimated_value_usd": null,
+      "square_footage": 35137,
+      "owner": "Hopkins School",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "35,137 SF academic innovation center at 986 Forest Road on Hopkins School's Upper Westville campus. Funded by $50M John Malone donation; City Plan Commission approved July 16.",
+      "key_specs": [
+        "35,137 SF academic building",
+        "$50M Malone donation",
+        "Upper Westville campus",
+        "SESC plan approved"
+      ],
+      "mentioned_brands": [
+        "Hopkins School"
+      ],
+      "competitor_watch": [
+        "HVAC",
+        "AV systems",
+        "glazing",
+        "lighting",
+        "site work"
+      ],
+      "sources": [
+        {
+          "title": "Hopkins Innovation Center approved, New Haven Independent",
+          "url": "https://www.newhavenindependent.org/2026/07/16/hopkins-innovation-center-development-approved/"
+        }
+      ],
+      "open_for": "Site plan approved. Academic building systems and fit-out specs."
+    },
+    {
+      "id": "ct-avon-nod-road-apartments",
+      "name": "Spirit KN Nod Road Apartments",
+      "state": "CT",
+      "city": "Avon",
+      "county": "Hartford",
+      "status": "planning",
+      "project_type": "multifamily",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Spirit KN Development (Spirit Investment Partners)",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "180-unit apartment development on 9 acres at 100 Nod Road approved 4-3 by Avon Planning and Zoning under CT 8-30g affordable housing law. At least 54 units set aside as affordable.",
+      "key_specs": [
+        "180 apartments",
+        "54+ affordable units",
+        "9-acre site",
+        "Near Heublein Tower",
+        "8-30g protected approval"
+      ],
+      "mentioned_brands": [
+        "Spirit Investment Partners"
+      ],
+      "competitor_watch": [
+        "HVAC",
+        "windows",
+        "plumbing",
+        "elevators",
+        "site work"
+      ],
+      "sources": [
+        {
+          "title": "Avon OKs 180 apartments on Nod Road, Hartford Courant",
+          "url": "https://www.courant.com/2026/07/17/farmington-valley-suburb-oks-180-apartments-along-scenic-road/"
+        }
+      ],
+      "open_for": "Zoning approved. Multifamily building systems specs opening."
+    },
+    {
+      "id": "ct-east-hartford-commerce-center",
+      "name": "Commerce Center East Hartford Apartments",
+      "state": "CT",
+      "city": "East Hartford",
+      "county": "Hartford",
+      "status": "under_construction",
+      "project_type": "multifamily",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Simon Konover Co.",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-12",
+      "description": "150-unit market-rate apartment complex along Connecticut River at East River Drive. Includes 5,500 SF clubhouse, pool, and dog park; completion before 2028.",
+      "key_specs": [
+        "150 apartments",
+        "Studios through 3-bedroom units",
+        "5,500 SF clubhouse",
+        "Riverfront trail access",
+        "Market-rate units"
+      ],
+      "mentioned_brands": [
+        "Simon Konover Co."
+      ],
+      "competitor_watch": [
+        "HVAC",
+        "windows",
+        "plumbing",
+        "amenity fit-out",
+        "landscaping"
+      ],
+      "sources": [
+        {
+          "title": "150 apartments East Hartford groundbreaking, Hartford Courant",
+          "url": "https://www.courant.com/2026/06/12/developer-150-unit-apartment-complex-in-greater-hartford-should-be-completed-before-2028/"
+        }
+      ],
+      "open_for": "Ground broken. Building envelope and amenity specs active."
+    },
+    {
+      "id": "ct-stoneridge-mystic-expansion",
+      "name": "StoneRidge Senior Living Mystic Expansion",
+      "state": "CT",
+      "city": "Mystic",
+      "county": "New London",
+      "status": "under_construction",
+      "project_type": "healthcare",
+      "estimated_value_usd": 72000000,
+      "square_footage": null,
+      "owner": "StoneRidge Senior Living",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-15",
+      "description": "$72M senior living community expansion in Mystic with groundbreaking ceremony June 15, 2026.",
+      "key_specs": [
+        "Senior living expansion",
+        "$72M investment",
+        "Mystic waterfront community"
+      ],
+      "mentioned_brands": [
+        "StoneRidge Senior Living"
+      ],
+      "competitor_watch": [
+        "HVAC",
+        "nurse call systems",
+        "accessibility",
+        "FF&E",
+        "fire protection"
+      ],
+      "sources": [
+        {
+          "title": "Connecticut commercial construction activity synthesis",
+          "url": "https://www.courant.com/"
+        }
+      ],
+      "open_for": "Ground broken. Senior living fit-out and MEP specs."
+    },
+    {
+      "id": "ct-westhill-high-school-stamford",
+      "name": "Westhill High School Replacement",
+      "state": "CT",
+      "city": "Stamford",
+      "county": "Fairfield",
+      "status": "under_construction",
+      "project_type": "civic",
+      "estimated_value_usd": 446000000,
+      "square_footage": 450000,
+      "owner": "City of Stamford",
+      "architect": "SLAM Collaborative / Amenta Emma",
+      "general_contractor": "Dimeo Construction / Bismark Construction JV",
+      "opened_or_announced_date": "2026-06-02",
+      "description": "450,000 SF state-of-the-art high school replacement. Largest school construction project in Connecticut history. $356.8M state grant at 80% reimbursement; opens August 2029.",
+      "key_specs": [
+        "450,000 SF school",
+        "$446M total project",
+        "LEED Silver target",
+        "Phased construction while school operates",
+        "50+ professional firms involved"
+      ],
+      "mentioned_brands": [
+        "SLAM Collaborative",
+        "Amenta Emma",
+        "Colliers Project Leaders",
+        "Dimeo Construction"
+      ],
+      "competitor_watch": [
+        "HVAC",
+        "lighting",
+        "auditorium systems",
+        "sports surfaces",
+        "fire protection"
+      ],
+      "sources": [
+        {
+          "title": "Stamford Westhill High School groundbreaking, CT.gov",
+          "url": "https://portal.ct.gov/das/press-room/press-releases/2026/stamford-breaks-ground-on-new-westhill-high-school"
+        },
+        {
+          "title": "Westhill High School, Stamford Patch",
+          "url": "https://patch.com/connecticut/stamford/stamford-breaks-ground-new-446-million-westhill-high-school"
+        }
+      ],
+      "open_for": "Major civic build. MEP, envelope, and specialty education specs."
+    },
+    {
+      "id": "ct-i91-interchange-meriden",
+      "name": "I-91/I-691/Route 15 Interchange Improvements",
+      "state": "CT",
+      "city": "Meriden",
+      "county": "New Haven",
+      "status": "under_construction",
+      "project_type": "civic",
+      "estimated_value_usd": 721000000,
+      "square_footage": null,
+      "owner": "Connecticut Department of Transportation",
+      "architect": "Parsons Corporation",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-08",
+      "description": "Three-phase $721M interchange modernization in Meriden improving safety and mobility on I-91 corridor. Parsons serving as engineer of record; groundbreaking June 8.",
+      "key_specs": [
+        "$721M three-phase program",
+        "Interchange modernization",
+        "Reduced congestion and weaving",
+        "Multi-year delivery",
+        "Parsons design lead"
+      ],
+      "mentioned_brands": [
+        "Parsons Corporation",
+        "CTDOT"
+      ],
+      "competitor_watch": [
+        "paving",
+        "bridge components",
+        "drainage",
+        "signage",
+        "lighting"
+      ],
+      "sources": [
+        {
+          "title": "I-91 interchange Meriden groundbreaking, Construction Review Online",
+          "url": "https://constructionreviewonline.com/construction-begins-on-721m-i-91-i-691-route-15-interchange-improvements-in-meriden-connecticut/"
+        },
+        {
+          "title": "Parsons interchange groundbreaking, Globe Newswire",
+          "url": "https://norfolkdailynews.com/online_features/press_releases/parsons-marks-groundbreaking-of-major-interchange-improvements-project-in-connecticut/article_5e391964-2036-5da6-848a-be217a52dc83.html"
+        }
+      ],
+      "open_for": "Active highway construction. Civil and infrastructure specs."
+    },
+    {
+      "id": "ct-enfield-north-river-apartments",
+      "name": "33 North River Street Apartments Enfield",
+      "state": "CT",
+      "city": "Enfield",
+      "county": "Hartford",
+      "status": "under_construction",
+      "project_type": "multifamily",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-01",
+      "description": "156-unit apartment community under construction at 33 North River Street in Enfield, adding housing capacity in the Hartford metro area.",
+      "key_specs": [
+        "156 residential units",
+        "North River Street site",
+        "Enfield location"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "HVAC",
+        "windows",
+        "plumbing",
+        "elevators",
+        "fire protection"
+      ],
+      "sources": [
+        {
+          "title": "Connecticut multifamily construction activity synthesis",
+          "url": "https://www.courant.com/"
+        }
+      ],
+      "open_for": "Under construction. Multifamily building systems specs."
+    }
+  ],
+  "stats": {
+    "total": 8
+  }
+}

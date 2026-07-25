@@ -1,0 +1,56 @@
+{
+  "state": "NJ",
+  "state_name": "New Jersey",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — BeOne Medicines IR, Business Facilities, local news.",
+  "projects": [
+    {
+      "id": "nj-beone-hopewell-expansion",
+      "name": "BeOne Medicines Hopewell Campus Expansion",
+      "state": "NJ",
+      "city": "Hopewell Township",
+      "county": "Mercer",
+      "status": "planning",
+      "project_type": "healthcare",
+      "estimated_value_usd": 300000000,
+      "square_footage": 145000,
+      "owner": "BeOne Medicines",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "$300M expansion announced July 2026. New 145K SF three-story building for small-molecule manufacturing. Total campus investment >$1B. Groundbreaking H1 2027.",
+      "key_specs": [
+        "145K SF new building",
+        "545K SF total campus",
+        "Drug product manufacturing and packaging",
+        "~120 new jobs",
+        "NJEDA $33.9M award"
+      ],
+      "mentioned_brands": [
+        "BeOne Medicines"
+      ],
+      "competitor_watch": [
+        "cleanroom systems",
+        "HVAC",
+        "lab equipment",
+        "packaging lines",
+        "quality control systems"
+      ],
+      "sources": [
+        {
+          "title": "BeOne Hopewell expansion, Business Facilities",
+          "url": "https://businessfacilities.com/beone-medicines-to-invest-300m-in-new-jersey-manufacturing-expansion/"
+        },
+        {
+          "title": "BeOne IR announcement",
+          "url": "https://ir.beonemedicines.com/news/beone-medicines-expands-us-manufacturing-with-total-investment-of-more-than-dollar1-billion-to-advance/ed73c96c-c5b5-4fbe-929a-d13e2f3f4a61"
+        }
+      ],
+      "open_for": "Land use approval pending. Pharma MEP specs forming."
+    }
+  ],
+  "stats": {
+    "total": 1
+  }
+}

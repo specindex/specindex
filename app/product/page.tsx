@@ -9,37 +9,37 @@ export const metadata: Metadata = {
 
 const useCases = [
   {
-    label: "Out of the Box",
-    title: "Search open commercial projects",
-    body: "Filter Georgia projects by status, type, county, and product category. See what's still open for manufacturer influence — planning through under construction.",
+    label: "Available now",
+    title: "Search the project index",
+    body: "Filter commercial projects by state, county, stage, project type, and product category. Planning through under construction, so you can tell an early conversation from a late one.",
     href: "/projects/",
-    cta: "Browse Georgia projects",
+    cta: "Search the index",
   },
   {
-    label: "Out of the Box",
-    title: "Read project specs and teams",
-    body: "Project pages consolidate owner, architect, GC, key scopes, manufacturer watch lists, and sources — so reps don't chase plan rooms for basics.",
-    href: "/projects/georgia-pacific-center-conversion/",
-    cta: "View sample project",
+    label: "Available now",
+    title: "Read the project record",
+    body: "One page per project: owner, architect, contractor, value, square footage, the scopes that matter, the categories still in play, and links to every source behind it.",
+    href: "/projects/ga-georgia-pacific-center-conversion/",
+    cta: "View a sample record",
   },
   {
-    label: "Out of the Box",
-    title: "Check brand visibility",
-    body: "Scan the corpus for your brand mentions vs category opportunities. See mention rate and a prioritized list of projects where your product area is in play but you're not named.",
+    label: "Available now",
+    title: "Check your brand against the index",
+    body: "See how often your brand appears, which projects name your category without naming a manufacturer, and which of your competitors show up instead.",
     href: "/visibility/",
-    cta: "Run visibility scan",
+    cta: "Run a brand check",
   },
   {
-    label: "With Your Data",
-    title: "Spec PDF analysis and alerts",
-    body: "Upload or connect spec documents for AI extraction, brand NER with confidence scores, and email alerts when your brand appears or disappears on a tracked project.",
+    label: "In development",
+    title: "Specification-book extraction",
+    body: "Reading spec books division by division to pull out basis of design products, approved manufacturers lists, and substitution language, with a citation on every fact you can open and check.",
     href: "/pricing/",
     cta: "See pricing",
   },
   {
-    label: "With Your Data",
-    title: "Competitive share by market",
-    body: "Track mention rate vs named competitors by county, project type, and CSI division — the manufacturer equivalent of share-of-spec reporting.",
+    label: "In development",
+    title: "Share of spec by market",
+    body: "How often you appear against named competitors, broken out by county, project type, and CSI division. It is the closest thing a manufacturer gets to a market share report.",
     href: "/pricing/",
     cta: "Talk to us",
   },
@@ -51,10 +51,10 @@ export default function ProductPage() {
       <section className="border-b border-[var(--color-border)] bg-[var(--color-bg)]">
         <div className="mx-auto max-w-3xl px-5 py-16 text-center md:px-8 md:py-20">
           <p className="text-eyebrow">Product</p>
-          <h1 className="mt-4 text-hero">Specification intelligence built for manufacturers.</h1>
+          <h1 className="mt-4 text-hero">Built around one question: is my category still open?</h1>
           <p className="mt-5 text-base leading-relaxed text-[var(--color-gray-600)]">
-            Strong on day one with public Georgia project data. Unmatched when you
-            connect specs, brands, and territory rules.
+            Everything below is either working in the public index today or labelled as
+            still being built. Nothing in between.
           </p>
         </div>
       </section>

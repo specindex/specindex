@@ -1,0 +1,137 @@
+{
+  "state": "WA",
+  "state_name": "Washington",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — Industrial Briefs, Covington Reporter, Wenatchee World, municipal planning filings.",
+  "projects": [
+    {
+      "id": "wa-amazon-chehalis-distribution",
+      "name": "Amazon Distribution Center, Chehalis",
+      "state": "WA",
+      "city": "Chehalis",
+      "county": "Lewis",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": 9320000,
+      "square_footage": 1000000,
+      "owner": "Amazon",
+      "architect": "Ware Malcomb",
+      "general_contractor": "Clayco",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "1M SF distribution center on 34-acre Port of Chehalis site. Robotics floor, mezzanine, conveyors. 500. 1,000 jobs. Permits approved May 2026.",
+      "key_specs": [
+        "1M SF",
+        "34 acres",
+        "Robotics and MHE systems",
+        "CRG Development / Ryan Companies team"
+      ],
+      "mentioned_brands": [
+        "Amazon",
+        "Clayco",
+        "Core States Group"
+      ],
+      "competitor_watch": [
+        "conveyors",
+        "dock doors",
+        "lighting",
+        "HVAC",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Amazon Chehalis distribution, Industrial Briefs",
+          "url": "https://www.industrialbriefs.com/amazon-distribution-hub-construction-washington/"
+        }
+      ],
+      "open_for": "Under construction. Logistics MEP and material handling specs."
+    },
+    {
+      "id": "wa-podium-i5-warehouse-federal-way",
+      "name": "Woodbridge Corporate Park Warehouse Expansion",
+      "state": "WA",
+      "city": "Federal Way",
+      "county": "King",
+      "status": "permitting",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": 1033680,
+      "owner": "Stock Families / Panattoni Development. Industrial Realty Group (IRG)",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-28",
+      "description": "1.03 million SF industrial warehouse proposed on the former Wild Waves Theme Park site in Federal Way, leased to Panattoni Development. Features dock-high loading on east and west sides. 971,390 SF total expansion across 3 warehouse properties with office space at Woodbridge Corporate Park (former Weyerhaeuser campus) in Federal Way. Public land use hearing held June 8, 2026.",
+      "key_specs": [
+        "1,033,680 SF industrial building",
+        "Dock-high loading east and west",
+        "Associated parking and utility improvements",
+        "Panattoni development",
+        "971,390 SF across 3 buildings",
+        "Former Weyerhaeuser campus site",
+        "Industrial / Warehouse with office space"
+      ],
+      "mentioned_brands": [
+        "Panattoni Development",
+        "Terra Associates",
+        "Industrial Realty Group"
+      ],
+      "competitor_watch": [
+        "dock doors",
+        "industrial flooring",
+        "HVAC",
+        "lighting",
+        "roofing",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Giant warehouse planned for Wild Waves property in Federal Way - Covington Reporter",
+          "url": "https://www.covingtonreporter.com/2026/05/28/giant-warehouse-planned-for-wild-waves-property-in-federal-way/"
+        }
+      ],
+      "open_for": "Permitting. Shell, dock equipment, and HVAC procurement. Permitting. Shell, MEP, roofing, paving."
+    },
+    {
+      "id": "wa-confluence-health-cancer-center-wenatchee",
+      "name": "Confluence Health Central Campus Cancer Care Center",
+      "state": "WA",
+      "city": "Wenatchee",
+      "county": "Chelan",
+      "status": "permitting",
+      "project_type": "healthcare",
+      "estimated_value_usd": 60000000,
+      "square_footage": 36000,
+      "owner": "Confluence Health",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-11",
+      "description": "11,000 SF building addition and 25,000 SF interior tenant improvement renovation ($60M total) at Confluence Health Central Hospital campus in Wenatchee to consolidate radiation oncology and infusion therapy.",
+      "key_specs": [
+        "$60M estimated budget",
+        "11,000 SF building addition",
+        "25,000 SF tenant improvement interior renovation",
+        "Radiation Oncology & Infusion Therapy"
+      ],
+      "mentioned_brands": [
+        "Confluence Health"
+      ],
+      "competitor_watch": [
+        "medical gas",
+        "HVAC/cleanroom",
+        "radiation shielding",
+        "lighting",
+        "electrical"
+      ],
+      "sources": [
+        {
+          "title": "Confluence Health applies for permit for new cancer care center - Wenatchee World",
+          "url": "https://www.wenatcheeworld.com/news/local/confluence-health-applies-for-permit-for-new-cancer-care-center/article_5a289c0d-7ec0-4eff-af2f-d368e6c72e8e.html"
+        }
+      ],
+      "open_for": "Permitting. Medical interior TI, HVAC, radiation equipment shielding."
+    }
+  ],
+  "stats": {
+    "total": 4
+  }
+}

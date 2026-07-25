@@ -1,0 +1,17 @@
+---
+description: Tennessee commercial project capture — read the playbook before any pull
+globs: data/states/tn.json,data/raw/tn-*.json,scripts/pull-tn*.py,docs/states/tn.md
+alwaysApply: false
+---
+
+# Tennessee Commercial Pulls
+
+Before capturing or refreshing Tennessee, read **`docs/states/tn.md`** in full.
+
+After the pull, update that playbook:
+
+1. **What works** and **What failed last time**
+2. **Pull log** with date, source, and outcome
+3. The AUTO header stats (run `python3 scripts/sync-state-playbooks.py --state tn`)
+
+Follow `.cursor/rules/state-data-pull-review.mdc` for the review checklist.

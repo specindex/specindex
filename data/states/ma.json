@@ -1,0 +1,89 @@
+{
+  "state": "MA",
+  "state_name": "Massachusetts",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — REBusinessOnline, local industrial news.",
+  "projects": [
+    {
+      "id": "ma-arco-northbridge-billerica",
+      "name": "Northbridge Industrial Park, Billerica",
+      "state": "MA",
+      "city": "Billerica",
+      "county": "Middlesex",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": 222050,
+      "owner": "Northbridge",
+      "architect": "",
+      "general_contractor": "ARCO National Construction",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "Two-building 222,050 SF industrial park under construction in Billerica by ARCO National Construction for Northbridge.",
+      "key_specs": [
+        "Two buildings",
+        "222,050 SF total",
+        "Speculative industrial"
+      ],
+      "mentioned_brands": [
+        "ARCO National Construction",
+        "Northbridge"
+      ],
+      "competitor_watch": [
+        "dock doors",
+        "HVAC",
+        "lighting",
+        "insulation",
+        "roofing"
+      ],
+      "sources": [
+        {
+          "title": "ARCO Northbridge Billerica, industry coverage",
+          "url": "https://rebusinessonline.com/"
+        }
+      ],
+      "open_for": "Active industrial build. Envelope and MEP specs."
+    },
+    {
+      "id": "ma-maersk-hopedale-fulfillment",
+      "name": "Maersk Fulfillment Hub, Hopedale",
+      "state": "MA",
+      "city": "Hopedale",
+      "county": "Worcester",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": 617000,
+      "owner": "Maersk",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "617,000 SF fulfillment hub opening late August 2026 in Hopedale.",
+      "key_specs": [
+        "617,000 SF",
+        "Late August 2026 opening",
+        "Fulfillment operations"
+      ],
+      "mentioned_brands": [
+        "Maersk"
+      ],
+      "competitor_watch": [
+        "conveyors",
+        "dock equipment",
+        "HVAC",
+        "lighting",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Maersk Hopedale hub, industry reports",
+          "url": "https://rebusinessonline.com/"
+        }
+      ],
+      "open_for": "Near completion. Final systems and commissioning specs."
+    }
+  ],
+  "stats": {
+    "total": 2
+  }
+}

@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
-/* Filmore.ai design system → SpecIndex
-   Source: https://www.filmore.ai/ — see docs/design-system.md */
+/* SpecIndex design system. See docs/design-system.md */
 :root {
   --color-bg: #fafaf9;
   --color-ink: #1a1a1a;

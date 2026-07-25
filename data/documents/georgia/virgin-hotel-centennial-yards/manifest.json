@@ -1,0 +1,17 @@
+{
+  "project_id": "virgin-hotel-centennial-yards",
+  "project_name": "Virgin Hotel Centennial Yards",
+  "fetched_at": "2026-07-24T05:15:03.340572+00:00",
+  "sources": [
+    {
+      "url": "https://www.businesswire.com/news/home/20260422617909/en/CIM-Group-Centennial-Yards-Company-and-The-Drew-Company-Announce-Partnership-to-Bring-Award-Winning-Virgin-Hotel-to-Downtown-Atlanta",
+      "title": "Business Wire \u2014 Virgin Hotel Atlanta",
+      "files": [],
+      "error": "HTTP 403"
+    }
+  ],
+  "documents": [],
+  "errors": [
+    "https://www.businesswire.com/news/home/20260422617909/en/CIM-Group-Centennial-Yards-Company-and-The-Drew-Company-Announce-Partnership-to-Bring-Award-Winning-Virgin-Hotel-to-Downtown-Atlanta: HTTP 403"
+  ]
+}

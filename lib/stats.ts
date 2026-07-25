@@ -13,6 +13,24 @@ export function getTopCounties(projects: Project[], limit = 6): string[] {
     .map(([county]) => county);
 }
 
+/**
+ * Stages where product selection is typically still open. "under_construction"
+ * is excluded because structure and long-lead equipment are already committed.
+ */
+const OPEN_STAGES = new Set([
+  "planning",
+  "design",
+  "permitting",
+  "bidding",
+  "pre_construction",
+  "proposed",
+  "approved",
+]);
+
+export function isStillOpen(project: Project): boolean {
+  return OPEN_STAGES.has(project.status);
+}
+
 export function getVisibilitySnapshot(
   projects: Project[],
   brand: string,
@@ -21,6 +39,7 @@ export function getVisibilitySnapshot(
   const mentioned = projects.filter((p) => brandMentioned(p, brand));
   const categoryHits = projects.filter((p) => categoryMatch(p, category));
   const opportunities = categoryHits.filter((p) => !brandMentioned(p, brand));
+  const stillOpen = opportunities.filter(isStillOpen);
   const rate =
     projects.length === 0
       ? 0
@@ -30,7 +49,7 @@ export function getVisibilitySnapshot(
       ? 0
       : Math.round((categoryHits.length / projects.length) * 100);
 
-  return { mentioned, categoryHits, opportunities, rate, categoryRate };
+  return { mentioned, categoryHits, opportunities, stillOpen, rate, categoryRate };
 }
 
 export function getStatusesInCorpus(projects: Project[]): string[] {
@@ -39,6 +58,24 @@ export function getStatusesInCorpus(projects: Project[]): string[] {
 
 export function getCountiesInCorpus(projects: Project[]): string[] {
   return Array.from(new Set(projects.map((p) => p.county).filter(Boolean))).sort();
+}
+
+export function getStatesInCorpus(projects: Project[]): string[] {
+  return Array.from(
+    new Set(projects.map((p) => p.state ?? "GA").filter(Boolean)),
+  ).sort();
+}
+
+export function getCountiesForState(projects: Project[], state: string): string[] {
+  const code = state.toUpperCase();
+  return Array.from(
+    new Set(
+      projects
+        .filter((p) => (p.state ?? "GA").toUpperCase() === code)
+        .map((p) => p.county)
+        .filter(Boolean),
+    ),
+  ).sort();
 }
 
 export function getCategoriesInCorpus(projects: Project[]): string[] {

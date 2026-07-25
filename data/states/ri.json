@@ -1,0 +1,209 @@
+{
+  "state": "RI",
+  "state_name": "Rhode Island",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — Providence Business News, local news, permits, trade journals.",
+  "projects": [
+    {
+      "id": "ri-providence-life-sciences-lab",
+      "name": "Providence Life Sciences / Lab Expansion",
+      "state": "RI",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "healthcare",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "Providence metro life-sciences and lab-fit commercial projects in 2026 permit cycle. I-195 corridor redevelopment spillover.",
+      "key_specs": [
+        "Life sciences lab fit-outs",
+        "Providence metro",
+        "I-195 corridor"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "lab equipment",
+        "HVAC",
+        "cleanroom finishes",
+        "plumbing"
+      ],
+      "sources": [
+        {
+          "title": "Providence commercial pipeline, local business news",
+          "url": "https://pbn.com/"
+        }
+      ],
+      "open_for": "Lab and MEP specs in planning filings."
+    },
+    {
+      "id": "ri-barrington-school-construction-project",
+      "name": "Barrington $250M School Construction Project",
+      "state": "RI",
+      "city": "Barrington",
+      "county": "Bristol",
+      "status": "under_construction",
+      "project_type": "education",
+      "estimated_value_usd": 250000000,
+      "square_footage": null,
+      "owner": "Barrington Public Schools / Town of Barrington",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-10",
+      "description": "Groundbroken $250 million municipal educational construction project comprising a new Barrington High School and new PreK-5 elementary school facilities.",
+      "key_specs": [
+        "$250M voter-approved bond",
+        "New Barrington High School",
+        "New PreK-5 elementary facilities",
+        "Modernized HVAC & safety systems"
+      ],
+      "mentioned_brands": [
+        "Barrington Public Schools"
+      ],
+      "competitor_watch": [
+        "HVAC",
+        "fire safety & security",
+        "roofing",
+        "glazing",
+        "acoustic ceilings"
+      ],
+      "sources": [
+        {
+          "title": "Barrington leaders break ground on $250 million school construction project",
+          "url": "https://coastalabc.com/news/local/barrington-leaders-break-ground-on-250-million-school-construction-project-voter-approved-new-high-school-elementary-june-10-2026"
+        }
+      ],
+      "open_for": "Educational MEP subcontracts, building envelope, safety and HVAC systems."
+    },
+    {
+      "id": "ri-the-bellevue-hotel-newport",
+      "name": "The Bellevue Hotel, Newport",
+      "state": "RI",
+      "city": "Newport",
+      "county": "Newport",
+      "status": "under_construction",
+      "project_type": "hospitality",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Procaccianti Companies",
+      "architect": "Centerbrook Architects",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "Groundbroken 90-room boutique luxury hotel on Bellevue Avenue inside Bellevue Gardens Plaza, featuring multiple dining venues and underground parking.",
+      "key_specs": [
+        "90 luxury guest rooms",
+        "Underground parking garage",
+        "Designed by Centerbrook Architects",
+        "INTERA Collection operational brand"
+      ],
+      "mentioned_brands": [
+        "Procaccianti Companies",
+        "TPG Hotels & Resorts",
+        "Centerbrook Architects"
+      ],
+      "competitor_watch": [
+        "hospitality HVAC",
+        "luxury plumbing",
+        "architectural glazing",
+        "underground garage ventilation",
+        "access control"
+      ],
+      "sources": [
+        {
+          "title": "Luxury Bellevue Avenue Hotel Project Breaks Ground June 1",
+          "url": "https://thenewportbuzz.com/bellevue-hotel-newport-construction-june/61113"
+        }
+      ],
+      "open_for": "Boutique hotel trade subcontracts, civil underground work, interior finishes."
+    },
+    {
+      "id": "ri-skye-city-centre-warwick",
+      "name": "Skye City Centre Residential & Retail Community",
+      "state": "RI",
+      "city": "Warwick",
+      "county": "Kent",
+      "status": "under_construction",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Michael Integlia & Company / LeCesse Development",
+      "architect": "5G Studio Collaborative",
+      "general_contractor": "Callahan Construction Managers",
+      "opened_or_announced_date": "2026-05-20",
+      "description": "Groundbroken 297-unit luxury apartment and mixed-use transit-oriented community near TF Green Airport with a connected 5-level 437-space garage and ground retail.",
+      "key_specs": [
+        "297 luxury apartment units",
+        "5-level, 437-space parking garage",
+        "Ground-floor retail space",
+        "Transit-oriented development near MBTA / TF Green"
+      ],
+      "mentioned_brands": [
+        "Michael Integlia & Company",
+        "LeCesse Development",
+        "Callahan Construction Managers",
+        "5G Studio Collaborative"
+      ],
+      "competitor_watch": [
+        "precast parking garage",
+        "residential HVAC & heat pumps",
+        "elevators",
+        "smart access control",
+        "appliances"
+      ],
+      "sources": [
+        {
+          "title": "Callahan Celebrates Groundbreaking for Skye City Centre Residential Community in Warwick",
+          "url": "https://www.high-profile.com/callahan-celebrates-groundbreaking-for-skye-city-centre-residential-community-in-warwick/"
+        }
+      ],
+      "open_for": "Multi-family MEP, elevator installation, precast structure, interior trade packages."
+    },
+    {
+      "id": "ri-uri-student-housing-expansion",
+      "name": "URI Flagg Road Residence Halls & Graduate Village",
+      "state": "RI",
+      "city": "South Kingstown",
+      "county": "Washington",
+      "status": "under_construction",
+      "project_type": "education",
+      "estimated_value_usd": 175000000,
+      "square_footage": null,
+      "owner": "University of Rhode Island / Gilbane Development Co.",
+      "architect": "",
+      "general_contractor": "Gilbane Building Company",
+      "opened_or_announced_date": "2026-06-25",
+      "description": "Groundbroken student housing expansion adding 1,100+ beds across two new undergraduate residence halls on Flagg Road and rebuilding Graduate Village Apartments.",
+      "key_specs": [
+        "1,100+ new student beds",
+        "Two undergraduate residence halls",
+        "Reconstructed Graduate Village",
+        "First hall opens August 2027"
+      ],
+      "mentioned_brands": [
+        "University of Rhode Island",
+        "Gilbane Development Co."
+      ],
+      "competitor_watch": [
+        "student housing HVAC",
+        "plumbing risers",
+        "fire protection",
+        "access control",
+        "drywall & insulation"
+      ],
+      "sources": [
+        {
+          "title": "URI to break ground on new on-campus student housing",
+          "url": "https://pbn.com/uri-to-break-ground-on-new-on-campus-student-housing/"
+        }
+      ],
+      "open_for": "Student housing MEP, structural framing, interior build-out contracts."
+    }
+  ],
+  "stats": {
+    "total": 5
+  }
+}

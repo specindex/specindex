@@ -1,0 +1,18 @@
+{
+  "project_id": "dodge-data-center-clayton",
+  "project_name": "Clayton County Data Center (DRI filed)",
+  "fetched_at": "2026-07-24T05:14:09.092417+00:00",
+  "sources": [
+    {
+      "url": "https://thecurrentga.org/2026/07/22/20-billion-openai-data-center-to-open-in-effingham-county/",
+      "title": "The Current GA \u2014 data center DRIs",
+      "files": [
+        "source-01.html"
+      ],
+      "final_url": "https://thecurrentga.org/2026/07/22/20-billion-openai-data-center-to-open-in-effingham-county/",
+      "content_type": "text/html; charset=UTF-8"
+    }
+  ],
+  "documents": [],
+  "errors": []
+}

@@ -1,0 +1,132 @@
+{
+  "state": "MD",
+  "state_name": "Maryland",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — Data Center Dynamics, Southern Maryland Chronicle.",
+  "projects": [
+    {
+      "id": "md-aws-calvert-technology-center",
+      "name": "AWS Calvert Technology Center, Lusby",
+      "state": "MD",
+      "city": "Lusby",
+      "county": "Calvert",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": 2464000,
+      "owner": "Amazon Web Services / Constellation Energy",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-04",
+      "description": "Concept site plan filed May 2026 for eight data center buildings (266K. 332K SF each) near Calvert Cliffs Nuclear Plant. ~2.46M SF total; concept review in progress.",
+      "key_specs": [
+        "8 data center buildings",
+        "2.464M SF total",
+        "Three independently operated campuses",
+        "Near Constellation nuclear plant"
+      ],
+      "mentioned_brands": [
+        "Amazon Web Services",
+        "Constellation Energy"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "generators",
+        "cooling",
+        "electrical",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "AWS Calvert site plan, Southern Maryland Chronicle",
+          "url": "https://southernmarylandchronicle.com/2026/05/27/aws-calvert-technology-center-site-plan-filed/"
+        },
+        {
+          "title": "AWS Calvert proposal, DCD",
+          "url": "https://www.datacenterdynamics.com/en/news/aws-proposes-data-center-campus-next-to-nuclear-plant-in-calvert-county-maryland/"
+        }
+      ],
+      "open_for": "Concept review. Early MEP and infrastructure specs."
+    },
+    {
+      "id": "md-rowan-bauxite-frederick",
+      "name": "Rowan Bauxite I Data Center, Frederick County",
+      "state": "MD",
+      "city": "Frederick",
+      "county": "Frederick",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": 975000000,
+      "square_footage": 777150,
+      "owner": "Rowan Digital Infrastructure",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "$975M construction financing closed for Phase I of 300MW hyperscale campus at TPG Quantum Frederick Park. Four single-story buildings; construction well underway.",
+      "key_specs": [
+        "300 MW Phase I",
+        "777,150 SF four buildings",
+        "Former aluminum plant site",
+        "Bauxite II and III planned"
+      ],
+      "mentioned_brands": [
+        "Rowan Digital Infrastructure",
+        "TPG Real Estate",
+        "MUFG",
+        "SMBC"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "cooling",
+        "generators",
+        "electrical distribution"
+      ],
+      "sources": [
+        {
+          "title": "Rowan Maryland financing, DCD",
+          "url": "https://www.datacenterdynamics.com/en/news/rowan-secures-975-million-financing-for-maryland-data-center-campus/"
+        }
+      ],
+      "open_for": "Active hyperscale build. MEP specs."
+    },
+    {
+      "id": "md-security-land-woodlawn-data-center",
+      "name": "Security Land 150MW Data Center, Woodlawn",
+      "state": "MD",
+      "city": "Woodlawn",
+      "county": "Baltimore",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Security Land and Development LP",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "150MW data center proposed on 42 acres in Woodlawn. Construction expected June/July 2026; razing permit resubmitted June 2026.",
+      "key_specs": [
+        "150 MW",
+        "42 acres",
+        "Woodlawn area Baltimore County"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "switchgear",
+        "generators",
+        "cooling",
+        "site civil"
+      ],
+      "sources": [
+        {
+          "title": "150MW Baltimore County proposal, DCD",
+          "url": "https://www.datacenterdynamics.com/en/news/150mw-data-center-proposed-for-baltimore-county-maryland/"
+        }
+      ],
+      "open_for": "Pre-construction. Infrastructure specs forming."
+    }
+  ],
+  "stats": {
+    "total": 3
+  }
+}

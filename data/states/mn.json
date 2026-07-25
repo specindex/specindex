@@ -1,0 +1,50 @@
+{
+  "state": "MN",
+  "state_name": "Minnesota",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — local news, city approvals.",
+  "projects": [
+    {
+      "id": "mn-google-hermantown-data-center",
+      "name": "Google Data Center Campus, Hermantown",
+      "state": "MN",
+      "city": "Hermantown",
+      "county": "St. Louis",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Google",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-01",
+      "description": "403-acre Google data center campus approved in Hermantown late 2025; construction timeline 5. 10 years. Project Skyway near Pine Island temporarily halted by court order.",
+      "key_specs": [
+        "403-acre campus",
+        "Hermantown approval",
+        "Multi-year build timeline",
+        "Northern Minnesota market"
+      ],
+      "mentioned_brands": [
+        "Google"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "cooling",
+        "generators",
+        "electrical"
+      ],
+      "sources": [
+        {
+          "title": "Midwest data center pipeline, industry reports",
+          "url": "https://atlasbuildingshub.com/2026/04/07/midwestern-states-reckon-with-data-center-development/"
+        }
+      ],
+      "open_for": "Pre-construction planning. Monitor permit activity."
+    }
+  ],
+  "stats": {
+    "total": 1
+  }
+}

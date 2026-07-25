@@ -1,0 +1,17 @@
+{
+  "project_id": "project-azalea-thomson",
+  "project_name": "Project Azalea Data Center",
+  "fetched_at": "2026-07-24T05:15:10.289206+00:00",
+  "sources": [
+    {
+      "url": "https://www.datacenterdynamics.com/en/news/200-acre-project-azalea-data-center-approved/",
+      "title": "Data Center Dynamics \u2014 Project Azalea",
+      "files": [],
+      "error": "HTTP 403"
+    }
+  ],
+  "documents": [],
+  "errors": [
+    "https://www.datacenterdynamics.com/en/news/200-acre-project-azalea-data-center-approved/: HTTP 403"
+  ]
+}

@@ -1,0 +1,17 @@
+---
+description: Iowa commercial project capture — read the playbook before any pull
+globs: data/states/ia.json,data/raw/ia-*.json,scripts/pull-ia*.py,docs/states/ia.md
+alwaysApply: false
+---
+
+# Iowa Commercial Pulls
+
+Before capturing or refreshing Iowa, read **`docs/states/ia.md`** in full.
+
+After the pull, update that playbook:
+
+1. **What works** and **What failed last time**
+2. **Pull log** with date, source, and outcome
+3. The AUTO header stats (run `python3 scripts/sync-state-playbooks.py --state ia`)
+
+Follow `.cursor/rules/state-data-pull-review.mdc` for the review checklist.

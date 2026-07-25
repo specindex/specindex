@@ -7,7 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "deploy": "npm run build && npx -y firebase-tools@latest deploy --only hosting"
+    "deploy": "npm run build && npx -y firebase-tools@latest deploy --only hosting",
+    "db:up": "docker compose up --build -d",
+    "db:down": "docker compose down",
+    "db:load": "python3 scripts/load-corpus-to-postgres.py",
+    "db:setup-gcp": "bash scripts/setup-phase1-gcp.sh"
   },
   "dependencies": {
     "framer-motion": "^12.40.0",

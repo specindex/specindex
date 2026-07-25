@@ -1,0 +1,48 @@
+{
+  "state": "ME",
+  "state_name": "Maine",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — GSA federal construction listings.",
+  "projects": [
+    {
+      "id": "me-gsa-land-port-modernization",
+      "name": "GSA Land Port of Entry Modernization, Multiple Sites",
+      "state": "ME",
+      "city": "Multiple",
+      "county": "Various",
+      "status": "under_construction",
+      "project_type": "civic",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "U.S. General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "Federal land port of entry construction at Calais, Coburn Gore, Fort Fairfield, Houlton, and Limestone. Active GSA commercial construction in Maine.",
+      "key_specs": [
+        "Five border port sites",
+        "Federal civic infrastructure",
+        "GSA-managed"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "security systems",
+        "HVAC",
+        "lighting",
+        "doors/hardware",
+        "site civil"
+      ],
+      "sources": [
+        {
+          "title": "GSA Maine port projects, federal construction listings",
+          "url": "https://www.gsa.gov/"
+        }
+      ],
+      "open_for": "Federal border infrastructure. Systems and finishes specs."
+    }
+  ],
+  "stats": {
+    "total": 1
+  }
+}

@@ -18,16 +18,16 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "SpecIndex — Specification intelligence for building product manufacturers",
+    default: "SpecIndex · Specification intelligence for building product manufacturers",
     template: "%s · SpecIndex",
   },
   description:
-    "Search open commercial projects, read specs, see if your brand is mentioned, and compare visibility. Beachhead: Georgia.",
+    "Commercial construction projects nationwide, indexed by stage and product category, so building product manufacturers can tell which specs are still open.",
   metadataBase: new URL("https://specindex.ai"),
   openGraph: {
-    title: "SpecIndex — Specification intelligence for building product manufacturers",
+    title: "SpecIndex · Specification intelligence for building product manufacturers",
     description:
-      "Find open Georgia commercial projects where your brand can still win the spec.",
+      "Your product gets chosen long before anyone asks for a quote. SpecIndex shows which commercial projects are still early enough to influence.",
     url: "https://specindex.ai",
     siteName: "SpecIndex",
     locale: "en_US",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "SpecIndex",
     description:
-      "Specification intelligence for building product manufacturers. Georgia beachhead.",
+      "Commercial projects nationwide, indexed by stage and product category, for building product manufacturers.",
   },
 };
 

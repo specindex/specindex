@@ -1,0 +1,170 @@
+{
+  "state": "SC",
+  "state_name": "South Carolina",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — SC Dept of Commerce, local business journals, press releases.",
+  "projects": [
+    {
+      "id": "sc-steelfab-florence-expansion",
+      "name": "SteelFab Florence County Manufacturing Expansion",
+      "state": "SC",
+      "city": "Florence",
+      "county": "Florence",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "SteelFab",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "SteelFab expanding manufacturing operations with new facility in Florence County, SC. Structural steel fabrication.",
+      "key_specs": [
+        "Manufacturing expansion",
+        "Florence County",
+        "Structural steel fabrication"
+      ],
+      "mentioned_brands": [
+        "SteelFab"
+      ],
+      "competitor_watch": [
+        "overhead cranes",
+        "HVAC",
+        "electrical",
+        "fire suppression",
+        "industrial flooring"
+      ],
+      "sources": [
+        {
+          "title": "SteelFab Florence expansion, industry reports",
+          "url": "https://rebusinessonline.com/"
+        }
+      ],
+      "open_for": "Manufacturing build-out. Industrial MEP specs."
+    },
+    {
+      "id": "sc-ferrara-orangeburg-candy-plant",
+      "name": "Ferrara Candy Company Manufacturing Plant",
+      "state": "SC",
+      "city": "Orangeburg",
+      "county": "Orangeburg",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": 675000000,
+      "square_footage": 750000,
+      "owner": "Ferrara Candy Company",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-22",
+      "description": "Groundbroken $675 million, 750,000 SF candy manufacturing plant in Orangeburg County producing NERDS Gummy Clusters and Trolli, creating 1,000 jobs.",
+      "key_specs": [
+        "750,000 SF manufacturing facility",
+        "$675M investment",
+        "1,000 projected jobs",
+        "First SC operation for Ferrara"
+      ],
+      "mentioned_brands": [
+        "Ferrara Candy Company"
+      ],
+      "competitor_watch": [
+        "food-grade HVAC",
+        "process piping",
+        "heavy electrical switchgear",
+        "industrial epoxy flooring",
+        "high-bay LED lighting"
+      ],
+      "sources": [
+        {
+          "title": "Ferrara breaks ground on $675M Orangeburg County candy plant",
+          "url": "https://spotonsouthcarolina.com/santee-cooper-district/1686320/ferrara-breaks-ground-on-675m-orangeburg.html"
+        }
+      ],
+      "open_for": "Food-grade manufacturing MEP, clean utility piping, heavy electrical power distribution."
+    },
+    {
+      "id": "sc-upstate-church-five-forks",
+      "name": "Upstate Church Five Forks Campus",
+      "state": "SC",
+      "city": "Simpsonville",
+      "county": "Greenville",
+      "status": "under_construction",
+      "project_type": "civic",
+      "estimated_value_usd": null,
+      "square_footage": 28000,
+      "owner": "Upstate Church",
+      "architect": "LS3P",
+      "general_contractor": "P+F Construction",
+      "opened_or_announced_date": "2026-06-26",
+      "description": "Groundbroken 28,000 SF church campus on 12.6 acres featuring a 550-seat worship center, youth spaces, advanced AVL technology, and steel-frame construction.",
+      "key_specs": [
+        "28,000 SF facility",
+        "12.6-acre site",
+        "550-seat worship center",
+        "Designed by LS3P",
+        "Opening late spring 2027"
+      ],
+      "mentioned_brands": [
+        "Upstate Church",
+        "LS3P",
+        "P+F Construction"
+      ],
+      "competitor_watch": [
+        "AVL technology",
+        "structural steel",
+        "assembly HVAC",
+        "roofing",
+        "acoustic panels"
+      ],
+      "sources": [
+        {
+          "title": "Upstate Church breaks ground on new Five Forks campus",
+          "url": "https://greenvillejournal.com/construction/upstate-church-breaks-ground-on-new-five-forks-campus/"
+        }
+      ],
+      "open_for": "Sanctuary AVL systems, steel framing, assembly mechanical and electrical."
+    },
+    {
+      "id": "sc-dxd-capital-mount-pleasant",
+      "name": "DXD Capital Mount Pleasant Self-Storage & Retail",
+      "state": "SC",
+      "city": "Mount Pleasant",
+      "county": "Charleston",
+      "status": "under_construction",
+      "project_type": "retail",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "DXD Capital / CrossHarbor",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-30",
+      "description": "Groundbroken 4-story Class-A facility featuring 800 climate-controlled self-storage units and ground-floor retail space in Mount Pleasant.",
+      "key_specs": [
+        "4-story building",
+        "800 climate-controlled units",
+        "Ground retail space",
+        "Opening summer 2027"
+      ],
+      "mentioned_brands": [
+        "DXD Capital",
+        "CrossHarbor"
+      ],
+      "competitor_watch": [
+        "climate control HVAC",
+        "roll-up storage doors",
+        "access control & security",
+        "elevators"
+      ],
+      "sources": [
+        {
+          "title": "DXD Capital Breaks Ground on Class-A Self-Storage Facility and Retail Space in Mount Pleasant, SC",
+          "url": "https://www.einpresswire.com/article/922468293/dxd-capital-breaks-ground-on-class-a-self-storage-facility-and-retail-space-in-mount-pleasant-sc"
+        }
+      ],
+      "open_for": "Self-storage climate control systems, security/access control packages, elevators."
+    }
+  ],
+  "stats": {
+    "total": 4
+  }
+}

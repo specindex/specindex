@@ -1,0 +1,91 @@
+{
+  "state": "OH",
+  "state_name": "Ohio",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — REBusinessOnline, Columbus Business First, local news.",
+  "projects": [
+    {
+      "id": "oh-opus-canal-crossing-commerce",
+      "name": "Canal Crossing Commerce Center, Canal Winchester",
+      "state": "OH",
+      "city": "Canal Winchester",
+      "county": "Fairfield",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": 898500,
+      "owner": "Opus",
+      "architect": "Red Architecture",
+      "general_contractor": "Opus",
+      "opened_or_announced_date": "2026-06-15",
+      "description": "898,500 SF three-building speculative industrial on 72 acres near Rickenbacker and I-270. Completion June 2027.",
+      "key_specs": [
+        "Building A: 398,600 SF, 36-ft clear",
+        "Building B: 297,975 SF",
+        "Building C: 201,925 SF",
+        "400+ jobs",
+        "$4M+ public infrastructure"
+      ],
+      "mentioned_brands": [
+        "Opus",
+        "Kimley-Horn"
+      ],
+      "competitor_watch": [
+        "dock doors",
+        "high-bay lighting",
+        "concrete",
+        "insulation",
+        "HVAC"
+      ],
+      "sources": [
+        {
+          "title": "Opus Canal Crossing, REBusinessOnline",
+          "url": "https://rebusinessonline.com/opus-breaks-ground-on-898500-sf-canal-crossing-commerce-center-in-suburban-columbus/"
+        }
+      ],
+      "open_for": "Spec industrial. Dock, lighting, envelope specs open."
+    },
+    {
+      "id": "oh-core5-c5-global-connect",
+      "name": "C5 Global Connect Industrial Campus, Rickenbacker",
+      "state": "OH",
+      "city": "Columbus",
+      "county": "Franklin",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": 2500000,
+      "owner": "Core5 Industrial Partners",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "2.5M SF industrial campus construction begun near Rickenbacker International Airport.",
+      "key_specs": [
+        "2.5M SF campus",
+        "Near Rickenbacker Airport",
+        "Atlanta-based Core5 developer"
+      ],
+      "mentioned_brands": [
+        "Core5 Industrial Partners"
+      ],
+      "competitor_watch": [
+        "dock equipment",
+        "lighting",
+        "HVAC",
+        "paving",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Core5 Rickenbacker campus, Columbus Business First",
+          "url": "https://www.bizjournals.com/columbus/news/2026/07/23/core5-industrial-c5-global-connect-rickenbacker.html"
+        }
+      ],
+      "open_for": "Just started. Early civil and building envelope specs."
+    }
+  ],
+  "stats": {
+    "total": 2
+  }
+}

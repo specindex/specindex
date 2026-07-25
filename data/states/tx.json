@@ -1,0 +1,201 @@
+{
+  "state": "TX",
+  "state_name": "Texas",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — REBusinessOnline, BLDUP, state/local announcements. No proprietary plan-room data.",
+  "projects": [
+    {
+      "id": "tx-rowan-temple-data-center",
+      "name": "Rowan Digital Infrastructure Hyperscale Campus, Temple",
+      "state": "TX",
+      "city": "Temple",
+      "county": "Bell",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": 3000000000,
+      "square_footage": null,
+      "owner": "Rowan Digital Infrastructure / Blackstone",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "$3B construction financing secured for 700-acre, 300MW hyperscale data center campus at 1855 Bob White Road. Phase I ~$700M; 12. 18 month build.",
+      "key_specs": [
+        "300 MW Phase I",
+        "700 acres",
+        "Water recirculation system",
+        "~600 construction jobs"
+      ],
+      "mentioned_brands": [
+        "Rowan Digital Infrastructure",
+        "Blackstone"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "generators",
+        "cooling systems",
+        "fire suppression",
+        "UPS"
+      ],
+      "sources": [
+        {
+          "title": "Rowan $3B Temple financing, REBusinessOnline",
+          "url": "https://rebusinessonline.com/rowan-digital-infrastructure-receives-3b-in-construction-financing-for-data-center-campus-in-temple-texas/"
+        }
+      ],
+      "open_for": "Active hyperscale build. MEP and infrastructure specs."
+    },
+    {
+      "id": "tx-sabey-round-rock-data-center",
+      "name": "Sabey Data Centers Building B, Round Rock",
+      "state": "TX",
+      "city": "Round Rock",
+      "county": "Williamson",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Sabey Data Centers",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-02",
+      "description": "54MW three-story data center Building B in northern Austin metro. First 18MW available Q3 2027.",
+      "key_specs": [
+        "54 MW campus",
+        "Three-story facility",
+        "18 MW initial capacity Q3 2027"
+      ],
+      "mentioned_brands": [
+        "Sabey Corp",
+        "National Real Estate Advisors"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "cooling",
+        "electrical distribution",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Sabey Round Rock groundbreaking, REBusinessOnline",
+          "url": "https://rebusinessonline.com/sabey-data-centers-breaks-ground-on-54-megawatt-project-in-metro-austin/"
+        }
+      ],
+      "open_for": "Early vertical. Data center MEP packages."
+    },
+    {
+      "id": "tx-microsoft-castroville-data-center",
+      "name": "Microsoft SAT 82 Data Center, Castroville",
+      "state": "TX",
+      "city": "Castroville",
+      "county": "Medina",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": 400000000,
+      "square_footage": 195000,
+      "owner": "Microsoft",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-16",
+      "description": "$400M, ~195,000 SF data center west of San Antonio. Construction scheduled to begin August 2026 per TDLR filing.",
+      "key_specs": [
+        "195,000 SF",
+        "SAT 82 designation",
+        "~2-year build"
+      ],
+      "mentioned_brands": [
+        "Microsoft"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "cooling systems",
+        "generators",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Microsoft Castroville data center, REBusinessOnline",
+          "url": "https://rebusinessonline.com/reports-microsoft-plans-400m-data-center-in-castroville-texas/"
+        }
+      ],
+      "open_for": "Pre-construction. Infrastructure specs forming."
+    },
+    {
+      "id": "tx-cyrusone-bosque-county-dfw17",
+      "name": "CyrusOne DFW17B/DFW17C, Bosque County",
+      "state": "TX",
+      "city": "Whitney",
+      "county": "Bosque",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": 342409,
+      "owner": "CyrusOne",
+      "architect": "JHET Architects",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-01",
+      "description": "Two new hyperscale data center buildings (249,090 SF + 93,319 SF with office) at Whitney campus. Construction from Feb 2026; completion July 2027.",
+      "key_specs": [
+        "DFW17B: 249,090 SF",
+        "DFW17C: 93,319 SF + office",
+        "210MW power expansion with Calpine"
+      ],
+      "mentioned_brands": [
+        "CyrusOne",
+        "Calpine"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "cooling",
+        "electrical",
+        "precast envelope"
+      ],
+      "sources": [
+        {
+          "title": "CyrusOne Bosque County expansion, BLDUP",
+          "url": "https://www.bldup.com/posts/cyrusone-seeks-approval-for-two-new-data-centers-as-part-of-bosque-county-campus-expansion"
+        }
+      ],
+      "open_for": "Permitting/early build. MEP and tenant fit-out specs."
+    },
+    {
+      "id": "tx-edged-irving-dallas-2",
+      "name": "Edged Dallas 2, Irving",
+      "state": "TX",
+      "city": "Irving",
+      "county": "Dallas",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Edged U.S.",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-20",
+      "description": "24MW data center along North Wildwood Drive. Construction Q2 2026; completion fall 2027.",
+      "key_specs": [
+        "24 MW capacity",
+        "Irving campus expansion",
+        "Fall 2027 completion"
+      ],
+      "mentioned_brands": [
+        "Edged U.S."
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "cooling",
+        "electrical distribution"
+      ],
+      "sources": [
+        {
+          "title": "Edged Irving Dallas 2, REBusinessOnline",
+          "url": "https://rebusinessonline.com/edged-u-s-to-open-new-data-center-facility-at-irving-campus/"
+        }
+      ],
+      "open_for": "Q2 2026 start. Early MEP specs."
+    }
+  ],
+  "stats": {
+    "total": 5
+  }
+}

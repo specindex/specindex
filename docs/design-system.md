@@ -1,9 +1,8 @@
 # SpecIndex Design System
 
-**Source:** [filmore.ai](https://www.filmore.ai/) (Jul 2026)  
 **Implementation:** `lib/design-tokens.ts` + `app/globals.css`
 
-SpecIndex uses Filmore's B2B SaaS visual language — clean stone backgrounds, Inter typography, amber CTAs, and forest-green accents for stats and labels.
+The visual language is deliberately plain: warm stone backgrounds, Inter for everything, JetBrains Mono for figures, amber for actions, and forest green for stats and labels.
 
 ---
 
@@ -55,7 +54,7 @@ Loaded via `next/font/google` in `app/layout.tsx`.
 - White bg, 1px border, subtle shadow
 - **Elevated:** larger shadow for product mock
 
-### Layout patterns (from Filmore)
+### Layout patterns
 1. Sticky white header — logo mark + nav + amber CTA
 2. Hero — eyebrow + headline + subcopy + CTA, product mock right
 3. Stats strip — 4-up green numbers on white
@@ -72,7 +71,7 @@ Loaded via `next/font/google` in `app/layout.tsx`.
 
 | Route | Purpose |
 |---|---|
-| `/` | Marketing home (Filmore structure) |
+| `/` | Marketing home |
 | `/product/` | Use cases |
 | `/how-it-works/` | 4-step workflow |
 | `/pricing/` | Free / Pro / Team tiers |

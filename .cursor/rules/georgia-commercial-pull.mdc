@@ -1,0 +1,28 @@
+---
+description: Georgia commercial project capture — read the playbook before any GA pull
+globs: data/states/ga.json,data/raw/ga-*.json,scripts/pull-ga*.py,scripts/*georgia*,docs/states/ga.md
+alwaysApply: false
+---
+
+# Georgia Commercial Pulls
+
+Before capturing or refreshing Georgia, read **`docs/states/ga.md`** in full. That file
+is the canonical reference for source order, filters, endpoints, and what failed last time.
+
+Legacy copy also lives at `docs/GEORGIA-COMMERCIAL-SOURCE-PLAYBOOK.md`; prefer `docs/states/ga.md`.
+
+## Source order (do not reorder)
+
+1. **Georgia DRI** — `scripts/pull-ga-dri.py --months 12`
+2. **Municipal ArcGIS (commercial only)** — `scripts/pull-ga-municipal-commercial.py --months 12`
+3. **Accela (Atlanta, Gwinnett, Cobb)** — `scripts/pull-ga-accela-commercial.py --months 12`
+4. **Rebuild corpus** — `python3 scripts/rebuild-ga-corpus.py`
+
+## After merge
+
+Follow `.cursor/rules/state-data-pull-review.mdc`, then:
+
+```bash
+python3 scripts/merge-national-corpus.py
+npm run build
+```

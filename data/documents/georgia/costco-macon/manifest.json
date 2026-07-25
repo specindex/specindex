@@ -1,0 +1,25 @@
+{
+  "project_id": "costco-macon",
+  "project_name": "Costco Wholesale Macon",
+  "fetched_at": "2026-07-24T05:14:54.984494+00:00",
+  "sources": [
+    {
+      "url": "https://www.41nbc.com/coming-soon-new-costco-approved-for-macon/",
+      "title": "41NBC \u2014 Costco approved for Macon",
+      "files": [
+        "source-01.html"
+      ],
+      "final_url": "https://www.41nbc.com/coming-soon-new-costco-approved-for-macon/",
+      "content_type": "text/html; charset=UTF-8"
+    }
+  ],
+  "documents": [
+    {
+      "filename": "doc-01-EEO-annrep-2025.pdf",
+      "url": "https://www.41nbc.com/content/uploads/2025/12/v/i/EEO-annrep-2025.pdf",
+      "content_type": "application/pdf",
+      "size_bytes": 398211
+    }
+  ],
+  "errors": []
+}

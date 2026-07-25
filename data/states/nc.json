@@ -1,0 +1,56 @@
+{
+  "state": "NC",
+  "state_name": "North Carolina",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — AbbVie press release, local news, industry publications.",
+  "projects": [
+    {
+      "id": "nc-abbvie-durham-campus",
+      "name": "AbbVie Pharmaceutical Manufacturing Campus, Durham",
+      "state": "NC",
+      "city": "Durham",
+      "county": "Durham",
+      "status": "planning",
+      "project_type": "healthcare",
+      "estimated_value_usd": 1400000000,
+      "square_footage": 440000,
+      "owner": "AbbVie",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-22",
+      "description": "$1.4B, 185-acre SVP pharmaceutical manufacturing campus near Research Triangle Park. 734 jobs; 2,000+ construction jobs. Completion end of 2028.",
+      "key_specs": [
+        "185 acres",
+        "440,000 SF Phase I campus",
+        "SVP drug product manufacturing",
+        "AI-integrated labs",
+        "734 permanent jobs"
+      ],
+      "mentioned_brands": [
+        "AbbVie"
+      ],
+      "competitor_watch": [
+        "cleanroom systems",
+        "HVAC",
+        "process piping",
+        "lab equipment",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "AbbVie Durham campus announcement",
+          "url": "https://news.abbvie.com/2026-04-22-AbbVie-Selects-North-Carolina-for-New-1-4-Billion-Manufacturing-Campus"
+        },
+        {
+          "title": "AbbVie Durham moves forward, ABC11",
+          "url": "https://abc11.com/post/abbvie-pharmaceutical-project-moves-forward-durham/19500900/"
+        }
+      ],
+      "open_for": "Construction starting 2026. Pharma MEP and cleanroom specs."
+    }
+  ],
+  "stats": {
+    "total": 1
+  }
+}

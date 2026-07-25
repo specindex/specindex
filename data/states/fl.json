@@ -1,0 +1,490 @@
+{
+  "state": "FL",
+  "state_name": "Florida",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Web research — Florida Construction News, REBusinessOnline, Florida YIMBY, WLRN, GrowthSpotter, MCD Magazine",
+  "projects": [
+    {
+      "id": "fl-jupiter-medical-avenir-hospital",
+      "name": "Jupiter Medical Center Neighborhood Hospital at Avenir",
+      "state": "FL",
+      "city": "Palm Beach Gardens",
+      "county": "Palm Beach",
+      "status": "under_construction",
+      "project_type": "healthcare",
+      "estimated_value_usd": null,
+      "square_footage": 100370,
+      "owner": "Jupiter Medical Center / Sina Companies",
+      "architect": "DSC Architects",
+      "general_contractor": "Black Diamond Construction",
+      "opened_or_announced_date": "2026-06-24",
+      "description": "53,370 SF neighborhood hospital with 29 beds, 4 ORs, and 24-hour ED plus 47,000 SF three-story MOB at Avenir master-planned community. Early 2028 opening.",
+      "key_specs": [
+        "29 inpatient beds",
+        "4 operating rooms",
+        "24-hour emergency department",
+        "47,000 SF MOB",
+        "Diagnostic lab and imaging",
+        "Early 2028 opening"
+      ],
+      "mentioned_brands": [
+        "Jupiter Medical Center",
+        "Sina Companies",
+        "Stonemont",
+        "Fengate Asset Management"
+      ],
+      "competitor_watch": [
+        "medical equipment",
+        "HVAC",
+        "nurse call",
+        "OR systems",
+        "imaging equipment"
+      ],
+      "sources": [
+        {
+          "title": "Jupiter Medical Center Avenir groundbreaking, Town-Crier",
+          "url": "https://gotowncrier.com/2026/07/jupiter-medical-center-breaks-ground-on-hospital-at-avenir/"
+        },
+        {
+          "title": "Jupiter Medical MOB and hospital, MCD Magazine",
+          "url": "https://mcdmag.com/2026/07/construction-begins-on-neighborhood-hospital-mob-for-jupiter-medical-center-in-florida/"
+        }
+      ],
+      "open_for": "Ground broken. Hospital MEP and medical equipment specs active."
+    },
+    {
+      "id": "fl-exalt-health-riverview-rehab",
+      "name": "Exalt Health Inpatient Rehabilitation Hospital Riverview",
+      "state": "FL",
+      "city": "Riverview",
+      "county": "Hillsborough",
+      "status": "under_construction",
+      "project_type": "healthcare",
+      "estimated_value_usd": null,
+      "square_footage": 39093,
+      "owner": "Exalt Health / Ryan Companies",
+      "architect": "E4H Architecture",
+      "general_contractor": "Ryan Companies",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "39,093 SF 40-bed inpatient rehabilitation hospital near BayCare St. Joseph's South Hospital. Late summer 2027 opening; Ryan JV partner and GC. Healthcare development by Ryan Companies in Brandon as part of expanding Tampa Bay healthcare portfolio alongside Riverview rehab hospital.",
+      "key_specs": [
+        "40-bed inpatient rehab",
+        "39,093 SF",
+        "Near 223-bed St. Joseph's South",
+        "Late summer 2027 opening",
+        "Kimley-Horn civil engineer",
+        "Medical office/plaza",
+        "Brandon Gateway location",
+        "Ryan Companies healthcare portfolio"
+      ],
+      "mentioned_brands": [
+        "Exalt Health",
+        "Ryan Companies",
+        "E4H Architecture"
+      ],
+      "competitor_watch": [
+        "medical equipment",
+        "HVAC",
+        "accessibility systems",
+        "therapy equipment",
+        "medical fit-out",
+        "elevators",
+        "tenant improvement"
+      ],
+      "sources": [
+        {
+          "title": "Exalt Health Riverview rehab hospital, Florida Construction News",
+          "url": "https://www.floridaconstructionnews.com/ryan-companies-and-exalt-health-break-ground-on-new-inpatient-rehabilitation-hospital-in-riverview/"
+        }
+      ],
+      "open_for": "Active healthcare build. MEP and rehab equipment specs. Healthcare build. MOB fit-out and MEP specs."
+    },
+    {
+      "id": "fl-lakeview-corporate-park-tampa",
+      "name": "Lakeview Corporate Park Tampa",
+      "state": "FL",
+      "city": "Tampa",
+      "county": "Hillsborough",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": 310000,
+      "owner": "Richland Capital Holdings",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "310,000 SF Class A industrial redevelopment at 6700 Lakeview Center Drive converting former 1984 office campus into two rear-load distribution buildings. Q1 2027 completion.",
+      "key_specs": [
+        "Building 1: 106,375 SF, 33 dock doors",
+        "Building 2: 203,320 SF, 53 dock doors",
+        "32-ft clear heights",
+        "Office-to-industrial adaptive reuse",
+        "Near Port Tampa Bay and I-4/I-75"
+      ],
+      "mentioned_brands": [
+        "Richland Capital Holdings",
+        "JLL"
+      ],
+      "competitor_watch": [
+        "concrete",
+        "dock equipment",
+        "roofing",
+        "ESFR sprinklers",
+        "LED lighting"
+      ],
+      "sources": [
+        {
+          "title": "Lakeview Corporate Park Tampa, Florida YIMBY",
+          "url": "https://floridayimby.com/2026/07/construction-underway-on-310000-square-foot-lakeview-corporate-park-in-east-tampa.html"
+        },
+        {
+          "title": "Richland Capital Lakeview, CRE Market Beat",
+          "url": "https://cremarketbeat.com/richland-capital-begins-office-to-industrial-conversion-at-lakeview-corporate-park-in-tampa/"
+        }
+      ],
+      "open_for": "Conversion underway. Industrial envelope and MEP specs."
+    },
+    {
+      "id": "fl-speedway-commerce-center-daytona",
+      "name": "Speedway Commerce Center Building III",
+      "state": "FL",
+      "city": "Daytona Beach",
+      "county": "Volusia",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": 217603,
+      "owner": "Development Solutions Inc. / Karis",
+      "architect": "Lamar Johnson Collaborative",
+      "general_contractor": "DSI South",
+      "opened_or_announced_date": "2026-07-02",
+      "description": "Final phase of 808,693 SF Speedway Commerce Center industrial park. Building III is 217,603 SF with 36-ft clear heights and 32 dock doors; Q4 2026 delivery.",
+      "key_specs": [
+        "217,603 SF",
+        "36-ft clear heights",
+        "32 dock doors + 2 drive-in",
+        "ESFR sprinklers",
+        "Up to 20,000 SF office space",
+        "Q4 2026 delivery"
+      ],
+      "mentioned_brands": [
+        "Development Solutions Inc.",
+        "Karis",
+        "LJC"
+      ],
+      "competitor_watch": [
+        "tilt-up",
+        "dock equipment",
+        "roofing",
+        "concrete",
+        "ESFR"
+      ],
+      "sources": [
+        {
+          "title": "Speedway Commerce Center Building III, REBusinessOnline",
+          "url": "https://rebusinessonline.com/dsi-karis-break-ground-on-final-phase-of-speedway-commerce-center-in-daytona-beach-florida/"
+        }
+      ],
+      "open_for": "Final phase active. Industrial building systems specs."
+    },
+    {
+      "id": "fl-coresite-orlando-expansion",
+      "name": "CoreSite Orlando Data Center Expansion",
+      "state": "FL",
+      "city": "Orlando",
+      "county": "Orange",
+      "status": "planning",
+      "project_type": "data_center",
+      "estimated_value_usd": null,
+      "square_footage": 76280,
+      "owner": "CoreSite (American Tower)",
+      "architect": "Langan Engineering",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-23",
+      "description": "Second 76,280 SF two-story data center building at 9701 S John Young Parkway campus. Environmental Resource Permit modification submitted to SFWMD in May 2026.",
+      "key_specs": [
+        "76,280 SF new building",
+        "Two-story structure",
+        "Adjacent to 129,000 SF existing facility",
+        "Built in existing parking lot",
+        "Near Beachline Expressway"
+      ],
+      "mentioned_brands": [
+        "CoreSite",
+        "Langan Engineering"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "cooling",
+        "generators",
+        "UPS",
+        "structured cabling"
+      ],
+      "sources": [
+        {
+          "title": "CoreSite Orlando second building, GrowthSpotter",
+          "url": "https://www.growthspotter.com/2026/06/02/coresite-looks-to-add-second-orlando-data-center-building/"
+        }
+      ],
+      "open_for": "Permit submitted. Data center MEP and power specs opening."
+    },
+    {
+      "id": "fl-project-tango-palm-beach",
+      "name": "Palm Beach County Data Center Moratorium",
+      "state": "FL",
+      "city": "Loxahatchee",
+      "county": "Palm Beach",
+      "status": "planning",
+      "project_type": "data_center",
+      "estimated_value_usd": null,
+      "square_footage": 3600000,
+      "owner": "PBA Holdings / WPB Logistics. Palm Beach County",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "600MW hyperscale AI campus at Central Park Commerce Center denied 5-1 by Palm Beach County Commission July 15 after 12+ hours of testimony. 3.6M SF proposed; denial without prejudice. County commissioners advanced 7-0 proposal for formal moratorium on large-scale data centers following Project Tango debate. First reading scheduled August 27, 2026.",
+      "key_specs": [
+        "600MW power draw",
+        "3.6M SF total development",
+        "1.03M SF AI data center",
+        "2.35M SF warehouses",
+        "600K gallons/day water use cited",
+        "County advancing data center moratorium",
+        "Countywide moratorium proposal",
+        "Triggered by Project Tango denial",
+        "First reading Aug 27",
+        "SB 484 large-load regulations in effect"
+      ],
+      "mentioned_brands": [
+        "PBA Holdings",
+        "Florida Power & Light"
+      ],
+      "competitor_watch": [
+        "generators",
+        "cooling",
+        "switchgear",
+        "noise mitigation",
+        "water systems",
+        "policy impact on future data center specs"
+      ],
+      "sources": [
+        {
+          "title": "Project Tango denied, WLRN",
+          "url": "https://www.wlrn.org/government-politics/2026-07-16/project-tango-ai-data-center-palm-beach-rejected"
+        },
+        {
+          "title": "Project Tango, USA Today",
+          "url": "https://www.usatoday.com/story/news/state/florida/2026/07/17/palm-beach-county-florida-artificial-intelligence-data-center/90953199007/"
+        }
+      ],
+      "open_for": "Denied but may resubmit. Specs on hold pending revised proposal. Regulatory. Monitor for revised data center project specs post-moratorium."
+    },
+    {
+      "id": "fl-project-swan-lakeland",
+      "name": "Project Swan Lakeland Data Center",
+      "state": "FL",
+      "city": "Lakeland",
+      "county": "Polk",
+      "status": "planning",
+      "project_type": "data_center",
+      "estimated_value_usd": null,
+      "square_footage": 600000,
+      "owner": "Ryan Companies U.S. Inc.",
+      "architect": "Kimley-Horn",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-02",
+      "description": "600,000 SF data center proposed at 923 Wilkinson Road on 60 acres. Developer withdrew June 3 DRT review after city comments that data centers are not a permitted use; proposal not formally withdrawn.",
+      "key_specs": [
+        "600,000 SF data center",
+        "60-acre site",
+        "Requires annexation and PUD rezoning",
+        "Kimley-Horn engineering",
+        "City considering data center moratorium"
+      ],
+      "mentioned_brands": [
+        "Ryan Companies",
+        "Kimley-Horn"
+      ],
+      "competitor_watch": [
+        "power infrastructure",
+        "cooling",
+        "generators",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "Project Swan Lakeland, DCD",
+          "url": "https://www.datacenterdynamics.com/en/news/600000-sq-ft-project-swan-data-center-could-be-built-in-lakeland-florida/"
+        },
+        {
+          "title": "Project Swan withdrawn review, LkldNow",
+          "url": "https://www.lkldnow.com/withdrawn-facing-intense-opposition-developer-voluntarily-ends-data-center-quest/"
+        }
+      ],
+      "open_for": "Entitlement phase. Specs pending zoning resolution."
+    },
+    {
+      "id": "fl-fort-meade-stonebridge-data-center",
+      "name": "Stonebridge Fort Meade Hyperscale Data Center",
+      "state": "FL",
+      "city": "Fort Meade",
+      "county": "Polk",
+      "status": "planning",
+      "project_type": "data_center",
+      "estimated_value_usd": null,
+      "square_footage": 4400000,
+      "owner": "Stonebridge (Fort Meade LLC)",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-15",
+      "description": "4.4M SF hyperscale data center on 1,300 acres of former phosphate mine land. Development agreement approved April 15; $150M/10-year tax break; lawsuits filed May 14. Groundbreaking targeted end 2026.",
+      "key_specs": [
+        "8 large buildings around central hub",
+        "1,300-acre site",
+        "$150M tax incentive",
+        "450 permanent jobs at $107K avg",
+        "Duke Energy Hines Complex power",
+        "Groundbreaking end 2026 target"
+      ],
+      "mentioned_brands": [
+        "Stonebridge",
+        "Duke Energy"
+      ],
+      "competitor_watch": [
+        "generators",
+        "cooling",
+        "switchgear",
+        "water systems",
+        "site work"
+      ],
+      "sources": [
+        {
+          "title": "Polk County data centers, The Ledger",
+          "url": "https://www.theledger.com/story/news/politics/government/2026/06/25/polk-county-data-centers-whats-here-approvals-and-whats-next/90674767007/"
+        },
+        {
+          "title": "Fort Meade data center tracker",
+          "url": "https://floridadatacenters.org/"
+        }
+      ],
+      "open_for": "Pre-groundbreaking. Site prep and power infrastructure specs if lawsuits resolved."
+    },
+    {
+      "id": "fl-gainesville-public-safety-centers",
+      "name": "Gainesville Fire Station 3 and Southwest Public Safety Center",
+      "state": "FL",
+      "city": "Gainesville",
+      "county": "Alachua",
+      "status": "under_construction",
+      "project_type": "civic",
+      "estimated_value_usd": 36000000,
+      "square_footage": 46527,
+      "owner": "City of Gainesville",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "Two public safety groundbreakings in July 2026: 16,773 SF Fire Station #3 ($14M) and 29,754 SF hurricane-hardened Southwest Public Safety Center ($22M) with fire station, Public Works warehouse, and community room.",
+      "key_specs": [
+        "Fire Station #3: 3 engine bays",
+        "SW Center: 4 engine bays + warehouse",
+        "Hurricane-hardened construction",
+        "End 2027 completion",
+        "Funded by infrastructure surtax"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "fire suppression",
+        "HVAC",
+        "generator backup",
+        "storm-resistant materials"
+      ],
+      "sources": [
+        {
+          "title": "Gainesville July 2026 groundbreakings",
+          "url": "https://www.gainesvillefl.gov/News-articles/July-2026-groundbreakings"
+        }
+      ],
+      "open_for": "Just broke ground. Civic building systems and fire/rescue equipment specs."
+    },
+    {
+      "id": "fl-southwest-ranches-logistics",
+      "name": "Logistics Center at Southwest Ranches",
+      "state": "FL",
+      "city": "Southwest Ranches",
+      "county": "Broward",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": 300000,
+      "owner": "FRP Development Corp",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Class A logistics development on 24 acres at SW 202nd Avenue and Sheridan Street. 300,000+ SF with 36-ft clear heights; construction expected later 2026, completion 2028.",
+      "key_specs": [
+        "300,000+ SF logistics",
+        "24-acre infill site",
+        "36-ft clear heights",
+        "2.5-year entitlement process",
+        "Construction start later 2026"
+      ],
+      "mentioned_brands": [
+        "FRP Development Corp"
+      ],
+      "competitor_watch": [
+        "concrete",
+        "dock equipment",
+        "roofing",
+        "site work"
+      ],
+      "sources": [
+        {
+          "title": "Southwest Ranches logistics center, Florida YIMBY",
+          "url": "https://floridayimby.com/2026/07/300000-square-foot-logistics-center-planned-on-24-acre-site-in-southwest-ranches.html"
+        }
+      ],
+      "open_for": "Site acquired. Pre-construction logistics infrastructure specs."
+    },
+    {
+      "id": "fl-iron-mountain-miami-dade",
+      "name": "Iron Mountain Miami-Dade Data Center",
+      "state": "FL",
+      "city": "Miami",
+      "county": "Miami-Dade",
+      "status": "under_construction",
+      "project_type": "data_center",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Iron Mountain",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-01",
+      "description": "Iron Mountain data center in Miami-Dade County under construction and set to open later in 2026, filed as telecommunications hub with permitted-by-right status.",
+      "key_specs": [
+        "Miami-Dade data center",
+        "Telecommunications hub classification",
+        "Opening targeted late 2026"
+      ],
+      "mentioned_brands": [
+        "Iron Mountain"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "cooling",
+        "generators",
+        "UPS"
+      ],
+      "sources": [
+        {
+          "title": "Florida data center activity, Local10 / WLRN",
+          "url": "https://www.local10.com/news/local/2026/07/15/project-tango-fuels-debate-over-floridas-first-hyperscale-ai-data-center/"
+        }
+      ],
+      "open_for": "Near completion. Final MEP and commissioning specs."
+    }
+  ],
+  "stats": {
+    "total": 13
+  }
+}

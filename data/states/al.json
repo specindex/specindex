@@ -1,0 +1,334 @@
+{
+  "state": "AL",
+  "state_name": "Alabama",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Web research — governor.alabama.gov, Made in Alabama, al.com, local TV news, ADECA",
+  "projects": [
+    {
+      "id": "al-sports-illustrated-resort-tuscaloosa",
+      "name": "Sports Illustrated Resort Tuscaloosa",
+      "state": "AL",
+      "city": "Tuscaloosa",
+      "county": "Tuscaloosa",
+      "status": "under_construction",
+      "project_type": "hospitality",
+      "estimated_value_usd": 150000000,
+      "square_footage": null,
+      "owner": "Travel + Leisure Inc.",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-27",
+      "description": "Ground-up Sports Illustrated resort on the Black Warrior River with 161 hotel/condo units and 12,000 SF of restaurant and retail space near the University of Alabama campus.",
+      "key_specs": [
+        "161 hotel/condo units",
+        "12,000 SF retail",
+        "Riverfront site on Rice Mine Road",
+        "Expected opening summer 2028"
+      ],
+      "mentioned_brands": [
+        "Sports Illustrated",
+        "Travel + Leisure"
+      ],
+      "competitor_watch": [
+        "HVAC",
+        "glazing",
+        "FF&E",
+        "kitchen equipment",
+        "lighting"
+      ],
+      "sources": [
+        {
+          "title": "Sports Illustrated Resort breaks ground in Tuscaloosa",
+          "url": "https://abc3340.com/news/local/sports-illustrated-resort-breaks-ground-in-tuscaloosa-after-years-of-debate"
+        },
+        {
+          "title": "New details on $150M Tuscaloosa Sports Illustrated resort, al.com",
+          "url": "https://www.al.com/news/tuscaloosa/2026/05/new-details-announced-on-150-million-tuscaloosa-sports-illustrated-resort.html"
+        }
+      ],
+      "open_for": "Early vertical construction. MEP, interior finishes, and FF&E packages."
+    },
+    {
+      "id": "al-stadium-trace-village-phase-2",
+      "name": "Stadium Trace Village Phase 2",
+      "state": "AL",
+      "city": "Hoover",
+      "county": "Jefferson",
+      "status": "planning",
+      "project_type": "mixed_use",
+      "estimated_value_usd": 200000000,
+      "square_footage": 80000,
+      "owner": "Broad Metro",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Second phase of Stadium Trace Village between I-459 and Stadium Trace Parkway including South Haven Surgical Plaza (80,000 SF, 25-bed surgery center), senior living, golf entertainment, and stormwater improvements. Hoover approved $28M in tax incentives.",
+      "key_specs": [
+        "80,000 SF surgical healthcare center",
+        "25-bed surgery center",
+        "Senior living facilities",
+        "Chasing Aces golf entertainment",
+        "$4M stormwater improvements"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "medical equipment",
+        "HVAC",
+        "roofing",
+        "site furnishings",
+        "stormwater"
+      ],
+      "sources": [
+        {
+          "title": "Hoover approves $28M tax incentive for Stadium Trace Village expansion, al.com",
+          "url": "https://www.al.com/news/birmingham/2026/07/hoover-approves-28-million-tax-incentive-for-stadium-trace-village-expansion.html"
+        },
+        {
+          "title": "Stadium Trace Village $200M second phase, al.com",
+          "url": "https://www.al.com/news/birmingham/2026/06/hoovers-stadium-trace-village-plans-200-million-second-phase-expansion.html"
+        }
+      ],
+      "open_for": "Incentive approved. Pre-construction procurement for healthcare and mixed-use buildings."
+    },
+    {
+      "id": "al-costco-irondale",
+      "name": "Costco Warehouse Irondale",
+      "state": "AL",
+      "city": "Irondale",
+      "county": "Jefferson",
+      "status": "under_construction",
+      "project_type": "retail",
+      "estimated_value_usd": 105000000,
+      "square_footage": 152000,
+      "owner": "Costco Wholesale",
+      "architect": "",
+      "general_contractor": "Two Eight (site prep/blasting)",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "152,000-square-foot Costco warehouse and self-service gas station on 33 acres at Grants Mill Road and I-459. Development agreement finalized May 29; site clearing and blasting underway for 26-month build.",
+      "key_specs": [
+        "152,000 SF warehouse",
+        "Self-service gas station",
+        "33-acre site",
+        "Site blasting through mid-2027",
+        "Target opening 2028"
+      ],
+      "mentioned_brands": [
+        "Costco"
+      ],
+      "competitor_watch": [
+        "concrete",
+        "refrigeration",
+        "roofing",
+        "paving",
+        "fuel systems"
+      ],
+      "sources": [
+        {
+          "title": "Costco project moves forward in Irondale, ABC 33/40",
+          "url": "https://abc3340.com/news/local/costco-project-officially-moves-forward-in-irondale-construction-set-to-begin-this-week"
+        },
+        {
+          "title": "When will Alabama's newest Costco open?, al.com",
+          "url": "https://www.al.com/news/2026/06/when-will-alabamas-newest-costco-open-after-5-year-wait-construction-nears.html"
+        }
+      ],
+      "open_for": "Site prep active. Structural, MEP, and refrigeration specs opening as vertical construction approaches."
+    },
+    {
+      "id": "al-virginia-transformer-muscle-shoals",
+      "name": "Virginia Transformer Muscle Shoals Plant",
+      "state": "AL",
+      "city": "Muscle Shoals",
+      "county": "Colbert",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": 600000,
+      "owner": "Virginia Transformer Corp.",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-01",
+      "description": "600,000-square-foot state-of-the-art power transformer manufacturing plant at Shoals Research Airpark. Construction began immediately upon May 2026 announcement; 1,100 jobs at full operation.",
+      "key_specs": [
+        "600,000 SF manufacturing plant",
+        "90-acre site",
+        "Power transformers for utilities and data centers",
+        "Production start January 2028",
+        "1,100 jobs"
+      ],
+      "mentioned_brands": [
+        "Virginia Transformer"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "cranes",
+        "heavy electrical",
+        "HVAC",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Governor Ivey, Virginia Transformer Plant Muscle Shoals",
+          "url": "https://governor.alabama.gov/newsroom/2026/05/governor-ivey-announces-virginia-transformer-plant-will-bring-1100-jobs-to-northwest-alabama/"
+        }
+      ],
+      "open_for": "Greenfield industrial build. Heavy electrical, crane, and process equipment specs active."
+    },
+    {
+      "id": "al-doncasters-auburn-superalloy",
+      "name": "Doncasters Auburn Superalloy Facility",
+      "state": "AL",
+      "city": "Auburn",
+      "county": "Lee",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": 50000000,
+      "square_footage": null,
+      "owner": "Doncasters (DPC Holdings PLC)",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "New greenfield facility in Auburn for high-performance vacuum master melt superalloys serving aerospace and industrial gas turbine markets. $50M investment creating ~70 jobs.",
+      "key_specs": [
+        "Vacuum master melt superalloy production",
+        "Aerospace and IGT applications",
+        "70 jobs at $30.29/hr average",
+        "10-year property tax abatement"
+      ],
+      "mentioned_brands": [
+        "Doncasters"
+      ],
+      "competitor_watch": [
+        "industrial furnaces",
+        "process controls",
+        "HVAC",
+        "specialty metals handling"
+      ],
+      "sources": [
+        {
+          "title": "Doncasters expanding in Auburn with $50M facility, Made in Alabama",
+          "url": "https://www.madeinalabama.com/2026/07/governor-ivey-announces-doncasters-expanding-in-auburn-with-50m-facility/"
+        }
+      ],
+      "open_for": "Pre-construction. Specialty industrial equipment and process systems."
+    },
+    {
+      "id": "al-vulcaflex-auburn",
+      "name": "Vulcaflex Auburn Automotive Facility",
+      "state": "AL",
+      "city": "Auburn",
+      "county": "Lee",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": 70000000,
+      "square_footage": null,
+      "owner": "Vulcaflex S.p.A.",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "Italian manufacturer's first U.S. facility at Auburn Technology Park West producing synthetic leather for automotive interiors. Site being prepped for construction; 130 jobs.",
+      "key_specs": [
+        "Automotive synthetic leather production",
+        "Auburn Technology Park West",
+        "130 jobs",
+        "Serves U.S., Canada, Mexico OEMs"
+      ],
+      "mentioned_brands": [
+        "Vulcaflex"
+      ],
+      "competitor_watch": [
+        "process equipment",
+        "HVAC",
+        "coating systems",
+        "material handling"
+      ],
+      "sources": [
+        {
+          "title": "Governor Ivey, Vulcaflex selects Auburn for U.S. expansion",
+          "url": "https://governor.alabama.gov/newsroom/2026/06/governor-ivey-announces-130-new-jobs-as-vulcaflex-selects-auburn-for-u-s-expansion/"
+        }
+      ],
+      "open_for": "Site prep underway. Manufacturing equipment and building systems specs opening."
+    },
+    {
+      "id": "al-cpt-america-tuskegee",
+      "name": "CPT America Tuskegee Automotive Plant",
+      "state": "AL",
+      "city": "Tuskegee",
+      "county": "Macon",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": 163000000,
+      "square_footage": 350000,
+      "owner": "CPT America",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-26",
+      "description": "Tier-one automotive supplier plant at Tuskegee Commerce Park producing stamped metal components. Initial 350,000 SF facility with potential 700,000 SF second phase. ADECA awarded $400K infrastructure grant.",
+      "key_specs": [
+        "350,000 SF initial facility",
+        "Stamped metal components",
+        "700,000 SF potential Phase 2",
+        "187 jobs",
+        "Near Samkee auto parts plant"
+      ],
+      "mentioned_brands": [
+        "CPT America"
+      ],
+      "competitor_watch": [
+        "stamping presses",
+        "robotics",
+        "HVAC",
+        "overhead cranes",
+        "process utilities"
+      ],
+      "sources": [
+        {
+          "title": "Gov. Ivey awards grant for Tuskegee industrial development, ADECA",
+          "url": "https://adeca.alabama.gov/2026/05/26/gov-ivey-awards-grant-for-new-industrial-development-expected-to-bring-187-jobs-to-tuskegee/"
+        }
+      ],
+      "open_for": "Infrastructure grant approved. Water/sewer extension and plant construction specs active."
+    },
+    {
+      "id": "al-huntsville-retail-development",
+      "name": "Huntsville Retail and Restaurant Development",
+      "state": "AL",
+      "city": "Huntsville",
+      "county": "Madison",
+      "status": "planning",
+      "project_type": "retail",
+      "estimated_value_usd": 240000000,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-15",
+      "description": "Huntsville City Council approved a $240 million retail and restaurant development in June 2026, adding significant commercial square footage to the fast-growing market.",
+      "key_specs": [
+        "Retail and restaurant mix",
+        "City council approved June 2026",
+        "Madison County location"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "storefront systems",
+        "HVAC",
+        "lighting",
+        "site work",
+        "tenant improvement"
+      ],
+      "sources": [
+        {
+          "title": "Alabama commercial construction activity, al.com search synthesis",
+          "url": "https://www.al.com/news/"
+        }
+      ],
+      "open_for": "Post-approval. Tenant improvement and site development packages."
+    }
+  ],
+  "stats": {
+    "total": 8
+  }
+}

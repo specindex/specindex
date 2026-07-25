@@ -1,0 +1,205 @@
+{
+  "state": "WY",
+  "state_name": "Wyoming",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — Cap City News, Cowboy State Daily, Wyoming News, county planning filings.",
+  "projects": [
+    {
+      "id": "wy-project-sail-cheyenne-data-center",
+      "name": "Project Sail Data Center, Cheyenne",
+      "state": "WY",
+      "city": "Cheyenne",
+      "county": "Laramie",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-01",
+      "description": "Cheyenne/Laramie County data center and powered-land pipeline activity in 2026. Wyoming targeting hyperscale energy-adjacent development.",
+      "key_specs": [
+        "Cheyenne LEADS corridor",
+        "Powered land pipeline",
+        "Hyperscale interest"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "switchgear",
+        "generators",
+        "cooling",
+        "site civil"
+      ],
+      "sources": [
+        {
+          "title": "Wyoming data center pipeline, state economic development",
+          "url": "https://www.wyomingbusiness.org/"
+        }
+      ],
+      "open_for": "Early-stage. Monitor entitlement filings."
+    },
+    {
+      "id": "wy-microsoft-highlands-cheyenne",
+      "name": "Microsoft Highlands Data Center Campus",
+      "state": "WY",
+      "city": "Cheyenne",
+      "county": "Laramie",
+      "status": "permitting",
+      "project_type": "data_center",
+      "estimated_value_usd": 5000000000,
+      "square_footage": null,
+      "owner": "Microsoft",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "Microsoft closed on 3,460 acres (Highlands tract) and secured Cheyenne City Council annexation approval on July 14, 2026 for a multi-billion dollar, multi-decade hyperscale data center campus.",
+      "key_specs": [
+        "3,459.99 acres annexed into Cheyenne",
+        "Multi-decade buildout",
+        "Utility extension & substation connections",
+        "20% expansion to Cheyenne city footprint"
+      ],
+      "mentioned_brands": [
+        "Microsoft"
+      ],
+      "competitor_watch": [
+        "substations",
+        "switchgear",
+        "generators",
+        "chillers",
+        "site civil"
+      ],
+      "sources": [
+        {
+          "title": "Cheyenne passes Microsoft data center land annexation - Cap City News",
+          "url": "https://capcity.news/community/city/2026/07/14/cheyenne-passes-microsoft-data-center-land-annexation-after-more-than-5-hours-of-discussion/"
+        }
+      ],
+      "open_for": "Planning & entitlement. Infrastructure, utility connections, civil engineering."
+    },
+    {
+      "id": "wy-google-project-tembo-cheyenne",
+      "name": "Google Project Tembo Data Center Campus",
+      "state": "WY",
+      "city": "Cheyenne",
+      "county": "Laramie",
+      "status": "permitting",
+      "project_type": "data_center",
+      "estimated_value_usd": 3000000000,
+      "square_footage": null,
+      "owner": "Google / Jupiter Star Holdings",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Google unmasked as owner of 2.7-gigawatt Project Tembo (formerly Project Jade) in Switchgrass Industrial Park, 8 miles south of Cheyenne. Amended filings submitted June 30, 2026 for 716-acre campus with 4 large data center halls and office hub.",
+      "key_specs": [
+        "2.7 GW power capacity",
+        "716-acre campus",
+        "4 large-scale data center halls & office hub",
+        "Target completion 2031"
+      ],
+      "mentioned_brands": [
+        "Google",
+        "Jupiter Star Holdings"
+      ],
+      "competitor_watch": [
+        "liquid cooling",
+        "high-density switchgear",
+        "backup generators",
+        "substations"
+      ],
+      "sources": [
+        {
+          "title": "Google Revealed As Owner Of Wyoming's Largest Data Center Project - Cowboy State Daily",
+          "url": "https://cowboystatedaily.com/2026/07/08/google-revealed-as-owner-of-wyomings-largest-data-center-project-now-project-tembo/"
+        }
+      ],
+      "open_for": "Permitting & site plan approval. Electrical grid interconnect, high-density cooling."
+    },
+    {
+      "id": "wy-related-digital-coreweave-cheyenne",
+      "name": "Related Digital / CoreWeave Data Center Campus",
+      "state": "WY",
+      "city": "Cheyenne",
+      "county": "Laramie",
+      "status": "under_construction",
+      "project_type": "data_center",
+      "estimated_value_usd": 1200000000,
+      "square_footage": 184000,
+      "owner": "Related Digital / CoreWeave",
+      "architect": "",
+      "general_contractor": "Clayco",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "Related Digital broke ground July 2026 on a $1.2B, 302 MW campus in Cheyenne Business Parkway. First phase is a 184,000 SF building fully leased to CoreWeave delivering 88 MW, GC Clayco, completion late 2026.",
+      "key_specs": [
+        "$1.2B investment",
+        "302 MW campus capacity",
+        "Phase 1: 184,000 SF / 88 MW",
+        "Clayco GC, leased to CoreWeave"
+      ],
+      "mentioned_brands": [
+        "Related Digital",
+        "CoreWeave",
+        "Clayco",
+        "Black Hills Energy"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "liquid cooling",
+        "generators",
+        "electrical distribution",
+        "precast concrete"
+      ],
+      "sources": [
+        {
+          "title": "Related Digital breaks ground on 302 MW data center campus in Cheyenne",
+          "url": "https://www.instagram.com/p/DPha1ChkksS/"
+        }
+      ],
+      "open_for": "Under construction. Shell completion late 2026, MEP & liquid cooling fit-out."
+    },
+    {
+      "id": "wy-prometheus-target-hyperscale-uinta",
+      "name": "Target Hyper/Scale Workforce Hub & Prometheus Data Center",
+      "state": "WY",
+      "city": "Evanston",
+      "county": "Uinta",
+      "status": "permitting",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Target Hospitality / Target Hyper/Scale / Prometheus Hyperscale",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Uinta County approved Conditional Use Permit on July 21, 2026 for Target Hyper/Scale to build a workforce hub near Bear River State Park supporting construction of Prometheus Hyperscale's 1.25 GW data center (up to 3,500 workers).",
+      "key_specs": [
+        "1.25 GW data center footprint",
+        "Up to 3,500 construction workforce hub",
+        "Conditional Use Permit approved July 21, 2026"
+      ],
+      "mentioned_brands": [
+        "Target Hospitality",
+        "Prometheus Hyperscale"
+      ],
+      "competitor_watch": [
+        "modular housing",
+        "water/wastewater",
+        "site utilities",
+        "power distribution"
+      ],
+      "sources": [
+        {
+          "title": "Uinta County Commission approves man camp permit - Wyoming News",
+          "url": "https://www.wyomingnews.com/news/local_news/uinta-county-commission-approves-man-camp-permit/article_754d475d-aa3b-4e5d-983b-f530385ab916.html"
+        }
+      ],
+      "open_for": "Permitting. Modular building procurement, infrastructure, civil utilities."
+    }
+  ],
+  "stats": {
+    "total": 5
+  }
+}

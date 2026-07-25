@@ -1,0 +1,223 @@
+{
+  "state": "AK",
+  "state_name": "Alaska",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Web research — Alaska Business Magazine, ADN, PR Newswire, Tanana Chiefs Conference, DredgeWire",
+  "projects": [
+    {
+      "id": "ak-alyeschem-prudhoe-bay",
+      "name": "Alyeschem North Slope Petrochemical Facility",
+      "state": "AK",
+      "city": "Prudhoe Bay",
+      "county": "North Slope Borough",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": 140000000,
+      "square_footage": null,
+      "owner": "Alyeschem LLC",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-15",
+      "description": "First U.S. Arctic petrochemical plant converting North Slope natural gas and captured CO2 into methanol and ultra-low sulfur diesel. Built on existing AIDEA gravel pad; truckable modules fabricated off-site.",
+      "key_specs": [
+        "Methanol and ULSD production",
+        "AIDEA-financed up to $70M",
+        "80 construction jobs",
+        "15 permanent operations jobs",
+        "Online late 2027",
+        "93% CO2 emissions reduction claim"
+      ],
+      "mentioned_brands": [
+        "Alyeschem",
+        "AIDEA",
+        "BP Energy Partners"
+      ],
+      "competitor_watch": [
+        "process equipment",
+        "modular construction",
+        "tank farm",
+        "HVAC",
+        "Arctic-rated materials"
+      ],
+      "sources": [
+        {
+          "title": "Alyeschem breaks ground on North Slope facility, Alaska Story",
+          "url": "https://thealaskastory.com/alyeschem-breaks-ground-on-north-slope-chemical-and-fuels-facility-backed-by-aidea/"
+        },
+        {
+          "title": "Alyeschem Breaks Ground on North Slope Petrochemical Factory, Alaska Business",
+          "url": "https://www.akbizmag.com/industry/manufacturing/alyeschem-breaks-ground-on-north-slope-petrochemical-factory/"
+        }
+      ],
+      "open_for": "Early construction. Modular process equipment and Arctic-rated MEP specs."
+    },
+    {
+      "id": "ak-chugach-village-in-the-city",
+      "name": "Chugach Village in the City",
+      "state": "AK",
+      "city": "Anchorage",
+      "county": "Anchorage",
+      "status": "under_construction",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Chugach Alaska Corporation",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-24",
+      "description": "Multi-phase 4.35-acre campus at 36th Avenue and Old Seward Highway in Midtown Anchorage. Phase 1 includes commercial space for Chugach subsidiaries, tribal services offices, and Chugach heritage museum/archive.",
+      "key_specs": [
+        "4.35-acre campus",
+        "Tribal services and commercial space",
+        "Chugach Museum and archive",
+        "$6.2M Exxon Valdez grant for archive",
+        "Future 32-unit apartment buildings and retail",
+        "Phase 1 completion summer 2028"
+      ],
+      "mentioned_brands": [
+        "Chugach Alaska Corporation",
+        "Chugach Heritage Foundation"
+      ],
+      "competitor_watch": [
+        "museum fit-out",
+        "HVAC",
+        "glazing",
+        "cultural exhibit systems",
+        "site work"
+      ],
+      "sources": [
+        {
+          "title": "Chugach Alaska Breaks Ground on Village in the City, Alaska Business",
+          "url": "https://www.akbizmag.com/industry/alaska-native/chugach-alaska-breaks-ground-on-village-in-the-city/"
+        }
+      ],
+      "open_for": "Ground broken. Vertical construction and cultural/museum fit-out specs opening."
+    },
+    {
+      "id": "ak-port-alaska-terminal-1",
+      "name": "Don Young Port of Alaska Terminal 1 Replacement",
+      "state": "AK",
+      "city": "Anchorage",
+      "county": "Anchorage",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": 1970000000,
+      "square_footage": null,
+      "owner": "Municipality of Anchorage",
+      "architect": "",
+      "general_contractor": "Manson Construction",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "Pile-driving and wharf construction for new Cargo Terminal 1 under the Port of Alaska Modernization Program. Manson began 6-ft diameter pile installation in June 2026; $180M federal settlement secured July 2026.",
+      "key_specs": [
+        "6-ft diameter 150-ft piles",
+        "New seismically resilient cargo wharf",
+        "Shoreline expansion and dredging",
+        "Completion targeted 2029 for Terminal 1",
+        "Full PAMP $1.97, 2.76B"
+      ],
+      "mentioned_brands": [
+        "Manson Construction",
+        "MARAD"
+      ],
+      "competitor_watch": [
+        "marine piling",
+        "dredging equipment",
+        "cranes",
+        "dock hardware",
+        "corrosion protection"
+      ],
+      "sources": [
+        {
+          "title": "Manson Begins Pile Driving for Port of Alaska Terminal 1, DredgeWire",
+          "url": "https://dredgewire.com/manson-begins-pile-driving-for-port-of-alaska-terminal-1-replacement-project/"
+        },
+        {
+          "title": "Anchorage and feds settle port lawsuit, Anchorage Daily News",
+          "url": "https://www.adn.com/alaska-news/anchorage/2026/07/07/anchorage-and-feds-settle-port-lawsuit-securing-180m-for-modernization-project/"
+        }
+      ],
+      "open_for": "Active marine construction. Piling, dredging, and waterfront infrastructure specs."
+    },
+    {
+      "id": "ak-rampart-clinic",
+      "name": "Tanana Chiefs Conference Rampart Health Clinic",
+      "state": "AK",
+      "city": "Rampart",
+      "county": "Yukon-Koyukuk Census Area",
+      "status": "planning",
+      "project_type": "healthcare",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Tanana Chiefs Conference",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "New health clinic in remote Rampart; TCC issued RFP for general contractor services July 16, 2026. Construction scheduled to begin summer 2026 with substantial completion by December 31, 2027.",
+      "key_specs": [
+        "Remote healthcare clinic",
+        "100% design documents issued",
+        "Summer 2026 construction start",
+        "Substantial completion December 2027"
+      ],
+      "mentioned_brands": [
+        "Tanana Chiefs Conference"
+      ],
+      "competitor_watch": [
+        "modular construction",
+        "medical equipment",
+        "HVAC",
+        "remote logistics",
+        "backup power"
+      ],
+      "sources": [
+        {
+          "title": "RFP, Rampart Clinic General Contractor, Tanana Chiefs Conference",
+          "url": "https://www.tananachiefs.org/request-for-proposals-rampart-clinic-for-general-contractor-services/"
+        }
+      ],
+      "open_for": "GC selection underway. Clinic systems and remote-construction specs open."
+    },
+    {
+      "id": "ak-airport-heights-senior-housing",
+      "name": "Airport Heights Senior Housing",
+      "state": "AK",
+      "city": "Anchorage",
+      "county": "Anchorage",
+      "status": "under_construction",
+      "project_type": "multifamily",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Cook Inlet Housing Authority",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Senior housing development in Airport Heights; civil and site development completed by July 1, 2026 to enable vertical building construction to begin in July under a separate contract.",
+      "key_specs": [
+        "Civil and site development complete July 2026",
+        "Vertical construction starting July 2026",
+        "Anchorage Airport Heights location"
+      ],
+      "mentioned_brands": [
+        "Cook Inlet Housing Authority"
+      ],
+      "competitor_watch": [
+        "concrete",
+        "HVAC",
+        "accessibility systems",
+        "roofing",
+        "insulation"
+      ],
+      "sources": [
+        {
+          "title": "Airport Heights Senior Housing civil construction ITB, CIHA",
+          "url": "https://www.cookinlethousing.org/wp-content/uploads/2026/03/ITB-26T-DV-102-Airport-Heights-Senior-Housing-Civil-Construction.pdf"
+        }
+      ],
+      "open_for": "Vertical construction commencing. Building envelope and MEP specs active."
+    }
+  ],
+  "stats": {
+    "total": 5
+  }
+}

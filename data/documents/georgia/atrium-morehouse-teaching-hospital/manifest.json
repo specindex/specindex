@@ -1,0 +1,18 @@
+{
+  "project_id": "atrium-morehouse-teaching-hospital",
+  "project_name": "Atrium Health / Morehouse Teaching Hospital",
+  "fetched_at": "2026-07-24T05:15:02.383519+00:00",
+  "sources": [
+    {
+      "url": "https://www.ajc.com/",
+      "title": "Atlanta healthcare development coverage",
+      "files": [
+        "source-01.html"
+      ],
+      "final_url": "https://www.ajc.com/",
+      "content_type": "text/html; charset=utf-8"
+    }
+  ],
+  "documents": [],
+  "errors": []
+}

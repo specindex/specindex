@@ -1,0 +1,52 @@
+{
+  "state": "IN",
+  "state_name": "Indiana",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — WNDU, local news.",
+  "projects": [
+    {
+      "id": "in-aws-new-carlisle-data-center",
+      "name": "Amazon Web Services Data Center Campus, St. Joseph County",
+      "state": "IN",
+      "city": "New Carlisle",
+      "county": "St. Joseph",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": 13800000000,
+      "square_footage": null,
+      "owner": "Amazon Web Services",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "AWS investment surpassed $13.8B (original $11B goal) near New Carlisle. ~30 buildings planned; ~18 operational. Peak construction ongoing.",
+      "key_specs": [
+        "~30 buildings at full build",
+        "~18 operational",
+        "Air cooling 98% of year",
+        "SR 2/Larrison diverging diamond interchange planned"
+      ],
+      "mentioned_brands": [
+        "Amazon Web Services",
+        "AWS"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "cooling",
+        "generators",
+        "fire suppression",
+        "electrical"
+      ],
+      "sources": [
+        {
+          "title": "AWS St. Joseph County investment, WNDU",
+          "url": "https://www.wndu.com/2026/07/23/amazon-web-services-investment-st-joseph-county-data-center-campus-surpasses-138-billion/"
+        }
+      ],
+      "open_for": "Multi-building campus active. Ongoing MEP and infrastructure specs."
+    }
+  ],
+  "stats": {
+    "total": 1
+  }
+}

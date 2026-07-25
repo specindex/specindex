@@ -1,0 +1,17 @@
+{
+  "project_id": "monroe-drive-safe-streets",
+  "project_name": "Monroe Drive Safe Streets Project",
+  "fetched_at": "2026-07-24T05:14:08.072586+00:00",
+  "sources": [
+    {
+      "url": "https://www.atlantaga.gov/",
+      "title": "City of Atlanta \u2014 Monroe Drive Safe Streets",
+      "files": [],
+      "error": "HTTP 403"
+    }
+  ],
+  "documents": [],
+  "errors": [
+    "https://www.atlantaga.gov/: HTTP 403"
+  ]
+}

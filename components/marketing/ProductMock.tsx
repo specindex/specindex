@@ -1,21 +1,26 @@
 import Link from "next/link";
-import { getProjects } from "@/lib/projects";
+import { getCorpus, getProjects } from "@/lib/projects";
 import { formatUsd, typeLabel } from "@/lib/format";
 import { getTopCounties, getVisibilitySnapshot } from "@/lib/stats";
 import { StatusPill } from "@/components/StatusPill";
 
-const DEMO_BRAND = "Hilton";
-const DEMO_CATEGORY = "HVAC";
+const DEMO_BRAND = "Acuity Brands";
+const DEMO_CATEGORY = "lighting";
 
 export function ProductMock() {
   const projects = getProjects();
+  const corpus = getCorpus();
   const preview = projects.slice(0, 4);
   const counties = getTopCounties(projects, 6);
-  const { rate, categoryRate, opportunities } = getVisibilitySnapshot(
+  const { categoryHits, stillOpen } = getVisibilitySnapshot(
     projects,
     DEMO_BRAND,
     DEMO_CATEGORY,
   );
+  const stateLabel =
+    corpus.stats?.states && corpus.stats.states > 1
+      ? `${corpus.stats.states} states`
+      : "national index";
 
   return (
     <div className="card-elevated overflow-hidden">
@@ -25,7 +30,7 @@ export function ProductMock() {
             S
           </span>
           <span className="text-xs font-medium text-[var(--color-gray-600)]">
-            SpecIndex · Georgia
+            SpecIndex · {stateLabel}
           </span>
         </div>
         <span className="font-mono text-[10px] text-[var(--color-gray-400)]">
@@ -53,12 +58,14 @@ export function ProductMock() {
             ))}
           </div>
           <p className="mt-4 font-mono text-[10px] text-[var(--color-gray-600)]">
-            {DEMO_BRAND} mention rate
+            {DEMO_CATEGORY} · still early enough
           </p>
-          <p className="font-mono text-2xl font-bold text-[var(--color-green)]">{rate}%</p>
+          <p className="font-mono text-2xl font-bold text-[var(--color-green)]">
+            {stillOpen.length}
+          </p>
           <p className="mt-1 text-[10px] text-[var(--color-gray-400)]">
-            vs {categoryRate}% {DEMO_CATEGORY.toLowerCase()} pipeline · {opportunities.length}{" "}
-            open opportunities
+            of {categoryHits.length} projects needing {DEMO_CATEGORY} are in planning or
+            permitting
           </p>
         </div>
 

@@ -1,0 +1,313 @@
+{
+  "state": "CO",
+  "state_name": "Colorado",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Web research — Mile High CRE, Connect CRE, BusinessDen, Caliber, Construction Review Online, ENR",
+  "projects": [
+    {
+      "id": "co-fda-lab-denver-federal-center",
+      "name": "FDA Denver Federal Center Laboratory",
+      "state": "CO",
+      "city": "Lakewood",
+      "county": "Jefferson",
+      "status": "under_construction",
+      "project_type": "healthcare",
+      "estimated_value_usd": 228000000,
+      "square_footage": 30500,
+      "owner": "U.S. General Services Administration / FDA",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-17",
+      "description": "New premier food safety laboratory at Denver Federal Center with 16,500 SF microbiology and 14,000 SF chemistry labs. FDA's only BSL-3 facility west of the Mississippi.",
+      "key_specs": [
+        "16,500 SF microbiology lab",
+        "14,000 SF chemistry lab",
+        "BSL-3 containment",
+        "Neoclassical exterior design",
+        "Completion early 2029"
+      ],
+      "mentioned_brands": [
+        "GSA",
+        "FDA"
+      ],
+      "competitor_watch": [
+        "lab equipment",
+        "HVAC",
+        "BSL-3 systems",
+        "clean room",
+        "specialty plumbing"
+      ],
+      "sources": [
+        {
+          "title": "$228M FDA Lab Denver Federal Center, Mile High CRE",
+          "url": "https://milehighcre.com/228m-fda-lab-breaks-ground-at-the-denver-federal-center/"
+        }
+      ],
+      "open_for": "Ground broken. Lab fit-out and specialty MEP specs active."
+    },
+    {
+      "id": "co-crossroads-25-thornton",
+      "name": "Crossroads 25 Industrial Park",
+      "state": "CO",
+      "city": "Thornton",
+      "county": "Adams",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": 828000,
+      "owner": "Trammell Crow / PCCP",
+      "architect": "Ware Malcomb",
+      "general_contractor": "Murray & Stafford",
+      "opened_or_announced_date": "2026-06-08",
+      "description": "Six-building Class A industrial park on 76 acres at I-25 and E-470 in Thornton. Phase 1 delivers 828,000 SF across four buildings; Building 4 (409,000 SF) fully preleased.",
+      "key_specs": [
+        "828,000 SF Phase 1",
+        "4 buildings",
+        "Building 4 409K SF preleased",
+        "Full buildout 1.1M SF",
+        "Q3 2027 delivery",
+        "Simmons Bank construction financing"
+      ],
+      "mentioned_brands": [
+        "Trammell Crow",
+        "PCCP",
+        "CBRE"
+      ],
+      "competitor_watch": [
+        "tilt-up concrete",
+        "HVAC",
+        "dock equipment",
+        "roofing",
+        "ESFR sprinklers"
+      ],
+      "sources": [
+        {
+          "title": "Trammell Crow Crossroads 25 Thornton, Connect CRE",
+          "url": "https://www.connectcre.com/stories/trammell-crow-pccp-developing-828k-sf-denver-warehouse-park/"
+        }
+      ],
+      "open_for": "Active industrial build. Structural and tenant-ready specs."
+    },
+    {
+      "id": "co-weld-energy-storage",
+      "name": "Weld Energy Storage Project",
+      "state": "CO",
+      "city": "Severance",
+      "county": "Weld",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Platte River Power Authority",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-04",
+      "description": "PRPA's first utility-scale battery storage project storing 400 MWh at Severance Substation. Groundbreaking June 4; construction began May 2026.",
+      "key_specs": [
+        "400 MWh battery storage",
+        "Severance Substation site",
+        "Serves Fort Collins area communities",
+        "1041 permit from Larimer County",
+        "Non-carbon energy strategy"
+      ],
+      "mentioned_brands": [
+        "Platte River Power Authority"
+      ],
+      "competitor_watch": [
+        "battery storage",
+        "switchgear",
+        "transformers",
+        "grid interconnection"
+      ],
+      "sources": [
+        {
+          "title": "400MWh Weld Energy Storage, Construction Review Online",
+          "url": "https://constructionreviewonline.com/400mwh-weld-energy-storage-project-in-platte-river-colorado-advances-as-prpa-finishes-key-steps/"
+        }
+      ],
+      "open_for": "Early construction. Battery and electrical infrastructure specs."
+    },
+    {
+      "id": "co-hyatt-studios-steamboat-springs",
+      "name": "Hyatt Studios Steamboat Springs",
+      "state": "CO",
+      "city": "Steamboat Springs",
+      "county": "Routt",
+      "status": "under_construction",
+      "project_type": "hospitality",
+      "estimated_value_usd": null,
+      "square_footage": 57971,
+      "owner": "Caliber / Hyatt",
+      "architect": "",
+      "general_contractor": "KT Development",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "114-room extended-stay Hyatt Studios hotel at 1801 Lincoln Avenue. Four-story 57,971 SF property; first of Caliber's 15 planned Hyatt Studios developments.",
+      "key_specs": [
+        "114 rooms",
+        "57,971 SF",
+        "Kitchen in every guestroom",
+        "24-hour fitness center",
+        "Outdoor hot tubs and fire pits",
+        "Q2 2027 completion"
+      ],
+      "mentioned_brands": [
+        "Hyatt Studios",
+        "Caliber",
+        "KT Development"
+      ],
+      "competitor_watch": [
+        "FF&E",
+        "HVAC",
+        "kitchen equipment",
+        "lighting",
+        "EV charging"
+      ],
+      "sources": [
+        {
+          "title": "Caliber Hyatt Studios Steamboat groundbreaking",
+          "url": "https://www.caliberco.com/caliber-breaks-ground-on-hyatt-studios-development-in-steamboat-springs-co/"
+        },
+        {
+          "title": "Hyatt Studios Steamboat, Hotel Online",
+          "url": "https://www.hotel-online.com/news/caliber-breaks-ground-on-114-key-hyatt-studios-steamboat-springs-in-colorado"
+        }
+      ],
+      "open_for": "Just broke ground. Hospitality FF&E and MEP specs opening."
+    },
+    {
+      "id": "co-formativ-rino-apartments",
+      "name": "Formativ RiNo Apartment Project",
+      "state": "CO",
+      "city": "Denver",
+      "county": "Denver",
+      "status": "under_construction",
+      "project_type": "multifamily",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Formativ",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-04",
+      "description": "Formativ broke ground on its second apartment project in Denver's RiNo (River North) district in early June 2026.",
+      "key_specs": [
+        "RiNo district location",
+        "Second Formativ RiNo project",
+        "Multifamily residential"
+      ],
+      "mentioned_brands": [
+        "Formativ"
+      ],
+      "competitor_watch": [
+        "HVAC",
+        "windows",
+        "elevators",
+        "plumbing",
+        "fire protection"
+      ],
+      "sources": [
+        {
+          "title": "Formativ RiNo apartment groundbreaking, BusinessDen",
+          "url": "https://businessden.com/2026/06/04/formativ-breaks-ground-on-second-rino-apartment-project/"
+        }
+      ],
+      "open_for": "Ground broken. Building envelope and MEP packages."
+    },
+    {
+      "id": "co-swire-coca-cola-colorado-springs",
+      "name": "Swire Coca-Cola Colorado Springs Bottling Plant",
+      "state": "CO",
+      "city": "Colorado Springs",
+      "county": "El Paso",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": 475000000,
+      "square_footage": 620000,
+      "owner": "Swire Coca-Cola USA",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-01",
+      "description": "620,000 SF state-of-the-art bottling facility at Peak Innovation Park replacing 90-year-old Denver plant. ~1,190 construction jobs; 170 permanent jobs at opening spring 2028.",
+      "key_specs": [
+        "620,000 SF bottling plant",
+        "Peak Innovation Park",
+        "1,600-acre business park",
+        "170 net new jobs",
+        "Spring 2028 opening",
+        "LEED-oriented design"
+      ],
+      "mentioned_brands": [
+        "Swire Coca-Cola",
+        "Coca-Cola"
+      ],
+      "competitor_watch": [
+        "bottling lines",
+        "process equipment",
+        "refrigeration",
+        "HVAC",
+        "material handling"
+      ],
+      "sources": [
+        {
+          "title": "Swire Coca-Cola Colorado Springs, SoCo Digest",
+          "url": "https://socodigest.com/2026/03/26/swire-coca-cola-breaks-ground-on-new-colorado-springs-bottling-facility/"
+        },
+        {
+          "title": "Swire Coca-Cola groundbreaking, KRDO",
+          "url": "https://krdo.com/news/2026/03/26/swire-coca-cola-usa-breaks-ground-on-mew-facility-in-colorado-springs/"
+        }
+      ],
+      "open_for": "Active construction. Process and building systems specs."
+    },
+    {
+      "id": "co-commerce-yards-commerce-city",
+      "name": "Commerce Yards Industrial",
+      "state": "CO",
+      "city": "Commerce City",
+      "county": "Adams",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": 77100000,
+      "square_footage": 466000,
+      "owner": "Lincoln Property Company",
+      "architect": "Powers Brown Architecture",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-01",
+      "description": "46-acre three-building Class A industrial development at 9401 Heinz Way with rare secured outdoor storage zoning (up to 50% of site). $77.1M financing; delivery late 2026/early 2027.",
+      "key_specs": [
+        "466,000 SF across 3 buildings",
+        "113,000, 200,000 SF per building",
+        "32-ft clear heights",
+        "Secured outdoor yard storage",
+        "Colorado Enterprise Zone",
+        "Kimley-Horn engineering"
+      ],
+      "mentioned_brands": [
+        "Lincoln Property Company",
+        "JLL Capital Markets",
+        "First Horizon Bank"
+      ],
+      "competitor_watch": [
+        "tilt-up",
+        "fencing",
+        "paving",
+        "HVAC",
+        "dock equipment"
+      ],
+      "sources": [
+        {
+          "title": "Lincoln Commerce Yards groundbreaking",
+          "url": "https://lpc.com/press-releases/lincoln-breaks-ground-commerce-yards/"
+        },
+        {
+          "title": "Commerce Yards, BusinessDen",
+          "url": "https://old.businessden.com/2026/03/13/the-pipeline-commercial-real-estate-deals-for-3-13-26/"
+        }
+      ],
+      "open_for": "Under construction. Industrial building and yard infrastructure specs."
+    }
+  ],
+  "stats": {
+    "total": 7
+  }
+}

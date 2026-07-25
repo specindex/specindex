@@ -3,28 +3,60 @@ import { ProductMock } from "@/components/marketing/ProductMock";
 import { StatsStrip, DemoSection } from "@/components/marketing/DemoSection";
 import { FAQ } from "@/components/marketing/FAQ";
 import { getCorpus, getProjects } from "@/lib/projects";
-import { getCountiesInCorpus, getVisibilitySnapshot } from "@/lib/stats";
+import { getCountiesInCorpus, getStatesInCorpus, getVisibilitySnapshot } from "@/lib/stats";
+import { getDivisionRollup, getMappedProjectCount } from "@/lib/divisions";
 
 const faqs = [
   {
-    q: "Do my reps need another dashboard?",
-    a: "SpecIndex is built for quick search and visibility scans — not a heavy CRM replacement. Reps find open projects, check brand mentions, and export targets for outreach.",
+    q: "Where does the project data come from?",
+    a: "County and city permit records, state economic development announcements, owner and developer releases, and construction trade press. We only use public sources, and we don't resell anyone's licensed plan room content.",
   },
   {
-    q: "How fast do we see Georgia projects?",
-    a: "The public Georgia corpus is live today. We refresh from public sources weekly and can prioritize your product categories on request.",
+    q: "How current is the index?",
+    a: "Projects go in as we find them. Every project page shows the date it was captured and links to the sources behind it, so you can check the original before you act on it.",
   },
   {
-    q: "What do you need to get started?",
-    a: "Just your brand name and product categories. Full spec PDF analysis and alerts require a manufacturer account — we handle setup with your team.",
+    q: "Can you tell me if my brand is in an actual specification?",
+    a: "Not yet. Right now we report brand names found in public project coverage and in documents we're allowed to read. Reading full specification books is what we're building next, and when it ships every extracted fact will link to the page it came from.",
   },
   {
-    q: "How is this different from Dodge or ConstructConnect?",
-    a: "Those tools optimize for contractors and estimators. SpecIndex is built for manufacturers: brand mention detection, competitive visibility, and spec-stage opportunity scoring.",
+    q: "What do you need from us to start?",
+    a: "Your brand names and the categories you sell. That's enough to run a check against the index.",
   },
   {
-    q: "Which states do you cover?",
-    a: "Georgia is live now. Florida, North Carolina, South Carolina, and Tennessee are next on the roadmap.",
+    q: "How is this different from a plan room?",
+    a: "A plan room is set up for estimators who need to know what to price and when it's due. You need to know something else: whether the product decision has already been made, and whether your category is still open. That's what the index is organized around.",
+  },
+  {
+    q: "How much of the country do you cover?",
+    a: "Commercial projects in all 50 states, filtered by state and county. Depth varies a lot by jurisdiction. Some counties publish permits as open data and those are well covered; elsewhere we rely on announcements and trade coverage, which is thinner.",
+  },
+];
+
+const stages = [
+  {
+    stage: "Announced",
+    window: "Window opening",
+    body: "Owner, site, and scale become public. Nothing is drawn yet.",
+    detail: "Too early for product detail, but early enough to get known by the design team.",
+  },
+  {
+    stage: "Design and permitting",
+    window: "Window open",
+    body: "Drawings and specifications take shape. A basis of design gets named.",
+    detail: "This is the stage that decides whether your product is even eligible.",
+  },
+  {
+    stage: "Bidding",
+    window: "Window closing",
+    body: "Documents are issued. Substitution requests carry deadlines.",
+    detail: "You can still get added here, but it takes an approval rather than a conversation.",
+  },
+  {
+    stage: "Under construction",
+    window: "Mostly closed",
+    body: "Structure and envelope are committed. Long lead equipment is bought.",
+    detail: "Interiors, finishes, and FF&E packages are still in play on plenty of jobs.",
   },
 ];
 
@@ -32,9 +64,13 @@ export default function HomePage() {
   const projects = getProjects();
   const corpus = getCorpus();
   const count = projects.length;
-  const recent = corpus.stats?.opened_last_3_months ?? 0;
+  const recent =
+    corpus.stats?.opened_last_90_days ?? corpus.stats?.opened_last_3_months ?? 0;
+  const stateCount = corpus.stats?.states ?? getStatesInCorpus(projects).length;
   const countyCount = getCountiesInCorpus(projects).length;
-  const hiltonScan = getVisibilitySnapshot(projects, "Hilton", "lighting");
+  const brandScan = getVisibilitySnapshot(projects, "Acuity Brands", "lighting");
+  const divisions = getDivisionRollup(projects);
+  const mappedCount = getMappedProjectCount(projects);
 
   return (
     <>
@@ -42,28 +78,34 @@ export default function HomePage() {
       <section className="bg-[var(--color-bg)]">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:grid-cols-2 md:px-8 md:py-24">
           <div>
-            <p className="text-eyebrow">For Building Product Manufacturers</p>
+            <p className="text-eyebrow">
+              Top of funnel leads for building product manufacturers
+            </p>
             <h1 className="mt-4 text-hero">
-              Find the open projects where your brand can still win the spec.
+              Your product gets chosen long before anyone asks you for a quote.
             </h1>
             <p className="mt-5 max-w-lg text-base leading-relaxed text-[var(--color-gray-600)]">
-              SpecIndex combines open commercial project data, specification
-              intelligence, and brand visibility scoring to put your sales team
-              in conversations before the window closes.
+              SpecIndex gives your spec sales team a working list of commercial
+              projects that are still early enough to influence, sorted by the CSI
+              division they actually sell.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/#demo" className="btn btn-primary">
+              <a
+                href="mailto:hello@specindex.ai?subject=SpecIndex%20Demo%20Request"
+                className="btn btn-primary"
+              >
                 Request Demo
-              </Link>
+              </a>
               <Link href="/projects/" className="btn btn-outline">
-                Browse Georgia projects
+                Search the index
               </Link>
               <Link href="/visibility/" className="btn btn-outline">
-                Check brand visibility
+                Run a brand check
               </Link>
             </div>
             <p className="mt-6 text-sm text-[var(--color-gray-400)]">
-              Built for manufacturer reps tracking commercial work in Georgia.
+              Currently tracking commercial work in{" "}
+              {stateCount === 1 ? "1 state" : `${stateCount} states`}.
             </p>
           </div>
           <ProductMock />
@@ -72,10 +114,13 @@ export default function HomePage() {
 
       <StatsStrip
         stats={[
-          { value: `${count}+`, label: "Open commercial projects indexed in Georgia" },
-          { value: `${recent}`, label: "Projects opened or announced in the last 3 months" },
-          { value: `${countyCount}`, label: "Georgia counties with active commercial work" },
-          { value: "All trades", label: "HVAC, glazing, flooring, MEP, and more" },
+          { value: `${count}+`, label: "Open commercial projects indexed nationwide" },
+          { value: `${recent}`, label: "Projects with activity in the last 90 days" },
+          {
+            value: `${stateCount}`,
+            label: stateCount === 1 ? "State with active commercial work" : "States with active commercial work",
+          },
+          { value: `${countyCount}`, label: "Counties with indexed projects" },
         ]}
       />
 
@@ -83,18 +128,56 @@ export default function HomePage() {
       <section className="bg-white">
         <div className="mx-auto max-w-3xl px-5 py-20 text-center md:px-8">
           <h2 className="text-section">
-            There&apos;s an air gap between your reps and open project specs.
+            Specs get written in rooms you&apos;re not in.
           </h2>
           <p className="mt-5 text-base leading-relaxed text-[var(--color-gray-600)]">
-            Every week, commercial projects break ground, move to bidding, or publish
-            updated plans across Georgia. Each one is a signal that someone will
-            specify products — windows, HVAC, hardware, finishes.
+            An architect names a basis of design. An engineer publishes an approved
+            manufacturers list. A substitution deadline comes and goes. Every one of
+            those moments affects whether your product is eligible, and all of them
+            happen before a purchase order exists.
           </p>
           <p className="mt-4 text-base leading-relaxed text-[var(--color-gray-600)]">
-            Your CRM doesn&apos;t see any of it. Plan rooms bury the PDFs. And
-            nobody on your team has time to manually check whether your brand is
-            written in.
+            Most of that leaves a public trail: permit filings, groundbreakings,
+            owner announcements, project documents. The trouble is that it&apos;s
+            spread across thousands of counties and cities, and they all publish it
+            differently.
           </p>
+        </div>
+      </section>
+
+      {/* Spec window timeline */}
+      <section className="border-t border-[var(--color-border)] bg-[var(--color-gray-100)]">
+        <div className="mx-auto max-w-6xl px-5 py-20 md:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-section">Every project has a window. Then it closes.</h2>
+            <p className="mt-4 text-base leading-relaxed text-[var(--color-gray-600)]">
+              The same job is worth a very different call depending on how far along
+              it is. We record the stage so you can sort that out before you pick up
+              the phone.
+            </p>
+          </div>
+          <ol className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {stages.map((s, i) => (
+              <li
+                key={s.stage}
+                className="card flex flex-col p-5"
+              >
+                <div className="flex items-baseline justify-between gap-2">
+                  <span className="font-mono text-xs font-semibold text-[var(--color-gray-400)]">
+                    0{i + 1}
+                  </span>
+                  <span className="pill">{s.window}</span>
+                </div>
+                <h3 className="mt-3 text-base font-semibold">{s.stage}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--color-gray-600)]">
+                  {s.body}
+                </p>
+                <p className="mt-3 text-xs leading-relaxed text-[var(--color-gray-400)]">
+                  {s.detail}
+                </p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
@@ -102,20 +185,20 @@ export default function HomePage() {
       <section className="border-t border-[var(--color-border)] bg-[var(--color-bg)]">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 md:grid-cols-2 md:px-8">
           <div>
-            <p className="section-label">Out of the Box</p>
-            <h2 className="text-section">Find open projects you didn&apos;t know existed.</h2>
+            <p className="section-label">The index</p>
+            <h2 className="text-section">See the projects your pipeline hasn&apos;t heard about yet.</h2>
             <p className="mt-4 text-base leading-relaxed text-[var(--color-gray-600)]">
-              SpecIndex indexes open commercial work across Georgia — mixed-use,
-              healthcare, industrial, hospitality — with status, value, teams, and
-              manufacturer watch lists so reps know what&apos;s still in play.
+              Commercial work in every state, from mixed use and healthcare to
+              industrial, hospitality, and data centers. Each record carries the
+              stage, value, project team, and what the job will need.
             </p>
             <Link href="/projects/" className="mt-6 inline-block text-sm font-semibold text-[var(--color-green)] hover:underline">
-              Search Georgia projects →
+              Search the index →
             </Link>
           </div>
           <div className="card p-5">
             <p className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-gray-400)]">
-              Live Project Signal
+              Sample project record
             </p>
             <h4 className="mt-2 text-lg font-semibold">Horizon 16 Industrial Park Phase II</h4>
             <p className="text-sm text-[var(--color-gray-600)]">Savannah, Chatham County</p>
@@ -154,85 +237,132 @@ export default function HomePage() {
                 <span className="font-semibold">SpecIndex</span>
               </div>
               <p className="mt-3 leading-relaxed text-[var(--color-gray-700)]">
-                Brand check: Hilton mentioned on {hiltonScan.mentioned.length} of {count}{" "}
-                Georgia projects. {hiltonScan.opportunities.length} projects watch lighting
-                without a Hilton mention — opportunity list ready.
+                {brandScan.categoryHits.length} of {count} indexed projects will need
+                lighting. {brandScan.stillOpen.length} are still in planning or
+                permitting with no manufacturer named, so those are the ones worth a
+                call this week.
               </p>
               <p className="mt-2 text-[var(--color-gray-400)]">9:42 AM</p>
             </div>
           </div>
           <div className="order-1 md:order-2">
-            <p className="section-label">Out of the Box</p>
-            <h2 className="text-section">See if your brand is in — and where you&apos;re missing.</h2>
+            <p className="section-label">Brand visibility</p>
+            <h2 className="text-section">Check where your name already shows up.</h2>
             <p className="mt-4 text-base leading-relaxed text-[var(--color-gray-600)]">
-              Run a visibility scan against the Georgia corpus. See mention rate,
-              category fit, and opportunity projects where your product area is in
-              play but your brand isn&apos;t named yet.
+              Run your brand against the index and you&apos;ll see how many projects
+              need your category, how many are still early, and how many name a
+              manufacturer at all.
             </p>
             <Link href="/visibility/" className="mt-6 inline-block text-sm font-semibold text-[var(--color-green)] hover:underline">
-              Open visibility compare →
+              Run a brand check →
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Steps */}
-      <section className="border-t border-[var(--color-border)] bg-[var(--color-gray-100)]">
+      {/* Division segmentation */}
+      <section className="border-t border-[var(--color-border)] bg-white">
         <div className="mx-auto max-w-6xl px-5 py-20 md:px-8">
-          <h2 className="text-center text-section">From project signal to spec win in three steps.</h2>
-          <ol className="mt-14 grid gap-10 md:grid-cols-3">
-            {[
-              {
-                step: "Step 1",
-                title: "SpecIndex watches your market.",
-                body: "Public project data, permits, and coverage monitored across Georgia — filtered by trade and product category.",
-              },
-              {
-                step: "Step 2",
-                title: "You inspect specs and brand fit.",
-                body: "Project detail pages show teams, key scopes, manufacturer watch lists, and whether your brand appears in public coverage.",
-              },
-              {
-                step: "Step 3",
-                title: "Your reps act.",
-                body: "Prioritized project lists for outreach — who to call, why it matters, and what categories are still open.",
-              },
-            ].map((s) => (
-              <li key={s.step}>
-                <p className="font-mono text-xs font-semibold uppercase tracking-wider text-[var(--color-green)]">
-                  {s.step}
-                </p>
-                <h3 className="mt-3 text-lg font-semibold">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--color-gray-600)]">
-                  {s.body}
-                </p>
-              </li>
-            ))}
-          </ol>
+          <div className="max-w-3xl">
+            <p className="section-label">Find your division</p>
+            <h2 className="text-section">
+              Sorted the way specs are written, not the way crews are hired.
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-[var(--color-gray-600)]">
+              A spec book is organized by CSI MasterFormat division, so that&apos;s how
+              we organize the index. It matters because trade labels overlap: lighting
+              and switchgear are both Division 26 and both land on the electrical
+              engineer&apos;s desk, so treating them as separate markets counts the same
+              buyer twice.
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-[var(--color-gray-600)]">
+              Each division below shows how many indexed projects will need it, how
+              many are still early enough to influence, and who normally writes it
+              into the spec. That last column is the one your reps care about, because
+              it tells them whose desk to get to.
+            </p>
+          </div>
+
+          <div className="mt-10 overflow-x-auto">
+            <table className="w-full min-w-[640px] text-sm">
+              <thead>
+                <tr className="border-b border-[var(--color-border)]">
+                  <th className="px-3 py-3 text-left font-semibold">Division</th>
+                  <th className="px-3 py-3 text-left font-semibold">What you sell</th>
+                  <th className="px-3 py-3 text-right font-semibold">Projects</th>
+                  <th className="px-3 py-3 text-right font-semibold">Still early</th>
+                  <th className="px-3 py-3 text-left font-semibold">Usually specified by</th>
+                </tr>
+              </thead>
+              <tbody>
+                {divisions.map((d) => (
+                  <tr
+                    key={d.code}
+                    className="border-b border-[var(--color-border)] last:border-0"
+                  >
+                    <td className="px-3 py-2.5 whitespace-nowrap">
+                      <span className="font-mono text-xs font-semibold text-[var(--color-green)]">
+                        {d.code}
+                      </span>{" "}
+                      <span className="font-medium">{d.name}</span>
+                    </td>
+                    <td className="px-3 py-2.5 text-[var(--color-gray-600)]">{d.plain}</td>
+                    <td className="px-3 py-2.5 text-right font-mono">{d.projects}</td>
+                    <td className="px-3 py-2.5 text-right font-mono font-semibold text-[var(--color-green)]">
+                      {d.stillOpen}
+                    </td>
+                    <td className="px-3 py-2.5 text-[var(--color-gray-600)]">
+                      {d.specifiedBy}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-4 text-sm text-[var(--color-gray-400)]">
+            Counted across {count} indexed projects, {mappedCount} of which need at
+            least one of these divisions. A project appears in every division it
+            needs, so the column adds up to more than {count}.
+          </p>
         </div>
       </section>
 
-      {/* Comparison */}
+      {/* Funnel position */}
+      <section className="border-t border-[var(--color-border)] bg-[var(--color-gray-100)]">
+        <div className="mx-auto max-w-3xl px-5 py-20 md:px-8">
+          <h2 className="text-section">This is the top of your funnel.</h2>
+          <p className="mt-5 text-base leading-relaxed text-[var(--color-gray-600)]">
+            By the time a job reaches your quote log, the interesting decisions have
+            been made. SpecIndex sits earlier than that. It answers the question a rep
+            has on Monday morning: which projects in my territory exist, which ones
+            need what I sell, and which are early enough that a conversation still
+            changes the outcome.
+          </p>
+          <p className="mt-4 text-base leading-relaxed text-[var(--color-gray-600)]">
+            Everything downstream stays where it is. Your CRM still holds the
+            relationship, your quoting stays in your system, your distributors keep
+            their role. What you get here is the list that feeds all of it, with a
+            source link on every project so a rep can verify it before making the
+            call.
+          </p>
+        </div>
+      </section>
+
+      {/* Positioning */}
       <section className="border-t border-[var(--color-border)] bg-white">
-        <div className="mx-auto max-w-3xl px-5 py-20 text-center md:px-8">
-          <h2 className="text-section">
-            Your reps don&apos;t need another plan room to ignore.
-          </h2>
-          <div className="mt-10 space-y-4 text-left">
-            {[
-              ["Others give reps a map to explore.", "SpecIndex gives them projects still open for specs."],
-              ["Others track what got built.", "SpecIndex finds what's about to be specified."],
-              ["Others require digging through PDFs.", "SpecIndex surfaces brand mentions and watch lists."],
-            ].map(([a, b]) => (
-              <div
-                key={a}
-                className="grid gap-2 rounded-lg border border-[var(--color-border)] p-4 sm:grid-cols-2"
-              >
-                <p className="text-sm text-[var(--color-gray-600)]">{a}</p>
-                <p className="text-sm font-semibold text-[var(--color-ink)]">{b}</p>
-              </div>
-            ))}
-          </div>
+        <div className="mx-auto max-w-3xl px-5 py-20 md:px-8">
+          <h2 className="text-section">Bid boards were built for the people doing the buying.</h2>
+          <p className="mt-5 text-base leading-relaxed text-[var(--color-gray-600)]">
+            Plan rooms and project databases are organized around what an estimator
+            needs: what do I price, and when is it due. That&apos;s a perfectly good
+            question, but it isn&apos;t yours.
+          </p>
+          <p className="mt-4 text-base leading-relaxed text-[var(--color-gray-600)]">
+            What you need to know is whether the product decision has been made yet,
+            who&apos;s making it, and whether your category is still open. So we
+            organized the index around stage, product category, and whether anyone
+            has been named.
+          </p>
         </div>
       </section>
 

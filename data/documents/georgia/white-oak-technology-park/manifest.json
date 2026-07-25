@@ -1,0 +1,17 @@
+{
+  "project_id": "white-oak-technology-park",
+  "project_name": "White Oak Technology Park",
+  "fetched_at": "2026-07-24T05:15:01.802502+00:00",
+  "sources": [
+    {
+      "url": "https://augustagoodnews.com/",
+      "title": "Augusta area development coverage",
+      "files": [],
+      "error": "<urlopen error [SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version (_ssl.c:1129)>"
+    }
+  ],
+  "documents": [],
+  "errors": [
+    "https://augustagoodnews.com/: <urlopen error [SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version (_ssl.c:1129)>"
+  ]
+}

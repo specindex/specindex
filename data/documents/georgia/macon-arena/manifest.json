@@ -1,0 +1,17 @@
+{
+  "project_id": "macon-arena",
+  "project_name": "New Macon Arena",
+  "fetched_at": "2026-07-24T05:14:15.220163+00:00",
+  "sources": [
+    {
+      "url": "https://www.macon.com/news/local/article316247768.html",
+      "title": "Macon Telegraph \u2014 arena design reveal",
+      "files": [],
+      "error": "The read operation timed out"
+    }
+  ],
+  "documents": [],
+  "errors": [
+    "https://www.macon.com/news/local/article316247768.html: The read operation timed out"
+  ]
+}

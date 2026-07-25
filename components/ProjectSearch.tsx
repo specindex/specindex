@@ -3,10 +3,11 @@
 import Link from "next/link";
 import { useMemo, useState, useTransition } from "react";
 import type { Project } from "@/lib/types";
-import { formatDate, formatSf, formatUsd, typeLabel } from "@/lib/format";
+import { formatDate, formatSf, formatUsd, stateName, typeLabel } from "@/lib/format";
 import {
   getCategoriesInCorpus,
-  getCountiesInCorpus,
+  getCountiesForState,
+  getStatesInCorpus,
   getStatusesInCorpus,
 } from "@/lib/stats";
 import { StatusPill } from "./StatusPill";
@@ -17,14 +18,22 @@ type Props = {
 
 export function ProjectSearch({ projects }: Props) {
   const [query, setQuery] = useState("");
+  const [state, setState] = useState<string>("all");
   const [status, setStatus] = useState<string>("all");
   const [type, setType] = useState<string>("all");
   const [county, setCounty] = useState<string>("all");
   const [category, setCategory] = useState<string>("all");
   const [isPending, startTransition] = useTransition();
 
+  const states = useMemo(() => getStatesInCorpus(projects), [projects]);
   const statuses = useMemo(() => getStatusesInCorpus(projects), [projects]);
-  const counties = useMemo(() => getCountiesInCorpus(projects), [projects]);
+  const counties = useMemo(
+    () =>
+      state === "all"
+        ? Array.from(new Set(projects.map((p) => p.county).filter(Boolean))).sort()
+        : getCountiesForState(projects, state),
+    [projects, state],
+  );
   const categories = useMemo(() => getCategoriesInCorpus(projects), [projects]);
 
   const types = useMemo(
@@ -35,6 +44,7 @@ export function ProjectSearch({ projects }: Props) {
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return projects.filter((p) => {
+      if (state !== "all" && (p.state ?? "GA") !== state) return false;
       if (status !== "all" && p.status !== status) return false;
       if (type !== "all" && p.project_type !== type) return false;
       if (county !== "all" && p.county !== county) return false;
@@ -48,6 +58,7 @@ export function ProjectSearch({ projects }: Props) {
       }
       if (!q) return true;
       const blob = [
+        p.id,
         p.name,
         p.city,
         p.county,
@@ -64,7 +75,7 @@ export function ProjectSearch({ projects }: Props) {
         .toLowerCase();
       return blob.includes(q);
     });
-  }, [projects, query, status, type, county, category]);
+  }, [projects, query, state, status, type, county, category]);
 
   return (
     <div>
@@ -81,7 +92,22 @@ export function ProjectSearch({ projects }: Props) {
           placeholder="City, owner, GC, HVAC, glazing, healthcare…"
           className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-4 py-3 text-base outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
         />
-        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+          <select
+            value={state}
+            onChange={(e) => {
+              setState(e.target.value);
+              setCounty("all");
+            }}
+            className="rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm"
+          >
+            <option value="all">All states</option>
+            {states.map((s) => (
+              <option key={s} value={s}>
+                {stateName(s)}
+              </option>
+            ))}
+          </select>
           <select
             value={status}
             onChange={(e) => setStatus(e.target.value)}
@@ -154,8 +180,13 @@ export function ProjectSearch({ projects }: Props) {
                     <StatusPill status={project.status} />
                   </div>
                   <p className="mt-1 text-sm text-[var(--color-gray-600)]">
+                    <span className="font-mono text-xs text-[var(--color-gray-400)]">
+                      {project.id}
+                    </span>
+                    {" · "}
                     {project.city}
-                    {project.county ? `, ${project.county} County` : ""} ·{" "}
+                    {project.county ? `, ${project.county} County` : ""}
+                    {project.state ? `, ${stateName(project.state)}` : ""} ·{" "}
                     {typeLabel(project.project_type)}
                     {project.opened_or_announced_date
                       ? ` · ${formatDate(project.opened_or_announced_date)}`

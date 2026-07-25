@@ -25,7 +25,7 @@ export function StatsStrip({ stats }: { stats: Stat[] }) {
 export function DemoSection() {
   const [submitted, setSubmitted] = useState(false);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
@@ -35,7 +35,31 @@ export function DemoSection() {
     const company = String(data.get("company") ?? "");
     const categories = String(data.get("categories") ?? "");
 
-    const subject = encodeURIComponent(`SpecIndex demo request — ${company}`);
+    // 1. Post to Google Sheet webhook if configured
+    const webhookUrl = process.env.NEXT_PUBLIC_SHEET_WEBHOOK_URL;
+    if (webhookUrl) {
+      try {
+        await fetch(webhookUrl, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            timestamp: new Date().toISOString(),
+            firstName: first,
+            lastName: last,
+            email,
+            company,
+            categories,
+            source: "specindex.ai",
+          }),
+        });
+      } catch (err) {
+        console.error("Failed to post to Google Sheet webhook:", err);
+      }
+    }
+
+    // 2. Open pre-filled mailto to hello@specindex.ai
+    const subject = encodeURIComponent(`SpecIndex demo request: ${company}`);
     const body = encodeURIComponent(
       [
         "Demo request from specindex.ai",
@@ -44,6 +68,7 @@ export function DemoSection() {
         `Email: ${email}`,
         `Company: ${company}`,
         `Product categories: ${categories || "Not specified"}`,
+        `Submitted: ${new Date().toLocaleString()}`,
       ].join("\n"),
     );
 
@@ -56,14 +81,14 @@ export function DemoSection() {
       <div className="mx-auto max-w-6xl px-5 py-20 md:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
           <div>
-            <h2 className="text-section">Never miss another spec window.</h2>
+            <h2 className="text-section">See what is still open in your territory.</h2>
             <p className="mt-4 text-base leading-relaxed text-[var(--color-gray-600)]">
-              See the open commercial projects in Georgia where your brand can still
-              win — and how you compare to competitors in the same categories.
+              Tell us your brand and the divisions you sell. We come back with the
+              projects in your markets where the product decision is still live, plus
+              the ones where a competitor already has their name on it.
             </p>
             <p className="mt-3 text-sm text-[var(--color-gray-600)]">
-              Fill out the form and we&apos;ll show you real projects in your market
-              within one business day.
+              Real projects from the index, within one business day.
             </p>
           </div>
 
@@ -71,8 +96,8 @@ export function DemoSection() {
             <h3 className="text-lg font-semibold">Request a Demo</h3>
             {submitted ? (
               <p className="mt-4 rounded-md bg-[var(--color-green-light)] px-4 py-3 text-sm text-[var(--color-green)]">
-                Thanks — your email client should open with a pre-filled message. Send
-                it to complete your request, or email us at{" "}
+                Thanks. Your email client should open with a message already filled
+                in. Send it to finish the request, or just write to us at{" "}
                 <a href="mailto:hello@specindex.ai" className="underline">
                   hello@specindex.ai
                 </a>
@@ -136,11 +161,11 @@ export function DemoSection() {
               Request Demo
             </button>
             <p className="mt-3 text-center text-xs text-[var(--color-gray-400)]">
-              Or browse the{" "}
+              Or{" "}
               <Link href="/projects/" className="underline hover:text-[var(--color-ink)]">
-                Georgia project index
+                search the index
               </Link>{" "}
-              now.
+              first. No account needed.
             </p>
           </form>
         </div>

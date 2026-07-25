@@ -1,0 +1,53 @@
+{
+  "state": "IA",
+  "state_name": "Iowa",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — REBusinessOnline.",
+  "projects": [
+    {
+      "id": "ia-opus-contitech-mount-pleasant",
+      "name": "ContiTech Advanced Manufacturing Expansion, Mount Pleasant",
+      "state": "IA",
+      "city": "Mount Pleasant",
+      "county": "Henry",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": 80000,
+      "owner": "ContiTech / Continental",
+      "architect": "Martin Gardner Architects",
+      "general_contractor": "Opus",
+      "opened_or_announced_date": "2026-05-26",
+      "description": "80K+ SF compounding center with three-story mixing facility, automated high-bay warehouse, lab and office. Completion June 2027.",
+      "key_specs": [
+        "Three-story 17,472 SF mixing facility",
+        "Automated high-bay warehouse",
+        "4,250 SF office/lab",
+        "Vertical manufacturing process"
+      ],
+      "mentioned_brands": [
+        "ContiTech",
+        "Continental",
+        "Opus"
+      ],
+      "competitor_watch": [
+        "process equipment",
+        "HVAC",
+        "conveyors",
+        "fire suppression",
+        "industrial flooring"
+      ],
+      "sources": [
+        {
+          "title": "Opus ContiTech Mount Pleasant, REBusinessOnline",
+          "url": "https://rebusinessonline.com/opus-breaks-ground-on-80000-sf-advanced-manufacturing-facility-for-contitech-in-iowa/"
+        }
+      ],
+      "open_for": "Ground broken. Process and MEP specs active."
+    }
+  ],
+  "stats": {
+    "total": 1
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "state": "NY",
+  "state_name": "New York",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — ENR, Construction Dive, press releases, ConstructConnect public news. No plan-room scraping.",
+  "projects": [
+    {
+      "id": "ny-micron-clay-megafab",
+      "name": "Micron Semiconductor Megafab, Clay",
+      "state": "NY",
+      "city": "Clay",
+      "county": "Onondaga",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": 100000000000,
+      "square_footage": null,
+      "owner": "Micron Technology",
+      "architect": "Jacobs",
+      "general_contractor": "Bechtel / Gilbane",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "First concrete pour for $100B four-fab semiconductor campus at White Pine Commerce Park. Vertical construction began ahead of schedule. Up to 50,000 jobs statewide.",
+      "key_specs": [
+        "Four-fab campus",
+        "First fab foundation poured July 2026",
+        "Bechtel EPC Phase I",
+        "Gilbane site infrastructure",
+        "$675M+ to NY contractors to date"
+      ],
+      "mentioned_brands": [
+        "Micron",
+        "Bechtel",
+        "Gilbane",
+        "Jacobs"
+      ],
+      "competitor_watch": [
+        "cleanroom systems",
+        "HVAC",
+        "process piping",
+        "electrical",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Micron foundation work, ENR",
+          "url": "https://www.enr.com/articles/63307-foundation-work-begins-on-microns-100b-new-york-semiconductor-megafab"
+        },
+        {
+          "title": "Micron concrete pour, Construction Dive",
+          "url": "https://www.constructiondive.com/news/micron-concrete-pour-new-york-chip-fab/825093/"
+        }
+      ],
+      "open_for": "Vertical construction. Massive MEP and cleanroom spec window."
+    },
+    {
+      "id": "ny-amex-2-world-trade-center",
+      "name": "American Express Global Headquarters, 2 World Trade Center",
+      "state": "NY",
+      "city": "New York",
+      "county": "New York",
+      "status": "under_construction",
+      "project_type": "office",
+      "estimated_value_usd": null,
+      "square_footage": 2000000,
+      "owner": "American Express",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "Groundbreaking for ~2M SF sole-occupant HQ at 200 Greenwich St. Opening targeted 2031; 3,200+ construction jobs.",
+      "key_specs": [
+        "~2M SF office tower",
+        "Lower Manhattan anchor tenant",
+        "2031 opening",
+        "Union construction"
+      ],
+      "mentioned_brands": [
+        "American Express"
+      ],
+      "competitor_watch": [
+        "curtain wall",
+        "elevators",
+        "HVAC",
+        "lighting",
+        "interior finishes"
+      ],
+      "sources": [
+        {
+          "title": "AmEx 2 WTC groundbreaking, ConstructConnect News",
+          "url": "https://news.constructconnect.com/american-express-holds-groundbreaking-on-nearly-2-million-square-foot-headquarters-at-2-world-trade-center"
+        }
+      ],
+      "open_for": "Megaproject early phase. Building systems and envelope specs."
+    },
+    {
+      "id": "ny-resorts-world-phase-two",
+      "name": "Resorts World NYC Phase Two Expansion",
+      "state": "NY",
+      "city": "Queens",
+      "county": "Queens",
+      "status": "under_construction",
+      "project_type": "hospitality",
+      "estimated_value_usd": 5500000000,
+      "square_footage": 2000000,
+      "owner": "Genting Americas East",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "$5.5B integrated resort Phase Two groundbreaking less than 3 months after opening. Adds 2M SF gaming, entertainment, dining, retail, convention, hotel, parking.",
+      "key_specs": [
+        "2M SF new space",
+        "5,000 union construction jobs projected",
+        "Hotel and parking infrastructure",
+        "Integrated resort expansion"
+      ],
+      "mentioned_brands": [
+        "Genting Group",
+        "Resorts World"
+      ],
+      "competitor_watch": [
+        "HVAC",
+        "lighting",
+        "FF&E",
+        "fire/life safety",
+        "casino systems"
+      ],
+      "sources": [
+        {
+          "title": "Resorts World NYC Phase Two, press release",
+          "url": "https://rwnewyork.com/press-releases/resorts-world-new-york-city-breaks-ground-on-phase-two-of-5-5-billion-expansion/"
+        }
+      ],
+      "open_for": "Phase Two just broke ground. Hospitality and MEP specs active."
+    }
+  ],
+  "stats": {
+    "total": 3
+  }
+}

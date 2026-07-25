@@ -8,6 +8,7 @@ const nav = [
   { href: "/product/", label: "Product" },
   { href: "/projects/", label: "Projects" },
   { href: "/visibility/", label: "Visibility" },
+  { href: "/reporting/", label: "Reporting" },
   { href: "/how-it-works/", label: "How It Works" },
   { href: "/pricing/", label: "Pricing" },
   { href: "/about/", label: "About" },
@@ -68,9 +69,12 @@ export function SiteHeader() {
           >
             hello@specindex.ai
           </a>
-          <Link href="/#demo" className="btn btn-primary hidden sm:inline-flex">
+          <a
+            href="mailto:hello@specindex.ai?subject=SpecIndex%20Demo%20Request"
+            className="btn btn-primary hidden sm:inline-flex"
+          >
             Request Demo
-          </Link>
+          </a>
           <button
             type="button"
             aria-expanded={open}
@@ -123,9 +127,12 @@ export function SiteHeader() {
                 </Link>
               );
             })}
-            <Link href="/#demo" className="btn btn-primary mt-4 w-full">
+            <a
+              href="mailto:hello@specindex.ai?subject=SpecIndex%20Demo%20Request"
+              className="btn btn-primary mt-4 w-full text-center"
+            >
               Request Demo
-            </Link>
+            </a>
           </nav>
         </div>
       )}

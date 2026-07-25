@@ -1,0 +1,169 @@
+{
+  "state": "WV",
+  "state_name": "West Virginia",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — My Buckhannon, West Virginia Daily News, Lede News, state economic development.",
+  "projects": [
+    {
+      "id": "wv-form-energy-weirton-factory",
+      "name": "Form Energy Battery Factory, Weirton",
+      "state": "WV",
+      "city": "Weirton",
+      "county": "Brooke",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Form Energy",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-01",
+      "description": "Form Energy iron-air battery manufacturing facility continuing construction in Weirton. Major WV industrial project.",
+      "key_specs": [
+        "Battery manufacturing",
+        "Weirton steel site adaptive reuse",
+        "Long-duration storage"
+      ],
+      "mentioned_brands": [
+        "Form Energy"
+      ],
+      "competitor_watch": [
+        "process equipment",
+        "HVAC",
+        "electrical",
+        "fire suppression",
+        "industrial flooring"
+      ],
+      "sources": [
+        {
+          "title": "Form Energy Weirton, industry coverage",
+          "url": "https://www.enr.com/"
+        }
+      ],
+      "open_for": "Manufacturing build. Process and MEP specs."
+    },
+    {
+      "id": "wv-vandalia-mon-harrison-hospital",
+      "name": "Vandalia Health Mon Harrison Neighborhood Hospital",
+      "state": "WV",
+      "city": "Bridgeport",
+      "county": "Harrison",
+      "status": "under_construction",
+      "project_type": "healthcare",
+      "estimated_value_usd": 30000000,
+      "square_footage": 40000,
+      "owner": "Vandalia Health / Mon Health",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "2-story, 40,000 SF micro-hospital at Charles Pointe Crossing in Bridgeport ($30M investment). Broke ground June 2026 and celebrated steel beam signing July 2026. Features 8 ED treatment rooms, 10 private inpatient beds, and imaging suite.",
+      "key_specs": [
+        "$30M budget",
+        "40,000 SF 2-story facility",
+        "Full-service ER + 10 inpatient beds",
+        "2nd floor shell space for future clinical expansion"
+      ],
+      "mentioned_brands": [
+        "Vandalia Health",
+        "Mon Health"
+      ],
+      "competitor_watch": [
+        "HVAC",
+        "medical gas",
+        "emergency power",
+        "glazing",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Vandalia Health celebrates construction milestone at Mon Harrison Hospital - My Buckhannon",
+          "url": "https://www.mybuckhannon.com/vandalia-health-celebrates-construction-milestone-at-mon-harrison-neighborhood-hospital-with-steel-beam-signing/"
+        }
+      ],
+      "open_for": "Under construction. MEP, medical gas, interior fit-out."
+    },
+    {
+      "id": "wv-wvsom-science-building-expansion",
+      "name": "WVSOM Frederic W. Smith Science Building Expansion",
+      "state": "WV",
+      "city": "Lewisburg",
+      "county": "Greenbrier",
+      "status": "under_construction",
+      "project_type": "education",
+      "estimated_value_usd": 35000000,
+      "square_footage": 28523,
+      "owner": "West Virginia School of Osteopathic Medicine",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-15",
+      "description": "$35M, 28,523 SF expansion and renovation of the Frederic W. Smith Science Building. Phase 1 demolition and MEP infrastructure completed June 2026. Includes research labs, computer lab, and a 3rd story for public-private research.",
+      "key_specs": [
+        "$35M budget",
+        "28,523 SF expansion (more than doubling size)",
+        "3-story design with biomedical research labs",
+        "MEP infrastructure completed June 2026"
+      ],
+      "mentioned_brands": [
+        "West Virginia School of Osteopathic Medicine"
+      ],
+      "competitor_watch": [
+        "lab equipment",
+        "HVAC/cleanroom",
+        "glazing",
+        "electrical",
+        "plumbing"
+      ],
+      "sources": [
+        {
+          "title": "Construction continues as WVSOM science building expansion takes shape - WVDN",
+          "url": "https://wvdn.com/200833/"
+        }
+      ],
+      "open_for": "Under construction. Laboratory MEP, deep foundation, framing."
+    },
+    {
+      "id": "wv-wvu-st-joseph-cancer-complex-wheeling",
+      "name": "WVU Cancer Institute St. Joseph Regional Cancer Complex",
+      "state": "WV",
+      "city": "Wheeling",
+      "county": "Ohio",
+      "status": "under_construction",
+      "project_type": "healthcare",
+      "estimated_value_usd": 122000000,
+      "square_footage": null,
+      "owner": "WVU Medicine / Wheeling Hospital",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "$122M regional cancer complex in Center Wheeling. Site preparation and hillside earthwork completed April-June 2026; structural concrete pour and full construction starting Summer 2026 with 150 full-time staff planned.",
+      "key_specs": [
+        "$122M total budget",
+        "Site clearance completed mid-2026",
+        "150 full-time healthcare employees",
+        "Opening planned for Q3 2028"
+      ],
+      "mentioned_brands": [
+        "WVU Medicine",
+        "WVU Cancer Institute"
+      ],
+      "competitor_watch": [
+        "structural steel",
+        "concrete",
+        "HVAC",
+        "medical equipment power",
+        "glazing"
+      ],
+      "sources": [
+        {
+          "title": "Construction of St. Joseph’s Cancer Complex Beginning this Summer - Lede News",
+          "url": "https://ledenews.com/the-silence-is-soon-to-end-in-center-wheeling/"
+        }
+      ],
+      "open_for": "Under construction. Structural concrete, steel, and MEP systems."
+    }
+  ],
+  "stats": {
+    "total": 4
+  }
+}

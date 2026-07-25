@@ -5,7 +5,7 @@ import { getProjects } from "@/lib/projects";
 export const metadata: Metadata = {
   title: "Brand Visibility",
   description:
-    "See if your brand is mentioned across Georgia open projects and compare category opportunities.",
+    "Check how often your brand appears across commercial projects nationwide, and find the projects where your category is still open.",
 };
 
 export default function VisibilityPage() {
@@ -16,10 +16,11 @@ export default function VisibilityPage() {
       <div className="border-b border-[var(--color-border)] bg-white">
         <div className="mx-auto max-w-6xl px-5 py-12 md:px-8 md:py-16">
           <p className="text-eyebrow">Brand intelligence</p>
-          <h1 className="mt-3 text-hero">Visibility compare</h1>
+          <h1 className="mt-3 text-hero">Brand check</h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-[var(--color-gray-600)]">
-            Check mention coverage for your brand against SpecIndex&apos;s Georgia
-            corpus, then jump to opportunity projects.
+            Enter a brand and a category to see where it already appears across the
+            index, and which projects need that category without naming a
+            manufacturer.
           </p>
         </div>
       </div>

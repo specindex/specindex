@@ -1,0 +1,183 @@
+{
+  "state": "DE",
+  "state_name": "Delaware",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Web research — Delaware Business Times, ENR, St. John Properties, Delaware Online",
+  "projects": [
+    {
+      "id": "de-delaware-container-terminal-edgemoor",
+      "name": "New Castle County Industrial Pad Development",
+      "state": "DE",
+      "city": "Edgemoor",
+      "county": "New Castle",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": 669000000,
+      "square_footage": null,
+      "owner": "Diamond State Port Corp. / Enstructure (Port Wilmington)",
+      "architect": "",
+      "general_contractor": "Walsh-Soletanche JV",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "Phase 1 of $669M container terminal expansion at Edgemoor to quadruple Port of Wilmington container capacity. Early construction began June 1, 2026 after $110M additional state funding approved. Industrial pad and flex space development activity in New Castle County tied to I-95 corridor logistics demand and port-adjacent industrial growth.",
+      "key_specs": [
+        "Quadruple container capacity",
+        "Larger vessel accommodation",
+        "Demolition and dredging underway",
+        "Completion targeted early 2029",
+        "Frees existing port for military/ag cargo",
+        "I-95 corridor location",
+        "Port-adjacent industrial demand",
+        "Flex and logistics uses"
+      ],
+      "mentioned_brands": [
+        "Walsh Group",
+        "Soletanche Bachy",
+        "Enstructure"
+      ],
+      "competitor_watch": [
+        "marine construction",
+        "cranes",
+        "dredging",
+        "piling",
+        "electrification",
+        "site work",
+        "tilt-up",
+        "HVAC",
+        "dock equipment"
+      ],
+      "sources": [
+        {
+          "title": "Walsh-Soletanche Delaware Container Terminal, ENR",
+          "url": "https://www.enr.com/articles/63239-walsh-soletanche-jv-advances-669m-delaware-container-terminal"
+        }
+      ],
+      "open_for": "Early site prep active. Marine and port infrastructure specs. Site planning. Early industrial infrastructure specs."
+    },
+    {
+      "id": "de-middletown-exchange",
+      "name": "Middletown Exchange Phase I",
+      "state": "DE",
+      "city": "Middletown",
+      "county": "New Castle",
+      "status": "under_construction",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": 96000,
+      "owner": "St. John Properties",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-01",
+      "description": "St. John Properties' Delaware market entry: 75-acre Middletown Exchange with 225,000 SF commercial and 450 homes. Phase I two flex/R&D buildings totaling 96,000 SF; spring 2026 groundbreaking.",
+      "key_specs": [
+        "96,000 SF Phase I (51,120 + 45,120 SF buildings)",
+        "225,000 SF total commercial planned",
+        "18-ft clear heights",
+        "LEED-designed flex/R&D prototype",
+        "600+ jobs upon completion",
+        "Early 2027 delivery"
+      ],
+      "mentioned_brands": [
+        "St. John Properties"
+      ],
+      "competitor_watch": [
+        "flex build-out",
+        "HVAC",
+        "dock doors",
+        "roofing",
+        "tenant improvement"
+      ],
+      "sources": [
+        {
+          "title": "Middletown Exchange, Delaware Online",
+          "url": "http://eu.delawareonline.com/story/money/business/2026/02/26/in-middletown-465-homes-and-five-commercial-sites-planned-near-us-301/88858323007/"
+        },
+        {
+          "title": "St. John Properties Middletown, SJPI",
+          "url": "https://sjpi.com/press-releases/st-john-properties-enters-delaware-with-acquisition-of-75-acre-site-in-middletown"
+        }
+      ],
+      "open_for": "Phase I underway. Flex/R&D building systems and site specs."
+    },
+    {
+      "id": "de-milford-corporate-center",
+      "name": "Milford Corporate Center",
+      "state": "DE",
+      "city": "Milford",
+      "county": "Kent",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": 18000000,
+      "square_footage": 2000000,
+      "owner": "City of Milford",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "182-acre corporate center with 27 lots and ~2M SF commercial potential at Routes 14 and 15. Infrastructure work continuing in July 2026; agents marketing lots as roads and utilities advance.",
+      "key_specs": [
+        "182 acres, 27 lots",
+        "2M SF commercial potential",
+        "$18M infrastructure investment",
+        "1,300+ projected jobs",
+        "Site Readiness and TIIF state funding",
+        "Water tower and sewer improvements"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "site utilities",
+        "road construction",
+        "water/sewer",
+        "pad-ready infrastructure"
+      ],
+      "sources": [
+        {
+          "title": "Milford Corporate Center marketing lots, Delaware Business Times",
+          "url": "https://delawarebusinesstimes.com/news/milford-corporate-center-lots/"
+        },
+        {
+          "title": "Milford Corporate Center groundbreaking, Delaware Business Times",
+          "url": "https://delawarebusinesstimes.com/news/milford-corporate-center/"
+        }
+      ],
+      "open_for": "Infrastructure phase. Pad-ready site and utility specs for incoming tenants."
+    },
+    {
+      "id": "de-wilmington-riverfront-mixed-use",
+      "name": "Wilmington Riverfront Commercial Development",
+      "state": "DE",
+      "city": "Wilmington",
+      "county": "New Castle",
+      "status": "planning",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "Commercial and mixed-use activity along the Wilmington riverfront corridor with new development submissions and permit activity in Q2 2026 per Delaware economic development pipeline.",
+      "key_specs": [
+        "Riverfront corridor",
+        "Mixed-use commercial",
+        "New Castle County"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "HVAC",
+        "glazing",
+        "site work",
+        "tenant improvement"
+      ],
+      "sources": [
+        {
+          "title": "Delaware economic development activity, Delaware Business Times",
+          "url": "https://delawarebusinesstimes.com/"
+        }
+      ],
+      "open_for": "Pre-development. Early commercial specs as projects advance."
+    }
+  ],
+  "stats": {
+    "total": 5
+  }
+}
