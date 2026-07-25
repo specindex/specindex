@@ -7,9 +7,9 @@ import { StatusPill } from "@/components/StatusPill";
 const DEMO_BRAND = "Acuity Brands";
 const DEMO_CATEGORY = "lighting";
 
-export function ProductMock() {
-  const projects = getProjects();
-  const corpus = getCorpus();
+export async function ProductMock() {
+  const projects = await getProjects();
+  const corpus = await getCorpus();
   const preview = projects.slice(0, 4);
   const counties = getTopCounties(projects, 6);
   const { categoryHits, stillOpen } = getVisibilitySnapshot(
@@ -34,7 +34,7 @@ export function ProductMock() {
           </span>
         </div>
         <span className="font-mono text-[10px] text-[var(--color-gray-400)]">
-          Live · {projects.length} projects
+          Live · 1000+ projects
         </span>
       </div>
 

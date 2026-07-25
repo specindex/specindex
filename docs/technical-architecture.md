@@ -82,6 +82,8 @@
 
 **GCP setup automation:** `scripts/setup-phase1-gcp.sh` (invoked via `npm run db:setup-gcp`) creates the Cloud SQL instance, loads the corpus, and deploys the API to Cloud Run. Requires `--edition=ENTERPRISE` on `gcloud sql instances create` for the `db-f1-micro` tier (the `specindex-ai` project's default edition is Enterprise Plus, which doesn't support shared-core tiers) and `gcloud auth application-default login` (separate from `gcloud auth login`) before the Cloud SQL Auth Proxy step will authenticate. Full walkthrough in `docs/PHASE1-DATABASE-SETUP.md`.
 
+**Status (2026-07-25): live and verified.** 652 rows loaded into `specindex-db`; `specindex-api` deployed to Cloud Run at `https://specindex-api-gmm6irqe4q-uc.a.run.app`, confirmed serving real queries (`/health`, `/v1/stats`, `/v1/projects`).
+
 **Not yet wired up:** the Next.js site does not read from this API yet — it still builds from static JSON. Connecting the site (or a future ingest pipeline) to `specindex-api` is open work.
 
 ---
@@ -295,12 +297,15 @@ Manual `npm run deploy` still works as a fallback.
 4. ✅ Firebase Hosting init + first deploy — live at specindex.ai
 5. ✅ Custom domain `specindex.ai`
 6. ✅ GitHub Actions CI/CD (PR previews + live deploy on merge to `main`)
-7. ✅ Phase 1 Postgres (Cloud SQL) + read API (Cloud Run) — built, not yet wired to the site
+7. ✅ Phase 1 Postgres (Cloud SQL) + read API (Cloud Run) — live and verified; schema v2 (`db/migrations/002`, `003`) adds numeric surrogate keys, external ID crosswalk, and a `project_csi_divisions` fact table — see `docs/DATA_SCHEMA_V2.md`
 8. 🔲 Complete corpus capture for remaining 40 states
-9. 🔲 Wire the Next.js site to `specindex-api` (or an ingest pipeline) instead of static JSON
-10. 🔲 Spec book extraction pipeline (PyMuPDF → CSI division LLM pass → cited JSON) — see `docs/CONTEXT.md`
+9. ✅ Wire the Next.js site to `specindex-api` instead of static JSON — `lib/projects.ts` now paginates the live API at `next build` time (site stays a static export; verified with a full local build against the live API — 652 project pages + sitemap generated correctly)
+10. 🚧 Spec book extraction pipeline (PyMuPDF → CSI division LLM pass → cited JSON) — see `docs/CONTEXT.md`. Built: `scripts/extract-spec-book.py`, parsing/chunking layer verified against a synthetic PDF. Not yet run against a real spec book or a live LLM call (see item 13).
 11. 🔲 Firestore or Postgres-backed authenticated manufacturer seats
 12. 🔲 Automated permit/press capture job + brand NER
+13. 🔲 Source a real spec book PDF and run `scripts/extract-spec-book.py` end-to-end against the live Anthropic API — the LLM classification layer is built but has never been exercised (no `ANTHROPIC_API_KEY` in the dev environment used to build it)
+14. 🔲 Wire `api/main.py` to expose the schema v2 columns (`project_sk`, `external_ids`, `csi_division_codes`, `status_code`) in API responses — the live API still only returns the v1 field shape
+15. 🔲 Fix Chicago-style bundled-permit rows — at least one row conflates 60+ separate city permits into single `owner`/`architect`/`description` fields (see the Chicago sample in `docs/DATA_SOURCES.md`); needs either a per-permit split or a dedicated multi-permit representation
 
 ---
 

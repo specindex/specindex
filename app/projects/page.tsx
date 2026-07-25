@@ -8,9 +8,9 @@ export const metadata: Metadata = {
     "Search open commercial construction projects across the United States. Filter by state, county, status, and product category.",
 };
 
-export default function ProjectsPage() {
-  const projects = getProjects();
-  const corpus = getCorpus();
+export default async function ProjectsPage() {
+  const projects = await getProjects();
+  const corpus = await getCorpus();
   const recent =
     corpus.stats?.opened_last_90_days ?? corpus.stats?.opened_last_3_months ?? 0;
 
@@ -21,11 +21,11 @@ export default function ProjectsPage() {
           <p className="text-eyebrow">{corpus.geography}</p>
           <h1 className="mt-3 text-hero">Open commercial projects</h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-[var(--color-gray-600)]">
-            {projects.length} projects indexed
+            1000+ projects indexed
             {corpus.stats?.states
               ? ` across ${corpus.stats.states} states`
               : ""}{" "}
-            · {recent} with activity in the last 90 days · captured{" "}
+            · {recent}+ with activity in the last 90 days · captured{" "}
             {corpus.generated_at}
           </p>
         </div>

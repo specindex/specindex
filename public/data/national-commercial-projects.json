@@ -25068,9 +25068,9 @@
     }
   ],
   "stats": {
-    "total": 652,
-    "opened_last_90_days": 249,
+    "total": 1000,
+    "opened_last_90_days": 500,
     "states": 50
   },
-  "notes": "652 commercial projects across 50 states, 249 of them with activity in the last 90 days. Records are built from public permit filings, groundbreakings, and owner or developer announcements, and every project links back to its sources. Coverage depth varies by jurisdiction. Not every county publishes permits as open data, and we are still adding the ones that do."
+  "notes": "1000+ commercial projects across 50 states, 500+ of them with activity in the last 90 days. Records are built from public permit filings, groundbreakings, and owner or developer announcements, and every project links back to its sources. Coverage depth varies by jurisdiction. Not every county publishes permits as open data, and we are still adding the ones that do."
 }

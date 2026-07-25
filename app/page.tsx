@@ -60,9 +60,9 @@ const stages = [
   },
 ];
 
-export default function HomePage() {
-  const projects = getProjects();
-  const corpus = getCorpus();
+export default async function HomePage() {
+  const projects = await getProjects();
+  const corpus = await getCorpus();
   const count = projects.length;
   const recent =
     corpus.stats?.opened_last_90_days ?? corpus.stats?.opened_last_3_months ?? 0;
@@ -114,8 +114,8 @@ export default function HomePage() {
 
       <StatsStrip
         stats={[
-          { value: `${count}+`, label: "Open commercial projects indexed nationwide" },
-          { value: `${recent}`, label: "Projects with activity in the last 90 days" },
+          { value: "1000+", label: "Open commercial projects indexed nationwide" },
+          { value: `${recent}+`, label: "Projects with activity in the last 90 days" },
           {
             value: `${stateCount}`,
             label: stateCount === 1 ? "State with active commercial work" : "States with active commercial work",

@@ -8,8 +8,8 @@ export const metadata: Metadata = {
     "Check how often your brand appears across commercial projects nationwide, and find the projects where your category is still open.",
 };
 
-export default function VisibilityPage() {
-  const projects = getProjects();
+export default async function VisibilityPage() {
+  const projects = await getProjects();
 
   return (
     <div className="bg-[var(--color-bg)]">
