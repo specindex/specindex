@@ -3,7 +3,7 @@ import { getProjectIds } from "@/lib/projects";
 
 export const dynamic = "force-static";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = "https://specindex.ai";
   const staticRoutes = [
     "",
@@ -15,6 +15,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "visibility",
   ];
 
+  const projectIds = await getProjectIds();
+
   return [
     ...staticRoutes.map((path) => ({
       url: `${base}/${path}${path ? "/" : ""}`,
@@ -22,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: path === "" ? 1 : 0.8,
     })),
-    ...getProjectIds().map((id) => ({
+    ...projectIds.map((id) => ({
       url: `${base}/projects/${id}/`,
       lastModified: new Date("2026-07-24"),
       changeFrequency: "weekly" as const,

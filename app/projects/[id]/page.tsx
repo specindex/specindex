@@ -7,13 +7,14 @@ import { getProjectById, getProjectIds } from "@/lib/projects";
 
 type Props = { params: Promise<{ id: string }> };
 
-export function generateStaticParams() {
-  return getProjectIds().map((id) => ({ id }));
+export async function generateStaticParams() {
+  const ids = await getProjectIds();
+  return ids.map((id) => ({ id }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
-  const project = getProjectById(id);
+  const project = await getProjectById(id);
   if (!project) return { title: "Project" };
   return {
     title: project.name,
@@ -23,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ProjectDetailPage({ params }: Props) {
   const { id } = await params;
-  const project = getProjectById(id);
+  const project = await getProjectById(id);
   if (!project) notFound();
 
   return (

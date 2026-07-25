@@ -10,8 +10,8 @@ export const metadata: Metadata = {
     "Why SpecIndex exists: specification intelligence for building product manufacturers.",
 };
 
-export default function AboutPage() {
-  const count = getProjects().length;
+export default async function AboutPage() {
+  const count = (await getProjects()).length;
 
   return (
     <>

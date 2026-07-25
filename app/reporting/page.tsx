@@ -29,8 +29,8 @@ const CRH_BRANDS = [
   "Techniseal",
 ];
 
-export default function ReportingPage() {
-  const projects = getProjects();
+export default async function ReportingPage() {
+  const projects = await getProjects();
   const total = projects.length;
 
   const captured = getCapturedCoverage(projects);

@@ -60,9 +60,9 @@ const stages = [
   },
 ];
 
-export default function HomePage() {
-  const projects = getProjects();
-  const corpus = getCorpus();
+export default async function HomePage() {
+  const projects = await getProjects();
+  const corpus = await getCorpus();
   const count = projects.length;
   const recent =
     corpus.stats?.opened_last_90_days ?? corpus.stats?.opened_last_3_months ?? 0;
