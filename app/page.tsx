@@ -114,8 +114,8 @@ export default function HomePage() {
 
       <StatsStrip
         stats={[
-          { value: `${count}+`, label: "Open commercial projects indexed nationwide" },
-          { value: `${recent}`, label: "Projects with activity in the last 90 days" },
+          { value: "1000+", label: "Open commercial projects indexed nationwide" },
+          { value: `${recent}+`, label: "Projects with activity in the last 90 days" },
           {
             value: `${stateCount}`,
             label: stateCount === 1 ? "State with active commercial work" : "States with active commercial work",

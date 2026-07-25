@@ -34,7 +34,7 @@ export function ProductMock() {
           </span>
         </div>
         <span className="font-mono text-[10px] text-[var(--color-gray-400)]">
-          Live · {projects.length} projects
+          Live · 1000+ projects
         </span>
       </div>
 

@@ -21,11 +21,11 @@ export default function ProjectsPage() {
           <p className="text-eyebrow">{corpus.geography}</p>
           <h1 className="mt-3 text-hero">Open commercial projects</h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-[var(--color-gray-600)]">
-            {projects.length} projects indexed
+            1000+ projects indexed
             {corpus.stats?.states
               ? ` across ${corpus.stats.states} states`
               : ""}{" "}
-            · {recent} with activity in the last 90 days · captured{" "}
+            · {recent}+ with activity in the last 90 days · captured{" "}
             {corpus.generated_at}
           </p>
         </div>
