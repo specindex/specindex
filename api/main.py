@@ -90,6 +90,9 @@ def get_conn():
 def row_to_project(row: dict[str, Any]) -> dict[str, Any]:
     return {
         "id": row["project_id"],
+        "project_sk": row["project_sk"],
+        "external_ids": row["external_ids"] or {},
+        "record_type": row["record_type"],
         "name": row["name"],
         "state": row["state"],
         "city": row["city"] or "",
