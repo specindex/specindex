@@ -1,0 +1,93 @@
+{
+  "state": "HI",
+  "state_name": "Hawaii",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — CNR Magazine, Star-Advertiser, EB5 updates.",
+  "projects": [
+    {
+      "id": "hi-aloha-stadium-entertainment-district",
+      "name": "New Aloha Stadium Entertainment District, Halawa",
+      "state": "HI",
+      "city": "Halawa",
+      "county": "Honolulu",
+      "status": "under_construction",
+      "project_type": "mixed_use",
+      "estimated_value_usd": 4000000000,
+      "square_footage": null,
+      "owner": "Aloha Hālawa District Partners",
+      "architect": "Populous / RMA / WCIT",
+      "general_contractor": "Hawaiian Dredging / AECOM Hunt",
+      "opened_or_announced_date": "2026-04-01",
+      "description": "$4B mixed-use district. Old stadium demolition underway 2026. New stadium targeted early 2029; future phases include 4,100 housing units through 2046.",
+      "key_specs": [
+        "New stadium + Aloha Live zone",
+        "4,100 housing units future phases",
+        "Hotel towers and retail planned",
+        "Stanford Carr / Cordish developers"
+      ],
+      "mentioned_brands": [
+        "Stanford Carr Development",
+        "Cordish Company",
+        "Populous"
+      ],
+      "competitor_watch": [
+        "structural steel",
+        "HVAC",
+        "lighting",
+        " seating systems",
+        "site civil"
+      ],
+      "sources": [
+        {
+          "title": "Aloha Stadium district, CNR Magazine",
+          "url": "https://mycnr.com/project/aloha-stadium-largest-construction-project-underway-in-hawaii/"
+        }
+      ],
+      "open_for": "Demolition/active phase 1. Stadium and infrastructure specs."
+    },
+    {
+      "id": "hi-amazon-kapolei-fulfillment",
+      "name": "Amazon Kapolei Fulfillment Center (proposed)",
+      "state": "HI",
+      "city": "Kapolei",
+      "county": "Honolulu",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": 600000000,
+      "square_footage": 2800000,
+      "owner": "Amazon",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-27",
+      "description": "Proposed 2.8M SF five-floor fulfillment center on 16 acres near Kalaeloa Harbor. Height variance to 100 ft sought; 1,562 employees. Application filed April 2026.",
+      "key_specs": [
+        "2.8M SF",
+        "47 loading docks",
+        "895 parking spaces",
+        "Five-story parking garage",
+        "Robotics-assisted fulfillment"
+      ],
+      "mentioned_brands": [
+        "Amazon"
+      ],
+      "competitor_watch": [
+        "conveyors",
+        "dock equipment",
+        "HVAC",
+        "fire suppression",
+        "robotics systems"
+      ],
+      "sources": [
+        {
+          "title": "Amazon Kapolei expansion, Star-Advertiser",
+          "url": "https://www.staradvertiser.com/2026/05/27/hawaii-news/amazon-pursuing-expansion-in-kapolei/"
+        }
+      ],
+      "open_for": "Permitting. Pre-construction MEP specs."
+    }
+  ],
+  "stats": {
+    "total": 2
+  }
+}

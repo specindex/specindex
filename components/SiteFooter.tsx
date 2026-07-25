@@ -4,8 +4,9 @@ const product = [
   { href: "/product/", label: "Use Cases" },
   { href: "/how-it-works/", label: "How It Works" },
   { href: "/pricing/", label: "Pricing" },
-  { href: "/projects/", label: "Georgia Projects" },
+  { href: "/projects/", label: "Projects" },
   { href: "/visibility/", label: "Brand Visibility" },
+  { href: "/reporting/", label: "Reporting" },
 ];
 
 const company = [
@@ -26,6 +27,11 @@ export function SiteFooter() {
           </div>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-[var(--color-gray-600)]">
             Specification intelligence for building product manufacturers.
+          </p>
+          <p className="mt-3 max-w-xs text-sm leading-relaxed text-[var(--color-gray-400)]">
+            <a href="mailto:hello@specindex.ai" className="hover:text-[var(--color-ink)]">
+              hello@specindex.ai
+            </a>
           </p>
         </div>
 
@@ -62,9 +68,10 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold text-[var(--color-ink)]">Beachhead</h3>
+          <h3 className="text-sm font-semibold text-[var(--color-ink)]">Coverage</h3>
           <p className="mt-4 text-sm leading-relaxed text-[var(--color-gray-600)]">
-            Open commercial projects in Georgia — expanding state by state.
+            Commercial projects in all 50 states, filterable by state and county.
+            Built from public records only.
           </p>
         </div>
       </div>

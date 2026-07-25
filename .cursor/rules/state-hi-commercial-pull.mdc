@@ -1,0 +1,17 @@
+---
+description: Hawaii commercial project capture — read the playbook before any pull
+globs: data/states/hi.json,data/raw/hi-*.json,scripts/pull-hi*.py,docs/states/hi.md
+alwaysApply: false
+---
+
+# Hawaii Commercial Pulls
+
+Before capturing or refreshing Hawaii, read **`docs/states/hi.md`** in full.
+
+After the pull, update that playbook:
+
+1. **What works** and **What failed last time**
+2. **Pull log** with date, source, and outcome
+3. The AUTO header stats (run `python3 scripts/sync-state-playbooks.py --state hi`)
+
+Follow `.cursor/rules/state-data-pull-review.mdc` for the review checklist.

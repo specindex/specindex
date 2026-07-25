@@ -1,0 +1,31 @@
+{
+  "state": "XX",
+  "state_name": "State Name",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Web research — state DED releases, county/city permit portals, REBusinessOnline, local news",
+  "projects": [
+    {
+      "id": "xx-example-project-slug",
+      "name": "Example Commercial Project",
+      "state": "XX",
+      "city": "City Name",
+      "county": "County Name",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-15",
+      "description": "Brief project description.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": ["HVAC", "glazing"],
+      "sources": [{ "title": "Source title", "url": "https://example.com" }],
+      "open_for": "What's still open for manufacturers."
+    }
+  ],
+  "stats": { "total": 0 }
+}

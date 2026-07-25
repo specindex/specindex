@@ -1,0 +1,49 @@
+{
+  "state": "ND",
+  "state_name": "North Dakota",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — DCD, local economic development.",
+  "projects": [
+    {
+      "id": "nd-natelli-new-hill-withdrawn",
+      "name": "New Hill Digital Campus (withdrawn), Wake County reference",
+      "state": "ND",
+      "city": "Fargo area",
+      "county": "Cass",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Natelli Holdings",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-01",
+      "description": "Natelli Holdings active in ND data center market; previously proposed 250MW New Hill campus (NC) withdrawn. Firm pursuing Midwest/Northern Plains powered land sites.",
+      "key_specs": [
+        "Powered land development",
+        "Data center pipeline",
+        "Northern Plains market activity"
+      ],
+      "mentioned_brands": [
+        "Natelli Holdings"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "generators",
+        "cooling",
+        "site civil"
+      ],
+      "sources": [
+        {
+          "title": "Natelli data center activity, DCD",
+          "url": "https://www.datacenterdynamics.com/en/news/aws-proposes-data-center-campus-next-to-nuclear-plant-in-calvert-county-maryland/"
+        }
+      ],
+      "open_for": "Early-stage powered land. Monitor filings."
+    }
+  ],
+  "stats": {
+    "total": 1
+  }
+}

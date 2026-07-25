@@ -1,0 +1,50 @@
+{
+  "state": "NV",
+  "state_name": "Nevada",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — Data Center Dynamics, local news.",
+  "projects": [
+    {
+      "id": "nv-vantage-reno-campus",
+      "name": "Vantage Data Centers Campus, Reno area",
+      "state": "NV",
+      "city": "Reno",
+      "county": "Storey",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Vantage Data Centers",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "224MW data center campus announced near Reno. Northern Nevada hyperscale expansion.",
+      "key_specs": [
+        "224 MW capacity",
+        "Northern Nevada market",
+        "Hyperscale campus"
+      ],
+      "mentioned_brands": [
+        "Vantage Data Centers"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "generators",
+        "cooling",
+        "electrical",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Vantage Reno campus, DCD",
+          "url": "https://www.datacenterdynamics.com/"
+        }
+      ],
+      "open_for": "Early development. Infrastructure specs forming."
+    }
+  ],
+  "stats": {
+    "total": 1
+  }
+}

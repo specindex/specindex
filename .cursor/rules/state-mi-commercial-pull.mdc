@@ -1,0 +1,17 @@
+---
+description: Michigan commercial project capture — read the playbook before any pull
+globs: data/states/mi.json,data/raw/mi-*.json,scripts/pull-mi*.py,docs/states/mi.md
+alwaysApply: false
+---
+
+# Michigan Commercial Pulls
+
+Before capturing or refreshing Michigan, read **`docs/states/mi.md`** in full.
+
+After the pull, update that playbook:
+
+1. **What works** and **What failed last time**
+2. **Pull log** with date, source, and outcome
+3. The AUTO header stats (run `python3 scripts/sync-state-playbooks.py --state mi`)
+
+Follow `.cursor/rules/state-data-pull-review.mdc` for the review checklist.

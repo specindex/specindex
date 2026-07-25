@@ -1,0 +1,207 @@
+{
+  "state": "OR",
+  "state_name": "Oregon",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — PR Newswire, Data Center Dynamics, local permits, trade publications.",
+  "projects": [
+    {
+      "id": "or-sabey-umatilla-milestone",
+      "name": "Sabey SDC Umatilla Campus",
+      "state": "OR",
+      "city": "Umatilla",
+      "county": "Umatilla",
+      "status": "under_construction",
+      "project_type": "data_center",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Sabey Data Centers",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-15",
+      "description": "Sabey Data Centers reached construction milestone and started vertical steel erection at its 120MW SDC Umatilla campus in eastern Oregon.",
+      "key_specs": [
+        "120MW capacity campus",
+        "Two-building campus",
+        "Closed-loop liquid cooling system",
+        "First 12MW online in 2027"
+      ],
+      "mentioned_brands": [
+        "Sabey Data Centers"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "cooling",
+        "generators",
+        "electrical"
+      ],
+      "sources": [
+        {
+          "title": "Sabey Breaks Ground on 120MW Data Center Campus in Oregon",
+          "url": "https://baxtel.com/news/sabey-breaks-ground-on-120mw-data-center-campus-in-oregon"
+        }
+      ],
+      "open_for": "Active build. Data center MEP and liquid cooling specs."
+    },
+    {
+      "id": "or-verrus-salem-mill-creek",
+      "name": "Verrus Mill Creek Corporate Center, Salem",
+      "state": "OR",
+      "city": "Salem",
+      "county": "Marion",
+      "status": "planning",
+      "project_type": "data_center",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Verrus",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-01",
+      "description": "Three-building data center campus planned at Mill Creek Corporate Center in Salem.",
+      "key_specs": [
+        "Three-building campus",
+        "Mill Creek Corporate Center",
+        "Salem metro"
+      ],
+      "mentioned_brands": [
+        "Verrus"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "cooling",
+        "generators",
+        "site civil"
+      ],
+      "sources": [
+        {
+          "title": "Verrus Salem campus, DCD",
+          "url": "https://www.datacenterdynamics.com/"
+        }
+      ],
+      "open_for": "Planning. Early infrastructure specs."
+    },
+    {
+      "id": "or-alaska-airlines-pdx-hangar",
+      "name": "Alaska Airlines PDX Maintenance Hangar",
+      "state": "OR",
+      "city": "Portland",
+      "county": "Multnomah",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": 135000000,
+      "square_footage": 185000,
+      "owner": "Alaska Airlines",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-16",
+      "description": "Groundbroken $135 million maintenance hangar at Portland International Airport adding 125,000 SF for indoor aircraft maintenance and 60,000 SF for offices, engine, and machine shops.",
+      "key_specs": [
+        "185,000 SF total facility",
+        "125,000 SF hangar bay",
+        "60,000 SF shops and offices",
+        "Completion Q2 2028"
+      ],
+      "mentioned_brands": [
+        "Alaska Airlines",
+        "Hawaiian Airlines",
+        "Horizon Air"
+      ],
+      "competitor_watch": [
+        "hangar doors",
+        "deluge fire suppression",
+        "industrial HVAC",
+        "high-bay LED lighting",
+        "crane systems"
+      ],
+      "sources": [
+        {
+          "title": "Alaska Airlines breaks ground on new hangar facility at Portland International Airport",
+          "url": "https://www.prnewswire.com/news-releases/alaska-airlines-breaks-ground-on-new-hangar-facility-at-portland-international-airport-302801014.html"
+        }
+      ],
+      "open_for": "Aviation maintenance hangar doors, heavy mechanical/electrical, deluge suppression systems."
+    },
+    {
+      "id": "or-dsv-hillsboro-warehouse-hub",
+      "name": "DSV Regional Semiconductor Logistics Hub",
+      "state": "OR",
+      "city": "Hillsboro",
+      "county": "Washington",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": 750000,
+      "owner": "DSV. Global Transport and Logistics",
+      "architect": "",
+      "general_contractor": "ARCO Design/Build",
+      "opened_or_announced_date": "2026-06-17",
+      "description": "Groundbroken 750,000 SF contract logistics hub in Hillsboro dedicated to supporting Oregon's growing semiconductor manufacturing supply chain.",
+      "key_specs": [
+        "750,000 SF warehouse hub",
+        "Consolidates three Oregon facilities",
+        "Dedicated semiconductor logistics",
+        "Completion July 2027"
+      ],
+      "mentioned_brands": [
+        "DSV",
+        "ARCO Design/Build"
+      ],
+      "competitor_watch": [
+        "dock equipment",
+        "high-bay lighting",
+        "warehouse HVAC",
+        "roofing",
+        "fire protection"
+      ],
+      "sources": [
+        {
+          "title": "DSV Breaks Ground on New Oregon Regional Warehouse Hub in Hillsboro",
+          "url": "https://www.expansionsolutionsmagazine.com/dsv-breaks-ground-on-new-oregon-regional-warehouse-hub-in-hillsboro/"
+        }
+      ],
+      "open_for": "Design-build industrial trade subcontracts, climate-controlled logistics, dock levellers."
+    },
+    {
+      "id": "or-cascada-hotel-bend",
+      "name": "CASCADA Hotel and Thermal Wellness Facility",
+      "state": "OR",
+      "city": "Bend",
+      "county": "Deschutes",
+      "status": "under_construction",
+      "project_type": "hospitality",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "SolTerra",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Groundbroken 68-room boutique luxury hotel and Nordic-inspired thermal wellness spa occupying a full city block near Bend's Box Factory district.",
+      "key_specs": [
+        "68 luxury boutique rooms",
+        "Thermal wellness spa & pool facility",
+        "Full city block footprint",
+        "Opening late 2028"
+      ],
+      "mentioned_brands": [
+        "SolTerra"
+      ],
+      "competitor_watch": [
+        "spa boilers & water treatment",
+        "hospitality HVAC",
+        "luxury plumbing fixtures",
+        "glazing",
+        "acoustic insulation"
+      ],
+      "sources": [
+        {
+          "title": "Bend wellness spa, hotel project breaks ground",
+          "url": "https://bendbulletin.com/2026/07/22/bend-wellness-spa-hotel-project-breaks-ground/"
+        }
+      ],
+      "open_for": "Boutique hospitality MEP, thermal pool/spa systems, interior architectural finishes."
+    }
+  ],
+  "stats": {
+    "total": 5
+  }
+}

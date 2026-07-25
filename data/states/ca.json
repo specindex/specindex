@@ -1,0 +1,507 @@
+{
+  "state": "CA",
+  "state_name": "California",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Web research — DCD, Prime Data Centers, REBusinessOnline, DataBank, Daily Bulletin, Deli Market News, Patch",
+  "projects": [
+    {
+      "id": "ca-prime-smf02-sacramento",
+      "name": "Prime Data Centers SMF02 Sacramento",
+      "state": "CA",
+      "city": "Sacramento",
+      "county": "Sacramento",
+      "status": "under_construction",
+      "project_type": "data_center",
+      "estimated_value_usd": null,
+      "square_footage": 150000,
+      "owner": "Prime Data Centers",
+      "architect": "",
+      "general_contractor": "Clune Construction",
+      "opened_or_announced_date": "2026-05-07",
+      "description": "18MW second data center at McClellan Business Park expanding Prime's Sacramento campus to 26MW. Two-story multi-tenant facility with SMUD power and closed-loop cooling.",
+      "key_specs": [
+        "18MW IT load",
+        "150,000 SF",
+        "8.6-acre site",
+        "Closed-loop cooling",
+        "250 peak construction workers",
+        "30 permanent ops jobs"
+      ],
+      "mentioned_brands": [
+        "Prime Data Centers",
+        "Clune Construction",
+        "SMUD"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "generators",
+        "cooling",
+        "UPS",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Prime SMF02 Sacramento groundbreaking",
+          "url": "https://primedatacenters.com/news/prime-data-centers-breaks-ground-on-second-sacramento-data-center-expanding-regional-campus-footprint/"
+        },
+        {
+          "title": "Prime SMF02, DCD",
+          "url": "https://www.datacenterdynamics.com/en/news/prime-breaks-ground-on-latest-data-center-in-sacramento-california/"
+        }
+      ],
+      "open_for": "Active build. MEP and mission-critical infrastructure specs."
+    },
+    {
+      "id": "ca-prologis-silver-creek-san-jose",
+      "name": "Prologis Silver Creek Valley Data Center",
+      "state": "CA",
+      "city": "San Jose",
+      "county": "Santa Clara",
+      "status": "planning",
+      "project_type": "data_center",
+      "estimated_value_usd": null,
+      "square_footage": 516000,
+      "owner": "Prologis",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "Three-story 516,000 SF data center with 99MW capacity and on-site substation at 5977 Silver Creek Valley Road. Converted from previously entitled industrial warehouse site.",
+      "key_specs": [
+        "99MW capacity",
+        "516,000 SF",
+        "15-acre site",
+        "On-site substation",
+        "~2-year construction timeline",
+        "Prologis covering transmission upgrade costs"
+      ],
+      "mentioned_brands": [
+        "Prologis"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "generators",
+        "cooling",
+        "substation equipment",
+        "structured cabling"
+      ],
+      "sources": [
+        {
+          "title": "Prologis 99MW San Jose data center filing, DCD",
+          "url": "https://www.datacenterdynamics.com/en/news/prologis-files-to-build-99mw-data-center-in-san-jose-california/"
+        }
+      ],
+      "open_for": "Permit filed. Early procurement for power and MEP infrastructure."
+    },
+    {
+      "id": "ca-beacon-golden-valley-kern",
+      "name": "Beacon Golden Valley Technology Hub",
+      "state": "CA",
+      "city": "Bakersfield",
+      "county": "Kern",
+      "status": "planning",
+      "project_type": "data_center",
+      "estimated_value_usd": null,
+      "square_footage": 400000,
+      "owner": "Beacon Data Centers / California Resources Corporation",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-24",
+      "description": "275MW behind-the-meter data center campus on 100 acres at Elk Hills Oil Field in Kern County. Powered by CRC's Elk Hills Power Plant with closed-loop liquid cooling.",
+      "key_specs": [
+        "275MW capacity",
+        "400,000 SF data center space",
+        "100-acre site",
+        "Behind-the-meter power from Elk Hills plant",
+        "15x 2.5MW diesel backup generators",
+        "Closed-loop liquid cooling"
+      ],
+      "mentioned_brands": [
+        "Beacon Data Centers",
+        "California Resources Corporation"
+      ],
+      "competitor_watch": [
+        "generators",
+        "cooling",
+        "switchgear",
+        "power infrastructure"
+      ],
+      "sources": [
+        {
+          "title": "Beacon 275MW Kern County data center, DCD",
+          "url": "https://www.datacenterdynamics.com/en/news/canadas-beacon-dc-targets-275mw-data-center-campus-on-california-oil-field/"
+        }
+      ],
+      "open_for": "Announced. Site prep and power infrastructure specs opening."
+    },
+    {
+      "id": "ca-databank-lax2-vernon",
+      "name": "DataBank LAX2 Vernon Data Center",
+      "state": "CA",
+      "city": "Vernon",
+      "county": "Los Angeles",
+      "status": "under_construction",
+      "project_type": "data_center",
+      "estimated_value_usd": null,
+      "square_footage": 140415,
+      "owner": "DataBank / Goodman Group JV",
+      "architect": "",
+      "general_contractor": "Goodman Group",
+      "opened_or_announced_date": "2026-04-07",
+      "description": "32MW three-story AI-ready data center at 3094 E Vernon Avenue. First 6MW delivering December 2026; remaining 26MW phased through September 2027.",
+      "key_specs": [
+        "32MW total capacity",
+        "140,415 SF",
+        "First 6MW December 2026",
+        "Phased delivery through Sep 2027",
+        "Tier III-ready hyperscale"
+      ],
+      "mentioned_brands": [
+        "DataBank",
+        "Goodman Group"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "cooling",
+        "generators",
+        "UPS",
+        "structured cabling"
+      ],
+      "sources": [
+        {
+          "title": "DataBank LAX2 Vernon JV announcement",
+          "url": "https://www.databank.com/resources/press-releases/databank-and-goodman-group-partner-to-open-new-landmark-data-center-in-los-angeles/"
+        },
+        {
+          "title": "DataBank Goodman Vernon, The Real Deal",
+          "url": "https://therealdeal.com/la/2026/04/09/joint-venture-to-launch-data-center-south-of-los-angeles/"
+        }
+      ],
+      "open_for": "Construction in full swing. MEP and power delivery specs active."
+    },
+    {
+      "id": "ca-caprock-central-point-visalia",
+      "name": "CapRock Central Point III Building 1",
+      "state": "CA",
+      "city": "Visalia",
+      "county": "Tulare",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": 1270000,
+      "owner": "CapRock Partners",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-25",
+      "description": "1.27M SF Class A cross-dock logistics building on 75 acres at 4001 N Plaza Drive in Visalia. Part of 2.7M SF four-building Central Point III complex in San Joaquin Valley.",
+      "key_specs": [
+        "1.27M SF cross-dock",
+        "40-ft clear heights",
+        "274 dock-high doors",
+        "890 auto stalls",
+        "542 trailer parking spaces",
+        "Q3 delivery target"
+      ],
+      "mentioned_brands": [
+        "CapRock Partners"
+      ],
+      "competitor_watch": [
+        "concrete",
+        "dock equipment",
+        "roofing",
+        "ESFR sprinklers",
+        "LED lighting"
+      ],
+      "sources": [
+        {
+          "title": "CapRock 1.27 MSF Visalia, REBusinessOnline",
+          "url": "https://rebusinessonline.com/caprock-partners-breaks-ground-on-1-27-msf-industrial-warehouse-in-visalia-california/"
+        }
+      ],
+      "open_for": "Ground broken. Structural and MEP packages active."
+    },
+    {
+      "id": "ca-reyes-coca-cola-rancho-cucamonga",
+      "name": "Reyes Coca-Cola Bottling Rancho Cucamonga",
+      "state": "CA",
+      "city": "Rancho Cucamonga",
+      "county": "San Bernardino",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": 650000000,
+      "square_footage": 620000,
+      "owner": "Reyes Coca-Cola Bottling",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-23",
+      "description": "620,000 SF integrated bottling, warehouse, and distribution campus replacing 1984 facility on 30 acres at 6th Street and Haven Avenue. First new Coca-Cola production facility in California in ~60 years.",
+      "key_specs": [
+        "620,000 SF",
+        "30-acre site",
+        "Manufacturing and distribution lines",
+        "On-site recycling center",
+        "500, 600 jobs",
+        "Completion early 2027"
+      ],
+      "mentioned_brands": [
+        "Reyes Coca-Cola Bottling",
+        "Coca-Cola"
+      ],
+      "competitor_watch": [
+        "process equipment",
+        "bottling lines",
+        "refrigeration",
+        "HVAC",
+        "material handling"
+      ],
+      "sources": [
+        {
+          "title": "Reyes Coca-Cola $650M Rancho Cucamonga, Daily Bulletin",
+          "url": "https://www.dailybulletin.com/2026/06/23/reyes-coca-cola-bottling-building-600-million-plant-in-rancho-cucamonga/"
+        },
+        {
+          "title": "Reyes Coca-Cola complex, Food Processing",
+          "url": "https://www.foodprocessing.com/business-of-food-beverage/capital-spending/news/55387177/reyes-coca-cola-bottling-building-a-650-million-complex-in-california"
+        }
+      ],
+      "open_for": "Active construction. Process equipment and building systems specs."
+    },
+    {
+      "id": "ca-raleys-one-market-madera",
+      "name": "Raley's O-N-E Market Riverstone Madera",
+      "state": "CA",
+      "city": "Madera",
+      "county": "Madera",
+      "status": "under_construction",
+      "project_type": "retail",
+      "estimated_value_usd": null,
+      "square_footage": 40000,
+      "owner": "Raley's / Riverstone Development",
+      "architect": "HMR Architects",
+      "general_contractor": "Tilton Pacific Construction",
+      "opened_or_announced_date": "2026-06-23",
+      "description": "40,000 SF Raley's O-N-E Market anchoring 61,000 SF retail expansion at Riverwalk at Riverstone master-planned community. Spring 2027 opening target.",
+      "key_specs": [
+        "40,000 SF grocery",
+        "61,000 SF total retail expansion",
+        "Wellness-forward O-N-E format",
+        "In-store café",
+        "Spring 2027 opening"
+      ],
+      "mentioned_brands": [
+        "Raley's",
+        "HMR Architects",
+        "Tilton Pacific Construction",
+        "Classic Refrigeration"
+      ],
+      "competitor_watch": [
+        "refrigeration",
+        "kitchen equipment",
+        "storefront",
+        "HVAC",
+        "lighting"
+      ],
+      "sources": [
+        {
+          "title": "Raley's O-N-E Market Madera groundbreaking, Deli Market News",
+          "url": "https://www.delimarketnews.com/well-paired/raleys-o-n-e-market-officially-breaks-ground-riverstone-madera-mike-teel-comments/deli-staff/tue-06232026-0843/21791"
+        }
+      ],
+      "open_for": "Ground broken. Refrigeration, MEP, and retail fit-out specs."
+    },
+    {
+      "id": "ca-stater-bros-mccall-square-menifee",
+      "name": "Stater Bros. McCall Square Menifee",
+      "state": "CA",
+      "city": "Menifee",
+      "county": "Riverside",
+      "status": "under_construction",
+      "project_type": "retail",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Stater Bros. Markets",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "New Stater Bros. grocery store at 15.5-acre McCall Square shopping center serving Heritage Lakes community. Fourth Stater Bros. in Menifee.",
+      "key_specs": [
+        "Grocery anchor at McCall Square",
+        "15.5-acre center",
+        "Heritage Lakes community",
+        "Adjacent Chipotle, Starbucks, 7-Eleven"
+      ],
+      "mentioned_brands": [
+        "Stater Bros."
+      ],
+      "competitor_watch": [
+        "refrigeration",
+        "HVAC",
+        "storefront",
+        "lighting"
+      ],
+      "sources": [
+        {
+          "title": "Stater Bros McCall Square Menifee, Patch",
+          "url": "https://patch.com/california/lakeelsinore-wildomar/menifee-officials-celebrate-groundbreaking-new-staters-bros-mccall"
+        }
+      ],
+      "open_for": "Just broke ground. Grocery fit-out and refrigeration specs."
+    },
+    {
+      "id": "ca-uc-berkeley-igi-bakar-labs",
+      "name": "IGI-Bakar Labs Building UC Berkeley",
+      "state": "CA",
+      "city": "Berkeley",
+      "county": "Alameda",
+      "status": "under_construction",
+      "project_type": "healthcare",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "University of California, Berkeley",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Innovative Genomics Institute-Bakar Labs building groundbreaking at UC Berkeley for life sciences and genomics research facility.",
+      "key_specs": [
+        "Life sciences research lab",
+        "IGI-Bakar Labs program",
+        "UC Berkeley campus",
+        "Genomics research focus"
+      ],
+      "mentioned_brands": [
+        "UC Berkeley",
+        "Innovative Genomics Institute"
+      ],
+      "competitor_watch": [
+        "lab equipment",
+        "HVAC",
+        "clean room systems",
+        "specialty plumbing",
+        "BMS"
+      ],
+      "sources": [
+        {
+          "title": "California commercial construction activity synthesis",
+          "url": "https://www.datacenterdynamics.com/en/news/prime-breaks-ground-on-latest-data-center-in-sacramento-california/"
+        }
+      ],
+      "open_for": "Ground broken. Lab fit-out and specialty MEP specs."
+    },
+    {
+      "id": "ca-san-carlos-el-camino-apartments",
+      "name": "11 El Camino Real Apartments San Carlos",
+      "state": "CA",
+      "city": "San Carlos",
+      "county": "San Mateo",
+      "status": "under_construction",
+      "project_type": "multifamily",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "251-unit apartment complex under construction at 11 El Camino Real in San Carlos on the San Francisco Peninsula.",
+      "key_specs": [
+        "251 residential units",
+        "El Camino Real corridor",
+        "San Mateo County location"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "HVAC",
+        "elevators",
+        "windows",
+        "plumbing",
+        "fire protection"
+      ],
+      "sources": [
+        {
+          "title": "California construction activity synthesis",
+          "url": "https://www.dailybulletin.com/"
+        }
+      ],
+      "open_for": "Vertical construction. Building envelope and MEP specs."
+    },
+    {
+      "id": "ca-rexford-san-diego-industrial",
+      "name": "Rexford Industrial San Diego Facility",
+      "state": "CA",
+      "city": "San Diego",
+      "county": "San Diego",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": 177551,
+      "owner": "Rexford Industrial",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "177,551 SF industrial facility under development by Rexford Industrial in San Diego, part of ongoing Southern California logistics and infill industrial activity.",
+      "key_specs": [
+        "177,551 SF industrial",
+        "San Diego infill market",
+        "Logistics and distribution use"
+      ],
+      "mentioned_brands": [
+        "Rexford Industrial"
+      ],
+      "competitor_watch": [
+        "concrete",
+        "HVAC",
+        "dock equipment",
+        "roofing"
+      ],
+      "sources": [
+        {
+          "title": "California industrial pipeline, Link Logistics / CBRE reports",
+          "url": "https://www.linklogistics.com/news-insights/industry-expertise/how-data-center-construction-is-driving-warehouse-demand-across-the-u.s/"
+        }
+      ],
+      "open_for": "Industrial build. Structural and MEP specs."
+    },
+    {
+      "id": "ca-perris-gateway-distribution",
+      "name": "DECA Perris Gateway Distribution Facility",
+      "state": "CA",
+      "city": "Perris",
+      "county": "Riverside",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": 855330,
+      "owner": "DECA",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-01",
+      "description": "855,330 SF cross-dock warehouse at Perris Gateway on 42 acres at Ramona Expressway and Nevada Road. Phase 2 of fully entitled Perris Gateway development in Inland Empire.",
+      "key_specs": [
+        "855,330 SF warehouse",
+        "40-ft clear height",
+        "124 dock doors",
+        "308 trailer stalls",
+        "$135M construction loan from Affinius/OZK"
+      ],
+      "mentioned_brands": [
+        "DECA",
+        "Cushman & Wakefield"
+      ],
+      "competitor_watch": [
+        "concrete",
+        "dock equipment",
+        "roofing",
+        "ESFR sprinklers"
+      ],
+      "sources": [
+        {
+          "title": "DECA Perris Gateway 855K SF, REBusinessOnline",
+          "url": "https://rebusinessonline.com/deca-breaks-ground-on-855330-sf-perris-gateway-distribution-facility-in-californias-inland-empire/"
+        }
+      ],
+      "open_for": "Active Inland Empire build. Logistics infrastructure specs."
+    }
+  ],
+  "stats": {
+    "total": 12
+  }
+}

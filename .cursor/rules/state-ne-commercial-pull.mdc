@@ -1,0 +1,17 @@
+---
+description: Nebraska commercial project capture — read the playbook before any pull
+globs: data/states/ne.json,data/raw/ne-*.json,scripts/pull-ne*.py,docs/states/ne.md
+alwaysApply: false
+---
+
+# Nebraska Commercial Pulls
+
+Before capturing or refreshing Nebraska, read **`docs/states/ne.md`** in full.
+
+After the pull, update that playbook:
+
+1. **What works** and **What failed last time**
+2. **Pull log** with date, source, and outcome
+3. The AUTO header stats (run `python3 scripts/sync-state-playbooks.py --state ne`)
+
+Follow `.cursor/rules/state-data-pull-review.mdc` for the review checklist.

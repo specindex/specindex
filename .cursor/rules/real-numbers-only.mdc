@@ -1,0 +1,51 @@
+---
+description: Every figure shown on the site must be computed from real data, never invented
+alwaysApply: true
+---
+
+# Real Numbers Only
+
+The owner has stated this as a hard constraint: no illustrative, projected, or
+placeholder figures anywhere on the site. A plausible-looking invented number is
+the worst possible outcome, because it will get repeated in a sales conversation.
+
+## Compute, do not hardcode
+
+Derive every figure from the corpus at build time via `lib/` helpers such as
+`getDivisionRollup`, `getVisibilitySnapshot`, and `getReportingGaps`. Never type a
+count into JSX.
+
+## Say zero out loud
+
+When a metric is zero because the data is not captured yet, print the zero and
+explain why in the surrounding copy. Do not hide the row or substitute a sample.
+Bid winners and installed products are all zero today, and the reporting page says
+so plainly.
+
+## Never let prose contradict a computed value
+
+Copy that describes a number must be conditional on it, because the number moves
+when the corpus changes.
+
+```tsx
+// BAD: hardcoded claim that silently becomes false
+<p>It is zero. No source names CRH.</p>
+
+// GOOD: derived from the same value the reader sees
+<p>{crhNamed === 0
+  ? `Across all ${total} indexed projects, not one source names CRH`
+  : `Across ${total} indexed projects, only ${crhNamed} name CRH`}</p>
+```
+
+## Verify before shipping
+
+After a build, re-derive the numbers independently from the shipped source and
+compare against the rendered HTML in `out/`. Ordering and matching logic can shift
+counts in ways that are not obvious. A discrepancy is either a real bug or a
+difference in method that must be understood before deploying, not waved through.
+
+## Word boundaries when matching brands
+
+Use `termAppearsIn` from `lib/format.ts`, never `String.includes`. Substring
+matching produced false positives such as "RDI" hitting inside "Nordic", which
+inflated brand mention counts.

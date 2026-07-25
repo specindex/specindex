@@ -1,0 +1,47 @@
+{
+  "state": "SD",
+  "state_name": "South Dakota",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — state economic development.",
+  "projects": [
+    {
+      "id": "sd-sioux-falls-industrial-expansion",
+      "name": "Sioux Falls Industrial Expansion",
+      "state": "SD",
+      "city": "Sioux Falls",
+      "county": "Minnehaha",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-01",
+      "description": "Sioux Falls metro spec industrial and logistics development active in 2026. I-29 corridor distribution growth.",
+      "key_specs": [
+        "Spec industrial/logistics",
+        "Sioux Falls metro",
+        "I-29 corridor"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "dock doors",
+        "HVAC",
+        "lighting",
+        "insulation"
+      ],
+      "sources": [
+        {
+          "title": "Sioux Falls industrial market, REBusinessOnline",
+          "url": "https://rebusinessonline.com/"
+        }
+      ],
+      "open_for": "Spec industrial. Envelope and MEP specs."
+    }
+  ],
+  "stats": {
+    "total": 1
+  }
+}

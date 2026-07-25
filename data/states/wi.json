@@ -1,0 +1,216 @@
+{
+  "state": "WI",
+  "state_name": "Wisconsin",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — DCD, Innovatrix, HNG News, GMToday, industrial news.",
+  "projects": [
+    {
+      "id": "wi-vantage-lighthouse-port-washington",
+      "name": "OpenAI/Oracle Stargate Lighthouse Campus, Port Washington",
+      "state": "WI",
+      "city": "Port Washington",
+      "county": "Ozaukee",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": 15000000000,
+      "square_footage": 2500000,
+      "owner": "Vantage Data Centers / OpenAI / Oracle",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-25",
+      "description": "672-acre Stargate campus. Second building topped out June 2026. 902MW, 2.5M SF across four buildings; ~5,000 peak construction workers. Live 2028.",
+      "key_specs": [
+        "902 MW at full build",
+        "2.5M SF four buildings",
+        "Closed-loop liquid cooling",
+        "$175M+ regional infrastructure upgrades"
+      ],
+      "mentioned_brands": [
+        "Vantage Data Centers",
+        "OpenAI",
+        "Oracle",
+        "Cloverleaf Infrastructure"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "liquid cooling",
+        "generators",
+        "electrical",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Lighthouse topping out, DCD",
+          "url": "https://www.datacenterdynamics.com/en/news/vantage-tops-out-second-building-at-openais-lighthouse-campus-in-wisconsin/"
+        },
+        {
+          "title": "Stargate Wisconsin, DCD",
+          "url": "https://www.datacenterdynamics.com/en/news/openai-oracle-and-vantage-plan-stargate-wisconsin-data-center-expected-to-be-close-to-a-gigawatt/"
+        }
+      ],
+      "open_for": "Active Stargate build. Hyperscale MEP specs."
+    },
+    {
+      "id": "wi-microsoft-fairwater-mount-pleasant",
+      "name": "Microsoft Fairwater Campus, Mount Pleasant",
+      "state": "WI",
+      "city": "Mount Pleasant",
+      "county": "Racine",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": 4700000000,
+      "square_footage": 1200000,
+      "owner": "Microsoft",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-23",
+      "description": "First Fairwater data center operational June 2026; second building under construction for 2028. Approval for 15 additional buildings January 2026.",
+      "key_specs": [
+        "First building operational",
+        "Second building to 2028",
+        "15 additional buildings approved",
+        "$4.7B local investment 2024, 2028"
+      ],
+      "mentioned_brands": [
+        "Microsoft"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "cooling",
+        "generators",
+        "electrical"
+      ],
+      "sources": [
+        {
+          "title": "Microsoft Mount Pleasant operational, DCD",
+          "url": "https://www.datacenterdynamics.com/en/news/microsofts-first-data-center-at-mount-pleasant-wisconsin-campus-now-operational/"
+        }
+      ],
+      "open_for": "Multi-building expansion. Ongoing MEP specs."
+    },
+    {
+      "id": "wi-aspirus-wausau-hospital-expansion",
+      "name": "Aspirus Wausau Hospital Expansion",
+      "state": "WI",
+      "city": "Wausau",
+      "county": "Marathon",
+      "status": "under_construction",
+      "project_type": "healthcare",
+      "estimated_value_usd": 227000000,
+      "square_footage": null,
+      "owner": "Aspirus Health",
+      "architect": "HGA",
+      "general_contractor": "Miron Construction",
+      "opened_or_announced_date": "2026-05-08",
+      "description": "$227M hospital expansion groundbreaking held May 8, 2026. Multi-phase project running through 2028 adds 48 intermediate care beds, 16 observation beds, fixed PET/CT scanner, and expanded surgical suites.",
+      "key_specs": [
+        "$227M total investment",
+        "48 intermediate care beds & 16-bed observation unit",
+        "New fixed PET/CT scanner",
+        "HGA architect & Miron Construction GC"
+      ],
+      "mentioned_brands": [
+        "Aspirus Health",
+        "HGA",
+        "Miron Construction"
+      ],
+      "competitor_watch": [
+        "medical gas",
+        "HVAC",
+        "electrical",
+        "plumbing",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Aspirus breaks ground on $227 million Wausau hospital expansion - Innovatrix",
+          "url": "https://innovatrix.eu/aspirus-breaks-ground-on-227-million-wausau-hospital-expansion/"
+        }
+      ],
+      "open_for": "Under construction. Structural work, medical MEP, specialized imaging suites."
+    },
+    {
+      "id": "wi-amazon-deforest-delivery-facility",
+      "name": "Amazon Delivery Facility, DeForest",
+      "state": "WI",
+      "city": "DeForest",
+      "county": "Dane",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": 218000,
+      "owner": "Amazon / Ryan Companies",
+      "architect": "",
+      "general_contractor": "Ryan Companies",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "218,000 SF Amazon parcel delivery facility in DeForest. Construction starting July 2026 by Ryan Companies with completion set for June 2027. Features 15 semi-truck loading docks and 914 van stalls.",
+      "key_specs": [
+        "218,000 SF facility",
+        "15 semi-truck loading docks",
+        "914 van parking stalls",
+        "550-600 daily employees"
+      ],
+      "mentioned_brands": [
+        "Amazon",
+        "Ryan Companies"
+      ],
+      "competitor_watch": [
+        "dock doors",
+        "conveyors",
+        "paving",
+        "lighting",
+        "HVAC"
+      ],
+      "sources": [
+        {
+          "title": "Amazon delivery facility coming to DeForest - HNG News",
+          "url": "https://www.hngnews.com/the_star/local_news/amazon-delivery-facility-coming-to-deforest/article_8a598eed-cde0-4e36-aa42-9dccf0db29d6.html"
+        }
+      ],
+      "open_for": "Under construction. Site work, building shell, dock doors, MEP."
+    },
+    {
+      "id": "wi-rockwell-automation-new-berlin",
+      "name": "Rockwell Automation Advanced Manufacturing Campus",
+      "state": "WI",
+      "city": "New Berlin",
+      "county": "Waukesha",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": 810000,
+      "owner": "Rockwell Automation",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "Phase 1 calls for an 810,000 SF advanced manufacturing facility (770k SF manufacturing + 40k SF office) in New Berlin on West Grange Ave, expandable to over 1M SF. City approvals reviewed July 2026, groundbreaking planned late 2026.",
+      "key_specs": [
+        "810,000 SF Phase 1 (expandable to 1M+ SF)",
+        "770,000 SF manufacturing / assembly",
+        "40,000 SF office space",
+        "Potential 425k SF Phase 2"
+      ],
+      "mentioned_brands": [
+        "Rockwell Automation"
+      ],
+      "competitor_watch": [
+        "industrial power",
+        "HVAC",
+        "compressed air",
+        "dock doors",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "New Berlin Plan Commission reviews Rockwell Automation - GMToday",
+          "url": "https://www.gmtoday.com/the_freeman/business/rockwell-automation-new-berlin/article_16f3551b-13f0-5494-9b28-7fd0b2485907.html"
+        }
+      ],
+      "open_for": "Planning & rezoning. Advance procurement for industrial shell and MEP."
+    }
+  ],
+  "stats": {
+    "total": 5
+  }
+}

@@ -1,0 +1,17 @@
+---
+description: Louisiana commercial project capture — read the playbook before any pull
+globs: data/states/la.json,data/raw/la-*.json,scripts/pull-la*.py,docs/states/la.md
+alwaysApply: false
+---
+
+# Louisiana Commercial Pulls
+
+Before capturing or refreshing Louisiana, read **`docs/states/la.md`** in full.
+
+After the pull, update that playbook:
+
+1. **What works** and **What failed last time**
+2. **Pull log** with date, source, and outcome
+3. The AUTO header stats (run `python3 scripts/sync-state-playbooks.py --state la`)
+
+Follow `.cursor/rules/state-data-pull-review.mdc` for the review checklist.

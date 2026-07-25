@@ -1,0 +1,55 @@
+---
+description: How to edit the project corpus without losing the changes
+globs: data/**,scripts/**
+alwaysApply: false
+---
+
+# Project Data Pipeline
+
+`data/national-commercial-projects.json` is generated output. Editing it directly
+is wasted work, because `scripts/merge-national-corpus.py` overwrites it from the
+per-state files.
+
+## Correct order
+
+1. Edit `data/states/*.json`, the source of truth for the 50 states.
+2. Run `python3 scripts/merge-national-corpus.py` to rebuild the merged corpus.
+3. Run `npm run build`.
+
+Corpus-wide text fixes belong in a script under `scripts/` that walks
+`data/states/*.json`, so the fix survives the next capture run. See
+`scripts/clean-dashes.py`.
+
+## Dry run text transforms first
+
+Print before and after pairs for a handful of representative inputs before writing
+to 50 files. A naive capitalisation pass produced "Eearly" and "Ttotal" across the
+whole corpus because the replacement inserted a capital without consuming the
+original character. The dry run caught it; a blind run would have shipped it.
+
+## Metadata lives in the merge script
+
+`capture_method` and `notes` in the merged file come from
+`scripts/merge-national-corpus.py`, not from the state files. Fix that text there.
+
+## Known gaps
+
+- Some Chicago records are named "Chicago Permit #101082051, 707 W JUNIOR TER"
+  because the permit feed has no project title. These need better names.
+- Public permits and press almost never name a manufacturer. Expect brand mention
+  counts near zero until specification extraction ships, and never present that
+  zero as a lost bid.
+
+## State playbooks
+
+Every state has a playbook at **`docs/states/{code}.md`** and a matching Cursor rule at
+**`.cursor/rules/state-{code}-commercial-pull.mdc`**.
+
+Before any state pull:
+
+1. Read `docs/states/{code}.md`
+2. Follow `.cursor/rules/state-data-pull-review.mdc` when the pull finishes
+3. Run `python3 scripts/sync-state-playbooks.py --state {code}` to refresh counts
+
+Georgia is the deepest playbook today. Use it as the template when a state graduates
+from web research to automated feeds.

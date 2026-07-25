@@ -1,0 +1,47 @@
+{
+  "state": "MT",
+  "state_name": "Montana",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — state permits, local news.",
+  "projects": [
+    {
+      "id": "mt-bozeman-tech-industrial",
+      "name": "Bozeman Tech Corridor Industrial",
+      "state": "MT",
+      "city": "Bozeman",
+      "county": "Gallatin",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "Gallatin County/Bozeman tech-adjacent industrial and lab-fit commercial permits in 2026 cycle.",
+      "key_specs": [
+        "Bozeman tech corridor",
+        "Industrial and lab-adjacent",
+        "Fast-growing Gallatin County"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "HVAC",
+        "lighting",
+        "lab systems",
+        "insulation"
+      ],
+      "sources": [
+        {
+          "title": "Montana commercial development, local business news",
+          "url": "https://www.mtpr.org/"
+        }
+      ],
+      "open_for": "Monitor permit filings for spec projects."
+    }
+  ],
+  "stats": {
+    "total": 1
+  }
+}

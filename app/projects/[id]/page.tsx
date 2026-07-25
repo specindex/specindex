@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { StatusPill } from "@/components/StatusPill";
-import { formatSf, formatUsd, typeLabel } from "@/lib/format";
+import { formatDate, formatSf, formatUsd, stateName, typeLabel } from "@/lib/format";
 import { getProjectById, getProjectIds } from "@/lib/projects";
 
 type Props = { params: Promise<{ id: string }> };
@@ -34,7 +34,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             href="/projects/"
             className="text-sm font-medium text-[var(--color-gray-600)] hover:text-[var(--color-ink)]"
           >
-            ← All Georgia projects
+            ← All projects
           </Link>
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <StatusPill status={project.status} />
@@ -43,20 +43,32 @@ export default async function ProjectDetailPage({ params }: Props) {
             </span>
           </div>
           <h1 className="mt-3 text-hero">{project.name}</h1>
+          <p className="mt-2 font-mono text-sm text-[var(--color-gray-400)]">
+            Project ID: {project.id}
+          </p>
           <p className="mt-2 text-lg text-[var(--color-gray-600)]">
             {project.city}
-            {project.county ? `, ${project.county} County` : ""}, Georgia
+            {project.county ? `, ${project.county} County` : ""},{" "}
+            {stateName(project.state)}
           </p>
         </div>
       </div>
 
       <div className="mx-auto max-w-6xl px-5 py-10 md:px-8 md:py-12">
         <dl className="card grid gap-4 p-6 sm:grid-cols-2 lg:grid-cols-3">
+          <Fact label="Project ID" value={project.id} mono />
           <Fact label="Estimated value" value={formatUsd(project.estimated_value_usd)} />
           <Fact label="Square footage" value={formatSf(project.square_footage)} />
-          <Fact label="Owner" value={project.owner || "—"} />
-          <Fact label="General contractor" value={project.general_contractor || "—"} />
-          <Fact label="Architect" value={project.architect || "—"} />
+          <Fact
+            label="Opened / announced"
+            value={formatDate(project.opened_or_announced_date)}
+          />
+          <Fact label="Owner" value={project.owner || "Not reported"} />
+          <Fact
+            label="General contractor"
+            value={project.general_contractor || "Not reported"}
+          />
+          <Fact label="Architect" value={project.architect || "Not reported"} />
           <Fact
             label="Brands mentioned"
             value={
@@ -130,9 +142,12 @@ export default async function ProjectDetailPage({ params }: Props) {
           </section>
         )}
 
-        <div className="mt-12">
+        <div className="mt-12 flex flex-wrap gap-3">
           <Link href="/visibility/" className="btn btn-primary">
             Compare brand visibility
+          </Link>
+          <Link href="/projects/" className="btn btn-outline">
+            Back to all projects
           </Link>
         </div>
       </div>
@@ -140,13 +155,13 @@ export default async function ProjectDetailPage({ params }: Props) {
   );
 }
 
-function Fact({ label, value }: { label: string; value: string }) {
+function Fact({ label, value, mono }: { label: string; value: string; mono?: boolean }) {
   return (
     <div>
       <dt className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-gray-400)]">
         {label}
       </dt>
-      <dd className="mt-1 text-sm font-medium">{value}</dd>
+      <dd className={`mt-1 text-sm font-medium ${mono ? "font-mono text-xs" : ""}`}>{value}</dd>
     </div>
   );
 }

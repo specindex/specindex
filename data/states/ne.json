@@ -1,0 +1,49 @@
+{
+  "state": "NE",
+  "state_name": "Nebraska",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — Meta/Google pipeline, state announcements.",
+  "projects": [
+    {
+      "id": "ne-meta-kearney-data-center",
+      "name": "Meta Data Center, Kearney area",
+      "state": "NE",
+      "city": "Kearney",
+      "county": "Buffalo",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Meta Platforms",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-01",
+      "description": "Meta data center campus development continuing in central Nebraska. Part of Midwest AI infrastructure buildout.",
+      "key_specs": [
+        "Hyperscale campus",
+        "Central Nebraska",
+        "Meta infrastructure pipeline"
+      ],
+      "mentioned_brands": [
+        "Meta"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "cooling",
+        "generators",
+        "electrical"
+      ],
+      "sources": [
+        {
+          "title": "Midwest data center development, Atlas Buildings Hub",
+          "url": "https://atlasbuildingshub.com/2026/04/07/midwestern-states-reckon-with-data-center-development/"
+        }
+      ],
+      "open_for": "Campus build. MEP specs active."
+    }
+  ],
+  "stats": {
+    "total": 1
+  }
+}

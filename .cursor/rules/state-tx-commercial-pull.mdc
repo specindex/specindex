@@ -1,0 +1,17 @@
+---
+description: Texas commercial project capture — read the playbook before any pull
+globs: data/states/tx.json,data/raw/tx-*.json,scripts/pull-tx*.py,docs/states/tx.md
+alwaysApply: false
+---
+
+# Texas Commercial Pulls
+
+Before capturing or refreshing Texas, read **`docs/states/tx.md`** in full.
+
+After the pull, update that playbook:
+
+1. **What works** and **What failed last time**
+2. **Pull log** with date, source, and outcome
+3. The AUTO header stats (run `python3 scripts/sync-state-playbooks.py --state tx`)
+
+Follow `.cursor/rules/state-data-pull-review.mdc` for the review checklist.

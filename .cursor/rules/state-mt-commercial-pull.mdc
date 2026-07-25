@@ -1,0 +1,17 @@
+---
+description: Montana commercial project capture — read the playbook before any pull
+globs: data/states/mt.json,data/raw/mt-*.json,scripts/pull-mt*.py,docs/states/mt.md
+alwaysApply: false
+---
+
+# Montana Commercial Pulls
+
+Before capturing or refreshing Montana, read **`docs/states/mt.md`** in full.
+
+After the pull, update that playbook:
+
+1. **What works** and **What failed last time**
+2. **Pull log** with date, source, and outcome
+3. The AUTO header stats (run `python3 scripts/sync-state-playbooks.py --state mt`)
+
+Follow `.cursor/rules/state-data-pull-review.mdc` for the review checklist.

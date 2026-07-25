@@ -1,0 +1,53 @@
+{
+  "state": "KS",
+  "state_name": "Kansas",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — Johnson County Post, local news.",
+  "projects": [
+    {
+      "id": "ks-chiefs-olathe-headquarters",
+      "name": "Kansas City Chiefs Headquarters, Olathe",
+      "state": "KS",
+      "city": "Olathe",
+      "county": "Johnson",
+      "status": "planning",
+      "project_type": "mixed_use",
+      "estimated_value_usd": 300000000,
+      "square_footage": null,
+      "owner": "Kansas City Chiefs",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Burns & McDonnell named owner's rep for $300M HQ and practice facility at College Blvd and Ridgeview. Open targeted 2031 NFL season.",
+      "key_specs": [
+        "HQ and practice facility",
+        "Burns & McDonnell + CAA ICON oversight",
+        "Local tax incentives approved",
+        "Related $3B Wyandotte stadium project"
+      ],
+      "mentioned_brands": [
+        "Kansas City Chiefs",
+        "Burns & McDonnell",
+        "CAA ICON"
+      ],
+      "competitor_watch": [
+        "HVAC",
+        "lighting",
+        " turf systems",
+        "lockers/fixtures",
+        "site civil"
+      ],
+      "sources": [
+        {
+          "title": "Chiefs Olathe HQ, Johnson County Post",
+          "url": "https://johnsoncountypost.com/2026/07/17/chiefs-burns-mcdonnell-291761/"
+        }
+      ],
+      "open_for": "Design phase starting. Building systems specs forming."
+    }
+  ],
+  "stats": {
+    "total": 1
+  }
+}

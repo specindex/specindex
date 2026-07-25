@@ -1,0 +1,60 @@
+{
+  "state": "LA",
+  "state_name": "Louisiana",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — Meta Data Centers, WWNO, state economic development.",
+  "projects": [
+    {
+      "id": "la-meta-richland-parish-hyperion",
+      "name": "Meta Hyperion Data Center Expansion, Richland Parish",
+      "state": "LA",
+      "city": "Rayville",
+      "county": "Richland",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": 50000000000,
+      "square_footage": null,
+      "owner": "Meta Platforms",
+      "architect": "",
+      "general_contractor": "DPR Construction / Turner / Mortenson",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "Meta expanding Richland Parish AI data center to 5GW. Total investment $50B (+$40B announced July 2026). 3,200+ acres; 7,500 peak construction jobs.",
+      "key_specs": [
+        "5 GW compute capacity",
+        "3,200+ acres",
+        "Hyperion AI training cluster",
+        "$1.6B+ contracted to LA businesses",
+        "Full build-out to 2036"
+      ],
+      "mentioned_brands": [
+        "Meta",
+        "Entergy Louisiana",
+        "DPR Construction",
+        "Turner Construction",
+        "Mortenson"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "generators",
+        "cooling",
+        "electrical",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Meta Richland Parish expansion, Meta Data Centers",
+          "url": "https://datacenters.atmeta.com/2026/07/deepening-our-investment-in-richland-parish-louisiana/"
+        },
+        {
+          "title": "Meta $40B expansion, WWNO",
+          "url": "https://www.wwno.org/economy/2026-07-14/meta-is-investing-40b-more-to-expand-richland-parish-data-center-project"
+        }
+      ],
+      "open_for": "Massive expansion underway. Infrastructure and MEP specs."
+    }
+  ],
+  "stats": {
+    "total": 1
+  }
+}

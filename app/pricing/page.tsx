@@ -11,15 +11,15 @@ const plans = [
   {
     name: "Free",
     price: "$0",
-    period: "Georgia browse",
-    description: "Explore the public Georgia corpus and run limited brand checks.",
+    period: "public index",
+    description: "Search the public index and run a brand check now and then.",
     features: [
-      "Browse open Georgia projects",
-      "Project search and filters",
-      "1 brand visibility scan / week",
-      "Public source attribution",
+      "Search commercial projects in all 50 states",
+      "Filter by state, county, stage, and category",
+      "1 brand check per week",
+      "Source links on every project",
     ],
-    cta: "Browse projects",
+    cta: "Search the index",
     href: "/projects/",
     highlighted: false,
   },
@@ -27,30 +27,30 @@ const plans = [
     name: "Pro",
     price: "Contact us",
     period: "per seat / month",
-    description: "Unlimited search and visibility for manufacturer reps in Georgia.",
+    description: "For reps working a territory who need this every morning.",
     features: [
-      "Unlimited Georgia project search",
-      "Unlimited brand visibility scans",
+      "Unlimited search across the national index",
+      "Unlimited brand checks",
       "Competitor compare (up to 5 brands)",
-      "Category opportunity lists",
-      "Email alerts (weekly digest)",
+      "Lists of projects with your category still open",
+      "Weekly email digest for your territory",
     ],
-    cta: "Get a Demo",
-    href: "/#demo",
+    cta: "Request Demo",
+    href: "mailto:hello@specindex.ai?subject=SpecIndex%20Pro%20plan",
     highlighted: true,
   },
   {
     name: "Team",
     price: "Contact us",
     period: "multi-seat",
-    description: "For rep firms and enterprise manufacturers with multi-brand books.",
+    description: "For rep firms and manufacturers carrying several brands at once.",
     features: [
       "Everything in Pro",
-      "Multi-brand profiles",
-      "Territory seats and exports",
-      "Spec PDF upload + NER (beta)",
-      "CRM export / API (roadmap)",
-      "Southeast expansion priority",
+      "Multiple brand profiles",
+      "Territory seats and list exports",
+      "Spec book upload and extraction (beta)",
+      "CRM export and API (roadmap)",
+      "Priority on the jurisdictions you care about",
     ],
     cta: "Talk to us",
     href: "mailto:hello@specindex.ai?subject=SpecIndex%20Team%20plan",
@@ -64,10 +64,11 @@ export default function PricingPage() {
       <section className="border-b border-[var(--color-border)] bg-[var(--color-bg)]">
         <div className="mx-auto max-w-3xl px-5 py-16 text-center md:px-8 md:py-20">
           <p className="text-eyebrow">Pricing</p>
-          <h1 className="mt-4 text-hero">Start free in Georgia. Scale with your territory.</h1>
+          <h1 className="mt-4 text-hero">The index is free to search. Always.</h1>
           <p className="mt-5 text-base leading-relaxed text-[var(--color-gray-600)]">
-            Public project browse is free. Manufacturer intelligence — brand alerts,
-            competitive compare, spec analysis — on paid seats.
+            Anyone can search public project data without paying us for it. The paid
+            seats cover the work layered on top: brand tracking, competitor compare,
+            alerts, and reading the spec books.
           </p>
         </div>
       </section>

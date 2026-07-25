@@ -1,0 +1,215 @@
+{
+  "state": "PA",
+  "state_name": "Pennsylvania",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — local news, PR Newswire, REBusinessOnline, state economic development.",
+  "projects": [
+    {
+      "id": "pa-northpoint-hazleton-logistics-141",
+      "name": "Hazleton Logistics 141 Building 5, Hazleton",
+      "state": "PA",
+      "city": "Hazleton",
+      "county": "Luzerne",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": 100000000,
+      "square_footage": null,
+      "owner": "NorthPoint Development",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Next phase of 5.3M SF master-planned logistics park along I-81. Building 5 groundbreaking July 22; completion July 2027.",
+      "key_specs": [
+        "5.3M SF master plan",
+        "Building 1: 1.05M SF occupied by RJW Logistics",
+        "I-81 Exit 141 access",
+        "LERTA tax abatement"
+      ],
+      "mentioned_brands": [
+        "NorthPoint Development",
+        "RJW Logistics"
+      ],
+      "competitor_watch": [
+        "dock doors",
+        "lighting",
+        "concrete",
+        "HVAC",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "NorthPoint Hazleton groundbreaking, Standard-Speaker",
+          "url": "https://www.standardspeaker.com/2026/07/22/northpoint-breaks-ground-on-new-phase-of-hazleton-logistics-141/"
+        },
+        {
+          "title": "Hazleton Logistics 141, FOX56",
+          "url": "https://fox56.com/news/local/northpoint-breaks-ground-on-next-phase-of-hazleton-logistics-141-amid-ongoing-debate"
+        }
+      ],
+      "open_for": "Active logistics build. Industrial MEP and dock specs."
+    },
+    {
+      "id": "pa-provident-300-keystone-drive",
+      "name": "300 Keystone Drive Industrial, Limerick",
+      "state": "PA",
+      "city": "Limerick",
+      "county": "Montgomery",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": 257040,
+      "owner": "Provident Industrial",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "257,040 SF Class A industrial groundbreaking. Provident's first Northeast development in Greater Philadelphia market.",
+      "key_specs": [
+        "257,040 SF Class A",
+        "Highway network access",
+        "Speculative industrial",
+        "Philadelphia office opened March 2026"
+      ],
+      "mentioned_brands": [
+        "Provident Industrial",
+        "Provident"
+      ],
+      "competitor_watch": [
+        "dock equipment",
+        "lighting",
+        "insulation",
+        "HVAC",
+        "roofing"
+      ],
+      "sources": [
+        {
+          "title": "Provident 300 Keystone, PR Newswire",
+          "url": "https://www.prnewswire.com/news-releases/provident-industrial-breaks-ground-on-300-keystone-drive-marking-its-first-northeast-development-302823393.html"
+        }
+      ],
+      "open_for": "Ground broken. Spec industrial packages open."
+    },
+    {
+      "id": "pa-wegmans-cranberry",
+      "name": "Wegmans Supermarket, Cranberry Township",
+      "state": "PA",
+      "city": "Cranberry Township",
+      "county": "Butler",
+      "status": "under_construction",
+      "project_type": "retail",
+      "estimated_value_usd": null,
+      "square_footage": 115000,
+      "owner": "Wegmans Food Markets",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "Groundbroken 115,000 SF supermarket store on a 13-acre site adjacent to UPMC Lemieux Sports Complex, marking Wegmans' first location in Southwestern Pennsylvania.",
+      "key_specs": [
+        "115,000 SF retail space",
+        "13-acre development site",
+        "400-500 employees",
+        "Opening target late 2027"
+      ],
+      "mentioned_brands": [
+        "Wegmans"
+      ],
+      "competitor_watch": [
+        "commercial refrigeration",
+        "retail HVAC",
+        "storefront glazing",
+        "polished concrete",
+        "lighting"
+      ],
+      "sources": [
+        {
+          "title": "Wegmans to start construction on Cranberry location",
+          "url": "https://triblive.com/local/regional/wegmans-to-start-construction-on-cranberry-location-in-july/"
+        }
+      ],
+      "open_for": "Grocery refrigeration systems, retail store fit-outs, commercial MEP."
+    },
+    {
+      "id": "pa-cumberland-county-state-health-center",
+      "name": "Cumberland County State Health Center Renovation & Expansion",
+      "state": "PA",
+      "city": "South Middleton Township",
+      "county": "Cumberland",
+      "status": "under_construction",
+      "project_type": "healthcare",
+      "estimated_value_usd": null,
+      "square_footage": 15300,
+      "owner": "Linlo Properties",
+      "architect": "",
+      "general_contractor": "Keller Contracting",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Groundbroken 15,300 SF project involving full interior renovation of an 11,300 SF building and construction of a 4,000 SF addition at 27 Brookwood Ave for state health and office facilities.",
+      "key_specs": [
+        "11,300 SF renovation + 4,000 SF addition",
+        "Upgraded exterior facade",
+        "State health center & administrative space",
+        "Completion summer 2027"
+      ],
+      "mentioned_brands": [
+        "Linlo Properties",
+        "Keller Contracting"
+      ],
+      "competitor_watch": [
+        "healthcare HVAC",
+        "medical gas/plumbing",
+        "exterior cladding",
+        "LED lighting",
+        "commercial doors"
+      ],
+      "sources": [
+        {
+          "title": "Linlo Properties, Keller Contracting break ground on Cumberland County state health center",
+          "url": "https://www.cpbj.com/linlo-properties-keller-contracting-break-ground-on-cumberland-county-state-health-center/"
+        }
+      ],
+      "open_for": "Healthcare interior fit-out subcontracts, medical plumbing, building envelope updates."
+    },
+    {
+      "id": "pa-bette-brown-slayton-business-park",
+      "name": "Bette Brown Slayton Business Park",
+      "state": "PA",
+      "city": "Bedford",
+      "county": "Bedford",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": 6700000,
+      "square_footage": null,
+      "owner": "Bedford County Development Association (BCDA)",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Groundbreaking on a 44-acre industrial park creating 9 shovel-ready pads for expanding businesses, funded by PA SITES, PIDA, and Multimodal state grants.",
+      "key_specs": [
+        "44-acre industrial park",
+        "9 shovel-ready build pads",
+        "$6.7M Commonwealth funding package",
+        "60 construction jobs"
+      ],
+      "mentioned_brands": [
+        "Bedford County Development Association",
+        "PA SITES"
+      ],
+      "competitor_watch": [
+        "civil infrastructure",
+        "paving",
+        "stormwater management",
+        "utility power & gas",
+        "site lighting"
+      ],
+      "sources": [
+        {
+          "title": "Shapiro Administration Celebrates Bette Brown Slayton Business Park Groundbreaking",
+          "url": "https://dced.pa.gov/newsroom/shapiro-administration-celebrates-bette-brown-slayton-business-park-groundbreaking-creating-shovel-ready-opportunities-for-businesses-in-bedford-county/"
+        }
+      ],
+      "open_for": "Industrial park civil utilities, earthwork, sub-feed power infrastructure."
+    }
+  ],
+  "stats": {
+    "total": 5
+  }
+}

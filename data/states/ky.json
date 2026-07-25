@@ -1,0 +1,95 @@
+{
+  "state": "KY",
+  "state_name": "Kentucky",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — local news, permit filings.",
+  "projects": [
+    {
+      "id": "ky-kroger-patchen-wilkes-marketplace",
+      "name": "Kroger Marketplace, Patchen Wilkes Lexington",
+      "state": "KY",
+      "city": "Lexington",
+      "county": "Fayette",
+      "status": "under_construction",
+      "project_type": "retail",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Kroger",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Groundbreaking July 22 for largest Kroger Marketplace in Kentucky by roof area on Winchester Road. ~300 jobs; drive-thru pharmacy, sushi bar, fuel center.",
+      "key_specs": [
+        "Largest KY Kroger Marketplace by roof area",
+        "~300 jobs",
+        "Drive-thru pharmacy",
+        "Fuel center"
+      ],
+      "mentioned_brands": [
+        "Kroger"
+      ],
+      "competitor_watch": [
+        "refrigeration",
+        "HVAC",
+        "lighting",
+        "store fixtures",
+        " flooring"
+      ],
+      "sources": [
+        {
+          "title": "Kroger Lexington groundbreaking, WKYT",
+          "url": "https://www.wkyt.com/2026/07/20/kroger-break-ground-new-lexington-location/"
+        }
+      ],
+      "open_for": "Just broke ground. Retail MEP and refrigeration specs."
+    },
+    {
+      "id": "ky-poe-carrollton-data-center",
+      "name": "Carrollton Industrial Campus (proposed), Carroll County",
+      "state": "KY",
+      "city": "Carrollton",
+      "county": "Carroll",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": 9600000000,
+      "square_footage": null,
+      "owner": "Poe Companies / PowerHouse Data Centers",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Proposed $9.6B hyperscale data center on 550 acres near I-71. Early planning; site options secured; power studies completed with LG&E/KU.",
+      "key_specs": [
+        "550 acres",
+        "~300 acres for data center",
+        "PILOT ~$11.1M/year to Carrollton",
+        "$93.2M local tax revenue projected"
+      ],
+      "mentioned_brands": [
+        "Poe Companies",
+        "PowerHouse Data Centers"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "generators",
+        "cooling",
+        "electrical",
+        "site civil"
+      ],
+      "sources": [
+        {
+          "title": "Poe Carroll County data center, Courier-Journal",
+          "url": "https://www.courier-journal.com/story/News/local/kentucky/2026/07/23/louisville-poe-companies-plans-new-9-billion-data-center-project-in-kentucky/91022223007/"
+        },
+        {
+          "title": "Carrollton campus, WDRB",
+          "url": "https://www.wdrb.com/news/business/louisville-based-development-team-announces-plans-for-9-6b-data-center-campus-in-carroll-county/article_fbadd4b9-3df3-4a85-8e1c-ed98165aec07.html"
+        }
+      ],
+      "open_for": "Early planning. Pre-development infrastructure specs."
+    }
+  ],
+  "stats": {
+    "total": 2
+  }
+}

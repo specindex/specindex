@@ -1,0 +1,17 @@
+{
+  "project_id": "wellstar-columbia-county-medical",
+  "project_name": "Wellstar Columbia County Medical Center",
+  "fetched_at": "2026-07-24T05:15:07.281076+00:00",
+  "sources": [
+    {
+      "url": "https://augustagoodnews.com/wellstar-columbia-county-medical-center-on-track-to-open-in-late-summer-2026/",
+      "title": "Augusta Good News \u2014 Wellstar Columbia County",
+      "files": [],
+      "error": "<urlopen error [SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version (_ssl.c:1129)>"
+    }
+  ],
+  "documents": [],
+  "errors": [
+    "https://augustagoodnews.com/wellstar-columbia-county-medical-center-on-track-to-open-in-late-summer-2026/: <urlopen error [SSL: TLSV1_ALERT_PROTOCOL_VERSION] tlsv1 alert protocol version (_ssl.c:1129)>"
+  ]
+}

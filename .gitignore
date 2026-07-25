@@ -20,6 +20,7 @@
 
 # misc
 .DS_Store
+.cache/
 *.pem
 .env
 .env*.local
@@ -33,6 +34,11 @@ yarn-error.log*
 .firebase/
 firebase-debug.log
 firestore-debug.log
+
+# agent tooling caches (local only)
+.agents/
+.claude/
+skills-lock.json
 
 # typescript
 *.tsbuildinfo

@@ -1,0 +1,50 @@
+{
+  "state": "UT",
+  "state_name": "Utah",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — state economic development, industry news.",
+  "projects": [
+    {
+      "id": "ut-ti-lehi-semiconductor-fab",
+      "name": "Texas Instruments Semiconductor Fab, Lehi",
+      "state": "UT",
+      "city": "Lehi",
+      "county": "Utah",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Texas Instruments",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-01",
+      "description": "Texas Instruments actively developing semiconductor fabrication facility in Lehi, Utah. Silicon Slopes corridor.",
+      "key_specs": [
+        "Semiconductor fab",
+        "Lehi UT",
+        "Silicon Slopes corridor"
+      ],
+      "mentioned_brands": [
+        "Texas Instruments"
+      ],
+      "competitor_watch": [
+        "cleanroom systems",
+        "process piping",
+        "HVAC",
+        "electrical",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "TI Lehi fab, industry coverage",
+          "url": "https://www.enr.com/"
+        }
+      ],
+      "open_for": "Fab construction. Process and MEP specs."
+    }
+  ],
+  "stats": {
+    "total": 1
+  }
+}

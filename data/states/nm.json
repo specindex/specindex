@@ -1,0 +1,53 @@
+{
+  "state": "NM",
+  "state_name": "New Mexico",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — DCD, Stargate announcements.",
+  "projects": [
+    {
+      "id": "nm-stargate-project-jupiter-dona-ana",
+      "name": "Stargate Project Jupiter, Doña Ana County",
+      "state": "NM",
+      "city": "Las Cruces area",
+      "county": "Doña Ana",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Stack Infrastructure / BorderPlex Digital Assets / Oracle / OpenAI",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-01",
+      "description": "1,400-acre Stargate site in Doña Ana County for Oracle and OpenAI. Part of US Stargate 4.5GW pipeline.",
+      "key_specs": [
+        "1,400 acres",
+        "Stargate initiative",
+        "Oracle and OpenAI tenants",
+        "BorderPlex region"
+      ],
+      "mentioned_brands": [
+        "OpenAI",
+        "Oracle",
+        "Stack Infrastructure"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "cooling",
+        "generators",
+        "electrical",
+        "site civil"
+      ],
+      "sources": [
+        {
+          "title": "Stargate Wisconsin reference NM site, DCD",
+          "url": "https://www.datacenterdynamics.com/en/news/openai-oracle-and-vantage-plan-stargate-wisconsin-data-center-expected-to-be-close-to-a-gigawatt/"
+        }
+      ],
+      "open_for": "Early Stargate development. Infrastructure specs forming."
+    }
+  ],
+  "stats": {
+    "total": 1
+  }
+}

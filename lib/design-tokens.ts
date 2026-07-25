@@ -1,6 +1,5 @@
 /**
- * SpecIndex design tokens — derived from filmore.ai (Jul 2026).
- * See docs/design-system.md
+ * SpecIndex design tokens. See docs/design-system.md
  */
 
 export const colors = {

@@ -1,10 +1,26 @@
 import Link from "next/link";
-import { getProjects } from "@/lib/projects";
+import { getCorpus, getProjects } from "@/lib/projects";
 import { formatUsd, typeLabel } from "@/lib/format";
+import { getTopCounties, getVisibilitySnapshot } from "@/lib/stats";
 import { StatusPill } from "@/components/StatusPill";
 
+const DEMO_BRAND = "Acuity Brands";
+const DEMO_CATEGORY = "lighting";
+
 export function ProductMock() {
-  const projects = getProjects().slice(0, 4);
+  const projects = getProjects();
+  const corpus = getCorpus();
+  const preview = projects.slice(0, 4);
+  const counties = getTopCounties(projects, 6);
+  const { categoryHits, stillOpen } = getVisibilitySnapshot(
+    projects,
+    DEMO_BRAND,
+    DEMO_CATEGORY,
+  );
+  const stateLabel =
+    corpus.stats?.states && corpus.stats.states > 1
+      ? `${corpus.stats.states} states`
+      : "national index";
 
   return (
     <div className="card-elevated overflow-hidden">
@@ -14,46 +30,47 @@ export function ProductMock() {
             S
           </span>
           <span className="text-xs font-medium text-[var(--color-gray-600)]">
-            SpecIndex · Georgia
+            SpecIndex · {stateLabel}
           </span>
         </div>
         <span className="font-mono text-[10px] text-[var(--color-gray-400)]">
-          Live
+          Live · {projects.length} projects
         </span>
       </div>
 
       <div className="grid gap-0 md:grid-cols-[1fr_1.1fr]">
         <div className="border-b border-[var(--color-border)] p-4 md:border-b-0 md:border-r">
           <p className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-gray-400)]">
-            Open projects · Fulton
+            Top counties
           </p>
           <div className="mt-3 grid grid-cols-3 gap-1">
-            {["Fulton", "Chatham", "Gwinnett", "Bibb", "Henry", "Effingham"].map(
-              (c, i) => (
-                <div
-                  key={c}
-                  className={`rounded px-1.5 py-1 text-center font-mono text-[9px] ${
-                    i < 3
-                      ? "bg-[var(--color-green-light)] font-semibold text-[var(--color-green)]"
-                      : "bg-[var(--color-gray-100)] text-[var(--color-gray-600)]"
-                  }`}
-                >
-                  {c}
-                </div>
-              ),
-            )}
+            {counties.map((c, i) => (
+              <div
+                key={c}
+                className={`rounded px-1.5 py-1 text-center font-mono text-[9px] ${
+                  i < 3
+                    ? "bg-[var(--color-green-light)] font-semibold text-[var(--color-green)]"
+                    : "bg-[var(--color-gray-100)] text-[var(--color-gray-600)]"
+                }`}
+              >
+                {c}
+              </div>
+            ))}
           </div>
           <p className="mt-4 font-mono text-[10px] text-[var(--color-gray-600)]">
-            Brand mention rate
+            {DEMO_CATEGORY} · still early enough
           </p>
-          <p className="font-mono text-2xl font-bold text-[var(--color-green)]">12%</p>
+          <p className="font-mono text-2xl font-bold text-[var(--color-green)]">
+            {stillOpen.length}
+          </p>
           <p className="mt-1 text-[10px] text-[var(--color-gray-400)]">
-            vs 34% category opportunity
+            of {categoryHits.length} projects needing {DEMO_CATEGORY} are in planning or
+            permitting
           </p>
         </div>
 
         <div className="max-h-[280px] overflow-y-auto p-3">
-          {projects.map((p) => (
+          {preview.map((p) => (
             <Link
               key={p.id}
               href={`/projects/${p.id}/`}

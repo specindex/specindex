@@ -26,6 +26,7 @@ export type ProjectSource = {
 export type Project = {
   id: string;
   name: string;
+  state?: string;
   city: string;
   county: string;
   status: ProjectStatus | string;
@@ -49,7 +50,13 @@ export type ProjectCorpus = {
   geography: string;
   capture_method?: string;
   date_range?: string;
+  states_covered?: string[];
   projects: Project[];
-  stats?: { total: number; opened_last_3_months: number };
+  stats?: {
+    total: number;
+    opened_last_3_months?: number;
+    opened_last_90_days?: number;
+    states?: number;
+  };
   notes?: string;
 };

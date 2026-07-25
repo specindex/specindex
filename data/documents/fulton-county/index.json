@@ -1,0 +1,67 @@
+{
+  "generated_at": "2026-07-24T05:31:48.297652+00:00",
+  "jurisdiction_notes": "Fulton County Public Works only handles Planning/Zoning/Permits for the Fulton Industrial Business District. Most Fulton County corpus projects are in incorporated cities (primarily Atlanta, Alpharetta, South Fulton). Atlanta project plans/specs are in Accela Citizen Access (Planning/Building tabs).",
+  "county_portal": "https://www.fultoncountyga.gov/inside-fulton-county/fulton-county-departments/public-works/planning-zoning-and-permitting",
+  "atlanta_portal": "https://aca-prod.accela.com/ATLANTA_GA/Cap/CapHome.aspx?TabName=Planning&module=Planning",
+  "county_forms": [
+    {
+      "path": "data/documents/fulton-county/county-forms/commercial-plan-review-building-permit-instructions.pdf",
+      "url": "https://www.fultoncountyga.gov/-/media/Departments/Public-Works/Planning-Zoning-and-Permits/Commercial-Plan-Review---Building-Permit-Instructions-updated-8-25-25.pdf",
+      "content_type": "application/pdf",
+      "size_bytes": 372205,
+      "title": "Commercial Plan Review / Building Permit Instructions",
+      "category": "county_specifications"
+    },
+    {
+      "path": "data/documents/fulton-county/county-forms/building-permit-application-and-site-plan-checklist.pdf",
+      "url": "https://www.fultoncountyga.gov/-/media/Departments/Public-Works/Planning-Zoning-and-Permits/Permits-and-plan-review/updated-forms/Building_Permit_Application_and_Site_Plan_Checklist.pdf",
+      "content_type": "application/pdf",
+      "size_bytes": 594585,
+      "title": "Building Permit Application and Site Plan Checklist",
+      "category": "county_specifications"
+    }
+  ],
+  "project_documents": [
+    {
+      "path": "data/documents/fulton-county/projects/centennial-yards/centennial-yards-site-plan-pdf-cim-property-capsule.pdf",
+      "url": "https://cimgroup.propertycapsule.com/property/capsule_data/803/property/pdf/siteplan/3393.pdf",
+      "content_type": "application/pdf",
+      "size_bytes": 88315,
+      "project_id": "centennial-yards",
+      "title": "Centennial Yards Site Plan PDF (CIM Property Capsule)"
+    },
+    {
+      "project_id": "teachers-village-atlanta",
+      "title": "Invest Atlanta \u2014 Teachers Village project page",
+      "url": "https://www.investatlanta.com/developments/under-construction/teachers-village",
+      "type": "reference_page"
+    }
+  ],
+  "accela_search_targets": [
+    {
+      "project_id": "teachers-village-atlanta",
+      "street": "Fairlie",
+      "notes": "Teachers Village tower \u2014 search Atlanta Accela Planning"
+    },
+    {
+      "project_id": "motto-hilton-midtown",
+      "street": "Peachtree",
+      "street_no": "512",
+      "notes": "512 W Peachtree Motto hotel permit"
+    },
+    {
+      "project_id": "overlook-at-garson",
+      "street": "Garson",
+      "notes": "Overlook at Garson \u2014 Garson Drive NE"
+    },
+    {
+      "project_id": "centennial-yards-elliott-hotel",
+      "street": "Elliott",
+      "notes": "Centennial Yards Elliott Street boutique hotel"
+    }
+  ],
+  "errors": [
+    "DCP Digital Submittal Instructions (City of Atlanta): HTTP Error 403: Forbidden",
+    "centennial-yards Invest Atlanta Board Presentation \u2014 Centennial Yards (June 2024): HTTP Error 403: Forbidden"
+  ]
+}

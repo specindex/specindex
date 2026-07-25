@@ -1,0 +1,266 @@
+{
+  "state": "AR",
+  "state_name": "Arkansas",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Web research — Cypress Creek Energy, ENR, Arkansas Business, Arkansas Advocate, Serverfarm, AVAIO Digital",
+  "projects": [
+    {
+      "id": "ar-steel-river-energy-center",
+      "name": "Steel River Energy Center",
+      "state": "AR",
+      "city": "Wilson",
+      "county": "Mississippi",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": 4500000000,
+      "square_footage": null,
+      "owner": "Cypress Creek Energy",
+      "architect": "",
+      "general_contractor": "Moss",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "Nation's largest solar-plus-storage project; 2.5 GWdc solar and 2.9 GWh battery storage across three phases by 2029. Google anchor offtaker on Phases 1. 2. Ground broken July 14 in Mississippi County.",
+      "key_specs": [
+        "2.5 GWdc solar",
+        "2.9 GWh battery storage",
+        "1.6 GWdc + 1.9 GWh in Phases 1, 2",
+        "700 construction jobs per phase",
+        "$300M local tax revenue",
+        "Arkansas-made steel and components"
+      ],
+      "mentioned_brands": [
+        "Cypress Creek Energy",
+        "Google",
+        "Moss"
+      ],
+      "competitor_watch": [
+        "solar panels",
+        "trackers",
+        "battery storage",
+        "transformers",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "Cypress Creek and Google break ground Steel River, Cypress Creek",
+          "url": "https://cypresscreekenergy.com/news/steel-river-groundbreaking/"
+        },
+        {
+          "title": "$4.5B Arkansas solar storage megaproject, ENR",
+          "url": "https://www.enr.com/articles/63321-45b-arkansas-solar-storage-megaproject-gets-underway"
+        },
+        {
+          "title": "Steel River Energy Center, Arkansas Business",
+          "url": "https://www.arkansasbusiness.com/article/cypress-creek-google-to-build-major-solar-project-in-mississippi-county/"
+        }
+      ],
+      "open_for": "Just broken ground. EPC procurement for solar, storage, and grid interconnection."
+    },
+    {
+      "id": "ar-serverfarm-clarksville-data-center",
+      "name": "Serverfarm ARK Clarksville Data Center Campus",
+      "state": "AR",
+      "city": "Clarksville",
+      "county": "Johnson",
+      "status": "under_construction",
+      "project_type": "data_center",
+      "estimated_value_usd": 6600000000,
+      "square_footage": null,
+      "owner": "Serverfarm",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "Multi-building hyperscale data center campus near Johnson Regional Medical Center. Site prep and construction underway; first two buildings targeted January 2028. $558M projected local public benefit through 2060.",
+      "key_specs": [
+        "Multi-building scalable campus",
+        "Advanced closed-loop cooling",
+        "First phase by early 2028",
+        "$548M PILOT payments projected",
+        "Hundreds of construction jobs"
+      ],
+      "mentioned_brands": [
+        "Serverfarm"
+      ],
+      "competitor_watch": [
+        "generators",
+        "switchgear",
+        "cooling systems",
+        "UPS",
+        "security systems"
+      ],
+      "sources": [
+        {
+          "title": "Serverfarm ARK Arkansas Data Center",
+          "url": "https://www.serverfarmllc.com/arkansas/"
+        },
+        {
+          "title": "$6.6B data center Clarksville, Arkansas Advocate",
+          "url": "https://arkansasadvocate.com/2026/07/20/mixed-opinions-limited-information-about-6-6-billion-data-center-in-arkansas-river-valley/"
+        }
+      ],
+      "open_for": "Site prep active. Power, cooling, and mission-critical MEP specs."
+    },
+    {
+      "id": "ar-avaio-leo-data-hub-wrightsville",
+      "name": "AVAIO Digital Leo Data Hub",
+      "state": "AR",
+      "city": "Wrightsville",
+      "county": "Pulaski",
+      "status": "planning",
+      "project_type": "data_center",
+      "estimated_value_usd": 6000000000,
+      "square_footage": null,
+      "owner": "AVAIO Digital Partners",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "760-acre AI-ready data center and power campus north of 145th Street west of Wrightsville. First two buildings need 150MW; construction planned summer 2026, operational 2028. Entergy power contract filed April 2026.",
+      "key_specs": [
+        "760-acre campus",
+        "150MW for first two buildings",
+        "Up to 1 GW potential expansion",
+        "1,000+ construction jobs",
+        "70 permanent jobs",
+        "PILOT abatement under discussion"
+      ],
+      "mentioned_brands": [
+        "AVAIO Digital",
+        "Entergy Arkansas"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "generators",
+        "cooling",
+        "power infrastructure",
+        "noise mitigation"
+      ],
+      "sources": [
+        {
+          "title": "AVAIO officials discuss $6B Wrightsville data center, Democrat-Gazette",
+          "url": "https://www.arkansasonline.com/news/2026/jul/13/avaio-officials-discuss-project-details-for-6-billion-data-center/"
+        },
+        {
+          "title": "AVAIO Leo Data Hub announcement",
+          "url": "https://www.avaiodigital.com/updates/avaio-digital-announces-new-large-scale-ai-ready-data-center-and-power-campus-in-little-rock-arkansas"
+        }
+      ],
+      "open_for": "Pre-construction. Power interconnection and first-building MEP specs opening."
+    },
+    {
+      "id": "ar-the-visionaries-rogers",
+      "name": "The Visionaries Office Building",
+      "state": "AR",
+      "city": "Rogers",
+      "county": "Benton",
+      "status": "completed",
+      "project_type": "office",
+      "estimated_value_usd": null,
+      "square_footage": 400000,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "400,000-square-foot office building opened in Rogers in July 2026, adding significant Class A office capacity in Northwest Arkansas.",
+      "key_specs": [
+        "400,000 SF office",
+        "Rogers NWA market",
+        "Recently opened July 2026"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "tenant improvement",
+        "HVAC",
+        "lighting",
+        "elevators",
+        "access control"
+      ],
+      "sources": [
+        {
+          "title": "Arkansas commercial construction activity synthesis",
+          "url": "https://www.arkansasbusiness.com/"
+        }
+      ],
+      "open_for": "Newly opened. Tenant improvement and building systems commissioning."
+    },
+    {
+      "id": "ar-edgeconnex-grant-county-data-center",
+      "name": "Grant County Hyperscale Data Center (Proposed)",
+      "state": "AR",
+      "city": "Sheridan",
+      "county": "Grant",
+      "status": "planning",
+      "project_type": "data_center",
+      "estimated_value_usd": 10000000000,
+      "square_footage": null,
+      "owner": "EdgeConneX (potential developer)",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "Proposed $8. 12 billion hyperscale data center in Grant County identified as potential EdgeConneX development. Part of Arkansas's cluster of six announced data center projects.",
+      "key_specs": [
+        "$8, 12B estimated investment",
+        "Hyperscale campus",
+        "Central Arkansas location",
+        "Part of state data center pipeline"
+      ],
+      "mentioned_brands": [
+        "EdgeConneX"
+      ],
+      "competitor_watch": [
+        "power infrastructure",
+        "generators",
+        "cooling",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "Arkansas data center pipeline, industry reports",
+          "url": "https://arkansasadvocate.com/2026/07/20/mixed-opinions-limited-information-about-6-6-billion-data-center-in-arkansas-river-valley/"
+        }
+      ],
+      "open_for": "Early planning. Site and power infrastructure specs if project advances."
+    },
+    {
+      "id": "ar-google-west-memphis-data-center",
+      "name": "Google West Memphis Data Center Campus",
+      "state": "AR",
+      "city": "West Memphis",
+      "county": "Crittenden",
+      "status": "under_construction",
+      "project_type": "data_center",
+      "estimated_value_usd": 4000000000,
+      "square_footage": null,
+      "owner": "Google",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-01",
+      "description": "Google's $4B data center campus under construction in West Memphis, Crittenden County. Part of Arkansas's growing data center corridor alongside Serverfarm, AVAIO, and Steel River energy supply.",
+      "key_specs": [
+        "$4B campus investment",
+        "Multi-building data center",
+        "Crittenden County location",
+        "Active construction through 2026"
+      ],
+      "mentioned_brands": [
+        "Google"
+      ],
+      "competitor_watch": [
+        "generators",
+        "cooling",
+        "switchgear",
+        "UPS",
+        "structured cabling"
+      ],
+      "sources": [
+        {
+          "title": "Arkansas data center announcements, Democrat-Gazette",
+          "url": "https://www.arkansasonline.com/news/2026/jan/12/6b-data-center-announced-for-pulaski-county/"
+        }
+      ],
+      "open_for": "Ongoing construction. Mission-critical MEP and infrastructure specs."
+    }
+  ],
+  "stats": {
+    "total": 6
+  }
+}

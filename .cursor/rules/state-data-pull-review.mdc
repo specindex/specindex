@@ -1,0 +1,55 @@
+---
+description: After every data pull, review what worked and update the state playbook
+globs: data/states/*.json,data/raw/*,scripts/pull*.py,scripts/rebuild-*-corpus.py,docs/states/**
+alwaysApply: false
+---
+
+# State Data Pull Review
+
+Run this checklist at the end of every capture session, before merging or deploying.
+The goal is to write down what worked so the next pull does not rediscover it from scratch.
+
+## Before you pull
+
+1. Identify the state code (e.g. `ga` → `data/states/ga.json`).
+2. Read **`docs/states/{code}.md`** in full. Do not invent a new source order if the playbook already has one.
+3. Load the matching Cursor rule: **`.cursor/rules/state-{code}-commercial-pull.mdc`**.
+
+## After you pull
+
+Update **`docs/states/{code}.md`** with:
+
+| Section | What to record |
+|---------|----------------|
+| **What works** | Endpoints, scripts, filters, and field maps that produced clean commercial records |
+| **What failed last time** | Dead URLs, wrong ArcGIS layers, residential noise, dedupe traps, rate limits |
+| **Pull log** | Date, source tried, record count added or removed, and one-line outcome |
+| **Do not use** | Sources that looked promising but are zip aggregates, residential-only, or duplicate-prone |
+
+Then refresh the auto header:
+
+```bash
+python3 scripts/sync-state-playbooks.py --state {code}
+```
+
+## Dedupe reminders
+
+- Never merge on shared ArcGIS **layer catalog** URLs. Only record-specific URLs count.
+- Different permit case numbers are different projects, even on one campus.
+- Re-verify corpus count independently after merge. Do not hardcode counts in the playbook prose.
+
+## Ship sequence
+
+```bash
+python3 scripts/merge-national-corpus.py
+npm run build
+grep -r -e '—' -e '–' app components lib out
+npx firebase-tools deploy --only hosting
+```
+
+## Periodic full review (monthly or after a major corpus change)
+
+1. Run `python3 scripts/sync-state-playbooks.py` for all states.
+2. For each state with a pull script under `scripts/`, re-run the script and note drift.
+3. Flag states where `capture_method` in the JSON no longer matches what the playbook says.
+4. Prioritize the next pull by project count and sales territory importance, not alphabetically.

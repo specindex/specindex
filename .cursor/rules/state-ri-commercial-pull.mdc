@@ -1,0 +1,17 @@
+---
+description: Rhode Island commercial project capture — read the playbook before any pull
+globs: data/states/ri.json,data/raw/ri-*.json,scripts/pull-ri*.py,docs/states/ri.md
+alwaysApply: false
+---
+
+# Rhode Island Commercial Pulls
+
+Before capturing or refreshing Rhode Island, read **`docs/states/ri.md`** in full.
+
+After the pull, update that playbook:
+
+1. **What works** and **What failed last time**
+2. **Pull log** with date, source, and outcome
+3. The AUTO header stats (run `python3 scripts/sync-state-playbooks.py --state ri`)
+
+Follow `.cursor/rules/state-data-pull-review.mdc` for the review checklist.

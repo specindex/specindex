@@ -1,0 +1,49 @@
+{
+  "state": "MO",
+  "state_name": "Missouri",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — REBusinessOnline, local news.",
+  "projects": [
+    {
+      "id": "mo-meta-kansas-city-data-center",
+      "name": "Meta Kansas City Data Center (reported)",
+      "state": "MO",
+      "city": "Kansas City",
+      "county": "Jackson",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Meta Platforms",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "Meta exploring/expanding data center presence in Kansas City metro. Midwest AI infrastructure pipeline.",
+      "key_specs": [
+        "Kansas City metro",
+        "Hyperscale data center pipeline",
+        "Midwest grid access"
+      ],
+      "mentioned_brands": [
+        "Meta"
+      ],
+      "competitor_watch": [
+        "switchgear",
+        "cooling",
+        "generators",
+        "electrical"
+      ],
+      "sources": [
+        {
+          "title": "Midwest data center activity, Atlas Buildings Hub",
+          "url": "https://atlasbuildingshub.com/2026/04/07/midwestern-states-reckon-with-data-center-development/"
+        }
+      ],
+      "open_for": "Early stage. Monitor permit filings."
+    }
+  ],
+  "stats": {
+    "total": 1
+  }
+}

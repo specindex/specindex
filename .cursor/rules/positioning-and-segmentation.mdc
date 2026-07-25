@@ -1,0 +1,40 @@
+---
+description: How SpecIndex is positioned and how customers are segmented
+alwaysApply: true
+---
+
+# Positioning and Segmentation
+
+## Who this is for
+
+Top of funnel lead generation for the sales teams at building product
+manufacturers. The reader is a spec rep or a VP of sales who needs to know which
+projects in their territory exist, which need what they sell, and which are early
+enough that a conversation still changes the outcome.
+
+Everything downstream stays where it is. SpecIndex does not replace the CRM, the
+quoting system, or the distributor relationship. It feeds them.
+
+## Segment by CSI division, not by trade
+
+Specifications are written division by division, so the index is organised the same
+way. Trade labels are the wrong axis because they overlap at different levels:
+lighting and switchgear are both Division 26 and both land on the electrical
+engineer's desk, so treating them as separate markets counts the same buyer twice.
+
+Use `lib/divisions.ts`. Each division carries a plain-language product label and
+the discipline that usually specifies it, because "whose desk do I get to" is the
+question a rep actually has.
+
+The order of the `DIVISIONS` array is load bearing. Roughly 29 category strings
+match two divisions, such as "dock doors" hitting both 08 and 11, and the earlier
+entry claims them. Reordering moves counts between divisions.
+
+## The core insight
+
+The product decision is made by an architect or engineer, written into a document,
+and finished months before anyone asks for a quote. Frame value as timing: which
+stage the job is at, and whether the category is still open.
+
+Lead with the count of projects that are still early and have nobody named. That is
+the actionable number, not the brand mention rate.

@@ -1,0 +1,17 @@
+---
+description: South Carolina commercial project capture — read the playbook before any pull
+globs: data/states/sc.json,data/raw/sc-*.json,scripts/pull-sc*.py,docs/states/sc.md
+alwaysApply: false
+---
+
+# South Carolina Commercial Pulls
+
+Before capturing or refreshing South Carolina, read **`docs/states/sc.md`** in full.
+
+After the pull, update that playbook:
+
+1. **What works** and **What failed last time**
+2. **Pull log** with date, source, and outcome
+3. The AUTO header stats (run `python3 scripts/sync-state-playbooks.py --state sc`)
+
+Follow `.cursor/rules/state-data-pull-review.mdc` for the review checklist.

@@ -1,0 +1,47 @@
+{
+  "state": "VT",
+  "state_name": "Vermont",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — state permits, local news.",
+  "projects": [
+    {
+      "id": "vt-burlington-mixed-use-infill",
+      "name": "Burlington Commercial Infill Projects",
+      "state": "VT",
+      "city": "Burlington",
+      "county": "Chittenden",
+      "status": "under_construction",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "Burlington/Chittenden County mixed-use and commercial infill projects permitted in 2026. Limited but active market.",
+      "key_specs": [
+        "Mixed-use infill",
+        "Chittenden County",
+        "Urban commercial renovation"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "HVAC",
+        "windows",
+        "lighting",
+        "plumbing fixtures"
+      ],
+      "sources": [
+        {
+          "title": "Vermont commercial permits, state/local listings",
+          "url": "https://www.vermont.gov/"
+        }
+      ],
+      "open_for": "Urban commercial. MEP and finish specs."
+    }
+  ],
+  "stats": {
+    "total": 1
+  }
+}

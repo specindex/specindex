@@ -1,0 +1,17 @@
+---
+description: Georgia commercial project capture — read the playbook before any pull
+globs: data/states/ga.json,data/raw/ga-*.json,scripts/pull-ga*.py,docs/states/ga.md
+alwaysApply: false
+---
+
+# Georgia Commercial Pulls
+
+Before capturing or refreshing Georgia, read **`docs/states/ga.md`** in full.
+
+After the pull, update that playbook:
+
+1. **What works** and **What failed last time**
+2. **Pull log** with date, source, and outcome
+3. The AUTO header stats (run `python3 scripts/sync-state-playbooks.py --state ga`)
+
+Follow `.cursor/rules/state-data-pull-review.mdc` for the review checklist.

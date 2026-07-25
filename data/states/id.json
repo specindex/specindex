@@ -1,0 +1,140 @@
+{
+  "state": "ID",
+  "state_name": "Idaho",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — Idaho Statesman, BoiseDev, PR Newswire.",
+  "projects": [
+    {
+      "id": "id-district-at-ten-mile-meridian",
+      "name": "The District at Ten Mile, Meridian",
+      "state": "ID",
+      "city": "Meridian",
+      "county": "Ada",
+      "status": "under_construction",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": 650000,
+      "owner": "Ahlquist Development / Adler Industrial",
+      "architect": "",
+      "general_contractor": "McAlvain Companies",
+      "opened_or_announced_date": "2026-05-05",
+      "description": "222-acre commercial center at Ten Mile Interchange: Target (148K SF), Life Time fitness, hotels, 230K+ SF industrial, In-N-Out, 650K+ SF retail total.",
+      "key_specs": [
+        "222 acres",
+        "148K SF Target opening May 2027",
+        "100K+ SF Life Time",
+        "Two industrial buildings 230K+ SF",
+        "Two hotels",
+        "Up to 400 townhomes in later phase"
+      ],
+      "mentioned_brands": [
+        "Target",
+        "Life Time",
+        "In-N-Out",
+        "Ahlquist Development",
+        "Adler Industrial"
+      ],
+      "competitor_watch": [
+        "HVAC",
+        "lighting",
+        "store fixtures",
+        "dock doors",
+        "paving"
+      ],
+      "sources": [
+        {
+          "title": "District at Ten Mile, Idaho Statesman",
+          "url": "https://www.idahostatesman.com/news/business/article315645848.html"
+        },
+        {
+          "title": "District at Ten Mile, Construction Equipment Guide",
+          "url": "https://www.constructionequipmentguide.com/work-under-way-at-the-district-at-ten-mile-in-meridian-idaho/71407"
+        }
+      ],
+      "open_for": "Phase 1 active. Retail and industrial specs open."
+    },
+    {
+      "id": "id-st-lukes-boise-expansion",
+      "name": "St. Luke's Regional Medical Center Expansion, Boise",
+      "state": "ID",
+      "city": "Boise",
+      "county": "Ada",
+      "status": "under_construction",
+      "project_type": "healthcare",
+      "estimated_value_usd": 1100000000,
+      "square_footage": 1040000,
+      "owner": "St. Luke's Health System",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-26",
+      "description": "$1.1B expansion topping-out June 2026. 860K SF hospital tower + 180K SF MOB; 80 new beds, 7 new ORs. Completion late 2029; patients early 2030.",
+      "key_specs": [
+        "860K SF hospital tower",
+        "180K SF medical office plaza",
+        "80 new beds",
+        "7 new operating rooms",
+        "Second helipad"
+      ],
+      "mentioned_brands": [
+        "St. Luke's"
+      ],
+      "competitor_watch": [
+        "medical equipment",
+        "HVAC",
+        "nurse call",
+        "OR systems",
+        "lighting"
+      ],
+      "sources": [
+        {
+          "title": "St. Luke's Boise expansion, BoiseDev",
+          "url": "https://boisedev.com/news/2026/06/26/st-lukes-1-1-billion-boise-expansion-reaches-milestone-with-years-still-to-go/"
+        }
+      ],
+      "open_for": "Vertical construction. Healthcare MEP and equipment specs."
+    },
+    {
+      "id": "id-skanska-boise-fabrication",
+      "name": "Skanska High-Tech Fabrication Facility, Boise",
+      "state": "ID",
+      "city": "Boise",
+      "county": "Ada",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": 390000000,
+      "square_footage": null,
+      "owner": "Confidential high-tech client",
+      "architect": "",
+      "general_contractor": "Skanska",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "$390M fabrication facility + central utility plant. Work begun; completion Q1 2028.",
+      "key_specs": [
+        "Fabrication facility",
+        "Central utility plant",
+        "Site infrastructure",
+        "Q1 2028 completion"
+      ],
+      "mentioned_brands": [
+        "Skanska"
+      ],
+      "competitor_watch": [
+        "process piping",
+        "HVAC",
+        "electrical",
+        "cleanroom-adjacent systems",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Skanska Boise fabrication, PR Newswire",
+          "url": "https://www.prnewswire.com/news-releases/skanska-builds-high-tech-fabrication-facility-in-boise-idaho-usa-for-usd-390m-about-sek-3-6-billion-302828347.html"
+        }
+      ],
+      "open_for": "Just started. Industrial MEP and process specs."
+    }
+  ],
+  "stats": {
+    "total": 3
+  }
+}

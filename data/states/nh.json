@@ -1,0 +1,47 @@
+{
+  "state": "NH",
+  "state_name": "New Hampshire",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — REBusinessOnline, local permits.",
+  "projects": [
+    {
+      "id": "nh-industrial-nashua-merrimack",
+      "name": "Merrimack Industrial / Life Sciences Pipeline",
+      "state": "NH",
+      "city": "Merrimack",
+      "county": "Hillsborough",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "Southern NH I-293 corridor seeing industrial and life-sciences spec development activity in 2026 permit cycle.",
+      "key_specs": [
+        "Merrimack/Nashua corridor",
+        "Industrial and lab-adjacent uses",
+        "Boston metro spillover market"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "HVAC",
+        "lab systems",
+        "lighting",
+        "cleanroom-adjacent finishes"
+      ],
+      "sources": [
+        {
+          "title": "NH industrial market, REBusinessOnline",
+          "url": "https://rebusinessonline.com/"
+        }
+      ],
+      "open_for": "Monitor permit filings for spec industrial."
+    }
+  ],
+  "stats": {
+    "total": 1
+  }
+}

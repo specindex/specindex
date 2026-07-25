@@ -1,0 +1,172 @@
+{
+  "state": "TN",
+  "state_name": "Tennessee",
+  "generated_at": "2026-07-24",
+  "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
+  "capture_method": "Public sources — REBusinessOnline, permit filings, local news.",
+  "projects": [
+    {
+      "id": "tn-hamilton-cornerstone-business-park",
+      "name": "Cornerstone Business Park, Smyrna",
+      "state": "TN",
+      "city": "Smyrna",
+      "county": "Rutherford",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": 1800000,
+      "owner": "Hamilton Development",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-25",
+      "description": "152-acre, 1.8M SF industrial park off I-840. Phase I: 8 buildings, 1M SF; first delivery Q1 2027.",
+      "key_specs": [
+        "12 buildings at full build-out",
+        "Phase I: 1M SF in 8 buildings",
+        "Phase II: 800K SF",
+        "I-840 access"
+      ],
+      "mentioned_brands": [
+        "Hamilton Development",
+        "Cushman & Wakefield"
+      ],
+      "competitor_watch": [
+        "dock doors",
+        "lighting",
+        "HVAC",
+        "concrete",
+        "insulation"
+      ],
+      "sources": [
+        {
+          "title": "Hamilton Cornerstone Smyrna, REBusinessOnline",
+          "url": "https://rebusinessonline.com/hamilton-development-begins-construction-on-1-8-msf-industrial-park-in-smyrna-tennessee/"
+        }
+      ],
+      "open_for": "Phase I active. Multi-building industrial specs."
+    },
+    {
+      "id": "tn-constellation-goodlettsville-65",
+      "name": "Constellation Goodlettsville 65",
+      "state": "TN",
+      "city": "Goodlettsville",
+      "county": "Davidson",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": 352620,
+      "owner": "Constellation Real Estate Partners",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-07",
+      "description": "Two-building 352,620 SF speculative industrial on 39 acres north of Nashville. Delivery end of 2026.",
+      "key_specs": [
+        "32- and 36-ft clear heights",
+        "300 car spaces",
+        "71-trailer storage yard",
+        "I-65/Bethel Road interchange"
+      ],
+      "mentioned_brands": [
+        "Constellation Real Estate Partners",
+        "Lee & Associates"
+      ],
+      "competitor_watch": [
+        "dock equipment",
+        "lighting",
+        "HVAC",
+        "paving"
+      ],
+      "sources": [
+        {
+          "title": "Constellation Goodlettsville, REBusinessOnline",
+          "url": "https://rebusinessonline.com/constellation-breaks-ground-on-352620-sf-industrial-project-in-goodlettsville-tennessee/"
+        }
+      ],
+      "open_for": "Under construction. Industrial MEP and dock specs."
+    },
+    {
+      "id": "tn-station-33-chattanooga",
+      "name": "Station 33 Mixed-Use, Chattanooga",
+      "state": "TN",
+      "city": "Chattanooga",
+      "county": "Hamilton",
+      "status": "planning",
+      "project_type": "mixed_use",
+      "estimated_value_usd": 130000000,
+      "square_footage": null,
+      "owner": "Barbera Development",
+      "architect": "Franklin Architects",
+      "general_contractor": "Grace Construction / Collier Construction",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "$130M South Broad mixed-use with residential, commercial, hospitality (Aloft Marriott), Riverwalk connection. Infrastructure starts August 2026; vertical November 2026.",
+      "key_specs": [
+        "47 residential units referenced",
+        "Aloft by Marriott hotel",
+        "5-acre site",
+        "Fall 2028 completion"
+      ],
+      "mentioned_brands": [
+        "Barbera Development",
+        "Aloft",
+        "Marriott",
+        "SouthEast Bank"
+      ],
+      "competitor_watch": [
+        "HVAC",
+        "lighting",
+        "FF&E",
+        "glazing",
+        "plumbing fixtures"
+      ],
+      "sources": [
+        {
+          "title": "Station 33 Chattanooga, Chattanoogan.com",
+          "url": "https://www.chattanoogan.com/2026/7/23/521284/Work-Set-To-Start-Soon-On-130-Million.aspx"
+        }
+      ],
+      "open_for": "Infrastructure starting August. Early vertical specs window."
+    },
+    {
+      "id": "tn-tech-engineering-buildings-cookeville",
+      "name": "Tennessee Tech Engineering Buildings, Cookeville",
+      "state": "TN",
+      "city": "Cookeville",
+      "county": "Putnam",
+      "status": "under_construction",
+      "project_type": "education",
+      "estimated_value_usd": 60174894,
+      "square_footage": null,
+      "owner": "Tennessee Tech University",
+      "architect": "",
+      "general_contractor": "Denark Construction",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "June 2026 permits: $12.5M foundry building (205 Wings Up Way) and $47.7M Advanced Construction & Manufacturing Engineering building (800 Stadium Drive).",
+      "key_specs": [
+        "Foundry building for College of Engineering",
+        "Advanced Construction & Manufacturing Engineering building",
+        "Denark Construction GC"
+      ],
+      "mentioned_brands": [
+        "Tennessee Tech",
+        "Denark Construction"
+      ],
+      "competitor_watch": [
+        "HVAC",
+        "lab equipment",
+        "lighting",
+        "fire suppression",
+        "structural steel"
+      ],
+      "sources": [
+        {
+          "title": "Tennessee Tech June permits, Herald-Citizen",
+          "url": "https://www.herald-citizen.com/news/new-buildings-at-tech-top-june-permits/article_f9b710f9-d6aa-5273-8b80-f09bb606ad80.html"
+        }
+      ],
+      "open_for": "Permitted. MEP and lab/education specs active."
+    }
+  ],
+  "stats": {
+    "total": 4
+  }
+}
