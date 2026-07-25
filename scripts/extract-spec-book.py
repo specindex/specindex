@@ -30,6 +30,20 @@ Usage:
   python3 scripts/extract-spec-book.py --pdf specbook.pdf --project-id ga-alpharetta-bc250259
   python3 scripts/extract-spec-book.py --pdf specbook.pdf --project-id ga-... --write-db
   python3 scripts/extract-spec-book.py --pdf specbook.pdf --project-id ga-... --dry-run
+  python3 scripts/extract-spec-book.py --pdf gs://specindex-ai-raw-documents/specbook.pdf \\
+      --project-id ga-... --write-bq
+
+--write-bq loads spec_extractions and citations into the `warehouse` BigQuery
+dataset (see scripts/test-gcp-storage-bq.py for the schema these were smoke
+tested against). entity_resolution is NOT written here — that table maps raw
+manufacturer mentions to a canonical name/product, and no canonicalization
+logic exists yet anywhere in this pipeline. Writing to it now would mean
+putting unresolved raw strings in a table whose whole purpose is to hold
+resolved ones; leave it empty until that logic is actually built.
+
+Note: --write-bq uses streaming inserts (no upsert) — re-running against the
+same PDF will duplicate rows in BigQuery, unlike --write-db which replaces
+cleanly. Fine for a first wiring pass; revisit if this becomes a re-run path.
 """
 
 from __future__ import annotations
@@ -39,7 +53,10 @@ import json
 import os
 import re
 import sys
+import tempfile
+import uuid
 from dataclasses import dataclass, field
+from datetime import datetime, timezone
 from pathlib import Path
 
 import fitz  # PyMuPDF
@@ -204,12 +221,28 @@ def classify_section(client, section: DivisionSection, model: str) -> dict:
     raise RuntimeError("Model did not return a tool_use block")
 
 
-def run(pdf_path: Path, project_id: str, dry_run: bool, model: str) -> list[DivisionExtraction]:
+def download_from_gcs(gcs_uri: str) -> Path:
+    """Download a gs://bucket/path.pdf URI to a local temp file and return its path."""
+    from google.cloud import storage
+
+    bucket_name, _, blob_path = gcs_uri.removeprefix("gs://").partition("/")
+    if not blob_path:
+        raise SystemExit(f"Invalid GCS URI (expected gs://bucket/path.pdf): {gcs_uri}")
+
+    tmp = tempfile.NamedTemporaryFile(suffix=".pdf", delete=False)
+    tmp.close()
+    client = storage.Client()
+    client.bucket(bucket_name).blob(blob_path).download_to_filename(tmp.name)
+    print(f"Downloaded {gcs_uri} -> {tmp.name}", file=sys.stderr)
+    return Path(tmp.name)
+
+
+def run(pdf_path: Path, project_id: str, dry_run: bool, model: str, source_document: str) -> list[DivisionExtraction]:
     pages = extract_pages(pdf_path)
     sections = find_division_sections(pages)
 
     if not sections:
-        print(f"No CSI division headers detected in {pdf_path.name} — nothing to extract.", file=sys.stderr)
+        print(f"No CSI division headers detected in {source_document} — nothing to extract.", file=sys.stderr)
         return []
 
     print(f"Found {len(sections)} division section(s): {[s.division for s in sections]}", file=sys.stderr)
@@ -224,7 +257,7 @@ def run(pdf_path: Path, project_id: str, dry_run: bool, model: str) -> list[Divi
                 approved_manufacturers=[],
                 substitution_language=None,
                 model_numbers=[],
-                source_document=pdf_path.name,
+                source_document=source_document,
                 page=s.start_page + 1,
                 confidence="unclassified (dry-run)",
             )
@@ -249,7 +282,7 @@ def run(pdf_path: Path, project_id: str, dry_run: bool, model: str) -> list[Divi
                 approved_manufacturers=data.get("approved_manufacturers", []),
                 substitution_language=data.get("substitution_language"),
                 model_numbers=data.get("model_numbers", []),
-                source_document=pdf_path.name,
+                source_document=source_document,
                 page=section.start_page + 1,
                 confidence=data.get("confidence", "low"),
             )
@@ -349,9 +382,65 @@ def write_db(project_id: str, payload: dict, database_url: str) -> None:
     print(f"Wrote {len(divisions)} division record(s) to project_id={project_id} (project_sk={project_sk})", file=sys.stderr)
 
 
+CONFIDENCE_SCORES = {"high": 0.9, "medium": 0.6, "low": 0.3}
+
+
+def write_bq(project_id: str, payload: dict, bq_project: str, dataset: str) -> None:
+    """Stream extraction + citation rows into the warehouse dataset. See module
+    docstring for why entity_resolution is intentionally not written here."""
+    from google.cloud import bigquery
+
+    client = bigquery.Client(project=bq_project)
+    now = datetime.now(timezone.utc).isoformat()
+
+    extraction_rows = []
+    citation_rows = []
+    for d in payload["csi_divisions"]:
+        extraction_id = str(uuid.uuid4())
+        confidence_score = CONFIDENCE_SCORES.get(d["confidence"])
+        extraction_rows.append(
+            {
+                "extraction_id": extraction_id,
+                "project_id": project_id,
+                "source_document": d["source_document"],
+                "csi_division": d["division"],
+                "csi_section": None,
+                "product_category": None,
+                "basis_of_design_product": d["basis_of_design_product"],
+                "approved_manufacturers": "; ".join(d["approved_manufacturers"]) or None,
+                "substitution_language": d["substitution_language"],
+                "confidence_score": confidence_score,
+                "extracted_at": now,
+            }
+        )
+        citation_rows.append(
+            {
+                "citation_id": str(uuid.uuid4()),
+                "extraction_id": extraction_id,
+                "source_document": d["source_document"],
+                "page_number": d["page"],
+                "source_snippet": None,
+                "confidence_score": confidence_score,
+            }
+        )
+
+    errors = client.insert_rows_json(f"{bq_project}.{dataset}.spec_extractions", extraction_rows)
+    if errors:
+        raise RuntimeError(f"BigQuery insert into spec_extractions failed: {errors}")
+    errors = client.insert_rows_json(f"{bq_project}.{dataset}.citations", citation_rows)
+    if errors:
+        raise RuntimeError(f"BigQuery insert into citations failed: {errors}")
+
+    print(
+        f"Wrote {len(extraction_rows)} extraction row(s) and {len(citation_rows)} citation row(s) "
+        f"to {bq_project}.{dataset}",
+        file=sys.stderr,
+    )
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--pdf", required=True, type=Path, help="Path to spec book PDF")
+    parser.add_argument("--pdf", required=True, help="Path to spec book PDF, or a gs://bucket/path.pdf URI")
     parser.add_argument("--project-id", required=True, help="SpecIndex project_id this spec book belongs to")
     parser.add_argument("--model", default="claude-sonnet-5", help="Anthropic model for the classification pass")
     parser.add_argument("--dry-run", action="store_true", help="Parse/chunk only, skip the LLM call")
@@ -361,13 +450,29 @@ def main() -> int:
         default=os.environ.get("DATABASE_URL", "postgresql://specindex:specindex@localhost:5432/specindex"),
         help="Postgres connection string (used only with --write-db)",
     )
+    parser.add_argument("--write-bq", action="store_true", help="Stream results into the warehouse BigQuery dataset")
+    parser.add_argument("--bq-project", default="specindex-ai", help="GCP project for --write-bq")
+    parser.add_argument("--bq-dataset", default="warehouse", help="BigQuery dataset for --write-bq")
     parser.add_argument("--out", type=Path, help="Write JSON output to this path (default: stdout)")
     args = parser.parse_args()
 
-    if not args.pdf.exists():
-        raise SystemExit(f"PDF not found: {args.pdf}")
+    downloaded_tmp_path: Path | None = None
+    if args.pdf.startswith("gs://"):
+        source_document = args.pdf
+        pdf_path = download_from_gcs(args.pdf)
+        downloaded_tmp_path = pdf_path
+    else:
+        pdf_path = Path(args.pdf)
+        if not pdf_path.exists():
+            raise SystemExit(f"PDF not found: {pdf_path}")
+        source_document = pdf_path.name
 
-    extractions = run(args.pdf, args.project_id, dry_run=args.dry_run, model=args.model)
+    try:
+        extractions = run(pdf_path, args.project_id, dry_run=args.dry_run, model=args.model, source_document=source_document)
+    finally:
+        if downloaded_tmp_path is not None:
+            downloaded_tmp_path.unlink(missing_ok=True)
+
     payload = to_json(extractions)
     payload["project_id"] = args.project_id
 
@@ -378,10 +483,12 @@ def main() -> int:
     else:
         print(output)
 
+    if args.dry_run and (args.write_db or args.write_bq):
+        raise SystemExit("--write-db/--write-bq and --dry-run are mutually exclusive")
     if args.write_db:
-        if args.dry_run:
-            raise SystemExit("--write-db and --dry-run are mutually exclusive")
         write_db(args.project_id, payload, args.database_url)
+    if args.write_bq:
+        write_bq(args.project_id, payload, args.bq_project, args.bq_dataset)
 
     return 0
 
