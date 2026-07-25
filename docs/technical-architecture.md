@@ -1,7 +1,7 @@
 # SpecIndex.ai — Technical Architecture
 
-**Status:** Kickoff / MVP  
-**Last updated:** 2026-07-23
+**Status:** MVP + Phase 1 backend live  
+**Last updated:** 2026-07-25
 
 ---
 
@@ -46,7 +46,43 @@
 
 **MVP phase (now):** static Next.js export on Firebase Hosting, project data as versioned JSON in the repo (`data/`), client-side search/filter. No auth required for public browse.
 
-**Phase 2:** Firestore as system of record, Cloud Functions for refresh/ingest, manufacturer accounts, brand alerts.
+**Phase 1 backend (built 2026-07-25):** Postgres (Cloud SQL) as a second, queryable system of record alongside the static JSON, fronted by a read-only FastAPI service on Cloud Run. The public site still reads from build-time JSON — this backend exists so later phases (ingest pipelines, spec extraction, manufacturer accounts) have a real database to write to instead of hand-editing JSON files. See "Backend infrastructure" below.
+
+**Phase 2:** Firestore or continued Postgres expansion as system of record, Cloud Functions/ingest pipelines for automated refresh, manufacturer accounts, brand alerts.
+
+---
+
+## Backend infrastructure (Phase 1 — built)
+
+```
+┌──────────────────────────┐
+│  data/national-commercial-  │
+│  projects.json (652 rows)   │
+└─────────────┬────────────┘
+              │ scripts/load-corpus-to-postgres.py
+              ▼
+┌──────────────────────────┐
+│  Cloud SQL — specindex-db   │
+│  Postgres 16, db-f1-micro   │
+│  project: specindex-ai      │
+│  region: us-central1        │
+└─────────────┬────────────┘
+              │ Cloud SQL Auth Proxy / unix socket
+              ▼
+┌──────────────────────────┐
+│  Cloud Run — specindex-api  │
+│  FastAPI read API (api/)    │
+│  GET /health, /v1/stats,    │
+│  /v1/projects, /v1/projects/│
+│  {id}                       │
+└──────────────────────────┘
+```
+
+**Local dev:** `docker-compose.yml` runs Postgres + the API together (`npm run db:up`); requires Docker (not installed on this machine as of setup — GCP path was used directly instead).
+
+**GCP setup automation:** `scripts/setup-phase1-gcp.sh` (invoked via `npm run db:setup-gcp`) creates the Cloud SQL instance, loads the corpus, and deploys the API to Cloud Run. Requires `--edition=ENTERPRISE` on `gcloud sql instances create` for the `db-f1-micro` tier (the `specindex-ai` project's default edition is Enterprise Plus, which doesn't support shared-core tiers) and `gcloud auth application-default login` (separate from `gcloud auth login`) before the Cloud SQL Auth Proxy step will authenticate. Full walkthrough in `docs/PHASE1-DATABASE-SETUP.md`.
+
+**Not yet wired up:** the Next.js site does not read from this API yet — it still builds from static JSON. Connecting the site (or a future ingest pipeline) to `specindex-api` is open work.
 
 ---
 
@@ -218,6 +254,20 @@ Phase 2 upgrades to PDF/spec NER via Cloud Functions + Kimi, with confidence and
 
 ---
 
+## CI/CD
+
+GitHub Actions deploys Firebase Hosting automatically (set up 2026-07-25 via `firebase init hosting:github`):
+
+- **PR preview:** `.github/workflows/firebase-hosting-pull-request.yml` — builds and deploys a temporary preview channel on every PR, posts the URL as a PR comment. Verified working on [specindex/specindex#1](https://github.com/specindex/specindex/pull/1).
+- **Live deploy:** `.github/workflows/firebase-hosting-merge.yml` — builds and deploys to the live `specindex-ai` Hosting site on every push to `main`.
+- Auth: a GCP service account (`github-action-<id>@specindex-ai.iam.gserviceaccount.com`) stored as the `FIREBASE_SERVICE_ACCOUNT_SPECINDEX_AI` secret in the GitHub repo.
+
+Manual `npm run deploy` still works as a fallback.
+
+**Repo:** `https://github.com/specindex/specindex` (migrated from `Influentialinternal219/specindex` on 2026-07-25; authenticated locally via `gh` CLI as the `specindex` GitHub account).
+
+---
+
 ## Custom domain cutover
 
 1. Deploy Hosting to Firebase default URL
@@ -239,18 +289,22 @@ Phase 2 upgrades to PDF/spec NER via Cloud Functions + Kimi, with confidence and
 
 ## Near-term engineering milestones
 
-1. ✅ Product strategy + this architecture doc  
-2. ✅ Georgia corpus v0 (Kimi-structured)  
-3. 🔲 Static SpecIndex site + project search UI  
-4. 🔲 Firebase Hosting init + first deploy  
-5. 🔲 Custom domain `specindex.ai`  
-6. 🔲 Firestore + authenticated manufacturer seats  
-7. 🔲 Automated weekly capture job + brand NER  
+1. ✅ Product strategy + this architecture doc
+2. ✅ Georgia corpus v0 (Kimi-structured), expanded to 126 projects / 10 states
+3. ✅ Static SpecIndex site + project search UI
+4. ✅ Firebase Hosting init + first deploy — live at specindex.ai
+5. ✅ Custom domain `specindex.ai`
+6. ✅ GitHub Actions CI/CD (PR previews + live deploy on merge to `main`)
+7. ✅ Phase 1 Postgres (Cloud SQL) + read API (Cloud Run) — built, not yet wired to the site
+8. 🔲 Complete corpus capture for remaining 40 states
+9. 🔲 Wire the Next.js site to `specindex-api` (or an ingest pipeline) instead of static JSON
+10. 🔲 Spec book extraction pipeline (PyMuPDF → CSI division LLM pass → cited JSON) — see `docs/CONTEXT.md`
+11. 🔲 Firestore or Postgres-backed authenticated manufacturer seats
+12. 🔲 Automated permit/press capture job + brand NER
 
 ---
 
 ## Open decisions (need owner input)
 
-1. **Firebase project:** create new `specindex-ai` vs reuse an existing project?  
-2. **DNS:** who controls `specindex.ai` registrar access for Firebase verification?  
-3. **Auth timing:** waitlist-only at launch vs Google sign-in on day one?
+1. **Auth timing:** waitlist-only at launch vs Google sign-in on day one?
+2. **System of record:** converge on Postgres as the single source of truth (retiring hand-edited JSON) vs keeping JSON as the primary and Postgres as a read replica for API consumers?

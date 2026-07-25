@@ -261,9 +261,10 @@ Downloaded to `data/documents/`:
 ## Deployment
 
 - **Hosting:** Firebase (`firebase.json` → `out/`)
-- **Deploy:** `npm run deploy` from local machine (requires user approval for production writes)
-- **Git remote:** `https://github.com/Influentialinternal219/specindex`
-- **Branch:** `cursor/expand-corpus-filmore-site` (commits pushed locally; GitHub auth needed for remote push)
+- **Deploy:** GitHub Actions auto-deploys on push to `main` (PR previews on every PR); `npm run deploy` still works as a manual fallback
+- **Git remote:** `https://github.com/specindex/specindex` (migrated from `Influentialinternal219/specindex` on 2026-07-25)
+- **Branch:** `cursor/expand-corpus-filmore-site` (pushed; open as PR #1 into `main` for testing CI/CD)
+- **Backend:** Postgres (Cloud SQL `specindex-db`) + FastAPI read API (Cloud Run `specindex-api`) — see `docs/PHASE1-DATABASE-SETUP.md`, not yet wired into the site build
 
 ---
 
@@ -286,7 +287,8 @@ Downloaded to `data/documents/`:
 - [ ] Build spec book extraction pipeline (PyMuPDF → CSI division LLM pass → cited JSON)
 - [ ] Title-block / schedule extraction from drawings (MVP scope only)
 - [ ] Wire spec extractions into project detail pages on site
-- [ ] GitHub push auth setup (`gh auth login` or Keychain token)
+- [ ] Wire the live site to `specindex-api` (Postgres) instead of build-time JSON
+- [x] ~~GitHub push auth setup~~ — done 2026-07-25 via `gh` CLI, repo migrated to `specindex/specindex`
 
 ---
 
