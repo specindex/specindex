@@ -1,5 +1,8 @@
 -- SpecIndex MVP schema for Cloud Run testing.
 -- Full lifecycle schema lives in docs/DATABASE_DESIGN.md.
+-- This is the v1 baseline. On a fresh install, apply db/migrations/*.sql
+-- (in order) after this file to bring the table up to the current schema —
+-- see docs/DATA_SCHEMA_V2.md for what 002_schema_v2.sql adds and why.
 
 CREATE TABLE IF NOT EXISTS projects (
   project_id              TEXT PRIMARY KEY,

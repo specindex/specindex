@@ -264,7 +264,7 @@ Downloaded to `data/documents/`:
 - **Deploy:** GitHub Actions auto-deploys on push to `main` (PR previews on every PR); `npm run deploy` still works as a manual fallback
 - **Git remote:** `https://github.com/specindex/specindex` (migrated from `Influentialinternal219/specindex` on 2026-07-25)
 - **Branch:** `cursor/expand-corpus-filmore-site` (pushed; open as PR #1 into `main` for testing CI/CD)
-- **Backend:** Postgres (Cloud SQL `specindex-db`) + FastAPI read API (Cloud Run `specindex-api`) — see `docs/PHASE1-DATABASE-SETUP.md`, not yet wired into the site build
+- **Backend:** Postgres (Cloud SQL `specindex-db`, 652 rows loaded) + FastAPI read API (Cloud Run `specindex-api`, live at `https://specindex-api-gmm6irqe4q-uc.a.run.app`) — see `docs/PHASE1-DATABASE-SETUP.md`, not yet wired into the site build
 
 ---
 

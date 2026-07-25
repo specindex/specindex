@@ -8,9 +8,9 @@ export const metadata: Metadata = {
     "Search open commercial construction projects across the United States. Filter by state, county, status, and product category.",
 };
 
-export default function ProjectsPage() {
-  const projects = getProjects();
-  const corpus = getCorpus();
+export default async function ProjectsPage() {
+  const projects = await getProjects();
+  const corpus = await getCorpus();
   const recent =
     corpus.stats?.opened_last_90_days ?? corpus.stats?.opened_last_3_months ?? 0;
 
