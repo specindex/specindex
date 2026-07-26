@@ -6,6 +6,12 @@ on:
   push:
     branches:
       - main
+concurrency:
+  # Each build is a full 27K+-page static export -- back-to-back pushes
+  # otherwise queue redundant full builds instead of the newest commit
+  # (which already contains everything the older ones do) superseding them.
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
