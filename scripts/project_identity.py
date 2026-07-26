@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import re
+from collections import defaultdict
 from difflib import SequenceMatcher
 from typing import Any
 
@@ -243,31 +244,51 @@ def assign_unique_ids(projects: list[dict], state_code: str) -> list[dict]:
     return out
 
 
-def dedupe_projects(projects: list[dict], state_code: str) -> tuple[list[dict], int]:
-    """Merge duplicate records; return (projects, merges_performed).
-
-    Single pairwise pass, O(n^2) -- each pair of records is compared once.
-    An earlier version restarted the *entire* scan from index 0 every time
-    it found one merge, which made total cost scale with the number of
-    merges found (O(n^2 * merges)), not just record count. That was fine at
-    Georgia's scale (~1,400 records, well under a minute) but made a
-    24-month North Carolina pull (~7,000 raw permit records, much higher
-    near-duplicate rate) run for 15+ minutes with no sign of finishing --
-    had to be killed. This version still finds the same duplicates (every
-    pair is still compared) but never re-scans records already cleared.
-    """
-    normalized = [ensure_state_prefixed(dict(p), state_code) for p in projects]
+def _dedupe_bucket(bucket: list[dict]) -> int:
+    """In-place pairwise dedupe within one (state, county) bucket. Returns
+    merges performed. Single pass, O(k^2) over the bucket -- see
+    dedupe_projects() for why restarting from index 0 on every merge was
+    the previous performance bug."""
     merges = 0
     i = 0
-    while i < len(normalized):
+    while i < len(bucket):
         j = i + 1
-        while j < len(normalized):
-            if same_project(normalized[i], normalized[j]):
-                primary, secondary = prefer_canonical(normalized[i], normalized[j])
-                normalized[i] = merge_projects(primary, secondary)
-                del normalized[j]
+        while j < len(bucket):
+            if same_project(bucket[i], bucket[j]):
+                primary, secondary = prefer_canonical(bucket[i], bucket[j])
+                bucket[i] = merge_projects(primary, secondary)
+                del bucket[j]
                 merges += 1
                 continue  # re-check the (possibly enriched) record i against the next j
             j += 1
         i += 1
-    return assign_unique_ids(normalized, state_code), merges
+    return merges
+
+
+def dedupe_projects(projects: list[dict], state_code: str) -> tuple[list[dict], int]:
+    """Merge duplicate records; return (projects, merges_performed).
+
+    Buckets records by (state, county) before comparing, since same_project()
+    always rejects a pair whose state or county differ before doing anything
+    else -- comparing across buckets can never find a match. This turns the
+    scan from O(n^2) over the whole batch into O(sum(k_i^2)) over each
+    bucket's size, with no change in which duplicates are found (an earlier
+    single-pass-no-bucketing version already fixed a worse O(n^2 * merges)
+    bug where the scan restarted from index 0 on every merge; bucketing is
+    the next win once record counts grow past a single small county, e.g.
+    a 24-month North Carolina pull spanning several counties at once).
+    """
+    normalized = [ensure_state_prefixed(dict(p), state_code) for p in projects]
+
+    buckets: dict[tuple[str, str], list[dict]] = defaultdict(list)
+    for p in normalized:
+        key = ((p.get("state") or "").upper(), (p.get("county") or "").lower())
+        buckets[key].append(p)
+
+    merges = 0
+    deduped: list[dict] = []
+    for bucket in buckets.values():
+        merges += _dedupe_bucket(bucket)
+        deduped.extend(bucket)
+
+    return assign_unique_ids(deduped, state_code), merges
