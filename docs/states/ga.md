@@ -2,11 +2,11 @@
 **State:** GA (Georgia)  
 **Corpus file:** `data/states/ga.json`  
 **Last corpus update:** 2026-07-25  
-**Projects in corpus:** 1377  
-**Counties:** 69 · **Cities:** 128  
+**Projects in corpus:** 1394  
+**Counties:** 69 · **Cities:** 139  
 **Date range:** Last 24 months commercial  
-**Capture method:** Georgia DRI filings, Alpharetta/Fulton County/Savannah/Johns Creek/Marietta commercial permits, Accela commercial permits (Atlanta/Gwinnett/Cobb, when available), USAspending.gov federal construction awards, plus prior public research  
-**Status mix:** permitting 519, planning 451, completed 287, under_construction 120
+**Capture method:** Georgia DRI filings, Alpharetta/Fulton County/Savannah/Johns Creek/Marietta commercial permits, Accela commercial permits (Atlanta/Gwinnett/Cobb, when available), USAspending.gov federal construction awards, SAM.gov federal solicitations (bulk CSV extract), plus prior public research  
+**Status mix:** permitting 519, planning 459, completed 287, under_construction 123, bidding 6
 <!-- AUTO:HEADER END -->
 
 # Georgia Commercial Project Sources Playbook
@@ -38,6 +38,98 @@ npm run build
 Also saved to Google Drive: `My Drive/GEORGIA-COMMERCIAL-SOURCE-PLAYBOOK.md`
 
 This document captures what worked in Georgia, what did not, and how the major incumbents (Dodge, Shovels, PermitStack) pull the same class of data. Use it as a template for other states.
+
+---
+
+## Adding a new source: step-by-step
+
+Procedure for checking whether a candidate jurisdiction/site has usable data, and what access method to build. Derived from the 2026-07-25 session (Fulton, Savannah, and USAspending all followed this successfully; Columbus, the Atlanta CSV, and Cobb/Gwinnett ArcGIS were all rejected by it before any script got written).
+
+### 1. Find the candidate
+
+Use web search (LLM-assisted) for `"{jurisdiction} building permits" open data ArcGIS OR Socrata`, or take a lead from secondhand research (Reddit, another AI session's summary, a vendor's methodology page). **Treat every specific technical claim in secondhand research as a hypothesis, not a fact** — roughly half of what a pasted research summary claimed about Georgia sources on 2026-07-25 (Cobb/Gwinnett having ArcGIS permit layers, GDOT's vendor portal being scrapeable) did not survive step 3 below. LLM web search is good for *surfacing* candidates; it is not evidence a candidate actually works.
+
+### 2. Classify the access method
+
+Fetch the URL and determine what you're actually looking at:
+
+| What you find | Access method | Example today |
+|---|---|---|
+| ArcGIS `FeatureServer`/`MapServer` REST endpoint (`.../query?f=json`) | Direct API query. No auth, no Playwright. **Always prefer this when it exists.** | Fulton County, Savannah/SAGIS |
+| Socrata / other REST open-data API | Direct API query, same tier as ArcGIS | (none found for GA yet — checked Atlanta, wrong domain guess, not resolved) |
+| A `.gov`/`.arcgis.com` item that resolves through the DCAT catalog (`/api/feed/dcat-us/1.1.json`) to a **static CSV upload** | Reject — see step 3, this is almost always stale | Atlanta "All Building Permits 2019-2024", Columbus |
+| Plain HTML form, classic multi-page site, server-side rendered (view-source shows the real form fields) | Raw HTTP POST/GET scripting (`urllib`), no Playwright needed *if* every field you need actually exists in the HTML | Atlanta/Cobb Accela (works) |
+| JS-rendered SPA / ASP.NET postback where fields only appear after a client-side interaction (dropdown selection reveals new fields, "Showing" text loads async) | **Playwright required.** Before scripting UI clicks, try intercepting the page's actual network requests (`page.on("response", ...)`) — if there's a clean JSON API underneath, hit that directly instead of driving the UI | Gwinnett Accela (raw POST silently failed — the date fields don't exist on that page at all, only found via live browser inspection); GPR (JSON-ish app, search UI not yet reliably automated) |
+| Login-gated portal with no public search | Reject immediately, don't build anything | GDOT Vendor Portal |
+
+**Preference order when multiple methods are technically possible:** direct API > raw HTTP form scripting > Playwright driving the UI > Playwright intercepting network calls to find a hidden API (worth trying before giving up, not before trying raw HTTP). Each step up this list is more fragile and slower to run. Gwinnett needed Playwright only because raw HTTP genuinely couldn't work (the date fields aren't in that page's HTML) — not because JS-rendering was hard to script around.
+
+### 3. Verify liveness BEFORE writing a pull function
+
+For any ArcGIS layer, run a stats query first:
+```
+.../query?where=1=1&outStatistics=[{"statisticType":"max","onStatisticField":"<date_field>","outStatisticFieldName":"maxDate"},{"statisticType":"count","onStatisticField":"OBJECTID","outStatisticFieldName":"cnt"}]&f=json
+```
+If `maxDate` is more than ~1-2 months old, the source is dead for practical purposes regardless of how good the schema looks — this caught Columbus (stale since 2022) and would have wasted real build time if skipped. For non-ArcGIS sources, check the item's real modification date (not marketing copy), and be suspicious of "20XX-20XX" date ranges in a title — that's usually a one-time historical export.
+
+### 4. Verify the schema and commercial/residential filter field
+
+Pull a real sample (couple hundred recent records) and inspect actual field values — don't guess field names or assume a field like `LocationType` is populated just because it exists (it wasn't, for Fulton). Find the field that actually distinguishes commercial from residential (`JobTypeDescription='Commercial'` for Fulton, `WorkClass='Full Site-Private'` + text filtering for Savannah, `CASE_TYPE_DESC` for Alpharetta) — every jurisdiction encodes this differently, there's no universal field name.
+
+### 5. Write the pull function, test small, then scale
+
+- Write `pull_<name>(cutoff)` following the existing pattern in `pull-ga-municipal-commercial.py` (ArcGIS) or `pull-ga-accela-commercial.py` (Accela/Playwright) — add to that file rather than creating a new one-off script unless the source needs a fundamentally different client (e.g. `pull-usaspending-ga.py` was separate because it's a POST-based JSON API, not ArcGIS or Accela).
+- Test with `--months 1` first. Confirm: (a) it returns something plausible, not silently zero everywhere, and (b) two different narrow date windows return **different** record sets — if they return identical results, the date filter isn't actually working server-side (this is exactly the Gwinnett bug: identical top-10 regardless of requested window).
+- Watch for suspiciously uniform numbers across unrelated query types (all exactly 10, or all exactly 100) — that's a pagination/cap ceiling being hit silently, not real signal.
+- Only widen to `--months 24` once the 1-month test looks right.
+
+### 6. Be mindful of request volume against one host
+
+Debugging (many small Playwright/curl test calls) plus a real production pull against the same host, close together, risks looking like an external outage when it's actually self-inflicted rate-limiting — this happened to both Accela and GPR simultaneously on 2026-07-25. Space out heavy debugging sessions from production pulls where possible.
+
+### 7. Document the outcome either way
+
+Add a row to the relevant results table in this file whether the source was accepted *or* rejected, with the specific verification method used (not just "checked, didn't work"). A rejected source with a documented reason saves the next session from re-discovering the same dead end; an undocumented one gets re-investigated for nothing.
+
+---
+
+## Master runbook: maximize the pull, ordered by proven yield
+
+**No step here starts with a login.** Checked on 2026-07-25: every source that actually produced real data required zero authentication. Login-gated resources exist (GPR's "Buyer Login," Accela's "Register for an Account," SciQuest's guest-access credentials) but none has demonstrated value yet — GPR's buyer login in particular is for *agencies posting bids*, not for the public bid search we need to read, so it isn't actually relevant to maximizing pull volume. They're listed at the bottom as unproven.
+
+Ranked by actual 24-month (or noted) yield, highest first — run in this order:
+
+| Rank | Source | Yield | Reliability |
+|---:|---|---:|---|
+| 1 | Accela Atlanta | **potentially the largest single source** — one permit type alone (Electrical) hit 3,994 in a partial run before the pull failed | Currently broken (network timeout, output-file race — see below). Highest upside, least reliable right now |
+| 2 | Accela Gwinnett | 318 in a **1-month** test (not yet run at 24mo) — could be very large scaled up | Fixed today (was a broken date filter) but unproven at full window, and still hits a ~100/type display cap on high-volume types |
+| 3 | USAspending.gov | 414 (2yr) | Solid — no auth, no quota, clean API |
+| 4 | Alpharetta (ArcGIS) | 381 | Solid |
+| 5 | Fulton County (ArcGIS) | 299 | Solid, but has a real ~1-month ingestion lag |
+| 6 | Georgia DRI | 252 | Solid |
+| 7 | Savannah/SAGIS (ArcGIS) | 103 | Solid |
+| 8 | SAM.gov bulk CSV | 43 | Solid — no auth, no quota, daily-updated. Supersedes the old quota-limited SAM.gov API script entirely |
+| 9 | Marietta (ArcGIS) | 26 | Solid but a static snapshot layer, not date-filterable — won't grow with a wider window |
+| 10 | Johns Creek (ArcGIS) | 7 | Same — static snapshot, won't grow |
+| 11 | Accela Cobb | 4 in a 1-month test | Low yield even when working — Cobb's portal just doesn't expose fine-grained permit types the way Atlanta's does |
+
+Execution order in practice, since reliability matters as much as yield — run the solid, no-drama sources first so you have a good corpus even if the fragile ones fail:
+
+**Tier 1 — run first, every refresh (solid, proven, no auth):**
+1. `python3 scripts/pull-usaspending-ga.py --years 2`
+2. `python3 scripts/pull-ga-municipal-commercial.py --months 24 --merge` — Alpharetta, Fulton, Savannah, Marietta, Johns Creek
+3. `python3 scripts/pull-ga-dri.py --months 24`
+4. `python3 scripts/pull-sam-gov-bulk-ga.py` — downloads the ~230MB daily CSV fresh each run (no `--csv-path` needed unless testing against an already-downloaded copy)
+
+**Tier 2 — highest upside, run in isolation (not stacked on a debugging session against the same host — that's what caused the 2026-07-25 outage):**
+5. `python3 scripts/pull-ga-accela-commercial.py --months 24` — covers Atlanta (biggest prize), Gwinnett, Cobb. Verify each agency's output before moving on; all three currently share one output file with no `--out` override (roadmap item 20 — fix before the next run to avoid another silent overwrite like the one that lost the working Gwinnett result today).
+
+**Tier 3 — unproven, exploratory, not part of the routine refresh:**
+6. **GPR search automation** — confirmed real, structured bid/spec data exists; no login needed to browse; search UI not yet reliably scriptable. Next attempt: intercept the frontend's network requests to find the backend JSON API rather than more blind `select_option` calls.
+7. **SciQuest/Jaggaer Statewide Contract Index** (`solutions.sciquest.com`, guest credentials listed on the DOAS bids page) — never tested. Lower expected value even if it works: pre-established *statewide contracts* (vendor pricing agreements), not individual construction *projects* — a different data shape than everything else here.
+8. **Georgia Tech's ~8 named current projects** (manual add from `facilities.gatech.edu`) and UGA's equivalent page (not yet checked) — hand-curated research tier, low volume but real.
+
+**After all tiers:** `python3 scripts/rebuild-ga-corpus.py && python3 scripts/merge-national-corpus.py`
 
 ---
 
@@ -108,12 +200,13 @@ Most Georgia sources do not publish zip codes in a consistent field. Where locat
 
 ## 2026-07-25 update: window expanded to 24 months, new sources, Accela outage
 
-Corpus went from 489 → **1,377** projects. Window expanded from 12 to 24 months on all date-filterable sources. Approach: validate every new/changed source at a 1-month window first, confirm real signal, only then scale to 24 months — caught several problems this way that a blind 24-month run would have hidden.
+Corpus went from 489 → **1,394** projects. Window expanded from 12 to 24 months on all date-filterable sources. Approach: validate every new/changed source at a 1-month window first, confirm real signal, only then scale to 24 months — caught several problems this way that a blind 24-month run would have hidden.
 
 ### New sources added
 
 | Source | Script | 24mo yield | Notes |
 |---|---:|---:|---|
+| SAM.gov bulk CSV extract | `pull-sam-gov-bulk-ga.py` | 43 (matching same NAICS filter as the old API script) | **Supersedes the quota-limited API approach** (`pull-sam-gov-ga.py`, item 16 — was stuck at ~10 hits before throttling). SAM.gov publishes the full government-wide Contract Opportunities dataset as a public, no-key, no-quota CSV, updated daily: `s3.amazonaws.com/falextracts/Contract Opportunities/datagov/ContractOpportunitiesFullCSV.csv` (~232MB). Real, active GA construction opportunities found this way include Savannah District design-build task order contracts, Fort Stewart and Fort Benning solicitations. One gap vs. the old API: no per-notice attachment/resourceLinks field in the bulk file, so spec/drawing PDFs would need a follow-up fetch of the notice page. Also: **the file is cp1252-encoded, not UTF-8** — decoding as UTF-8 with `errors="replace"` "works" but silently mangles every em-dash into `�`; use `encoding="cp1252"`. |
 | Fulton County "Building Permits Issued" (ArcGIS) | `pull-ga-municipal-commercial.py` (`pull_fulton`) | 299 | `JobTypeDescription='Commercial'`. Includes square footage (rare field). Has a real **~1-month ingestion lag** — a `--months 1` pull alone returns 0; use `--months 2+`. Covers unincorporated Fulton + cities without their own system; may overlap with Alpharetta (dedup isn't guaranteed to catch a full-county feed against a city-specific one). |
 | Savannah/Chatham SAGIS "Site Permit by Work Class" (ArcGIS) | `pull-ga-municipal-commercial.py` (`pull_savannah`) | 103 | `WorkClass='Full Site-Private'`, text-filtered. No project-name field — synthesized from address. Live as of 2026-07-17. |
 | USAspending.gov federal construction awards | `pull-usaspending-ga.py` | 414 (422 raw, 8 filtered as noise) | **No API key or quota** (unlike SAM.gov's ~10 calls/day limit). PSC filter `{"require": [["Product","Y"]]}`, contract award types A-D. Real top hits: $491M CDC high-containment lab, $221M CDC Chamblee campus, $195M Navy Trident Refit expansion. 75% of 2-year awards already show `completed` status (period of performance ended) — `open_for` text is conditioned on status so completed awards aren't misrepresented as active spec opportunities. |
@@ -124,7 +217,7 @@ Corpus went from 489 → **1,377** projects. Window expanded from 12 to 24 month
 | Source | Why rejected |
 |---|---|
 | Columbus/Muscogee "BuildingPermits" ArcGIS (`ccggisprod.columbusga.org`) | Best-structured schema found all session (owner, contractor, valuation, sqft, dedicated Commercial layer) but **stale — most recent record 2022-04-15**. Confirmed via `outStatistics` max-date query before building anything on it. |
-| Atlanta city Hub "All Building Permits 2019-2024" (`dpcd-coaplangis.opendata.arcgis.com`) | Resolves through the DCAT catalog to a static **CSV upload, last touched 2024-08-08** — not a live feed, same dead-end pattern as Columbus. |
+| Atlanta city Hub "All Building Permits 2019-2024" (`dpcd-coaplangis.opendata.arcgis.com`) | Resolves through the DCAT catalog to a static **CSV upload, last touched 2024-08-08** — not a live feed, same dead-end pattern as Columbus. Checked all 57 datasets in Atlanta's GIS hub, not just this one — no other permit/building/construction match. Turns out this dataset **is itself a one-time export pulled from Accela**, never refreshed — confirming there's no ArcGIS shortcut around Accela for Atlanta; Accela is the only real source there. |
 | Cobb County ArcGIS permits layer | Checked Cobb's open-data DCAT catalog directly for a "permit"/"building" dataset — **none exists**. Cobb's real permit system is Accela. A secondhand research summary claimed otherwise; didn't hold up under direct verification. |
 | Gwinnett County ArcGIS permits layer | Same check on Gwinnett's catalog — only near-match is a generic "Buildings" footprint layer, not permits. Gwinnett's real permit system is Accela. |
 | GDOT Vendor Portal (`vendorportal.dot.ga.gov`) | Login-gated, no public data on the entry page. |
@@ -159,8 +252,9 @@ USG Board of Regents facilities hub, UGA procurement, and Georgia Tech procureme
 | `scripts/pull-ga-municipal-commercial.py` | Added `pull_savannah()`, `pull_fulton()` |
 | `scripts/pull-ga-accela-commercial.py` | Fixed value-vs-label type matching; added `pull_gwinnett_playwright()`; broadened commercial keywords |
 | `scripts/pull-usaspending-ga.py` | New |
+| `scripts/pull-sam-gov-bulk-ga.py` | New — supersedes `pull-sam-gov-ga.py`'s quota-limited API approach with SAM.gov's public daily CSV extract |
 | `scripts/tag-trade-permits.py` | New — tags Accela records as `trade` vs `project` post-pull (not yet applied to real data since Accela output was lost) |
-| `scripts/rebuild-ga-corpus.py` | Added `usaspending-ga-construction.json` as a merge source; updated date range to 24mo |
+| `scripts/rebuild-ga-corpus.py` | Added `usaspending-ga-construction.json` and `sam-gov-bulk-ga-construction.json` as merge sources; updated date range to 24mo |
 
 ---
 
@@ -194,7 +288,7 @@ These are the best automated feeds when they exist. Query the REST endpoint dire
 | Alpharetta | ArcGIS MapServer | `OpenData/OpenData_PCE_Full/MapServer/1` | `Commercial *` case types | 318 raw → 274 kept |
 | Johns Creek | ArcGIS FeatureServer | `ActiveDevelopmentProjects/FeatureServer/0` | Non-residential dev polygons | 7 |
 | Marietta | ArcGIS MapServer | `HubContent/AGOL_OpenData/MapServer/8` | TYPE in Industrial, Commercial, Mixed Use | 26 |
-| Fulton County | Socrata aggregate | `performance.fultoncountyga.gov/.../p3f6-ug7s` | Zip/quarter counts only | **Not usable** (no project records) |
+| Fulton County (this specific Socrata dataset) | Socrata aggregate | `performance.fultoncountyga.gov/.../p3f6-ug7s` | Zip/quarter counts only | **Not usable** (no project records) — superseded 2026-07-25: see `Building_Permits_Issued` ArcGIS FeatureServer in the 2026-07-25 update section, a *different*, real, record-level Fulton dataset that is usable (299 in 24mo) |
 
 **Commercial-only filters that matter:**
 - Drop `Residential`, `Townhomes`, `Subdivision` type labels.
