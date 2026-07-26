@@ -239,7 +239,7 @@ export function OpsDashboard() {
         <h2 className="text-lg font-semibold">Data staleness watchlist</h2>
         <p className="mt-1 text-sm text-[var(--color-gray-600)]">
           States with the largest gap since their newest project record — a proxy for a
-          source that's stopped updating.
+          source that&apos;s stopped updating.
         </p>
         <div className="mt-4 overflow-x-auto rounded-lg border border-[var(--color-border)] bg-white">
           <table className="w-full min-w-[480px] text-sm">
@@ -273,7 +273,7 @@ export function OpsDashboard() {
           Manual/approximate — Cloud Billing API integration (live per-service spend) is
           planned but not wired up yet. Cloud Run/Cloud SQL request/error/latency metrics
           (Cloud Monitoring API) are the other planned addition, gated on granting the
-          API's service account monitoring.viewer.
+          API&apos;s service account monitoring.viewer.
         </p>
         <table className="mt-4 w-full max-w-md text-sm">
           <tbody className="divide-y divide-[var(--color-border)]">
