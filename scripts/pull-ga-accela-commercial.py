@@ -40,7 +40,8 @@ RESIDENTIAL = re.compile(
     re.I,
 )
 COMMERCIAL_TYPE = re.compile(
-    r"commercial|industrial|office|retail|hotel|mixed|hospitality|warehouse|medical|lodging",
+    r"commercial|industrial|office|retail|hotel|mixed|hospitality|warehouse|medical|lodging|"
+    r"hospital|school|church|institutional",
     re.I,
 )
 PRIMARY_TYPES = re.compile(
@@ -119,8 +120,16 @@ def commercial_permit_types(html: str, *, primary_only: bool) -> list[tuple[str,
         label = text.strip()
         if not val or label.startswith("--"):
             continue
-        if COMMERCIAL_TYPE.search(label):
-            if primary_only and not PRIMARY_TYPES.search(label):
+        # Some agencies (e.g. Gwinnett) encode the record type in the option
+        # VALUE ("Building/Commercial/NA/NA") while the display LABEL is a
+        # generic human name ("Building") with no "commercial" in it at all.
+        # Match against both, not just the label, or those types get silently
+        # skipped entirely.
+        blob = f"{val} {label}"
+        if RESIDENTIAL.search(blob) and not COMMERCIAL_TYPE.search(label):
+            continue
+        if COMMERCIAL_TYPE.search(blob):
+            if primary_only and not PRIMARY_TYPES.search(blob):
                 continue
             out.append((val, label))
     return out
@@ -380,6 +389,132 @@ def row_to_project(row: dict, agency: dict) -> dict | None:
     }
 
 
+def pull_gwinnett_playwright(agency: dict, cutoff: dt.date, end: dt.date, *, primary_only: bool) -> list[dict]:
+    """Gwinnett's Building-module general search form has no start/end date
+    fields at all (unlike Atlanta/Cobb) -- confirmed 2026-07-25 by inspecting
+    the live form; only a hidden internal date field exists. The raw-POST
+    AccelaClient approach silently ignored txtGSStartDate/txtGSEndDate values
+    that don't correspond to any real control, always returning the same
+    top-10-by-record-number result regardless of requested window.
+
+    Fix: results are sorted newest-first by default with no filter applied,
+    so paginate through the real numbered pager (a real browser is needed --
+    it's a plain __doPostBack link, not reconstructible as a clean REST call)
+    and stop once row dates fall below cutoff. Filters client-side instead of
+    server-side.
+    """
+    from playwright.sync_api import sync_playwright
+
+    base_url = f"{agency['host']}{agency['path']}"
+    seen: set[str] = set()
+    projects: list[dict] = []
+
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        page = browser.new_page()
+        page.goto(base_url, timeout=60000)
+        page.wait_for_load_state("networkidle")
+        types = commercial_permit_types(page.content(), primary_only=primary_only)
+        if not types:
+            print(f"  {agency['id']}: no commercial permit types found")
+            browser.close()
+            return []
+        print(f"  {agency['id']}: {len(types)} commercial permit types (playwright)", flush=True)
+
+        for permit_value, permit_label in types:
+            print(f"    searching {permit_label[:45]}...", flush=True)
+
+            # The search postback is flaky in practice -- occasionally lands back
+            # on a reset "--Select--" form instead of executing (confirmed by
+            # direct reproduction 2026-07-25), silently yielding zero results.
+            # Verify the results grid actually rendered before trusting it, and
+            # retry the whole select+search sequence a few times if not.
+            search_ok = False
+            for attempt in range(4):
+                page.goto(base_url, timeout=60000)
+                page.wait_for_load_state("networkidle")
+                page.select_option(
+                    'select[name="ctl00$PlaceHolderMain$generalSearchForm$ddlGSPermitType"]', permit_value
+                )
+                page.wait_for_load_state("networkidle")
+                page.wait_for_timeout(800)
+                search_btn = page.locator('#ctl00_PlaceHolderMain_btnNewSearch, a[id*="btnNewSearch"]').first
+                if search_btn.count() == 0:
+                    break
+                search_btn.click()
+                page.wait_for_load_state("networkidle")
+                page.wait_for_timeout(1000)
+                body_text = page.locator("body").inner_text()
+                if re.search(r"Showing\s+\d+\s*-\s*\d+\s+of\s+(\d+|100\+)", body_text, re.I):
+                    search_ok = True
+                    break
+                if "no matching records" in body_text.lower() or "no records found" in body_text.lower():
+                    search_ok = True  # genuinely zero results, not a failed postback
+                    break
+                page.wait_for_timeout(1500 * (attempt + 1))
+
+            if not search_ok:
+                print(f"    {permit_label[:40]}: search never landed after 4 attempts, skipping", flush=True)
+                continue
+
+            added = 0
+            highest_page_clicked = 1
+            for _ in range(200):  # hard cap: 2000 rows/type, far above any realistic 24-month volume
+                rows = parse_records(page.content(), agency["host"])
+                stop = False
+                for row in rows:
+                    cells = row.get("cells") or []
+                    opened = cells[0] if cells else None
+                    row_date = None
+                    if opened and re.match(r"\d{2}/\d{2}/\d{4}", opened):
+                        try:
+                            row_date = dt.datetime.strptime(opened, "%m/%d/%Y").date()
+                        except ValueError:
+                            row_date = None
+                    if row_date and row_date > end:
+                        continue  # future-dated noise, skip
+                    if row_date and row_date < cutoff:
+                        stop = True  # sorted newest-first: everything after this is older too
+                        continue
+                    if row["record_number"] in seen:
+                        continue
+                    seen.add(row["record_number"])
+                    row["permit_type"] = permit_label
+                    project = row_to_project(row, agency)
+                    if project:
+                        projects.append(project)
+                        added += 1
+                if stop:
+                    break
+
+                html = page.content()
+                page_links = {
+                    int(m.group(2)): m.group(1)
+                    for m in re.finditer(
+                        r"__doPostBack\('(ctl00\$PlaceHolderMain\$dgvPermitList\$gdvPermitList\$ctl13\$ctl\d+)',''\)"
+                        r'[^>]*>(\d+)</a>',
+                        html,
+                    )
+                }
+                next_targets = {n: t for n, t in page_links.items() if n > highest_page_clicked}
+                if not next_targets:
+                    break
+                next_page_num = min(next_targets)
+                target = next_targets[next_page_num]
+                page.evaluate(f"__doPostBack('{target}', '')")
+                page.wait_for_load_state("networkidle")
+                page.wait_for_timeout(1000)
+                highest_page_clicked = next_page_num
+
+            if added:
+                print(f"    {permit_label[:40]}: +{added} (running total {len(projects)})")
+            time.sleep(0.3)
+
+        browser.close()
+
+    return projects
+
+
 def pull_agency(agency: dict, cutoff: dt.date, end: dt.date, *, primary_only: bool) -> list[dict]:
     client = AccelaClient(agency["host"], agency["path"])
     html = client._get()
@@ -440,7 +575,10 @@ def main() -> int:
     all_projects: list[dict] = []
     for agency in agencies:
         try:
-            rows = pull_agency(agency, cutoff, end, primary_only=primary_only)
+            if agency["id"] == "gwinnett":
+                rows = pull_gwinnett_playwright(agency, cutoff, end, primary_only=primary_only)
+            else:
+                rows = pull_agency(agency, cutoff, end, primary_only=primary_only)
             all_projects.extend(rows)
             print(f"  {agency['id']} subtotal: {len(rows)}")
         except Exception as exc:  # noqa: BLE001
