@@ -75,6 +75,25 @@ async function fetchAllProjects(): Promise<Project[]> {
   return all;
 }
 
+// Single-project fetch, used by the detail page instead of pulling the
+// full bulk-paginated cache and filtering for one id. That approach was
+// causing real, reproducible bugs under a 27K-page build's heavy parallel
+// load: individual projects would occasionally build with null score/
+// timeline/news even though the live API had real data for them -- a
+// per-row enrichment race during the bulk crawl, not caught by
+// fetchPage()'s malformed-page retry (the page itself was validly
+// shaped, just one row's enrichment join came back degraded). Hitting
+// /v1/projects/{id}} directly avoids the bulk crawl entirely for the one
+// place data correctness matters most.
+export async function getProject(id: string): Promise<Project | undefined> {
+  const res = await fetch(`${API_BASE}/v1/projects/${encodeURIComponent(id)}`);
+  if (res.status === 404) return undefined;
+  if (!res.ok) {
+    throw new Error(`specindex-api /v1/projects/${id} failed: ${res.status} ${res.statusText}`);
+  }
+  return normalizeProject((await res.json()) as Project);
+}
+
 // Memoized per build process so every page/component sharing this module
 // triggers only one paginated fetch sequence against the API, not one per call.
 let cache: Promise<Project[]> | null = null;
@@ -88,11 +107,6 @@ function getAllProjects(): Promise<Project[]> {
 
 export async function getProjects(): Promise<Project[]> {
   return getAllProjects();
-}
-
-export async function getProjectById(id: string): Promise<Project | undefined> {
-  const projects = await getAllProjects();
-  return projects.find((p) => p.id === id);
 }
 
 export async function getProjectIds(): Promise<string[]> {

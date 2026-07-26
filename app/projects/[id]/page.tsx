@@ -7,7 +7,7 @@ import { ProjectTimeline } from "@/components/ProjectTimeline";
 import { ProjectNews } from "@/components/ProjectNews";
 import { ProjectLocationMap } from "@/components/ProjectLocationMap";
 import { formatDate, formatSf, formatUsd, stateName, typeLabel } from "@/lib/format";
-import { getProjectById, getProjectIds } from "@/lib/projects";
+import { getProject, getProjectIds } from "@/lib/projects";
 
 type Props = { params: Promise<{ id: string }> };
 
@@ -18,7 +18,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
-  const project = await getProjectById(id);
+  const project = await getProject(id);
   if (!project) return { title: "Project" };
   return {
     title: project.name,
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ProjectDetailPage({ params }: Props) {
   const { id } = await params;
-  const project = await getProjectById(id);
+  const project = await getProject(id);
   if (!project) notFound();
 
   return (
