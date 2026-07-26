@@ -6,6 +6,8 @@ rather than on every edit (Sheets can't be updated in place — see note at bott
 
 **Standing goal (2026-07-26): improving data coverage is the main, ongoing objective right now** — more states, more counties, deeper per-county detail. Proactively surface and recommend new/improved sources whenever working in this repo, don't wait to be asked. Verify every source live before building against it (see `docs/states/ga.md` → "Adding a new source: step-by-step"). Track deep-vs-thin county coverage at `specindex.ai/coverage/` (backed by `county_coverage`, see item 26).
 
+**Sourcing priority order (2026-07-26):** national first, then state, then county. Capture broad national-level sources (SAM.gov, USAspending, DRI, other federal/nationwide feeds) to establish a baseline everywhere, then work state by state (state-level permit/bid boards), and only then spend effort on county-by-county local feeds (ArcGIS/Accela/EnerGov) — those are the highest-effort, most fragile integrations and should target the highest-value gaps shown in the Insights dashboard, not whatever research arrives first.
+
 | # | Milestone | Status | Notes |
 |---|---|---|---|
 | 1 | Product strategy + architecture doc | Done | |

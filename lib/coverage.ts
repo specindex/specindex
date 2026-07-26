@@ -21,6 +21,7 @@ export type StateSummary = {
   deep: number;
   thin: number;
   total_projects: number;
+  net_delta: number | null;
 };
 
 export type TopProject = {
@@ -34,6 +35,22 @@ export type TopProject = {
 export type CoverageInsights = {
   state_summary: StateSummary[];
   top_projects_by_county: Record<string, TopProject[]>;
+};
+
+export type StateQuality = {
+  state: string;
+  total_projects: number;
+  pct_has_city: number;
+  pct_has_value: number;
+  pct_has_contractor: number;
+  pct_has_date: number;
+  freshness_days: number | null;
+  computed_at: string | null;
+};
+
+type QualityResponse = {
+  total: number;
+  quality: StateQuality[];
 };
 
 // Same build-time-fetch pattern as lib/projects.ts -- this runs at
@@ -59,4 +76,13 @@ export async function getCoverageInsights(): Promise<CoverageInsights> {
     throw new Error(`specindex-api /v1/coverage/insights failed: ${res.status} ${res.statusText}`);
   }
   return (await res.json()) as CoverageInsights;
+}
+
+export async function getQuality(): Promise<StateQuality[]> {
+  const res = await fetch(`${API_BASE}/v1/quality`);
+  if (!res.ok) {
+    throw new Error(`specindex-api /v1/quality failed: ${res.status} ${res.statusText}`);
+  }
+  const data = (await res.json()) as QualityResponse;
+  return data.quality;
 }

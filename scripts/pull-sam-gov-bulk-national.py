@@ -175,6 +175,19 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--csv-path", help="Use an already-downloaded CSV instead of fetching fresh")
     ap.add_argument("--states", help="Comma-separated state codes to limit to (default: all with a data/states/ file)")
+    ap.add_argument(
+        "--exclude-states",
+        default="GA",
+        help=(
+            "Comma-separated state codes to skip (default: GA). GA has its own "
+            "rebuild-ga-corpus.py pipeline that rebuilds data/states/ga.json from "
+            "raw/ sources only -- merging this script's output directly into "
+            "ga.json would get silently erased the next time rebuild-ga-corpus.py "
+            "runs. Use scripts/pull-sam-gov-bulk-ga.py instead, which writes to "
+            "data/raw/ where rebuild-ga-corpus.py actually looks. Pass '' to "
+            "disable this exclusion."
+        ),
+    )
     args = ap.parse_args()
 
     if args.csv_path:
@@ -189,6 +202,12 @@ def main() -> int:
     target_states = (
         {s.strip().upper() for s in args.states.split(",")} if args.states else valid_states
     )
+    exclude_states = (
+        {s.strip().upper() for s in args.exclude_states.split(",") if s.strip()}
+        if args.exclude_states
+        else set()
+    )
+    target_states -= exclude_states
     target_states &= valid_states
 
     csv.field_size_limit(10_000_000)

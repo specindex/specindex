@@ -14,6 +14,11 @@ Run this after any corpus reload (scripts/load-corpus-to-postgres.py) to
 keep the coverage table current -- it reads directly from the live
 `projects` table, not from local JSON files.
 
+Also captures each county's prior project_count before refreshing, writing
+it back as previous_project_count/delta (see
+db/migrations/006_county_coverage_diff.sql) so the Insights dashboard can
+show week-over-week movement, not just a point-in-time snapshot.
+
 Usage:
     python3 scripts/compute-county-coverage.py --database-url postgresql://...
 """
@@ -68,7 +73,11 @@ def main() -> int:
             "DATABASE_URL", "postgresql://specindex:specindex@localhost:5432/specindex"
         ),
     )
-    ap.add_argument("--apply-migration", action="store_true", help="Run db/migrations/004_county_coverage.sql first")
+    ap.add_argument(
+        "--apply-migration",
+        action="store_true",
+        help="Run db/migrations/004_county_coverage.sql and 006_county_coverage_diff.sql first",
+    )
     args = ap.parse_args()
 
     conn = psycopg2.connect(args.database_url)
@@ -77,9 +86,15 @@ def main() -> int:
             if args.apply_migration:
                 from pathlib import Path
 
-                migration = Path(__file__).resolve().parents[1] / "db" / "migrations" / "004_county_coverage.sql"
-                cur.execute(migration.read_text(encoding="utf-8"))
+                migrations_dir = Path(__file__).resolve().parents[1] / "db" / "migrations"
+                for name in ("004_county_coverage.sql", "006_county_coverage_diff.sql"):
+                    cur.execute((migrations_dir / name).read_text(encoding="utf-8"))
                 conn.commit()
+
+            # Capture pre-refresh counts for week-over-week diffing before
+            # they're wiped by the TRUNCATE below.
+            cur.execute("SELECT state, county, project_count FROM county_coverage")
+            previous_counts = {(state, county): count for state, county, count in cur.fetchall()}
 
             cur.execute(
                 "SELECT project_id, state, county FROM projects "
@@ -104,6 +119,10 @@ def main() -> int:
                     v["count"],
                     sorted(v["sources"]),
                     "deep" if v["deep"] else "thin",
+                    previous_counts.get((state, county)),
+                    (v["count"] - previous_counts[(state, county)])
+                    if (state, county) in previous_counts
+                    else None,
                 )
                 for (state, county), v in agg.items()
             ]
@@ -111,7 +130,9 @@ def main() -> int:
             cur.execute("TRUNCATE county_coverage")
             execute_values(
                 cur,
-                "INSERT INTO county_coverage (state, county, project_count, sources, coverage_type) VALUES %s",
+                "INSERT INTO county_coverage "
+                "(state, county, project_count, sources, coverage_type, previous_project_count, delta) "
+                "VALUES %s",
                 coverage_rows,
                 page_size=500,
             )

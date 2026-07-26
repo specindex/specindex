@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { CoverageTabs } from "@/components/CoverageTabs";
-import { getCoverage, getCoverageInsights } from "@/lib/coverage";
+import { getCoverage, getCoverageInsights, getQuality } from "@/lib/coverage";
 
 export const metadata: Metadata = {
   title: "Data Coverage",
@@ -8,7 +8,11 @@ export const metadata: Metadata = {
 };
 
 export default async function CoveragePage() {
-  const [coverage, insights] = await Promise.all([getCoverage(), getCoverageInsights()]);
+  const [coverage, insights, quality] = await Promise.all([
+    getCoverage(),
+    getCoverageInsights(),
+    getQuality(),
+  ]);
 
   return (
     <div className="bg-[var(--color-bg)]">
@@ -29,7 +33,7 @@ export default async function CoveragePage() {
         </div>
       </div>
       <div className="mx-auto max-w-6xl px-5 py-10 md:px-8 md:py-12">
-        <CoverageTabs coverage={coverage} insights={insights} />
+        <CoverageTabs coverage={coverage} insights={insights} quality={quality} />
       </div>
     </div>
   );
