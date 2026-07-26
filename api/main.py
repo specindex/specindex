@@ -105,9 +105,21 @@ def get_conn():
         pool.putconn(conn)
 
 
+def spx_id(project_sk: int) -> str:
+    """The one identifier customers should ever see or reference -- a
+    branded, permanent number wrapping project_sk (the real permanent
+    key; project_id is just a URL-routing slug). See the MLS-positioning
+    plan notes: don't surface project_sk or project_id as "the ID"
+    anywhere a human looks -- pick one branded format and keep the other
+    two as internal plumbing, or customers see three different-looking
+    identifiers for the same project."""
+    return f"SPX-{project_sk:06d}"
+
+
 def row_to_project(row: dict[str, Any]) -> dict[str, Any]:
     return {
         "id": row["project_id"],
+        "spx_id": spx_id(row["project_sk"]),
         "project_sk": row["project_sk"],
         "external_ids": row["external_ids"] or {},
         "record_type": row["record_type"],
@@ -395,7 +407,6 @@ def list_pipeline_runs(
         clauses.append("workflow = %s")
         params.append(workflow)
     where = f"WHERE {' AND '.join(clauses)}" if clauses else ""
-    params.append(limit)
 
     with get_conn() as conn:
         with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
@@ -408,12 +419,16 @@ def list_pipeline_runs(
                 ORDER BY started_at DESC
                 LIMIT %s
                 """,
-                params,
+                [*params, limit],
             )
             rows = cur.fetchall()
 
+            cur.execute("SELECT workflow, count(*) AS n FROM pipeline_runs GROUP BY workflow")
+            run_counts = {r["workflow"]: r["n"] for r in cur.fetchall()}
+
     return {
         "total": len(rows),
+        "run_counts": run_counts,
         "runs": [
             {
                 "id": r["id"],

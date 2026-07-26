@@ -58,6 +58,7 @@ export function OpsDashboard() {
   const [apiUp, setApiUp] = useState<boolean | null>(null);
   const [dbHealth, setDbHealth] = useState<DbHealth | null>(null);
   const [runs, setRuns] = useState<PipelineRun[]>([]);
+  const [runCounts, setRunCounts] = useState<Record<string, number>>({});
   const [states, setStates] = useState<StateSummary[]>([]);
   const [quality, setQuality] = useState<StateQuality[]>([]);
   const [expanded, setExpanded] = useState<number | null>(null);
@@ -79,6 +80,7 @@ export function OpsDashboard() {
         setApiUp(healthRes);
         setDbHealth(dbRes);
         setRuns(runsRes.runs ?? []);
+        setRunCounts(runsRes.run_counts ?? {});
         setStates(insightsRes.state_summary ?? []);
         setQuality(qualityRes.quality ?? []);
       } catch (e) {
@@ -108,7 +110,7 @@ export function OpsDashboard() {
 
   return (
     <div className="space-y-8">
-      <section className="grid gap-4 sm:grid-cols-3">
+      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <div className="card p-4">
           <p className="text-xs font-semibold uppercase tracking-wider text-[var(--color-gray-400)]">
             API status
@@ -142,6 +144,19 @@ export function OpsDashboard() {
           </p>
           <p className="mt-1 text-xs text-[var(--color-gray-600)]">
             Across {states.length} states with any coverage
+          </p>
+        </div>
+        <div className="card p-4">
+          <p className="text-xs font-semibold uppercase tracking-wider text-[var(--color-gray-400)]">
+            Agent/cron runs (lifetime)
+          </p>
+          <p className="mt-1 text-lg font-semibold">
+            {Object.values(runCounts).reduce((sum, n) => sum + n, 0)}
+          </p>
+          <p className="mt-1 text-xs text-[var(--color-gray-600)]">
+            {Object.entries(runCounts)
+              .map(([w, n]) => `${w}: ${n}`)
+              .join(" · ") || "none logged yet"}
           </p>
         </div>
       </section>
@@ -282,7 +297,7 @@ export function OpsDashboard() {
               <td className="py-2 text-right tabular-nums">~$10/mo</td>
             </tr>
             <tr>
-              <td className="py-2 text-[var(--color-gray-600)]">Domain (GoDaddy)</td>
+              <td className="py-2 text-[var(--color-gray-600)]">Domain</td>
               <td className="py-2 text-right tabular-nums">$165/yr</td>
             </tr>
             <tr>

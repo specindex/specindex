@@ -45,7 +45,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           </div>
           <h1 className="mt-3 text-hero">{project.name}</h1>
           <p className="mt-2 font-mono text-sm text-[var(--color-gray-400)]">
-            Project ID: {project.id}
+            {project.spx_id}
           </p>
           <p className="mt-2 text-lg text-[var(--color-gray-600)]">
             {project.city}
@@ -57,7 +57,7 @@ export default async function ProjectDetailPage({ params }: Props) {
 
       <div className="mx-auto max-w-6xl px-5 py-10 md:px-8 md:py-12">
         <dl className="card grid gap-4 p-6 sm:grid-cols-2 lg:grid-cols-3">
-          <Fact label="Project ID" value={project.id} mono />
+          <Fact label="Project ID" value={project.spx_id} mono />
           <Fact label="Estimated value" value={formatUsd(project.estimated_value_usd)} />
           <Fact label="Square footage" value={formatSf(project.square_footage)} />
           <Fact

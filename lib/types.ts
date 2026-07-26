@@ -25,6 +25,7 @@ export type ProjectSource = {
 
 export type Project = {
   id: string;
+  spx_id: string;
   name: string;
   state?: string;
   city: string;

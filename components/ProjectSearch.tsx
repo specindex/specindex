@@ -197,7 +197,7 @@ export function ProjectSearch({ projects }: Props) {
                   </div>
                   <p className="mt-1 text-sm text-[var(--color-gray-600)]">
                     <span className="font-mono text-xs text-[var(--color-gray-400)]">
-                      {project.id}
+                      {project.spx_id}
                     </span>
                     {" · "}
                     {project.city}
