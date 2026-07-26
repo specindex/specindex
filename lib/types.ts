@@ -77,6 +77,7 @@ export type Project = {
   timeline: ProjectTimelineEvent[];
   provenance: ProjectProvenance[];
   news: ProjectNewsItem[];
+  first_seen_at?: string | null;
 };
 
 export type ProjectCorpus = {

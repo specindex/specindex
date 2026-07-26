@@ -226,6 +226,9 @@ def row_to_project(row: dict[str, Any], enrichment: dict[str, Any] | None = None
         "open_for": row["open_for"] or "",
         "latitude": float(row["latitude"]) if row.get("latitude") is not None else None,
         "longitude": float(row["longitude"]) if row.get("longitude") is not None else None,
+        "first_seen_at": (
+            row["first_seen_at"].isoformat() if row.get("first_seen_at") else None
+        ),
     }
 
 
@@ -262,6 +265,9 @@ def list_projects(
     category: str | None = Query(default=None, description="Matches any entry in competitor_watch"),
     year: int | None = None,
     q: str | None = Query(default=None, description="Free-text search across name/city/owner/GC/description"),
+    new_since_days: int | None = Query(
+        default=None, ge=1, le=365, description="Only projects first seen in the last N days"
+    ),
     sort: str = Query(default="score", pattern="^(score|name|value|recency)$"),
     limit: int = Query(default=50, ge=1, le=100),
     offset: int = Query(default=0, ge=0),
@@ -297,6 +303,9 @@ def list_projects(
             "p.general_contractor ILIKE %s OR p.description ILIKE %s)"
         )
         params.extend([f"%{q}%"] * 5)
+    if new_since_days:
+        clauses.append("p.first_seen_at >= now() - make_interval(days => %s)")
+        params.append(new_since_days)
 
     where = f"WHERE {' AND '.join(clauses)}" if clauses else ""
     order_by = {
