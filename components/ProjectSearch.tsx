@@ -9,6 +9,7 @@ import {
   getCountiesForState,
   getStatesInCorpus,
   getStatusesInCorpus,
+  getYearsInCorpus,
 } from "@/lib/stats";
 import { StatusPill } from "./StatusPill";
 
@@ -23,10 +24,12 @@ export function ProjectSearch({ projects }: Props) {
   const [type, setType] = useState<string>("all");
   const [county, setCounty] = useState<string>("all");
   const [category, setCategory] = useState<string>("all");
+  const [year, setYear] = useState<string>("all");
   const [isPending, startTransition] = useTransition();
 
   const states = useMemo(() => getStatesInCorpus(projects), [projects]);
   const statuses = useMemo(() => getStatusesInCorpus(projects), [projects]);
+  const years = useMemo(() => getYearsInCorpus(projects), [projects]);
   const counties = useMemo(
     () =>
       state === "all"
@@ -48,6 +51,7 @@ export function ProjectSearch({ projects }: Props) {
       if (status !== "all" && p.status !== status) return false;
       if (type !== "all" && p.project_type !== type) return false;
       if (county !== "all" && p.county !== county) return false;
+      if (year !== "all" && p.opened_or_announced_date?.slice(0, 4) !== year) return false;
       if (
         category !== "all" &&
         !p.competitor_watch.some((item) =>
@@ -75,7 +79,7 @@ export function ProjectSearch({ projects }: Props) {
         .toLowerCase();
       return blob.includes(q);
     });
-  }, [projects, query, state, status, type, county, category]);
+  }, [projects, query, state, status, type, county, category, year]);
 
   return (
     <div>
@@ -92,7 +96,7 @@ export function ProjectSearch({ projects }: Props) {
           placeholder="City, owner, GC, HVAC, glazing, healthcare…"
           className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-4 py-3 text-base outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
         />
-        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
           <select
             value={state}
             onChange={(e) => {
@@ -153,6 +157,18 @@ export function ProjectSearch({ projects }: Props) {
             {categories.map((c) => (
               <option key={c} value={c}>
                 {c}
+              </option>
+            ))}
+          </select>
+          <select
+            value={year}
+            onChange={(e) => setYear(e.target.value)}
+            className="rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm"
+          >
+            <option value="all">All years</option>
+            {years.map((y) => (
+              <option key={y} value={y}>
+                {y}
               </option>
             ))}
           </select>
