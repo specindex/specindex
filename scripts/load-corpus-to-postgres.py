@@ -11,11 +11,24 @@ from datetime import date, datetime
 from pathlib import Path
 
 import psycopg2
-from psycopg2.extras import Json
+from psycopg2.extras import Json, execute_values
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CORPUS = ROOT / "data" / "national-commercial-projects.json"
 DEFAULT_SCHEMA = ROOT / "db" / "schema.sql"
+
+# Batched via psycopg2.extras.execute_values (see main()) instead of one
+# execute() per row -- 7,000+ individual round trips through the Cloud SQL
+# Auth Proxy took 30+ minutes and eventually hit a server-side connection
+# reset (idle/max-lifetime timeout) before finishing. Batches of 500 finish
+# in seconds and are far less likely to outlive any connection limit.
+UPSERT_ROW_TEMPLATE = (
+    "(%(project_id)s, %(name)s, %(state)s, %(city)s, %(county)s, %(status)s, "
+    "%(project_type)s, %(estimated_value_usd)s, %(square_footage)s, %(owner)s, "
+    "%(architect)s, %(general_contractor)s, %(opened_or_announced_date)s, "
+    "%(description)s, %(key_specs)s, %(mentioned_brands)s, %(competitor_watch)s, "
+    "%(sources)s, %(open_for)s, %(corpus_generated_at)s)"
+)
 
 UPSERT = """
 INSERT INTO projects (
@@ -23,13 +36,7 @@ INSERT INTO projects (
   estimated_value_usd, square_footage, owner, architect, general_contractor,
   opened_or_announced_date, description, key_specs, mentioned_brands,
   competitor_watch, sources, open_for, corpus_generated_at
-) VALUES (
-  %(project_id)s, %(name)s, %(state)s, %(city)s, %(county)s, %(status)s,
-  %(project_type)s, %(estimated_value_usd)s, %(square_footage)s, %(owner)s,
-  %(architect)s, %(general_contractor)s, %(opened_or_announced_date)s,
-  %(description)s, %(key_specs)s, %(mentioned_brands)s, %(competitor_watch)s,
-  %(sources)s, %(open_for)s, %(corpus_generated_at)s
-)
+) VALUES %s
 ON CONFLICT (project_id) DO UPDATE SET
   name = EXCLUDED.name,
   state = EXCLUDED.state,
@@ -136,8 +143,8 @@ def main() -> int:
             if args.apply_schema:
                 cur.execute(DEFAULT_SCHEMA.read_text(encoding="utf-8"))
 
-            for p in projects:
-                cur.execute(UPSERT, project_row(p, generated_at))
+            rows = [project_row(p, generated_at) for p in projects]
+            execute_values(cur, UPSERT, rows, template=UPSERT_ROW_TEMPLATE, page_size=500)
 
             cur.execute("SELECT count(*) FROM projects")
             total = cur.fetchone()[0]

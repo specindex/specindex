@@ -244,26 +244,30 @@ def assign_unique_ids(projects: list[dict], state_code: str) -> list[dict]:
 
 
 def dedupe_projects(projects: list[dict], state_code: str) -> tuple[list[dict], int]:
-    """Merge duplicate records; return (projects, merges_performed)."""
+    """Merge duplicate records; return (projects, merges_performed).
+
+    Single pairwise pass, O(n^2) -- each pair of records is compared once.
+    An earlier version restarted the *entire* scan from index 0 every time
+    it found one merge, which made total cost scale with the number of
+    merges found (O(n^2 * merges)), not just record count. That was fine at
+    Georgia's scale (~1,400 records, well under a minute) but made a
+    24-month North Carolina pull (~7,000 raw permit records, much higher
+    near-duplicate rate) run for 15+ minutes with no sign of finishing --
+    had to be killed. This version still finds the same duplicates (every
+    pair is still compared) but never re-scans records already cleared.
+    """
     normalized = [ensure_state_prefixed(dict(p), state_code) for p in projects]
     merges = 0
-    changed = True
-    while changed:
-        changed = False
-        for i in range(len(normalized)):
-            if i >= len(normalized):
-                break
-            for j in range(i + 1, len(normalized)):
-                if j >= len(normalized):
-                    break
-                if same_project(normalized[i], normalized[j]):
-                    primary, secondary = prefer_canonical(normalized[i], normalized[j])
-                    merged = merge_projects(primary, secondary)
-                    normalized[i] = merged
-                    del normalized[j]
-                    merges += 1
-                    changed = True
-                    break
-            if changed:
-                break
+    i = 0
+    while i < len(normalized):
+        j = i + 1
+        while j < len(normalized):
+            if same_project(normalized[i], normalized[j]):
+                primary, secondary = prefer_canonical(normalized[i], normalized[j])
+                normalized[i] = merge_projects(primary, secondary)
+                del normalized[j]
+                merges += 1
+                continue  # re-check the (possibly enriched) record i against the next j
+            j += 1
+        i += 1
     return assign_unique_ids(normalized, state_code), merges
