@@ -1,9 +1,9 @@
 {
   "state": "WA",
   "state_name": "Washington",
-  "generated_at": "2026-07-25",
+  "generated_at": "2026-07-26",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — Industrial Briefs, Covington Reporter, Wenatchee World, municipal planning filings, SAM.gov federal solicitations (bulk CSV extract)",
+  "capture_method": "Public sources — Industrial Briefs, Covington Reporter, Wenatchee World, municipal planning filings, SAM.gov federal solicitations (bulk CSV extract), SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "wa-amazon-chehalis-distribution",

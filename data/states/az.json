@@ -1,9 +1,9 @@
 {
   "state": "AZ",
   "state_name": "Arizona",
-  "generated_at": "2026-07-25",
+  "generated_at": "2026-07-26",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Web research — Prime Data Centers, AZ Big Media, REBusinessOnline, Colliers, Connect CRE, Hoodline, SAM.gov federal solicitations (bulk CSV extract)",
+  "capture_method": "Web research — Prime Data Centers, AZ Big Media, REBusinessOnline, Colliers, Connect CRE, Hoodline, SAM.gov federal solicitations (bulk CSV extract), SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "az-prime-phx01-avondale",
