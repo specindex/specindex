@@ -256,22 +256,19 @@ def stats():
             return dict(row)
 
 
-@app.get("/v1/projects")
-def list_projects(
-    state: str | None = Query(default=None, description="Comma-separated state codes, e.g. NC,SC,VA"),
-    status: str | None = None,
-    project_type: str | None = None,
-    county: str | None = None,
-    category: str | None = Query(default=None, description="Matches any entry in competitor_watch"),
-    year: int | None = None,
-    q: str | None = Query(default=None, description="Free-text search across name/city/owner/GC/description"),
-    new_since_days: int | None = Query(
-        default=None, ge=1, le=365, description="Only projects first seen in the last N days"
-    ),
-    sort: str = Query(default="score", pattern="^(score|name|value|recency)$"),
-    limit: int = Query(default=50, ge=1, le=100),
-    offset: int = Query(default=0, ge=0),
-):
+def _project_filter_clauses(
+    state: str | None,
+    status: str | None,
+    project_type: str | None,
+    county: str | None,
+    category: str | None,
+    year: int | None,
+    q: str | None,
+    new_since_days: int | None,
+) -> tuple[list[str], list[Any]]:
+    """Shared WHERE-clause builder for /v1/projects and /v1/projects/map-points
+    -- both need the same filter set (the map is meant to show pins bounded
+    to whatever the list is currently filtered to, not the full corpus)."""
     clauses: list[str] = []
     params: list[Any] = []
 
@@ -306,6 +303,29 @@ def list_projects(
     if new_since_days:
         clauses.append("p.first_seen_at >= now() - make_interval(days => %s)")
         params.append(new_since_days)
+
+    return clauses, params
+
+
+@app.get("/v1/projects")
+def list_projects(
+    state: str | None = Query(default=None, description="Comma-separated state codes, e.g. NC,SC,VA"),
+    status: str | None = None,
+    project_type: str | None = None,
+    county: str | None = None,
+    category: str | None = Query(default=None, description="Matches any entry in competitor_watch"),
+    year: int | None = None,
+    q: str | None = Query(default=None, description="Free-text search across name/city/owner/GC/description"),
+    new_since_days: int | None = Query(
+        default=None, ge=1, le=365, description="Only projects first seen in the last N days"
+    ),
+    sort: str = Query(default="score", pattern="^(score|name|value|recency)$"),
+    limit: int = Query(default=50, ge=1, le=100),
+    offset: int = Query(default=0, ge=0),
+):
+    clauses, params = _project_filter_clauses(
+        state, status, project_type, county, category, year, q, new_since_days
+    )
 
     where = f"WHERE {' AND '.join(clauses)}" if clauses else ""
     order_by = {
@@ -398,6 +418,67 @@ def project_facets(state: str | None = Query(default=None, description="Comma-se
         "statuses": statuses,
         "categories": categories,
         "years": years,
+    }
+
+
+@app.get("/v1/projects/map-points")
+def project_map_points(
+    state: str | None = Query(default=None, description="Comma-separated state codes, e.g. NC,SC,VA"),
+    status: str | None = None,
+    project_type: str | None = None,
+    county: str | None = None,
+    category: str | None = Query(default=None, description="Matches any entry in competitor_watch"),
+    year: int | None = None,
+    q: str | None = Query(default=None, description="Free-text search across name/city/owner/GC/description"),
+    new_since_days: int | None = Query(default=None, ge=1, le=365),
+):
+    """Public, customer-facing equivalent of /v1/ops/map-points -- bounded
+    to whatever filters the visitor currently has set on /projects rather
+    than returning every geocoded project (that endpoint stays internal,
+    used only by the Mapbox GL admin map at /map/). Lightweight rows only,
+    same as the ops version, since a map pin doesn't need the full project
+    payload."""
+    clauses, params = _project_filter_clauses(
+        state, status, project_type, county, category, year, q, new_since_days
+    )
+    clauses += ["p.latitude IS NOT NULL", "p.longitude IS NOT NULL"]
+    where = f"WHERE {' AND '.join(clauses)}"
+
+    with get_conn() as conn:
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+            cur.execute(
+                f"""
+                SELECT p.project_id, p.project_sk, p.name, p.state, p.county, p.city,
+                       p.latitude, p.longitude, p.status, p.estimated_value_usd,
+                       COALESCE(ps.score, 0) AS score
+                FROM projects p
+                LEFT JOIN project_scores ps ON ps.project_sk = p.project_sk
+                {where}
+                ORDER BY score DESC
+                LIMIT 2000
+                """,
+                params,
+            )
+            rows = cur.fetchall()
+
+    return {
+        "total": len(rows),
+        "points": [
+            {
+                "id": r["project_id"],
+                "spx_id": spx_id(r["project_sk"]),
+                "name": r["name"],
+                "state": r["state"],
+                "county": r["county"],
+                "city": r["city"],
+                "latitude": float(r["latitude"]),
+                "longitude": float(r["longitude"]),
+                "status": r["status"],
+                "estimated_value_usd": r["estimated_value_usd"],
+                "score": r["score"],
+            }
+            for r in rows
+        ],
     }
 
 

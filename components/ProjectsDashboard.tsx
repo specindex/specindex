@@ -5,9 +5,13 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import type { Project } from "@/lib/types";
 import { formatDate, formatSf, formatUsd, stateName, typeLabel } from "@/lib/format";
 import { StatusPill } from "./StatusPill";
+import { ProjectsMapView } from "./ProjectsMapView";
 
 const API_BASE = "https://specindex-api-gmm6irqe4q-uc.a.run.app";
 const PAGE_SIZE = 50;
+const TERRITORY_KEY = "specindex:territory";
+const CATEGORY_KEY = "specindex:category";
+const ONBOARDED_KEY = "specindex:onboarded";
 
 type Facets = {
   states: string[];
@@ -29,7 +33,7 @@ const EMPTY_FACETS: Facets = {
   years: [],
 };
 
-function buildQuery(params: Record<string, string | number | undefined>): string {
+export function buildQuery(params: Record<string, string | number | undefined>): string {
   const usp = new URLSearchParams();
   for (const [k, v] of Object.entries(params)) {
     if (v !== undefined && v !== "" && v !== "all") usp.set(k, String(v));
@@ -37,23 +41,89 @@ function buildQuery(params: Record<string, string | number | undefined>): string
   return usp.toString();
 }
 
+// SSR-safe: these components render on the client only ("use client"), but
+// guard against `window`/`localStorage` being unavailable during the
+// initial static-export prerender pass anyway.
+function readStoredList(key: string): string[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const raw = window.localStorage.getItem(key);
+    const parsed = raw ? JSON.parse(raw) : [];
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+function readStoredValue(key: string): string | null {
+  if (typeof window === "undefined") return null;
+  return window.localStorage.getItem(key);
+}
+
 export function ProjectsDashboard() {
-  const [territory, setTerritory] = useState<string[]>([]);
+  // Restored from localStorage so a returning visitor lands straight on
+  // their territory+category instead of the full nationwide list every
+  // time -- a lightweight stand-in for a saved profile until real
+  // accounts exist (see docs/ROADMAP.md item 46, Phase B).
+  const [territory, setTerritory] = useState<string[]>(() => readStoredList(TERRITORY_KEY));
   const [status, setStatus] = useState("all");
   const [projectType, setProjectType] = useState("all");
   const [county, setCounty] = useState("all");
-  const [category, setCategory] = useState("all");
+  const [category, setCategory] = useState(() => readStoredValue(CATEGORY_KEY) ?? "all");
   const [year, setYear] = useState("all");
   const [query, setQuery] = useState("");
   const [debouncedQuery, setDebouncedQuery] = useState("");
   const [sort, setSort] = useState<SortKey>("score");
   const [offset, setOffset] = useState(0);
+  const [newOnly, setNewOnly] = useState(false);
+  const [newThisWeek, setNewThisWeek] = useState<number | null>(null);
+  const [showOnboarding, setShowOnboarding] = useState(false);
+  const [view, setView] = useState<"list" | "map">("list");
 
   const [facets, setFacets] = useState<Facets>(EMPTY_FACETS);
   const [projects, setProjects] = useState<Project[]>([]);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  // First-time visitor with no saved territory/category -- nudge them to
+  // set one instead of defaulting silently to a nationwide, unranked-feeling
+  // list. Dismissing (or just picking a state/category) hides it for good.
+  useEffect(() => {
+    if (territory.length === 0 && category === "all" && !localStorage.getItem(ONBOARDED_KEY)) {
+      setShowOnboarding(true);
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
+    localStorage.setItem(TERRITORY_KEY, JSON.stringify(territory));
+  }, [territory]);
+
+  useEffect(() => {
+    localStorage.setItem(CATEGORY_KEY, category);
+  }, [category]);
+
+  function dismissOnboarding() {
+    localStorage.setItem(ONBOARDED_KEY, "1");
+    setShowOnboarding(false);
+  }
+
+  // Lightweight separate fetch for the "N new this week" count so it's
+  // visible in the header regardless of whether the newOnly toggle is on,
+  // scoped to the visitor's current territory (not the whole corpus).
+  useEffect(() => {
+    let cancelled = false;
+    const qs = buildQuery({ state: territory.join(","), new_since_days: 7, limit: 1 });
+    fetch(`${API_BASE}/v1/projects?${qs}`)
+      .then((r) => r.json())
+      .then((data) => {
+        if (!cancelled) setNewThisWeek(typeof data.total === "number" ? data.total : null);
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, [territory]);
 
   // Debounce free-text search so every keystroke doesn't fire a request.
   useEffect(() => {
@@ -62,7 +132,7 @@ export function ProjectsDashboard() {
   }, [query]);
 
   // Any filter change resets to page 1.
-  const filterKey = JSON.stringify([territory, status, projectType, county, category, year, debouncedQuery, sort]);
+  const filterKey = JSON.stringify([territory, status, projectType, county, category, year, debouncedQuery, sort, newOnly]);
   const prevFilterKey = useRef(filterKey);
   useEffect(() => {
     if (prevFilterKey.current !== filterKey) {
@@ -101,6 +171,7 @@ export function ProjectsDashboard() {
       year,
       q: debouncedQuery,
       sort,
+      new_since_days: newOnly ? 7 : undefined,
       limit: PAGE_SIZE,
       offset,
     });
@@ -123,7 +194,7 @@ export function ProjectsDashboard() {
     return () => {
       cancelled = true;
     };
-  }, [territory, status, projectType, county, category, year, debouncedQuery, sort, offset]);
+  }, [territory, status, projectType, county, category, year, debouncedQuery, sort, newOnly, offset]);
 
   const territoryLabel = useMemo(() => {
     if (territory.length === 0) return "All states";
@@ -138,21 +209,67 @@ export function ProjectsDashboard() {
   const page = Math.floor(offset / PAGE_SIZE) + 1;
   const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
 
+  // Leads with "top N" framing on the default (score-sorted, page 1) view
+  // -- this is a ranked shortlist, not a database dump -- and falls back to
+  // a plain match count once someone re-sorts or pages past it.
+  const resultsLabel = useMemo(() => {
+    if (loading) return "Loading…";
+    const scope = territory.length > 0 ? `in ${territoryLabel}` : "nationwide";
+    const catLabel = category !== "all" ? ` · ${category}` : "";
+    if (sort === "score" && offset === 0 && !newOnly) {
+      const shown = Math.min(PAGE_SIZE, total);
+      return `Top ${shown} ${scope}${catLabel} · ${total.toLocaleString()} total match — refine below to search all`;
+    }
+    return `${total.toLocaleString()} projects match ${scope}${catLabel} · page ${page} of ${totalPages}`;
+  }, [loading, territory, territoryLabel, category, sort, offset, newOnly, total, page, totalPages]);
+
   return (
     <div>
+      {showOnboarding && (
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-3 rounded-lg border border-[var(--color-amber)]/30 bg-[var(--color-amber)]/10 px-4 py-3">
+          <p className="text-sm text-[var(--color-ink)]">
+            Pick your territory and product category below to see the projects that actually need
+            what you sell — not all {total.toLocaleString()}.
+          </p>
+          <button type="button" onClick={dismissOnboarding} className="text-xs font-medium text-[var(--color-gray-600)] hover:text-[var(--color-ink)]">
+            Dismiss
+          </button>
+        </div>
+      )}
       <div className="card p-4 md:p-5">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <label className="text-xs font-semibold uppercase tracking-wider text-[var(--color-gray-400)]">
             Your territory
           </label>
-          <span className="text-xs text-[var(--color-gray-600)]">{territoryLabel}</span>
+          <div className="flex items-center gap-3">
+            {newThisWeek !== null && newThisWeek > 0 && (
+              <button
+                type="button"
+                onClick={() => {
+                  setNewOnly((v) => !v);
+                  dismissOnboarding();
+                }}
+                className={`rounded-full border px-2.5 py-1 text-xs font-medium transition ${
+                  newOnly
+                    ? "border-[var(--color-amber)] bg-[var(--color-amber)]/10 text-[var(--color-amber)]"
+                    : "border-[var(--color-border)] text-[var(--color-gray-600)] hover:border-[var(--color-gray-400)]"
+                }`}
+              >
+                🔔 {newThisWeek.toLocaleString()} new this week
+              </button>
+            )}
+            <span className="text-xs text-[var(--color-gray-600)]">{territoryLabel}</span>
+          </div>
         </div>
         <div className="mt-2 flex flex-wrap gap-1.5">
           {facets.states.map((s) => (
             <button
               key={s}
               type="button"
-              onClick={() => toggleState(s)}
+              onClick={() => {
+                toggleState(s);
+                dismissOnboarding();
+              }}
               className={`rounded-full border px-2.5 py-1 text-xs font-medium transition ${
                 territory.includes(s)
                   ? "border-[var(--color-green)] bg-[var(--color-green)]/10 text-[var(--color-green)]"
@@ -189,7 +306,14 @@ export function ProjectsDashboard() {
               <option key={c} value={c}>{c}</option>
             ))}
           </select>
-          <select value={category} onChange={(e) => setCategory(e.target.value)} className="rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm">
+          <select
+            value={category}
+            onChange={(e) => {
+              setCategory(e.target.value);
+              dismissOnboarding();
+            }}
+            className="rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm"
+          >
             <option value="all">All product categories</option>
             {facets.categories.map((c) => (
               <option key={c} value={c}>{c}</option>
@@ -208,13 +332,47 @@ export function ProjectsDashboard() {
             <option value="name">Sort: name</option>
           </select>
         </div>
-        <p className="mt-4 text-sm text-[var(--color-gray-600)]">
-          {loading ? "Loading…" : `${total.toLocaleString()} projects match · page ${page} of ${totalPages}`}
-        </p>
+        <div className="mt-4 flex flex-wrap items-center justify-between gap-2">
+          <p className="text-sm text-[var(--color-gray-600)]">{resultsLabel}</p>
+          <div className="flex overflow-hidden rounded-md border border-[var(--color-border)] text-xs font-medium">
+            <button
+              type="button"
+              onClick={() => setView("list")}
+              className={`px-3 py-1.5 ${view === "list" ? "bg-[var(--color-green)] text-white" : "bg-white text-[var(--color-gray-600)]"}`}
+            >
+              List
+            </button>
+            <button
+              type="button"
+              onClick={() => setView("map")}
+              className={`px-3 py-1.5 ${view === "map" ? "bg-[var(--color-green)] text-white" : "bg-white text-[var(--color-gray-600)]"}`}
+            >
+              Map
+            </button>
+          </div>
+        </div>
       </div>
 
       {error && <p className="mt-4 text-sm text-red-600">Failed to load: {error}</p>}
 
+      {view === "map" && (
+        <div className="mt-6">
+          <ProjectsMapView
+            filters={{
+              territory,
+              status,
+              projectType,
+              county,
+              category,
+              year,
+              query: debouncedQuery,
+              newOnly,
+            }}
+          />
+        </div>
+      )}
+
+      {view === "list" && (
       <ul className="mt-6 divide-y divide-[var(--color-border)] rounded-lg border border-[var(--color-border)] bg-white">
         {projects.map((project) => (
           <li key={project.id}>
@@ -257,8 +415,9 @@ export function ProjectsDashboard() {
           <li className="px-4 py-16 text-center text-[var(--color-gray-600)]">No projects match.</li>
         )}
       </ul>
+      )}
 
-      {totalPages > 1 && (
+      {view === "list" && totalPages > 1 && (
         <div className="mt-6 flex items-center justify-between">
           <button
             type="button"

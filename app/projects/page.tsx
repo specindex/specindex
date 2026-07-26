@@ -16,10 +16,12 @@ export default async function ProjectsPage() {
       <div className="border-b border-[var(--color-border)] bg-white">
         <div className="mx-auto max-w-6xl px-5 py-12 md:px-8 md:py-16">
           <p className="text-eyebrow">United States</p>
-          <h1 className="mt-3 text-hero">Open commercial projects</h1>
+          <h1 className="mt-3 text-hero">Projects worth chasing this week</h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-[var(--color-gray-600)]">
-            {stats.total.toLocaleString()}+ projects indexed across {stats.states} states ·{" "}
-            {stats.early_stage.toLocaleString()}+ still in early stage (planning through bidding)
+            Ranked by priority score, filtered to your territory and product category —
+            not a browse-everything list. {stats.total.toLocaleString()}+ projects indexed across{" "}
+            {stats.states} states, {stats.early_stage.toLocaleString()}+ still in early stage
+            (planning through bidding), if you want to search the full corpus.
           </p>
         </div>
       </div>
