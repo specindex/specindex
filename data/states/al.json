@@ -1,9 +1,9 @@
 {
   "state": "AL",
   "state_name": "Alabama",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Web research — governor.alabama.gov, Made in Alabama, al.com, local TV news, ADECA",
+  "capture_method": "Web research — governor.alabama.gov, Made in Alabama, al.com, local TV news, ADECA, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "al-sports-illustrated-resort-tuscaloosa",
@@ -326,9 +326,1204 @@
         }
       ],
       "open_for": "Post-approval. Tenant improvement and site development packages."
+    },
+    {
+      "id": "al-sam-8142295d1ae242bd-notice-of-intent-to-modify-frr-vi-matoc-to-increas",
+      "name": "Notice of Intent to Modify FRR VI MATOC to Increase Capacity",
+      "city": "Huntsville",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "Federal special notice PANHES-26-P-0000-030984. Notice of Intent to Modify FRR VI MATOC to Increase Capacity. Response deadline 2026-08-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice PANHES-26-P-0000-030984",
+          "url": "https://sam.gov/workspace/contract/opp/8142295d1ae242bdb75dffc0fe0c1d73/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-c80fb2737c444f2e-fort-benning-job-order-contract-joc",
+      "name": "Fort Benning Job Order Contract (JOC)",
+      "city": "Fort Benning",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Federal special notice W5168W25RA013. Fort Benning Job Order Contract (JOC).",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice W5168W25RA013",
+          "url": "https://sam.gov/workspace/contract/opp/c80fb2737c444f2e9b122cae28ab720c/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-9a4116598bce4a25-619a4-23-104-replace-generators-for-buildings-5-90",
+      "name": "619A4-23-104 | Replace Generators for Buildings 5 & 90",
+      "city": "Tuskegee",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Structural Builders Inc Atlanta Ga 30344 Usa",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "Federal award notice 36C24726R0089. 619A4-23-104 | Replace Generators for Buildings 5 & 90.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice 36C24726R0089",
+          "url": "https://sam.gov/workspace/contract/opp/9a4116598bce4a258859b6f514adc9b7/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-fd5eb4d67a124f1c-117th-arw-alert-pad-crack-repairs",
+      "name": "117th ARW Alert Pad Crack Repairs",
+      "city": "Birmingham",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Federal solicitation W50S6M26QA013. 117th ARW Alert Pad Crack Repairs. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1BZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S6M26QA013",
+          "url": "https://sam.gov/workspace/contract/opp/fd5eb4d67a124f1c89d47b06049ad05d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-45a0dce0282e4f6b-pre-solicitation-notice-b1502-renovation",
+      "name": "Pre-Solicitation Notice B1502 Renovation",
+      "city": "",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-24",
+      "description": "Federal presolicitation W50S6N26QA022P. Pre-Solicitation Notice B1502 Renovation. Response deadline 2026-07-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W50S6N26QA022P",
+          "url": "https://sam.gov/workspace/contract/opp/45a0dce0282e4f6b905a201480690a45/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-3452ceb036214ea8-sources-sought-b1502-renovation",
+      "name": "Sources Sought B1502 Renovation",
+      "city": "",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-24",
+      "description": "Federal presolicitation W50S6N26QA022P. Sources Sought B1502 Renovation. Response deadline 2026-07-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W50S6N26QA022P",
+          "url": "https://sam.gov/workspace/contract/opp/3452ceb036214ea895ae908e9094f9e7/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-78e3bfe5f225469d-z2da-619a4-22-700-ehrm-infrastructure-upgrades-tus",
+      "name": "Z2DA--619A4-22-700 EHRM Infrastructure Upgrades Tuskegee Construction",
+      "city": "Tuskegee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-05",
+      "description": "Federal solicitation 36C77626R0043. Z2DA--619A4-22-700 EHRM Infrastructure Upgrades Tuskegee Construction. Response deadline 2026-06-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0043",
+          "url": "https://sam.gov/workspace/contract/opp/78e3bfe5f225469d860edab5e7b90d18/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-7f3a8cfd02954000-z2da-619a4-22-700-ehrm-infrastructure-upgrades-tus",
+      "name": "Z2DA--619A4-22-700 EHRM Infrastructure Upgrades Tuskegee Construction",
+      "city": "Tuskegee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-02",
+      "description": "Federal solicitation 36C77626R0043. Z2DA--619A4-22-700 EHRM Infrastructure Upgrades Tuskegee Construction. Response deadline 2026-06-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0043",
+          "url": "https://sam.gov/workspace/contract/opp/7f3a8cfd02954000ad0be1c4b3f289ce/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-9a4773f35a88418b-z2da-project-521-22-119-nrm-replace-windows-phase-",
+      "name": "Z2DA--Project 521-22-119 NRM Replace Windows Phase III",
+      "city": "Birmingham",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-06-02",
+      "description": "Federal solicitation 36C24726R0032. Z2DA--Project 521-22-119 NRM Replace Windows Phase III. Response deadline 2026-06-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24726R0032",
+          "url": "https://sam.gov/workspace/contract/opp/9a4773f35a88418bb1630f15232d70f6/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-d22fd92d6dc9489f-z2da-619a4-22-700-ehrm-infrastructure-upgrades-tus",
+      "name": "Z2DA--619A4-22-700 EHRM Infrastructure Upgrades Tuskegee Construction",
+      "city": "Tuskegee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "Federal solicitation 36C77626R0043. Z2DA--619A4-22-700 EHRM Infrastructure Upgrades Tuskegee Construction. Response deadline 2026-06-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0043",
+          "url": "https://sam.gov/workspace/contract/opp/d22fd92d6dc9489f9d92e8af01e8231d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-fb78895a94b44bb6-z2da-619a4-22-700-ehrm-infrastructure-upgrades-tus",
+      "name": "Z2DA--619A4-22-700 EHRM Infrastructure Upgrades Tuskegee Construction",
+      "city": "Tuskegee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-18",
+      "description": "Federal solicitation 36C77626R0043. Z2DA--619A4-22-700 EHRM Infrastructure Upgrades Tuskegee Construction. Response deadline 2026-06-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0043",
+          "url": "https://sam.gov/workspace/contract/opp/fb78895a94b44bb699fb73499b7f497f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-027cc49c3de04d7b-z2da-619a4-22-700-ehrm-infrastructure-upgrades-tus",
+      "name": "Z2DA--619A4-22-700 EHRM Infrastructure Upgrades Tuskegee Construction",
+      "city": "Tuskegee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-05",
+      "description": "Federal solicitation 36C77626R0043. Z2DA--619A4-22-700 EHRM Infrastructure Upgrades Tuskegee Construction. Response deadline 2026-05-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0043",
+          "url": "https://sam.gov/workspace/contract/opp/027cc49c3de04d7b863fc36c7381da43/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-3bdeccc7c81b4480-z2da-619a4-22-700-ehrm-infrastructure-upgrades-tus",
+      "name": "Z2DA--619A4-22-700 EHRM Infrastructure Upgrades Tuskegee Construction",
+      "city": "Tuskegee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-20",
+      "description": "Federal solicitation 36C77626R0043. Z2DA--619A4-22-700 EHRM Infrastructure Upgrades Tuskegee Construction. Response deadline 2026-05-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0043",
+          "url": "https://sam.gov/workspace/contract/opp/3bdeccc7c81b4480b60eb2deec1327f9/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-19bf6006db664cf6-fort-benning-job-order-contract-joc",
+      "name": "Fort Benning Job Order Contract (JOC)",
+      "city": "Fort Benning",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-10",
+      "description": "Federal special notice W5168W25RA013. Fort Benning Job Order Contract (JOC).",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice W5168W25RA013",
+          "url": "https://sam.gov/workspace/contract/opp/19bf6006db664cf68e021030f2ddc75a/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-955ecd16e5e7404e-fort-benning-job-order-contract-joc",
+      "name": "Fort Benning Job Order Contract (JOC)",
+      "city": "Fort Benning",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-09",
+      "description": "Federal special notice W5168W25RA013. Fort Benning Job Order Contract (JOC).",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice W5168W25RA013",
+          "url": "https://sam.gov/workspace/contract/opp/955ecd16e5e7404e92480f521c0a955b/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-2fcf9919af884209-fort-benning-job-order-contract-joc",
+      "name": "Fort Benning Job Order Contract (JOC)",
+      "city": "Fort Benning",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-09",
+      "description": "Federal special notice W5168W25RA013. Fort Benning Job Order Contract (JOC).",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice W5168W25RA013",
+          "url": "https://sam.gov/workspace/contract/opp/2fcf9919af884209b9c75cfa45958c1f/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-59e1f3c3f7e54d09-construct-usda-ars-auburn-lab-auburn-al",
+      "name": "Construct USDA-ARS Auburn Lab Auburn, AL",
+      "city": "Auburn",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-15",
+      "description": "Federal solicitation W9127826RA007. Construct USDA-ARS Auburn Lab Auburn, AL. Response deadline 2026-01-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W9127826RA007",
+          "url": "https://sam.gov/workspace/contract/opp/59e1f3c3f7e54d09894c7e167863c235/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-26d87c670e614250-construct-usda-ars-auburn-lab-auburn-al",
+      "name": "Construct USDA-ARS Auburn Lab Auburn, AL",
+      "city": "Auburn",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-13",
+      "description": "Federal solicitation W9127826RA007. Construct USDA-ARS Auburn Lab Auburn, AL. Response deadline 2026-01-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W9127826RA007",
+          "url": "https://sam.gov/workspace/contract/opp/26d87c670e614250a28ebeaf247dda9b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-08ef1d59e98b49b2-construct-usda-ars-auburn-lab-auburn-al",
+      "name": "Construct USDA-ARS Auburn Lab Auburn, AL",
+      "city": "Auburn",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-06",
+      "description": "Federal solicitation W9127826RA007. Construct USDA-ARS Auburn Lab Auburn, AL. Response deadline 2026-01-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W9127826RA007",
+          "url": "https://sam.gov/workspace/contract/opp/08ef1d59e98b49b2831b29c13c4a8852/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-148979d1391f4937-construct-usda-ars-auburn-lab-auburn-al",
+      "name": "Construct USDA-ARS Auburn Lab Auburn, AL",
+      "city": "Auburn",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-22",
+      "description": "Federal solicitation W9127826RA007. Construct USDA-ARS Auburn Lab Auburn, AL. Response deadline 2026-01-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W9127826RA007",
+          "url": "https://sam.gov/workspace/contract/opp/148979d1391f4937a23f9124da66c89d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-e78a8d999582457a-construct-usda-ars-auburn-lab-auburn-al",
+      "name": "Construct USDA-ARS Auburn Lab Auburn, AL",
+      "city": "Auburn",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-12",
+      "description": "Federal solicitation W9127826RA007. Construct USDA-ARS Auburn Lab Auburn, AL. Response deadline 2026-01-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W9127826RA007",
+          "url": "https://sam.gov/workspace/contract/opp/e78a8d999582457abae0afe443103f3f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-40ed93ea00464662-construct-usda-ars-auburn-lab-auburn-al",
+      "name": "Construct USDA-ARS Auburn Lab Auburn, AL",
+      "city": "Auburn",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-09",
+      "description": "Federal solicitation W9127826RA007. Construct USDA-ARS Auburn Lab Auburn, AL. Response deadline 2026-01-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W9127826RA007",
+          "url": "https://sam.gov/workspace/contract/opp/40ed93ea00464662907482a3b620e688/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-f63adf5c03c14fa2-fort-benning-job-order-contract-joc",
+      "name": "Fort Benning Job Order Contract (JOC)",
+      "city": "Fort Benning",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-24",
+      "description": "Federal special notice W5168W25RA013. Fort Benning Job Order Contract (JOC).",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice W5168W25RA013",
+          "url": "https://sam.gov/workspace/contract/opp/f63adf5c03c14fa2a48658a27d54b831/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-a81503ca1b8a4963-fort-benning-job-order-contract-joc",
+      "name": "Fort Benning Job Order Contract (JOC)",
+      "city": "Fort Benning",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-24",
+      "description": "Federal special notice W5168W25RA013. Fort Benning Job Order Contract (JOC).",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice W5168W25RA013",
+          "url": "https://sam.gov/workspace/contract/opp/a81503ca1b8a496396780f47ab855cfa/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-99e16e30765f4f27-construct-usda-ars-auburn-lab-auburn-al",
+      "name": "Construct USDA-ARS Auburn Lab Auburn, AL",
+      "city": "Auburn",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-21",
+      "description": "Federal solicitation W9127826RA007. Construct USDA-ARS Auburn Lab Auburn, AL. Response deadline 2025-12-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W9127826RA007",
+          "url": "https://sam.gov/workspace/contract/opp/99e16e30765f4f27b759dd7462e5dce1/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-21cd8be0b5eb4a50-fort-benning-job-order-contract-joc",
+      "name": "Fort Benning Job Order Contract (JOC)",
+      "city": "Fort Benning",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-18",
+      "description": "Federal special notice W5168W25RA013. Fort Benning Job Order Contract (JOC).",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice W5168W25RA013",
+          "url": "https://sam.gov/workspace/contract/opp/21cd8be0b5eb4a50a2b4553d29ea73a3/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-c67dc14b75f54245-fort-benning-job-order-contract-joc",
+      "name": "Fort Benning Job Order Contract (JOC)",
+      "city": "Fort Benning",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-09-10",
+      "description": "Federal special notice W5168W25RA013. Fort Benning Job Order Contract (JOC).",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice W5168W25RA013",
+          "url": "https://sam.gov/workspace/contract/opp/c67dc14b75f5424593ff4aad0eff1835/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-b7b8057d08744f24-fort-benning-job-order-contract-joc",
+      "name": "Fort Benning Job Order Contract (JOC)",
+      "city": "Fort Benning",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-07-03",
+      "description": "Federal special notice W5168W25RA013. Fort Benning Job Order Contract (JOC).",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice W5168W25RA013",
+          "url": "https://sam.gov/workspace/contract/opp/b7b8057d08744f24999b12e999cffcc0/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-28a273d339d444b4-fort-benning-job-order-contract-joc",
+      "name": "Fort Benning Job Order Contract (JOC)",
+      "city": "Fort Benning",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-05-01",
+      "description": "Federal special notice W5168W25RA013. Fort Benning Job Order Contract (JOC).",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice W5168W25RA013",
+          "url": "https://sam.gov/workspace/contract/opp/28a273d339d444b48dac98236caa13c4/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-a0e4a7ffc77f44de-fort-benning-job-order-contract-joc",
+      "name": "Fort Benning Job Order Contract (JOC)",
+      "city": "Fort Benning",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-04-03",
+      "description": "Federal special notice W5168W25RA013. Fort Benning Job Order Contract (JOC).",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice W5168W25RA013",
+          "url": "https://sam.gov/workspace/contract/opp/a0e4a7ffc77f44deac4130d7812017d6/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AL"
+    },
+    {
+      "id": "al-sam-215a96eef3054997-indefinite-delivery-indefinite-quantity-idiq-singl",
+      "name": "Indefinite Delivery Indefinite Quantity (IDIQ) Single Award Task Order Contract (SATOC) For General Repair and Construct",
+      "city": "Anniston",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "Dominguez Design-Build, Inc Pensacola Fl 32504 Usa",
+      "opened_or_announced_date": "2024-09-26",
+      "description": "Federal award notice W9127824R0056. Indefinite Delivery Indefinite Quantity (IDIQ) Single Award Task Order Contract (SATOC) For General Repair and Construction at Department Of Homeland Security (DHS) Center for Domestic Preparedness (CDP).",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "8(a) Sole Source",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice W9127824R0056",
+          "url": "https://sam.gov/workspace/contract/opp/215a96eef30549979906ce0cbb839b39/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AL"
     }
   ],
   "stats": {
-    "total": 8
+    "total": 39
   }
 }

@@ -1,9 +1,9 @@
 {
   "state": "MD",
   "state_name": "Maryland",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — Data Center Dynamics, Southern Maryland Chronicle.",
+  "capture_method": "Public sources — Data Center Dynamics, Southern Maryland Chronicle, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "md-aws-calvert-technology-center",
@@ -124,9 +124,2237 @@
         }
       ],
       "open_for": "Pre-construction. Infrastructure specs forming."
+    },
+    {
+      "id": "md-sam-05b7fed2184e43e0-repair-building-3002-fuel-cell-hangar",
+      "name": "Repair Building 3002 Fuel Cell Hangar",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "Federal solicitation W50S6W26BA002. Repair Building 3002 Fuel Cell Hangar. Response deadline 2026-07-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S6W26BA002",
+          "url": "https://sam.gov/workspace/contract/opp/05b7fed2184e43e0a63a0a34f9b5eec2/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-6d18620464b4491d-building-215-clean-room-hepa-filter-replacement",
+      "name": "Building 215 Clean Room HEPA Filter Replacement",
+      "city": "Gaithersburg",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Commerce, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Federal solicitation 1333ND26RNB190014. Building 215 Clean Room HEPA Filter Replacement. Response deadline 2026-08-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2DB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 1333ND26RNB190014",
+          "url": "https://sam.gov/workspace/contract/opp/6d18620464b4491d8963c28ab5ef2910/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-57a9a9c906564d22-repair-building-3002-fuel-cell-hangar",
+      "name": "Repair Building 3002 Fuel Cell Hangar",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Federal solicitation W50S6W26BA002. Repair Building 3002 Fuel Cell Hangar. Response deadline 2026-07-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S6W26BA002",
+          "url": "https://sam.gov/workspace/contract/opp/57a9a9c906564d22abe9c523fae34532/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-d53016d2ec394cda-switchgear-replacement-and-upgrades-project-for-bl",
+      "name": "Switchgear Replacement and Upgrades Project for BLDG 49",
+      "city": "Bethesda",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Federal solicitation 75N98026R00123. Switchgear Replacement and Upgrades Project for BLDG 49. Response deadline 2026-08-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code J059"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75N98026R00123",
+          "url": "https://sam.gov/workspace/contract/opp/d53016d2ec394cda94aab32ca99f8f2f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-76b528000bb84aee-merletti-classroom-expansion",
+      "name": "Merletti Classroom Expansion",
+      "city": "Laurel",
+      "county": "",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-06",
+      "description": "Federal sources sought RFIMerlettiClassroom. Merletti Classroom Expansion. Response deadline 2026-07-15.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Sources Sought",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought RFIMerlettiClassroom",
+          "url": "https://sam.gov/workspace/contract/opp/76b528000bb84aee82c7a3c22b172d4b/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-ff0639f31ef74b73-solicitation-national-capital-region-ncr-multiple-",
+      "name": "SOLICITATION - National Capital Region (NCR) Multiple Award Task Order Contract (MATOC)",
+      "city": "Aberdeen Proving Ground",
+      "county": "",
+      "status": "bidding",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-02",
+      "description": "Federal solicitation W51EW7-26-R-A002. SOLICITATION - National Capital Region (NCR) Multiple Award Task Order Contract (MATOC). Response deadline 2026-07-09.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W51EW7-26-R-A002",
+          "url": "https://sam.gov/workspace/contract/opp/ff0639f31ef74b73aae789ad5eaf1f54/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-3f2429c9ed4b4b1c-solicitation-national-capital-region-ncr-multiple-",
+      "name": "SOLICITATION - National Capital Region (NCR) Multiple Award Task Order Contract (MATOC)",
+      "city": "Aberdeen Proving Ground",
+      "county": "",
+      "status": "bidding",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Federal solicitation W51EW7-26-R-A002. SOLICITATION - National Capital Region (NCR) Multiple Award Task Order Contract (MATOC). Response deadline 2026-07-09.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W51EW7-26-R-A002",
+          "url": "https://sam.gov/workspace/contract/opp/3f2429c9ed4b4b1c92f185d3c1ffaf46/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-16bc397d009747ed-repair-building-3002-fuel-cell-hangar",
+      "name": "Repair Building 3002 Fuel Cell Hangar",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Federal solicitation W50S6W26BA002. Repair Building 3002 Fuel Cell Hangar. Response deadline 2026-07-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S6W26BA002",
+          "url": "https://sam.gov/workspace/contract/opp/16bc397d009747ed97ab57c439edf088/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-7145e8ac6a3f4e80-repair-building-3002-fuel-cell-hangar",
+      "name": "Repair Building 3002 Fuel Cell Hangar",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Federal solicitation W50S6W26BA002. Repair Building 3002 Fuel Cell Hangar. Response deadline 2026-07-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S6W26BA002",
+          "url": "https://sam.gov/workspace/contract/opp/7145e8ac6a3f4e8094a0ad4c044e7110/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-4a2e4eefce40498d-repair-building-3002-fuel-cell-hangar",
+      "name": "Repair Building 3002 Fuel Cell Hangar",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Federal solicitation W50S6W26BA002. Repair Building 3002 Fuel Cell Hangar. Response deadline 2026-07-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S6W26BA002",
+          "url": "https://sam.gov/workspace/contract/opp/4a2e4eefce40498d80c232828082b07d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-1f32cf08145f4273-building-215-clean-room-hepa-filter-replacement",
+      "name": "Building 215 Clean Room HEPA Filter Replacement",
+      "city": "Gaithersburg",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Commerce, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "Federal solicitation 1333ND26RNB190014. Building 215 Clean Room HEPA Filter Replacement. Response deadline 2026-07-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2DB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 1333ND26RNB190014",
+          "url": "https://sam.gov/workspace/contract/opp/1f32cf08145f427384da22ae84311c27/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-3f0bdf34c8694d65-solicitation-national-capital-region-ncr-multiple-",
+      "name": "SOLICITATION - National Capital Region (NCR) Multiple Award Task Order Contract (MATOC)",
+      "city": "Aberdeen Proving Ground",
+      "county": "",
+      "status": "bidding",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-25",
+      "description": "Federal solicitation W51EW7-26-R-A002. SOLICITATION - National Capital Region (NCR) Multiple Award Task Order Contract (MATOC). Response deadline 2026-07-09.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W51EW7-26-R-A002",
+          "url": "https://sam.gov/workspace/contract/opp/3f0bdf34c8694d65980e7e8f310a2390/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-adb80a2cdc214de6-solicitation-national-capital-region-ncr-multiple-",
+      "name": "SOLICITATION - National Capital Region (NCR) Multiple Award Task Order Contract (MATOC)",
+      "city": "Aberdeen Proving Ground",
+      "county": "",
+      "status": "bidding",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-12",
+      "description": "Federal solicitation W51EW7-26-R-A002. SOLICITATION - National Capital Region (NCR) Multiple Award Task Order Contract (MATOC). Response deadline 2026-07-01.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W51EW7-26-R-A002",
+          "url": "https://sam.gov/workspace/contract/opp/adb80a2cdc214de6b259745f25ace09c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-0061ddd2097042cd-building-215-clean-room-hepa-filter-replacement",
+      "name": "Building 215 Clean Room HEPA Filter Replacement",
+      "city": "Gaithersburg",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Commerce, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-05",
+      "description": "Federal solicitation 1333ND26RNB190014. Building 215 Clean Room HEPA Filter Replacement. Response deadline 2026-07-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2DB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 1333ND26RNB190014",
+          "url": "https://sam.gov/workspace/contract/opp/0061ddd2097042cdaefd0cab9af2e34b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-274ecbd262054efd-building-215-clean-room-hepa-filter-replacement",
+      "name": "Building 215 Clean Room HEPA Filter Replacement",
+      "city": "Gaithersburg",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Commerce, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-05",
+      "description": "Federal solicitation 1333ND26RNB190014. Building 215 Clean Room HEPA Filter Replacement. Response deadline 2026-07-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2DB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 1333ND26RNB190014",
+          "url": "https://sam.gov/workspace/contract/opp/274ecbd262054efdb3a064dbff38f9a9/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-ef1b2ada919a42ae-building-215-clean-room-hepa-filter-replacement",
+      "name": "Building 215 Clean Room HEPA Filter Replacement",
+      "city": "Gaithersburg",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Commerce, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-04",
+      "description": "Federal solicitation 1333ND26RNB190014. Building 215 Clean Room HEPA Filter Replacement. Response deadline 2026-07-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2DB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 1333ND26RNB190014",
+          "url": "https://sam.gov/workspace/contract/opp/ef1b2ada919a42aeb29b6dd0386fc484/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-40b4754625734629-nos-nccos-coop-oxford-lab-bsl-2-project",
+      "name": "NOS NCCOS COOP Oxford Lab BSL-2 Project",
+      "city": "Oxford",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Commerce, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-02",
+      "description": "Federal presolicitation 1305M426R0030. NOS NCCOS COOP Oxford Lab BSL-2 Project. Response deadline 2026-06-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 1305M426R0030",
+          "url": "https://sam.gov/workspace/contract/opp/40b47546257346299c0ee43cf391c312/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-237a956aeb8f4c53-nos-nccos-coop-oxford-lab-bsl-2-project",
+      "name": "NOS NCCOS COOP Oxford Lab BSL-2 Project",
+      "city": "Oxford",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Commerce, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-02",
+      "description": "Federal presolicitation 1305M426R0030. NOS NCCOS COOP Oxford Lab BSL-2 Project. Response deadline 2026-06-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1DB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 1305M426R0030",
+          "url": "https://sam.gov/workspace/contract/opp/237a956aeb8f4c538b63c60dd95769f3/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-a0494d83a4004d21-solicitation-national-capital-region-ncr-multiple-",
+      "name": "SOLICITATION - National Capital Region (NCR) Multiple Award Task Order Contract (MATOC)",
+      "city": "Aberdeen Proving Ground",
+      "county": "",
+      "status": "bidding",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-22",
+      "description": "Federal solicitation W51EW7-26-R-A002. SOLICITATION - National Capital Region (NCR) Multiple Award Task Order Contract (MATOC). Response deadline 2026-06-17.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W51EW7-26-R-A002",
+          "url": "https://sam.gov/workspace/contract/opp/a0494d83a4004d21801a58b01b2656c9/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-34f55da9c05f4526-disa-fy26-j3-5-7-conf-room-reconfiguration",
+      "name": "DISA FY26 J3/5/7 Conf Room Reconfiguration",
+      "city": "Fort George G Meade",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-19",
+      "description": "Federal sources sought PANNAD-26-P-0000032273. DISA FY26 J3/5/7 Conf Room Reconfiguration. Response deadline 2026-06-02.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought PANNAD-26-P-0000032273",
+          "url": "https://sam.gov/workspace/contract/opp/34f55da9c05f452685e418da5b5760e9/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-c0f2ff98a8de4e82-solicitation-national-capital-region-ncr-multiple-",
+      "name": "SOLICITATION - National Capital Region (NCR) Multiple Award Task Order Contract (MATOC)",
+      "city": "Aberdeen Proving Ground",
+      "county": "",
+      "status": "bidding",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-04",
+      "description": "Federal solicitation W51EW7-26-R-A002. SOLICITATION - National Capital Region (NCR) Multiple Award Task Order Contract (MATOC). Response deadline 2026-06-03.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W51EW7-26-R-A002",
+          "url": "https://sam.gov/workspace/contract/opp/c0f2ff98a8de4e82bb1e276d6181a057/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-92fabc14b4074aeb-solicitation-national-capital-region-ncr-multiple-",
+      "name": "SOLICITATION - National Capital Region (NCR) Multiple Award Task Order Contract (MATOC)",
+      "city": "Aberdeen Proving Ground",
+      "county": "",
+      "status": "bidding",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-04",
+      "description": "Federal solicitation W51EW7-26-R-A002. SOLICITATION - National Capital Region (NCR) Multiple Award Task Order Contract (MATOC). Response deadline 2026-06-03.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W51EW7-26-R-A002",
+          "url": "https://sam.gov/workspace/contract/opp/92fabc14b4074aebbc555b4d20d1606c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-af7b2d9129864dd5-kimbrough-ambulatory-care-center-fort-meade-md",
+      "name": "KIMBROUGH AMBULATORY CARE CENTER, FORT MEADE, MD.",
+      "city": "0",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-29",
+      "description": "Federal special notice W912DR26RA033. KIMBROUGH AMBULATORY CARE CENTER, FORT MEADE, MD. Response deadline 2026-04-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice W912DR26RA033",
+          "url": "https://sam.gov/workspace/contract/opp/af7b2d9129864dd59d63cf46d927ac80/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-c8ff8e99fe63474b-solicitation-national-capital-region-ncr-multiple-",
+      "name": "SOLICITATION - National Capital Region (NCR) Multiple Award Task Order Contract (MATOC)",
+      "city": "Aberdeen Proving Ground",
+      "county": "",
+      "status": "bidding",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-20",
+      "description": "Federal solicitation W51EW7-26-R-A002. SOLICITATION - National Capital Region (NCR) Multiple Award Task Order Contract (MATOC). Response deadline 2026-05-08.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W51EW7-26-R-A002",
+          "url": "https://sam.gov/workspace/contract/opp/c8ff8e99fe63474b9db2e4ddad7d3601/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-9a59b64036184ae7-solicitation-national-capital-region-ncr-multiple-",
+      "name": "SOLICITATION - National Capital Region (NCR) Multiple Award Task Order Contract (MATOC)",
+      "city": "Aberdeen Proving Ground",
+      "county": "",
+      "status": "bidding",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-06",
+      "description": "Federal solicitation W51EW7-26-R-A002. SOLICITATION - National Capital Region (NCR) Multiple Award Task Order Contract (MATOC). Response deadline 2026-04-24.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W51EW7-26-R-A002",
+          "url": "https://sam.gov/workspace/contract/opp/9a59b64036184ae7b1a4b34338cac139/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-53705f33630f4f0c-kimbrough-ambulatory-care-center-fort-meade-md",
+      "name": "KIMBROUGH AMBULATORY CARE CENTER, FORT MEADE, MD.",
+      "city": "0",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-27",
+      "description": "Federal special notice W912DR26RA033. KIMBROUGH AMBULATORY CARE CENTER, FORT MEADE, MD. Response deadline 2026-04-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice W912DR26RA033",
+          "url": "https://sam.gov/workspace/contract/opp/53705f33630f4f0c88c12d9d4d7e9c96/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-40e083ac84fc47ca-solicitation-national-capital-region-ncr-multiple-",
+      "name": "SOLICITATION - National Capital Region (NCR) Multiple Award Task Order Contract (MATOC)",
+      "city": "Aberdeen Proving Ground",
+      "county": "",
+      "status": "bidding",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-13",
+      "description": "Federal solicitation W51EW7-26-R-A002. SOLICITATION - National Capital Region (NCR) Multiple Award Task Order Contract (MATOC). Response deadline 2026-04-24.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W51EW7-26-R-A002",
+          "url": "https://sam.gov/workspace/contract/opp/40e083ac84fc47ca80653e3d9b1d9eac/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-2919aac591b2495c-amendment-1-solicitation-cup-two-phase-design-buil",
+      "name": "Amendment 1-Solicitation - CUP - Two-Phase Design-Build Acquisition for Modernization and Expansion of Central Utility P",
+      "city": "Gaithersburg",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Commerce, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-05",
+      "description": "Federal solicitation 1333ND26RNB190004. Amendment 1-Solicitation - CUP - Two-Phase Design-Build Acquisition for Modernization and Expansion of Central Utility Plant. Response deadline 2026-03-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 1333ND26RNB190004",
+          "url": "https://sam.gov/workspace/contract/opp/2919aac591b2495c8d38f1490de78ede/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-e54852a4c6504c0d-solicitation-cup-two-phase-design-build-acquisitio",
+      "name": "Solicitation - CUP - Two-Phase Design-Build Acquisition for Modernization and Expansion of Central Utility Plant",
+      "city": "Gaithersburg",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Commerce, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-02",
+      "description": "Federal solicitation 1333ND26RNB190004. Solicitation - CUP - Two-Phase Design-Build Acquisition for Modernization and Expansion of Central Utility Plant. Response deadline 2026-03-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 1333ND26RNB190004",
+          "url": "https://sam.gov/workspace/contract/opp/e54852a4c6504c0db84f21fb0391b340/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-7daaa93e64924de0-nrde-general-construction-idiq-joc-for-pax-ih-dahl",
+      "name": "NRDE GENERAL CONSTRUCTION IDIQ JOC FOR PAX/IH/DAHL",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "Innovative Mechanical Contractors, Llc Westminster Md 21158 Usa",
+      "opened_or_announced_date": "2022-10-05",
+      "description": "Federal award notice N4008022D0018. NRDE GENERAL CONSTRUCTION IDIQ JOC FOR PAX/IH/DAHL.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "8a Competed",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice N4008022D0018",
+          "url": "https://sam.gov/workspace/contract/opp/7daaa93e64924de0ad0241f361e098f8/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-1755297559414364-nrde-general-construction-idiq-joc-for-nrl-dc-and-",
+      "name": "NRDE GENERAL CONSTRUCTION IDIQ JOC FOR NRL, DC AND NSWC CARDEROCK, MD",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "Innovative Mechanical Contractors, Llc Westminster Md 21158 Usa",
+      "opened_or_announced_date": "2022-10-05",
+      "description": "Federal award notice N4008022D1119. NRDE GENERAL CONSTRUCTION IDIQ JOC FOR NRL, DC AND NSWC CARDEROCK, MD.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "8a Competed",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice N4008022D1119",
+          "url": "https://sam.gov/workspace/contract/opp/175529755941436491b8ca1c4d92e6f5/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-410b41a5863e4f72-special-operations-forces-sof-operations-building-",
+      "name": "Special Operations Forces (SOF) Operations Building, Fort Meade, MD",
+      "city": "Fort George G Meade",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "Grunley Construction Co., Inc. Md 20850-3390 Usa",
+      "opened_or_announced_date": "2022-09-30",
+      "description": "Federal award notice W912DR22C0066. Special Operations Forces (SOF) Operations Building, Fort Meade, MD.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Classification code Y1AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice W912DR22C0066",
+          "url": "https://sam.gov/workspace/contract/opp/410b41a5863e4f72bf5d11fbdea3e4c9/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-61a2b718e7485dbd-combat-capabilities-development-command-ccdc-build",
+      "name": "Combat Capabilities Development Command (CCDC) Building 3072 Renovation Aberdeen Proving Ground",
+      "city": "ABERDEEN",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-09-11",
+      "description": "Federal presolicitation W912DR19B0018. Combat Capabilities Development Command (CCDC) Building 3072 Renovation Aberdeen Proving Ground. Response deadline 2019-09-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912DR19B0018",
+          "url": "https://sam.gov/workspace/contract/opp/61a2b718e7485dbdaf4d9d99da2babc8/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-4a795d7695a9cb2a-combat-capabilities-development-command-ccdc-build",
+      "name": "Combat Capabilities Development Command (CCDC) Building 3072 Renovation Aberdeen Proving Ground",
+      "city": "ABERDEEN",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-09-10",
+      "description": "Federal presolicitation W912DR19B0018. Combat Capabilities Development Command (CCDC) Building 3072 Renovation Aberdeen Proving Ground. Response deadline 2019-09-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912DR19B0018",
+          "url": "https://sam.gov/workspace/contract/opp/4a795d7695a9cb2a0f07354e1fede5d3/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-f738f541ce292676-combat-capabilities-development-command-ccdc-build",
+      "name": "Combat Capabilities Development Command (CCDC) Building 3072 Renovation Aberdeen Proving Ground",
+      "city": "ABERDEEN",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-09-04",
+      "description": "Federal presolicitation W912DR19B0018. Combat Capabilities Development Command (CCDC) Building 3072 Renovation Aberdeen Proving Ground. Response deadline 2019-09-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912DR19B0018",
+          "url": "https://sam.gov/workspace/contract/opp/f738f541ce292676cc8c18f64a3225f5/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-45d09641b8406f32-combat-capabilities-development-command-ccdc-build",
+      "name": "Combat Capabilities Development Command (CCDC) Building 3072 Renovation Aberdeen Proving Ground",
+      "city": "ABERDEEN",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-09-03",
+      "description": "Federal presolicitation W912DR19B0018. Combat Capabilities Development Command (CCDC) Building 3072 Renovation Aberdeen Proving Ground. Response deadline 2019-09-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912DR19B0018",
+          "url": "https://sam.gov/workspace/contract/opp/45d09641b8406f323707745d0a41f329/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-a1ed06bf17a5c769-combat-capabilities-development-command-ccdc-build",
+      "name": "Combat Capabilities Development Command (CCDC) Building 3072 Renovation Aberdeen Proving Ground",
+      "city": "ABERDEEN",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-08-22",
+      "description": "Federal presolicitation W912DR19B0018. Combat Capabilities Development Command (CCDC) Building 3072 Renovation Aberdeen Proving Ground. Response deadline 2019-09-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912DR19B0018",
+          "url": "https://sam.gov/workspace/contract/opp/a1ed06bf17a5c7693bd2b0b15d2c57f4/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-c2c149ec8aa37656-combat-capabilities-development-command-ccdc-build",
+      "name": "Combat Capabilities Development Command (CCDC) Building 3072 Renovation Aberdeen Proving Ground",
+      "city": "ABERDEEN",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-08-21",
+      "description": "Federal presolicitation W912DR19B0018. Combat Capabilities Development Command (CCDC) Building 3072 Renovation Aberdeen Proving Ground. Response deadline 2019-09-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912DR19B0018",
+          "url": "https://sam.gov/workspace/contract/opp/c2c149ec8aa37656c33da5019ef830b2/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-58bd57e1248b69a0-combat-capabilities-development-command-ccdc-build",
+      "name": "Combat Capabilities Development Command (CCDC) Building 3072 Renovation Aberdeen Proving Ground",
+      "city": "ABERDEEN",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-08-12",
+      "description": "Federal presolicitation W912DR19B0018. Combat Capabilities Development Command (CCDC) Building 3072 Renovation Aberdeen Proving Ground. Response deadline 2019-09-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912DR19B0018",
+          "url": "https://sam.gov/workspace/contract/opp/58bd57e1248b69a0f83c4548eb785ac6/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-173d23079e7ec999-combat-capabilities-development-command-ccdc-build",
+      "name": "Combat Capabilities Development Command (CCDC) Building 3072 Renovation Aberdeen Proving Ground",
+      "city": "ABERDEEN",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-08-12",
+      "description": "Federal presolicitation W912DR19B0018. Combat Capabilities Development Command (CCDC) Building 3072 Renovation Aberdeen Proving Ground. Response deadline 2019-09-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912DR19B0018",
+          "url": "https://sam.gov/workspace/contract/opp/173d23079e7ec99917c1dd9ed40d18b1/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-49fdeb806341b8ac-combat-capabilities-development-command-ccdc-build",
+      "name": "Combat Capabilities Development Command (CCDC) Building 3072 Renovation Aberdeen Proving Ground",
+      "city": "ABERDEEN",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-08-12",
+      "description": "Federal presolicitation W912DR19B0018. Combat Capabilities Development Command (CCDC) Building 3072 Renovation Aberdeen Proving Ground. Response deadline 2019-09-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912DR19B0018",
+          "url": "https://sam.gov/workspace/contract/opp/49fdeb806341b8ac40d6f2f38f37c398/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-85949c48e4d50296-combat-capabilities-development-command-ccdc-build",
+      "name": "Combat Capabilities Development Command (CCDC) Building 3072 Renovation Aberdeen Proving Ground",
+      "city": "ABERDEEN",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-08-12",
+      "description": "Federal presolicitation W912DR19B0018. Combat Capabilities Development Command (CCDC) Building 3072 Renovation Aberdeen Proving Ground. Response deadline 2019-09-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912DR19B0018",
+          "url": "https://sam.gov/workspace/contract/opp/85949c48e4d50296d4c1ec4391f6d841/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-aa06e608a955702d-combat-capabilities-development-command-ccdc-build",
+      "name": "Combat Capabilities Development Command (CCDC) Building 3072 Renovation Aberdeen Proving Ground",
+      "city": "ABERDEEN",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-08-12",
+      "description": "Federal presolicitation W912DR19B0018. Combat Capabilities Development Command (CCDC) Building 3072 Renovation Aberdeen Proving Ground. Response deadline 2019-09-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912DR19B0018",
+          "url": "https://sam.gov/workspace/contract/opp/aa06e608a955702d9b43fbc8fb50ea92/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-840c6954b0313237-combat-capabilities-development-command-ccdc-build",
+      "name": "Combat Capabilities Development Command (CCDC) Building 3072 Renovation Aberdeen Proving Ground",
+      "city": "ABERDEEN",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-08-12",
+      "description": "Federal presolicitation W912DR19B0018. Combat Capabilities Development Command (CCDC) Building 3072 Renovation Aberdeen Proving Ground. Response deadline 2019-09-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912DR19B0018",
+          "url": "https://sam.gov/workspace/contract/opp/840c6954b0313237149f70ae5d7cbd7a/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-9cdc9ef29bb2d4e3-multiple-award-construction-contract-macc-for-gene",
+      "name": "MULTIPLE-AWARD-CONSTRUCTION-CONTRACT-(MACC) FOR GENERAL CONSTRUCTION SERVICES AT THE NATIONAL INSTITUTES OF HEALTH.",
+      "city": "BETHESDA",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-03-25",
+      "description": "Federal presolicitation 75N99019R00001. MULTIPLE-AWARD-CONSTRUCTION-CONTRACT-(MACC) FOR GENERAL CONSTRUCTION SERVICES AT THE NATIONAL INSTITUTES OF HEALTH. Response deadline 2019-04-02.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 75N99019R00001",
+          "url": "https://sam.gov/workspace/contract/opp/9cdc9ef29bb2d4e37f9e383e78643ac8/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-782aa0af142eddee-multiple-award-construction-contract-macc-for-gene",
+      "name": "MULTIPLE-AWARD-CONSTRUCTION-CONTRACT-(MACC) FOR GENERAL CONSTRUCTION SERVICES AT THE NATIONAL INSTITUTES OF HEALTH.",
+      "city": "BETHESDA",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-03-21",
+      "description": "Federal presolicitation 75N99019R00001. MULTIPLE-AWARD-CONSTRUCTION-CONTRACT-(MACC) FOR GENERAL CONSTRUCTION SERVICES AT THE NATIONAL INSTITUTES OF HEALTH. Response deadline 2019-04-02.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 75N99019R00001",
+          "url": "https://sam.gov/workspace/contract/opp/782aa0af142eddeef5f7bd699c955c33/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-a8fa4ef943fafe27-multiple-award-construction-contract-macc-for-gene",
+      "name": "MULTIPLE-AWARD-CONSTRUCTION-CONTRACT-(MACC) FOR GENERAL CONSTRUCTION SERVICES AT THE NATIONAL INSTITUTES OF HEALTH.",
+      "city": "BETHESDA",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-03-14",
+      "description": "Federal presolicitation 75N99019R00001. MULTIPLE-AWARD-CONSTRUCTION-CONTRACT-(MACC) FOR GENERAL CONSTRUCTION SERVICES AT THE NATIONAL INSTITUTES OF HEALTH. Response deadline 2019-03-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 75N99019R00001",
+          "url": "https://sam.gov/workspace/contract/opp/a8fa4ef943fafe2774f1319e8e48adb3/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-b994e75ffd930d6e-multiple-award-construction-contract-macc-for-gene",
+      "name": "MULTIPLE-AWARD-CONSTRUCTION-CONTRACT-(MACC) FOR GENERAL CONSTRUCTION SERVICES AT THE NATIONAL INSTITUTES OF HEALTH.",
+      "city": "BETHESDA",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-03-07",
+      "description": "Federal presolicitation 75N99019R00001. MULTIPLE-AWARD-CONSTRUCTION-CONTRACT-(MACC) FOR GENERAL CONSTRUCTION SERVICES AT THE NATIONAL INSTITUTES OF HEALTH. Response deadline 2019-03-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 75N99019R00001",
+          "url": "https://sam.gov/workspace/contract/opp/b994e75ffd930d6e5ebd372e12b4fee4/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-57819ba0b60ed821-multiple-award-construction-contract-macc-for-gene",
+      "name": "MULTIPLE-AWARD-CONSTRUCTION-CONTRACT-(MACC) FOR GENERAL CONSTRUCTION SERVICES AT THE NATIONAL INSTITUTES OF HEALTH.",
+      "city": "BETHESDA",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-02-28",
+      "description": "Federal presolicitation 75N99019R00001. MULTIPLE-AWARD-CONSTRUCTION-CONTRACT-(MACC) FOR GENERAL CONSTRUCTION SERVICES AT THE NATIONAL INSTITUTES OF HEALTH. Response deadline 2019-03-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 75N99019R00001",
+          "url": "https://sam.gov/workspace/contract/opp/57819ba0b60ed821f875842d48b87fb1/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-67cd5b762deafc6b-multiple-award-construction-contract-macc-for-gene",
+      "name": "MULTIPLE-AWARD-CONSTRUCTION-CONTRACT-(MACC) FOR GENERAL CONSTRUCTION SERVICES AT THE NATIONAL INSTITUTES OF HEALTH.",
+      "city": "BETHESDA",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-02-12",
+      "description": "Federal presolicitation 75N99019R00001. MULTIPLE-AWARD-CONSTRUCTION-CONTRACT-(MACC) FOR GENERAL CONSTRUCTION SERVICES AT THE NATIONAL INSTITUTES OF HEALTH. Response deadline 2019-03-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 75N99019R00001",
+          "url": "https://sam.gov/workspace/contract/opp/67cd5b762deafc6b5008c78f75a5a058/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-02151c55e641706e-multiple-award-construction-contract-macc-for-gene",
+      "name": "MULTIPLE-AWARD-CONSTRUCTION-CONTRACT-(MACC) FOR GENERAL CONSTRUCTION SERVICES AT THE NATIONAL INSTITUTES OF HEALTH.",
+      "city": "BETHESDA",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-02-08",
+      "description": "Federal presolicitation 75N99019R00001. MULTIPLE-AWARD-CONSTRUCTION-CONTRACT-(MACC) FOR GENERAL CONSTRUCTION SERVICES AT THE NATIONAL INSTITUTES OF HEALTH. Response deadline 2019-03-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 75N99019R00001",
+          "url": "https://sam.gov/workspace/contract/opp/02151c55e641706e2184ddf4976dc791/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-363f297197c33bfe-multiple-award-construction-contract-macc-for-gene",
+      "name": "MULTIPLE-AWARD-CONSTRUCTION-CONTRACT-(MACC) FOR GENERAL CONSTRUCTION SERVICES AT THE NATIONAL INSTITUTES OF HEALTH.",
+      "city": "BETHESDA",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-01-30",
+      "description": "Federal presolicitation 75N99019R00001. MULTIPLE-AWARD-CONSTRUCTION-CONTRACT-(MACC) FOR GENERAL CONSTRUCTION SERVICES AT THE NATIONAL INSTITUTES OF HEALTH. Response deadline 2019-03-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 75N99019R00001",
+          "url": "https://sam.gov/workspace/contract/opp/363f297197c33bfeb8cc89f25d95966e/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-fe3e5d23e8724509-altmeyer-ncc-building-3rd-floor-renovation",
+      "name": "Altmeyer NCC Building 3rd Floor Renovation",
+      "city": "BALTIMORE",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2016-10-17",
+      "description": "Federal presolicitation GS-03-P-16-DX-C-7009. Altmeyer NCC Building 3rd Floor Renovation. Response deadline 2016-10-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation GS-03-P-16-DX-C-7009",
+          "url": "https://sam.gov/workspace/contract/opp/fe3e5d23e87245090c16a6388db5f392/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-ae03a7e4ef951b79-altmeyer-ncc-building-3rd-floor-renovation",
+      "name": "Altmeyer NCC Building 3rd Floor Renovation",
+      "city": "BALTIMORE",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2016-10-11",
+      "description": "Federal presolicitation GS-03-P-16-DX-C-7009. Altmeyer NCC Building 3rd Floor Renovation. Response deadline 2016-10-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation GS-03-P-16-DX-C-7009",
+          "url": "https://sam.gov/workspace/contract/opp/ae03a7e4ef951b79b2c97ae6d5e07bf4/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-ab1dae4416bdf566-altmeyer-ncc-building-3rd-floor-renovation",
+      "name": "Altmeyer NCC Building 3rd Floor Renovation",
+      "city": "BALTIMORE",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2016-10-11",
+      "description": "Federal presolicitation GS-03-P-16-DX-C-7009. Altmeyer NCC Building 3rd Floor Renovation. Response deadline 2016-10-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation GS-03-P-16-DX-C-7009",
+          "url": "https://sam.gov/workspace/contract/opp/ab1dae4416bdf56620dd1fb9c4fe2f7b/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-283a2f640b7ff545-altmeyer-ncc-building-3rd-floor-renovation",
+      "name": "Altmeyer NCC Building 3rd Floor Renovation",
+      "city": "BALTIMORE",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2016-09-16",
+      "description": "Federal presolicitation GS-03-P-16-DX-C-7009. Altmeyer NCC Building 3rd Floor Renovation. Response deadline 2016-10-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation GS-03-P-16-DX-C-7009",
+          "url": "https://sam.gov/workspace/contract/opp/283a2f640b7ff54592c6955b8c2dd052/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-85ba5acf06abc967-altmeyer-ncc-building-3rd-floor-renovation",
+      "name": "Altmeyer NCC Building 3rd Floor Renovation",
+      "city": "BALTIMORE",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2016-09-03",
+      "description": "Federal presolicitation GS-03-P-16-DX-C-7009. Altmeyer NCC Building 3rd Floor Renovation. Response deadline 2016-10-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation GS-03-P-16-DX-C-7009",
+          "url": "https://sam.gov/workspace/contract/opp/85ba5acf06abc9671d4cc4b4aed0e3b8/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
+    },
+    {
+      "id": "md-sam-7f6bd7f65d6b9302-altmeyer-ncc-building-3rd-floor-renovation",
+      "name": "Altmeyer NCC Building 3rd Floor Renovation",
+      "city": "BALTIMORE",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2016-09-01",
+      "description": "Federal presolicitation GS-03-P-16-DX-C-7009. Altmeyer NCC Building 3rd Floor Renovation. Response deadline 2016-10-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation GS-03-P-16-DX-C-7009",
+          "url": "https://sam.gov/workspace/contract/opp/7f6bd7f65d6b93029850c052bdee2152/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MD"
     }
   ],
   "stats": {
-    "total": 3
+    "total": 61
   }
 }

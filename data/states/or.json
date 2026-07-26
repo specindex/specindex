@@ -1,9 +1,9 @@
 {
   "state": "OR",
   "state_name": "Oregon",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — PR Newswire, Data Center Dynamics, local permits, trade publications.",
+  "capture_method": "Public sources — PR Newswire, Data Center Dynamics, local permits, trade publications, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "or-sabey-umatilla-milestone",
@@ -199,9 +199,632 @@
         }
       ],
       "open_for": "Boutique hospitality MEP, thermal pool/spa systems, interior architectural finishes."
+    },
+    {
+      "id": "or-sam-138811c5dc7141e9-z2dz-project-number-653-105-seismic-retrofit-of-bu",
+      "name": "Z2DZ--Project Number 653-105, Seismic Retrofit of Building 16, Roseburg VAMC, Oregon",
+      "city": "Roseburg",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Federal presolicitation 36C10F26R0084. Z2DZ--Project Number 653-105, Seismic Retrofit of Building 16, Roseburg VAMC, Oregon. Response deadline 2026-08-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C10F26R0084",
+          "url": "https://sam.gov/workspace/contract/opp/138811c5dc7141e9b2f3e3b7952a6a72/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "OR"
+    },
+    {
+      "id": "or-sam-c1943e6eedc94e09-z2dz-seismic-retrofit-of-building-13-pn-653-104-ro",
+      "name": "Z2DZ--Seismic Retrofit of Building 13 (PN 653-104) Roseburg VAMC, Oregon",
+      "city": "Roseburg",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Federal presolicitation 36C10F26R0083. Z2DZ--Seismic Retrofit of Building 13 (PN 653-104) Roseburg VAMC, Oregon. Response deadline 2026-08-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C10F26R0083",
+          "url": "https://sam.gov/workspace/contract/opp/c1943e6eedc94e09972c5acc8d9401bc/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "OR"
+    },
+    {
+      "id": "or-sam-25578e287ad04c17-z2dz-seismic-retrofit-of-building-13-pn-653-104-ro",
+      "name": "Z2DZ--Seismic Retrofit of Building 13 (PN 653-104) Roseburg VAMC, Oregon",
+      "city": "Roseburg",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Federal presolicitation 36C10F26R0083. Z2DZ--Seismic Retrofit of Building 13 (PN 653-104) Roseburg VAMC, Oregon. Response deadline 2026-08-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Z2DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C10F26R0083",
+          "url": "https://sam.gov/workspace/contract/opp/25578e287ad04c179d1ce07f9cad4fe3/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "OR"
+    },
+    {
+      "id": "or-sam-b596c7319f10495d-z2dz-seismic-retrofit-of-building-11-pn-653-107-ro",
+      "name": "Z2DZ--Seismic Retrofit of Building 11 (PN 653-107) Roseburg VAMC, Oregon",
+      "city": "Roseburg",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Federal presolicitation 36C10F26R0082. Z2DZ--Seismic Retrofit of Building 11 (PN 653-107) Roseburg VAMC, Oregon. Response deadline 2026-08-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C10F26R0082",
+          "url": "https://sam.gov/workspace/contract/opp/b596c7319f10495d8f4f8c0bf1ed8e5f/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "OR"
+    },
+    {
+      "id": "or-sam-7a0ebb597ab74ebe-bpa-call-northwest-facilities-maintenance-fmac-bpa",
+      "name": "BPA Call - Northwest Facilities Maintenance (FMAC) BPA - Cascade Head Experimental Forest Replace Windows and Door",
+      "city": "Otis",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Federal special notice 1240BJ26R0007. BPA Call - Northwest Facilities Maintenance (FMAC) BPA - Cascade Head Experimental Forest Replace Windows and Door. Response deadline 2026-07-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice 1240BJ26R0007",
+          "url": "https://sam.gov/workspace/contract/opp/7a0ebb597ab74ebeac0d5c9e7d905ea1/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "OR"
+    },
+    {
+      "id": "or-sam-efe4a55edbdb4666-special-tactics-complex-oregon-air-national-guard",
+      "name": "Special Tactics Complex, Oregon Air National Guard",
+      "city": "Portland",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-23",
+      "description": "Federal solicitation W912DW26RA011. Special Tactics Complex, Oregon Air National Guard. Response deadline 2026-05-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DW26RA011",
+          "url": "https://sam.gov/workspace/contract/opp/efe4a55edbdb4666b64aa30992058b8c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OR"
+    },
+    {
+      "id": "or-sam-d48ef16533294dd3-special-tactics-complex-oregon-air-national-guard",
+      "name": "Special Tactics Complex, Oregon Air National Guard",
+      "city": "Portland",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-16",
+      "description": "Federal solicitation W912DW26RA011. Special Tactics Complex, Oregon Air National Guard. Response deadline 2026-05-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DW26RA011",
+          "url": "https://sam.gov/workspace/contract/opp/d48ef16533294dd38ab46d13bd0a6f4a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OR"
+    },
+    {
+      "id": "or-sam-75b5a26640a84fb5-special-tactics-complex-oregon-air-national-guard",
+      "name": "Special Tactics Complex, Oregon Air National Guard",
+      "city": "Portland",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-16",
+      "description": "Federal solicitation W912DW26RA011. Special Tactics Complex, Oregon Air National Guard. Response deadline 2026-04-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DW26RA011",
+          "url": "https://sam.gov/workspace/contract/opp/75b5a26640a84fb59aea310b27ec148d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OR"
+    },
+    {
+      "id": "or-sam-c3d58415dba74e32-special-tactics-complex-oregon-air-national-guard",
+      "name": "Special Tactics Complex, Oregon Air National Guard",
+      "city": "Portland",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-15",
+      "description": "Federal solicitation W912DW26RA011. Special Tactics Complex, Oregon Air National Guard. Response deadline 2026-04-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DW26RA011",
+          "url": "https://sam.gov/workspace/contract/opp/c3d58415dba74e32b99a4c6f30d4c134/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OR"
+    },
+    {
+      "id": "or-sam-d39578c736a24a01-special-tactics-complex-oregon-air-national-guard",
+      "name": "Special Tactics Complex, Oregon Air National Guard",
+      "city": "Portland",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-02",
+      "description": "Federal solicitation W912DW26RA011. Special Tactics Complex, Oregon Air National Guard. Response deadline 2026-04-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DW26RA011",
+          "url": "https://sam.gov/workspace/contract/opp/d39578c736a24a01bb895e3e4eb45aa8/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OR"
+    },
+    {
+      "id": "or-sam-25ba0e0a774b42d5-special-tactics-complex-oregon-air-national-guard",
+      "name": "Special Tactics Complex, Oregon Air National Guard",
+      "city": "Portland",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-18",
+      "description": "Federal solicitation W912DW26RA011. Special Tactics Complex, Oregon Air National Guard. Response deadline 2026-04-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DW26RA011",
+          "url": "https://sam.gov/workspace/contract/opp/25ba0e0a774b42d586983d6acc873828/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OR"
+    },
+    {
+      "id": "or-sam-8f76af15d88e4d7c-special-tactics-complex-oregon-air-national-guard",
+      "name": "Special Tactics Complex, Oregon Air National Guard",
+      "city": "Portland",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-12",
+      "description": "Federal solicitation W912DW26RA011. Special Tactics Complex, Oregon Air National Guard. Response deadline 2026-04-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DW26RA011",
+          "url": "https://sam.gov/workspace/contract/opp/8f76af15d88e4d7c9f9ed90f2ed935d5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OR"
+    },
+    {
+      "id": "or-sam-d441ba1ae2064fd1-special-tactics-complex-oregon-air-national-guard",
+      "name": "Special Tactics Complex, Oregon Air National Guard",
+      "city": "Portland",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-25",
+      "description": "Federal solicitation W912DW26RA011. Special Tactics Complex, Oregon Air National Guard. Response deadline 2026-04-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DW26RA011",
+          "url": "https://sam.gov/workspace/contract/opp/d441ba1ae2064fd183fdba32f651a7da/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OR"
+    },
+    {
+      "id": "or-sam-79472ec266a54448-special-tactics-complex-oregon-air-national-guard",
+      "name": "Special Tactics Complex, Oregon Air National Guard",
+      "city": "Portland",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-24",
+      "description": "Federal solicitation W912DW26RA011. Special Tactics Complex, Oregon Air National Guard. Response deadline 2026-04-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DW26RA011",
+          "url": "https://sam.gov/workspace/contract/opp/79472ec266a54448835d534bf46b9c1f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OR"
+    },
+    {
+      "id": "or-sam-3d0092a9b3c7493c-special-tactics-complex-oregon-air-national-guard",
+      "name": "Special Tactics Complex, Oregon Air National Guard",
+      "city": "Portland",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-17",
+      "description": "Federal solicitation W912DW26RA011. Special Tactics Complex, Oregon Air National Guard. Response deadline 2026-03-02.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DW26RA011",
+          "url": "https://sam.gov/workspace/contract/opp/3d0092a9b3c7493cbec422edbd52c45d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OR"
+    },
+    {
+      "id": "or-sam-3d0b808e86094c31-ang-special-tactics-complex-portland-oregon",
+      "name": "ANG Special Tactics Complex-Portland, Oregon",
+      "city": "Portland",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-30",
+      "description": "Federal solicitation W912DW26RA011. ANG Special Tactics Complex-Portland, Oregon. Response deadline 2026-03-02.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DW26RA011",
+          "url": "https://sam.gov/workspace/contract/opp/3d0b808e86094c31829f1b857ad5190e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OR"
     }
   ],
   "stats": {
-    "total": 5
+    "total": 21
   }
 }

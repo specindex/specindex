@@ -1,9 +1,9 @@
 {
   "state": "WY",
   "state_name": "Wyoming",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — Cap City News, Cowboy State Daily, Wyoming News, county planning filings.",
+  "capture_method": "Public sources — Cap City News, Cowboy State Daily, Wyoming News, county planning filings, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "wy-project-sail-cheyenne-data-center",
@@ -197,9 +197,360 @@
         }
       ],
       "open_for": "Permitting. Modular building procurement, infrastructure, civil utilities."
+    },
+    {
+      "id": "wy-sam-0c4e9999964d4ef3-z1da-442-21-700-ehrm-infrastructure-upgrades-cheye",
+      "name": "Z1DA--442-21-700 | EHRM Infrastructure Upgrades | Cheyenne, WY |",
+      "city": "Cheyenne",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Federal solicitation 36C77626R0007. Z1DA--442-21-700 | EHRM Infrastructure Upgrades | Cheyenne, WY |. Response deadline 2026-05-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0007",
+          "url": "https://sam.gov/workspace/contract/opp/0c4e9999964d4ef3bf1d4c62ecc34325/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WY"
+    },
+    {
+      "id": "wy-sam-fd015b3bed52432b-z1da-442-21-700-ehrm-infrastructure-upgrades-cheye",
+      "name": "Z1DA--442-21-700 | EHRM Infrastructure Upgrades | Cheyenne, WY |",
+      "city": "Cheyenne",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-18",
+      "description": "Federal solicitation 36C77626R0007. Z1DA--442-21-700 | EHRM Infrastructure Upgrades | Cheyenne, WY |. Response deadline 2026-05-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0007",
+          "url": "https://sam.gov/workspace/contract/opp/fd015b3bed52432bab22ec0103413cef/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WY"
+    },
+    {
+      "id": "wy-sam-0b126ba2e71b409d-z1da-442-21-700-ehrm-infrastructure-upgrades-cheye",
+      "name": "Z1DA--442-21-700 | EHRM Infrastructure Upgrades | Cheyenne, WY |",
+      "city": "Cheyenne",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-11",
+      "description": "Federal solicitation 36C77626R0007. Z1DA--442-21-700 | EHRM Infrastructure Upgrades | Cheyenne, WY |. Response deadline 2026-05-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0007",
+          "url": "https://sam.gov/workspace/contract/opp/0b126ba2e71b409d9c9d71d3265aa146/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WY"
+    },
+    {
+      "id": "wy-sam-6778674751104f4f-z1da-442-21-700-ehrm-infrastructure-upgrades-cheye",
+      "name": "Z1DA--442-21-700 | EHRM Infrastructure Upgrades | Cheyenne, WY |",
+      "city": "Cheyenne",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-04",
+      "description": "Federal solicitation 36C77626R0007. Z1DA--442-21-700 | EHRM Infrastructure Upgrades | Cheyenne, WY |. Response deadline 2026-05-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0007",
+          "url": "https://sam.gov/workspace/contract/opp/6778674751104f4f900b3daba2fcd94e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WY"
+    },
+    {
+      "id": "wy-sam-eac622e57a6d4c03-z1da-442-21-700-ehrm-infrastructure-upgrades-cheye",
+      "name": "Z1DA--442-21-700 | EHRM Infrastructure Upgrades | Cheyenne, WY |",
+      "city": "Cheyenne",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-28",
+      "description": "Federal solicitation 36C77626R0007. Z1DA--442-21-700 | EHRM Infrastructure Upgrades | Cheyenne, WY |. Response deadline 2026-05-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0007",
+          "url": "https://sam.gov/workspace/contract/opp/eac622e57a6d4c038ec482169a82c6dc/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WY"
+    },
+    {
+      "id": "wy-sam-306019547fd145e2-z1da-442-21-700-ehrm-infrastructure-upgrades-cheye",
+      "name": "Z1DA--442-21-700 | EHRM Infrastructure Upgrades | Cheyenne, WY |",
+      "city": "Cheyenne",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-13",
+      "description": "Federal solicitation 36C77626R0007. Z1DA--442-21-700 | EHRM Infrastructure Upgrades | Cheyenne, WY |. Response deadline 2026-05-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0007",
+          "url": "https://sam.gov/workspace/contract/opp/306019547fd145e2b7204a75fb596bd3/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WY"
+    },
+    {
+      "id": "wy-sam-0a9953de9cb548de-z1da-442-21-700-ehrm-infrastructure-upgrades-cheye",
+      "name": "Z1DA--442-21-700 | EHRM Infrastructure Upgrades | Cheyenne, WY |",
+      "city": "Cheyenne",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-06",
+      "description": "Federal solicitation 36C77626R0007. Z1DA--442-21-700 | EHRM Infrastructure Upgrades | Cheyenne, WY |. Response deadline 2026-04-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0007",
+          "url": "https://sam.gov/workspace/contract/opp/0a9953de9cb548dea7c961f8bfbd9475/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WY"
+    },
+    {
+      "id": "wy-sam-dc93ea8b86e54fe2-z1da-442-21-700-ehrm-infrastructure-upgrades-cheye",
+      "name": "Z1DA--442-21-700 | EHRM Infrastructure Upgrades | Cheyenne, WY |",
+      "city": "Cheyenne",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-17",
+      "description": "Federal solicitation 36C77626R0007. Z1DA--442-21-700 | EHRM Infrastructure Upgrades | Cheyenne, WY |. Response deadline 2026-04-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0007",
+          "url": "https://sam.gov/workspace/contract/opp/dc93ea8b86e54fe2a5bf1c54e92d0325/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WY"
+    },
+    {
+      "id": "wy-sam-a1de0e2af57b4c7f-z1da-442-21-700-ehrm-infrastructure-upgrades-cheye",
+      "name": "Z1DA--442-21-700 | EHRM Infrastructure Upgrades | Cheyenne, WY |",
+      "city": "Cheyenne",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-26",
+      "description": "Federal solicitation 36C77626R0007. Z1DA--442-21-700 | EHRM Infrastructure Upgrades | Cheyenne, WY |. Response deadline 2026-04-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0007",
+          "url": "https://sam.gov/workspace/contract/opp/a1de0e2af57b4c7f84ba4c21f5bb6f8c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WY"
     }
   ],
   "stats": {
-    "total": 5
+    "total": 14
   }
 }

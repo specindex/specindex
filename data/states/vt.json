@@ -1,9 +1,9 @@
 {
   "state": "VT",
   "state_name": "Vermont",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — state permits, local news.",
+  "capture_method": "Public sources — state permits, local news, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "vt-burlington-mixed-use-infill",
@@ -39,9 +39,633 @@
         }
       ],
       "open_for": "Urban commercial. MEP and finish specs."
+    },
+    {
+      "id": "vt-sam-93dd7c4dd517434a-gmf-ripton-barracks-demo-repairs",
+      "name": "GMF Ripton Barracks Demo & Repairs",
+      "city": "Ripton",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "Federal solicitation 12445526Q0090. GMF Ripton Barracks Demo & Repairs. Response deadline 2026-08-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 12445526Q0090",
+          "url": "https://sam.gov/workspace/contract/opp/93dd7c4dd517434aa5a58dedcb580f16/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VT"
+    },
+    {
+      "id": "vt-sam-be157be5d64d4e0b-design-bid-build-dbb-construction-requirement-for-",
+      "name": "Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont",
+      "city": "Alburgh",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "Federal solicitation 47PB5126R0008. Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont. Response deadline 2026-07-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PB5126R0008",
+          "url": "https://sam.gov/workspace/contract/opp/be157be5d64d4e0bac98083827e1ea4f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VT"
+    },
+    {
+      "id": "vt-sam-2b203913f3374fcb-design-bid-build-dbb-construction-requirement-for-",
+      "name": "Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont",
+      "city": "Alburgh",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-18",
+      "description": "Federal solicitation 47PB5126R0008. Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont. Response deadline 2026-07-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PB5126R0008",
+          "url": "https://sam.gov/workspace/contract/opp/2b203913f3374fcb88a7d2c612709b32/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VT"
+    },
+    {
+      "id": "vt-sam-7b7f6ce746374d8c-design-bid-build-dbb-construction-requirement-for-",
+      "name": "Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont",
+      "city": "Alburgh",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-15",
+      "description": "Federal solicitation 47PB5126R0008. Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont. Response deadline 2026-07-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PB5126R0008",
+          "url": "https://sam.gov/workspace/contract/opp/7b7f6ce746374d8c94332f917b0f85aa/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VT"
+    },
+    {
+      "id": "vt-sam-a54c08055a2147c8-design-bid-build-dbb-construction-requirement-for-",
+      "name": "Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont",
+      "city": "Alburgh",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-02",
+      "description": "Federal solicitation 47PB5126R0008. Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont. Response deadline 2026-07-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PB5126R0008",
+          "url": "https://sam.gov/workspace/contract/opp/a54c08055a2147c889f69102e0f5afae/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VT"
+    },
+    {
+      "id": "vt-sam-16f2118998a24e9e-design-bid-build-dbb-construction-requirement-for-",
+      "name": "Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont",
+      "city": "Alburgh",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-29",
+      "description": "Federal solicitation 47PB5126R0008. Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont. Response deadline 2026-06-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PB5126R0008",
+          "url": "https://sam.gov/workspace/contract/opp/16f2118998a24e9ebb996fb44000ea27/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VT"
+    },
+    {
+      "id": "vt-sam-a780c085b18943bd-design-bid-build-dbb-construction-requirement-for-",
+      "name": "Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont",
+      "city": "Alburgh",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-21",
+      "description": "Federal solicitation 47PB5126R0008. Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont. Response deadline 2026-06-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PB5126R0008",
+          "url": "https://sam.gov/workspace/contract/opp/a780c085b18943bdb3aa2fb22edb9b17/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VT"
+    },
+    {
+      "id": "vt-sam-88a29909def34786-design-bid-build-dbb-construction-requirement-for-",
+      "name": "Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont",
+      "city": "Alburgh",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-15",
+      "description": "Federal solicitation 47PB5126R0008. Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont. Response deadline 2026-06-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PB5126R0008",
+          "url": "https://sam.gov/workspace/contract/opp/88a29909def347868bc59aa94bfd53d5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VT"
+    },
+    {
+      "id": "vt-sam-a090fe5622904e70-design-bid-build-dbb-construction-requirement-for-",
+      "name": "Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont",
+      "city": "Alburgh",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-12",
+      "description": "Federal solicitation 47PB5126R0008. Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont. Response deadline 2026-06-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PB5126R0008",
+          "url": "https://sam.gov/workspace/contract/opp/a090fe5622904e70b5859281ce8ddb12/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VT"
+    },
+    {
+      "id": "vt-sam-e4d1aac4f0f64def-design-bid-build-dbb-construction-requirement-for-",
+      "name": "Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont",
+      "city": "Alburgh",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-05",
+      "description": "Federal solicitation 47PB5126R0008. Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont. Response deadline 2026-06-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PB5126R0008",
+          "url": "https://sam.gov/workspace/contract/opp/e4d1aac4f0f64defb723f08409cb9464/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VT"
+    },
+    {
+      "id": "vt-sam-b12264e7b4b54d51-design-bid-build-dbb-construction-requirement-for-",
+      "name": "Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont",
+      "city": "Alburgh",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-04",
+      "description": "Federal solicitation 47PB5126R0008. Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont. Response deadline 2026-06-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PB5126R0008",
+          "url": "https://sam.gov/workspace/contract/opp/b12264e7b4b54d51966424db9432dabc/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VT"
+    },
+    {
+      "id": "vt-sam-18858dc854f44c43-design-bid-build-dbb-construction-requirement-for-",
+      "name": "Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont",
+      "city": "Alburgh",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-01",
+      "description": "Federal solicitation 47PB5126R0008. Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont. Response deadline 2026-06-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PB5126R0008",
+          "url": "https://sam.gov/workspace/contract/opp/18858dc854f44c43a83a00d55efb7202/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VT"
+    },
+    {
+      "id": "vt-sam-099b1ca4a58d451d-design-bid-build-dbb-construction-requirement-for-",
+      "name": "Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont",
+      "city": "Alburgh",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-21",
+      "description": "Federal solicitation 47PB5126R0008. Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont. Response deadline 2026-06-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PB5126R0008",
+          "url": "https://sam.gov/workspace/contract/opp/099b1ca4a58d451db4cce5a702a33d42/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VT"
+    },
+    {
+      "id": "vt-sam-33f93ecb52f4454d-design-bid-build-dbb-construction-requirement-for-",
+      "name": "Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont",
+      "city": "Alburgh",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-16",
+      "description": "Federal solicitation 47PB5126R0008. Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont. Response deadline 2026-06-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PB5126R0008",
+          "url": "https://sam.gov/workspace/contract/opp/33f93ecb52f4454d86550171c703ce2e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VT"
+    },
+    {
+      "id": "vt-sam-d7f31f1e06424eaa-design-bid-build-dbb-construction-requirement-for-",
+      "name": "Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont",
+      "city": "Alburgh",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-15",
+      "description": "Federal solicitation 47PB5126R0008. Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont. Response deadline 2026-06-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PB5126R0008",
+          "url": "https://sam.gov/workspace/contract/opp/d7f31f1e06424eaa92843fb28178e76c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VT"
+    },
+    {
+      "id": "vt-sam-f635d62abd744a17-design-bid-build-dbb-construction-requirement-for-",
+      "name": "Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont",
+      "city": "Alburgh",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-15",
+      "description": "Federal solicitation 47PB5126R0008. Design Bid Build (DBB) Construction Requirement for Alburg Springs Land Port of Entry (LPOE), Alburg, Vermont. Response deadline 2026-06-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PB5126R0008",
+          "url": "https://sam.gov/workspace/contract/opp/f635d62abd744a17b4348731dcb242d9/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VT"
     }
   ],
   "stats": {
-    "total": 1
+    "total": 17
   }
 }

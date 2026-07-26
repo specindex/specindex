@@ -1,9 +1,9 @@
 {
   "state": "WA",
   "state_name": "Washington",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — Industrial Briefs, Covington Reporter, Wenatchee World, municipal planning filings.",
+  "capture_method": "Public sources — Industrial Briefs, Covington Reporter, Wenatchee World, municipal planning filings, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "wa-amazon-chehalis-distribution",
@@ -129,9 +129,1046 @@
         }
       ],
       "open_for": "Permitting. Medical interior TI, HVAC, radiation equipment shielding."
+    },
+    {
+      "id": "wa-sam-825121b0449f430d-z2da-fy27q1-con-668-24-106-renovate-clc-east-wing-",
+      "name": "Z2DA--FY27Q1-CON 668-24-106 Renovate CLC East Wing and Courtyard",
+      "city": "Spokane",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal presolicitation 36C26026R0088. Z2DA--FY27Q1-CON 668-24-106 Renovate CLC East Wing and Courtyard.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C26026R0088",
+          "url": "https://sam.gov/workspace/contract/opp/825121b0449f430d98a9b009d43f4e9c/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WA"
+    },
+    {
+      "id": "wa-sam-afa1d43f3be84c96-snoqualmie-ranger-station-siding-project",
+      "name": "SNOQUALMIE RANGER STATION SIDING PROJECT",
+      "city": "",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Federal presolicitation 1240BJ26Q0038. SNOQUALMIE RANGER STATION SIDING PROJECT. Response deadline 2026-08-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 1240BJ26Q0038",
+          "url": "https://sam.gov/workspace/contract/opp/afa1d43f3be84c96b662a1aa6348ea35/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WA"
+    },
+    {
+      "id": "wa-sam-3d5efb3b0f674521-repair-building-2008",
+      "name": "Repair Building 2008",
+      "city": "Joint Base Lewis McChord",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "Federal sources sought W912DW27RA010. Repair Building 2008. Response deadline 2026-08-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W912DW27RA010",
+          "url": "https://sam.gov/workspace/contract/opp/3d5efb3b0f6745218df9ba51bca37344/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WA"
+    },
+    {
+      "id": "wa-sam-3656e55955b245cb-repair-building-2008",
+      "name": "Repair Building 2008",
+      "city": "Joint Base Lewis McChord",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Federal sources sought W912DW27RA010. Repair Building 2008. Response deadline 2026-08-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W912DW27RA010",
+          "url": "https://sam.gov/workspace/contract/opp/3656e55955b245cbb00c664f174b4f1c/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WA"
+    },
+    {
+      "id": "wa-sam-ffc43ab62daa4796-shipyard-infrastructure-optimization-program-multi",
+      "name": "Shipyard Infrastructure Optimization Program Multi-Mission Dry Dock, Multiple Award Construction Contract",
+      "city": "Silverdale",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Federal sources sought N4425526R0005. Shipyard Infrastructure Optimization Program Multi-Mission Dry Dock, Multiple Award Construction Contract. Response deadline 2026-07-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2ED"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought N4425526R0005",
+          "url": "https://sam.gov/workspace/contract/opp/ffc43ab62daa4796b7700ddaf6df750b/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WA"
+    },
+    {
+      "id": "wa-sam-21070847e1d34ce0-bpa-call-northwest-facilities-maintenance-fmac-for",
+      "name": "BPA Call - Northwest Facilities Maintenance (FMAC) - Forest-Wide Chimney Repairs",
+      "city": "Deming",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "Federal special notice 1240BJ26Q0029. BPA Call - Northwest Facilities Maintenance (FMAC) - Forest-Wide Chimney Repairs. Response deadline 2026-07-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice 1240BJ26Q0029",
+          "url": "https://sam.gov/workspace/contract/opp/21070847e1d34ce0b2a8f3de9e9333c4/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WA"
+    },
+    {
+      "id": "wa-sam-984a0e0b755c4b64-headquarters-compound-roof-replacement",
+      "name": "Headquarters Compound Roof Replacement",
+      "city": "Colville",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "Federal presolicitation 1240BJ26Q0027. Headquarters Compound Roof Replacement. Response deadline 2026-07-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 1240BJ26Q0027",
+          "url": "https://sam.gov/workspace/contract/opp/984a0e0b755c4b64818eea6c82987eb3/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WA"
+    },
+    {
+      "id": "wa-sam-7dfa6524b78e49b6-shipyard-infrastructure-optimization-program-multi",
+      "name": "Shipyard Infrastructure Optimization Program Multi-Mission Dry Dock, Multiple Award Construction Contract",
+      "city": "Bremerton",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-15",
+      "description": "Federal special notice N4425526R0005. Shipyard Infrastructure Optimization Program Multi-Mission Dry Dock, Multiple Award Construction Contract. Response deadline 2026-09-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice N4425526R0005",
+          "url": "https://sam.gov/workspace/contract/opp/7dfa6524b78e49b697eacf73f0f97404/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WA"
+    },
+    {
+      "id": "wa-sam-0ec82ea524c1485e-western-federal-lands-highway-division-wflhd-build",
+      "name": "Western Federal Lands Highway Division (WFLHD) Building Renovations",
+      "city": "",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Transportation, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-04",
+      "description": "Federal presolicitation 69056726R000008. Western Federal Lands Highway Division (WFLHD) Building Renovations.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 69056726R000008",
+          "url": "https://sam.gov/workspace/contract/opp/0ec82ea524c1485ea24a446f16297e2d/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WA"
+    },
+    {
+      "id": "wa-sam-6cdbd22da7c746d5-western-federal-lands-highway-division-wflhd-build",
+      "name": "Western Federal Lands Highway Division (WFLHD) Building Renovations",
+      "city": "",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Transportation, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-03",
+      "description": "Federal presolicitation 69056726R000008. Western Federal Lands Highway Division (WFLHD) Building Renovations.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 69056726R000008",
+          "url": "https://sam.gov/workspace/contract/opp/6cdbd22da7c746d59e8560ef8a44e76a/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WA"
+    },
+    {
+      "id": "wa-sam-40a2f64a83884d90-west-area-tank-farms-risk-management-construction-",
+      "name": "West Area Tank Farms Risk Management - Construction Services",
+      "city": "Richland",
+      "county": "",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Energy, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-02",
+      "description": "Federal sources sought Constructions_Services. West Area Tank Farms Risk Management - Construction Services. Response deadline 2026-08-13.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Sources Sought"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought Constructions_Services",
+          "url": "https://sam.gov/workspace/contract/opp/40a2f64a83884d90bba620adb571aef5/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WA"
+    },
+    {
+      "id": "wa-sam-619d1e05f0694926-y1bg-ehrm-infrastructure-upgrades-construction-ame",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction - American Lake - Project 663A4-24-703",
+      "city": "Tacoma",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Angel Design Build Construction Llc Richmond Va 23230 Usa",
+      "opened_or_announced_date": "2026-05-19",
+      "description": "Federal award notice 36C77626B0013. Y1BG--EHRM Infrastructure Upgrades Construction - American Lake - Project 663A4-24-703.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice 36C77626B0013",
+          "url": "https://sam.gov/workspace/contract/opp/619d1e05f0694926ab516cfbf38b32e6/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WA"
+    },
+    {
+      "id": "wa-sam-5f85a718f48846bc-western-federal-lands-highway-division-wflhd-build",
+      "name": "Western Federal Lands Highway Division (WFLHD) Building Renovations",
+      "city": "",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Transportation, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-18",
+      "description": "Federal presolicitation 69056726R000008. Western Federal Lands Highway Division (WFLHD) Building Renovations.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 69056726R000008",
+          "url": "https://sam.gov/workspace/contract/opp/5f85a718f48846bc92313b059015c7a0/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WA"
+    },
+    {
+      "id": "wa-sam-7e45a005d18c4d83-y1bg-ehrm-infrastructure-upgrades-construction-ame",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction - American Lake - Project 663A4-24-703",
+      "city": "Tacoma",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-27",
+      "description": "Federal special notice 36C77626B0013. Y1BG--EHRM Infrastructure Upgrades Construction - American Lake - Project 663A4-24-703.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice 36C77626B0013",
+          "url": "https://sam.gov/workspace/contract/opp/7e45a005d18c4d839c330204fb82d9b8/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WA"
+    },
+    {
+      "id": "wa-sam-5720adbb2668452d-y1bg-ehrm-infrastructure-upgrades-construction-ame",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction - American Lake - Project 663A4-24-703",
+      "city": "Tacoma",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-20",
+      "description": "Federal solicitation 36C77626B0013. Y1BG--EHRM Infrastructure Upgrades Construction - American Lake - Project 663A4-24-703. Response deadline 2026-04-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0013",
+          "url": "https://sam.gov/workspace/contract/opp/5720adbb2668452db10e6f5814fc24ef/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WA"
+    },
+    {
+      "id": "wa-sam-d57f8927b816436d-y1bg-ehrm-infrastructure-upgrades-construction-ame",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction - American Lake - Project 663A4-24-703",
+      "city": "Tacoma",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-16",
+      "description": "Federal solicitation 36C77626B0013. Y1BG--EHRM Infrastructure Upgrades Construction - American Lake - Project 663A4-24-703. Response deadline 2026-04-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0013",
+          "url": "https://sam.gov/workspace/contract/opp/d57f8927b816436d8b7b184632c733e4/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WA"
+    },
+    {
+      "id": "wa-sam-fbaa987288444399-y1bg-ehrm-infrastructure-upgrades-construction-ame",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction - American Lake - Project 663A4-24-703",
+      "city": "Tacoma",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-19",
+      "description": "Federal solicitation 36C77626B0013. Y1BG--EHRM Infrastructure Upgrades Construction - American Lake - Project 663A4-24-703. Response deadline 2026-04-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0013",
+          "url": "https://sam.gov/workspace/contract/opp/fbaa98728844439983b525c8575c04ab/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WA"
+    },
+    {
+      "id": "wa-sam-9bd41acab43f41e0-y1bg-ehrm-infrastructure-upgrades-construction-ame",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction - American Lake - Project 663A4-24-703",
+      "city": "Tacoma",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-09",
+      "description": "Federal solicitation 36C77626B0013. Y1BG--EHRM Infrastructure Upgrades Construction - American Lake - Project 663A4-24-703. Response deadline 2026-04-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0013",
+          "url": "https://sam.gov/workspace/contract/opp/9bd41acab43f41e09d99a1a225abeafe/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WA"
+    },
+    {
+      "id": "wa-sam-0010bfbea55142d7-joint-base-lewis-mcchord-jblm-multi-domain-task-fo",
+      "name": "Joint Base Lewis-McChord (JBLM) Multi Domain Task Force (MDTF) Buildings (BLDGs) 3218 and 3219",
+      "city": "Joint Base Lewis McChord",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-15",
+      "description": "Federal presolicitation W912DW26RA014. Joint Base Lewis-McChord (JBLM) Multi Domain Task Force (MDTF) Buildings (BLDGs) 3218 and 3219.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912DW26RA014",
+          "url": "https://sam.gov/workspace/contract/opp/0010bfbea55142d7ac0d48a2db7a894b/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WA"
+    },
+    {
+      "id": "wa-sam-5a8acd2cb34347ed-modernize-and-upgrade-new-pumphouse-and-substation",
+      "name": "Modernize and Upgrade New Pumphouse and Substation (Long Beach VA Campus",
+      "city": "Long Beach",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "R2Build Irvine Ca 92614 Usa",
+      "opened_or_announced_date": "2025-09-25",
+      "description": "Federal award notice W912PL25CA012. Modernize and Upgrade New Pumphouse and Substation (Long Beach VA Campus.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1NE"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice W912PL25CA012",
+          "url": "https://sam.gov/workspace/contract/opp/5a8acd2cb34347ed80c6c2e5f4ae8bfe/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WA"
+    },
+    {
+      "id": "wa-sam-e164f87d2044bcd4-fy19-matoc",
+      "name": "FY19 MATOC",
+      "city": "FAIRCHILD AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-05-15",
+      "description": "Federal combined synopsis/solicitation FA4620-19-R-A001. FY19 MATOC. Response deadline 2019-05-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "8a Competed",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation FA4620-19-R-A001",
+          "url": "https://sam.gov/workspace/contract/opp/e164f87d2044bcd481f28d0c1e308a49/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WA"
+    },
+    {
+      "id": "wa-sam-1db442b25c86c9d5-emsl-3410-rad-capability-construction",
+      "name": "EMSL/3410 Rad Capability Construction",
+      "city": "RICHLAND",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2012-06-06",
+      "description": "Federal combined synopsis/solicitation 208576. EMSL/3410 Rad Capability Construction. Response deadline 2012-06-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 208576",
+          "url": "https://sam.gov/workspace/contract/opp/1db442b25c86c9d5cb9f645c65a3ff52/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WA"
+    },
+    {
+      "id": "wa-sam-65fc0194b6725400-emsl-3410-rad-capability-construction",
+      "name": "EMSL/3410 Rad Capability Construction",
+      "city": "RICHLAND",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2012-06-04",
+      "description": "Federal combined synopsis/solicitation 208576. EMSL/3410 Rad Capability Construction. Response deadline 2012-06-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 208576",
+          "url": "https://sam.gov/workspace/contract/opp/65fc0194b67254003062d4b9364abb00/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WA"
+    },
+    {
+      "id": "wa-sam-59991807bef8fe5f-emsl-3410-rad-capability-construction",
+      "name": "EMSL/3410 Rad Capability Construction",
+      "city": "RICHLAND",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2012-05-30",
+      "description": "Federal combined synopsis/solicitation 208576. EMSL/3410 Rad Capability Construction. Response deadline 2012-06-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 208576",
+          "url": "https://sam.gov/workspace/contract/opp/59991807bef8fe5fce2d07079fb90fa0/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WA"
+    },
+    {
+      "id": "wa-sam-da52d938671e95bc-emsl-3410-rad-capability-construction",
+      "name": "EMSL/3410 Rad Capability Construction",
+      "city": "RICHLAND",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2012-05-30",
+      "description": "Federal combined synopsis/solicitation 208576. EMSL/3410 Rad Capability Construction. Response deadline 2012-06-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 208576",
+          "url": "https://sam.gov/workspace/contract/opp/da52d938671e95bc67d7b521018598e5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WA"
+    },
+    {
+      "id": "wa-sam-d7bcbe5ef988ba10-emsl-3410-rad-capability-construction",
+      "name": "EMSL/3410 Rad Capability Construction",
+      "city": "RICHLAND",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2012-05-17",
+      "description": "Federal combined synopsis/solicitation 208576. EMSL/3410 Rad Capability Construction. Response deadline 2012-06-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 208576",
+          "url": "https://sam.gov/workspace/contract/opp/d7bcbe5ef988ba106c4741af3975924d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WA"
+    },
+    {
+      "id": "wa-sam-af3842d042533bb5-emsl-3410-rad-capability-construction",
+      "name": "EMSL/3410 Rad Capability Construction",
+      "city": "RICHLAND",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2012-05-17",
+      "description": "Federal combined synopsis/solicitation 208576. EMSL/3410 Rad Capability Construction. Response deadline 2012-06-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 208576",
+          "url": "https://sam.gov/workspace/contract/opp/af3842d042533bb5b6fbf81ecd288f5f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WA"
     }
   ],
   "stats": {
-    "total": 4
+    "total": 30
   }
 }

@@ -1,9 +1,9 @@
 {
   "state": "WV",
   "state_name": "West Virginia",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — My Buckhannon, West Virginia Daily News, Lede News, state economic development.",
+  "capture_method": "Public sources — My Buckhannon, West Virginia Daily News, Lede News, state economic development, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "wv-form-energy-weirton-factory",
@@ -161,9 +161,1020 @@
         }
       ],
       "open_for": "Under construction. Structural concrete, steel, and MEP systems."
+    },
+    {
+      "id": "wv-sam-adf70ff3232346bb-ehrm-huntington-vamc-581-22-700-construct-infrastr",
+      "name": "EHRM Huntington VAMC 581-22-700 Construct Infrastructure Upgrades",
+      "city": "Huntington",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Sawtooth Construction Jv Ii Llc Chicago Il 60656 Usa",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Federal award notice 36C77626C0061. EHRM Huntington VAMC 581-22-700 Construct Infrastructure Upgrades.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice 36C77626C0061",
+          "url": "https://sam.gov/workspace/contract/opp/adf70ff3232346bb8d1986feedb9be5a/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WV"
+    },
+    {
+      "id": "wv-sam-fe96ea08ef3b444e-ehrm-huntington-vamc-581-22-700-construct-infrastr",
+      "name": "EHRM Huntington VAMC 581-22-700 Construct Infrastructure Upgrades",
+      "city": "Huntington",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Federal solicitation 36C77626R0025. EHRM Huntington VAMC 581-22-700 Construct Infrastructure Upgrades. Response deadline 2026-07-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0025",
+          "url": "https://sam.gov/workspace/contract/opp/fe96ea08ef3b444e9f225afdd3baf866/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WV"
+    },
+    {
+      "id": "wv-sam-619b6b84f1244240-sources-sought-rfi-fpc-alderson-training-center-ki",
+      "name": "Sources Sought/RFI - FPC Alderson Training Center Kitchen Remodel",
+      "city": "Alderson",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Justice, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "Federal sources sought ALD-AHSS_3. Sources Sought/RFI - FPC Alderson Training Center Kitchen Remodel. Response deadline 2026-07-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Y1FD"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought ALD-AHSS_3",
+          "url": "https://sam.gov/workspace/contract/opp/619b6b84f1244240a567cb1ead437245/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WV"
+    },
+    {
+      "id": "wv-sam-fb101aefb6f34ca9-sources-sought-rfi-fpc-alderson-training-center-ki",
+      "name": "Sources Sought/RFI - FPC Alderson Training Center Kitchen Remodel",
+      "city": "",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Justice, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "Federal sources sought ALD-AHSS_3. Sources Sought/RFI - FPC Alderson Training Center Kitchen Remodel. Response deadline 2026-07-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Y1FD"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought ALD-AHSS_3",
+          "url": "https://sam.gov/workspace/contract/opp/fb101aefb6f34ca9aa34834eb87132dc/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WV"
+    },
+    {
+      "id": "wv-sam-7f9574d04f2145ce-fpc-alderson-b-f-horticulture-new-greenhouse-proj-",
+      "name": "FPC Alderson - B&F - Horticulture - NEW Greenhouse - Proj 261ZAQ6",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Justice, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "Federal combined synopsis/solicitation 15B10126Q00000028. FPC Alderson - B&F - Horticulture - NEW Greenhouse - Proj 261ZAQ6. Response deadline 2026-07-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code 5670"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 15B10126Q00000028",
+          "url": "https://sam.gov/workspace/contract/opp/7f9574d04f2145ce8d21aa7484a08f14/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WV"
+    },
+    {
+      "id": "wv-sam-d2272b8b90c74bfd-z1da-halls-and-walls-secva-construction-project-nu",
+      "name": "Z1DA-- Halls and Walls (SECVA) - Construction Project Number 540-26-110",
+      "city": "Clarksburg",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-26",
+      "description": "Federal presolicitation 36C24526B0003. Z1DA-- Halls and Walls (SECVA) - Construction Project Number 540-26-110. Response deadline 2026-07-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24526B0003",
+          "url": "https://sam.gov/workspace/contract/opp/d2272b8b90c74bfd93ca1271f417dc65/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WV"
+    },
+    {
+      "id": "wv-sam-c66a1d183251455b-z1da-replace-boiler-3-construction-project-number-",
+      "name": "Z1DA--REPLACE BOILER #3 CONSTRUCTION PROJECT NUMBER 540-22-103",
+      "city": "Clarksburg",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-19",
+      "description": "Federal presolicitation 36C24526R0025. Z1DA--REPLACE BOILER #3 CONSTRUCTION PROJECT NUMBER 540-22-103. Response deadline 2026-05-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24526R0025",
+          "url": "https://sam.gov/workspace/contract/opp/c66a1d183251455b8b9d90cec947b5fa/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WV"
+    },
+    {
+      "id": "wv-sam-8609a72383a34ffc-ehrm-huntington-vamc-581-22-700-construct-infrastr",
+      "name": "EHRM Huntington VAMC 581-22-700 Construct Infrastructure Upgrades",
+      "city": "Huntington",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-13",
+      "description": "Federal solicitation 36C77626R0025. EHRM Huntington VAMC 581-22-700 Construct Infrastructure Upgrades. Response deadline 2026-05-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0025",
+          "url": "https://sam.gov/workspace/contract/opp/8609a72383a34ffcbe6e36cd91d01203/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WV"
+    },
+    {
+      "id": "wv-sam-5991a50fc69846db-ehrm-huntington-vamc-581-22-700-construct-infrastr",
+      "name": "EHRM Huntington VAMC 581-22-700 Construct Infrastructure Upgrades",
+      "city": "Huntington",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-13",
+      "description": "Federal solicitation 36C77626R0025. EHRM Huntington VAMC 581-22-700 Construct Infrastructure Upgrades. Response deadline 2026-05-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0025",
+          "url": "https://sam.gov/workspace/contract/opp/5991a50fc69846dbb05e8b43b9abbf16/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WV"
+    },
+    {
+      "id": "wv-sam-b192976cdc644723-ehrm-huntington-vamc-581-22-700-construct-infrastr",
+      "name": "EHRM Huntington VAMC 581-22-700 Construct Infrastructure Upgrades",
+      "city": "Huntington",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-08",
+      "description": "Federal solicitation 36C77626R0025. EHRM Huntington VAMC 581-22-700 Construct Infrastructure Upgrades. Response deadline 2026-05-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0025",
+          "url": "https://sam.gov/workspace/contract/opp/b192976cdc644723819d1ffa96142472/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WV"
+    },
+    {
+      "id": "wv-sam-78cfcd37a35c48ab-ehrm-huntington-vamc-581-22-700-construct-infrastr",
+      "name": "EHRM Huntington VAMC 581-22-700 Construct Infrastructure Upgrades",
+      "city": "Huntington",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-08",
+      "description": "Federal solicitation 36C77626R0025. EHRM Huntington VAMC 581-22-700 Construct Infrastructure Upgrades. Response deadline 2026-05-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0025",
+          "url": "https://sam.gov/workspace/contract/opp/78cfcd37a35c48ab8ed594d36efe2935/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WV"
+    },
+    {
+      "id": "wv-sam-506594b3348247ad-ehrm-huntington-vamc-581-22-700-construct-infrastr",
+      "name": "EHRM Huntington VAMC 581-22-700 Construct Infrastructure Upgrades",
+      "city": "Huntington",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-06",
+      "description": "Federal solicitation 36C77626R0025. EHRM Huntington VAMC 581-22-700 Construct Infrastructure Upgrades. Response deadline 2026-05-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0025",
+          "url": "https://sam.gov/workspace/contract/opp/506594b3348247ad859279bcdcea3bfa/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WV"
+    },
+    {
+      "id": "wv-sam-4859b33ebc104b26-ehrm-huntington-vamc-581-22-700-construct-infrastr",
+      "name": "EHRM Huntington VAMC 581-22-700 Construct Infrastructure Upgrades",
+      "city": "Huntington",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-29",
+      "description": "Federal solicitation 36C77626R0025. EHRM Huntington VAMC 581-22-700 Construct Infrastructure Upgrades. Response deadline 2026-05-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0025",
+          "url": "https://sam.gov/workspace/contract/opp/4859b33ebc104b26bc48c42414774789/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WV"
+    },
+    {
+      "id": "wv-sam-a435903e9a954e92-ehrm-huntington-vamc-581-22-700-construct-infrastr",
+      "name": "EHRM Huntington VAMC 581-22-700 Construct Infrastructure Upgrades",
+      "city": "Huntington",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-27",
+      "description": "Federal solicitation 36C77626R0025. EHRM Huntington VAMC 581-22-700 Construct Infrastructure Upgrades. Response deadline 2026-05-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0025",
+          "url": "https://sam.gov/workspace/contract/opp/a435903e9a954e928fc8d44a38caaa58/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WV"
+    },
+    {
+      "id": "wv-sam-91b9df7b56734af3-ehrm-huntington-vamc-581-22-700-construct-infrastr",
+      "name": "EHRM Huntington VAMC 581-22-700 Construct Infrastructure Upgrades",
+      "city": "Huntington",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-21",
+      "description": "Federal solicitation 36C77626R0025. EHRM Huntington VAMC 581-22-700 Construct Infrastructure Upgrades. Response deadline 2026-05-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0025",
+          "url": "https://sam.gov/workspace/contract/opp/91b9df7b56734af3b4dba370b63d43ee/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WV"
+    },
+    {
+      "id": "wv-sam-7921750ad3594c59-ehrm-huntington-vamc-581-22-700-construct-infrastr",
+      "name": "EHRM Huntington VAMC 581-22-700 Construct Infrastructure Upgrades",
+      "city": "Huntington",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-21",
+      "description": "Federal solicitation 36C77626R0025. EHRM Huntington VAMC 581-22-700 Construct Infrastructure Upgrades. Response deadline 2026-05-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0025",
+          "url": "https://sam.gov/workspace/contract/opp/7921750ad3594c59a3c349cd607f098a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WV"
+    },
+    {
+      "id": "wv-sam-0183df09c8d64bd0-ehrm-huntington-vamc-581-22-700-construct-infrastr",
+      "name": "EHRM Huntington VAMC 581-22-700 Construct Infrastructure Upgrades",
+      "city": "Huntington",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-13",
+      "description": "Federal solicitation 36C77626R0025. EHRM Huntington VAMC 581-22-700 Construct Infrastructure Upgrades. Response deadline 2026-04-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0025",
+          "url": "https://sam.gov/workspace/contract/opp/0183df09c8d64bd0b55cd60cd3d6a32b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WV"
+    },
+    {
+      "id": "wv-sam-e59f99461b5c4e9c-z1da-replace-boiler-3-construction-project-number-",
+      "name": "Z1DA--REPLACE BOILER #3 CONSTRUCTION PROJECT NUMBER 540-22-103",
+      "city": "Clarksburg",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-04-09",
+      "description": "Federal presolicitation 36C24526R0025. Z1DA--REPLACE BOILER #3 CONSTRUCTION PROJECT NUMBER 540-22-103. Response deadline 2026-05-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24526R0025",
+          "url": "https://sam.gov/workspace/contract/opp/e59f99461b5c4e9c9ccdc303e36ee916/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WV"
+    },
+    {
+      "id": "wv-sam-b868840a72134b4b-ehrm-huntington-vamc-581-22-700-construct-infrastr",
+      "name": "EHRM Huntington VAMC 581-22-700 Construct Infrastructure Upgrades",
+      "city": "Huntington",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-31",
+      "description": "Federal solicitation 36C77626R0025. EHRM Huntington VAMC 581-22-700 Construct Infrastructure Upgrades. Response deadline 2026-04-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0025",
+          "url": "https://sam.gov/workspace/contract/opp/b868840a72134b4b980960a0f9de92fe/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WV"
+    },
+    {
+      "id": "wv-sam-e541b0e01a2644f6-ehrm-huntington-vamc-581-22-700-construct-infrastr",
+      "name": "EHRM Huntington VAMC 581-22-700 Construct Infrastructure Upgrades",
+      "city": "Huntington",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-16",
+      "description": "Federal solicitation 36C77626R0025. EHRM Huntington VAMC 581-22-700 Construct Infrastructure Upgrades. Response deadline 2026-04-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0025",
+          "url": "https://sam.gov/workspace/contract/opp/e541b0e01a2644f6b255273266107aa3/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WV"
+    },
+    {
+      "id": "wv-sam-52c11c12e4fa432a-z1da-renovate-pharmacy-for-usp800-compliance-proje",
+      "name": "Z1DA--Renovate Pharmacy for USP800 Compliance Project Number 540-18-107",
+      "city": "Clarksburg",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-03-09",
+      "description": "Federal presolicitation 36C24526B0001. Z1DA--Renovate Pharmacy for USP800 Compliance Project Number 540-18-107. Response deadline 2026-05-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24526B0001",
+          "url": "https://sam.gov/workspace/contract/opp/52c11c12e4fa432a887c4f0980ededff/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WV"
+    },
+    {
+      "id": "wv-sam-296fb0c5045945f7-z1da-renovate-pharmacy-for-usp800-compliance-proje",
+      "name": "Z1DA--Renovate Pharmacy for USP800 Compliance Project 540-18-102",
+      "city": "Clarksburg",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-01-28",
+      "description": "Federal presolicitation 36C24526B0001. Z1DA--Renovate Pharmacy for USP800 Compliance Project 540-18-102. Response deadline 2026-03-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24526B0001",
+          "url": "https://sam.gov/workspace/contract/opp/296fb0c5045945f7a7152ec376bbf5ec/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WV"
+    },
+    {
+      "id": "wv-sam-e8cc2c3e9744439c-z1da-replace-boiler-3-construction-project-number-",
+      "name": "Z1DA--REPLACE BOILER #3 CONSTRUCTION PROJECT NUMBER 540-22-103",
+      "city": "Clarksburg",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-01-13",
+      "description": "Federal presolicitation 36C24526R0025. Z1DA--REPLACE BOILER #3 CONSTRUCTION PROJECT NUMBER 540-22-103. Response deadline 2026-02-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24526R0025",
+          "url": "https://sam.gov/workspace/contract/opp/e8cc2c3e9744439ca67828073eb56275/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WV"
+    },
+    {
+      "id": "wv-sam-5ebe91fe86a04238-z1da-renovate-pharmacy-for-usp800-compliance-proje",
+      "name": "Z1DA--Renovate Pharmacy for USP800 Compliance Project 540-18-102",
+      "city": "Clarksburg",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2025-12-11",
+      "description": "Federal presolicitation 36C24526B0001. Z1DA--Renovate Pharmacy for USP800 Compliance Project 540-18-102. Response deadline 2026-02-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24526B0001",
+          "url": "https://sam.gov/workspace/contract/opp/5ebe91fe86a04238a017517138db7b80/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WV"
+    },
+    {
+      "id": "wv-sam-d5eb5b090ce44c54-z1da-renovate-pharmacy-for-usp800-compliance-proje",
+      "name": "Z1DA--Renovate Pharmacy for USP800 Compliance Project 540-18-102",
+      "city": "Clarksburg",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2025-11-18",
+      "description": "Federal presolicitation 36C24526B0001. Z1DA--Renovate Pharmacy for USP800 Compliance Project 540-18-102. Response deadline 2026-01-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24526B0001",
+          "url": "https://sam.gov/workspace/contract/opp/d5eb5b090ce44c548b2b4c74bef8f875/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WV"
+    },
+    {
+      "id": "wv-sam-251fd8ce33796ca7-gutters-fascia-downspouts-and-ridge-cap-repair",
+      "name": "Gutters, Fascia, Downspouts and Ridge Cap Repair",
+      "city": "CHARLESTON",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-04-09",
+      "description": "Federal sources sought W15QKN-19-Q-1117. Gutters, Fascia, Downspouts and Ridge Cap Repair. Response deadline 2019-04-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W15QKN-19-Q-1117",
+          "url": "https://sam.gov/workspace/contract/opp/251fd8ce33796ca77bd0c56a34ce964d/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WV"
     }
   ],
   "stats": {
-    "total": 4
+    "total": 30
   }
 }

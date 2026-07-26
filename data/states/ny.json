@@ -1,9 +1,9 @@
 {
   "state": "NY",
   "state_name": "New York",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — ENR, Construction Dive, press releases, ConstructConnect public news. No plan-room scraping.",
+  "capture_method": "Public sources — ENR, Construction Dive, press releases, ConstructConnect public news. No plan-room scraping, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "ny-micron-clay-megafab",
@@ -130,9 +130,4270 @@
         }
       ],
       "open_for": "Phase Two just broke ground. Hospitality and MEP specs active."
+    },
+    {
+      "id": "ny-sam-71d3015e9f1f4e64-basic-ordering-agreement-for-carpentry-services-at",
+      "name": "Basic Ordering Agreement for Carpentry Services at Brookhaven National Laboratory",
+      "city": "Upton",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Energy, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal solicitation JF472266. Basic Ordering Agreement for Carpentry Services at Brookhaven National Laboratory. Response deadline 2026-07-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation JF472266",
+          "url": "https://sam.gov/workspace/contract/opp/71d3015e9f1f4e648aaa46503f6706d6/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-51835015e28c4acb-construction-of-new-child-development-center-fort-",
+      "name": "Construction of New Child Development Center, Fort Hamilton, NY",
+      "city": "Brooklyn",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Federal solicitation W912DS26RA018. Construction of New Child Development Center, Fort Hamilton, NY. Response deadline 2026-07-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1CA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DS26RA018",
+          "url": "https://sam.gov/workspace/contract/opp/51835015e28c4acba458f1485c29a1f6/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-0aea21ef4432431e-z2da-fy26-ehrm-620a4-22-700-ehrm-infrastructure-up",
+      "name": "Z2DA--FY26 EHRM 620A4-22-700 EHRM Infrastructure Upgrades Construction Castle Point VA Medical Center; Wappinger Falls N",
+      "city": "Wappingers Falls",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Federal solicitation IFB-36C77626B0025. Z2DA--FY26 EHRM 620A4-22-700 EHRM Infrastructure Upgrades Construction Castle Point VA Medical Center; Wappinger Falls NY. Response deadline 2026-08-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation IFB-36C77626B0025",
+          "url": "https://sam.gov/workspace/contract/opp/0aea21ef4432431ea614920aaa336a24/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-063c5b2e00614a3f-z1lz-526-17-707-parking-lot-replacement-and-expans",
+      "name": "Z1LZ--526-17-707 Parking Lot Replacement and Expansion",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "Federal solicitation 36C24226B0044. Z1LZ--526-17-707 Parking Lot Replacement and Expansion. Response deadline 2026-08-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1LZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24226B0044",
+          "url": "https://sam.gov/workspace/contract/opp/063c5b2e00614a3f998ad0d2b06c7075/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-757cf9702b924e76-z1da-upgrade-chiller-plant-construction-northport-",
+      "name": "Z1DA--Upgrade Chiller Plant Construction Northport - Project 632-25-101",
+      "city": "Northport",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "Federal solicitation 36C77626B0024. Z1DA--Upgrade Chiller Plant Construction Northport - Project 632-25-101. Response deadline 2026-08-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0024",
+          "url": "https://sam.gov/workspace/contract/opp/757cf9702b924e76ab2c9afca76f5d55/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-8415d64d93e743a6-z1da-albany-vamc-528a8-21-812-a-wing-facade-repair",
+      "name": "Z1DA--Albany VAMC 528A8-21-812 A Wing Facade Repair",
+      "city": "Albany",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Federal solicitation 36C24226B0050. Z1DA--Albany VAMC 528A8-21-812 A Wing Facade Repair. Response deadline 2026-08-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24226B0050",
+          "url": "https://sam.gov/workspace/contract/opp/8415d64d93e743a6afb160e71afbd476/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-4cb541db4f764a32-y1bg-ehrm-infrastructure-upgrades-construction-syr",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction - Syracuse - Project 528A7-22-700",
+      "city": "Syracuse",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Federal special notice 36C77626B0009. Y1BG--EHRM Infrastructure Upgrades Construction - Syracuse - Project 528A7-22-700.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice 36C77626B0009",
+          "url": "https://sam.gov/workspace/contract/opp/4cb541db4f764a32af918b2c0fe1564b/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-807ae2c8f38e45f9-market-survey-va-canandaigua-phase-iii",
+      "name": "Market Survey - VA Canandaigua Phase III",
+      "city": "Canandaigua",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Federal sources sought W912P426. Market Survey - VA Canandaigua Phase III. Response deadline 2026-07-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "No Set aside used",
+        "Classification code Y1AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W912P426",
+          "url": "https://sam.gov/workspace/contract/opp/807ae2c8f38e45f9af76e2f242aaa8c7/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-a8bb90fdf32f4071-solicitation-notice-rochester-ny-courthouse-constr",
+      "name": "SOLICITATION NOTICE- Rochester, NY Courthouse Construction",
+      "city": "Rochester",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "Federal solicitation 47PC5326R0021. SOLICITATION NOTICE- Rochester, NY Courthouse Construction. Response deadline 2026-09-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PC5326R0021",
+          "url": "https://sam.gov/workspace/contract/opp/a8bb90fdf32f4071b87620bd134a6bc6/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-3483cc9a6d1a47bd-z2da-620-23-206-and-620-20-105-renovate-b-14-ab-an",
+      "name": "Z2DA--620-23-206 and 620-20-105 Renovate B. 14 AB and CD",
+      "city": "Montrose",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "Federal presolicitation 36C24227B0001. Z2DA--620-23-206 and 620-20-105 Renovate B. 14 AB and CD. Response deadline 2026-09-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24227B0001",
+          "url": "https://sam.gov/workspace/contract/opp/3483cc9a6d1a47bda9658be9a2d7d950/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-65615dbbc7154b3b-z1lz-526-17-707-parking-lot-replacement-and-expans",
+      "name": "Z1LZ--526-17-707 Parking Lot Replacement and Expansion",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Federal solicitation 36C24226B0044. Z1LZ--526-17-707 Parking Lot Replacement and Expansion. Response deadline 2026-08-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1LZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24226B0044",
+          "url": "https://sam.gov/workspace/contract/opp/65615dbbc7154b3b990e6248b2549c3a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-6b20115df28b4226-general-construction-services-of-javits-federal-bu",
+      "name": "General Construction Services of Javits Federal Building 33rd Floor Renovation",
+      "city": "New York",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Federal sources sought 47PB5126R0033. General Construction Services of Javits Federal Building 33rd Floor Renovation. Response deadline 2026-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 47PB5126R0033",
+          "url": "https://sam.gov/workspace/contract/opp/6b20115df28b42268d4c1d6d5385e44e/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-ba2ba597eaa5483b-javits-federal-building-33rd-floor-renovation",
+      "name": "Javits Federal Building 33rd Floor Renovation",
+      "city": "New York",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Federal sources sought 47PB5126R0033. Javits Federal Building 33rd Floor Renovation. Response deadline 2026-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 47PB5126R0033",
+          "url": "https://sam.gov/workspace/contract/opp/ba2ba597eaa5483ba895d0da984804e4/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-e081483b4aee4766-electrical-switching-station-north-watervliet-arse",
+      "name": "ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK",
+      "city": "Watervliet",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "Federal solicitation W912DS26RA015. ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK. Response deadline 2026-07-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DS26RA015",
+          "url": "https://sam.gov/workspace/contract/opp/e081483b4aee4766ad1608b6ba634393/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-9ad9a96561f14bd9-electrical-switching-station-north-watervliet-arse",
+      "name": "ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK",
+      "city": "Watervliet",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Federal solicitation W912DS26RA015. ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK. Response deadline 2026-07-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DS26RA015",
+          "url": "https://sam.gov/workspace/contract/opp/9ad9a96561f14bd98b6566415d09e2c0/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-2611bea65b8246ab-z2da-fy26-ehrm-620a4-22-700-ehrm-infrastructure-up",
+      "name": "Z2DA--FY26 EHRM 620A4-22-700 EHRM Infrastructure Upgrades Construction Castle Point VA Medical Center; Wappinger Falls N",
+      "city": "Wappingers Falls",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Federal solicitation IFB-36C77626B0025. Z2DA--FY26 EHRM 620A4-22-700 EHRM Infrastructure Upgrades Construction Castle Point VA Medical Center; Wappinger Falls NY. Response deadline 2026-07-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation IFB-36C77626B0025",
+          "url": "https://sam.gov/workspace/contract/opp/2611bea65b8246abb7deec82a8116aa5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-690e3af4d65d42bc-ogdensburg-customs-house-sally-port-heat-project",
+      "name": "Ogdensburg Customs House Sally Port Heat project",
+      "city": "Ogdensburg",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "Federal solicitation 47PC5326R0017. Ogdensburg Customs House Sally Port Heat project. Response deadline 2026-07-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PC5326R0017",
+          "url": "https://sam.gov/workspace/contract/opp/690e3af4d65d42bca8fd812ef7baf8ca/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-acaa677b05384e33-z1da-upgrade-chiller-plant-construction-northport-",
+      "name": "Z1DA--Upgrade Chiller Plant Construction Northport - Project 632-25-101",
+      "city": "Northport",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "Federal solicitation 36C77626B0024. Z1DA--Upgrade Chiller Plant Construction Northport - Project 632-25-101. Response deadline 2026-08-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0024",
+          "url": "https://sam.gov/workspace/contract/opp/acaa677b05384e33879eefdb2ac2ded6/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-4379f9c9759a46b8-general-construction-services-for-elevator-moderni",
+      "name": "General Construction Services for Elevator Modernization at the Thurgood Marshall U.S. Courthouse, New York, NY",
+      "city": "New York",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-06",
+      "description": "Federal presolicitation 47PB5126R0018. General Construction Services for Elevator Modernization at the Thurgood Marshall U.S. Courthouse, New York, NY. Response deadline 2026-07-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "No Set aside used",
+        "Classification code Y1AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 47PB5126R0018",
+          "url": "https://sam.gov/workspace/contract/opp/4379f9c9759a46b890a4ea3bc968cf14/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-c426963069284709-y1bg-ehrm-infrastructure-upgrades-construction-syr",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction - Syracuse - Project 528A7-22-700",
+      "city": "Syracuse",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-06",
+      "description": "Federal solicitation 36C77626B0009. Y1BG--EHRM Infrastructure Upgrades Construction - Syracuse - Project 528A7-22-700. Response deadline 2026-07-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0009",
+          "url": "https://sam.gov/workspace/contract/opp/c426963069284709beab70e94806253e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-d33e5d6199914692-market-survey-va-canandaigua-phase-iii",
+      "name": "Market Survey - VA Canandaigua Phase III",
+      "city": "Canandaigua",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-06",
+      "description": "Federal sources sought W912P426. Market Survey - VA Canandaigua Phase III. Response deadline 2026-07-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "No Set aside used",
+        "Classification code Y1AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W912P426",
+          "url": "https://sam.gov/workspace/contract/opp/d33e5d61999146928d29f9c53df70ab3/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-abf6cbbdf6fa4a88-general-contractor-services-for-enabling-work-asso",
+      "name": "General Contractor Services for enabling work associated with the Elevator Modernization for the Thurgood Marshall U.S. ",
+      "city": "New York",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-06",
+      "description": "Federal presolicitation 47PB5126R0018. General Contractor Services for enabling work associated with the Elevator Modernization for the Thurgood Marshall U.S. Courthouse, New York, NY. Response deadline 2026-07-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "No Set aside used",
+        "Classification code Y1AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 47PB5126R0018",
+          "url": "https://sam.gov/workspace/contract/opp/abf6cbbdf6fa4a8882eda8a2f3a3aef9/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-491499e6ff3641ed-y1bg-ehrm-infrastructure-upgrades-construction-syr",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction - Syracuse - Project 528A7-22-700",
+      "city": "Syracuse",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-06",
+      "description": "Federal solicitation 36C77626B0009. Y1BG--EHRM Infrastructure Upgrades Construction - Syracuse - Project 528A7-22-700. Response deadline 2026-07-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0009",
+          "url": "https://sam.gov/workspace/contract/opp/491499e6ff3641edb47620b821ba4d5a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-12bd4591e67649da-construction-of-new-child-development-center-fort-",
+      "name": "Construction of New Child Development Center, Fort Hamilton, NY",
+      "city": "Brooklyn",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-02",
+      "description": "Federal solicitation W912DS26RA018. Construction of New Child Development Center, Fort Hamilton, NY. Response deadline 2026-07-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1CA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DS26RA018",
+          "url": "https://sam.gov/workspace/contract/opp/12bd4591e67649daa330ce47693b880b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-17ad2ee390b24dc2-electrical-switching-station-north-watervliet-arse",
+      "name": "ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK",
+      "city": "Watervliet",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-02",
+      "description": "Federal solicitation W912DS26RA015. ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK. Response deadline 2026-07-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DS26RA015",
+          "url": "https://sam.gov/workspace/contract/opp/17ad2ee390b24dc2bb7da217d9ef1aa3/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-df68d5b953fa485d-basic-ordering-agreement-for-carpentry-services-at",
+      "name": "Basic Ordering Agreement for Carpentry Services at Brookhaven National Laboratory",
+      "city": "Upton",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Energy, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "Federal solicitation JF472266. Basic Ordering Agreement for Carpentry Services at Brookhaven National Laboratory. Response deadline 2026-07-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation JF472266",
+          "url": "https://sam.gov/workspace/contract/opp/df68d5b953fa485d894d62b26c710377/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-7cdd1fb442ff4350-y1bg-ehrm-infrastructure-upgrades-construction-bat",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction - Bath - Project 528A6-22-700",
+      "city": "Bath",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Tactical Services Organization Llc Farmington Ny 14425 Usa",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "Federal award notice 36C77626B0015. Y1BG--EHRM Infrastructure Upgrades Construction - Bath - Project 528A6-22-700.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice 36C77626B0015",
+          "url": "https://sam.gov/workspace/contract/opp/7cdd1fb442ff43508bd852c4d5fae32f/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-8f0f87fc17664ea4-electrical-switching-station-north-watervliet-arse",
+      "name": "ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK",
+      "city": "Watervliet",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "Federal solicitation W912DS26RA015. ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK. Response deadline 2026-07-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DS26RA015",
+          "url": "https://sam.gov/workspace/contract/opp/8f0f87fc17664ea49fe8090080b84065/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-c84756d1a6e1452f-solicitation-notice-rochester-ny-courthouse-constr",
+      "name": "SOLICITATION NOTICE- Rochester, NY Courthouse Construction",
+      "city": "Rochester",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "Federal solicitation 47PC5326R0021. SOLICITATION NOTICE- Rochester, NY Courthouse Construction. Response deadline 2026-08-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PC5326R0021",
+          "url": "https://sam.gov/workspace/contract/opp/c84756d1a6e1452f806126bcf24dfc04/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-2275e5b794e74ccb-times-square-video-display-upgrade",
+      "name": "Times Square Video Display Upgrade",
+      "city": "New York",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-26",
+      "description": "Federal presolicitation W912DS26RA027. Times Square Video Display Upgrade. Response deadline 2026-07-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code C1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912DS26RA027",
+          "url": "https://sam.gov/workspace/contract/opp/2275e5b794e74ccbb1147275830f7047/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-17331046ebf84545-market-survey-va-canandaigua-phase-iii",
+      "name": "Market Survey - VA Canandaigua Phase III",
+      "city": "Canandaigua",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-26",
+      "description": "Federal sources sought W912P426. Market Survey - VA Canandaigua Phase III. Response deadline 2026-07-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "No Set aside used",
+        "Classification code Y1AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W912P426",
+          "url": "https://sam.gov/workspace/contract/opp/17331046ebf84545a00830dcb26d632b/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-56b258287b2b4398-brooklyn-ny-rugby-station-hvac-upgrade-b54943",
+      "name": "Brooklyn, NY Rugby Station HVAC Upgrade B54943",
+      "city": "Brooklyn",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Postal Service",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-23",
+      "description": "Federal solicitation 089495-26-A-0075. Brooklyn, NY Rugby Station HVAC Upgrade B54943. Response deadline 2026-07-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2HB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 089495-26-A-0075",
+          "url": "https://sam.gov/workspace/contract/opp/56b258287b2b43989871410fed641dc2/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-9e3a9086c7cb40be-electrical-switching-station-north-watervliet-arse",
+      "name": "ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK",
+      "city": "Watervliet",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-22",
+      "description": "Federal solicitation W912DS26RA015. ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK. Response deadline 2026-06-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DS26RA015",
+          "url": "https://sam.gov/workspace/contract/opp/9e3a9086c7cb40beb82606a2a1df5576/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-3e1dae346804472a-construction-of-new-child-development-center-fort-",
+      "name": "Construction of New Child Development Center, Fort Hamilton, NY",
+      "city": "Brooklyn",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-17",
+      "description": "Federal solicitation W912DS26RA018. Construction of New Child Development Center, Fort Hamilton, NY. Response deadline 2026-07-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1CA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DS26RA018",
+          "url": "https://sam.gov/workspace/contract/opp/3e1dae346804472ab2c14c8108de2a9d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-c447cd7fc3874c6d-construction-of-new-child-development-center-fort-",
+      "name": "Construction of New Child Development Center, Fort Hamilton, NY",
+      "city": "Brooklyn",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-17",
+      "description": "Federal solicitation W912DS26RA018. Construction of New Child Development Center, Fort Hamilton, NY. Response deadline 2026-07-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1CA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DS26RA018",
+          "url": "https://sam.gov/workspace/contract/opp/c447cd7fc3874c6da8e363475c9fe410/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-f01a61f59e864271-y1bg-ehrm-infrastructure-upgrades-construction-syr",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction - Syracuse - Project 528A7-22-700",
+      "city": "Syracuse",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-17",
+      "description": "Federal solicitation 36C77626B0009. Y1BG--EHRM Infrastructure Upgrades Construction - Syracuse - Project 528A7-22-700. Response deadline 2026-07-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0009",
+          "url": "https://sam.gov/workspace/contract/opp/f01a61f59e8642718595ba7d63fcb541/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-b38f428d827c4543-y1bg-ehrm-infrastructure-upgrades-construction-syr",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction - Syracuse - Project 528A7-22-700",
+      "city": "Syracuse",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-17",
+      "description": "Federal solicitation 36C77626B0009. Y1BG--EHRM Infrastructure Upgrades Construction - Syracuse - Project 528A7-22-700. Response deadline 2026-06-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0009",
+          "url": "https://sam.gov/workspace/contract/opp/b38f428d827c454395ad2c26e032e3da/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-c2028384e5694803-z2da-fy26-ehrm-620a4-22-700-ehrm-infrastructure-up",
+      "name": "Z2DA--FY26 EHRM 620A4-22-700 EHRM Infrastructure Upgrades Construction Castle Point VA Medical Center; Wappinger Falls N",
+      "city": "Wappingers Falls",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-15",
+      "description": "Federal solicitation IFB-36C77626B0025. Z2DA--FY26 EHRM 620A4-22-700 EHRM Infrastructure Upgrades Construction Castle Point VA Medical Center; Wappinger Falls NY. Response deadline 2026-07-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation IFB-36C77626B0025",
+          "url": "https://sam.gov/workspace/contract/opp/c2028384e5694803a4b479a7e9d19b6a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-7382baf6575047b2-electrical-switching-station-north-watervliet-arse",
+      "name": "ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK",
+      "city": "Watervliet",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-12",
+      "description": "Federal solicitation W912DS26RA015. ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK. Response deadline 2026-06-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DS26RA015",
+          "url": "https://sam.gov/workspace/contract/opp/7382baf6575047b2bc91d09b2e49d230/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-02a622493c7445c7-market-survey-va-canandaigua-phase-iii",
+      "name": "Market Survey - VA Canandaigua Phase III",
+      "city": "Canandaigua",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-12",
+      "description": "Federal sources sought W912P426. Market Survey - VA Canandaigua Phase III. Response deadline 2026-06-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "No Set aside used",
+        "Classification code Y1AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W912P426",
+          "url": "https://sam.gov/workspace/contract/opp/02a622493c7445c7afd000cd26a9b3d8/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-35f133fcffdd4dd8-fy23-28-general-construction-services-bpa-w911s223",
+      "name": "FY23-28 General Construction Services BPA - W911S223S8000",
+      "city": "Fort Drum",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-12",
+      "description": "Federal combined synopsis/solicitation W911S223S8000. FY23-28 General Construction Services BPA - W911S223S8000. Response deadline 2027-11-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W911S223S8000",
+          "url": "https://sam.gov/workspace/contract/opp/35f133fcffdd4dd8853907bb75bb00ed/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-51696acfc5a543d2-electrical-switching-station-north-watervliet-arse",
+      "name": "ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK",
+      "city": "Watervliet",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-11",
+      "description": "Federal solicitation W912DS26RA015. ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK. Response deadline 2026-06-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DS26RA015",
+          "url": "https://sam.gov/workspace/contract/opp/51696acfc5a543d29826cabe082e70e6/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-edeca816137c487c-ogdensburg-customs-house-sally-port-heat-project",
+      "name": "Ogdensburg Customs House Sally Port Heat project",
+      "city": "Ogdensburg",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-11",
+      "description": "Federal solicitation 47PC5326R0017. Ogdensburg Customs House Sally Port Heat project. Response deadline 2026-07-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PC5326R0017",
+          "url": "https://sam.gov/workspace/contract/opp/edeca816137c487ca98b8f5968fd69dc/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-1ba2a2b2329e48bf-z1da-albany-vamc-528a8-21-812-a-wing-facade-repair",
+      "name": "Z1DA--Albany VAMC 528A8-21-812 A Wing Facade Repair",
+      "city": "Albany",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-06-11",
+      "description": "Federal presolicitation 36C24226B0050. Z1DA--Albany VAMC 528A8-21-812 A Wing Facade Repair. Response deadline 2026-08-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24226B0050",
+          "url": "https://sam.gov/workspace/contract/opp/1ba2a2b2329e48bf80bbbef86a2f2216/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-e9fa82bb47e3412b-y1bg-ehrm-infrastructure-upgrades-construction-syr",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction - Syracuse - Project 528A7-22-700",
+      "city": "Syracuse",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-10",
+      "description": "Federal solicitation 36C77626B0009. Y1BG--EHRM Infrastructure Upgrades Construction - Syracuse - Project 528A7-22-700. Response deadline 2026-06-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0009",
+          "url": "https://sam.gov/workspace/contract/opp/e9fa82bb47e3412bb8ce4b1f4ea83523/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-6cfc0627f4354ea5-electrical-switching-station-north-watervliet-arse",
+      "name": "ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK",
+      "city": "Watervliet",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-08",
+      "description": "Federal solicitation W912DS26RA015. ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK. Response deadline 2026-06-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DS26RA015",
+          "url": "https://sam.gov/workspace/contract/opp/6cfc0627f4354ea5a9a5a5017dfa1980/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-865a1efc14b54403-y1bg-ehrm-infrastructure-upgrades-construction-bat",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction - Bath - Project 528A6-22-700",
+      "city": "Bath",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-08",
+      "description": "Federal special notice 36C77626B0015. Y1BG--EHRM Infrastructure Upgrades Construction - Bath - Project 528A6-22-700.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice 36C77626B0015",
+          "url": "https://sam.gov/workspace/contract/opp/865a1efc14b54403be3fa0d5807b89d6/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-a3eca24d66d244ab-y1bg-ehrm-infrastructure-upgrades-construction-syr",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction - Syracuse - Project 528A7-22-700",
+      "city": "Syracuse",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-04",
+      "description": "Federal solicitation 36C77626B0009. Y1BG--EHRM Infrastructure Upgrades Construction - Syracuse - Project 528A7-22-700. Response deadline 2026-06-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0009",
+          "url": "https://sam.gov/workspace/contract/opp/a3eca24d66d244aba478534e6256fd33/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-33985b04a7304181-z2da-fy26-ehrm-620a4-22-700-ehrm-infrastructure-up",
+      "name": "Z2DA--FY26 EHRM 620A4-22-700 EHRM Infrastructure Upgrades Construction Castle Point VA Medical Center; Wappinger Falls N",
+      "city": "Wappingers Falls",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-03",
+      "description": "Federal solicitation IFB-36C77626B0025. Z2DA--FY26 EHRM 620A4-22-700 EHRM Infrastructure Upgrades Construction Castle Point VA Medical Center; Wappinger Falls NY. Response deadline 2026-07-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation IFB-36C77626B0025",
+          "url": "https://sam.gov/workspace/contract/opp/33985b04a7304181964700f135feac27/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-e79e12861fa14cfc-electrical-switching-station-north-watervliet-arse",
+      "name": "ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK",
+      "city": "Watervliet",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-03",
+      "description": "Federal solicitation W912DS26RA015. ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK. Response deadline 2026-06-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DS26RA015",
+          "url": "https://sam.gov/workspace/contract/opp/e79e12861fa14cfcb5bd818dffc2bdd5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-5a1fe68d1cca48b8-electrical-switching-station-north-watervliet-arse",
+      "name": "ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK",
+      "city": "Watervliet",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "Federal solicitation W912DS26RA015. ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK. Response deadline 2026-06-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DS26RA015",
+          "url": "https://sam.gov/workspace/contract/opp/5a1fe68d1cca48b89dc3901b59a80a43/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-582939057fc743f2-construction-of-new-child-development-center-fort-",
+      "name": "Construction of New Child Development Center, Fort Hamilton, NY",
+      "city": "Brooklyn",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-29",
+      "description": "Federal solicitation W912DS26RA018. Construction of New Child Development Center, Fort Hamilton, NY. Response deadline 2026-06-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1CA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DS26RA018",
+          "url": "https://sam.gov/workspace/contract/opp/582939057fc743f2ab5c67070a9d8e98/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-9c3d16d59d604716-advanced-notice-times-square-video-display-upgrade",
+      "name": "Advanced Notice- Times Square Video Display Upgrade",
+      "city": "New York",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-28",
+      "description": "Federal presolicitation W912DS26RA027. Advanced Notice- Times Square Video Display Upgrade. Response deadline 2026-06-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code C1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912DS26RA027",
+          "url": "https://sam.gov/workspace/contract/opp/9c3d16d59d604716a2b161eb7fe51886/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-60a644ec79a94fc3-construction-of-new-child-development-center-fort-",
+      "name": "Construction of New Child Development Center, Fort Hamilton, NY",
+      "city": "Brooklyn",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-28",
+      "description": "Federal solicitation W912DS26RA018. Construction of New Child Development Center, Fort Hamilton, NY. Response deadline 2026-06-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1CA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DS26RA018",
+          "url": "https://sam.gov/workspace/contract/opp/60a644ec79a94fc3bdeecec013b1f093/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-33b6016a55384dc6-z2da-fy26-ehrm-620a4-22-700-ehrm-infrastructure-up",
+      "name": "Z2DA--FY26 EHRM 620A4-22-700 EHRM Infrastructure Upgrades Construction Castle Point VA Medical Center; Wappinger Falls N",
+      "city": "Wappingers Falls",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-27",
+      "description": "Federal presolicitation 36C77626B0025. Z2DA--FY26 EHRM 620A4-22-700 EHRM Infrastructure Upgrades Construction Castle Point VA Medical Center; Wappinger Falls NY.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C77626B0025",
+          "url": "https://sam.gov/workspace/contract/opp/33b6016a55384dc6980ccf083d6dd71b/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-c91cfba3a54e4945-construction-of-new-child-development-center-fort-",
+      "name": "Construction of New Child Development Center, Fort Hamilton, NY",
+      "city": "Brooklyn",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-27",
+      "description": "Federal solicitation W912DS26RA018. Construction of New Child Development Center, Fort Hamilton, NY. Response deadline 2026-06-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1CA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DS26RA018",
+          "url": "https://sam.gov/workspace/contract/opp/c91cfba3a54e4945a6a204d27e840b19/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-2313377870e444e1-electrical-switching-station-north-watervliet-arse",
+      "name": "ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK",
+      "city": "Watervliet",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-26",
+      "description": "Federal solicitation W912DS26RA015. ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK. Response deadline 2026-06-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DS26RA015",
+          "url": "https://sam.gov/workspace/contract/opp/2313377870e444e1a192f3dfaec55abb/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-d6008502f1f14055-y1bg-ehrm-infrastructure-upgrades-construction-bat",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction - Bath - Project 528A6-22-700",
+      "city": "Bath",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-26",
+      "description": "Federal solicitation 36C77626B0015. Y1BG--EHRM Infrastructure Upgrades Construction - Bath - Project 528A6-22-700. Response deadline 2026-06-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0015",
+          "url": "https://sam.gov/workspace/contract/opp/d6008502f1f14055a033c38c729a91b0/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-771826eec1024192-electrical-switching-station-north-watervliet-arse",
+      "name": "ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK",
+      "city": "Watervliet",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-22",
+      "description": "Federal solicitation W912DS26RA015. ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK. Response deadline 2026-06-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DS26RA015",
+          "url": "https://sam.gov/workspace/contract/opp/771826eec1024192b9ac6f48850da02b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-22ab4d378aa14dea-y1da-nrm-630-24-105-conduct-duct-bank-survey",
+      "name": "Y1DA--NRM 630-24-105 Conduct Duct Bank Survey",
+      "city": "Northport",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-20",
+      "description": "Federal presolicitation 36C24226B0056. Y1DA--NRM 630-24-105 Conduct Duct Bank Survey. Response deadline 2026-06-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24226B0056",
+          "url": "https://sam.gov/workspace/contract/opp/22ab4d378aa14deaa2c67d0dacb1d2e5/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-d3118f96265c4a58-electrical-switching-station-north-watervliet-arse",
+      "name": "ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK",
+      "city": "Watervliet",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-19",
+      "description": "Federal solicitation W912DS26RA015. ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK. Response deadline 2026-06-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DS26RA015",
+          "url": "https://sam.gov/workspace/contract/opp/d3118f96265c4a58a651ecc880788a9d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-d8ab00071f1c4422-electrical-switching-station-north-watervliet-arse",
+      "name": "ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK",
+      "city": "Watervliet",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-18",
+      "description": "Federal solicitation W912DS26RA015. ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK. Response deadline 2026-06-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DS26RA015",
+          "url": "https://sam.gov/workspace/contract/opp/d8ab00071f1c4422a54c859752093a72/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-f6033da4d4b84e0d-y1bg-ehrm-infrastructure-upgrades-construction-bat",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction - Bath - Project 528A6-22-700",
+      "city": "Bath",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-18",
+      "description": "Federal solicitation 36C77626B0015. Y1BG--EHRM Infrastructure Upgrades Construction - Bath - Project 528A6-22-700. Response deadline 2026-06-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0015",
+          "url": "https://sam.gov/workspace/contract/opp/f6033da4d4b84e0d949c00a2ff591169/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-6d229e5c79c045dd-y1bg-ehrm-infrastructure-upgrades-construction-syr",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction - Syracuse - Project 528A7-22-700",
+      "city": "Syracuse",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-18",
+      "description": "Federal solicitation 36C77626B0009. Y1BG--EHRM Infrastructure Upgrades Construction - Syracuse - Project 528A7-22-700. Response deadline 2026-06-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0009",
+          "url": "https://sam.gov/workspace/contract/opp/6d229e5c79c045dda1fc7e6a9033c947/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-0e9e10521bcc4d11-y1da-nrm-const-632-26-109-replace-campus-fire-hydr",
+      "name": "Y1DA--NRM - CONST 632-26-109 Replace Campus Fire Hydrants Number 11, 22, 27, 36 and 42",
+      "city": "Northport,",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-13",
+      "description": "Federal presolicitation 36C24226B0055. Y1DA--NRM - CONST 632-26-109 Replace Campus Fire Hydrants Number 11, 22, 27, 36 and 42. Response deadline 2026-05-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24226B0055",
+          "url": "https://sam.gov/workspace/contract/opp/0e9e10521bcc4d119e48a0f82b017b93/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-6072381c51184caa-y1bg-ehrm-infrastructure-upgrades-construction-bat",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction - Bath - Project 528A6-22-700",
+      "city": "Bath",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-07",
+      "description": "Federal solicitation 36C77626B0015. Y1BG--EHRM Infrastructure Upgrades Construction - Bath - Project 528A6-22-700. Response deadline 2026-05-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0015",
+          "url": "https://sam.gov/workspace/contract/opp/6072381c51184caa80cdf24eda2839dd/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-c9593e1467fd45d3-z2da-620-22-700-electronic-health-record-moderniza",
+      "name": "Z2DA--620-22-700 Electronic Health Record Modernization Infrastructure Upgrades - Franklin Delano Roosevelt VA Hospital,",
+      "city": "Montrose",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-04",
+      "description": "Federal solicitation RFP-36C77626R0033. Z2DA--620-22-700 Electronic Health Record Modernization Infrastructure Upgrades - Franklin Delano Roosevelt VA Hospital, Montrose, NY. Response deadline 2026-05-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation RFP-36C77626R0033",
+          "url": "https://sam.gov/workspace/contract/opp/c9593e1467fd45d38eec1ec34d7f00e8/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-982744e887ce491e-electrical-switching-station-north-watervliet-arse",
+      "name": "ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK",
+      "city": "Watervliet",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-04",
+      "description": "Federal solicitation W912DS26RA015. ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK. Response deadline 2026-06-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DS26RA015",
+          "url": "https://sam.gov/workspace/contract/opp/982744e887ce491ea82565f00f99b024/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-94867330b8844034-y1bg-ehrm-infrastructure-upgrades-construction-syr",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction - Syracuse - Project 528A7-22-700",
+      "city": "Syracuse",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-30",
+      "description": "Federal solicitation 36C77626B0009. Y1BG--EHRM Infrastructure Upgrades Construction - Syracuse - Project 528A7-22-700. Response deadline 2026-05-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0009",
+          "url": "https://sam.gov/workspace/contract/opp/94867330b8844034bf166b7bf33f3e9d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-6ed174f140b24194-electrical-switching-station-north-watervliet-arse",
+      "name": "ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK",
+      "city": "Watervliet",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-29",
+      "description": "Federal solicitation W912DS26RA015. ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK. Response deadline 2026-06-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DS26RA015",
+          "url": "https://sam.gov/workspace/contract/opp/6ed174f140b24194a3685405bc030ca6/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-2dbbdbfd1b384010-z1da-630a4-26-102-gi-renovation-phase-iii",
+      "name": "Z1DA--630A4-26-102 GI RENOVATION PHASE III",
+      "city": "Brooklyn",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-04-28",
+      "description": "Federal solicitation 36C24226R0018. Z1DA--630A4-26-102 GI RENOVATION PHASE III. Response deadline 2026-05-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24226R0018",
+          "url": "https://sam.gov/workspace/contract/opp/2dbbdbfd1b384010b78e1e327ee83839/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-4fae2623549a44fa-z2da-620-22-700-electronic-health-record-moderniza",
+      "name": "Z2DA--620-22-700 Electronic Health Record Modernization Infrastructure Upgrades - Franklin Delano Roosevelt VA Hospital,",
+      "city": "Montrose",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-27",
+      "description": "Federal solicitation RFP-36C77626R0033. Z2DA--620-22-700 Electronic Health Record Modernization Infrastructure Upgrades - Franklin Delano Roosevelt VA Hospital, Montrose, NY. Response deadline 2026-05-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation RFP-36C77626R0033",
+          "url": "https://sam.gov/workspace/contract/opp/4fae2623549a44fa9b4391815f155e46/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-c39e6d0068e84888-y1da-np-refurbish-audiometric-suites",
+      "name": "Y1DA--NP Refurbish Audiometric Suites",
+      "city": "Northport",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-04-20",
+      "description": "Federal presolicitation 36C24226B0054. Y1DA--NP Refurbish Audiometric Suites. Response deadline 2026-05-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24226B0054",
+          "url": "https://sam.gov/workspace/contract/opp/c39e6d0068e84888b74ae5c455b36c64/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-5333d8a968484dc9-z2da-620-22-700-electronic-health-record-moderniza",
+      "name": "Z2DA--620-22-700 Electronic Health Record Modernization Infrastructure Upgrades - Franklin Delano Roosevelt VA Hospital,",
+      "city": "Montrose",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-20",
+      "description": "Federal solicitation RFP-36C77626R0033. Z2DA--620-22-700 Electronic Health Record Modernization Infrastructure Upgrades - Franklin Delano Roosevelt VA Hospital, Montrose, NY. Response deadline 2026-04-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation RFP-36C77626R0033",
+          "url": "https://sam.gov/workspace/contract/opp/5333d8a968484dc9b3079d6cdc44c639/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-c97190adb84546a7-electrical-switching-station-north-watervliet-arse",
+      "name": "ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK",
+      "city": "Watervliet",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-17",
+      "description": "Federal solicitation W912DS26RA015. ELECTRICAL SWITCHING STATION NORTH, WATERVLIET ARSENAL, NEW YORK. Response deadline 2026-05-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DS26RA015",
+          "url": "https://sam.gov/workspace/contract/opp/c97190adb84546a783aa209b4dc9381e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-f4b71d131f494654-z1da-630a4-26-102-gi-renovation-phase-iii",
+      "name": "Z1DA--630A4-26-102 GI RENOVATION PHASE III",
+      "city": "Brooklyn",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-04-15",
+      "description": "Federal solicitation 36C24226R0018. Z1DA--630A4-26-102 GI RENOVATION PHASE III. Response deadline 2026-04-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24226R0018",
+          "url": "https://sam.gov/workspace/contract/opp/f4b71d131f494654b95d40d57d99d5ec/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-8942800ac0dd4fb2-y1dz-nrm-const-630a4-25-200-refurbish-upgrade-laun",
+      "name": "Y1DZ--NRM CONST 630A4-25-200 (REFURBISH & UPGRADE LAUNDRY VENTILATION)",
+      "city": "Jamaica",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-04-15",
+      "description": "Federal solicitation 36C24226B0045. Y1DZ--NRM CONST 630A4-25-200 (REFURBISH & UPGRADE LAUNDRY VENTILATION). Response deadline 2026-04-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24226B0045",
+          "url": "https://sam.gov/workspace/contract/opp/8942800ac0dd4fb292b37880d96e9f43/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-ce09d0b042ef4c40-y1bg-ehrm-infrastructure-upgrades-construction-syr",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction - Syracuse - Project 528A7-22-700",
+      "city": "Syracuse",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-08",
+      "description": "Federal solicitation 36C77626B0009. Y1BG--EHRM Infrastructure Upgrades Construction - Syracuse - Project 528A7-22-700. Response deadline 2026-05-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0009",
+          "url": "https://sam.gov/workspace/contract/opp/ce09d0b042ef4c40a98d7d5fb2de8e2c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-bf2be90646dc42e0-y1bg-ehrm-infrastructure-upgrades-construction-bat",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction - Bath - Project 528A6-22-700",
+      "city": "Bath",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-07",
+      "description": "Federal solicitation 36C77626B0015. Y1BG--EHRM Infrastructure Upgrades Construction - Bath - Project 528A6-22-700. Response deadline 2026-05-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0015",
+          "url": "https://sam.gov/workspace/contract/opp/bf2be90646dc42e0b1f0d50043767824/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-4f9c639c090e4a25-z2da-620-22-700-electronic-health-record-moderniza",
+      "name": "Z2DA--620-22-700 Electronic Health Record Modernization Infrastructure Upgrades - Franklin Delano Roosevelt VA Hospital,",
+      "city": "Montrose",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-07",
+      "description": "Federal solicitation RFP-36C77626R0033. Z2DA--620-22-700 Electronic Health Record Modernization Infrastructure Upgrades - Franklin Delano Roosevelt VA Hospital, Montrose, NY. Response deadline 2026-04-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation RFP-36C77626R0033",
+          "url": "https://sam.gov/workspace/contract/opp/4f9c639c090e4a2582cf049d7921a590/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-9531936daa394632-z1da-630a4-26-102-gi-renovation-phase-iii",
+      "name": "Z1DA--630A4-26-102 GI RENOVATION PHASE III",
+      "city": "Brooklyn",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-04-02",
+      "description": "Federal solicitation 36C24226R0018. Z1DA--630A4-26-102 GI RENOVATION PHASE III. Response deadline 2026-04-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24226R0018",
+          "url": "https://sam.gov/workspace/contract/opp/9531936daa394632b16449da7284e37b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-6dae3ba50f624bf0-y1bg-ehrm-infrastructure-upgrades-construction-bat",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction - Bath - Project 528A6-22-700",
+      "city": "Bath",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-01",
+      "description": "Federal solicitation 36C77626B0015. Y1BG--EHRM Infrastructure Upgrades Construction - Bath - Project 528A6-22-700. Response deadline 2026-05-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0015",
+          "url": "https://sam.gov/workspace/contract/opp/6dae3ba50f624bf0997c981516156229/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-a094af18d01a4146-z2da-620-22-700-electronic-health-record-moderniza",
+      "name": "Z2DA--620-22-700 Electronic Health Record Modernization Infrastructure Upgrades - Franklin Delano Roosevelt VA Hospital,",
+      "city": "Montrose",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-24",
+      "description": "Federal solicitation RFP-36C77626R0033. Z2DA--620-22-700 Electronic Health Record Modernization Infrastructure Upgrades - Franklin Delano Roosevelt VA Hospital, Montrose, NY. Response deadline 2026-04-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation RFP-36C77626R0033",
+          "url": "https://sam.gov/workspace/contract/opp/a094af18d01a4146afcc1e0b96272284/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-4d931a99e8974204-y1da-renovate-b-14-ab-and-cd",
+      "name": "Y1DA--Renovate B. 14 AB and CD",
+      "city": "Montrose",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-03-24",
+      "description": "Federal sources sought 36C24226Q0461. Y1DA--Renovate B. 14 AB and CD. Response deadline 2026-04-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 36C24226Q0461",
+          "url": "https://sam.gov/workspace/contract/opp/4d931a99e8974204be5815f09f4bea04/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-09c92a098d974c82-y1bg-ehrm-infrastructure-upgrades-construction-bat",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction - Bath - Project 528A6-22-700",
+      "city": "Bath",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-23",
+      "description": "Federal solicitation 36C77626B0015. Y1BG--EHRM Infrastructure Upgrades Construction - Bath - Project 528A6-22-700. Response deadline 2026-05-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0015",
+          "url": "https://sam.gov/workspace/contract/opp/09c92a098d974c82909f8752642aece4/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-221121e9675b4bed-z2da-620-22-700-electronic-health-record-moderniza",
+      "name": "Z2DA--620-22-700 Electronic Health Record Modernization Infrastructure Upgrades - Franklin Delano Roosevelt VA Hospital,",
+      "city": "Montrose",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-12",
+      "description": "Federal solicitation RFP-36C77626R0033. Z2DA--620-22-700 Electronic Health Record Modernization Infrastructure Upgrades - Franklin Delano Roosevelt VA Hospital, Montrose, NY. Response deadline 2026-04-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation RFP-36C77626R0033",
+          "url": "https://sam.gov/workspace/contract/opp/221121e9675b4bed8a7c92c30923a5fd/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-3d0e8d717e594376-y1bg-ehrm-infrastructure-upgrades-construction-syr",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction - Syracuse - Project 528A7-22-700",
+      "city": "Syracuse",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-11",
+      "description": "Federal solicitation 36C77626B0009. Y1BG--EHRM Infrastructure Upgrades Construction - Syracuse - Project 528A7-22-700. Response deadline 2026-04-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0009",
+          "url": "https://sam.gov/workspace/contract/opp/3d0e8d717e594376898de16cb940b91c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-06e42b3ff4f6419c-z1da-albany-vamc-528a8-21-812-a-wing-facade-repair",
+      "name": "Z1DA--Albany VAMC 528A8-21-812 A Wing Facade Repair",
+      "city": "Albany",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-03-10",
+      "description": "Federal presolicitation 36C24226B0050. Z1DA--Albany VAMC 528A8-21-812 A Wing Facade Repair. Response deadline 2026-04-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24226B0050",
+          "url": "https://sam.gov/workspace/contract/opp/06e42b3ff4f6419c9c76b3c4e6c5ab60/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-060da376be164c27-z1da-630a4-26-102-gi-renovation-phase-iii",
+      "name": "Z1DA--630A4-26-102 GI RENOVATION PHASE III",
+      "city": "Brooklyn",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-03-06",
+      "description": "Federal solicitation 36C24226R0018. Z1DA--630A4-26-102 GI RENOVATION PHASE III. Response deadline 2026-03-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24226R0018",
+          "url": "https://sam.gov/workspace/contract/opp/060da376be164c27b198224ceb8b1926/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-c2643010c84f4214-y1bg-ehrm-infrastructure-upgrades-construction-syr",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction - Syracuse - Project 528A7-22-700",
+      "city": "Syracuse",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-02",
+      "description": "Federal solicitation 36C77626B0009. Y1BG--EHRM Infrastructure Upgrades Construction - Syracuse - Project 528A7-22-700. Response deadline 2026-04-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0009",
+          "url": "https://sam.gov/workspace/contract/opp/c2643010c84f421497415e1158053ae7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-233fd60ee694431c-y1da-nrm-const-630a4-20-412-repair-parking-lots-an",
+      "name": "Y1DA--NRM-CONST 630A4-20-412 Repair Parking Lots and Roads SA",
+      "city": "Jamaica",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-27",
+      "description": "Federal solicitation 36C24226B0014. Y1DA--NRM-CONST 630A4-20-412 Repair Parking Lots and Roads SA. Response deadline 2026-03-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24226B0014",
+          "url": "https://sam.gov/workspace/contract/opp/233fd60ee694431cb8032a4ba300743a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-6d3d0d2a851348be-y1da-nrm-const-630a4-20-412-repair-parking-lots-an",
+      "name": "Y1DA--NRM-CONST 630A4-20-412 Repair Parking Lots and Roads SA",
+      "city": "Jamaica",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-10",
+      "description": "Federal solicitation 36C24226B0014. Y1DA--NRM-CONST 630A4-20-412 Repair Parking Lots and Roads SA. Response deadline 2026-03-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24226B0014",
+          "url": "https://sam.gov/workspace/contract/opp/6d3d0d2a851348beb4ba18458738f7e0/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-3cdde1ece9154917-brooklyn-ny-brooklyn-p-dc-dock-leveler-upgrade-b36",
+      "name": "Brooklyn, NY Brooklyn P&DC Dock Leveler Upgrade B36579",
+      "city": "Brooklyn",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Postal Service",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-31",
+      "description": "Federal solicitation 089495-26-A-0021. Brooklyn, NY Brooklyn P&DC Dock Leveler Upgrade B36579. Response deadline 2026-02-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code J039"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 089495-26-A-0021",
+          "url": "https://sam.gov/workspace/contract/opp/3cdde1ece9154917aa1c02a76226d664/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-e034ca47c6ec4789-fy23-28-general-construction-services-bpa-w911s223",
+      "name": "FY23-28 General Construction Services BPA - W911S223S8000",
+      "city": "Fort Drum",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-18",
+      "description": "Federal combined synopsis/solicitation W911S223S8000. FY23-28 General Construction Services BPA - W911S223S8000. Response deadline 2027-11-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W911S223S8000",
+          "url": "https://sam.gov/workspace/contract/opp/e034ca47c6ec4789af79b9bebec27c31/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-de27412cffbc4167-fy23-28-general-construction-services-bpa-w911s223",
+      "name": "FY23-28 General Construction Services BPA - W911S223S8000",
+      "city": "Fort Drum",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-18",
+      "description": "Federal combined synopsis/solicitation W911S223S8000. FY23-28 General Construction Services BPA - W911S223S8000. Response deadline 2027-11-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W911S223S8000",
+          "url": "https://sam.gov/workspace/contract/opp/de27412cffbc4167833996fcbb4b6e60/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-2b238c6c45064d87-fy23-28-general-construction-services-bpa-w911s223",
+      "name": "FY23-28 General Construction Services BPA - W911S223S8000",
+      "city": "Fort Drum",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2024-11-04",
+      "description": "Federal combined synopsis/solicitation W911S223S8000. FY23-28 General Construction Services BPA - W911S223S8000. Response deadline 2027-11-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W911S223S8000",
+          "url": "https://sam.gov/workspace/contract/opp/2b238c6c45064d879a02bd49eb1d6d1f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-26a17c51e4a84b25-fy23-28-general-construction-services-bpa-w911s223",
+      "name": "FY23-28 General Construction Services BPA - W911S223S8000",
+      "city": "Fort Drum",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2023-11-16",
+      "description": "Federal combined synopsis/solicitation W911S223S8000. FY23-28 General Construction Services BPA - W911S223S8000. Response deadline 2027-11-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W911S223S8000",
+          "url": "https://sam.gov/workspace/contract/opp/26a17c51e4a84b2598bbc919ea17b665/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-fad276e0c5e24768-fy23-28-general-construction-services-bpa-w911s223",
+      "name": "FY23-28 General Construction Services BPA - W911S223S8000",
+      "city": "Fort Drum",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2023-09-18",
+      "description": "Federal combined synopsis/solicitation W911S223S8000. FY23-28 General Construction Services BPA - W911S223S8000. Response deadline 2027-11-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W911S223S8000",
+          "url": "https://sam.gov/workspace/contract/opp/fad276e0c5e247688a32dade614b17e1/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-8b9fe5082aa24cfe-fy23-28-general-construction-services-bpa-w911s223",
+      "name": "FY23-28 General Construction Services BPA - W911S223S8000",
+      "city": "Fort Drum",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2023-02-23",
+      "description": "Federal combined synopsis/solicitation W911S223S8000. FY23-28 General Construction Services BPA - W911S223S8000. Response deadline 2027-11-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W911S223S8000",
+          "url": "https://sam.gov/workspace/contract/opp/8b9fe5082aa24cfea643ae28c2ddd800/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-762c737ae56b4ad5-fy23-28-general-construction-services-bpa-w911s223",
+      "name": "FY23-28 General Construction Services BPA - W911S223S8000",
+      "city": "Fort Drum",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2023-02-23",
+      "description": "Federal combined synopsis/solicitation W911S223S8000. FY23-28 General Construction Services BPA - W911S223S8000. Response deadline 2027-11-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W911S223S8000",
+          "url": "https://sam.gov/workspace/contract/opp/762c737ae56b4ad596535682691e9f58/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-58a8b43d68124ec5-fy23-28-general-construction-services-bpa-w911s223",
+      "name": "FY23-28 General Construction Services BPA - W911S223S8000",
+      "city": "26759",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2022-12-02",
+      "description": "Federal combined synopsis/solicitation W911S223S8000. FY23-28 General Construction Services BPA - W911S223S8000. Response deadline 2027-11-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W911S223S8000",
+          "url": "https://sam.gov/workspace/contract/opp/58a8b43d68124ec586d692e4c11dcf35/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-9aeb95e6641bbfca-o-hara-hall-pool-project",
+      "name": "O'Hara Hall Pool Project",
+      "city": "KINGS POINT",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Transportation, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-07-30",
+      "description": "Federal presolicitation 693JF719B000004. O'Hara Hall Pool Project. Response deadline 2019-08-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 693JF719B000004",
+          "url": "https://sam.gov/workspace/contract/opp/9aeb95e6641bbfca251c84d75ddba947/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-2afaaf1969d86b4b-o-hara-hall-pool-project",
+      "name": "O'Hara Hall Pool Project",
+      "city": "KINGS POINT",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Transportation, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-07-24",
+      "description": "Federal presolicitation 693JF719B000004. O'Hara Hall Pool Project. Response deadline 2019-07-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 693JF719B000004",
+          "url": "https://sam.gov/workspace/contract/opp/2afaaf1969d86b4b9a8aeb5ac4b77589/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-fc77a89839e92691-o-hara-hall-pool-project",
+      "name": "O'Hara Hall Pool Project",
+      "city": "KINGS POINT",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Transportation, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-07-18",
+      "description": "Federal presolicitation 693JF719B000004. O'Hara Hall Pool Project. Response deadline 2019-07-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 693JF719B000004",
+          "url": "https://sam.gov/workspace/contract/opp/fc77a89839e9269189ec52960def2dd3/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-b46bcb4aae780dc0-o-hara-hall-pool-project",
+      "name": "O'Hara Hall Pool Project",
+      "city": "KINGS POINT",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Transportation, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-07-12",
+      "description": "Federal presolicitation 693JF719B000004. O'Hara Hall Pool Project. Response deadline 2019-07-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 693JF719B000004",
+          "url": "https://sam.gov/workspace/contract/opp/b46bcb4aae780dc0f9ee875544467192/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-4486bb7d10289c56-o-hara-hall-pool-project",
+      "name": "O'Hara Hall Pool Project",
+      "city": "KINGS POINT",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Transportation, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-06-28",
+      "description": "Federal presolicitation 693JF719B000004. O'Hara Hall Pool Project. Response deadline 2019-07-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 693JF719B000004",
+          "url": "https://sam.gov/workspace/contract/opp/4486bb7d10289c56492ba3a6ef91991e/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-99e46e5e7233df7b-o-hara-hall-pool-project",
+      "name": "O'Hara Hall Pool Project",
+      "city": "KINGS POINT",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Transportation, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-06-28",
+      "description": "Federal presolicitation 693JF719B000004. O'Hara Hall Pool Project. Response deadline 2019-07-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 693JF719B000004",
+          "url": "https://sam.gov/workspace/contract/opp/99e46e5e7233df7b094292c18a099172/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-9c63afdeeff95603-hanley-elevator-modernization-construction-project",
+      "name": "Hanley Elevator Modernization Construction Project",
+      "city": "SYRACUSE",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-06-21",
+      "description": "Federal combined synopsis/solicitation 47PC1119R0006. Hanley Elevator Modernization Construction Project. Response deadline 2019-07-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 47PC1119R0006",
+          "url": "https://sam.gov/workspace/contract/opp/9c63afdeeff95603bb3b7428d57b322d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-aa1568d1d62b3ea3-hanley-elevator-modernization-construction-project",
+      "name": "Hanley Elevator Modernization Construction Project",
+      "city": "SYRACUSE",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-06-06",
+      "description": "Federal combined synopsis/solicitation 47PC1119R0006. Hanley Elevator Modernization Construction Project. Response deadline 2019-07-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 47PC1119R0006",
+          "url": "https://sam.gov/workspace/contract/opp/aa1568d1d62b3ea371646215b6903e21/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NY"
+    },
+    {
+      "id": "ny-sam-ea3ae75e1161ec7d-renovation-and-modernization-of-bradley-barracks-w",
+      "name": "Renovation and Modernization of Bradley Barracks, West Point, New York",
+      "city": "WEST POINT",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-06-03",
+      "description": "Federal presolicitation W912DS19B0008. Renovation and Modernization of Bradley Barracks, West Point, New York. Response deadline 2019-06-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912DS19B0008",
+          "url": "https://sam.gov/workspace/contract/opp/ea3ae75e1161ec7d3236c22f331db340/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NY"
     }
   ],
   "stats": {
-    "total": 3
+    "total": 113
   }
 }

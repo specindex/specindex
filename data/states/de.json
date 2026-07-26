@@ -1,9 +1,9 @@
 {
   "state": "DE",
   "state_name": "Delaware",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Web research — Delaware Business Times, ENR, St. John Properties, Delaware Online",
+  "capture_method": "Web research — Delaware Business Times, ENR, St. John Properties, Delaware Online, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "de-delaware-container-terminal-edgemoor",
@@ -175,9 +175,204 @@
         }
       ],
       "open_for": "Pre-development. Early commercial specs as projects advance."
+    },
+    {
+      "id": "de-sam-4cb92cf9cc234f85-6115-fy-26-nrm-460-24-007-parking-garage-emergency",
+      "name": "6115--FY 26 NRM | 460-24-007 | Parking Garage Emergency Generator Replacement | NCO 4 Construction East (VA-25-00051425)",
+      "city": "Wilmington",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-28",
+      "description": "Federal presolicitation 36C24426B0023. 6115--FY 26 NRM | 460-24-007 | Parking Garage Emergency Generator Replacement | NCO 4 Construction East (VA-25-00051425). Response deadline 2026-06-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code 6115"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24426B0023",
+          "url": "https://sam.gov/workspace/contract/opp/4cb92cf9cc234f859f95dc0c54b5a706/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "DE"
+    },
+    {
+      "id": "de-sam-2e34a682437d4c10-z2da-fy26-nrm-460-20-004-tuckpointing-fy26-katelyn",
+      "name": "Z2DA--FY26 NRM 460-20-004 | Tuckpointing FY26 | Katelyn Fallon | NCO 4 Construction East (VA-26-00060656)",
+      "city": "Wilmington",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-18",
+      "description": "Federal presolicitation 36C24426B0018. Z2DA--FY26 NRM 460-20-004 | Tuckpointing FY26 | Katelyn Fallon | NCO 4 Construction East (VA-26-00060656). Response deadline 2026-06-02.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24426B0018",
+          "url": "https://sam.gov/workspace/contract/opp/2e34a682437d4c1087aba38ebb525bb4/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "DE"
+    },
+    {
+      "id": "de-sam-9ea20d6abb394f66-z2da-fy26-nrm-460-26-008-clc-roof-hvac-piping-repl",
+      "name": "Z2DA--FY26 NRM | 460-26-008 | CLC Roof HVAC Piping Replacement | NCO 4 Construction East (VA-26-00057618)",
+      "city": "Wilmington",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-12",
+      "description": "Federal presolicitation 36C24426B0017. Z2DA--FY26 NRM | 460-26-008 | CLC Roof HVAC Piping Replacement | NCO 4 Construction East (VA-26-00057618). Response deadline 2026-05-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24426B0017",
+          "url": "https://sam.gov/workspace/contract/opp/9ea20d6abb394f66b7f9255fa3c17e58/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "DE"
+    },
+    {
+      "id": "de-sam-1179487fcf0f425d-z1da-460-26-004-wilmington-vamc-roof-replacement-n",
+      "name": "Z1DA-- 460-26-004 | Wilmington VAMC Roof Replacement | NCO 4 Construction East (VA-26-00029152)",
+      "city": "Wilmington",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-04-27",
+      "description": "Federal presolicitation 36C24426B0015. Z1DA-- 460-26-004 | Wilmington VAMC Roof Replacement | NCO 4 Construction East (VA-26-00029152). Response deadline 2026-06-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24426B0015",
+          "url": "https://sam.gov/workspace/contract/opp/1179487fcf0f425d96a6d444658fb866/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "DE"
+    },
+    {
+      "id": "de-sam-ffae323ac97215cc-repair-reserve-headquarters-facility-202",
+      "name": "Repair Reserve Headquarters Facility 202",
+      "city": "DOVER",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2010-07-23",
+      "description": "Federal modification/amendment/cancel FA4497-10-R-0005. Repair Reserve Headquarters Facility 202.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Modification/Amendment/Cancel",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Modification/Amendment/Cancel FA4497-10-R-0005",
+          "url": "https://sam.gov/workspace/contract/opp/ffae323ac97215cc471777e778a17c7f/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "DE"
     }
   ],
   "stats": {
-    "total": 5
+    "total": 9
   }
 }

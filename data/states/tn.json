@@ -1,9 +1,9 @@
 {
   "state": "TN",
   "state_name": "Tennessee",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — REBusinessOnline, permit filings, local news.",
+  "capture_method": "Public sources — REBusinessOnline, permit filings, local news, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "tn-hamilton-cornerstone-business-park",
@@ -164,9 +164,1132 @@
         }
       ],
       "open_for": "Permitted. MEP and lab/education specs active."
+    },
+    {
+      "id": "tn-sam-3a50975ab51c4417-y1qa-project-621-24-103-restoration-of-b35-theater",
+      "name": "Y1QA--Project 621-24-103 Restoration of B35 Theater",
+      "city": "Mountain Home",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "Federal solicitation 36C24926R0055. Y1QA--Project 621-24-103 Restoration of B35 Theater. Response deadline 2026-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24926R0055",
+          "url": "https://sam.gov/workspace/contract/opp/3a50975ab51c4417a5769d9f19d0e92e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "TN"
+    },
+    {
+      "id": "tn-sam-ef3ac18994fd4e71-y1qa-project-621-24-103-restoration-of-b35-theater",
+      "name": "Y1QA--Project 621-24-103 Restoration of B35 Theater",
+      "city": "Mountain Home",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "Federal solicitation 36C24926R0055. Y1QA--Project 621-24-103 Restoration of B35 Theater. Response deadline 2026-07-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24926R0055",
+          "url": "https://sam.gov/workspace/contract/opp/ef3ac18994fd4e71924645c57b22b893/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "TN"
+    },
+    {
+      "id": "tn-sam-670ea3bb15a74265-b747-auditorium-and-restrooms",
+      "name": "B747 Auditorium and Restrooms",
+      "city": "Nashville",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Federal presolicitation W50S9726BA002. B747 Auditorium and Restrooms. Response deadline 2026-09-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W50S9726BA002",
+          "url": "https://sam.gov/workspace/contract/opp/670ea3bb15a74265ad9659ce78cb2d76/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "TN"
+    },
+    {
+      "id": "tn-sam-c5b92e2d37124a03-z2da-621-22-121-renovate-bldg-204-for-cath-lab-ii-",
+      "name": "Z2DA--621-22-121 Renovate Bldg. 204 for Cath Lab II - Engineering",
+      "city": "Mountain Home",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "Federal solicitation 36C24926R0057. Z2DA--621-22-121 Renovate Bldg. 204 for Cath Lab II - Engineering. Response deadline 2026-08-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24926R0057",
+          "url": "https://sam.gov/workspace/contract/opp/c5b92e2d37124a03af428acb31e6c2ba/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "TN"
+    },
+    {
+      "id": "tn-sam-88911f8758254ba1-z1da-621-23-104-relocate-police-dispatch",
+      "name": "Z1DA--621-23-104 - Relocate Police Dispatch",
+      "city": "Mountain Home",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "Federal solicitation 36C24926R0075. Z1DA--621-23-104 - Relocate Police Dispatch. Response deadline 2026-08-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24926R0075",
+          "url": "https://sam.gov/workspace/contract/opp/88911f8758254ba182a1f30174be719e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "TN"
+    },
+    {
+      "id": "tn-sam-d2fdb813f51c4688-irs-memphis-tn-design-build-replacement-of-roofs-e",
+      "name": "IRS Memphis, TN Design/Build Replacement of Roofs, Electrical Breakers and Fire Alarm System Construction Project",
+      "city": "Memphis",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "Andercorp Llc Gulfport Ms 39501 Usa",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Federal award notice 47PB5226C0008. IRS Memphis, TN Design/Build Replacement of Roofs, Electrical Breakers and Fire Alarm System Construction Project.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "No Set aside used",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice 47PB5226C0008",
+          "url": "https://sam.gov/workspace/contract/opp/d2fdb813f51c4688b97bdd02607692bb/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "TN"
+    },
+    {
+      "id": "tn-sam-8a4ed98987384e57-y1qa-project-621-24-103-restoration-of-b35-theater",
+      "name": "Y1QA--Project 621-24-103 Restoration of B35 Theater",
+      "city": "Mountain Home",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Federal solicitation 36C24926R0055. Y1QA--Project 621-24-103 Restoration of B35 Theater. Response deadline 2026-07-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24926R0055",
+          "url": "https://sam.gov/workspace/contract/opp/8a4ed98987384e57b4850a8f8f66c62c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "TN"
+    },
+    {
+      "id": "tn-sam-2923275bf2da49aa-y1qa-project-621-24-103-restoration-of-b35-theater",
+      "name": "Y1QA--Project 621-24-103 Restoration of B35 Theater",
+      "city": "Mountain Home",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-07-02",
+      "description": "Federal solicitation 36C24926R0055. Y1QA--Project 621-24-103 Restoration of B35 Theater. Response deadline 2026-07-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24926R0055",
+          "url": "https://sam.gov/workspace/contract/opp/2923275bf2da49aa81023fd9d61c2eef/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "TN"
+    },
+    {
+      "id": "tn-sam-acb56233ff954242-z2da-621-22-121-renovate-bldg-204-for-cath-lab-ii-",
+      "name": "Z2DA--621-22-121 Renovate Bldg. 204 for Cath Lab II - Engineering",
+      "city": "Mountain Home",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Federal solicitation 36C24926R0057. Z2DA--621-22-121 Renovate Bldg. 204 for Cath Lab II - Engineering. Response deadline 2026-08-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24926R0057",
+          "url": "https://sam.gov/workspace/contract/opp/acb56233ff954242ab7f778f96ec8994/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "TN"
+    },
+    {
+      "id": "tn-sam-75ea959d58254067-z2da-621-22-121-renovate-bldg-204-for-cath-lab-ii-",
+      "name": "Z2DA--621-22-121 Renovate Bldg. 204 for Cath Lab II - Engineering",
+      "city": "Mountain Home",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-25",
+      "description": "Federal solicitation 36C24926R0057. Z2DA--621-22-121 Renovate Bldg. 204 for Cath Lab II - Engineering. Response deadline 2026-08-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24926R0057",
+          "url": "https://sam.gov/workspace/contract/opp/75ea959d58254067bb7b8fa4292a94ca/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "TN"
+    },
+    {
+      "id": "tn-sam-4809bd42ead04a7a-psxe242022-repair-facility-exterior-lighting",
+      "name": "PSXE242022 Repair Facility Exterior Lighting",
+      "city": "Louisville",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-25",
+      "description": "Federal presolicitation W50S98-26-B-A005. PSXE242022 Repair Facility Exterior Lighting.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1PZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W50S98-26-B-A005",
+          "url": "https://sam.gov/workspace/contract/opp/4809bd42ead04a7aa981d308dc211df8/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "TN"
+    },
+    {
+      "id": "tn-sam-d0d78a3b18e543dd-psxe242022-repair-facility-exterior-lighting",
+      "name": "PSXE242022 Repair Facility Exterior Lighting",
+      "city": "Louisville",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-24",
+      "description": "Federal presolicitation W50S98-26-B-A005. PSXE242022 Repair Facility Exterior Lighting.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1PZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W50S98-26-B-A005",
+          "url": "https://sam.gov/workspace/contract/opp/d0d78a3b18e543ddbfc70faac1cafbbb/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "TN"
+    },
+    {
+      "id": "tn-sam-8058af6903094b15-y1qa-project-621-24-103-restoration-of-b35-theater",
+      "name": "Y1QA--Project 621-24-103 Restoration of B35 Theater",
+      "city": "Mountain Home",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-06-12",
+      "description": "Federal solicitation 36C24926R0055. Y1QA--Project 621-24-103 Restoration of B35 Theater. Response deadline 2026-07-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24926R0055",
+          "url": "https://sam.gov/workspace/contract/opp/8058af6903094b15a8ebf45e47270d1b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "TN"
+    },
+    {
+      "id": "tn-sam-909b702a30c94848-y1qa-project-621-24-103-restoration-of-b35-theater",
+      "name": "Y1QA--Project 621-24-103 Restoration of B35 Theater",
+      "city": "Mountain Home",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-27",
+      "description": "Federal solicitation 36C24926R0055. Y1QA--Project 621-24-103 Restoration of B35 Theater. Response deadline 2026-06-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24926R0055",
+          "url": "https://sam.gov/workspace/contract/opp/909b702a30c94848b742a5bced291514/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "TN"
+    },
+    {
+      "id": "tn-sam-fe9ea6f6282e4ce3-z2da-621-22-121-renovate-bldg-204-for-cath-lab-ii-",
+      "name": "Z2DA--621-22-121 Renovate Bldg. 204 for Cath Lab II - Engineering",
+      "city": "Mt Home",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-26",
+      "description": "Federal presolicitation 36C24926R0057. Z2DA--621-22-121 Renovate Bldg. 204 for Cath Lab II - Engineering. Response deadline 2026-07-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24926R0057",
+          "url": "https://sam.gov/workspace/contract/opp/fe9ea6f6282e4ce38ab94d1698f4d752/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "TN"
+    },
+    {
+      "id": "tn-sam-4562787c95444e2e-psxe232039-repair-perimeter-fencing-basewide",
+      "name": "PSXE232039 Repair Perimeter Fencing Basewide",
+      "city": "",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-09",
+      "description": "Federal special notice W50S98-26-B-A004. PSXE232039 Repair Perimeter Fencing Basewide. Response deadline 2026-04-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice W50S98-26-B-A004",
+          "url": "https://sam.gov/workspace/contract/opp/4562787c95444e2e9c8c7f1be8cb1685/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "TN"
+    },
+    {
+      "id": "tn-sam-72a8e61b37614067-c1dz-621-24-701-ehrm-infrastructure-upgrades-tier-",
+      "name": "C1DZ--621-24-701 EHRM Infrastructure Upgrades Tier 3 Data Center Construction - Mountain Home VAMC",
+      "city": "Mountain Home",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-09",
+      "description": "Federal solicitation 36C77626B0006. C1DZ--621-24-701 EHRM Infrastructure Upgrades Tier 3 Data Center Construction - Mountain Home VAMC. Response deadline 2026-04-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code C1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0006",
+          "url": "https://sam.gov/workspace/contract/opp/72a8e61b37614067aa789ae9e1db3703/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "TN"
+    },
+    {
+      "id": "tn-sam-889bc9d7cca24a55-c1dz-621-24-701-ehrm-infrastructure-upgrades-tier-",
+      "name": "C1DZ--621-24-701 EHRM Infrastructure Upgrades Tier 3 Data Center Construction - Mountain Home VAMC",
+      "city": "Mountain Home",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-30",
+      "description": "Federal solicitation 36C77626B0006. C1DZ--621-24-701 EHRM Infrastructure Upgrades Tier 3 Data Center Construction - Mountain Home VAMC. Response deadline 2026-04-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code C1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0006",
+          "url": "https://sam.gov/workspace/contract/opp/889bc9d7cca24a55a96084f2b0c40982/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "TN"
+    },
+    {
+      "id": "tn-sam-b607a0292b714de8-c1dz-621-24-701-ehrm-infrastructure-upgrades-tier-",
+      "name": "C1DZ--621-24-701 EHRM Infrastructure Upgrades Tier 3 Data Center Construction - Mountain Home VAMC",
+      "city": "Mountain Home",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-25",
+      "description": "Federal solicitation 36C77626B0006. C1DZ--621-24-701 EHRM Infrastructure Upgrades Tier 3 Data Center Construction - Mountain Home VAMC. Response deadline 2026-04-02.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code C1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0006",
+          "url": "https://sam.gov/workspace/contract/opp/b607a0292b714de8abb7d0f239c6d6ef/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "TN"
+    },
+    {
+      "id": "tn-sam-c286fb22e0a94870-c1dz-621-24-701-ehrm-infrastructure-upgrades-tier-",
+      "name": "C1DZ--621-24-701 EHRM Infrastructure Upgrades Tier 3 Data Center Construction - Mountain Home VAMC",
+      "city": "Mountain Home",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-25",
+      "description": "Federal solicitation 36C77626B0006. C1DZ--621-24-701 EHRM Infrastructure Upgrades Tier 3 Data Center Construction - Mountain Home VAMC. Response deadline 2026-04-02.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code C1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0006",
+          "url": "https://sam.gov/workspace/contract/opp/c286fb22e0a94870acf2d13385d212a4/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "TN"
+    },
+    {
+      "id": "tn-sam-53e073bd920b4034-c1dz-621-24-701-ehrm-infrastructure-upgrades-tier-",
+      "name": "C1DZ--621-24-701 EHRM Infrastructure Upgrades Tier 3 Data Center Construction - Mountain Home VAMC",
+      "city": "Mountain Home",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-24",
+      "description": "Federal solicitation 36C77626B0006. C1DZ--621-24-701 EHRM Infrastructure Upgrades Tier 3 Data Center Construction - Mountain Home VAMC. Response deadline 2026-04-02.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code C1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0006",
+          "url": "https://sam.gov/workspace/contract/opp/53e073bd920b403489b869dae2b37287/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "TN"
+    },
+    {
+      "id": "tn-sam-3a36a5c64c004a8a-c1dz-621-24-701-ehrm-infrastructure-upgrades-tier-",
+      "name": "C1DZ--621-24-701 EHRM Infrastructure Upgrades Tier 3 Data Center Construction - Mountain Home VAMC",
+      "city": "Mountain Home",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-16",
+      "description": "Federal solicitation 36C77626B0006. C1DZ--621-24-701 EHRM Infrastructure Upgrades Tier 3 Data Center Construction - Mountain Home VAMC. Response deadline 2026-03-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code C1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0006",
+          "url": "https://sam.gov/workspace/contract/opp/3a36a5c64c004a8ab0ec47218b88c7a0/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "TN"
+    },
+    {
+      "id": "tn-sam-b4b9ca634e314e61-c1dz-621-24-701-ehrm-infrastructure-upgrades-tier-",
+      "name": "C1DZ--621-24-701 EHRM Infrastructure Upgrades Tier 3 Data Center Construction - Mountain Home VAMC",
+      "city": "Mountain Home",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-12",
+      "description": "Federal solicitation 36C77626B0006. C1DZ--621-24-701 EHRM Infrastructure Upgrades Tier 3 Data Center Construction - Mountain Home VAMC. Response deadline 2026-03-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code C1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0006",
+          "url": "https://sam.gov/workspace/contract/opp/b4b9ca634e314e61a7a0dbcddfc8a681/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "TN"
+    },
+    {
+      "id": "tn-sam-a2eb4282016546f5-c1dz-621-24-701-ehrm-infrastructure-upgrades-tier-",
+      "name": "C1DZ--621-24-701 EHRM Infrastructure Upgrades Tier 3 Data Center Construction - Mountain Home VAMC",
+      "city": "Mountain Home",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-04",
+      "description": "Federal solicitation 36C77626B0006. C1DZ--621-24-701 EHRM Infrastructure Upgrades Tier 3 Data Center Construction - Mountain Home VAMC. Response deadline 2026-03-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code C1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0006",
+          "url": "https://sam.gov/workspace/contract/opp/a2eb4282016546f5a335af338e5dc2a8/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "TN"
+    },
+    {
+      "id": "tn-sam-c072e6aaad91455c-c1dz-621-24-701-ehrm-infrastructure-upgrades-tier-",
+      "name": "C1DZ--621-24-701 EHRM Infrastructure Upgrades Tier 3 Data Center Construction - Mountain Home VAMC",
+      "city": "Mountain Home",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-19",
+      "description": "Federal solicitation 36C77626B0006. C1DZ--621-24-701 EHRM Infrastructure Upgrades Tier 3 Data Center Construction - Mountain Home VAMC. Response deadline 2026-03-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code C1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0006",
+          "url": "https://sam.gov/workspace/contract/opp/c072e6aaad91455c8d0ac8494ccf6b04/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "TN"
+    },
+    {
+      "id": "tn-sam-d80e4aea19d6463c-c1dz-621-24-701-ehrm-infrastructure-upgrades-tier-",
+      "name": "C1DZ--621-24-701 EHRM Infrastructure Upgrades Tier 3 Data Center Construction - Mountain Home VAMC",
+      "city": "Mountain Home",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-29",
+      "description": "Federal solicitation 36C77626B0006. C1DZ--621-24-701 EHRM Infrastructure Upgrades Tier 3 Data Center Construction - Mountain Home VAMC. Response deadline 2026-03-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code C1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0006",
+          "url": "https://sam.gov/workspace/contract/opp/d80e4aea19d6463c8a279e87021bafa7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "TN"
+    },
+    {
+      "id": "tn-sam-252595de061e4c21-facilities-acquisitions-for-restoration-and-modern",
+      "name": "Facilities Acquisitions for Restoration and Modernization (FARM) III",
+      "city": "0",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-04",
+      "description": "Federal special notice FA9101-25-R-FARMIII-Special_Notice. Facilities Acquisitions for Restoration and Modernization (FARM) III. Response deadline 2025-12-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice FA9101-25-R-FARMIII-Special_Notice",
+          "url": "https://sam.gov/workspace/contract/opp/252595de061e4c21a2b3c10aa7138a91/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "TN"
+    },
+    {
+      "id": "tn-sam-ec6a4f144ad3472e-facilities-acquisitions-for-restoration-and-modern",
+      "name": "Facilities Acquisitions for Restoration and Modernization (FARM) III",
+      "city": "0",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-04",
+      "description": "Federal special notice. Facilities Acquisitions for Restoration and Modernization (FARM) III. Response deadline 2025-12-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice ",
+          "url": "https://sam.gov/workspace/contract/opp/ec6a4f144ad3472e8206ea91ca70048f/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "TN"
+    },
+    {
+      "id": "tn-sam-185069fa4c124ec2-facilities-acquisitions-for-restoration-and-modern",
+      "name": "Facilities Acquisitions for Restoration and Modernization (FARM) III",
+      "city": "Arnold AFB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-04",
+      "description": "Federal sources sought FA9101-25-R-FARMIII. Facilities Acquisitions for Restoration and Modernization (FARM) III. Response deadline 2025-12-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought FA9101-25-R-FARMIII",
+          "url": "https://sam.gov/workspace/contract/opp/185069fa4c124ec28305c354bc64d5dd/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "TN"
     }
   ],
   "stats": {
-    "total": 4
+    "total": 33
   }
 }

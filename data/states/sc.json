@@ -1,9 +1,9 @@
 {
   "state": "SC",
   "state_name": "South Carolina",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — SC Dept of Commerce, local business journals, press releases.",
+  "capture_method": "Public sources — SC Dept of Commerce, local business journals, press releases, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "sc-steelfab-florence-expansion",
@@ -162,9 +162,2531 @@
         }
       ],
       "open_for": "Self-storage climate control systems, security/access control packages, elevators."
+    },
+    {
+      "id": "sc-sam-a173022f0d86414b-construction-of-aeromedical-evacuation-squadron-fa",
+      "name": "Construction of Aeromedical Evacuation Squadron Facility, Joint Base Charleston, SC",
+      "city": "Charleston",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "Federal solicitation W912QR26BA019. Construction of Aeromedical Evacuation Squadron Facility, Joint Base Charleston, SC. Response deadline 2026-08-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA019",
+          "url": "https://sam.gov/workspace/contract/opp/a173022f0d86414b9e02933de7906e5d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-9cd597a4964947c8-construction-of-aeromedical-evacuation-squadron-fa",
+      "name": "Construction of Aeromedical Evacuation Squadron Facility, Joint Base Charleston, SC",
+      "city": "Charleston",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "Federal solicitation W912QR26BA019. Construction of Aeromedical Evacuation Squadron Facility, Joint Base Charleston, SC. Response deadline 2026-08-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA019",
+          "url": "https://sam.gov/workspace/contract/opp/9cd597a4964947c8b76ef46de11a7b10/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-f968634981f948c3-jb-charleston-multiple-award-construction-contract",
+      "name": "JB Charleston Multiple Award Construction Contract",
+      "city": "0",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal solicitation FA441826R0009. JB Charleston Multiple Award Construction Contract. Response deadline 2026-09-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA441826R0009",
+          "url": "https://sam.gov/workspace/contract/opp/f968634981f948c393cab059c0791948/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-8580571846f447f0-construction-of-aeromedical-evacuation-squadron-fa",
+      "name": "Construction of Aeromedical Evacuation Squadron Facility, Joint Base Charleston, SC",
+      "city": "Charleston",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal solicitation W912QR26BA019. Construction of Aeromedical Evacuation Squadron Facility, Joint Base Charleston, SC. Response deadline 2026-08-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA019",
+          "url": "https://sam.gov/workspace/contract/opp/8580571846f447f082bad19d5b4bef25/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-a7ab9ff001f143fa-construction-of-aeromedical-evacuation-squadron-fa",
+      "name": "Construction of Aeromedical Evacuation Squadron Facility, Joint Base Charleston, SC",
+      "city": "Charleston",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal solicitation W912QR26BA019. Construction of Aeromedical Evacuation Squadron Facility, Joint Base Charleston, SC. Response deadline 2026-08-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA019",
+          "url": "https://sam.gov/workspace/contract/opp/a7ab9ff001f143fab0e8386d5a8ceceb/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-c6f66bc599c84283-fy27-macc",
+      "name": "FY27 MACC",
+      "city": "Shaw AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Federal solicitation FA480326B0006. FY27 MACC. Response deadline 2026-09-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA480326B0006",
+          "url": "https://sam.gov/workspace/contract/opp/c6f66bc599c8428383fdc062ad317616/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-30d586aa9e974993-y1da-534-24-706-ehrm-data-center-upgrades-construc",
+      "name": "Y1DA--534-24-706 EHRM Data Center Upgrades Construction - Charleston",
+      "city": "Charleston",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Federal presolicitation 36C77626B0027. Y1DA--534-24-706 EHRM Data Center Upgrades Construction - Charleston.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C77626B0027",
+          "url": "https://sam.gov/workspace/contract/opp/30d586aa9e974993a048465896eddc70/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-508a69b8a7634819-y1da-534-24-102-renovate-sps-spaces-construction",
+      "name": "Y1DA--534-24-102 Renovate SPS Spaces Construction",
+      "city": "Charleston",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Federal combined synopsis/solicitation 36C24726Q0729. Y1DA--534-24-102 Renovate SPS Spaces Construction. Response deadline 2026-08-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 36C24726Q0729",
+          "url": "https://sam.gov/workspace/contract/opp/508a69b8a7634819b3a5216847593aa4/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-54f9438985d04950-repair-naval-reserve-center-building-3370-fa4418-2",
+      "name": "Repair Naval Reserve Center Building 3370 - FA4418-26-R-00013",
+      "city": "Charleston AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "Federal solicitation FA441826R0013. Repair Naval Reserve Center Building 3370 - FA4418-26-R-00013. Response deadline 2026-07-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2PD"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA441826R0013",
+          "url": "https://sam.gov/workspace/contract/opp/54f9438985d04950bf2a532477c7905b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-34be58debe7c475e-construction-of-aeromedical-evacuation-squadron-fa",
+      "name": "Construction of Aeromedical Evacuation Squadron Facility, Joint Base Charleston, SC",
+      "city": "Charleston",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "Federal solicitation W912QR26BA019. Construction of Aeromedical Evacuation Squadron Facility, Joint Base Charleston, SC. Response deadline 2026-08-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA019",
+          "url": "https://sam.gov/workspace/contract/opp/34be58debe7c475e8eac6b073487bb3e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-a79e245c502b41b3-construction-of-aeromedical-evacuation-squadron-fa",
+      "name": "Construction of Aeromedical Evacuation Squadron Facility, Joint Base Charleston, SC",
+      "city": "Charleston",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "Federal solicitation W912QR26BA019. Construction of Aeromedical Evacuation Squadron Facility, Joint Base Charleston, SC. Response deadline 2026-08-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA019",
+          "url": "https://sam.gov/workspace/contract/opp/a79e245c502b41b3a47c28253707eafd/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-564e2cba757941a6-construction-of-aeromedical-evacuation-squadron-fa",
+      "name": "Construction of Aeromedical Evacuation Squadron Facility, Joint Base Charleston, SC",
+      "city": "Charleston",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "Federal solicitation W912QR26BA019. Construction of Aeromedical Evacuation Squadron Facility, Joint Base Charleston, SC. Response deadline 2026-08-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA019",
+          "url": "https://sam.gov/workspace/contract/opp/564e2cba757941a69d28c262477b60af/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-fed71c8f3dd643ab-design-bid-build-aes-facility-located-at-joint-bas",
+      "name": "Design-Bid-Build AES facility located at Joint Base Charleston, South Carolina",
+      "city": "Charleston",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "Federal solicitation W912QR26BA019. Design-Bid-Build AES facility located at Joint Base Charleston, South Carolina. Response deadline 2026-08-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA019",
+          "url": "https://sam.gov/workspace/contract/opp/fed71c8f3dd643abae32642af16004c9/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-a628e120afd946b0-repair-naval-reserve-center-building-3370-fa4418-2",
+      "name": "Repair Naval Reserve Center Building 3370 - FA4418-26-R-00013",
+      "city": "Charleston AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "Federal solicitation FA441826R0013. Repair Naval Reserve Center Building 3370 - FA4418-26-R-00013. Response deadline 2026-07-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2PD"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA441826R0013",
+          "url": "https://sam.gov/workspace/contract/opp/a628e120afd946b099c3ffa8107ac1be/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-675ec4f1d4aa4eed-repair-naval-reserve-center-building-3370-fa4418-2",
+      "name": "Repair Naval Reserve Center Building 3370 - FA4418-26-R-00013",
+      "city": "Charleston AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Federal solicitation FA441826R0013. Repair Naval Reserve Center Building 3370 - FA4418-26-R-00013. Response deadline 2026-07-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2PD"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA441826R0013",
+          "url": "https://sam.gov/workspace/contract/opp/675ec4f1d4aa4eed9e8a9ca262366b9a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-6417550ace744d5e-usace-virtual-industry-day-fy27-construction-proje",
+      "name": "USACE Virtual Industry Day – FY27 Construction Projects for the Department of Energy (DOE) at Savannah River Site (SRS) ",
+      "city": "Aiken",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "Federal special notice. USACE Virtual Industry Day – FY27 Construction Projects for the Department of Energy (DOE) at Savannah River Site (SRS) in Aiken, SC and the Department of Homeland Security (DHS) at Federal Law Enforcement Training Center (FLETC), in North Charleston, SC. Response deadline 2026-08-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice ",
+          "url": "https://sam.gov/workspace/contract/opp/6417550ace744d5e85d9ac05a89d5c1c/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-8c570485abc94018-p475-aircraft-maintenance-hangar",
+      "name": "P475 Aircraft Maintenance Hangar",
+      "city": "Beaufort",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-25",
+      "description": "Federal solicitation N4008526R0148. P475 Aircraft Maintenance Hangar. Response deadline 2026-07-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0148",
+          "url": "https://sam.gov/workspace/contract/opp/8c570485abc940189d9610da7750966d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-f988f5d32bf54142-p475-aircraft-maintenance-hangar",
+      "name": "P475 Aircraft Maintenance Hangar",
+      "city": "Beaufort",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-25",
+      "description": "Federal solicitation N4008526R0148. P475 Aircraft Maintenance Hangar. Response deadline 2026-07-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0148",
+          "url": "https://sam.gov/workspace/contract/opp/f988f5d32bf54142bbed2bc53e9b9a4c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-b130c89adff44280-p475-aircraft-maintenance-hangar",
+      "name": "P475 Aircraft Maintenance Hangar",
+      "city": "Beaufort",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-25",
+      "description": "Federal solicitation N4008526R0148. P475 Aircraft Maintenance Hangar. Response deadline 2026-02-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0148",
+          "url": "https://sam.gov/workspace/contract/opp/b130c89adff442809ad2912b43b688a3/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-b6d9bd3ec0894fa8-repair-naval-reserve-center-building-3370-fa4418-2",
+      "name": "Repair Naval Reserve Center Building 3370 - FA4418-26-R-00013",
+      "city": "Charleston AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-24",
+      "description": "Federal solicitation FA441826R0013. Repair Naval Reserve Center Building 3370 - FA4418-26-R-00013. Response deadline 2026-07-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2PD"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA441826R0013",
+          "url": "https://sam.gov/workspace/contract/opp/b6d9bd3ec0894fa8a7b112ff2ad3e7f3/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-86895fd1997b4aa8-repair-naval-reserve-center-building-3370-fa4418-2",
+      "name": "Repair Naval Reserve Center Building 3370 - FA4418-26-R-00013",
+      "city": "Charleston AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-23",
+      "description": "Federal solicitation FA441826R0013. Repair Naval Reserve Center Building 3370 - FA4418-26-R-00013. Response deadline 2026-07-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2PD"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA441826R0013",
+          "url": "https://sam.gov/workspace/contract/opp/86895fd1997b4aa8a345a3d919f601c2/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-c4b06b43cac14237-repair-naval-reserve-center-building-3370-fa4418-2",
+      "name": "Repair Naval Reserve Center Building 3370 - FA4418-26-R-00013",
+      "city": "Charleston AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-23",
+      "description": "Federal solicitation FA441826R0013. Repair Naval Reserve Center Building 3370 - FA4418-26-R-00013. Response deadline 2026-06-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2PD"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA441826R0013",
+          "url": "https://sam.gov/workspace/contract/opp/c4b06b43cac14237b88062116f355086/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-3725500368a54a1b-repair-naval-reserve-center-building-3370-fa4418-2",
+      "name": "Repair Naval Reserve Center Building 3370 - FA4418-26-R-00013",
+      "city": "Charleston AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-22",
+      "description": "Federal solicitation FA441826R0013. Repair Naval Reserve Center Building 3370 - FA4418-26-R-00013. Response deadline 2026-06-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2PD"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA441826R0013",
+          "url": "https://sam.gov/workspace/contract/opp/3725500368a54a1ba9a794c7161eb491/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-8f2c5eee49544418-repair-naval-reserve-center-building-3370-fa4418-2",
+      "name": "Repair Naval Reserve Center Building 3370 - FA4418-26-R-00013",
+      "city": "Charleston AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-04",
+      "description": "Federal solicitation FA441826R0013. Repair Naval Reserve Center Building 3370 - FA4418-26-R-00013. Response deadline 2026-06-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2PD"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA441826R0013",
+          "url": "https://sam.gov/workspace/contract/opp/8f2c5eee49544418ac7d5f3ac1df085d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-eefe188d80a74ad4-repair-naval-reserve-center-building-3370-fa4418-2",
+      "name": "Repair Naval Reserve Center Building 3370 - FA4418-26-R-00013",
+      "city": "Charleston AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-27",
+      "description": "Federal solicitation FA441826R0013. Repair Naval Reserve Center Building 3370 - FA4418-26-R-00013. Response deadline 2026-06-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2PD"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA441826R0013",
+          "url": "https://sam.gov/workspace/contract/opp/eefe188d80a74ad4a549ef3d6ff17868/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-1f74f860598b4292-repair-naval-reserve-center-building-3370-fa4418-2",
+      "name": "Repair Naval Reserve Center Building 3370 - FA4418-26-R-00013",
+      "city": "Charleston AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-27",
+      "description": "Federal solicitation FA441826R0013. Repair Naval Reserve Center Building 3370 - FA4418-26-R-00013. Response deadline 2026-06-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2PD"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA441826R0013",
+          "url": "https://sam.gov/workspace/contract/opp/1f74f860598b429282a19177f138926b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-544f48d401e74908-repair-naval-reserve-center-building-3370-fa4418-2",
+      "name": "Repair Naval Reserve Center Building 3370 - FA4418-26-R-00013",
+      "city": "Charleston AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-27",
+      "description": "Federal solicitation FA441826R0013. Repair Naval Reserve Center Building 3370 - FA4418-26-R-00013. Response deadline 2026-06-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2PD"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA441826R0013",
+          "url": "https://sam.gov/workspace/contract/opp/544f48d401e74908bccec450617b380b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-988b859136af4b0a-repair-naval-reserve-center-building-3370-fa4418-2",
+      "name": "Repair Naval Reserve Center Building 3370 - FA4418-26-R-00013",
+      "city": "Charleston AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-26",
+      "description": "Federal solicitation FA441826R0013. Repair Naval Reserve Center Building 3370 - FA4418-26-R-00013. Response deadline 2026-06-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2PD"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA441826R0013",
+          "url": "https://sam.gov/workspace/contract/opp/988b859136af4b0a947b02deaa0eb18e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-261e77a9926e4e2b-y1dz-renovate-b3-ehrm-training-and-admin-space-pro",
+      "name": "Y1DZ--Renovate B3-EHRM Training and Admin Space Project 544 22 703 EHRM Construction 6439 Garner's Ferry Rd. Columbia VA",
+      "city": "Columbia",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-15",
+      "description": "Federal solicitation 36C77626R0032_2. Y1DZ--Renovate B3-EHRM Training and Admin Space Project 544 22 703 EHRM Construction 6439 Garner's Ferry Rd. Columbia VAMC Columbia, SC 29209. Response deadline 2026-04-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0032_2",
+          "url": "https://sam.gov/workspace/contract/opp/261e77a9926e4e2b8c60ae8aedc2babf/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-1ddfb4e425904c06-y1dz-renovate-b3-ehrm-training-and-admin-space-pro",
+      "name": "Y1DZ--Renovate B3-EHRM Training and Admin Space Project 544 22 703 EHRM Construction 6439 Garner's Ferry Rd. Columbia VA",
+      "city": "Columbia",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-02",
+      "description": "Federal solicitation 36C77626R0032_2. Y1DZ--Renovate B3-EHRM Training and Admin Space Project 544 22 703 EHRM Construction 6439 Garner's Ferry Rd. Columbia VAMC Columbia, SC 29209. Response deadline 2026-04-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0032_2",
+          "url": "https://sam.gov/workspace/contract/opp/1ddfb4e425904c06b7afb4fa441091f5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-118cb3c1c3624923-rfp-p200-nuclear-power-training-facility-simulatio",
+      "name": "RFP - P200 Nuclear Power Training Facility Simulation Expansion, JB Charleston, SC",
+      "city": "Charleston AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-31",
+      "description": "Federal solicitation N6945026R0001. RFP - P200 Nuclear Power Training Facility Simulation Expansion, JB Charleston, SC. Response deadline 2026-04-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0001",
+          "url": "https://sam.gov/workspace/contract/opp/118cb3c1c36249238dea21751bd53aa5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-b1db63cca1d54873-y1dz-renovate-b3-ehrm-training-and-admin-space-pro",
+      "name": "Y1DZ--Renovate B3-EHRM Training and Admin Space Project 544 22 703 EHRM Construction 6439 Garner's Ferry Rd. Columbia VA",
+      "city": "Columbia",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-31",
+      "description": "Federal solicitation 36C77626R0032_2. Y1DZ--Renovate B3-EHRM Training and Admin Space Project 544 22 703 EHRM Construction 6439 Garner's Ferry Rd. Columbia VAMC Columbia, SC 29209. Response deadline 2026-04-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0032_2",
+          "url": "https://sam.gov/workspace/contract/opp/b1db63cca1d54873bc4639f0f1bc4e38/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-51db7cd781d4449e-rfp-p200-nuclear-power-training-facility-simulatio",
+      "name": "RFP - P200 Nuclear Power Training Facility Simulation Expansion, JB Charleston, SC",
+      "city": "Charleston AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-25",
+      "description": "Federal solicitation N6945026R0001. RFP - P200 Nuclear Power Training Facility Simulation Expansion, JB Charleston, SC. Response deadline 2026-04-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0001",
+          "url": "https://sam.gov/workspace/contract/opp/51db7cd781d4449eb41377bd7f0c5dd8/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-58e8ac760ae649cb-y1dz-renovate-b3-ehrm-training-and-admin-space-pro",
+      "name": "Y1DZ--Renovate B3-EHRM Training and Admin Space Project 544 22 703 EHRM Construction 6439 Garner's Ferry Rd. Columbia VA",
+      "city": "Columbia",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-23",
+      "description": "Federal solicitation 36C77626R0032_2. Y1DZ--Renovate B3-EHRM Training and Admin Space Project 544 22 703 EHRM Construction 6439 Garner's Ferry Rd. Columbia VAMC Columbia, SC 29209. Response deadline 2026-04-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0032_2",
+          "url": "https://sam.gov/workspace/contract/opp/58e8ac760ae649cb9570f0534c899a94/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-45bf927d582e4aaa-rfp-p200-nuclear-power-training-facility-simulatio",
+      "name": "RFP - P200 Nuclear Power Training Facility Simulation Expansion, JB Charleston, SC",
+      "city": "Charleston AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-20",
+      "description": "Federal solicitation N6945026R0001. RFP - P200 Nuclear Power Training Facility Simulation Expansion, JB Charleston, SC. Response deadline 2026-04-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0001",
+          "url": "https://sam.gov/workspace/contract/opp/45bf927d582e4aaa89e2b4054b03e5d7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-66f414df416a4b4b-rfp-p200-nuclear-power-training-facility-simulatio",
+      "name": "RFP - P200 Nuclear Power Training Facility Simulation Expansion, JB Charleston, SC",
+      "city": "Charleston AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-19",
+      "description": "Federal solicitation N6945026R0001. RFP - P200 Nuclear Power Training Facility Simulation Expansion, JB Charleston, SC. Response deadline 2026-04-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0001",
+          "url": "https://sam.gov/workspace/contract/opp/66f414df416a4b4b870597d3aa74c9c4/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-b89905b1181243d2-repair-naval-reserve-training-facility-b3370",
+      "name": "Repair Naval Reserve Training Facility B3370",
+      "city": "Charleston AFB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-18",
+      "description": "Federal sources sought DKGV-1137999. Repair Naval Reserve Training Facility B3370. Response deadline 2029-04-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought DKGV-1137999",
+          "url": "https://sam.gov/workspace/contract/opp/b89905b1181243d28240b965587cf27a/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-a6d873bcd46e4e77-repair-natural-resources-facility-b3370",
+      "name": "Repair Natural Resources Facility B3370",
+      "city": "Charleston AFB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-17",
+      "description": "Federal sources sought DKGV-1137999. Repair Natural Resources Facility B3370. Response deadline 2029-04-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought DKGV-1137999",
+          "url": "https://sam.gov/workspace/contract/opp/a6d873bcd46e4e77beecf35c52675c4d/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-7165dd5c37b1491a-y1dz-renovate-b3-ehrm-training-and-admin-space-pro",
+      "name": "Y1DZ--Renovate B3-EHRM Training and Admin Space Project 544 22 703 EHRM Construction 6439 Garner's Ferry Rd. Columbia VA",
+      "city": "Columbia",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-12",
+      "description": "Federal solicitation 36C77626R0032_2. Y1DZ--Renovate B3-EHRM Training and Admin Space Project 544 22 703 EHRM Construction 6439 Garner's Ferry Rd. Columbia VAMC Columbia, SC 29209. Response deadline 2026-03-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0032_2",
+          "url": "https://sam.gov/workspace/contract/opp/7165dd5c37b1491aa73eab53b97365e6/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-d6446fd9f9e1496a-rfp-p200-nuclear-power-training-facility-simulatio",
+      "name": "RFP - P200 Nuclear Power Training Facility Simulation Expansion, JB Charleston, SC",
+      "city": "Charleston AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-11",
+      "description": "Federal solicitation N6945026R0001. RFP - P200 Nuclear Power Training Facility Simulation Expansion, JB Charleston, SC. Response deadline 2026-04-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0001",
+          "url": "https://sam.gov/workspace/contract/opp/d6446fd9f9e1496aaf95da587fdda856/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-4e0aea9196f64fdb-charleston-pier-mike-recapitalization-uscg-base-ch",
+      "name": "Charleston Pier Mike Recapitalization, USCG Base Charleston, South Carolina",
+      "city": "North Charleston",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "Whiting-Turner Contracting Company, The Towson Md 21286 Usa",
+      "opened_or_announced_date": "2026-03-11",
+      "description": "Federal award notice 70Z04726RPCNI0003. Charleston Pier Mike Recapitalization, USCG Base Charleston, South Carolina.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "No Set aside used",
+        "Classification code Y1QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice 70Z04726RPCNI0003",
+          "url": "https://sam.gov/workspace/contract/opp/4e0aea9196f64fdbae49630272917c68/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-8915817350c6413f-rfp-p200-nuclear-power-training-facility-simulatio",
+      "name": "RFP - P200 Nuclear Power Training Facility Simulation Expansion, JB Charleston, SC",
+      "city": "Charleston AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-10",
+      "description": "Federal solicitation N6945026R0001. RFP - P200 Nuclear Power Training Facility Simulation Expansion, JB Charleston, SC. Response deadline 2026-03-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0001",
+          "url": "https://sam.gov/workspace/contract/opp/8915817350c6413fb17ba8d8e659e14b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-bd0208781a80431a-y1dz-renovate-b3-ehrm-training-and-admin-space-pro",
+      "name": "Y1DZ--Renovate B3-EHRM Training and Admin Space Project 544 22 703 EHRM Construction 6439 Garner's Ferry Rd. Columbia VA",
+      "city": "Columbia",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-06",
+      "description": "Federal solicitation 36C77626R0032_2. Y1DZ--Renovate B3-EHRM Training and Admin Space Project 544 22 703 EHRM Construction 6439 Garner's Ferry Rd. Columbia VAMC Columbia, SC 29209. Response deadline 2026-03-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0032_2",
+          "url": "https://sam.gov/workspace/contract/opp/bd0208781a80431aa9656c39f83ebbe1/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-55b92053e4a04441-rfp-p200-nuclear-power-training-facility-simulatio",
+      "name": "RFP - P200 Nuclear Power Training Facility Simulation Expansion, JB Charleston, SC",
+      "city": "Charleston AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-05",
+      "description": "Federal solicitation N6945026R0001. RFP - P200 Nuclear Power Training Facility Simulation Expansion, JB Charleston, SC. Response deadline 2026-03-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0001",
+          "url": "https://sam.gov/workspace/contract/opp/55b92053e4a044418cbe56ddf9e40a29/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-6153e08cc6ea46cd-rfp-p200-nuclear-power-training-facility-simulatio",
+      "name": "RFP - P200 Nuclear Power Training Facility Simulation Expansion, JB Charleston, SC",
+      "city": "Charleston AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-02",
+      "description": "Federal solicitation N6945026R0001. RFP - P200 Nuclear Power Training Facility Simulation Expansion, JB Charleston, SC. Response deadline 2026-03-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0001",
+          "url": "https://sam.gov/workspace/contract/opp/6153e08cc6ea46cdbd57169b2a048196/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-1e5d95d92daa477e-y1dz-renovate-b3-ehrm-training-and-admin-space-pro",
+      "name": "Y1DZ--Renovate B3-EHRM Training and Admin Space Project 544 22 703 EHRM Construction 6439 Garner's Ferry Rd. Columbia VA",
+      "city": "Columbia",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-23",
+      "description": "Federal solicitation 36C77626R0032_2. Y1DZ--Renovate B3-EHRM Training and Admin Space Project 544 22 703 EHRM Construction 6439 Garner's Ferry Rd. Columbia VAMC Columbia, SC 29209. Response deadline 2026-03-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0032_2",
+          "url": "https://sam.gov/workspace/contract/opp/1e5d95d92daa477e91c462dd9261c9f0/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-495a64f462ec4bff-rfp-p200-nuclear-power-training-facility-simulatio",
+      "name": "RFP - P200 Nuclear Power Training Facility Simulation Expansion, JB Charleston, SC",
+      "city": "Charleston AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-20",
+      "description": "Federal solicitation N6945026R0001. RFP - P200 Nuclear Power Training Facility Simulation Expansion, JB Charleston, SC. Response deadline 2026-03-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0001",
+          "url": "https://sam.gov/workspace/contract/opp/495a64f462ec4bffaccdcc187a09db12/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-81894852d0174f80-p475-aircraft-maintenance-hangar",
+      "name": "P475 Aircraft Maintenance Hangar",
+      "city": "Beaufort",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-19",
+      "description": "Federal solicitation N4008526R0148. P475 Aircraft Maintenance Hangar. Response deadline 2026-02-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0148",
+          "url": "https://sam.gov/workspace/contract/opp/81894852d0174f8099f2659886ccd606/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-98e6ca1fe1204c03-p475-aircraft-maintenance-hangar",
+      "name": "P475 Aircraft Maintenance Hangar",
+      "city": "Beaufort",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-19",
+      "description": "Federal solicitation N4008526R0148. P475 Aircraft Maintenance Hangar. Response deadline 2026-02-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0148",
+          "url": "https://sam.gov/workspace/contract/opp/98e6ca1fe1204c03a493a6e823c6cbf0/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-99728f5a4d824694-p475-aircraft-maintenance-hangar",
+      "name": "P475 Aircraft Maintenance Hangar",
+      "city": "Beaufort",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-13",
+      "description": "Federal solicitation N4008526R0148. P475 Aircraft Maintenance Hangar. Response deadline 2026-02-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0148",
+          "url": "https://sam.gov/workspace/contract/opp/99728f5a4d824694a67c35a103dc9dc9/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-07b8eb35f46f4c5a-p475-aircraft-maintenance-hangar",
+      "name": "P475 Aircraft Maintenance Hangar",
+      "city": "Beaufort",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-13",
+      "description": "Federal solicitation N4008526R0148. P475 Aircraft Maintenance Hangar. Response deadline 2026-02-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0148",
+          "url": "https://sam.gov/workspace/contract/opp/07b8eb35f46f4c5aa371f6e207c37f58/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-0609521ecdb549f5-p475-aircraft-maintenance-hangar",
+      "name": "P475 Aircraft Maintenance Hangar",
+      "city": "Beaufort",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-13",
+      "description": "Federal solicitation N4008526R0148. P475 Aircraft Maintenance Hangar. Response deadline 2026-02-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0148",
+          "url": "https://sam.gov/workspace/contract/opp/0609521ecdb549f58c9edb94a006b020/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-26863b6b2d23475e-p475-aircraft-maintenance-hangar",
+      "name": "P475 Aircraft Maintenance Hangar",
+      "city": "Beaufort",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-13",
+      "description": "Federal solicitation N4008526R0148. P475 Aircraft Maintenance Hangar. Response deadline 2026-02-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0148",
+          "url": "https://sam.gov/workspace/contract/opp/26863b6b2d23475e971c6a1d3f3f7c96/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-ce3b8bc46d8447c4-rfp-p200-nuclear-power-training-facility-simulatio",
+      "name": "RFP - P200 Nuclear Power Training Facility Simulation Expansion, JB Charleston, SC",
+      "city": "Charleston AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-12",
+      "description": "Federal solicitation N6945026R0001. RFP - P200 Nuclear Power Training Facility Simulation Expansion, JB Charleston, SC. Response deadline 2026-03-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0001",
+          "url": "https://sam.gov/workspace/contract/opp/ce3b8bc46d8447c492ac4e51fbd6775c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-4a108d2315a048df-p475-aircraft-maintenance-hangar",
+      "name": "P475 Aircraft Maintenance Hangar",
+      "city": "Beaufort",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-04",
+      "description": "Federal solicitation N4008526R0148. P475 Aircraft Maintenance Hangar. Response deadline 2026-02-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0148",
+          "url": "https://sam.gov/workspace/contract/opp/4a108d2315a048df9c0c347d92144e21/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-38e1345a732c454e-p475-aircraft-maintenance-hangar",
+      "name": "P475 Aircraft Maintenance Hangar",
+      "city": "Beaufort",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-27",
+      "description": "Federal solicitation N4008526R0148. P475 Aircraft Maintenance Hangar. Response deadline 2026-02-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0148",
+          "url": "https://sam.gov/workspace/contract/opp/38e1345a732c454ea668f4c20847ad75/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-f763da292f0e43f3-p475-aircraft-maintenance-hangar",
+      "name": "P475 Aircraft Maintenance Hangar",
+      "city": "Beaufort",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-27",
+      "description": "Federal solicitation N4008526R0148. P475 Aircraft Maintenance Hangar. Response deadline 2026-02-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0148",
+          "url": "https://sam.gov/workspace/contract/opp/f763da292f0e43f3bcb2a2435979452b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-18f48a5c23974fbe-p475-aircraft-maintenance-hangar",
+      "name": "P475 Aircraft Maintenance Hangar",
+      "city": "Beaufort",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-26",
+      "description": "Federal solicitation N4008526R0148. P475 Aircraft Maintenance Hangar. Response deadline 2026-02-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0148",
+          "url": "https://sam.gov/workspace/contract/opp/18f48a5c23974fbe9dbe6b723857ffe8/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-89ff6527f9b54149-n4008526r0148-p475-aircraft-maintenance-hangar",
+      "name": "N4008526R0148: P475 Aircraft Maintenance Hangar",
+      "city": "Beaufort",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-26",
+      "description": "Federal solicitation N4008526R0148. N4008526R0148: P475 Aircraft Maintenance Hangar. Response deadline 2026-02-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0148",
+          "url": "https://sam.gov/workspace/contract/opp/89ff6527f9b5414990af92532b3d50af/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-c80edca15b9a430a-n4008526r0148-p475-aircraft-maintenance-hangar",
+      "name": "N4008526R0148: P475 Aircraft Maintenance Hangar",
+      "city": "Beaufort",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-21",
+      "description": "Federal solicitation N4008526R0148. N4008526R0148: P475 Aircraft Maintenance Hangar. Response deadline 2026-02-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0148",
+          "url": "https://sam.gov/workspace/contract/opp/c80edca15b9a430ab5d5ee0ee3af48a8/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-0c79bb72d92f48ee-n4008526r0148-p475-aircraft-maintenance-hangar",
+      "name": "N4008526R0148: P475 Aircraft Maintenance Hangar",
+      "city": "Beaufort",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-07",
+      "description": "Federal solicitation N4008526R0148. N4008526R0148: P475 Aircraft Maintenance Hangar. Response deadline 2026-02-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0148",
+          "url": "https://sam.gov/workspace/contract/opp/0c79bb72d92f48eeb27f887333185acc/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-3937628106a14a25-p475-aircraft-maintenance-hangar",
+      "name": "P475 Aircraft Maintenance Hangar",
+      "city": "Beaufort",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-07",
+      "description": "Federal solicitation N4008526R0148. P475 Aircraft Maintenance Hangar. Response deadline 2026-02-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0148",
+          "url": "https://sam.gov/workspace/contract/opp/3937628106a14a25a51f2adb6ffda5e6/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-cbae761f0c734c1e-p475-aircraft-maintenance-hangar",
+      "name": "P475 Aircraft Maintenance Hangar",
+      "city": "Beaufort",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-22",
+      "description": "Federal solicitation N4008526R0148. P475 Aircraft Maintenance Hangar. Response deadline 2026-02-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0148",
+          "url": "https://sam.gov/workspace/contract/opp/cbae761f0c734c1eb3af18c1b1a03721/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-f0f3225ea80e4ccd-n4008526r0148-p475-aircraft-maintenance-hangar-mca",
+      "name": "N4008526R0148 - P475 Aircraft Maintenance Hangar, MCAS Beaufort, SC",
+      "city": "Beaufort",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-22",
+      "description": "Federal solicitation N4008526R0148. N4008526R0148 - P475 Aircraft Maintenance Hangar, MCAS Beaufort, SC. Response deadline 2026-02-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0148",
+          "url": "https://sam.gov/workspace/contract/opp/f0f3225ea80e4ccdbf26bec3e910d84f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
+    },
+    {
+      "id": "sc-sam-38ce86ef47ca4521-n4008525r0148-p475-aircraft-maintenance-hangar-mca",
+      "name": "N4008525R0148 - P475 Aircraft Maintenance Hangar, MCAS Beaufort, SC",
+      "city": "Beaufort",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-22",
+      "description": "Federal solicitation N4008526R0148. N4008525R0148 - P475 Aircraft Maintenance Hangar, MCAS Beaufort, SC. Response deadline 2026-02-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0148",
+          "url": "https://sam.gov/workspace/contract/opp/38ce86ef47ca4521a8553818c48c4380/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SC"
     }
   ],
   "stats": {
-    "total": 4
+    "total": 69
   }
 }

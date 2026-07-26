@@ -1,9 +1,9 @@
 {
   "state": "ND",
   "state_name": "North Dakota",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — DCD, local economic development.",
+  "capture_method": "Public sources — DCD, local economic development, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "nd-natelli-new-hill-withdrawn",
@@ -41,9 +41,1295 @@
         }
       ],
       "open_for": "Early-stage powered land. Monitor filings."
+    },
+    {
+      "id": "nd-sam-e4e9a060657e4485-n3203422-minot-probation-office",
+      "name": "N3203422 Minot Probation Office",
+      "city": "Minot",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal combined synopsis/solicitation 47PD5326R0024. N3203422 Minot Probation Office. Response deadline 2026-08-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 47PD5326R0024",
+          "url": "https://sam.gov/workspace/contract/opp/e4e9a060657e4485a805aea60d93e9a9/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-1efd9b1121f44c0a-n3203422-minot-probation-office",
+      "name": "N3203422 Minot Probation Office",
+      "city": "Minot",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Federal combined synopsis/solicitation 47PD5326R0024. N3203422 Minot Probation Office. Response deadline 2026-08-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 47PD5326R0024",
+          "url": "https://sam.gov/workspace/contract/opp/1efd9b1121f44c0abc3302faf5f5d13a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-7a8decfd02b04c79-ubro-office-renovation",
+      "name": "UBRO Office Renovation",
+      "city": "Riverdale",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "Federal solicitation W9128F26QA001. UBRO Office Renovation. Response deadline 2026-08-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W9128F26QA001",
+          "url": "https://sam.gov/workspace/contract/opp/7a8decfd02b04c799329e451cbdf9027/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-eb6cc73a4147420f-rfp-47pd5326r0051-nd0047zz-domestic-recirculation-",
+      "name": "RFP 47PD5326R0051 ND0047ZZ Domestic Recirculation Repairs Fargo, ND",
+      "city": "Fargo",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "Federal combined synopsis/solicitation 47PD5326R0051. RFP 47PD5326R0051 ND0047ZZ Domestic Recirculation Repairs Fargo, ND. Response deadline 2026-08-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 47PD5326R0051",
+          "url": "https://sam.gov/workspace/contract/opp/eb6cc73a4147420f9389630dffb3c0bc/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-d92ec845d03149df-nd0037zz-usms-egress-modifications-bismarck-340974",
+      "name": "ND0037ZZ USMS Egress Modifications Bismarck 3409747",
+      "city": "Bismarck",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "Federal solicitation 47PD5326R0039. ND0037ZZ USMS Egress Modifications Bismarck 3409747. Response deadline 2026-07-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code N063"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PD5326R0039",
+          "url": "https://sam.gov/workspace/contract/opp/d92ec845d03149df9dc155477d16f7e7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-1ffb232bd2fd4e5d-nd0037zz-usms-egress-modifications-bismarck-340974",
+      "name": "ND0037ZZ USMS Egress Modifications Bismarck 3409747",
+      "city": "Bismarck",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "Federal solicitation 47PD5326R0039. ND0037ZZ USMS Egress Modifications Bismarck 3409747. Response deadline 2026-07-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code N063"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PD5326R0039",
+          "url": "https://sam.gov/workspace/contract/opp/1ffb232bd2fd4e5db47354a0de158db9/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-5ccece12fe274f25-nd0037zz-usms-ballistic-window-installation-bismar",
+      "name": "ND0037ZZ USMS Ballistic Window Installation Bismarck 3408285",
+      "city": "Bismarck",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "Federal combined synopsis/solicitation 47PD5326R0041. ND0037ZZ USMS Ballistic Window Installation Bismarck 3408285. Response deadline 2026-07-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 47PD5326R0041",
+          "url": "https://sam.gov/workspace/contract/opp/5ccece12fe274f258de469e8ba03b26f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-af69706e3c94426d-greenhouse-phase-v-renovation-fargo-nd",
+      "name": "Greenhouse Phase V Renovation (Fargo, ND)",
+      "city": "Fargo",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Federal combined synopsis/solicitation 1232SA26Q0870. Greenhouse Phase V Renovation (Fargo, ND). Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1232SA26Q0870",
+          "url": "https://sam.gov/workspace/contract/opp/af69706e3c94426dbaec70a3b4d6e20d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-57eaf6e2536d43b8-greenhouse-phase-v-renovation-fargo-nd",
+      "name": "Greenhouse Phase V Renovation (Fargo, ND)",
+      "city": "Fargo",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Federal combined synopsis/solicitation 1232SA26Q0870. Greenhouse Phase V Renovation (Fargo, ND). Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1232SA26Q0870",
+          "url": "https://sam.gov/workspace/contract/opp/57eaf6e2536d43b8b2a9ac728aaffe3a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-4aded6cd166e4079-rfp-47pd5326r0051-nd0047zz-domestic-recirculation-",
+      "name": "RFP 47PD5326R0051 ND0047ZZ Domestic Recirculation Repairs Fargo, ND",
+      "city": "Fargo",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Federal combined synopsis/solicitation 47PD5326R0051. RFP 47PD5326R0051 ND0047ZZ Domestic Recirculation Repairs Fargo, ND. Response deadline 2026-08-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 47PD5326R0051",
+          "url": "https://sam.gov/workspace/contract/opp/4aded6cd166e4079b03b491679afbf9f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-bad9835e0e724929-nd0037zz-usms-ballistic-window-installation-bismar",
+      "name": "ND0037ZZ USMS Ballistic Window Installation Bismarck 3408285",
+      "city": "Bismarck",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Federal combined synopsis/solicitation 47PD5326R0041. ND0037ZZ USMS Ballistic Window Installation Bismarck 3408285. Response deadline 2026-07-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 47PD5326R0041",
+          "url": "https://sam.gov/workspace/contract/opp/bad9835e0e7249299dd41f5617266cea/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-35224c561c0540d3-grand-forks-office-buildout",
+      "name": "Grand Forks Office Buildout",
+      "city": "Grand Forks",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Federal combined synopsis/solicitation 47PD5326R0046. Grand Forks Office Buildout. Response deadline 2026-08-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 47PD5326R0046",
+          "url": "https://sam.gov/workspace/contract/opp/35224c561c0540d3b358bae2cad1dc6c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-525d1720c0454d92-grand-forks-office-buildout",
+      "name": "Grand Forks Office Buildout",
+      "city": "Grand Forks",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "Federal combined synopsis/solicitation 47PD5326R0046. Grand Forks Office Buildout. Response deadline 2026-08-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 47PD5326R0046",
+          "url": "https://sam.gov/workspace/contract/opp/525d1720c0454d92985d95e6718a2c56/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-327c2f3b9502437f-nd0037zz-usms-egress-modifications-bismarck-340974",
+      "name": "ND0037ZZ USMS Egress Modifications Bismarck 3409747",
+      "city": "Bismarck",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "Federal solicitation 47PD5326R0039. ND0037ZZ USMS Egress Modifications Bismarck 3409747. Response deadline 2026-07-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code N063"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PD5326R0039",
+          "url": "https://sam.gov/workspace/contract/opp/327c2f3b9502437fa8296c893ea926bc/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-a01d0ca3eab84771-greenhouse-phase-v-renovation-fargo-nd",
+      "name": "Greenhouse Phase V Renovation (Fargo, ND)",
+      "city": "Fargo",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-26",
+      "description": "Federal combined synopsis/solicitation 1232SA26Q0870. Greenhouse Phase V Renovation (Fargo, ND). Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1232SA26Q0870",
+          "url": "https://sam.gov/workspace/contract/opp/a01d0ca3eab847718c351024d4de4062/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-7dd75d3137b440af-nd0037zz-usms-egress-modifications-bismarck-340974",
+      "name": "ND0037ZZ USMS Egress Modifications Bismarck 3409747",
+      "city": "Bismarck",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-23",
+      "description": "Federal solicitation 47PD5326R0039. ND0037ZZ USMS Egress Modifications Bismarck 3409747. Response deadline 2026-07-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code N063"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PD5326R0039",
+          "url": "https://sam.gov/workspace/contract/opp/7dd75d3137b440af8c3096858efb02bf/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-eb3c63a6097b4c68-nd0550ao-aphis-insulation-corrections-pembina-nd",
+      "name": "ND0550AO APHIS Insulation Corrections Pembina ND",
+      "city": "Pembina",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-23",
+      "description": "Federal combined synopsis/solicitation EQPMBA-26-0314. ND0550AO APHIS Insulation Corrections Pembina ND. Response deadline 2026-07-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation EQPMBA-26-0314",
+          "url": "https://sam.gov/workspace/contract/opp/eb3c63a6097b4c68b5d9907b458f2d92/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-704d90a73b574ef3-nd0037zz-usms-ballistic-window-installation-bismar",
+      "name": "ND0037ZZ USMS Ballistic Window Installation Bismarck 3408285",
+      "city": "Bismarck",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-22",
+      "description": "Federal combined synopsis/solicitation 47PD5326R0041. ND0037ZZ USMS Ballistic Window Installation Bismarck 3408285. Response deadline 2026-07-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 47PD5326R0041",
+          "url": "https://sam.gov/workspace/contract/opp/704d90a73b574ef3becf0a39af4fee83/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-2b0052db0534499f-nd0037zz-usms-ballistic-window-installation-bismar",
+      "name": "ND0037ZZ USMS Ballistic Window Installation Bismarck 3408285",
+      "city": "Bismarck",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-18",
+      "description": "Federal combined synopsis/solicitation 47PD5326R0041. ND0037ZZ USMS Ballistic Window Installation Bismarck 3408285. Response deadline 2026-07-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 47PD5326R0041",
+          "url": "https://sam.gov/workspace/contract/opp/2b0052db0534499f9bccea7d8dbf6042/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-007af337eb70490e-nd0037zz-usms-egress-modifications-bismarck-340974",
+      "name": "ND0037ZZ USMS Egress Modifications Bismarck 3409747",
+      "city": "Bismarck",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-17",
+      "description": "Federal solicitation 47PD5326R0039. ND0037ZZ USMS Egress Modifications Bismarck 3409747. Response deadline 2026-07-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code N063"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PD5326R0039",
+          "url": "https://sam.gov/workspace/contract/opp/007af337eb70490e9c6814dc1d0bd501/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-7dcee86fc2c240ad-north-south-dakota-job-ordering-agreement-contract",
+      "name": "North & South Dakota Job Ordering Agreement Contract (JOC) Solicitation",
+      "city": "Bismarck",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Postal Service",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-11",
+      "description": "Federal solicitation 089495-26-A-0072. North & South Dakota Job Ordering Agreement Contract (JOC) Solicitation. Response deadline 2026-07-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2HB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 089495-26-A-0072",
+          "url": "https://sam.gov/workspace/contract/opp/7dcee86fc2c240adbda2f0fd6cd9cba7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-cdc5f1d4fb034dc8-ubro-office-renovation",
+      "name": "UBRO Office Renovation",
+      "city": "Riverdale",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-05",
+      "description": "Federal presolicitation W9128F26QA001. UBRO Office Renovation. Response deadline 2026-07-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W9128F26QA001",
+          "url": "https://sam.gov/workspace/contract/opp/cdc5f1d4fb034dc8abd2e252cd6ac05f/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-80d95c54979f426e-urbo-office-renovation",
+      "name": "URBO Office Renovation",
+      "city": "Riverdale",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-05",
+      "description": "Federal presolicitation W9128F26QA001. URBO Office Renovation. Response deadline 2026-07-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W9128F26QA001",
+          "url": "https://sam.gov/workspace/contract/opp/80d95c54979f426e8a99ea3a7f0b4b8a/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-6de79a46e9ac4628-n3203422-minot-probation-office",
+      "name": "N3203422 Minot Probation Office",
+      "city": "Minot",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-02",
+      "description": "Federal combined synopsis/solicitation 47PD5326R0024. N3203422 Minot Probation Office. Response deadline 2026-06-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 47PD5326R0024",
+          "url": "https://sam.gov/workspace/contract/opp/6de79a46e9ac462893779cc6968c187a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-696f432b59cb498f-n3203422-minot-probation-office",
+      "name": "N3203422 Minot Probation Office",
+      "city": "Minot",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-22",
+      "description": "Federal combined synopsis/solicitation 47PD5326R0024. N3203422 Minot Probation Office. Response deadline 2026-06-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 47PD5326R0024",
+          "url": "https://sam.gov/workspace/contract/opp/696f432b59cb498f984846b9ffc14183/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-f5f6e5a6d2d84a45-n3203422-minot-probation-office",
+      "name": "N3203422 Minot Probation Office",
+      "city": "Minot",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-05",
+      "description": "Federal combined synopsis/solicitation 47PD5326R0024. N3203422 Minot Probation Office. Response deadline 2026-06-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 47PD5326R0024",
+          "url": "https://sam.gov/workspace/contract/opp/f5f6e5a6d2d84a459ae8e3eab64bccd0/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-9c3a90b1e8dc4e62-y1dz-437-24-101-replace-ust-s-leak-detection-syste",
+      "name": "Y1DZ--437-24-101, Replace UST's & Leak Detection System",
+      "city": "Fargo",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-31",
+      "description": "Federal solicitation 36C26326B0016_2. Y1DZ--437-24-101, Replace UST's & Leak Detection System. Response deadline 2026-04-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26326B0016_2",
+          "url": "https://sam.gov/workspace/contract/opp/9c3a90b1e8dc4e6291122ffd3d99c889/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-9c456b31d0a04a9b-437-22-108-place-chilled-water-pumps-on-epower",
+      "name": "437-22-108 Place Chilled Water Pumps on Epower",
+      "city": "Fargo",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-20",
+      "description": "Federal presolicitation 36C26326B0013. 437-22-108 Place Chilled Water Pumps on Epower. Response deadline 2026-02-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "SDVOSB Sole Source",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C26326B0013",
+          "url": "https://sam.gov/workspace/contract/opp/9c456b31d0a04a9ba952189a322c5d0a/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-e31b456bc1354250-y1da-437-23-105-replace-fire-alarm-system-437-26-1",
+      "name": "Y1DA--437-23-105 Replace Fire Alarm System 437-26-1-6690-0001",
+      "city": "Fargo",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Greenstone Construction, Inc. Fargo Nd 58103 Usa",
+      "opened_or_announced_date": "2026-01-09",
+      "description": "Federal award notice 36C26326C0016. Y1DA--437-23-105 Replace Fire Alarm System 437-26-1-6690-0001.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice 36C26326C0016",
+          "url": "https://sam.gov/workspace/contract/opp/e31b456bc1354250a3cfcc6e061dac9d/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-af9a31fcec9638aa-fsc-ballistic-protection-740th",
+      "name": "FSC Ballistic Protection - 740th",
+      "city": "MINOT AFB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-04-16",
+      "description": "Federal presolicitation FA4528-19-R-A003. FSC Ballistic Protection - 740th. Response deadline 2019-04-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Women-Owned Small Business",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation FA4528-19-R-A003",
+          "url": "https://sam.gov/workspace/contract/opp/af9a31fcec9638aafed3a64ed2fe77ed/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-5cba40ca5e2f2ac4-fsc-ballistic-protection-740th",
+      "name": "FSC Ballistic Protection - 740th",
+      "city": "MINOT AFB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-03-20",
+      "description": "Federal presolicitation FA4528-19-R-A003. FSC Ballistic Protection - 740th. Response deadline 2019-04-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Women-Owned Small Business",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation FA4528-19-R-A003",
+          "url": "https://sam.gov/workspace/contract/opp/5cba40ca5e2f2ac434df22c5bf5b2b0a/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-68fa4e6dd6ee6c0c-fsc-ballistic-protection-740th",
+      "name": "FSC Ballistic Protection - 740th",
+      "city": "MINOT AFB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-03-18",
+      "description": "Federal presolicitation FA4528-19-R-A003. FSC Ballistic Protection - 740th. Response deadline 2019-04-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Women-Owned Small Business",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation FA4528-19-R-A003",
+          "url": "https://sam.gov/workspace/contract/opp/68fa4e6dd6ee6c0c4f7f2ca1599817e7/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "ND"
+    },
+    {
+      "id": "nd-sam-b1d533ce8964cb25-fsc-ballistic-protection-740th",
+      "name": "FSC Ballistic Protection - 740th",
+      "city": "MINOT AFB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2018-11-14",
+      "description": "Federal presolicitation FA4528-19-R-A003. FSC Ballistic Protection - 740th. Response deadline 2018-11-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Women-Owned Small Business",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation FA4528-19-R-A003",
+          "url": "https://sam.gov/workspace/contract/opp/b1d533ce8964cb255fb067f1867bb21e/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "ND"
     }
   ],
   "stats": {
-    "total": 1
+    "total": 34
   }
 }

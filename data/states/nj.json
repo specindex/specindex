@@ -1,9 +1,9 @@
 {
   "state": "NJ",
   "state_name": "New Jersey",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — BeOne Medicines IR, Business Facilities, local news.",
+  "capture_method": "Public sources — BeOne Medicines IR, Business Facilities, local news, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "nj-beone-hopewell-expansion",
@@ -48,9 +48,1328 @@
         }
       ],
       "open_for": "Land use approval pending. Pharma MEP specs forming."
+    },
+    {
+      "id": "nj-sam-7b8d89ce9d3b4ca4-z1da-vanjhcs-demolition-and-abatement-idiq-east-or",
+      "name": "Z1DA--VANJHCS Demolition and Abatement IDIQ East Orange and Lyons",
+      "city": "East Orange",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Federal sources sought 36C24226Q0809. Z1DA--VANJHCS Demolition and Abatement IDIQ East Orange and Lyons. Response deadline 2026-08-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 36C24226Q0809",
+          "url": "https://sam.gov/workspace/contract/opp/7b8d89ce9d3b4ca4aeeea450f2d066bc/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-6d00757c824448f5-construction-of-f16-mission-training-center",
+      "name": "Construction of F16 Mission Training Center",
+      "city": "Egg Harbor Township",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Federal solicitation W50S8F-26-R-A011. Construction of F16 Mission Training Center. Response deadline 2026-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8F-26-R-A011",
+          "url": "https://sam.gov/workspace/contract/opp/6d00757c824448f59417a3bfd53cb380/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-e3229ca0eab04971-construction-of-f16-mission-training-center",
+      "name": "Construction of F16 Mission Training Center",
+      "city": "Egg Harbor Township",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Federal solicitation W50S8F-26-R-A011. Construction of F16 Mission Training Center. Response deadline 2026-07-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8F-26-R-A011",
+          "url": "https://sam.gov/workspace/contract/opp/e3229ca0eab0497194ffcbc5ebe0016c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-c9ad8d9e26484dca-construction-of-f16-mission-training-center",
+      "name": "Construction of F16 Mission Training Center",
+      "city": "Egg Harbor Township",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Federal solicitation W50S8F-26-R-A011. Construction of F16 Mission Training Center. Response deadline 2026-07-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8F-26-R-A011",
+          "url": "https://sam.gov/workspace/contract/opp/c9ad8d9e26484dca935fb02a8fa65dcb/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-400488be8f204749-construction-of-the-power-generation-with-microgri",
+      "name": "Construction of the Power Generation with Microgrid at Joint Base McGuire-Dix-Lakehurst (JBMDL), New Hanover, NJ",
+      "city": "0",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Federal presolicitation W912DS26BA032. Construction of the Power Generation with Microgrid at Joint Base McGuire-Dix-Lakehurst (JBMDL), New Hanover, NJ. Response deadline 2026-08-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "No Set aside used",
+        "Classification code Y1NZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912DS26BA032",
+          "url": "https://sam.gov/workspace/contract/opp/400488be8f204749b1d5f9289f378866/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-aa997ffcfd9242ea-construction-of-f16-mission-training-center",
+      "name": "Construction of F16 Mission Training Center",
+      "city": "Egg Harbor Township",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Federal solicitation W50S8F-26-R-A011. Construction of F16 Mission Training Center. Response deadline 2026-07-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8F-26-R-A011",
+          "url": "https://sam.gov/workspace/contract/opp/aa997ffcfd9242ea9d2dc265687af2b2/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-ffc3c8e97e2447be-construction-of-the-power-generation-with-microgri",
+      "name": "Construction of the Power Generation with Microgrid at Joint Base McGuire-Dix-Lakehurst (JBMDL), New Hanover, NJ",
+      "city": "Joint Base MDL",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "Federal sources sought W912DS26S0037. Construction of the Power Generation with Microgrid at Joint Base McGuire-Dix-Lakehurst (JBMDL), New Hanover, NJ. Response deadline 2026-07-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "No Set aside used",
+        "Classification code Y1NZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W912DS26S0037",
+          "url": "https://sam.gov/workspace/contract/opp/ffc3c8e97e2447be9ff7f43d21968af7/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-6bd185e7422c4321-phase-1-construction-for-the-critical-infrastructu",
+      "name": "Phase 1 Construction for the Critical Infrastructure Recovery & Renewal (CIRR) Project",
+      "city": "Princeton",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Energy, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Federal combined synopsis/solicitation RFP-26-056-CM. Phase 1 Construction for the Critical Infrastructure Recovery & Renewal (CIRR) Project. Response deadline 2026-08-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Classification code Y1HA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation RFP-26-056-CM",
+          "url": "https://sam.gov/workspace/contract/opp/6bd185e7422c43219a64d5e52a4d3ba2/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-8a1022208eea4dfb-construction-of-the-power-generation-with-microgri",
+      "name": "Construction of the Power Generation with Microgrid at Joint Base McGuire-Dix-Lakehurst (JBMDL), New Hanover, NJ",
+      "city": "Joint Base MDL",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "Federal sources sought W912DS26S0037. Construction of the Power Generation with Microgrid at Joint Base McGuire-Dix-Lakehurst (JBMDL), New Hanover, NJ. Response deadline 2026-07-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "No Set aside used",
+        "Classification code Y1NZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W912DS26S0037",
+          "url": "https://sam.gov/workspace/contract/opp/8a1022208eea4dfb9f46463f16581ca2/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-6ac4503e64c54fba-construction-of-f16-mission-training-center",
+      "name": "Construction of F16 Mission Training Center",
+      "city": "Egg Harbor Township",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-26",
+      "description": "Federal solicitation W50S8F-26-R-A011. Construction of F16 Mission Training Center. Response deadline 2026-07-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8F-26-R-A011",
+          "url": "https://sam.gov/workspace/contract/opp/6ac4503e64c54fbab4d1894a50cd1016/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-37d9a595ab5548d4-construction-of-f16-mission-training-center",
+      "name": "Construction of F16 Mission Training Center",
+      "city": "Egg Harbor Township",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-24",
+      "description": "Federal solicitation W50S8F-26-R-A011. Construction of F16 Mission Training Center. Response deadline 2026-07-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8F-26-R-A011",
+          "url": "https://sam.gov/workspace/contract/opp/37d9a595ab5548d4b50e0ee08acc586b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-27436963b6474e80-construction-of-f16-mission-training-center",
+      "name": "Construction of F16 Mission Training Center",
+      "city": "Egg Harbor Township",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-23",
+      "description": "Federal solicitation W50S8F-26-R-A011. Construction of F16 Mission Training Center. Response deadline 2026-07-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8F-26-R-A011",
+          "url": "https://sam.gov/workspace/contract/opp/27436963b6474e8090612d5e468dfd42/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-30131eed3dc244ce-construction-of-f16-mission-training-center",
+      "name": "Construction of F16 Mission Training Center",
+      "city": "Egg Harbor Township",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-29",
+      "description": "Federal solicitation W50S8F-26-R-A011. Construction of F16 Mission Training Center. Response deadline 2026-07-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8F-26-R-A011",
+          "url": "https://sam.gov/workspace/contract/opp/30131eed3dc244ceba3b8b18af280c1a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-37bdd94276724ae9-561a4-26-509-repair-steam-line-and-condensate-syst",
+      "name": "561A4-26-509 | Repair Steam line and Condensate System building 53",
+      "city": "Lyons",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-30",
+      "description": "Federal combined synopsis/solicitation 36C24226R0083. 561A4-26-509 | Repair Steam line and Condensate System building 53. Response deadline 2026-05-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 36C24226R0083",
+          "url": "https://sam.gov/workspace/contract/opp/37bdd94276724ae986de5b3c5a53f6c2/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-41cd7739982c46fe-561a4-26-509-repair-steam-line-and-condensate-syst",
+      "name": "561A4-26-509 | Repair Steam line and Condensate System building 53",
+      "city": "Lyons",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-21",
+      "description": "Federal combined synopsis/solicitation 36C24226R0083. 561A4-26-509 | Repair Steam line and Condensate System building 53. Response deadline 2026-05-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 36C24226R0083",
+          "url": "https://sam.gov/workspace/contract/opp/41cd7739982c46feb4d4c6afddc9ca3c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-49f5c457cabd4f68-561a4-26-509-repair-steam-line-and-condensate-syst",
+      "name": "561A4-26-509 | Repair Steam line and Condensate System building 53",
+      "city": "Lyons",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-16",
+      "description": "Federal combined synopsis/solicitation 36C24226R0083. 561A4-26-509 | Repair Steam line and Condensate System building 53. Response deadline 2026-05-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 36C24226R0083",
+          "url": "https://sam.gov/workspace/contract/opp/49f5c457cabd4f688f81f96f90ea417e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-fb6931db16734fc7-561a4-26-509-repair-steam-line-and-condensate-syst",
+      "name": "561A4-26-509 | Repair Steam line and Condensate System building 53",
+      "city": "Lyons",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-16",
+      "description": "Federal combined synopsis/solicitation 36C24226R0083. 561A4-26-509 | Repair Steam line and Condensate System building 53. Response deadline 2026-05-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 36C24226R0083",
+          "url": "https://sam.gov/workspace/contract/opp/fb6931db16734fc7b7fc889b96ea0919/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-bd6b3695c12549ba-561a4-26-509-repair-steam-line-and-condensate-syst",
+      "name": "561A4-26-509 | Repair Steam line and Condensate System building 53",
+      "city": "Lyons",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-09",
+      "description": "Federal combined synopsis/solicitation 36C24226R0083. 561A4-26-509 | Repair Steam line and Condensate System building 53. Response deadline 2026-05-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 36C24226R0083",
+          "url": "https://sam.gov/workspace/contract/opp/bd6b3695c12549baa18dbcd1bb0d15fe/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-8b0850866f374c0f-repair-steam-line-and-condensate-system-building-5",
+      "name": "Repair Steam line and Condensate System building 53",
+      "city": "Lyons",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-08",
+      "description": "Federal combined synopsis/solicitation 36C24226R0083. Repair Steam line and Condensate System building 53. Response deadline 2026-04-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 36C24226R0083",
+          "url": "https://sam.gov/workspace/contract/opp/8b0850866f374c0fa220d31fe89ec361/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-a29fa1f9319347a0-jersey-city-nj-jersey-city-mpo-backflow-prevention",
+      "name": "Jersey City, NJ Jersey City MPO Backflow Prevention Upgrade B64929",
+      "city": "Jersey City",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Postal Service",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-13",
+      "description": "Federal solicitation 089495-26-A-0054. Jersey City, NJ Jersey City MPO Backflow Prevention Upgrade B64929. Response deadline 2026-04-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code J045"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 089495-26-A-0054",
+          "url": "https://sam.gov/workspace/contract/opp/a29fa1f9319347a0ad19289503b8b789/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-ed270d8e0fa44c0f-y1bg-561a4-22-700-ehrm-infrastructure-upgrades-con",
+      "name": "Y1BG--561A4-22-700 EHRM Infrastructure Upgrades Construction - Lyons, NJ VAMC",
+      "city": "Lyons",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-06",
+      "description": "Federal solicitation 36C77626R0001. Y1BG--561A4-22-700 EHRM Infrastructure Upgrades Construction - Lyons, NJ VAMC. Response deadline 2026-03-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0001",
+          "url": "https://sam.gov/workspace/contract/opp/ed270d8e0fa44c0f85f042cd4a513e1c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-11a3b08791a448bd-y1bg-561a4-22-700-ehrm-infrastructure-upgrades-con",
+      "name": "Y1BG--561A4-22-700 EHRM Infrastructure Upgrades Construction - Lyons, NJ VAMC",
+      "city": "Lyons",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-27",
+      "description": "Federal solicitation 36C77626R0001. Y1BG--561A4-22-700 EHRM Infrastructure Upgrades Construction - Lyons, NJ VAMC. Response deadline 2026-03-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0001",
+          "url": "https://sam.gov/workspace/contract/opp/11a3b08791a448bdb89858be6f71eae9/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-454fa796ead94440-y1bg-561a4-22-700-ehrm-infrastructure-upgrades-con",
+      "name": "Y1BG--561A4-22-700 EHRM Infrastructure Upgrades Construction - Lyons, NJ VAMC",
+      "city": "Lyons",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-24",
+      "description": "Federal solicitation 36C77626R0001. Y1BG--561A4-22-700 EHRM Infrastructure Upgrades Construction - Lyons, NJ VAMC. Response deadline 2026-03-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0001",
+          "url": "https://sam.gov/workspace/contract/opp/454fa796ead94440af2cb946899e7058/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-e7230b3cd2df4ccf-y1bg-561a4-22-700-ehrm-infrastructure-upgrades-con",
+      "name": "Y1BG--561A4-22-700 EHRM Infrastructure Upgrades Construction - Lyons, NJ VAMC",
+      "city": "Lyons",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-03",
+      "description": "Federal solicitation 36C77626R0001. Y1BG--561A4-22-700 EHRM Infrastructure Upgrades Construction - Lyons, NJ VAMC. Response deadline 2026-03-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0001",
+          "url": "https://sam.gov/workspace/contract/opp/e7230b3cd2df4ccfa7afd676558302bb/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-dbb98c9ca909462a-y1bg-561a4-22-700-ehrm-infrastructure-upgrades-con",
+      "name": "Y1BG--561A4-22-700 EHRM Infrastructure Upgrades Construction - Lyons, NJ VAMC",
+      "city": "Lyons",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-21",
+      "description": "Federal solicitation 36C77626R0001. Y1BG--561A4-22-700 EHRM Infrastructure Upgrades Construction - Lyons, NJ VAMC. Response deadline 2026-03-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0001",
+          "url": "https://sam.gov/workspace/contract/opp/dbb98c9ca909462a9e840bfea06056f6/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-dbd8d329c2d34ea8-y1bg-561a4-22-700-ehrm-infrastructure-upgrades-con",
+      "name": "Y1BG--561A4-22-700 EHRM Infrastructure Upgrades Construction - Lyons, NJ VAMC",
+      "city": "Lyons",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-16",
+      "description": "Federal solicitation 36C77626R0001. Y1BG--561A4-22-700 EHRM Infrastructure Upgrades Construction - Lyons, NJ VAMC. Response deadline 2026-03-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0001",
+          "url": "https://sam.gov/workspace/contract/opp/dbd8d329c2d34ea8bb5faf49f693e7ed/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-ee721ad2c056ecdc-kc-46a-two-bay-general-purpose-mx-hangar",
+      "name": "KC 46A Two Bay General Purpose MX Hangar",
+      "city": "Burlington County",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2018-11-06",
+      "description": "Federal combined synopsis/solicitation W912DS-19-R-0001. KC 46A Two Bay General Purpose MX Hangar. Response deadline 2018-11-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W912DS-19-R-0001",
+          "url": "https://sam.gov/workspace/contract/opp/ee721ad2c056ecdc8cc2fa87b452b3fb/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-c93d52a9fda74ffe-kc-46a-two-bay-general-purpose-mx-hangar",
+      "name": "KC 46A Two Bay General Purpose MX Hangar",
+      "city": "Burlington County",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2018-11-02",
+      "description": "Federal combined synopsis/solicitation W912DS-19-R-0001. KC 46A Two Bay General Purpose MX Hangar. Response deadline 2018-11-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W912DS-19-R-0001",
+          "url": "https://sam.gov/workspace/contract/opp/c93d52a9fda74ffe29e93109042b67a5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-4e27f4096eba4d01-kc-46a-two-bay-general-purpose-mx-hangar",
+      "name": "KC 46A Two Bay General Purpose MX Hangar",
+      "city": "Burlington County",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2018-11-02",
+      "description": "Federal combined synopsis/solicitation W912DS-19-R-0001. KC 46A Two Bay General Purpose MX Hangar. Response deadline 2018-11-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W912DS-19-R-0001",
+          "url": "https://sam.gov/workspace/contract/opp/4e27f4096eba4d0107eaf1eea1b7a52d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-51c8e69c31a3b143-kc-46a-two-bay-general-purpose-mx-hangar",
+      "name": "KC 46A Two Bay General Purpose MX Hangar",
+      "city": "Burlington County",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2018-10-10",
+      "description": "Federal combined synopsis/solicitation W912DS-19-R-0001. KC 46A Two Bay General Purpose MX Hangar. Response deadline 2018-11-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W912DS-19-R-0001",
+          "url": "https://sam.gov/workspace/contract/opp/51c8e69c31a3b1439ca38ab293b9a5aa/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-8f09cde71dea2bbc-replace-countertops-cabinets-and-entrance-doors",
+      "name": "Replace Countertops & Cabinets and Entrance Doors",
+      "city": "LAKEHURST",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2018-08-02",
+      "description": "Federal combined synopsis/solicitation FA448418R0012. Replace Countertops & Cabinets and Entrance Doors. Response deadline 2018-08-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation FA448418R0012",
+          "url": "https://sam.gov/workspace/contract/opp/8f09cde71dea2bbcf3f74c3686fd8258/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-e081a41d9b5d6eb4-replace-countertops-cabinets-and-entrance-doors",
+      "name": "Replace Countertops & Cabinets and Entrance Doors",
+      "city": "LAKEHURST",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2018-08-02",
+      "description": "Federal combined synopsis/solicitation FA448418R0012. Replace Countertops & Cabinets and Entrance Doors. Response deadline 2018-08-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation FA448418R0012",
+          "url": "https://sam.gov/workspace/contract/opp/e081a41d9b5d6eb4d8b9cfa2724fc117/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-b76b1a82fcd8d627-replace-countertops-cabinets-and-entrance-doors",
+      "name": "Replace Countertops & Cabinets and Entrance Doors",
+      "city": "LAKEHURST",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2018-07-23",
+      "description": "Federal combined synopsis/solicitation FA448418R0012. Replace Countertops & Cabinets and Entrance Doors. Response deadline 2018-08-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation FA448418R0012",
+          "url": "https://sam.gov/workspace/contract/opp/b76b1a82fcd8d6270dddef40bb4aef18/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
+    },
+    {
+      "id": "nj-sam-fb7a26dd522dfe8c-replace-countertops-cabinets-and-entrance-doors",
+      "name": "Replace Countertops & Cabinets and Entrance Doors",
+      "city": "LAKEHURST",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2018-07-12",
+      "description": "Federal combined synopsis/solicitation FA448418R0012. Replace Countertops & Cabinets and Entrance Doors. Response deadline 2018-08-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation FA448418R0012",
+          "url": "https://sam.gov/workspace/contract/opp/fb7a26dd522dfe8c64f9dab40ca337d2/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NJ"
     }
   ],
   "stats": {
-    "total": 1
+    "total": 35
   }
 }

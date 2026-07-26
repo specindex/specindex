@@ -1,9 +1,9 @@
 {
   "state": "CT",
   "state_name": "Connecticut",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Web research — New Haven Independent, Hartford Courant, CT Insider, CT.gov, Construction Review Online",
+  "capture_method": "Web research — New Haven Independent, Hartford Courant, CT Insider, CT.gov, Construction Review Online, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "ct-unilever-innovation-center-new-haven",
@@ -335,9 +335,124 @@
         }
       ],
       "open_for": "Under construction. Multifamily building systems specs."
+    },
+    {
+      "id": "ct-sam-33b1070c00b84268-construction-of-chilled-water-replacement-and-site",
+      "name": "Construction of Chilled Water Replacement and Site Utility Improvements (Phase A2) at the Department of Veteran Affairs ",
+      "city": "West Haven",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "Federal presolicitation W912WJ26RA008. Construction of Chilled Water Replacement and Site Utility Improvements (Phase A2) at the Department of Veteran Affairs (DVA) campus in West Haven, CT.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y1NB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912WJ26RA008",
+          "url": "https://sam.gov/workspace/contract/opp/33b1070c00b84268b88fa3fbb563abe9/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "CT"
+    },
+    {
+      "id": "ct-sam-1a1bfef102d84c46-y1nb-boiler-plant-replacement-construction-west-ha",
+      "name": "Y1NB--Boiler Plant Replacement - Construction West Haven VA Medical Center",
+      "city": "West Haven",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-06-23",
+      "description": "Federal sources sought 36C77626Q0235. Y1NB--Boiler Plant Replacement - Construction West Haven VA Medical Center. Response deadline 2026-07-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Y1NB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 36C77626Q0235",
+          "url": "https://sam.gov/workspace/contract/opp/1a1bfef102d84c46985b5dcf70bb1ce2/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "CT"
+    },
+    {
+      "id": "ct-sam-5e4af62a337f42cd-shortlisted-firms-for-phase-ii-design-build-servic",
+      "name": "Shortlisted Firms for Phase II Design-Build Services for a New United States Courthouse in Hartford, CT",
+      "city": "Hartford",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-03",
+      "description": "Federal special notice. Shortlisted Firms for Phase II Design-Build Services for a New United States Courthouse in Hartford, CT.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "No Set aside used",
+        "Classification code Y1AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice ",
+          "url": "https://sam.gov/workspace/contract/opp/5e4af62a337f42cdba9ed4640dcef7f4/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "CT"
     }
   ],
   "stats": {
-    "total": 8
+    "total": 11
   }
 }

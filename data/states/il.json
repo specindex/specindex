@@ -1,9 +1,9 @@
 {
   "state": "IL",
   "state_name": "Illinois",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — REBusinessOnline, DC BLOX filings.",
+  "capture_method": "Public sources — REBusinessOnline, DC BLOX filings, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "il-mapletree-joliet-industrial",
@@ -259,9 +259,2774 @@
         }
       ],
       "open_for": "Active Chicago commercial permit. Open for MEP, glazing, structural and interior sub-trades."
+    },
+    {
+      "id": "il-sam-469f0a1fc5524190-repair-dumpster-enclosures-126arw-scott-afb-il",
+      "name": "REPAIR Dumpster Enclosures, 126ARW, Scott AFB, IL",
+      "city": "Scott Air Force Base",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "Federal combined synopsis/solicitation W50S7S26Q0015. REPAIR Dumpster Enclosures, 126ARW, Scott AFB, IL. Response deadline 2026-08-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W50S7S26Q0015",
+          "url": "https://sam.gov/workspace/contract/opp/469f0a1fc5524190936ebc6f30a6c302/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-c2f832ac00004976-repair-concrete-base-wide-126-arw-scott-afb",
+      "name": "Repair Concrete Base-wide, 126 ARW, Scott AFB",
+      "city": "Scott Air Force Base",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "Federal combined synopsis/solicitation W50S7S26Q0013. Repair Concrete Base-wide, 126 ARW, Scott AFB. Response deadline 2026-08-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W50S7S26Q0013",
+          "url": "https://sam.gov/workspace/contract/opp/c2f832ac0000497698e153100063b30e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-aab12175eb6b4075-repair-windows-basewide-126-arw-scott-afb",
+      "name": "Repair Windows Basewide, 126 ARW, Scott AFB",
+      "city": "Scott Air Force Base",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "Federal combined synopsis/solicitation W50S7S26Q0012. Repair Windows Basewide, 126 ARW, Scott AFB. Response deadline 2026-08-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W50S7S26Q0012",
+          "url": "https://sam.gov/workspace/contract/opp/aab12175eb6b4075bc96ee5f52c884ae/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-cfbc036e1c3b461d-repair-office-space-b5000-126arw-scott-afb",
+      "name": "REPAIR, Office Space B5000, 126ARW, Scott AFB",
+      "city": "Scott Air Force Base",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "Federal combined synopsis/solicitation W50S7S26Q0016. REPAIR, Office Space B5000, 126ARW, Scott AFB. Response deadline 2026-08-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W50S7S26Q0016",
+          "url": "https://sam.gov/workspace/contract/opp/cfbc036e1c3b461d90744451e9a61767/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-463f113557274a39-repair-office-space-b5000-126arw-scott-afb",
+      "name": "REPAIR, Office Space B5000, 126ARW, Scott AFB",
+      "city": "Scott Air Force Base",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal combined synopsis/solicitation W50S7S26Q0016. REPAIR, Office Space B5000, 126ARW, Scott AFB. Response deadline 2026-08-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W50S7S26Q0016",
+          "url": "https://sam.gov/workspace/contract/opp/463f113557274a39b0d31e24e4f3a4fa/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-1a4eb46cd2094b02-repair-windows-basewide-126-arw-scott-afb",
+      "name": "Repair Windows Basewide, 126 ARW, Scott AFB",
+      "city": "Scott Air Force Base",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal combined synopsis/solicitation W50S7S26Q0012. Repair Windows Basewide, 126 ARW, Scott AFB. Response deadline 2026-08-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W50S7S26Q0012",
+          "url": "https://sam.gov/workspace/contract/opp/1a4eb46cd2094b0295427d68b9a5a1f5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-7ebb596fed664b54-repair-concrete-base-wide-126-arw-scott-afb",
+      "name": "Repair Concrete Base-wide, 126 ARW, Scott AFB",
+      "city": "Scott Air Force Base",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal combined synopsis/solicitation W50S7S26Q0013. Repair Concrete Base-wide, 126 ARW, Scott AFB. Response deadline 2026-08-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W50S7S26Q0013",
+          "url": "https://sam.gov/workspace/contract/opp/7ebb596fed664b548beeb43b15e6231b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-92a27d69368548aa-repair-dumpster-enclosures-126arw-scott-afb-il",
+      "name": "REPAIR Dumpster Enclosures, 126ARW, Scott AFB, IL",
+      "city": "Scott Air Force Base",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal combined synopsis/solicitation W50S7S26Q0015. REPAIR Dumpster Enclosures, 126ARW, Scott AFB, IL. Response deadline 2026-08-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W50S7S26Q0015",
+          "url": "https://sam.gov/workspace/contract/opp/92a27d69368548aa944b74c34bfacf27/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-fa232c7b395d4a46-repair-b632-fire-suppression-and-hangar-door",
+      "name": "Repair B632, Fire Suppression and Hangar Door",
+      "city": "Peoria",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal solicitation W50S7T26BA004. Repair B632, Fire Suppression and Hangar Door. Response deadline 2026-07-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1BZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S7T26BA004",
+          "url": "https://sam.gov/workspace/contract/opp/fa232c7b395d4a46ae14403799de1d66/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-27d0cc5491234af7-z2da-project-537-26-702-chicago-il-ehrm-ddpo-insta",
+      "name": "Z2DA--Project 537-26-702 Chicago, IL. EHRM DDPO Installation",
+      "city": "",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Federal special notice 36C77626B0021_1. Z2DA--Project 537-26-702 Chicago, IL. EHRM DDPO Installation. Response deadline 2026-08-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice 36C77626B0021_1",
+          "url": "https://sam.gov/workspace/contract/opp/27d0cc5491234af79dda4e3c94039076/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-05e9e02ca8fb4ec5-repair-dumpster-enclosures-126arw-scott-afb-il",
+      "name": "REPAIR Dumpster Enclosures, 126ARW, Scott AFB, IL",
+      "city": "Scott Air Force Base",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Federal combined synopsis/solicitation W50S7S26Q0015. REPAIR Dumpster Enclosures, 126ARW, Scott AFB, IL. Response deadline 2026-08-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W50S7S26Q0015",
+          "url": "https://sam.gov/workspace/contract/opp/05e9e02ca8fb4ec5baa00d5e0c0bb5ed/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-d1a50371beac4940-y1dz-556-24-122-b132-pool-and-hvac-replacement",
+      "name": "Y1DZ--556-24-122 B132 Pool and HVAC Replacement",
+      "city": "North Chicago",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Federal solicitation 36C25226B0032_01. Y1DZ--556-24-122 B132 Pool and HVAC Replacement. Response deadline 2026-08-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C25226B0032_01",
+          "url": "https://sam.gov/workspace/contract/opp/d1a50371beac4940b7bfe2ead02c7f52/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-e394848704094db2-repair-b632-fire-suppression-and-hangar-door",
+      "name": "Repair B632, Fire Suppression and Hangar Door",
+      "city": "Peoria",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Federal solicitation W50S7T26BA004. Repair B632, Fire Suppression and Hangar Door. Response deadline 2026-07-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1BZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S7T26BA004",
+          "url": "https://sam.gov/workspace/contract/opp/e394848704094db280444344cc04d6dd/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-d37ac7269e5f4580-183-ces-repair-customer-service-b-48",
+      "name": "183 CES Repair Customer Service B-48",
+      "city": "Springfield",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Federal combined synopsis/solicitation W50S7U-26-Q-A002. 183 CES Repair Customer Service B-48. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W50S7U-26-Q-A002",
+          "url": "https://sam.gov/workspace/contract/opp/d37ac7269e5f4580953f5ab5be7c374a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-3f9bc19e4f4e4318-repair-b632-fire-suppression-and-hangar-door",
+      "name": "Repair B632, Fire Suppression and Hangar Door",
+      "city": "Peoria",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "Federal solicitation W50S7T26BA004. Repair B632, Fire Suppression and Hangar Door. Response deadline 2026-07-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1BZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S7T26BA004",
+          "url": "https://sam.gov/workspace/contract/opp/3f9bc19e4f4e4318a7a0ea2f034c9fc2/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-d73d602c6be3452f-bldg-repair-renovation-garrison-consolidation",
+      "name": "Bldg Repair & Renovation - Garrison Consolidation",
+      "city": "Rock Island",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "Federal solicitation W519TC-26-R-A044. Bldg Repair & Renovation - Garrison Consolidation. Response deadline 2026-07-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W519TC-26-R-A044",
+          "url": "https://sam.gov/workspace/contract/opp/d73d602c6be3452f8282e6790ee29f75/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-09b3106898b744d5-building-138-repair-repurpose",
+      "name": "Building 138 Repair/Repurpose",
+      "city": "Rock Island",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "Federal solicitation W519TC-26-R-A032. Building 138 Repair/Repurpose. Response deadline 2026-07-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2EB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W519TC-26-R-A032",
+          "url": "https://sam.gov/workspace/contract/opp/09b3106898b744d5a0fe5bc8b6fa65d8/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-3e289accfaa74406-repair-concrete-base-wide-126-arw-scott-afb",
+      "name": "Repair Concrete Base-wide, 126 ARW, Scott AFB",
+      "city": "Scott Air Force Base",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "Federal combined synopsis/solicitation W50S7S26Q0013. Repair Concrete Base-wide, 126 ARW, Scott AFB. Response deadline 2026-08-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W50S7S26Q0013",
+          "url": "https://sam.gov/workspace/contract/opp/3e289accfaa7440697b0250e7a00c3cc/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-a03fdc43459e4914-repair-windows-basewide-126-arw-scott-afb",
+      "name": "Repair Windows Basewide, 126 ARW, Scott AFB",
+      "city": "Scott Air Force Base",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "Federal combined synopsis/solicitation W50S7S26Q0012. Repair Windows Basewide, 126 ARW, Scott AFB. Response deadline 2026-08-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W50S7S26Q0012",
+          "url": "https://sam.gov/workspace/contract/opp/a03fdc43459e4914bad41508fbbb886a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-ad679574bf574f97-repair-office-space-b5000-126arw-scott-afb",
+      "name": "REPAIR, Office Space B5000, 126ARW, Scott AFB",
+      "city": "Scott Air Force Base",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "Federal combined synopsis/solicitation W50S7S26Q0016. REPAIR, Office Space B5000, 126ARW, Scott AFB. Response deadline 2026-08-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W50S7S26Q0016",
+          "url": "https://sam.gov/workspace/contract/opp/ad679574bf574f97a1a20c665058f3a6/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-2168f17cc584466f-base-exterior-signage-upgrades",
+      "name": "Base Exterior Signage Upgrades",
+      "city": "Springfield",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "Federal presolicitation DCFT262003-Synopsis. Base Exterior Signage Upgrades. Response deadline 2026-07-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation DCFT262003-Synopsis",
+          "url": "https://sam.gov/workspace/contract/opp/2168f17cc584466f91075a733e9a8547/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-33e39ce6aa324f39-bldg-repair-renovation-garrison-consolidation",
+      "name": "Bldg Repair & Renovation - Garrison Consolidation",
+      "city": "Rock Island",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "Federal solicitation W519TC-26-R-A044. Bldg Repair & Renovation - Garrison Consolidation. Response deadline 2026-07-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W519TC-26-R-A044",
+          "url": "https://sam.gov/workspace/contract/opp/33e39ce6aa324f39967d3b5abcbcc89e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-04526005c86c4bc0-pullman-nhp-renovation-and-build-out",
+      "name": "Pullman NHP - Renovation and Build-out",
+      "city": "Chicago",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Interior, Department Of The",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Federal solicitation 140P6226B0002. Pullman NHP - Renovation and Build-out. Response deadline 2026-08-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 140P6226B0002",
+          "url": "https://sam.gov/workspace/contract/opp/04526005c86c4bc097ec7f6bfa6e9684/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-4e2d54ff82a3475a-base-exterior-signage-upgrades",
+      "name": "Base Exterior Signage Upgrades",
+      "city": "Springfield",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "Federal presolicitation DCFT262003-Synopsis. Base Exterior Signage Upgrades. Response deadline 2026-07-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation DCFT262003-Synopsis",
+          "url": "https://sam.gov/workspace/contract/opp/4e2d54ff82a3475aa5626efeccffd452/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-716fe69f442a47bd-ces-expansion-ups-upgrade",
+      "name": "CES Expansion UPS Upgrade",
+      "city": "Springfield",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Federal presolicitation 038315. CES Expansion UPS Upgrade. Response deadline 2026-07-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 038315",
+          "url": "https://sam.gov/workspace/contract/opp/716fe69f442a47bd853d0c56fd3cc7fc/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-3de10448859c4d00-ces-expansion-ups-upgrade",
+      "name": "CES Expansion UPS Upgrade",
+      "city": "Springfield",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Federal presolicitation 038315. CES Expansion UPS Upgrade. Response deadline 2026-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 038315",
+          "url": "https://sam.gov/workspace/contract/opp/3de10448859c4d0089cc05e8db658c54/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-29c7eb430e1b4436-building-138-repair-repurpose",
+      "name": "Building 138 Repair/Repurpose",
+      "city": "Rock Island",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Federal solicitation W519TC-26-R-A032. Building 138 Repair/Repurpose. Response deadline 2026-07-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2EB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W519TC-26-R-A032",
+          "url": "https://sam.gov/workspace/contract/opp/29c7eb430e1b443685e892ef2336a522/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-0b2e552819c344ff-z2da-537-24-106-create-contractor-lie-down-zone",
+      "name": "Z2DA--537-24-106 Create Contractor Lie-Down Zone",
+      "city": "Chicago",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Federal presolicitation 36C25226B0030. Z2DA--537-24-106 Create Contractor Lie-Down Zone. Response deadline 2026-08-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C25226B0030",
+          "url": "https://sam.gov/workspace/contract/opp/0b2e552819c344ffa3530c5c86e4a9ff/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-22727f03dc6b423f-183-ces-repair-customer-service-b-48",
+      "name": "183 CES Repair Customer Service B-48",
+      "city": "Springfield",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Federal combined synopsis/solicitation W50S7U-26-Q-A002. 183 CES Repair Customer Service B-48. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W50S7U-26-Q-A002",
+          "url": "https://sam.gov/workspace/contract/opp/22727f03dc6b423fa47357c2775433e3/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-6f4aecd51c564710-construct-headhouse-greenhouse-peoria-il",
+      "name": "Construct Headhouse & Greenhouse, Peoria, IL",
+      "city": "Peoria",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "Federal combined synopsis/solicitation 1232SA26Q0701. Construct Headhouse & Greenhouse, Peoria, IL. Response deadline 2026-07-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1232SA26Q0701",
+          "url": "https://sam.gov/workspace/contract/opp/6f4aecd51c564710871f340c67dcb990/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-238bb9e50467485b-183-ces-repair-customer-service-b-48",
+      "name": "183 CES Repair Customer Service B-48",
+      "city": "Springfield",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "Federal combined synopsis/solicitation W50S7U-26-Q-A002. 183 CES Repair Customer Service B-48. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W50S7U-26-Q-A002",
+          "url": "https://sam.gov/workspace/contract/opp/238bb9e50467485bb5b70d998d038c2b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-baee43ba367144fa-repair-b632-fire-suppression-and-hangar-door",
+      "name": "Repair B632, Fire Suppression and Hangar Door",
+      "city": "Peoria",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "Federal solicitation W50S7T26BA004. Repair B632, Fire Suppression and Hangar Door. Response deadline 2026-07-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1BZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S7T26BA004",
+          "url": "https://sam.gov/workspace/contract/opp/baee43ba367144fa8d140767112e56a6/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-2d45b8a52ca14acf-183-ces-ups-expansion-upgrades-b-8",
+      "name": "183 CES UPS Expansion Upgrades B-8",
+      "city": "Springfield",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-25",
+      "description": "Federal sources sought DCFT262002-SourcesSought. 183 CES UPS Expansion Upgrades B-8. Response deadline 2026-07-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought DCFT262002-SourcesSought",
+          "url": "https://sam.gov/workspace/contract/opp/2d45b8a52ca14acf8017b9d50745231b/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-10431eb2bf4845d9-building-138-repair-repurpose",
+      "name": "Building 138 Repair/Repurpose",
+      "city": "Rock Island",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-24",
+      "description": "Federal solicitation W519TC-26-R-A032. Building 138 Repair/Repurpose. Response deadline 2026-07-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2EB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W519TC-26-R-A032",
+          "url": "https://sam.gov/workspace/contract/opp/10431eb2bf4845d99eea2d7403da818a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-33d73bf628ab4e9e-183-ces-base-exterior-signage-upgrades",
+      "name": "183 CES Base Exterior Signage Upgrades",
+      "city": "Springfield",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-24",
+      "description": "Federal sources sought DCFT262003-SourcesSought. 183 CES Base Exterior Signage Upgrades. Response deadline 2026-06-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1PZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought DCFT262003-SourcesSought",
+          "url": "https://sam.gov/workspace/contract/opp/33d73bf628ab4e9e8609e9ed1ccdafa5/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-08302724a5074842-z2da-657a5-21-401-construct-new-campus-chiller-pla",
+      "name": "Z2DA--657A5-21-401, Construct New Campus Chiller Plant, MRN",
+      "city": "Marion",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-06-23",
+      "description": "Federal presolicitation 36C25526R0129. Z2DA--657A5-21-401, Construct New Campus Chiller Plant, MRN. Response deadline 2026-08-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C25526R0129",
+          "url": "https://sam.gov/workspace/contract/opp/08302724a5074842a3a53f8ad2c469d5/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-07e03c6f339046e8-building-138-repair-repurpose",
+      "name": "Building 138 Repair/Repurpose",
+      "city": "Rock Island",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-23",
+      "description": "Federal solicitation W519TC-26-R-A032. Building 138 Repair/Repurpose. Response deadline 2026-06-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2EB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W519TC-26-R-A032",
+          "url": "https://sam.gov/workspace/contract/opp/07e03c6f339046e8888c8ee6c556a056/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-8b41227729884def-building-138-repair-repurpose",
+      "name": "Building 138 Repair/Repurpose",
+      "city": "Rock Island",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-22",
+      "description": "Federal solicitation W519TC-26-R-A032. Building 138 Repair/Repurpose. Response deadline 2026-06-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2EB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W519TC-26-R-A032",
+          "url": "https://sam.gov/workspace/contract/opp/8b41227729884def90b3c25cb21e9710/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-56fd935d214345e5-183-ces-repair-customer-service-b-48",
+      "name": "183 CES Repair Customer Service B-48",
+      "city": "Springfield",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-18",
+      "description": "Federal sources sought DCFT242003-SourcesSought. 183 CES Repair Customer Service B-48. Response deadline 2026-06-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought DCFT242003-SourcesSought",
+          "url": "https://sam.gov/workspace/contract/opp/56fd935d214345e59ff07f50e8b80ba2/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-571e5e6ac0514ad9-bldg-repair-renovation-garrison-consolidation",
+      "name": "Bldg Repair & Renovation - Garrison Consolidation",
+      "city": "Rock Island",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-17",
+      "description": "Federal solicitation W519TC-26-R-A044. Bldg Repair & Renovation - Garrison Consolidation. Response deadline 2026-07-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W519TC-26-R-A044",
+          "url": "https://sam.gov/workspace/contract/opp/571e5e6ac0514ad98ba44d0560089e04/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-f91e134cb703445c-z2da-project-537-26-702-chicago-il-ehrm-ddpo-insta",
+      "name": "Z2DA--Project 537-26-702 Chicago, IL. EHRM DDPO Installation",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-16",
+      "description": "Federal solicitation 36C77626B0021. Z2DA--Project 537-26-702 Chicago, IL. EHRM DDPO Installation. Response deadline 2026-06-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0021",
+          "url": "https://sam.gov/workspace/contract/opp/f91e134cb703445c84bf1e2ef845d110/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-c39d1f4b28834386-z2da-project-537-26-702-chicago-il-ehrm-ddpo-insta",
+      "name": "Z2DA--Project 537-26-702 Chicago, IL. EHRM DDPO Installation",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-16",
+      "description": "Federal solicitation 36C77626B0021. Z2DA--Project 537-26-702 Chicago, IL. EHRM DDPO Installation. Response deadline 2026-06-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0021",
+          "url": "https://sam.gov/workspace/contract/opp/c39d1f4b2883438695a0cdc02b9ae677/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-3463340fb8ef4474-z1da-550-25-108-renovate-bathrooms-b103-prrtp-b-64",
+      "name": "Z1DA--550-25-108 Renovate Bathrooms B103 PRRTP & B 64/72 (CON)",
+      "city": "Danville",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-06-16",
+      "description": "Federal solicitation 36C25226B0025. Z1DA--550-25-108 Renovate Bathrooms B103 PRRTP & B 64/72 (CON). Response deadline 2026-06-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C25226B0025",
+          "url": "https://sam.gov/workspace/contract/opp/3463340fb8ef4474902fa09c47c3f738/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-30607caff64c4f85-z2da-construction-of-polk-dock-lifts-jesse-brown-v",
+      "name": "Z2DA--Construction of Polk Dock Lifts Jesse Brown VA Medical Center",
+      "city": "Chicago",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-06-15",
+      "description": "Federal presolicitation 36C25226Q0512. Z2DA--Construction of Polk Dock Lifts Jesse Brown VA Medical Center. Response deadline 2026-07-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C25226Q0512",
+          "url": "https://sam.gov/workspace/contract/opp/30607caff64c4f8598f6274b37815a08/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-0b85a044e5fe4e5d-ehrm-installation-of-ddpo2-hines-il",
+      "name": "EHRM Installation of DDPO2 - Hines, IL",
+      "city": "Hines",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-12",
+      "description": "Federal combined synopsis/solicitation 36C77626Q0210. EHRM Installation of DDPO2 - Hines, IL. Response deadline 2026-06-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 36C77626Q0210",
+          "url": "https://sam.gov/workspace/contract/opp/0b85a044e5fe4e5d8117f953f80107f4/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-98c70fa0a3c947c5-z1da-550-25-108-renovate-bathrooms-b103-prrtp-b-64",
+      "name": "Z1DA--550-25-108 Renovate Bathrooms B103 PRRTP & B 64/72 (CON)",
+      "city": "Danville",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-06-08",
+      "description": "Federal solicitation 36C25226B0025. Z1DA--550-25-108 Renovate Bathrooms B103 PRRTP & B 64/72 (CON). Response deadline 2026-06-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C25226B0025",
+          "url": "https://sam.gov/workspace/contract/opp/98c70fa0a3c947c5afda704a00fab3ec/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-b653daa9648d4bb3-z1da-550-25-108-renovate-bathrooms-b103-prrtp-b-64",
+      "name": "Z1DA--550-25-108 Renovate Bathrooms B103 PRRTP & B 64/72 (CON)",
+      "city": "Danville",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-06-08",
+      "description": "Federal presolicitation 36C25226B0025. Z1DA--550-25-108 Renovate Bathrooms B103 PRRTP & B 64/72 (CON). Response deadline 2026-06-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C25226B0025",
+          "url": "https://sam.gov/workspace/contract/opp/b653daa9648d4bb38cf7c7bb4335ab27/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-bcda1cd1e88546d6-z2da-project-537-26-702-chicago-il-ehrm-ddpo-insta",
+      "name": "Z2DA--Project 537-26-702 Chicago, IL. EHRM DDPO Installation",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-08",
+      "description": "Federal solicitation 36C77626B0021. Z2DA--Project 537-26-702 Chicago, IL. EHRM DDPO Installation. Response deadline 2026-06-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0021",
+          "url": "https://sam.gov/workspace/contract/opp/bcda1cd1e88546d68f218f6ca86d395c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-ca8d6ee672ae45d1-z1da-550-25-108-renovate-bathrooms-b103-prrtp-b-64",
+      "name": "Z1DA--550-25-108 Renovate Bathrooms B103 PRRTP & B 64/72 (CON)",
+      "city": "Danville",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-06-05",
+      "description": "Federal presolicitation 36C25226B0025. Z1DA--550-25-108 Renovate Bathrooms B103 PRRTP & B 64/72 (CON). Response deadline 2026-06-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C25226B0025",
+          "url": "https://sam.gov/workspace/contract/opp/ca8d6ee672ae45d19f962b90f3abde2a/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-f9faba4559714b6c-building-138-repair-repurpose",
+      "name": "Building 138 Repair/Repurpose",
+      "city": "Rock Island",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-02",
+      "description": "Federal solicitation W519TC-26-R-A032. Building 138 Repair/Repurpose. Response deadline 2026-06-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2EB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W519TC-26-R-A032",
+          "url": "https://sam.gov/workspace/contract/opp/f9faba4559714b6cb91b5d44132b8e2a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-9da376e2c36247b1-construct-headhouse-greenhouse-peoria-il",
+      "name": "Construct Headhouse & Greenhouse, Peoria, IL",
+      "city": "Peoria",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-02",
+      "description": "Federal combined synopsis/solicitation 1232SA26Q0701. Construct Headhouse & Greenhouse, Peoria, IL. Response deadline 2026-07-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1232SA26Q0701",
+          "url": "https://sam.gov/workspace/contract/opp/9da376e2c36247b18d5a057565a15710/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-f8199a02a553473e-ehrm-installation-of-ddpo2-hines-il",
+      "name": "EHRM Installation of DDPO2 - Hines, IL",
+      "city": "Hines",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-27",
+      "description": "Federal combined synopsis/solicitation 36C77626Q0210. EHRM Installation of DDPO2 - Hines, IL. Response deadline 2026-06-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 36C77626Q0210",
+          "url": "https://sam.gov/workspace/contract/opp/f8199a02a553473eabde3af0027d772e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-7fbaebc6585e4be5-state-of-illinois-1-2-job-ordering-agreement-contr",
+      "name": "State of Illinois 1 & 2 Job Ordering Agreement Contract Solicitation",
+      "city": "Springfield",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Postal Service",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-27",
+      "description": "Federal solicitation 089495-26-A-0055. State of Illinois 1 & 2 Job Ordering Agreement Contract Solicitation. Response deadline 2026-06-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2HB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 089495-26-A-0055",
+          "url": "https://sam.gov/workspace/contract/opp/7fbaebc6585e4be5bbe5b771e26a6a41/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-b882e4aede9a410f-z2da-project-537-26-702-chicago-il-ehrm-ddpo-insta",
+      "name": "Z2DA--Project 537-26-702 Chicago, IL. EHRM DDPO Installation",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-21",
+      "description": "Federal solicitation 36C77626B0021. Z2DA--Project 537-26-702 Chicago, IL. EHRM DDPO Installation. Response deadline 2026-06-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0021",
+          "url": "https://sam.gov/workspace/contract/opp/b882e4aede9a410facf696eaa3006adb/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-ee0c12a7dd3b4289-ehrm-installation-of-ddpo2-hines-il",
+      "name": "EHRM Installation of DDPO2 - Hines, IL",
+      "city": "Hines",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-20",
+      "description": "Federal combined synopsis/solicitation 36C77626Q0210. EHRM Installation of DDPO2 - Hines, IL. Response deadline 2026-06-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 36C77626Q0210",
+          "url": "https://sam.gov/workspace/contract/opp/ee0c12a7dd3b42899061641abcebe8b1/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-e209eb8a1da94374-ehrm-installation-of-ddpo2-hines-il",
+      "name": "EHRM Installation of DDPO2 - Hines, IL",
+      "city": "Hines",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-18",
+      "description": "Federal combined synopsis/solicitation 36C77626Q0210. EHRM Installation of DDPO2 - Hines, IL. Response deadline 2026-06-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 36C77626Q0210",
+          "url": "https://sam.gov/workspace/contract/opp/e209eb8a1da9437486327027cd87b4c9/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-5b90ed142cf149a2-z1da-550-25-108-renovate-bathrooms-b103-prrtp-b-64",
+      "name": "Z1DA--550-25-108 Renovate Bathrooms B103 PRRTP & B 64/72 (CON)",
+      "city": "Danville",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-15",
+      "description": "Federal solicitation 36C25226B0025. Z1DA--550-25-108 Renovate Bathrooms B103 PRRTP & B 64/72 (CON). Response deadline 2026-06-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C25226B0025",
+          "url": "https://sam.gov/workspace/contract/opp/5b90ed142cf149a2af2edc1e7c1b3bfa/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-b2b75c7431af44d6-ehrm-installation-of-ddpo2-hines-il",
+      "name": "EHRM Installation of DDPO2 - Hines, IL",
+      "city": "Hines",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-14",
+      "description": "Federal combined synopsis/solicitation 36C77626Q0210. EHRM Installation of DDPO2 - Hines, IL. Response deadline 2026-06-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 36C77626Q0210",
+          "url": "https://sam.gov/workspace/contract/opp/b2b75c7431af44d6a3c5352bc47a45aa/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-8c3bd40957804814-z2da-project-537-26-702-chicago-il-ehrm-ddpo-insta",
+      "name": "Z2DA--Project 537-26-702 Chicago, IL. EHRM DDPO Installation",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-07",
+      "description": "Federal solicitation 36C77626B0021. Z2DA--Project 537-26-702 Chicago, IL. EHRM DDPO Installation. Response deadline 2026-06-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0021",
+          "url": "https://sam.gov/workspace/contract/opp/8c3bd40957804814843d04b566ef4e9a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-563c4a5a912441cf-z2da-project-537-26-702-chicago-il-ehrm-ddpo-insta",
+      "name": "Z2DA--Project 537-26-702 Chicago, IL. EHRM DDPO Installation",
+      "city": "",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-30",
+      "description": "Federal presolicitation 36C77626Q0183. Z2DA--Project 537-26-702 Chicago, IL. EHRM DDPO Installation. Response deadline 2026-05-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C77626Q0183",
+          "url": "https://sam.gov/workspace/contract/opp/563c4a5a912441cfbf6f207fa2494f23/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-385d07f824e14e55-y1bg-ehrm-infrastructure-upgrades-construction-pro",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction Project 765-24-700 Great Lakes Consolidated Mail Outpatient Pharmacy (CM",
+      "city": "Hines",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-27",
+      "description": "Federal solicitation 36C77626R0039. Y1BG--EHRM Infrastructure Upgrades Construction Project 765-24-700 Great Lakes Consolidated Mail Outpatient Pharmacy (CMOP) Hines, IL 60141. Response deadline 2026-05-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0039",
+          "url": "https://sam.gov/workspace/contract/opp/385d07f824e14e55843913371269729e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-25be9b87a63e4c5e-z1da-578-26-016-donation-renovations-building-217-",
+      "name": "Z1DA--578-26-016 Donation Renovations Building 217 Phase 2 CON",
+      "city": "Hines",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-04-22",
+      "description": "Federal presolicitation 36C25226B0028. Z1DA--578-26-016 Donation Renovations Building 217 Phase 2 CON. Response deadline 2026-07-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C25226B0028",
+          "url": "https://sam.gov/workspace/contract/opp/25be9b87a63e4c5e8b913f2e8c520131/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-347022a2e03141c7-z2da-project-537-26-702-chicago-il-ehrm-ddpo-insta",
+      "name": "Z2DA--Project 537-26-702 Chicago, IL. EHRM DDPO Installation",
+      "city": "",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-20",
+      "description": "Federal presolicitation 36C77626Q0183. Z2DA--Project 537-26-702 Chicago, IL. EHRM DDPO Installation. Response deadline 2026-05-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C77626Q0183",
+          "url": "https://sam.gov/workspace/contract/opp/347022a2e03141c79fa3876098ee3277/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-c8d03f04f9784fe8-z1da-550-25-108-renovate-bathrooms-b103-prrtp-b-64",
+      "name": "Z1DA--550-25-108 Renovate Bathrooms B103 PRRTP & B 64/72 (CON)",
+      "city": "Danville",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-04-17",
+      "description": "Federal solicitation 36C25226B0025. Z1DA--550-25-108 Renovate Bathrooms B103 PRRTP & B 64/72 (CON). Response deadline 2026-05-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C25226B0025",
+          "url": "https://sam.gov/workspace/contract/opp/c8d03f04f9784fe898ab34629fda763f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-228b852b4ece4ac8-z1da-remodel-ent-procedure-rooms-con-537-19-109",
+      "name": "Z1DA--Remodel ENT Procedure Rooms CON 537-19-109",
+      "city": "Chicago",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-04-09",
+      "description": "Federal presolicitation 36C25226B0026. Z1DA--Remodel ENT Procedure Rooms CON 537-19-109. Response deadline 2026-07-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C25226B0026",
+          "url": "https://sam.gov/workspace/contract/opp/228b852b4ece4ac88201b06ac3e59828/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-363003eb4f8641a5-y1bg-ehrm-infrastructure-upgrades-construction-pro",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction Project 765-24-700 Great Lakes Consolidated Mail Outpatient Pharmacy (CM",
+      "city": "Hines",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-31",
+      "description": "Federal solicitation 36C77626R0039. Y1BG--EHRM Infrastructure Upgrades Construction Project 765-24-700 Great Lakes Consolidated Mail Outpatient Pharmacy (CMOP) Hines, IL 60141. Response deadline 2026-04-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0039",
+          "url": "https://sam.gov/workspace/contract/opp/363003eb4f8641a5b94fd1e8b13cd340/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-5d4c9744b43a46bd-z1da-550-25-108-renovate-bathrooms-b103-prrtp-b-64",
+      "name": "Z1DA--550-25-108 Renovate Bathrooms B103 PRRTP & B 64/72 (CON)",
+      "city": "Danville",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-03-25",
+      "description": "Federal presolicitation 36C25226B0025. Z1DA--550-25-108 Renovate Bathrooms B103 PRRTP & B 64/72 (CON). Response deadline 2026-05-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C25226B0025",
+          "url": "https://sam.gov/workspace/contract/opp/5d4c9744b43a46bd9a2b7626ef27b41d/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-c10189a268d84028-y1bg-ehrm-infrastructure-upgrades-construction-pro",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction Project 765-24-700 Great Lakes Consolidated Mail Outpatient Pharmacy (CM",
+      "city": "Hines",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-16",
+      "description": "Federal solicitation 36C77626R0039. Y1BG--EHRM Infrastructure Upgrades Construction Project 765-24-700 Great Lakes Consolidated Mail Outpatient Pharmacy (CMOP) Hines, IL 60141. Response deadline 2026-04-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0039",
+          "url": "https://sam.gov/workspace/contract/opp/c10189a268d8402896aaf0dcea80877b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-e5526f16ac0242c9-y1bg-ehrm-infrastructure-upgrades-construction-pro",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction Project 765-24-700 Great Lakes Consolidated Mail Outpatient Pharmacy (CM",
+      "city": "Hines",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-16",
+      "description": "Federal solicitation 36C77626R0039. Y1BG--EHRM Infrastructure Upgrades Construction Project 765-24-700 Great Lakes Consolidated Mail Outpatient Pharmacy (CMOP) Hines, IL 60141. Response deadline 2026-04-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0039",
+          "url": "https://sam.gov/workspace/contract/opp/e5526f16ac0242c98d012808a1e99e99/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-7900dae782ec4256-y1bg-ehrm-infrastructure-upgrades-construction-pro",
+      "name": "Y1BG--EHRM Infrastructure Upgrades Construction Project 765-24-700 Great Lakes Consolidated Mail Outpatient Pharmacy (CM",
+      "city": "Hines",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-13",
+      "description": "Federal solicitation 36C77626R0039. Y1BG--EHRM Infrastructure Upgrades Construction Project 765-24-700 Great Lakes Consolidated Mail Outpatient Pharmacy (CMOP) Hines, IL 60141. Response deadline 2026-04-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1BG"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0039",
+          "url": "https://sam.gov/workspace/contract/opp/7900dae782ec4256a5e6c7066dccbf0a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IL"
+    },
+    {
+      "id": "il-sam-473a8e7f14664c08-183-ces-repair-vehicle-barriers",
+      "name": "183 CES Repair Vehicle Barriers",
+      "city": "Springfield",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "Charpie Construction Co., Inc. Chicago Il 60631 Usa",
+      "opened_or_announced_date": "2025-09-26",
+      "description": "Federal award notice W50S7U-25-C-A003. 183 CES Repair Vehicle Barriers.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1PZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice W50S7U-25-C-A003",
+          "url": "https://sam.gov/workspace/contract/opp/473a8e7f14664c08a8ae06cf0be9c822/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IL"
     }
   ],
   "stats": {
-    "total": 2
+    "total": 74
   }
 }

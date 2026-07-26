@@ -1,9 +1,9 @@
 {
   "state": "AR",
   "state_name": "Arkansas",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Web research — Cypress Creek Energy, ENR, Arkansas Business, Arkansas Advocate, Serverfarm, AVAIO Digital",
+  "capture_method": "Web research — Cypress Creek Energy, ENR, Arkansas Business, Arkansas Advocate, Serverfarm, AVAIO Digital, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "ar-steel-river-energy-center",
@@ -258,9 +258,165 @@
         }
       ],
       "open_for": "Ongoing construction. Mission-critical MEP and infrastructure specs."
+    },
+    {
+      "id": "ar-sam-6d466b4215f94ff4-f35-3-bay-hangar-at-ebbing-angb-fort-smith-ar",
+      "name": "F35 3-Bay Hangar at Ebbing ANGB, Fort Smith, AR.",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "Bl Harbert International Llc Birmingham Al 35209 Usa",
+      "opened_or_announced_date": "2026-04-06",
+      "description": "Federal award notice W9127S26CA006. F35 3-Bay Hangar at Ebbing ANGB, Fort Smith, AR.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "No Set aside used",
+        "Classification code Y1BZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice W9127S26CA006",
+          "url": "https://sam.gov/workspace/contract/opp/6d466b4215f94ff4bee54087c3b64cd6/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AR"
+    },
+    {
+      "id": "ar-sam-8e27500226f94936-f35-3-bay-hangar-at-ebbing-angb-fort-smith-ar",
+      "name": "F35 3-Bay Hangar at Ebbing ANGB, Fort Smith, AR.",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "Bl Harbert International Llc Birmingham Al 35209 Usa",
+      "opened_or_announced_date": "2026-04-03",
+      "description": "Federal award notice W9127S26CA006. F35 3-Bay Hangar at Ebbing ANGB, Fort Smith, AR.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "No Set aside used",
+        "Classification code Y1BZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice W9127S26CA006",
+          "url": "https://sam.gov/workspace/contract/opp/8e27500226f94936872c74b80550dea4/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AR"
+    },
+    {
+      "id": "ar-sam-4b7c236bf7a64655-design-build-security-system-infrastructure-instal",
+      "name": "Design Build Security System Infrastructure Installation US Post Office and Courthouse Ave Texarkana, AR",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "Big C Construction, L.L.C Skiatook Ok 74070 Usa",
+      "opened_or_announced_date": "2025-10-29",
+      "description": "Federal award notice 47PH0526C0001. Design Build Security System Infrastructure Installation US Post Office and Courthouse Ave Texarkana, AR.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "8(a) Sole Source",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice 47PH0526C0001",
+          "url": "https://sam.gov/workspace/contract/opp/4b7c236bf7a64655b6619c14693ac02c/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AR"
+    },
+    {
+      "id": "ar-sam-ffd93ab35fe2ef11-ballistics-panels-glazing-jp-hammerschmidt-federal",
+      "name": "Ballistics Panels/Glazing /JP Hammerschmidt Federal Office Building/Courthouse, Fayetteville, AR.",
+      "city": "FAYETTEVILLE",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2013-05-09",
+      "description": "Federal modification/amendment/cancel GS-07P-13-UT-C-0003. Ballistics Panels/Glazing /JP Hammerschmidt Federal Office Building/Courthouse, Fayetteville, AR. Response deadline 2013-05-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Modification/Amendment/Cancel",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Modification/Amendment/Cancel GS-07P-13-UT-C-0003",
+          "url": "https://sam.gov/workspace/contract/opp/ffd93ab35fe2ef11b48362dfe6207e80/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AR"
     }
   ],
   "stats": {
-    "total": 6
+    "total": 10
   }
 }

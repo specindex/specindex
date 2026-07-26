@@ -1,9 +1,9 @@
 {
   "state": "PA",
   "state_name": "Pennsylvania",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — local news, PR Newswire, REBusinessOnline, state economic development.",
+  "capture_method": "Public sources — local news, PR Newswire, REBusinessOnline, state economic development, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "pa-northpoint-hazleton-logistics-141",
@@ -207,9 +207,2655 @@
         }
       ],
       "open_for": "Industrial park civil utilities, earthwork, sub-feed power infrastructure."
+    },
+    {
+      "id": "pa-sam-3afe456a74b74dfd-z1da-sol-nrm-646-21-101-ud-sps-ahu-ro-upgrade-cons",
+      "name": "Z1DA--| SOL| NRM| 646-21-101 UD SPS AHU & RO Upgrade Construction (VA-26-00036217)",
+      "city": "Pittsburgh",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "Federal solicitation 36C24426R0139. Z1DA--| SOL| NRM| 646-21-101 UD SPS AHU & RO Upgrade Construction (VA-26-00036217). Response deadline 2026-08-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24426R0139",
+          "url": "https://sam.gov/workspace/contract/opp/3afe456a74b74dfd978661519462532e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-1fe979abad65452e-construct-erhm-infrastructure-upgrades-university-",
+      "name": "Construct ERHM Infrastructure Upgrades - University Drive - Pittsburgh, PA",
+      "city": "Pittsburgh",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "Federal solicitation 36C77626R0082_1. Construct ERHM Infrastructure Upgrades - University Drive - Pittsburgh, PA. Response deadline 2026-07-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0082_1",
+          "url": "https://sam.gov/workspace/contract/opp/1fe979abad65452e9a037c063b18f0a5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-f579e30d60c648f0-building-87-sub-surface-acoustic-and-machinery-lab",
+      "name": "Building 87 Sub Surface Acoustic and Machinery Lab",
+      "city": "Philadelphia",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal sources sought N4008526R0107. Building 87 Sub Surface Acoustic and Machinery Lab. Response deadline 2026-07-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "8a Competed",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought N4008526R0107",
+          "url": "https://sam.gov/workspace/contract/opp/f579e30d60c648f0895f0f78ffa6ae58/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-aceee70e450f4845-building-87-sub-surface-acoustic-and-machinery-lab",
+      "name": "Building 87 Sub Surface Acoustic and Machinery Lab",
+      "city": "Philadelphia",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal sources sought N4008526R0107. Building 87 Sub Surface Acoustic and Machinery Lab. Response deadline 2026-07-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "8a Competed",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought N4008526R0107",
+          "url": "https://sam.gov/workspace/contract/opp/aceee70e450f48458a62c1601c59fa1c/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-0cc87e1845a644a4-z1da-646a4-22-700-ehrm-infrastructure-upgrades-pit",
+      "name": "Z1DA--646A4-22-700 | EHRM Infrastructure Upgrades | Pittsburgh-Heinz, PA",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "Federal solicitation 36C77626R0071. Z1DA--646A4-22-700 | EHRM Infrastructure Upgrades | Pittsburgh-Heinz, PA. Response deadline 2026-08-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0071",
+          "url": "https://sam.gov/workspace/contract/opp/0cc87e1845a644a4bab13575b96c1047/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-c075f894a3ed4049-construct-erhm-infrastructure-upgrades-university-",
+      "name": "Construct ERHM Infrastructure Upgrades - University Drive - Pittsburgh, PA",
+      "city": "Pittsburgh",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Federal solicitation 36C77626R0082_1. Construct ERHM Infrastructure Upgrades - University Drive - Pittsburgh, PA. Response deadline 2026-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0082_1",
+          "url": "https://sam.gov/workspace/contract/opp/c075f894a3ed4049a9b0598db63f4e2a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-79b7ff785f684eb4-z1da-646a4-22-700-ehrm-infrastructure-upgrades-pit",
+      "name": "Z1DA--646A4-22-700 | EHRM Infrastructure Upgrades | Pittsburgh-Heinz, PA",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Federal solicitation 36C77626R0071. Z1DA--646A4-22-700 | EHRM Infrastructure Upgrades | Pittsburgh-Heinz, PA. Response deadline 2026-08-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0071",
+          "url": "https://sam.gov/workspace/contract/opp/79b7ff785f684eb49720805f64dc4c2e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-4d973dc7e8884e4f-carlisle-barracks-job-order-contract-joc",
+      "name": "Carlisle Barracks Job Order Contract (JOC)",
+      "city": "Carlisle",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Federal solicitation W5168W26RA007. Carlisle Barracks Job Order Contract (JOC). Response deadline 2026-07-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W5168W26RA007",
+          "url": "https://sam.gov/workspace/contract/opp/4d973dc7e8884e4fabaf7c8b57a28c13/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-096cbf99ce04480d-carlisle-barracks-job-order-contract-joc",
+      "name": "Carlisle Barracks Job Order Contract (JOC)",
+      "city": "Carlisle",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Federal solicitation W5168W26RA007. Carlisle Barracks Job Order Contract (JOC). Response deadline 2026-07-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W5168W26RA007",
+          "url": "https://sam.gov/workspace/contract/opp/096cbf99ce04480dbe65db832bcac667/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-4ed438c540094a26-alf-vault-toilet-replacement",
+      "name": "ALF Vault Toilet Replacement",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Federal combined synopsis/solicitation 12445526Q0103. ALF Vault Toilet Replacement. Response deadline 2026-08-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 12445526Q0103",
+          "url": "https://sam.gov/workspace/contract/opp/4ed438c540094a26acc52f2a0e2a76d6/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-ebea78697e4a4619-building-87-sub-surface-acoustic-and-machinery-lab",
+      "name": "Building 87 Sub Surface Acoustic and Machinery Lab",
+      "city": "Philadelphia",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Federal sources sought N4008526R0107. Building 87 Sub Surface Acoustic and Machinery Lab. Response deadline 2026-07-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "8a Competed",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought N4008526R0107",
+          "url": "https://sam.gov/workspace/contract/opp/ebea78697e4a46199f782c0ff9afae6a/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-5d974936b6174df7-z1da-646a4-22-700-ehrm-infrastructure-upgrades-pit",
+      "name": "Z1DA--646A4-22-700 | EHRM Infrastructure Upgrades | Pittsburgh-Heinz, PA",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Federal solicitation 36C77626R0071. Z1DA--646A4-22-700 | EHRM Infrastructure Upgrades | Pittsburgh-Heinz, PA. Response deadline 2026-08-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0071",
+          "url": "https://sam.gov/workspace/contract/opp/5d974936b6174df7a0164feabaab094d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-1745ebcabaca437a-construct-erhm-infrastructure-upgrades-university-",
+      "name": "Construct ERHM Infrastructure Upgrades - University Drive - Pittsburgh, PA",
+      "city": "Pittsburgh",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-06",
+      "description": "Federal solicitation 36C77626R0082_1. Construct ERHM Infrastructure Upgrades - University Drive - Pittsburgh, PA. Response deadline 2026-07-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0082_1",
+          "url": "https://sam.gov/workspace/contract/opp/1745ebcabaca437a9544500d1ccb3659/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-5e2840c2ac554b70-z1da-upgrade-medical-gas-communication-system-desi",
+      "name": "Z1DA--Upgrade Medical Gas & Communication System Design Build",
+      "city": "Erie",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-02",
+      "description": "Federal solicitation 36C24426R0119. Z1DA--Upgrade Medical Gas & Communication System Design Build. Response deadline 2026-07-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24426R0119",
+          "url": "https://sam.gov/workspace/contract/opp/5e2840c2ac554b70a300bd22b42b94ee/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-1485bfbf9ae148bc-greenhouse-modernization",
+      "name": "Greenhouse Modernization",
+      "city": "University Park",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Federal combined synopsis/solicitation 1232SA26Q0889. Greenhouse Modernization. Response deadline 2026-08-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1232SA26Q0889",
+          "url": "https://sam.gov/workspace/contract/opp/1485bfbf9ae148bcb2a44d4e0ac697fd/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-dd75302ec29a4a5d-z1da-646a4-22-700-ehrm-infrastructure-upgrades-pit",
+      "name": "Z1DA--646A4-22-700 | EHRM Infrastructure Upgrades | Pittsburgh-Heinz, PA",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Federal solicitation 36C77626R0071. Z1DA--646A4-22-700 | EHRM Infrastructure Upgrades | Pittsburgh-Heinz, PA. Response deadline 2026-07-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0071",
+          "url": "https://sam.gov/workspace/contract/opp/dd75302ec29a4a5d8cad63c6b83acbb1/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-5c613df1dab44fb7-construct-erhm-infrastructure-upgrades-university-",
+      "name": "Construct ERHM Infrastructure Upgrades - University Drive - Pittsburgh, PA",
+      "city": "Pittsburgh",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-27",
+      "description": "Federal solicitation 36C77626R0082_1. Construct ERHM Infrastructure Upgrades - University Drive - Pittsburgh, PA. Response deadline 2026-07-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0082_1",
+          "url": "https://sam.gov/workspace/contract/opp/5c613df1dab44fb7b7f93043eba1e11a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-91541829639d4915-z1da-646a4-22-700-ehrm-infrastructure-upgrades-pit",
+      "name": "Z1DA--646A4-22-700 | EHRM Infrastructure Upgrades | Pittsburgh-Heinz, PA",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-24",
+      "description": "Federal solicitation 36C77626R0071. Z1DA--646A4-22-700 | EHRM Infrastructure Upgrades | Pittsburgh-Heinz, PA. Response deadline 2026-07-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0071",
+          "url": "https://sam.gov/workspace/contract/opp/91541829639d4915a3ff26cd62328fe8/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-ee7bdf71fdd74432-construct-erhm-infrastructure-upgrades-university-",
+      "name": "Construct ERHM Infrastructure Upgrades - University Drive - Pittsburgh, PA",
+      "city": "Pittsburgh",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-17",
+      "description": "Federal solicitation 36C77626R0082_1. Construct ERHM Infrastructure Upgrades - University Drive - Pittsburgh, PA. Response deadline 2026-07-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0082_1",
+          "url": "https://sam.gov/workspace/contract/opp/ee7bdf71fdd74432bb7d9e474f0e1f07/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-61d5fdabad074ca9-z1da-646a4-22-700-ehrm-infrastructure-upgrades-pit",
+      "name": "Z1DA--646A4-22-700 | EHRM Infrastructure Upgrades | Pittsburgh-Heinz, PA",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-16",
+      "description": "Federal solicitation 36C77626R0071. Z1DA--646A4-22-700 | EHRM Infrastructure Upgrades | Pittsburgh-Heinz, PA. Response deadline 2026-07-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0071",
+          "url": "https://sam.gov/workspace/contract/opp/61d5fdabad074ca9bef2f742d4edbbfb/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-64a5072823344cdd-z1da-upgrade-medical-gas-communication-system-desi",
+      "name": "Z1DA--Upgrade Medical Gas & Communication System Design Build",
+      "city": "Erie",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-16",
+      "description": "Federal solicitation 36C24426R0119. Z1DA--Upgrade Medical Gas & Communication System Design Build. Response deadline 2026-07-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24426R0119",
+          "url": "https://sam.gov/workspace/contract/opp/64a5072823344cddbe045a3f9ae33398/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-fc8958e777fa459d-z1da-646a4-22-700-ehrm-infrastructure-upgrades-pit",
+      "name": "Z1DA--646A4-22-700 | EHRM Infrastructure Upgrades | Pittsburgh-Heinz, PA",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-08",
+      "description": "Federal solicitation 36C77626R0071. Z1DA--646A4-22-700 | EHRM Infrastructure Upgrades | Pittsburgh-Heinz, PA. Response deadline 2026-06-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0071",
+          "url": "https://sam.gov/workspace/contract/opp/fc8958e777fa459d8a3ddbd8f98aa8a0/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-756119d6e39343bb-z1da-646a4-22-700-ehrm-infrastructure-upgrades-pit",
+      "name": "Z1DA--646A4-22-700 | EHRM Infrastructure Upgrades | Pittsburgh-Heinz, PA",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-22",
+      "description": "Federal solicitation 36C77626R0071. Z1DA--646A4-22-700 | EHRM Infrastructure Upgrades | Pittsburgh-Heinz, PA. Response deadline 2026-06-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0071",
+          "url": "https://sam.gov/workspace/contract/opp/756119d6e39343bb835f4985ea96abaa/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-16a76e1ace1f4cf4-z1da-646a4-22-700-ehrm-infrastructure-upgrades-pit",
+      "name": "Z1DA--646A4-22-700 | EHRM Infrastructure Upgrades | Pittsburgh-Heinz, PA",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-21",
+      "description": "Federal solicitation 36C77626R0071. Z1DA--646A4-22-700 | EHRM Infrastructure Upgrades | Pittsburgh-Heinz, PA. Response deadline 2026-06-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0071",
+          "url": "https://sam.gov/workspace/contract/opp/16a76e1ace1f4cf4a97ab403cdd7f369/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-72c91a58c02845a4-component-rebuild-shop-at-letterkenny-army-depot",
+      "name": "Component Rebuild Shop at Letterkenny Army Depot",
+      "city": "Chambersburg",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-13",
+      "description": "Federal presolicitation W912DR26R5395. Component Rebuild Shop at Letterkenny Army Depot.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912DR26R5395",
+          "url": "https://sam.gov/workspace/contract/opp/72c91a58c02845a4b469160c7c9ec21f/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-f3b51578ef4d4f87-component-rebuild-shop-at-letterkenny-army-depot",
+      "name": "Component Rebuild Shop at Letterkenny Army Depot",
+      "city": "Chambersburg",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-01",
+      "description": "Federal presolicitation W912DR26R5395. Component Rebuild Shop at Letterkenny Army Depot.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912DR26R5395",
+          "url": "https://sam.gov/workspace/contract/opp/f3b51578ef4d4f8799328f542c02f180/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-56dea8d8606a41ba-rocket-missile-maintenance-facility-rmmf-letterken",
+      "name": "Rocket Missile Maintenance Facility (RMMF) Letterkenny Army Depot (LEAD) PrSM and Voelz Gate ACP",
+      "city": "Chambersburg",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-10",
+      "description": "Federal presolicitation W9912DR26RA035. Rocket Missile Maintenance Facility (RMMF) Letterkenny Army Depot (LEAD) PrSM and Voelz Gate ACP.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "No Set aside used",
+        "Classification code Y1BF"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W9912DR26RA035",
+          "url": "https://sam.gov/workspace/contract/opp/56dea8d8606a41baa72bb81504d7343b/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-1892142b9a114f32-component-rebuild-shop-at-letterkenny-army-depot",
+      "name": "Component Rebuild Shop at Letterkenny Army Depot",
+      "city": "Chambersburg",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-09",
+      "description": "Federal presolicitation W912DR26R5395. Component Rebuild Shop at Letterkenny Army Depot.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912DR26R5395",
+          "url": "https://sam.gov/workspace/contract/opp/1892142b9a114f32a91dd795da4ba0ab/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-1fa7167fecd54ce6-carlisle-barracks-job-order-contract-joc",
+      "name": "Carlisle Barracks Job Order Contract (JOC)",
+      "city": "Carlisle",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-06",
+      "description": "Federal solicitation W5168W26RA007. Carlisle Barracks Job Order Contract (JOC). Response deadline 2026-03-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W5168W26RA007",
+          "url": "https://sam.gov/workspace/contract/opp/1fa7167fecd54ce69678cb22fe1c9198/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-2659d18780384ac1-carlisle-barracks-job-order-contract-joc",
+      "name": "Carlisle Barracks Job Order Contract (JOC)",
+      "city": "Carlisle",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-06",
+      "description": "Federal solicitation W5168W26RA007. Carlisle Barracks Job Order Contract (JOC). Response deadline 2026-03-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W5168W26RA007",
+          "url": "https://sam.gov/workspace/contract/opp/2659d18780384ac19abcf30044df9a67/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-8de822d68673447f-carlisle-barracks-job-order-contract-joc",
+      "name": "Carlisle Barracks Job Order Contract (JOC)",
+      "city": "Carlisle",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-06",
+      "description": "Federal solicitation W5168W26RA007. Carlisle Barracks Job Order Contract (JOC). Response deadline 2026-03-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W5168W26RA007",
+          "url": "https://sam.gov/workspace/contract/opp/8de822d68673447f93d70f353b2b7f55/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-57aa6e79308c475f-component-rebuild-shop-at-letterkenny-army-depot",
+      "name": "Component Rebuild Shop at Letterkenny Army Depot",
+      "city": "Chambersburg",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-27",
+      "description": "Federal presolicitation W912DR26R5395. Component Rebuild Shop at Letterkenny Army Depot.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912DR26R5395",
+          "url": "https://sam.gov/workspace/contract/opp/57aa6e79308c475f89abc143b0256806/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-a9378f676e7247ac-carlisle-barracks-job-order-contract-joc",
+      "name": "Carlisle Barracks Job Order Contract (JOC)",
+      "city": "Carlisle",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-24",
+      "description": "Federal solicitation W5168W26RA007. Carlisle Barracks Job Order Contract (JOC). Response deadline 2026-03-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W5168W26RA007",
+          "url": "https://sam.gov/workspace/contract/opp/a9378f676e7247acb5fdd2c53118edcb/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-dfc1c2eb5a654cad-carlisle-barracks-job-order-contract-joc",
+      "name": "Carlisle Barracks Job Order Contract (JOC)",
+      "city": "Carlisle",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-23",
+      "description": "Federal solicitation W5168W26RA007. Carlisle Barracks Job Order Contract (JOC). Response deadline 2026-03-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W5168W26RA007",
+          "url": "https://sam.gov/workspace/contract/opp/dfc1c2eb5a654cad8aea0e911234240b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-428d26d65fba4772-carlisle-barracks-job-order-contract-joc",
+      "name": "Carlisle Barracks Job Order Contract (JOC)",
+      "city": "Carlisle",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-17",
+      "description": "Federal solicitation W5168W26RA007. Carlisle Barracks Job Order Contract (JOC). Response deadline 2026-02-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W5168W26RA007",
+          "url": "https://sam.gov/workspace/contract/opp/428d26d65fba477283482a4596f20857/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-5c63eca8aa94473b-component-rebuild-shop-at-letterkenny-army-depot",
+      "name": "Component Rebuild Shop at Letterkenny Army Depot",
+      "city": "Chambersburg",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-11",
+      "description": "Federal presolicitation W912DR26R5395. Component Rebuild Shop at Letterkenny Army Depot.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912DR26R5395",
+          "url": "https://sam.gov/workspace/contract/opp/5c63eca8aa94473bacb7adc32330d981/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-a8f7daa79ecf410f-component-rebuild-shop-at-letterkenny-army-depot",
+      "name": "Component Rebuild Shop at Letterkenny Army Depot",
+      "city": "Chambersburg",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-09",
+      "description": "Federal presolicitation W912DR26R5395. Component Rebuild Shop at Letterkenny Army Depot.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912DR26R5395",
+          "url": "https://sam.gov/workspace/contract/opp/a8f7daa79ecf410f842be3ea5382d57e/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-af36baefd81e4c28-carlisle-barracks-job-order-contract-joc",
+      "name": "Carlisle Barracks Job Order Contract (JOC)",
+      "city": "Carlisle",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-04",
+      "description": "Federal solicitation W5168W26RA007. Carlisle Barracks Job Order Contract (JOC). Response deadline 2026-02-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W5168W26RA007",
+          "url": "https://sam.gov/workspace/contract/opp/af36baefd81e4c2899408ce581ebd11b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-f78fecd0aa9240f5-carlisle-barracks-job-order-contract-joc",
+      "name": "Carlisle Barracks Job Order Contract (JOC)",
+      "city": "Carlisle",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-03",
+      "description": "Federal solicitation W5168W26RA007. Carlisle Barracks Job Order Contract (JOC). Response deadline 2026-02-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W5168W26RA007",
+          "url": "https://sam.gov/workspace/contract/opp/f78fecd0aa9240f58c6ec8b1db07604d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-d821aabbd2364bc2-carlisle-barracks-job-order-contract-joc",
+      "name": "Carlisle Barracks Job Order Contract (JOC)",
+      "city": "Carlisle",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-02",
+      "description": "Federal solicitation W5168W26RA007. Carlisle Barracks Job Order Contract (JOC). Response deadline 2026-02-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W5168W26RA007",
+          "url": "https://sam.gov/workspace/contract/opp/d821aabbd2364bc29e15b34c6e43779d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-831e31d84cd04c79-carlisle-barracks-job-order-contract-joc",
+      "name": "Carlisle Barracks Job Order Contract (JOC)",
+      "city": "Carlisle",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-02",
+      "description": "Federal solicitation W5168W26RA007. Carlisle Barracks Job Order Contract (JOC). Response deadline 2026-02-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W5168W26RA007",
+          "url": "https://sam.gov/workspace/contract/opp/831e31d84cd04c79aed117653ab1f894/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-0080d73cac264422-design-build-design-bid-build-indefinite-delivery-",
+      "name": "DESIGN-BUILD / DESIGN-BID-BUILD, INDEFINITE DELIVERY/INDEFINITE QUANTITY MULTIPLE AWARD CONSTRUCTION CONTRACT FOR GENERA",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-30",
+      "description": "Federal solicitation N4008525R2684. DESIGN-BUILD / DESIGN-BID-BUILD, INDEFINITE DELIVERY/INDEFINITE QUANTITY MULTIPLE AWARD CONSTRUCTION CONTRACT FOR GENERAL CONSTRUCTION SERVICES IN THE PUBLIC WORKS DEPARTMENT PENNSYLVANIA AREA OF RESPONSIBILITY. Response deadline 2025-10-02.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2684",
+          "url": "https://sam.gov/workspace/contract/opp/0080d73cac26442295815e62c195aa18/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-7e54bc2a36c74beb-carlisle-barracks-job-order-contract-joc",
+      "name": "Carlisle Barracks Job Order Contract (JOC)",
+      "city": "Carlisle",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-28",
+      "description": "Federal solicitation W5168W26RA007. Carlisle Barracks Job Order Contract (JOC). Response deadline 2026-02-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W5168W26RA007",
+          "url": "https://sam.gov/workspace/contract/opp/7e54bc2a36c74bebaa5216bf5bc6e1f9/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-1eaa09ee37eb4c01-carlisle-barracks-job-order-contract-joc",
+      "name": "Carlisle Barracks Job Order Contract (JOC)",
+      "city": "Carlisle",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-23",
+      "description": "Federal solicitation W5168W26RA007. Carlisle Barracks Job Order Contract (JOC). Response deadline 2026-02-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W5168W26RA007",
+          "url": "https://sam.gov/workspace/contract/opp/1eaa09ee37eb4c01aded872eaac699ab/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-a96b270161cd48bf-carlisle-barracks-job-order-contract-joc",
+      "name": "Carlisle Barracks Job Order Contract (JOC)",
+      "city": "Carlisle",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-23",
+      "description": "Federal solicitation W5168W26RA007. Carlisle Barracks Job Order Contract (JOC). Response deadline 2026-02-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W5168W26RA007",
+          "url": "https://sam.gov/workspace/contract/opp/a96b270161cd48bfbf557b1eba0ba6f8/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-361ca7833c374c44-design-build-design-bid-build-indefinite-delivery-",
+      "name": "DESIGN-BUILD / DESIGN-BID-BUILD, INDEFINITE DELIVERY/INDEFINITE QUANTITY MULTIPLE AWARD CONSTRUCTION CONTRACT FOR GENERA",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-09-23",
+      "description": "Federal solicitation N4008525R2684. DESIGN-BUILD / DESIGN-BID-BUILD, INDEFINITE DELIVERY/INDEFINITE QUANTITY MULTIPLE AWARD CONSTRUCTION CONTRACT FOR GENERAL CONSTRUCTION SERVICES IN THE PUBLIC WORKS DEPARTMENT PENNSYLVANIA AREA OF RESPONSIBILITY. Response deadline 2025-10-02.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2684",
+          "url": "https://sam.gov/workspace/contract/opp/361ca7833c374c449768051e42429ba7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-cb4eed8a53184df4-design-build-design-bid-build-indefinite-delivery-",
+      "name": "DESIGN-BUILD / DESIGN-BID-BUILD, INDEFINITE DELIVERY/INDEFINITE QUANTITY MULTIPLE AWARD CONSTRUCTION CONTRACT FOR GENERA",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-09-23",
+      "description": "Federal solicitation N4008525R2684. DESIGN-BUILD / DESIGN-BID-BUILD, INDEFINITE DELIVERY/INDEFINITE QUANTITY MULTIPLE AWARD CONSTRUCTION CONTRACT FOR GENERAL CONSTRUCTION SERVICES IN THE PUBLIC WORKS DEPARTMENT PENNSYLVANIA AREA OF RESPONSIBILITY. Response deadline 2025-10-02.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2684",
+          "url": "https://sam.gov/workspace/contract/opp/cb4eed8a53184df489fa93c1dc61b24e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-e1498c8b0a9a46f2-design-build-design-bid-build-indefinite-delivery-",
+      "name": "DESIGN-BUILD / DESIGN-BID-BUILD, INDEFINITE DELIVERY/INDEFINITE QUANTITY MULTIPLE AWARD CONSTRUCTION CONTRACT FOR GENERA",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-09-17",
+      "description": "Federal solicitation N4008525R2684. DESIGN-BUILD / DESIGN-BID-BUILD, INDEFINITE DELIVERY/INDEFINITE QUANTITY MULTIPLE AWARD CONSTRUCTION CONTRACT FOR GENERAL CONSTRUCTION SERVICES IN THE PUBLIC WORKS DEPARTMENT PENNSYLVANIA AREA OF RESPONSIBILITY. Response deadline 2025-09-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2684",
+          "url": "https://sam.gov/workspace/contract/opp/e1498c8b0a9a46f29839cc1404399945/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-72ad548bbd5049fc-design-build-design-bid-build-indefinite-delivery-",
+      "name": "DESIGN-BUILD / DESIGN-BID-BUILD, INDEFINITE DELIVERY/INDEFINITE QUANTITY MULTIPLE AWARD CONSTRUCTION CONTRACT FOR GENERA",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-09-17",
+      "description": "Federal solicitation N4008525R2684. DESIGN-BUILD / DESIGN-BID-BUILD, INDEFINITE DELIVERY/INDEFINITE QUANTITY MULTIPLE AWARD CONSTRUCTION CONTRACT FOR GENERAL CONSTRUCTION SERVICES IN THE PUBLIC WORKS DEPARTMENT PENNSYLVANIA AREA OF RESPONSIBILITY. Response deadline 2025-09-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2684",
+          "url": "https://sam.gov/workspace/contract/opp/72ad548bbd5049fcb60a6ea3e4cffa9a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-7c06d0480a6d40c5-design-build-maintenance-and-repair-army-reserve-m",
+      "name": "Design-Build Maintenance and Repair Army Reserve (MRAR) of Edgemont Army Reserve Center at Newtown Square, PA",
+      "city": "Newtown Square",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-09-15",
+      "description": "Federal solicitation W912QR25RA019. Design-Build Maintenance and Repair Army Reserve (MRAR) of Edgemont Army Reserve Center at Newtown Square, PA. Response deadline 2025-09-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR25RA019",
+          "url": "https://sam.gov/workspace/contract/opp/7c06d0480a6d40c5a1dee8f30db54b95/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-cb78a4e222314fb1-design-build-design-bid-build-indefinite-delivery-",
+      "name": "DESIGN-BUILD / DESIGN-BID-BUILD, INDEFINITE DELIVERY/INDEFINITE QUANTITY MULTIPLE AWARD CONSTRUCTION CONTRACT FOR GENERA",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-09-11",
+      "description": "Federal solicitation N4008525R2684. DESIGN-BUILD / DESIGN-BID-BUILD, INDEFINITE DELIVERY/INDEFINITE QUANTITY MULTIPLE AWARD CONSTRUCTION CONTRACT FOR GENERAL CONSTRUCTION SERVICES IN THE PUBLIC WORKS DEPARTMENT PENNSYLVANIA AREA OF RESPONSIBILITY. Response deadline 2025-09-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2684",
+          "url": "https://sam.gov/workspace/contract/opp/cb78a4e222314fb182b77ea107addea2/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-3f975ebc1a8e4e20-design-build-design-bid-build-indefinite-delivery-",
+      "name": "DESIGN-BUILD / DESIGN-BID-BUILD, INDEFINITE DELIVERY/INDEFINITE QUANTITY MULTIPLE AWARD CONSTRUCTION CONTRACT FOR GENERA",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-09-10",
+      "description": "Federal solicitation N4008525R2684. DESIGN-BUILD / DESIGN-BID-BUILD, INDEFINITE DELIVERY/INDEFINITE QUANTITY MULTIPLE AWARD CONSTRUCTION CONTRACT FOR GENERAL CONSTRUCTION SERVICES IN THE PUBLIC WORKS DEPARTMENT PENNSYLVANIA AREA OF RESPONSIBILITY. Response deadline 2025-09-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2684",
+          "url": "https://sam.gov/workspace/contract/opp/3f975ebc1a8e4e20a1830cda5ab5bc27/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-6496bb7340474d29-design-build-maintenance-and-repair-army-reserve-m",
+      "name": "Design-Build Maintenance and Repair Army Reserve (MRAR) of Edgemont Army Reserve Center at Newtown Square, PA",
+      "city": "Newtown Square",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-09-08",
+      "description": "Federal solicitation W912QR25RA019. Design-Build Maintenance and Repair Army Reserve (MRAR) of Edgemont Army Reserve Center at Newtown Square, PA. Response deadline 2025-09-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR25RA019",
+          "url": "https://sam.gov/workspace/contract/opp/6496bb7340474d29a1cb138298c7ed98/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-150e034d65494ade-design-build-design-bid-build-indefinite-delivery-",
+      "name": "DESIGN-BUILD / DESIGN-BID-BUILD, INDEFINITE DELIVERY/INDEFINITE QUANTITY MULTIPLE AWARD CONSTRUCTION CONTRACT FOR GENERA",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-09-05",
+      "description": "Federal solicitation N4008525R2684. DESIGN-BUILD / DESIGN-BID-BUILD, INDEFINITE DELIVERY/INDEFINITE QUANTITY MULTIPLE AWARD CONSTRUCTION CONTRACT FOR GENERAL CONSTRUCTION SERVICES IN THE PUBLIC WORKS DEPARTMENT PENNSYLVANIA AREA OF RESPONSIBILITY. Response deadline 2025-09-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2684",
+          "url": "https://sam.gov/workspace/contract/opp/150e034d65494ade9003a900de153f7d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-a1ad418fdcd64198-design-build-design-bid-build-indefinite-delivery-",
+      "name": "DESIGN-BUILD / DESIGN-BID-BUILD, INDEFINITE DELIVERY/INDEFINITE QUANTITY MULTIPLE AWARD CONSTRUCTION CONTRACT FOR GENERA",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-09-05",
+      "description": "Federal solicitation N4008525R2684. DESIGN-BUILD / DESIGN-BID-BUILD, INDEFINITE DELIVERY/INDEFINITE QUANTITY MULTIPLE AWARD CONSTRUCTION CONTRACT FOR GENERAL CONSTRUCTION SERVICES IN THE PUBLIC WORKS DEPARTMENT PENNSYLVANIA AREA OF RESPONSIBILITY. Response deadline 2025-09-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2684",
+          "url": "https://sam.gov/workspace/contract/opp/a1ad418fdcd641988fd2e4a80b8ee813/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-a2be3fd47bbb494a-design-build-maintenance-and-repair-army-reserves-",
+      "name": "Design-Build Maintenance and Repair Army Reserves (MRAR) of U.S. Army Reserve Center (ARC), Building 315, New Cumberland",
+      "city": "New Cumberland",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-09-02",
+      "description": "Federal solicitation W912QR25RA029. Design-Build Maintenance and Repair Army Reserves (MRAR) of U.S. Army Reserve Center (ARC), Building 315, New Cumberland, PA. Response deadline 2025-09-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR25RA029",
+          "url": "https://sam.gov/workspace/contract/opp/a2be3fd47bbb494aaddc20360d88361e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-c9ccf0c15a634b07-design-build-maintenance-and-repair-army-reserves-",
+      "name": "Design-Build Maintenance and Repair Army Reserves (MRAR) of U.S. Army Reserve Center (ARC), Building 315, New Cumberland",
+      "city": "New Cumberland",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-08-28",
+      "description": "Federal solicitation W912QR25RA029. Design-Build Maintenance and Repair Army Reserves (MRAR) of U.S. Army Reserve Center (ARC), Building 315, New Cumberland, PA. Response deadline 2025-09-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR25RA029",
+          "url": "https://sam.gov/workspace/contract/opp/c9ccf0c15a634b0781fc786b49bbf986/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-05449fcbd6c440c7-design-build-design-bid-build-indefinite-delivery-",
+      "name": "DESIGN-BUILD / DESIGN-BID-BUILD, INDEFINITE DELIVERY/INDEFINITE QUANTITY MULTIPLE AWARD CONSTRUCTION CONTRACT FOR GENERA",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-08-22",
+      "description": "Federal solicitation N4008525R2684. DESIGN-BUILD / DESIGN-BID-BUILD, INDEFINITE DELIVERY/INDEFINITE QUANTITY MULTIPLE AWARD CONSTRUCTION CONTRACT FOR GENERAL CONSTRUCTION SERVICES IN THE PUBLIC WORKS DEPARTMENT PENNSYLVANIA AREA OF RESPONSIBILITY. Response deadline 2025-09-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2684",
+          "url": "https://sam.gov/workspace/contract/opp/05449fcbd6c440c7b91782ba2a76b9a7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-0e0556fbf2394bf5-design-build-design-bid-build-indefinite-delivery-",
+      "name": "DESIGN-BUILD / DESIGN-BID-BUILD, INDEFINITE DELIVERY/INDEFINITE QUANTITY MULTIPLE AWARD CONSTRUCTION CONTRACT FOR GENERA",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-08-22",
+      "description": "Federal solicitation N4008525R2684. DESIGN-BUILD / DESIGN-BID-BUILD, INDEFINITE DELIVERY/INDEFINITE QUANTITY MULTIPLE AWARD CONSTRUCTION CONTRACT FOR GENERAL CONSTRUCTION SERVICES IN THE PUBLIC WORKS DEPARTMENT PENNSYLVANIA AREA OF RESPONSIBILITY. Response deadline 2025-09-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2684",
+          "url": "https://sam.gov/workspace/contract/opp/0e0556fbf2394bf5af1fc07979e75581/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-291cb64a04a24388-design-build-maintenance-and-repair-army-reserve-m",
+      "name": "Design-Build Maintenance and Repair Army Reserve (MRAR) of Edgemont Army Reserve Center at Newtown Square, PA",
+      "city": "Newtown Square",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-08-18",
+      "description": "Federal solicitation W912QR25RA019. Design-Build Maintenance and Repair Army Reserve (MRAR) of Edgemont Army Reserve Center at Newtown Square, PA. Response deadline 2025-09-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR25RA019",
+          "url": "https://sam.gov/workspace/contract/opp/291cb64a04a24388ac065050a6ab1c34/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-8aceb090d0ab4c00-design-build-maintenance-and-repair-army-reserves-",
+      "name": "Design-Build Maintenance and Repair Army Reserves (MRAR) of U.S. Army Reserve Center (ARC), Building 315, New Cumberland",
+      "city": "New Cumberland",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-08-12",
+      "description": "Federal solicitation W912QR25RA029. Design-Build Maintenance and Repair Army Reserves (MRAR) of U.S. Army Reserve Center (ARC), Building 315, New Cumberland, PA. Response deadline 2025-09-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR25RA029",
+          "url": "https://sam.gov/workspace/contract/opp/8aceb090d0ab4c00bf1105657fab5e96/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-1979c05694074cd6-design-build-design-bid-build-indefinite-delivery-",
+      "name": "DESIGN-BUILD / DESIGN-BID-BUILD, INDEFINITE DELIVERY/INDEFINITE QUANTITY MULTIPLE AWARD CONSTRUCTION CONTRACT FOR GENERA",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-07-22",
+      "description": "Federal solicitation N4008525R2684. DESIGN-BUILD / DESIGN-BID-BUILD, INDEFINITE DELIVERY/INDEFINITE QUANTITY MULTIPLE AWARD CONSTRUCTION CONTRACT FOR GENERAL CONSTRUCTION SERVICES IN THE PUBLIC WORKS DEPARTMENT PENNSYLVANIA AREA OF RESPONSIBILITY. Response deadline 2025-09-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2684",
+          "url": "https://sam.gov/workspace/contract/opp/1979c05694074cd698a654ab66832349/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-2d311fcc870948e0-db-dbb-idiq-macc-for-general-construction-service-",
+      "name": "DB/DBB IDIQ MACC for General Construction Service for the PWD Pennsylvania AOR",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-07-22",
+      "description": "Federal solicitation N4008525R2684. DB/DBB IDIQ MACC for General Construction Service for the PWD Pennsylvania AOR. Response deadline 2025-09-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2684",
+          "url": "https://sam.gov/workspace/contract/opp/2d311fcc870948e081b46c980deca5ce/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-a899f199f0c84220-design-build-maintenance-and-repair-army-reserve-m",
+      "name": "Design-Build Maintenance and Repair Army Reserve (MRAR) of Edgemont Army Reserve Center at Newtown Square, PA",
+      "city": "Newtown Square",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-05-16",
+      "description": "Federal solicitation W912QR25RA019. Design-Build Maintenance and Repair Army Reserve (MRAR) of Edgemont Army Reserve Center at Newtown Square, PA. Response deadline 2025-06-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR25RA019",
+          "url": "https://sam.gov/workspace/contract/opp/a899f199f0c842209f0fc45214a84643/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-7efc3f0f34bc4e99-design-build-maintenance-and-repair-army-reserve-m",
+      "name": "Design-Build Maintenance and Repair Army Reserve (MRAR) of Edgemont Army Reserve Center at Newtown Square, PA",
+      "city": "Newtown Square",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-05-16",
+      "description": "Federal solicitation W912QR25RA019. Design-Build Maintenance and Repair Army Reserve (MRAR) of Edgemont Army Reserve Center at Newtown Square, PA. Response deadline 2025-06-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR25RA019",
+          "url": "https://sam.gov/workspace/contract/opp/7efc3f0f34bc4e99b615baa77b212c63/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-465c7aad79b24f89-design-build-maintenance-and-repair-army-reserve-m",
+      "name": "Design-Build Maintenance and Repair Army Reserve (MRAR) of Edgemont Army Reserve Center at Newtown Square, PA",
+      "city": "Newtown Square",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-05-16",
+      "description": "Federal solicitation W912QR25RA019. Design-Build Maintenance and Repair Army Reserve (MRAR) of Edgemont Army Reserve Center at Newtown Square, PA. Response deadline 2025-06-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR25RA019",
+          "url": "https://sam.gov/workspace/contract/opp/465c7aad79b24f89819a90bad3104871/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-1de639ee196140b1-design-build-maintenance-and-repair-army-reserves-",
+      "name": "Design-Build Maintenance and Repair Army Reserves (MRAR) of U.S. Army Reserve Center (ARC), Building 315, New Cumberland",
+      "city": "New Cumberland",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-04-28",
+      "description": "Federal solicitation W912QR25RA029. Design-Build Maintenance and Repair Army Reserves (MRAR) of U.S. Army Reserve Center (ARC), Building 315, New Cumberland, PA. Response deadline 2025-05-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR25RA029",
+          "url": "https://sam.gov/workspace/contract/opp/1de639ee196140b1bbb9f64da0fc9476/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
+    },
+    {
+      "id": "pa-sam-3d1f9723cef2408d-design-build-maintenance-and-repair-army-reserves-",
+      "name": "Design-Build Maintenance and Repair Army Reserves (MRAR) of U.S. Army Reserve Center (ARC), Building 315, New Cumberland",
+      "city": "New Cumberland",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-04-28",
+      "description": "Federal solicitation W912QR25RA029. Design-Build Maintenance and Repair Army Reserves (MRAR) of U.S. Army Reserve Center (ARC), Building 315, New Cumberland, PA. Response deadline 2025-05-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR25RA029",
+          "url": "https://sam.gov/workspace/contract/opp/3d1f9723cef2408d99cbe55c692295ad/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "PA"
     }
   ],
   "stats": {
-    "total": 5
+    "total": 73
   }
 }

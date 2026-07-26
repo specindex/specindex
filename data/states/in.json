@@ -1,9 +1,9 @@
 {
   "state": "IN",
   "state_name": "Indiana",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — WNDU, local news.",
+  "capture_method": "Public sources — WNDU, local news, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "in-aws-new-carlisle-data-center",
@@ -44,9 +44,2076 @@
         }
       ],
       "open_for": "Multi-building campus active. Ongoing MEP and infrastructure specs."
+    },
+    {
+      "id": "in-sam-177992c072314ea0-virtualized-electromagnetic-warfare-and-mission-en",
+      "name": "VIRTUALIZED ELECTROMAGNETIC WARFARE AND MISSION ENGINEERING CENTER (VEWMEC)",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "Federal solicitation W912QR26BA022. VIRTUALIZED ELECTROMAGNETIC WARFARE AND MISSION ENGINEERING CENTER (VEWMEC). Response deadline 2026-08-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA022",
+          "url": "https://sam.gov/workspace/contract/opp/177992c072314ea0a5825b6c636389c5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-75907ac191b44bfd-virtualized-electromagnetic-warfare-and-mission-en",
+      "name": "VIRTUALIZED ELECTROMAGNETIC WARFARE AND MISSION ENGINEERING CENTER (VEWMEC)",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "Federal solicitation W912QR26BA022. VIRTUALIZED ELECTROMAGNETIC WARFARE AND MISSION ENGINEERING CENTER (VEWMEC). Response deadline 2026-08-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA022",
+          "url": "https://sam.gov/workspace/contract/opp/75907ac191b44bfda3cddb367294320b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-7512ad88736e4246-w912qr26ba008-construction-of-tmac-at-nswc-crane-i",
+      "name": "W912QR26BA008 - Construction of TMAC at NSWC - Crane, IN",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal solicitation W912QR26BA008. W912QR26BA008 - Construction of TMAC at NSWC - Crane, IN. Response deadline 2026-07-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1NZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA008",
+          "url": "https://sam.gov/workspace/contract/opp/7512ad88736e4246b400b7c7e05099c3/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-385907c89e004cea-unmanned-fusion-warfare-laboratory-at-nswc-crane-i",
+      "name": "Unmanned Fusion Warfare Laboratory at NSWC Crane IN",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Federal solicitation W912QR26BA017. Unmanned Fusion Warfare Laboratory at NSWC Crane IN. Response deadline 2026-07-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA017",
+          "url": "https://sam.gov/workspace/contract/opp/385907c89e004cea88335f6e05cdac53/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-39463dbefdc54593-w912qr26ba008-construction-of-tmac-at-nswc-crane-i",
+      "name": "W912QR26BA008 - Construction of TMAC at NSWC - Crane, IN",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Federal solicitation W912QR26BA008. W912QR26BA008 - Construction of TMAC at NSWC - Crane, IN. Response deadline 2026-07-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1NZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA008",
+          "url": "https://sam.gov/workspace/contract/opp/39463dbefdc54593b3b81772320c8f6b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-6396eab212b847ce-unmanned-fusion-warfare-laboratory-at-nswc-crane-i",
+      "name": "Unmanned Fusion Warfare Laboratory at NSWC Crane IN",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "Federal solicitation W912QR26BA017. Unmanned Fusion Warfare Laboratory at NSWC Crane IN. Response deadline 2026-07-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA017",
+          "url": "https://sam.gov/workspace/contract/opp/6396eab212b847cebbe4096fb5c1ae5b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-60a0940e49ac4bbe-w912qr26ba008-construction-of-tmac-at-nswc-crane-i",
+      "name": "W912QR26BA008 - Construction of TMAC at NSWC - Crane, IN",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-26",
+      "description": "Federal solicitation W912QR26BA008. W912QR26BA008 - Construction of TMAC at NSWC - Crane, IN. Response deadline 2026-07-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1NZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA008",
+          "url": "https://sam.gov/workspace/contract/opp/60a0940e49ac4bbeb1cfd8ae3361d625/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-3752a65feabc4697-unmanned-fusion-warfare-laboratory-at-nswc-crane-i",
+      "name": "Unmanned Fusion Warfare Laboratory at NSWC Crane IN",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-26",
+      "description": "Federal solicitation W912QR26BA017. Unmanned Fusion Warfare Laboratory at NSWC Crane IN. Response deadline 2026-07-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA017",
+          "url": "https://sam.gov/workspace/contract/opp/3752a65feabc46978379104ff2c2738f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-51d6d346bf8d40d7-w912qr26ba008-construction-of-tmac-at-nswc-crane-i",
+      "name": "W912QR26BA008 - Construction of TMAC at NSWC - Crane, IN",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-26",
+      "description": "Federal solicitation W912QR26BA008. W912QR26BA008 - Construction of TMAC at NSWC - Crane, IN. Response deadline 2026-07-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1NZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA008",
+          "url": "https://sam.gov/workspace/contract/opp/51d6d346bf8d40d7a0d57864fb29eb25/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-ddf7a273a817476e-virtualized-electromagnetic-warfare-and-mission-en",
+      "name": "Virtualized Electromagnetic Warfare and Mission Engineering Center (VEWMEC) at NSWC, Crane IN",
+      "city": "Crane",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-18",
+      "description": "Federal presolicitation W912QR26BA022. Virtualized Electromagnetic Warfare and Mission Engineering Center (VEWMEC) at NSWC, Crane IN. Response deadline 2026-07-02.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912QR26BA022",
+          "url": "https://sam.gov/workspace/contract/opp/ddf7a273a817476ebf17590cff71c4bd/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-d8de0687e3c145d3-virtualized-electromagnetic-warfare-and-mission-en",
+      "name": "Virtualized Electromagnetic Warfare and Mission Engineering Center (VEWMEC) at NSWC, Crane IN",
+      "city": "Crane",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-18",
+      "description": "Federal presolicitation W912QR26BA022. Virtualized Electromagnetic Warfare and Mission Engineering Center (VEWMEC) at NSWC, Crane IN. Response deadline 2026-07-02.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912QR26BA022",
+          "url": "https://sam.gov/workspace/contract/opp/d8de0687e3c145d3a08f85236d7f019c/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-1048c32ff3d8446a-unmanned-fusion-warfare-laboratory-at-nswc-crane-i",
+      "name": "Unmanned Fusion Warfare Laboratory at NSWC Crane IN",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-17",
+      "description": "Federal solicitation W912QR26BA017. Unmanned Fusion Warfare Laboratory at NSWC Crane IN. Response deadline 2026-06-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA017",
+          "url": "https://sam.gov/workspace/contract/opp/1048c32ff3d8446a9eb44c2cc6d58469/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-ca27d58e22aa4d37-w912qr26ba008-construction-of-tmac-at-nswc-crane-i",
+      "name": "W912QR26BA008 - Construction of TMAC at NSWC - Crane, IN",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-15",
+      "description": "Federal solicitation W912QR26BA008. W912QR26BA008 - Construction of TMAC at NSWC - Crane, IN. Response deadline 2026-07-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1NZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA008",
+          "url": "https://sam.gov/workspace/contract/opp/ca27d58e22aa4d379aeb9f5a8803a0b5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-6feb6dcacd7543b2-unmanned-fusion-warfare-laboratory-at-nswc-crane-i",
+      "name": "Unmanned Fusion Warfare Laboratory at NSWC Crane IN",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-15",
+      "description": "Federal solicitation W912QR26BA017. Unmanned Fusion Warfare Laboratory at NSWC Crane IN. Response deadline 2026-06-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA017",
+          "url": "https://sam.gov/workspace/contract/opp/6feb6dcacd7543b2aa871f221e2c1550/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-92757ddd971f417d-unmanned-fusion-warfare-laboratory-at-nswc-crane-i",
+      "name": "Unmanned Fusion Warfare Laboratory at NSWC Crane IN",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-10",
+      "description": "Federal solicitation W912QR26BA017. Unmanned Fusion Warfare Laboratory at NSWC Crane IN. Response deadline 2026-06-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA017",
+          "url": "https://sam.gov/workspace/contract/opp/92757ddd971f417d9336aafaec12afd1/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-946efea8b4d34371-construction-of-a-virtualized-electromagnetic-warf",
+      "name": "Construction of a Virtualized Electromagnetic Warfare and Mission Engineering Center (VEWMEC) at NSWC Crane, IN.",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-04",
+      "description": "Federal solicitation W912QR26BA018. Construction of a Virtualized Electromagnetic Warfare and Mission Engineering Center (VEWMEC) at NSWC Crane, IN. Response deadline 2026-06-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA018",
+          "url": "https://sam.gov/workspace/contract/opp/946efea8b4d34371822e1e8ee987abb7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-cf3db401d2f14333-construction-of-a-virtualized-electromagnetic-warf",
+      "name": "Construction of a Virtualized Electromagnetic Warfare and Mission Engineering Center (VEWMEC) at NSWC Crane, IN.",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-28",
+      "description": "Federal solicitation W912QR26BA018. Construction of a Virtualized Electromagnetic Warfare and Mission Engineering Center (VEWMEC) at NSWC Crane, IN. Response deadline 2026-06-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA018",
+          "url": "https://sam.gov/workspace/contract/opp/cf3db401d2f14333aebf486c124351c1/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-63f6aa4b25964d9a-insulate-pact-roof-duct-610a4-26-509",
+      "name": "Insulate PACT Roof Duct 610A4-26-509",
+      "city": "Fort Wayne",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-26",
+      "description": "Federal solicitation 36C25026Q0508. Insulate PACT Roof Duct 610A4-26-509. Response deadline 2026-07-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C25026Q0508",
+          "url": "https://sam.gov/workspace/contract/opp/63f6aa4b25964d9a9b3837c8c41b37bf/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-05452b39da9049d8-w912qr26ba008-construction-of-tmac-at-nswc-crane-i",
+      "name": "W912QR26BA008 - Construction of TMAC at NSWC - Crane, IN",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-26",
+      "description": "Federal solicitation W912QR26BA008. W912QR26BA008 - Construction of TMAC at NSWC - Crane, IN. Response deadline 2026-06-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1NZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA008",
+          "url": "https://sam.gov/workspace/contract/opp/05452b39da9049d8a3c09f080f27c7c6/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-b3d73ea9c5084b54-unmanned-fusion-warfare-laboratory-at-nswc-crane-i",
+      "name": "Unmanned Fusion Warfare Laboratory at NSWC Crane IN",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-20",
+      "description": "Federal solicitation W912QR26BA017. Unmanned Fusion Warfare Laboratory at NSWC Crane IN. Response deadline 2026-06-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA017",
+          "url": "https://sam.gov/workspace/contract/opp/b3d73ea9c5084b5481a66cec9c19e15a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-e876498b2a06476d-construction-of-a-virtualized-electromagnetic-warf",
+      "name": "Construction of a Virtualized Electromagnetic Warfare and Mission Engineering Center (VEWMEC) at NSWC Crane, IN.",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-20",
+      "description": "Federal solicitation W912QR26BA018. Construction of a Virtualized Electromagnetic Warfare and Mission Engineering Center (VEWMEC) at NSWC Crane, IN. Response deadline 2026-06-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA018",
+          "url": "https://sam.gov/workspace/contract/opp/e876498b2a06476d86e095be44f9df17/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-f1f0914d9ed34cfe-w912qr26ba008-construction-of-tmac-at-nswc-crane-i",
+      "name": "W912QR26BA008 - Construction of TMAC at NSWC - Crane, IN",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-19",
+      "description": "Federal solicitation W912QR26BA008. W912QR26BA008 - Construction of TMAC at NSWC - Crane, IN. Response deadline 2026-06-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1NZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA008",
+          "url": "https://sam.gov/workspace/contract/opp/f1f0914d9ed34cfe8f8113b112ecd4b6/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-001832fe5b834630-construction-of-a-virtualized-electromagnetic-warf",
+      "name": "Construction of a Virtualized Electromagnetic Warfare and Mission Engineering Center (VEWMEC) at NSWC Crane, IN.",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-18",
+      "description": "Federal solicitation W912QR26BA018. Construction of a Virtualized Electromagnetic Warfare and Mission Engineering Center (VEWMEC) at NSWC Crane, IN. Response deadline 2026-06-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA018",
+          "url": "https://sam.gov/workspace/contract/opp/001832fe5b8346308f11089a56ff3a35/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-5f61cca6fc1640da-w912qr26ba008-construction-of-tmac-at-nswc-crane-i",
+      "name": "W912QR26BA008 - Construction of TMAC at NSWC - Crane, IN",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-15",
+      "description": "Federal solicitation W912QR26BA008. W912QR26BA008 - Construction of TMAC at NSWC - Crane, IN. Response deadline 2026-06-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1NZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA008",
+          "url": "https://sam.gov/workspace/contract/opp/5f61cca6fc1640da99db590004414366/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-d7bf70c364a84fad-unmanned-fusion-warfare-laboratory-at-nswc-crane-i",
+      "name": "Unmanned Fusion Warfare Laboratory at NSWC Crane IN",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-15",
+      "description": "Federal solicitation W912QR26BA017. Unmanned Fusion Warfare Laboratory at NSWC Crane IN. Response deadline 2026-06-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA017",
+          "url": "https://sam.gov/workspace/contract/opp/d7bf70c364a84fad90c42b53d6a5d46a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-624281aaaad14996-w912qr26ba008-construction-of-tmac-at-nswc-crane-i",
+      "name": "W912QR26BA008 - Construction of TMAC at NSWC - Crane, IN",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-14",
+      "description": "Federal solicitation W912QR26BA008. W912QR26BA008 - Construction of TMAC at NSWC - Crane, IN. Response deadline 2026-06-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1NZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA008",
+          "url": "https://sam.gov/workspace/contract/opp/624281aaaad14996a19bbe5c18079836/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-f1f2c68c17cf4c5f-w912qr26ba008-construction-of-tmac-at-nswc-crane-i",
+      "name": "W912QR26BA008 - Construction of TMAC at NSWC - Crane, IN",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-14",
+      "description": "Federal solicitation W912QR26BA008. W912QR26BA008 - Construction of TMAC at NSWC - Crane, IN. Response deadline 2026-06-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1NZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA008",
+          "url": "https://sam.gov/workspace/contract/opp/f1f2c68c17cf4c5f90019d336dda1c14/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-2ccc046cc5ee448a-construction-of-a-virtualized-electromagnetic-warf",
+      "name": "Construction of a Virtualized Electromagnetic Warfare and Mission Engineering Center (VEWMEC) at NSWC Crane, IN.",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-12",
+      "description": "Federal solicitation W912QR26BA018. Construction of a Virtualized Electromagnetic Warfare and Mission Engineering Center (VEWMEC) at NSWC Crane, IN. Response deadline 2026-06-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA018",
+          "url": "https://sam.gov/workspace/contract/opp/2ccc046cc5ee448a92fa14e2217b2a9c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-31bb43108fe94f31-unmanned-fusion-warfare-laboratory-at-nswc-crane-i",
+      "name": "Unmanned Fusion Warfare Laboratory at NSWC Crane IN",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-08",
+      "description": "Federal solicitation W912QR26BA017. Unmanned Fusion Warfare Laboratory at NSWC Crane IN. Response deadline 2026-06-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA017",
+          "url": "https://sam.gov/workspace/contract/opp/31bb43108fe94f318dd56a05912f09bd/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-d6c706c2b2d04eed-unmanned-fusion-warfare-laboratory-at-nswc-crane-i",
+      "name": "Unmanned Fusion Warfare Laboratory at NSWC Crane IN",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-08",
+      "description": "Federal solicitation W912QR26BA017. Unmanned Fusion Warfare Laboratory at NSWC Crane IN. Response deadline 2026-06-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA017",
+          "url": "https://sam.gov/workspace/contract/opp/d6c706c2b2d04eedb3c816e4972456ac/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-a7bef9b411784a69-construction-of-a-virtualized-electromagnetic-warf",
+      "name": "Construction of a Virtualized Electromagnetic Warfare and Mission Engineering Center (VEWMEC) at NSWC Crane, IN.",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-30",
+      "description": "Federal solicitation W912QR26BA018. Construction of a Virtualized Electromagnetic Warfare and Mission Engineering Center (VEWMEC) at NSWC Crane, IN. Response deadline 2026-06-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA018",
+          "url": "https://sam.gov/workspace/contract/opp/a7bef9b411784a6983e42f4adb0cd1de/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-8b762d77d7a74289-unmanned-fusion-warfare-laboratory-at-nswc-crane-i",
+      "name": "Unmanned Fusion Warfare Laboratory at NSWC Crane IN",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-30",
+      "description": "Federal solicitation W912QR26BA017. Unmanned Fusion Warfare Laboratory at NSWC Crane IN. Response deadline 2026-06-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA017",
+          "url": "https://sam.gov/workspace/contract/opp/8b762d77d7a74289ac857f8e8460177c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-d0fd241ac5ab4b42-unmanned-fusion-warfare-laboratory-at-nswc-crane-i",
+      "name": "Unmanned Fusion Warfare Laboratory at NSWC Crane IN",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-30",
+      "description": "Federal solicitation W912QR26BA017. Unmanned Fusion Warfare Laboratory at NSWC Crane IN. Response deadline 2026-06-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA017",
+          "url": "https://sam.gov/workspace/contract/opp/d0fd241ac5ab4b428900c4d0af7f7617/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-fe9c14a2050c4edd-construction-of-a-virtualized-electromagnetic-warf",
+      "name": "Construction of a Virtualized Electromagnetic Warfare and Mission Engineering Center (VEWMEC) at NSWC Crane, IN.",
+      "city": "Crane",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-30",
+      "description": "Federal solicitation W912QR26BA018. Construction of a Virtualized Electromagnetic Warfare and Mission Engineering Center (VEWMEC) at NSWC Crane, IN. Response deadline 2026-06-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA018",
+          "url": "https://sam.gov/workspace/contract/opp/fe9c14a2050c4eddb7ba7fcf38768a67/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-184fb1f8dfb4476c-b-198-hvac-replacement-at-nswc-crane-in",
+      "name": "B-198 HVAC Replacement at NSWC Crane, IN",
+      "city": "Crane",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-30",
+      "description": "Federal sources sought W912QR-26-B138-CRANE. B-198 HVAC Replacement at NSWC Crane, IN. Response deadline 2026-05-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W912QR-26-B138-CRANE",
+          "url": "https://sam.gov/workspace/contract/opp/184fb1f8dfb4476cb2495cfdb5994b38/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-452a09809d4b4d3e-b-198-hvac-replacement-at-nswc-crane-in",
+      "name": "B-198 HVAC Replacement at NSWC Crane, IN",
+      "city": "Crane",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-24",
+      "description": "Federal sources sought W912QR-26-B138-CRANE. B-198 HVAC Replacement at NSWC Crane, IN. Response deadline 2026-05-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W912QR-26-B138-CRANE",
+          "url": "https://sam.gov/workspace/contract/opp/452a09809d4b4d3e826bdab6255b814e/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-950322c7722a4076-b-198-hvac-replacement-at-nswc-crane-in",
+      "name": "B-198 HVAC Replacement at NSWC Crane, IN",
+      "city": "Crane",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-24",
+      "description": "Federal sources sought W912QR-26-B138-CRANE. B-198 HVAC Replacement at NSWC Crane, IN. Response deadline 2026-05-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W912QR-26-B138-CRANE",
+          "url": "https://sam.gov/workspace/contract/opp/950322c7722a4076af356764b7bbd7da/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-a61c4ee1e5204c3e-unmanned-fusion-warfare-laboratory-ufwl-at-nswc-cr",
+      "name": "Unmanned Fusion Warfare Laboratory (UFWL) at NSWC Crane IN",
+      "city": "Crane",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-17",
+      "description": "Federal presolicitation W912QR26BA010. Unmanned Fusion Warfare Laboratory (UFWL) at NSWC Crane IN. Response deadline 2026-04-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912QR26BA010",
+          "url": "https://sam.gov/workspace/contract/opp/a61c4ee1e5204c3ea03dec6d7e1dde47/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-079fcdf97ea54785-virtualized-electromagnetic-warfare-and-mission-en",
+      "name": "Virtualized Electromagnetic Warfare and Mission Engineering Center (VEWMEC) at NSWC, Crane IN",
+      "city": "Crane",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-07",
+      "description": "Federal presolicitation W912QR26BA0009. Virtualized Electromagnetic Warfare and Mission Engineering Center (VEWMEC) at NSWC, Crane IN. Response deadline 2026-04-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912QR26BA0009",
+          "url": "https://sam.gov/workspace/contract/opp/079fcdf97ea54785b266a7f77a29b19d/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-267da5429b6e4892-unmanned-fusion-warfare-laboratory-ufwl-at-nswc-cr",
+      "name": "Unmanned Fusion Warfare Laboratory (UFWL) at NSWC Crane IN",
+      "city": "Crane",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-07",
+      "description": "Federal presolicitation W912QR26BA010. Unmanned Fusion Warfare Laboratory (UFWL) at NSWC Crane IN. Response deadline 2026-04-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912QR26BA010",
+          "url": "https://sam.gov/workspace/contract/opp/267da5429b6e489292b7a236e58b2834/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-01453ae63658a3b3-aerial-port-facility-at-grissom-air-reserve-base-i",
+      "name": "Aerial Port Facility at Grissom Air Reserve Base, IN",
+      "city": "GRISSOM ARB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-05-24",
+      "description": "Federal presolicitation W912QR19R0044. Aerial Port Facility at Grissom Air Reserve Base, IN. Response deadline 2019-05-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912QR19R0044",
+          "url": "https://sam.gov/workspace/contract/opp/01453ae63658a3b328b7ad484be8dcf1/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-1ac661b36abc053f-aerial-port-facility-at-grissom-air-reserve-base-i",
+      "name": "Aerial Port Facility at Grissom Air Reserve Base, IN",
+      "city": "GRISSOM ARB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-05-24",
+      "description": "Federal presolicitation W912QR19R0044. Aerial Port Facility at Grissom Air Reserve Base, IN. Response deadline 2019-05-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912QR19R0044",
+          "url": "https://sam.gov/workspace/contract/opp/1ac661b36abc053fb34eada0087ffc06/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-2c54e440fe384de0-aerial-port-facility-at-grissom-air-reserve-base-i",
+      "name": "Aerial Port Facility at Grissom Air Reserve Base, IN",
+      "city": "GRISSOM ARB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-05-21",
+      "description": "Federal presolicitation W912QR19R0044. Aerial Port Facility at Grissom Air Reserve Base, IN. Response deadline 2019-05-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912QR19R0044",
+          "url": "https://sam.gov/workspace/contract/opp/2c54e440fe384de02b15b92f23f4b45d/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-23a0057d5594585e-aerial-port-facility-at-grissom-air-reserve-base-i",
+      "name": "Aerial Port Facility at Grissom Air Reserve Base, IN",
+      "city": "GRISSOM ARB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-05-06",
+      "description": "Federal presolicitation W912QR19R0044. Aerial Port Facility at Grissom Air Reserve Base, IN. Response deadline 2019-05-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912QR19R0044",
+          "url": "https://sam.gov/workspace/contract/opp/23a0057d5594585ed23864d346dbce7e/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-72ac851a7340ac14-aerial-port-facility-at-grissom-air-reserve-base-i",
+      "name": "Aerial Port Facility at Grissom Air Reserve Base, IN",
+      "city": "GRISSOM ARB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-05-06",
+      "description": "Federal presolicitation W912QR19R0044. Aerial Port Facility at Grissom Air Reserve Base, IN. Response deadline 2019-05-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912QR19R0044",
+          "url": "https://sam.gov/workspace/contract/opp/72ac851a7340ac147482b0d88d207a2f/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-e0728e8bb6cd168f-aerial-port-facility-at-grissom-air-reserve-base-i",
+      "name": "Aerial Port Facility at Grissom Air Reserve Base, IN",
+      "city": "GRISSOM ARB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-04-29",
+      "description": "Federal presolicitation W912QR19R0044. Aerial Port Facility at Grissom Air Reserve Base, IN. Response deadline 2019-05-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912QR19R0044",
+          "url": "https://sam.gov/workspace/contract/opp/e0728e8bb6cd168f0d3b4463bafb2b33/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-97b9359714624f17-aerial-port-facility-at-grissom-air-reserve-base-i",
+      "name": "Aerial Port Facility at Grissom Air Reserve Base, IN",
+      "city": "GRISSOM ARB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-04-29",
+      "description": "Federal presolicitation W912QR19R0044. Aerial Port Facility at Grissom Air Reserve Base, IN. Response deadline 2019-05-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912QR19R0044",
+          "url": "https://sam.gov/workspace/contract/opp/97b9359714624f174c3b93f9e90c8a9f/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-ba9b2922045a5708-aerial-port-facility-at-grissom-air-reserve-base-i",
+      "name": "Aerial Port Facility at Grissom Air Reserve Base, IN",
+      "city": "GRISSOM ARB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-04-29",
+      "description": "Federal presolicitation W912QR19R0044. Aerial Port Facility at Grissom Air Reserve Base, IN. Response deadline 2019-05-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912QR19R0044",
+          "url": "https://sam.gov/workspace/contract/opp/ba9b2922045a5708e086c937b6927b91/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-587815294b9f5534-courtroom-entrance-repairs",
+      "name": "Courtroom Entrance Repairs",
+      "city": "HAMMOND",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-03-14",
+      "description": "Federal presolicitation 47PF0019R0038. Courtroom Entrance Repairs. Response deadline 2019-03-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 47PF0019R0038",
+          "url": "https://sam.gov/workspace/contract/opp/587815294b9f5534f5330f71eaf1694c/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-2a37e6bc9b34cff7-courtroom-entrance-repairs",
+      "name": "Courtroom Entrance Repairs",
+      "city": "HAMMOND",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-03-13",
+      "description": "Federal presolicitation 47PF0019R0038. Courtroom Entrance Repairs. Response deadline 2019-03-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 47PF0019R0038",
+          "url": "https://sam.gov/workspace/contract/opp/2a37e6bc9b34cff78fd682347565f19a/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-9c7a26c75c8f63fe-courtroom-entrance-repairs",
+      "name": "Courtroom Entrance Repairs",
+      "city": "HAMMOND",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-03-06",
+      "description": "Federal presolicitation 47PF0019R0038. Courtroom Entrance Repairs. Response deadline 2019-03-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 47PF0019R0038",
+          "url": "https://sam.gov/workspace/contract/opp/9c7a26c75c8f63fe4ba6c177bbb27068/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-36f2b7ce6569e443-courtroom-entrance-repairs",
+      "name": "Courtroom Entrance Repairs",
+      "city": "HAMMOND",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-02-21",
+      "description": "Federal presolicitation 47PF0019R0038. Courtroom Entrance Repairs. Response deadline 2019-03-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 47PF0019R0038",
+          "url": "https://sam.gov/workspace/contract/opp/36f2b7ce6569e44336f00df3626acd5a/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IN"
+    },
+    {
+      "id": "in-sam-c527b31ca529a20f-courtroom-entrance-repairs",
+      "name": "Courtroom Entrance Repairs",
+      "city": "HAMMOND",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-02-20",
+      "description": "Federal presolicitation 47PF0019R0038. Courtroom Entrance Repairs. Response deadline 2019-03-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 47PF0019R0038",
+          "url": "https://sam.gov/workspace/contract/opp/c527b31ca529a20fddc05bdd0e96eb29/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IN"
     }
   ],
   "stats": {
-    "total": 1
+    "total": 54
   }
 }

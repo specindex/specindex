@@ -1,9 +1,9 @@
 {
   "state": "VA",
   "state_name": "Virginia",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — Commercial Observer, Data Center Knowledge, press releases, state economic development.",
+  "capture_method": "Public sources — Commercial Observer, Data Center Knowledge, press releases, state economic development, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "va-starwood-plaza-500-fairfax",
@@ -236,9 +236,3903 @@
         }
       ],
       "open_for": "Planning & zoning. Future MEP and shell specs."
+    },
+    {
+      "id": "va-sam-9dedc511e5c04bab-rhs-hvac-replacement-ervd172002",
+      "name": "RHS HVAC Replacement ERVD172002",
+      "city": "Virginia Beach",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "Federal solicitation W50S9B26BA003. RHS HVAC Replacement ERVD172002. Response deadline 2026-08-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S9B26BA003",
+          "url": "https://sam.gov/workspace/contract/opp/9dedc511e5c04bab887c5f8738d95e5b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-9e90aa94dd6e4a2f-lf-18-jfk-restrooms-renovation",
+      "name": "LF-18 JFK RESTROOMS RENOVATION",
+      "city": "Norfolk",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal special notice N40085-26-R-0242. LF-18 JFK RESTROOMS RENOVATION. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "8a Competed",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice N40085-26-R-0242",
+          "url": "https://sam.gov/workspace/contract/opp/9e90aa94dd6e4a2fa6352599cf00d6c4/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-4f52cb978b83440c-8-a-idiq-contract-for-design-build-design-bid-buil",
+      "name": "8(A) IDIQ CONTRACT FOR DESIGN BUILD/DESIGN BID BUILD GENERAL CONSTRUCTION AND REPAIR/RENOVATION PROJECTS AT AREAS OF RES",
+      "city": "Virginia Beach",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "Tst Tactical Defense Solutions, Inc. Virginia Beach Va 23454 Usa",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal award notice N4008526D0059. 8(A) IDIQ CONTRACT FOR DESIGN BUILD/DESIGN BID BUILD GENERAL CONSTRUCTION AND REPAIR/RENOVATION PROJECTS AT AREAS OF RESPONSIBLITY OF THE PUBLIC WORKS DEPARTMENT (PWD) OCEANA, VIRGINIA BEACH, VIRGINIA.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "8(a) Sole Source",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice N4008526D0059",
+          "url": "https://sam.gov/workspace/contract/opp/4f52cb978b83440c96cdd2b65b72b342/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-c1e1519fca0b4b04-idiq-8-a-db-dbb-general-construction-and-repair-re",
+      "name": "IDIQ 8(A), DB/DBB GENERAL CONSTRUCTION AND REPAIR/RENOVATION, PUBLIC WORKS DEPARTMENT (PWD) OCEANA, AOR",
+      "city": "Virginia Beach",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "Etolin Strait Development Group Llc Virginia Beach Va 23452 Usa",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal award notice N4008526D0055. IDIQ 8(A), DB/DBB GENERAL CONSTRUCTION AND REPAIR/RENOVATION, PUBLIC WORKS DEPARTMENT (PWD) OCEANA, AOR.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "8(a) Sole Source",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice N4008526D0055",
+          "url": "https://sam.gov/workspace/contract/opp/c1e1519fca0b4b04bbee5bde6d50bc71/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-5c411bca6f554224-exhibit-space-preparation-for-naval-history-and-he",
+      "name": "Exhibit Space Preparation for Naval History and Heritage Command",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Federal combined synopsis/solicitation N0018926QL255. Exhibit Space Preparation for Naval History and Heritage Command. Response deadline 2026-07-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation N0018926QL255",
+          "url": "https://sam.gov/workspace/contract/opp/5c411bca6f55422492202feadf2d1fdf/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-3592b4382a304762-design-build-p1678-nato-jfcnf-phase-ii-interim-mod",
+      "name": "DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Federal solicitation N4008525R2638. DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA. Response deadline 2026-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2638",
+          "url": "https://sam.gov/workspace/contract/opp/3592b4382a30476296e0ae9098bba890/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-fe7f774385fc4036-design-build-p1678-nato-jfcnf-phase-ii-interim-mod",
+      "name": "DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Federal solicitation N4008525R2638. DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA. Response deadline 2026-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2638",
+          "url": "https://sam.gov/workspace/contract/opp/fe7f774385fc4036bf06b6398b6620c7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-88d67d8906e445d0-idiq-8-a-db-dbb-general-construction-and-repair-re",
+      "name": "IDIQ 8(A), DB/DBB GENERAL CONSTRUCTION AND REPAIR/RENOVATION, PUBLIC WORKS DEPARTMENT (PWD) OCEANA, AOR",
+      "city": "Virginia Beach",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "Etolin Strait Development Group Llc Virginia Beach Va 23452 Usa",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Federal award notice N4008526D0055. IDIQ 8(A), DB/DBB GENERAL CONSTRUCTION AND REPAIR/RENOVATION, PUBLIC WORKS DEPARTMENT (PWD) OCEANA, AOR.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "8(a) Sole Source",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice N4008526D0055",
+          "url": "https://sam.gov/workspace/contract/opp/88d67d8906e445d086918962c3501092/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-4cebe045ecbf40bf-8-a-idiq-contract-for-design-build-design-bid-buil",
+      "name": "8(A) IDIQ CONTRACT FOR DESIGN BUILD/DESIGN BID BUILD GENERAL CONSTRUCTION AND REPAIR/RENOVATION PROJECTS AT AREAS OF RES",
+      "city": "Virginia Beach",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "Cf Solutions Llc Leesburg Va 20175 Usa",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Federal award notice N4008526D0057. 8(A) IDIQ CONTRACT FOR DESIGN BUILD/DESIGN BID BUILD GENERAL CONSTRUCTION AND REPAIR/RENOVATION PROJECTS AT AREAS OF RESPONSIBILITY OF THE PUBLIC WORKS DEPARTMENT (PWD) OCEANA, VIRGINIA BEACH, VIRGINIA.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "8(a) Sole Source",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice N4008526D0057",
+          "url": "https://sam.gov/workspace/contract/opp/4cebe045ecbf40bfa1540865b5709a35/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-eefee8bded624da7-fort-lee-vehicle-recovery-range",
+      "name": "Fort Lee Vehicle Recovery Range",
+      "city": "Fort Lee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Federal solicitation W9123626BA006. Fort Lee Vehicle Recovery Range. Response deadline 2026-08-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Y1PZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W9123626BA006",
+          "url": "https://sam.gov/workspace/contract/opp/eefee8bded624da78df45ba69e492b56/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-c0405db521974924-z1da-renovate-patient-restrooms",
+      "name": "Z1DA--Renovate Patient Restrooms",
+      "city": "Salem",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "Federal presolicitation 36C24626B0036. Z1DA--Renovate Patient Restrooms. Response deadline 2026-08-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24626B0036",
+          "url": "https://sam.gov/workspace/contract/opp/c0405db52197492481ba08fb98638572/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-5c5dd8b97fee4636-z1da-renovate-patient-restrooms",
+      "name": "Z1DA--Renovate Patient Restrooms",
+      "city": "Salem",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "Federal presolicitation 36C24626B0036. Z1DA--Renovate Patient Restrooms. Response deadline 2026-08-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24626B0036",
+          "url": "https://sam.gov/workspace/contract/opp/5c5dd8b97fee4636a65637da3c36ff81/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-9a785e632e5b4c10-fort-lee-vehicle-recovery-range",
+      "name": "Fort Lee Vehicle Recovery Range",
+      "city": "Fort Lee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Federal solicitation W9123626BA006. Fort Lee Vehicle Recovery Range. Response deadline 2026-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Y1PZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W9123626BA006",
+          "url": "https://sam.gov/workspace/contract/opp/9a785e632e5b4c10ae84a6eea0c2a6cb/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-81fee7832b0746d8-solicitation-for-design-build-db-b-550-repair-mcis",
+      "name": "Solicitation for Design-Build (DB), B-550 Repair MCIS/Student HSG Dam Neck Annex, Naval Air Station Oceana, Virginia Bea",
+      "city": "Virginia Beach",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Federal solicitation N4008526R0099. Solicitation for Design-Build (DB), B-550 Repair MCIS/Student HSG Dam Neck Annex, Naval Air Station Oceana, Virginia Beach, VA. Response deadline 2026-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0099",
+          "url": "https://sam.gov/workspace/contract/opp/81fee7832b0746d891c7a6034046ce61/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-995678e837d14cf1-n4008525r2639-design-bid-build-p-222-mq-25-aircraf",
+      "name": "N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "Grunley Construction Co., Inc. Rockville Md 20850 Usa",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Federal award notice N4008526C0017. N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice N4008526C0017",
+          "url": "https://sam.gov/workspace/contract/opp/995678e837d14cf1b39d9188c8f2eb00/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-5abd6c5f29714bec-williamsburg-interior-renovations",
+      "name": "Williamsburg INTERIOR RENOVATIONS",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Federal combined synopsis/solicitation N66604-26-Q-0338. Williamsburg INTERIOR RENOVATIONS. Response deadline 2026-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation N66604-26-Q-0338",
+          "url": "https://sam.gov/workspace/contract/opp/5abd6c5f29714beca35c1cb8adb83b23/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-38bfd85e016448f3-solicitation-for-design-build-db-b-550-repair-mcis",
+      "name": "Solicitation for Design-Build (DB), B-550 Repair MCIS/Student HSG Dam Neck Annex, Naval Air Station Oceana, Virginia Bea",
+      "city": "Virginia Beach",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Federal solicitation N4008526R0099. Solicitation for Design-Build (DB), B-550 Repair MCIS/Student HSG Dam Neck Annex, Naval Air Station Oceana, Virginia Beach, VA. Response deadline 2026-07-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0099",
+          "url": "https://sam.gov/workspace/contract/opp/38bfd85e016448f38ba96d6d3b8b6964/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-5afdd23e33c34689-exhibit-space-preparation-for-naval-history-and-he",
+      "name": "Exhibit Space Preparation for Naval History and Heritage Command",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Federal combined synopsis/solicitation N0018926QL255. Exhibit Space Preparation for Naval History and Heritage Command. Response deadline 2026-07-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation N0018926QL255",
+          "url": "https://sam.gov/workspace/contract/opp/5afdd23e33c34689b47d2ee89fb735a9/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-4cc5be2eb4084df7-williamsburg-interior-renovations",
+      "name": "Williamsburg INTERIOR RENOVATIONS",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "Federal combined synopsis/solicitation N66604-26-Q-0338. Williamsburg INTERIOR RENOVATIONS. Response deadline 2026-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation N66604-26-Q-0338",
+          "url": "https://sam.gov/workspace/contract/opp/4cc5be2eb4084df7b58f8d33a80778bf/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-cb5c4f4b664d408d-design-build-p1678-nato-jfcnf-phase-ii-interim-mod",
+      "name": "DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "Federal solicitation N4008525R2638. DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA. Response deadline 2026-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2638",
+          "url": "https://sam.gov/workspace/contract/opp/cb5c4f4b664d408db42778fb550aab76/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-7255093170cd4e3a-design-build-p1678-nato-jfcnf-phase-ii-interim-mod",
+      "name": "DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "Federal solicitation N4008525R2638. DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA. Response deadline 2026-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2638",
+          "url": "https://sam.gov/workspace/contract/opp/7255093170cd4e3a9a77307f856bc2f6/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-a4fb44e91ee54b55-solicitation-for-design-build-db-b-550-repair-mcis",
+      "name": "Solicitation for Design-Build (DB), B-550 Repair MCIS/Student HSG Dam Neck Annex, Naval Air Station Oceana, Virginia Bea",
+      "city": "Virginia Beach",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "Federal solicitation N4008526R0099. Solicitation for Design-Build (DB), B-550 Repair MCIS/Student HSG Dam Neck Annex, Naval Air Station Oceana, Virginia Beach, VA. Response deadline 2026-07-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0099",
+          "url": "https://sam.gov/workspace/contract/opp/a4fb44e91ee54b55a1b1fd0251ba46c4/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-ec745ba54a054d79-fort-lee-vehicle-recovery-range",
+      "name": "Fort Lee Vehicle Recovery Range",
+      "city": "Fort Lee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "Federal solicitation W9123626BA006. Fort Lee Vehicle Recovery Range. Response deadline 2026-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Y1PZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W9123626BA006",
+          "url": "https://sam.gov/workspace/contract/opp/ec745ba54a054d79a777f2701ea3795c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-c57c59da3f834d3d-williamsburg-interior-renovations",
+      "name": "Williamsburg INTERIOR RENOVATIONS",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-26",
+      "description": "Federal combined synopsis/solicitation N66604-26-Q-0338. Williamsburg INTERIOR RENOVATIONS. Response deadline 2026-07-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation N66604-26-Q-0338",
+          "url": "https://sam.gov/workspace/contract/opp/c57c59da3f834d3d8f50f4d030a87546/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-75915b77bcce42b6-design-build-p1678-nato-jfcnf-phase-ii-interim-mod",
+      "name": "DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-25",
+      "description": "Federal solicitation N4008525R2638. DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA. Response deadline 2026-07-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2638",
+          "url": "https://sam.gov/workspace/contract/opp/75915b77bcce42b6b2115c76470612d1/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-615518d20d2e471e-design-build-p1678-nato-jfcnf-phase-ii-interim-mod",
+      "name": "DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-25",
+      "description": "Federal solicitation N4008525R2638. DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA. Response deadline 2026-07-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2638",
+          "url": "https://sam.gov/workspace/contract/opp/615518d20d2e471e843228016cf85d22/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-f91095686a7c4d4a-658-317-consolidate-intensive-care-unit-salem-va",
+      "name": "658-317 | Consolidate Intensive Care Unit | Salem, VA",
+      "city": "Salem",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-24",
+      "description": "Federal solicitation 36C77626R0080. 658-317 | Consolidate Intensive Care Unit | Salem, VA. Response deadline 2026-07-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0080",
+          "url": "https://sam.gov/workspace/contract/opp/f91095686a7c4d4abed8945539c75204/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-49fcfbf8c9d745ba-williamsburg-interior-renovations",
+      "name": "Williamsburg INTERIOR RENOVATIONS",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-23",
+      "description": "Federal combined synopsis/solicitation N66604-26-Q-0338. Williamsburg INTERIOR RENOVATIONS. Response deadline 2026-07-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation N66604-26-Q-0338",
+          "url": "https://sam.gov/workspace/contract/opp/49fcfbf8c9d745ba87ee23ff925d4d04/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-afcd5910421344b4-fort-lee-vehicle-recovery-range-construction-proje",
+      "name": "Fort Lee Vehicle Recovery Range construction project",
+      "city": "Fort Lee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-18",
+      "description": "Federal solicitation W9123626BA006. Fort Lee Vehicle Recovery Range construction project. Response deadline 2026-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Y1PZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W9123626BA006",
+          "url": "https://sam.gov/workspace/contract/opp/afcd5910421344b49e470d034c2406e3/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-4cdfe72410a0475d-replace-hvac-units-bldg-582-naval-air-station-ocea",
+      "name": "REPLACE HVAC UNITS, BLDG 582, NAVAL AIR STATION OCEANA VIRGINIA BEACH, VA",
+      "city": "Virginia Beach",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-18",
+      "description": "Federal solicitation N4008526R0172. REPLACE HVAC UNITS, BLDG 582, NAVAL AIR STATION OCEANA VIRGINIA BEACH, VA. Response deadline 2026-06-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2FB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0172",
+          "url": "https://sam.gov/workspace/contract/opp/4cdfe72410a0475d82541dd6e3152291/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-ef67c4a92d5c4d6a-658-317-consolidate-intensive-care-unit-salem-va",
+      "name": "658-317 | Consolidate Intensive Care Unit | Salem, VA",
+      "city": "Salem",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-17",
+      "description": "Federal solicitation 36C77626R0080. 658-317 | Consolidate Intensive Care Unit | Salem, VA. Response deadline 2026-07-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0080",
+          "url": "https://sam.gov/workspace/contract/opp/ef67c4a92d5c4d6a8e37020d84d824e4/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-10ec21ccc0ec4ede-ft-lee-obstacle-course-sources-sought",
+      "name": "Ft. Lee Obstacle Course Sources Sought",
+      "city": "Prince George",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-17",
+      "description": "Federal sources sought W9123626B1BYR. Ft. Lee Obstacle Course Sources Sought. Response deadline 2026-07-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Y1PZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W9123626B1BYR",
+          "url": "https://sam.gov/workspace/contract/opp/10ec21ccc0ec4edeb1390fbefebb430f/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-f9bf365f7c5841e0-solicitation-for-design-build-db-b-550-repair-mcis",
+      "name": "Solicitation for Design-Build (DB), B-550 Repair MCIS/Student HSG Dam Neck Annex, Naval Air Station Oceana, Virginia Bea",
+      "city": "Virginia Beach",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-16",
+      "description": "Federal solicitation N4008526R0099. Solicitation for Design-Build (DB), B-550 Repair MCIS/Student HSG Dam Neck Annex, Naval Air Station Oceana, Virginia Beach, VA. Response deadline 2026-07-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0099",
+          "url": "https://sam.gov/workspace/contract/opp/f9bf365f7c5841e0a7dcd8afc38f4540/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-9fa83e285e654f6e-design-build-p1678-nato-jfcnf-phase-ii-interim-mod",
+      "name": "DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-15",
+      "description": "Federal solicitation N4008525R2638. DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA. Response deadline 2026-07-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2638",
+          "url": "https://sam.gov/workspace/contract/opp/9fa83e285e654f6ea8e1fd0b6b664cbc/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-4fc3814db7b448a1-design-build-p1678-nato-jfcnf-phase-ii-interim-mod",
+      "name": "DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-15",
+      "description": "Federal solicitation N4008525R2638. DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA. Response deadline 2026-07-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2638",
+          "url": "https://sam.gov/workspace/contract/opp/4fc3814db7b448a1b39b3a5f2e2f5d74/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-38eadf7dc83c4295-658-317-consolidate-intensive-care-unit-salem-va",
+      "name": "658-317 | Consolidate Intensive Care Unit | Salem, VA",
+      "city": "Salem",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-11",
+      "description": "Federal solicitation 36C77626R0080. 658-317 | Consolidate Intensive Care Unit | Salem, VA. Response deadline 2026-06-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0080",
+          "url": "https://sam.gov/workspace/contract/opp/38eadf7dc83c4295bd3420618112ca65/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-f72428d2ea734135-replace-hvac-units-bldg-582-naval-air-station-ocea",
+      "name": "REPLACE HVAC UNITS, BLDG 582, NAVAL AIR STATION OCEANA VIRGINIA BEACH, VA",
+      "city": "Virginia Beach",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-11",
+      "description": "Federal solicitation N4008526R0172. REPLACE HVAC UNITS, BLDG 582, NAVAL AIR STATION OCEANA VIRGINIA BEACH, VA. Response deadline 2026-06-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2FB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0172",
+          "url": "https://sam.gov/workspace/contract/opp/f72428d2ea7341358671d4cc9d3f361d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-1a05c7cb9c3d4772-658-317-consolidate-intensive-care-unit-salem-va",
+      "name": "658-317 | Consolidate Intensive Care Unit | Salem, VA",
+      "city": "Salem",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-10",
+      "description": "Federal solicitation 36C77626R0080. 658-317 | Consolidate Intensive Care Unit | Salem, VA. Response deadline 2026-06-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0080",
+          "url": "https://sam.gov/workspace/contract/opp/1a05c7cb9c3d4772a46b6b328edeabd3/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-19fa1ed8c15c44aa-replace-hvac-units-bldg-582-naval-air-station-ocea",
+      "name": "REPLACE HVAC UNITS, BLDG 582, NAVAL AIR STATION OCEANA VIRGINIA BEACH, VA",
+      "city": "Virginia Beach",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-10",
+      "description": "Federal solicitation N4008526R0172. REPLACE HVAC UNITS, BLDG 582, NAVAL AIR STATION OCEANA VIRGINIA BEACH, VA. Response deadline 2026-06-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2FB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0172",
+          "url": "https://sam.gov/workspace/contract/opp/19fa1ed8c15c44aa8f7190ac4787bba4/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-dd387149934d405c-design-build-db-p-1476u-new-fire-apparatus-bay-che",
+      "name": "DESIGN-BUILD (DB), P-1476U NEW FIRE APPARATUS BAY CHEATHAM ANNEX, NAVAL WEAPONS STATION YORKTOWN, VIRGINIA",
+      "city": "Yorktown",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-08",
+      "description": "Federal solicitation N40085-26-R-0131. DESIGN-BUILD (DB), P-1476U NEW FIRE APPARATUS BAY CHEATHAM ANNEX, NAVAL WEAPONS STATION YORKTOWN, VIRGINIA. Response deadline 2026-06-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N40085-26-R-0131",
+          "url": "https://sam.gov/workspace/contract/opp/dd387149934d405cae8b79b440ade160/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-b229597fdc764c0e-design-build-db-p-1476u-new-fire-apparatus-bay-che",
+      "name": "DESIGN-BUILD (DB), P-1476U NEW FIRE APPARATUS BAY CHEATHAM ANNEX, NAVAL WEAPONS STATION YORKTOWN, VIRGINIA",
+      "city": "Yorktown",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-08",
+      "description": "Federal solicitation N40085-26-R-0131. DESIGN-BUILD (DB), P-1476U NEW FIRE APPARATUS BAY CHEATHAM ANNEX, NAVAL WEAPONS STATION YORKTOWN, VIRGINIA. Response deadline 2026-06-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N40085-26-R-0131",
+          "url": "https://sam.gov/workspace/contract/opp/b229597fdc764c0e9291c6cfbfa68795/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-95cb2d07b6ed4219-design-build-db-p-1476u-new-fire-apparatus-bay-che",
+      "name": "DESIGN-BUILD (DB), P-1476U NEW FIRE APPARATUS BAY CHEATHAM ANNEX, NAVAL WEAPONS STATION YORKTOWN, VIRGINIA",
+      "city": "Yorktown",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "Federal solicitation N40085-26-R-0131. DESIGN-BUILD (DB), P-1476U NEW FIRE APPARATUS BAY CHEATHAM ANNEX, NAVAL WEAPONS STATION YORKTOWN, VIRGINIA. Response deadline 2026-06-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N40085-26-R-0131",
+          "url": "https://sam.gov/workspace/contract/opp/95cb2d07b6ed4219840cb03b89ff72bd/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-13b04c44cd1343c9-sources-sought-notice-for-design-build-naval-air-m",
+      "name": "SOURCES SOUGHT NOTICE FOR DESIGN BUILD, NAVAL AIR MAINTENANCE CENTER FOR EXCELLENCE (NAMCE), TENSION FABRIC STRUCTURE (T",
+      "city": "Virginia Beach",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-29",
+      "description": "Federal sources sought N4008526R0185. SOURCES SOUGHT NOTICE FOR DESIGN BUILD, NAVAL AIR MAINTENANCE CENTER FOR EXCELLENCE (NAMCE), TENSION FABRIC STRUCTURE (TFS) HANGAR 122, NAVAL AIR STATION OCEANA, VIRGINIA BEACH, VIRGINIA. Response deadline 2026-06-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Y1BZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought N4008526R0185",
+          "url": "https://sam.gov/workspace/contract/opp/13b04c44cd1343c998aba34e6c2ee7df/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-c4ecd1920e8f4c29-replace-hvac-units-bldg-582-naval-air-station-ocea",
+      "name": "REPLACE HVAC UNITS, BLDG 582, NAVAL AIR STATION OCEANA VIRGINIA BEACH, VA",
+      "city": "Virginia Beach",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-29",
+      "description": "Federal solicitation N4008526R0172. REPLACE HVAC UNITS, BLDG 582, NAVAL AIR STATION OCEANA VIRGINIA BEACH, VA. Response deadline 2026-06-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2FB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0172",
+          "url": "https://sam.gov/workspace/contract/opp/c4ecd1920e8f4c29a02c7d80a5b0b658/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-30e41a1f27b5415b-n4008525r2639-design-bid-build-p-222-mq-25-aircraf",
+      "name": "N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-28",
+      "description": "Federal solicitation N4008525R2639. N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA. Response deadline 2026-06-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2639",
+          "url": "https://sam.gov/workspace/contract/opp/30e41a1f27b5415ba87cfa87218f67d7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-4aef1a2e582f445e-n4008525r2639-design-bid-build-p-222-mq-25-aircraf",
+      "name": "N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-28",
+      "description": "Federal solicitation N4008525R2639. N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA. Response deadline 2026-06-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2639",
+          "url": "https://sam.gov/workspace/contract/opp/4aef1a2e582f445eb52eefe7c40952ff/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-fe27bb2d19e646d4-design-build-p1678-nato-jfcnf-phase-ii-interim-mod",
+      "name": "DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-28",
+      "description": "Federal solicitation N4008525R2638. DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA. Response deadline 2026-07-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2638",
+          "url": "https://sam.gov/workspace/contract/opp/fe27bb2d19e646d4926773dc1bedabfa/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-8b85abe51cef406b-design-build-p1678-nato-jfcnf-phase-ii-interim-mod",
+      "name": "DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-28",
+      "description": "Federal solicitation N4008525R2638. DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA. Response deadline 2026-07-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2638",
+          "url": "https://sam.gov/workspace/contract/opp/8b85abe51cef406bb9465f28898b6a53/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-17c943fb5eb6490d-658-317-consolidate-intensive-care-unit-salem-va",
+      "name": "658-317 | Consolidate Intensive Care Unit | Salem, VA",
+      "city": "Salem",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-27",
+      "description": "Federal solicitation 36C77626R0080. 658-317 | Consolidate Intensive Care Unit | Salem, VA. Response deadline 2026-06-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0080",
+          "url": "https://sam.gov/workspace/contract/opp/17c943fb5eb6490d9e8dfd67cc37d390/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-433361d8d1cd4305-solicitation-for-design-build-db-b-550-repair-mcis",
+      "name": "Solicitation for Design-Build (DB), B-550 Repair MCIS/Student HSG Dam Neck Annex, Naval Air Station Oceana, Virginia Bea",
+      "city": "Virginia Beach",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-22",
+      "description": "Federal solicitation N4008526R0099. Solicitation for Design-Build (DB), B-550 Repair MCIS/Student HSG Dam Neck Annex, Naval Air Station Oceana, Virginia Beach, VA. Response deadline 2026-07-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0099",
+          "url": "https://sam.gov/workspace/contract/opp/433361d8d1cd4305bc13ca4792c6325c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-a24320897d254c8d-design-build-db-p-1476u-new-fire-apparatus-bay-che",
+      "name": "DESIGN-BUILD (DB), P-1476U NEW FIRE APPARATUS BAY CHEATHAM ANNEX, NAVAL WEAPONS STATION YORKTOWN, VIRGINIA",
+      "city": "Yorktown",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-22",
+      "description": "Federal solicitation N40085-26-R-0131. DESIGN-BUILD (DB), P-1476U NEW FIRE APPARATUS BAY CHEATHAM ANNEX, NAVAL WEAPONS STATION YORKTOWN, VIRGINIA. Response deadline 2026-06-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N40085-26-R-0131",
+          "url": "https://sam.gov/workspace/contract/opp/a24320897d254c8d94f7a4bfbb58f281/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-42ad10bbe0e3497c-658-317-consolidate-intensive-care-unit-salem-va",
+      "name": "658-317 | Consolidate Intensive Care Unit | Salem, VA",
+      "city": "Salem",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-20",
+      "description": "Federal solicitation 36C77626R0080. 658-317 | Consolidate Intensive Care Unit | Salem, VA. Response deadline 2026-06-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0080",
+          "url": "https://sam.gov/workspace/contract/opp/42ad10bbe0e3497caf616bd2517d6ddf/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-71de891f7c584dec-z1da-renovate-surgical-suite-phase-ii",
+      "name": "Z1DA--Renovate Surgical Suite Phase II",
+      "city": "Salem",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-20",
+      "description": "Federal solicitation 36C24626R0039. Z1DA--Renovate Surgical Suite Phase II. Response deadline 2026-05-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24626R0039",
+          "url": "https://sam.gov/workspace/contract/opp/71de891f7c584deca007b814ffd47cac/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-853fb2ab753a43da-replace-hvac-units-bldg-582-naval-air-station-ocea",
+      "name": "REPLACE HVAC UNITS, BLDG 582, NAVAL AIR STATION OCEANA VIRGINIA BEACH, VA",
+      "city": "Virginia Beach",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-20",
+      "description": "Federal solicitation N4008526R0172. REPLACE HVAC UNITS, BLDG 582, NAVAL AIR STATION OCEANA VIRGINIA BEACH, VA. Response deadline 2026-06-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2FB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0172",
+          "url": "https://sam.gov/workspace/contract/opp/853fb2ab753a43daa128ea7ba61b0f51/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-004b77793c4e4531-z1da-renovate-surgical-suite-phase-ii",
+      "name": "Z1DA--Renovate Surgical Suite Phase II",
+      "city": "Salem",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-15",
+      "description": "Federal solicitation 36C24626R0039. Z1DA--Renovate Surgical Suite Phase II. Response deadline 2026-05-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24626R0039",
+          "url": "https://sam.gov/workspace/contract/opp/004b77793c4e4531ba53977706ab321a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-8553d27e4ec74d2c-z1da-renovate-surgical-suite-phase-ii",
+      "name": "Z1DA--Renovate Surgical Suite Phase II",
+      "city": "Salem",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-14",
+      "description": "Federal solicitation 36C24626R0039. Z1DA--Renovate Surgical Suite Phase II. Response deadline 2026-05-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24626R0039",
+          "url": "https://sam.gov/workspace/contract/opp/8553d27e4ec74d2c93e1831d25f59e78/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-77ec152680f74a10-design-build-db-p-1476u-new-fire-apparatus-bay-che",
+      "name": "DESIGN-BUILD (DB), P-1476U NEW FIRE APPARATUS BAY CHEATHAM ANNEX, NAVAL WEAPONS STATION YORKTOWN, VIRGINIA",
+      "city": "Yorktown",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-13",
+      "description": "Federal solicitation N40085-26-R-0131. DESIGN-BUILD (DB), P-1476U NEW FIRE APPARATUS BAY CHEATHAM ANNEX, NAVAL WEAPONS STATION YORKTOWN, VIRGINIA. Response deadline 2026-05-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N40085-26-R-0131",
+          "url": "https://sam.gov/workspace/contract/opp/77ec152680f74a1094edc86d5c8461dd/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-f91583b56f6b4b20-658-317-consolidate-intensive-care-unit-salem-va",
+      "name": "658-317 | Consolidate Intensive Care Unit | Salem, VA",
+      "city": "Salem",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-12",
+      "description": "Federal solicitation 36C77626R0080. 658-317 | Consolidate Intensive Care Unit | Salem, VA. Response deadline 2026-06-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0080",
+          "url": "https://sam.gov/workspace/contract/opp/f91583b56f6b4b20a01bfcbcc148ecde/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-2c3ed1316a0e4111-z1da-renovate-surgical-suite-phase-ii",
+      "name": "Z1DA--Renovate Surgical Suite Phase II",
+      "city": "Salem",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-11",
+      "description": "Federal solicitation 36C24626R0039. Z1DA--Renovate Surgical Suite Phase II. Response deadline 2026-05-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24626R0039",
+          "url": "https://sam.gov/workspace/contract/opp/2c3ed1316a0e411194f21e42d1efd11f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-2a155faf86574b37-design-build-db-p-1476u-new-fire-apparatus-bay-che",
+      "name": "DESIGN-BUILD (DB), P-1476U NEW FIRE APPARATUS BAY CHEATHAM ANNEX, NAVAL WEAPONS STATION YORKTOWN, VIRGINIA",
+      "city": "Yorktown",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-06",
+      "description": "Federal solicitation N40085-26-R-0131. DESIGN-BUILD (DB), P-1476U NEW FIRE APPARATUS BAY CHEATHAM ANNEX, NAVAL WEAPONS STATION YORKTOWN, VIRGINIA. Response deadline 2026-05-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N40085-26-R-0131",
+          "url": "https://sam.gov/workspace/contract/opp/2a155faf86574b3788f3559a8e6e2fc4/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-122c27bac006472f-z1da-renovate-surgical-suite-phase-ii",
+      "name": "Z1DA--Renovate Surgical Suite Phase II",
+      "city": "Salem",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-30",
+      "description": "Federal solicitation 36C24626R0039. Z1DA--Renovate Surgical Suite Phase II. Response deadline 2026-05-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24626R0039",
+          "url": "https://sam.gov/workspace/contract/opp/122c27bac006472fb9e1c926730ece9b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-8964bc4b728d4f30-design-build-db-p-1476u-new-fire-apparatus-bay-che",
+      "name": "DESIGN-BUILD (DB), P-1476U NEW FIRE APPARATUS BAY CHEATHAM ANNEX, NAVAL WEAPONS STATION YORKTOWN, VIRGINIA",
+      "city": "Yorktown",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-27",
+      "description": "Federal solicitation N40085-26-R-0131. DESIGN-BUILD (DB), P-1476U NEW FIRE APPARATUS BAY CHEATHAM ANNEX, NAVAL WEAPONS STATION YORKTOWN, VIRGINIA. Response deadline 2026-05-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N40085-26-R-0131",
+          "url": "https://sam.gov/workspace/contract/opp/8964bc4b728d4f30a16620196e1f17e1/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-3523caa97cb14c6f-z1da-renovate-surgical-suite-phase-ii",
+      "name": "Z1DA--Renovate Surgical Suite Phase II",
+      "city": "Salem",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-23",
+      "description": "Federal solicitation 36C24626R0039. Z1DA--Renovate Surgical Suite Phase II. Response deadline 2026-05-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24626R0039",
+          "url": "https://sam.gov/workspace/contract/opp/3523caa97cb14c6f9ba2d5eb3032396a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-02746309d2064c18-z1da-renovate-surgical-suite-phase-ii",
+      "name": "Z1DA--Renovate Surgical Suite Phase II",
+      "city": "Salem",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-14",
+      "description": "Federal solicitation 36C24626R0039. Z1DA--Renovate Surgical Suite Phase II. Response deadline 2026-05-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24626R0039",
+          "url": "https://sam.gov/workspace/contract/opp/02746309d2064c188f07d4259e52e8d6/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-be6352699d4640e8-z1da-renovate-surgical-suite-phase-ii",
+      "name": "Z1DA--Renovate Surgical Suite Phase II",
+      "city": "Salem",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-10",
+      "description": "Federal solicitation 36C24626R0039. Z1DA--Renovate Surgical Suite Phase II. Response deadline 2026-05-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24626R0039",
+          "url": "https://sam.gov/workspace/contract/opp/be6352699d4640e89413a975cba55d76/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-24fb1c62595b4143-z1da-renovate-surgical-suite-phase-ii",
+      "name": "Z1DA--Renovate Surgical Suite Phase II",
+      "city": "Salem",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-04-10",
+      "description": "Federal presolicitation 36C24626R0039. Z1DA--Renovate Surgical Suite Phase II. Response deadline 2026-05-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24626R0039",
+          "url": "https://sam.gov/workspace/contract/opp/24fb1c62595b414382530b37580a2dde/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-e78cfb7560604bb1-design-build-db-p-1476u-new-fire-apparatus-bay-che",
+      "name": "DESIGN-BUILD (DB), P-1476U NEW FIRE APPARATUS BAY CHEATHAM ANNEX, NAVAL WEAPONS STATION YORKTOWN, VIRGINIA",
+      "city": "Yorktown",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-01",
+      "description": "Federal solicitation N40085-26-R-0131. DESIGN-BUILD (DB), P-1476U NEW FIRE APPARATUS BAY CHEATHAM ANNEX, NAVAL WEAPONS STATION YORKTOWN, VIRGINIA. Response deadline 2026-05-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N40085-26-R-0131",
+          "url": "https://sam.gov/workspace/contract/opp/e78cfb7560604bb194ba005bfa4b9b43/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-0cdd4901ac0846b6-z1da-renovate-surgical-suite-phase-ii",
+      "name": "Z1DA--Renovate Surgical Suite Phase II",
+      "city": "Salem",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-03-26",
+      "description": "Federal presolicitation 36C24626R0039. Z1DA--Renovate Surgical Suite Phase II. Response deadline 2026-04-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24626R0039",
+          "url": "https://sam.gov/workspace/contract/opp/0cdd4901ac0846b695f32a64b03aef34/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-2d3bfa8367b04c9c-z1da-renovate-surgical-suite-phase-ii",
+      "name": "Z1DA--Renovate Surgical Suite Phase II",
+      "city": "Salem",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-03-26",
+      "description": "Federal presolicitation 36C24626R0039. Z1DA--Renovate Surgical Suite Phase II. Response deadline 2026-04-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24626R0039",
+          "url": "https://sam.gov/workspace/contract/opp/2d3bfa8367b04c9c998d8daf72aeccf2/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-721bfc0ff5804e7e-n4008525r2639-design-bid-build-p-222-mq-25-aircraf",
+      "name": "N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-25",
+      "description": "Federal solicitation N4008525R2639. N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA. Response deadline 2026-03-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2639",
+          "url": "https://sam.gov/workspace/contract/opp/721bfc0ff5804e7e8de9df20fe58325c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-a1413752470b4ea3-n4008525r2639-design-bid-build-p-222-mq-25-aircraf",
+      "name": "N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-25",
+      "description": "Federal solicitation N4008525R2639. N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA. Response deadline 2026-03-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2639",
+          "url": "https://sam.gov/workspace/contract/opp/a1413752470b4ea3aa1d5eb07f18fe8a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-75bbf1814eed4485-n4008525r2639-design-bid-build-p-222-mq-25-aircraf",
+      "name": "N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-19",
+      "description": "Federal solicitation N4008525R2639. N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA. Response deadline 2026-03-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2639",
+          "url": "https://sam.gov/workspace/contract/opp/75bbf1814eed4485900267e80b771e59/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-4ff5955ecc5e4c67-n4008525r2639-design-bid-build-p-222-mq-25-aircraf",
+      "name": "N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-19",
+      "description": "Federal solicitation N4008525R2639. N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA. Response deadline 2026-03-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2639",
+          "url": "https://sam.gov/workspace/contract/opp/4ff5955ecc5e4c678de98376e8771e6e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-377419716a654da4-n4008525r2639-design-bid-build-p-222-mq-25-aircraf",
+      "name": "N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-19",
+      "description": "Federal solicitation N4008525R2639. N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA. Response deadline 2026-03-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2639",
+          "url": "https://sam.gov/workspace/contract/opp/377419716a654da4b01e361d7afda5c5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-a28248e745e54a2b-n4008525r2639-design-bid-build-p-222-mq-25-aircraf",
+      "name": "N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-19",
+      "description": "Federal solicitation N4008525R2639. N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA. Response deadline 2026-03-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2639",
+          "url": "https://sam.gov/workspace/contract/opp/a28248e745e54a2ba5a8a57b120d305e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-91eeefe8214f4a78-n4008525r2639-design-bid-build-p-222-mq-25-aircraf",
+      "name": "N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-09",
+      "description": "Federal solicitation N4008525R2639. N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA. Response deadline 2026-03-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2639",
+          "url": "https://sam.gov/workspace/contract/opp/91eeefe8214f4a78b65e56f5e0f0c1d5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-759d1896dc084d28-n4008525r2639-design-bid-build-p-222-mq-25-aircraf",
+      "name": "N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-09",
+      "description": "Federal solicitation N4008525R2639. N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA. Response deadline 2026-03-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2639",
+          "url": "https://sam.gov/workspace/contract/opp/759d1896dc084d2893bb56b28e14ab1b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-4adb7b2c881544fc-n4008525r2639-design-bid-build-p-222-mq-25-aircraf",
+      "name": "N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-25",
+      "description": "Federal solicitation N4008525R2639. N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA. Response deadline 2026-03-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2639",
+          "url": "https://sam.gov/workspace/contract/opp/4adb7b2c881544fcb0b7f0e9379480f5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-e054a148fbe149be-n4008525r2639-design-bid-build-p-222-mq-25-aircraf",
+      "name": "N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-25",
+      "description": "Federal solicitation N4008525R2639. N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA. Response deadline 2026-03-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2639",
+          "url": "https://sam.gov/workspace/contract/opp/e054a148fbe149beb287e53f6af368c5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-bb136e8b41e94592-design-build-p1678-nato-jfcnf-phase-ii-interim-mod",
+      "name": "DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-20",
+      "description": "Federal solicitation N4008525R2638. DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA. Response deadline 2026-03-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2638",
+          "url": "https://sam.gov/workspace/contract/opp/bb136e8b41e94592a42f2c2eb874ffc9/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-668b8799f016479a-design-build-p1678-nato-jfcnf-phase-ii-interim-mod",
+      "name": "DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-20",
+      "description": "Federal solicitation N4008525R2638. DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA. Response deadline 2026-03-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2638",
+          "url": "https://sam.gov/workspace/contract/opp/668b8799f016479a974b88c5c839b05d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-b44f200aff5d4389-design-build-p1678-nato-jfcnf-phase-ii-interim-mod",
+      "name": "DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-19",
+      "description": "Federal solicitation N4008525R2638. DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA. Response deadline 2026-02-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2638",
+          "url": "https://sam.gov/workspace/contract/opp/b44f200aff5d43898ea24a2998bd2a0f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-b513a7ceee864009-design-build-p1678-nato-jfcnf-phase-ii-interim-mod",
+      "name": "DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-19",
+      "description": "Federal solicitation N4008525R2638. DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA. Response deadline 2026-02-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2638",
+          "url": "https://sam.gov/workspace/contract/opp/b513a7ceee864009b91e3858397c0616/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-f015de4199474754-n4008525r2639-design-bid-build-p-222-mq-25-aircraf",
+      "name": "N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-12",
+      "description": "Federal solicitation N4008525R2639. N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA. Response deadline 2026-03-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2639",
+          "url": "https://sam.gov/workspace/contract/opp/f015de4199474754b60a742b27ca712c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-3c352b1ef46146eb-design-build-p1678-nato-jfcnf-phase-ii-interim-mod",
+      "name": "DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-09",
+      "description": "Federal solicitation N4008525R2638. DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA. Response deadline 2026-02-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2638",
+          "url": "https://sam.gov/workspace/contract/opp/3c352b1ef46146ebbf9fb8e608a3e835/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-27a963fa47d5494a-design-build-p1678-nato-jfcnf-phase-ii-interim-mod",
+      "name": "DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-09",
+      "description": "Federal solicitation N4008525R2638. DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA. Response deadline 2026-02-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2638",
+          "url": "https://sam.gov/workspace/contract/opp/27a963fa47d5494abe52f787e464a4e9/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-aa5791518a7c4fd0-n4008525r2639-design-bid-build-p-222-mq-25-aircraf",
+      "name": "N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-05",
+      "description": "Federal solicitation N4008525R2639. N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA. Response deadline 2026-03-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2639",
+          "url": "https://sam.gov/workspace/contract/opp/aa5791518a7c4fd0b9bff0df204ae2b5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-3e54de5215c848da-n4008525r2639-design-bid-build-p-222-mq-25-aircraf",
+      "name": "N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-05",
+      "description": "Federal solicitation N4008525R2639. N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA. Response deadline 2026-03-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2639",
+          "url": "https://sam.gov/workspace/contract/opp/3e54de5215c848daa00d0901dfcc5a4f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-be177b92b72d4f9f-design-build-p1678-nato-jfcnf-phase-ii-interim-mod",
+      "name": "DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-28",
+      "description": "Federal solicitation N4008525R2638. DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA. Response deadline 2026-02-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2638",
+          "url": "https://sam.gov/workspace/contract/opp/be177b92b72d4f9fafbba27b08024f59/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-4283cb6497c54b80-design-build-p1678-nato-jfcnf-phase-ii-interim-mod",
+      "name": "DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-28",
+      "description": "Federal solicitation N4008525R2638. DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA. Response deadline 2026-02-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2638",
+          "url": "https://sam.gov/workspace/contract/opp/4283cb6497c54b80bfcb28202a4845b1/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-7ea7d224e4f24856-n4008525r2639-design-bid-build-p-222-mq-25-aircraf",
+      "name": "N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-26",
+      "description": "Federal solicitation N4008525R2639. N4008525R2639 DESIGN-BID-BUILD P-222: MQ-25 AIRCRAFT LAYDOWN FACILITIES, NAVAL STATION NORFOLK, NORFOLK, VA. Response deadline 2026-03-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2639",
+          "url": "https://sam.gov/workspace/contract/opp/7ea7d224e4f24856be0f3f6b12fe0ae0/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-190a91a4051b48a6-design-build-p1678-nato-jfcnf-phase-ii-interim-mod",
+      "name": "DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-22",
+      "description": "Federal solicitation N4008525R2638. DESIGN-BUILD P1678 NATO JFCNF PHASE II INTERIM MODULAR FACILITY, NSA NORFOLK, VA. Response deadline 2026-02-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R2638",
+          "url": "https://sam.gov/workspace/contract/opp/190a91a4051b48a6afe0978f145a2f83/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-347f0af992d54d5c-fort-eustis-dredge-material-management-area-constr",
+      "name": "Fort Eustis Dredge Material Management Area Construction in Newport News, Virginia",
+      "city": "Fort Eustis",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-10",
+      "description": "Federal sources sought W91236-26-B-1AVX. Fort Eustis Dredge Material Management Area Construction in Newport News, Virginia. Response deadline 2026-12-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Y1KF"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W91236-26-B-1AVX",
+          "url": "https://sam.gov/workspace/contract/opp/347f0af992d54d5cabd28f54c4372f18/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-28219db5b6f2485c-w-143-coles-bistro-renovation",
+      "name": "W-143 COLES BISTRO RENOVATION",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-08-19",
+      "description": "Federal solicitation N4008525R0100. W-143 COLES BISTRO RENOVATION. Response deadline 2025-08-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R0100",
+          "url": "https://sam.gov/workspace/contract/opp/28219db5b6f2485cb84432ad7ed843dd/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-a1802c61ca31435d-w-143-coles-bistro-renovation",
+      "name": "W-143 COLES BISTRO RENOVATION",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-08-19",
+      "description": "Federal solicitation N4008525R0100. W-143 COLES BISTRO RENOVATION. Response deadline 2025-08-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R0100",
+          "url": "https://sam.gov/workspace/contract/opp/a1802c61ca31435d91b2021095751810/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-e60eb0e2c3154c8c-w-143-coles-bistro-renovation",
+      "name": "W-143 COLES BISTRO RENOVATION",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-08-18",
+      "description": "Federal solicitation N4008525R0100. W-143 COLES BISTRO RENOVATION. Response deadline 2025-08-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R0100",
+          "url": "https://sam.gov/workspace/contract/opp/e60eb0e2c3154c8cb94115f3ed65bf6c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-49c890809c5847f5-w-143-coles-bistro-renovation",
+      "name": "W-143 COLES BISTRO RENOVATION",
+      "city": "Norfolk",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-08-14",
+      "description": "Federal solicitation N4008525R0100. W-143 COLES BISTRO RENOVATION. Response deadline 2025-08-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008525R0100",
+          "url": "https://sam.gov/workspace/contract/opp/49c890809c5847f580a9cea3edef0d98/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-248a4ca3ca3c448c-uscg-national-multiple-award-construction-contract",
+      "name": "USCG NATIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (NMACC III) SMALL BUSINESS RESERVES",
+      "city": "Norfolk",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "Fiber Business Solutions Group Inc Norristown Pa 19403 Usa",
+      "opened_or_announced_date": "2024-11-06",
+      "description": "Federal award notice 70Z04723RNMACCSB. USCG NATIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (NMACC III) SMALL BUSINESS RESERVES.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice 70Z04723RNMACCSB",
+          "url": "https://sam.gov/workspace/contract/opp/248a4ca3ca3c448cb490517697e3fee7/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-983cda7e1b4b462f-uscg-national-multiple-award-construction-contract",
+      "name": "USCG NATIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (NMACC III) SMALL BUSINESS RESERVES",
+      "city": "Norfolk",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "Fiber Business Solutions Group Inc Norristown Pa 19403 Usa",
+      "opened_or_announced_date": "2024-11-06",
+      "description": "Federal award notice 70Z04723RNMACCSB. USCG NATIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (NMACC III) SMALL BUSINESS RESERVES.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice 70Z04723RNMACCSB",
+          "url": "https://sam.gov/workspace/contract/opp/983cda7e1b4b462fb89bcf210d1c7afe/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-2f5106addb2e4cda-uscg-national-multiple-award-construction-contract",
+      "name": "USCG NATIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (NMACC III) SMALL BUSINESS RESERVES",
+      "city": "Norfolk",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "Fiber Business Solutions Group Inc Norristown Pa 19403 Usa",
+      "opened_or_announced_date": "2024-08-21",
+      "description": "Federal award notice 70Z04723RNMACCSB. USCG NATIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (NMACC III) SMALL BUSINESS RESERVES.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice 70Z04723RNMACCSB",
+          "url": "https://sam.gov/workspace/contract/opp/2f5106addb2e4cda8cfa2be639fabee0/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "VA"
+    },
+    {
+      "id": "va-sam-21c8a3bcd2b7d343-new-embassy-compound-nec-windhoek-namibia",
+      "name": "NEW EMBASSY COMPOUND (NEC) WINDHOEK, NAMIBIA",
+      "city": "ARLINGTON",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-01-11",
+      "description": "Federal special notice 19AQMM-19-R-0068. NEW EMBASSY COMPOUND (NEC) WINDHOEK, NAMIBIA. Response deadline 2019-02-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice 19AQMM-19-R-0068",
+          "url": "https://sam.gov/workspace/contract/opp/21c8a3bcd2b7d343efd33ecdc4b157ad/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "VA"
     }
   ],
   "stats": {
-    "total": 6
+    "total": 107
   }
 }

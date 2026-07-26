@@ -1,9 +1,9 @@
 {
   "state": "NH",
   "state_name": "New Hampshire",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — REBusinessOnline, local permits.",
+  "capture_method": "Public sources — REBusinessOnline, local permits, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "nh-industrial-nashua-merrimack",
@@ -39,9 +39,165 @@
         }
       ],
       "open_for": "Monitor permit filings for spec industrial."
+    },
+    {
+      "id": "nh-sam-e27c93b23ed343d2-b145-dcma-office-space-renovation",
+      "name": "B145 DCMA Office Space Renovation",
+      "city": "Newington",
+      "county": "",
+      "status": "bidding",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "Federal solicitation W50S8A26QA035. B145 DCMA Office Space Renovation. Response deadline 2026-08-21.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8A26QA035",
+          "url": "https://sam.gov/workspace/contract/opp/e27c93b23ed343d2a03441d345109d95/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NH"
+    },
+    {
+      "id": "nh-sam-36247dbef82445fe-z2db-pharmacy-hood-and-cache-upgrade",
+      "name": "Z2DB--Pharmacy Hood and Cache Upgrade",
+      "city": "Manchester",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Federal combined synopsis/solicitation 36C24126Q0525. Z2DB--Pharmacy Hood and Cache Upgrade. Response deadline 2026-07-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 36C24126Q0525",
+          "url": "https://sam.gov/workspace/contract/opp/36247dbef82445fea29a5d1071fc2138/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NH"
+    },
+    {
+      "id": "nh-sam-daa1e4fddbb946ec-z2db-608-26-010-pharmacy-hood-and-cache-upgrade",
+      "name": "Z2DB--608-26-010 Pharmacy Hood and Cache Upgrade",
+      "city": "Manchester",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-06-04",
+      "description": "Federal combined synopsis/solicitation 36C24126Q0525. Z2DB--608-26-010 Pharmacy Hood and Cache Upgrade. Response deadline 2026-06-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 36C24126Q0525",
+          "url": "https://sam.gov/workspace/contract/opp/daa1e4fddbb946ec900a99399efbbc24/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NH"
+    },
+    {
+      "id": "nh-sam-600d78fd0f4b7204-replace-exterior-doors-keene-nh",
+      "name": "REPLACE EXTERIOR DOORS, KEENE, NH",
+      "city": "KEENE",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2018-08-17",
+      "description": "Federal modification/amendment/cancel W15QKN-18-Q-1228. REPLACE EXTERIOR DOORS, KEENE, NH. Response deadline 2018-09-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Modification/Amendment/Cancel",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Modification/Amendment/Cancel W15QKN-18-Q-1228",
+          "url": "https://sam.gov/workspace/contract/opp/600d78fd0f4b720446082015aece58c2/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NH"
     }
   ],
   "stats": {
-    "total": 1
+    "total": 5
   }
 }

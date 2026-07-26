@@ -1,9 +1,9 @@
 {
   "state": "KY",
   "state_name": "Kentucky",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — local news, permit filings.",
+  "capture_method": "Public sources — local news, permit filings, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "ky-kroger-patchen-wilkes-marketplace",
@@ -87,9 +87,1594 @@
         }
       ],
       "open_for": "Early planning. Pre-development infrastructure specs."
+    },
+    {
+      "id": "ky-sam-4c03338be6f448c3-kentucky-lock-conferencing-trailer-construction-co",
+      "name": "KENTUCKY LOCK CONFERENCING TRAILER CONSTRUCTION CONTRACT",
+      "city": "Grand Rivers",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal solicitation W912P526BA002. KENTUCKY LOCK CONFERENCING TRAILER CONSTRUCTION CONTRACT. Response deadline 2026-07-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912P526BA002",
+          "url": "https://sam.gov/workspace/contract/opp/4c03338be6f448c382914d411d7132e8/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-8d4e99a768034ca8-nolin-river-lake-tailwater-restroom-construction",
+      "name": "NOLIN RIVER LAKE TAILWATER RESTROOM CONSTRUCTION",
+      "city": "Mammoth Cave",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Federal solicitation W912QR26QA067. NOLIN RIVER LAKE TAILWATER RESTROOM CONSTRUCTION. Response deadline 2026-08-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1FB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26QA067",
+          "url": "https://sam.gov/workspace/contract/opp/8d4e99a768034ca882b40eef344bb48b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-36d2e6bffa9d413b-fort-campbell-air-traffic-control-tower-generator-",
+      "name": "Fort Campbell Air Traffic Control Tower Generator J&A",
+      "city": "Fort Campbell",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Federal special notice. Fort Campbell Air Traffic Control Tower Generator J&A. Response deadline 2026-07-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Classification code Y1BA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice ",
+          "url": "https://sam.gov/workspace/contract/opp/36d2e6bffa9d413bb252dd790ab83539/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-e72f2013e6164be2-fort-campbell-air-traffic-control-tower-jacobs-wat",
+      "name": "Fort Campbell Air Traffic Control Tower Jacobs Water J&A",
+      "city": "Fort Campbell",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Federal special notice. Fort Campbell Air Traffic Control Tower Jacobs Water J&A. Response deadline 2026-07-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Classification code Y1BA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice ",
+          "url": "https://sam.gov/workspace/contract/opp/e72f2013e6164be2ba279bcae6bf4f12/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-a76f0c3f4b8f4b5d-fort-campbell-air-traffic-control-tower-clp-j-a",
+      "name": "Fort Campbell Air Traffic Control Tower CLP J&A",
+      "city": "Fort Campbell",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Federal special notice. Fort Campbell Air Traffic Control Tower CLP J&A. Response deadline 2026-07-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Classification code Y1BA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice ",
+          "url": "https://sam.gov/workspace/contract/opp/a76f0c3f4b8f4b5d98275bb0b27b1035/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-c9839492af9a4b7e-z-cane-rehabilitate-the-exterior-of-the",
+      "name": "Z--CANE - REHABILITATE THE EXTERIOR OF THE",
+      "city": "Nicholasville",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Interior, Department Of The",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-02",
+      "description": "Federal solicitation 140P5326R0011. Z--CANE - REHABILITATE THE EXTERIOR OF THE. Response deadline 2026-07-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 140P5326R0011",
+          "url": "https://sam.gov/workspace/contract/opp/c9839492af9a4b7ebdf162319a62eb5b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-b6f56768db004e99-z-cane-rehabilitate-the-exterior-of-the",
+      "name": "Z--CANE - REHABILITATE THE EXTERIOR OF THE",
+      "city": "Nicholasville",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Interior, Department Of The",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-23",
+      "description": "Federal solicitation 140P5326R0011. Z--CANE - REHABILITATE THE EXTERIOR OF THE. Response deadline 2026-07-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 140P5326R0011",
+          "url": "https://sam.gov/workspace/contract/opp/b6f56768db004e9998ef7138d5c3b90f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-f8a3a986b8a143aa-pla-market-survey-ftc-unaccompanied-enlisted-perso",
+      "name": "PLA Market Survey: FTC Unaccompanied Enlisted Personnel Housing Barracks FY26 & FY27",
+      "city": "Fort Campbell",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-23",
+      "description": "Federal sources sought W912QR-26-UEPH-FY26_FY27. PLA Market Survey: FTC Unaccompanied Enlisted Personnel Housing Barracks FY26 & FY27. Response deadline 2026-06-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W912QR-26-UEPH-FY26_FY27",
+          "url": "https://sam.gov/workspace/contract/opp/f8a3a986b8a143aaa501cc0b10f1e498/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-967e7698484442d4-pla-market-survey-ftc-unaccompanied-enlisted-perso",
+      "name": "PLA Market Survey: FTC Unaccompanied Enlisted Personnel Housing Barracks FY26 & FY27",
+      "city": "Fort Campbell",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-17",
+      "description": "Federal sources sought W912QR-26-UEPH-FY26_FY27. PLA Market Survey: FTC Unaccompanied Enlisted Personnel Housing Barracks FY26 & FY27. Response deadline 2026-06-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W912QR-26-UEPH-FY26_FY27",
+          "url": "https://sam.gov/workspace/contract/opp/967e7698484442d4a08626b328988ef1/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-258e0361707d4896-pla-market-survey-ftc-unaccompanied-enlisted-perso",
+      "name": "PLA Market Survey: FTC Unaccompanied Enlisted Personnel Housing Barracks FY26 & FY27",
+      "city": "Fort Campbell",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-16",
+      "description": "Federal sources sought W912QR-26-UEPH-FY26_FY27. PLA Market Survey: FTC Unaccompanied Enlisted Personnel Housing Barracks FY26 & FY27. Response deadline 2026-06-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W912QR-26-UEPH-FY26_FY27",
+          "url": "https://sam.gov/workspace/contract/opp/258e0361707d4896b855ddcec7f7064c/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-72adcf9c929d42a5-progressive-design-build-pdb-of-ft-campbell-aircra",
+      "name": "Progressive Design-Build (PDB) of Ft. Campbell Aircraft Maintenance Hangar",
+      "city": "Fort Campbell",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-16",
+      "description": "Federal sources sought W912QR-PDB-FTC-Aircraft-Maintenance-Hangar. Progressive Design-Build (PDB) of Ft. Campbell Aircraft Maintenance Hangar. Response deadline 2026-07-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Y1BZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W912QR-PDB-FTC-Aircraft-Maintenance-Hangar",
+          "url": "https://sam.gov/workspace/contract/opp/72adcf9c929d42a58b3f970b8f361e8b/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-cf537b64d5dd4936-construction-matoc-blue-grass-army-depot",
+      "name": "Construction MATOC Blue Grass Army Depot",
+      "city": "Richmond",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-15",
+      "description": "Federal presolicitation W519TC26NBTOC. Construction MATOC Blue Grass Army Depot. Response deadline 2026-06-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W519TC26NBTOC",
+          "url": "https://sam.gov/workspace/contract/opp/cf537b64d5dd4936af60a40a7adff38a/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-0a3468f375124829-ftc-cdc-renovate-b3069",
+      "name": "FTC CDC Renovate B3069",
+      "city": "Fort Campbell",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-10",
+      "description": "Federal solicitation W912QR-61034642. FTC CDC Renovate B3069. Response deadline 2026-07-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1CA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR-61034642",
+          "url": "https://sam.gov/workspace/contract/opp/0a3468f375124829a4f9abc7ad2dfb69/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-88ebfaa20ce54389-cane-rehabilitate-the-exterior-of-the",
+      "name": "CANE - REHABILITATE THE EXTERIOR OF THE",
+      "city": "Nicholasville",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Interior, Department Of The",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "Federal solicitation 140P5326R0011. CANE - REHABILITATE THE EXTERIOR OF THE. Response deadline 2026-06-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 140P5326R0011",
+          "url": "https://sam.gov/workspace/contract/opp/88ebfaa20ce54389b19618b5c2ce93c3/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-1edd6f7d84534966-kentucky-lock-conferencing-trailer-construction-co",
+      "name": "KENTUCKY LOCK CONFERENCING TRAILER CONSTRUCTION CONTRACT",
+      "city": "Grand Rivers",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-21",
+      "description": "Federal solicitation W912P526BA002. KENTUCKY LOCK CONFERENCING TRAILER CONSTRUCTION CONTRACT. Response deadline 2026-05-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912P526BA002",
+          "url": "https://sam.gov/workspace/contract/opp/1edd6f7d845349668db544fea561e02b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-c56ff9e41241462e-construction-of-ueph-barracks-at-fort-campbell-ky",
+      "name": "Construction of UEPH Barracks at Fort Campbell KY",
+      "city": "Fort Campbell",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-18",
+      "description": "Federal solicitation W912QR26RA016. Construction of UEPH Barracks at Fort Campbell KY. Response deadline 2026-05-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA016",
+          "url": "https://sam.gov/workspace/contract/opp/c56ff9e41241462e9351c80bd05edaf7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-0e1e9b6490bd4d5d-construction-of-ueph-barracks-at-fort-campbell-ky",
+      "name": "Construction of UEPH Barracks at Fort Campbell KY",
+      "city": "Fort Campbell",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-12",
+      "description": "Federal solicitation W912QR26RA016. Construction of UEPH Barracks at Fort Campbell KY. Response deadline 2026-05-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA016",
+          "url": "https://sam.gov/workspace/contract/opp/0e1e9b6490bd4d5dabea5ff503e50c21/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-57649f63e4144bb2-construction-of-small-arms-ammunition-magazine-blu",
+      "name": "Construction of Small Arms Ammunition Magazine, Blue Grass Army Depot, Richmond, Kentucky",
+      "city": "Richmond",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-07",
+      "description": "Federal solicitation W912QR26RA049. Construction of Small Arms Ammunition Magazine, Blue Grass Army Depot, Richmond, Kentucky. Response deadline 2026-05-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1GA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA049",
+          "url": "https://sam.gov/workspace/contract/opp/57649f63e4144bb2b3d55b7989cedca8/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-b9e2ef2cb1de4834-construction-of-ueph-barracks-at-fort-campbell-ky",
+      "name": "Construction of UEPH Barracks at Fort Campbell KY",
+      "city": "Fort Campbell",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-05",
+      "description": "Federal solicitation W912QR26RA016. Construction of UEPH Barracks at Fort Campbell KY. Response deadline 2026-05-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA016",
+          "url": "https://sam.gov/workspace/contract/opp/b9e2ef2cb1de4834907c236468a43dcf/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-4f3a2f925b3b4230-kentucky-lock-conferencing-trailer-construction-co",
+      "name": "KENTUCKY LOCK CONFERENCING TRAILER CONSTRUCTION CONTRACT",
+      "city": "Grand Rivers",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-05",
+      "description": "Federal solicitation W912P526BA002. KENTUCKY LOCK CONFERENCING TRAILER CONSTRUCTION CONTRACT. Response deadline 2026-05-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912P526BA002",
+          "url": "https://sam.gov/workspace/contract/opp/4f3a2f925b3b4230a382258f43f9dee8/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-f03199b02733404d-kentucky-lock-conferencing-trailer-construction-co",
+      "name": "KENTUCKY LOCK CONFERENCING TRAILER CONSTRUCTION CONTRACT",
+      "city": "Grand Rivers",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-05",
+      "description": "Federal solicitation W912P526BA002. KENTUCKY LOCK CONFERENCING TRAILER CONSTRUCTION CONTRACT. Response deadline 2026-05-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912P526BA002",
+          "url": "https://sam.gov/workspace/contract/opp/f03199b02733404d9402b8323deb897b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-3f93e5e30d384c06-construction-of-ueph-barracks-at-fort-campbell-ky",
+      "name": "Construction of UEPH Barracks at Fort Campbell KY",
+      "city": "Fort Campbell",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-30",
+      "description": "Federal solicitation W912QR26RA016. Construction of UEPH Barracks at Fort Campbell KY. Response deadline 2026-05-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA016",
+          "url": "https://sam.gov/workspace/contract/opp/3f93e5e30d384c06a2b7b2b167338530/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-0370e7065bdb4d3b-construction-of-small-arms-ammunition-magazine-blu",
+      "name": "Construction of Small Arms Ammunition Magazine, Blue Grass Army Depot, Richmond, Kentucky",
+      "city": "Richmond",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-22",
+      "description": "Federal solicitation W912QR26RA049. Construction of Small Arms Ammunition Magazine, Blue Grass Army Depot, Richmond, Kentucky. Response deadline 2026-05-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1GA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA049",
+          "url": "https://sam.gov/workspace/contract/opp/0370e7065bdb4d3b943ff73fa77c4472/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-ebda488d052e410f-kentucky-lock-conferencing-trailer-construction-co",
+      "name": "KENTUCKY LOCK CONFERENCING TRAILER CONSTRUCTION CONTRACT",
+      "city": "Grand Rivers",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-22",
+      "description": "Federal solicitation W912P526BA002. KENTUCKY LOCK CONFERENCING TRAILER CONSTRUCTION CONTRACT. Response deadline 2026-05-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912P526BA002",
+          "url": "https://sam.gov/workspace/contract/opp/ebda488d052e410fb65118626ca9e67f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-ef98d6e9c88a4d33-construction-of-ueph-barracks-at-fort-campbell-ky",
+      "name": "Construction of UEPH Barracks at Fort Campbell KY",
+      "city": "Fort Campbell",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-17",
+      "description": "Federal solicitation W912QR26RA016. Construction of UEPH Barracks at Fort Campbell KY. Response deadline 2026-05-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA016",
+          "url": "https://sam.gov/workspace/contract/opp/ef98d6e9c88a4d339df0375b9f06ef4d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-f06a07e12ad74551-the-state-of-kentucky-job-order-contract-joc-solic",
+      "name": "The State of Kentucky - Job Order Contract (JOC) Solicitation",
+      "city": "Frankfort",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Postal Service",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-07",
+      "description": "Federal solicitation 089495-26-A-0061. The State of Kentucky - Job Order Contract (JOC) Solicitation. Response deadline 2026-05-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z2HB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 089495-26-A-0061",
+          "url": "https://sam.gov/workspace/contract/opp/f06a07e12ad74551bde64dea75ff2b9a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-c419189f42a24c43-pre-solicitation-notice-bluegrass-army-depot-small",
+      "name": "Pre-Solicitation Notice - Bluegrass Army Depot Small Arms Ammunition Magazine",
+      "city": "",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-03",
+      "description": "Federal presolicitation W912QR26RA049_Presolicitation_Notice. Pre-Solicitation Notice - Bluegrass Army Depot Small Arms Ammunition Magazine. Response deadline 2026-04-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y1GA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912QR26RA049_Presolicitation_Notice",
+          "url": "https://sam.gov/workspace/contract/opp/c419189f42a24c438541bc0deb66fbd4/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-90c306fc0ccc4710-construction-of-ueph-barracks-at-fort-campbell-ky",
+      "name": "Construction of UEPH Barracks at Fort Campbell KY",
+      "city": "Fort Campbell",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-30",
+      "description": "Federal solicitation W912QR26RA016. Construction of UEPH Barracks at Fort Campbell KY. Response deadline 2026-04-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA016",
+          "url": "https://sam.gov/workspace/contract/opp/90c306fc0ccc4710adbbfa19615a0791/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-7a7352ce9b514dc2-construction-of-ueph-barracks-at-fort-campbell-ky",
+      "name": "Construction of UEPH Barracks at Fort Campbell KY",
+      "city": "Fort Campbell",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-16",
+      "description": "Federal solicitation W912QR26RA016. Construction of UEPH Barracks at Fort Campbell KY. Response deadline 2026-04-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA016",
+          "url": "https://sam.gov/workspace/contract/opp/7a7352ce9b514dc2beac0fd8a67f291a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-bf708b8816bf4fa0-construction-of-ueph-barracks-at-fort-campbell-ky",
+      "name": "Construction of UEPH Barracks at Fort Campbell KY",
+      "city": "Fort Campbell",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-13",
+      "description": "Federal solicitation W912QR26RA016. Construction of UEPH Barracks at Fort Campbell KY. Response deadline 2026-04-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA016",
+          "url": "https://sam.gov/workspace/contract/opp/bf708b8816bf4fa087aa49e5e843b7c7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-d7dd6feadb3c4089-w912qr26ra023-dbb-construction-of-usda-fapru-in-le",
+      "name": "W912QR26RA023 - DBB Construction of USDA FAPRU in Lexington, KY",
+      "city": "Lexington",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-09",
+      "description": "Federal solicitation W912QR26RA023. W912QR26RA023 - DBB Construction of USDA FAPRU in Lexington, KY. Response deadline 2026-03-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1DB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA023",
+          "url": "https://sam.gov/workspace/contract/opp/d7dd6feadb3c40899e0d9105e66c51cb/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-7ffdad5753084f28-fort-knox-construction-services-ma-idiq",
+      "name": "Fort Knox Construction Services MA IDIQ",
+      "city": "Fort Knox",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "Apex Fse Jv Llc Roswell Ga 30076 Usa",
+      "opened_or_announced_date": "2026-03-03",
+      "description": "Federal award notice W5168W25RA014. Fort Knox Construction Services MA IDIQ.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "HUBZone Set Aside",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice W5168W25RA014",
+          "url": "https://sam.gov/workspace/contract/opp/7ffdad5753084f28bcd77890e5586580/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-4bcf4cf787804322-w912qr26ra023-dbb-construction-of-usda-fapru-in-le",
+      "name": "W912QR26RA023 - DBB Construction of USDA FAPRU in Lexington, KY",
+      "city": "Lexington",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-24",
+      "description": "Federal solicitation W912QR26RA023. W912QR26RA023 - DBB Construction of USDA FAPRU in Lexington, KY. Response deadline 2026-03-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1DB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA023",
+          "url": "https://sam.gov/workspace/contract/opp/4bcf4cf787804322b15a55f4d92d368c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-21a1a363800e416e-w912qr26ra023-dbb-construction-of-usda-fapru-in-le",
+      "name": "W912QR26RA023 - DBB Construction of USDA FAPRU in Lexington, KY",
+      "city": "Lexington",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-04",
+      "description": "Federal solicitation W912QR26RA023. W912QR26RA023 - DBB Construction of USDA FAPRU in Lexington, KY. Response deadline 2026-03-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1DB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA023",
+          "url": "https://sam.gov/workspace/contract/opp/21a1a363800e416e88b3ab41d9aa5c5f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-134625667c184a6d-w912qr26ra023-dbb-construction-of-usda-fapru-in-le",
+      "name": "W912QR26RA023 - DBB Construction of USDA FAPRU in Lexington, KY",
+      "city": "Lexington",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-23",
+      "description": "Federal solicitation W912QR26RA023. W912QR26RA023 - DBB Construction of USDA FAPRU in Lexington, KY. Response deadline 2026-03-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1DB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA023",
+          "url": "https://sam.gov/workspace/contract/opp/134625667c184a6d987b4ed94c9fdda1/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-362814828d0e43d3-pre-solicitation-fy-26-construction-of-ueph-barrac",
+      "name": "Pre-Solicitation: FY 26 Construction of UEPH Barracks at Fort Campbell, KY",
+      "city": "Fort Campbell",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-23",
+      "description": "Federal presolicitation W912QR26RA016. Pre-Solicitation: FY 26 Construction of UEPH Barracks at Fort Campbell, KY. Response deadline 2026-02-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "No Set aside used",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912QR26RA016",
+          "url": "https://sam.gov/workspace/contract/opp/362814828d0e43d38d9565a7611cde8f/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-41711ddbcad241ea-pre-solicitation-fy-26-construction-of-ueph-barrac",
+      "name": "Pre-Solicitation: FY 26 Construction of UEPH Barracks at Fort Campbell, KY",
+      "city": "Fort Campbell",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-23",
+      "description": "Federal presolicitation W912QR26RA016. Pre-Solicitation: FY 26 Construction of UEPH Barracks at Fort Campbell, KY. Response deadline 2026-02-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "No Set aside used",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912QR26RA016",
+          "url": "https://sam.gov/workspace/contract/opp/41711ddbcad241ea9cba137d22058090/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-572ef325292e4f60-w912qr26ra023-dbb-construction-of-usda-fapru-in-le",
+      "name": "W912QR26RA023 - DBB Construction of USDA FAPRU in Lexington, KY",
+      "city": "Lexington",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-22",
+      "description": "Federal solicitation W912QR26RA023. W912QR26RA023 - DBB Construction of USDA FAPRU in Lexington, KY. Response deadline 2026-03-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1DB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA023",
+          "url": "https://sam.gov/workspace/contract/opp/572ef325292e4f60b2be2f9bdf0f18ac/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-40951750c03a47e2-w912qr26ra023-dbb-construction-of-usda-fapru-in-le",
+      "name": "W912QR26RA023 - DBB Construction of USDA FAPRU in Lexington, KY",
+      "city": "Lexington",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-21",
+      "description": "Federal solicitation W912QR26RA023. W912QR26RA023 - DBB Construction of USDA FAPRU in Lexington, KY. Response deadline 2026-03-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1DB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA023",
+          "url": "https://sam.gov/workspace/contract/opp/40951750c03a47e2a98c0db2cde67fde/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-2f9af47530ffd5b7-sof-landgraf-hangar-modernization-phase-ii-at-fort",
+      "name": "SOF Landgraf Hangar Modernization, Phase II at Fort Campbell, KY",
+      "city": "FORT CAMPBELL",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2018-05-09",
+      "description": "Federal modification/amendment/cancel W912QR-81233162. SOF Landgraf Hangar Modernization, Phase II at Fort Campbell, KY. Response deadline 2018-06-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Modification/Amendment/Cancel",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Modification/Amendment/Cancel W912QR-81233162",
+          "url": "https://sam.gov/workspace/contract/opp/2f9af47530ffd5b75f3866b2abc3bdaf/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "KY"
+    },
+    {
+      "id": "ky-sam-4e74c5583abd426a-bluegrass-army-depot-bgad-ky-d-b-b-construction-of",
+      "name": "Bluegrass Army Depot (BGAD), KY D/B/B construction of a new Consolidated Shipping Center (CSC)",
+      "city": "RICHMOND",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2016-05-05",
+      "description": "Federal modification/amendment/cancel W912QR-16-R-0019. Bluegrass Army Depot (BGAD), KY D/B/B construction of a new Consolidated Shipping Center (CSC). Response deadline 2016-05-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Modification/Amendment/Cancel",
+        "8a Competed",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Modification/Amendment/Cancel W912QR-16-R-0019",
+          "url": "https://sam.gov/workspace/contract/opp/4e74c5583abd426a26f45ea3f6fed01d/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "KY"
     }
   ],
   "stats": {
-    "total": 2
+    "total": 43
   }
 }

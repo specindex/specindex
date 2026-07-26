@@ -1,9 +1,9 @@
 {
   "state": "MS",
   "state_name": "Mississippi",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — Mississippi Development Authority, local news.",
+  "capture_method": "Public sources — Mississippi Development Authority, local news, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "ms-edged-columbus-data-center",
@@ -41,9 +41,1295 @@
         }
       ],
       "open_for": "Active development. MEP specs."
+    },
+    {
+      "id": "ms-sam-c7211de7ba214467-b730-renovate-convert-comm-to-sapr",
+      "name": "B730 Renovate Convert Comm to SAPR",
+      "city": "Columbus",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal solicitation FA302226R0025. B730 Renovate Convert Comm to SAPR. Response deadline 2026-08-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA302226R0025",
+          "url": "https://sam.gov/workspace/contract/opp/c7211de7ba21446786d7fb0fb60d5f98/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-0ece7770d17840b5-b730-renovate-convert-comm-to-sapr",
+      "name": "B730 Renovate Convert Comm to SAPR",
+      "city": "Columbus",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal solicitation FA302226R0025. B730 Renovate Convert Comm to SAPR. Response deadline 2026-08-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA302226R0025",
+          "url": "https://sam.gov/workspace/contract/opp/0ece7770d17840b5bbcbc488848b8bbb/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-e6e930b129014533-b972-renovate-uoq-community-commons",
+      "name": "B972 Renovate UOQ Community Commons",
+      "city": "Columbus",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal solicitation FA302226R0024. B972 Renovate UOQ Community Commons. Response deadline 2026-08-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA302226R0024",
+          "url": "https://sam.gov/workspace/contract/opp/e6e930b129014533be04490f5b5083e7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-aa29799a7b5b4dc9-amendment-0001-solicitation-y1dz-design-build-36c2",
+      "name": "AMENDMENT 0001 | SOLICITATION | Y1DZ | DESIGN -BUILD | 36C25626R0072 | 586-26-100 | RENOVATE RADIATION ONCOLOGY DEPARTME",
+      "city": "Jackson",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Federal solicitation 36C25626R0072. AMENDMENT 0001 | SOLICITATION | Y1DZ | DESIGN -BUILD | 36C25626R0072 | 586-26-100 | RENOVATE RADIATION ONCOLOGY DEPARTMENT. Response deadline 2026-08-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C25626R0072",
+          "url": "https://sam.gov/workspace/contract/opp/aa29799a7b5b4dc9a1357d8991f948b9/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-00c12b45e2d949f0-renovate-convert-50th-49th-sq-ops-b230",
+      "name": "RENOVATE/CONVERT 50th 49th SQ OPS, B230",
+      "city": "Columbus",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "Federal solicitation FA302226R0007. RENOVATE/CONVERT 50th 49th SQ OPS, B230. Response deadline 2026-07-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA302226R0007",
+          "url": "https://sam.gov/workspace/contract/opp/00c12b45e2d949f0a8e5607544e277eb/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-fdafc80f5a924a57-b730-renovate-rm106-for-emergency-operations-cente",
+      "name": "B730 - Renovate RM106 for Emergency Operations Center",
+      "city": "Columbus",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "Federal solicitation FA302226R0022. B730 - Renovate RM106 for Emergency Operations Center. Response deadline 2026-09-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA302226R0022",
+          "url": "https://sam.gov/workspace/contract/opp/fdafc80f5a924a57a31df594a1cefada/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-ad17b30d541a4f29-b268-replace-stus-backup-generator",
+      "name": "B268 Replace STUS Backup Generator",
+      "city": "Columbus",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "Federal solicitation FA302226R00023. B268 Replace STUS Backup Generator. Response deadline 2026-09-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA302226R00023",
+          "url": "https://sam.gov/workspace/contract/opp/ad17b30d541a4f29ae8dfe92c9ed59be/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-e0941d472f814b6c-b268-replace-stus-backup-generator",
+      "name": "B268 Replace STUS Backup Generator",
+      "city": "Columbus",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Federal solicitation FA302226R00023. B268 Replace STUS Backup Generator. Response deadline 2026-09-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA302226R00023",
+          "url": "https://sam.gov/workspace/contract/opp/e0941d472f814b6cb46f93f4f56b67c6/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-2658981c2ecf4b01-b730-renovate-rm106-for-emergency-operations-cente",
+      "name": "B730 - Renovate RM106 for Emergency Operations Center",
+      "city": "Columbus",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Federal solicitation FA302226R0022. B730 - Renovate RM106 for Emergency Operations Center. Response deadline 2026-09-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA302226R0022",
+          "url": "https://sam.gov/workspace/contract/opp/2658981c2ecf4b01b5927ae47dbae699/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-88659556c44549dd-b995-convert-t1-hangar-to-t7-umt-facility",
+      "name": "B995 Convert T1 Hangar to T7 UMT Facility",
+      "city": "Columbus",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "West Brothers Construction Inc Columbus Ms 39702 Usa",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "Federal award notice FA302226C0007. B995 Convert T1 Hangar to T7 UMT Facility.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice FA302226C0007",
+          "url": "https://sam.gov/workspace/contract/opp/88659556c44549ddaa6610b6ae0d24ff/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-19f723bf46904302-replace-radar-generator-b2021",
+      "name": "Replace Radar Generator, B2021",
+      "city": "Columbus",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "Federal solicitation FA302226R0006. Replace Radar Generator, B2021. Response deadline 2026-07-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA302226R0006",
+          "url": "https://sam.gov/workspace/contract/opp/19f723bf46904302ad8a96aefb87e961/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-b52538b998a54460-z1da-586-22-703-ehrm-tass-construction",
+      "name": "Z1DA--586-22-703 EHRM TASS Construction",
+      "city": "Jackson",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "Federal solicitation 36C25626R0074-SOL. Z1DA--586-22-703 EHRM TASS Construction. Response deadline 2026-07-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C25626R0074-SOL",
+          "url": "https://sam.gov/workspace/contract/opp/b52538b998a54460ae72afe4c8b95903/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-408da2db9a854c3a-renovate-convert-50th-49th-sq-ops-b230",
+      "name": "RENOVATE/CONVERT 50th 49th SQ OPS, B230",
+      "city": "Columbus",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "Federal solicitation FA302226R0007. RENOVATE/CONVERT 50th 49th SQ OPS, B230. Response deadline 2026-07-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA302226R0007",
+          "url": "https://sam.gov/workspace/contract/opp/408da2db9a854c3abfdbe9778f5cb1b8/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-a0299e4d751447e6-b926-replace-security-forces-elevator",
+      "name": "B926 Replace Security Forces Elevator",
+      "city": "Columbus",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Federal solicitation FA302226R0018. B926 Replace Security Forces Elevator. Response deadline 2026-08-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA302226R0018",
+          "url": "https://sam.gov/workspace/contract/opp/a0299e4d751447e68eace1db0d5090c0/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-4eed6f9335b44461-osi-b926-flooring",
+      "name": "OSI B926 Flooring",
+      "city": "Columbus",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Federal solicitation FA302226R0020. OSI B926 Flooring. Response deadline 2026-08-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA302226R0020",
+          "url": "https://sam.gov/workspace/contract/opp/4eed6f9335b44461af5c574d2a7f296b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-248bd59e1806447c-replace-radar-generator-b2021",
+      "name": "Replace Radar Generator, B2021",
+      "city": "Columbus",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Federal solicitation FA302226R0006. Replace Radar Generator, B2021. Response deadline 2026-07-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA302226R0006",
+          "url": "https://sam.gov/workspace/contract/opp/248bd59e1806447cacadb9496ac11cd3/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-5ca00f635f2d4c29-replace-greenhouse-3-and-renovate-headhouse-heatin",
+      "name": "Replace Greenhouse 3 and Renovate Headhouse Heating System (Stoneville, MS)",
+      "city": "Stoneville",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Federal combined synopsis/solicitation 1232SA26Q0885. Replace Greenhouse 3 and Renovate Headhouse Heating System (Stoneville, MS). Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1232SA26Q0885",
+          "url": "https://sam.gov/workspace/contract/opp/5ca00f635f2d4c2987770d5a63ddeeb4/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-1ecff536a3974353-b926-replace-security-forces-elevator",
+      "name": "B926 Replace Security Forces Elevator",
+      "city": "Columbus",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Federal solicitation FA302226R0018. B926 Replace Security Forces Elevator. Response deadline 2026-08-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA302226R0018",
+          "url": "https://sam.gov/workspace/contract/opp/1ecff536a3974353a0adc1972fe111cc/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-637a64276bc04bdb-replace-radar-generator-b2021",
+      "name": "Replace Radar Generator, B2021",
+      "city": "Columbus",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "Federal solicitation FA302226R0006. Replace Radar Generator, B2021. Response deadline 2026-07-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA302226R0006",
+          "url": "https://sam.gov/workspace/contract/opp/637a64276bc04bdb8acea9e37568f956/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-fc517759958a4e74-replace-greenhouse-3-and-renovate-headhouse-heatin",
+      "name": "Replace Greenhouse 3 and Renovate Headhouse Heating System (Stoneville, MS)",
+      "city": "Stoneville",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "Federal combined synopsis/solicitation 1232SA26Q0885. Replace Greenhouse 3 and Renovate Headhouse Heating System (Stoneville, MS). Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1232SA26Q0885",
+          "url": "https://sam.gov/workspace/contract/opp/fc517759958a4e74a3dc3803ed8fa150/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-3b079a0e99904d74-b972-renovate-uoq-community-commons",
+      "name": "B972 Renovate UOQ Community Commons",
+      "city": "Columbus",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-25",
+      "description": "Federal sources sought EEPZ254664. B972 Renovate UOQ Community Commons. Response deadline 2026-07-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought EEPZ254664",
+          "url": "https://sam.gov/workspace/contract/opp/3b079a0e99904d7493af7b01b9e65e3c/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-4251bc1827d546aa-renovate-convert-50th-49th-sq-ops-b230",
+      "name": "RENOVATE/CONVERT 50th 49th SQ OPS, B230",
+      "city": "Columbus",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-25",
+      "description": "Federal solicitation FA302226R0007. RENOVATE/CONVERT 50th 49th SQ OPS, B230. Response deadline 2026-07-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA302226R0007",
+          "url": "https://sam.gov/workspace/contract/opp/4251bc1827d546aabeea474dad0cf935/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-e0bfd7663b8640e3-replace-radar-generator-b2021",
+      "name": "Replace Radar Generator, B2021",
+      "city": "Columbus",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-24",
+      "description": "Federal solicitation FA302226R0006. Replace Radar Generator, B2021. Response deadline 2026-07-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA302226R0006",
+          "url": "https://sam.gov/workspace/contract/opp/e0bfd7663b8640e3a5753db921d78391/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-2c9405095f204fb7-z1da-586-22-703-ehrm-tass-construction",
+      "name": "Z1DA--586-22-703 EHRM TASS Construction",
+      "city": "Jackson",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-23",
+      "description": "Federal solicitation 36C25626R0074-SOL. Z1DA--586-22-703 EHRM TASS Construction. Response deadline 2026-07-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C25626R0074-SOL",
+          "url": "https://sam.gov/workspace/contract/opp/2c9405095f204fb7a29d510979b93ef9/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-2a8fd5207bf84221-solicitation-y1dz-design-build-36c25626r0072-586-2",
+      "name": "SOLICITATION | Y1DZ | DESIGN -BUILD | 36C25626R0072 |586-26-100 | RENOVATE RADIATION ONCOLOGY DEPARTMENT",
+      "city": "Jackson",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-18",
+      "description": "Federal solicitation 36C25626R0072_DB_RENOVATE_RADIATION_ONCOLOGY_BUILDING. SOLICITATION | Y1DZ | DESIGN -BUILD | 36C25626R0072 |586-26-100 | RENOVATE RADIATION ONCOLOGY DEPARTMENT. Response deadline 2026-07-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C25626R0072_DB_RENOVATE_RADIATION_ONCOLOGY_BUILDING ",
+          "url": "https://sam.gov/workspace/contract/opp/2a8fd5207bf84221add0ec29793ec64d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-e810c0420a10468c-z1da-586-22-703-ehrm-tass-construction",
+      "name": "Z1DA--586-22-703 EHRM TASS Construction",
+      "city": "Jackson",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-17",
+      "description": "Federal solicitation 36C25626R0074-SOL. Z1DA--586-22-703 EHRM TASS Construction. Response deadline 2026-07-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C25626R0074-SOL",
+          "url": "https://sam.gov/workspace/contract/opp/e810c0420a10468ca7a1a238de8d7c1e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-fc40af30ae064031-z1da-586-22-703-ehrm-tass-construction",
+      "name": "Z1DA--586-22-703 EHRM TASS Construction",
+      "city": "Jackson",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-02",
+      "description": "Federal solicitation 36C25626R0074-SOL. Z1DA--586-22-703 EHRM TASS Construction. Response deadline 2026-07-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C25626R0074-SOL",
+          "url": "https://sam.gov/workspace/contract/opp/fc40af30ae064031a8a8cb76d2379de0/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-e2f5246349b34710-replace-radar-generator-b2021",
+      "name": "Replace Radar Generator, B2021",
+      "city": "Columbus",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-26",
+      "description": "Federal solicitation FA302226R0006. Replace Radar Generator, B2021. Response deadline 2026-06-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA302226R0006",
+          "url": "https://sam.gov/workspace/contract/opp/e2f5246349b34710b5be7f4b3a74ea8f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-262cde34f6f4454b-renovate-convert-50th-49th-sq-ops-b230",
+      "name": "RENOVATE/CONVERT 50th 49th SQ OPS, B230",
+      "city": "Columbus",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-26",
+      "description": "Federal solicitation FA302226R0007. RENOVATE/CONVERT 50th 49th SQ OPS, B230. Response deadline 2026-07-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA302226R0007",
+          "url": "https://sam.gov/workspace/contract/opp/262cde34f6f4454b9ba73ab4a50b250f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-534a56d733ff4c6c-renovate-convert-50th-49th-sq-ops-b230",
+      "name": "RENOVATE/CONVERT 50th 49th SQ OPS, B230",
+      "city": "Columbus",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-08",
+      "description": "Federal solicitation FA302226R0007. RENOVATE/CONVERT 50th 49th SQ OPS, B230. Response deadline 2026-07-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA302226R0007",
+          "url": "https://sam.gov/workspace/contract/opp/534a56d733ff4c6c81d68687623b4b5b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-1cafedc9c2d948c6-replace-radar-generator-b2021",
+      "name": "Replace Radar Generator, B2021",
+      "city": "Columbus",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-08",
+      "description": "Federal solicitation FA302226R0006. Replace Radar Generator, B2021. Response deadline 2026-06-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA302226R0006",
+          "url": "https://sam.gov/workspace/contract/opp/1cafedc9c2d948c6a52b59050084d596/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-c251327fc3694a7b-construction-manager-as-constructor-cmc-contract-f",
+      "name": "Construction Manager as Constructor (CMc) Contract for the New US Courthouse in Greenville, MS.",
+      "city": "GREENVILLE",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2018-12-13",
+      "description": "Federal presolicitation 47PH0819R0003. Construction Manager as Constructor (CMc) Contract for the New US Courthouse in Greenville, MS. Response deadline 2019-01-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 47PH0819R0003",
+          "url": "https://sam.gov/workspace/contract/opp/c251327fc3694a7b821ba4dca7ef81ba/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MS"
+    },
+    {
+      "id": "ms-sam-a1d45235a20cc792-aircraft-sun-shelter-repair",
+      "name": "Aircraft Sun Shelter Repair",
+      "city": "COLUMBUS",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2012-05-24",
+      "description": "Federal modification/amendment/cancel F1N3BD2094A001. Aircraft Sun Shelter Repair. Response deadline 2012-06-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Modification/Amendment/Cancel",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Modification/Amendment/Cancel F1N3BD2094A001",
+          "url": "https://sam.gov/workspace/contract/opp/a1d45235a20cc792d451e19288b6d9f4/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MS"
     }
   ],
   "stats": {
-    "total": 1
+    "total": 34
   }
 }

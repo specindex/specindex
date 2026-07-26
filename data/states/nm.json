@@ -1,9 +1,9 @@
 {
   "state": "NM",
   "state_name": "New Mexico",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — DCD, Stargate announcements.",
+  "capture_method": "Public sources — DCD, Stargate announcements, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "nm-stargate-project-jupiter-dona-ana",
@@ -45,9 +45,1022 @@
         }
       ],
       "open_for": "Early Stargate development. Infrastructure specs forming."
+    },
+    {
+      "id": "nm-sam-224492f6d1bf45b0-kirtland-afb-b497-repair-suites-b277-b419-power-an",
+      "name": "Kirtland AFB B497 Repair Suites; B277, B419 Power and Communication",
+      "city": "Kirtland AFB",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "Qa Engineering Llc Albuquerque Nm 87108 Usa",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "Federal award notice W912PP26PA016. Kirtland AFB B497 Repair Suites; B277, B419 Power and Communication.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "8(a) Sole Source",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice W912PP26PA016",
+          "url": "https://sam.gov/workspace/contract/opp/224492f6d1bf45b0bb0c3d4ac221e769/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NM"
+    },
+    {
+      "id": "nm-sam-ecc01a8c52c94798-crownpoint-medical-gas-upgrade-construction",
+      "name": "Crownpoint Medical Gas Upgrade Construction",
+      "city": "Crownpoint",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "Federal solicitation 75H70126R00028. Crownpoint Medical Gas Upgrade Construction. Response deadline 2026-08-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00028",
+          "url": "https://sam.gov/workspace/contract/opp/ecc01a8c52c94798b84a924dd4dacd4b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NM"
+    },
+    {
+      "id": "nm-sam-56c333c956884d94-santa-fe-and-taos-picuris-ihc-lab-and-rx-casework-",
+      "name": "Santa Fe and Taos-Picuris IHC Lab and Rx Casework Improvements",
+      "city": "Santa Fe",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Federal solicitation 75H70126R00031. Santa Fe and Taos-Picuris IHC Lab and Rx Casework Improvements. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00031",
+          "url": "https://sam.gov/workspace/contract/opp/56c333c956884d94b2e24996d67ae512/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NM"
+    },
+    {
+      "id": "nm-sam-6c16e90f2b5d4426-dbb-adal-acj130-flight-training-bldg-957",
+      "name": "DBB ADAL ACJ130 Flight Training Bldg. 957",
+      "city": "Kirtland AFB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Federal sources sought W912PP26BA002. DBB ADAL ACJ130 Flight Training Bldg. 957. Response deadline 2026-08-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W912PP26BA002",
+          "url": "https://sam.gov/workspace/contract/opp/6c16e90f2b5d4426ad9d3e0f47db7701/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NM"
+    },
+    {
+      "id": "nm-sam-f3e5a24c840e4e3a-santa-fe-and-taos-picuris-ihc-lab-and-rx-casework-",
+      "name": "Santa Fe and Taos-Picuris IHC Lab and Rx Casework Improvements",
+      "city": "Santa Fe",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Federal solicitation 75H70126R00031. Santa Fe and Taos-Picuris IHC Lab and Rx Casework Improvements. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00031",
+          "url": "https://sam.gov/workspace/contract/opp/f3e5a24c840e4e3aa215735c37121781/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NM"
+    },
+    {
+      "id": "nm-sam-a005be7832494b84-santa-fe-and-taos-picuris-ihc-lab-and-rx-casework-",
+      "name": "Santa Fe and Taos-Picuris IHC Lab and Rx Casework Improvements",
+      "city": "Santa Fe",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "Federal solicitation 75H70126R00031. Santa Fe and Taos-Picuris IHC Lab and Rx Casework Improvements. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00031",
+          "url": "https://sam.gov/workspace/contract/opp/a005be7832494b8495acfb1fd1f0ab27/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NM"
+    },
+    {
+      "id": "nm-sam-21f1a2af7a8e4615-santa-fe-and-taos-picuris-ihc-lab-and-rx-casework-",
+      "name": "Santa Fe and Taos-Picuris IHC Lab and Rx Casework Improvements",
+      "city": "Santa Fe",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "Federal solicitation 75H70126R00031. Santa Fe and Taos-Picuris IHC Lab and Rx Casework Improvements. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00031",
+          "url": "https://sam.gov/workspace/contract/opp/21f1a2af7a8e46158f4c67b5c3c84ea5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NM"
+    },
+    {
+      "id": "nm-sam-d58be859b82142a6-crownpoint-medical-gas-upgrade-construction",
+      "name": "Crownpoint Medical Gas Upgrade Construction",
+      "city": "Crownpoint",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "Federal solicitation 75H70126R00028. Crownpoint Medical Gas Upgrade Construction. Response deadline 2026-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00028",
+          "url": "https://sam.gov/workspace/contract/opp/d58be859b82142a68c568efaf4ae8a1b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NM"
+    },
+    {
+      "id": "nm-sam-d8c4293245b045ed-santa-fe-and-taos-picuris-ihc-lab-and-rx-casework-",
+      "name": "Santa Fe and Taos-Picuris IHC Lab and Rx Casework Improvements",
+      "city": "Santa Fe",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "Federal solicitation 75H70126R00031. Santa Fe and Taos-Picuris IHC Lab and Rx Casework Improvements. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00031",
+          "url": "https://sam.gov/workspace/contract/opp/d8c4293245b045ed91e9029d1cb1c303/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NM"
+    },
+    {
+      "id": "nm-sam-876a839b630a4c2d-gallup-indian-medical-center-gimc-fire-alarm-upgra",
+      "name": "Gallup Indian Medical Center (GIMC) Fire Alarm Upgrade – Construction (Gallup, NM)",
+      "city": "Gallup",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "Federal solicitation 75H70126R00010. Gallup Indian Medical Center (GIMC) Fire Alarm Upgrade – Construction (Gallup, NM). Response deadline 2026-07-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00010",
+          "url": "https://sam.gov/workspace/contract/opp/876a839b630a4c2daa77b8f202392efa/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NM"
+    },
+    {
+      "id": "nm-sam-3688d7796f5247cf-gallup-indian-medical-center-gimc-fire-alarm-upgra",
+      "name": "Gallup Indian Medical Center (GIMC) Fire Alarm Upgrade – Construction (Gallup, NM)",
+      "city": "Gallup",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "Federal solicitation 75H70126R00010. Gallup Indian Medical Center (GIMC) Fire Alarm Upgrade – Construction (Gallup, NM). Response deadline 2026-07-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00010",
+          "url": "https://sam.gov/workspace/contract/opp/3688d7796f5247cfb7dec05bd472d152/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NM"
+    },
+    {
+      "id": "nm-sam-afee4a23a2374c1e-repair-structural-fire-trainer-b17903-17904",
+      "name": "Repair Structural Fire Trainer B17903, 17904",
+      "city": "Holloman Air Force Base",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Federal solicitation FA480126R0005. Repair Structural Fire Trainer B17903, 17904. Response deadline 2026-08-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA480126R0005",
+          "url": "https://sam.gov/workspace/contract/opp/afee4a23a2374c1e8582b4ef4b0903db/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NM"
+    },
+    {
+      "id": "nm-sam-1fe9d379817646d6-crownpoint-medical-gas-upgrade-construction",
+      "name": "Crownpoint Medical Gas Upgrade Construction",
+      "city": "Crownpoint",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "Federal solicitation 75H70126R00028. Crownpoint Medical Gas Upgrade Construction. Response deadline 2026-07-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00028",
+          "url": "https://sam.gov/workspace/contract/opp/1fe9d379817646d6a25c2332e5d7bbe7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NM"
+    },
+    {
+      "id": "nm-sam-23bf992b1f934a17-santa-fe-and-taos-picuris-ihc-lab-and-rx-casework-",
+      "name": "Santa Fe and Taos-Picuris IHC Lab and Rx Casework Improvements",
+      "city": "Santa Fe",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-22",
+      "description": "Federal solicitation 75H70126R00031. Santa Fe and Taos-Picuris IHC Lab and Rx Casework Improvements. Response deadline 2026-07-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00031",
+          "url": "https://sam.gov/workspace/contract/opp/23bf992b1f934a17b902d5239c04abb7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NM"
+    },
+    {
+      "id": "nm-sam-82fc5918971c4f2a-santa-fe-and-taos-picuris-ihc-lab-and-rx-casework-",
+      "name": "Santa Fe and Taos-Picuris IHC Lab and Rx Casework Improvements",
+      "city": "Santa Fe",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-17",
+      "description": "Federal solicitation 75H70126R00031. Santa Fe and Taos-Picuris IHC Lab and Rx Casework Improvements. Response deadline 2026-07-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00031",
+          "url": "https://sam.gov/workspace/contract/opp/82fc5918971c4f2a9d71f4d614971bec/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NM"
+    },
+    {
+      "id": "nm-sam-6cbfff6ecb3a420a-crownpoint-medical-gas-upgrade-construction",
+      "name": "Crownpoint Medical Gas Upgrade Construction",
+      "city": "Crownpoint",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-02",
+      "description": "Federal solicitation 75H70126R00028. Crownpoint Medical Gas Upgrade Construction. Response deadline 2026-07-02.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00028",
+          "url": "https://sam.gov/workspace/contract/opp/6cbfff6ecb3a420ab890528a5626c50b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NM"
+    },
+    {
+      "id": "nm-sam-95460441104143be-crownpoint-medical-gas-upgrade-construction",
+      "name": "Crownpoint Medical Gas Upgrade Construction",
+      "city": "Crownpoint",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-02",
+      "description": "Federal solicitation 75H70126R00028. Crownpoint Medical Gas Upgrade Construction. Response deadline 2026-07-02.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00028",
+          "url": "https://sam.gov/workspace/contract/opp/95460441104143beb58b78c5b712893c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NM"
+    },
+    {
+      "id": "nm-sam-deeba632bb924ada-gallup-indian-medical-center-gimc-fire-alarm-upgra",
+      "name": "Gallup Indian Medical Center (GIMC) Fire Alarm Upgrade – Construction (Gallup, NM)",
+      "city": "Gallup",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-13",
+      "description": "Federal solicitation 75H70126R00010. Gallup Indian Medical Center (GIMC) Fire Alarm Upgrade – Construction (Gallup, NM). Response deadline 2026-03-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00010",
+          "url": "https://sam.gov/workspace/contract/opp/deeba632bb924adaa2eebed19fc8df11/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NM"
+    },
+    {
+      "id": "nm-sam-3aa3bee5661a430c-z-mescalero-adult-detention-center-design-build-co",
+      "name": "Z--Mescalero Adult Detention Center Design/Build Cons",
+      "city": "Mescalero",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Interior, Department Of The",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-10",
+      "description": "Federal solicitation 140A1626R0002. Z--Mescalero Adult Detention Center Design/Build Cons. Response deadline 2026-02-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Z2FF"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 140A1626R0002",
+          "url": "https://sam.gov/workspace/contract/opp/3aa3bee5661a430ca32d124eed5af5c2/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NM"
+    },
+    {
+      "id": "nm-sam-3cb74e778f25427f-z-mescalero-adult-detention-center-design-build-co",
+      "name": "Z--Mescalero Adult Detention Center Design/Build Cons",
+      "city": "Mescalero",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Interior, Department Of The",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-26",
+      "description": "Federal solicitation 140A1626R0002. Z--Mescalero Adult Detention Center Design/Build Cons. Response deadline 2026-02-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Z2FF"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 140A1626R0002",
+          "url": "https://sam.gov/workspace/contract/opp/3cb74e778f25427fa9750ce5a0f4d460/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NM"
+    },
+    {
+      "id": "nm-sam-e14621cbccfd4692-gallup-indian-medical-center-gimc-fire-alarm-upgra",
+      "name": "Gallup Indian Medical Center (GIMC) Fire Alarm Upgrade – Construction (Gallup, NM)",
+      "city": "Gallup",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-22",
+      "description": "Federal solicitation 75H70126R00010. Gallup Indian Medical Center (GIMC) Fire Alarm Upgrade – Construction (Gallup, NM). Response deadline 2026-02-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00010",
+          "url": "https://sam.gov/workspace/contract/opp/e14621cbccfd4692af01d7d5f96f7f49/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NM"
+    },
+    {
+      "id": "nm-sam-2bfdf87087a643eb-mescalero-adult-detention-center-design-build-cons",
+      "name": "Mescalero Adult Detention Center Design/Build Cons",
+      "city": "Mescalero",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Interior, Department Of The",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-15",
+      "description": "Federal solicitation 140A1626R0002. Mescalero Adult Detention Center Design/Build Cons. Response deadline 2026-02-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Z2FF"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 140A1626R0002",
+          "url": "https://sam.gov/workspace/contract/opp/2bfdf87087a643ebba412aeb22700a3d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NM"
+    },
+    {
+      "id": "nm-sam-587a20cf7a42418a-gallup-indian-medical-center-gimc-fire-alarm-upgra",
+      "name": "Gallup Indian Medical Center (GIMC) Fire Alarm Upgrade – Construction (Gallup, NM)",
+      "city": "Gallup",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-08",
+      "description": "Federal solicitation 75H70126R00010. Gallup Indian Medical Center (GIMC) Fire Alarm Upgrade – Construction (Gallup, NM). Response deadline 2026-01-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00010",
+          "url": "https://sam.gov/workspace/contract/opp/587a20cf7a42418ab5f1bb05cd15a4d1/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NM"
+    },
+    {
+      "id": "nm-sam-a25096f8d08d4847-gallup-indian-medical-center-gimc-fire-alarm-upgra",
+      "name": "Gallup Indian Medical Center (GIMC) Fire Alarm Upgrade – Construction (Gallup, NM)",
+      "city": "Gallup",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-19",
+      "description": "Federal solicitation 75H70126R00010. Gallup Indian Medical Center (GIMC) Fire Alarm Upgrade – Construction (Gallup, NM). Response deadline 2026-01-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00010",
+          "url": "https://sam.gov/workspace/contract/opp/a25096f8d08d48478cc0468fe795d5c0/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NM"
+    },
+    {
+      "id": "nm-sam-26b86c90918a4e08-gallup-indian-medical-center-gimc-fire-alarm-upgra",
+      "name": "Gallup Indian Medical Center (GIMC) Fire Alarm Upgrade – Construction (Gallup, NM)",
+      "city": "Gallup",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-11",
+      "description": "Federal solicitation 75H70126R00010. Gallup Indian Medical Center (GIMC) Fire Alarm Upgrade – Construction (Gallup, NM). Response deadline 2025-12-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00010",
+          "url": "https://sam.gov/workspace/contract/opp/26b86c90918a4e08b37046607f07ade8/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NM"
+    },
+    {
+      "id": "nm-sam-a1f8b31acb6d4e53-gallup-indian-medical-center-gimc-fire-alarm-upgra",
+      "name": "Gallup Indian Medical Center (GIMC) Fire Alarm Upgrade – Construction (Gallup, NM)",
+      "city": "Gallup",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-13",
+      "description": "Federal solicitation 75H70126R00010. Gallup Indian Medical Center (GIMC) Fire Alarm Upgrade – Construction (Gallup, NM). Response deadline 2025-12-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00010",
+          "url": "https://sam.gov/workspace/contract/opp/a1f8b31acb6d4e53b3cda4c44d019052/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NM"
     }
   ],
   "stats": {
-    "total": 1
+    "total": 27
   }
 }

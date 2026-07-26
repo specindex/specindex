@@ -1,9 +1,9 @@
 {
   "state": "UT",
   "state_name": "Utah",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — state economic development, industry news.",
+  "capture_method": "Public sources — state economic development, industry news, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "ut-ti-lehi-semiconductor-fab",
@@ -42,9 +42,1173 @@
         }
       ],
       "open_for": "Fab construction. Process and MEP specs."
+    },
+    {
+      "id": "ut-sam-8a6afb0e472f468c-escalante-basement-flood-repairs-dixie-national-fo",
+      "name": "Escalante Basement Flood Repairs - Dixie National Forests",
+      "city": "Escalante",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal combined synopsis/solicitation 1240LT26Q0124. Escalante Basement Flood Repairs - Dixie National Forests. Response deadline 2026-08-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1240LT26Q0124",
+          "url": "https://sam.gov/workspace/contract/opp/8a6afb0e472f468c9c576e3122f64007/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "UT"
+    },
+    {
+      "id": "ut-sam-d7f53159fe4042a6-orrin-hatch-u-s-courthouse-led-lighting-upgrade",
+      "name": "Orrin Hatch U.S. Courthouse LED Lighting Upgrade",
+      "city": "Salt Lake City",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "Federal solicitation 47PD5126R0005. Orrin Hatch U.S. Courthouse LED Lighting Upgrade. Response deadline 2026-07-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PD5126R0005",
+          "url": "https://sam.gov/workspace/contract/opp/d7f53159fe4042a6a91d6003ca73d14d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "UT"
+    },
+    {
+      "id": "ut-sam-0ff86b5a75bc4ef3-15340-mezzanine-modular-office",
+      "name": "15340 - Mezzanine & Modular Office",
+      "city": "Hill Air Force Base",
+      "county": "",
+      "status": "bidding",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Federal combined synopsis/solicitation FA8227-26-A-1002. 15340 - Mezzanine & Modular Office. Response deadline 2026-08-03.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1GZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation FA8227-26-A-1002",
+          "url": "https://sam.gov/workspace/contract/opp/0ff86b5a75bc4ef3af29ca665d291b86/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "UT"
+    },
+    {
+      "id": "ut-sam-151b971352cf4bd4-escalante-basement-flood-repairs-dixie-national-fo",
+      "name": "Escalante Basement Flood Repairs - Dixie National Forests",
+      "city": "Escalante",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "Federal combined synopsis/solicitation 1240LT26Q0124. Escalante Basement Flood Repairs - Dixie National Forests. Response deadline 2026-08-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1240LT26Q0124",
+          "url": "https://sam.gov/workspace/contract/opp/151b971352cf4bd4ac9a9fe0309c5a7b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "UT"
+    },
+    {
+      "id": "ut-sam-b1ef3eb1397c43af-orrin-hatch-u-s-courthouse-led-lighting-upgrade",
+      "name": "Orrin Hatch U.S. Courthouse LED Lighting Upgrade",
+      "city": "Salt Lake City",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "Federal solicitation 47PD5126R0005. Orrin Hatch U.S. Courthouse LED Lighting Upgrade. Response deadline 2026-07-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PD5126R0005",
+          "url": "https://sam.gov/workspace/contract/opp/b1ef3eb1397c43afa4ff4359c280357b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "UT"
+    },
+    {
+      "id": "ut-sam-376126073c484aac-draft-solicitation-usace-spk-db-construction-nsa-u",
+      "name": "DRAFT SOLICITATION - USACE SPK DB Construction NSA-U Consolidation Mission Facility - Camp Williams, Utah",
+      "city": "Bluffdale",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "Federal special notice. DRAFT SOLICITATION - USACE SPK DB Construction NSA-U Consolidation Mission Facility - Camp Williams, Utah. Response deadline 2026-08-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice ",
+          "url": "https://sam.gov/workspace/contract/opp/376126073c484aac9701536df37c6485/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "UT"
+    },
+    {
+      "id": "ut-sam-f129607e20264ba9-15340-mezzanine-modular-office",
+      "name": "15340 - Mezzanine & Modular Office",
+      "city": "Hill Air Force Base",
+      "county": "",
+      "status": "bidding",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "Federal combined synopsis/solicitation FA8227-26-A-1002. 15340 - Mezzanine & Modular Office. Response deadline 2026-07-22.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1GZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation FA8227-26-A-1002",
+          "url": "https://sam.gov/workspace/contract/opp/f129607e20264ba9840ccc9572d9daf4/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "UT"
+    },
+    {
+      "id": "ut-sam-30328039dca6459c-15340-mezzanine-modular-office",
+      "name": "15340 - Mezzanine & Modular Office",
+      "city": "Hill Air Force Base",
+      "county": "",
+      "status": "bidding",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-22",
+      "description": "Federal combined synopsis/solicitation FA8227-26-A-1002. 15340 - Mezzanine & Modular Office. Response deadline 2026-07-10.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1GZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation FA8227-26-A-1002",
+          "url": "https://sam.gov/workspace/contract/opp/30328039dca6459cbddfff39ee39be32/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "UT"
+    },
+    {
+      "id": "ut-sam-a8992deb1fb44aca-orrin-hatch-u-s-courthouse-led-lighting-upgrade",
+      "name": "Orrin Hatch U.S. Courthouse LED Lighting Upgrade",
+      "city": "Salt Lake City",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-18",
+      "description": "Federal solicitation 47PD5126R0005. Orrin Hatch U.S. Courthouse LED Lighting Upgrade. Response deadline 2026-07-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PD5126R0005",
+          "url": "https://sam.gov/workspace/contract/opp/a8992deb1fb44acab18b35f10cf3bd91/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "UT"
+    },
+    {
+      "id": "ut-sam-705c6d8e57d74887-15340-mezzanine-modular-office",
+      "name": "15340 - Mezzanine & Modular Office",
+      "city": "Hill Air Force Base",
+      "county": "",
+      "status": "bidding",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-09",
+      "description": "Federal combined synopsis/solicitation FA8227-26-A-1002. 15340 - Mezzanine & Modular Office. Response deadline 2026-06-25.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1GZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation FA8227-26-A-1002",
+          "url": "https://sam.gov/workspace/contract/opp/705c6d8e57d74887acf1a650e42fade9/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "UT"
+    },
+    {
+      "id": "ut-sam-f5e2f08b5863448c-15340-mezzanine-modular-office",
+      "name": "15340 - Mezzanine & Modular Office",
+      "city": "Hill Air Force Base",
+      "county": "",
+      "status": "bidding",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-09",
+      "description": "Federal combined synopsis/solicitation FA8227-26-A-1002. 15340 - Mezzanine & Modular Office. Response deadline 2026-06-22.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1GZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation FA8227-26-A-1002",
+          "url": "https://sam.gov/workspace/contract/opp/f5e2f08b5863448cb7929c36d6c8d9b8/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "UT"
+    },
+    {
+      "id": "ut-sam-a485683f42fc44dd-15340-mezzanine-modular-office",
+      "name": "15340 - Mezzanine & Modular Office",
+      "city": "Hill Air Force Base",
+      "county": "",
+      "status": "bidding",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-05",
+      "description": "Federal combined synopsis/solicitation FA8227-26-A-1002. 15340 - Mezzanine & Modular Office. Response deadline 2026-06-22.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1GZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation FA8227-26-A-1002",
+          "url": "https://sam.gov/workspace/contract/opp/a485683f42fc44ddbd0a191891dcbf9d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "UT"
+    },
+    {
+      "id": "ut-sam-eb5582d94ca14386-15340-mezzanine-modular-office",
+      "name": "15340 - Mezzanine & Modular Office",
+      "city": "Hill Air Force Base",
+      "county": "",
+      "status": "bidding",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "Federal combined synopsis/solicitation FA8227-26-A-1002. 15340 - Mezzanine & Modular Office. Response deadline 2026-06-12.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1GZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation FA8227-26-A-1002",
+          "url": "https://sam.gov/workspace/contract/opp/eb5582d94ca143869b40c79bc882e053/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "UT"
+    },
+    {
+      "id": "ut-sam-8e4accc8b7c04a9c-15340-mezzanine-modular-office",
+      "name": "15340 - Mezzanine & Modular Office",
+      "city": "Hill Air Force Base",
+      "county": "",
+      "status": "bidding",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-29",
+      "description": "Federal combined synopsis/solicitation FA8227-26-A-1002. 15340 - Mezzanine & Modular Office. Response deadline 2026-06-12.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1GZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation FA8227-26-A-1002",
+          "url": "https://sam.gov/workspace/contract/opp/8e4accc8b7c04a9c8662f5e1f53be178/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "UT"
+    },
+    {
+      "id": "ut-sam-7e6aa2a7331d4e82-little-mountain-testing-facility-lmtf-progress-des",
+      "name": "Little Mountain Testing Facility (LMTF) Progress-Design-Build OT",
+      "city": "Hill Air Force Base",
+      "county": "",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-28",
+      "description": "Federal special notice W91238269A001. Little Mountain Testing Facility (LMTF) Progress-Design-Build OT. Response deadline 2026-05-29.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Special Notice",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice W91238269A001",
+          "url": "https://sam.gov/workspace/contract/opp/7e6aa2a7331d4e82ab1331f75d4597ac/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "UT"
+    },
+    {
+      "id": "ut-sam-c26653975e704a6c-15340-mezzanine-modular-office",
+      "name": "15340 - Mezzanine & Modular Office",
+      "city": "Hill Air Force Base",
+      "county": "",
+      "status": "bidding",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-28",
+      "description": "Federal combined synopsis/solicitation FA8227-26-A-1002. 15340 - Mezzanine & Modular Office. Response deadline 2026-06-12.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1GZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation FA8227-26-A-1002",
+          "url": "https://sam.gov/workspace/contract/opp/c26653975e704a6cba66e99163c0063b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "UT"
+    },
+    {
+      "id": "ut-sam-4c332064dab3499c-little-mountain-testing-facility-lmtf-progress-des",
+      "name": "Little Mountain Testing Facility (LMTF) Progress-Design-Build OT",
+      "city": "Hill Air Force Base",
+      "county": "",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-28",
+      "description": "Federal special notice W91238269A001. Little Mountain Testing Facility (LMTF) Progress-Design-Build OT. Response deadline 2026-05-29.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Special Notice",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice W91238269A001",
+          "url": "https://sam.gov/workspace/contract/opp/4c332064dab3499c8e94a5cb9f646d81/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "UT"
+    },
+    {
+      "id": "ut-sam-80ec674005804326-orrin-hatch-u-s-courthouse-led-lighting-upgrade",
+      "name": "Orrin Hatch U.S. Courthouse LED Lighting Upgrade",
+      "city": "Salt Lake City",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-20",
+      "description": "Federal solicitation 47PD5126R0005. Orrin Hatch U.S. Courthouse LED Lighting Upgrade. Response deadline 2026-06-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PD5126R0005",
+          "url": "https://sam.gov/workspace/contract/opp/80ec674005804326a4340b2450b6db93/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "UT"
+    },
+    {
+      "id": "ut-sam-a71da592c34b4c0f-little-mountain-testing-facility-lmtf-progress-des",
+      "name": "Little Mountain Testing Facility (LMTF) Progress-Design-Build OT",
+      "city": "Hill Air Force Base",
+      "county": "",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-16",
+      "description": "Federal special notice W91238269A001. Little Mountain Testing Facility (LMTF) Progress-Design-Build OT. Response deadline 2026-05-29.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Special Notice",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice W91238269A001",
+          "url": "https://sam.gov/workspace/contract/opp/a71da592c34b4c0f917c22aeeccc86f2/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "UT"
+    },
+    {
+      "id": "ut-sam-dbbed91d443645e2-little-mountain-testing-facility-lmtf-progress-des",
+      "name": "Little Mountain Testing Facility (LMTF) Progress-Design-Build OT",
+      "city": "Hill Air Force Base",
+      "county": "",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-15",
+      "description": "Federal special notice W91238269A001. Little Mountain Testing Facility (LMTF) Progress-Design-Build OT. Response deadline 2026-05-29.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Special Notice",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice W91238269A001",
+          "url": "https://sam.gov/workspace/contract/opp/dbbed91d443645e2894971c2f9168352/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "UT"
+    },
+    {
+      "id": "ut-sam-b59fc43a818c4fa6-little-mountain-testing-facility-lmtf-progress-des",
+      "name": "Little Mountain Testing Facility (LMTF) Progress-Design-Build OT",
+      "city": "Hill Air Force Base",
+      "county": "",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-08",
+      "description": "Federal special notice W91238269A001. Little Mountain Testing Facility (LMTF) Progress-Design-Build OT. Response deadline 2026-05-11.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Special Notice",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice W91238269A001",
+          "url": "https://sam.gov/workspace/contract/opp/b59fc43a818c4fa6b87c3c681849c2d2/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "UT"
+    },
+    {
+      "id": "ut-sam-90d79a32c3cc4513-little-mountain-testing-facility-lmtf-progress-des",
+      "name": "Little Mountain Testing Facility (LMTF) Progress-Design-Build OT",
+      "city": "Hill Air Force Base",
+      "county": "",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-05",
+      "description": "Federal special notice W91238269A001. Little Mountain Testing Facility (LMTF) Progress-Design-Build OT. Response deadline 2026-05-11.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Special Notice",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice W91238269A001",
+          "url": "https://sam.gov/workspace/contract/opp/90d79a32c3cc451393681eec069f1427/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "UT"
+    },
+    {
+      "id": "ut-sam-65598a1983ce45c2-little-mountain-testing-facility-lmtf-progress-des",
+      "name": "Little Mountain Testing Facility (LMTF) Progress-Design-Build OT",
+      "city": "Hill Air Force Base",
+      "county": "",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-30",
+      "description": "Federal special notice W91238269A001. Little Mountain Testing Facility (LMTF) Progress-Design-Build OT. Response deadline 2026-05-11.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Special Notice",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice W91238269A001",
+          "url": "https://sam.gov/workspace/contract/opp/65598a1983ce45c297a21da85d47d767/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "UT"
+    },
+    {
+      "id": "ut-sam-68218df96e0440fc-little-mountain-testing-facility-lmtf-progress-des",
+      "name": "Little Mountain Testing Facility (LMTF) Progress-Design-Build OT",
+      "city": "Hill Air Force Base",
+      "county": "",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-30",
+      "description": "Federal special notice W91238269A001. Little Mountain Testing Facility (LMTF) Progress-Design-Build OT. Response deadline 2026-05-11.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Special Notice",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice W91238269A001",
+          "url": "https://sam.gov/workspace/contract/opp/68218df96e0440fca510ad0bfe893a3a/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "UT"
+    },
+    {
+      "id": "ut-sam-76fba140e1a444a2-plating-shop-renovation-industry-day",
+      "name": "Plating Shop Renovation Industry Day",
+      "city": "Layton",
+      "county": "",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-21",
+      "description": "Federal special notice. Plating Shop Renovation Industry Day. Response deadline 2025-10-22.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Special Notice",
+        "Classification code Z2EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice ",
+          "url": "https://sam.gov/workspace/contract/opp/76fba140e1a444a293d6d2add8a424fe/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "UT"
+    },
+    {
+      "id": "ut-sam-30a82e55c580465b-plating-shop-renovation-industry-day",
+      "name": "Plating Shop Renovation Industry Day",
+      "city": "Layton",
+      "county": "",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-10",
+      "description": "Federal special notice. Plating Shop Renovation Industry Day. Response deadline 2025-10-22.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Special Notice",
+        "Classification code Z2EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice ",
+          "url": "https://sam.gov/workspace/contract/opp/30a82e55c580465bb5fb6b01d3656042/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "UT"
+    },
+    {
+      "id": "ut-sam-c1faaaf9b2804b3f-plating-shop-renovation-industry-day",
+      "name": "Plating Shop Renovation Industry Day",
+      "city": "Layton",
+      "county": "",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-07",
+      "description": "Federal special notice. Plating Shop Renovation Industry Day. Response deadline 2025-10-22.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Special Notice",
+        "Classification code Z2EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice ",
+          "url": "https://sam.gov/workspace/contract/opp/c1faaaf9b2804b3f9cc79ba18ad33446/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "UT"
+    },
+    {
+      "id": "ut-sam-46fdf371dfcb4bf8-plating-shop-renovation-industry-day",
+      "name": "Plating Shop Renovation Industry Day",
+      "city": "Layton",
+      "county": "",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-03",
+      "description": "Federal special notice. Plating Shop Renovation Industry Day. Response deadline 2025-10-22.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Special Notice",
+        "Classification code Z2EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice ",
+          "url": "https://sam.gov/workspace/contract/opp/46fdf371dfcb4bf89b23ffa6ef8349bb/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "UT"
+    },
+    {
+      "id": "ut-sam-c3407c8f15db4cec-plating-shop-renovation-industry-day",
+      "name": "Plating Shop Renovation Industry Day",
+      "city": "Layton",
+      "county": "",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-02",
+      "description": "Federal special notice. Plating Shop Renovation Industry Day. Response deadline 2025-10-22.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Special Notice",
+        "Classification code Z2EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice ",
+          "url": "https://sam.gov/workspace/contract/opp/c3407c8f15db4cec8bd44efbee62304b/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "UT"
+    },
+    {
+      "id": "ut-sam-05d28b3caf3f6c20-cmc-services-for-irs-service-center-limited-scope-",
+      "name": "CMc Services for IRS Service Center Limited Scope Modernization",
+      "city": "OGDEN",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-06-24",
+      "description": "Federal presolicitation GSA47PJ0019Rxxxx_IRS. CMc Services for IRS Service Center Limited Scope Modernization. Response deadline 2019-06-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation GSA47PJ0019Rxxxx_IRS",
+          "url": "https://sam.gov/workspace/contract/opp/05d28b3caf3f6c20e23204aba3977d79/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "UT"
     }
   ],
   "stats": {
-    "total": 1
+    "total": 31
   }
 }

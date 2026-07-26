@@ -1,9 +1,9 @@
 {
   "state": "MA",
   "state_name": "Massachusetts",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — REBusinessOnline, local industrial news.",
+  "capture_method": "Public sources — REBusinessOnline, local industrial news, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "ma-arco-northbridge-billerica",
@@ -81,9 +81,2291 @@
         }
       ],
       "open_for": "Near completion. Final systems and commissioning specs."
+    },
+    {
+      "id": "ma-sam-066129dd3f314dc7-w50s8126ra010",
+      "name": "W50S8126RA010",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "Federal solicitation W50S8126RA010. W50S8126RA010. Response deadline 2026-08-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8126RA010",
+          "url": "https://sam.gov/workspace/contract/opp/066129dd3f314dc79f27e6f58c005b9f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-7e85f8bf72b24b75-design-bid-build-construction-of-a-collective-enli",
+      "name": "Design Bid Build Construction of a Collective Enlisted Training Barracks at Devens RFTA, MA",
+      "city": "Devens",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal solicitation W912QR26RA051. Design Bid Build Construction of a Collective Enlisted Training Barracks at Devens RFTA, MA. Response deadline 2026-08-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA051",
+          "url": "https://sam.gov/workspace/contract/opp/7e85f8bf72b24b75967e6399090d5ca8/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-880829c9ff2645ff-y-rehabilitate-buildings-at-boston-national-histor",
+      "name": "Y--Rehabilitate Buildings at Boston National Historic",
+      "city": "Boston",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Interior, Department Of The",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Federal solicitation 140P4326R0021. Y--Rehabilitate Buildings at Boston National Historic. Response deadline 2026-08-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 140P4326R0021",
+          "url": "https://sam.gov/workspace/contract/opp/880829c9ff2645ffad3ad2eb655f425b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-efe13f861c954f38-building-623-drop-ceiling-grid-system-replacement-",
+      "name": "Building 623 Drop Ceiling Grid System Replacement - Devens, MA",
+      "city": "Devens",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Federal solicitation W15QKN-26-Q-A141. Building 623 Drop Ceiling Grid System Replacement - Devens, MA. Response deadline 2026-08-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Z1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W15QKN-26-Q-A141",
+          "url": "https://sam.gov/workspace/contract/opp/efe13f861c954f3880fcedcebc5232ce/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-fd4d2bd7bc4c4ff9-w50s8126ra010",
+      "name": "W50S8126RA010",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Federal solicitation W50S8126RA010. W50S8126RA010. Response deadline 2026-07-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8126RA010",
+          "url": "https://sam.gov/workspace/contract/opp/fd4d2bd7bc4c4ff99e8c2ab4ab4ba89a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-c36721a76ba74bf9-design-bid-build-construction-of-a-collective-enli",
+      "name": "Design Bid Build Construction of a Collective Enlisted Training Barracks at Devens RFTA, MA",
+      "city": "Devens",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Federal solicitation W912QR26RA051. Design Bid Build Construction of a Collective Enlisted Training Barracks at Devens RFTA, MA. Response deadline 2026-08-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA051",
+          "url": "https://sam.gov/workspace/contract/opp/c36721a76ba74bf9a9d2ec128437c6b9/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-bb79cf8b7c6f422c-saber-idiq-westover-air-reserve-base",
+      "name": "SABER IDIQ Westover Air Reserve Base",
+      "city": "Chicopee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Federal solicitation FA6606-26-R-0008. SABER IDIQ Westover Air Reserve Base. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA6606-26-R-0008",
+          "url": "https://sam.gov/workspace/contract/opp/bb79cf8b7c6f422c9e8cd8f591bdc983/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-ce8597efa7644720-renovate-squad-ops-bldg-25-project-axqd232620",
+      "name": "Renovate Squad Ops (Bldg 25), Project AXQD232620",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "Federal solicitation W50S8126RA010. Renovate Squad Ops (Bldg 25), Project AXQD232620. Response deadline 2026-07-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8126RA010",
+          "url": "https://sam.gov/workspace/contract/opp/ce8597efa76447209ad12af85ec8857d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-fba6a7d52f0d4289-construction-services-for-the-construction-of-the-",
+      "name": "Construction Services for the Construction of the New Project Office at East Brimfield Dam in Fiskdale, Massachusetts",
+      "city": "Fiskdale",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "Federal presolicitation W912WJ26BA017. Construction Services for the Construction of the New Project Office at East Brimfield Dam in Fiskdale, Massachusetts.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912WJ26BA017",
+          "url": "https://sam.gov/workspace/contract/opp/fba6a7d52f0d4289b19572af30fe48f2/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-3d9995a1bc5447f5-design-bid-build-construction-of-a-collective-enli",
+      "name": "Design Bid Build Construction of a Collective Enlisted Training Barracks at Devens RFTA, MA",
+      "city": "Devens",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Federal solicitation W912QR26RA051. Design Bid Build Construction of a Collective Enlisted Training Barracks at Devens RFTA, MA. Response deadline 2026-07-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA051",
+          "url": "https://sam.gov/workspace/contract/opp/3d9995a1bc5447f5a25705f057be77dc/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-a2a5ca1782284b22-renovate-squad-ops-bldg-25-project-axqd232620",
+      "name": "Renovate Squad Ops (Bldg 25), Project AXQD232620",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Federal solicitation W50S8126RA010. Renovate Squad Ops (Bldg 25), Project AXQD232620. Response deadline 2026-07-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8126RA010",
+          "url": "https://sam.gov/workspace/contract/opp/a2a5ca1782284b22b1875b701b5c09a1/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-5165ff3a2e9143c1-construction-of-fire-station-and-air-passenger-ter",
+      "name": "Construction of Fire Station and Air Passenger Terminal (APT), Demolish Building 1721 at Hanscom AFB (HAFB), MA.",
+      "city": "Hanscom AFB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Federal special notice W912WJ26BA011. Construction of Fire Station and Air Passenger Terminal (APT), Demolish Building 1721 at Hanscom AFB (HAFB), MA. Response deadline 2026-07-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Classification code Y1QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice W912WJ26BA011",
+          "url": "https://sam.gov/workspace/contract/opp/5165ff3a2e9143c1b957c13cc290872f/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-afc63ce15b564e1f-y1da-518-22-700-ehrm-infrastructure-upgrades-const",
+      "name": "Y1DA--518-22-700 EHRM Infrastructure Upgrades Construction Bedford VAMC",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Sawtooth Construction Jv Ii Llc Chicago Il 60656 Usa",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "Federal award notice 36C77626C0067. Y1DA--518-22-700 EHRM Infrastructure Upgrades Construction Bedford VAMC.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice 36C77626C0067",
+          "url": "https://sam.gov/workspace/contract/opp/afc63ce15b564e1f9170beb922690f94/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-169abbe235394bd5-vinyl-floor-tile-replacement-bldg-623-fort-devens-",
+      "name": "Vinyl Floor Tile Replacement Bldg 623 Fort Devens MA",
+      "city": "Devens",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "Federal solicitation W15QKN26QA134. Vinyl Floor Tile Replacement Bldg 623 Fort Devens MA. Response deadline 2026-07-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W15QKN26QA134",
+          "url": "https://sam.gov/workspace/contract/opp/169abbe235394bd5aeb7128de61d48e6/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-af9524d81dcf4a2a-vinyl-floor-tile-replacement-bldg-623-fort-devens-",
+      "name": "Vinyl Floor Tile Replacement Bldg 623 Fort Devens MA",
+      "city": "Devens",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "Federal solicitation W15QKN26QA134. Vinyl Floor Tile Replacement Bldg 623 Fort Devens MA. Response deadline 2026-07-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W15QKN26QA134",
+          "url": "https://sam.gov/workspace/contract/opp/af9524d81dcf4a2a8558c9eb3bdfd448/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-3bb434eadb1f4f87-construction-of-fire-station-and-air-passenger-ter",
+      "name": "Construction of Fire Station and Air Passenger Terminal (APT), Demolish Building 1721 at Hanscom AFB (HAFB), MA.",
+      "city": "Hanscom AFB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-02",
+      "description": "Federal special notice W912WJ26BA011. Construction of Fire Station and Air Passenger Terminal (APT), Demolish Building 1721 at Hanscom AFB (HAFB), MA. Response deadline 2026-07-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Classification code Y1QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice W912WJ26BA011",
+          "url": "https://sam.gov/workspace/contract/opp/3bb434eadb1f4f87ad7ffc36fe842354/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-c4aad9c3ecf74ac3-design-bid-build-construction-of-a-collective-enli",
+      "name": "Design Bid Build Construction of a Collective Enlisted Training Barracks at Devens RFTA, MA",
+      "city": "Devens",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Federal solicitation W912QR26RA051. Design Bid Build Construction of a Collective Enlisted Training Barracks at Devens RFTA, MA. Response deadline 2026-07-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA051",
+          "url": "https://sam.gov/workspace/contract/opp/c4aad9c3ecf74ac39e044b13a5ecfe30/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-82bedfd6faf24d02-design-bid-build-construction-of-a-collective-enli",
+      "name": "Design Bid Build Construction of a Collective Enlisted Training Barracks at Devens RFTA, MA",
+      "city": "Devens",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Federal solicitation W912QR26RA051. Design Bid Build Construction of a Collective Enlisted Training Barracks at Devens RFTA, MA. Response deadline 2026-07-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA051",
+          "url": "https://sam.gov/workspace/contract/opp/82bedfd6faf24d02acab9ec585cb7e31/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-20de1f37edd148c8-saber-idiq-westover-air-reserve-base",
+      "name": "SABER IDIQ Westover Air Reserve Base",
+      "city": "Chicopee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Federal solicitation FA6606-26-R-0008. SABER IDIQ Westover Air Reserve Base. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA6606-26-R-0008",
+          "url": "https://sam.gov/workspace/contract/opp/20de1f37edd148c8b536790ac3c0bdea/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-95ba06ba4929449b-renovate-squad-ops-bldg-25-project-axqd232620",
+      "name": "Renovate Squad Ops (Bldg 25), Project AXQD232620",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-26",
+      "description": "Federal solicitation W50S8126RA010. Renovate Squad Ops (Bldg 25), Project AXQD232620. Response deadline 2026-07-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8126RA010",
+          "url": "https://sam.gov/workspace/contract/opp/95ba06ba4929449bba1635e4df034e15/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-2a0ac2c4471f4ccf-vinyl-floor-tile-replacement-bldg-623-fort-devens-",
+      "name": "Vinyl Floor Tile Replacement Bldg 623 Fort Devens MA",
+      "city": "Devens",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-25",
+      "description": "Federal solicitation W15QKN26QA134. Vinyl Floor Tile Replacement Bldg 623 Fort Devens MA. Response deadline 2026-07-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W15QKN26QA134",
+          "url": "https://sam.gov/workspace/contract/opp/2a0ac2c4471f4ccf80d314165df0f4b5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-a513ebea225b4104-saber-idiq-westover-air-reserve-base",
+      "name": "SABER IDIQ Westover Air Reserve Base",
+      "city": "Chicopee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-25",
+      "description": "Federal solicitation FA6606-26-R-0008. SABER IDIQ Westover Air Reserve Base. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA6606-26-R-0008",
+          "url": "https://sam.gov/workspace/contract/opp/a513ebea225b410483a16621df0c85ed/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-0a01ad1910214576-y-rehabilitate-buildings-at-boston-national-histor",
+      "name": "Y--Rehabilitate Buildings at Boston National Historic",
+      "city": "Boston",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Interior, Department Of The",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-23",
+      "description": "Federal solicitation 140P4326R0021. Y--Rehabilitate Buildings at Boston National Historic. Response deadline 2026-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 140P4326R0021",
+          "url": "https://sam.gov/workspace/contract/opp/0a01ad1910214576bb967220ae2b7ed3/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-6f10ed8c0165478e-renovate-squad-ops-bldg-25-project-axqd232620",
+      "name": "Renovate Squad Ops (Bldg 25), Project AXQD232620",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-17",
+      "description": "Federal solicitation W50S8126RA010. Renovate Squad Ops (Bldg 25), Project AXQD232620. Response deadline 2026-07-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8126RA010",
+          "url": "https://sam.gov/workspace/contract/opp/6f10ed8c0165478eab7cab0abbeb6fd7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-2fddc00d56ce469b-y-rehabilitate-buildings-at-boston-national-histor",
+      "name": "Y--Rehabilitate Buildings at Boston National Historic",
+      "city": "Boston",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Interior, Department Of The",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-16",
+      "description": "Federal solicitation 140P4326R0021. Y--Rehabilitate Buildings at Boston National Historic. Response deadline 2026-06-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 140P4326R0021",
+          "url": "https://sam.gov/workspace/contract/opp/2fddc00d56ce469bbd36348ae82d0508/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-f2f8bbf704a74f74-design-bid-build-construction-of-a-collective-enli",
+      "name": "Design Bid Build Construction of a Collective Enlisted Training Barracks at Devens RFTA, MA",
+      "city": "Devens",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-11",
+      "description": "Federal solicitation W912QR26RA051. Design Bid Build Construction of a Collective Enlisted Training Barracks at Devens RFTA, MA. Response deadline 2026-07-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA051",
+          "url": "https://sam.gov/workspace/contract/opp/f2f8bbf704a74f7497cdfcb9bbced043/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-b62d09bf683a4a21-design-bid-build-construction-of-a-collective-enli",
+      "name": "Design Bid Build Construction of a Collective Enlisted Training Barracks at Devens RFTA, MA",
+      "city": "Devens",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-11",
+      "description": "Federal solicitation W912QR26RA051. Design Bid Build Construction of a Collective Enlisted Training Barracks at Devens RFTA, MA. Response deadline 2026-07-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA051",
+          "url": "https://sam.gov/workspace/contract/opp/b62d09bf683a4a218a89d7b1c1df6ac0/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-4b30aeaaf4a0443e-saber-idiq-westover-air-reserve-base",
+      "name": "SABER IDIQ Westover Air Reserve Base",
+      "city": "Chicopee",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-10",
+      "description": "Federal presolicitation FA6606-26-R-0008. SABER IDIQ Westover Air Reserve Base.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "8a Competed",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation FA6606-26-R-0008",
+          "url": "https://sam.gov/workspace/contract/opp/4b30aeaaf4a0443e8ccb7b3c8899af00/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-b4881e4a86a5452f-y-rehabilitate-buildings-at-boston-national-histor",
+      "name": "Y--Rehabilitate Buildings at Boston National Historic",
+      "city": "Boston",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Interior, Department Of The",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-09",
+      "description": "Federal solicitation 140P4326R0021. Y--Rehabilitate Buildings at Boston National Historic. Response deadline 2026-06-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 140P4326R0021",
+          "url": "https://sam.gov/workspace/contract/opp/b4881e4a86a5452fa51c5ae15ebbf965/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-7ffc9c9b3d1840b1-design-bid-build-construction-of-a-collective-enli",
+      "name": "Design Bid Build Construction of a Collective Enlisted Training Barracks at Devens RFTA, MA",
+      "city": "Devens",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-04",
+      "description": "Federal solicitation W912QR26RA051. Design Bid Build Construction of a Collective Enlisted Training Barracks at Devens RFTA, MA. Response deadline 2026-06-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA051",
+          "url": "https://sam.gov/workspace/contract/opp/7ffc9c9b3d1840b1a31ea7f9f4ab5495/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-3cee2fc58e1d4566-631-26-010-abate-and-upgrade-building-1-common-are",
+      "name": "631-26-010 Abate and Upgrade Building 1 Common Area",
+      "city": "Leeds",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-02",
+      "description": "Federal solicitation 36C24126Q0357. 631-26-010 Abate and Upgrade Building 1 Common Area. Response deadline 2026-06-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24126Q0357",
+          "url": "https://sam.gov/workspace/contract/opp/3cee2fc58e1d45669a1140468540771f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-a57874b2538143c6-rehabilitate-buildings-at-boston-national-historic",
+      "name": "Rehabilitate Buildings at Boston National Historic",
+      "city": "Boston",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Interior, Department Of The",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-29",
+      "description": "Federal solicitation 140P4326R0021. Rehabilitate Buildings at Boston National Historic. Response deadline 2026-06-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 140P4326R0021",
+          "url": "https://sam.gov/workspace/contract/opp/a57874b2538143c6ad2e7d002dcaf798/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-ab403fc29de442d9-631-26-010-abate-and-upgrade-building-1-common-are",
+      "name": "631-26-010 Abate and Upgrade Building 1 Common Area",
+      "city": "Leeds",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-28",
+      "description": "Federal solicitation 36C24126Q0357. 631-26-010 Abate and Upgrade Building 1 Common Area. Response deadline 2026-06-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24126Q0357",
+          "url": "https://sam.gov/workspace/contract/opp/ab403fc29de442d98a66be04206c7a3d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-8cd80528bfe04333-construction-services-for-the-construction-of-the-",
+      "name": "Construction Services for the Construction of the New Project Office at East Brimfield Dam in Fiskdale, Massachusetts",
+      "city": "Fiskdale",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-07",
+      "description": "Federal presolicitation W912WJ26BA017. Construction Services for the Construction of the New Project Office at East Brimfield Dam in Fiskdale, Massachusetts.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912WJ26BA017",
+          "url": "https://sam.gov/workspace/contract/opp/8cd80528bfe04333b1cd6753aeae9344/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-e1b895c9e7334fb6-631-26-010-abate-and-upgrade-building-1-common-are",
+      "name": "631-26-010 Abate and Upgrade Building 1 Common Area",
+      "city": "Leeds",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-06",
+      "description": "Federal solicitation 36C24126Q0357. 631-26-010 Abate and Upgrade Building 1 Common Area. Response deadline 2026-06-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24126Q0357",
+          "url": "https://sam.gov/workspace/contract/opp/e1b895c9e7334fb6bf8006e1eda6fe65/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-4e3de98ea6364bcb-631-19-002-upgrade-steam-distribution-system-phase",
+      "name": "631-19-002 Upgrade Steam Distribution System Phase 2 Industry Day",
+      "city": "Leeds",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-01",
+      "description": "Federal special notice 36C24126Q0472_IndustryDay. 631-19-002 Upgrade Steam Distribution System Phase 2 Industry Day. Response deadline 2026-05-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "No Set aside used",
+        "Classification code Z2NZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice 36C24126Q0472_IndustryDay",
+          "url": "https://sam.gov/workspace/contract/opp/4e3de98ea6364bcb84472043b6c97587/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-e645fd8c8f3c440f-631-26-010-abate-and-upgrade-building-1-common-are",
+      "name": "631-26-010 Abate and Upgrade Building 1 Common Area",
+      "city": "Leeds",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-24",
+      "description": "Federal solicitation 36C24126Q0357. 631-26-010 Abate and Upgrade Building 1 Common Area. Response deadline 2026-05-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24126Q0357",
+          "url": "https://sam.gov/workspace/contract/opp/e645fd8c8f3c440fbfb60c80d28a5914/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-61270dcaed114911-631-26-010-abate-and-upgrade-building-1-common-are",
+      "name": "631-26-010 Abate and Upgrade Building 1 Common Area",
+      "city": "Leeds",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-16",
+      "description": "Federal solicitation 36C24126Q0357. 631-26-010 Abate and Upgrade Building 1 Common Area. Response deadline 2026-05-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24126Q0357",
+          "url": "https://sam.gov/workspace/contract/opp/61270dcaed114911abeb976bc275a77a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-21dd481362824e8c-z2da-523a5-18-371-building-4-elevator-replacement-",
+      "name": "Z2DA--523A5-18-371 Building 4 Elevator Replacement (Brockton)",
+      "city": "Brockton",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-04-09",
+      "description": "Federal solicitation 36C24126Q0250. Z2DA--523A5-18-371 Building 4 Elevator Replacement (Brockton). Response deadline 2026-04-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24126Q0250",
+          "url": "https://sam.gov/workspace/contract/opp/21dd481362824e8ca29ea8a25bda2840/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-8fc657e3303a4945-y1dz-523a4-20-208-replace-boilers-and-upgrade-cont",
+      "name": "Y1DZ--523A4-20-208 Replace Boilers and Upgrade Controls",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-02",
+      "description": "Federal solicitation 36C24125R0077Solicitation. Y1DZ--523A4-20-208 Replace Boilers and Upgrade Controls. Response deadline 2026-04-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24125R0077Solicitation",
+          "url": "https://sam.gov/workspace/contract/opp/8fc657e3303a49458ecda2f4584efd0e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-caca4dcd5f284649-z2da-523a5-18-371-building-4-elevator-replacement-",
+      "name": "Z2DA--523A5-18-371 Building 4 Elevator Replacement (Brockton)",
+      "city": "Brockton",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-03-27",
+      "description": "Federal solicitation 36C24126Q0250. Z2DA--523A5-18-371 Building 4 Elevator Replacement (Brockton). Response deadline 2026-04-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24126Q0250",
+          "url": "https://sam.gov/workspace/contract/opp/caca4dcd5f2846499b47e5964b44d2aa/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-2ea6cbead0bf475d-y1dz-523a4-20-208-replace-boilers-and-upgrade-cont",
+      "name": "Y1DZ--523A4-20-208 Replace Boilers and Upgrade Controls",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-18",
+      "description": "Federal solicitation 36C24125R0077Solicitation. Y1DZ--523A4-20-208 Replace Boilers and Upgrade Controls. Response deadline 2026-04-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24125R0077Solicitation",
+          "url": "https://sam.gov/workspace/contract/opp/2ea6cbead0bf475d9de6c578a89cc40b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-159f37bcb7bf4c9b-z2da-523a5-18-371-building-4-elevator-replacement-",
+      "name": "Z2DA--523A5-18-371 Building 4 Elevator Replacement (Brockton)",
+      "city": "Brockton",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-02-26",
+      "description": "Federal solicitation 36C24126Q0250. Z2DA--523A5-18-371 Building 4 Elevator Replacement (Brockton). Response deadline 2026-04-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24126Q0250",
+          "url": "https://sam.gov/workspace/contract/opp/159f37bcb7bf4c9b9541c1571d27b653/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-afe4064183524d78-z2da-523a5-18-371-building-4-elevator-replacement-",
+      "name": "Z2DA--523A5-18-371 Building 4 Elevator Replacement (Brockton)",
+      "city": "Brockton",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-02-23",
+      "description": "Federal solicitation 36C24126Q0250. Z2DA--523A5-18-371 Building 4 Elevator Replacement (Brockton). Response deadline 2026-04-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24126Q0250",
+          "url": "https://sam.gov/workspace/contract/opp/afe4064183524d78ad9a4a1afd7fb201/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-dc70a766bc9443d5-y1dz-523a4-20-208-replace-boilers-and-upgrade-cont",
+      "name": "Y1DZ--523A4-20-208 Replace Boilers and Upgrade Controls",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-23",
+      "description": "Federal solicitation 36C24125R0077Solicitation. Y1DZ--523A4-20-208 Replace Boilers and Upgrade Controls. Response deadline 2026-04-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24125R0077Solicitation",
+          "url": "https://sam.gov/workspace/contract/opp/dc70a766bc9443d5ba25fe6d39d803b1/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-70b63d63a42643b1-y1dz-523a4-20-208-replace-boilers-and-upgrade-cont",
+      "name": "Y1DZ--523A4-20-208 Replace Boilers and Upgrade Controls",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-21",
+      "description": "Federal solicitation 36C24125R0077Solicitation. Y1DZ--523A4-20-208 Replace Boilers and Upgrade Controls. Response deadline 2026-03-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24125R0077Solicitation",
+          "url": "https://sam.gov/workspace/contract/opp/70b63d63a42643b198a78337b8a7caef/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-51f035d819494ad1-y1dz-523a4-20-208-replace-boilers-and-upgrade-cont",
+      "name": "Y1DZ--523A4-20-208 Replace Boilers and Upgrade Controls",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-14",
+      "description": "Federal solicitation 36C24125R0077Solicitation. Y1DZ--523A4-20-208 Replace Boilers and Upgrade Controls. Response deadline 2026-03-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24125R0077Solicitation",
+          "url": "https://sam.gov/workspace/contract/opp/51f035d819494ad1a293ab058f91cc06/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-9668500d60dd45d7-y1dz-523a4-20-208-replace-boilers-and-upgrade-cont",
+      "name": "Y1DZ--523A4-20-208 Replace Boilers and Upgrade Controls",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-18",
+      "description": "Federal solicitation 36C24125R0077Solicitation. Y1DZ--523A4-20-208 Replace Boilers and Upgrade Controls. Response deadline 2026-02-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24125R0077Solicitation",
+          "url": "https://sam.gov/workspace/contract/opp/9668500d60dd45d795faa57e10742045/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-85a319cc9ea44184-repair-of-the-squadron-operations-facility-buildin",
+      "name": "Repair of the Squadron Operations Facility, Building 7087, at Westover Air Reserve Base",
+      "city": "Chicopee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-16",
+      "description": "Federal solicitation W912QR26BA001. Repair of the Squadron Operations Facility, Building 7087, at Westover Air Reserve Base. Response deadline 2025-12-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA001",
+          "url": "https://sam.gov/workspace/contract/opp/85a319cc9ea44184a50901f8a5f9c27d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-07175d82e3a64ebd-repair-of-the-squadron-operations-facility-buildin",
+      "name": "Repair of the Squadron Operations Facility, Building 7087, at Westover Air Reserve Base",
+      "city": "Chicopee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-05",
+      "description": "Federal solicitation W912QR26BA001. Repair of the Squadron Operations Facility, Building 7087, at Westover Air Reserve Base. Response deadline 2025-12-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA001",
+          "url": "https://sam.gov/workspace/contract/opp/07175d82e3a64ebdbe004ff6f8cfb163/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-98121ded8718450e-repair-of-the-squadron-operations-facility-buildin",
+      "name": "Repair of the Squadron Operations Facility, Building 7087, at Westover Air Reserve Base",
+      "city": "Chicopee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-05",
+      "description": "Federal solicitation W912QR26BA001. Repair of the Squadron Operations Facility, Building 7087, at Westover Air Reserve Base. Response deadline 2025-12-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA001",
+          "url": "https://sam.gov/workspace/contract/opp/98121ded8718450e886dd9d30c627a5f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-da94c2745542459f-repair-of-the-squadron-operations-facility-buildin",
+      "name": "Repair of the Squadron Operations Facility, Building 7087, at Westover Air Reserve Base",
+      "city": "Chicopee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-17",
+      "description": "Federal solicitation W912QR26BA001. Repair of the Squadron Operations Facility, Building 7087, at Westover Air Reserve Base. Response deadline 2025-12-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA001",
+          "url": "https://sam.gov/workspace/contract/opp/da94c2745542459fa3cca298ef48c4fb/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-f0b9279aa213408e-repair-of-the-squadron-operations-facility-buildin",
+      "name": "Repair of the Squadron Operations Facility, Building 7087, at Westover Air Reserve Base",
+      "city": "Chicopee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-30",
+      "description": "Federal solicitation W912QR26BA001. Repair of the Squadron Operations Facility, Building 7087, at Westover Air Reserve Base. Response deadline 2025-12-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA001",
+          "url": "https://sam.gov/workspace/contract/opp/f0b9279aa213408ea2d0f58c4c4cac3c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-bbe6be6bef58476c-repair-of-the-squadron-operations-facility-buildin",
+      "name": "Repair of the Squadron Operations Facility, Building 7087, at Westover Air Reserve Base",
+      "city": "Chicopee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-30",
+      "description": "Federal solicitation W912QR26BA001. Repair of the Squadron Operations Facility, Building 7087, at Westover Air Reserve Base. Response deadline 2025-12-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA001",
+          "url": "https://sam.gov/workspace/contract/opp/bbe6be6bef58476cae41f4f17295c41a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-c3e268e8ffd74b10-repair-of-the-squadron-operations-facility-buildin",
+      "name": "Repair of the Squadron Operations Facility, Building 7087, at Westover Air Reserve Base",
+      "city": "Chicopee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-30",
+      "description": "Federal solicitation W912QR26BA001. Repair of the Squadron Operations Facility, Building 7087, at Westover Air Reserve Base. Response deadline 2025-12-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA001",
+          "url": "https://sam.gov/workspace/contract/opp/c3e268e8ffd74b10b6fb2a6568a2fcb3/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-f76e2ed9d91f4b45-repair-of-the-squadron-operations-facility-buildin",
+      "name": "Repair of the Squadron Operations Facility, Building 7087, at Westover Air Reserve Base",
+      "city": "Chicopee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-14",
+      "description": "Federal solicitation W912QR26BA001. Repair of the Squadron Operations Facility, Building 7087, at Westover Air Reserve Base. Response deadline 2025-11-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA001",
+          "url": "https://sam.gov/workspace/contract/opp/f76e2ed9d91f4b45830ba290d341b73c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-b3b95c2bd1414ac9-repair-of-the-squadron-operations-facility-buildin",
+      "name": "Repair of the Squadron Operations Facility, Building 7087, at Westover Air Reserve Base",
+      "city": "Chicopee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-09",
+      "description": "Federal solicitation W912QR26BA001. Repair of the Squadron Operations Facility, Building 7087, at Westover Air Reserve Base. Response deadline 2025-11-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26BA001",
+          "url": "https://sam.gov/workspace/contract/opp/b3b95c2bd1414ac9a57241b92f5d21d9/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-1493666a0c8bbaf9-industry-day-for-mit-lincoln-laboratory",
+      "name": "Industry Day for MIT Lincoln Laboratory",
+      "city": "LEXINGTON",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2018-11-29",
+      "description": "Federal special notice W912WJ19X0001. Industry Day for MIT Lincoln Laboratory. Response deadline 2018-12-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice W912WJ19X0001",
+          "url": "https://sam.gov/workspace/contract/opp/1493666a0c8bbaf96f2c68f1ecde9359/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MA"
+    },
+    {
+      "id": "ma-sam-a3efc28c83209c9c-industry-day-for-mit-lincoln-laboratory",
+      "name": "Industry Day for MIT Lincoln Laboratory",
+      "city": "LEXINGTON",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2018-11-28",
+      "description": "Federal special notice W912WJ19X0001. Industry Day for MIT Lincoln Laboratory. Response deadline 2018-12-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice W912WJ19X0001",
+          "url": "https://sam.gov/workspace/contract/opp/a3efc28c83209c9cca6155e02d10fee1/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MA"
     }
   ],
   "stats": {
-    "total": 2
+    "total": 61
   }
 }

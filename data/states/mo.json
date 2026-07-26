@@ -1,9 +1,9 @@
 {
   "state": "MO",
   "state_name": "Missouri",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — REBusinessOnline, local news.",
+  "capture_method": "Public sources — REBusinessOnline, local news, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "mo-meta-kansas-city-data-center",
@@ -41,9 +41,1237 @@
         }
       ],
       "open_for": "Early stage. Monitor permit filings."
+    },
+    {
+      "id": "mo-sam-6565e6f61b274389-657-26-105-upgrade-interior-physical-security",
+      "name": "657-26-105, Upgrade Interior Physical Security",
+      "city": "Saint Louis",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Dominguez & Persons, Llc Pensacola Fl 32504 Usa",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal award notice 36C25526C0041. 657-26-105, Upgrade Interior Physical Security.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "SDVOSB Sole Source",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice 36C25526C0041",
+          "url": "https://sam.gov/workspace/contract/opp/6565e6f61b274389bcaaddb703dbb5f3/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-49ac0536e0ba41d7-va-stlhcs-jc-northeast-parking-structure-sources-s",
+      "name": "VA STLHCS-JC Northeast Parking Structure Sources Sought",
+      "city": "Saint Louis",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Federal sources sought VASTLHCS-JC-NEPS. VA STLHCS-JC Northeast Parking Structure Sources Sought. Response deadline 2026-07-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Y1LZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought VASTLHCS-JC-NEPS",
+          "url": "https://sam.gov/workspace/contract/opp/49ac0536e0ba41d7ad5d8d736e663f55/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-d2649921a75642de-ltuy202005-construct-vehicle-operations-covered-pa",
+      "name": "LTUY202005 Construct Vehicle Operations Covered Parking",
+      "city": "Saint Louis",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Federal combined synopsis/solicitation W50S8K26QA002. LTUY202005 Construct Vehicle Operations Covered Parking. Response deadline 2026-08-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1PZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W50S8K26QA002",
+          "url": "https://sam.gov/workspace/contract/opp/d2649921a75642de9ce0614ed0462214/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-a6f7e783ab654aa8-ltuy202005-construct-vehicle-operations-covered-pa",
+      "name": "LTUY202005 Construct Vehicle Operations Covered Parking",
+      "city": "Saint Louis",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "Federal combined synopsis/solicitation W50S8K26QA002. LTUY202005 Construct Vehicle Operations Covered Parking. Response deadline 2026-07-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1PZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W50S8K26QA002",
+          "url": "https://sam.gov/workspace/contract/opp/a6f7e783ab654aa8bcdcd25d11aeda88/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-ea423bc01ea34986-ict-swing-space-and-utility-relocation",
+      "name": "ICT Swing Space and Utility Relocation",
+      "city": "Saint Louis",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "Guarantee Interiors, Inc. Saint Louis Mo 63103 Usa",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "Federal award notice W912DQ26CA037. ICT Swing Space and Utility Relocation.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice W912DQ26CA037",
+          "url": "https://sam.gov/workspace/contract/opp/ea423bc01ea34986acae83adbe8634ac/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-16485923673c4234-ltuy232044-repair-buildings-1-28-and-36-windows",
+      "name": "LTUY232044 Repair Buildings 1, 28, and 36 Windows",
+      "city": "Saint Louis",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "Federal presolicitation W50S8K26QA004. LTUY232044 Repair Buildings 1, 28, and 36 Windows.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W50S8K26QA004",
+          "url": "https://sam.gov/workspace/contract/opp/16485923673c4234b5a38dfd36d6356c/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-6d3b97de3a184387-project-labor-market-survey-for-solicitation-w912d",
+      "name": "PROJECT LABOR MARKET SURVEY for SOLICITATION # W912DQ26RA060 REPLACE BED TOWER, CLINICAL EXPANSION, AND PARKING GARAGE, ",
+      "city": "Saint Louis",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Federal sources sought W912DQ26RA060. PROJECT LABOR MARKET SURVEY for SOLICITATION # W912DQ26RA060 REPLACE BED TOWER, CLINICAL EXPANSION, AND PARKING GARAGE, JOHN COCHRAN DIVISION, ST. LOUIS, MO. Response deadline 2026-07-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W912DQ26RA060",
+          "url": "https://sam.gov/workspace/contract/opp/6d3b97de3a184387960bb12c522d4e20/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-7c4024f6d53046a5-va-stlhcs-jc-northeast-parking-structure-sources-s",
+      "name": "VA STLHCS-JC Northeast Parking Structure Sources Sought",
+      "city": "Saint Louis",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "Federal sources sought VASTLHCS-JC-NEPS. VA STLHCS-JC Northeast Parking Structure Sources Sought. Response deadline 2026-07-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Y1LZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought VASTLHCS-JC-NEPS",
+          "url": "https://sam.gov/workspace/contract/opp/7c4024f6d53046a5b3d298dd125efd6e/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-667a7fd0ecb74817-ltuy202057-repair-roof-roads-grounds-facility-bldg",
+      "name": "LTUY202057 Repair Roof, Roads & Grounds Facility, Bldg. 99",
+      "city": "Saint Louis",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "Federal combined synopsis/solicitation W50S8K26QA003. LTUY202057 Repair Roof, Roads & Grounds Facility, Bldg. 99. Response deadline 2026-07-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2EB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W50S8K26QA003",
+          "url": "https://sam.gov/workspace/contract/opp/667a7fd0ecb748179d5440d3799cd707/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-fe94e41184594810-ltuy202005-construct-vehicle-operations-covered-pa",
+      "name": "LTUY202005 Construct Vehicle Operations Covered Parking",
+      "city": "Saint Louis",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-16",
+      "description": "Federal combined synopsis/solicitation W50S8K26QA002. LTUY202005 Construct Vehicle Operations Covered Parking. Response deadline 2026-07-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1PZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W50S8K26QA002",
+          "url": "https://sam.gov/workspace/contract/opp/fe94e4118459481093eb43fc977b3a8f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-0d9960c79c9949cb-ltuy202005-construct-vehicle-operations-covered-pa",
+      "name": "LTUY202005 Construct Vehicle Operations Covered Parking",
+      "city": "Saint Louis",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-16",
+      "description": "Federal combined synopsis/solicitation W50S8K26QA002. LTUY202005 Construct Vehicle Operations Covered Parking. Response deadline 2026-07-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1PZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W50S8K26QA002",
+          "url": "https://sam.gov/workspace/contract/opp/0d9960c79c9949cb8c16e433d44eda0c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-e9fcace695ef424f-the-state-of-missouri-joc-ordering-agreement-solic",
+      "name": "The State of Missouri JOC Ordering Agreement Solicitation",
+      "city": "Jefferson City",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Postal Service",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "Federal solicitation 089495-26-A-0069. The State of Missouri JOC Ordering Agreement Solicitation. Response deadline 2026-07-02.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2HB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 089495-26-A-0069",
+          "url": "https://sam.gov/workspace/contract/opp/e9fcace695ef424f8232552ff5135454/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-b4e454f217d94f11-z2da-657-24-110jb-fca-replace-roofs-on-buildings-1",
+      "name": "Z2DA--657-24-110JB - FCA Replace Roofs on Buildings 1, 52, 53",
+      "city": "Saint Louis",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-28",
+      "description": "Federal solicitation 36C25526R0041-0002. Z2DA--657-24-110JB - FCA Replace Roofs on Buildings 1, 52, 53. Response deadline 2026-05-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C25526R0041-0002",
+          "url": "https://sam.gov/workspace/contract/opp/b4e454f217d94f118e042b01ebdac0eb/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-409cb61658e040b6-403873-flw-ait-barracks-complex-ii-phase-2",
+      "name": "403873 FLW AIT Barracks Complex II Phase 2",
+      "city": "Fort Leonard Wood",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-13",
+      "description": "Federal solicitation W912DQ25RA004. 403873 FLW AIT Barracks Complex II Phase 2. Response deadline 2026-01-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DQ25RA004",
+          "url": "https://sam.gov/workspace/contract/opp/409cb61658e040b6af382fc3e6bcce99/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-977f8f7ac237480d-403873-flw-ait-barracks-complex-ii-phase-2",
+      "name": "403873 FLW AIT Barracks Complex II Phase 2",
+      "city": "Fort Leonard Wood",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-13",
+      "description": "Federal solicitation W912DQ25RA004. 403873 FLW AIT Barracks Complex II Phase 2. Response deadline 2026-01-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DQ25RA004",
+          "url": "https://sam.gov/workspace/contract/opp/977f8f7ac237480d909ab4de4a4e8334/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-c112134a107c4bad-403873-flw-ait-barracks-complex-ii-phase-2",
+      "name": "403873 FLW AIT Barracks Complex II Phase 2",
+      "city": "Fort Leonard Wood",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-13",
+      "description": "Federal solicitation W912DQ25RA004. 403873 FLW AIT Barracks Complex II Phase 2. Response deadline 2026-01-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DQ25RA004",
+          "url": "https://sam.gov/workspace/contract/opp/c112134a107c4badbec9daf82c9dac9e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-44bb7985dcaf4184-403873-flw-ait-barracks-complex-ii-phase-2",
+      "name": "403873 FLW AIT Barracks Complex II Phase 2",
+      "city": "Fort Leonard Wood",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-13",
+      "description": "Federal solicitation W912DQ25RA004. 403873 FLW AIT Barracks Complex II Phase 2. Response deadline 2026-01-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DQ25RA004",
+          "url": "https://sam.gov/workspace/contract/opp/44bb7985dcaf4184a62b66a7f7aac1dd/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-607568b59e6147c7-renovate-bld-654-ft-leonard-wood-mo-sources-sought",
+      "name": "Renovate Bld 654 Ft Leonard Wood, MO Sources Sought",
+      "city": "Fort Leonard Wood",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-03",
+      "description": "Federal sources sought W912DQ26RA036. Renovate Bld 654 Ft Leonard Wood, MO Sources Sought. Response deadline 2025-12-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "No Set aside used",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W912DQ26RA036",
+          "url": "https://sam.gov/workspace/contract/opp/607568b59e6147c79056145b6099ba14/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-43ed8e622fcd40d4-403873-flw-ait-barracks-complex-ii-phase-2",
+      "name": "403873 FLW AIT Barracks Complex II Phase 2",
+      "city": "Fort Leonard Wood",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-03",
+      "description": "Federal solicitation W912DQ25RA004. 403873 FLW AIT Barracks Complex II Phase 2. Response deadline 2026-01-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DQ25RA004",
+          "url": "https://sam.gov/workspace/contract/opp/43ed8e622fcd40d4bd39d7f657e15aec/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-e2ece8056d8e47cf-403873-flw-ait-barracks-complex-ii-phase-2",
+      "name": "403873 FLW AIT Barracks Complex II Phase 2",
+      "city": "Fort Leonard Wood",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-25",
+      "description": "Federal solicitation W912DQ25RA004. 403873 FLW AIT Barracks Complex II Phase 2. Response deadline 2026-01-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DQ25RA004",
+          "url": "https://sam.gov/workspace/contract/opp/e2ece8056d8e47cfbcaeeaf5d1e4adfa/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-1e5f6033d0b44663-renovate-bld-654-ft-leonard-wood-mo",
+      "name": "Renovate Bld 654 Ft Leonard Wood, MO",
+      "city": "Fort Leonard Wood",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-19",
+      "description": "Federal sources sought W912DQ26RA036. Renovate Bld 654 Ft Leonard Wood, MO. Response deadline 2025-12-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "No Set aside used",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W912DQ26RA036",
+          "url": "https://sam.gov/workspace/contract/opp/1e5f6033d0b44663bdb20c3aa2d0796a/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-8de334c2c81b4737-403873-flw-ait-barracks-complex-ii-phase-2",
+      "name": "403873 FLW AIT Barracks Complex II Phase 2",
+      "city": "Fort Leonard Wood",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-04",
+      "description": "Federal solicitation W912DQ25RA004. 403873 FLW AIT Barracks Complex II Phase 2. Response deadline 2025-12-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DQ25RA004",
+          "url": "https://sam.gov/workspace/contract/opp/8de334c2c81b473796c45f9e8c3e12c2/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-c6bff2beddbe444d-403873-flw-ait-barracks-complex-ii-phase-2",
+      "name": "403873 FLW AIT Barracks Complex II Phase 2",
+      "city": "Fort Leonard Wood",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-03",
+      "description": "Federal solicitation W912DQ25RA004. 403873 FLW AIT Barracks Complex II Phase 2. Response deadline 2025-12-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DQ25RA004",
+          "url": "https://sam.gov/workspace/contract/opp/c6bff2beddbe444dbc09e68f464ca783/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-34a008a00e7b4de5-403873-flw-ait-barracks-complex-ii-phase-2",
+      "name": "403873 FLW AIT Barracks Complex II Phase 2",
+      "city": "Fort Leonard Wood",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-28",
+      "description": "Federal solicitation W912DQ25RA004. 403873 FLW AIT Barracks Complex II Phase 2. Response deadline 2025-11-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DQ25RA004",
+          "url": "https://sam.gov/workspace/contract/opp/34a008a00e7b4de5bf0a45d797abe48c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-a26fd19bc51e430a-403873-flw-ait-barracks-complex-ii-phase-2",
+      "name": "403873 FLW AIT Barracks Complex II Phase 2",
+      "city": "Fort Leonard Wood",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-28",
+      "description": "Federal solicitation W912DQ25RA004. 403873 FLW AIT Barracks Complex II Phase 2. Response deadline 2025-11-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DQ25RA004",
+          "url": "https://sam.gov/workspace/contract/opp/a26fd19bc51e430a99186b5be5d3eef4/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-cf5f1b7b61784f25-403873-flw-ait-barracks-complex-ii-phase-2",
+      "name": "403873 FLW AIT Barracks Complex II Phase 2",
+      "city": "Fort Leonard Wood",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-23",
+      "description": "Federal solicitation W912DQ25RA004. 403873 FLW AIT Barracks Complex II Phase 2. Response deadline 2025-11-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DQ25RA004",
+          "url": "https://sam.gov/workspace/contract/opp/cf5f1b7b61784f259191a0787558d410/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-a343ed80295443dd-403873-flw-ait-barracks-complex-ii-phase-2",
+      "name": "403873 FLW AIT Barracks Complex II Phase 2",
+      "city": "Fort Leonard Wood",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-23",
+      "description": "Federal solicitation W912DQ25RA004. 403873 FLW AIT Barracks Complex II Phase 2. Response deadline 2025-11-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DQ25RA004",
+          "url": "https://sam.gov/workspace/contract/opp/a343ed80295443ddb6fdd664ee710ebc/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-a74c745d73fd48ac-403873-flw-ait-barracks-complex-ii-phase-2",
+      "name": "403873 FLW AIT Barracks Complex II Phase 2",
+      "city": "Fort Leonard Wood",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-03",
+      "description": "Federal solicitation W912DQ25RA004. 403873 FLW AIT Barracks Complex II Phase 2. Response deadline 2025-10-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DQ25RA004",
+          "url": "https://sam.gov/workspace/contract/opp/a74c745d73fd48acb1ff4fa7adfdb2ed/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-c6bfccd281d6438e-403873-flw-ait-barracks-complex-ii-phase-2",
+      "name": "403873 FLW AIT Barracks Complex II Phase 2",
+      "city": "Fort Leonard Wood",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-09-16",
+      "description": "Federal solicitation W912DQ25RA004. 403873 FLW AIT Barracks Complex II Phase 2. Response deadline 2025-10-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DQ25RA004",
+          "url": "https://sam.gov/workspace/contract/opp/c6bfccd281d6438eb48d14c1aa592826/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-0692b81ccfff499c-403873-flw-ait-barracks-complex-ii-phase-2",
+      "name": "403873 FLW AIT Barracks Complex II Phase 2",
+      "city": "Fort Leonard Wood",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-09-16",
+      "description": "Federal solicitation W912DQ25RA004. 403873 FLW AIT Barracks Complex II Phase 2. Response deadline 2025-10-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912DQ25RA004",
+          "url": "https://sam.gov/workspace/contract/opp/0692b81ccfff499ca799225ef45f7ac0/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-6163d0a9e9959025-construct-medical-reference-laboratory",
+      "name": "Construct Medical Reference Laboratory",
+      "city": "SPRINGFIELD",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Justice, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2016-03-15",
+      "description": "Federal modification/amendment/cancel IFBP04141600001. Construct Medical Reference Laboratory. Response deadline 2016-03-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Modification/Amendment/Cancel",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Modification/Amendment/Cancel IFBP04141600001",
+          "url": "https://sam.gov/workspace/contract/opp/6163d0a9e9959025a312ce585c598e96/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MO"
+    },
+    {
+      "id": "mo-sam-4e54df9a5eeac0a2-construct-medical-reference-laboratory",
+      "name": "Construct Medical Reference Laboratory",
+      "city": "SPRINGFIELD",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Justice, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2016-02-23",
+      "description": "Federal modification/amendment/cancel IFBP04141600001. Construct Medical Reference Laboratory. Response deadline 2016-03-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Modification/Amendment/Cancel",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Modification/Amendment/Cancel IFBP04141600001",
+          "url": "https://sam.gov/workspace/contract/opp/4e54df9a5eeac0a294ab1cde59fe0e2c/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MO"
     }
   ],
   "stats": {
-    "total": 1
+    "total": 33
   }
 }
