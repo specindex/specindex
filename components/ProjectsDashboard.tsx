@@ -405,9 +405,19 @@ export function ProjectsDashboard() {
                   <p className="text-xs text-[var(--color-gray-600)]">{formatSf(project.square_footage)}</p>
                 </div>
               </div>
-              <p className="mt-2 text-xs text-[var(--color-gray-400)]">
-                {formatDate(project.opened_or_announced_date)}
-              </p>
+              <div className="mt-2 flex flex-wrap items-center gap-2">
+                <p className="text-xs text-[var(--color-gray-400)]">
+                  {formatDate(project.opened_or_announced_date)}
+                </p>
+                {project.competitor_watch.slice(0, 3).map((cat) => (
+                  <span
+                    key={cat}
+                    className="rounded-full bg-[var(--color-gray-100)] px-2 py-0.5 text-[10px] font-medium text-[var(--color-gray-600)]"
+                  >
+                    {cat}
+                  </span>
+                ))}
+              </div>
             </Link>
           </li>
         ))}

@@ -233,12 +233,9 @@ export default async function ReportingPage() {
             you exactly what the index holds on them today, including the gaps.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a
-              href="mailto:hello@specindex.ai?subject=SpecIndex%20Reporting"
-              className="btn btn-primary"
-            >
+            <Link href="/#demo" className="btn btn-primary">
               Request Demo
-            </a>
+            </Link>
             <Link href="/projects/" className="btn btn-outline">
               Search the index
             </Link>

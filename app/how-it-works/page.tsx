@@ -71,12 +71,9 @@ export default function HowItWorksPage() {
         <div className="mx-auto max-w-3xl px-5 py-16 text-center md:px-8">
           <h2 className="text-section">Want this run against your territory?</h2>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a
-              href="mailto:hello@specindex.ai?subject=SpecIndex%20Demo%20Request"
-              className="btn btn-primary"
-            >
+            <Link href="#demo" className="btn btn-primary">
               Request Demo
-            </a>
+            </Link>
             <Link href="/projects/" className="btn btn-outline">
               Search the index
             </Link>

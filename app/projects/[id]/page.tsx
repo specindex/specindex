@@ -130,8 +130,15 @@ export default async function ProjectDetailPage({ params }: Props) {
           </div>
 
           <div className="mt-12 flex flex-wrap gap-3">
-            <Link href="/visibility/" className="btn btn-primary">
-              Compare brand visibility
+            <Link
+              href={`/visibility/${
+                project.competitor_watch[0]
+                  ? `?category=${encodeURIComponent(project.competitor_watch[0])}`
+                  : ""
+              }`}
+              className="btn btn-primary"
+            >
+              Run a brand check for this project
             </Link>
             <Link href="/projects/" className="btn btn-outline">
               Back to all projects

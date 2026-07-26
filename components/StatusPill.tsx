@@ -1,9 +1,14 @@
+// Colors track how open the spec window still is, not an arbitrary hue per
+// status -- planning/permitting/design are all "still early enough to
+// influence," bidding is narrowing, under_construction is mostly locked
+// in. A rep scanning a list of cards should read urgency at a glance
+// without opening each one (see docs/ROADMAP.md item 47/48).
 const tones: Record<string, string> = {
-  planning: "bg-amber-50 text-amber-900 border-amber-200",
-  design: "bg-sky-50 text-sky-900 border-sky-200",
-  permitting: "bg-violet-50 text-violet-900 border-violet-200",
-  bidding: "bg-orange-50 text-orange-900 border-orange-200",
-  under_construction: "bg-[var(--color-green-light)] text-[var(--color-green)] border-green-200",
+  planning: "bg-[var(--color-green-light)] text-[var(--color-green)] border-green-200",
+  permitting: "bg-[var(--color-green-light)] text-[var(--color-green)] border-green-200",
+  design: "bg-[var(--color-green-light)] text-[var(--color-green)] border-green-200",
+  bidding: "bg-amber-50 text-amber-900 border-amber-200",
+  under_construction: "bg-red-50 text-red-800 border-red-200",
 };
 
 export function StatusPill({ status }: { status: string }) {

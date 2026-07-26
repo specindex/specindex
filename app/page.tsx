@@ -90,10 +90,7 @@ export default async function HomePage() {
               division they actually sell.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="mailto:hello@specindex.ai?subject=SpecIndex%20Demo%20Request"
-                className="btn btn-primary"
-              >
+              <a href="#demo" className="btn btn-primary">
                 Request Demo
               </a>
               <Link href="/projects/" className="btn btn-outline">
@@ -180,6 +177,11 @@ export default async function HomePage() {
           </ol>
         </div>
       </section>
+
+      {/* Demo form -- moved up from the very bottom of the page (was below
+          the FAQ and CSI table) to right after the core "window" pitch,
+          per the "demo form is buried" feedback in docs/ROADMAP.md item 47. */}
+      <DemoSection />
 
       {/* Feature 1 */}
       <section className="border-t border-[var(--color-border)] bg-[var(--color-bg)]">
@@ -367,7 +369,6 @@ export default async function HomePage() {
       </section>
 
       <FAQ items={faqs} />
-      <DemoSection />
     </>
   );
 }

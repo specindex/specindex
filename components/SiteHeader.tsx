@@ -69,12 +69,9 @@ export function SiteHeader() {
           >
             hello@specindex.ai
           </a>
-          <a
-            href="mailto:hello@specindex.ai?subject=SpecIndex%20Demo%20Request"
-            className="btn btn-primary hidden sm:inline-flex"
-          >
+          <Link href="/#demo" className="btn btn-primary hidden sm:inline-flex">
             Request Demo
-          </a>
+          </Link>
           <button
             type="button"
             aria-expanded={open}
@@ -127,12 +124,9 @@ export function SiteHeader() {
                 </Link>
               );
             })}
-            <a
-              href="mailto:hello@specindex.ai?subject=SpecIndex%20Demo%20Request"
-              className="btn btn-primary mt-4 w-full text-center"
-            >
+            <Link href="/#demo" className="btn btn-primary mt-4 w-full text-center">
               Request Demo
-            </a>
+            </Link>
           </nav>
         </div>
       )}

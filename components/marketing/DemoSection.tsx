@@ -1,7 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
+
+const API_BASE = "https://specindex-api-gmm6irqe4q-uc.a.run.app";
 
 type Stat = { value: string; label: string };
 
@@ -23,57 +26,43 @@ export function StatsStrip({ stats }: { stats: Stat[] }) {
 }
 
 export function DemoSection() {
+  const pathname = usePathname();
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [pending, setPending] = useState(false);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
-    const first = String(data.get("firstName") ?? "");
-    const last = String(data.get("lastName") ?? "");
-    const email = String(data.get("email") ?? "");
-    const company = String(data.get("company") ?? "");
-    const categories = String(data.get("categories") ?? "");
+    setPending(true);
+    setError(null);
 
-    // 1. Post to Google Sheet webhook if configured
-    const webhookUrl = process.env.NEXT_PUBLIC_SHEET_WEBHOOK_URL;
-    if (webhookUrl) {
-      try {
-        await fetch(webhookUrl, {
-          method: "POST",
-          mode: "no-cors",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            timestamp: new Date().toISOString(),
-            firstName: first,
-            lastName: last,
-            email,
-            company,
-            categories,
-            source: "specindex.ai",
-          }),
-        });
-      } catch (err) {
-        console.error("Failed to post to Google Sheet webhook:", err);
-      }
+    try {
+      const res = await fetch(`${API_BASE}/v1/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          first_name: String(data.get("firstName") ?? ""),
+          last_name: String(data.get("lastName") ?? ""),
+          email: String(data.get("email") ?? ""),
+          company: String(data.get("company") ?? ""),
+          categories: String(data.get("categories") ?? ""),
+          source_path: pathname,
+        }),
+      });
+      if (!res.ok) throw new Error(`Request failed (${res.status})`);
+      form.reset();
+      setSubmitted(true);
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? `${err.message} — email us directly at hello@specindex.ai instead.`
+          : "Something went wrong — email us directly at hello@specindex.ai instead."
+      );
+    } finally {
+      setPending(false);
     }
-
-    // 2. Open pre-filled mailto to hello@specindex.ai
-    const subject = encodeURIComponent(`SpecIndex demo request: ${company}`);
-    const body = encodeURIComponent(
-      [
-        "Demo request from specindex.ai",
-        "",
-        `Name: ${first} ${last}`,
-        `Email: ${email}`,
-        `Company: ${company}`,
-        `Product categories: ${categories || "Not specified"}`,
-        `Submitted: ${new Date().toLocaleString()}`,
-      ].join("\n"),
-    );
-
-    window.location.href = `mailto:hello@specindex.ai?subject=${subject}&body=${body}`;
-    setSubmitted(true);
   }
 
   return (
@@ -96,13 +85,16 @@ export function DemoSection() {
             <h3 className="text-lg font-semibold">Request a Demo</h3>
             {submitted ? (
               <p className="mt-4 rounded-md bg-[var(--color-green-light)] px-4 py-3 text-sm text-[var(--color-green)]">
-                Thanks. Your email client should open with a message already filled
-                in. Send it to finish the request, or just write to us at{" "}
+                Thanks — we&apos;ve got your request and will follow up within one
+                business day. You can also write to us directly at{" "}
                 <a href="mailto:hello@specindex.ai" className="underline">
                   hello@specindex.ai
                 </a>
                 .
               </p>
+            ) : null}
+            {error ? (
+              <p className="mt-4 rounded-md bg-red-50 px-4 py-3 text-sm text-red-800">{error}</p>
             ) : null}
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               <label className="block sm:col-span-1">
@@ -157,8 +149,8 @@ export function DemoSection() {
                 />
               </label>
             </div>
-            <button type="submit" className="btn btn-primary mt-6 w-full">
-              Request Demo
+            <button type="submit" disabled={pending} className="btn btn-primary mt-6 w-full disabled:opacity-60">
+              {pending ? "Sending…" : "Request Demo"}
             </button>
             <p className="mt-3 text-center text-xs text-[var(--color-gray-400)]">
               Or{" "}

@@ -36,7 +36,7 @@ const plans = [
       "Weekly email digest for your territory",
     ],
     cta: "Request Demo",
-    href: "mailto:hello@specindex.ai?subject=SpecIndex%20Pro%20plan",
+    href: "#demo",
     highlighted: true,
   },
   {
@@ -53,7 +53,7 @@ const plans = [
       "Priority on the jurisdictions you care about",
     ],
     cta: "Talk to us",
-    href: "mailto:hello@specindex.ai?subject=SpecIndex%20Team%20plan",
+    href: "#demo",
     highlighted: false,
   },
 ];

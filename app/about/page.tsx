@@ -69,12 +69,9 @@ export default async function AboutPage() {
             </li>
           </ul>
           <div className="mt-10 flex flex-wrap gap-3">
-            <a
-              href="mailto:hello@specindex.ai?subject=SpecIndex%20Demo%20Request"
-              className="btn btn-primary"
-            >
+            <Link href="#demo" className="btn btn-primary">
               Request Demo
-            </a>
+            </Link>
             <Link href="/projects/" className="btn btn-outline">
               Search the index
             </Link>

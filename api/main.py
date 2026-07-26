@@ -4,8 +4,11 @@ from __future__ import annotations
 
 import json
 import os
+import smtplib
 import time
 from contextlib import contextmanager
+from datetime import datetime, timezone
+from email.message import EmailMessage
 from typing import Any
 
 import psycopg2
@@ -13,6 +16,7 @@ import psycopg2.extras
 import psycopg2.pool
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel, Field, field_validator
 
 DATABASE_URL = os.environ.get("DATABASE_URL", "")
 
@@ -60,7 +64,7 @@ app = FastAPI(title="SpecIndex API", version="0.1.0")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_methods=["GET"],
+    allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
 
@@ -823,3 +827,89 @@ def get_project(project_id: str):
         enrichment = fetch_enrichment(conn, [row["project_sk"]])
 
     return row_to_project(row, enrichment.get(row["project_sk"]))
+
+
+# Gmail SMTP creds -- same credential pair already used by the pipeline
+# health-email GitHub Action (EMAIL_SMTP_USERNAME/PASSWORD secrets), set
+# here as Cloud Run env vars instead. Notification is best-effort: a
+# missing/misconfigured credential must never lose a real submission, it
+# just goes unnotified (see notify_error on the row).
+EMAIL_SMTP_USERNAME = os.environ.get("EMAIL_SMTP_USERNAME", "")
+EMAIL_SMTP_PASSWORD = os.environ.get("EMAIL_SMTP_PASSWORD", "")
+CONTACT_NOTIFY_TO = os.environ.get("CONTACT_NOTIFY_TO", "hello@specindex.ai")
+
+
+class ContactSubmission(BaseModel):
+    first_name: str = Field(min_length=1, max_length=200)
+    last_name: str = Field(min_length=1, max_length=200)
+    email: str = Field(min_length=3, max_length=320)
+    company: str = Field(min_length=1, max_length=200)
+    categories: str = Field(default="", max_length=500)
+    source_path: str = Field(default="", max_length=200)
+
+    @field_validator("email")
+    @classmethod
+    def email_looks_like_email(cls, v: str) -> str:
+        if "@" not in v or " " in v:
+            raise ValueError("not a valid email address")
+        return v
+
+
+def _send_contact_notification(sub: ContactSubmission) -> str | None:
+    """Returns an error string on failure, None on success/skip. Never
+    raises -- called from the request path after the row is already
+    committed, so a notification failure must not turn into a 500 for a
+    submission that was, in fact, saved."""
+    if not EMAIL_SMTP_USERNAME or not EMAIL_SMTP_PASSWORD:
+        return "EMAIL_SMTP_USERNAME/PASSWORD not configured"
+    try:
+        msg = EmailMessage()
+        msg["Subject"] = f"SpecIndex demo request: {sub.company}"
+        msg["From"] = EMAIL_SMTP_USERNAME
+        msg["To"] = CONTACT_NOTIFY_TO
+        msg["Reply-To"] = sub.email
+        msg.set_content(
+            "New demo request from specindex.ai\n\n"
+            f"Name: {sub.first_name} {sub.last_name}\n"
+            f"Email: {sub.email}\n"
+            f"Company: {sub.company}\n"
+            f"Product categories: {sub.categories or 'Not specified'}\n"
+            f"Page: {sub.source_path or 'unknown'}\n"
+        )
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=10) as smtp:
+            smtp.login(EMAIL_SMTP_USERNAME, EMAIL_SMTP_PASSWORD)
+            smtp.send_message(msg)
+        return None
+    except Exception as e:  # noqa: BLE001 -- deliberately broad, see docstring
+        return str(e)
+
+
+@app.post("/v1/contact")
+def submit_contact(sub: ContactSubmission):
+    """Backs the homepage demo-request form (components/marketing/
+    DemoSection.tsx). Replaces the previous mailto:/optional-Google-Sheet-
+    webhook approach -- every submission is now durably stored even if
+    email notification isn't configured or fails."""
+    with get_conn() as conn:
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                INSERT INTO contact_submissions
+                    (first_name, last_name, email, company, categories, source_path)
+                VALUES (%s, %s, %s, %s, %s, %s)
+                RETURNING id
+                """,
+                (sub.first_name, sub.last_name, sub.email, sub.company, sub.categories, sub.source_path),
+            )
+            submission_id = cur.fetchone()[0]
+        conn.commit()
+
+        error = _send_contact_notification(sub)
+        with conn.cursor() as cur:
+            cur.execute(
+                "UPDATE contact_submissions SET notified_at = %s, notify_error = %s WHERE id = %s",
+                (None if error else datetime.now(timezone.utc), error, submission_id),
+            )
+        conn.commit()
+
+    return {"ok": True, "id": submission_id, "notified": error is None}

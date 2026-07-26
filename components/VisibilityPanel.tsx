@@ -26,9 +26,20 @@ type Props = {
   projects: Project[];
 };
 
+// Reads ?category= from the URL on first render (e.g. a "Run a brand
+// check" link from a project detail page) without useSearchParams/Suspense
+// -- this is a static export, so search params can only be read
+// client-side anyway; a plain lazy initializer keeps it simple, same
+// SSR-safe-guard pattern as ProjectsDashboard's localStorage reads.
+function initialCategoryFromUrl(): string {
+  if (typeof window === "undefined") return "lighting";
+  const fromUrl = new URLSearchParams(window.location.search).get("category");
+  return fromUrl || "lighting";
+}
+
 export function VisibilityPanel({ projects }: Props) {
   const [brand, setBrand] = useState("Acuity Brands");
-  const [category, setCategory] = useState("lighting");
+  const [category, setCategory] = useState(initialCategoryFromUrl);
 
   const analysis = useMemo(
     () => getVisibilitySnapshot(projects, brand, category),
