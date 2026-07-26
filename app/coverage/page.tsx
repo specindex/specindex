@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { CoverageTable } from "@/components/CoverageTable";
-import { getCoverage } from "@/lib/coverage";
+import { CoverageTabs } from "@/components/CoverageTabs";
+import { getCoverage, getCoverageInsights } from "@/lib/coverage";
 
 export const metadata: Metadata = {
   title: "Data Coverage",
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 export default async function CoveragePage() {
-  const coverage = await getCoverage();
+  const [coverage, insights] = await Promise.all([getCoverage(), getCoverageInsights()]);
 
   return (
     <div className="bg-[var(--color-bg)]">
@@ -22,12 +22,14 @@ export default async function CoveragePage() {
             feed (&ldquo;deep&rdquo;) or only broad statewide/federal coverage
             (&ldquo;thin&rdquo;). Backed by the <code>county_coverage</code> table in
             Cloud SQL — refresh it with{" "}
-            <code>scripts/compute-county-coverage.py</code> after a corpus reload.
+            <code>scripts/compute-county-coverage.py</code> after a corpus reload. This
+            is the dashboard for deciding where to point the next pull script — the
+            goal is closing the gap on uncovered counties, one verified source at a time.
           </p>
         </div>
       </div>
       <div className="mx-auto max-w-6xl px-5 py-10 md:px-8 md:py-12">
-        <CoverageTable coverage={coverage} />
+        <CoverageTabs coverage={coverage} insights={insights} />
       </div>
     </div>
   );

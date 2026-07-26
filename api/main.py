@@ -16,6 +16,24 @@ from fastapi.middleware.cors import CORSMiddleware
 
 DATABASE_URL = os.environ.get("DATABASE_URL", "")
 
+# Standard county/county-equivalent counts per state, used only to compute
+# "how much room is left" in the /v1/coverage/insights endpoint -- not
+# authoritative for anything billing- or legal-critical. A few states have
+# genuinely ambiguous counts (CT reorganized into 9 planning regions in
+# 2022 but 8 legacy counties are still commonly cited; VA/MO include
+# independent cities as county-equivalents) -- picked the commonly-cited
+# figure in each case rather than resolve every edge case.
+US_COUNTY_TOTALS: dict[str, int] = {
+    "AL": 67, "AK": 29, "AZ": 15, "AR": 75, "CA": 58, "CO": 64, "CT": 8,
+    "DE": 3, "FL": 67, "GA": 159, "HI": 5, "ID": 44, "IL": 102, "IN": 92,
+    "IA": 99, "KS": 105, "KY": 120, "LA": 64, "ME": 16, "MD": 24, "MA": 14,
+    "MI": 83, "MN": 87, "MS": 82, "MO": 115, "MT": 56, "NE": 93, "NV": 17,
+    "NH": 10, "NJ": 21, "NM": 33, "NY": 62, "NC": 100, "ND": 53, "OH": 88,
+    "OK": 77, "OR": 36, "PA": 67, "RI": 5, "SC": 46, "SD": 66, "TN": 95,
+    "TX": 254, "UT": 29, "VT": 14, "VA": 133, "WA": 39, "WV": 55, "WI": 72,
+    "WY": 23,
+}
+
 # specindex-db is db-f1-micro: Postgres max_connections=25, ~9 already used by
 # Cloud SQL system overhead. Opening a fresh connection per request (the old
 # behavior) exhausts that fast under concurrent load — verified 2026-07-25:
@@ -234,6 +252,87 @@ def list_coverage(
             for r in rows
         ],
     }
+
+
+@app.get("/v1/coverage/insights")
+def coverage_insights():
+    """Powers the Insights tab on /coverage: per-state rollup (how many
+    counties total vs. covered vs. deep/thin) plus the top 3 projects (by
+    estimated value, falling back to most recent) in every covered county --
+    the two things needed to decide where to point the next pull script."""
+    with get_conn() as conn:
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+            cur.execute(
+                """
+                SELECT state,
+                       count(*) AS counties_covered,
+                       count(*) FILTER (WHERE coverage_type = 'deep') AS deep,
+                       count(*) FILTER (WHERE coverage_type = 'thin') AS thin,
+                       sum(project_count) AS total_projects
+                FROM county_coverage
+                GROUP BY state
+                """
+            )
+            state_rows = cur.fetchall()
+
+            cur.execute(
+                """
+                SELECT state, county, name, status, estimated_value_usd,
+                       opened_or_announced_date, project_id
+                FROM (
+                    SELECT p.state, p.county, p.name, p.status, p.estimated_value_usd,
+                           p.opened_or_announced_date, p.project_id,
+                           row_number() OVER (
+                             PARTITION BY p.state, p.county
+                             ORDER BY p.estimated_value_usd DESC NULLS LAST,
+                                      p.opened_or_announced_date DESC NULLS LAST
+                           ) AS rn
+                    FROM projects p
+                    WHERE p.county IS NOT NULL AND p.county != ''
+                ) ranked
+                WHERE rn <= 3
+                ORDER BY state, county, rn
+                """
+            )
+            top_rows = cur.fetchall()
+
+    top_by_county: dict[str, list[dict[str, Any]]] = {}
+    for r in top_rows:
+        key = f"{r['state']}|{r['county']}"
+        top_by_county.setdefault(key, []).append(
+            {
+                "id": r["project_id"],
+                "name": r["name"],
+                "status": r["status"],
+                "estimated_value_usd": r["estimated_value_usd"],
+                "opened_or_announced_date": (
+                    r["opened_or_announced_date"].isoformat()
+                    if r["opened_or_announced_date"]
+                    else None
+                ),
+            }
+        )
+
+    state_summary = []
+    for r in state_rows:
+        state = r["state"]
+        total = US_COUNTY_TOTALS.get(state)
+        covered = r["counties_covered"]
+        state_summary.append(
+            {
+                "state": state,
+                "total_us_counties": total,
+                "counties_covered": covered,
+                "counties_uncovered": (total - covered) if total is not None else None,
+                "coverage_pct": round(100 * covered / total, 1) if total else None,
+                "deep": r["deep"],
+                "thin": r["thin"],
+                "total_projects": r["total_projects"],
+            }
+        )
+    state_summary.sort(key=lambda s: s["coverage_pct"] or 0, reverse=True)
+
+    return {"state_summary": state_summary, "top_projects_by_county": top_by_county}
 
 
 @app.get("/v1/projects/{project_id}")
