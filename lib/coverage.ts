@@ -12,6 +12,30 @@ type CoverageResponse = {
   coverage: CoverageEntry[];
 };
 
+export type StateSummary = {
+  state: string;
+  total_us_counties: number | null;
+  counties_covered: number;
+  counties_uncovered: number | null;
+  coverage_pct: number | null;
+  deep: number;
+  thin: number;
+  total_projects: number;
+};
+
+export type TopProject = {
+  id: string;
+  name: string;
+  status: string;
+  estimated_value_usd: number | null;
+  opened_or_announced_date: string | null;
+};
+
+export type CoverageInsights = {
+  state_summary: StateSummary[];
+  top_projects_by_county: Record<string, TopProject[]>;
+};
+
 // Same build-time-fetch pattern as lib/projects.ts -- this runs at
 // `next build`, not in the browser. county_coverage is a reporting table
 // refreshed on demand (scripts/compute-county-coverage.py), not updated
@@ -27,4 +51,12 @@ export async function getCoverage(): Promise<CoverageEntry[]> {
   }
   const data = (await res.json()) as CoverageResponse;
   return data.coverage;
+}
+
+export async function getCoverageInsights(): Promise<CoverageInsights> {
+  const res = await fetch(`${API_BASE}/v1/coverage/insights`);
+  if (!res.ok) {
+    throw new Error(`specindex-api /v1/coverage/insights failed: ${res.status} ${res.statusText}`);
+  }
+  return (await res.json()) as CoverageInsights;
 }

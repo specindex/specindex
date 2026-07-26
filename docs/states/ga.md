@@ -13,6 +13,8 @@
 
 **Canonical reference for all Georgia pulls.** Read this file before adding or refreshing `data/states/ga.json`.
 
+**Standing goal (2026-07-26): improving data coverage — more counties, deeper per-county detail — is the main, ongoing objective for specindex.ai.** Check `specindex.ai/coverage/` (backed by the `county_coverage` Cloud SQL table, roadmap item 26) to see which GA counties are still thin or uncovered, and proactively recommend/verify new sources for them, not just when asked.
+
 **Prepared:** July 24, 2026  
 **Scope:** Commercial construction only. Residential housing, townhome subdivisions, and low-signal permit noise excluded.  
 **Window:** Last 12 months where a date field exists; undated mapped developments kept when type is clearly commercial or industrial.

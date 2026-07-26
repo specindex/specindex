@@ -13,6 +13,8 @@
 
 **Canonical reference for all North Carolina pulls.** Read this file before adding or refreshing `data/states/nc.json`. Mirrors the structure and discipline of `docs/states/ga.md` — read that file first for the general methodology (verify liveness before building, test at 1 month before scaling to 24, prefer direct API over Playwright, etc.); this file only covers what's specific to North Carolina.
 
+**Standing goal (2026-07-26): improving data coverage — more counties, deeper per-county detail — is the main, ongoing objective for specindex.ai.** Check `specindex.ai/coverage/` (backed by the `county_coverage` Cloud SQL table, roadmap item 26) to see which NC counties are still thin or uncovered (currently only 2: Mecklenburg, Wake), and proactively recommend/verify new sources for them, not just when asked. **Known trap:** `geo.forsythco.com` is Forsyth County GA, not NC — confirmed by real coordinates 2026-07-26 (roadmap item 27). Do not use it for NC's Forsyth County (Winston-Salem).
+
 **Prepared:** 2026-07-25/26  
 **Scope:** Commercial construction only. Residential/single-family/subdivision permits excluded at ingestion.  
 **Window:** Last 24 months.
