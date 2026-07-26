@@ -1,9 +1,9 @@
 {
   "state": "CO",
   "state_name": "Colorado",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Web research — Mile High CRE, Connect CRE, BusinessDen, Caliber, Construction Review Online, ENR",
+  "capture_method": "Web research — Mile High CRE, Connect CRE, BusinessDen, Caliber, Construction Review Online, ENR, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "co-fda-lab-denver-federal-center",
@@ -305,9 +305,897 @@
         }
       ],
       "open_for": "Under construction. Industrial building and yard infrastructure specs."
+    },
+    {
+      "id": "co-sam-3f39bb62fe164165-industry-day-joint-cyber-facility",
+      "name": "Industry Day Joint Cyber Facility",
+      "city": "Lakewood",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal special notice. Industry Day Joint Cyber Facility. Response deadline 2026-07-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "No Set aside used",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice ",
+          "url": "https://sam.gov/workspace/contract/opp/3f39bb62fe16416597939c1c32399939/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "CO"
+    },
+    {
+      "id": "co-sam-af1d163d927549df-b85a-doi-solicitors-modernization-construction-pro",
+      "name": "B85a DOI Solicitors Modernization Construction Project",
+      "city": "Lakewood",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Federal solicitation 47PD5126Q9834. B85a DOI Solicitors Modernization Construction Project. Response deadline 2026-08-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PD5126Q9834",
+          "url": "https://sam.gov/workspace/contract/opp/af1d163d927549df869dd199ad4d32e1/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "CO"
+    },
+    {
+      "id": "co-sam-bbe2347825e949e0-b85a-doi-solicitors-modernization-construction-pro",
+      "name": "B85a DOI Solicitors Modernization Construction Project",
+      "city": "Lakewood",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Federal solicitation 47PD5126Q9834. B85a DOI Solicitors Modernization Construction Project. Response deadline 2026-08-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PD5126Q9834",
+          "url": "https://sam.gov/workspace/contract/opp/bbe2347825e949e09d54faaaf3d7d1b6/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "CO"
+    },
+    {
+      "id": "co-sam-ceae978f628440e3-nist-boulder-building-2-1330-fume-hood-replacement",
+      "name": "NIST Boulder Building 2 1330 Fume Hood Replacement",
+      "city": "Boulder",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Commerce, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Federal combined synopsis/solicitation 1333ND26RNB190028. NIST Boulder Building 2 1330 Fume Hood Replacement. Response deadline 2026-07-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1333ND26RNB190028",
+          "url": "https://sam.gov/workspace/contract/opp/ceae978f628440e3885f94b88fb7b832/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "CO"
+    },
+    {
+      "id": "co-sam-8f3d7ef803264a9c-nist-boulder-building-2-1330-fume-hood-replacement",
+      "name": "NIST Boulder Building 2 1330 Fume Hood Replacement",
+      "city": "Boulder",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Commerce, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "Federal combined synopsis/solicitation 1333ND26RNB190028. NIST Boulder Building 2 1330 Fume Hood Replacement. Response deadline 2026-07-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1333ND26RNB190028",
+          "url": "https://sam.gov/workspace/contract/opp/8f3d7ef803264a9cb7c86fd51666c864/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "CO"
+    },
+    {
+      "id": "co-sam-1df55f29638d4d5e-imaging-system-removal-floor-restoration-and-elect",
+      "name": "Imaging System Removal Floor Restoration and Electrical Work",
+      "city": "Aurora",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "Federal presolicitation 36C25926Q0539. Imaging System Removal Floor Restoration and Electrical Work. Response deadline 2026-07-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C25926Q0539",
+          "url": "https://sam.gov/workspace/contract/opp/1df55f29638d4d5ea4d21ce96dc7888c/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "CO"
+    },
+    {
+      "id": "co-sam-82699a4041974ec4-gaoa-south-park-office-rehab-pike-national-forest",
+      "name": "GAOA South Park Office Rehab Pike National Forest",
+      "city": "Fairplay",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Federal combined synopsis/solicitation 1240BH26Q0028. GAOA South Park Office Rehab Pike National Forest. Response deadline 2026-08-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1240BH26Q0028",
+          "url": "https://sam.gov/workspace/contract/opp/82699a4041974ec4a2ab32452853c9e9/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "CO"
+    },
+    {
+      "id": "co-sam-c6ad9c74a1714f59-rocky-mountain-construction-idiq",
+      "name": "Rocky Mountain Construction IDIQ",
+      "city": "Denver",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Federal solicitation 47PH5126R0001. Rocky Mountain Construction IDIQ. Response deadline 2026-08-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PH5126R0001",
+          "url": "https://sam.gov/workspace/contract/opp/c6ad9c74a1714f59abcdb88f127dcd38/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "CO"
+    },
+    {
+      "id": "co-sam-328ccc20f81a4e81-industry-day-joint-cyber-facility",
+      "name": "Industry Day Joint Cyber Facility",
+      "city": "Lakewood",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Federal special notice. Industry Day Joint Cyber Facility. Response deadline 2026-07-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "No Set aside used",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice ",
+          "url": "https://sam.gov/workspace/contract/opp/328ccc20f81a4e8199c55ed5ce75be09/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "CO"
+    },
+    {
+      "id": "co-sam-f46a14d7122b431a-sources-sought-market-intelligence-fort-carson-equ",
+      "name": "Sources Sought/Market Intelligence: Fort Carson Equipment Concentration Site - Potential Use of Progressive Design Build",
+      "city": "Colorado Springs",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-06",
+      "description": "Federal sources sought W912QR-PDB-FortCarsonECS. Sources Sought/Market Intelligence: Fort Carson Equipment Concentration Site - Potential Use of Progressive Design Build using Other Transaction Authority (OTA). Response deadline 2026-07-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W912QR-PDB-FortCarsonECS",
+          "url": "https://sam.gov/workspace/contract/opp/f46a14d7122b431a9b7ec553eea006d9/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "CO"
+    },
+    {
+      "id": "co-sam-a43efb4c833d423b-nist-boulder-site-wide-road-painting",
+      "name": "NIST Boulder Site-Wide Road Painting",
+      "city": "Boulder",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Commerce, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Federal combined synopsis/solicitation 1333ND26RNB190027. NIST Boulder Site-Wide Road Painting. Response deadline 2026-07-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1333ND26RNB190027",
+          "url": "https://sam.gov/workspace/contract/opp/a43efb4c833d423bb61139dfae65b9c2/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "CO"
+    },
+    {
+      "id": "co-sam-4e2b86f98fe64096-b85a-doi-solicitors-modernization-construction-pro",
+      "name": "B85a DOI Solicitors Modernization Construction Project",
+      "city": "Lakewood",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Federal solicitation 47PD5126Q9834. B85a DOI Solicitors Modernization Construction Project. Response deadline 2026-07-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PD5126Q9834",
+          "url": "https://sam.gov/workspace/contract/opp/4e2b86f98fe640968c39006b62301ca0/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "CO"
+    },
+    {
+      "id": "co-sam-338eb9d4d12c4a70-nist-boulder-building-2-1330-fume-hood-replacement",
+      "name": "NIST Boulder Building 2 1330 Fume Hood Replacement",
+      "city": "Boulder",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Commerce, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "Federal combined synopsis/solicitation 1333ND26RNB190028. NIST Boulder Building 2 1330 Fume Hood Replacement. Response deadline 2026-07-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1333ND26RNB190028",
+          "url": "https://sam.gov/workspace/contract/opp/338eb9d4d12c4a70b0bef7a8cac7a60e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "CO"
+    },
+    {
+      "id": "co-sam-ae87688266af4141-imaging-system-removal-floor-restoration-and-elect",
+      "name": "Imaging System Removal Floor Restoration and Electrical Work",
+      "city": "Aurora",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-24",
+      "description": "Federal presolicitation 36C25926Q0539. Imaging System Removal Floor Restoration and Electrical Work. Response deadline 2026-07-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C25926Q0539",
+          "url": "https://sam.gov/workspace/contract/opp/ae87688266af4141b4abbb819b8028ac/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "CO"
+    },
+    {
+      "id": "co-sam-1aa4a6101d2e447a-fort-carson-equipment-concentration-site-potential",
+      "name": "Fort Carson Equipment Concentration Site: Potential Use of Progressive Design Build using Other Transaction Authority (O",
+      "city": "Colorado Springs",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-24",
+      "description": "Federal sources sought W912QR-PDB-FortCarsonECS. Fort Carson Equipment Concentration Site: Potential Use of Progressive Design Build using Other Transaction Authority (OTA). Response deadline 2026-07-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W912QR-PDB-FortCarsonECS",
+          "url": "https://sam.gov/workspace/contract/opp/1aa4a6101d2e447aa7e287e888112051/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "CO"
+    },
+    {
+      "id": "co-sam-739c2a278c6148a4-fort-carson-equipment-concentration-site-potential",
+      "name": "Fort Carson Equipment Concentration Site: Potential Use of Progressive Design Build using Other Transaction Authority (O",
+      "city": "Colorado Springs",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-24",
+      "description": "Federal sources sought W912QR-PDB-FortCarsonECS. Fort Carson Equipment Concentration Site: Potential Use of Progressive Design Build using Other Transaction Authority (OTA). Response deadline 2026-07-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W912QR-PDB-FortCarsonECS",
+          "url": "https://sam.gov/workspace/contract/opp/739c2a278c6148a49dd168c645c51881/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "CO"
+    },
+    {
+      "id": "co-sam-c203e11581e641d1-steam-tunnel-ventilation-replacement",
+      "name": "Steam Tunnel Ventilation Replacement",
+      "city": "Boulder",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Commerce, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-18",
+      "description": "Federal combined synopsis/solicitation 1333ND26RNB190032. Steam Tunnel Ventilation Replacement. Response deadline 2026-08-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1333ND26RNB190032",
+          "url": "https://sam.gov/workspace/contract/opp/c203e11581e641d1bae4143de5c8d355/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "CO"
+    },
+    {
+      "id": "co-sam-d72bd1e6e3a04bbd-steam-tunnel-ventilation-replacement",
+      "name": "Steam Tunnel Ventilation Replacement",
+      "city": "Boulder",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Commerce, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-17",
+      "description": "Federal combined synopsis/solicitation 1333ND26RNB190032. Steam Tunnel Ventilation Replacement. Response deadline 2026-08-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1333ND26RNB190032",
+          "url": "https://sam.gov/workspace/contract/opp/d72bd1e6e3a04bbd8e85fc5bd1438286/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "CO"
+    },
+    {
+      "id": "co-sam-0860d15b801b48c8-nist-boulder-b1-wing-6-seal-above-hallway-doors",
+      "name": "NIST Boulder B1 Wing 6 Seal Above Hallway Doors",
+      "city": "Boulder",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Commerce, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-12",
+      "description": "Federal combined synopsis/solicitation 1333ND26RNB190030. NIST Boulder B1 Wing 6 Seal Above Hallway Doors. Response deadline 2026-07-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1333ND26RNB190030",
+          "url": "https://sam.gov/workspace/contract/opp/0860d15b801b48c88edc9f0744b9705f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "CO"
+    },
+    {
+      "id": "co-sam-d29fa54458294b82-nist-boulder-building-2-1330-fume-hood-replacement",
+      "name": "NIST Boulder Building 2 1330 Fume Hood Replacement",
+      "city": "Boulder",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Commerce, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-09",
+      "description": "Federal combined synopsis/solicitation 1333ND26RNB190028. NIST Boulder Building 2 1330 Fume Hood Replacement. Response deadline 2026-07-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1333ND26RNB190028",
+          "url": "https://sam.gov/workspace/contract/opp/d29fa54458294b82a99ea13ae493da10/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "CO"
+    },
+    {
+      "id": "co-sam-85ec5ceb31254965-nist-boulder-site-wide-road-painting",
+      "name": "NIST Boulder Site-Wide Road Painting",
+      "city": "Boulder",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Commerce, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-05",
+      "description": "Federal combined synopsis/solicitation 1333ND26RNB190027. NIST Boulder Site-Wide Road Painting. Response deadline 2026-07-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1333ND26RNB190027",
+          "url": "https://sam.gov/workspace/contract/opp/85ec5ceb31254965ae6a90ef616d74f5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "CO"
+    },
+    {
+      "id": "co-sam-8a04636f67f30873-fhwa-lab-remodel-building-52-denver-federal-center",
+      "name": "FHWA Lab Remodel, Building 52, Denver Federal Center, Lakewood, Colorado",
+      "city": "LAKEWOOD",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-06-25",
+      "description": "Federal combined synopsis/solicitation Solicitation_47PJ0019R0148_for_B52_FHWA_Lab_Remodel. FHWA Lab Remodel, Building 52, Denver Federal Center, Lakewood, Colorado. Response deadline 2019-07-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Women-Owned Small Business",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation Solicitation_47PJ0019R0148_for_B52_FHWA_Lab_Remodel",
+          "url": "https://sam.gov/workspace/contract/opp/8a04636f67f30873cdf42e904e6a7b6c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "CO"
+    },
+    {
+      "id": "co-sam-30058f588f7a8a66-fhwa-lab-remodel-building-52-denver-federal-center",
+      "name": "FHWA Lab Remodel, Building 52, Denver Federal Center, Lakewood, Colorado",
+      "city": "LAKEWOOD",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-06-20",
+      "description": "Federal combined synopsis/solicitation Solicitation_47PJ0019R0148_for_B52_FHWA_Lab_Remodel. FHWA Lab Remodel, Building 52, Denver Federal Center, Lakewood, Colorado. Response deadline 2019-07-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Women-Owned Small Business",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation Solicitation_47PJ0019R0148_for_B52_FHWA_Lab_Remodel",
+          "url": "https://sam.gov/workspace/contract/opp/30058f588f7a8a6650899534728f0318/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "CO"
     }
   ],
   "stats": {
-    "total": 7
+    "total": 30
   }
 }

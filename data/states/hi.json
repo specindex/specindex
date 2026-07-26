@@ -1,9 +1,9 @@
 {
   "state": "HI",
   "state_name": "Hawaii",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — CNR Magazine, Star-Advertiser, EB5 updates.",
+  "capture_method": "Public sources — CNR Magazine, Star-Advertiser, EB5 updates, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "hi-aloha-stadium-entertainment-district",
@@ -85,9 +85,593 @@
         }
       ],
       "open_for": "Permitting. Pre-construction MEP specs."
+    },
+    {
+      "id": "hi-sam-dadbd9e989ab4273-sources-sought-fuel-pit-door-removal-and-replace",
+      "name": "Sources Sought - Fuel Pit Door Removal and Replace",
+      "city": "JBPHH",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Federal sources sought 26-009. Sources Sought - Fuel Pit Door Removal and Replace. Response deadline 2026-07-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "No Set aside used",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 26-009",
+          "url": "https://sam.gov/workspace/contract/opp/dadbd9e989ab427380766c59d24a21f2/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "HI"
+    },
+    {
+      "id": "hi-sam-0e599f61c78d4785-j059-459-26-009-modernize-outlying-cboc-building-a",
+      "name": "J059--459-26-009 Modernize Outlying CBOC Building Automated Systems",
+      "city": "Honolulu",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Federal presolicitation 36C26126R0040. J059--459-26-009 Modernize Outlying CBOC Building Automated Systems. Response deadline 2026-05-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code J059"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C26126R0040",
+          "url": "https://sam.gov/workspace/contract/opp/0e599f61c78d4785923b88c02ffda37a/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "HI"
+    },
+    {
+      "id": "hi-sam-517a1622db1b431f-z2dz-modernize-generator-project",
+      "name": "Z2DZ--Modernize Generator Project",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-15",
+      "description": "Federal solicitation 36C26126R00310003. Z2DZ--Modernize Generator Project. Response deadline 2026-05-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26126R00310003",
+          "url": "https://sam.gov/workspace/contract/opp/517a1622db1b431fb4657811f78878cb/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "HI"
+    },
+    {
+      "id": "hi-sam-0961f0c302c9403d-j059-459-26-009-modernize-outlying-cboc-building-a",
+      "name": "J059--459-26-009 Modernize Outlying CBOC Building Automated Systems",
+      "city": "Honolulu",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-07",
+      "description": "Federal presolicitation 36C26126R0040. J059--459-26-009 Modernize Outlying CBOC Building Automated Systems. Response deadline 2026-05-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code J059"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C26126R0040",
+          "url": "https://sam.gov/workspace/contract/opp/0961f0c302c9403dbb13890224232959/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "HI"
+    },
+    {
+      "id": "hi-sam-d44ba0fd3da845f8-gsa-region-09-2026-construction-idiq-zone-3",
+      "name": "GSA Region 09 2026 Construction IDIQ Zone 3",
+      "city": "Honolulu",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-30",
+      "description": "Federal solicitation 47PK0125R0006. GSA Region 09 2026 Construction IDIQ Zone 3. Response deadline 2026-01-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PK0125R0006",
+          "url": "https://sam.gov/workspace/contract/opp/d44ba0fd3da845f89c982b5b9f468a6b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "HI"
+    },
+    {
+      "id": "hi-sam-de3444025aaf4637-gsa-region-09-2026-construction-idiq-zone-3",
+      "name": "GSA Region 09 2026 Construction IDIQ Zone 3",
+      "city": "Honolulu",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-29",
+      "description": "Federal solicitation 47PK0125R0006. GSA Region 09 2026 Construction IDIQ Zone 3. Response deadline 2026-01-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PK0125R0006",
+          "url": "https://sam.gov/workspace/contract/opp/de3444025aaf463786bf820e21d448af/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "HI"
+    },
+    {
+      "id": "hi-sam-f0570b488fc14458-gsa-region-09-2026-construction-idiq-zone-3",
+      "name": "GSA Region 09 2026 Construction IDIQ Zone 3",
+      "city": "Honolulu",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-29",
+      "description": "Federal solicitation 47PK0125R0006. GSA Region 09 2026 Construction IDIQ Zone 3. Response deadline 2026-01-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PK0125R0006",
+          "url": "https://sam.gov/workspace/contract/opp/f0570b488fc144589519bd7b9ca80e86/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "HI"
+    },
+    {
+      "id": "hi-sam-64a938c1aaa14c27-gsa-region-09-2026-construction-idiq-zone-3",
+      "name": "GSA Region 09 2026 Construction IDIQ Zone 3",
+      "city": "Honolulu",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-03",
+      "description": "Federal solicitation 47PK0125R0006. GSA Region 09 2026 Construction IDIQ Zone 3. Response deadline 2025-11-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PK0125R0006",
+          "url": "https://sam.gov/workspace/contract/opp/64a938c1aaa14c27acb5feeda353c2b0/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "HI"
+    },
+    {
+      "id": "hi-sam-861350ef20e943ff-gsa-region-09-2026-construction-idiq-zone-3",
+      "name": "GSA Region 09 2026 Construction IDIQ Zone 3",
+      "city": "Honolulu",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-24",
+      "description": "Federal solicitation 47PK0125R0006. GSA Region 09 2026 Construction IDIQ Zone 3. Response deadline 2025-11-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PK0125R0006",
+          "url": "https://sam.gov/workspace/contract/opp/861350ef20e943ff9f0ee77ab697659e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "HI"
+    },
+    {
+      "id": "hi-sam-fed59939e9924bb2-gsa-region-09-2026-construction-idiq-zone-3",
+      "name": "GSA Region 09 2026 Construction IDIQ Zone 3",
+      "city": "Honolulu",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-16",
+      "description": "Federal solicitation 47PK0125R0006. GSA Region 09 2026 Construction IDIQ Zone 3. Response deadline 2025-11-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PK0125R0006",
+          "url": "https://sam.gov/workspace/contract/opp/fed59939e9924bb2bc119452c3861452/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "HI"
+    },
+    {
+      "id": "hi-sam-957a32f350354302-gsa-region-09-2026-construction-idiq-zone-3",
+      "name": "GSA Region 09 2026 Construction IDIQ Zone 3",
+      "city": "Honolulu",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-14",
+      "description": "Federal solicitation 47PK0125R0006. GSA Region 09 2026 Construction IDIQ Zone 3. Response deadline 2025-11-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PK0125R0006",
+          "url": "https://sam.gov/workspace/contract/opp/957a32f35035430282cbbb9380e5e221/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "HI"
+    },
+    {
+      "id": "hi-sam-1e738a0ebf914d00-gsa-region-09-2026-construction-idiq-zone-3",
+      "name": "GSA Region 09 2026 Construction IDIQ Zone 3",
+      "city": "Honolulu",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-02",
+      "description": "Federal solicitation 47PK0125R0006. GSA Region 09 2026 Construction IDIQ Zone 3. Response deadline 2025-11-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PK0125R0006",
+          "url": "https://sam.gov/workspace/contract/opp/1e738a0ebf914d00b87e94e37a90801b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "HI"
+    },
+    {
+      "id": "hi-sam-b9c59bae63994470-gsa-region-09-2026-construction-idiq-zone-3",
+      "name": "GSA Region 09 2026 Construction IDIQ Zone 3",
+      "city": "Honolulu",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-09-30",
+      "description": "Federal solicitation 47PK0125R0006. GSA Region 09 2026 Construction IDIQ Zone 3. Response deadline 2025-11-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PK0125R0006",
+          "url": "https://sam.gov/workspace/contract/opp/b9c59bae639944708872e841d44dd5da/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "HI"
+    },
+    {
+      "id": "hi-sam-aafa05c3e4eb4408-gsa-region-09-2026-construction-idiq-zone-3",
+      "name": "GSA Region 09 2026 Construction IDIQ Zone 3",
+      "city": "Honolulu",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-09-29",
+      "description": "Federal solicitation 47PK0125R0006. GSA Region 09 2026 Construction IDIQ Zone 3. Response deadline 2025-11-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PK0125R0006",
+          "url": "https://sam.gov/workspace/contract/opp/aafa05c3e4eb4408a1fa8f2bc7ce6e04/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "HI"
+    },
+    {
+      "id": "hi-sam-9602d0cf47d5a244-renovate-geodss-towers-on-maui",
+      "name": "Renovate GEODSS Towers on Maui",
+      "city": "KULA",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2015-08-28",
+      "description": "Federal modification/amendment/cancel FA5215-15-B-0001. Renovate GEODSS Towers on Maui. Response deadline 2015-09-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Modification/Amendment/Cancel",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Modification/Amendment/Cancel FA5215-15-B-0001",
+          "url": "https://sam.gov/workspace/contract/opp/9602d0cf47d5a2443b4d6164a20299a3/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "HI"
     }
   ],
   "stats": {
-    "total": 2
+    "total": 17
   }
 }

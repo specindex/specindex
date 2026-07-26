@@ -1,9 +1,9 @@
 {
   "state": "MT",
   "state_name": "Montana",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — state permits, local news.",
+  "capture_method": "Public sources — state permits, local news, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "mt-bozeman-tech-industrial",
@@ -39,9 +39,513 @@
         }
       ],
       "open_for": "Monitor permit filings for spec projects."
+    },
+    {
+      "id": "mt-sam-dedb6e09f2254613-pryor-clinic-expansion-construction-in-pryor",
+      "name": "Pryor Clinic Expansion Construction in Pryor",
+      "city": "Pryor",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal solicitation 75H70126R00024. Pryor Clinic Expansion Construction in Pryor. Response deadline 2026-08-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00024",
+          "url": "https://sam.gov/workspace/contract/opp/dedb6e09f2254613a89082649da8f4f5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MT"
+    },
+    {
+      "id": "mt-sam-a8fe87b9c90b4eb3-crow-renovation-phase-ii",
+      "name": "Crow Renovation Phase II",
+      "city": "Crow Agency",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Federal presolicitation 75H70126R00054. Crow Renovation Phase II. Response deadline 2026-08-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 75H70126R00054",
+          "url": "https://sam.gov/workspace/contract/opp/a8fe87b9c90b4eb38a17eb8cf027d85d/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MT"
+    },
+    {
+      "id": "mt-sam-08389c8a47b34f93-turner-roof-and-building-envelope-project",
+      "name": "Turner Roof and Building Envelope Project",
+      "city": "Turner",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Federal combined synopsis/solicitation 47PD5526R0042. Turner Roof and Building Envelope Project. Response deadline 2026-08-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 47PD5526R0042",
+          "url": "https://sam.gov/workspace/contract/opp/08389c8a47b34f93adbfe7e9a3a7e208/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MT"
+    },
+    {
+      "id": "mt-sam-8f0102848a354295-pryor-clinic-expansion-construction-in-pryor",
+      "name": "Pryor Clinic Expansion Construction in Pryor",
+      "city": "Pryor",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "Federal solicitation 75H70126R00024. Pryor Clinic Expansion Construction in Pryor. Response deadline 2026-08-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00024",
+          "url": "https://sam.gov/workspace/contract/opp/8f0102848a354295bf916bfe282b661b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MT"
+    },
+    {
+      "id": "mt-sam-46f877ac19c743c5-turner-roof-and-building-envelope-project",
+      "name": "Turner Roof and Building Envelope Project",
+      "city": "Turner",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "Federal combined synopsis/solicitation 47PD5526R0042. Turner Roof and Building Envelope Project. Response deadline 2026-08-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 47PD5526R0042",
+          "url": "https://sam.gov/workspace/contract/opp/46f877ac19c743c5b535bce9529c01e8/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MT"
+    },
+    {
+      "id": "mt-sam-85c95fb9520d4e5d-pryor-clinic-expansion-construction-in-pryor",
+      "name": "Pryor Clinic Expansion Construction in Pryor",
+      "city": "Pryor",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "Federal solicitation 75H70126R00024. Pryor Clinic Expansion Construction in Pryor. Response deadline 2026-08-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00024",
+          "url": "https://sam.gov/workspace/contract/opp/85c95fb9520d4e5d9073baafd8fb815f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MT"
+    },
+    {
+      "id": "mt-sam-fe69c921d297464b-ac-unit-replacement-piegan-lpoe",
+      "name": "AC Unit Replacement- Piegan LPOE",
+      "city": "Babb",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-24",
+      "description": "Federal combined synopsis/solicitation 47PD5526R0041. AC Unit Replacement- Piegan LPOE. Response deadline 2026-07-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 47PD5526R0041",
+          "url": "https://sam.gov/workspace/contract/opp/fe69c921d297464b93116f1214486d31/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MT"
+    },
+    {
+      "id": "mt-sam-fdf88e9ccd784eb8-crawlspace-water-mitigation-piegan-lpoe-babb",
+      "name": "Crawlspace Water Mitigation - Piegan LPOE-Babb",
+      "city": "Babb",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-18",
+      "description": "Federal combined synopsis/solicitation 47PD5526R0039. Crawlspace Water Mitigation - Piegan LPOE-Babb. Response deadline 2026-07-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 47PD5526R0039",
+          "url": "https://sam.gov/workspace/contract/opp/fdf88e9ccd784eb884c6465c589dca2d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MT"
+    },
+    {
+      "id": "mt-sam-188817867f3c45a1-pryor-clinic-expansion-construction-in-pryor",
+      "name": "Pryor Clinic Expansion Construction in Pryor",
+      "city": "Pryor",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-16",
+      "description": "Federal solicitation 75H70126R00024. Pryor Clinic Expansion Construction in Pryor. Response deadline 2026-07-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00024",
+          "url": "https://sam.gov/workspace/contract/opp/188817867f3c45a197900bf4effcc526/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MT"
+    },
+    {
+      "id": "mt-sam-db5e48dd0b844f44-the-state-of-montana-joc-ordering-agreement-solici",
+      "name": "The State of Montana JOC Ordering Agreement Solicitation",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Postal Service",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "Federal solicitation 089495-26-A-0066. The State of Montana JOC Ordering Agreement Solicitation. Response deadline 2026-07-02.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2HB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 089495-26-A-0066",
+          "url": "https://sam.gov/workspace/contract/opp/db5e48dd0b844f448346eb2bb30f06ff/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MT"
+    },
+    {
+      "id": "mt-sam-1e80a10d1c4747c0-pryor-clinic-expansion-construction-in-pryor",
+      "name": "Pryor Clinic Expansion Construction in Pryor",
+      "city": "Pryor",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-12",
+      "description": "Federal sources sought SS75H70126R00024. Pryor Clinic Expansion Construction in Pryor. Response deadline 2026-04-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought SS75H70126R00024",
+          "url": "https://sam.gov/workspace/contract/opp/1e80a10d1c4747c0a73430e145701449/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MT"
+    },
+    {
+      "id": "mt-sam-976793cb643f4f9d-pryor-clinic-expansion-construction-in-pryor",
+      "name": "Pryor Clinic Expansion Construction in Pryor",
+      "city": "Pryor",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-11",
+      "description": "Federal sources sought SS75H70126R00024. Pryor Clinic Expansion Construction in Pryor. Response deadline 2026-04-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought SS75H70126R00024",
+          "url": "https://sam.gov/workspace/contract/opp/976793cb643f4f9da063d2e762c14aa7/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MT"
+    },
+    {
+      "id": "mt-sam-d012c188db1b44a5-gaoa-lcic-lighting-upgrades",
+      "name": "GAOA LCIC Lighting Upgrades",
+      "city": "Great Falls",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "Xenturis Llc Missoula Mt 59808 Usa",
+      "opened_or_announced_date": "2025-12-02",
+      "description": "Federal award notice 1240LU26C0004. GAOA LCIC Lighting Upgrades.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1FB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice 1240LU26C0004",
+          "url": "https://sam.gov/workspace/contract/opp/d012c188db1b44a59bb995ff17b1e8f7/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MT"
     }
   ],
   "stats": {
-    "total": 1
+    "total": 14
   }
 }

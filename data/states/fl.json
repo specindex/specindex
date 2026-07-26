@@ -1,9 +1,9 @@
 {
   "state": "FL",
   "state_name": "Florida",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Web research — Florida Construction News, REBusinessOnline, Florida YIMBY, WLRN, GrowthSpotter, MCD Magazine",
+  "capture_method": "Web research — Florida Construction News, REBusinessOnline, Florida YIMBY, WLRN, GrowthSpotter, MCD Magazine, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "fl-jupiter-medical-avenir-hospital",
@@ -482,9 +482,4633 @@
         }
       ],
       "open_for": "Near completion. Final MEP and commissioning specs."
+    },
+    {
+      "id": "fl-sam-090d54d9ab2a428d-design-and-build-covered-parking-structure-for-fig",
+      "name": "Design and Build Covered Parking Structure for Fighter Aircraft",
+      "city": "Homestead",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "Federal combined synopsis/solicitation FA664826Q0009. Design and Build Covered Parking Structure for Fighter Aircraft. Response deadline 2026-08-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1BZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation FA664826Q0009",
+          "url": "https://sam.gov/workspace/contract/opp/090d54d9ab2a428d929768c286f989b9/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-874d51611f7b4200-rfi-concepts-for-design-construction-and-operation",
+      "name": "RFI - Concepts for Design, Construction, and Operation of a Regional Liquefied Natural Gas (LNG) Production and Storage ",
+      "city": "Orlando",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "National Aeronautics And Space Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal special notice RFI-KSC-LNGplant-2026. RFI - Concepts for Design, Construction, and Operation of a Regional Liquefied Natural Gas (LNG) Production and Storage Facility at Kennedy Space Center or Cape Canaveral Space Force Station. Response deadline 2026-08-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "No Set aside used",
+        "Classification code C1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice RFI-KSC-LNGplant-2026",
+          "url": "https://sam.gov/workspace/contract/opp/874d51611f7b4200be46f9dd2e998c16/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-d4acffb4a5d74a4f-reconfigure-and-modernize-the-1600-member-ltc-luis",
+      "name": "Reconfigure and Modernize the 1600-member LTC Luis E. Martinez Army Reserve Center (ARC) in Perrine, FL",
+      "city": "Miami",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Federal solicitation W912QR26RA012. Reconfigure and Modernize the 1600-member LTC Luis E. Martinez Army Reserve Center (ARC) in Perrine, FL. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA012",
+          "url": "https://sam.gov/workspace/contract/opp/d4acffb4a5d74a4f997dd9f818558cce/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-8cfb73e5159648eb-reconfigure-and-modernize-the-1600-member-ltc-luis",
+      "name": "Reconfigure and Modernize the 1600-member LTC Luis E. Martinez Army Reserve Center (ARC) in Perrine, FL",
+      "city": "Miami",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Federal solicitation W912QR26RA012. Reconfigure and Modernize the 1600-member LTC Luis E. Martinez Army Reserve Center (ARC) in Perrine, FL. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA012",
+          "url": "https://sam.gov/workspace/contract/opp/8cfb73e5159648ebba8b5dd82b3feec8/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-590e476b143d4278-nasa-john-f-kennedy-space-center-small-task-order-",
+      "name": "NASA / John F. Kennedy Space Center_ Small Task Order Construction Contract (STOCC) II",
+      "city": "Orlando",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "National Aeronautics And Space Administration",
+      "architect": "",
+      "general_contractor": "Ses Technologies Llc Merritt Island Fl 32953 Usa",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Federal award notice 80KSC026R0012. NASA / John F. Kennedy Space Center_ Small Task Order Construction Contract (STOCC) II.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice 80KSC026R0012",
+          "url": "https://sam.gov/workspace/contract/opp/590e476b143d42789514ede7aa023165/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-077160598c9f4324-nasa-john-f-kennedy-space-center-small-task-order-",
+      "name": "NASA / John F. Kennedy Space Center_ Small Task Order Construction Contract (STOCC) II",
+      "city": "Orlando",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "National Aeronautics And Space Administration",
+      "architect": "",
+      "general_contractor": "Marco Federal Services, Llc Kissimmee Fl 34741 Usa",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Federal award notice 80KSC026R0012. NASA / John F. Kennedy Space Center_ Small Task Order Construction Contract (STOCC) II.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice 80KSC026R0012",
+          "url": "https://sam.gov/workspace/contract/opp/077160598c9f43248a6192f3211268cf/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-5cf9736b28654272-nasa-john-f-kennedy-space-center-small-task-order-",
+      "name": "NASA / John F. Kennedy Space Center_ Small Task Order Construction Contract (STOCC) II",
+      "city": "Orlando",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "National Aeronautics And Space Administration",
+      "architect": "",
+      "general_contractor": "General Mechanical Corporation Jacksonville Fl 32256 Usa",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Federal award notice 80KSC026R0012. NASA / John F. Kennedy Space Center_ Small Task Order Construction Contract (STOCC) II.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice 80KSC026R0012",
+          "url": "https://sam.gov/workspace/contract/opp/5cf9736b286542729d90f807f33132db/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-f6b5a72727214c04-nasa-john-f-kennedy-space-center-small-task-order-",
+      "name": "NASA / John F. Kennedy Space Center_ Small Task Order Construction Contract (STOCC) II",
+      "city": "Orlando",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "National Aeronautics And Space Administration",
+      "architect": "",
+      "general_contractor": "Best Value Management, Llc Jacksonville Fl 32204 Usa",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Federal award notice 80KSC026R0012. NASA / John F. Kennedy Space Center_ Small Task Order Construction Contract (STOCC) II.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice 80KSC026R0012",
+          "url": "https://sam.gov/workspace/contract/opp/f6b5a72727214c04b21948112d0867c7/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-34b81a833d5f4944-nasa-john-f-kennedy-space-center-small-task-order-",
+      "name": "NASA / John F. Kennedy Space Center_ Small Task Order Construction Contract (STOCC) II",
+      "city": "Orlando",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "National Aeronautics And Space Administration",
+      "architect": "",
+      "general_contractor": "Apex Facility Services Group Llc Roswell Ga 30076 Usa",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Federal award notice 80KSC026R0012. NASA / John F. Kennedy Space Center_ Small Task Order Construction Contract (STOCC) II.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice 80KSC026R0012",
+          "url": "https://sam.gov/workspace/contract/opp/34b81a833d5f494481c0af7fe3b81cec/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-64b1cdd00c564c78-nasa-john-f-kennedy-space-center-small-task-order-",
+      "name": "NASA / John F. Kennedy Space Center_ Small Task Order Construction Contract (STOCC) II",
+      "city": "Orlando",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "National Aeronautics And Space Administration",
+      "architect": "",
+      "general_contractor": "Aleut Construction Llc Reston Va 20191 Usa",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Federal award notice 80KSC026R0012. NASA / John F. Kennedy Space Center_ Small Task Order Construction Contract (STOCC) II.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice 80KSC026R0012",
+          "url": "https://sam.gov/workspace/contract/opp/64b1cdd00c564c78b220f5e9d3879554/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-ab43f0750f2844fb-nasa-john-f-kennedy-space-center-small-task-order-",
+      "name": "NASA / John F. Kennedy Space Center_ Small Task Order Construction Contract (STOCC) II",
+      "city": "Orlando",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "National Aeronautics And Space Administration",
+      "architect": "",
+      "general_contractor": "Aiko Enterprises, Inc Jacksonville Fl 32210 Usa",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Federal award notice 80KSC026R0012. NASA / John F. Kennedy Space Center_ Small Task Order Construction Contract (STOCC) II.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice 80KSC026R0012",
+          "url": "https://sam.gov/workspace/contract/opp/ab43f0750f2844fb8adb336c279b6f49/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-6da6f7389ac4480c-z1dz-fy27-nrm-proj-516-26-117-bb-repair-steam-pipi",
+      "name": "Z1DZ--FY27 NRM (PROJ 516-26-117) BB Repair Steam Piping in Manhole Near Building 1",
+      "city": "Bay Pines",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Federal presolicitation 36C24827Q0004. Z1DZ--FY27 NRM (PROJ 516-26-117) BB Repair Steam Piping in Manhole Near Building 1. Response deadline 2026-07-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24827Q0004",
+          "url": "https://sam.gov/workspace/contract/opp/6da6f7389ac4480cb24dc1c0a2f822dd/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-0c94525c69fc470a-y1da-573-21-106-ehrm-infrastructure-upgrades-and-d",
+      "name": "Y1DA--573-21-106 EHRM Infrastructure Upgrades and Data Center Construction - Gainesville VAMC",
+      "city": "Gainesville",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "Federal solicitation 36C77626B0026. Y1DA--573-21-106 EHRM Infrastructure Upgrades and Data Center Construction - Gainesville VAMC. Response deadline 2026-09-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0026",
+          "url": "https://sam.gov/workspace/contract/opp/0c94525c69fc470a9ef25d6150a44ebc/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-cbb1f12970294dc0-bldg-89-lab-renovations-miami-fl",
+      "name": "Bldg. 89 Lab Renovations, Miami, FL",
+      "city": "Miami",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "Federal combined synopsis/solicitation 1232SA26Q0770. Bldg. 89 Lab Renovations, Miami, FL. Response deadline 2026-07-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2DB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1232SA26Q0770",
+          "url": "https://sam.gov/workspace/contract/opp/cbb1f12970294dc0a037ae8a3055535d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-46b8bcdf8328487f-install-panel-wall-to-bsl2-standards",
+      "name": "Install Panel Wall to BSL2 Standards",
+      "city": "Coral Gables",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "Federal combined synopsis/solicitation 1232SA26Q0930. Install Panel Wall to BSL2 Standards. Response deadline 2026-08-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1232SA26Q0930",
+          "url": "https://sam.gov/workspace/contract/opp/46b8bcdf8328487f850da6788c5fd11b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-85717cd3daf0466e-nwr-shelter-replacement-perry-florida",
+      "name": "NWR Shelter Replacement - Perry, Florida",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Commerce, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "Federal solicitation 1305M326Q0245. NWR Shelter Replacement - Perry, Florida. Response deadline 2026-07-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 1305M326Q0245",
+          "url": "https://sam.gov/workspace/contract/opp/85717cd3daf0466ea9e034783a288d06/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-1efb15a9d3a94dba-nwr-shelter-replacement-perry-florida",
+      "name": "NWR Shelter Replacement - Perry, Florida",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Commerce, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-06",
+      "description": "Federal solicitation 1305M326Q0245. NWR Shelter Replacement - Perry, Florida. Response deadline 2026-07-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 1305M326Q0245",
+          "url": "https://sam.gov/workspace/contract/opp/1efb15a9d3a94dbaa67a7641f88254da/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-6215b575a4bf4351-lake-city-atb-mold-remediation-reconstruction",
+      "name": "Lake City ATB- Mold Remediation & Reconstruction",
+      "city": "Lake City",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "Federal combined synopsis/solicitation 12445226Q0036. Lake City ATB- Mold Remediation & Reconstruction. Response deadline 2026-07-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 12445226Q0036",
+          "url": "https://sam.gov/workspace/contract/opp/6215b575a4bf4351a7630c7a4f2699c5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-fedfe9abb50d40b5-reconfigure-and-modernize-the-1600-member-ltc-luis",
+      "name": "Reconfigure and Modernize the 1600-member LTC Luis E. Martinez Army Reserve Center (ARC) in Perrine, FL",
+      "city": "Miami",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "Federal solicitation W912QR26RA012. Reconfigure and Modernize the 1600-member LTC Luis E. Martinez Army Reserve Center (ARC) in Perrine, FL. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA012",
+          "url": "https://sam.gov/workspace/contract/opp/fedfe9abb50d40b585d8b9354fd8c405/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-214b5eb3e0f142fb-reconfigure-and-modernize-the-1600-member-ltc-luis",
+      "name": "Reconfigure and Modernize the 1600-member LTC Luis E. Martinez Army Reserve Center (ARC) in Perrine, FL",
+      "city": "Miami",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "Federal solicitation W912QR26RA012. Reconfigure and Modernize the 1600-member LTC Luis E. Martinez Army Reserve Center (ARC) in Perrine, FL. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA012",
+          "url": "https://sam.gov/workspace/contract/opp/214b5eb3e0f142fb89bca11dfbf52697/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-90f488f13c5c4601-y1da-573-21-106-ehrm-infrastructure-upgrades-and-d",
+      "name": "Y1DA--573-21-106 EHRM Infrastructure Upgrades and Data Center Construction - Gainesville VAMC",
+      "city": "Gainesville",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-06-26",
+      "description": "Federal presolicitation 36C77626B0026. Y1DA--573-21-106 EHRM Infrastructure Upgrades and Data Center Construction - Gainesville VAMC.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C77626B0026",
+          "url": "https://sam.gov/workspace/contract/opp/90f488f13c5c4601b88f6f7b2fd80fb8/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-e3cc13dbf9bc4093-z2da-fy26-nrm-proj-516-csi-134-bb-prepare-site-for",
+      "name": "Z2DA--FY26: NRM (PROJ: 516-CSI-134) BB Prepare Site for installation of a new PET/CT",
+      "city": "Bay Pines",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-06-26",
+      "description": "Federal solicitation 36C24826Q0459. Z2DA--FY26: NRM (PROJ: 516-CSI-134) BB Prepare Site for installation of a new PET/CT. Response deadline 2026-07-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24826Q0459",
+          "url": "https://sam.gov/workspace/contract/opp/e3cc13dbf9bc4093bede766701c11f56/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-9db7aafe66ad4c20-nwr-shelter-replacement-perry-florida",
+      "name": "NWR Shelter Replacement - Perry, Florida",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Commerce, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-26",
+      "description": "Federal solicitation 1305M326Q0245. NWR Shelter Replacement - Perry, Florida. Response deadline 2026-07-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 1305M326Q0245",
+          "url": "https://sam.gov/workspace/contract/opp/9db7aafe66ad4c20932c42cef31514fd/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-0ee893d92f404b48-z2da-fy26-nrm-proj-516-csi-134-bb-prepare-site-for",
+      "name": "Z2DA--FY26: NRM (PROJ: 516-CSI-134) BB Prepare Site for installation of a new PET/CT",
+      "city": "Bay Pines",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-06-26",
+      "description": "Federal solicitation 36C24826Q0459. Z2DA--FY26: NRM (PROJ: 516-CSI-134) BB Prepare Site for installation of a new PET/CT. Response deadline 2026-07-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24826Q0459",
+          "url": "https://sam.gov/workspace/contract/opp/0ee893d92f404b488d4f16126fd074ac/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-0813f223f583404c-space-port-of-the-future-infrastructure-spotfi-cam",
+      "name": "Space Port of the Future Infrastructure (SPOTFi) Campus Industry Day",
+      "city": "Cocoa Beach",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-26",
+      "description": "Federal special notice. Space Port of the Future Infrastructure (SPOTFi) Campus Industry Day.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice ",
+          "url": "https://sam.gov/workspace/contract/opp/0813f223f583404c9236539cb30c64f0/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-487956734b8c4e8c-nwr-shelter-replacement-perry-florida",
+      "name": "NWR Shelter Replacement - Perry, Florida",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Commerce, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-22",
+      "description": "Federal solicitation 1305M326Q0245. NWR Shelter Replacement - Perry, Florida. Response deadline 2026-06-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 1305M326Q0245",
+          "url": "https://sam.gov/workspace/contract/opp/487956734b8c4e8ca7bf608fc6b8106b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-12b75aab1cf641a6-p683-aircraft-engine-repair-facility-nas-jacksonvi",
+      "name": "P683 Aircraft Engine Repair Facility, NAS Jacksonville, FL",
+      "city": "Jacksonville",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-18",
+      "description": "Federal solicitation N6945026R0005. P683 Aircraft Engine Repair Facility, NAS Jacksonville, FL. Response deadline 2026-06-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0005",
+          "url": "https://sam.gov/workspace/contract/opp/12b75aab1cf641a6905dd4080f0cf77b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-10f87679b9554b1c-z2da-fy26-nrm-proj-516-csi-134-bb-prepare-site-for",
+      "name": "Z2DA--FY26: NRM (PROJ: 516-CSI-134) BB Prepare Site for installation of a new PET/CT",
+      "city": "Bay Pines",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-06-17",
+      "description": "Federal solicitation 36C24826Q0459. Z2DA--FY26: NRM (PROJ: 516-CSI-134) BB Prepare Site for installation of a new PET/CT. Response deadline 2026-06-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24826Q0459",
+          "url": "https://sam.gov/workspace/contract/opp/10f87679b9554b1ca4f821c38f31b994/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-fdc574cb1bbd4460-z2da-fy26-nrm-proj-516-csi-134-bb-prepare-site-for",
+      "name": "Z2DA--FY26: NRM (PROJ: 516-CSI-134) BB Prepare Site for installation of a new PET/CT",
+      "city": "Bay Pines",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-06-17",
+      "description": "Federal solicitation 36C24826Q0459. Z2DA--FY26: NRM (PROJ: 516-CSI-134) BB Prepare Site for installation of a new PET/CT. Response deadline 2026-06-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24826Q0459",
+          "url": "https://sam.gov/workspace/contract/opp/fdc574cb1bbd4460aa06deccfb26d354/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-37159d68c54c4564-nwr-shelter-replacement-perry-florida",
+      "name": "NWR Shelter Replacement - Perry, Florida",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Commerce, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-16",
+      "description": "Federal solicitation 1305M326Q0245. NWR Shelter Replacement - Perry, Florida. Response deadline 2026-06-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 1305M326Q0245",
+          "url": "https://sam.gov/workspace/contract/opp/37159d68c54c4564bee660af65e53ac8/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-66925f82557a499d-lake-city-atb-mold-remediation-reconstruction",
+      "name": "Lake City ATB- Mold Remediation & Reconstruction",
+      "city": "Lake City",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-16",
+      "description": "Federal combined synopsis/solicitation 12445226Q0036. Lake City ATB- Mold Remediation & Reconstruction. Response deadline 2026-07-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 12445226Q0036",
+          "url": "https://sam.gov/workspace/contract/opp/66925f82557a499d95ffd164e4d6144f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-495b75c9aeca4375-proj-675-24-106-bb-upgrade-lake-baldwin-pharmacy-h",
+      "name": "(PROJ 675-24-106) BB Upgrade Lake Baldwin Pharmacy Hazardous Mixing Room - Construction",
+      "city": "Orlando",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-12",
+      "description": "Federal combined synopsis/solicitation 36C24826Q0673. (PROJ 675-24-106) BB Upgrade Lake Baldwin Pharmacy Hazardous Mixing Room - Construction. Response deadline 2026-06-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 36C24826Q0673",
+          "url": "https://sam.gov/workspace/contract/opp/495b75c9aeca4375be57a352ca08cca2/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-22ee92fab0b24d9a-p683-aircraft-engine-repair-facility-nas-jacksonvi",
+      "name": "P683 Aircraft Engine Repair Facility, NAS Jacksonville, FL",
+      "city": "Jacksonville",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-11",
+      "description": "Federal solicitation N6945026R0005. P683 Aircraft Engine Repair Facility, NAS Jacksonville, FL. Response deadline 2026-06-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0005",
+          "url": "https://sam.gov/workspace/contract/opp/22ee92fab0b24d9aadaee3e8791ddc4c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-18e13e809e0a4a52-bldg-89-lab-renovations-miami-fl",
+      "name": "Bldg. 89 Lab Renovations, Miami, FL",
+      "city": "Miami",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-10",
+      "description": "Federal combined synopsis/solicitation 1232SA26Q0770. Bldg. 89 Lab Renovations, Miami, FL. Response deadline 2026-07-02.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2DB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1232SA26Q0770",
+          "url": "https://sam.gov/workspace/contract/opp/18e13e809e0a4a52b6ea3d188be4f4bb/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-efcc14dd3ba44874-p683-aircraft-engine-repair-facility-nas-jacksonvi",
+      "name": "P683 Aircraft Engine Repair Facility, NAS Jacksonville, FL",
+      "city": "Jacksonville",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-08",
+      "description": "Federal solicitation N6945026R0005. P683 Aircraft Engine Repair Facility, NAS Jacksonville, FL. Response deadline 2026-06-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0005",
+          "url": "https://sam.gov/workspace/contract/opp/efcc14dd3ba4487480d5b92ac255daac/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-1501592528464bf3-reconfigure-and-modernize-the-1600-member-ltc-luis",
+      "name": "Reconfigure and Modernize the 1600-member LTC Luis E. Martinez Army Reserve Center (ARC) in Perrine, FL",
+      "city": "Miami",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-05",
+      "description": "Federal solicitation W912QR26RA012. Reconfigure and Modernize the 1600-member LTC Luis E. Martinez Army Reserve Center (ARC) in Perrine, FL. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA012",
+          "url": "https://sam.gov/workspace/contract/opp/1501592528464bf3a9779a00da921083/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-79246aaef44e462c-z1da-fy26-nrm-proj-548-23-112-bb-upgrade-exterior-",
+      "name": "Z1DA--FY26: NRM (PROJ: 548-23-112) BB Upgrade Exterior Signage and Wayfinding",
+      "city": "West Palm Beach",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-06-04",
+      "description": "Federal solicitation 36C24826Q0480. Z1DA--FY26: NRM (PROJ: 548-23-112) BB Upgrade Exterior Signage and Wayfinding. Response deadline 2026-06-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24826Q0480",
+          "url": "https://sam.gov/workspace/contract/opp/79246aaef44e462ca27071ab7fc5dadb/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-73ec81fd554841d1-p683-aircraft-engine-repair-facility-nas-jacksonvi",
+      "name": "P683 Aircraft Engine Repair Facility, NAS Jacksonville, FL",
+      "city": "Jacksonville",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-03",
+      "description": "Federal solicitation N6945026R0005. P683 Aircraft Engine Repair Facility, NAS Jacksonville, FL. Response deadline 2026-06-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0005",
+          "url": "https://sam.gov/workspace/contract/opp/73ec81fd554841d1a7b015fb48ef771e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-15dca9d150db4782-z1da-fy26-nrm-proj-548-23-112-bb-upgrade-exterior-",
+      "name": "Z1DA--FY26: NRM (PROJ: 548-23-112) BB Upgrade Exterior Signage and Wayfinding",
+      "city": "West Palm Beach",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-06-02",
+      "description": "Federal solicitation 36C24826Q0480. Z1DA--FY26: NRM (PROJ: 548-23-112) BB Upgrade Exterior Signage and Wayfinding. Response deadline 2026-06-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24826Q0480",
+          "url": "https://sam.gov/workspace/contract/opp/15dca9d150db478284c3d091df10258e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-f5e96bda87d64a01-proj-675-24-106-bb-upgrade-lake-baldwin-pharmacy-h",
+      "name": "(PROJ 675-24-106) BB Upgrade Lake Baldwin Pharmacy Hazardous Mixing Room - Construction",
+      "city": "Orlando",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-02",
+      "description": "Federal combined synopsis/solicitation 36C24826Q0673. (PROJ 675-24-106) BB Upgrade Lake Baldwin Pharmacy Hazardous Mixing Room - Construction. Response deadline 2026-06-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 36C24826Q0673",
+          "url": "https://sam.gov/workspace/contract/opp/f5e96bda87d64a019d010c15183b8f82/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-88fac65e67d3435d-p683-aircraft-engine-repair-facility-nas-jacksonvi",
+      "name": "P683 Aircraft Engine Repair Facility, NAS Jacksonville, FL",
+      "city": "Jacksonville",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "Federal solicitation N6945026R0005. P683 Aircraft Engine Repair Facility, NAS Jacksonville, FL. Response deadline 2026-06-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0005",
+          "url": "https://sam.gov/workspace/contract/opp/88fac65e67d3435dbd66454e298289c3/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-e4dd34daa2b84ac5-p683-aircraft-engine-repair-facility-nas-jacksonvi",
+      "name": "P683 Aircraft Engine Repair Facility, NAS Jacksonville, FL",
+      "city": "Jacksonville",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-29",
+      "description": "Federal solicitation N6945026R0005. P683 Aircraft Engine Repair Facility, NAS Jacksonville, FL. Response deadline 2026-06-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0005",
+          "url": "https://sam.gov/workspace/contract/opp/e4dd34daa2b84ac587ddca302bc3dc49/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-fc65edcc0faa47a3-y1dz-project-675-22-106-bid-build-bb-address-lake-",
+      "name": "Y1DZ--PROJECT 675-22-106, Bid-Build (BB) Address Lake Baldwin Site Deficiencies",
+      "city": "Orlando",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-28",
+      "description": "Federal presolicitation 36C24826Q0585. Y1DZ--PROJECT 675-22-106, Bid-Build (BB) Address Lake Baldwin Site Deficiencies. Response deadline 2026-06-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24826Q0585",
+          "url": "https://sam.gov/workspace/contract/opp/fc65edcc0faa47a3be263b635c68b079/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-593d9645891d484e-p683-aircraft-engine-repair-facility-nas-jacksonvi",
+      "name": "P683 Aircraft Engine Repair Facility, NAS Jacksonville, FL",
+      "city": "Jacksonville",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-21",
+      "description": "Federal solicitation N6945026R0005. P683 Aircraft Engine Repair Facility, NAS Jacksonville, FL. Response deadline 2026-06-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0005",
+          "url": "https://sam.gov/workspace/contract/opp/593d9645891d484eb4a1e4f9e7c09dba/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-cd09293187ac42da-p683-aircraft-engine-repair-facility-nas-jacksonvi",
+      "name": "P683 Aircraft Engine Repair Facility, NAS Jacksonville, FL",
+      "city": "Jacksonville",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-21",
+      "description": "Federal solicitation N6945026R0005. P683 Aircraft Engine Repair Facility, NAS Jacksonville, FL. Response deadline 2026-06-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0005",
+          "url": "https://sam.gov/workspace/contract/opp/cd09293187ac42dab22455c06d545173/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-4b70b3e412374f26-p683-aircraft-engine-repair-facility-nas-jacksonvi",
+      "name": "P683 Aircraft Engine Repair Facility, NAS Jacksonville, FL",
+      "city": "Jacksonville",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-20",
+      "description": "Federal solicitation N6945026R0005. P683 Aircraft Engine Repair Facility, NAS Jacksonville, FL. Response deadline 2026-06-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0005",
+          "url": "https://sam.gov/workspace/contract/opp/4b70b3e412374f26b4ead5c35ea9aa98/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-a496c2f43ea74545-z1da-fy26-nrm-proj-548-23-112-bb-upgrade-exterior-",
+      "name": "Z1DA--FY26: NRM (PROJ: 548-23-112) BB Upgrade Exterior Signage and Wayfinding",
+      "city": "West Palm Beach",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-18",
+      "description": "Federal solicitation 36C24826Q0480. Z1DA--FY26: NRM (PROJ: 548-23-112) BB Upgrade Exterior Signage and Wayfinding. Response deadline 2026-06-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24826Q0480",
+          "url": "https://sam.gov/workspace/contract/opp/a496c2f43ea74545bfc20f7e7fda90c8/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-42d852cac16e4eac-fy26-nrm-proj-548-23-105-bb-upgrade-interior-signa",
+      "name": "FY26: NRM (PROJ: 548-23-105) BB Upgrade Interior Signage and Wayfinding",
+      "city": "West Palm Beach",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-18",
+      "description": "Federal solicitation 36C24826Q0483_2. FY26: NRM (PROJ: 548-23-105) BB Upgrade Interior Signage and Wayfinding. Response deadline 2026-06-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24826Q0483_2",
+          "url": "https://sam.gov/workspace/contract/opp/42d852cac16e4eac8535ab31c0ec7d17/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-7c43a3f7a2324cc4-p683-aircraft-engine-repair-facility-nas-jacksonvi",
+      "name": "P683 Aircraft Engine Repair Facility, NAS Jacksonville, FL",
+      "city": "Jacksonville",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-15",
+      "description": "Federal solicitation N6945026R0005. P683 Aircraft Engine Repair Facility, NAS Jacksonville, FL. Response deadline 2026-06-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0005",
+          "url": "https://sam.gov/workspace/contract/opp/7c43a3f7a2324cc4b83e25a100d0b789/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-ff795c5a9d5a447f-p683-aircraft-engine-repair-facility-nas-jacksonvi",
+      "name": "P683 Aircraft Engine Repair Facility, NAS Jacksonville, FL",
+      "city": "Jacksonville",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-15",
+      "description": "Federal solicitation N6945026R0005. P683 Aircraft Engine Repair Facility, NAS Jacksonville, FL. Response deadline 2026-06-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0005",
+          "url": "https://sam.gov/workspace/contract/opp/ff795c5a9d5a447fb97557330540e4e6/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-7e97fb917c894410-fy26-nrm-proj-548-23-105-bb-upgrade-interior-signa",
+      "name": "FY26: NRM (PROJ: 548-23-105) BB Upgrade Interior Signage and Wayfinding",
+      "city": "West Palm Beach",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-14",
+      "description": "Federal solicitation 36C24826Q0483_2. FY26: NRM (PROJ: 548-23-105) BB Upgrade Interior Signage and Wayfinding. Response deadline 2026-06-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24826Q0483_2",
+          "url": "https://sam.gov/workspace/contract/opp/7e97fb917c8944108864353f77ee2257/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-3faf1e42bb0d4c72-z1da-fy26-nrm-proj-548-23-112-bb-upgrade-exterior-",
+      "name": "Z1DA--FY26: NRM (PROJ: 548-23-112) BB Upgrade Exterior Signage and Wayfinding",
+      "city": "West Palm Beach",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-14",
+      "description": "Federal solicitation 36C24826Q0480. Z1DA--FY26: NRM (PROJ: 548-23-112) BB Upgrade Exterior Signage and Wayfinding. Response deadline 2026-06-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24826Q0480",
+          "url": "https://sam.gov/workspace/contract/opp/3faf1e42bb0d4c728d4690ada82f6272/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-282d74d993304d75-proj-675-24-106-bb-upgrade-lake-baldwin-pharmacy-h",
+      "name": "(PROJ 675-24-106) BB Upgrade Lake Baldwin Pharmacy Hazardous Mixing Room - Construction",
+      "city": "Orlando",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-13",
+      "description": "Federal combined synopsis/solicitation 36C24826Q0673. (PROJ 675-24-106) BB Upgrade Lake Baldwin Pharmacy Hazardous Mixing Room - Construction. Response deadline 2026-06-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 36C24826Q0673",
+          "url": "https://sam.gov/workspace/contract/opp/282d74d993304d75b72ea5e49bc0512f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-c83cdcbb30d546b9-y1dz-project-675-22-106-bid-build-bb-address-lake-",
+      "name": "Y1DZ--PROJECT 675-22-106, Bid-Build (BB) Address Lake Baldwin Site Deficiencies",
+      "city": "Orlando",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-08",
+      "description": "Federal presolicitation 36C24826Q0585. Y1DZ--PROJECT 675-22-106, Bid-Build (BB) Address Lake Baldwin Site Deficiencies. Response deadline 2026-05-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24826Q0585",
+          "url": "https://sam.gov/workspace/contract/opp/c83cdcbb30d546b98a31630c25532afb/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-6827cd7d81f5428c-fy26-nrm-proj-548-23-105-bb-upgrade-interior-signa",
+      "name": "FY26: NRM (PROJ: 548-23-105) BB Upgrade Interior Signage and Wayfinding",
+      "city": "West Palm Beach",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-06",
+      "description": "Federal solicitation 36C24826Q0483_2. FY26: NRM (PROJ: 548-23-105) BB Upgrade Interior Signage and Wayfinding. Response deadline 2026-06-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24826Q0483_2",
+          "url": "https://sam.gov/workspace/contract/opp/6827cd7d81f5428c89c1f1919da3c92b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-ba71ca7c33194c55-z1da-fy26-nrm-proj-548-23-112-bb-upgrade-exterior-",
+      "name": "Z1DA--FY26: NRM (PROJ: 548-23-112) BB Upgrade Exterior Signage and Wayfinding",
+      "city": "West Palm Beach",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-05",
+      "description": "Federal solicitation 36C24826Q0480. Z1DA--FY26: NRM (PROJ: 548-23-112) BB Upgrade Exterior Signage and Wayfinding. Response deadline 2026-06-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24826Q0480",
+          "url": "https://sam.gov/workspace/contract/opp/ba71ca7c33194c55a192618485d5b942/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-ae6a3538f8f94d10-p215-joint-interagency-task-force-south-jiatf-s",
+      "name": "P215 Joint Interagency Task Force - South (JIATF-S)",
+      "city": "Key West",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-04",
+      "description": "Federal solicitation N6945026R0002. P215 Joint Interagency Task Force - South (JIATF-S). Response deadline 2026-05-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0002",
+          "url": "https://sam.gov/workspace/contract/opp/ae6a3538f8f94d10b39e4873b163791a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-164d1318de68427b-z1da-fy26-nrm-proj-548-26-104-db-remove-and-replac",
+      "name": "Z1DA--FY26: NRM (PROJ: 548-26-104) DB - Remove and Replace Nurse Call System",
+      "city": "West Palm Beach",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-01",
+      "description": "Federal presolicitation 36C24826R0094. Z1DA--FY26: NRM (PROJ: 548-26-104) DB - Remove and Replace Nurse Call System. Response deadline 2026-05-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24826R0094",
+          "url": "https://sam.gov/workspace/contract/opp/164d1318de68427ba53eee6d641f0ba9/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-9d41fb4887294a1f-fy26-nrm-proj-548-23-105-bb-upgrade-interior-signa",
+      "name": "FY26: NRM (PROJ: 548-23-105) BB Upgrade Interior Signage and Wayfinding",
+      "city": "West Palm Beach",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-30",
+      "description": "Federal solicitation 36C24826Q0483_2. FY26: NRM (PROJ: 548-23-105) BB Upgrade Interior Signage and Wayfinding. Response deadline 2026-06-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24826Q0483_2",
+          "url": "https://sam.gov/workspace/contract/opp/9d41fb4887294a1fa49bb45ffb090f90/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-c3ffb09d9b024483-z1da-fy26-nrm-proj-548-23-112-bb-upgrade-exterior-",
+      "name": "Z1DA--FY26: NRM (PROJ: 548-23-112) BB Upgrade Exterior Signage and Wayfinding",
+      "city": "West Palm Beach",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-04-30",
+      "description": "Federal solicitation 36C24826Q0480. Z1DA--FY26: NRM (PROJ: 548-23-112) BB Upgrade Exterior Signage and Wayfinding. Response deadline 2026-06-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24826Q0480",
+          "url": "https://sam.gov/workspace/contract/opp/c3ffb09d9b024483ace74204a42e1209/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-339a02d54d1c4571-p683-aircraft-engine-repair-facility-naval-air-sta",
+      "name": "P683 AIRCRAFT ENGINE REPAIR FACILITY, NAVAL AIR STATION(NAS), JACKSONVILLE, FLORIDA",
+      "city": "Jacksonville",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-29",
+      "description": "Federal solicitation N6945026R0005. P683 AIRCRAFT ENGINE REPAIR FACILITY, NAVAL AIR STATION(NAS), JACKSONVILLE, FLORIDA. Response deadline 2026-06-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0005",
+          "url": "https://sam.gov/workspace/contract/opp/339a02d54d1c4571a329becc9f4eba77/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-15dc5a1bfc0440c5-y1dz-675-106-expand-radiology-oncology-minor-const",
+      "name": "Y1DZ--675-106 Expand Radiology & Oncology Minor Construction - Lake Nona",
+      "city": "Orlando",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-27",
+      "description": "Federal solicitation 36C77626R0035. Y1DZ--675-106 Expand Radiology & Oncology Minor Construction - Lake Nona. Response deadline 2026-04-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0035",
+          "url": "https://sam.gov/workspace/contract/opp/15dc5a1bfc0440c5b5460c9d246c1229/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-93d5f464faab4fb1-y1dz-675-106-expand-radiology-oncology-minor-const",
+      "name": "Y1DZ--675-106 Expand Radiology & Oncology Minor Construction - Lake Nona",
+      "city": "Orlando",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-24",
+      "description": "Federal solicitation 36C77626R0035. Y1DZ--675-106 Expand Radiology & Oncology Minor Construction - Lake Nona. Response deadline 2026-04-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0035",
+          "url": "https://sam.gov/workspace/contract/opp/93d5f464faab4fb193ee1fd29409fbe3/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-587aef24be57483e-y1dz-675-106-expand-radiology-oncology-minor-const",
+      "name": "Y1DZ--675-106 Expand Radiology & Oncology Minor Construction - Lake Nona",
+      "city": "Orlando",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-22",
+      "description": "Federal solicitation 36C77626R0035. Y1DZ--675-106 Expand Radiology & Oncology Minor Construction - Lake Nona. Response deadline 2026-04-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0035",
+          "url": "https://sam.gov/workspace/contract/opp/587aef24be57483eba88c25121d9b7ca/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-6d1477beefd647da-z1da-fy26-nrm-proj-548-26-104-db-remove-and-replac",
+      "name": "Z1DA--FY26: NRM (PROJ: 548-26-104) DB - Remove and Replace Nurse Call System",
+      "city": "West Palm Beach",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-04-20",
+      "description": "Federal presolicitation 36C24826R0094. Z1DA--FY26: NRM (PROJ: 548-26-104) DB - Remove and Replace Nurse Call System. Response deadline 2026-05-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24826R0094",
+          "url": "https://sam.gov/workspace/contract/opp/6d1477beefd647da92a3362cca23f782/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-566da056153847aa-y1nb-fy26-proj-546-23-105-create-redundancy-capaci",
+      "name": "Y1NB--FY26: (PROJ: 546-23-105) Create Redundancy Capacity in Chiller Plant System/ Chilled & Condensed Water System Repa",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-20",
+      "description": "Federal solicitation 36C24826R0028. Y1NB--FY26: (PROJ: 546-23-105) Create Redundancy Capacity in Chiller Plant System/ Chilled & Condensed Water System Repair/Replacement. Response deadline 2026-04-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1NB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24826R0028",
+          "url": "https://sam.gov/workspace/contract/opp/566da056153847aa9877b549f58b75ad/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-c8e95a76849b492b-y1dz-675-106-expand-radiology-oncology-minor-const",
+      "name": "Y1DZ--675-106 Expand Radiology & Oncology Minor Construction - Lake Nona",
+      "city": "Orlando",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-16",
+      "description": "Federal solicitation 36C77626R0035. Y1DZ--675-106 Expand Radiology & Oncology Minor Construction - Lake Nona. Response deadline 2026-04-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0035",
+          "url": "https://sam.gov/workspace/contract/opp/c8e95a76849b492bbd23dd7464ca1df7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-0c0b234cf73a4502-p215-joint-interagency-task-force-south-jiatf-s",
+      "name": "P215 Joint Interagency Task Force - South (JIATF-S)",
+      "city": "Key West",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-16",
+      "description": "Federal solicitation N6945026R0002. P215 Joint Interagency Task Force - South (JIATF-S). Response deadline 2026-04-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0002",
+          "url": "https://sam.gov/workspace/contract/opp/0c0b234cf73a450293dbb890a30b1487/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-6abf9a1b4cf744bf-y1nb-fy26-proj-546-23-105-create-redundancy-capaci",
+      "name": "Y1NB--FY26: (PROJ: 546-23-105) Create Redundancy Capacity in Chiller Plant System/ Chilled & Condensed Water System Repa",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-16",
+      "description": "Federal solicitation 36C24826R0028. Y1NB--FY26: (PROJ: 546-23-105) Create Redundancy Capacity in Chiller Plant System/ Chilled & Condensed Water System Repair/Replacement. Response deadline 2026-04-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1NB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24826R0028",
+          "url": "https://sam.gov/workspace/contract/opp/6abf9a1b4cf744bf9e42a05d6a733a92/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-28c729203fc64353-fy26-nrm-proj-548-23-105-bb-upgrade-interior-signa",
+      "name": "FY26: NRM (PROJ: 548-23-105) BB Upgrade Interior Signage and Wayfinding",
+      "city": "West Palm Beach",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-14",
+      "description": "Federal solicitation 36C24826Q0483_2. FY26: NRM (PROJ: 548-23-105) BB Upgrade Interior Signage and Wayfinding. Response deadline 2026-05-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24826Q0483_2",
+          "url": "https://sam.gov/workspace/contract/opp/28c729203fc6435389b55ee2d5f0eeaf/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-5134808188be4514-p215-joint-interagency-task-force-south-jiatf-s",
+      "name": "P215 Joint Interagency Task Force - South (JIATF-S)",
+      "city": "Key West",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-13",
+      "description": "Federal solicitation N6945026R0002. P215 Joint Interagency Task Force - South (JIATF-S). Response deadline 2026-04-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0002",
+          "url": "https://sam.gov/workspace/contract/opp/5134808188be451480209d53d40e46fb/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-4de32774e0444118-y1nb-fy26-proj-546-23-105-create-redundancy-capaci",
+      "name": "Y1NB--FY26: (PROJ: 546-23-105) Create Redundancy Capacity in Chiller Plant System/ Chilled & Condensed Water System Repa",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-13",
+      "description": "Federal solicitation 36C24826R0028. Y1NB--FY26: (PROJ: 546-23-105) Create Redundancy Capacity in Chiller Plant System/ Chilled & Condensed Water System Repair/Replacement. Response deadline 2026-04-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1NB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24826R0028",
+          "url": "https://sam.gov/workspace/contract/opp/4de32774e0444118b1416f245a631773/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-a61616009d384e04-p215-joint-interagency-task-force-south-jiatf-s",
+      "name": "P215 Joint Interagency Task Force - South (JIATF-S)",
+      "city": "Key West",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-09",
+      "description": "Federal solicitation N6945026R0002. P215 Joint Interagency Task Force - South (JIATF-S). Response deadline 2026-04-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0002",
+          "url": "https://sam.gov/workspace/contract/opp/a61616009d384e04a43585d390835cf8/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-5a3066be05fd439a-z1da-fy26-nrm-proj-548-26-104-db-remove-and-replac",
+      "name": "Z1DA--FY26: NRM (PROJ: 548-26-104) DB - Remove and Replace Nurse Call System",
+      "city": "West Palm Beach",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-04-06",
+      "description": "Federal presolicitation 36C24826R0094. Z1DA--FY26: NRM (PROJ: 548-26-104) DB - Remove and Replace Nurse Call System. Response deadline 2026-04-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24826R0094",
+          "url": "https://sam.gov/workspace/contract/opp/5a3066be05fd439ab22db10d0976e1f1/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-d1512ce7a15f41bf-tiered-evaluation-fy26-nrm-proj-573-21-705-bb-repl",
+      "name": "TIERED EVALUATION FY26: NRM (PROJ: 573-21-705) BB - Replace Deteriorated AHU 21, 22, 23 and 24 Gainesville FL Solicitati",
+      "city": "Gainesville",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-02",
+      "description": "Federal solicitation 36C24826R0039. TIERED EVALUATION FY26: NRM (PROJ: 573-21-705) BB - Replace Deteriorated AHU 21, 22, 23 and 24 Gainesville FL Solicitation. Response deadline 2026-04-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24826R0039",
+          "url": "https://sam.gov/workspace/contract/opp/d1512ce7a15f41bf853574db38c738f2/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-b4dcd3bd86294a33-tiered-evaluation-fy26-nrm-proj-573-21-705-bb-repl",
+      "name": "TIERED EVALUATION FY26: NRM (PROJ: 573-21-705) BB - Replace Deteriorated AHU 21, 22, 23 and 24 Gainesville FL Solicitati",
+      "city": "Gainesville",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-31",
+      "description": "Federal solicitation 36C24826R0039. TIERED EVALUATION FY26: NRM (PROJ: 573-21-705) BB - Replace Deteriorated AHU 21, 22, 23 and 24 Gainesville FL Solicitation. Response deadline 2026-04-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24826R0039",
+          "url": "https://sam.gov/workspace/contract/opp/b4dcd3bd86294a338c08055cdb7b165a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-ff476f711db547ff-y1dz-675-106-expand-radiology-oncology-minor-const",
+      "name": "Y1DZ--675-106 Expand Radiology & Oncology Minor Construction - Lake Nona",
+      "city": "Orlando",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-31",
+      "description": "Federal solicitation 36C77626R0035. Y1DZ--675-106 Expand Radiology & Oncology Minor Construction - Lake Nona. Response deadline 2026-04-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0035",
+          "url": "https://sam.gov/workspace/contract/opp/ff476f711db547ff920d6351fbeca96c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-01b037591a864355-tiered-evaluation-fy26-nrm-proj-573-21-705-bb-repl",
+      "name": "TIERED EVALUATION FY26: NRM (PROJ: 573-21-705) BB - Replace Deteriorated AHU 21, 22, 23 and 24 Gainesville FL Solicitati",
+      "city": "Gainesville",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-31",
+      "description": "Federal solicitation 36C24826R0039. TIERED EVALUATION FY26: NRM (PROJ: 573-21-705) BB - Replace Deteriorated AHU 21, 22, 23 and 24 Gainesville FL Solicitation. Response deadline 2026-04-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24826R0039",
+          "url": "https://sam.gov/workspace/contract/opp/01b037591a864355ba9aa96ff6595b9f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-f7f7ec2b3f3a4214-tiered-evaluation-fy26-nrm-proj-573-21-705-bb-repl",
+      "name": "TIERED EVALUATION FY26: NRM (PROJ: 573-21-705) BB - Replace Deteriorated AHU 21, 22, 23 and 24 Gainesville FL Solicitati",
+      "city": "Gainesville",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-26",
+      "description": "Federal solicitation 36C24826R0039. TIERED EVALUATION FY26: NRM (PROJ: 573-21-705) BB - Replace Deteriorated AHU 21, 22, 23 and 24 Gainesville FL Solicitation. Response deadline 2026-04-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24826R0039",
+          "url": "https://sam.gov/workspace/contract/opp/f7f7ec2b3f3a42148991fc258d0a3d22/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-eb347362dbe44178-fy26-nrm-proj-548-23-105-bb-upgrade-interior-signa",
+      "name": "FY26: NRM (PROJ: 548-23-105) BB Upgrade Interior Signage and Wayfinding",
+      "city": "West Palm Beach",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-25",
+      "description": "Federal presolicitation 36C24826Q0483. FY26: NRM (PROJ: 548-23-105) BB Upgrade Interior Signage and Wayfinding. Response deadline 2026-04-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24826Q0483",
+          "url": "https://sam.gov/workspace/contract/opp/eb347362dbe4417897d75d0000a8b44f/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-5b37ca0a621e40fc-fy26-nrm-proj-548-23-105-bb-upgrade-interior-signa",
+      "name": "FY26: NRM (PROJ: 548-23-105) BB Upgrade Interior Signage and Wayfinding",
+      "city": "West Palm Beach",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-25",
+      "description": "Federal presolicitation 36C24826Q0483. FY26: NRM (PROJ: 548-23-105) BB Upgrade Interior Signage and Wayfinding. Response deadline 2026-04-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C24826Q0483",
+          "url": "https://sam.gov/workspace/contract/opp/5b37ca0a621e40fcad32935a6fed52b2/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-59e15757a21c4d82-y1dz-675-106-expand-radiology-oncology-minor-const",
+      "name": "Y1DZ--675-106 Expand Radiology & Oncology Minor Construction - Lake Nona",
+      "city": "Orlando",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-24",
+      "description": "Federal solicitation 36C77626R0035. Y1DZ--675-106 Expand Radiology & Oncology Minor Construction - Lake Nona. Response deadline 2026-04-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0035",
+          "url": "https://sam.gov/workspace/contract/opp/59e15757a21c4d82a4b497d50d2f41cb/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-93ec3a19e1534d66-p215-joint-interagency-task-force-south-jiatf-s",
+      "name": "P215 Joint Interagency Task Force - South (JIATF-S)",
+      "city": "Key West",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-24",
+      "description": "Federal solicitation N6945026R0002. P215 Joint Interagency Task Force - South (JIATF-S). Response deadline 2026-04-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0002",
+          "url": "https://sam.gov/workspace/contract/opp/93ec3a19e1534d66a3dd2d04448f9257/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-83d8cd25ab4a4472-y1dz-675-106-expand-radiology-oncology-minor-const",
+      "name": "Y1DZ--675-106 Expand Radiology & Oncology Minor Construction - Lake Nona",
+      "city": "Orlando",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-23",
+      "description": "Federal solicitation 36C77626R0035. Y1DZ--675-106 Expand Radiology & Oncology Minor Construction - Lake Nona. Response deadline 2026-04-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0035",
+          "url": "https://sam.gov/workspace/contract/opp/83d8cd25ab4a4472a9126fb7adb6ba28/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-0ee6b2ec46134b13-tiered-evaluation-fy26-nrm-proj-573-21-705-bb-repl",
+      "name": "TIERED EVALUATION FY26: NRM (PROJ: 573-21-705) BB - Replace Deteriorated AHU 21, 22, 23 and 24 Gainesville FL Solicitati",
+      "city": "Gainesville",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-17",
+      "description": "Federal solicitation 36C24826R0039. TIERED EVALUATION FY26: NRM (PROJ: 573-21-705) BB - Replace Deteriorated AHU 21, 22, 23 and 24 Gainesville FL Solicitation. Response deadline 2026-03-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24826R0039",
+          "url": "https://sam.gov/workspace/contract/opp/0ee6b2ec46134b13a7d0a18498cd2057/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-694354a3444946f2-p215-joint-interagency-task-force-south-jiatf-s",
+      "name": "P215 Joint Interagency Task Force - South (JIATF-S)",
+      "city": "Key West",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-16",
+      "description": "Federal solicitation N6945026R0002. P215 Joint Interagency Task Force - South (JIATF-S). Response deadline 2026-04-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0002",
+          "url": "https://sam.gov/workspace/contract/opp/694354a3444946f2a2810c131d1cb224/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-f4d53a0dcb024a52-y1dz-675-106-expand-radiology-oncology-minor-const",
+      "name": "Y1DZ--675-106 Expand Radiology & Oncology Minor Construction - Lake Nona",
+      "city": "Orlando",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-12",
+      "description": "Federal solicitation 36C77626R0035. Y1DZ--675-106 Expand Radiology & Oncology Minor Construction - Lake Nona. Response deadline 2026-04-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0035",
+          "url": "https://sam.gov/workspace/contract/opp/f4d53a0dcb024a5280e2c838e31ba3e6/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-75a8edb36b9e4b89-y1dz-675-106-expand-radiology-oncology-minor-const",
+      "name": "Y1DZ--675-106 Expand Radiology & Oncology Minor Construction - Lake Nona",
+      "city": "Orlando",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-11",
+      "description": "Federal solicitation 36C77626R0035. Y1DZ--675-106 Expand Radiology & Oncology Minor Construction - Lake Nona. Response deadline 2026-04-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0035",
+          "url": "https://sam.gov/workspace/contract/opp/75a8edb36b9e4b8980eb0e159990c9d5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-964a3e2c32294ffa-y1nb-fy26-proj-546-23-105-create-redundancy-capaci",
+      "name": "Y1NB--FY26: (PROJ: 546-23-105) Create Redundancy Capacity in Chiller Plant System/ Chilled & Condensed Water System Repa",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-06",
+      "description": "Federal solicitation 36C24826R0028. Y1NB--FY26: (PROJ: 546-23-105) Create Redundancy Capacity in Chiller Plant System/ Chilled & Condensed Water System Repair/Replacement. Response deadline 2026-04-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1NB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24826R0028",
+          "url": "https://sam.gov/workspace/contract/opp/964a3e2c32294ffa97119078cf6787ad/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-22cd2fd58f854810-y1nb-fy26-proj-546-23-105-create-redundancy-capaci",
+      "name": "Y1NB--FY26: (PROJ: 546-23-105) Create Redundancy Capacity in Chiller Plant System/ Chilled & Condensed Water System Repa",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-06",
+      "description": "Federal solicitation 36C24826R0028. Y1NB--FY26: (PROJ: 546-23-105) Create Redundancy Capacity in Chiller Plant System/ Chilled & Condensed Water System Repair/Replacement. Response deadline 2026-04-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1NB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24826R0028",
+          "url": "https://sam.gov/workspace/contract/opp/22cd2fd58f854810a2d02231ee7821dd/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-1657a50e6edf4332-p215-joint-interagency-task-force-south-jiatf-s",
+      "name": "P215 Joint Interagency Task Force - South (JIATF-S)",
+      "city": "Key West",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-06",
+      "description": "Federal solicitation N6945026R0002. P215 Joint Interagency Task Force - South (JIATF-S). Response deadline 2026-04-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0002",
+          "url": "https://sam.gov/workspace/contract/opp/1657a50e6edf4332b081be5bfb287a56/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-870c30b7704b434c-tiered-evaluation-fy26-nrm-proj-573-21-705-bb-repl",
+      "name": "TIERED EVALUATION FY26: NRM (PROJ: 573-21-705) BB - Replace Deteriorated AHU 21, 22, 23 and 24 Gainesville FL Solicitati",
+      "city": "Gainesville",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-05",
+      "description": "Federal solicitation 36C24826R0039. TIERED EVALUATION FY26: NRM (PROJ: 573-21-705) BB - Replace Deteriorated AHU 21, 22, 23 and 24 Gainesville FL Solicitation. Response deadline 2026-03-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24826R0039",
+          "url": "https://sam.gov/workspace/contract/opp/870c30b7704b434cab5279d93bbe0f18/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-41e5a84b38874961-y1nb-fy26-proj-546-23-105-create-redundancy-capaci",
+      "name": "Y1NB--FY26: (PROJ: 546-23-105) Create Redundancy Capacity in Chiller Plant System/ Chilled & Condensed Water System Repa",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-03",
+      "description": "Federal solicitation 36C24826R0028. Y1NB--FY26: (PROJ: 546-23-105) Create Redundancy Capacity in Chiller Plant System/ Chilled & Condensed Water System Repair/Replacement. Response deadline 2026-04-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1NB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24826R0028",
+          "url": "https://sam.gov/workspace/contract/opp/41e5a84b38874961aafb6e6990c9076a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-8d9c380fe3af4000-p215-joint-interagency-task-force-south-jiatf-s",
+      "name": "P215 Joint Interagency Task Force - South (JIATF-S)",
+      "city": "Key West",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-02",
+      "description": "Federal solicitation N6945026R0002. P215 Joint Interagency Task Force - South (JIATF-S). Response deadline 2026-04-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0002",
+          "url": "https://sam.gov/workspace/contract/opp/8d9c380fe3af400095ec6f5717b65d7c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-3d80b3e7319d49d2-p215-joint-interagency-task-force-south-jiatf-s",
+      "name": "P215 Joint Interagency Task Force - South (JIATF-S)",
+      "city": "Key West",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-25",
+      "description": "Federal solicitation N6945026R0002. P215 Joint Interagency Task Force - South (JIATF-S). Response deadline 2026-04-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0002",
+          "url": "https://sam.gov/workspace/contract/opp/3d80b3e7319d49d2b8a1d31a72e11ba7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-2bebe41ccfe243c8-p215-joint-interagency-task-force-south-jiatf-s",
+      "name": "P215 Joint Interagency Task Force - South (JIATF-S)",
+      "city": "Key West",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-24",
+      "description": "Federal solicitation N6945026R0002. P215 Joint Interagency Task Force - South (JIATF-S). Response deadline 2026-03-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0002",
+          "url": "https://sam.gov/workspace/contract/opp/2bebe41ccfe243c893f43b14684f6517/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-d56bf442ca7e4c09-p215-joint-interagency-task-force-south-jiatf-s",
+      "name": "P215 Joint Interagency Task Force - South (JIATF-S)",
+      "city": "Key West",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-12",
+      "description": "Federal solicitation N6945026R0002. P215 Joint Interagency Task Force - South (JIATF-S). Response deadline 2026-03-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945026R0002",
+          "url": "https://sam.gov/workspace/contract/opp/d56bf442ca7e4c09b2ae4dc183fdc6bf/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-7cb7725df369440f-tiered-evaluation-fy26-nrm-proj-573-21-705-bb-repl",
+      "name": "TIERED EVALUATION FY26: NRM (PROJ: 573-21-705) BB - Replace Deteriorated AHU 21, 22, 23 and 24 Gainesville FL Solicitati",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-12",
+      "description": "Federal solicitation 36C24826R0039. TIERED EVALUATION FY26: NRM (PROJ: 573-21-705) BB - Replace Deteriorated AHU 21, 22, 23 and 24 Gainesville FL Solicitation. Response deadline 2026-03-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24826R0039",
+          "url": "https://sam.gov/workspace/contract/opp/7cb7725df369440f9e1d2f993b58f21c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-71ed768deb2841bf-tiered-evaluation-fy26-nrm-proj-573-21-705-bb-repl",
+      "name": "TIERED EVALUATION FY26: NRM (PROJ: 573-21-705) BB - Replace Deteriorated AHU 21, 22, 23 and 24 Gainesville FL Solicitati",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-16",
+      "description": "Federal solicitation 36C24826R0039. TIERED EVALUATION FY26: NRM (PROJ: 573-21-705) BB - Replace Deteriorated AHU 21, 22, 23 and 24 Gainesville FL Solicitation. Response deadline 2026-02-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24826R0039",
+          "url": "https://sam.gov/workspace/contract/opp/71ed768deb2841bfb0588506ea2d5b97/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-3f624b28b60f4034-amendment-0002-design-build-db-and-design-bid-buil",
+      "name": "Amendment 0002 Design-Build (DB) and Design-Bid-Build (DBB) Indefinite-Delivery, Indefinite-Quantity (IDIQ) Firm-Fixed P",
+      "city": "Jacksonville",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-06-09",
+      "description": "Federal solicitation N6945025R0011-0002. Amendment 0002 Design-Build (DB) and Design-Bid-Build (DBB) Indefinite-Delivery, Indefinite-Quantity (IDIQ) Firm-Fixed Price (FFP) Medium Multiple Award Construction Contract (MACC) for Naval Engineering Facilities Engineering Systems Command Southeast. Response deadline 2025-06-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6945025R0011-0002",
+          "url": "https://sam.gov/workspace/contract/opp/3f624b28b60f40348c99cf29575d7b44/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-c0e6ac04f5e084a1-construction-and-renovation-of-the-wilson-armed-fo",
+      "name": "Construction and Renovation of the Wilson Armed Forces Reserve Center (AFRC)",
+      "city": "",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-08-21",
+      "description": "Federal presolicitation W912QR19R0067. Construction and Renovation of the Wilson Armed Forces Reserve Center (AFRC). Response deadline 2019-08-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912QR19R0067",
+          "url": "https://sam.gov/workspace/contract/opp/c0e6ac04f5e084a13cbdbf9d0693c828/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-66e1fdc179f3c9d9-construction-and-renovation-of-the-wilson-armed-fo",
+      "name": "Construction and Renovation of the Wilson Armed Forces Reserve Center (AFRC)",
+      "city": "",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-08-21",
+      "description": "Federal presolicitation W912QR19R0067. Construction and Renovation of the Wilson Armed Forces Reserve Center (AFRC). Response deadline 2019-08-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912QR19R0067",
+          "url": "https://sam.gov/workspace/contract/opp/66e1fdc179f3c9d9d249dfa61b4a8eb5/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-ae8ec0b257a0a0fe-construction-and-renovation-of-the-wilson-armed-fo",
+      "name": "Construction and Renovation of the Wilson Armed Forces Reserve Center (AFRC)",
+      "city": "",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-08-19",
+      "description": "Federal presolicitation W912QR19R0067. Construction and Renovation of the Wilson Armed Forces Reserve Center (AFRC). Response deadline 2019-08-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912QR19R0067",
+          "url": "https://sam.gov/workspace/contract/opp/ae8ec0b257a0a0fe32e80da1e9ee7203/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-9a24093d3b9121b9-construction-and-renovation-of-the-wilson-armed-fo",
+      "name": "Construction and Renovation of the Wilson Armed Forces Reserve Center (AFRC)",
+      "city": "",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-07-22",
+      "description": "Federal presolicitation W912QR19R0067. Construction and Renovation of the Wilson Armed Forces Reserve Center (AFRC). Response deadline 2019-08-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912QR19R0067",
+          "url": "https://sam.gov/workspace/contract/opp/9a24093d3b9121b9c26b924606817356/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-f3848dee724c74ae-construction-and-renovation-of-the-wilson-armed-fo",
+      "name": "Construction and Renovation of the Wilson Armed Forces Reserve Center (AFRC)",
+      "city": "",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-07-22",
+      "description": "Federal presolicitation W912QR19R0067. Construction and Renovation of the Wilson Armed Forces Reserve Center (AFRC). Response deadline 2019-08-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912QR19R0067",
+          "url": "https://sam.gov/workspace/contract/opp/f3848dee724c74aeff42faff616acd62/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-d27619c16c021690-construction-and-renovation-of-the-wilson-armed-fo",
+      "name": "Construction and Renovation of the Wilson Armed Forces Reserve Center (AFRC)",
+      "city": "",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-07-22",
+      "description": "Federal presolicitation W912QR19R0067. Construction and Renovation of the Wilson Armed Forces Reserve Center (AFRC). Response deadline 2019-08-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912QR19R0067",
+          "url": "https://sam.gov/workspace/contract/opp/d27619c16c0216907fee3e0fa420e832/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-f17a5c11a6d72836-design-build-replace-dorm-19",
+      "name": "DESIGN-BUILD REPLACE DORM 19",
+      "city": "EGLIN AFB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-06-24",
+      "description": "Federal presolicitation W9127819R0039. DESIGN-BUILD REPLACE DORM 19. Response deadline 2019-07-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W9127819R0039",
+          "url": "https://sam.gov/workspace/contract/opp/f17a5c11a6d72836f821b480365d117a/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-8ed40fec161a5588-design-build-replace-dorm-19",
+      "name": "DESIGN-BUILD REPLACE DORM 19",
+      "city": "EGLIN AFB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-06-17",
+      "description": "Federal presolicitation W9127819R0039. DESIGN-BUILD REPLACE DORM 19. Response deadline 2019-07-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W9127819R0039",
+          "url": "https://sam.gov/workspace/contract/opp/8ed40fec161a55882fc9954fb58f6984/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-6ffbf594230b06e2-design-build-replace-dorm-19",
+      "name": "DESIGN-BUILD REPLACE DORM 19",
+      "city": "EGLIN AFB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-06-17",
+      "description": "Federal presolicitation W9127819R0039. DESIGN-BUILD REPLACE DORM 19. Response deadline 2019-07-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W9127819R0039",
+          "url": "https://sam.gov/workspace/contract/opp/6ffbf594230b06e251fd3f643132026c/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-48b6fae5ee2c9b43-design-build-replace-dorm-19",
+      "name": "DESIGN-BUILD REPLACE DORM 19",
+      "city": "EGLIN AFB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-06-06",
+      "description": "Federal presolicitation W9127819R0039. DESIGN-BUILD REPLACE DORM 19. Response deadline 2019-07-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W9127819R0039",
+          "url": "https://sam.gov/workspace/contract/opp/48b6fae5ee2c9b4385e67c43e382222d/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-0da8688bb06ae1de-design-build-replace-dorm-19",
+      "name": "DESIGN-BUILD REPLACE DORM 19",
+      "city": "EGLIN AFB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-05-20",
+      "description": "Federal presolicitation W9127819R0039. DESIGN-BUILD REPLACE DORM 19. Response deadline 2019-07-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W9127819R0039",
+          "url": "https://sam.gov/workspace/contract/opp/0da8688bb06ae1dea23280b9b857c831/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-53838127ace23642-design-build-f-35a-integrated-training-center-acad",
+      "name": "Design-Build F-35A Integrated Training Center Academics Buildin",
+      "city": "EGLIN AFB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-02-20",
+      "description": "Federal presolicitation W9127819R0014. Design-Build F-35A Integrated Training Center Academics Buildin. Response deadline 2019-02-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W9127819R0014",
+          "url": "https://sam.gov/workspace/contract/opp/53838127ace23642f6c94b9d6b104bf0/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-1573fa142610d38b-design-build-f-35a-integrated-training-center-acad",
+      "name": "Design-Build F-35A Integrated Training Center Academics Buildin",
+      "city": "EGLIN AFB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-02-15",
+      "description": "Federal presolicitation W9127819R0014. Design-Build F-35A Integrated Training Center Academics Buildin. Response deadline 2019-02-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W9127819R0014",
+          "url": "https://sam.gov/workspace/contract/opp/1573fa142610d38bc351f4ee54324f88/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-55ec1d9756cfb988-design-build-f-35a-integrated-training-center-acad",
+      "name": "Design-Build F-35A Integrated Training Center Academics Buildin",
+      "city": "EGLIN AFB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-02-11",
+      "description": "Federal presolicitation W9127819R0014. Design-Build F-35A Integrated Training Center Academics Buildin. Response deadline 2019-02-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W9127819R0014",
+          "url": "https://sam.gov/workspace/contract/opp/55ec1d9756cfb988fe7fb8a0d0c90eae/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-b59206fc486acb3e-design-build-f-35a-integrated-training-center-acad",
+      "name": "Design-Build F-35A Integrated Training Center Academics Buildin",
+      "city": "EGLIN AFB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-02-05",
+      "description": "Federal presolicitation W9127819R0014. Design-Build F-35A Integrated Training Center Academics Buildin. Response deadline 2019-02-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W9127819R0014",
+          "url": "https://sam.gov/workspace/contract/opp/b59206fc486acb3ecdbea2db91300f06/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-82b196c69954b0fe-design-build-f-35a-integrated-training-center-acad",
+      "name": "Design-Build F-35A Integrated Training Center Academics Buildin",
+      "city": "EGLIN AFB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-01-29",
+      "description": "Federal presolicitation W9127819R0014. Design-Build F-35A Integrated Training Center Academics Buildin. Response deadline 2019-02-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W9127819R0014",
+          "url": "https://sam.gov/workspace/contract/opp/82b196c69954b0feccf64a13f9debf72/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-83c0e40646ba26de-design-build-f-35a-integrated-training-center-acad",
+      "name": "Design-Build F-35A Integrated Training Center Academics Buildin",
+      "city": "EGLIN AFB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-01-23",
+      "description": "Federal presolicitation W9127819R0014. Design-Build F-35A Integrated Training Center Academics Buildin. Response deadline 2019-02-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W9127819R0014",
+          "url": "https://sam.gov/workspace/contract/opp/83c0e40646ba26de61fb31d2958709ba/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-3b75c70c4a8cf867-design-build-f-35a-integrated-training-center-acad",
+      "name": "Design-Build F-35A Integrated Training Center Academics Buildin",
+      "city": "EGLIN AFB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-01-16",
+      "description": "Federal presolicitation W9127819R0014. Design-Build F-35A Integrated Training Center Academics Buildin. Response deadline 2019-02-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W9127819R0014",
+          "url": "https://sam.gov/workspace/contract/opp/3b75c70c4a8cf867e594b37daabfe054/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-700a8d5e9a77ccd0-design-build-f-35a-integrated-training-center-acad",
+      "name": "Design-Build F-35A Integrated Training Center Academics Buildin",
+      "city": "EGLIN AFB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-01-16",
+      "description": "Federal presolicitation W9127819R0014. Design-Build F-35A Integrated Training Center Academics Buildin. Response deadline 2019-02-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W9127819R0014",
+          "url": "https://sam.gov/workspace/contract/opp/700a8d5e9a77ccd0400fc6543fcaf810/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
+    },
+    {
+      "id": "fl-sam-8995d8e07feb3b60-design-build-f-35a-integrated-training-center-acad",
+      "name": "Design-Build F-35A Integrated Training Center Academics Buildin",
+      "city": "EGLIN AFB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-01-15",
+      "description": "Federal presolicitation W9127819R0014. Design-Build F-35A Integrated Training Center Academics Buildin. Response deadline 2019-02-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W9127819R0014",
+          "url": "https://sam.gov/workspace/contract/opp/8995d8e07feb3b607a63e8a8b0793ac2/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "FL"
     }
   ],
   "stats": {
-    "total": 13
+    "total": 131
   }
 }

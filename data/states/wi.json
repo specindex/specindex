@@ -1,9 +1,9 @@
 {
   "state": "WI",
   "state_name": "Wisconsin",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — DCD, Innovatrix, HNG News, GMToday, industrial news.",
+  "capture_method": "Public sources — DCD, Innovatrix, HNG News, GMToday, industrial news, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "wi-vantage-lighthouse-port-washington",
@@ -208,9 +208,1062 @@
         }
       ],
       "open_for": "Planning & rezoning. Advance procurement for industrial shell and MEP."
+    },
+    {
+      "id": "wi-sam-9e4b8d4f418f4774-y1dz-ehrm-infrastructure-upgrades-tier-1-construct",
+      "name": "Y1DZ--EHRM Infrastructure Upgrades Tier 1 Construction 695-21-700 Milwaukee",
+      "city": "Milwaukee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Federal solicitation 36C77626R0002. Y1DZ--EHRM Infrastructure Upgrades Tier 1 Construction 695-21-700 Milwaukee. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0002",
+          "url": "https://sam.gov/workspace/contract/opp/9e4b8d4f418f4774925cb50111b7b17b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WI"
+    },
+    {
+      "id": "wi-sam-bb71819741a54292-y1dz-ehrm-infrastructure-upgrades-tier-1-construct",
+      "name": "Y1DZ--EHRM Infrastructure Upgrades Tier 1 Construction 695-21-700 Milwaukee",
+      "city": "Milwaukee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Federal solicitation 36C77626R0002. Y1DZ--EHRM Infrastructure Upgrades Tier 1 Construction 695-21-700 Milwaukee. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0002",
+          "url": "https://sam.gov/workspace/contract/opp/bb71819741a54292a585fc0e19e240a5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WI"
+    },
+    {
+      "id": "wi-sam-baded54120314503-y1dz-ehrm-infrastructure-upgrades-tier-1-construct",
+      "name": "Y1DZ--EHRM Infrastructure Upgrades Tier 1 Construction 695-21-700 Milwaukee",
+      "city": "Milwaukee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Federal solicitation 36C77626R0002. Y1DZ--EHRM Infrastructure Upgrades Tier 1 Construction 695-21-700 Milwaukee. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0002",
+          "url": "https://sam.gov/workspace/contract/opp/baded5412031450387389313e9136208/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WI"
+    },
+    {
+      "id": "wi-sam-a0727b6a73084925-solicitation-y1ez-construct-chiller-plant-design-b",
+      "name": "Solicitation - Y1EZ--Construct Chiller Plant | Design Build Milwaukee, WI VAMC | 695-24-101",
+      "city": "Milwaukee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-16",
+      "description": "Federal solicitation 36C77626R0024. Solicitation - Y1EZ--Construct Chiller Plant | Design Build Milwaukee, WI VAMC | 695-24-101. Response deadline 2026-05-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0024",
+          "url": "https://sam.gov/workspace/contract/opp/a0727b6a73084925beba90fed82496f7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WI"
+    },
+    {
+      "id": "wi-sam-b83f49b1340a422d-solicitation-y1ez-construct-chiller-plant-design-b",
+      "name": "Solicitation - Y1EZ--Construct Chiller Plant | Design Build Milwaukee, WI VAMC | 695-24-101",
+      "city": "Milwaukee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-16",
+      "description": "Federal solicitation 36C77626R0024. Solicitation - Y1EZ--Construct Chiller Plant | Design Build Milwaukee, WI VAMC | 695-24-101. Response deadline 2026-05-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0024",
+          "url": "https://sam.gov/workspace/contract/opp/b83f49b1340a422dac28cee0e38dc65b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WI"
+    },
+    {
+      "id": "wi-sam-2f979e5dac4f4468-y1dz-ehrm-infrastructure-upgrades-tier-1-construct",
+      "name": "Y1DZ--EHRM Infrastructure Upgrades Tier 1 Construction 695-21-700 Milwaukee",
+      "city": "Milwaukee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-10",
+      "description": "Federal solicitation 36C77626R0002. Y1DZ--EHRM Infrastructure Upgrades Tier 1 Construction 695-21-700 Milwaukee. Response deadline 2026-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0002",
+          "url": "https://sam.gov/workspace/contract/opp/2f979e5dac4f4468b061da25b9c68ebc/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WI"
+    },
+    {
+      "id": "wi-sam-384faf7e83ba4b31-z2da-install-ddpo-per-csr-676-26-702-tomah",
+      "name": "Z2DA--Install DDPO per CSR 676-26-702 Tomah",
+      "city": "Tomah",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Rhi Llc Marriot-Slaterville Ut 84404 Usa",
+      "opened_or_announced_date": "2026-06-09",
+      "description": "Federal award notice 36C77626P0043. Z2DA--Install DDPO per CSR 676-26-702 Tomah.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice 36C77626P0043",
+          "url": "https://sam.gov/workspace/contract/opp/384faf7e83ba4b3198281b207a7d5324/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WI"
+    },
+    {
+      "id": "wi-sam-2e00ec77209248f4-solicitation-y1ez-construct-chiller-plant-design-b",
+      "name": "Solicitation - Y1EZ--Construct Chiller Plant | Design Build Milwaukee, WI VAMC | 695-24-101",
+      "city": "Milwaukee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-18",
+      "description": "Federal solicitation 36C77626R0024. Solicitation - Y1EZ--Construct Chiller Plant | Design Build Milwaukee, WI VAMC | 695-24-101. Response deadline 2026-05-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0024",
+          "url": "https://sam.gov/workspace/contract/opp/2e00ec77209248f48814ccc76a9ff449/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WI"
+    },
+    {
+      "id": "wi-sam-86e195caef2b4a7b-solicitation-y1ez-construct-chiller-plant-design-b",
+      "name": "Solicitation - Y1EZ--Construct Chiller Plant | Design Build Milwaukee, WI VAMC | 695-24-101",
+      "city": "Milwaukee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-13",
+      "description": "Federal solicitation 36C77626R0024. Solicitation - Y1EZ--Construct Chiller Plant | Design Build Milwaukee, WI VAMC | 695-24-101. Response deadline 2026-05-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0024",
+          "url": "https://sam.gov/workspace/contract/opp/86e195caef2b4a7b8b527f7c24786401/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WI"
+    },
+    {
+      "id": "wi-sam-0ef83c4d64d14c57-y1dz-ehrm-infrastructure-upgrades-tier-1-construct",
+      "name": "Y1DZ--EHRM Infrastructure Upgrades Tier 1 Construction 695-21-700 Milwaukee",
+      "city": "Milwaukee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-06",
+      "description": "Federal solicitation 36C77626R0002. Y1DZ--EHRM Infrastructure Upgrades Tier 1 Construction 695-21-700 Milwaukee. Response deadline 2026-06-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0002",
+          "url": "https://sam.gov/workspace/contract/opp/0ef83c4d64d14c57a7820bed03842fc0/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WI"
+    },
+    {
+      "id": "wi-sam-964d8bfeb92c4f53-replace-building-1-windows-construction-madison-wi",
+      "name": "Replace Building 1 Windows | Construction Madison, WI | 607-24-112",
+      "city": "Madison",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-30",
+      "description": "Federal presolicitation 36C77626B0022. Replace Building 1 Windows | Construction Madison, WI | 607-24-112. Response deadline 2026-05-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C77626B0022",
+          "url": "https://sam.gov/workspace/contract/opp/964d8bfeb92c4f539675e3477be1a219/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WI"
+    },
+    {
+      "id": "wi-sam-b6c0a440a81c467d-z2da-install-ddpo-per-csr-676-26-702-tomah",
+      "name": "Z2DA--Install DDPO per CSR 676-26-702 Tomah",
+      "city": "Tomah",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-29",
+      "description": "Federal solicitation 36C77626Q0144. Z2DA--Install DDPO per CSR 676-26-702 Tomah. Response deadline 2026-05-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626Q0144",
+          "url": "https://sam.gov/workspace/contract/opp/b6c0a440a81c467da470ca7c278217cd/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WI"
+    },
+    {
+      "id": "wi-sam-55d9e1dad82848b9-z2da-install-ddpo-per-csr-676-26-702-tomah",
+      "name": "Z2DA--Install DDPO per CSR 676-26-702 Tomah",
+      "city": "Tomah",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-27",
+      "description": "Federal solicitation 36C77626Q0144. Z2DA--Install DDPO per CSR 676-26-702 Tomah. Response deadline 2026-04-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626Q0144",
+          "url": "https://sam.gov/workspace/contract/opp/55d9e1dad82848b99e3175c4a5996fd4/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WI"
+    },
+    {
+      "id": "wi-sam-c0626321d7cf46aa-y1dz-ehrm-infrastructure-upgrades-tier-1-construct",
+      "name": "Y1DZ--EHRM Infrastructure Upgrades Tier 1 Construction 695-21-700 Milwaukee",
+      "city": "Milwaukee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-27",
+      "description": "Federal solicitation 36C77626R0002. Y1DZ--EHRM Infrastructure Upgrades Tier 1 Construction 695-21-700 Milwaukee. Response deadline 2026-06-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0002",
+          "url": "https://sam.gov/workspace/contract/opp/c0626321d7cf46aaaed011d6d384d036/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WI"
+    },
+    {
+      "id": "wi-sam-ac0c06a9b1ab4c4f-z2da-install-ddpo-per-csr-676-26-702-tomah",
+      "name": "Z2DA--Install DDPO per CSR 676-26-702 Tomah",
+      "city": "Tomah",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-24",
+      "description": "Federal solicitation 36C77626Q0144. Z2DA--Install DDPO per CSR 676-26-702 Tomah. Response deadline 2026-04-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626Q0144",
+          "url": "https://sam.gov/workspace/contract/opp/ac0c06a9b1ab4c4fa583a8a23f0ab40b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WI"
+    },
+    {
+      "id": "wi-sam-df05857373a149fa-solicitation-y1ez-construct-chiller-plant-design-b",
+      "name": "Solicitation - Y1EZ--Construct Chiller Plant | Design Build Milwaukee, WI VAMC | 695-24-101",
+      "city": "Milwaukee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-22",
+      "description": "Federal solicitation 36C77626R0024. Solicitation - Y1EZ--Construct Chiller Plant | Design Build Milwaukee, WI VAMC | 695-24-101. Response deadline 2026-05-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0024",
+          "url": "https://sam.gov/workspace/contract/opp/df05857373a149fa88f31b75c462ffa2/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WI"
+    },
+    {
+      "id": "wi-sam-1142a536da834f34-y1dz-ehrm-infrastructure-upgrades-tier-1-construct",
+      "name": "Y1DZ--EHRM Infrastructure Upgrades Tier 1 Construction 695-21-700 Milwaukee",
+      "city": "Milwaukee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-22",
+      "description": "Federal solicitation 36C77626R0002. Y1DZ--EHRM Infrastructure Upgrades Tier 1 Construction 695-21-700 Milwaukee. Response deadline 2026-06-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0002",
+          "url": "https://sam.gov/workspace/contract/opp/1142a536da834f349be9cbe90b364927/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WI"
+    },
+    {
+      "id": "wi-sam-22ada97efde6403b-y1dz-ehrm-infrastructure-upgrades-tier-1-construct",
+      "name": "Y1DZ--EHRM Infrastructure Upgrades Tier 1 Construction 695-21-700 Milwaukee",
+      "city": "Milwaukee",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-22",
+      "description": "Federal solicitation 36C77626R0002. Y1DZ--EHRM Infrastructure Upgrades Tier 1 Construction 695-21-700 Milwaukee. Response deadline 2026-06-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0002",
+          "url": "https://sam.gov/workspace/contract/opp/22ada97efde6403b8fc12fee8dfbd8aa/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WI"
+    },
+    {
+      "id": "wi-sam-846875c5077b44bd-z2da-install-ddpo-per-csr-676-26-702-tomah",
+      "name": "Z2DA--Install DDPO per CSR 676-26-702 Tomah",
+      "city": "Tomah",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-21",
+      "description": "Federal solicitation 36C77626Q0144. Z2DA--Install DDPO per CSR 676-26-702 Tomah. Response deadline 2026-04-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626Q0144",
+          "url": "https://sam.gov/workspace/contract/opp/846875c5077b44bda19a1127cd04c795/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WI"
+    },
+    {
+      "id": "wi-sam-8af95b9fa1b94668-z2da-install-ddpo-per-csr-676-26-702-tomah",
+      "name": "Z2DA--Install DDPO per CSR 676-26-702 Tomah",
+      "city": "Tomah",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-21",
+      "description": "Federal special notice. Z2DA--Install DDPO per CSR 676-26-702 Tomah. Response deadline 2026-04-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice ",
+          "url": "https://sam.gov/workspace/contract/opp/8af95b9fa1b946688a2725476646d162/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WI"
+    },
+    {
+      "id": "wi-sam-66c52e92888b4ca2-z2da-install-ddpo-per-csr-676-26-702-tomah",
+      "name": "Z2DA--Install DDPO per CSR 676-26-702 Tomah",
+      "city": "",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-16",
+      "description": "Federal special notice 36C77626Q0144_0003. Z2DA--Install DDPO per CSR 676-26-702 Tomah. Response deadline 2026-04-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice 36C77626Q0144_0003",
+          "url": "https://sam.gov/workspace/contract/opp/66c52e92888b4ca2a1708919b7069d77/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "WI"
+    },
+    {
+      "id": "wi-sam-f56c93cb64784b11-wisconsin-job-ordering-contract-joc-solicitation",
+      "name": "Wisconsin Job Ordering Contract (JOC) Solicitation",
+      "city": "Madison",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Postal Service",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-10",
+      "description": "Federal solicitation 089495-26-A-0059. Wisconsin Job Ordering Contract (JOC) Solicitation. Response deadline 2026-05-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z2HB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 089495-26-A-0059",
+          "url": "https://sam.gov/workspace/contract/opp/f56c93cb64784b11b8070939212f135e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WI"
+    },
+    {
+      "id": "wi-sam-fc5f0e656a604dd8-new-contract-construct-lift-station-at-south-post-",
+      "name": "NEW CONTRACT - CONSTRUCT LIFT STATION AT SOUTH POST HOUSING",
+      "city": "Fort McCoy",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-26",
+      "description": "Federal solicitation W911SA26BA003. NEW CONTRACT - CONSTRUCT LIFT STATION AT SOUTH POST HOUSING. Response deadline 2026-03-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W911SA26BA003",
+          "url": "https://sam.gov/workspace/contract/opp/fc5f0e656a604dd89ebed73eb67e7b41/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WI"
+    },
+    {
+      "id": "wi-sam-32d01238e17f4f64-z2da-install-ddpo-per-csr-676-26-702-tomah",
+      "name": "Z2DA--Install DDPO per CSR 676-26-702 Tomah",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-24",
+      "description": "Federal solicitation 36C77626Q0144. Z2DA--Install DDPO per CSR 676-26-702 Tomah. Response deadline 2026-04-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626Q0144",
+          "url": "https://sam.gov/workspace/contract/opp/32d01238e17f4f64a6bf8a20fa0626b0/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WI"
+    },
+    {
+      "id": "wi-sam-e2339687bef74cdd-new-contract-construct-lift-station-at-south-post-",
+      "name": "NEW CONTRACT - CONSTRUCT LIFT STATION AT SOUTH POST HOUSING",
+      "city": "Fort McCoy",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-20",
+      "description": "Federal solicitation W911SA26BA003. NEW CONTRACT - CONSTRUCT LIFT STATION AT SOUTH POST HOUSING. Response deadline 2026-03-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W911SA26BA003",
+          "url": "https://sam.gov/workspace/contract/opp/e2339687bef74cdd87a95b98059a9266/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WI"
+    },
+    {
+      "id": "wi-sam-df9f7d40d6da4527-new-contract-construct-lift-station-at-south-post-",
+      "name": "NEW CONTRACT - CONSTRUCT LIFT STATION AT SOUTH POST HOUSING",
+      "city": "Fort McCoy",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-18",
+      "description": "Federal solicitation W911SA26BA003. NEW CONTRACT - CONSTRUCT LIFT STATION AT SOUTH POST HOUSING. Response deadline 2026-03-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W911SA26BA003",
+          "url": "https://sam.gov/workspace/contract/opp/df9f7d40d6da4527bd1d07688d766d81/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WI"
+    },
+    {
+      "id": "wi-sam-005ea072f11948c0-new-contract-construct-lift-station-at-south-post-",
+      "name": "NEW CONTRACT - CONSTRUCT LIFT STATION AT SOUTH POST HOUSING",
+      "city": "Fort McCoy",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-04",
+      "description": "Federal solicitation W911SA26BA003. NEW CONTRACT - CONSTRUCT LIFT STATION AT SOUTH POST HOUSING. Response deadline 2026-03-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W911SA26BA003",
+          "url": "https://sam.gov/workspace/contract/opp/005ea072f11948c0af2c4114dc7237aa/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "WI"
     }
   ],
   "stats": {
-    "total": 5
+    "total": 32
   }
 }

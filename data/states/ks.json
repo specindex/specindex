@@ -1,9 +1,9 @@
 {
   "state": "KS",
   "state_name": "Kansas",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — Johnson County Post, local news.",
+  "capture_method": "Public sources — Johnson County Post, local news, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "ks-chiefs-olathe-headquarters",
@@ -45,9 +45,477 @@
         }
       ],
       "open_for": "Design phase starting. Building systems specs forming."
+    },
+    {
+      "id": "ks-sam-a84f53c932ee4207-z2da-589a7-25-503-prepare-site-for-cath-lab-equipm",
+      "name": "Z2DA--589A7-25-503 Prepare Site for Cath Lab Equipment FY26 NRM",
+      "city": "Wichita",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Federal solicitation 36C25526R0142_1. Z2DA--589A7-25-503 Prepare Site for Cath Lab Equipment FY26 NRM. Response deadline 2026-08-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C25526R0142_1",
+          "url": "https://sam.gov/workspace/contract/opp/a84f53c932ee42078c82ccdc5458427e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "KS"
+    },
+    {
+      "id": "ks-sam-ddd3afb7a3a14940-wichita-va-medical-center-campus-wayfinding-signag",
+      "name": "Wichita VA Medical Center Campus Wayfinding Signage",
+      "city": "Wichita",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Federal presolicitation 36C25526Q0517. Wichita VA Medical Center Campus Wayfinding Signage. Response deadline 2026-07-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C25526Q0517",
+          "url": "https://sam.gov/workspace/contract/opp/ddd3afb7a3a14940b2fc3129d8825300/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "KS"
+    },
+    {
+      "id": "ks-sam-366efd92f63d4702-synopsis-grant-pool-repairs-fort-leavenworth",
+      "name": "Synopsis Grant Pool Repairs Fort Leavenworth",
+      "city": "Fort Leavenworth",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-02",
+      "description": "Federal presolicitation W91QF426BA006. Synopsis Grant Pool Repairs Fort Leavenworth. Response deadline 2026-08-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "No Set aside used",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W91QF426BA006",
+          "url": "https://sam.gov/workspace/contract/opp/366efd92f63d4702b9e76a6195e27821/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "KS"
+    },
+    {
+      "id": "ks-sam-37c193c232824124-synopsis-grant-pool-at-fort-leavenworth",
+      "name": "Synopsis Grant Pool at Fort leavenworth",
+      "city": "",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "Federal special notice W91QF426Pool. Synopsis Grant Pool at Fort leavenworth. Response deadline 2026-07-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "No Set aside used",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice W91QF426Pool",
+          "url": "https://sam.gov/workspace/contract/opp/37c193c232824124bccd7fb84ab25f35/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "KS"
+    },
+    {
+      "id": "ks-sam-da314e6897f44f18-z2da-589a7-21-132-construct-centralized-emergency-",
+      "name": "Z2DA--589A7-21-132 Construct Centralized Emergency Power System",
+      "city": "Wichita",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-06-11",
+      "description": "Federal presolicitation 36C25526R0125. Z2DA--589A7-21-132 Construct Centralized Emergency Power System. Response deadline 2026-08-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C25526R0125",
+          "url": "https://sam.gov/workspace/contract/opp/da314e6897f44f18a29a398e703c931e/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "KS"
+    },
+    {
+      "id": "ks-sam-11a3bc8a0f064bff-z2da-589a7-25-503-prepare-site-for-cath-lab-equipm",
+      "name": "Z2DA--589A7-25-503 Prepare Site for Cath Lab Equipment FY26 NRM",
+      "city": "Wichita",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-06-11",
+      "description": "Federal presolicitation 36C25526R0142. Z2DA--589A7-25-503 Prepare Site for Cath Lab Equipment FY26 NRM. Response deadline 2026-08-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C25526R0142",
+          "url": "https://sam.gov/workspace/contract/opp/11a3bc8a0f064bff965c63c227e410af/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "KS"
+    },
+    {
+      "id": "ks-sam-80b661b315b24a6c-y1da-589a5-22-122-relocate-oit-from-6th-fl-to-bldg",
+      "name": "Y1DA--589A5-22-122 RELOCATE OIT FROM 6TH FL TO BLDG 21 ME (VA-26-00061111)",
+      "city": "Topeka",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-06-09",
+      "description": "Federal presolicitation 36C25526R0150. Y1DA--589A5-22-122 RELOCATE OIT FROM 6TH FL TO BLDG 21 ME (VA-26-00061111). Response deadline 2026-06-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C25526R0150",
+          "url": "https://sam.gov/workspace/contract/opp/80b661b315b24a6c84f0d338a977c1d7/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "KS"
+    },
+    {
+      "id": "ks-sam-86a4dade93a84bdc-z2da-589a7-21-132-construct-centralized-emergency-",
+      "name": "Z2DA--589A7-21-132 Construct Centralized Emergency Power System",
+      "city": "Wichita",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "Federal presolicitation 36C25526R0125. Z2DA--589A7-21-132 Construct Centralized Emergency Power System. Response deadline 2026-06-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C25526R0125",
+          "url": "https://sam.gov/workspace/contract/opp/86a4dade93a84bdc8d75f334290b053d/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "KS"
+    },
+    {
+      "id": "ks-sam-c62c7e91910d41f7-z2da-589a7-25-503-prepare-site-for-cath-lab-equipm",
+      "name": "Z2DA--589A7-25-503 Prepare Site for Cath Lab Equipment FY26 NRM",
+      "city": "Wichita",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-27",
+      "description": "Federal presolicitation 36C25526R0142. Z2DA--589A7-25-503 Prepare Site for Cath Lab Equipment FY26 NRM. Response deadline 2026-06-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C25526R0142",
+          "url": "https://sam.gov/workspace/contract/opp/c62c7e91910d41f78643f887941588d8/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "KS"
+    },
+    {
+      "id": "ks-sam-dfca058ac1104a13-y1da-589a5-22-122-relocate-oit-from-6th-fl-to-bldg",
+      "name": "Y1DA--589A5-22-122 RELOCATE OIT FROM 6TH FL TO BLDG 21 ME (VA-26-00061111)",
+      "city": "Topeka",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-15",
+      "description": "Federal sources sought 36C25526Q0349. Y1DA--589A5-22-122 RELOCATE OIT FROM 6TH FL TO BLDG 21 ME (VA-26-00061111). Response deadline 2026-05-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 36C25526Q0349",
+          "url": "https://sam.gov/workspace/contract/opp/dfca058ac1104a13b75bc0d93e092d12/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "KS"
+    },
+    {
+      "id": "ks-sam-dc21f2344c874fc2-z2da-589-701b-construct-and-renovate-med-surg-beds",
+      "name": "Z2DA--589-701B Construct and Renovate Med/Surg Beds for Patient Privacy",
+      "city": "Wichita",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Guarantee Interiors, Inc. Saint Louis Mo 63103 Usa",
+      "opened_or_announced_date": "2025-09-17",
+      "description": "Federal award notice 36C25525C0063. Z2DA--589-701B Construct and Renovate Med/Surg Beds for Patient Privacy.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Veteran Sole Source",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice 36C25525C0063",
+          "url": "https://sam.gov/workspace/contract/opp/dc21f2344c874fc2afc9727d4c47b842/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "KS"
+    },
+    {
+      "id": "ks-sam-02d6d14a6706455d-access-walkways-for-the-chiller-cooling-towers",
+      "name": "Access Walkways for the Chiller Cooling Towers",
+      "city": "Manhattan",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "Firelake Construction Inc Lawrence Ks 66046 Usa",
+      "opened_or_announced_date": "2025-07-18",
+      "description": "Federal award notice 1232SA25C0012. Access Walkways for the Chiller Cooling Towers.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice 1232SA25C0012",
+          "url": "https://sam.gov/workspace/contract/opp/02d6d14a6706455d97212e8fa12b3439/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "KS"
     }
   ],
   "stats": {
-    "total": 1
+    "total": 13
   }
 }

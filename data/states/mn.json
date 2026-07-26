@@ -1,9 +1,9 @@
 {
   "state": "MN",
   "state_name": "Minnesota",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — local news, city approvals.",
+  "capture_method": "Public sources — local news, city approvals, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "mn-google-hermantown-data-center",
@@ -42,9 +42,1097 @@
         }
       ],
       "open_for": "Pre-construction planning. Monitor permit activity."
+    },
+    {
+      "id": "mn-sam-7589f89ba3a144ac-suf-sand-lake-gutters",
+      "name": "SUF Sand Lake Gutters",
+      "city": "Aurora",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "Minnesota Gutter Llc Evansville Mn 56326 Usa",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "Federal award notice 12445526P0038. SUF Sand Lake Gutters.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice 12445526P0038",
+          "url": "https://sam.gov/workspace/contract/opp/7589f89ba3a144acac876d5b9a266b0b/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MN"
+    },
+    {
+      "id": "mn-sam-c4378f6a86ae4eb1-z2da-618-csi-240-sps-equipment-site-prep-36c263-26",
+      "name": "Z2DA--618-CSI-240, SPS Equipment Site Prep 36C263-26-AP-1525 - FY26 NRM OS",
+      "city": "Minneapolis",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Federal solicitation 36C26326R0056-0001. Z2DA--618-CSI-240, SPS Equipment Site Prep 36C263-26-AP-1525 - FY26 NRM OS. Response deadline 2026-08-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26326R0056-0001",
+          "url": "https://sam.gov/workspace/contract/opp/c4378f6a86ae4eb18265417fce3f6955/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MN"
+    },
+    {
+      "id": "mn-sam-a936e217df164cab-b752-repair-facade-and-tuckpointing",
+      "name": "B752 Repair Facade and Tuckpointing",
+      "city": "Minneapolis",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Federal solicitation FA663326Q0007. B752 Repair Facade and Tuckpointing. Response deadline 2026-08-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA663326Q0007",
+          "url": "https://sam.gov/workspace/contract/opp/a936e217df164cab8ce53fff5a4d2fc7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MN"
+    },
+    {
+      "id": "mn-sam-850bb5f4a27a4f29-project-618-26-701-ehrm-infrastructure-upgrades-ma",
+      "name": "Project # 618-26-701 - EHRM - Infrastructure Upgrades - Main Computer Room Update - Minneapolis VAMC - Minneapolis, MN",
+      "city": "Minneapolis",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "Federal solicitation 36C77626B0017. Project # 618-26-701 - EHRM - Infrastructure Upgrades - Main Computer Room Update - Minneapolis VAMC - Minneapolis, MN. Response deadline 2026-07-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0017",
+          "url": "https://sam.gov/workspace/contract/opp/850bb5f4a27a4f2981bfd5ec2806600c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MN"
+    },
+    {
+      "id": "mn-sam-d23342592e5748a5-humidifier-replacement-minneapolis-artcc",
+      "name": "Humidifier Replacement - Minneapolis ARTCC",
+      "city": "Farmington",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Transportation, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Federal solicitation 697DCK-26-R-00258. Humidifier Replacement - Minneapolis ARTCC. Response deadline 2026-07-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 697DCK-26-R-00258",
+          "url": "https://sam.gov/workspace/contract/opp/d23342592e5748a58946776521315b2f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MN"
+    },
+    {
+      "id": "mn-sam-dc9485877dd047ce-z2da-618-csi-240-sps-equipment-site-prep-36c263-26",
+      "name": "Z2DA--618-CSI-240, SPS Equipment Site Prep 36C263-26-AP-1525 - FY26 NRM OS",
+      "city": "Minneapolis",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Federal solicitation 36C26326R0056. Z2DA--618-CSI-240, SPS Equipment Site Prep 36C263-26-AP-1525 - FY26 NRM OS. Response deadline 2026-08-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26326R0056",
+          "url": "https://sam.gov/workspace/contract/opp/dc9485877dd047ce9b028bb510a37b10/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MN"
+    },
+    {
+      "id": "mn-sam-9dc873f80feb4943-z2da-618-csi-240-sps-equipment-site-prep-36c263-26",
+      "name": "Z2DA--618-CSI-240, SPS Equipment Site Prep 36C263-26-AP-1525 - FY26 NRM OS",
+      "city": "Minneapolis",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Federal solicitation 36C26326R0056. Z2DA--618-CSI-240, SPS Equipment Site Prep 36C263-26-AP-1525 - FY26 NRM OS. Response deadline 2026-08-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26326R0056",
+          "url": "https://sam.gov/workspace/contract/opp/9dc873f80feb4943aacfd761a64499db/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MN"
+    },
+    {
+      "id": "mn-sam-b843beab7bfc4c2b-project-618-26-701-ehrm-infrastructure-upgrades-ma",
+      "name": "Project # 618-26-701 - EHRM - Infrastructure Upgrades - Main Computer Room Update - Minneapolis VAMC - Minneapolis, MN",
+      "city": "Minneapolis",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Federal solicitation 36C77626B0017. Project # 618-26-701 - EHRM - Infrastructure Upgrades - Main Computer Room Update - Minneapolis VAMC - Minneapolis, MN. Response deadline 2026-07-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0017",
+          "url": "https://sam.gov/workspace/contract/opp/b843beab7bfc4c2ba02388659e39092a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MN"
+    },
+    {
+      "id": "mn-sam-6ed625c68afb480b-project-618-26-701-ehrm-infrastructure-upgrades-ma",
+      "name": "Project # 618-26-701 - EHRM - Infrastructure Upgrades - Main Computer Room Update - Minneapolis VAMC - Minneapolis, MN",
+      "city": "Minneapolis",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-23",
+      "description": "Federal solicitation 36C77626B0017. Project # 618-26-701 - EHRM - Infrastructure Upgrades - Main Computer Room Update - Minneapolis VAMC - Minneapolis, MN. Response deadline 2026-07-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0017",
+          "url": "https://sam.gov/workspace/contract/opp/6ed625c68afb480b856599dfaf01fa22/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MN"
+    },
+    {
+      "id": "mn-sam-401c72a43be74077-project-618-26-701-ehrm-infrastructure-upgrades-ma",
+      "name": "Project # 618-26-701 - EHRM - Infrastructure Upgrades - Main Computer Room Update - Minneapolis VAMC - Minneapolis, MN",
+      "city": "Minneapolis",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-09",
+      "description": "Federal solicitation 36C77626B0017. Project # 618-26-701 - EHRM - Infrastructure Upgrades - Main Computer Room Update - Minneapolis VAMC - Minneapolis, MN. Response deadline 2026-07-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0017",
+          "url": "https://sam.gov/workspace/contract/opp/401c72a43be7407793c33de97e7d3e9f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MN"
+    },
+    {
+      "id": "mn-sam-da1dd48402574d8f-project-618-26-701-ehrm-infrastructure-upgrades-ma",
+      "name": "Project # 618-26-701 - EHRM - Infrastructure Upgrades - Main Computer Room Update - Minneapolis VAMC - Minneapolis, MN",
+      "city": "Minneapolis",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-26",
+      "description": "Federal solicitation 36C77626B0017. Project # 618-26-701 - EHRM - Infrastructure Upgrades - Main Computer Room Update - Minneapolis VAMC - Minneapolis, MN. Response deadline 2026-06-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0017",
+          "url": "https://sam.gov/workspace/contract/opp/da1dd48402574d8f89cc3353d1aa19d8/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MN"
+    },
+    {
+      "id": "mn-sam-49880dc980de4a17-project-618-26-701-ehrm-infrastructure-upgrades-ma",
+      "name": "Project # 618-26-701 - EHRM - Infrastructure Upgrades - Main Computer Room Update - Minneapolis VAMC - Minneapolis, MN",
+      "city": "Minneapolis",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-26",
+      "description": "Federal solicitation 36C77626B0017. Project # 618-26-701 - EHRM - Infrastructure Upgrades - Main Computer Room Update - Minneapolis VAMC - Minneapolis, MN. Response deadline 2026-06-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0017",
+          "url": "https://sam.gov/workspace/contract/opp/49880dc980de4a17a1d9e0d42122f964/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MN"
+    },
+    {
+      "id": "mn-sam-89cceb4961014d6f-repair-amsa-ecs-arden-hills-army-reserve-center-mi",
+      "name": "Repair AMSA/ECS- Arden Hills Army Reserve Center, Minnesota",
+      "city": "Arden Hills",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-12",
+      "description": "Federal solicitation W912QR26RA035. Repair AMSA/ECS- Arden Hills Army Reserve Center, Minnesota. Response deadline 2026-05-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA035",
+          "url": "https://sam.gov/workspace/contract/opp/89cceb4961014d6fa99b4ff679658a7c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MN"
+    },
+    {
+      "id": "mn-sam-94090398fa384bb9-repair-amsa-ecs-arden-hills-army-reserve-center-mi",
+      "name": "Repair AMSA/ECS- Arden Hills Army Reserve Center, Minnesota",
+      "city": "Arden Hills",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-12",
+      "description": "Federal solicitation W912QR26RA035. Repair AMSA/ECS- Arden Hills Army Reserve Center, Minnesota. Response deadline 2026-05-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA035",
+          "url": "https://sam.gov/workspace/contract/opp/94090398fa384bb997641faeced561ee/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MN"
+    },
+    {
+      "id": "mn-sam-361f5dc966544ed5-project-618-26-701-ehrm-infrastructure-upgrades-ma",
+      "name": "Project # 618-26-701 - EHRM - Infrastructure Upgrades - Main Computer Room Update - Minneapolis VAMC - Minneapolis, MN",
+      "city": "Minneapolis",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-12",
+      "description": "Federal solicitation 36C77626B0017. Project # 618-26-701 - EHRM - Infrastructure Upgrades - Main Computer Room Update - Minneapolis VAMC - Minneapolis, MN. Response deadline 2026-06-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0017",
+          "url": "https://sam.gov/workspace/contract/opp/361f5dc966544ed58e90070ada62f7a8/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MN"
+    },
+    {
+      "id": "mn-sam-4a0e5d3309e549dd-project-618-26-701-ehrm-infrastructure-upgrades-ma",
+      "name": "Project # 618-26-701 - EHRM - Infrastructure Upgrades - Main Computer Room Update - Minneapolis VAMC - Minneapolis, MN",
+      "city": "Minneapolis",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-07",
+      "description": "Federal solicitation 36C77626B0017. Project # 618-26-701 - EHRM - Infrastructure Upgrades - Main Computer Room Update - Minneapolis VAMC - Minneapolis, MN. Response deadline 2026-06-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0017",
+          "url": "https://sam.gov/workspace/contract/opp/4a0e5d3309e549dd94ba773a3bb01e78/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MN"
+    },
+    {
+      "id": "mn-sam-a4b641814a024be9-the-state-of-minnesota-job-order-contract-joc-soli",
+      "name": "The State of Minnesota Job Order Contract (JOC) Solicitation",
+      "city": "Saint Paul",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Postal Service",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-04",
+      "description": "Federal solicitation 089495-26-A-0056. The State of Minnesota Job Order Contract (JOC) Solicitation. Response deadline 2026-06-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2HB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 089495-26-A-0056",
+          "url": "https://sam.gov/workspace/contract/opp/a4b641814a024be99812aa7de3d7c3a3/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MN"
+    },
+    {
+      "id": "mn-sam-97fd9a0a5d7a4db7-project-618-26-701-ehrm-infrastructure-upgrades-ma",
+      "name": "Project # 618-26-701 - EHRM - Infrastructure Upgrades - Main Computer Room Update - Minneapolis VAMC - Minneapolis, MN",
+      "city": "Minneapolis",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-21",
+      "description": "Federal solicitation 36C77626B0017. Project # 618-26-701 - EHRM - Infrastructure Upgrades - Main Computer Room Update - Minneapolis VAMC - Minneapolis, MN. Response deadline 2026-06-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0017",
+          "url": "https://sam.gov/workspace/contract/opp/97fd9a0a5d7a4db7ae2bc8011844ef71/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MN"
+    },
+    {
+      "id": "mn-sam-8fbde792d07d413c-repair-amsa-ecs-arden-hills-army-reserve-center-mi",
+      "name": "Repair AMSA/ECS- Arden Hills Army Reserve Center, Minnesota",
+      "city": "Arden Hills",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-17",
+      "description": "Federal solicitation W912QR26RA035. Repair AMSA/ECS- Arden Hills Army Reserve Center, Minnesota. Response deadline 2026-05-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA035",
+          "url": "https://sam.gov/workspace/contract/opp/8fbde792d07d413ca939ccb225046245/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MN"
+    },
+    {
+      "id": "mn-sam-b1b786d927d147d3-656-26-702-ehrm-ddpo-2-0",
+      "name": "656-26-702 EHRM DDPO 2.0",
+      "city": "Saint Cloud",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-15",
+      "description": "Federal presolicitation 36C26326B0028. 656-26-702 EHRM DDPO 2.0. Response deadline 2026-05-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C26326B0028",
+          "url": "https://sam.gov/workspace/contract/opp/b1b786d927d147d3b9aacea6a0a6ce24/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "MN"
+    },
+    {
+      "id": "mn-sam-e50ee33650544b49-y1az-ehrm-infrastructure-upgrades-construction-st-",
+      "name": "Y1AZ--EHRM Infrastructure Upgrades Construction - St. Cloud",
+      "city": "Saint Cloud",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2022-08-10",
+      "description": "Federal solicitation 36C77622B0035. Y1AZ--EHRM Infrastructure Upgrades Construction - St. Cloud. Response deadline 2022-08-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77622B0035",
+          "url": "https://sam.gov/workspace/contract/opp/e50ee33650544b49a7fea0d09c886e6f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MN"
+    },
+    {
+      "id": "mn-sam-f14251f4635d457c-y1az-ehrm-infrastructure-upgrades-construction-st-",
+      "name": "Y1AZ--EHRM Infrastructure Upgrades Construction - St. Cloud",
+      "city": "Saint Cloud",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2022-07-28",
+      "description": "Federal solicitation 36C77622B0035. Y1AZ--EHRM Infrastructure Upgrades Construction - St. Cloud. Response deadline 2022-08-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77622B0035",
+          "url": "https://sam.gov/workspace/contract/opp/f14251f4635d457c80888e6943a4042c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MN"
+    },
+    {
+      "id": "mn-sam-8cde4a3e2f35451c-y1az-ehrm-infrastructure-upgrades-construction-st-",
+      "name": "Y1AZ--EHRM Infrastructure Upgrades Construction - St. Cloud",
+      "city": "Saint Cloud",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2022-07-05",
+      "description": "Federal solicitation 36C77622B0035. Y1AZ--EHRM Infrastructure Upgrades Construction - St. Cloud. Response deadline 2022-08-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77622B0035",
+          "url": "https://sam.gov/workspace/contract/opp/8cde4a3e2f35451cb6a48235a2a36179/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MN"
+    },
+    {
+      "id": "mn-sam-bd491fdc3efa4647-y1az-ehrm-infrastructure-upgrades-construction-st-",
+      "name": "Y1AZ--EHRM Infrastructure Upgrades Construction - St. Cloud",
+      "city": "Saint Cloud",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2022-06-09",
+      "description": "Federal solicitation 36C77622B0035. Y1AZ--EHRM Infrastructure Upgrades Construction - St. Cloud. Response deadline 2022-08-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77622B0035",
+          "url": "https://sam.gov/workspace/contract/opp/bd491fdc3efa464786518a8abbb2cbbe/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MN"
+    },
+    {
+      "id": "mn-sam-19e5344948314b13-y1az-ehrm-training-and-administrative-support-spac",
+      "name": "Y1AZ--EHRM Training and Administrative Support Space Construction - St. Cloud",
+      "city": "Saint Cloud",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2022-05-24",
+      "description": "Federal solicitation 36C77622B0026. Y1AZ--EHRM Training and Administrative Support Space Construction - St. Cloud. Response deadline 2022-06-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77622B0026",
+          "url": "https://sam.gov/workspace/contract/opp/19e5344948314b13b3aac7667e6414a9/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MN"
+    },
+    {
+      "id": "mn-sam-dfd08313841b4921-y1az-ehrm-training-and-administrative-support-spac",
+      "name": "Y1AZ--EHRM Training and Administrative Support Space Construction - St. Cloud",
+      "city": "Saint Cloud",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2022-05-12",
+      "description": "Federal solicitation 36C77622B0026. Y1AZ--EHRM Training and Administrative Support Space Construction - St. Cloud. Response deadline 2022-05-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77622B0026",
+          "url": "https://sam.gov/workspace/contract/opp/dfd08313841b4921a76f942d78fdb345/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MN"
+    },
+    {
+      "id": "mn-sam-ec3b41956a55401b-y1az-ehrm-training-and-administrative-support-spac",
+      "name": "Y1AZ--EHRM Training and Administrative Support Space Construction - St. Cloud",
+      "city": "Saint Cloud",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2022-04-20",
+      "description": "Federal solicitation 36C77622B0026. Y1AZ--EHRM Training and Administrative Support Space Construction - St. Cloud. Response deadline 2022-05-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77622B0026",
+          "url": "https://sam.gov/workspace/contract/opp/ec3b41956a55401bb66fa2cfb55d6176/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MN"
+    },
+    {
+      "id": "mn-sam-286b82ccca6341a4-y1az-ehrm-training-and-administrative-support-spac",
+      "name": "Y1AZ--EHRM Training and Administrative Support Space Construction - St. Cloud",
+      "city": "Saint Cloud",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2022-04-07",
+      "description": "Federal solicitation 36C77622B0026. Y1AZ--EHRM Training and Administrative Support Space Construction - St. Cloud. Response deadline 2022-05-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77622B0026",
+          "url": "https://sam.gov/workspace/contract/opp/286b82ccca6341a495a2da2d44a4a6ea/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MN"
     }
   ],
   "stats": {
-    "total": 1
+    "total": 29
   }
 }

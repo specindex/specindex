@@ -1,9 +1,9 @@
 {
   "state": "RI",
   "state_name": "Rhode Island",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — Providence Business News, local news, permits, trade journals.",
+  "capture_method": "Public sources — Providence Business News, local news, permits, trade journals, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "ri-providence-life-sciences-lab",
@@ -201,9 +201,824 @@
         }
       ],
       "open_for": "Student housing MEP, structural framing, interior build-out contracts."
+    },
+    {
+      "id": "ri-sam-0ac2b85356704edd-construction-nuwcdivnpt-consolidated-secure-facili",
+      "name": "Construction - NUWCDIVNPT - Consolidated Secure Facility",
+      "city": "Newport",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal solicitation N6660426R0163. Construction - NUWCDIVNPT - Consolidated Secure Facility. Response deadline 2026-07-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6660426R0163",
+          "url": "https://sam.gov/workspace/contract/opp/0ac2b85356704eddb81fc77d3d6c0651/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "RI"
+    },
+    {
+      "id": "ri-sam-19d4026e6a81407e-p084-next-generation-torpedo-integration-lab-naval",
+      "name": "P084 NEXT GENERATION TORPEDO INTEGRATION LAB, NAVAL STATION NEWPORT, NEWPORT, RHODE ISLAND",
+      "city": "Newport",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Federal special notice N4008526R0178. P084 NEXT GENERATION TORPEDO INTEGRATION LAB, NAVAL STATION NEWPORT, NEWPORT, RHODE ISLAND. Response deadline 2026-08-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice N4008526R0178",
+          "url": "https://sam.gov/workspace/contract/opp/19d4026e6a81407ebfbe7d10119c6d00/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "RI"
+    },
+    {
+      "id": "ri-sam-84db349ce77e46d8-n4008526r0151-design-build-provide-full-repairs-to",
+      "name": "N4008526R0151 Design Build Provide full repairs to Building 1372, Coddington Point (CP), referred to as Ripley Hall. Nav",
+      "city": "Newport",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "Doyon Management Services, Llc Warwick Ri 02886 Usa",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Federal award notice N4008526F1234. N4008526R0151 Design Build Provide full repairs to Building 1372, Coddington Point (CP), referred to as Ripley Hall. Naval Station Newport, Newport, RI.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "No Set aside used",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice N4008526F1234",
+          "url": "https://sam.gov/workspace/contract/opp/84db349ce77e46d89d1df631e68dadc9/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "RI"
+    },
+    {
+      "id": "ri-sam-0833842f01384d05-db-repair-otc-dorm-king-hall-bldg-291",
+      "name": "DB Repair OTC Dorm King Hall Bldg. 291",
+      "city": "Newport",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Federal special notice N4008526R0228. DB Repair OTC Dorm King Hall Bldg. 291. Response deadline 2026-08-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice N4008526R0228",
+          "url": "https://sam.gov/workspace/contract/opp/0833842f01384d0589bddce8d89148a4/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "RI"
+    },
+    {
+      "id": "ri-sam-ac6eeeb4383947b5-construction-nuwcdivnpt-consolidated-secure-facili",
+      "name": "Construction - NUWCDIVNPT - Consolidated Secure Facility",
+      "city": "Newport",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Federal solicitation N6660426R0163. Construction - NUWCDIVNPT - Consolidated Secure Facility. Response deadline 2026-07-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6660426R0163",
+          "url": "https://sam.gov/workspace/contract/opp/ac6eeeb4383947b592e9e8a2f2a485ee/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "RI"
+    },
+    {
+      "id": "ri-sam-771a5bff902f406e-n4008526r0221-design-bid-build-steam-and-condensat",
+      "name": "N4008526R0221, Design Bid Build - Steam and Condensate Repairs Vicinity of B690CP and B1163CP, Naval Station Newport, Ne",
+      "city": "Newport",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "Federal solicitation N4008526R0221. N4008526R0221, Design Bid Build - Steam and Condensate Repairs Vicinity of B690CP and B1163CP, Naval Station Newport, Newport, RI. Response deadline 2026-08-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0221",
+          "url": "https://sam.gov/workspace/contract/opp/771a5bff902f406ebdf08e9f305741f7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "RI"
+    },
+    {
+      "id": "ri-sam-babe6f1016c245f0-construction-nuwcdivnpt-b68-rm-136-renovation-proj",
+      "name": "Construction - NUWCDIVNPT B68 Rm 136 Renovation Project",
+      "city": "Newport",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "Federal combined synopsis/solicitation N6660426Q0291. Construction - NUWCDIVNPT B68 Rm 136 Renovation Project. Response deadline 2026-07-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation N6660426Q0291",
+          "url": "https://sam.gov/workspace/contract/opp/babe6f1016c245f0adb9e74025b9f382/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "RI"
+    },
+    {
+      "id": "ri-sam-5ea46cf208d44f46-p084-next-generation-torpedo-integration-lab-naval",
+      "name": "P084 NEXT GENERATION TORPEDO INTEGRATION LAB, NAVAL STATION NEWPORT, NEWPORT, RHODE ISLAND",
+      "city": "Newport",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Federal presolicitation N4008526R0178. P084 NEXT GENERATION TORPEDO INTEGRATION LAB, NAVAL STATION NEWPORT, NEWPORT, RHODE ISLAND. Response deadline 2026-07-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y1JB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation N4008526R0178",
+          "url": "https://sam.gov/workspace/contract/opp/5ea46cf208d44f46b81a607db2fb0175/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "RI"
+    },
+    {
+      "id": "ri-sam-032506397b784fd8-n4008526r0177-design-bid-build-building-114-crane-",
+      "name": "N4008526R0177, Design Bid Build - Building 114 Crane 64 Replacement, Naval Undersea Warfare Center, Naval Station Newpor",
+      "city": "Newport",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Federal solicitation N4008526R0177. N4008526R0177, Design Bid Build - Building 114 Crane 64 Replacement, Naval Undersea Warfare Center, Naval Station Newport, Newport, RI. Response deadline 2026-07-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0177",
+          "url": "https://sam.gov/workspace/contract/opp/032506397b784fd8b13069d8236b4531/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "RI"
+    },
+    {
+      "id": "ri-sam-4e690bed45484085-b124-nuwc-upgrades-navsta-npt-newport-ri",
+      "name": "B124 NUWC Upgrades, NAVSTA NPT, Newport, RI",
+      "city": "Newport",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "Federal solicitation N4008526R0222. B124 NUWC Upgrades, NAVSTA NPT, Newport, RI. Response deadline 2026-08-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0222",
+          "url": "https://sam.gov/workspace/contract/opp/4e690bed4548408590864dc0db56f6b0/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "RI"
+    },
+    {
+      "id": "ri-sam-8521b0510d9345a2-b1171-land-based-integration-test-lbit-facility-ad",
+      "name": "B1171 Land Based Integration Test (LBIT) & Facility Addition, NAVSTA NPT, Newport, RI",
+      "city": "Newport",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "Federal solicitation N4008526R0192. B1171 Land Based Integration Test (LBIT) & Facility Addition, NAVSTA NPT, Newport, RI. Response deadline 2026-08-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0192",
+          "url": "https://sam.gov/workspace/contract/opp/8521b0510d9345a29ad0c29bc41a8f4e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "RI"
+    },
+    {
+      "id": "ri-sam-5018e13bf0534030-n4008526r0219-design-bid-build-decentralize-steam-",
+      "name": "N4008526R0219, Design Bid Build - Decentralize Steam - Provide Natural Gas Fired Boilers at Buildings 23A, 43, 44, 49 at",
+      "city": "Newport",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "Federal solicitation N4008526R0219. N4008526R0219, Design Bid Build - Decentralize Steam - Provide Natural Gas Fired Boilers at Buildings 23A, 43, 44, 49 at Naval Health Care New England (NHCNE) Newport, RI. Response deadline 2026-08-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0219",
+          "url": "https://sam.gov/workspace/contract/opp/5018e13bf0534030a0b6ac472725eafe/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "RI"
+    },
+    {
+      "id": "ri-sam-1e94b733e7f44cd3-construction-nuwcdivnpt-b68-rm-136-renovation-proj",
+      "name": "Construction - NUWCDIVNPT B68 Rm 136 Renovation Project",
+      "city": "Newport",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-26",
+      "description": "Federal combined synopsis/solicitation N6660426Q0291. Construction - NUWCDIVNPT B68 Rm 136 Renovation Project. Response deadline 2026-07-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation N6660426Q0291",
+          "url": "https://sam.gov/workspace/contract/opp/1e94b733e7f44cd3acde3d9652d41809/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "RI"
+    },
+    {
+      "id": "ri-sam-d63efe91fe6344fd-construction-nuwcdivnpt-consolidated-secure-facili",
+      "name": "Construction - NUWCDIVNPT - Consolidated Secure Facility",
+      "city": "Newport",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-18",
+      "description": "Federal solicitation N6660426R0163. Construction - NUWCDIVNPT - Consolidated Secure Facility. Response deadline 2026-07-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N6660426R0163",
+          "url": "https://sam.gov/workspace/contract/opp/d63efe91fe6344fd9ddc243023a903e6/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "RI"
+    },
+    {
+      "id": "ri-sam-6d7a51e44e614ec3-construction-nuwcdivnpt-b68-rm-136-renovation-proj",
+      "name": "Construction - NUWCDIVNPT B68 Rm 136 Renovation Project",
+      "city": "Newport",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-11",
+      "description": "Federal combined synopsis/solicitation N6660426Q0291. Construction - NUWCDIVNPT B68 Rm 136 Renovation Project. Response deadline 2026-06-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation N6660426Q0291",
+          "url": "https://sam.gov/workspace/contract/opp/6d7a51e44e614ec38e9f8c42936f6f7f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "RI"
+    },
+    {
+      "id": "ri-sam-25e00b0134d54df9-construction-nuwcdivnpt-b68-rm-136-renovation-proj",
+      "name": "Construction - NUWCDIVNPT B68 Rm 136 Renovation Project",
+      "city": "Newport",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-09",
+      "description": "Federal combined synopsis/solicitation N6660426Q0291. Construction - NUWCDIVNPT B68 Rm 136 Renovation Project. Response deadline 2026-06-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation N6660426Q0291",
+          "url": "https://sam.gov/workspace/contract/opp/25e00b0134d54df9a3fdb3c95db24eed/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "RI"
+    },
+    {
+      "id": "ri-sam-6305525d0feb438d-n4008526r0177-design-bid-build-building-114-crane-",
+      "name": "N4008526R0177, Design Bid Build - Building 114 Crane 64 Replacement, Naval Undersea Warfare Center, Naval Station Newpor",
+      "city": "Newport",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-04",
+      "description": "Federal solicitation N4008526R0177. N4008526R0177, Design Bid Build - Building 114 Crane 64 Replacement, Naval Undersea Warfare Center, Naval Station Newport, Newport, RI. Response deadline 2026-07-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation N4008526R0177",
+          "url": "https://sam.gov/workspace/contract/opp/6305525d0feb438dab485db4fa1ff0f0/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "RI"
+    },
+    {
+      "id": "ri-sam-b94d32c8e93a463b-construction-nuwcdivnpt-b68-rm-136-renovation-proj",
+      "name": "Construction - NUWCDIVNPT B68 Rm 136 Renovation Project",
+      "city": "Newport",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-02",
+      "description": "Federal combined synopsis/solicitation N6660426Q0291. Construction - NUWCDIVNPT B68 Rm 136 Renovation Project. Response deadline 2026-06-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation N6660426Q0291",
+          "url": "https://sam.gov/workspace/contract/opp/b94d32c8e93a463bb6642ce46caf29de/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "RI"
+    },
+    {
+      "id": "ri-sam-c5c2042ca8664cb8-construction-nuwcdivnpt-b68-rm-136-renovation-proj",
+      "name": "Construction - NUWCDIVNPT B68 Rm 136 Renovation Project",
+      "city": "Newport",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-14",
+      "description": "Federal combined synopsis/solicitation N6660426Q0291. Construction - NUWCDIVNPT B68 Rm 136 Renovation Project. Response deadline 2026-06-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation N6660426Q0291",
+          "url": "https://sam.gov/workspace/contract/opp/c5c2042ca8664cb8adedbeb60534b781/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "RI"
+    },
+    {
+      "id": "ri-sam-dd2c0a56058c4eb1-construction-nuwcdivnpt-b68-rm-136-renovation-proj",
+      "name": "Construction - NUWCDIVNPT B68 Rm 136 Renovation Project",
+      "city": "Newport",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-12",
+      "description": "Federal combined synopsis/solicitation N6660426Q0291. Construction - NUWCDIVNPT B68 Rm 136 Renovation Project. Response deadline 2026-06-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation N6660426Q0291",
+          "url": "https://sam.gov/workspace/contract/opp/dd2c0a56058c4eb1bd7153a33c8f6a43/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "RI"
+    },
+    {
+      "id": "ri-sam-d67e3b4812fdf68b-d-b-b-bumed-projrcts-1-2-4-8-at-naval-station-newp",
+      "name": "D/B/B BUMED PROJRCTS 1,2,4,& 8 at Naval Station Newport, Rhode Island",
+      "city": "NEWPORT",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2013-09-13",
+      "description": "Federal modification/amendment/cancel N40085-13-R-3534. D/B/B BUMED PROJRCTS 1,2,4,& 8 at Naval Station Newport, Rhode Island. Response deadline 2013-09-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Modification/Amendment/Cancel",
+        "8a Competed",
+        "Classification code 56"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Modification/Amendment/Cancel N40085-13-R-3534",
+          "url": "https://sam.gov/workspace/contract/opp/d67e3b4812fdf68bb0c6d2f0f3cd4da8/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "RI"
     }
   ],
   "stats": {
-    "total": 5
+    "total": 26
   }
 }

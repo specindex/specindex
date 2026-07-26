@@ -1,9 +1,9 @@
 {
   "state": "LA",
   "state_name": "Louisiana",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — Meta Data Centers, WWNO, state economic development.",
+  "capture_method": "Public sources — Meta Data Centers, WWNO, state economic development, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "la-meta-richland-parish-hyperion",
@@ -52,9 +52,708 @@
         }
       ],
       "open_for": "Massive expansion underway. Infrastructure and MEP specs."
+    },
+    {
+      "id": "la-sam-ff22d0fc45b34100-freshwater-bayou-waterway-freshwater-bayou-lock-ne",
+      "name": "Freshwater Bayou Waterway, Freshwater Bayou Lock, New Shops Building, Vermilion Parish, Louisiana",
+      "city": "Kaplan",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal solicitation W912P826BA003. Freshwater Bayou Waterway, Freshwater Bayou Lock, New Shops Building, Vermilion Parish, Louisiana. Response deadline 2026-07-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Y1EB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912P826BA003",
+          "url": "https://sam.gov/workspace/contract/opp/ff22d0fc45b34100ade73ec887e22527/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "LA"
+    },
+    {
+      "id": "la-sam-13429e49893146fa-usace-mvn-new-orleans-district-warehouse-restroom-",
+      "name": "USACE MVN New Orleans District Warehouse Restroom Remodel",
+      "city": "New Orleans",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "Kemper System Group, Llc Silver Spring Md 20906 Usa",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "Federal award notice W912P8-C-A030. USACE MVN New Orleans District Warehouse Restroom Remodel.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice W912P8-C-A030",
+          "url": "https://sam.gov/workspace/contract/opp/13429e49893146fa8b2670bc15e17522/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "LA"
+    },
+    {
+      "id": "la-sam-152f118889d24530-job-order-contract-joc-at-fort-polk-louisiana",
+      "name": "Job Order Contract(JOC) at Fort Polk, Louisiana",
+      "city": "Fort Polk",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "Federal sources sought W5168W-27-X-POLK. Job Order Contract(JOC) at Fort Polk, Louisiana. Response deadline 2025-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W5168W-27-X-POLK",
+          "url": "https://sam.gov/workspace/contract/opp/152f118889d24530afda3e42851f8ef4/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "LA"
+    },
+    {
+      "id": "la-sam-2d30a34bb6ba4a58-job-order-contract-joc-at-fort-polk-louisiana",
+      "name": "Job Order Contract(JOC) at Fort Polk, Louisiana",
+      "city": "Fort Polk",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "Federal sources sought W5168W-27-X-POLK. Job Order Contract(JOC) at Fort Polk, Louisiana. Response deadline 2025-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W5168W-27-X-POLK",
+          "url": "https://sam.gov/workspace/contract/opp/2d30a34bb6ba4a589a73c31360f6ed02/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "LA"
+    },
+    {
+      "id": "la-sam-0f3ca337ac0842cf-sources-sought-notice-new-orleans-courthouse-harde",
+      "name": "Sources Sought Notice - New Orleans Courthouse Hardening",
+      "city": "New Orleans",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "Federal sources sought 47PB5327XXXXX. Sources Sought Notice - New Orleans Courthouse Hardening. Response deadline 2026-08-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 47PB5327XXXXX",
+          "url": "https://sam.gov/workspace/contract/opp/0f3ca337ac0842cfb3c72e2b8c43ca7c/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "LA"
+    },
+    {
+      "id": "la-sam-603d9594b00144ed-construct-sugarcane-research-laboratory",
+      "name": "Construct Sugarcane Research Laboratory",
+      "city": "Houma",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Federal solicitation 1232SA26R0027. Construct Sugarcane Research Laboratory. Response deadline 2026-08-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1DB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 1232SA26R0027",
+          "url": "https://sam.gov/workspace/contract/opp/603d9594b00144ed98efb4a03eddf643/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "LA"
+    },
+    {
+      "id": "la-sam-33124e2f2a314c02-freshwater-bayou-waterway-freshwater-bayou-lock-ne",
+      "name": "Freshwater Bayou Waterway, Freshwater Bayou Lock, New Shops Building, Vermilion Parish, Louisiana",
+      "city": "Kaplan",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Federal solicitation W912P826BA003. Freshwater Bayou Waterway, Freshwater Bayou Lock, New Shops Building, Vermilion Parish, Louisiana. Response deadline 2026-07-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Y1EB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912P826BA003",
+          "url": "https://sam.gov/workspace/contract/opp/33124e2f2a314c02add9ad60147bf135/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "LA"
+    },
+    {
+      "id": "la-sam-120d7fc9528f412e-freshwater-bayou-waterway-freshwater-bayou-lock-ne",
+      "name": "Freshwater Bayou Waterway, Freshwater Bayou Lock, New Shops Building, Vermilion Parish, Louisiana",
+      "city": "Kaplan",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "Federal solicitation W912P826BA003. Freshwater Bayou Waterway, Freshwater Bayou Lock, New Shops Building, Vermilion Parish, Louisiana. Response deadline 2026-07-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Y1EB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912P826BA003",
+          "url": "https://sam.gov/workspace/contract/opp/120d7fc9528f412ea43abfcb538416f4/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "LA"
+    },
+    {
+      "id": "la-sam-88d9a05a66c94bdc-construct-sugarcane-research-laboratory",
+      "name": "Construct Sugarcane Research Laboratory",
+      "city": "Houma",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-22",
+      "description": "Federal solicitation 1232SA26R0027. Construct Sugarcane Research Laboratory. Response deadline 2026-08-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1DB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 1232SA26R0027",
+          "url": "https://sam.gov/workspace/contract/opp/88d9a05a66c94bdcb124208e7cf695f3/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "LA"
+    },
+    {
+      "id": "la-sam-ccf283742f694d8e-freshwater-bayou-waterway-freshwater-bayou-lock-ne",
+      "name": "Freshwater Bayou Waterway, Freshwater Bayou Lock, New Shops Building, Vermilion Parish, Louisiana",
+      "city": "Kaplan",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-09",
+      "description": "Federal solicitation W912P826BA003. Freshwater Bayou Waterway, Freshwater Bayou Lock, New Shops Building, Vermilion Parish, Louisiana. Response deadline 2026-06-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Y1EB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912P826BA003",
+          "url": "https://sam.gov/workspace/contract/opp/ccf283742f694d8ea3dc1afd017e2911/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "LA"
+    },
+    {
+      "id": "la-sam-9acee8ed842341af-y1dz-502-21-222-ehrm-infrastructure-upgrades-pinev",
+      "name": "Y1DZ--502-21-222 | EHRM Infrastructure Upgrades | Pineville, LA |",
+      "city": "Pineville",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-11",
+      "description": "Federal sources sought 36C77626Q0207. Y1DZ--502-21-222 | EHRM Infrastructure Upgrades | Pineville, LA |. Response deadline 2026-05-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 36C77626Q0207",
+          "url": "https://sam.gov/workspace/contract/opp/9acee8ed842341af9e9ce894ad9f3cd7/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "LA"
+    },
+    {
+      "id": "la-sam-15bba49f6dde498c-job-order-contract-joc-at-fort-polk-louisiana",
+      "name": "Job Order Contract(JOC) at Fort Polk, Louisiana",
+      "city": "Fort Polk",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-02",
+      "description": "Federal sources sought W5168W-27-X-POLK. Job Order Contract(JOC) at Fort Polk, Louisiana. Response deadline 2025-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W5168W-27-X-POLK",
+          "url": "https://sam.gov/workspace/contract/opp/15bba49f6dde498c9df37c0baddcbd41/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "LA"
+    },
+    {
+      "id": "la-sam-1b6d81385b8c44f8-job-order-contract-joc-at-fort-polk-louisiana",
+      "name": "Job Order Contract(JOC) at Fort Polk, Louisiana",
+      "city": "Fort Polk",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-05",
+      "description": "Federal sources sought W5168W-27-X-POLK. Job Order Contract(JOC) at Fort Polk, Louisiana. Response deadline 2025-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W5168W-27-X-POLK",
+          "url": "https://sam.gov/workspace/contract/opp/1b6d81385b8c44f8a878bcc6f8694ee7/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "LA"
+    },
+    {
+      "id": "la-sam-33aeba46052945ea-job-order-contract-joc-at-fort-polk-louisiana",
+      "name": "Job Order Contract(JOC) at Fort Polk, Louisiana",
+      "city": "Fort Polk",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-24",
+      "description": "Federal sources sought W5168W-27-X-POLK. Job Order Contract(JOC) at Fort Polk, Louisiana. Response deadline 2025-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W5168W-27-X-POLK",
+          "url": "https://sam.gov/workspace/contract/opp/33aeba46052945eaac24ce3444e66d4c/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "LA"
+    },
+    {
+      "id": "la-sam-6d3d88b8526546b8-freshwater-bayou-waterway-freshwater-bayou-lock-ne",
+      "name": "Freshwater Bayou Waterway, Freshwater Bayou Lock, New Shops Building, Vermilion Parish, Louisiana",
+      "city": "Kaplan",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-06",
+      "description": "Federal solicitation W912P826BA003. Freshwater Bayou Waterway, Freshwater Bayou Lock, New Shops Building, Vermilion Parish, Louisiana. Response deadline 2026-11-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "8a Competed",
+        "Classification code Y1EB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912P826BA003",
+          "url": "https://sam.gov/workspace/contract/opp/6d3d88b8526546b891ee2545b75beace/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "LA"
+    },
+    {
+      "id": "la-sam-c573a084455a4a5b-job-order-contract-joc-at-fort-polk-louisiana",
+      "name": "Job Order Contract(JOC) at Fort Polk, Louisiana",
+      "city": "Fort Polk",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-07-17",
+      "description": "Federal sources sought W5168W-27-X-POLK. Job Order Contract(JOC) at Fort Polk, Louisiana. Response deadline 2025-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W5168W-27-X-POLK",
+          "url": "https://sam.gov/workspace/contract/opp/c573a084455a4a5bac1c1ab15d6c160e/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "LA"
+    },
+    {
+      "id": "la-sam-9be52d7d8a4c499d-job-order-contract-joc-at-fort-polk-louisiana",
+      "name": "Job Order Contract(JOC) at Fort Polk, Louisiana",
+      "city": "Fort Polk",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-07-14",
+      "description": "Federal sources sought W5168W-27-X-POLK. Job Order Contract(JOC) at Fort Polk, Louisiana. Response deadline 2025-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W5168W-27-X-POLK",
+          "url": "https://sam.gov/workspace/contract/opp/9be52d7d8a4c499db7ef1fe4832c678a/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "LA"
+    },
+    {
+      "id": "la-sam-2c923b64468f452c-information-systems-facility-phase-ii",
+      "name": "Information Systems Facility Phase II",
+      "city": "Fort Johnson",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2023-12-01",
+      "description": "Federal sources sought W9126G24R0107. Information Systems Facility Phase II. Response deadline 2023-12-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W9126G24R0107",
+          "url": "https://sam.gov/workspace/contract/opp/2c923b64468f452c9d032da4bca51a43/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "LA"
     }
   ],
   "stats": {
-    "total": 1
+    "total": 19
   }
 }

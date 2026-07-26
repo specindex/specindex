@@ -1,9 +1,9 @@
 {
   "state": "MI",
   "state_name": "Michigan",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — ENR, industry news.",
+  "capture_method": "Public sources — ENR, industry news, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "mi-oracle-saline-township-data-center",
@@ -47,9 +47,626 @@
         }
       ],
       "open_for": "Under construction Q1 2026. Hyperscale MEP specs active."
+    },
+    {
+      "id": "mi-sam-2cfcf7eb0db04cfb-z1da-relocate-sewer-pump-station-no-3-controls-553",
+      "name": "Z1DA--Relocate Sewer-Pump Station No 3 Controls 553-21-204 - Amendment 0001",
+      "city": "Detroit",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-06-16",
+      "description": "Federal solicitation 36C25026B0037. Z1DA--Relocate Sewer-Pump Station No 3 Controls 553-21-204 - Amendment 0001. Response deadline 2026-07-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C25026B0037",
+          "url": "https://sam.gov/workspace/contract/opp/2cfcf7eb0db04cfb9a51c7ff76e70914/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MI"
+    },
+    {
+      "id": "mi-sam-4d283ea18f4b4465-z1da-relocate-sewer-pump-station-no-3-controls-553",
+      "name": "Z1DA--Relocate Sewer-Pump Station No 3 Controls 553-21-204",
+      "city": "Detroit",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-27",
+      "description": "Federal solicitation 36C25026B0037. Z1DA--Relocate Sewer-Pump Station No 3 Controls 553-21-204. Response deadline 2026-07-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C25026B0037",
+          "url": "https://sam.gov/workspace/contract/opp/4d283ea18f4b4465829b8423a283b19f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MI"
+    },
+    {
+      "id": "mi-sam-64a781bb7115424a-michigan-job-ordering-contract-joc-solicitation",
+      "name": "Michigan Job Ordering Contract (JOC) Solicitation",
+      "city": "Lansing",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Postal Service",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-15",
+      "description": "Federal solicitation 089495-26-A-0067. Michigan Job Ordering Contract (JOC) Solicitation. Response deadline 2026-06-02.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z2HB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 089495-26-A-0067",
+          "url": "https://sam.gov/workspace/contract/opp/64a781bb7115424aaed86dd12921239d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MI"
+    },
+    {
+      "id": "mi-sam-876cf81cf399485b-solicitation-w911sa26ra006",
+      "name": "Solicitation: W911SA26RA006",
+      "city": "Bay City",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-20",
+      "description": "Federal solicitation W911SA26RA006. Solicitation: W911SA26RA006. Response deadline 2026-04-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Sole Source",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W911SA26RA006",
+          "url": "https://sam.gov/workspace/contract/opp/876cf81cf399485baaa9d264a3bb308a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MI"
+    },
+    {
+      "id": "mi-sam-ad2c70e39c334219-solicitation-w911sa26ra006",
+      "name": "Solicitation: W911SA26RA006",
+      "city": "Bay City",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-20",
+      "description": "Federal solicitation W911SA26RA006. Solicitation: W911SA26RA006. Response deadline 2026-04-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Sole Source",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W911SA26RA006",
+          "url": "https://sam.gov/workspace/contract/opp/ad2c70e39c33421995a68e85163f9ded/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MI"
+    },
+    {
+      "id": "mi-sam-11e201114c0c46d9-solicitation-w911sa26ra006",
+      "name": "Solicitation: W911SA26RA006",
+      "city": "Bay City",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-13",
+      "description": "Federal solicitation W911SA26RA006. Solicitation: W911SA26RA006. Response deadline 2026-03-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Sole Source",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W911SA26RA006",
+          "url": "https://sam.gov/workspace/contract/opp/11e201114c0c46d9a867775b2d6e5722/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MI"
+    },
+    {
+      "id": "mi-sam-1316b58c891d412a-solicitation-w911sa26ra006",
+      "name": "Solicitation: W911SA26RA006",
+      "city": "Bay City",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-27",
+      "description": "Federal solicitation W911SA26RA006. Solicitation: W911SA26RA006. Response deadline 2026-03-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W911SA26RA006",
+          "url": "https://sam.gov/workspace/contract/opp/1316b58c891d412a97de1ba9977d2308/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MI"
+    },
+    {
+      "id": "mi-sam-18fcb4aae3a8476a-solicitation-w911sa26ra006",
+      "name": "Solicitation: W911SA26RA006",
+      "city": "Bay City",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-24",
+      "description": "Federal solicitation W911SA26RA006. Solicitation: W911SA26RA006. Response deadline 2026-03-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W911SA26RA006",
+          "url": "https://sam.gov/workspace/contract/opp/18fcb4aae3a8476ab83e2444fdd121e1/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MI"
+    },
+    {
+      "id": "mi-sam-66194cb83ea1487c-solicitation",
+      "name": "Solicitation",
+      "city": "Bay City",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-23",
+      "description": "Federal solicitation W911SA26RA006. Solicitation. Response deadline 2026-03-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W911SA26RA006",
+          "url": "https://sam.gov/workspace/contract/opp/66194cb83ea1487cb363593912bd8b15/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MI"
+    },
+    {
+      "id": "mi-sam-bdf9c4a9f37e4812-dta-manned-unmanned-tactical-vehicle-lab",
+      "name": "DTA Manned/Unmanned Tactical Vehicle Lab",
+      "city": "Warren",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-08-25",
+      "description": "Federal solicitation W912QR25R0052. DTA Manned/Unmanned Tactical Vehicle Lab. Response deadline 2025-07-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR25R0052",
+          "url": "https://sam.gov/workspace/contract/opp/bdf9c4a9f37e4812850b28195339c45a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MI"
+    },
+    {
+      "id": "mi-sam-0007d616dedc4bf7-dta-manned-unmanned-tactical-vehicle-lab",
+      "name": "DTA Manned/Unmanned Tactical Vehicle Lab",
+      "city": "Warren",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-08-25",
+      "description": "Federal solicitation W912QR25R0052. DTA Manned/Unmanned Tactical Vehicle Lab. Response deadline 2025-08-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR25R0052",
+          "url": "https://sam.gov/workspace/contract/opp/0007d616dedc4bf787c58ff31df36801/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MI"
+    },
+    {
+      "id": "mi-sam-83fd756262484dd4-dta-manned-unmanned-tactical-vehicle-lab",
+      "name": "DTA Manned/Unmanned Tactical Vehicle Lab",
+      "city": "Warren",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-06-27",
+      "description": "Federal solicitation W912QR25R0052. DTA Manned/Unmanned Tactical Vehicle Lab. Response deadline 2025-07-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR25R0052",
+          "url": "https://sam.gov/workspace/contract/opp/83fd756262484dd4aad284c02eb1c208/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MI"
+    },
+    {
+      "id": "mi-sam-2d7709210111409a-dta-manned-unmanned-tactical-vehicle-lab",
+      "name": "DTA Manned/Unmanned Tactical Vehicle Lab",
+      "city": "Warren",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-06-26",
+      "description": "Federal solicitation W912QR25R0052. DTA Manned/Unmanned Tactical Vehicle Lab. Response deadline 2025-07-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR25R0052",
+          "url": "https://sam.gov/workspace/contract/opp/2d7709210111409aaff58463a8e774ff/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MI"
+    },
+    {
+      "id": "mi-sam-bdc5664e6dd748ff-dta-manned-unmanned-tactical-vehicle-lab",
+      "name": "DTA Manned/Unmanned Tactical Vehicle Lab",
+      "city": "Warren",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-06-23",
+      "description": "Federal solicitation W912QR25R0052. DTA Manned/Unmanned Tactical Vehicle Lab. Response deadline 2025-07-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR25R0052",
+          "url": "https://sam.gov/workspace/contract/opp/bdc5664e6dd748ffa1891ab08445454b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MI"
+    },
+    {
+      "id": "mi-sam-18394d0a94fd49e3-dta-manned-unmanned-tactical-vehicle-lab",
+      "name": "DTA Manned/Unmanned Tactical Vehicle Lab",
+      "city": "Warren",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-06-02",
+      "description": "Federal solicitation W912QR25R0052. DTA Manned/Unmanned Tactical Vehicle Lab. Response deadline 2025-06-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR25R0052",
+          "url": "https://sam.gov/workspace/contract/opp/18394d0a94fd49e3afec5435c08fbc4c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MI"
+    },
+    {
+      "id": "mi-sam-650de7e2772645c6-dta-manned-unmanned-tactical-vehicle-lab",
+      "name": "DTA Manned/Unmanned Tactical Vehicle Lab",
+      "city": "Warren",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-05-12",
+      "description": "Federal solicitation W912QR25R0052. DTA Manned/Unmanned Tactical Vehicle Lab. Response deadline 2025-06-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR25R0052",
+          "url": "https://sam.gov/workspace/contract/opp/650de7e2772645c68ffab8283a3b20da/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "MI"
     }
   ],
   "stats": {
-    "total": 1
+    "total": 17
   }
 }

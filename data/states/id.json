@@ -1,9 +1,9 @@
 {
   "state": "ID",
   "state_name": "Idaho",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — Idaho Statesman, BoiseDev, PR Newswire.",
+  "capture_method": "Public sources — Idaho Statesman, BoiseDev, PR Newswire, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "id-district-at-ten-mile-meridian",
@@ -132,9 +132,710 @@
         }
       ],
       "open_for": "Just started. Industrial MEP and process specs."
+    },
+    {
+      "id": "id-sam-dfc21734dd6c45d5-renovate-base-chapel",
+      "name": "Renovate Base Chapel",
+      "city": "Mountain Home AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Federal combined synopsis/solicitation FA489726Q0025. Renovate Base Chapel. Response deadline 2026-08-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2FE"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation FA489726Q0025",
+          "url": "https://sam.gov/workspace/contract/opp/dfc21734dd6c45d5b461b0b00abed5dd/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ID"
+    },
+    {
+      "id": "id-sam-1fd6a547fafa4b86-z-nifc-300-jwh-stes-222-227-renovation",
+      "name": "Z--NIFC 300 JWH STES 222 & 227 RENOVATION",
+      "city": "Boise",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Interior, Department Of The",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Federal presolicitation 140L3726B0001. Z--NIFC 300 JWH STES 222 & 227 RENOVATION. Response deadline 2026-07-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 140L3726B0001",
+          "url": "https://sam.gov/workspace/contract/opp/1fd6a547fafa4b86a3104b0f73da1820/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "ID"
+    },
+    {
+      "id": "id-sam-29cac0205b58421d-sources-sought-market-survey-for-air-traffic-contr",
+      "name": "Sources Sought – Market Survey for Air Traffic Control Tower at Mountain Home Air Force Base (MHAFB), ID",
+      "city": "Mountain Home AFB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "Federal sources sought W912DW27R1BWM. Sources Sought – Market Survey for Air Traffic Control Tower at Mountain Home Air Force Base (MHAFB), ID. Response deadline 2026-08-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code C1BZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W912DW27R1BWM",
+          "url": "https://sam.gov/workspace/contract/opp/29cac0205b58421dbabd8a1fd3bc2362/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "ID"
+    },
+    {
+      "id": "id-sam-369bbda4bebd4ffc-driggs-and-dubois-siding-replacement",
+      "name": "Driggs and Dubois Siding Replacement",
+      "city": "Dubois",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "Federal combined synopsis/solicitation 1240LT26Q0097. Driggs and Dubois Siding Replacement. Response deadline 2026-07-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1240LT26Q0097",
+          "url": "https://sam.gov/workspace/contract/opp/369bbda4bebd4ffc96f7ffa3217ad3ab/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ID"
+    },
+    {
+      "id": "id-sam-3275f1f355fb4347-driggs-and-dubois-siding-replacement",
+      "name": "Driggs and Dubois Siding Replacement",
+      "city": "Dubois",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-06",
+      "description": "Federal combined synopsis/solicitation 1240LT26Q0097. Driggs and Dubois Siding Replacement. Response deadline 2026-07-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1240LT26Q0097",
+          "url": "https://sam.gov/workspace/contract/opp/3275f1f355fb43478bee1f2386165ad4/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ID"
+    },
+    {
+      "id": "id-sam-80eaf5a5d44b459c-driggs-and-dubois-siding-replacement",
+      "name": "Driggs and Dubois Siding Replacement",
+      "city": "Dubois",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-02",
+      "description": "Federal combined synopsis/solicitation 1240LT26Q0097. Driggs and Dubois Siding Replacement. Response deadline 2026-07-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1240LT26Q0097",
+          "url": "https://sam.gov/workspace/contract/opp/80eaf5a5d44b459cb08783c9b15ba3cd/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ID"
+    },
+    {
+      "id": "id-sam-066e261d26b24138-driggs-and-dubois-siding-replacement",
+      "name": "Driggs and Dubois Siding Replacement",
+      "city": "Dubois",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-15",
+      "description": "Federal combined synopsis/solicitation 1240LT26Q0097. Driggs and Dubois Siding Replacement. Response deadline 2026-07-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1240LT26Q0097",
+          "url": "https://sam.gov/workspace/contract/opp/066e261d26b2413880e3e9c29150f16c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ID"
+    },
+    {
+      "id": "id-sam-44cefcf25f8b48e5-fire-alarm-system-replacement-mountain-home-afb",
+      "name": "Fire Alarm System Replacement, Mountain Home AFB",
+      "city": "Mountain Home AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-14",
+      "description": "Federal solicitation FA489725R0008. Fire Alarm System Replacement, Mountain Home AFB. Response deadline 2026-01-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z2FZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA489725R0008",
+          "url": "https://sam.gov/workspace/contract/opp/44cefcf25f8b48e5ad63effff73c5b90/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ID"
+    },
+    {
+      "id": "id-sam-6801385ead6d4e93-fire-alarm-system-replacement-mountain-home-afb",
+      "name": "Fire Alarm System Replacement, Mountain Home AFB",
+      "city": "Mountain Home AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-19",
+      "description": "Federal solicitation FA489725R0008. Fire Alarm System Replacement, Mountain Home AFB. Response deadline 2026-01-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code J063"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA489725R0008",
+          "url": "https://sam.gov/workspace/contract/opp/6801385ead6d4e9392a1247905dd52ba/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ID"
+    },
+    {
+      "id": "id-sam-c293e07b263b4c75-fire-alarm-system-replacement-mountain-home-afb",
+      "name": "Fire Alarm System Replacement, Mountain Home AFB",
+      "city": "Mountain Home AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-04",
+      "description": "Federal solicitation FA489725R0008. Fire Alarm System Replacement, Mountain Home AFB. Response deadline 2026-01-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code J063"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA489725R0008",
+          "url": "https://sam.gov/workspace/contract/opp/c293e07b263b4c75a3d6347a0c592e92/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ID"
+    },
+    {
+      "id": "id-sam-1adaadf959fa4b79-fire-alarm-system-replacement-mountain-home-afb",
+      "name": "Fire Alarm System Replacement, Mountain Home AFB",
+      "city": "Mountain Home AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-01",
+      "description": "Federal solicitation FA489725R0008. Fire Alarm System Replacement, Mountain Home AFB. Response deadline 2026-01-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code J063"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA489725R0008",
+          "url": "https://sam.gov/workspace/contract/opp/1adaadf959fa4b79932e778ef97a9bfc/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ID"
+    },
+    {
+      "id": "id-sam-f712fa6b20014d1e-fire-alarm-system-replacement-mountain-home-afb",
+      "name": "Fire Alarm System Replacement, Mountain Home AFB",
+      "city": "Mountain Home AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-19",
+      "description": "Federal solicitation FA489725R0008. Fire Alarm System Replacement, Mountain Home AFB. Response deadline 2026-01-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code J063"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA489725R0008",
+          "url": "https://sam.gov/workspace/contract/opp/f712fa6b20014d1e9473440869efeb67/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ID"
+    },
+    {
+      "id": "id-sam-d332033df9314e06-fire-alarm-system-replacement-mountain-home-afb",
+      "name": "Fire Alarm System Replacement, Mountain Home AFB",
+      "city": "Mountain Home AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-30",
+      "description": "Federal solicitation FA489725R0008. Fire Alarm System Replacement, Mountain Home AFB. Response deadline 2025-12-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code J063"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA489725R0008",
+          "url": "https://sam.gov/workspace/contract/opp/d332033df9314e069f677ab562017655/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ID"
+    },
+    {
+      "id": "id-sam-d23a1e3e4cc4434d-fire-alarm-system-replacement-mountain-home-afb",
+      "name": "Fire Alarm System Replacement, Mountain Home AFB",
+      "city": "Mountain Home AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-17",
+      "description": "Federal solicitation FA489725R0008. Fire Alarm System Replacement, Mountain Home AFB. Response deadline 2025-12-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code J063"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA489725R0008",
+          "url": "https://sam.gov/workspace/contract/opp/d23a1e3e4cc4434db390f87063781d6c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ID"
+    },
+    {
+      "id": "id-sam-792a9f991ffa43ec-fire-alarm-system-replacement-mountain-home-afb",
+      "name": "Fire Alarm System Replacement, Mountain Home AFB",
+      "city": "Mountain Home AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-16",
+      "description": "Federal solicitation FA489725R0008. Fire Alarm System Replacement, Mountain Home AFB. Response deadline 2025-12-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code J063"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA489725R0008",
+          "url": "https://sam.gov/workspace/contract/opp/792a9f991ffa43ec92132f500560b824/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ID"
+    },
+    {
+      "id": "id-sam-5ad7bc725caa4a94-fire-alarm-system-replacement-mountain-home-afb",
+      "name": "Fire Alarm System Replacement, Mountain Home AFB",
+      "city": "Mountain Home AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-16",
+      "description": "Federal solicitation FA489725R0008. Fire Alarm System Replacement, Mountain Home AFB. Response deadline 2025-12-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code J063"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA489725R0008",
+          "url": "https://sam.gov/workspace/contract/opp/5ad7bc725caa4a94a8a01f82464d11a1/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ID"
+    },
+    {
+      "id": "id-sam-8fb859a3dde8474e-fire-alarm-system-replacement-mountain-home-afb",
+      "name": "Fire Alarm System Replacement, Mountain Home AFB",
+      "city": "Mountain Home AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-16",
+      "description": "Federal solicitation FA489725R0008. Fire Alarm System Replacement, Mountain Home AFB. Response deadline 2025-11-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code J063"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA489725R0008",
+          "url": "https://sam.gov/workspace/contract/opp/8fb859a3dde8474eabc02fc011ec960f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ID"
+    },
+    {
+      "id": "id-sam-882162b999863aa5-renovate-restrooms-gunfighter-club",
+      "name": "Renovate Restrooms, Gunfighter Club",
+      "city": "MOUNTAIN HOME AFB",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2016-07-28",
+      "description": "Federal presolicitation FA4897-16-B-0013. Renovate Restrooms, Gunfighter Club.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation FA4897-16-B-0013",
+          "url": "https://sam.gov/workspace/contract/opp/882162b999863aa5d7a9c0329caea897/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "ID"
     }
   ],
   "stats": {
-    "total": 3
+    "total": 21
   }
 }

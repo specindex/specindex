@@ -1,9 +1,9 @@
 {
   "state": "ME",
   "state_name": "Maine",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — GSA federal construction listings.",
+  "capture_method": "Public sources — GSA federal construction listings, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "me-gsa-land-port-modernization",
@@ -40,9 +40,1292 @@
         }
       ],
       "open_for": "Federal border infrastructure. Systems and finishes specs."
+    },
+    {
+      "id": "me-sam-ea2258d2fafe4081-maine-air-national-guard-fuel-cell-hangar-construc",
+      "name": "Maine Air National Guard Fuel Cell Hangar Construction",
+      "city": "Bangor",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "Federal solicitation W50S8326BA001. Maine Air National Guard Fuel Cell Hangar Construction. Response deadline 2026-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8326BA001",
+          "url": "https://sam.gov/workspace/contract/opp/ea2258d2fafe408183af2efda49c8649/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-f743e2c2cfdc42b9-electronic-health-record-modernization-infrastruct",
+      "name": "Electronic Health Record Modernization Infrastructure Upgrades - Construction - Togus, ME",
+      "city": "Augusta",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "Federal solicitation 36C77626R0062. Electronic Health Record Modernization Infrastructure Upgrades - Construction - Togus, ME. Response deadline 2026-07-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0062",
+          "url": "https://sam.gov/workspace/contract/opp/f743e2c2cfdc42b9ab5056cfa7ea4adb/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-3c2f012c9dfa49d7-electronic-health-record-modernization-infrastruct",
+      "name": "Electronic Health Record Modernization Infrastructure Upgrades - Construction - Togus, ME",
+      "city": "Augusta",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "Federal solicitation 36C77626R0062. Electronic Health Record Modernization Infrastructure Upgrades - Construction - Togus, ME. Response deadline 2026-07-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0062",
+          "url": "https://sam.gov/workspace/contract/opp/3c2f012c9dfa49d79e92e7ada88a2dde/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-03e0fd7a10784bde-maine-air-national-guard-fuel-cell-hangar-construc",
+      "name": "Maine Air National Guard Fuel Cell Hangar Construction",
+      "city": "Bangor",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "Federal solicitation W50S8326BA001. Maine Air National Guard Fuel Cell Hangar Construction. Response deadline 2026-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8326BA001",
+          "url": "https://sam.gov/workspace/contract/opp/03e0fd7a10784bdebd602f1dc47580bb/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-9463b381a87f455d-maine-air-national-guard-fuel-cell-hangar-construc",
+      "name": "Maine Air National Guard Fuel Cell Hangar Construction",
+      "city": "Bangor",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Federal solicitation W50S8326BA001. Maine Air National Guard Fuel Cell Hangar Construction. Response deadline 2026-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8326BA001",
+          "url": "https://sam.gov/workspace/contract/opp/9463b381a87f455d8c5745b52ac9ade6/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-2c7e102285f44a6c-maine-air-national-guard-fuel-cell-hangar-construc",
+      "name": "Maine Air National Guard Fuel Cell Hangar Construction",
+      "city": "Bangor",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-23",
+      "description": "Federal solicitation W50S8326BA001. Maine Air National Guard Fuel Cell Hangar Construction. Response deadline 2026-07-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8326BA001",
+          "url": "https://sam.gov/workspace/contract/opp/2c7e102285f44a6ca0fd80d90922efe3/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-ad44f5126d764306-electronic-health-record-modernization-infrastruct",
+      "name": "Electronic Health Record Modernization Infrastructure Upgrades - Construction - Togus, ME",
+      "city": "Augusta",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-17",
+      "description": "Federal solicitation 36C77626R0062. Electronic Health Record Modernization Infrastructure Upgrades - Construction - Togus, ME. Response deadline 2026-07-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0062",
+          "url": "https://sam.gov/workspace/contract/opp/ad44f5126d764306adc7a2a45787723f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-dd4634d3957d40cd-major-maintenance-repair-m-r-at-uscg-sector-field-",
+      "name": "MAJOR MAINTENANCE & REPAIR (M&R) AT USCG SECTOR FIELD OFFICE, SOUTHWEST HARBOR, ME (HANCOCK COUNTY)",
+      "city": "Southwest Harbor",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "King Construction Inc. Machias Me 04654 Usa",
+      "opened_or_announced_date": "2026-06-04",
+      "description": "Federal award notice 70Z0G126BSNNEDW01. MAJOR MAINTENANCE & REPAIR (M&R) AT USCG SECTOR FIELD OFFICE, SOUTHWEST HARBOR, ME (HANCOCK COUNTY).",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice 70Z0G126BSNNEDW01",
+          "url": "https://sam.gov/workspace/contract/opp/dd4634d3957d40cd83c0eab673ba92eb/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-f2299eefb15f4ff6-major-maintenance-repair-m-r-at-uscg-sector-field-",
+      "name": "MAJOR MAINTENANCE & REPAIR (M&R) AT USCG SECTOR FIELD OFFICE, SOUTHWEST HARBOR, ME (HANCOCK COUNTY)",
+      "city": "Southwest Harbor",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-04",
+      "description": "Federal solicitation 70Z0G126BSNNEDW01. MAJOR MAINTENANCE & REPAIR (M&R) AT USCG SECTOR FIELD OFFICE, SOUTHWEST HARBOR, ME (HANCOCK COUNTY). Response deadline 2026-03-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 70Z0G126BSNNEDW01",
+          "url": "https://sam.gov/workspace/contract/opp/f2299eefb15f4ff6bfde2434c44acb71/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-48239f945e1d484e-maine-air-national-guard-fuel-cell-hangar-construc",
+      "name": "Maine Air National Guard Fuel Cell Hangar Construction",
+      "city": "Bangor",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "Federal solicitation W50S8326BA001. Maine Air National Guard Fuel Cell Hangar Construction. Response deadline 2026-06-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8326BA001",
+          "url": "https://sam.gov/workspace/contract/opp/48239f945e1d484ea4ed48ec6c0ea966/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-4c9230e3a2064e77-maine-air-national-guard-fuel-cell-hangar-construc",
+      "name": "Maine Air National Guard Fuel Cell Hangar Construction",
+      "city": "Bangor",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-15",
+      "description": "Federal solicitation W50S8326BA001. Maine Air National Guard Fuel Cell Hangar Construction. Response deadline 2026-06-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8326BA001",
+          "url": "https://sam.gov/workspace/contract/opp/4c9230e3a2064e77a70686d24fb335c1/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-9410928f3a324583-maine-air-national-guard-fuel-cell-hangar-construc",
+      "name": "Maine Air National Guard Fuel Cell Hangar Construction",
+      "city": "Bangor",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-12",
+      "description": "Federal solicitation W50S8326BA001. Maine Air National Guard Fuel Cell Hangar Construction. Response deadline 2026-06-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8326BA001",
+          "url": "https://sam.gov/workspace/contract/opp/9410928f3a324583bed67bddc31f239a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-3757c82f26a342f5-maine-air-national-guard-fuel-cell-hangar-construc",
+      "name": "Maine Air National Guard Fuel Cell Hangar Construction",
+      "city": "Bangor",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-24",
+      "description": "Federal solicitation W50S8326BA001. Maine Air National Guard Fuel Cell Hangar Construction. Response deadline 2026-05-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8326BA001",
+          "url": "https://sam.gov/workspace/contract/opp/3757c82f26a342f58ecee57df174038c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-354ce243c3624349-maine-air-national-guard-fuel-cell-hangar-construc",
+      "name": "Maine Air National Guard Fuel Cell Hangar Construction",
+      "city": "Bangor",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-24",
+      "description": "Federal solicitation W50S8326BA001. Maine Air National Guard Fuel Cell Hangar Construction. Response deadline 2026-05-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8326BA001",
+          "url": "https://sam.gov/workspace/contract/opp/354ce243c362434984b1351042a202ba/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-599698f59d684ea8-y1dz-electronic-health-record-modernization-infras",
+      "name": "Y1DZ--Electronic Health Record Modernization - Infrastructure Upgrades - Togus Veteran's Affairs Medical Center, Augusta",
+      "city": "Augusta",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-04-20",
+      "description": "Federal presolicitation 36C77626R0062. Y1DZ--Electronic Health Record Modernization - Infrastructure Upgrades - Togus Veteran's Affairs Medical Center, Augusta Maine - Project # 402-22-700. Response deadline 2026-06-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C77626R0062",
+          "url": "https://sam.gov/workspace/contract/opp/599698f59d684ea886aa558adaee425e/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-9b4cd077fb2f4ce4-major-maintenance-repair-m-r-at-uscg-sector-field-",
+      "name": "MAJOR MAINTENANCE & REPAIR (M&R) AT USCG SECTOR FIELD OFFICE, SOUTHWEST HARBOR, ME (HANCOCK COUNTY)",
+      "city": "Southwest Harbor",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-04",
+      "description": "Federal solicitation 70Z0G126BSNNEDW01. MAJOR MAINTENANCE & REPAIR (M&R) AT USCG SECTOR FIELD OFFICE, SOUTHWEST HARBOR, ME (HANCOCK COUNTY). Response deadline 2026-03-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 70Z0G126BSNNEDW01",
+          "url": "https://sam.gov/workspace/contract/opp/9b4cd077fb2f4ce48845afb57a452d2a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-7db89282612b49d9-construction-manager-as-constructor-cmc-requiremen",
+      "name": "Construction Manager as Constructor (CMc) Requirement for a New Land Port of Entry (LPOE), Coburn Gore, Maine",
+      "city": "Coburn Gore",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-02",
+      "description": "Federal solicitation 47PB0025R0044. Construction Manager as Constructor (CMc) Requirement for a New Land Port of Entry (LPOE), Coburn Gore, Maine. Response deadline 2026-03-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PB0025R0044",
+          "url": "https://sam.gov/workspace/contract/opp/7db89282612b49d9a972b22f9ad849d3/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-e2bd978493f64d0d-major-maintenance-repair-m-r-at-uscg-sector-field-",
+      "name": "MAJOR MAINTENANCE & REPAIR (M&R) AT USCG SECTOR FIELD OFFICE, SOUTHWEST HARBOR, ME (HANCOCK COUNTY)",
+      "city": "Southwest Harbor",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-25",
+      "description": "Federal solicitation 70Z0G126BSNNEDW01. MAJOR MAINTENANCE & REPAIR (M&R) AT USCG SECTOR FIELD OFFICE, SOUTHWEST HARBOR, ME (HANCOCK COUNTY). Response deadline 2026-03-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 70Z0G126BSNNEDW01",
+          "url": "https://sam.gov/workspace/contract/opp/e2bd978493f64d0da0eeb7f0353bb0e3/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-98a433d6d76b47e8-major-maintenance-repair-m-r-at-uscg-sector-field-",
+      "name": "MAJOR MAINTENANCE & REPAIR (M&R) AT USCG SECTOR FIELD OFFICE, SOUTHWEST HARBOR, ME (HANCOCK COUNTY)",
+      "city": "Southwest Harbor",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-23",
+      "description": "Federal solicitation 70Z0G126BSNNEDW01. MAJOR MAINTENANCE & REPAIR (M&R) AT USCG SECTOR FIELD OFFICE, SOUTHWEST HARBOR, ME (HANCOCK COUNTY). Response deadline 2026-03-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 70Z0G126BSNNEDW01",
+          "url": "https://sam.gov/workspace/contract/opp/98a433d6d76b47e89e00c51ad87ff668/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-832c0581a85e446c-construction-manager-as-constructor-cmc-requiremen",
+      "name": "Construction Manager as Constructor (CMc) Requirement for a New Land Port of Entry (LPOE), Coburn Gore, Maine",
+      "city": "Coburn Gore",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-19",
+      "description": "Federal solicitation 47PB0025R0044. Construction Manager as Constructor (CMc) Requirement for a New Land Port of Entry (LPOE), Coburn Gore, Maine. Response deadline 2026-03-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PB0025R0044",
+          "url": "https://sam.gov/workspace/contract/opp/832c0581a85e446c9f1f2063a1f4445f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-154447c7b49e42f5-major-maintenance-repair-m-r-at-uscg-sector-field-",
+      "name": "MAJOR MAINTENANCE & REPAIR (M&R) AT USCG SECTOR FIELD OFFICE, SOUTHWEST HARBOR, ME (HANCOCK COUNTY)",
+      "city": "Southwest Harbor",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-12",
+      "description": "Federal solicitation 70Z0G126BSNNEDW01. MAJOR MAINTENANCE & REPAIR (M&R) AT USCG SECTOR FIELD OFFICE, SOUTHWEST HARBOR, ME (HANCOCK COUNTY). Response deadline 2026-02-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 70Z0G126BSNNEDW01",
+          "url": "https://sam.gov/workspace/contract/opp/154447c7b49e42f582326f7fc81cc8fa/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-1e9e590b55754db7-major-maintenance-repair-m-r-at-uscg-sector-field-",
+      "name": "MAJOR MAINTENANCE & REPAIR (M&R) AT USCG SECTOR FIELD OFFICE, SOUTHWEST HARBOR, ME (HANCOCK COUNTY)",
+      "city": "Southwest Harbor",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-09",
+      "description": "Federal solicitation 70Z0G126BSNNEDW01. MAJOR MAINTENANCE & REPAIR (M&R) AT USCG SECTOR FIELD OFFICE, SOUTHWEST HARBOR, ME (HANCOCK COUNTY). Response deadline 2026-02-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 70Z0G126BSNNEDW01",
+          "url": "https://sam.gov/workspace/contract/opp/1e9e590b55754db7b38a16d6856e6bda/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-7f64ef15903f47df-major-maintenance-repair-m-r-at-uscg-sector-field-",
+      "name": "MAJOR MAINTENANCE & REPAIR (M&R) AT USCG SECTOR FIELD OFFICE, SOUTHWEST HARBOR, ME (HANCOCK COUNTY)",
+      "city": "Southwest Harbor",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-04",
+      "description": "Federal solicitation 70Z0G126BSNNEDW01. MAJOR MAINTENANCE & REPAIR (M&R) AT USCG SECTOR FIELD OFFICE, SOUTHWEST HARBOR, ME (HANCOCK COUNTY). Response deadline 2026-02-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 70Z0G126BSNNEDW01",
+          "url": "https://sam.gov/workspace/contract/opp/7f64ef15903f47dfa991826bce028674/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-8b68c6f242d34817-construction-manager-as-constructor-cmc-requiremen",
+      "name": "Construction Manager as Constructor (CMc) Requirement for a New Land Port of Entry (LPOE), Coburn Gore, Maine",
+      "city": "Coburn Gore",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-22",
+      "description": "Federal solicitation 47PB0025R0044. Construction Manager as Constructor (CMc) Requirement for a New Land Port of Entry (LPOE), Coburn Gore, Maine. Response deadline 2026-02-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PB0025R0044",
+          "url": "https://sam.gov/workspace/contract/opp/8b68c6f242d34817b9080d4fd3805a0e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-7d9faded838f4b5c-construction-manager-as-constructor-cmc-requiremen",
+      "name": "Construction Manager as Constructor (CMc) Requirement for a New Land Port of Entry (LPOE), Coburn Gore, Maine",
+      "city": "Coburn Gore",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-22",
+      "description": "Federal solicitation 47PB0025R0044. Construction Manager as Constructor (CMc) Requirement for a New Land Port of Entry (LPOE), Coburn Gore, Maine. Response deadline 2026-02-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PB0025R0044",
+          "url": "https://sam.gov/workspace/contract/opp/7d9faded838f4b5cae04382c10f81194/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-3bb9c1b762fc480d-major-maintenance-repair-m-r-at-uscg-sector-field-",
+      "name": "MAJOR MAINTENANCE & REPAIR (M&R) AT USCG SECTOR FIELD OFFICE, SOUTHWEST HARBOR, ME (HANCOCK COUNTY)",
+      "city": "Southwest Harbor",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-09",
+      "description": "Federal solicitation 70Z0G126BSNNEDW01. MAJOR MAINTENANCE & REPAIR (M&R) AT USCG SECTOR FIELD OFFICE, SOUTHWEST HARBOR, ME (HANCOCK COUNTY). Response deadline 2026-02-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 70Z0G126BSNNEDW01",
+          "url": "https://sam.gov/workspace/contract/opp/3bb9c1b762fc480dba391a17d96fee8f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-b000dab858b54484-construction-manager-as-constructor-cmc-requiremen",
+      "name": "Construction Manager as Constructor (CMc) Requirement for a New Land Port of Entry (LPOE), Coburn Gore, Maine",
+      "city": "Coburn Gore",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-10",
+      "description": "Federal solicitation 47PB0025R0044. Construction Manager as Constructor (CMc) Requirement for a New Land Port of Entry (LPOE), Coburn Gore, Maine. Response deadline 2026-01-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PB0025R0044",
+          "url": "https://sam.gov/workspace/contract/opp/b000dab858b54484abdc194d8bc4ddf7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-1ab6dab1f8eb411d-construction-manager-as-constructor-cmc-requiremen",
+      "name": "Construction Manager as Constructor (CMc) Requirement for a New Land Port of Entry (LPOE), Coburn Gore, Maine",
+      "city": "Coburn Gore",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-27",
+      "description": "Federal solicitation 47PB0025R0044. Construction Manager as Constructor (CMc) Requirement for a New Land Port of Entry (LPOE), Coburn Gore, Maine. Response deadline 2025-12-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PB0025R0044",
+          "url": "https://sam.gov/workspace/contract/opp/1ab6dab1f8eb411db4dd48c12b781b82/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-d0bbe8ac93f24808-construction-manager-as-constructor-cmc-requiremen",
+      "name": "Construction Manager as Constructor (CMc) Requirement for a New Land Port of Entry (LPOE), Coburn Gore, Maine",
+      "city": "Coburn Gore",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-22",
+      "description": "Federal solicitation 47PB0025R0044. Construction Manager as Constructor (CMc) Requirement for a New Land Port of Entry (LPOE), Coburn Gore, Maine. Response deadline 2025-11-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PB0025R0044",
+          "url": "https://sam.gov/workspace/contract/opp/d0bbe8ac93f24808a82c5602d8d951be/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-2e6524e5d76b4465-construction-manager-as-constructor-cmc-requiremen",
+      "name": "Construction Manager as Constructor (CMc) Requirement for a New Land Port of Entry (LPOE), Coburn Gore, Maine",
+      "city": "Coburn Gore",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-09-15",
+      "description": "Federal solicitation 47PB0025R0044. Construction Manager as Constructor (CMc) Requirement for a New Land Port of Entry (LPOE), Coburn Gore, Maine. Response deadline 2025-11-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PB0025R0044",
+          "url": "https://sam.gov/workspace/contract/opp/2e6524e5d76b446598d77ef792fff85e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-c2f306e8f4394775-construction-manager-as-constructor-cmc-requiremen",
+      "name": "Construction Manager as Constructor (CMc) Requirement for a New Land Port of Entry (LPOE), Coburn Gore, Maine",
+      "city": "Coburn Gore",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-08-27",
+      "description": "Federal presolicitation 47PB0025R0044. Construction Manager as Constructor (CMc) Requirement for a New Land Port of Entry (LPOE), Coburn Gore, Maine. Response deadline 2025-11-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "No Set aside used",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 47PB0025R0044",
+          "url": "https://sam.gov/workspace/contract/opp/c2f306e8f4394775b27804845a0c1f2a/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-2dd915a7cebc544b-fda-space-alterations-in-portland-me",
+      "name": "FDA Space Alterations in Portland, ME",
+      "city": "PORTLAND",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2014-07-24",
+      "description": "Federal modification/amendment/cancel GS-01P-14-BZ-C-0020. FDA Space Alterations in Portland, ME. Response deadline 2014-08-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Modification/Amendment/Cancel",
+        "HUBZone Set Aside",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Modification/Amendment/Cancel GS-01P-14-BZ-C-0020",
+          "url": "https://sam.gov/workspace/contract/opp/2dd915a7cebc544bf647372c04e3dc4e/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "ME"
+    },
+    {
+      "id": "me-sam-2c1eaf6b37151132-fda-space-alterations-in-portland-me",
+      "name": "FDA Space Alterations in Portland, ME",
+      "city": "PORTLAND",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2014-07-24",
+      "description": "Federal modification/amendment/cancel GS-01P-14-BZ-C-0020. FDA Space Alterations in Portland, ME. Response deadline 2014-08-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Modification/Amendment/Cancel",
+        "HUBZone Set Aside",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Modification/Amendment/Cancel GS-01P-14-BZ-C-0020",
+          "url": "https://sam.gov/workspace/contract/opp/2c1eaf6b37151132caf84031ab8addba/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "ME"
     }
   ],
   "stats": {
-    "total": 1
+    "total": 34
   }
 }

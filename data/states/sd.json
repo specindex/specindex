@@ -1,9 +1,9 @@
 {
   "state": "SD",
   "state_name": "South Dakota",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — state economic development.",
+  "capture_method": "Public sources — state economic development, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "sd-sioux-falls-industrial-expansion",
@@ -39,9 +39,867 @@
         }
       ],
       "open_for": "Spec industrial. Envelope and MEP specs."
+    },
+    {
+      "id": "sd-sam-4d0816361f0148a3-pine-ridge-hospital-roof-replacement",
+      "name": "Pine Ridge Hospital Roof Replacement",
+      "city": "Pine Ridge",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Federal solicitation 75H70126R00034. Pine Ridge Hospital Roof Replacement. Response deadline 2026-08-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00034",
+          "url": "https://sam.gov/workspace/contract/opp/4d0816361f0148a38bf34d1df885254e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SD"
+    },
+    {
+      "id": "sd-sam-142c48620ba64615-argon-piping-supply-installation-and-testing",
+      "name": "Argon Piping Supply, Installation and Testing",
+      "city": "Lead",
+      "county": "",
+      "status": "bidding",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Energy, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Federal solicitation 73573. Argon Piping Supply, Installation and Testing. Response deadline 2026-07-27.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 73573",
+          "url": "https://sam.gov/workspace/contract/opp/142c48620ba64615a2328803ff507fa2/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SD"
+    },
+    {
+      "id": "sd-sam-e0287b220875464c-pine-ridge-hospital-roof-replacement",
+      "name": "Pine Ridge Hospital Roof Replacement",
+      "city": "Pine Ridge",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "Federal solicitation 75H70126R00034. Pine Ridge Hospital Roof Replacement. Response deadline 2026-08-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00034",
+          "url": "https://sam.gov/workspace/contract/opp/e0287b220875464c88f021fff7fa971e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SD"
+    },
+    {
+      "id": "sd-sam-bf37b159eab140d9-argon-piping-supply-installation-and-testing",
+      "name": "Argon Piping Supply, Installation and Testing",
+      "city": "Lead",
+      "county": "",
+      "status": "bidding",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Energy, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Federal solicitation 73573. Argon Piping Supply, Installation and Testing. Response deadline 2026-07-27.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 73573",
+          "url": "https://sam.gov/workspace/contract/opp/bf37b159eab140d9bc6ba6b9d00e3949/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SD"
+    },
+    {
+      "id": "sd-sam-986a0c15bf664407-greenhouse-siding-repairs",
+      "name": "Greenhouse Siding Repairs",
+      "city": "Brookings",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "Federal combined synopsis/solicitation 1232SA26Q0830. Greenhouse Siding Repairs. Response deadline 2026-07-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1232SA26Q0830",
+          "url": "https://sam.gov/workspace/contract/opp/986a0c15bf664407b0a7984299e78496/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SD"
+    },
+    {
+      "id": "sd-sam-6f6a976ca6b14588-pine-ridge-hospital-roof-replacement",
+      "name": "Pine Ridge Hospital Roof Replacement",
+      "city": "Pine Ridge",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "Federal presolicitation 75H70126R00034. Pine Ridge Hospital Roof Replacement. Response deadline 2026-07-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 75H70126R00034",
+          "url": "https://sam.gov/workspace/contract/opp/6f6a976ca6b14588a7df8df004832053/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "SD"
+    },
+    {
+      "id": "sd-sam-a4977959200646bc-sd0035zz-supplemental-heat-rapid-city",
+      "name": "SD0035ZZ, Supplemental Heat, Rapid City",
+      "city": "Rapid City",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-25",
+      "description": "Federal combined synopsis/solicitation 47PD5326R0044. SD0035ZZ, Supplemental Heat, Rapid City. Response deadline 2026-07-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 47PD5326R0044",
+          "url": "https://sam.gov/workspace/contract/opp/a4977959200646bc80013d80f5819412/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SD"
+    },
+    {
+      "id": "sd-sam-7b70391c87104e35-argon-piping-supply-installation-and-testing",
+      "name": "Argon Piping Supply, Installation and Testing",
+      "city": "Lead",
+      "county": "",
+      "status": "bidding",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Energy, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-02",
+      "description": "Federal solicitation 73573. Argon Piping Supply, Installation and Testing. Response deadline 2026-07-27.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 73573",
+          "url": "https://sam.gov/workspace/contract/opp/7b70391c87104e359dbb25379d3554be/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SD"
+    },
+    {
+      "id": "sd-sam-8da0a79b56ef4627-south-dakota-national-guard-multiple-award-task-or",
+      "name": "South Dakota National Guard Multiple Award Task Order Contract (MATOC) for Construction",
+      "city": "Sioux Falls",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "Bruce Kreofsky & Sons Inc Plainview Mn 55964 Usa",
+      "opened_or_announced_date": "2026-05-29",
+      "description": "Federal award notice W50S9626DA022. South Dakota National Guard Multiple Award Task Order Contract (MATOC) for Construction.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice W50S9626DA022",
+          "url": "https://sam.gov/workspace/contract/opp/8da0a79b56ef4627a729832e41443966/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "SD"
+    },
+    {
+      "id": "sd-sam-e33db2560b844d9e-south-dakota-national-guard-multiple-award-task-or",
+      "name": "South Dakota National Guard Multiple Award Task Order Contract (MATOC) for Construction",
+      "city": "Sioux Falls",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "Tatco Llc Caputa Sd 57725 Usa",
+      "opened_or_announced_date": "2026-05-29",
+      "description": "Federal award notice W50S9626DA021. South Dakota National Guard Multiple Award Task Order Contract (MATOC) for Construction.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice W50S9626DA021",
+          "url": "https://sam.gov/workspace/contract/opp/e33db2560b844d9ea707672a334b99a6/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "SD"
+    },
+    {
+      "id": "sd-sam-8f963fd11fd24063-south-dakota-national-guard-multiple-award-task-or",
+      "name": "South Dakota National Guard Multiple Award Task Order Contract (MATOC) for Construction",
+      "city": "Sioux Falls",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "Mcl-Mrk Vii Llc Omaha Ne 68138 Usa",
+      "opened_or_announced_date": "2026-05-29",
+      "description": "Federal award notice W50S9626DA020. South Dakota National Guard Multiple Award Task Order Contract (MATOC) for Construction.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice W50S9626DA020",
+          "url": "https://sam.gov/workspace/contract/opp/8f963fd11fd24063951ef5bb25e9f4ac/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "SD"
+    },
+    {
+      "id": "sd-sam-970889170ba24693-south-dakota-national-guard-multiple-award-task-or",
+      "name": "South Dakota National Guard Multiple Award Task Order Contract (MATOC) for Construction",
+      "city": "Sioux Falls",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "Rjs Construction Inc Union Gap Wa 98901 Usa",
+      "opened_or_announced_date": "2026-05-29",
+      "description": "Federal award notice W50S9626DA019. South Dakota National Guard Multiple Award Task Order Contract (MATOC) for Construction.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice W50S9626DA019",
+          "url": "https://sam.gov/workspace/contract/opp/970889170ba24693be81415b1e2aa170/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "SD"
+    },
+    {
+      "id": "sd-sam-efb4cb4a3fdd47f5-south-dakota-national-guard-multiple-award-task-or",
+      "name": "South Dakota National Guard Multiple Award Task Order Contract (MATOC) for Construction",
+      "city": "Sioux Falls",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "Bhi Construction, Llc Harrisburg Sd 57032 Usa",
+      "opened_or_announced_date": "2026-05-29",
+      "description": "Federal award notice W50S9626DA018. South Dakota National Guard Multiple Award Task Order Contract (MATOC) for Construction.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice W50S9626DA018",
+          "url": "https://sam.gov/workspace/contract/opp/efb4cb4a3fdd47f581692a7f5fce2ec0/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "SD"
+    },
+    {
+      "id": "sd-sam-223a5546027141d8-south-dakota-national-guard-multiple-award-task-or",
+      "name": "South Dakota National Guard Multiple Award Task Order Contract (MATOC) for Construction",
+      "city": "Sioux Falls",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "Sterling Constructors Llc Denver Co 80229 Usa",
+      "opened_or_announced_date": "2026-05-29",
+      "description": "Federal award notice W50S9626DA017. South Dakota National Guard Multiple Award Task Order Contract (MATOC) for Construction.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice W50S9626DA017",
+          "url": "https://sam.gov/workspace/contract/opp/223a5546027141d890fda6645224e199/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "SD"
+    },
+    {
+      "id": "sd-sam-6f511856ee2748bb-south-dakota-national-guard-multiple-award-task-or",
+      "name": "South Dakota National Guard Multiple Award Task Order Contract (MATOC) for Construction",
+      "city": "Sioux Falls",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "Huot Construction And Services, Inc. South Saint Paul Mn 55075 Usa",
+      "opened_or_announced_date": "2026-05-29",
+      "description": "Federal award notice W50S9626DA016. South Dakota National Guard Multiple Award Task Order Contract (MATOC) for Construction.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice W50S9626DA016",
+          "url": "https://sam.gov/workspace/contract/opp/6f511856ee2748bb96b8566c5434a337/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "SD"
+    },
+    {
+      "id": "sd-sam-8516ff12bee54c6a-south-dakota-national-guard-multiple-award-task-or",
+      "name": "South Dakota National Guard Multiple Award Task Order Contract (MATOC) for Construction",
+      "city": "Sioux Falls",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "T. F. Powers Construction Co Fargo Nd 58102 Usa",
+      "opened_or_announced_date": "2026-05-29",
+      "description": "Federal award notice W50S9626DA015. South Dakota National Guard Multiple Award Task Order Contract (MATOC) for Construction.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice W50S9626DA015",
+          "url": "https://sam.gov/workspace/contract/opp/8516ff12bee54c6a9c8b932b5b59b5a2/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "SD"
+    },
+    {
+      "id": "sd-sam-a3dee7b68dcd4fa5-south-dakota-national-guard-multiple-award-task-or",
+      "name": "South Dakota National Guard Multiple Award Task Order Contract (MATOC) for Construction",
+      "city": "Sioux Falls",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "Mdm Construction Llc West Fargo Nd 58078 Usa",
+      "opened_or_announced_date": "2026-05-29",
+      "description": "Federal award notice W50S9626DA014. South Dakota National Guard Multiple Award Task Order Contract (MATOC) for Construction.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice W50S9626DA014",
+          "url": "https://sam.gov/workspace/contract/opp/a3dee7b68dcd4fa5813ec2911064aadc/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "SD"
+    },
+    {
+      "id": "sd-sam-bb92a6468b324e13-south-dakota-national-guard-multiple-award-task-or",
+      "name": "South Dakota National Guard Multiple Award Task Order Contract (MATOC) for Construction",
+      "city": "Sioux Falls",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "Gast Construction Company Inc Wahpeton Nd 58075 Usa",
+      "opened_or_announced_date": "2026-05-29",
+      "description": "Federal award notice W50S9626DA013. South Dakota National Guard Multiple Award Task Order Contract (MATOC) for Construction.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice W50S9626DA013",
+          "url": "https://sam.gov/workspace/contract/opp/bb92a6468b324e1398530693a34d2cc0/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "SD"
+    },
+    {
+      "id": "sd-sam-42002fe05c874e7a-south-dakota-national-guard-multiple-award-task-or",
+      "name": "South Dakota National Guard Multiple Award Task Order Contract (MATOC) for Construction",
+      "city": "Sioux Falls",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "Gil Haugan Construction, Inc Sioux Falls Sd 57104 Usa",
+      "opened_or_announced_date": "2026-05-29",
+      "description": "Federal award notice W50S9626DA012. South Dakota National Guard Multiple Award Task Order Contract (MATOC) for Construction.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice W50S9626DA012",
+          "url": "https://sam.gov/workspace/contract/opp/42002fe05c874e7a8ae85dc0b7ff5bf9/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "SD"
+    },
+    {
+      "id": "sd-sam-a5fb3d3f2b2f49cb-south-dakota-national-guard-multiple-award-task-or",
+      "name": "South Dakota National Guard Multiple Award Task Order Contract (MATOC) for Construction",
+      "city": "Sioux Falls",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "Razor Consulting Solutions, Inc Fargo Nd 58104 Usa",
+      "opened_or_announced_date": "2026-05-29",
+      "description": "Federal award notice W50S9626DA011. South Dakota National Guard Multiple Award Task Order Contract (MATOC) for Construction.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice W50S9626DA011",
+          "url": "https://sam.gov/workspace/contract/opp/a5fb3d3f2b2f49cbafb3cc3696b1bed1/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "SD"
+    },
+    {
+      "id": "sd-sam-c8cf601acb734a7c-south-dakota-national-guard-multiple-award-task-or",
+      "name": "South Dakota National Guard Multiple Award Task Order Contract (MATOC) for Construction",
+      "city": "Sioux Falls",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "Panacea Construction Group Llc Dubois Wy 82513 Usa",
+      "opened_or_announced_date": "2026-05-29",
+      "description": "Federal award notice W50S9626DA010. South Dakota National Guard Multiple Award Task Order Contract (MATOC) for Construction.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice W50S9626DA010",
+          "url": "https://sam.gov/workspace/contract/opp/c8cf601acb734a7c9b93bfcb32660272/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "SD"
+    },
+    {
+      "id": "sd-sam-b9da1182fd1840ed-south-dakota-national-guard-multiple-award-task-or",
+      "name": "South Dakota National Guard Multiple Award Task Order Contract (MATOC) for Construction",
+      "city": "Sioux Falls",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-05",
+      "description": "Federal solicitation W50S9625RA010. South Dakota National Guard Multiple Award Task Order Contract (MATOC) for Construction. Response deadline 2025-12-03.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S9625RA010",
+          "url": "https://sam.gov/workspace/contract/opp/b9da1182fd1840ed8c0a72031e911a01/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "SD"
     }
   ],
   "stats": {
-    "total": 1
+    "total": 23
   }
 }

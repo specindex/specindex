@@ -1,9 +1,9 @@
 {
   "state": "NV",
   "state_name": "Nevada",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — Data Center Dynamics, local news.",
+  "capture_method": "Public sources — Data Center Dynamics, local news, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "nv-vantage-reno-campus",
@@ -42,9 +42,2035 @@
         }
       ],
       "open_for": "Early development. Infrastructure specs forming."
+    },
+    {
+      "id": "nv-sam-a0cafb93c7cb4f73-pp-002-big-explosives-experimental-facility-beef-m",
+      "name": "PP-002 - BIG EXPLOSIVES EXPERIMENTAL FACILITY (BEEF) MODULAR FACILITY",
+      "city": "Mercury",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Energy, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal sources sought PP-0002. PP-002 - BIG EXPLOSIVES EXPERIMENTAL FACILITY (BEEF) MODULAR FACILITY. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "No Set aside used",
+        "Classification code 5410"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought PP-0002",
+          "url": "https://sam.gov/workspace/contract/opp/a0cafb93c7cb4f739a712dc8595e76d1/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-a5f80b8ccc0f400c-creech-afb-b225-hvac-replacement",
+      "name": "Creech AFB B225 HVAC Replacement",
+      "city": "Indian Springs",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Federal combined synopsis/solicitation F3G3JF6098A001. Creech AFB B225 HVAC Replacement. Response deadline 2026-07-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "HUBZone Set Aside",
+        "Classification code J041"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation F3G3JF6098A001",
+          "url": "https://sam.gov/workspace/contract/opp/a5f80b8ccc0f400cb15448ce7a3ab24a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-5855a1abab8d40a1-pp-002-big-explosives-experimental-facility-beef-m",
+      "name": "PP-002 - BIG EXPLOSIVES EXPERIMENTAL FACILITY (BEEF) MODULAR FACILITY",
+      "city": "Mercury",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Energy, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "Federal sources sought PP-0002. PP-002 - BIG EXPLOSIVES EXPERIMENTAL FACILITY (BEEF) MODULAR FACILITY. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "No Set aside used",
+        "Classification code 5410"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought PP-0002",
+          "url": "https://sam.gov/workspace/contract/opp/5855a1abab8d40a1866fd7cf9deba972/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-3159c3e573fd4a1c-creech-afb-b225-hvac-replacement",
+      "name": "Creech AFB B225 HVAC Replacement",
+      "city": "Indian Springs",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "Federal combined synopsis/solicitation F3G3JF6098A001. Creech AFB B225 HVAC Replacement. Response deadline 2026-07-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "HUBZone Set Aside",
+        "Classification code J041"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation F3G3JF6098A001",
+          "url": "https://sam.gov/workspace/contract/opp/3159c3e573fd4a1cb28c9272482c6082/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-f4f516bd31c14571-pp-002-big-explosives-experimental-facility-beef-m",
+      "name": "PP-002 - BIG EXPLOSIVES EXPERIMENTAL FACILITY (BEEF) MODULAR FACILITY",
+      "city": "Mercury",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Energy, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "Federal sources sought PP-0002. PP-002 - BIG EXPLOSIVES EXPERIMENTAL FACILITY (BEEF) MODULAR FACILITY. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "No Set aside used",
+        "Classification code 5410"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought PP-0002",
+          "url": "https://sam.gov/workspace/contract/opp/f4f516bd31c14571825291140ee4fe8c/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-f06fc66c0a9143f8-ldg-bollard-replacement",
+      "name": "LDG Bollard Replacement",
+      "city": "Las Vegas",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "Federal combined synopsis/solicitation 47PD5526Q0043. LDG Bollard Replacement. Response deadline 2026-08-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 47PD5526Q0043",
+          "url": "https://sam.gov/workspace/contract/opp/f06fc66c0a9143f8a1619872b435078d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-78c5360df56144bb-z1da-install-id-concrete-pad-project-593-26-104-va",
+      "name": "Z1DA--Install ID Concrete Pad Project 593-26-104 VAMC Las Vegas, NV",
+      "city": "North Las Vegas",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "Federal solicitation 36C26126R0054. Z1DA--Install ID Concrete Pad Project 593-26-104 VAMC Las Vegas, NV. Response deadline 2026-07-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26126R0054",
+          "url": "https://sam.gov/workspace/contract/opp/78c5360df56144bb9990e033c090ad99/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-2d340b595e9b4be8-creech-afb-b225-hvac-replacement",
+      "name": "Creech AFB B225 HVAC Replacement",
+      "city": "Indian Springs",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "Federal combined synopsis/solicitation F3G3JF6098A001. Creech AFB B225 HVAC Replacement. Response deadline 2026-07-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "HUBZone Set Aside",
+        "Classification code J041"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation F3G3JF6098A001",
+          "url": "https://sam.gov/workspace/contract/opp/2d340b595e9b4be895cfb5d12f1ffc39/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-cd6c25aed0a740b6-z1da-install-id-concrete-pad-project-593-26-104-va",
+      "name": "Z1DA--Install ID Concrete Pad Project 593-26-104 VAMC Las Vegas, NV",
+      "city": "North Las Vegas",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-02",
+      "description": "Federal solicitation 36C26126R0054. Z1DA--Install ID Concrete Pad Project 593-26-104 VAMC Las Vegas, NV. Response deadline 2026-07-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26126R0054",
+          "url": "https://sam.gov/workspace/contract/opp/cd6c25aed0a740b69643fef370bc7460/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-80ed0b30732a4b29-z1da-install-id-concrete-pad-project-593-26-104-va",
+      "name": "Z1DA--Install ID Concrete Pad Project 593-26-104 VAMC Las Vegas, NV",
+      "city": "North Las Vegas",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-24",
+      "description": "Federal solicitation 36C26126R0054. Z1DA--Install ID Concrete Pad Project 593-26-104 VAMC Las Vegas, NV. Response deadline 2026-07-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26126R0054",
+          "url": "https://sam.gov/workspace/contract/opp/80ed0b30732a4b29869b30a8e1751e0a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-bf1fc7ef0948480f-z2da-solicitation-no-36c26126r0041-project-593-26-",
+      "name": "Z2DA--Solicitation No. 36C26126R0041 Project 593-26-103, Renovate Education Building Training Hub",
+      "city": "North Las Vegas",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-16",
+      "description": "Federal solicitation 36C26126R0041. Z2DA--Solicitation No. 36C26126R0041 Project 593-26-103, Renovate Education Building Training Hub. Response deadline 2026-06-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26126R0041",
+          "url": "https://sam.gov/workspace/contract/opp/bf1fc7ef0948480fb392f6847a4368ae/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-6e467f119312473a-z2da-solicitation-no-36c26126r0041-project-593-26-",
+      "name": "Z2DA--Solicitation No. 36C26126R0041 Project 593-26-103, Renovate Education Building Training Hub",
+      "city": "North Las Vegas",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-11",
+      "description": "Federal solicitation 36C26126R0041. Z2DA--Solicitation No. 36C26126R0041 Project 593-26-103, Renovate Education Building Training Hub. Response deadline 2026-06-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26126R0041",
+          "url": "https://sam.gov/workspace/contract/opp/6e467f119312473a88964c2201dda5f3/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-e6a20af122314b49-saber-idiq",
+      "name": "SABER IDIQ",
+      "city": "Nellis AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-11",
+      "description": "Federal solicitation FA486125R0003. SABER IDIQ. Response deadline 2026-03-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA486125R0003",
+          "url": "https://sam.gov/workspace/contract/opp/e6a20af122314b49add62b8607bed726/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-0f6ea2b082cc4e89-z1da-install-id-concrete-pad-project-593-26-104-va",
+      "name": "Z1DA--Install ID Concrete Pad Project 593-26-104 VAMC Las Vegas, NV",
+      "city": "North Las Vegas",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-09",
+      "description": "Federal solicitation 36C26126R0054. Z1DA--Install ID Concrete Pad Project 593-26-104 VAMC Las Vegas, NV. Response deadline 2026-06-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26126R0054",
+          "url": "https://sam.gov/workspace/contract/opp/0f6ea2b082cc4e89bbd75bf27d3ff91a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-d820396c0072438d-creech-afb-b225-hvac-replacement",
+      "name": "Creech AFB B225 HVAC Replacement",
+      "city": "Indian Springs",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-08",
+      "description": "Federal combined synopsis/solicitation F3G3JF6098A001. Creech AFB B225 HVAC Replacement. Response deadline 2026-07-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "HUBZone Set Aside",
+        "Classification code J041"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation F3G3JF6098A001",
+          "url": "https://sam.gov/workspace/contract/opp/d820396c0072438dbde5933f94e94d87/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-a7399992169741cc-z2da-solicitation-no-36c26126r0041-project-593-26-",
+      "name": "Z2DA--Solicitation No. 36C26126R0041 Project 593-26-103, Renovate Education Building Training Hub",
+      "city": "North Las Vegas",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-05",
+      "description": "Federal solicitation 36C26126R0041. Z2DA--Solicitation No. 36C26126R0041 Project 593-26-103, Renovate Education Building Training Hub. Response deadline 2026-06-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26126R0041",
+          "url": "https://sam.gov/workspace/contract/opp/a7399992169741ccb1db3cc76cba2dae/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-083c965b04724d11-z1da-install-id-concrete-pad-project-593-26-104-va",
+      "name": "Z1DA--Install ID Concrete Pad Project 593-26-104 VAMC Las Vegas, NV",
+      "city": "North Las Vegas",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "Federal solicitation 36C26126R0054. Z1DA--Install ID Concrete Pad Project 593-26-104 VAMC Las Vegas, NV. Response deadline 2026-06-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26126R0054",
+          "url": "https://sam.gov/workspace/contract/opp/083c965b04724d118acbc236872650d1/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-6014dc53b1aa4c0c-z1da-install-id-concrete-pad-project-593-26-104-va",
+      "name": "Z1DA--Install ID Concrete Pad Project 593-26-104 VAMC Las Vegas, NV",
+      "city": "North Las Vegas",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-28",
+      "description": "Federal solicitation 36C26126R0054. Z1DA--Install ID Concrete Pad Project 593-26-104 VAMC Las Vegas, NV. Response deadline 2026-06-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26126R0054",
+          "url": "https://sam.gov/workspace/contract/opp/6014dc53b1aa4c0c8c6aab501449af7a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-a032a6e161be483f-z2da-solicitation-no-36c26126r0041-project-593-26-",
+      "name": "Z2DA--Solicitation No. 36C26126R0041 Project 593-26-103, Renovate Education Building Training Hub",
+      "city": "North Las Vegas",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-27",
+      "description": "Federal solicitation 36C26126R0041. Z2DA--Solicitation No. 36C26126R0041 Project 593-26-103, Renovate Education Building Training Hub. Response deadline 2026-06-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26126R0041",
+          "url": "https://sam.gov/workspace/contract/opp/a032a6e161be483f9d25a7b853c216e0/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-75499f2f3b024ae8-z2da-solicitation-no-36c26126r0041-project-593-26-",
+      "name": "Z2DA--Solicitation No. 36C26126R0041 Project 593-26-103, Renovate Education Building Training Hub",
+      "city": "North Las Vegas",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-27",
+      "description": "Federal solicitation 36C26126R0041. Z2DA--Solicitation No. 36C26126R0041 Project 593-26-103, Renovate Education Building Training Hub. Response deadline 2026-06-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26126R0041",
+          "url": "https://sam.gov/workspace/contract/opp/75499f2f3b024ae8b5f00e56494e93cd/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-ad327f28e5384568-y1lz-design-build-to-install-parking-shades-and-re",
+      "name": "Y1LZ--Design-Build to Install Parking Shades and Reconfigure Parking Lots VAMC Las Vegas, NV Project 593-26-306",
+      "city": "North Las Veags",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-27",
+      "description": "Federal sources sought 36C26126R0055. Y1LZ--Design-Build to Install Parking Shades and Reconfigure Parking Lots VAMC Las Vegas, NV Project 593-26-306. Response deadline 2026-06-02.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Y1LZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 36C26126R0055",
+          "url": "https://sam.gov/workspace/contract/opp/ad327f28e5384568b091b2d314e292f9/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-25c2316362674cf3-y1lz-design-build-to-install-parking-shades-and-re",
+      "name": "Y1LZ--Design-Build to Install Parking Shades and Reconfigure Parking Lots VAMC Las Vegas, NV Project 593-26-306",
+      "city": "North Las Veags",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-26",
+      "description": "Federal sources sought 36C26126R0055. Y1LZ--Design-Build to Install Parking Shades and Reconfigure Parking Lots VAMC Las Vegas, NV Project 593-26-306. Response deadline 2026-06-02.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Y1LZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 36C26126R0055",
+          "url": "https://sam.gov/workspace/contract/opp/25c2316362674cf39bff955a9f69f1ae/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-b3d916a5b1504c1b-z1da-install-id-concrete-pad-project-593-26-104-va",
+      "name": "Z1DA--Install ID Concrete Pad Project 593-26-104 VAMC Las Vegas, NV",
+      "city": "North Las Vegas",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-12",
+      "description": "Federal presolicitation 36C26126R0054. Z1DA--Install ID Concrete Pad Project 593-26-104 VAMC Las Vegas, NV. Response deadline 2026-05-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C26126R0054",
+          "url": "https://sam.gov/workspace/contract/opp/b3d916a5b1504c1bb78370b8425493e5/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-ae3c8dfe6da24b42-z2da-solicitation-no-36c26126r0041-project-593-26-",
+      "name": "Z2DA--Solicitation No. 36C26126R0041 Project 593-26-103, Renovate Education Building Training Hub",
+      "city": "North Las Vegas",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-06",
+      "description": "Federal solicitation 36C26126R0041. Z2DA--Solicitation No. 36C26126R0041 Project 593-26-103, Renovate Education Building Training Hub. Response deadline 2026-06-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26126R0041",
+          "url": "https://sam.gov/workspace/contract/opp/ae3c8dfe6da24b42b7b0ceae1589509b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-a4eb8638ee904aaa-z2da-presolicitation-notice-no-36c26126r0041-proje",
+      "name": "Z2DA--Presolicitation Notice No. 36C26126R0041 Project 593-26-103, Renovate Education Building Training Hub",
+      "city": "North Las Vegas",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-06",
+      "description": "Federal solicitation 36C26126R0041. Z2DA--Presolicitation Notice No. 36C26126R0041 Project 593-26-103, Renovate Education Building Training Hub. Response deadline 2026-06-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26126R0041",
+          "url": "https://sam.gov/workspace/contract/opp/a4eb8638ee904aaa93424379ce6f342d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-fc14c794c648420f-z1db-replace-dietetics-and-cath-lab-flooring-build",
+      "name": "Z1DB--Replace Dietetics and Cath Lab Flooring, Buildings 1 and 1D Reno, NV Project # 654-22-003 Reno, NV",
+      "city": "Reno",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-04-24",
+      "description": "Federal presolicitation 36C26126R0038. Z1DB--Replace Dietetics and Cath Lab Flooring, Buildings 1 and 1D Reno, NV Project # 654-22-003 Reno, NV. Response deadline 2026-06-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C26126R0038",
+          "url": "https://sam.gov/workspace/contract/opp/fc14c794c648420fa867ab474d5c7ecc/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-32f214b831f14985-z2da-presolicitation-notice-no-36c26126r0041-proje",
+      "name": "Z2DA--Presolicitation Notice No. 36C26126R0041 Project 593-26-103, Renovate Education Building Training Hub",
+      "city": "Northern Las Vegas",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-04-21",
+      "description": "Federal presolicitation 36C26126R0041. Z2DA--Presolicitation Notice No. 36C26126R0041 Project 593-26-103, Renovate Education Building Training Hub. Response deadline 2026-05-07.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C26126R0041",
+          "url": "https://sam.gov/workspace/contract/opp/32f214b831f14985baf3b3a1fa630ee6/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-64d60823b1bb41a6-z2da-593-csi-313-renovate-radiology-space",
+      "name": "Z2DA--593-CSI-313 | Renovate Radiology Space",
+      "city": "Las Vegas",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-04-02",
+      "description": "Federal sources sought 36C26126Q0565. Z2DA--593-CSI-313 | Renovate Radiology Space. Response deadline 2026-04-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 36C26126Q0565",
+          "url": "https://sam.gov/workspace/contract/opp/64d60823b1bb41a6bfd5766cb555fd97/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-bae34222dc3f4cae-saber-idiq",
+      "name": "SABER IDIQ",
+      "city": "Nellis AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-01",
+      "description": "Federal solicitation FA486125R0003. SABER IDIQ. Response deadline 2026-03-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA486125R0003",
+          "url": "https://sam.gov/workspace/contract/opp/bae34222dc3f4caea85fe3d465622817/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-95e29e2736504437-saber-idiq",
+      "name": "SABER IDIQ",
+      "city": "Nellis AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-17",
+      "description": "Federal solicitation FA486125R0003. SABER IDIQ. Response deadline 2026-03-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA486125R0003",
+          "url": "https://sam.gov/workspace/contract/opp/95e29e2736504437a3898cf054214ea7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-c627ecc6df084dc2-saber-idiq",
+      "name": "SABER IDIQ",
+      "city": "Nellis AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-10",
+      "description": "Federal solicitation FA486125R0003. SABER IDIQ. Response deadline 2026-03-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA486125R0003",
+          "url": "https://sam.gov/workspace/contract/opp/c627ecc6df084dc2a2322d288a5d5a84/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-6e7771f3b9f347b0-saber-idiq",
+      "name": "SABER IDIQ",
+      "city": "Nellis AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-05",
+      "description": "Federal solicitation FA486125R0003. SABER IDIQ. Response deadline 2026-03-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA486125R0003",
+          "url": "https://sam.gov/workspace/contract/opp/6e7771f3b9f347b0a7f49a607e229eb7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-6a1fabc0700446ca-saber-idiq",
+      "name": "SABER IDIQ",
+      "city": "Nellis AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-25",
+      "description": "Federal solicitation FA486125R0003. SABER IDIQ. Response deadline 2026-03-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA486125R0003",
+          "url": "https://sam.gov/workspace/contract/opp/6a1fabc0700446cab376819df6feb7c3/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-c04d14e2be664f0f-saber-idiq",
+      "name": "SABER IDIQ",
+      "city": "Nellis AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-03",
+      "description": "Federal solicitation FA486125R0003. SABER IDIQ. Response deadline 2026-03-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA486125R0003",
+          "url": "https://sam.gov/workspace/contract/opp/c04d14e2be664f0fa9be187938671de3/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-16371a1d10bf499d-saber-idiq",
+      "name": "SABER IDIQ",
+      "city": "Nellis AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-20",
+      "description": "Federal solicitation FA486125R0003. SABER IDIQ. Response deadline 2026-02-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA486125R0003",
+          "url": "https://sam.gov/workspace/contract/opp/16371a1d10bf499d8b17f1e0eb25edda/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-e068bed0f77444be-saber-idiq",
+      "name": "SABER IDIQ",
+      "city": "Nellis AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-20",
+      "description": "Federal solicitation FA486125R0003. SABER IDIQ. Response deadline 2026-02-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA486125R0003",
+          "url": "https://sam.gov/workspace/contract/opp/e068bed0f77444be9fe4edd16bad21af/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-23179f58e0104596-saber-idiq",
+      "name": "SABER IDIQ",
+      "city": "Nellis AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-20",
+      "description": "Federal solicitation FA486125R0003. SABER IDIQ. Response deadline 2026-02-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA486125R0003",
+          "url": "https://sam.gov/workspace/contract/opp/23179f58e010459692a6b508b6b1adfa/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-abd5bc013bc34b15-saber-idiq",
+      "name": "SABER IDIQ",
+      "city": "Nellis AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-20",
+      "description": "Federal solicitation FA486125R0003. SABER IDIQ. Response deadline 2026-02-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA486125R0003",
+          "url": "https://sam.gov/workspace/contract/opp/abd5bc013bc34b1599a304105ded60d7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-7e49f9f72b244151-saber-idiq",
+      "name": "SABER IDIQ",
+      "city": "Nellis AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-14",
+      "description": "Federal solicitation FA486125R0003. SABER IDIQ. Response deadline 2026-02-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA486125R0003",
+          "url": "https://sam.gov/workspace/contract/opp/7e49f9f72b24415197c54bef91375611/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-2b9ae70f687f4520-saber-idiq",
+      "name": "SABER IDIQ",
+      "city": "Nellis AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-30",
+      "description": "Federal solicitation FA486125R0003. SABER IDIQ. Response deadline 2026-02-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA486125R0003",
+          "url": "https://sam.gov/workspace/contract/opp/2b9ae70f687f4520afcaddebccc9686e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-0ff20dc580af4cab-saber-idiq",
+      "name": "SABER IDIQ",
+      "city": "Nellis AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-12",
+      "description": "Federal solicitation FA486125R0003. SABER IDIQ. Response deadline 2026-01-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA486125R0003",
+          "url": "https://sam.gov/workspace/contract/opp/0ff20dc580af4cabbf8277f07fee6fbb/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-ff2c459ce90642ff-saber-idiq",
+      "name": "SABER IDIQ",
+      "city": "Nellis AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-19",
+      "description": "Federal solicitation FA486125R0003. SABER IDIQ. Response deadline 2026-01-23.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA486125R0003",
+          "url": "https://sam.gov/workspace/contract/opp/ff2c459ce90642ffbe41e535f15fa7e4/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-15a9bb1dbe93456b-saber-idiq",
+      "name": "SABER IDIQ",
+      "city": "Nellis AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-19",
+      "description": "Federal solicitation FA486125R0003. SABER IDIQ. Response deadline 2025-11-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA486125R0003",
+          "url": "https://sam.gov/workspace/contract/opp/15a9bb1dbe93456b9e32908261ca152e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-94e86ed928864b64-saber-idiq",
+      "name": "SABER IDIQ",
+      "city": "Nellis AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-24",
+      "description": "Federal solicitation FA486125R0003. SABER IDIQ. Response deadline 2025-11-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA486125R0003",
+          "url": "https://sam.gov/workspace/contract/opp/94e86ed928864b648499b5e601f5ebcb/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-faa61ca1339c472a-saber-idiq",
+      "name": "SABER IDIQ",
+      "city": "Nellis AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-23",
+      "description": "Federal solicitation FA486125R0003. SABER IDIQ. Response deadline 2025-11-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA486125R0003",
+          "url": "https://sam.gov/workspace/contract/opp/faa61ca1339c472abb0c27b6d5ea3690/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-f178dddd94774b14-saber-idiq",
+      "name": "SABER IDIQ",
+      "city": "Nellis AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-15",
+      "description": "Federal solicitation FA486125R0003. SABER IDIQ. Response deadline 2025-11-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA486125R0003",
+          "url": "https://sam.gov/workspace/contract/opp/f178dddd94774b14a1610c75893eebb5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-73d49b5c72ec49c2-saber-idiq",
+      "name": "SABER IDIQ",
+      "city": "Nellis AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-06",
+      "description": "Federal solicitation FA486125R0003. SABER IDIQ. Response deadline 2025-11-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA486125R0003",
+          "url": "https://sam.gov/workspace/contract/opp/73d49b5c72ec49c28db5463a349e7637/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-2e2cf24fa26f4543-saber-idiq",
+      "name": "SABER IDIQ",
+      "city": "Nellis AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-01",
+      "description": "Federal solicitation FA486125R0003. SABER IDIQ. Response deadline 2025-11-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA486125R0003",
+          "url": "https://sam.gov/workspace/contract/opp/2e2cf24fa26f45438adae0fe97d676e5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-7d858bb81f2b49af-saber-idiq",
+      "name": "SABER IDIQ",
+      "city": "Nellis AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-09-26",
+      "description": "Federal solicitation FA486125R0003. SABER IDIQ. Response deadline 2025-11-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA486125R0003",
+          "url": "https://sam.gov/workspace/contract/opp/7d858bb81f2b49afa93c24c45ba007eb/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-232c6b4853d44421-design-build-construction-to-replace-seismically-d",
+      "name": "Design Build Construction to Replace Seismically Deficient Boiler Plant, Building 8. VAMC Reno, NV. -- Y1NB",
+      "city": "Reno",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Sgjv2, Llc ",
+      "opened_or_announced_date": "2025-04-25",
+      "description": "Federal award notice QSE--36C10F24R50000. Design Build Construction to Replace Seismically Deficient Boiler Plant, Building 8. VAMC Reno, NV. -- Y1NB.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Award Notice",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1NB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Award Notice QSE--36C10F24R50000",
+          "url": "https://sam.gov/workspace/contract/opp/232c6b4853d4442182e11fc5daae1ab8/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-0d709dc8fd2a0c1f-fy16-f-35-munitions-maintenance-facilities-nellis-",
+      "name": "FY16 F-35 Munitions Maintenance Facilities, Nellis AFB",
+      "city": "LAS VEGAS",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2018-02-13",
+      "description": "Federal modification/amendment/cancel W912PL-18-R-0007. FY16 F-35 Munitions Maintenance Facilities, Nellis AFB. Response deadline 2018-03-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Modification/Amendment/Cancel",
+        "8a Competed",
+        "Classification code Y"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Modification/Amendment/Cancel W912PL-18-R-0007",
+          "url": "https://sam.gov/workspace/contract/opp/0d709dc8fd2a0c1fa5030e285765ae43/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NV"
+    },
+    {
+      "id": "nv-sam-0cc81e4e9cbe7e9d-repair-data-lab-fti-building-423",
+      "name": "Repair Data Lab & FTI Building 423",
+      "city": "NELLIS AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2010-08-13",
+      "description": "Federal modification/amendment/cancel FA4861-10-R-A029. Repair Data Lab & FTI Building 423. Response deadline 2010-08-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Modification/Amendment/Cancel",
+        "HUBZone Set Aside",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Modification/Amendment/Cancel FA4861-10-R-A029",
+          "url": "https://sam.gov/workspace/contract/opp/0cc81e4e9cbe7e9d012f77a6afd68187/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "NV"
     }
   ],
   "stats": {
-    "total": 1
+    "total": 53
   }
 }

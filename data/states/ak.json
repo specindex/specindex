@@ -1,9 +1,9 @@
 {
   "state": "AK",
   "state_name": "Alaska",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Web research — Alaska Business Magazine, ADN, PR Newswire, Tanana Chiefs Conference, DredgeWire",
+  "capture_method": "Web research — Alaska Business Magazine, ADN, PR Newswire, Tanana Chiefs Conference, DredgeWire, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "ak-alyeschem-prudhoe-bay",
@@ -215,9 +215,1612 @@
         }
       ],
       "open_for": "Vertical construction commencing. Building envelope and MEP specs active."
+    },
+    {
+      "id": "ak-sam-d8cc8faed46646e1-replacement-of-conference-room-and-command-suite-w",
+      "name": "Replacement of Conference Room, and Command Suite Windows.",
+      "city": "Eielson AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "Federal combined synopsis/solicitation W50S6K-26-Q-A001. Replacement of Conference Room, and Command Suite Windows. Response deadline 2026-08-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W50S6K-26-Q-A001",
+          "url": "https://sam.gov/workspace/contract/opp/d8cc8faed46646e18118de7bbfdaa9d9/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-3402776d02c94606-virtual-industry-day-information-session-on-the-fi",
+      "name": "Virtual Industry Day - Information Session on the Fightertown Recapitalization (FTR) Program, Joint Base Elmendorf-Richa",
+      "city": "JBER",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Federal special notice FTRTWN_Industry_Day. Virtual Industry Day - Information Session on the Fightertown Recapitalization (FTR) Program, Joint Base Elmendorf-Richardson, Alaska. Response deadline 2026-06-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice FTRTWN_Industry_Day",
+          "url": "https://sam.gov/workspace/contract/opp/3402776d02c94606b3e689746fd40add/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-f962142abf4c41ac-virtual-industry-day-information-session-on-the-fi",
+      "name": "Virtual Industry Day - Information Session on the Fightertown Recapitalization (FTR) Program, Joint Base Elmendorf-Richa",
+      "city": "JBER",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Federal special notice FTRTWN_Industry_Day. Virtual Industry Day - Information Session on the Fightertown Recapitalization (FTR) Program, Joint Base Elmendorf-Richardson, Alaska. Response deadline 2026-06-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice FTRTWN_Industry_Day",
+          "url": "https://sam.gov/workspace/contract/opp/f962142abf4c41acba99e06ab84ccf63/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-f9e375db7585422e-repair-bld-moisture-barrier-proj-463-21-101",
+      "name": "Repair Bld Moisture Barrier Proj 463-21-101",
+      "city": "Anchorage",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-23",
+      "description": "Federal solicitation 36C26026R0061_RFP. Repair Bld Moisture Barrier Proj 463-21-101. Response deadline 2026-06-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26026R0061_RFP",
+          "url": "https://sam.gov/workspace/contract/opp/f9e375db7585422e982e22d22561cd81/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-a0aec96b505e43d4-virtual-industry-day-information-session-on-the-fi",
+      "name": "Virtual Industry Day - Information Session on the Fightertown Recapitalization (FTR) Program, Joint Base Elmendorf-Richa",
+      "city": "JBER",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-18",
+      "description": "Federal special notice FTRTWN_Industry_Day. Virtual Industry Day - Information Session on the Fightertown Recapitalization (FTR) Program, Joint Base Elmendorf-Richardson, Alaska. Response deadline 2026-06-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice FTRTWN_Industry_Day",
+          "url": "https://sam.gov/workspace/contract/opp/a0aec96b505e43d4a6ce6f587d44df73/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-ee2fb65d57da4288-repair-bld-moisture-barrier-proj-463-21-101",
+      "name": "Repair Bld Moisture Barrier Proj 463-21-101",
+      "city": "Anchorage",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-28",
+      "description": "Federal solicitation 36C26026R0061_RFP. Repair Bld Moisture Barrier Proj 463-21-101. Response deadline 2026-06-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26026R0061_RFP",
+          "url": "https://sam.gov/workspace/contract/opp/ee2fb65d57da4288ab1976fffd954ef3/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-962de28033384acc-gaoa-mendenhall-glacier-visitor-center-phase-1",
+      "name": "GAOA Mendenhall Glacier Visitor Center Phase 1",
+      "city": "Juneau",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-11",
+      "description": "Federal combined synopsis/solicitation 1240BH26Q0007. GAOA Mendenhall Glacier Visitor Center Phase 1. Response deadline 2026-03-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1240BH26Q0007",
+          "url": "https://sam.gov/workspace/contract/opp/962de28033384acca586aa1e9c450df7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-d7137817213f4b92-gaoa-mendenhall-glacier-visitor-center-phase-1",
+      "name": "GAOA Mendenhall Glacier Visitor Center Phase 1",
+      "city": "Juneau",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-04",
+      "description": "Federal combined synopsis/solicitation 1240BH26Q0007. GAOA Mendenhall Glacier Visitor Center Phase 1. Response deadline 2026-03-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1240BH26Q0007",
+          "url": "https://sam.gov/workspace/contract/opp/d7137817213f4b9296dfa097d13413eb/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-f8e029afe7b84e9c-gaoa-mendenhall-glacier-visitor-center-phase-1",
+      "name": "GAOA Mendenhall Glacier Visitor Center Phase 1",
+      "city": "Juneau",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-18",
+      "description": "Federal combined synopsis/solicitation 1240BH26Q0007. GAOA Mendenhall Glacier Visitor Center Phase 1. Response deadline 2026-03-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1240BH26Q0007",
+          "url": "https://sam.gov/workspace/contract/opp/f8e029afe7b84e9ca27290add4086c4d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-c325264751504fae-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-01-08",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2026-12-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/c325264751504faeaa0bae4c95438def/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-de2d937f18b247cb-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-30",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2026-12-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/de2d937f18b247cbb674b4bc218d4cbd/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-796b8188161049bf-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-19",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2026-12-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/796b8188161049bfa359c2b16432e946/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-52c84bddae6c49a3-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-04",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2026-07-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/52c84bddae6c49a386d92ce2fb8f7ca9/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-c6b3f7392c3944e2-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-26",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2026-03-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/c6b3f7392c3944e2986d80dfc1e5dd56/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-ae64a8e7a4474602-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-19",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2026-03-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/ae64a8e7a4474602a8dfcc6035d24f7d/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-6d39f88b972c42c5-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-11",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2026-03-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/6d39f88b972c42c5bdfaaa3fe0f128ef/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-9bd3af1f199f4b6b-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-11",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2026-03-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/9bd3af1f199f4b6bb2b56f87583a143f/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-8dd16b5a936941b8-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-03",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2025-12-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/8dd16b5a936941b8ba6c4ba179c8636e/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-9a16d7842f344cd8-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-03",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2025-12-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/9a16d7842f344cd89bcdc77e7b521489/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-c28de1184cb74c4c-jbr050-akarng-maintenance-hangar",
+      "name": "JBR050 AKARNG Maintenance Hangar",
+      "city": "",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-03",
+      "description": "Federal presolicitation W911KB26A013. JBR050 AKARNG Maintenance Hangar. Response deadline 2025-11-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y1EB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W911KB26A013",
+          "url": "https://sam.gov/workspace/contract/opp/c28de1184cb74c4cacf8aabcfcc73374/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-1e5f66a3f58e4064-jbr050-akarng-maintenance-hangar",
+      "name": "JBR050 AKARNG Maintenance Hangar",
+      "city": "",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-31",
+      "description": "Federal presolicitation W911KB26A013. JBR050 AKARNG Maintenance Hangar. Response deadline 2025-11-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Classification code Y1EB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W911KB26A013",
+          "url": "https://sam.gov/workspace/contract/opp/1e5f66a3f58e40649fe50d345ae2491b/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-d2084f49deb34974-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-27",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2025-12-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/d2084f49deb34974b5fa29de2d306650/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-74106dfc789f4df3-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-24",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2025-12-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/74106dfc789f4df399deb64915a52e76/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-529650ab58fa44d1-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-21",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2025-12-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/529650ab58fa44d185e2287a4c4d839b/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-91d3aee8780849af-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-17",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2025-12-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/91d3aee8780849af971be4387df04dc3/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-739b2f85573e4198-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-07",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2025-12-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/739b2f85573e419893ad2b81f582a623/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-003873615d5744b8-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-01",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2025-12-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/003873615d5744b8ba5649201a693d0e/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-cde1f35661324709-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-01",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2025-12-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/cde1f35661324709afbb9306cbbaf94f/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-4a4b2ece72854277-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-09-30",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2025-12-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/4a4b2ece72854277bd80a1958924f673/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-da546b0f30244851-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-09-30",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2025-12-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/da546b0f30244851bff27b22f4971d31/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-8affff0c1bde44ce-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-09-30",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2025-12-04.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/8affff0c1bde44ce9d2998bc74466ce0/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-4e0a206a7b0e47e4-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-09-25",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2026-05-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/4e0a206a7b0e47e4bf74c9907ccbc419/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-61f28f5680544480-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-09-08",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2026-05-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/61f28f5680544480b23174d37e5e3a9a/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-0cfa311740b34638-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-08-25",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2026-05-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/0cfa311740b3463895451dd2ad4d6c2f/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-d144986602b8438f-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-07-23",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2026-05-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/d144986602b8438f87c2d871a60598f9/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-d606025ad4274d6f-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-06-26",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2026-05-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/d606025ad4274d6fb849743f0c38bbe2/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-3f3651d4d95b429d-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-03-05",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2026-05-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/3f3651d4d95b429da78e26a6b66c33cd/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-96b581f0b64b41b9-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2024-11-13",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2024-11-26.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/96b581f0b64b41b991484c21251fc70c/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-bb1830f6b4ba49b8-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2024-11-06",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2024-11-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/bb1830f6b4ba49b8a8fea9bd43a5a04e/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-9c7039deee064050-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2024-10-10",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2024-11-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/9c7039deee064050a005fe1301b86e83/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-40bcae4e8dea43b8-uscg-regional-multiple-award-construction-contract",
+      "name": "USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III)",
+      "city": "Juneau",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2024-10-10",
+      "description": "Federal sources sought 70Z08725RRMACC003. USCG REGIONAL MULTIPLE AWARD CONSTRUCTION CONTRACT (RMACC III). Response deadline 2024-11-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 70Z08725RRMACC003",
+          "url": "https://sam.gov/workspace/contract/opp/40bcae4e8dea43b89db787b25fe53e17/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
+    },
+    {
+      "id": "ak-sam-aececd471b4c918f-simplified-acquisition-of-base-engineer-requiremen",
+      "name": "Simplified Acquisition of Base Engineer Requirements",
+      "city": "Elmendorf AFB",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2010-04-05",
+      "description": "Federal modification/amendment/cancel FA5000-10-R-0008. Simplified Acquisition of Base Engineer Requirements. Response deadline 2010-03-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Modification/Amendment/Cancel",
+        "HUBZone Set Aside",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Modification/Amendment/Cancel FA5000-10-R-0008",
+          "url": "https://sam.gov/workspace/contract/opp/aececd471b4c918fb72b30c5cfe2f237/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AK"
     }
   ],
   "stats": {
-    "total": 5
+    "total": 47
   }
 }

@@ -1,9 +1,9 @@
 {
   "state": "OH",
   "state_name": "Ohio",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — REBusinessOnline, Columbus Business First, local news.",
+  "capture_method": "Public sources — REBusinessOnline, Columbus Business First, local news, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "oh-opus-canal-crossing-commerce",
@@ -83,9 +83,4173 @@
         }
       ],
       "open_for": "Just started. Early civil and building envelope specs."
+    },
+    {
+      "id": "oh-sam-b13b426a72614c6d-b522-hvac-b414-demo",
+      "name": "B522 HVAC, B414 DEMO",
+      "city": "Mansfield",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "Federal solicitation W50S8R26BA002. B522 HVAC, B414 DEMO. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8R26BA002",
+          "url": "https://sam.gov/workspace/contract/opp/b13b426a72614c6da5bc903218924994/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-a268b20f6bf3408d-z2dz-construction-project-538-19-215-privacy-and-d",
+      "name": "Z2DZ--Construction Project 538-19-215: Privacy and Dignity",
+      "city": "Chillicothe",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal solicitation 36C25026B0043. Z2DZ--Construction Project 538-19-215: Privacy and Dignity. Response deadline 2026-08-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C25026B0043",
+          "url": "https://sam.gov/workspace/contract/opp/a268b20f6bf3408da42bdd1b485f76d7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-ba2cfaedb0d14885-b522-hvac-b414-demo",
+      "name": "B522 HVAC, B414 DEMO",
+      "city": "Mansfield",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal solicitation W50S8R26BA002. B522 HVAC, B414 DEMO. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8R26BA002",
+          "url": "https://sam.gov/workspace/contract/opp/ba2cfaedb0d14885a4c265d8ec47dbd7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-fd56e81c2a314452-y1ab-stabilize-improve-building-120-552-21-102",
+      "name": "Y1AB--Stabilize/Improve Building 120 - 552-21-102",
+      "city": "Dayton",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Federal special notice 36C25026B0033_Special_Notice. Y1AB--Stabilize/Improve Building 120 - 552-21-102. Response deadline 2026-07-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1AB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice 36C25026B0033_Special_Notice",
+          "url": "https://sam.gov/workspace/contract/opp/fd56e81c2a31445288b73704f9c6e02f/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-44b4d84b6d3849e8-b522-hvac-b414-demo",
+      "name": "B522 HVAC, B414 DEMO",
+      "city": "Mansfield",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "Federal solicitation W50S8R26BA002. B522 HVAC, B414 DEMO. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8R26BA002",
+          "url": "https://sam.gov/workspace/contract/opp/44b4d84b6d3849e89d13e66470e786ad/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-fff110c567e94cc8-renovate-b203-for-c130j-conversion",
+      "name": "Renovate B203 for C130J Conversion",
+      "city": "",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Federal presolicitation FA665626B0004. Renovate B203 for C130J Conversion. Response deadline 2026-09-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2EB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation FA665626B0004",
+          "url": "https://sam.gov/workspace/contract/opp/fff110c567e94cc89fd5e95d963a5535/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-9cfe920b04ef4745-cyber-maintenance-hangar-modernization",
+      "name": "Cyber Maintenance Hangar Modernization",
+      "city": "Mansfield",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "Federal solicitation W912QR26RA057. Cyber Maintenance Hangar Modernization. Response deadline 2026-08-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA057",
+          "url": "https://sam.gov/workspace/contract/opp/9cfe920b04ef4745b8b81d76fadf88ca/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-4165836b83734ac3-y1ab-stabilize-improve-building-120-552-21-102",
+      "name": "Y1AB--Stabilize/Improve Building 120 - 552-21-102",
+      "city": "Dayton",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "Federal solicitation 36C25026B0033_A00003. Y1AB--Stabilize/Improve Building 120 - 552-21-102. Response deadline 2026-07-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1AB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C25026B0033_A00003",
+          "url": "https://sam.gov/workspace/contract/opp/4165836b83734ac3a829837da42bfa58/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-630420cb57934e55-z2da-541-25-501-address-retro-commissioning-constr",
+      "name": "Z2DA--541-25-501 Address Retro Commissioning - Construction Procurement Package (VA-26-00053441) - VAMC CLEVELAND",
+      "city": "Cleveland",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "Federal presolicitation 36C25026B0040. Z2DA--541-25-501 Address Retro Commissioning - Construction Procurement Package (VA-26-00053441) - VAMC CLEVELAND. Response deadline 2026-08-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C25026B0040",
+          "url": "https://sam.gov/workspace/contract/opp/630420cb57934e5589f93fc9c5e80ac4/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-787a8b39784049c3-z2da-541-25-501-address-retro-commissioning-constr",
+      "name": "Z2DA--541-25-501 Address Retro Commissioning - Construction Procurement Package (VA-26-00053441) - VAMC CLEVELAND",
+      "city": "Cleveland",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "Federal presolicitation 36C25026B0040. Z2DA--541-25-501 Address Retro Commissioning - Construction Procurement Package (VA-26-00053441) - VAMC CLEVELAND. Response deadline 2026-07-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C25026B0040",
+          "url": "https://sam.gov/workspace/contract/opp/787a8b39784049c3beabb95a34755092/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-2b70e2f883ce4248-pbxp-222050-b403-cyber-repair",
+      "name": "PBXP 222050 - B403 CYBER REPAIR",
+      "city": "Mansfield",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Federal solicitation W50S8R26RA005. PBXP 222050 - B403 CYBER REPAIR. Response deadline 2026-07-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8R26RA005",
+          "url": "https://sam.gov/workspace/contract/opp/2b70e2f883ce4248bedf1deb25baaef8/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-d4529091b5a044a4-pbxp-222050-b403-cyber-repair",
+      "name": "PBXP 222050 - B403 CYBER REPAIR",
+      "city": "Mansfield",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Federal solicitation W50S8R26RA005. PBXP 222050 - B403 CYBER REPAIR. Response deadline 2026-07-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8R26RA005",
+          "url": "https://sam.gov/workspace/contract/opp/d4529091b5a044a4b9a5b291e821334e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-17c81e535b8c4bd1-pbxp-222050-b403-cyber-repair",
+      "name": "PBXP 222050 - B403 CYBER REPAIR",
+      "city": "Mansfield",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "Federal solicitation W50S8R26RA005. PBXP 222050 - B403 CYBER REPAIR. Response deadline 2026-07-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8R26RA005",
+          "url": "https://sam.gov/workspace/contract/opp/17c81e535b8c4bd1af947e3fac641d8d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-849e9edaefba4631-building-305-office-renovations-zqel-19-0016",
+      "name": "Building 305 Office Renovations - ZQEL 19-0016",
+      "city": "Vienna",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Federal solicitation FA665626B0002. Building 305 Office Renovations - ZQEL 19-0016. Response deadline 2026-07-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2BZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA665626B0002",
+          "url": "https://sam.gov/workspace/contract/opp/849e9edaefba46318b1411a638b845d2/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-94d98ecd255e41e2-building-305-office-renovations-zqel-19-0016",
+      "name": "Building 305 Office Renovations - ZQEL 19-0016",
+      "city": "Vienna",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Federal solicitation FA665626B0002. Building 305 Office Renovations - ZQEL 19-0016. Response deadline 2026-07-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2BZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA665626B0002",
+          "url": "https://sam.gov/workspace/contract/opp/94d98ecd255e41e296be8ac27f42c4aa/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-c04d69349b6a4e6d-z2da-541-25-501-address-retro-commissioning-constr",
+      "name": "Z2DA--541-25-501 Address Retro Commissioning - Construction Cleveland VA Medical Center",
+      "city": "Cleveland",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "Federal presolicitation 36C25026B0040. Z2DA--541-25-501 Address Retro Commissioning - Construction Cleveland VA Medical Center. Response deadline 2026-08-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C25026B0040",
+          "url": "https://sam.gov/workspace/contract/opp/c04d69349b6a4e6d85e7abfcc12c9073/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-edae8c703607401a-z2da-541-25-501-address-retro-commissioning-constr",
+      "name": "Z2DA--541-25-501 Address Retro Commissioning - Construction Cleveland VA Medical Center",
+      "city": "Cleveland",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "Federal presolicitation 36C25026B0040. Z2DA--541-25-501 Address Retro Commissioning - Construction Cleveland VA Medical Center. Response deadline 2026-08-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C25026B0040",
+          "url": "https://sam.gov/workspace/contract/opp/edae8c703607401aaddb6ea2f07aabc4/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-5ce428aff7cb4050-y1ab-stabilize-improve-building-120-552-21-102",
+      "name": "Y1AB--Stabilize/Improve Building 120 - 552-21-102",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "Federal solicitation 36C25026B0033_A00002. Y1AB--Stabilize/Improve Building 120 - 552-21-102. Response deadline 2026-07-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1AB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C25026B0033_A00002",
+          "url": "https://sam.gov/workspace/contract/opp/5ce428aff7cb4050a7741c13ecfad98d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-5a1a8d4ceea0414e-pbxp-222050-b403-cyber-repair",
+      "name": "PBXP 222050 - B403 CYBER REPAIR",
+      "city": "Mansfield",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "Federal solicitation W50S8R26RA005. PBXP 222050 - B403 CYBER REPAIR. Response deadline 2026-07-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8R26RA005",
+          "url": "https://sam.gov/workspace/contract/opp/5a1a8d4ceea0414eb8381cfbe2a43050/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-d0188731d330470f-zqel-22-0006-renovate-b301",
+      "name": "ZQEL 22-0006 Renovate B301",
+      "city": "Vienna",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-06",
+      "description": "Federal solicitation FA665626B0003. ZQEL 22-0006 Renovate B301. Response deadline 2026-07-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2BZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA665626B0003",
+          "url": "https://sam.gov/workspace/contract/opp/d0188731d330470fbf07928902498bac/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-9a647182146746d3-cyber-maintenance-hangar-modernization",
+      "name": "Cyber Maintenance Hangar Modernization",
+      "city": "Mansfield",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-06",
+      "description": "Federal solicitation W912QR26RA057. Cyber Maintenance Hangar Modernization. Response deadline 2026-07-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA057",
+          "url": "https://sam.gov/workspace/contract/opp/9a647182146746d3849785114b287f54/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-cfe1e92148c14eae-pbxp-222050-b403-cyber-repair",
+      "name": "PBXP 222050 - B403 CYBER REPAIR",
+      "city": "Mansfield",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-03",
+      "description": "Federal solicitation W50S8R26RA005. PBXP 222050 - B403 CYBER REPAIR. Response deadline 2026-07-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8R26RA005",
+          "url": "https://sam.gov/workspace/contract/opp/cfe1e92148c14eaeada61c2d644b21fa/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-6af0a36b46ea4b32-pbxp-222050-b403-cyber-repair",
+      "name": "PBXP 222050 - B403 CYBER REPAIR",
+      "city": "Mansfield",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-02",
+      "description": "Federal solicitation W50S8R26RA005. PBXP 222050 - B403 CYBER REPAIR. Response deadline 2026-07-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8R26RA005",
+          "url": "https://sam.gov/workspace/contract/opp/6af0a36b46ea4b328302f6cd1eeae71f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-2198d1b983a74564-zqel-22-0006-renovate-b301",
+      "name": "ZQEL 22-0006 Renovate B301",
+      "city": "Vienna",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Federal solicitation FA665626B0003. ZQEL 22-0006 Renovate B301. Response deadline 2026-07-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2BZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA665626B0003",
+          "url": "https://sam.gov/workspace/contract/opp/2198d1b983a745649ce1977c60cf0fb2/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-7a915f3317074994-notice-of-sole-source-extension-grc-construction-g",
+      "name": "Notice of Sole Source Extension - GRC Construction (GMACC-2)",
+      "city": "Cleveland",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "National Aeronautics And Space Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Federal special notice. Notice of Sole Source Extension - GRC Construction (GMACC-2). Response deadline 2026-07-17.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1HB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice ",
+          "url": "https://sam.gov/workspace/contract/opp/7a915f331707499490130993ac0a0fdc/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-74165aa820ff4cfb-zqel-22-0006-renovate-b301",
+      "name": "ZQEL 22-0006 Renovate B301",
+      "city": "Vienna",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "Federal solicitation FA665626B0003. ZQEL 22-0006 Renovate B301. Response deadline 2026-07-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2BZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA665626B0003",
+          "url": "https://sam.gov/workspace/contract/opp/74165aa820ff4cfbb939a11415158116/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-bcb491f324434226-building-305-office-renovations-zqel-19-0016",
+      "name": "Building 305 Office Renovations - ZQEL 19-0016",
+      "city": "Vienna",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "Federal solicitation FA665626B0002. Building 305 Office Renovations - ZQEL 19-0016. Response deadline 2026-07-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2BZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA665626B0002",
+          "url": "https://sam.gov/workspace/contract/opp/bcb491f3244342268d33d0f565e704bc/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-44d2c7c66402482b-pbxp-222050-b403-cyber-repair",
+      "name": "PBXP 222050 - B403 CYBER REPAIR",
+      "city": "Mansfield",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-25",
+      "description": "Federal solicitation W50S8R26RA005. PBXP 222050 - B403 CYBER REPAIR. Response deadline 2026-07-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8R26RA005",
+          "url": "https://sam.gov/workspace/contract/opp/44d2c7c66402482bbb2160a892671651/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-e185a37325b24846-zqel-22-0006-renovate-b301",
+      "name": "ZQEL 22-0006 Renovate B301",
+      "city": "Vienna",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-25",
+      "description": "Federal solicitation FA665626B0003. ZQEL 22-0006 Renovate B301. Response deadline 2026-07-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2BZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA665626B0003",
+          "url": "https://sam.gov/workspace/contract/opp/e185a37325b24846bc05e9a51cf88da8/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-483bd058ff31443f-b522-hvac-b414-demo",
+      "name": "B522 HVAC, B414 DEMO",
+      "city": "Mansfield",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-23",
+      "description": "Federal solicitation W50S8R26BA002. B522 HVAC, B414 DEMO. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8R26BA002",
+          "url": "https://sam.gov/workspace/contract/opp/483bd058ff31443f80730f0505313e3c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-2df3c003c7ee4df5-b403-cyber-repair",
+      "name": "B403 CYBER Repair",
+      "city": "Mansfield",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-23",
+      "description": "Federal solicitation W50S8R26RA005. B403 CYBER Repair. Response deadline 2026-07-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8R26RA005",
+          "url": "https://sam.gov/workspace/contract/opp/2df3c003c7ee4df5ab3e720914ce226d/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-66038d74cc674972-y1da-renovate-6s-for-inpatient-mental-health-552-2",
+      "name": "Y1DA--Renovate 6S for Inpatient Mental Health - 552-20-101",
+      "city": "Dayton",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-23",
+      "description": "Federal solicitation 36C25026B0023_A00005. Y1DA--Renovate 6S for Inpatient Mental Health - 552-20-101. Response deadline 2026-07-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C25026B0023_A00005",
+          "url": "https://sam.gov/workspace/contract/opp/66038d74cc6749728898e248540b3ac7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-1022911dee8e4d1b-y1da-renovate-6s-for-inpatient-mental-health-552-2",
+      "name": "Y1DA--Renovate 6S for Inpatient Mental Health - 552-20-101",
+      "city": "Dayton",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-23",
+      "description": "Federal solicitation 36C25026B0023_A00005. Y1DA--Renovate 6S for Inpatient Mental Health - 552-20-101. Response deadline 2026-07-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C25026B0023_A00005",
+          "url": "https://sam.gov/workspace/contract/opp/1022911dee8e4d1babf7d5482ac6668b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-cc461aeaed1248fb-cyber-maintenance-hangar-modernization",
+      "name": "Cyber Maintenance Hangar Modernization",
+      "city": "Mansfield",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-22",
+      "description": "Federal solicitation W912QR26RA057. Cyber Maintenance Hangar Modernization. Response deadline 2026-07-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA057",
+          "url": "https://sam.gov/workspace/contract/opp/cc461aeaed1248fb9ec632242479b7d4/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-25e64f52d10d40d4-cyber-maintenance-hangar-modernization",
+      "name": "Cyber Maintenance Hangar Modernization",
+      "city": "Mansfield",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-17",
+      "description": "Federal solicitation W912QR26RA057. Cyber Maintenance Hangar Modernization. Response deadline 2026-07-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR26RA057",
+          "url": "https://sam.gov/workspace/contract/opp/25e64f52d10d40d4a3bd6746a919f7a3/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-8dc9aa686f714ac2-zqel-22-0006-renovate-b301",
+      "name": "ZQEL 22-0006 Renovate B301",
+      "city": "Vienna",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-17",
+      "description": "Federal solicitation FA665626B0003. ZQEL 22-0006 Renovate B301. Response deadline 2026-07-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2BZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA665626B0003",
+          "url": "https://sam.gov/workspace/contract/opp/8dc9aa686f714ac28fe793229dbeb4c8/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-ac824f98ca8142ff-zqel-22-0006-renovate-b301",
+      "name": "ZQEL 22-0006 Renovate B301",
+      "city": "Vienna",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-16",
+      "description": "Federal solicitation FA665626B0003. ZQEL 22-0006 Renovate B301. Response deadline 2026-07-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2BZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA665626B0003",
+          "url": "https://sam.gov/workspace/contract/opp/ac824f98ca8142ff9b9c7dd330490cd2/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-14fcbda64b954636-b522-hvac-b414-demo",
+      "name": "B522 HVAC, B414 DEMO",
+      "city": "Mansfield",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-16",
+      "description": "Federal solicitation W50S8R26BA002. B522 HVAC, B414 DEMO. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8R26BA002",
+          "url": "https://sam.gov/workspace/contract/opp/14fcbda64b954636a32c15ea78048276/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-d5b4428999d243f6-zqel-22-0006-renovate-b301",
+      "name": "ZQEL 22-0006 Renovate B301",
+      "city": "Vienna",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-16",
+      "description": "Federal solicitation FA665626B0003. ZQEL 22-0006 Renovate B301. Response deadline 2026-07-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2BZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA665626B0003",
+          "url": "https://sam.gov/workspace/contract/opp/d5b4428999d243f6ac790a9e562b86a5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-77a0d5e90bb742c2-y1ab-stabilize-improve-building-120-552-21-102",
+      "name": "Y1AB--Stabilize/Improve Building 120 - 552-21-102",
+      "city": "Dayton",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-15",
+      "description": "Federal solicitation 36C25026B0033_A00001. Y1AB--Stabilize/Improve Building 120 - 552-21-102. Response deadline 2026-07-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1AB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C25026B0033_A00001",
+          "url": "https://sam.gov/workspace/contract/opp/77a0d5e90bb742c2a5f268476c13f3c6/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-49f97952e4e24f68-zqel-22-0006-renovate-b301",
+      "name": "ZQEL 22-0006 Renovate B301",
+      "city": "Vienna",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-15",
+      "description": "Federal solicitation FA665626B0003. ZQEL 22-0006 Renovate B301. Response deadline 2006-07-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2BZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA665626B0003",
+          "url": "https://sam.gov/workspace/contract/opp/49f97952e4e24f68a1aff7512d40f664/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-c7b274e6ce6e4204-y1da-renovate-operating-rooms-541-19-101",
+      "name": "Y1DA--RENOVATE OPERATING ROOMS 541-19-101",
+      "city": "Cleveland",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-12",
+      "description": "Federal solicitation 36C25026R0054Amend0002. Y1DA--RENOVATE OPERATING ROOMS 541-19-101. Response deadline 2026-06-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C25026R0054Amend0002",
+          "url": "https://sam.gov/workspace/contract/opp/c7b274e6ce6e4204955a74536b315b9b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-49f8b4d8a0674289-y1da-renovate-operating-rooms-541-19-101",
+      "name": "Y1DA--RENOVATE OPERATING ROOMS 541-19-101",
+      "city": "Cleveland",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-11",
+      "description": "Federal special notice 36C25026R0054_1SpecialNotice. Y1DA--RENOVATE OPERATING ROOMS 541-19-101. Response deadline 2026-06-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "No Set aside used",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice 36C25026R0054_1SpecialNotice",
+          "url": "https://sam.gov/workspace/contract/opp/49f8b4d8a0674289a6b810880d22cbfa/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-f046e6af12c14e93-y1da-renovate-operating-rooms-541-19-101",
+      "name": "Y1DA--RENOVATE OPERATING ROOMS 541-19-101",
+      "city": "Cleveland",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-11",
+      "description": "Federal solicitation 36C25026R0054Amend0001. Y1DA--RENOVATE OPERATING ROOMS 541-19-101. Response deadline 2026-06-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C25026R0054Amend0001",
+          "url": "https://sam.gov/workspace/contract/opp/f046e6af12c14e93a43cabab0d6ee685/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-7d1771f65e0a43c1-b522-hvac-b414-demo",
+      "name": "B522 HVAC, B414 DEMO",
+      "city": "Mansfield",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-09",
+      "description": "Federal solicitation W50S8R26BA002. B522 HVAC, B414 DEMO. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8R26BA002",
+          "url": "https://sam.gov/workspace/contract/opp/7d1771f65e0a43c19210a368d8aee3c8/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-dc27b7bb54b14aa5-b403-cyber-repair",
+      "name": "B403 CYBER Repair",
+      "city": "Mansfield",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-09",
+      "description": "Federal solicitation W50S8R26RA005. B403 CYBER Repair. Response deadline 2026-07-02.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8R26RA005",
+          "url": "https://sam.gov/workspace/contract/opp/dc27b7bb54b14aa598cc2acec6c30663/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-828a4110f965400f-building-305-office-renovations-zqel-19-0016",
+      "name": "Building 305 Office Renovations - ZQEL 19-0016",
+      "city": "Vienna",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-09",
+      "description": "Federal solicitation FA665626B0002. Building 305 Office Renovations - ZQEL 19-0016. Response deadline 2026-07-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2BZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA665626B0002",
+          "url": "https://sam.gov/workspace/contract/opp/828a4110f965400f874184c37aa1747a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-e8143b264eb344a0-building-305-office-renovations-zqel-19-0016",
+      "name": "Building 305 Office Renovations - ZQEL 19-0016",
+      "city": "Vienna",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-09",
+      "description": "Federal solicitation FA665626B0002. Building 305 Office Renovations - ZQEL 19-0016. Response deadline 2026-07-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2BZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA665626B0002",
+          "url": "https://sam.gov/workspace/contract/opp/e8143b264eb344a0a147005c6b27a551/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-0259cdae9e244ce7-zqel-22-0006-renovate-b301",
+      "name": "ZQEL 22-0006 Renovate B301",
+      "city": "Vienna",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-08",
+      "description": "Federal solicitation FA665626B0003. ZQEL 22-0006 Renovate B301. Response deadline 2006-07-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "HUBZone Set Aside",
+        "Classification code Z2BZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation FA665626B0003",
+          "url": "https://sam.gov/workspace/contract/opp/0259cdae9e244ce7b490abf79e691d70/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-87d6e91d14504f94-y1da-renovate-6s-for-inpatient-mental-health-552-2",
+      "name": "Y1DA--Renovate 6S for Inpatient Mental Health - 552-20-101",
+      "city": "Dayton",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-04",
+      "description": "Federal solicitation 36C25026B0023_A00004. Y1DA--Renovate 6S for Inpatient Mental Health - 552-20-101. Response deadline 2026-06-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C25026B0023_A00004",
+          "url": "https://sam.gov/workspace/contract/opp/87d6e91d14504f94893fd767e6803c24/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-a20ca86f031d4eaa-b522-hvac-b414-demo",
+      "name": "B522 HVAC, B414 DEMO",
+      "city": "Mansfield",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-04",
+      "description": "Federal solicitation W50S8R26BA002. B522 HVAC, B414 DEMO. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8R26BA002",
+          "url": "https://sam.gov/workspace/contract/opp/a20ca86f031d4eaabf69bc2f3c5b87bd/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-f0530d54009c4c6d-b403-cyber-repair",
+      "name": "B403 CYBER Repair",
+      "city": "Mansfield",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-02",
+      "description": "Federal solicitation W50S8R26RA005. B403 CYBER Repair. Response deadline 2026-07-02.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8R26RA005",
+          "url": "https://sam.gov/workspace/contract/opp/f0530d54009c4c6db836a6986481c96c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-298a93ddaf434a12-b403-cyber-repair",
+      "name": "B403 CYBER Repair",
+      "city": "Mansfield",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-28",
+      "description": "Federal solicitation W50S8R26RA005. B403 CYBER Repair. Response deadline 2026-07-02.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8R26RA005",
+          "url": "https://sam.gov/workspace/contract/opp/298a93ddaf434a1298b668e455bfc53c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-1cb06191d88947bb-b403-cyber-repair",
+      "name": "B403 CYBER Repair",
+      "city": "Mansfield",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-26",
+      "description": "Federal solicitation W50S8R26RA005. B403 CYBER Repair. Response deadline 2026-06-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8R26RA005",
+          "url": "https://sam.gov/workspace/contract/opp/1cb06191d88947bb89b5420e190008f0/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-6119a5d5cd794f7e-y1ab-stabilize-improve-building-120-552-21-102",
+      "name": "Y1AB--Stabilize/Improve Building 120 - 552-21-102",
+      "city": "Dayton",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-22",
+      "description": "Federal solicitation 36C25026B0033_1. Y1AB--Stabilize/Improve Building 120 - 552-21-102. Response deadline 2026-07-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1AB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C25026B0033_1",
+          "url": "https://sam.gov/workspace/contract/opp/6119a5d5cd794f7ebbf5b48976331a76/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-3b137c3d263c4ce1-z2da-541-25-501-address-retro-commissioning-constr",
+      "name": "Z2DA--541-25-501 Address Retro Commissioning - Construction Cleveland VA Medical Center",
+      "city": "Cleveland",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-21",
+      "description": "Federal presolicitation 36C25026B0040. Z2DA--541-25-501 Address Retro Commissioning - Construction Cleveland VA Medical Center. Response deadline 2026-06-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C25026B0040",
+          "url": "https://sam.gov/workspace/contract/opp/3b137c3d263c4ce1b7a597010519d8fc/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-a98359ccb7e04348-y1da-renovate-operating-rooms-541-19-101",
+      "name": "Y1DA--RENOVATE OPERATING ROOMS 541-19-101",
+      "city": "Cleveland",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-19",
+      "description": "Federal solicitation 36C25026R0054. Y1DA--RENOVATE OPERATING ROOMS 541-19-101. Response deadline 2026-06-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C25026R0054",
+          "url": "https://sam.gov/workspace/contract/opp/a98359ccb7e04348aa7c2c00182781d1/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-8949cd8dc10849e7-z1az-replace-learning-exchange-roof-541-23-202-vam",
+      "name": "Z1AZ--Replace Learning Exchange Roof 541-23-202 - VAMC CLEVELAND",
+      "city": "Cleveland",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-18",
+      "description": "Federal combined synopsis/solicitation 36C25026B0010. Z1AZ--Replace Learning Exchange Roof 541-23-202 - VAMC CLEVELAND. Response deadline 2026-05-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 36C25026B0010",
+          "url": "https://sam.gov/workspace/contract/opp/8949cd8dc10849e7a234d3a71793e9d5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-e6528561c44a4c86-b403-cyber-repair",
+      "name": "B403 CYBER Repair",
+      "city": "Mansfield",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-16",
+      "description": "Federal solicitation W50S8R26RA005. B403 CYBER Repair. Response deadline 2026-06-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8R26RA005",
+          "url": "https://sam.gov/workspace/contract/opp/e6528561c44a4c8687f84fcb6b1133a2/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-f330c6bc877b45dc-b403-cyber-repair",
+      "name": "B403 CYBER Repair",
+      "city": "Mansfield",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-15",
+      "description": "Federal solicitation W50S8R26RA005. B403 CYBER Repair. Response deadline 2026-06-29.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Z2QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W50S8R26RA005",
+          "url": "https://sam.gov/workspace/contract/opp/f330c6bc877b45dca6843fbdcee8a182/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-5136078c25e74635-z1az-replace-learning-exchange-roof-541-23-202-vam",
+      "name": "Z1AZ--Replace Learning Exchange Roof 541-23-202 - VAMC CLEVELAND",
+      "city": "Cleveland",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-13",
+      "description": "Federal combined synopsis/solicitation 36C25026B0010. Z1AZ--Replace Learning Exchange Roof 541-23-202 - VAMC CLEVELAND. Response deadline 2026-05-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 36C25026B0010",
+          "url": "https://sam.gov/workspace/contract/opp/5136078c25e74635bebeea45b453dc01/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-0140f4147a774d36-y1qa-replace-roof-building-1a-757-21-101-vaacc-col",
+      "name": "Y1QA--Replace Roof Building 1A 757-21-101 - VAACC COLUMBUS",
+      "city": "Columbus",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-11",
+      "description": "Federal combined synopsis/solicitation 36C25026B0011. Y1QA--Replace Roof Building 1A 757-21-101 - VAACC COLUMBUS. Response deadline 2026-05-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 36C25026B0011",
+          "url": "https://sam.gov/workspace/contract/opp/0140f4147a774d36b3e238a115715c62/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-5d33983202cb4352-z1az-replace-learning-exchange-roof-541-23-202-vam",
+      "name": "Z1AZ--Replace Learning Exchange Roof 541-23-202 - VAMC CLEVELAND",
+      "city": "Cleveland",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-11",
+      "description": "Federal combined synopsis/solicitation 36C25026B0010. Z1AZ--Replace Learning Exchange Roof 541-23-202 - VAMC CLEVELAND. Response deadline 2026-05-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 36C25026B0010",
+          "url": "https://sam.gov/workspace/contract/opp/5d33983202cb4352be4757edab72844f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-fab6d25ab8194d07-y1da-renovate-6s-for-inpatient-mental-health-552-2",
+      "name": "Y1DA--Renovate 6S for Inpatient Mental Health - 552-20-101",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-08",
+      "description": "Federal solicitation 36C25026B0023_A00002. Y1DA--Renovate 6S for Inpatient Mental Health - 552-20-101. Response deadline 2026-05-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C25026B0023_A00002",
+          "url": "https://sam.gov/workspace/contract/opp/fab6d25ab8194d079bc87ef584af9253/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-988d8b72cb66497b-z2dz-improve-security-and-safety-539-25-507",
+      "name": "Z2DZ--Improve Security and Safety 539-25-507",
+      "city": "Cincinnati",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-08",
+      "description": "Federal presolicitation 36C25026Q0505. Z2DZ--Improve Security and Safety 539-25-507. Response deadline 2026-06-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C25026Q0505",
+          "url": "https://sam.gov/workspace/contract/opp/988d8b72cb66497b947567722515466e/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-aa275c98bc8b4435-renovation-of-bldg-27-at-dscc-oh",
+      "name": "Renovation of Bldg 27 at DSCC, OH",
+      "city": "Columbus",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-07",
+      "description": "Federal presolicitation W912QR26BA013. Renovation of Bldg 27 at DSCC, OH. Response deadline 2026-05-22.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2FB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912QR26BA013",
+          "url": "https://sam.gov/workspace/contract/opp/aa275c98bc8b4435a382500e4ed9638b/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-032713aa66914ff1-y1da-ehrm-infrastructure-upgrades-tier-2-construct",
+      "name": "Y1DA--EHRM Infrastructure Upgrades - Tier 2 Construction Project 538-21-705 Chillicothe VA Medical Center (VAMC) Chillic",
+      "city": "Chillicothe",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-06",
+      "description": "Federal solicitation 36C77626B0018. Y1DA--EHRM Infrastructure Upgrades - Tier 2 Construction Project 538-21-705 Chillicothe VA Medical Center (VAMC) Chillicothe, OH 45601. Response deadline 2026-05-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0018",
+          "url": "https://sam.gov/workspace/contract/opp/032713aa66914ff1adc0aaf362359acf/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-54653cdf333048b8-y1qa-fy26-nrm-replace-roof-building-1a-757-21-101-",
+      "name": "Y1QA--FY26 NRM - Replace Roof Building 1A 757-21-101 - VAACC COLUMBUS",
+      "city": "Columbus",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-04",
+      "description": "Federal combined synopsis/solicitation 36C25026B0011. Y1QA--FY26 NRM - Replace Roof Building 1A 757-21-101 - VAACC COLUMBUS. Response deadline 2026-05-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 36C25026B0011",
+          "url": "https://sam.gov/workspace/contract/opp/54653cdf333048b8818c3b8a6f4b015a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-e452b5762ba04733-y1da-ehrm-infrastructure-upgrades-tier-2-construct",
+      "name": "Y1DA--EHRM Infrastructure Upgrades - Tier 2 Construction Project 538-21-705 Chillicothe VA Medical Center (VAMC) Chillic",
+      "city": "Chillicothe",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-30",
+      "description": "Federal solicitation 36C77626B0018. Y1DA--EHRM Infrastructure Upgrades - Tier 2 Construction Project 538-21-705 Chillicothe VA Medical Center (VAMC) Chillicothe, OH 45601. Response deadline 2026-05-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0018",
+          "url": "https://sam.gov/workspace/contract/opp/e452b5762ba04733b03f6fc289656183/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-5868ace282fd4503-y1qa-replace-roof-building-1a-757-21-101-vaacc-col",
+      "name": "Y1QA--Replace Roof Building 1A 757-21-101 - VAACC COLUMBUS",
+      "city": "Columbus",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-04-28",
+      "description": "Federal combined synopsis/solicitation 36C25026B0011. Y1QA--Replace Roof Building 1A 757-21-101 - VAACC COLUMBUS. Response deadline 2026-05-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 36C25026B0011",
+          "url": "https://sam.gov/workspace/contract/opp/5868ace282fd45039ba59b894f3e4aca/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-23689017966741d7-y1da-ehrm-infrastructure-upgrades-tier-2-construct",
+      "name": "Y1DA--EHRM Infrastructure Upgrades - Tier 2 Construction Project 538-21-705 Chillicothe VA Medical Center (VAMC) Chillic",
+      "city": "Chillicothe",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-24",
+      "description": "Federal solicitation 36C77626B0018. Y1DA--EHRM Infrastructure Upgrades - Tier 2 Construction Project 538-21-705 Chillicothe VA Medical Center (VAMC) Chillicothe, OH 45601. Response deadline 2026-05-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0018",
+          "url": "https://sam.gov/workspace/contract/opp/23689017966741d798e05172db146b0a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-32fe5a3588194477-z2dz-construction-project-538-19-215-privacy-and-d",
+      "name": "Z2DZ--Construction Project 538-19-215: Privacy and Dignity",
+      "city": "Chillicothe",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-04-22",
+      "description": "Federal presolicitation 36C25026B0043. Z2DZ--Construction Project 538-19-215: Privacy and Dignity. Response deadline 2026-05-11.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C25026B0043",
+          "url": "https://sam.gov/workspace/contract/opp/32fe5a3588194477a0af9c856f6f2960/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-ccaf70f5d8b1409f-y1qa-replace-roof-building-1a-757-21-101-vaacc-col",
+      "name": "Y1QA--Replace Roof Building 1A 757-21-101 - VAACC COLUMBUS",
+      "city": "Columbus",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-04-14",
+      "description": "Federal combined synopsis/solicitation 36C25026B0011. Y1QA--Replace Roof Building 1A 757-21-101 - VAACC COLUMBUS. Response deadline 2026-05-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 36C25026B0011",
+          "url": "https://sam.gov/workspace/contract/opp/ccaf70f5d8b1409f80fc1be7075edd4f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-c3f24c2c73b04b8b-z1az-replace-learning-exchange-roof-541-23-202-vam",
+      "name": "Z1AZ--Replace Learning Exchange Roof 541-23-202 - VAMC CLEVELAND",
+      "city": "Cleveland",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-04-13",
+      "description": "Federal combined synopsis/solicitation 36C25026B0010. Z1AZ--Replace Learning Exchange Roof 541-23-202 - VAMC CLEVELAND. Response deadline 2026-05-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 36C25026B0010",
+          "url": "https://sam.gov/workspace/contract/opp/c3f24c2c73b04b8b8b5dc65b6e593c7b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-07850a259d2841c3-y1da-ehrm-infrastructure-upgrades-tier-2-construct",
+      "name": "Y1DA--EHRM Infrastructure Upgrades - Tier 2 Construction Project 538-21-705 Chillicothe VA Medical Center (VAMC) Chillic",
+      "city": "Chillicothe",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-09",
+      "description": "Federal solicitation 36C77626B0018. Y1DA--EHRM Infrastructure Upgrades - Tier 2 Construction Project 538-21-705 Chillicothe VA Medical Center (VAMC) Chillicothe, OH 45601. Response deadline 2026-04-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0018",
+          "url": "https://sam.gov/workspace/contract/opp/07850a259d2841c38753724ac7263ffc/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-1588588dcf15460d-y1qa-replace-roof-building-1a-757-21-101-vaacc-col",
+      "name": "Y1QA--Replace Roof Building 1A 757-21-101 - VAACC COLUMBUS",
+      "city": "Columbus",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-04-09",
+      "description": "Federal combined synopsis/solicitation 36C25026B0011. Y1QA--Replace Roof Building 1A 757-21-101 - VAACC COLUMBUS. Response deadline 2026-05-05.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 36C25026B0011",
+          "url": "https://sam.gov/workspace/contract/opp/1588588dcf15460db632949e4054f220/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-ffba58eab71844fd-ohio-north-south-job-ordering-contract-joc-solicit",
+      "name": "Ohio North & South Job Ordering Contract (JOC) Solicitation",
+      "city": "Akron",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Postal Service",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-07",
+      "description": "Federal solicitation 089495-26-A-0052. Ohio North & South Job Ordering Contract (JOC) Solicitation. Response deadline 2026-05-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Z2HB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 089495-26-A-0052",
+          "url": "https://sam.gov/workspace/contract/opp/ffba58eab71844fd85421e10eba97237/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-aa2bf721576e4098-y1qa-replace-roof-building-1a-757-21-101-vaacc-col",
+      "name": "Y1QA--Replace Roof Building 1A 757-21-101 - VAACC COLUMBUS",
+      "city": "Columbus",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-04-03",
+      "description": "Federal combined synopsis/solicitation 36C25026B0011. Y1QA--Replace Roof Building 1A 757-21-101 - VAACC COLUMBUS. Response deadline 2026-05-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1QA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 36C25026B0011",
+          "url": "https://sam.gov/workspace/contract/opp/aa2bf721576e40988e587cc4117921b0/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-120f5c123f704203-y1da-ehrm-infrastructure-upgrades-tier-2-construct",
+      "name": "Y1DA--EHRM Infrastructure Upgrades - Tier 2 Construction Project 538-21-705 Chillicothe VA Medical Center (VAMC) Chillic",
+      "city": "Chillicothe",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-01",
+      "description": "Federal solicitation 36C77626B0018. Y1DA--EHRM Infrastructure Upgrades - Tier 2 Construction Project 538-21-705 Chillicothe VA Medical Center (VAMC) Chillicothe, OH 45601. Response deadline 2026-04-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0018",
+          "url": "https://sam.gov/workspace/contract/opp/120f5c123f704203b890b2e1bac2f817/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-6719bb9b6e354c51-y1da-ehrm-infrastructure-upgrades-tier-2-construct",
+      "name": "Y1DA--EHRM Infrastructure Upgrades - Tier 2 Construction Project 538-21-705 Chillicothe VA Medical Center (VAMC) Chillic",
+      "city": "Chillicothe",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-01",
+      "description": "Federal solicitation 36C77626B0018. Y1DA--EHRM Infrastructure Upgrades - Tier 2 Construction Project 538-21-705 Chillicothe VA Medical Center (VAMC) Chillicothe, OH 45601. Response deadline 2026-04-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0018",
+          "url": "https://sam.gov/workspace/contract/opp/6719bb9b6e354c51ad2fa9df31b40604/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-c4ccb147dea04164-y1da-ehrm-infrastructure-upgrades-tier-2-construct",
+      "name": "Y1DA--EHRM Infrastructure Upgrades - Tier 2 Construction Project 538-21-705 Chillicothe VA Medical Center (VAMC) Chillic",
+      "city": "Chillicothe",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-31",
+      "description": "Federal solicitation 36C77626B0018. Y1DA--EHRM Infrastructure Upgrades - Tier 2 Construction Project 538-21-705 Chillicothe VA Medical Center (VAMC) Chillicothe, OH 45601. Response deadline 2026-04-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0018",
+          "url": "https://sam.gov/workspace/contract/opp/c4ccb147dea04164a465211cdf9dc1b1/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-9fa07a67bf294847-renovation-of-bldg-27-at-dscc-oh",
+      "name": "Renovation of Bldg 27 at DSCC, OH",
+      "city": "Columbus",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-23",
+      "description": "Federal presolicitation W912QR26BA013. Renovation of Bldg 27 at DSCC, OH. Response deadline 2026-04-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2FB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation W912QR26BA013",
+          "url": "https://sam.gov/workspace/contract/opp/9fa07a67bf294847b736dfb19242da1d/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-8149963d844f46fe-y1da-ehrm-infrastructure-upgrade-construction-moun",
+      "name": "Y1DA--EHRM Infrastructure Upgrade Construction - Mountain Home",
+      "city": "Independence",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-08-28",
+      "description": "Federal solicitation 36C77624B0024. Y1DA--EHRM Infrastructure Upgrade Construction - Mountain Home. Response deadline 2025-08-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77624B0024",
+          "url": "https://sam.gov/workspace/contract/opp/8149963d844f46fe8ea1b86039db42ae/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-67d00099b98a4a9c-y1da-ehrm-infrastructure-upgrade-construction-moun",
+      "name": "Y1DA--EHRM Infrastructure Upgrade Construction - Mountain Home",
+      "city": "Independence",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-08-25",
+      "description": "Federal solicitation 36C77624B0024. Y1DA--EHRM Infrastructure Upgrade Construction - Mountain Home. Response deadline 2025-08-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77624B0024",
+          "url": "https://sam.gov/workspace/contract/opp/67d00099b98a4a9cb2b26ac6a485e549/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-6828e7f6951b4b50-y1da-ehrm-infrastructure-upgrade-construction-moun",
+      "name": "Y1DA--EHRM Infrastructure Upgrade Construction - Mountain Home",
+      "city": "Independence",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-08-21",
+      "description": "Federal solicitation 36C77624B0024. Y1DA--EHRM Infrastructure Upgrade Construction - Mountain Home. Response deadline 2025-08-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77624B0024",
+          "url": "https://sam.gov/workspace/contract/opp/6828e7f6951b4b509f562652446c9fe3/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-a89243ff9b574cdb-y1da-ehrm-infrastructure-upgrade-construction-moun",
+      "name": "Y1DA--EHRM Infrastructure Upgrade Construction - Mountain Home",
+      "city": "Independence",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-08-15",
+      "description": "Federal solicitation 36C77624B0024. Y1DA--EHRM Infrastructure Upgrade Construction - Mountain Home. Response deadline 2025-08-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77624B0024",
+          "url": "https://sam.gov/workspace/contract/opp/a89243ff9b574cdbb8e1c2fc05de5705/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-8fc372bab10f4bea-y1da-ehrm-infrastructure-upgrade-construction-moun",
+      "name": "Y1DA--EHRM Infrastructure Upgrade Construction - Mountain Home",
+      "city": "Independence",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-08-12",
+      "description": "Federal solicitation 36C77624B0024. Y1DA--EHRM Infrastructure Upgrade Construction - Mountain Home. Response deadline 2025-08-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77624B0024",
+          "url": "https://sam.gov/workspace/contract/opp/8fc372bab10f4beab87a13c24cb28e65/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-63080b00460547ed-y1da-ehrm-infrastructure-upgrade-construction-moun",
+      "name": "Y1DA--EHRM Infrastructure Upgrade Construction - Mountain Home",
+      "city": "Independence",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-08-11",
+      "description": "Federal solicitation 36C77624B0024. Y1DA--EHRM Infrastructure Upgrade Construction - Mountain Home. Response deadline 2025-08-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77624B0024",
+          "url": "https://sam.gov/workspace/contract/opp/63080b00460547edb3972c4707cc8776/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-9cc36aee2c02406f-renovate-facility-20145-at-wright-patterson-air-fo",
+      "name": "Renovate Facility 20145 at Wright Patterson Air Force Base",
+      "city": "Dayton",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-08-11",
+      "description": "Federal solicitation W912QR25R0027. Renovate Facility 20145 at Wright Patterson Air Force Base. Response deadline 2025-08-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1DB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR25R0027",
+          "url": "https://sam.gov/workspace/contract/opp/9cc36aee2c02406fb034a1edb81aba77/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-d400fa274c0d42dd-renovate-facility-20145-at-wright-patterson-air-fo",
+      "name": "Renovate Facility 20145 at Wright Patterson Air Force Base",
+      "city": "Dayton",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-08-11",
+      "description": "Federal solicitation W912QR25R0027. Renovate Facility 20145 at Wright Patterson Air Force Base. Response deadline 2025-08-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1DB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR25R0027",
+          "url": "https://sam.gov/workspace/contract/opp/d400fa274c0d42dd866d583a869bc69b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-2bc60d68abe44add-renovate-facility-20145-at-wright-patterson-air-fo",
+      "name": "Renovate Facility 20145 at Wright Patterson Air Force Base",
+      "city": "Dayton",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-08-11",
+      "description": "Federal solicitation W912QR25R0027. Renovate Facility 20145 at Wright Patterson Air Force Base. Response deadline 2025-08-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1DB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR25R0027",
+          "url": "https://sam.gov/workspace/contract/opp/2bc60d68abe44adda2ef5cf606d401bb/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-d3a3a4d831b341ee-renovate-facility-20145-at-wright-patterson-air-fo",
+      "name": "Renovate Facility 20145 at Wright Patterson Air Force Base",
+      "city": "Dayton",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-08-11",
+      "description": "Federal solicitation W912QR25R0027. Renovate Facility 20145 at Wright Patterson Air Force Base. Response deadline 2025-08-13.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1DB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR25R0027",
+          "url": "https://sam.gov/workspace/contract/opp/d3a3a4d831b341eea83ea7926ae7633e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-1c26c192c5c14c7a-y1da-ehrm-infrastructure-upgrade-construction-moun",
+      "name": "Y1DA--EHRM Infrastructure Upgrade Construction - Mountain Home",
+      "city": "Independence",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-08-08",
+      "description": "Federal solicitation 36C77624B0024. Y1DA--EHRM Infrastructure Upgrade Construction - Mountain Home. Response deadline 2025-08-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77624B0024",
+          "url": "https://sam.gov/workspace/contract/opp/1c26c192c5c14c7a9f1d71d997d91dfe/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-08263986e12642d5-renovate-facility-20145-at-wright-patterson-air-fo",
+      "name": "Renovate Facility 20145 at Wright Patterson Air Force Base",
+      "city": "Dayton",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-08-07",
+      "description": "Federal solicitation W912QR25R0027. Renovate Facility 20145 at Wright Patterson Air Force Base. Response deadline 2025-08-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1DB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR25R0027",
+          "url": "https://sam.gov/workspace/contract/opp/08263986e12642d59a0d96893fe0d32f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-79d4fc9b8b1a47fd-renovate-facility-20145-at-wright-patterson-air-fo",
+      "name": "Renovate Facility 20145 at Wright Patterson Air Force Base",
+      "city": "Dayton",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-08-05",
+      "description": "Federal solicitation W912QR25R0027. Renovate Facility 20145 at Wright Patterson Air Force Base. Response deadline 2025-08-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1DB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR25R0027",
+          "url": "https://sam.gov/workspace/contract/opp/79d4fc9b8b1a47fdb0a96f06f151b991/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-fa375f3ebf3b4f3f-renovate-facility-20145-at-wright-patterson-air-fo",
+      "name": "Renovate Facility 20145 at Wright Patterson Air Force Base",
+      "city": "Dayton",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-08-05",
+      "description": "Federal solicitation W912QR25R0027. Renovate Facility 20145 at Wright Patterson Air Force Base. Response deadline 2025-08-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1DB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR25R0027",
+          "url": "https://sam.gov/workspace/contract/opp/fa375f3ebf3b4f3f85568ce80c1dbd1e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-cd69c330d7524127-y1da-ehrm-infrastructure-upgrade-construction-moun",
+      "name": "Y1DA--EHRM Infrastructure Upgrade Construction - Mountain Home",
+      "city": "Independence",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-08-05",
+      "description": "Federal solicitation 36C77624B0024. Y1DA--EHRM Infrastructure Upgrade Construction - Mountain Home. Response deadline 2025-08-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77624B0024",
+          "url": "https://sam.gov/workspace/contract/opp/cd69c330d75241278cd2b0e639f7ae84/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-50ea7bbe23fb45e5-y1da-ehrm-infrastructure-upgrade-construction-moun",
+      "name": "Y1DA--EHRM Infrastructure Upgrade Construction - Mountain Home",
+      "city": "Independence",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-07-25",
+      "description": "Federal solicitation 36C77624B0024. Y1DA--EHRM Infrastructure Upgrade Construction - Mountain Home. Response deadline 2025-08-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77624B0024",
+          "url": "https://sam.gov/workspace/contract/opp/50ea7bbe23fb45e5ad103759bd5d1eec/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-647afbf603f0489f-y1da-ehrm-infrastructure-upgrade-construction-moun",
+      "name": "Y1DA--EHRM Infrastructure Upgrade Construction - Mountain Home",
+      "city": "Independence",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-07-25",
+      "description": "Federal solicitation 36C77624B0024. Y1DA--EHRM Infrastructure Upgrade Construction - Mountain Home. Response deadline 2025-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77624B0024",
+          "url": "https://sam.gov/workspace/contract/opp/647afbf603f0489f9165196a420a631e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-a808ff881aca4145-y1da-ehrm-infrastructure-upgrade-construction-moun",
+      "name": "Y1DA--EHRM Infrastructure Upgrade Construction - Mountain Home",
+      "city": "Independence",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-07-22",
+      "description": "Federal solicitation 36C77624B0024. Y1DA--EHRM Infrastructure Upgrade Construction - Mountain Home. Response deadline 2025-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77624B0024",
+          "url": "https://sam.gov/workspace/contract/opp/a808ff881aca414595f8f4d6c207bbf3/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-84dc83a59b204116-renovate-facility-20145-at-wright-patterson-air-fo",
+      "name": "Renovate Facility 20145 at Wright Patterson Air Force Base",
+      "city": "Dayton",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-07-17",
+      "description": "Federal solicitation W912QR25R0027. Renovate Facility 20145 at Wright Patterson Air Force Base. Response deadline 2025-08-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1DB"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912QR25R0027",
+          "url": "https://sam.gov/workspace/contract/opp/84dc83a59b20411692e96a0e4d7c59e9/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-1a62303faec740be-y1da-ehrm-infrastructure-upgrade-construction-moun",
+      "name": "Y1DA--EHRM Infrastructure Upgrade Construction - Mountain Home",
+      "city": "Independence",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-06-30",
+      "description": "Federal solicitation 36C77624B0024. Y1DA--EHRM Infrastructure Upgrade Construction - Mountain Home. Response deadline 2025-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77624B0024",
+          "url": "https://sam.gov/workspace/contract/opp/1a62303faec740beae37b69d6e02c319/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-7eec15e779954e9b-y1da-ehrm-infrastructure-upgrade-construction-moun",
+      "name": "Y1DA--EHRM Infrastructure Upgrade Construction - Mountain Home",
+      "city": "Independence",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-06-06",
+      "description": "Federal solicitation 36C77624B0024. Y1DA--EHRM Infrastructure Upgrade Construction - Mountain Home. Response deadline 2025-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77624B0024",
+          "url": "https://sam.gov/workspace/contract/opp/7eec15e779954e9bb9c8100d17b392b7/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-4733cf7513901fd7-renovation-of-building-65-at-wpafb",
+      "name": "Renovation of Building 65 at WPAFB",
+      "city": "DAYTON",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2018-12-14",
+      "description": "Federal combined synopsis/solicitation W912QR-83178856. Renovation of Building 65 at WPAFB. Response deadline 2018-12-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W912QR-83178856",
+          "url": "https://sam.gov/workspace/contract/opp/4733cf7513901fd7bec85a24b64c2cbf/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-7819701e25ea75dc-renovation-of-building-65-at-wpafb",
+      "name": "Renovation of Building 65 at WPAFB",
+      "city": "DAYTON",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2018-11-30",
+      "description": "Federal combined synopsis/solicitation W912QR-83178856. Renovation of Building 65 at WPAFB. Response deadline 2018-12-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W912QR-83178856",
+          "url": "https://sam.gov/workspace/contract/opp/7819701e25ea75dc6a12a40bef415316/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-f12d4b71220ff296-renovation-of-building-65-at-wpafb",
+      "name": "Renovation of Building 65 at WPAFB",
+      "city": "DAYTON",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2018-11-30",
+      "description": "Federal combined synopsis/solicitation W912QR-83178856. Renovation of Building 65 at WPAFB. Response deadline 2018-12-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W912QR-83178856",
+          "url": "https://sam.gov/workspace/contract/opp/f12d4b71220ff2963f01079f8c47d954/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
+    },
+    {
+      "id": "oh-sam-f8c7a3e692364351-renovation-of-building-65-at-wpafb",
+      "name": "Renovation of Building 65 at WPAFB",
+      "city": "DAYTON",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2018-11-29",
+      "description": "Federal combined synopsis/solicitation W912QR-83178856. Renovation of Building 65 at WPAFB. Response deadline 2018-12-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation W912QR-83178856",
+          "url": "https://sam.gov/workspace/contract/opp/f8c7a3e6923643512e346f8e1dd301c3/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "OH"
     }
   ],
   "stats": {
-    "total": 2
+    "total": 109
   }
 }

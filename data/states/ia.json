@@ -1,9 +1,9 @@
 {
   "state": "IA",
   "state_name": "Iowa",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — REBusinessOnline.",
+  "capture_method": "Public sources — REBusinessOnline, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "ia-opus-contitech-mount-pleasant",
@@ -45,9 +45,321 @@
         }
       ],
       "open_for": "Ground broken. Process and MEP specs active."
+    },
+    {
+      "id": "ia-sam-20b681a0d8dd41a0-building-154-cooling-tower-media-replacement",
+      "name": "Building 154 Cooling Tower Media Replacement",
+      "city": "Ames",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal combined synopsis/solicitation 1232SA26R0048. Building 154 Cooling Tower Media Replacement. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code J041"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1232SA26R0048",
+          "url": "https://sam.gov/workspace/contract/opp/20b681a0d8dd41a0b997d01c982caaff/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IA"
+    },
+    {
+      "id": "ia-sam-0588affc7169436e-building-154-cooling-tower-media-replacement",
+      "name": "Building 154 Cooling Tower Media Replacement",
+      "city": "Ames",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Agriculture, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Federal combined synopsis/solicitation 1232SA26R0048. Building 154 Cooling Tower Media Replacement. Response deadline 2026-07-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code J041"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 1232SA26R0048",
+          "url": "https://sam.gov/workspace/contract/opp/0588affc7169436e9b0a9d48a0d76837/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IA"
+    },
+    {
+      "id": "ia-sam-5fd397b5d66a4807-y1da-pn-636a6-26-201-patient-ceiling-lifts-install",
+      "name": "Y1DA--PN: 636A6-26-201, Patient Ceiling Lifts Install & Testing (DM) AP: 36C263-26-AP-1431",
+      "city": "Des Moines",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-22",
+      "description": "Federal solicitation 36C26326R0059. Y1DA--PN: 636A6-26-201, Patient Ceiling Lifts Install & Testing (DM) AP: 36C263-26-AP-1431. Response deadline 2026-06-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26326R0059",
+          "url": "https://sam.gov/workspace/contract/opp/5fd397b5d66a4807bc854d08b6f4855f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IA"
+    },
+    {
+      "id": "ia-sam-b56197c332cb43b9-y1da-pn-636a6-26-201-patient-ceiling-lifts-install",
+      "name": "Y1DA--PN: 636A6-26-201, Patient Ceiling Lifts Install & Testing (DM) AP: 36C263-26-AP-1431",
+      "city": "Des Moines",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-16",
+      "description": "Federal solicitation 36C26326R0059. Y1DA--PN: 636A6-26-201, Patient Ceiling Lifts Install & Testing (DM) AP: 36C263-26-AP-1431. Response deadline 2026-06-25.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26326R0059",
+          "url": "https://sam.gov/workspace/contract/opp/b56197c332cb43b9bb45356899bbf5de/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IA"
+    },
+    {
+      "id": "ia-sam-16bcd479023f4b10-y1da-pn-636a6-26-201-patient-ceiling-lifts-install",
+      "name": "Y1DA--PN: 636A6-26-201, Patient Ceiling Lifts Install & Testing (DM) AP: 36C263-26-AP-1431",
+      "city": "Des Moines",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-11",
+      "description": "Federal solicitation 36C26326R0059. Y1DA--PN: 636A6-26-201, Patient Ceiling Lifts Install & Testing (DM) AP: 36C263-26-AP-1431. Response deadline 2026-06-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26326R0059",
+          "url": "https://sam.gov/workspace/contract/opp/16bcd479023f4b108994accf83c3a5db/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IA"
+    },
+    {
+      "id": "ia-sam-d8e32aa04a304bbf-y1da-pn-636a6-26-201-patient-ceiling-lifts-install",
+      "name": "Y1DA--PN: 636A6-26-201, Patient Ceiling Lifts Install & Testing (DM) AP: 36C263-26-AP-1431",
+      "city": "Des Moines",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-11",
+      "description": "Federal solicitation 36C26326R0059. Y1DA--PN: 636A6-26-201, Patient Ceiling Lifts Install & Testing (DM) AP: 36C263-26-AP-1431. Response deadline 2026-06-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26326R0059",
+          "url": "https://sam.gov/workspace/contract/opp/d8e32aa04a304bbf9e6d66b50bbf880e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IA"
+    },
+    {
+      "id": "ia-sam-4c7b5bd450b54179-y1da-pn-636a6-26-201-patient-ceiling-lifts-install",
+      "name": "Y1DA--PN: 636A6-26-201, Patient Ceiling Lifts Install & Testing (DM) AP: 36C263-26-AP-1431",
+      "city": "Des Moines",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-03",
+      "description": "Federal solicitation 36C26326R0059. Y1DA--PN: 636A6-26-201, Patient Ceiling Lifts Install & Testing (DM) AP: 36C263-26-AP-1431. Response deadline 2026-06-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26326R0059",
+          "url": "https://sam.gov/workspace/contract/opp/4c7b5bd450b5417982f4f663e729d397/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "IA"
+    },
+    {
+      "id": "ia-sam-68dab64d003245d5-z1da-pn-636a8-22-001-reno-6th-floor-clinical-suppo",
+      "name": "Z1DA--PN: 636A8-22-001, Reno 6th Floor Clinical Support (IC) PR: 636-26-2-8822-0012",
+      "city": "Iowa City",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-29",
+      "description": "Federal presolicitation 36C26326B0025. Z1DA--PN: 636A8-22-001, Reno 6th Floor Clinical Support (IC) PR: 636-26-2-8822-0012. Response deadline 2026-06-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C26326B0025",
+          "url": "https://sam.gov/workspace/contract/opp/68dab64d003245d58f3433f92e8e87e8/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "IA"
     }
   ],
   "stats": {
-    "total": 1
+    "total": 9
   }
 }

@@ -1,9 +1,9 @@
 {
   "state": "AZ",
   "state_name": "Arizona",
-  "generated_at": "2026-07-24",
+  "generated_at": "2026-07-25",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Web research — Prime Data Centers, AZ Big Media, REBusinessOnline, Colliers, Connect CRE, Hoodline",
+  "capture_method": "Web research — Prime Data Centers, AZ Big Media, REBusinessOnline, Colliers, Connect CRE, Hoodline, SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "az-prime-phx01-avondale",
@@ -308,9 +308,2067 @@
         }
       ],
       "open_for": "Under construction. Industrial envelope and MEP specs."
+    },
+    {
+      "id": "az-sam-a3a5e76ef3a9472b-niwtp-biosolids-sludge-dryer-alternative-building-",
+      "name": "NIWTP Biosolids Sludge Dryer Alternative Building D/B",
+      "city": "Rio Rico",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "International Boundary And Water Commission: Us-Mexico",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Federal solicitation 191BWC26R0010. NIWTP Biosolids Sludge Dryer Alternative Building D/B. Response deadline 2026-08-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1PD"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 191BWC26R0010",
+          "url": "https://sam.gov/workspace/contract/opp/a3a5e76ef3a9472b99a4f13bad6b543a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-85626af542974fd0-niwtp-biosolids-sludge-dryer-alternative-building-",
+      "name": "NIWTP Biosolids Sludge Dryer Alternative Building D/B",
+      "city": "Rio Rico",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "International Boundary And Water Commission: Us-Mexico",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Federal solicitation 191BWC26R0010. NIWTP Biosolids Sludge Dryer Alternative Building D/B. Response deadline 2026-08-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1PD"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 191BWC26R0010",
+          "url": "https://sam.gov/workspace/contract/opp/85626af542974fd0ad282d3f1f0be22a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-6201faf91f7b4b3b-niwtp-biosolids-sludge-dryer-alternative-building-",
+      "name": "NIWTP Biosolids Sludge Dryer Alternative Building D/B",
+      "city": "Rio Rico",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "International Boundary And Water Commission: Us-Mexico",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "Federal solicitation 191BWC26R0010. NIWTP Biosolids Sludge Dryer Alternative Building D/B. Response deadline 2026-08-14.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1PD"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 191BWC26R0010",
+          "url": "https://sam.gov/workspace/contract/opp/6201faf91f7b4b3bb27ba411d70ca371/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-b78a691f42a04e9f-ihouse-apartment-construction",
+      "name": "iHouse Apartment Construction",
+      "city": "Tonalea",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "Federal solicitation 75H70126R00026. iHouse Apartment Construction. Response deadline 2026-08-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Indian Small Business Economic Enterprise (ISBEE) Set-Aside (specific to Department of Interior and Indian Health Services)",
+        "Classification code Y1FA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00026",
+          "url": "https://sam.gov/workspace/contract/opp/b78a691f42a04e9fbe6c39702e981170/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-c20d142f70374c36-y1ez-correct-fca-deficiencies-construction-amendme",
+      "name": "Y1EZ--Correct FCA Deficiencies Construction -Amendment",
+      "city": "Tucson",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "Federal solicitation 36C77026R0006. Y1EZ--Correct FCA Deficiencies Construction -Amendment. Response deadline 2026-08-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77026R0006",
+          "url": "https://sam.gov/workspace/contract/opp/c20d142f70374c36b691cc783dd8bfda/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-f3fcf34ef1f046b3-y1ez-correct-fca-deficiencies-construction-amendme",
+      "name": "Y1EZ--Correct FCA Deficiencies Construction -Amendment",
+      "city": "Tucson",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "Federal solicitation 36C77026R0006. Y1EZ--Correct FCA Deficiencies Construction -Amendment. Response deadline 2026-08-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77026R0006",
+          "url": "https://sam.gov/workspace/contract/opp/f3fcf34ef1f046b3a3d3f5ee1fbd567f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-d73716bcaea84e18-y1ez-correct-fca-deficiencies-construction-amendme",
+      "name": "Y1EZ--Correct FCA Deficiencies Construction -Amendment",
+      "city": "Tucson",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "Federal solicitation 36C77026R0006. Y1EZ--Correct FCA Deficiencies Construction -Amendment. Response deadline 2026-08-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77026R0006",
+          "url": "https://sam.gov/workspace/contract/opp/d73716bcaea84e1899a4f351da2cfc6e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-5b022f83edcf431f-prescott-replace-steam-boilers-project-no-649-22-1",
+      "name": "Prescott Replace Steam Boilers (Project No. 649-22-104)",
+      "city": "Prescott",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-06",
+      "description": "Federal solicitation 36C26226B0017. Prescott Replace Steam Boilers (Project No. 649-22-104). Response deadline 2026-07-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26226B0017",
+          "url": "https://sam.gov/workspace/contract/opp/5b022f83edcf431fb13a5659a23e9936/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-ebe4997694984712-prescott-replace-steam-boilers-project-no-649-22-1",
+      "name": "Prescott Replace Steam Boilers (Project No. 649-22-104)",
+      "city": "Prescott",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-02",
+      "description": "Federal solicitation 36C26226B0017. Prescott Replace Steam Boilers (Project No. 649-22-104). Response deadline 2026-07-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26226B0017",
+          "url": "https://sam.gov/workspace/contract/opp/ebe4997694984712957f78b3d5572d84/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-70f1ce2c2492494f-niwtp-biosolids-sludge-dryer-alternative-building-",
+      "name": "NIWTP Biosolids Sludge Dryer Alternative Building D/B",
+      "city": "Rio Rico",
+      "county": "",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "International Boundary And Water Commission: Us-Mexico",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Federal presolicitation FY264321004. NIWTP Biosolids Sludge Dryer Alternative Building D/B. Response deadline 2026-07-16.",
+      "key_specs": [
+        "NAICS 236210",
+        "Notice type: Presolicitation",
+        "No Set aside used",
+        "Classification code Y1PD"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression",
+        "switchgear"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation FY264321004",
+          "url": "https://sam.gov/workspace/contract/opp/70f1ce2c2492494f94325a68cb385f05/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-e085629a71f7465f-combined-synopsis-solicitation-for-b6-security-ren",
+      "name": "Combined Synopsis/Solicitation for B6 Security Renovation",
+      "city": "Tucson",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Federal combined synopsis/solicitation H92295-26-Q-B010. Combined Synopsis/Solicitation for B6 Security Renovation. Response deadline 2026-07-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation H92295-26-Q-B010",
+          "url": "https://sam.gov/workspace/contract/opp/e085629a71f7465fbe4943d161141a11/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-204f1ad59df64991-combined-synopsis-solicitation-for-b6-security-ren",
+      "name": "Combined Synopsis/Solicitation for B6 Security Renovation",
+      "city": "Tucson",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "Federal combined synopsis/solicitation H92295-26-Q-B010. Combined Synopsis/Solicitation for B6 Security Renovation. Response deadline 2026-07-09.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation H92295-26-Q-B010",
+          "url": "https://sam.gov/workspace/contract/opp/204f1ad59df649918cc4277f1c8d7604/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-9cc5225d48aa4c09-prescott-replace-steam-boilers-project-no-649-22-1",
+      "name": "Prescott Replace Steam Boilers (Project No. 649-22-104)",
+      "city": "Prescott",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "Federal solicitation 36C26226B0017. Prescott Replace Steam Boilers (Project No. 649-22-104). Response deadline 2026-07-08.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26226B0017",
+          "url": "https://sam.gov/workspace/contract/opp/9cc5225d48aa4c099c04b681cb98c429/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-be8ea9e99918477c-combined-synopsis-solicitation-for-b6-security-ren",
+      "name": "Combined Synopsis/Solicitation for B6 Security Renovation",
+      "city": "Tucson",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-26",
+      "description": "Federal combined synopsis/solicitation H92295-26-Q-B010. Combined Synopsis/Solicitation for B6 Security Renovation. Response deadline 2026-07-02.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation H92295-26-Q-B010",
+          "url": "https://sam.gov/workspace/contract/opp/be8ea9e99918477cba6fcac1e5193772/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-32db93fee7284a07-y1ez-762-24-700-construct-ehrm-infrastructure-upgr",
+      "name": "Y1EZ--762-24-700 | Construct EHRM Infrastructure Upgrades | Tucson, AZ CMOP |",
+      "city": "Tucson",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-24",
+      "description": "Federal solicitation 36C77626B0010. Y1EZ--762-24-700 | Construct EHRM Infrastructure Upgrades | Tucson, AZ CMOP |. Response deadline 2026-05-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0010",
+          "url": "https://sam.gov/workspace/contract/opp/32db93fee7284a07bfcc41299a878311/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-f23fe761eef54fc8-y1ez-762-24-700-construct-ehrm-infrastructure-upgr",
+      "name": "Y1EZ--762-24-700 | Construct EHRM Infrastructure Upgrades | Tucson, AZ CMOP |",
+      "city": "Tucson",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-24",
+      "description": "Federal solicitation 36C77626B0010. Y1EZ--762-24-700 | Construct EHRM Infrastructure Upgrades | Tucson, AZ CMOP |. Response deadline 2026-05-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0010",
+          "url": "https://sam.gov/workspace/contract/opp/f23fe761eef54fc8a5439a0c08a4ae29/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-ff9228db20c8458b-whiteriver-hospital-construction",
+      "name": "Whiteriver Hospital Construction",
+      "city": "Whiteriver",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-24",
+      "description": "Federal solicitation 75H70126R00016. Whiteriver Hospital Construction. Response deadline 2026-06-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00016",
+          "url": "https://sam.gov/workspace/contract/opp/ff9228db20c8458ba3d0225d74901ee8/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-f3a78bdbff3143b2-combined-synopsis-solicitation-for-b6-security-ren",
+      "name": "Combined Synopsis/Solicitation for B6 Security Renovation",
+      "city": "Tucson",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-17",
+      "description": "Federal combined synopsis/solicitation H92295-26-Q-B010. Combined Synopsis/Solicitation for B6 Security Renovation. Response deadline 2026-07-02.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation H92295-26-Q-B010",
+          "url": "https://sam.gov/workspace/contract/opp/f3a78bdbff3143b2add4a229ea495d4f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-602599a479c14494-combined-synopsis-solicitation-for-b6-security-ren",
+      "name": "Combined Synopsis/Solicitation for B6 Security Renovation",
+      "city": "Tucson",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-17",
+      "description": "Federal combined synopsis/solicitation H92295-26-Q-B010. Combined Synopsis/Solicitation for B6 Security Renovation. Response deadline 2026-07-02.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation H92295-26-Q-B010",
+          "url": "https://sam.gov/workspace/contract/opp/602599a479c14494a231738ef5fa545e/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-dccbf7fc37574161-whiteriver-hospital-construction",
+      "name": "Whiteriver Hospital Construction",
+      "city": "Whiteriver",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-17",
+      "description": "Federal solicitation 75H70126R00016. Whiteriver Hospital Construction. Response deadline 2026-06-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00016",
+          "url": "https://sam.gov/workspace/contract/opp/dccbf7fc3757416196bfd1b817773860/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-6ae43308354b496d-prescott-replace-steam-boilers-project-no-649-22-1",
+      "name": "Prescott Replace Steam Boilers (Project No. 649-22-104)",
+      "city": "Prescott",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-11",
+      "description": "Federal solicitation 36C26226B0017. Prescott Replace Steam Boilers (Project No. 649-22-104). Response deadline 2026-07-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26226B0017",
+          "url": "https://sam.gov/workspace/contract/opp/6ae43308354b496dae48103cb5c6f57a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-444efde9a72a4ee0-whiteriver-hospital-construction",
+      "name": "Whiteriver Hospital Construction",
+      "city": "Whiteriver",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-11",
+      "description": "Federal solicitation 75H70126R00016. Whiteriver Hospital Construction. Response deadline 2026-06-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00016",
+          "url": "https://sam.gov/workspace/contract/opp/444efde9a72a4ee09b5474bb0f5e75ef/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-fcc5dc70fc244a8a-y1ez-correct-fca-deficiencies-construction-amendme",
+      "name": "Y1EZ--Correct FCA Deficiencies Construction -Amendment",
+      "city": "Tucson",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-06-09",
+      "description": "Federal solicitation 36C77026R0006. Y1EZ--Correct FCA Deficiencies Construction -Amendment. Response deadline 2026-07-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77026R0006",
+          "url": "https://sam.gov/workspace/contract/opp/fcc5dc70fc244a8aba60d45b631d642b/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-0eb6279f9542441d-y1ez-correct-fca-deficiencies-construction-amendme",
+      "name": "Y1EZ--Correct FCA Deficiencies Construction -Amendment",
+      "city": "Tucson",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-06-09",
+      "description": "Federal solicitation 36C77026R0006. Y1EZ--Correct FCA Deficiencies Construction -Amendment. Response deadline 2026-07-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77026R0006",
+          "url": "https://sam.gov/workspace/contract/opp/0eb6279f9542441d9549af0a3cac85e0/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-e2b28b7a7f0f4b34-y1ez-correct-fca-deficiencies-construction-amendme",
+      "name": "Y1EZ--Correct FCA Deficiencies Construction -Amendment",
+      "city": "Tucson",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-06-04",
+      "description": "Federal solicitation 36C77026R0006. Y1EZ--Correct FCA Deficiencies Construction -Amendment. Response deadline 2026-07-16.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77026R0006",
+          "url": "https://sam.gov/workspace/contract/opp/e2b28b7a7f0f4b34b4b0cb1c558a4389/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-e43d4bc00d3943b6-prescott-replace-steam-boilers-project-no-649-22-1",
+      "name": "Prescott Replace Steam Boilers (Project No. 649-22-104)",
+      "city": "Prescott",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "Federal solicitation 36C26226B0017. Prescott Replace Steam Boilers (Project No. 649-22-104). Response deadline 2026-07-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C26226B0017",
+          "url": "https://sam.gov/workspace/contract/opp/e43d4bc00d3943b6ae6b7cf41938ad42/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-5bfee0c5d57242bf-whiteriver-hospital-construction",
+      "name": "Whiteriver Hospital Construction",
+      "city": "Whiteriver",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-29",
+      "description": "Federal solicitation 75H70126R00016. Whiteriver Hospital Construction. Response deadline 2026-06-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00016",
+          "url": "https://sam.gov/workspace/contract/opp/5bfee0c5d57242bf918636d962783b96/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-34e4bba1ce27432c-whiteriver-hospital-construction",
+      "name": "Whiteriver Hospital Construction",
+      "city": "Whiteriver",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-22",
+      "description": "Federal solicitation 75H70126R00016. Whiteriver Hospital Construction. Response deadline 2026-06-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00016",
+          "url": "https://sam.gov/workspace/contract/opp/34e4bba1ce27432c9122e211712527e0/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-5116432aa3c74144-whiteriver-hospital-construction",
+      "name": "Whiteriver Hospital Construction",
+      "city": "Whiteriver",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-15",
+      "description": "Federal solicitation 75H70126R00016. Whiteriver Hospital Construction. Response deadline 2026-06-18.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00016",
+          "url": "https://sam.gov/workspace/contract/opp/5116432aa3c74144b8e966e52ae72dd9/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-239b4c325f924aa1-y1ez-correct-fca-deficiencies-construction-amendme",
+      "name": "Y1EZ--Correct FCA Deficiencies Construction -Amendment",
+      "city": "Tucson",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-15",
+      "description": "Federal solicitation 36C77026R0006. Y1EZ--Correct FCA Deficiencies Construction -Amendment. Response deadline 2026-06-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77026R0006",
+          "url": "https://sam.gov/workspace/contract/opp/239b4c325f924aa18ac5eec12ffdc70c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-30d821f993c04236-y1ez-762-24-700-construct-ehrm-infrastructure-upgr",
+      "name": "Y1EZ--762-24-700 | Construct EHRM Infrastructure Upgrades | Tucson, AZ CMOP |",
+      "city": "Tucson",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-13",
+      "description": "Federal solicitation 36C77626B0010. Y1EZ--762-24-700 | Construct EHRM Infrastructure Upgrades | Tucson, AZ CMOP |. Response deadline 2026-05-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0010",
+          "url": "https://sam.gov/workspace/contract/opp/30d821f993c0423690941abbec431fa1/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-f25723860a4b458f-prescott-replace-steam-boilers-project-no-649-22-1",
+      "name": "Prescott Replace Steam Boilers (Project No. 649-22-104)",
+      "city": "Prescott",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-12",
+      "description": "Federal presolicitation 36C26226B0017. Prescott Replace Steam Boilers (Project No. 649-22-104). Response deadline 2026-07-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation 36C26226B0017",
+          "url": "https://sam.gov/workspace/contract/opp/f25723860a4b458fb206d3787e041df4/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-f7443f7309b2475b-y1ez-correct-fca-deficiencies-construction-pre-sol",
+      "name": "Y1EZ--Correct FCA Deficiencies Construction - Pre-Solicitation",
+      "city": "Tucson",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-05-12",
+      "description": "Federal solicitation 36C77026R0006. Y1EZ--Correct FCA Deficiencies Construction - Pre-Solicitation. Response deadline 2026-06-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77026R0006",
+          "url": "https://sam.gov/workspace/contract/opp/f7443f7309b2475bb0f4e12320583f64/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-2a06af442d52468b-whiteriver-hospital-construction",
+      "name": "Whiteriver Hospital Construction",
+      "city": "Whiteriver",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-07",
+      "description": "Federal solicitation 75H70126R00016. Whiteriver Hospital Construction. Response deadline 2026-05-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00016",
+          "url": "https://sam.gov/workspace/contract/opp/2a06af442d52468bbdf644ff8da49e95/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-46a20215873d41af-y1ez-762-24-700-construct-ehrm-infrastructure-upgr",
+      "name": "Y1EZ--762-24-700 | Construct EHRM Infrastructure Upgrades | Tucson, AZ CMOP |",
+      "city": "Tucson",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-05",
+      "description": "Federal solicitation 36C77626B0010. Y1EZ--762-24-700 | Construct EHRM Infrastructure Upgrades | Tucson, AZ CMOP |. Response deadline 2026-05-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0010",
+          "url": "https://sam.gov/workspace/contract/opp/46a20215873d41af8ef7ed610b0df9bb/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-f1b8b1bcc6484e91-whiteriver-hospital-construction",
+      "name": "Whiteriver Hospital Construction",
+      "city": "Whiteriver",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-05-01",
+      "description": "Federal solicitation 75H70126R00016. Whiteriver Hospital Construction. Response deadline 2026-05-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00016",
+          "url": "https://sam.gov/workspace/contract/opp/f1b8b1bcc6484e918c03707974663953/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-27bf7bde1e5b421c-y1ez-762-24-700-construct-ehrm-infrastructure-upgr",
+      "name": "Y1EZ--762-24-700 | Construct EHRM Infrastructure Upgrades | Tucson, AZ CMOP |",
+      "city": "Tucson",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-28",
+      "description": "Federal solicitation 36C77626B0010. Y1EZ--762-24-700 | Construct EHRM Infrastructure Upgrades | Tucson, AZ CMOP |. Response deadline 2026-05-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0010",
+          "url": "https://sam.gov/workspace/contract/opp/27bf7bde1e5b421c8cf42b00c03d5e98/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-69d33baf78e14220-whiteriver-hospital-construction",
+      "name": "Whiteriver Hospital Construction",
+      "city": "Whiteriver",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-24",
+      "description": "Federal solicitation 75H70126R00016. Whiteriver Hospital Construction. Response deadline 2026-05-28.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00016",
+          "url": "https://sam.gov/workspace/contract/opp/69d33baf78e1422096eccab863f04782/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-41f1e18a6c0446aa-y1ez-762-24-700-construct-ehrm-infrastructure-upgr",
+      "name": "Y1EZ--762-24-700 | Construct EHRM Infrastructure Upgrades | Tucson, AZ CMOP |",
+      "city": "Tucson",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-23",
+      "description": "Federal solicitation 36C77626B0010. Y1EZ--762-24-700 | Construct EHRM Infrastructure Upgrades | Tucson, AZ CMOP |. Response deadline 2026-05-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0010",
+          "url": "https://sam.gov/workspace/contract/opp/41f1e18a6c0446aa82024a67f1facfb6/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-30c3f879457840ac-ihouse-apartment-construction",
+      "name": "iHouse Apartment Construction",
+      "city": "Tonalea",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-20",
+      "description": "Federal sources sought SS75H70126R00026. iHouse Apartment Construction. Response deadline 2026-05-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Y1FA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought SS75H70126R00026",
+          "url": "https://sam.gov/workspace/contract/opp/30c3f879457840ac99870d89cf995318/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-1cb9afac22914667-whiteriver-hospital-construction",
+      "name": "Whiteriver Hospital Construction",
+      "city": "Whiteriver",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-14",
+      "description": "Federal solicitation 75H70126R00016. Whiteriver Hospital Construction. Response deadline 2026-05-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00016",
+          "url": "https://sam.gov/workspace/contract/opp/1cb9afac22914667b56b440bcc1c7703/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-e528c1cf8a134b33-y1ez-762-24-700-construct-ehrm-infrastructure-upgr",
+      "name": "Y1EZ--762-24-700 | Construct EHRM Infrastructure Upgrades | Tucson, AZ CMOP |",
+      "city": "Tucson",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-08",
+      "description": "Federal solicitation 36C77626B0010. Y1EZ--762-24-700 | Construct EHRM Infrastructure Upgrades | Tucson, AZ CMOP |. Response deadline 2026-04-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0010",
+          "url": "https://sam.gov/workspace/contract/opp/e528c1cf8a134b338698b3407285ec2a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-f48280d499494d01-y1ez-762-24-700-construct-ehrm-infrastructure-upgr",
+      "name": "Y1EZ--762-24-700 | Construct EHRM Infrastructure Upgrades | Tucson, AZ CMOP |",
+      "city": "Tucson",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-31",
+      "description": "Federal solicitation 36C77626B0010. Y1EZ--762-24-700 | Construct EHRM Infrastructure Upgrades | Tucson, AZ CMOP |. Response deadline 2026-04-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0010",
+          "url": "https://sam.gov/workspace/contract/opp/f48280d499494d01acc4676294570cee/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-698fbb2051c344b8-y1ez-762-24-700-construct-ehrm-infrastructure-upgr",
+      "name": "Y1EZ--762-24-700 | Construct EHRM Infrastructure Upgrades | Tucson, AZ CMOP |",
+      "city": "Tucson",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-24",
+      "description": "Federal solicitation 36C77626B0010. Y1EZ--762-24-700 | Construct EHRM Infrastructure Upgrades | Tucson, AZ CMOP |. Response deadline 2026-04-27.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1EZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626B0010",
+          "url": "https://sam.gov/workspace/contract/opp/698fbb2051c344b88f1b17ce58da7734/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-7eb4f4687c354330-whiteriver-hospital-construction",
+      "name": "Whiteriver Hospital Construction",
+      "city": "Whiteriver",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Health And Human Services, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-12",
+      "description": "Federal solicitation 75H70126R00016. Whiteriver Hospital Construction. Response deadline 2026-05-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "No Set aside used",
+        "Classification code Y1DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 75H70126R00016",
+          "url": "https://sam.gov/workspace/contract/opp/7eb4f4687c35433083bcf189ec8f52f8/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-4253fb261bf54eb7-gsa-region-09-2026-construction-idiq-zone-1",
+      "name": "GSA Region 09 2026 Construction IDIQ- Zone 1",
+      "city": "Phoenix",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-29",
+      "description": "Federal solicitation 47PK0125R0004. GSA Region 09 2026 Construction IDIQ- Zone 1. Response deadline 2026-01-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PK0125R0004",
+          "url": "https://sam.gov/workspace/contract/opp/4253fb261bf54eb7bd07c131f02422e0/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-ee48147b206745d1-gsa-region-09-2026-construction-idiq-zone-1",
+      "name": "GSA Region 09 2026 Construction IDIQ- Zone 1",
+      "city": "Phoenix",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-12-29",
+      "description": "Federal solicitation 47PK0125R0004. GSA Region 09 2026 Construction IDIQ- Zone 1. Response deadline 2026-01-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PK0125R0004",
+          "url": "https://sam.gov/workspace/contract/opp/ee48147b206745d1bca711bd783c462f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-c64ce8e8adef4643-gsa-region-09-2026-construction-idiq-zone-1",
+      "name": "GSA Region 09 2026 Construction IDIQ- Zone 1",
+      "city": "Phoenix",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-11-03",
+      "description": "Federal solicitation 47PK0125R0004. GSA Region 09 2026 Construction IDIQ- Zone 1. Response deadline 2025-11-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PK0125R0004",
+          "url": "https://sam.gov/workspace/contract/opp/c64ce8e8adef464399178d5b4797ff3f/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-5116bd5cb0f548c1-gsa-region-09-2026-construction-idiq-zone-1",
+      "name": "GSA Region 09 2026 Construction IDIQ- Zone 1",
+      "city": "Phoenix",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-24",
+      "description": "Federal solicitation 47PK0125R0004. GSA Region 09 2026 Construction IDIQ- Zone 1. Response deadline 2025-11-19.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PK0125R0004",
+          "url": "https://sam.gov/workspace/contract/opp/5116bd5cb0f548c1b2fd384aa6dd0f3a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-900e10838308421a-gsa-region-09-2026-construction-idiq-zone-1",
+      "name": "GSA Region 09 2026 Construction IDIQ- Zone 1",
+      "city": "Phoenix",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-16",
+      "description": "Federal solicitation 47PK0125R0004. GSA Region 09 2026 Construction IDIQ- Zone 1. Response deadline 2025-11-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PK0125R0004",
+          "url": "https://sam.gov/workspace/contract/opp/900e10838308421aa2d23666d8ea3634/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-43e92496e79b4432-gsa-region-09-2026-construction-idiq-zone-1",
+      "name": "GSA Region 09 2026 Construction IDIQ- Zone 1",
+      "city": "Phoenix",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-14",
+      "description": "Federal solicitation 47PK0125R0004. GSA Region 09 2026 Construction IDIQ- Zone 1. Response deadline 2025-11-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PK0125R0004",
+          "url": "https://sam.gov/workspace/contract/opp/43e92496e79b4432b7c7b06961da7d4c/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-794c211fdbba40d0-gsa-region-09-2026-construction-idiq-zone-1",
+      "name": "GSA Region 09 2026 Construction IDIQ- Zone 1",
+      "city": "Phoenix",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-02",
+      "description": "Federal solicitation 47PK0125R0004. GSA Region 09 2026 Construction IDIQ- Zone 1. Response deadline 2025-11-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PK0125R0004",
+          "url": "https://sam.gov/workspace/contract/opp/794c211fdbba40d0a270641ce19c6016/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
+    },
+    {
+      "id": "az-sam-431749efd71e4b3b-gsa-region-09-2026-construction-idiq-zone-1",
+      "name": "GSA Region 09 2026 Construction IDIQ- Zone 1",
+      "city": "Phoenix",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-09-29",
+      "description": "Federal solicitation 47PK0125R0004. GSA Region 09 2026 Construction IDIQ- Zone 1. Response deadline 2025-11-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Y1AZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 47PK0125R0004",
+          "url": "https://sam.gov/workspace/contract/opp/431749efd71e4b3b9133e2d8ab98f467/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "AZ"
     }
   ],
   "stats": {
-    "total": 8
+    "total": 60
   }
 }
