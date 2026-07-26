@@ -7,9 +7,12 @@ type Props = {
   latitude: number | null | undefined;
   longitude: number | null | undefined;
   name: string;
+  city?: string;
+  county?: string;
+  state?: string;
 };
 
-export function ProjectLocationMap({ latitude, longitude, name }: Props) {
+export function ProjectLocationMap({ latitude, longitude, name, city, county, state }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<import("leaflet").Map | null>(null);
 
@@ -48,9 +51,20 @@ export function ProjectLocationMap({ latitude, longitude, name }: Props) {
   }, [latitude, longitude, name]);
 
   if (latitude == null || longitude == null) {
+    const regionLabel = [city, county ? `${county} County` : null, state]
+      .filter(Boolean)
+      .join(", ");
     return (
-      <div className="card flex h-64 items-center justify-center p-4 text-sm text-[var(--color-gray-600)]">
-        Location not yet geocoded for this project.
+      <div className="card flex h-64 flex-col items-center justify-center gap-2 p-4 text-center">
+        <span className="rounded-full bg-[var(--color-amber)]/10 px-2.5 py-1 text-xs font-medium text-[var(--color-amber)]">
+          📍 Regional location pending
+        </span>
+        {regionLabel && (
+          <p className="text-sm font-medium text-[var(--color-ink)]">{regionLabel}</p>
+        )}
+        <p className="max-w-xs text-xs text-[var(--color-gray-600)]">
+          Exact coordinates for this project haven&apos;t been geocoded yet.
+        </p>
       </div>
     );
   }

@@ -82,12 +82,12 @@ export default async function HomePage() {
               Top of funnel leads for building product manufacturers
             </p>
             <h1 className="mt-4 text-hero">
-              Your product gets chosen long before anyone asks you for a quote.
+              The commercial projects your sales team should chase this week, ranked.
             </h1>
             <p className="mt-5 max-w-lg text-base leading-relaxed text-[var(--color-gray-600)]">
-              SpecIndex gives your spec sales team a working list of commercial
-              projects that are still early enough to influence, sorted by the CSI
-              division they actually sell.
+              SpecIndex ranks open commercial projects by a transparent priority
+              score, filtered to your territory and product category — not a
+              database dump of every permit in the state.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#demo" className="btn btn-primary">

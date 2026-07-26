@@ -23,7 +23,39 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: project.name,
     description: project.description.slice(0, 160),
+    // Absolute per-project URL so tracking params (?ref=, ?utm=) on shared
+    // links don't get indexed as separate pages competing with this one.
+    alternates: { canonical: `/projects/${project.id}/` },
   };
+}
+
+// Built only from our own verified DB fields (name/address/description/
+// value) -- never from outside "facts" an LLM might supply, since those
+// have been demonstrated to disagree with our sourced data (see
+// docs/ROADMAP.md item 50). GeoCoordinates is omitted entirely when we
+// don't have real coordinates, rather than guessing a city centroid.
+function projectJsonLd(project: NonNullable<Awaited<ReturnType<typeof getProject>>>) {
+  const address: Record<string, string> = {
+    "@type": "PostalAddress",
+    addressLocality: project.city || project.county || "",
+    addressRegion: project.state ?? "",
+    addressCountry: "US",
+  };
+  const jsonLd: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "Project",
+    name: project.name,
+    description: project.description,
+    address,
+  };
+  if (project.latitude != null && project.longitude != null) {
+    jsonLd.geo = {
+      "@type": "GeoCoordinates",
+      latitude: project.latitude,
+      longitude: project.longitude,
+    };
+  }
+  return jsonLd;
 }
 
 export default async function ProjectDetailPage({ params }: Props) {
@@ -33,6 +65,25 @@ export default async function ProjectDetailPage({ params }: Props) {
 
   return (
     <article className="bg-[var(--color-bg)]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectJsonLd(project)) }}
+      />
+
+      {/* Sticky title+score bar -- stays visible while scrolling the long
+          write-up below, so the score and identity don't disappear the
+          moment someone starts reading (per docs/ROADMAP.md item 52). */}
+      <div className="sticky top-14 z-40 border-b border-[var(--color-border)] bg-white/95 backdrop-blur-sm">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-2.5 md:px-8">
+          <p className="truncate text-sm font-medium text-[var(--color-ink)]">{project.name}</p>
+          {project.score && (
+            <span className="shrink-0 rounded-full bg-[var(--color-amber)]/10 px-2.5 py-1 text-xs font-semibold text-[var(--color-amber)]">
+              🔥 {project.score.total}/100
+            </span>
+          )}
+        </div>
+      </div>
+
       <div className="border-b border-[var(--color-border)] bg-white">
         <div className="mx-auto max-w-6xl px-5 py-10 md:px-8 md:py-14">
           <Link
@@ -153,6 +204,9 @@ export default async function ProjectDetailPage({ params }: Props) {
             latitude={project.latitude}
             longitude={project.longitude}
             name={project.name}
+            city={project.city}
+            county={project.county}
+            state={project.state}
           />
           <ProjectNews news={project.news} />
         </div>

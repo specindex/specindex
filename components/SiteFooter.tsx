@@ -68,19 +68,42 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold text-[var(--color-ink)]">Coverage</h3>
+          <h3 className="text-sm font-semibold text-[var(--color-ink)]">Data &amp; Coverage</h3>
           <p className="mt-4 text-sm leading-relaxed text-[var(--color-gray-600)]">
             Commercial projects in all 50 states, filterable by state and county.
             Built from public records only.
           </p>
+          <ul className="mt-4 space-y-2.5">
+            <li>
+              <Link
+                href="/projects/"
+                className="text-sm text-[var(--color-gray-600)] hover:text-[var(--color-ink)]"
+              >
+                Search the index
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/about/"
+                className="text-sm text-[var(--color-gray-600)] hover:text-[var(--color-ink)]"
+              >
+                How we source data
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
 
       <div className="border-t border-[var(--color-border)]">
-        <p className="mx-auto max-w-6xl px-5 py-4 text-xs text-[var(--color-gray-400)] md:px-8">
-          © {new Date().getFullYear()} SpecIndex. Project data from public sources; verify
-          before bidding or specifying.
-        </p>
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-5 py-4 md:px-8">
+          <p className="text-xs text-[var(--color-gray-400)]">
+            © {new Date().getFullYear()} SpecIndex. Project data from public sources; verify
+            before bidding or specifying.
+          </p>
+          <p className="text-xs text-[var(--color-gray-400)]">
+            🟢 Pipeline live · Public records only · No plan-room resale
+          </p>
+        </div>
       </div>
     </footer>
   );
