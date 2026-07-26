@@ -381,6 +381,76 @@ def list_quality(state: str | None = Query(default=None, min_length=2, max_lengt
     }
 
 
+@app.get("/v1/ops/pipeline-runs")
+def list_pipeline_runs(
+    workflow: str | None = Query(default=None),
+    limit: int = Query(default=30, le=200),
+):
+    """Backs the /ops dashboard's pipeline health view -- see
+    scripts/log-pipeline-run.py for how pipeline_runs gets written (one row
+    per GitHub Actions run of pull-national.yml / pull-state.yml)."""
+    clauses: list[str] = []
+    params: list[Any] = []
+    if workflow:
+        clauses.append("workflow = %s")
+        params.append(workflow)
+    where = f"WHERE {' AND '.join(clauses)}" if clauses else ""
+    params.append(limit)
+
+    with get_conn() as conn:
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+            cur.execute(
+                f"""
+                SELECT id, workflow, run_url, started_at, projects_before, projects_after,
+                       step_outcomes, top_movers, overall_status
+                FROM pipeline_runs
+                {where}
+                ORDER BY started_at DESC
+                LIMIT %s
+                """,
+                params,
+            )
+            rows = cur.fetchall()
+
+    return {
+        "total": len(rows),
+        "runs": [
+            {
+                "id": r["id"],
+                "workflow": r["workflow"],
+                "run_url": r["run_url"],
+                "started_at": r["started_at"].isoformat() if r["started_at"] else None,
+                "projects_before": r["projects_before"],
+                "projects_after": r["projects_after"],
+                "step_outcomes": r["step_outcomes"] or {},
+                "top_movers": r["top_movers"],
+                "overall_status": r["overall_status"],
+            }
+            for r in rows
+        ],
+    }
+
+
+@app.get("/v1/ops/db-health")
+def db_health():
+    """Live connection-pool utilization -- see the POOL_MIN_CONN/MAX_CONN
+    comment above for why this pool is small and retry-on-exhaustion
+    rather than blocking (db-f1-micro's 25-connection ceiling)."""
+    pool = _get_pool()
+    # psycopg2's pool doesn't expose a public utilization API; _pool/_used
+    # are the underlying lists it tracks internally (available vs
+    # checked-out connections) -- reading them for an ops view is fine,
+    # mutating them would not be.
+    in_use = len(getattr(pool, "_used", {}))
+    idle = len(getattr(pool, "_pool", []))
+    return {
+        "min_conn": POOL_MIN_CONN,
+        "max_conn": POOL_MAX_CONN,
+        "in_use": in_use,
+        "idle": idle,
+    }
+
+
 @app.get("/v1/projects/{project_id}")
 def get_project(project_id: str):
     with get_conn() as conn:

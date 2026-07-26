@@ -144,6 +144,24 @@ jobs:
             echo "Top county gains: ${{ steps.after.outputs.movers }}"
           } >> "$GITHUB_STEP_SUMMARY"
 
+      - name: Log pipeline run
+        if: always()
+        continue-on-error: true
+        run: |
+          python3 scripts/log-pipeline-run.py --apply-migration \
+            --workflow pull-state \
+            --run-url "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            --projects-before "${{ steps.before.outputs.count }}" \
+            --projects-after "${{ steps.after.outputs.count }}" \
+            --top-movers "${{ steps.after.outputs.movers }}" \
+            --step pull_ga_dri=${{ steps.pull_ga_dri.outcome }} \
+            --step rebuild_ga=${{ steps.rebuild_ga.outcome }} \
+            --step pull_nc=${{ steps.pull_nc.outcome }} \
+            --step merge=${{ steps.merge.outcome }} \
+            --step load=${{ steps.load.outcome }} \
+            --step coverage=${{ steps.coverage.outcome }} \
+            --step quality=${{ steps.quality.outcome }}
+
       - name: Email monthly state-pull summary
         if: always()
         continue-on-error: true
