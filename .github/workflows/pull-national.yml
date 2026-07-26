@@ -1,0 +1,131 @@
+name: Pull national sources + refresh coverage/quality
+
+# Agent 3 (Puller) + Agent 2/1 (Depth/Quality) from docs/AGENT_STRATEGY.md,
+# national scope only -- see that doc for the full three-agent strategy and
+# docs/ROADMAP.md for the national-before-state-before-county sourcing
+# priority this is built around.
+#
+# One-time setup required before this workflow can run (see the plan/PR
+# description for exact gcloud commands): a Workload Identity Federation
+# provider + service account with roles/cloudsql.client, and repo secrets
+# WIF_PROVIDER, WIF_SERVICE_ACCOUNT, CLOUDSQL_PASSWORD.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # weekly, Monday 06:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  id-token: write
+
+env:
+  CLOUDSQL_INSTANCE: specindex-ai:us-central1:specindex-db
+  DATABASE_URL: postgresql://specindex:${{ secrets.CLOUDSQL_PASSWORD }}@127.0.0.1:5433/specindex
+
+jobs:
+  pull_national:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements-db.txt
+
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+
+      - name: Start Cloud SQL Auth Proxy
+        run: |
+          curl -sL -o cloud-sql-proxy \
+            https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.14.0/cloud-sql-proxy.linux.amd64
+          chmod +x cloud-sql-proxy
+          ./cloud-sql-proxy --port 5433 "$CLOUDSQL_INSTANCE" &
+          for i in $(seq 1 15); do
+            (echo > /dev/tcp/127.0.0.1/5433) >/dev/null 2>&1 && break
+            sleep 1
+          done
+
+      # Each puller runs independently -- a broken source shouldn't block the
+      # others. Failures are recorded and surfaced in the job summary, never
+      # silently swallowed.
+      #
+      # GA runs its own SAM.gov + USAspending pullers first, both writing to
+      # data/raw/, then rebuild-ga-corpus.py combines all of GA's raw sources
+      # into data/states/ga.json. pull-sam-gov-bulk-national.py (next step)
+      # excludes GA by default for exactly this reason -- it merges directly
+      # into data/states/{state}.json, which rebuild-ga-corpus.py would
+      # otherwise overwrite and silently erase on its next run.
+      - name: Pull SAM.gov (GA)
+        id: pull_sam_ga
+        continue-on-error: true
+        run: python3 scripts/pull-sam-gov-bulk-ga.py
+
+      - name: Pull USAspending (GA)
+        id: pull_usaspending_ga
+        continue-on-error: true
+        run: python3 scripts/pull-usaspending-ga.py --years 2
+
+      - name: Rebuild GA corpus
+        id: rebuild_ga
+        continue-on-error: true
+        run: python3 scripts/rebuild-ga-corpus.py
+
+      - name: Pull SAM.gov (all other wired states)
+        id: pull_sam
+        continue-on-error: true
+        run: python3 scripts/pull-sam-gov-bulk-national.py
+
+      - name: Merge national corpus
+        id: merge
+        continue-on-error: true
+        run: python3 scripts/merge-national-corpus.py
+
+      - name: Load corpus to Cloud SQL
+        id: load
+        continue-on-error: true
+        run: python3 scripts/load-corpus-to-postgres.py --corpus data/national-commercial-projects.json
+
+      - name: Refresh county coverage (Depth agent)
+        id: coverage
+        continue-on-error: true
+        run: python3 scripts/compute-county-coverage.py --apply-migration
+
+      - name: Refresh state quality (Quality agent)
+        id: quality
+        continue-on-error: true
+        run: python3 scripts/compute-state-quality.py --apply-migration
+
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo "### Pull national — results"
+            echo "| Step | Outcome |"
+            echo "|---|---|"
+            echo "| SAM.gov (GA) | ${{ steps.pull_sam_ga.outcome }} |"
+            echo "| USAspending (GA) | ${{ steps.pull_usaspending_ga.outcome }} |"
+            echo "| Rebuild GA corpus | ${{ steps.rebuild_ga.outcome }} |"
+            echo "| SAM.gov (other states) | ${{ steps.pull_sam.outcome }} |"
+            echo "| Merge national corpus | ${{ steps.merge.outcome }} |"
+            echo "| Load to Cloud SQL | ${{ steps.load.outcome }} |"
+            echo "| Refresh county coverage | ${{ steps.coverage.outcome }} |"
+            echo "| Refresh state quality | ${{ steps.quality.outcome }} |"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      # Cloud SQL is reloaded above, before this push -- keeps the
+      # deploy-timing rule in docs/ROADMAP.md (reload DB before the
+      # triggering build, not after) true by construction.
+      - name: Commit updated corpus files
+        run: |
+          git config user.name "specindex-bot"
+          git config user.email "bot@specindex.ai"
+          git add data/
+          git diff --cached --quiet || git commit -m "Automated national pull refresh"
+          git push

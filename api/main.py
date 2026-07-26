@@ -268,7 +268,8 @@ def coverage_insights():
                        count(*) AS counties_covered,
                        count(*) FILTER (WHERE coverage_type = 'deep') AS deep,
                        count(*) FILTER (WHERE coverage_type = 'thin') AS thin,
-                       sum(project_count) AS total_projects
+                       sum(project_count) AS total_projects,
+                       sum(delta) AS net_delta
                 FROM county_coverage
                 GROUP BY state
                 """
@@ -328,11 +329,56 @@ def coverage_insights():
                 "deep": r["deep"],
                 "thin": r["thin"],
                 "total_projects": r["total_projects"],
+                "net_delta": r["net_delta"],
             }
         )
     state_summary.sort(key=lambda s: s["coverage_pct"] or 0, reverse=True)
 
     return {"state_summary": state_summary, "top_projects_by_county": top_by_county}
+
+
+@app.get("/v1/quality")
+def list_quality(state: str | None = Query(default=None, min_length=2, max_length=2)):
+    """Backs the Quality tab on /coverage -- see scripts/compute-state-quality.py
+    for how state_quality is populated (field completeness + freshness per
+    state, refreshed on demand, not live per-request)."""
+    clauses: list[str] = []
+    params: list[Any] = []
+    if state:
+        clauses.append("state = %s")
+        params.append(state.upper())
+    where = f"WHERE {' AND '.join(clauses)}" if clauses else ""
+
+    with get_conn() as conn:
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+            cur.execute(
+                f"""
+                SELECT state, total_projects, pct_has_city, pct_has_value,
+                       pct_has_contractor, pct_has_date, freshness_days, computed_at
+                FROM state_quality
+                {where}
+                ORDER BY state
+                """,
+                params,
+            )
+            rows = cur.fetchall()
+
+    return {
+        "total": len(rows),
+        "quality": [
+            {
+                "state": r["state"],
+                "total_projects": r["total_projects"],
+                "pct_has_city": float(r["pct_has_city"]),
+                "pct_has_value": float(r["pct_has_value"]),
+                "pct_has_contractor": float(r["pct_has_contractor"]),
+                "pct_has_date": float(r["pct_has_date"]),
+                "freshness_days": r["freshness_days"],
+                "computed_at": r["computed_at"].isoformat() if r["computed_at"] else None,
+            }
+            for r in rows
+        ],
+    }
 
 
 @app.get("/v1/projects/{project_id}")

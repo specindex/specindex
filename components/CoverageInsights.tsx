@@ -104,6 +104,7 @@ export function CoverageInsights({ insights }: Props) {
               <th className="px-4 py-3 text-right">Deep</th>
               <th className="px-4 py-3 text-right">Thin</th>
               <th className="px-4 py-3 text-right">Projects</th>
+              <th className="px-4 py-3 text-right">Since last run</th>
               <th className="px-4 py-3" />
             </tr>
           </thead>
@@ -127,6 +128,17 @@ export function CoverageInsights({ insights }: Props) {
                   <td className="px-4 py-3 text-right tabular-nums">
                     {s.total_projects.toLocaleString()}
                   </td>
+                  <td className="px-4 py-3 text-right tabular-nums">
+                    {s.net_delta === null ? (
+                      <span className="text-[var(--color-gray-400)]">—</span>
+                    ) : s.net_delta > 0 ? (
+                      <span className="text-[var(--color-green)]">+{s.net_delta}</span>
+                    ) : s.net_delta < 0 ? (
+                      <span className="text-red-600">{s.net_delta}</span>
+                    ) : (
+                      <span className="text-[var(--color-gray-400)]">0</span>
+                    )}
+                  </td>
                   <td className="px-4 py-3 text-right">
                     <button
                       type="button"
@@ -139,7 +151,7 @@ export function CoverageInsights({ insights }: Props) {
                 </tr>
                 {expanded === s.state && (
                   <tr>
-                    <td colSpan={8} className="bg-[var(--color-gray-100)] px-4 py-4">
+                    <td colSpan={9} className="bg-[var(--color-gray-100)] px-4 py-4">
                       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                         {countiesForState.map((county) => {
                           const key = `${s.state}|${county}`;
