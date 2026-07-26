@@ -80,9 +80,3256 @@
       ],
       "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
       "state": "NE"
+    },
+    {
+      "id": "ne-usaspending-w9128f23c0013",
+      "name": "Design And Construct Nc3 Alert Facility",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 155587845.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "WALSH FEDERAL LLC",
+      "opened_or_announced_date": "2023-03-31",
+      "description": "DESIGN AND CONSTRUCT NC3 ALERT FACILITY. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-03-22.",
+      "key_specs": [
+        "Award W9128F23C0013",
+        "Awarding agency: Department of the Army",
+        "ZIP 68005"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F23C0013: Design And Construct Nc3 Alert Facility",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F23C0013_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68005"
+    },
+    {
+      "id": "ne-usaspending-w9128f23c0015",
+      "name": "Milstar Satellite Communications Station/ Design/Bid/Build Campus Facilities.",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 107808224.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "WALSH FEDERAL LLC",
+      "opened_or_announced_date": "2023-07-01",
+      "description": "MILSTAR SATELLITE COMMUNICATIONS STATION/ DESIGN/BID/BUILD CAMPUS FACILITIES. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-07-14.",
+      "key_specs": [
+        "Award W9128F23C0015",
+        "Awarding agency: Department of the Army",
+        "ZIP 68005"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F23C0015: Milstar Satellite Communications Station/ Design/Bid/Build Campus Facilities.",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F23C0015_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68005"
+    },
+    {
+      "id": "ne-usaspending-w9128f22c0027",
+      "name": "Construct Security Campus",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 75578571.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "M. A. MORTENSON COMPANY",
+      "opened_or_announced_date": "2022-08-10",
+      "description": "CONSTRUCT SECURITY CAMPUS. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-04-11.",
+      "key_specs": [
+        "Award W9128F22C0027",
+        "Awarding agency: Department of the Army",
+        "ZIP 68005"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F22C0027: Construct Security Campus",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F22C0027_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68005"
+    },
+    {
+      "id": "ne-usaspending-w9128f26ca001",
+      "name": "Missouri River Levee R562 Repairs",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 43724248.6,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "HENDRICKSON TRANSPORTATION LLC",
+      "opened_or_announced_date": "2025-12-01",
+      "description": "MISSOURI RIVER LEVEE R562 REPAIRS. Awarded by Department of the Army (Department of Defense). Period of performance through 2027-11-29.",
+      "key_specs": [
+        "Award W9128F26CA001",
+        "Awarding agency: Department of the Army",
+        "ZIP 68421"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F26CA001: Missouri River Levee R562 Repairs",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F26CA001_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "NE",
+      "zip": "68421"
+    },
+    {
+      "id": "ne-usaspending-w9128f23c0006",
+      "name": "Construct Oss/Sere Facility",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 36773640.76,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "MEDVOLT TEPA EC JV",
+      "opened_or_announced_date": "2022-12-23",
+      "description": "CONSTRUCT OSS/SERE FACILITY. Awarded by Department of the Army (Department of Defense). Period of performance through 2024-10-27.",
+      "key_specs": [
+        "Award W9128F23C0006",
+        "Awarding agency: Department of the Army",
+        "ZIP 68113"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F23C0006: Construct Oss/Sere Facility",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F23C0006_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68113"
+    },
+    {
+      "id": "ne-usaspending-36c77623c0094",
+      "name": "636C3164 Ehrm Infrastructure Upgrade - Omaha",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 36371031.53,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "AC JV ONE LLC",
+      "opened_or_announced_date": "2023-09-28",
+      "description": "636C3164 EHRM INFRASTRUCTURE UPGRADE - OMAHA. Awarded by Department of Veterans Affairs. Period of performance through 2025-10-26.",
+      "key_specs": [
+        "Award 36C77623C0094",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 68105"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C77623C0094: 636C3164 Ehrm Infrastructure Upgrade - Omaha",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C77623C0094_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68105"
+    },
+    {
+      "id": "ne-usaspending-36c26322c0094",
+      "name": "Construct Combined Energy Plant, Va Nebraska Western Iowa Health Care System",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 27383910.0,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "GCH CONSTRUCTION COMPANY",
+      "opened_or_announced_date": "2022-08-24",
+      "description": "CONSTRUCT COMBINED ENERGY PLANT, VA NEBRASKA WESTERN IOWA HEALTH CARE SYSTEM. Awarded by Department of Veterans Affairs. Period of performance through 2026-09-30.",
+      "key_specs": [
+        "Award 36C26322C0094",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 68105"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C26322C0094: Construct Combined Energy Plant, Va Nebraska Western Iowa Health Care System",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C26322C0094_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "NE",
+      "zip": "68105"
+    },
+    {
+      "id": "ne-usaspending-w9128f25ca028",
+      "name": "Construct Greenhouse/Headhouse Physically Connected To The Existing Greenhouse Innovation Center On The Nebraska Innovat",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "office",
+      "estimated_value_usd": 25127941.92,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "SAMPSON CONSTRUCTION CO INC",
+      "opened_or_announced_date": "2025-06-02",
+      "description": "CONSTRUCT GREENHOUSE/HEADHOUSE PHYSICALLY CONNECTED TO THE EXISTING GREENHOUSE INNOVATION CENTER ON THE NEBRASKA INNOVATION CAMPUS AND PROVIDE FOR A FUTURE PHYSICAL CONNECTION TO A FUTURE USDA-ARS LAB/OFFICE BUILDING TO THE EAST OF THIS PROJECT. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-12-28.",
+      "key_specs": [
+        "Award W9128F25CA028",
+        "Awarding agency: Department of the Army",
+        "ZIP 68501"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "elevators",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F25CA028: Construct Greenhouse/Headhouse Physically Connected To The Existing Greenhouse I",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F25CA028_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "NE",
+      "zip": "68501"
+    },
+    {
+      "id": "ne-usaspending-w9128f22c0042",
+      "name": "Fy22 Bank Stabilization & Navigation Project - South (Bsnp), River Mile 498 To 600, Missouri River, Ia, Mo, Ne",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 19326121.88,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "WESTERN CONTRACTING CORP",
+      "opened_or_announced_date": "2022-09-30",
+      "description": "FY22 BANK STABILIZATION & NAVIGATION PROJECT - SOUTH (BSNP), RIVER MILE 498 TO 600, MISSOURI RIVER, IA, MO, NE. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-06-28.",
+      "key_specs": [
+        "Award W9128F22C0042",
+        "Awarding agency: Department of the Army",
+        "ZIP 68112"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F22C0042: Fy22 Bank Stabilization & Navigation Project - South (Bsnp), River Mile 498 To 6",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F22C0042_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68112"
+    },
+    {
+      "id": "ne-usaspending-w9128f21c0066",
+      "name": "Construct Lrs Campus",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 17981644.33,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "MEDVOLT-KOMADA JV",
+      "opened_or_announced_date": "2021-10-18",
+      "description": "CONSTRUCT LRS CAMPUS. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-07-25.",
+      "key_specs": [
+        "Award W9128F21C0066",
+        "Awarding agency: Department of the Army",
+        "ZIP 68113"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F21C0066: Construct Lrs Campus",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F21C0066_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68113"
+    },
+    {
+      "id": "ne-usaspending-36c77623c0031",
+      "name": "The General Contractor Is To Provide All Construction And Related Services To Complete The Ehrm Infrastructure Upgrades ",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 16266732.0,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "THE POVOLNY GROUP INC",
+      "opened_or_announced_date": "2023-03-08",
+      "description": "THE GENERAL CONTRACTOR IS TO PROVIDE ALL CONSTRUCTION AND RELATED SERVICES TO COMPLETE THE EHRM INFRASTRUCTURE UPGRADES PROJECT AT THE GRAND ISLAND VAMC. Awarded by Department of Veterans Affairs. Period of performance through 2025-11-03.",
+      "key_specs": [
+        "Award 36C77623C0031",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 68803"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C77623C0031: The General Contractor Is To Provide All Construction And Related Services To Co",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C77623C0031_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68803"
+    },
+    {
+      "id": "ne-usaspending-36c77626c0021",
+      "name": "636-502 Construct Sterile Processing Service - Omaha Vamc",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 15660522.0,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "MCL-MRK VII LLC",
+      "opened_or_announced_date": "2026-01-08",
+      "description": "636-502 CONSTRUCT STERILE PROCESSING SERVICE - OMAHA VAMC. Awarded by Department of Veterans Affairs. Period of performance through 2027-09-08.",
+      "key_specs": [
+        "Award 36C77626C0021",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 68105"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C77626C0021: 636-502 Construct Sterile Processing Service - Omaha Vamc",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C77626C0021_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "NE",
+      "zip": "68105"
+    },
+    {
+      "id": "ne-usaspending-w9128f22c0006",
+      "name": "Contruct Flighline Facilitiy To 5Ft Outs",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 14166963.31,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "FSA CONSTRUCTION, LLC",
+      "opened_or_announced_date": "2021-12-18",
+      "description": "CONTRUCT FLIGHLINE FACILITIY TO 5FT OUTS. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-06-27.",
+      "key_specs": [
+        "Award W9128F22C0006",
+        "Awarding agency: Department of the Army",
+        "ZIP 68113"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F22C0006: Contruct Flighline Facilitiy To 5Ft Outs",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F22C0006_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68113"
+    },
+    {
+      "id": "ne-usaspending-w9128f21c0051",
+      "name": "Design And Construct The Consolidated Recreation Facility At Offutt Afb, Ne.",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 12805191.9,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "COVENANT RUSSELL LLC",
+      "opened_or_announced_date": "2021-09-16",
+      "description": "DESIGN AND CONSTRUCT THE CONSOLIDATED RECREATION FACILITY AT OFFUTT AFB, NE. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-05-10.",
+      "key_specs": [
+        "Award W9128F21C0051",
+        "Awarding agency: Department of the Army",
+        "ZIP 68113"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F21C0051: Design And Construct The Consolidated Recreation Facility At Offutt Afb, Ne.",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F21C0051_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68113"
+    },
+    {
+      "id": "ne-usaspending-w9128f22c0041",
+      "name": "Fy22 Bank Stabilization & Navigation Project - North (Bsnp), River Mile 600 To 740, Missouri River, Ia, Mo, Ne",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 12675112.64,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "WESTERN CONTRACTING CORP",
+      "opened_or_announced_date": "2022-09-30",
+      "description": "FY22 BANK STABILIZATION & NAVIGATION PROJECT - NORTH (BSNP), RIVER MILE 600 TO 740, MISSOURI RIVER, IA, MO, NE. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-10-17.",
+      "key_specs": [
+        "Award W9128F22C0041",
+        "Awarding agency: Department of the Army",
+        "ZIP 68112"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F22C0041: Fy22 Bank Stabilization & Navigation Project - North (Bsnp), River Mile 600 To 7",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F22C0041_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68112"
+    },
+    {
+      "id": "ne-usaspending-36c78622c0066",
+      "name": "Grave Site Expansion Omaha National Cemetery",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 12224781.21,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "THE POVOLNY GROUP INC",
+      "opened_or_announced_date": "2022-09-23",
+      "description": "GRAVE SITE EXPANSION OMAHA NATIONAL CEMETERY. Awarded by Department of Veterans Affairs. Period of performance through 2025-03-31.",
+      "key_specs": [
+        "Award 36C78622C0066",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 68138"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C78622C0066: Grave Site Expansion Omaha National Cemetery",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C78622C0066_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68138"
+    },
+    {
+      "id": "ne-usaspending-w912dq23c1030",
+      "name": "Harlan Salt Cedar Eradication Project",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 9696691.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "KRW CONSTRUCTION INC",
+      "opened_or_announced_date": "2023-10-15",
+      "description": "HARLAN SALT CEDAR ERADICATION PROJECT. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-08-23.",
+      "key_specs": [
+        "Award W912DQ23C1030",
+        "Awarding agency: Department of the Army",
+        "ZIP 68971"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W912DQ23C1030: Harlan Salt Cedar Eradication Project",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W912DQ23C1030_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68971"
+    },
+    {
+      "id": "ne-usaspending-w9128f25fa169",
+      "name": "Fuel Tank 550 And 580 Repair And Maintenance",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 9597796.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "RELIABLE CONTRACTING GROUP, LLC",
+      "opened_or_announced_date": "2025-09-12",
+      "description": "FUEL TANK 550 AND 580 REPAIR AND MAINTENANCE. Awarded by Department of the Army (Department of Defense). Period of performance through 2027-10-19.",
+      "key_specs": [
+        "Award W9128F25FA169",
+        "Awarding agency: Department of the Army",
+        "ZIP 68113"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F25FA169: Fuel Tank 550 And 580 Repair And Maintenance",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F25FA169_9700_W9128F21D0057_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "NE",
+      "zip": "68113"
+    },
+    {
+      "id": "ne-usaspending-w9128f22c0008",
+      "name": "Middle Logan Creek Phase Ii Construction",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 8175225.34,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "IRON MIKE CONSTRUCTION LLC",
+      "opened_or_announced_date": "2022-03-10",
+      "description": "MIDDLE LOGAN CREEK PHASE II CONSTRUCTION. Awarded by Department of the Army (Department of Defense). Period of performance through 2024-04-04.",
+      "key_specs": [
+        "Award W9128F22C0008",
+        "Awarding agency: Department of the Army",
+        "ZIP 68771"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F22C0008: Middle Logan Creek Phase Ii Construction",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F22C0008_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68771"
+    },
+    {
+      "id": "ne-usaspending-fa460020f0192",
+      "name": "Renovate Oft-5 Flight Simulator, B493",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 8050051.19,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "PRO-MARK SERVICES INC",
+      "opened_or_announced_date": "2020-09-30",
+      "description": "RENOVATE OFT-5 FLIGHT SIMULATOR, B493. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2024-03-31.",
+      "key_specs": [
+        "Award FA460020F0192",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 68113"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA460020F0192: Renovate Oft-5 Flight Simulator, B493",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA460020F0192_9700_FA460016D6003_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68113"
+    },
+    {
+      "id": "ne-usaspending-fa460023f0073",
+      "name": "Repair Electrical Substation B565 At Offutt Afb, Ne",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 6614497.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "MOWA-BARLOVENTO JOINT VENTURE A",
+      "opened_or_announced_date": "2023-07-27",
+      "description": "REPAIR ELECTRICAL SUBSTATION B565 AT OFFUTT AFB, NE. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2026-03-30.",
+      "key_specs": [
+        "Award FA460023F0073",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 68113"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA460023F0073: Repair Electrical Substation B565 At Offutt Afb, Ne",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA460023F0073_9700_FA890317D0020_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68113"
+    },
+    {
+      "id": "ne-usaspending-w9128f23c0040",
+      "name": "Nko Parking Lot Construction At Offutt Afb, Ne",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 5300473.11,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "ADDON SERVICES LLC",
+      "opened_or_announced_date": "2023-09-18",
+      "description": "NKO PARKING LOT CONSTRUCTION AT OFFUTT AFB, NE. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-08-11.",
+      "key_specs": [
+        "Award W9128F23C0040",
+        "Awarding agency: Department of the Army",
+        "ZIP 68113"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F23C0040: Nko Parking Lot Construction At Offutt Afb, Ne",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F23C0040_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68113"
+    },
+    {
+      "id": "ne-usaspending-36c78623c0020",
+      "name": "890Cm3014 Gravesite Expansion, Fort Mcpherson National Cemetery, Maxwell, Nebraska",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 4514524.3,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "KMC SOLUTIONS, LLC",
+      "opened_or_announced_date": "2023-08-11",
+      "description": "890CM3014 GRAVESITE EXPANSION, FORT MCPHERSON NATIONAL CEMETERY, MAXWELL, NEBRASKA. Awarded by Department of Veterans Affairs. Period of performance through 2026-06-30.",
+      "key_specs": [
+        "Award 36C78623C0020",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 69151"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C78623C0020: 890Cm3014 Gravesite Expansion, Fort Mcpherson National Cemetery, Maxwell, Nebras",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C78623C0020_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "69151"
+    },
+    {
+      "id": "ne-usaspending-w9128f26ca014",
+      "name": "R-613 2019 Follow-On Repairs",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 4424699.57,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "GALE CONSTRUCTION COMPANY OF ILLINOIS",
+      "opened_or_announced_date": "2026-02-05",
+      "description": "R-613 2019 FOLLOW-ON REPAIRS. Awarded by Department of the Army (Department of Defense). Period of performance through 2027-02-04.",
+      "key_specs": [
+        "Award W9128F26CA014",
+        "Awarding agency: Department of the Army",
+        "ZIP 68123"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F26CA014: R-613 2019 Follow-On Repairs",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F26CA014_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "NE",
+      "zip": "68123"
+    },
+    {
+      "id": "ne-usaspending-w9128f19c0049",
+      "name": "Fuel System Repairs As A Result Of Omaha Flooding 2019",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 3815541.59,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "DAWSON ENTERPRISES, INC.",
+      "opened_or_announced_date": "2019-09-28",
+      "description": "FUEL SYSTEM REPAIRS AS A RESULT OF OMAHA FLOODING 2019. Awarded by Department of the Army (Department of Defense). Period of performance through 2021-12-31.",
+      "key_specs": [
+        "Award W9128F19C0049",
+        "Awarding agency: Department of the Army",
+        "ZIP 68113"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F19C0049: Fuel System Repairs As A Result Of Omaha Flooding 2019",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F19C0049_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68113"
+    },
+    {
+      "id": "ne-usaspending-w9128f22c0046",
+      "name": "Fabrication Of Draft Tube Bulkheads",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 3441385.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "TRANSCO INDUSTRIES, INC.",
+      "opened_or_announced_date": "2022-10-01",
+      "description": "FABRICATION OF DRAFT TUBE BULKHEADS. Awarded by Department of the Army (Department of Defense). Period of performance through 2024-12-15.",
+      "key_specs": [
+        "Award W9128F22C0046",
+        "Awarding agency: Department of the Army",
+        "ZIP 68730"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F22C0046: Fabrication Of Draft Tube Bulkheads",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F22C0046_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68730"
+    },
+    {
+      "id": "ne-usaspending-1240lt24c0011",
+      "name": "Bessey Nursery Greenhouse Re-Procurement",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 2846114.6,
+      "square_footage": null,
+      "owner": "Department of Agriculture",
+      "architect": "",
+      "general_contractor": "MYERS CONSTRUCTION, INC.",
+      "opened_or_announced_date": "2024-04-17",
+      "description": "BESSEY NURSERY GREENHOUSE RE-PROCUREMENT. Awarded by Forest Service (Department of Agriculture). Period of performance through 2025-10-31.",
+      "key_specs": [
+        "Award 1240LT24C0011",
+        "Awarding agency: Forest Service",
+        "ZIP 69142"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 1240LT24C0011: Bessey Nursery Greenhouse Re-Procurement",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_1240LT24C0011_12C2_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "69142"
+    },
+    {
+      "id": "ne-usaspending-fa460023f0121",
+      "name": "Construct Cafeteria Revolving Door B1000",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 2714542.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "BHATE ENVIRONMENTAL ASSOCIATES, INC.",
+      "opened_or_announced_date": "2023-09-20",
+      "description": "CONSTRUCT CAFETERIA REVOLVING DOOR B1000. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2025-11-10.",
+      "key_specs": [
+        "Award FA460023F0121",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 68113"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA460023F0121: Construct Cafeteria Revolving Door B1000",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA460023F0121_9700_FA890317D0014_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68113"
+    },
+    {
+      "id": "ne-usaspending-36c26324c0085",
+      "name": "636-23-301, D/B Improve Stormwater Detention",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 2271222.0,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "COVENANT CONSTRUCTION SERVICES LLC",
+      "opened_or_announced_date": "2024-09-26",
+      "description": "636-23-301, D/B IMPROVE STORMWATER DETENTION. Awarded by Department of Veterans Affairs. Period of performance through 2026-01-02.",
+      "key_specs": [
+        "Award 36C26324C0085",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 68105"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C26324C0085: 636-23-301, D/B Improve Stormwater Detention",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C26324C0085_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68105"
+    },
+    {
+      "id": "ne-usaspending-36c26324n0852",
+      "name": "Upgrade Campus Signage At Omaha Vamc",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 2007962.0,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "GCH CONSTRUCTION COMPANY",
+      "opened_or_announced_date": "2024-09-17",
+      "description": "UPGRADE CAMPUS SIGNAGE AT OMAHA VAMC. Awarded by Department of Veterans Affairs. Period of performance through 2025-08-11.",
+      "key_specs": [
+        "Award 36C26324N0852",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 68105"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C26324N0852: Upgrade Campus Signage At Omaha Vamc",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C26324N0852_3600_36C26320D0025_3600"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68105"
+    },
+    {
+      "id": "ne-usaspending-fa460023f0160",
+      "name": "Repair Youth Center B5805 At Offutt Afb, Ne",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 1764444.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "BHATE ENVIRONMENTAL ASSOCIATES, INC.",
+      "opened_or_announced_date": "2023-09-27",
+      "description": "REPAIR YOUTH CENTER B5805 AT OFFUTT AFB, NE. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2025-05-16.",
+      "key_specs": [
+        "Award FA460023F0160",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 68113"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA460023F0160: Repair Youth Center B5805 At Offutt Afb, Ne",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA460023F0160_9700_FA890317D0014_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68113"
+    },
+    {
+      "id": "ne-usaspending-36c77626c0024",
+      "name": "Ehrm Infrastructure Upgrades - Fm, A/E Cps In Omaha, Ne",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 1570635.48,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "ANDERSON ENGINEERING OF MINNESOTA, LLC",
+      "opened_or_announced_date": "2026-01-08",
+      "description": "EHRM INFRASTRUCTURE UPGRADES - FM, A/E CPS IN OMAHA, NE. Awarded by Department of Veterans Affairs. Period of performance through 2028-01-07.",
+      "key_specs": [
+        "Award 36C77626C0024",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 68105"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C77626C0024: Ehrm Infrastructure Upgrades - Fm, A/E Cps In Omaha, Ne",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C77626C0024_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "NE",
+      "zip": "68105"
+    },
+    {
+      "id": "ne-usaspending-w50s8923f0025",
+      "name": "Construct Gasnt Transportable Storage Facility. This Project Is To Construct A 1000Sf Facility For Gasnt Equipment And A",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 1500000.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "L & J BUILDING COMPANY LLC",
+      "opened_or_announced_date": "2023-09-22",
+      "description": "CONSTRUCT GASNT TRANSPORTABLE STORAGE FACILITY. THIS PROJECT IS TO CONSTRUCT A 1000SF FACILITY FOR GASNT EQUIPMENT AND AN ALTERNATE COMMAND POST AND CRISIS ACTION TEAM FACILITY. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-08-29.",
+      "key_specs": [
+        "Award W50S8923F0025",
+        "Awarding agency: Department of the Army",
+        "ZIP 68524"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W50S8923F0025: Construct Gasnt Transportable Storage Facility. This Project Is To Construct A 1",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W50S8923F0025_9700_W9124319D0004_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68524"
+    },
+    {
+      "id": "ne-usaspending-fa460023f0135",
+      "name": "Repair Interior Finishes - B462 At Offutt Afb, Ne",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 1296227.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "BHATE ENVIRONMENTAL ASSOCIATES, INC.",
+      "opened_or_announced_date": "2023-09-22",
+      "description": "REPAIR INTERIOR FINISHES - B462 AT OFFUTT AFB, NE. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2024-11-11.",
+      "key_specs": [
+        "Award FA460023F0135",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 68113"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA460023F0135: Repair Interior Finishes - B462 At Offutt Afb, Ne",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA460023F0135_9700_FA890317D0014_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68113"
+    },
+    {
+      "id": "ne-usaspending-697dck26c00103",
+      "name": "Replace The Instrument Landing System (Ils) For Runway 32L (Enf) And Runway 18 (Ppy) At Omaha Eppley Airfield, Omaha, Ne",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "aviation",
+      "estimated_value_usd": 1259845.44,
+      "square_footage": null,
+      "owner": "Department of Transportation",
+      "architect": "",
+      "general_contractor": "AIRFIELD WESTERN LLC",
+      "opened_or_announced_date": "2026-04-16",
+      "description": "REPLACE THE INSTRUMENT LANDING SYSTEM (ILS) FOR RUNWAY 32L (ENF) AND RUNWAY 18 (PPY) AT OMAHA EPPLEY AIRFIELD, OMAHA, NEBRASKA. Awarded by Federal Aviation Administration (Department of Transportation). Period of performance through 2026-11-06.",
+      "key_specs": [
+        "Award 697DCK26C00103",
+        "Awarding agency: Federal Aviation Administration",
+        "ZIP 68110"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "doors and hardware",
+        "concrete",
+        "lighting"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 697DCK26C00103: Replace The Instrument Landing System (Ils) For Runway 32L (Enf) And Runway 18 (",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_697DCK26C00103_6920_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "NE",
+      "zip": "68110"
+    },
+    {
+      "id": "ne-usaspending-w912dq22c1032",
+      "name": "Sluice Gate Valve Repair.",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 1161181.89,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "ALLTECH ENGINEERING CORP",
+      "opened_or_announced_date": "2022-09-30",
+      "description": "SLUICE GATE VALVE REPAIR. Awarded by Department of the Army (Department of Defense). Period of performance through 2024-05-07.",
+      "key_specs": [
+        "Award W912DQ22C1032",
+        "Awarding agency: Department of the Army",
+        "ZIP 68971"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W912DQ22C1032: Sluice Gate Valve Repair.",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W912DQ22C1032_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68971"
+    },
+    {
+      "id": "ne-usaspending-140fga25f0012",
+      "name": "Ne-Rainwater Bsn Mnd-Cold Storage Bldg",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 996600.0,
+      "square_footage": null,
+      "owner": "Department of the Interior",
+      "architect": "",
+      "general_contractor": "MDM CONSTRUCTION LLC",
+      "opened_or_announced_date": "2025-04-29",
+      "description": "NE-RAINWATER BSN MND-COLD STORAGE BLDG. Awarded by U.S. Fish and Wildlife Service (Department of the Interior). Period of performance through 2026-04-29.",
+      "key_specs": [
+        "Award 140FGA25F0012",
+        "Awarding agency: U.S. Fish and Wildlife Service",
+        "ZIP 68940"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 140FGA25F0012: Ne-Rainwater Bsn Mnd-Cold Storage Bldg",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_140FGA25F0012_1448_140F0822D0074_1448"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68940"
+    },
+    {
+      "id": "ne-usaspending-fa460023f0140",
+      "name": "Repair Cag Control Spaces B1000 At Offutt Afb, Ne",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 972949.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "BHATE ENVIRONMENTAL ASSOCIATES, INC.",
+      "opened_or_announced_date": "2023-09-27",
+      "description": "REPAIR CAG CONTROL SPACES B1000 AT OFFUTT AFB, NE. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2025-04-04.",
+      "key_specs": [
+        "Award FA460023F0140",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 68113"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA460023F0140: Repair Cag Control Spaces B1000 At Offutt Afb, Ne",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA460023F0140_9700_FA890317D0014_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68113"
+    },
+    {
+      "id": "ne-usaspending-fa460021f0172",
+      "name": "Upgrade Ahus #3 #8, B301",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 958660.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "RAZOR CONSULTING SOLUTIONS, INC",
+      "opened_or_announced_date": "2021-09-27",
+      "description": "UPGRADE AHUS #3 #8, B301. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2026-04-30.",
+      "key_specs": [
+        "Award FA460021F0172",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 68113"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA460021F0172: Upgrade Ahus #3 #8, B301",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA460021F0172_9700_FA460020D0008_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68113"
+    },
+    {
+      "id": "ne-usaspending-fa460024f0040",
+      "name": "Repair Water Damage To B303 Caused In December 2022 General Construction 8(A) Idiq - See Attached Basic Scope And Clin F",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 913025.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "NVE LLC",
+      "opened_or_announced_date": "2024-06-10",
+      "description": "REPAIR WATER DAMAGE TO B303 CAUSED IN DECEMBER 2022 GENERAL CONSTRUCTION 8(A) IDIQ - SEE ATTACHED BASIC SCOPE AND CLIN FOR BASIC IDIQ IN SECTION J. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2024-10-25.",
+      "key_specs": [
+        "Award FA460024F0040",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 68113"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA460024F0040: Repair Water Damage To B303 Caused In December 2022 General Construction 8(A) Id",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA460024F0040_9700_FA460022D0004_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68113"
+    },
+    {
+      "id": "ne-usaspending-6973gh26c00127",
+      "name": "Grand Island, Ne- Construction And Installation Of Shelter @ Grib Rcag In Accordance With The Attached Specifications An",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 759533.0,
+      "square_footage": null,
+      "owner": "Department of Transportation",
+      "architect": "",
+      "general_contractor": "DACO CONSTRUCTION COMPANY INC",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "GRAND ISLAND, NE- CONSTRUCTION AND INSTALLATION OF SHELTER @ GRIB RCAG IN ACCORDANCE WITH THE ATTACHED SPECIFICATIONS AND DRAWINGS. Awarded by Federal Aviation Administration (Department of Transportation). Period of performance through 2027-07-30.",
+      "key_specs": [
+        "Award 6973GH26C00127",
+        "Awarding agency: Federal Aviation Administration",
+        "ZIP 68801"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 6973GH26C00127: Grand Island, Ne- Construction And Installation Of Shelter @ Grib Rcag In Accord",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_6973GH26C00127_6920_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "NE",
+      "zip": "68801"
+    },
+    {
+      "id": "ne-usaspending-fa460025c0018",
+      "name": "This Project Is To Replace And Repair B73 Parking Lot Per The Attached Drawings And Specifications On Offutt Afb, Ne.",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 682840.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "PRIMECORPS LLC",
+      "opened_or_announced_date": "2025-09-30",
+      "description": "THIS PROJECT IS TO REPLACE AND REPAIR B73 PARKING LOT PER THE ATTACHED DRAWINGS AND SPECIFICATIONS ON OFFUTT AFB, NE. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2026-09-25.",
+      "key_specs": [
+        "Award FA460025C0018",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 68113"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA460025C0018: This Project Is To Replace And Repair B73 Parking Lot Per The Attached Drawings ",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA460025C0018_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "NE",
+      "zip": "68113"
+    },
+    {
+      "id": "ne-usaspending-fa460023f0163",
+      "name": "Repair East Planter Box - B1000",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 672127.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "BHATE ENVIRONMENTAL ASSOCIATES, INC.",
+      "opened_or_announced_date": "2023-09-28",
+      "description": "REPAIR EAST PLANTER BOX - B1000. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2024-09-06.",
+      "key_specs": [
+        "Award FA460023F0163",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 68113"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA460023F0163: Repair East Planter Box - B1000",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA460023F0163_9700_FA890317D0014_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68113"
+    },
+    {
+      "id": "ne-usaspending-w9128f26ca003",
+      "name": "Cedar Creek Levee Rehab Cass County, Ne",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 668625.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "YOST EXCAVATING INC",
+      "opened_or_announced_date": "2025-11-19",
+      "description": "CEDAR CREEK LEVEE REHAB CASS COUNTY, NE. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-07-17.",
+      "key_specs": [
+        "Award W9128F26CA003",
+        "Awarding agency: Department of the Army",
+        "ZIP 68048"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F26CA003: Cedar Creek Levee Rehab Cass County, Ne",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F26CA003_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68048"
+    },
+    {
+      "id": "ne-usaspending-697dck24f00023",
+      "name": "Jcn: 18062790, Replace Existing Fire Alarm System In Its Entirety At The R90 Tracon.",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 644651.0,
+      "square_footage": null,
+      "owner": "Department of Transportation",
+      "architect": "",
+      "general_contractor": "HONEYWELL INTERNATIONAL INC",
+      "opened_or_announced_date": "2023-11-13",
+      "description": "JCN: 18062790, REPLACE EXISTING FIRE ALARM SYSTEM IN ITS ENTIRETY AT THE R90 TRACON. Awarded by Federal Aviation Administration (Department of Transportation). Period of performance through 2025-02-28.",
+      "key_specs": [
+        "Award 697DCK24F00023",
+        "Awarding agency: Federal Aviation Administration",
+        "ZIP 68113"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 697DCK24F00023: Jcn: 18062790, Replace Existing Fire Alarm System In Its Entirety At The R90 Tra",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_697DCK24F00023_6920_697DCK19D00008_6920"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68113"
+    },
+    {
+      "id": "ne-usaspending-1240lt26c0032",
+      "name": "Work For This Project Consists Of Constructing A Roadway Embankment With Turnouts And Lead-Off Ditches; Installing Speci",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 459638.1,
+      "square_footage": null,
+      "owner": "Department of Agriculture",
+      "architect": "",
+      "general_contractor": "WALT MYERS CONSTRUCTION",
+      "opened_or_announced_date": "2026-06-25",
+      "description": "WORK FOR THIS PROJECT CONSISTS OF CONSTRUCTING A ROADWAY EMBANKMENT WITH TURNOUTS AND LEAD-OFF DITCHES; INSTALLING SPECIFIED MULTI-AXIAL GEOGRID GEOSYNTHETIC ON APPROVED CONSTRUCTED ROADWAY; FURNISHING, PLACING AND COMPACTING THE AGGREGATE MATERIAL B. Awarded by Forest Service (Department of Agriculture). Period of performance through 2026-10-30.",
+      "key_specs": [
+        "Award 1240LT26C0032",
+        "Awarding agency: Forest Service",
+        "ZIP 69142"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 1240LT26C0032: Work For This Project Consists Of Constructing A Roadway Embankment With Turnout",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_1240LT26C0032_12C2_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "NE",
+      "zip": "69142"
+    },
+    {
+      "id": "ne-usaspending-6973gh26c00008",
+      "name": "Omaha, Ne - Ppy Malsr Stair Installation In Omaha, Ne In Accordance With The Specifications And Drawings.",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 445359.0,
+      "square_footage": null,
+      "owner": "Department of Transportation",
+      "architect": "",
+      "general_contractor": "DACO CONSTRUCTION COMPANY INC",
+      "opened_or_announced_date": "2025-12-15",
+      "description": "OMAHA, NE - PPY MALSR STAIR INSTALLATION IN OMAHA, NE IN ACCORDANCE WITH THE SPECIFICATIONS AND DRAWINGS. Awarded by Federal Aviation Administration (Department of Transportation). Period of performance through 2027-07-31.",
+      "key_specs": [
+        "Award 6973GH26C00008",
+        "Awarding agency: Federal Aviation Administration",
+        "ZIP 68145"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 6973GH26C00008: Omaha, Ne - Ppy Malsr Stair Installation In Omaha, Ne In Accordance With The Spe",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_6973GH26C00008_6920_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "NE",
+      "zip": "68145"
+    },
+    {
+      "id": "ne-usaspending-6973gh23c00130",
+      "name": "Replace The Existing Pwe Vor Building With A Dme Shelter And Antenna In Pawnee City, Ne In Accordance With The Specifica",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 419024.0,
+      "square_footage": null,
+      "owner": "Department of Transportation",
+      "architect": "",
+      "general_contractor": "GREATER SOUTHWEST CONSTRUCTORS INC",
+      "opened_or_announced_date": "2023-08-09",
+      "description": "REPLACE THE EXISTING PWE VOR BUILDING WITH A DME SHELTER AND ANTENNA IN PAWNEE CITY, NE IN ACCORDANCE WITH THE SPECIFICATIONS AND DRAWINGS. Awarded by Federal Aviation Administration (Department of Transportation). Period of performance through 2024-09-30.",
+      "key_specs": [
+        "Award 6973GH23C00130",
+        "Awarding agency: Federal Aviation Administration",
+        "ZIP 68420"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 6973GH23C00130: Replace The Existing Pwe Vor Building With A Dme Shelter And Antenna In Pawnee C",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_6973GH23C00130_6920_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68420"
+    },
+    {
+      "id": "ne-usaspending-fa460023f0162",
+      "name": "Construct Antenna Bases - B1000 At Offutt Afb, Ne",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 410247.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "BHATE ENVIRONMENTAL ASSOCIATES, INC.",
+      "opened_or_announced_date": "2023-09-27",
+      "description": "CONSTRUCT ANTENNA BASES - B1000 AT OFFUTT AFB, NE. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2025-02-28.",
+      "key_specs": [
+        "Award FA460023F0162",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 68113"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA460023F0162: Construct Antenna Bases - B1000 At Offutt Afb, Ne",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA460023F0162_9700_FA890317D0014_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68113"
+    },
+    {
+      "id": "ne-usaspending-fa460024f0188",
+      "name": "Establish And Install Sustainable Walkways, Plazas, And Raised Garden Beds Between Parking Lots While Enhancing The Over",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 376759.14,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "TEPA CONSTRUCTION SOLUTIONS, LLC",
+      "opened_or_announced_date": "2024-09-27",
+      "description": "ESTABLISH AND INSTALL SUSTAINABLE WALKWAYS, PLAZAS, AND RAISED GARDEN BEDS BETWEEN PARKING LOTS WHILE ENHANCING THE OVERALL AESTHETICS OF THE USSTRATCOM COMPLEX, PREVENT FUTURE SOIL EROSION, THAT IS EASILY MAINTAINED IAW TASK ORDER PROJECT SCOPE. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2025-05-07.",
+      "key_specs": [
+        "Award FA460024F0188",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 68113"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA460024F0188: Establish And Install Sustainable Walkways, Plazas, And Raised Garden Beds Betwe",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA460024F0188_9700_FA460023D0002_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68113"
+    },
+    {
+      "id": "ne-usaspending-fa461325f0028",
+      "name": "Replace Underground Storage Tank",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 376254.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "G2I JBI LLC",
+      "opened_or_announced_date": "2025-04-23",
+      "description": "REPLACE UNDERGROUND STORAGE TANK. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2026-07-14.",
+      "key_specs": [
+        "Award FA461325F0028",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 69345"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA461325F0028: Replace Underground Storage Tank",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA461325F0028_9700_FA251720D0003_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "69345"
+    },
+    {
+      "id": "ne-usaspending-fa460023f0126",
+      "name": "Gate Repair Projects",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 340850.93,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "AAECON GENERAL CONTRACTING LLC",
+      "opened_or_announced_date": "2023-09-30",
+      "description": "GATE REPAIR PROJECTS. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2024-11-22.",
+      "key_specs": [
+        "Award FA460023F0126",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 68113"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA460023F0126: Gate Repair Projects",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA460023F0126_9700_FA460022D0005_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68113"
+    },
+    {
+      "id": "ne-usaspending-fa460025f0111",
+      "name": "Install An Alternate Vehicle Turnaround Pad On The South Side Of The C2F In Accordance With The Task Order Project Scope",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 314364.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "NORTH WIND GENERAL CONTRACTORS LLC",
+      "opened_or_announced_date": "2025-09-25",
+      "description": "INSTALL AN ALTERNATE VEHICLE TURNAROUND PAD ON THE SOUTH SIDE OF THE C2F IN ACCORDANCE WITH THE TASK ORDER PROJECT SCOPE AND SOW. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2026-06-26.",
+      "key_specs": [
+        "Award FA460025F0111",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 68113"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA460025F0111: Install An Alternate Vehicle Turnaround Pad On The South Side Of The C2F In Acco",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA460025F0111_9700_FA460024D0003_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68113"
+    },
+    {
+      "id": "ne-usaspending-w50s8924fa051",
+      "name": "This Project Consists Of Repairing A Ruptured 12 Inch Od Ductile Iron Fire Suppression Pipe And Damage Caused To Buildin",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 278120.69,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "RAZOR CONSULTING SOLUTIONS, INC",
+      "opened_or_announced_date": "2024-09-30",
+      "description": "THIS PROJECT CONSISTS OF REPAIRING A RUPTURED 12 INCH OD DUCTILE IRON FIRE SUPPRESSION PIPE AND DAMAGE CAUSED TO BUILDING 600. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-08-29.",
+      "key_specs": [
+        "Award W50S8924FA051",
+        "Awarding agency: Department of the Army",
+        "ZIP 68524"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W50S8924FA051: This Project Consists Of Repairing A Ruptured 12 Inch Od Ductile Iron Fire Suppr",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W50S8924FA051_9700_W50S8924D0009_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68524"
+    },
+    {
+      "id": "ne-usaspending-fa460023f0132",
+      "name": "Stormwater Runoff Repair",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 276154.54,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "TEPA CONSTRUCTION SOLUTIONS, LLC",
+      "opened_or_announced_date": "2023-10-02",
+      "description": "STORMWATER RUNOFF REPAIR. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2024-12-01.",
+      "key_specs": [
+        "Award FA460023F0132",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 68113"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA460023F0132: Stormwater Runoff Repair",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA460023F0132_9700_FA460023D0002_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68113"
+    },
+    {
+      "id": "ne-usaspending-w9128f22f0134",
+      "name": "Gp22 - Rec Iija Tailwater & Cottonwood",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 243515.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "JEREMY THOMAS CONSTRUCTION LLC",
+      "opened_or_announced_date": "2022-10-03",
+      "description": "GP22 - REC IIJA TAILWATER & COTTONWOOD. Awarded by Department of the Army (Department of Defense). Period of performance through 2023-09-09.",
+      "key_specs": [
+        "Award W9128F22F0134",
+        "Awarding agency: Department of the Army",
+        "ZIP 68730"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F22F0134: Gp22 - Rec Iija Tailwater & Cottonwood",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F22F0134_9700_W9128F21D0065_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68730"
+    },
+    {
+      "id": "ne-usaspending-w50s8925fa033",
+      "name": "This Project Consists Of Replacing The Existing Daikin Vrv Hvac System Located In The Southwest Corner Of B636, Composit",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 232507.68,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "FIRELAKE CONSTRUCTION INC",
+      "opened_or_announced_date": "2025-09-05",
+      "description": "THIS PROJECT CONSISTS OF REPLACING THE EXISTING DAIKIN VRV HVAC SYSTEM LOCATED IN THE SOUTHWEST CORNER OF B636, COMPOSITE SUPPORT FACILITY. SEE STATEMENT OF WORK FOR FULL DESCRIPTION. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-03-20.",
+      "key_specs": [
+        "Award W50S8925FA033",
+        "Awarding agency: Department of the Army",
+        "ZIP 68524"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W50S8925FA033: This Project Consists Of Replacing The Existing Daikin Vrv Hvac System Located I",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W50S8925FA033_9700_W50S8925DA014_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68524"
+    },
+    {
+      "id": "ne-usaspending-fa460022f0069",
+      "name": "Upgrade Voltage Relay B500",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 185168.66,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "KOMAN SUSTAINABLE SOLUTIONS, LLC",
+      "opened_or_announced_date": "2022-07-11",
+      "description": "UPGRADE VOLTAGE RELAY B500. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2022-12-22.",
+      "key_specs": [
+        "Award FA460022F0069",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 68113"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA460022F0069: Upgrade Voltage Relay B500",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA460022F0069_9700_FA460022D0002_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68113"
+    },
+    {
+      "id": "ne-usaspending-1240lt25c0041",
+      "name": "Work For This Project Consists Of Resurfacing Up To 2.70 Designated Miles Of Circle Road Nfsr 203 Per Base Item And Opti",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 172860.0,
+      "square_footage": null,
+      "owner": "Department of Agriculture",
+      "architect": "",
+      "general_contractor": "WALT MYERS CONSTRUCTION",
+      "opened_or_announced_date": "2026-05-01",
+      "description": "WORK FOR THIS PROJECT CONSISTS OF RESURFACING UP TO 2.70 DESIGNATED MILES OF CIRCLE ROAD NFSR 203 PER BASE ITEM AND OPTIONAL ITEMS FOR ADDITIONAL WORK ON SAME SEGMENT OF ROADWAY TO A FOURTEEN (14) FOOT WIDE ROADWAY, IN PREPARATION FOR FURNISHING, HAU. Awarded by Forest Service (Department of Agriculture). Period of performance through 2026-07-30.",
+      "key_specs": [
+        "Award 1240LT25C0041",
+        "Awarding agency: Forest Service",
+        "ZIP 69142"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 1240LT25C0041: Work For This Project Consists Of Resurfacing Up To 2.70 Designated Miles Of Cir",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_1240LT25C0041_12C2_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "NE",
+      "zip": "69142"
+    },
+    {
+      "id": "ne-usaspending-w9128f25pa105",
+      "name": "Contractor To Supply All Labor, Equipment, And Materials For Preparing And Paving Concrete Pads At Gavins Point Project ",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 141723.62,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "ALBERTO'S CONCRETE SERVICES LLC",
+      "opened_or_announced_date": "2025-09-30",
+      "description": "CONTRACTOR TO SUPPLY ALL LABOR, EQUIPMENT, AND MATERIALS FOR PREPARING AND PAVING CONCRETE PADS AT GAVINS POINT PROJECT CAMPGROUND LOCATIONS. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-06-07.",
+      "key_specs": [
+        "Award W9128F25PA105",
+        "Awarding agency: Department of the Army",
+        "ZIP 68730"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F25PA105: Contractor To Supply All Labor, Equipment, And Materials For Preparing And Pavin",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F25PA105_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68730"
+    },
+    {
+      "id": "ne-usaspending-w9128f20p0019",
+      "name": "Maintenance To Uv Light System For Zebra Mussel Mitigation",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 118115.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "ATLANTIUM TECHNOLOGIES LTD",
+      "opened_or_announced_date": "2020-05-28",
+      "description": "MAINTENANCE TO UV LIGHT SYSTEM FOR ZEBRA MUSSEL MITIGATION. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-04-30.",
+      "key_specs": [
+        "Award W9128F20P0019",
+        "Awarding agency: Department of the Army",
+        "ZIP 68774"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F20P0019: Maintenance To Uv Light System For Zebra Mussel Mitigation",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F20P0019_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68774"
+    },
+    {
+      "id": "ne-usaspending-36c78626n0204",
+      "name": "890-Mr25Nrm26-022 Correct Fca Deficiencies At Buildings 3001 And 3002 At Fort Mcpherson National Cemetery",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 110609.0,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "BKM CONSTRUCTION LLC",
+      "opened_or_announced_date": "2026-02-26",
+      "description": "890-MR25NRM26-022 CORRECT FCA DEFICIENCIES AT BUILDINGS 3001 AND 3002 AT FORT MCPHERSON NATIONAL CEMETERY. Awarded by Department of Veterans Affairs. Period of performance through 2026-05-29.",
+      "key_specs": [
+        "Award 36C78626N0204",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 69151"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C78626N0204: 890-Mr25Nrm26-022 Correct Fca Deficiencies At Buildings 3001 And 3002 At Fort Mc",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C78626N0204_3600_36C78625D0043_3600"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "69151"
+    },
+    {
+      "id": "ne-usaspending-w9128f26fa070",
+      "name": "W59Xqg60775213",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 110377.9,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "TERRACON CONSULTANTS INC",
+      "opened_or_announced_date": "2026-04-17",
+      "description": "W59XQG60775213. Awarded by Department of the Army (Department of Defense). Period of performance through 2027-04-16.",
+      "key_specs": [
+        "Award W9128F26FA070",
+        "Awarding agency: Department of the Army",
+        "ZIP 68144"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F26FA070: W59Xqg60775213",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F26FA070_9700_W9128F24D0006_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "NE",
+      "zip": "68144"
+    },
+    {
+      "id": "ne-usaspending-36c78626n0206",
+      "name": "890-Nrm24-010 Repair/Restore Brick And Mortar Joints At Building 3003 At Fort Mcpherson National Cemetery",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 90920.0,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "BKM CONSTRUCTION LLC",
+      "opened_or_announced_date": "2026-02-26",
+      "description": "890-NRM24-010 REPAIR/RESTORE BRICK AND MORTAR JOINTS AT BUILDING 3003 AT FORT MCPHERSON NATIONAL CEMETERY. Awarded by Department of Veterans Affairs. Period of performance through 2026-05-29.",
+      "key_specs": [
+        "Award 36C78626N0206",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 69151"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C78626N0206: 890-Nrm24-010 Repair/Restore Brick And Mortar Joints At Building 3003 At Fort Mc",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C78626N0206_3600_36C78625D0043_3600"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "69151"
+    },
+    {
+      "id": "ne-usaspending-89503421fwa401133",
+      "name": "Grand Island Substation, Circuit Breaker Foundations, Nebraska",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 85949.0,
+      "square_footage": null,
+      "owner": "Department of Energy",
+      "architect": "",
+      "general_contractor": "COMPLETE CONCRETE, INC.",
+      "opened_or_announced_date": "2021-08-04",
+      "description": "GRAND ISLAND SUBSTATION, CIRCUIT BREAKER FOUNDATIONS, NEBRASKA. Awarded by Department of Energy. Period of performance through 2022-07-29.",
+      "key_specs": [
+        "Award 89503421FWA401133",
+        "Awarding agency: Department of Energy",
+        "ZIP 68801"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 89503421FWA401133: Grand Island Substation, Circuit Breaker Foundations, Nebraska",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_89503421FWA401133_8900_89503419DWA000005_8900"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68801"
+    },
+    {
+      "id": "ne-usaspending-36c78625c0019",
+      "name": "935-Mm2325-011 Fca Deficiencies Repairs At Omaha National Cemetery",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 72876.97,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "BLACKHAWK CONSTRUCTION LLC",
+      "opened_or_announced_date": "2025-04-07",
+      "description": "935-MM2325-011 FCA DEFICIENCIES REPAIRS AT OMAHA NATIONAL CEMETERY. Awarded by Department of Veterans Affairs. Period of performance through 2025-09-30.",
+      "key_specs": [
+        "Award 36C78625C0019",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 68138"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C78625C0019: 935-Mm2325-011 Fca Deficiencies Repairs At Omaha National Cemetery",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C78625C0019_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68138"
+    },
+    {
+      "id": "ne-usaspending-w9128f24c0024",
+      "name": "L-550 Sand Bags Filled, Placed & Removed",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 63824.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "HENDRICKSON TRANSPORTATION LLC",
+      "opened_or_announced_date": "2024-06-24",
+      "description": "L-550 SAND BAGS FILLED, PLACED & REMOVED. Awarded by Department of the Army (Department of Defense). Period of performance through 2024-06-28.",
+      "key_specs": [
+        "Award W9128F24C0024",
+        "Awarding agency: Department of the Army",
+        "ZIP 68102"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F24C0024: L-550 Sand Bags Filled, Placed & Removed",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F24C0024_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68102"
+    },
+    {
+      "id": "ne-usaspending-36c78626n0148",
+      "name": "935-Mr25-004 Repair Roof Leaks, Down Spouts At Maintenance Building, Administrative Building, And Honor Guard Building A",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 56990.72,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "BKM CONSTRUCTION LLC",
+      "opened_or_announced_date": "2026-01-27",
+      "description": "935-MR25-004 REPAIR ROOF LEAKS, DOWN SPOUTS AT MAINTENANCE BUILDING, ADMINISTRATIVE BUILDING, AND HONOR GUARD BUILDING AT OMAHA NATIONAL CEMETERY. Awarded by Department of Veterans Affairs. Period of performance through 2026-06-12.",
+      "key_specs": [
+        "Award 36C78626N0148",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 68138"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C78626N0148: 935-Mr25-004 Repair Roof Leaks, Down Spouts At Maintenance Building, Administrat",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C78626N0148_3600_36C78625D0043_3600"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68138"
+    },
+    {
+      "id": "ne-usaspending-w9128f26fa012",
+      "name": "W59Xqg52954436",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 30306.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "TERRACON CONSULTANTS INC",
+      "opened_or_announced_date": "2025-11-14",
+      "description": "W59XQG52954436. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-01-13.",
+      "key_specs": [
+        "Award W9128F26FA012",
+        "Awarding agency: Department of the Army",
+        "ZIP 68144"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F26FA012: W59Xqg52954436",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F26FA012_9700_W9128F24D0006_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68144"
+    },
+    {
+      "id": "ne-usaspending-w9128f26fa061",
+      "name": "W59Xqg60795363  A1020-Ed - L-550-561 Rb 2024 Levee Rehab: Soils Lab Testing",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "healthcare",
+      "estimated_value_usd": 27540.5,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "TERRACON CONSULTANTS INC",
+      "opened_or_announced_date": "2026-04-03",
+      "description": "W59XQG60795363  A1020-ED - L-550-561 RB 2024 LEVEE REHAB: SOILS LAB TESTING. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-10-02.",
+      "key_specs": [
+        "Award W9128F26FA061",
+        "Awarding agency: Department of the Army",
+        "ZIP 68144"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "medical gas",
+        "elevators",
+        "flooring",
+        "lighting",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F26FA061: W59Xqg60795363  A1020-Ed - L-550-561 Rb 2024 Levee Rehab: Soils Lab Testing",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F26FA061_9700_W9128F24D0006_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "NE",
+      "zip": "68144"
+    },
+    {
+      "id": "ne-usaspending-fa460026p0026",
+      "name": "Fitness - Soccer Pitch Repair At Fieldhouse",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 24542.6,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "LONERGAN ELECTRIC SERVICE INC",
+      "opened_or_announced_date": "2026-04-13",
+      "description": "FITNESS - SOCCER PITCH REPAIR AT FIELDHOUSE. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2026-04-23.",
+      "key_specs": [
+        "Award FA460026P0026",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 68113"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA460026P0026: Fitness - Soccer Pitch Repair At Fieldhouse",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA460026P0026_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68113"
+    },
+    {
+      "id": "ne-usaspending-36c78626n0149",
+      "name": "935-Mr26-0A1 Replace And Repair Front Entrance Signage At Omaha National Cemetery",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 23850.0,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "US DIVERSIFIED CONTRACTING SERVICES INC.",
+      "opened_or_announced_date": "2026-01-20",
+      "description": "935-MR26-0A1 REPLACE AND REPAIR FRONT ENTRANCE SIGNAGE AT OMAHA NATIONAL CEMETERY. Awarded by Department of Veterans Affairs. Period of performance through 2026-03-31.",
+      "key_specs": [
+        "Award 36C78626N0149",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 68138"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C78626N0149: 935-Mr26-0A1 Replace And Repair Front Entrance Signage At Omaha National Cemeter",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C78626N0149_3600_36C78625D0046_3600"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68138"
+    },
+    {
+      "id": "ne-usaspending-w9128f26fa063",
+      "name": "W59Xqg60775197 - A1010-Ed - 2024: L-575 Missouri River Levee [572133] Soil Sampling Terrcon",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 17261.2,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "TERRACON CONSULTANTS INC",
+      "opened_or_announced_date": "2026-04-10",
+      "description": "W59XQG60775197 - A1010-ED - 2024: L-575 MISSOURI RIVER LEVEE [572133] SOIL SAMPLING TERRCON. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-10-09.",
+      "key_specs": [
+        "Award W9128F26FA063",
+        "Awarding agency: Department of the Army",
+        "ZIP 68144"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F26FA063: W59Xqg60775197 - A1010-Ed - 2024: L-575 Missouri River Levee [572133] Soil Sampl",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F26FA063_9700_W9128F24D0006_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "NE",
+      "zip": "68144"
+    },
+    {
+      "id": "ne-usaspending-w9128f25fa112",
+      "name": "W59Xqg52197695",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 15686.8,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "TERRACON CONSULTANTS INC",
+      "opened_or_announced_date": "2025-08-29",
+      "description": "W59XQG52197695. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-11-03.",
+      "key_specs": [
+        "Award W9128F25FA112",
+        "Awarding agency: Department of the Army",
+        "ZIP 68144"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F25FA112: W59Xqg52197695",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F25FA112_9700_W9128F24D0006_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68144"
+    },
+    {
+      "id": "ne-usaspending-36c78626n0209",
+      "name": "935-Mr26-004 Replace Fuel Pumps And Tank Meters At Omaha National Cemetery",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 14259.0,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "US DIVERSIFIED CONTRACTING SERVICES INC.",
+      "opened_or_announced_date": "2026-02-26",
+      "description": "935-MR26-004 REPLACE FUEL PUMPS AND TANK METERS AT OMAHA NATIONAL CEMETERY. Awarded by Department of Veterans Affairs. Period of performance through 2026-04-30.",
+      "key_specs": [
+        "Award 36C78626N0209",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 68138"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C78626N0209: 935-Mr26-004 Replace Fuel Pumps And Tank Meters At Omaha National Cemetery",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C78626N0209_3600_36C78625D0046_3600"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68138"
+    },
+    {
+      "id": "ne-usaspending-w9128f26fa010",
+      "name": "W59Xqg52611446",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 14168.3,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "TERRACON CONSULTANTS INC",
+      "opened_or_announced_date": "2025-10-29",
+      "description": "W59XQG52611446. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-12-28.",
+      "key_specs": [
+        "Award W9128F26FA010",
+        "Awarding agency: Department of the Army",
+        "ZIP 68144"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F26FA010: W59Xqg52611446",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F26FA010_9700_W9128F24D0006_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68144"
+    },
+    {
+      "id": "ne-usaspending-w9128f23p0077",
+      "name": "Gavins Point Powerhouse Generator Floor Tile Replacement",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 12452.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "BLACKHAWK CONSTRUCTION LLC",
+      "opened_or_announced_date": "2023-09-07",
+      "description": "GAVINS POINT POWERHOUSE GENERATOR FLOOR TILE REPLACEMENT. Awarded by Department of the Army (Department of Defense). Period of performance through 2023-11-06.",
+      "key_specs": [
+        "Award W9128F23P0077",
+        "Awarding agency: Department of the Army",
+        "ZIP 68730"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F23P0077: Gavins Point Powerhouse Generator Floor Tile Replacement",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F23P0077_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68730"
+    },
+    {
+      "id": "ne-usaspending-w9128f25fa153",
+      "name": "W59Xqg52278275",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 12094.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "TERRACON CONSULTANTS INC",
+      "opened_or_announced_date": "2025-09-17",
+      "description": "W59XQG52278275. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-11-19.",
+      "key_specs": [
+        "Award W9128F25FA153",
+        "Awarding agency: Department of the Army",
+        "ZIP 68144"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F25FA153: W59Xqg52278275",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F25FA153_9700_W9128F24D0006_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68144"
+    },
+    {
+      "id": "ne-usaspending-w9128f25fa075",
+      "name": "W59Xqg51785142",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 10798.6,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "TERRACON CONSULTANTS INC",
+      "opened_or_announced_date": "2025-07-11",
+      "description": "W59XQG51785142. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-08-15.",
+      "key_specs": [
+        "Award W9128F25FA075",
+        "Awarding agency: Department of the Army",
+        "ZIP 68144"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F25FA075: W59Xqg51785142",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F25FA075_9700_W9128F24D0006_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68144"
+    },
+    {
+      "id": "ne-usaspending-w9128f26fa048",
+      "name": "W59Xqg60361522",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 10210.8,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "TERRACON CONSULTANTS INC",
+      "opened_or_announced_date": "2026-03-09",
+      "description": "W59XQG60361522. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-10-30.",
+      "key_specs": [
+        "Award W9128F26FA048",
+        "Awarding agency: Department of the Army",
+        "ZIP 68144"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F26FA048: W59Xqg60361522",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F26FA048_9700_W9128F24D0006_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "NE",
+      "zip": "68144"
+    },
+    {
+      "id": "ne-usaspending-w9128f26fa021",
+      "name": "W59Xqg53255952 - D40224-Geotech Report, Soil Lab Testing, Rocky Flats Interpretative Center [508595]",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "healthcare",
+      "estimated_value_usd": 10031.5,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "TERRACON CONSULTANTS INC",
+      "opened_or_announced_date": "2026-02-06",
+      "description": "W59XQG53255952 - D40224-GEOTECH REPORT, SOIL LAB TESTING, ROCKY FLATS INTERPRETATIVE CENTER [508595]. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-04-05.",
+      "key_specs": [
+        "Award W9128F26FA021",
+        "Awarding agency: Department of the Army",
+        "ZIP 68144"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "medical gas",
+        "elevators",
+        "flooring",
+        "lighting",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F26FA021: W59Xqg53255952 - D40224-Geotech Report, Soil Lab Testing, Rocky Flats Interpreta",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F26FA021_9700_W9128F24D0006_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68144"
+    },
+    {
+      "id": "ne-usaspending-fa460025p0062",
+      "name": "This Requirement Is For Acquiring A Gate With Cipher Lock And Installation Service To Block Unauthorized Personnel From ",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 8950.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "AMERICAN FENCE CO. OF IOWA, INC.",
+      "opened_or_announced_date": "2025-09-08",
+      "description": "THIS REQUIREMENT IS FOR ACQUIRING A GATE WITH CIPHER LOCK AND INSTALLATION SERVICE TO BLOCK UNAUTHORIZED PERSONNEL FROM REACHING RESTRICTED AREAS OF THE BENNIE DAVIS MAINTENANCE FACILITY. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2025-12-22.",
+      "key_specs": [
+        "Award FA460025P0062",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 68113"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA460025P0062: This Requirement Is For Acquiring A Gate With Cipher Lock And Installation Servi",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA460025P0062_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68113"
+    },
+    {
+      "id": "ne-usaspending-w9128f25fa147",
+      "name": "W59Xqg51785177",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 6458.1,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "TERRACON CONSULTANTS INC",
+      "opened_or_announced_date": "2025-09-15",
+      "description": "W59XQG51785177. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-11-17.",
+      "key_specs": [
+        "Award W9128F25FA147",
+        "Awarding agency: Department of the Army",
+        "ZIP 68144"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F25FA147: W59Xqg51785177",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F25FA147_9700_W9128F24D0006_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "NE",
+      "zip": "68144"
+    },
+    {
+      "id": "ne-usaspending-w50s8924fa040",
+      "name": "Covers The Minimum Guarantee Of $2,000.00.",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 2000.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "VENUS UNLIMITED LLC",
+      "opened_or_announced_date": "2024-08-23",
+      "description": "COVERS THE MINIMUM GUARANTEE OF $2,000.00. Awarded by Department of the Army (Department of Defense). Period of performance through 2029-08-20.",
+      "key_specs": [
+        "Award W50S8924FA040",
+        "Awarding agency: Department of the Army",
+        "ZIP 68336"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W50S8924FA040: Covers The Minimum Guarantee Of $2,000.00.",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W50S8924FA040_9700_W50S8924D0012_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "NE",
+      "zip": "68336"
+    },
+    {
+      "id": "ne-usaspending-w50s8924fa038",
+      "name": "Covers The Minimum Guarantee Of $2,000.00.",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 2000.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "RGC CONSTRUCTORS INC",
+      "opened_or_announced_date": "2024-08-23",
+      "description": "COVERS THE MINIMUM GUARANTEE OF $2,000.00. Awarded by Department of the Army (Department of Defense). Period of performance through 2029-08-20.",
+      "key_specs": [
+        "Award W50S8924FA038",
+        "Awarding agency: Department of the Army",
+        "ZIP 68131"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W50S8924FA038: Covers The Minimum Guarantee Of $2,000.00.",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W50S8924FA038_9700_W50S8924D0010_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "NE",
+      "zip": "68131"
+    },
+    {
+      "id": "ne-usaspending-w50s8924fa036",
+      "name": "Covers The Minimum Guarantee Of $2,000.00.",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 2000.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "MARK-VII ENTERPRISES, INC.",
+      "opened_or_announced_date": "2024-08-22",
+      "description": "COVERS THE MINIMUM GUARANTEE OF $2,000.00. Awarded by Department of the Army (Department of Defense). Period of performance through 2029-08-20.",
+      "key_specs": [
+        "Award W50S8924FA036",
+        "Awarding agency: Department of the Army",
+        "ZIP 68131"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W50S8924FA036: Covers The Minimum Guarantee Of $2,000.00.",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W50S8924FA036_9700_W50S8924D0008_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "NE",
+      "zip": "68131"
+    },
+    {
+      "id": "ne-usaspending-w50s8924fa034",
+      "name": "Covers The Minimum Guarantee Of $2,000.00.",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 2000.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "FULLER CONSTRUCTION HOLDING COMPANY, INC",
+      "opened_or_announced_date": "2024-08-22",
+      "description": "COVERS THE MINIMUM GUARANTEE OF $2,000.00. Awarded by Department of the Army (Department of Defense). Period of performance through 2029-08-20.",
+      "key_specs": [
+        "Award W50S8924FA034",
+        "Awarding agency: Department of the Army",
+        "ZIP 69337"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W50S8924FA034: Covers The Minimum Guarantee Of $2,000.00.",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W50S8924FA034_9700_W50S8924D0006_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "NE",
+      "zip": "69337"
+    },
+    {
+      "id": "ne-usaspending-w50s8924fa032",
+      "name": "Covers The Minimum Guarantee Of $2,000.00.",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 2000.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "ELKHORN WEST CONSTRUCTION, INC.",
+      "opened_or_announced_date": "2024-08-22",
+      "description": "COVERS THE MINIMUM GUARANTEE OF $2,000.00. Awarded by Department of the Army (Department of Defense). Period of performance through 2029-08-20.",
+      "key_specs": [
+        "Award W50S8924FA032",
+        "Awarding agency: Department of the Army",
+        "ZIP 68136"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W50S8924FA032: Covers The Minimum Guarantee Of $2,000.00.",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W50S8924FA032_9700_W50S8924D0004_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "NE",
+      "zip": "68136"
+    },
+    {
+      "id": "ne-usaspending-w50s8924fa031",
+      "name": "Covers The Minimum Guarantee Of $2,000.00.",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 2000.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "CASPERS CONSTRUCTION CO",
+      "opened_or_announced_date": "2024-08-22",
+      "description": "COVERS THE MINIMUM GUARANTEE OF $2,000.00. Awarded by Department of the Army (Department of Defense). Period of performance through 2029-08-20.",
+      "key_specs": [
+        "Award W50S8924FA031",
+        "Awarding agency: Department of the Army",
+        "ZIP 68310"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W50S8924FA031: Covers The Minimum Guarantee Of $2,000.00.",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W50S8924FA031_9700_W50S8924D0003_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "NE",
+      "zip": "68310"
+    },
+    {
+      "id": "ne-usaspending-w50s8924fa029",
+      "name": "Covers The Minimum Guarantee Of $2,000.00.",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 2000.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "BECKENHAUER CONSTRUCTION, INC",
+      "opened_or_announced_date": "2024-08-22",
+      "description": "COVERS THE MINIMUM GUARANTEE OF $2,000.00. Awarded by Department of the Army (Department of Defense). Period of performance through 2029-08-20.",
+      "key_specs": [
+        "Award W50S8924FA029",
+        "Awarding agency: Department of the Army",
+        "ZIP 68701"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W50S8924FA029: Covers The Minimum Guarantee Of $2,000.00.",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W50S8924FA029_9700_W50S8924D0001_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "NE",
+      "zip": "68701"
     }
   ],
   "stats": {
-    "total": 2
+    "total": 92
   }
 }

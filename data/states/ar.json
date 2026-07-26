@@ -414,9 +414,4515 @@
       ],
       "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
       "state": "AR"
+    },
+    {
+      "id": "ar-usaspending-fa890320f1005",
+      "name": "Repair(Sustain)Primary Runway, Little Rock Afb, Ar",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "aviation",
+      "estimated_value_usd": 187920872.53,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "CONTRACK ECC LLC",
+      "opened_or_announced_date": "2020-05-29",
+      "description": "REPAIR(SUSTAIN)PRIMARY RUNWAY, LITTLE ROCK AFB, AR. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2024-05-31.",
+      "key_specs": [
+        "Award FA890320F1005",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 72099"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "doors and hardware",
+        "concrete",
+        "lighting"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA890320F1005: Repair(Sustain)Primary Runway, Little Rock Afb, Ar",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA890320F1005_9700_FA890317D0039_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72099"
+    },
+    {
+      "id": "ar-usaspending-w9127s22f0082",
+      "name": "Design-Build Construction Of A New Weir Opening At The Site Of The Mcclellan-Kerr Arkansas Navigation System, Three Rive",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 182183050.47,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "BFBC LLC",
+      "opened_or_announced_date": "2022-07-19",
+      "description": "DESIGN-BUILD CONSTRUCTION OF A NEW WEIR OPENING AT THE SITE OF THE MCCLELLAN-KERR ARKANSAS NAVIGATION SYSTEM, THREE RIVES, PRE-CONSTRUCTION, ENGINEERING AND DESIGN (PED), DESHA AND ARKANSAS COUNTIES, AR (HISTORIC CLOSURE STRUCTURE - 145), TICHNOR, AR. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-11-29.",
+      "key_specs": [
+        "Award W9127S22F0082",
+        "Awarding agency: Department of the Army",
+        "ZIP 72166"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S22F0082: Design-Build Construction Of A New Weir Opening At The Site Of The Mcclellan-Ker",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S22F0082_9700_W9126G19D0034_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72166"
+    },
+    {
+      "id": "ar-usaspending-w9127s25c0001",
+      "name": "Design-Bid-Build Of Three Rivers Phase 2 Hydraulic Containment Structure And Modifications To Owens Lake And La Grues La",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 108639709.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "BARNARD CONSTRUCTION COMPANY, INCORPORATED",
+      "opened_or_announced_date": "2024-12-17",
+      "description": "DESIGN-BID-BUILD OF THREE RIVERS PHASE 2 HYDRAULIC CONTAINMENT STRUCTURE AND MODIFICATIONS TO OWENS LAKE AND LA GRUES LAKE CULVERTS.  WORK WILL INCLUDE, BUT NOT LIMITED TO, ACTIVITIES SUCH AS CLEARING, GRUBBING, EXCAVATION AND HAUL ROADS. Awarded by Department of the Army (Department of Defense). Period of performance through 2028-01-08.",
+      "key_specs": [
+        "Award W9127S25C0001",
+        "Awarding agency: Department of the Army",
+        "ZIP 72166"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S25C0001: Design-Bid-Build Of Three Rivers Phase 2 Hydraulic Containment Structure And Mod",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S25C0001_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72166"
+    },
+    {
+      "id": "ar-usaspending-w9127s26ca001",
+      "name": "Project Includes A Multi-Story Steel Framed, Reinforced Concrete Flight Training Center With Brick Veneer, Vertical Pile",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 61350000.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "BL HARBERT INTERNATIONAL LLC",
+      "opened_or_announced_date": "2026-01-06",
+      "description": "PROJECT INCLUDES A MULTI-STORY STEEL FRAMED, REINFORCED CONCRETE FLIGHT TRAINING CENTER WITH BRICK VENEER, VERTICAL PILE FOUNDATION AND A STANDING SEAM METAL ROOF. Awarded by Department of the Army (Department of Defense). Period of performance through 2028-04-28.",
+      "key_specs": [
+        "Award W9127S26CA001",
+        "Awarding agency: Department of the Army",
+        "ZIP 72903"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S26CA001: Project Includes A Multi-Story Steel Framed, Reinforced Concrete Flight Training",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S26CA001_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72903"
+    },
+    {
+      "id": "ar-usaspending-75f40123c00057",
+      "name": "Bldg. 2 - Chiller Plant Construction And Associated Projects",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 46470615.27,
+      "square_footage": null,
+      "owner": "Department of Health and Human Services",
+      "architect": "",
+      "general_contractor": "AMERIND BG JV, LLC",
+      "opened_or_announced_date": "2023-06-02",
+      "description": "BLDG. 2 - CHILLER PLANT CONSTRUCTION AND ASSOCIATED PROJECTS. Awarded by Food and Drug Administration (Department of Health and Human Services). Period of performance through 2029-02-18.",
+      "key_specs": [
+        "Award 75F40123C00057",
+        "Awarding agency: Food and Drug Administration",
+        "ZIP 72079"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 75F40123C00057: Bldg. 2 - Chiller Plant Construction And Associated Projects",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_75F40123C00057_7524_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72079"
+    },
+    {
+      "id": "ar-usaspending-w9127s26ca006",
+      "name": "This Project Involves The Construction Of An Approximately 25,000 Sq Ft Aircraft Maintenance Hangar To Support The Bed D",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "aviation",
+      "estimated_value_usd": 40857635.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "BL HARBERT INTERNATIONAL LLC",
+      "opened_or_announced_date": "2026-04-03",
+      "description": "THIS PROJECT INVOLVES THE CONSTRUCTION OF AN APPROXIMATELY 25,000 SQ FT AIRCRAFT MAINTENANCE HANGAR TO SUPPORT THE BED DOWN OF THE F-35 AIRCRAFT AT EBBING FIELD AIR NATIONAL GUARD BASE LOCATED IN FORT SMITH, AR. Awarded by Department of the Army (Department of Defense). Period of performance through 2028-04-03.",
+      "key_specs": [
+        "Award W9127S26CA006",
+        "Awarding agency: Department of the Army",
+        "ZIP 72903"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "doors and hardware",
+        "concrete",
+        "lighting"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S26CA006: This Project Involves The Construction Of An Approximately 25,000 Sq Ft Aircraft",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S26CA006_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72903"
+    },
+    {
+      "id": "ar-usaspending-w9127s24f6031",
+      "name": "Design-Build, Renovation Ebbing Hangar Building 200, Ebbing Air National Guard Base, Arkansas",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "aviation",
+      "estimated_value_usd": 37408319.86,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "CERRIS BUILDERS, INC",
+      "opened_or_announced_date": "2024-09-27",
+      "description": "DESIGN-BUILD, RENOVATION EBBING HANGAR BUILDING 200, EBBING AIR NATIONAL GUARD BASE, ARKANSAS. Awarded by Department of the Army (Department of Defense). Period of performance through 2027-02-07.",
+      "key_specs": [
+        "Award W9127S24F6031",
+        "Awarding agency: Department of the Army",
+        "ZIP 72901"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "doors and hardware",
+        "concrete",
+        "lighting"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S24F6031: Design-Build, Renovation Ebbing Hangar Building 200, Ebbing Air National Guard B",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S24F6031_9700_W9126G24D0010_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72901"
+    },
+    {
+      "id": "ar-usaspending-w9127s20c6006",
+      "name": "Design Build  For A C-130 H/J Fuselage Trainer Facility At The Little Rock Air Force Base",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 36052658.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "ROSS GROUP CONSTRUCTION CORPORATION, LLC",
+      "opened_or_announced_date": "2020-09-01",
+      "description": "DESIGN BUILD  FOR A C-130 H/J FUSELAGE TRAINER FACILITY AT THE LITTLE ROCK AIR FORCE BASE. Awarded by Department of the Army (Department of Defense). Period of performance through 2023-06-16.",
+      "key_specs": [
+        "Award W9127S20C6006",
+        "Awarding agency: Department of the Army",
+        "ZIP 72076"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S20C6006: Design Build  For A C-130 H/J Fuselage Trainer Facility At The Little Rock Air F",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S20C6006_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72076"
+    },
+    {
+      "id": "ar-usaspending-36c25626c0046",
+      "name": "564-19-403 Renovate Sterile Processing Services (Sps), Fayetteville, Ar 72703. Pop 720 Calendar Days From Ntp. Eo 14398",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 30995241.0,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "BLUE CORD DESIGN AND CONSTRUCTION, LLC",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "564-19-403 RENOVATE STERILE PROCESSING SERVICES (SPS), FAYETTEVILLE, AR 72703. POP 720 CALENDAR DAYS FROM NTP. EO 14398. Awarded by Department of Veterans Affairs. Period of performance through 2028-09-13.",
+      "key_specs": [
+        "Award 36C25626C0046",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72703"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C25626C0046: 564-19-403 Renovate Sterile Processing Services (Sps), Fayetteville, Ar 72703. P",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C25626C0046_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72703"
+    },
+    {
+      "id": "ar-usaspending-w9127s21c6004",
+      "name": "Airmen Dormitory Replacement, Lrafb",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "housing",
+      "estimated_value_usd": 28872006.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "LS BLACK CONSTRUCTORS-LOEFFEL CONSTRUCTION JV",
+      "opened_or_announced_date": "2021-09-01",
+      "description": "AIRMEN DORMITORY REPLACEMENT, LRAFB. Awarded by Department of the Army (Department of Defense). Period of performance through 2024-03-17.",
+      "key_specs": [
+        "Award W9127S21C6004",
+        "Awarding agency: Department of the Army",
+        "ZIP 72099"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "plumbing fixtures",
+        "flooring",
+        "lighting"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S21C6004: Airmen Dormitory Replacement, Lrafb",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S21C6004_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72099"
+    },
+    {
+      "id": "ar-usaspending-w912eq24c0010",
+      "name": "Grand Prairie Pump Station Re-Procurement",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 24693661.36,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "C. J. MAHAN CONSTRUCTION COMPANY, LLC",
+      "opened_or_announced_date": "2024-06-21",
+      "description": "GRAND PRAIRIE PUMP STATION RE-PROCUREMENT. Awarded by Department of the Army (Department of Defense). Period of performance through 2028-10-31.",
+      "key_specs": [
+        "Award W912EQ24C0010",
+        "Awarding agency: Department of the Army",
+        "ZIP 72017"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W912EQ24C0010: Grand Prairie Pump Station Re-Procurement",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W912EQ24C0010_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72017"
+    },
+    {
+      "id": "ar-usaspending-w912eq26ca004",
+      "name": "Phase 3.2 Consist Of The Construction Of 14,665 Lf Of Irrigation Canal, 8 Farm Offtakes, 5 Siphon Structures, 1 Gravity ",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 24602400.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "RIGID CONSTRUCTORS LLC",
+      "opened_or_announced_date": "2026-01-15",
+      "description": "PHASE 3.2 CONSIST OF THE CONSTRUCTION OF 14,665 LF OF IRRIGATION CANAL, 8 FARM OFFTAKES, 5 SIPHON STRUCTURES, 1 GRAVITY TURNOUT, 2 PUMP TURNOUTS, AND ASSOCIATED GRADING AND DRAINAGE. Awarded by Department of the Army (Department of Defense). Period of performance through 2028-03-16.",
+      "key_specs": [
+        "Award W912EQ26CA004",
+        "Awarding agency: Department of the Army",
+        "ZIP 72142"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W912EQ26CA004: Phase 3.2 Consist Of The Construction Of 14,665 Lf Of Irrigation Canal, 8 Farm O",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W912EQ26CA004_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72142"
+    },
+    {
+      "id": "ar-usaspending-36c77622c0005",
+      "name": "Little Rock Sps Renovation Design Bid Build",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 20536962.02,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "VENERGY GROUP LLC",
+      "opened_or_announced_date": "2022-02-02",
+      "description": "LITTLE ROCK SPS RENOVATION DESIGN BID BUILD. Awarded by Department of Veterans Affairs. Period of performance through 2025-10-31.",
+      "key_specs": [
+        "Award 36C77622C0005",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72205"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C77622C0005: Little Rock Sps Renovation Design Bid Build",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C77622C0005_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72205"
+    },
+    {
+      "id": "ar-usaspending-w912ee24f0140",
+      "name": "Construction Of West Bank Mississippi River Item 525-R, Levee Enlargement And Berms, In Chicot County, Arkansas.",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 19828630.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "CIRCLE, LLC",
+      "opened_or_announced_date": "2024-09-30",
+      "description": "CONSTRUCTION OF WEST BANK MISSISSIPPI RIVER ITEM 525-R, LEVEE ENLARGEMENT AND BERMS, IN CHICOT COUNTY, ARKANSAS. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-06-30.",
+      "key_specs": [
+        "Award W912EE24F0140",
+        "Awarding agency: Department of the Army",
+        "ZIP 71653"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W912EE24F0140: Construction Of West Bank Mississippi River Item 525-R, Levee Enlargement And Be",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W912EE24F0140_9700_W912EE20D0008_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "71653"
+    },
+    {
+      "id": "ar-usaspending-w9127s22c6005",
+      "name": "Design And Construct New Classroom Complex For The Letc For Va",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 17523407.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "RED EAGLE JV",
+      "opened_or_announced_date": "2022-04-14",
+      "description": "DESIGN AND CONSTRUCT NEW CLASSROOM COMPLEX FOR THE LETC FOR VA. Awarded by Department of the Army (Department of Defense). Period of performance through 2024-10-07.",
+      "key_specs": [
+        "Award W9127S22C6005",
+        "Awarding agency: Department of the Army",
+        "ZIP 72114"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S22C6005: Design And Construct New Classroom Complex For The Letc For Va",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S22C6005_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72114"
+    },
+    {
+      "id": "ar-usaspending-w9127s22c6002",
+      "name": "Design And Construct New Food Service Center For Va",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 16995637.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "RED EAGLE JV",
+      "opened_or_announced_date": "2022-03-31",
+      "description": "DESIGN AND CONSTRUCT NEW FOOD SERVICE CENTER FOR VA. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-07-23.",
+      "key_specs": [
+        "Award W9127S22C6002",
+        "Awarding agency: Department of the Army",
+        "ZIP 72114"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S22C6002: Design And Construct New Food Service Center For Va",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S22C6002_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72114"
+    },
+    {
+      "id": "ar-usaspending-w912p825f0035",
+      "name": "Continuous Dredging Capability",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 16524142.1,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "PINE BLUFF SAND AND GRAVEL COMPANY",
+      "opened_or_announced_date": "2025-01-22",
+      "description": "CONTINUOUS DREDGING CAPABILITY. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-11-09.",
+      "key_specs": [
+        "Award W912P825F0035",
+        "Awarding agency: Department of the Army",
+        "ZIP 71602"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W912P825F0035: Continuous Dredging Capability",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W912P825F0035_9700_W912P825D0001_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "71602"
+    },
+    {
+      "id": "ar-usaspending-fa890323f0146",
+      "name": "Design-Build Construction Services To Repair/Refurbish Main Ramp, Aircraft Sunshades, And Taxiway At Ebbing Angb, Fort S",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 15445149.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "AHTNA-CDM SMITH JV",
+      "opened_or_announced_date": "2023-09-28",
+      "description": "DESIGN-BUILD CONSTRUCTION SERVICES TO REPAIR/REFURBISH MAIN RAMP, AIRCRAFT SUNSHADES, AND TAXIWAY AT EBBING ANGB, FORT SMITH, AR. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2026-09-11.",
+      "key_specs": [
+        "Award FA890323F0146",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 72903"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA890323F0146: Design-Build Construction Services To Repair/Refurbish Main Ramp, Aircraft Sunsh",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA890323F0146_9700_FA890317D0012_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72903"
+    },
+    {
+      "id": "ar-usaspending-36c25619c0065",
+      "name": "Construct New Inpatient Mental Health Building",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 15114989.02,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "HERNANDEZ CONSULTING INC.",
+      "opened_or_announced_date": "2019-07-16",
+      "description": "CONSTRUCT NEW INPATIENT MENTAL HEALTH BUILDING. Awarded by Department of Veterans Affairs. Period of performance through 2025-09-03.",
+      "key_specs": [
+        "Award 36C25619C0065",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72703"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C25619C0065: Construct New Inpatient Mental Health Building",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C25619C0065_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72703"
+    },
+    {
+      "id": "ar-usaspending-89503623csw000066",
+      "name": "Line 3001C Dardanelle-Structure 87 Rebuild",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 15063374.25,
+      "square_footage": null,
+      "owner": "Department of Energy",
+      "architect": "",
+      "general_contractor": "EAST COAST POWERLINE LLC",
+      "opened_or_announced_date": "2023-09-26",
+      "description": "LINE 3001C DARDANELLE-STRUCTURE 87 REBUILD. Awarded by Department of Energy. Period of performance through 2025-08-15.",
+      "key_specs": [
+        "Award 89503623CSW000066",
+        "Awarding agency: Department of Energy",
+        "ZIP 72834"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 89503623CSW000066: Line 3001C Dardanelle-Structure 87 Rebuild",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_89503623CSW000066_8900_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72834"
+    },
+    {
+      "id": "ar-usaspending-fa890322f0093",
+      "name": "Regional Engineering And Construction Contract (Re&C) Central Region Repair (Sustain) All American Landing Zone Drainage",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 13183402.26,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "CMS CORPORATION",
+      "opened_or_announced_date": "2022-07-13",
+      "description": "REGIONAL ENGINEERING AND CONSTRUCTION CONTRACT (RE&C) CENTRAL REGION REPAIR (SUSTAIN) ALL AMERICAN LANDING ZONE DRAINAGE & PAVEMENT/CONSTRUCT (R&M) FENCE AT CAMP ROBINSON LITTLE ROCK AFB, AR FOR PROJECT NUMBER: NKAK071032A. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2024-09-30.",
+      "key_specs": [
+        "Award FA890322F0093",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 72205"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA890322F0093: Regional Engineering And Construction Contract (Re&C) Central Region Repair (Sus",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA890322F0093_9700_FA890317D0016_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72205"
+    },
+    {
+      "id": "ar-usaspending-w9127s24f6024",
+      "name": "Building 32-630 Renovation",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 13076974.28,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "WALGA ROSS GROUP 3 JV",
+      "opened_or_announced_date": "2024-10-10",
+      "description": "BUILDING 32-630 RENOVATION. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-08-29.",
+      "key_specs": [
+        "Award W9127S24F6024",
+        "Awarding agency: Department of the Army",
+        "ZIP 71602"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S24F6024: Building 32-630 Renovation",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S24F6024_9700_W9126G21D0013_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "71602"
+    },
+    {
+      "id": "ar-usaspending-36c25624c0035",
+      "name": "564-17-140 Renovate Med & Surg Unit 2B.",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 12278917.63,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "DELCO LLC",
+      "opened_or_announced_date": "2024-07-19",
+      "description": "564-17-140 RENOVATE MED & SURG UNIT 2B. Awarded by Department of Veterans Affairs. Period of performance through 2026-09-23.",
+      "key_specs": [
+        "Award 36C25624C0035",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72703"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C25624C0035: 564-17-140 Renovate Med & Surg Unit 2B.",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C25624C0035_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72703"
+    },
+    {
+      "id": "ar-usaspending-w9127s21c0004",
+      "name": "Norfork Major Rehab: Modernization Electrical Install, Norfork Powerhouse. Pop: 660 Calendar Days From Ntp.",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 10150535.45,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "KOONTZ ELECTRIC COMPANY, INCORPORATED",
+      "opened_or_announced_date": "2021-06-30",
+      "description": "NORFORK MAJOR REHAB: MODERNIZATION ELECTRICAL INSTALL, NORFORK POWERHOUSE. POP: 660 CALENDAR DAYS FROM NTP. Awarded by Department of the Army (Department of Defense). Period of performance through 2024-11-07.",
+      "key_specs": [
+        "Award W9127S21C0004",
+        "Awarding agency: Department of the Army",
+        "ZIP 72658"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S21C0004: Norfork Major Rehab: Modernization Electrical Install, Norfork Powerhouse. Pop: ",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S21C0004_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72658"
+    },
+    {
+      "id": "ar-usaspending-47ph0819c0002",
+      "name": "Construction Services For The Capital Security Program (Csp) Project In The U.S. Courthouse/Post Office In Texarkana, Ar",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 10064526.39,
+      "square_footage": null,
+      "owner": "General Services Administration",
+      "architect": "",
+      "general_contractor": "JIM COOLEY CONSTRUCTION, LLC.",
+      "opened_or_announced_date": "2019-06-11",
+      "description": "CONSTRUCTION SERVICES FOR THE CAPITAL SECURITY PROGRAM (CSP) PROJECT IN THE U.S. COURTHOUSE/POST OFFICE IN TEXARKANA, AR. Awarded by Public Buildings Service (General Services Administration). Period of performance through 2024-11-15.",
+      "key_specs": [
+        "Award 47PH0819C0002",
+        "Awarding agency: Public Buildings Service",
+        "ZIP 71854"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 47PH0819C0002: Construction Services For The Capital Security Program (Csp) Project In The U.S.",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_47PH0819C0002_4740_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "71854"
+    },
+    {
+      "id": "ar-usaspending-w9127s25c0006",
+      "name": "Prairie Creek Small Flood Risk Management - Continuing Authorities Program 205 Requirement",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 9128585.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "JUNOT GROUP AND KOLB GRADING JOINT VENTURE LLC",
+      "opened_or_announced_date": "2025-05-21",
+      "description": "PRAIRIE CREEK SMALL FLOOD RISK MANAGEMENT - CONTINUING AUTHORITIES PROGRAM 205 REQUIREMENT. Awarded by Department of the Army (Department of Defense). Period of performance through 2027-08-19.",
+      "key_specs": [
+        "Award W9127S25C0006",
+        "Awarding agency: Department of the Army",
+        "ZIP 72801"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S25C0006: Prairie Creek Small Flood Risk Management - Continuing Authorities Program 205 R",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S25C0006_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72801"
+    },
+    {
+      "id": "ar-usaspending-36c25620c0180",
+      "name": "Igf Renovation Of Sps Jackson Ms",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 8027392.6,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "ADVON CORPORATION",
+      "opened_or_announced_date": "2020-09-25",
+      "description": "IGF RENOVATION OF SPS JACKSON MS. Awarded by Department of Veterans Affairs. Period of performance through 2024-01-30.",
+      "key_specs": [
+        "Award 36C25620C0180",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72114"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C25620C0180: Igf Renovation Of Sps Jackson Ms",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C25620C0180_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72114"
+    },
+    {
+      "id": "ar-usaspending-fa890323f0143",
+      "name": "Design And Construction Services For Renovation B115 Armament Facility, Ebbing Angb",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 7690490.63,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "BRISTOL GENERAL CONTRACTORS, LLC",
+      "opened_or_announced_date": "2023-09-30",
+      "description": "DESIGN AND CONSTRUCTION SERVICES FOR RENOVATION B115 ARMAMENT FACILITY, EBBING ANGB. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2026-07-22.",
+      "key_specs": [
+        "Award FA890323F0143",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 72903"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA890323F0143: Design And Construction Services For Renovation B115 Armament Facility, Ebbing A",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA890323F0143_9700_FA890317D0015_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72903"
+    },
+    {
+      "id": "ar-usaspending-89233124cna000380",
+      "name": "Training Command (Tracom) Physical Training Facility (Ptf) Renovation Building 1779, Fort Chaffee",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 7657104.55,
+      "square_footage": null,
+      "owner": "Department of Energy",
+      "architect": "",
+      "general_contractor": "QAYAQ GOVERNMENT SOLUTIONS LLC",
+      "opened_or_announced_date": "2024-09-17",
+      "description": "TRAINING COMMAND (TRACOM) PHYSICAL TRAINING FACILITY (PTF) RENOVATION BUILDING 1779, FORT CHAFFEE. Awarded by Department of Energy. Period of performance through 2026-08-05.",
+      "key_specs": [
+        "Award 89233124CNA000380",
+        "Awarding agency: Department of Energy",
+        "ZIP 72905"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 89233124CNA000380: Training Command (Tracom) Physical Training Facility (Ptf) Renovation Building 1",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_89233124CNA000380_8900_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72905"
+    },
+    {
+      "id": "ar-usaspending-36c25625c0049",
+      "name": "Building 65 Structural Repairs - Pop 365 Days From Ntp.",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 7605108.0,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "AVCOR CONSTRUCTION, LLC",
+      "opened_or_announced_date": "2025-09-30",
+      "description": "BUILDING 65 STRUCTURAL REPAIRS - POP 365 DAYS FROM NTP. Awarded by Department of Veterans Affairs. Period of performance through 2026-09-30.",
+      "key_specs": [
+        "Award 36C25625C0049",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72114"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C25625C0049: Building 65 Structural Repairs - Pop 365 Days From Ntp.",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C25625C0049_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72114"
+    },
+    {
+      "id": "ar-usaspending-w9127s20c6013",
+      "name": "Design Build Project For The Va Letc Dining Facility",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 7380195.08,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "ZODIAC-POETTKER HBZ JOINT VENTURE, LLC",
+      "opened_or_announced_date": "2020-09-17",
+      "description": "DESIGN BUILD PROJECT FOR THE VA LETC DINING FACILITY. Awarded by Department of the Army (Department of Defense). Period of performance through 2022-08-15.",
+      "key_specs": [
+        "Award W9127S20C6013",
+        "Awarding agency: Department of the Army",
+        "ZIP 72114"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S20C6013: Design Build Project For The Va Letc Dining Facility",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S20C6013_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72114"
+    },
+    {
+      "id": "ar-usaspending-fa890323f0145",
+      "name": "Design And Construction Services For Cargo Deployment Ramp Repair, Ebbing Angb, Ft. Smith, Ar.",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 7274974.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "AHTNA-CDM SMITH JV",
+      "opened_or_announced_date": "2023-10-06",
+      "description": "DESIGN AND CONSTRUCTION SERVICES FOR CARGO DEPLOYMENT RAMP REPAIR, EBBING ANGB, FT. SMITH, AR. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2024-10-16.",
+      "key_specs": [
+        "Award FA890323F0145",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 72903"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA890323F0145: Design And Construction Services For Cargo Deployment Ramp Repair, Ebbing Angb, ",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA890323F0145_9700_FA890317D0012_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72903"
+    },
+    {
+      "id": "ar-usaspending-w50s6q24c0002",
+      "name": "Remodel Existing Building 208",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 7162623.05,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "MGS CONSTRUCTION SERVICES INC.",
+      "opened_or_announced_date": "2024-09-17",
+      "description": "REMODEL EXISTING BUILDING 208. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-10-09.",
+      "key_specs": [
+        "Award W50S6Q24C0002",
+        "Awarding agency: Department of the Army",
+        "ZIP 72903"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W50S6Q24C0002: Remodel Existing Building 208",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W50S6Q24C0002_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72903"
+    },
+    {
+      "id": "ar-usaspending-w912eq26fa014",
+      "name": "Ditch 9 And 10 Straight Slough Channel Improvements",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 6989832.57,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "DONALD BOND CONSTRUCTION INC.",
+      "opened_or_announced_date": "2025-12-03",
+      "description": "DITCH 9 AND 10 STRAIGHT SLOUGH CHANNEL IMPROVEMENTS. Awarded by Department of the Army (Department of Defense). Period of performance through 2027-11-25.",
+      "key_specs": [
+        "Award W912EQ26FA014",
+        "Awarding agency: Department of the Army",
+        "ZIP 72401"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W912EQ26FA014: Ditch 9 And 10 Straight Slough Channel Improvements",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W912EQ26FA014_9700_W912EQ26DA006_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72401"
+    },
+    {
+      "id": "ar-usaspending-693c7325c000016",
+      "name": "Project Ar Erfo Fs 2020-1(1):  The Project Consists Of The Repair Of A Landslide On Morgan Mountain Road, Within The Oza",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 6805401.14,
+      "square_footage": null,
+      "owner": "Department of Transportation",
+      "architect": "",
+      "general_contractor": "FIDELIS-BBD, LLC",
+      "opened_or_announced_date": "2025-08-01",
+      "description": "PROJECT AR ERFO FS 2020-1(1):  THE PROJECT CONSISTS OF THE REPAIR OF A LANDSLIDE ON MORGAN MOUNTAIN ROAD, WITHIN THE OZARK NATIONAL FOREST. THE WORK INCLUDES GRADING, DRAINAGE, MECHANICALLY STABILIZED EARTH RETAINING WALL, RIPRAP, AGGREGATE BASE CO. Awarded by Federal Highway Administration (Department of Transportation). Period of performance through 2028-08-07.",
+      "key_specs": [
+        "Award 693C7325C000016",
+        "Awarding agency: Federal Highway Administration",
+        "ZIP 72721"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 693C7325C000016: Project Ar Erfo Fs 2020-1(1):  The Project Consists Of The Repair Of A Landslide",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_693C7325C000016_6925_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72721"
+    },
+    {
+      "id": "ar-usaspending-36e77619c0078",
+      "name": "Construction Project To Upgrade Pharmacy At The Little Rock Vamc",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 6381047.22,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "AVCOR CONSTRUCTION, LLC",
+      "opened_or_announced_date": "2019-10-01",
+      "description": "CONSTRUCTION PROJECT TO UPGRADE PHARMACY AT THE LITTLE ROCK VAMC. Awarded by Department of Veterans Affairs. Period of performance through 2025-02-28.",
+      "key_specs": [
+        "Award 36E77619C0078",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72205"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36E77619C0078: Construction Project To Upgrade Pharmacy At The Little Rock Vamc",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36E77619C0078_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72205"
+    },
+    {
+      "id": "ar-usaspending-36c25622c0025",
+      "name": "Develop Private/Semi-Private Bed Space For 3H",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 6086860.63,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "AVCOR CONSTRUCTION, LLC",
+      "opened_or_announced_date": "2021-12-27",
+      "description": "DEVELOP PRIVATE/SEMI-PRIVATE BED SPACE FOR 3H. Awarded by Department of Veterans Affairs. Period of performance through 2024-02-28.",
+      "key_specs": [
+        "Award 36C25622C0025",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72114"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C25622C0025: Develop Private/Semi-Private Bed Space For 3H",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C25622C0025_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72114"
+    },
+    {
+      "id": "ar-usaspending-w912eq26ca001",
+      "name": "Grand Prairie Pump Station Inlet Channel",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 5996721.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "VIXEN LLC",
+      "opened_or_announced_date": "2025-11-14",
+      "description": "GRAND PRAIRIE PUMP STATION INLET CHANNEL. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-10-21.",
+      "key_specs": [
+        "Award W912EQ26CA001",
+        "Awarding agency: Department of the Army",
+        "ZIP 72017"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W912EQ26CA001: Grand Prairie Pump Station Inlet Channel",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W912EQ26CA001_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72017"
+    },
+    {
+      "id": "ar-usaspending-36c25625c0015",
+      "name": "598-22-151 B170 Fiberglass Chilled Water Piping Replacement",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 5947076.0,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "VENERGY GROUP LLC",
+      "opened_or_announced_date": "2025-03-24",
+      "description": "598-22-151 B170 FIBERGLASS CHILLED WATER PIPING REPLACEMENT. Awarded by Department of Veterans Affairs. Period of performance through 2027-06-23.",
+      "key_specs": [
+        "Award 36C25625C0015",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72114"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C25625C0015: 598-22-151 B170 Fiberglass Chilled Water Piping Replacement",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C25625C0015_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72114"
+    },
+    {
+      "id": "ar-usaspending-w912ee25ca014",
+      "name": "The Work Consists Of Furnishing All Plant, Labor, Materials, And Equipment, For Mobilization And Demobilization Cofferda",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 5791179.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "UNDERWATER MECHANIX SERVICES LLC",
+      "opened_or_announced_date": "2025-09-10",
+      "description": "THE WORK CONSISTS OF FURNISHING ALL PLANT, LABOR, MATERIALS, AND EQUIPMENT, FOR MOBILIZATION AND DEMOBILIZATION COFFERDAMS AND DEWATERING CONSTRUCTION OF THE NEW STOPLOG SLOTS AND ASSOCIATED WORK. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-12-31.",
+      "key_specs": [
+        "Award W912EE25CA014",
+        "Awarding agency: Department of the Army",
+        "ZIP 71724"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W912EE25CA014: The Work Consists Of Furnishing All Plant, Labor, Materials, And Equipment, For ",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W912EE25CA014_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "71724"
+    },
+    {
+      "id": "ar-usaspending-693c7326f00001n",
+      "name": "Ar Erfo Fs Ozstf810 2022-1(1): The Project Consists Of The Permanent Slide Repair Of White Rock Road (Nfsr 1003) And Eas",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 5734999.5,
+      "square_footage": null,
+      "owner": "Department of Transportation",
+      "architect": "",
+      "general_contractor": "ECLIPSE COMPANIES, LLC",
+      "opened_or_announced_date": "2025-10-10",
+      "description": "AR ERFO FS OZSTF810 2022-1(1): THE PROJECT CONSISTS OF THE PERMANENT SLIDE REPAIR OF WHITE ROCK ROAD (NFSR 1003) AND EAST FLY GAP ROAD (NFSR 1503). THE WORK INCLUDES ROADWAY RECONSTRUCTION AND RECONDITIONING, EMBANKMENT STABILIZATION, CULVERT REPLAC. Awarded by Federal Highway Administration (Department of Transportation). Period of performance through 2027-05-10.",
+      "key_specs": [
+        "Award 693C7326F00001N",
+        "Awarding agency: Federal Highway Administration",
+        "ZIP 72820"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 693C7326F00001N: Ar Erfo Fs Ozstf810 2022-1(1): The Project Consists Of The Permanent Slide Repai",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_693C7326F00001N_6925_693C7320D000023_6925"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72820"
+    },
+    {
+      "id": "ar-usaspending-w912eq26ca006",
+      "name": "Helena Floodwall Replacement Project.",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 5697779.53,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "RANDY KINDER EXCAVATING INC",
+      "opened_or_announced_date": "2026-03-19",
+      "description": "HELENA FLOODWALL REPLACEMENT PROJECT. Awarded by Department of the Army (Department of Defense). Period of performance through 2027-04-14.",
+      "key_specs": [
+        "Award W912EQ26CA006",
+        "Awarding agency: Department of the Army",
+        "ZIP 72342"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W912EQ26CA006: Helena Floodwall Replacement Project.",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W912EQ26CA006_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72342"
+    },
+    {
+      "id": "ar-usaspending-w912eq23c0013",
+      "name": "St. Thomas Relief Wells",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 5370104.47,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "OZARK KINDER JV, LLC.",
+      "opened_or_announced_date": "2023-08-18",
+      "description": "ST. THOMAS RELIEF WELLS. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-06-29.",
+      "key_specs": [
+        "Award W912EQ23C0013",
+        "Awarding agency: Department of the Army",
+        "ZIP 72350"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W912EQ23C0013: St. Thomas Relief Wells",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W912EQ23C0013_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72350"
+    },
+    {
+      "id": "ar-usaspending-89503626csw000088",
+      "name": "Rebuild Of The Liberty To Van Buren Portion Of Southwesterns Van Buren To Weleetka 161Kv Transmission Line",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 5000000.0,
+      "square_footage": null,
+      "owner": "Department of Energy",
+      "architect": "",
+      "general_contractor": "EAST COAST POWERLINE LLC",
+      "opened_or_announced_date": "2026-01-30",
+      "description": "REBUILD OF THE LIBERTY TO VAN BUREN PORTION OF SOUTHWESTERNS VAN BUREN TO WELEETKA 161KV TRANSMISSION LINE. Awarded by Department of Energy. Period of performance through 2027-10-14.",
+      "key_specs": [
+        "Award 89503626CSW000088",
+        "Awarding agency: Department of Energy",
+        "ZIP 72956"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 89503626CSW000088: Rebuild Of The Liberty To Van Buren Portion Of Southwesterns Van Buren To Weleet",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_89503626CSW000088_8900_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72956"
+    },
+    {
+      "id": "ar-usaspending-36c25624c0032",
+      "name": "598-21-101 Renovate Ground Floor Support Services",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 4903028.93,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "DELCO LLC",
+      "opened_or_announced_date": "2024-04-10",
+      "description": "598-21-101 RENOVATE GROUND FLOOR SUPPORT SERVICES. Awarded by Department of Veterans Affairs. Period of performance through 2026-02-16.",
+      "key_specs": [
+        "Award 36C25624C0032",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72114"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C25624C0032: 598-21-101 Renovate Ground Floor Support Services",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C25624C0032_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72114"
+    },
+    {
+      "id": "ar-usaspending-36c25621c0159",
+      "name": "Igf:  Replacement Of Fiberglass Piping",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 4819128.62,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "VENERGY GROUP LLC",
+      "opened_or_announced_date": "2021-09-30",
+      "description": "IGF:  REPLACEMENT OF FIBERGLASS PIPING. Awarded by Department of Veterans Affairs. Period of performance through 2026-03-31.",
+      "key_specs": [
+        "Award 36C25621C0159",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72114"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C25621C0159: Igf:  Replacement Of Fiberglass Piping",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C25621C0159_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72114"
+    },
+    {
+      "id": "ar-usaspending-w9127s25f0046",
+      "name": "Swl Minor Constuction Satoc Task Order #62. Bull Shoals Paving Repairs At Lead Hill, Tucker Hollow, Hwy 125, And Buck Cr",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 4664603.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "OLGOONIK FEDERAL, LLC",
+      "opened_or_announced_date": "2025-05-01",
+      "description": "SWL MINOR CONSTUCTION SATOC TASK ORDER #62. BULL SHOALS PAVING REPAIRS AT LEAD HILL, TUCKER HOLLOW, HWY 125, AND BUCK CREEK, MARION AND BOONE COUNTIES, ARKANSAS. COMPLETION 120 CALENDAR DAYS AFTER RECEIPT OF NTP. DATES ON CAR ARE ESTIMATES ONLY. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-11-15.",
+      "key_specs": [
+        "Award W9127S25F0046",
+        "Awarding agency: Department of the Army",
+        "ZIP 72653"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S25F0046: Swl Minor Constuction Satoc Task Order #62. Bull Shoals Paving Repairs At Lead H",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S25F0046_9700_W9127S20D0022_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72653"
+    },
+    {
+      "id": "ar-usaspending-36c25619c0148",
+      "name": "Igf Construction Contract To Upgrade Hvac And Auditorium Finishes Bldg. 3",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 4346020.1,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "HERNANDEZ CONSULTING INC.",
+      "opened_or_announced_date": "2019-09-11",
+      "description": "IGF CONSTRUCTION CONTRACT TO UPGRADE HVAC AND AUDITORIUM FINISHES BLDG. 3. Awarded by Department of Veterans Affairs. Period of performance through 2024-08-14.",
+      "key_specs": [
+        "Award 36C25619C0148",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72703"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C25619C0148: Igf Construction Contract To Upgrade Hvac And Auditorium Finishes Bldg. 3",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C25619C0148_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72703"
+    },
+    {
+      "id": "ar-usaspending-w9127s21f0149",
+      "name": "Gate Seal Replacement (Conduit 14)",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 4254051.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "OLGOONIK FEDERAL, LLC",
+      "opened_or_announced_date": "2021-10-15",
+      "description": "GATE SEAL REPLACEMENT (CONDUIT 14). Awarded by Department of the Army (Department of Defense). Period of performance through 2024-11-02.",
+      "key_specs": [
+        "Award W9127S21F0149",
+        "Awarding agency: Department of the Army",
+        "ZIP 72619"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S21F0149: Gate Seal Replacement (Conduit 14)",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S21F0149_9700_W9127S20D0022_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72619"
+    },
+    {
+      "id": "ar-usaspending-w50s6q25f0001",
+      "name": "Add Alter Bldg 220",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 3909746.4,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "MGS CONSTRUCTION SERVICES INC.",
+      "opened_or_announced_date": "2024-10-15",
+      "description": "ADD ALTER BLDG 220. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-08-15.",
+      "key_specs": [
+        "Award W50S6Q25F0001",
+        "Awarding agency: Department of the Army",
+        "ZIP 72903"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W50S6Q25F0001: Add Alter Bldg 220",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W50S6Q25F0001_9700_W912JF23D0007_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72903"
+    },
+    {
+      "id": "ar-usaspending-6973gh23c00169",
+      "name": "Russellville, Ar - Qxr Building Renovations, Along With Site Improvements, Including Radome Work In Russellville, Ar In ",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 3806869.5,
+      "square_footage": null,
+      "owner": "Department of Transportation",
+      "architect": "",
+      "general_contractor": "UNIFIED CONTRACTOR, INC",
+      "opened_or_announced_date": "2023-09-20",
+      "description": "RUSSELLVILLE, AR - QXR BUILDING RENOVATIONS, ALONG WITH SITE IMPROVEMENTS, INCLUDING RADOME WORK IN RUSSELLVILLE, AR IN ACCORDANCE WITH THE APPLICABLE DRAWINGS, SPECIFICATIONS AND CONDITIONS OF THE CONTRACT. Awarded by Federal Aviation Administration (Department of Transportation). Period of performance through 2026-03-31.",
+      "key_specs": [
+        "Award 6973GH23C00169",
+        "Awarding agency: Federal Aviation Administration",
+        "ZIP 72801"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 6973GH23C00169: Russellville, Ar - Qxr Building Renovations, Along With Site Improvements, Inclu",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_6973GH23C00169_6920_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72801"
+    },
+    {
+      "id": "ar-usaspending-36c25624c0065",
+      "name": "598-20-106 Improve Physical Medicine & Rehabilitation Service",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 3690077.34,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "VENERGY GROUP LLC",
+      "opened_or_announced_date": "2024-08-22",
+      "description": "598-20-106 IMPROVE PHYSICAL MEDICINE & REHABILITATION SERVICE. Awarded by Department of Veterans Affairs. Period of performance through 2026-09-28.",
+      "key_specs": [
+        "Award 36C25624C0065",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72114"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C25624C0065: 598-20-106 Improve Physical Medicine & Rehabilitation Service",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C25624C0065_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72114"
+    },
+    {
+      "id": "ar-usaspending-36c25626c0007",
+      "name": "598-22-127 Mixing Valves For Anti-Scald-Nlr/Lr.  365 Calendar Days From Issuance Of Ntp.",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 3635426.0,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "JETT'S SPECIALTY CONTRACTING, LLC",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "598-22-127 MIXING VALVES FOR ANTI-SCALD-NLR/LR.  365 CALENDAR DAYS FROM ISSUANCE OF NTP. Awarded by Department of Veterans Affairs. Period of performance through 2027-06-01.",
+      "key_specs": [
+        "Award 36C25626C0007",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72205"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C25626C0007: 598-22-127 Mixing Valves For Anti-Scald-Nlr/Lr.  365 Calendar Days From Issuance",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C25626C0007_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72205"
+    },
+    {
+      "id": "ar-usaspending-w9127s25f0047",
+      "name": "Swl Minor Construction Satoc Task Order #63. Norfork Lake Paving Repairs At Robinson Point, Quarry Point, Gamaliel, And ",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 3622091.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "OLGOONIK FEDERAL, LLC",
+      "opened_or_announced_date": "2025-05-01",
+      "description": "SWL MINOR CONSTRUCTION SATOC TASK ORDER #63. NORFORK LAKE PAVING REPAIRS AT ROBINSON POINT, QUARRY POINT, GAMALIEL, AND PIGEON CREEK, BAXTER COUNTY ARKANSAS. WORK TO BE COMPLETE WITHIN 120 DAYS OF TASK ORDER AWARD. DATES ON CAR ARE ESTIMATES ONLY. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-04-03.",
+      "key_specs": [
+        "Award W9127S25F0047",
+        "Awarding agency: Department of the Army",
+        "ZIP 72653"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S25F0047: Swl Minor Construction Satoc Task Order #63. Norfork Lake Paving Repairs At Robi",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S25F0047_9700_W9127S20D0022_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72653"
+    },
+    {
+      "id": "ar-usaspending-w912eq24c0012",
+      "name": "Excavation",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 3528016.42,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "VUCON, LLC",
+      "opened_or_announced_date": "2024-08-27",
+      "description": "EXCAVATION. Awarded by Department of the Army (Department of Defense). Period of performance through 2027-01-04.",
+      "key_specs": [
+        "Award W912EQ24C0012",
+        "Awarding agency: Department of the Army",
+        "ZIP 72301"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W912EQ24C0012: Excavation",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W912EQ24C0012_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72301"
+    },
+    {
+      "id": "ar-usaspending-36c78626c0005",
+      "name": "Construction Services At Fayetteville National Cemetery For A Gravesite Expansion Project To Allow For Continued Benefit",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 3417814.0,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "DOUBLE BRONZE STAR MARKETING AND CONSULTING, INC",
+      "opened_or_announced_date": "2026-04-17",
+      "description": "CONSTRUCTION SERVICES AT FAYETTEVILLE NATIONAL CEMETERY FOR A GRAVESITE EXPANSION PROJECT TO ALLOW FOR CONTINUED BENEFITS TO VETERANS AND THEIR FAMILIES. Awarded by Department of Veterans Affairs. Period of performance through 2027-10-14.",
+      "key_specs": [
+        "Award 36C78626C0005",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72701"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C78626C0005: Construction Services At Fayetteville National Cemetery For A Gravesite Expansio",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C78626C0005_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72701"
+    },
+    {
+      "id": "ar-usaspending-140fhr25f0023",
+      "name": "Construction Services For New Aeration System Phase 2",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 3265945.04,
+      "square_footage": null,
+      "owner": "Department of the Interior",
+      "architect": "",
+      "general_contractor": "WRIGHT BROS LLC",
+      "opened_or_announced_date": "2025-09-10",
+      "description": "CONSTRUCTION SERVICES FOR NEW AERATION SYSTEM PHASE 2. Awarded by U.S. Fish and Wildlife Service (Department of the Interior). Period of performance through 2026-12-31.",
+      "key_specs": [
+        "Award 140FHR25F0023",
+        "Awarding agency: U.S. Fish and Wildlife Service",
+        "ZIP 72653"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 140FHR25F0023: Construction Services For New Aeration System Phase 2",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_140FHR25F0023_1448_140F0822D0128_1448"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72653"
+    },
+    {
+      "id": "ar-usaspending-w9127s25fa041",
+      "name": "Lock Lighting Upgrade, Montgomery Point Lock And Dam, Desha And Arkansas Counties, Arkansas. Work Shall Be Complete With",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 3011973.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "OLGOONIK FEDERAL, LLC",
+      "opened_or_announced_date": "2025-09-04",
+      "description": "LOCK LIGHTING UPGRADE, MONTGOMERY POINT LOCK AND DAM, DESHA AND ARKANSAS COUNTIES, ARKANSAS. WORK SHALL BE COMPLETE WITHIN 720 CALENDAR DAYS FROM RECEIPT OF NOTICE TO PROCEED. Awarded by Department of the Army (Department of Defense). Period of performance through 2027-08-24.",
+      "key_specs": [
+        "Award W9127S25FA041",
+        "Awarding agency: Department of the Army",
+        "ZIP 71611"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S25FA041: Lock Lighting Upgrade, Montgomery Point Lock And Dam, Desha And Arkansas Countie",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S25FA041_9700_W9127S20D0022_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "71611"
+    },
+    {
+      "id": "ar-usaspending-36c25626c0008",
+      "name": "598-21-108 Upgrade Heating Water System-Lr 270 Calendar Day Period Of Performance After Issuance Of Ntp.",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 3008033.91,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "JETT'S SPECIALTY CONTRACTING, LLC",
+      "opened_or_announced_date": "2025-11-18",
+      "description": "598-21-108 UPGRADE HEATING WATER SYSTEM-LR 270 CALENDAR DAY PERIOD OF PERFORMANCE AFTER ISSUANCE OF NTP. Awarded by Department of Veterans Affairs. Period of performance through 2027-04-12.",
+      "key_specs": [
+        "Award 36C25626C0008",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72205"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C25626C0008: 598-21-108 Upgrade Heating Water System-Lr 270 Calendar Day Period Of Performanc",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C25626C0008_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72205"
+    },
+    {
+      "id": "ar-usaspending-w912eq21c0005",
+      "name": "White River Backwater Seepage",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 2777225.53,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "STEPHENS CONSTRUCTION AND CONCRETE, INC",
+      "opened_or_announced_date": "2021-03-01",
+      "description": "WHITE RIVER BACKWATER SEEPAGE. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-01-30.",
+      "key_specs": [
+        "Award W912EQ21C0005",
+        "Awarding agency: Department of the Army",
+        "ZIP 72069"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W912EQ21C0005: White River Backwater Seepage",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W912EQ21C0005_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72069"
+    },
+    {
+      "id": "ar-usaspending-36c25624c0024",
+      "name": "598-22-126 Demo Buildings",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 2666012.0,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "JUNOT GROUP, LLC",
+      "opened_or_announced_date": "2024-03-04",
+      "description": "598-22-126 DEMO BUILDINGS. Awarded by Department of Veterans Affairs. Period of performance through 2024-09-11.",
+      "key_specs": [
+        "Award 36C25624C0024",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72114"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C25624C0024: 598-22-126 Demo Buildings",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C25624C0024_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72114"
+    },
+    {
+      "id": "ar-usaspending-36c25623c0052",
+      "name": "Construction Of Inpatient Dialysis",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 2457389.98,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "VENERGY GROUP LLC",
+      "opened_or_announced_date": "2023-06-21",
+      "description": "CONSTRUCTION OF INPATIENT DIALYSIS. Awarded by Department of Veterans Affairs. Period of performance through 2025-08-29.",
+      "key_specs": [
+        "Award 36C25623C0052",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72114"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C25623C0052: Construction Of Inpatient Dialysis",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C25623C0052_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72114"
+    },
+    {
+      "id": "ar-usaspending-693c7326f00036n",
+      "name": "Project Ar Fw Bld 11(1): The Project Consists Of Roadway Reconstruction And Resurfacing Of Granary South Road (Route 011",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 2144404.76,
+      "square_footage": null,
+      "owner": "Department of Transportation",
+      "architect": "",
+      "general_contractor": "ECLIPSE COMPANIES, LLC",
+      "opened_or_announced_date": "2026-02-26",
+      "description": "PROJECT AR FW BLD 11(1): THE PROJECT CONSISTS OF ROADWAY RECONSTRUCTION AND RESURFACING OF GRANARY SOUTH ROAD (ROUTE 011). THE WORK INCLUDES BANK STABILIZATION, AGGREGATE BASE (LIMESTONE), AGGREGATE SURFACE COURSE (LIMESTONE), PIPE CULVERT REPLACEME. Awarded by Federal Highway Administration (Department of Transportation). Period of performance through 2027-03-09.",
+      "key_specs": [
+        "Award 693C7326F00036N",
+        "Awarding agency: Federal Highway Administration",
+        "ZIP 72081"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 693C7326F00036N: Project Ar Fw Bld 11(1): The Project Consists Of Roadway Reconstruction And Resu",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_693C7326F00036N_6925_693C7326D000007_6925"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72081"
+    },
+    {
+      "id": "ar-usaspending-w9127s24f0151",
+      "name": "Swl Minor Construction Satoc #57 Award. Panther Bay Paving Repairs,  Norfork Lake, Baxter County, Arkansas. Work To Be C",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 2016146.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "OLGOONIK FEDERAL, LLC",
+      "opened_or_announced_date": "2024-09-30",
+      "description": "SWL MINOR CONSTRUCTION SATOC #57 AWARD. PANTHER BAY PAVING REPAIRS,  NORFORK LAKE, BAXTER COUNTY, ARKANSAS. WORK TO BE COMPLETED IN 120 DAYS. DATES ON CAR ARE ESTIMATED. Awarded by Department of the Army (Department of Defense). Period of performance through 2024-09-30.",
+      "key_specs": [
+        "Award W9127S24F0151",
+        "Awarding agency: Department of the Army",
+        "ZIP 72653"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S24F0151: Swl Minor Construction Satoc #57 Award. Panther Bay Paving Repairs,  Norfork Lak",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S24F0151_9700_W9127S20D0022_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72653"
+    },
+    {
+      "id": "ar-usaspending-w9127s23f0119",
+      "name": "Satoc #50. Rehabilitate Gantry Crane, Nimrod Lake Dam, Perry County, Arkansas. 750 Days After Ntp Is Issued.",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 1702778.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "OLGOONIK FEDERAL, LLC",
+      "opened_or_announced_date": "2023-10-15",
+      "description": "SATOC #50. REHABILITATE GANTRY CRANE, NIMROD LAKE DAM, PERRY COUNTY, ARKANSAS. 750 DAYS AFTER NTP IS ISSUED. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-01-20.",
+      "key_specs": [
+        "Award W9127S23F0119",
+        "Awarding agency: Department of the Army",
+        "ZIP 72857"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S23F0119: Satoc #50. Rehabilitate Gantry Crane, Nimrod Lake Dam, Perry County, Arkansas. 7",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S23F0119_9700_W9127S20D0022_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72857"
+    },
+    {
+      "id": "ar-usaspending-36c25626c0031",
+      "name": "598-23-107, Med Gas Deficiencies",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 1692438.94,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "MGI, INC.",
+      "opened_or_announced_date": "2026-04-20",
+      "description": "598-23-107, MED GAS DEFICIENCIES. Awarded by Department of Veterans Affairs. Period of performance through 2027-01-05.",
+      "key_specs": [
+        "Award 36C25626C0031",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72114"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C25626C0031: 598-23-107, Med Gas Deficiencies",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C25626C0031_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72114"
+    },
+    {
+      "id": "ar-usaspending-36c25625c0072",
+      "name": "598-19-127 Building 104 Renovations Letc.  Pop Is 300 Calendar Days After Ntp.",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 1490077.05,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "DISABLED VETERANS CONSTRUCTION INC",
+      "opened_or_announced_date": "2025-11-03",
+      "description": "598-19-127 BUILDING 104 RENOVATIONS LETC.  POP IS 300 CALENDAR DAYS AFTER NTP. Awarded by Department of Veterans Affairs. Period of performance through 2026-09-17.",
+      "key_specs": [
+        "Award 36C25625C0072",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72114"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C25625C0072: 598-19-127 Building 104 Renovations Letc.  Pop Is 300 Calendar Days After Ntp.",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C25625C0072_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72114"
+    },
+    {
+      "id": "ar-usaspending-36c25624c0047",
+      "name": "Fisher House Utilities Site Prep",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 1460037.04,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "VENERGY GROUP LLC",
+      "opened_or_announced_date": "2024-05-17",
+      "description": "FISHER HOUSE UTILITIES SITE PREP. Awarded by Department of Veterans Affairs. Period of performance through 2025-12-31.",
+      "key_specs": [
+        "Award 36C25624C0047",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72205"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C25624C0047: Fisher House Utilities Site Prep",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C25624C0047_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72205"
+    },
+    {
+      "id": "ar-usaspending-w912eq24c0004",
+      "name": "Dd17 Inlet Channel Cleanout",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 1421067.39,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "GRAYLEE CONSTRUCTION LLC",
+      "opened_or_announced_date": "2024-06-01",
+      "description": "DD17 INLET CHANNEL CLEANOUT. Awarded by Department of the Army (Department of Defense). Period of performance through 2024-09-19.",
+      "key_specs": [
+        "Award W912EQ24C0004",
+        "Awarding agency: Department of the Army",
+        "ZIP 72370"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W912EQ24C0004: Dd17 Inlet Channel Cleanout",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W912EQ24C0004_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72370"
+    },
+    {
+      "id": "ar-usaspending-w912eq26fa011",
+      "name": "Usace, Memphis District Intends To Issue A Task Order Under The Existing 8(A) Competitive Matoc For Mrl-M System 6 Segme",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 1399600.75,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "POLK & ASSOCIATES CONSTRUCTION INC",
+      "opened_or_announced_date": "2025-12-01",
+      "description": "USACE, MEMPHIS DISTRICT INTENDS TO ISSUE A TASK ORDER UNDER THE EXISTING 8(A) COMPETITIVE MATOC FOR MRL-M SYSTEM 6 SEGMENT 20 LEVEE GRAVEL. THE WORK CONSISTS OF PLACING AGGREGATE SURFACE COURSE ON LEVEE CROWNS AND RAMPS FOR LEVEE SYSTEM 6. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-03-31.",
+      "key_specs": [
+        "Award W912EQ26FA011",
+        "Awarding agency: Department of the Army",
+        "ZIP 72069"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W912EQ26FA011: Usace, Memphis District Intends To Issue A Task Order Under The Existing 8(A) Co",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W912EQ26FA011_9700_W912EQ24D0006_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72069"
+    },
+    {
+      "id": "ar-usaspending-1232sa26p0219",
+      "name": "Construction Of Necropsy House",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 1276333.0,
+      "square_footage": null,
+      "owner": "Department of Agriculture",
+      "architect": "",
+      "general_contractor": "MGS CONSTRUCTION SERVICES INC.",
+      "opened_or_announced_date": "2026-05-07",
+      "description": "CONSTRUCTION OF NECROPSY HOUSE. Awarded by Agricultural Research Service (Department of Agriculture). Period of performance through 2027-01-31.",
+      "key_specs": [
+        "Award 1232SA26P0219",
+        "Awarding agency: Agricultural Research Service",
+        "ZIP 72704"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 1232SA26P0219: Construction Of Necropsy House",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_1232SA26P0219_12H2_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72704"
+    },
+    {
+      "id": "ar-usaspending-w9127s24f0152",
+      "name": "Swl Minor Construction Satoc Task Order #58 Paving Repairs, Lakeview, Bull Shoals Lake, Mountain Home Project. Completio",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 1272061.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "OLGOONIK FEDERAL, LLC",
+      "opened_or_announced_date": "2024-09-30",
+      "description": "SWL MINOR CONSTRUCTION SATOC TASK ORDER #58 PAVING REPAIRS, LAKEVIEW, BULL SHOALS LAKE, MOUNTAIN HOME PROJECT. COMPLETION EXPECTED 120 DAYS AFTER RECEIPT OF NTP. DATES LISTED ON CAR ARE ONLY ESTIMATES. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-01-28.",
+      "key_specs": [
+        "Award W9127S24F0152",
+        "Awarding agency: Department of the Army",
+        "ZIP 72653"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S24F0152: Swl Minor Construction Satoc Task Order #58 Paving Repairs, Lakeview, Bull Shoal",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S24F0152_9700_W9127S20D0022_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72653"
+    },
+    {
+      "id": "ar-usaspending-12405b23c0015",
+      "name": "Construction Of Colony House 3C And Construction Of Colony House 4C",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 1063623.77,
+      "square_footage": null,
+      "owner": "Department of Agriculture",
+      "architect": "",
+      "general_contractor": "MCKENZIE CONSTRUCTION & SITE DEVELOPMENT LLC",
+      "opened_or_announced_date": "2023-08-09",
+      "description": "CONSTRUCTION OF COLONY HOUSE 3C AND CONSTRUCTION OF COLONY HOUSE 4C. Awarded by Agricultural Research Service (Department of Agriculture). Period of performance through 2024-06-30.",
+      "key_specs": [
+        "Award 12405B23C0015",
+        "Awarding agency: Agricultural Research Service",
+        "ZIP 72701"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 12405B23C0015: Construction Of Colony House 3C And Construction Of Colony House 4C",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_12405B23C0015_12H2_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72701"
+    },
+    {
+      "id": "ar-usaspending-w9127s25f0019",
+      "name": "Swl Minor Construction Satoc Task Order #61. Generator Bay Door Replacement, Norfork Powerhouse. Work To Be Complete Wit",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 835168.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "OLGOONIK FEDERAL, LLC",
+      "opened_or_announced_date": "2025-02-21",
+      "description": "SWL MINOR CONSTRUCTION SATOC TASK ORDER #61. GENERATOR BAY DOOR REPLACEMENT, NORFORK POWERHOUSE. WORK TO BE COMPLETE WITHIN 180 OF NOTICE TO PROCEED. DATES ON CAR ARE ESTIMATES ONLY. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-05-08.",
+      "key_specs": [
+        "Award W9127S25F0019",
+        "Awarding agency: Department of the Army",
+        "ZIP 72653"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S25F0019: Swl Minor Construction Satoc Task Order #61. Generator Bay Door Replacement, Nor",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S25F0019_9700_W9127S20D0022_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72653"
+    },
+    {
+      "id": "ar-usaspending-36c77621c0115",
+      "name": "36C77621C0115  Renovate Corridor Between Building 60 And Building 1 Tt54 Veterans Affairs North Texas Healthcare System ",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 731198.34,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "GOODWIN FACILITIES SOLUTIONS, LLC",
+      "opened_or_announced_date": "2021-09-30",
+      "description": "36C77621C0115  RENOVATE CORRIDOR BETWEEN BUILDING 60 AND BUILDING 1 TT54 VETERANS AFFAIRS NORTH TEXAS HEALTHCARE SYSTEM (VANTHCS), DALLAS, TEXAS. Awarded by Department of Veterans Affairs. Period of performance through 2022-09-28.",
+      "key_specs": [
+        "Award 36C77621C0115",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72764"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C77621C0115: 36C77621C0115  Renovate Corridor Between Building 60 And Building 1 Tt54 Veteran",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C77621C0115_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72764"
+    },
+    {
+      "id": "ar-usaspending-36c78624c50582",
+      "name": "Fy24 National Shrine Project Ft Smith National",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 615209.0,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "WORRELL CONTRACTING CO INC",
+      "opened_or_announced_date": "2024-09-30",
+      "description": "FY24 NATIONAL SHRINE PROJECT FT SMITH NATIONAL. Awarded by Department of Veterans Affairs. Period of performance through 2025-09-30.",
+      "key_specs": [
+        "Award 36C78624C50582",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72901"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C78624C50582: Fy24 National Shrine Project Ft Smith National",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C78624C50582_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72901"
+    },
+    {
+      "id": "ar-usaspending-36c25626c0021",
+      "name": "Structural Repair",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 599560.93,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "GOODWIN FACILITIES SOLUTIONS, LLC",
+      "opened_or_announced_date": "2026-05-04",
+      "description": "STRUCTURAL REPAIR. Awarded by Department of Veterans Affairs. Period of performance through 2027-05-30.",
+      "key_specs": [
+        "Award 36C25626C0021",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72205"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C25626C0021: Structural Repair",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C25626C0021_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72205"
+    },
+    {
+      "id": "ar-usaspending-w9127s25f0079",
+      "name": "Swl Minor Construction Satoc Task Order #65, Ozark Switchyard Paving Rehabilitation At Ozark Powerhouse. Work Is To Be C",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 588806.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "OLGOONIK FEDERAL, LLC",
+      "opened_or_announced_date": "2025-07-01",
+      "description": "SWL MINOR CONSTRUCTION SATOC TASK ORDER #65, OZARK SWITCHYARD PAVING REHABILITATION AT OZARK POWERHOUSE. WORK IS TO BE COMPLETE NO LATER THAN 100 CALENDAR DAYS AFTER RECEIPT OF NTP. DATES ON CAR ARE ESTIMATES. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-12-07.",
+      "key_specs": [
+        "Award W9127S25F0079",
+        "Awarding agency: Department of the Army",
+        "ZIP 72949"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S25F0079: Swl Minor Construction Satoc Task Order #65, Ozark Switchyard Paving Rehabilitat",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S25F0079_9700_W9127S20D0022_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72949"
+    },
+    {
+      "id": "ar-usaspending-w9127s26fa053",
+      "name": "Satoc #1, Electrical Upgrades Gamaliel Campground, Norfork Lake. All Work Shall Be Complete Within One-Hundred And Eight",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 505610.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "OLGOONIK GENERAL, LLC",
+      "opened_or_announced_date": "2026-04-01",
+      "description": "SATOC #1, ELECTRICAL UPGRADES GAMALIEL CAMPGROUND, NORFORK LAKE. ALL WORK SHALL BE COMPLETE WITHIN ONE-HUNDRED AND EIGHTY (180) CALENDAR DAYS. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-09-28.",
+      "key_specs": [
+        "Award W9127S26FA053",
+        "Awarding agency: Department of the Army",
+        "ZIP 72653"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S26FA053: Satoc #1, Electrical Upgrades Gamaliel Campground, Norfork Lake. All Work Shall ",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S26FA053_9700_W9127S25DA004_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72653"
+    },
+    {
+      "id": "ar-usaspending-w50s6q25fa008",
+      "name": "Construct Female Latrine Facility At Regional Training Site, Massard Rd, 188Th Wing, Fort Smith, Ar.",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 479500.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "MGS CONSTRUCTION SERVICES INC.",
+      "opened_or_announced_date": "2025-08-26",
+      "description": "CONSTRUCT FEMALE LATRINE FACILITY AT REGIONAL TRAINING SITE, MASSARD RD, 188TH WING, FORT SMITH, AR. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-06-30.",
+      "key_specs": [
+        "Award W50S6Q25FA008",
+        "Awarding agency: Department of the Army",
+        "ZIP 72903"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W50S6Q25FA008: Construct Female Latrine Facility At Regional Training Site, Massard Rd, 188Th W",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W50S6Q25FA008_9700_W912JF23D0007_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72903"
+    },
+    {
+      "id": "ar-usaspending-36c25626f0049",
+      "name": "Add Hvac To Corridor B-1, B-3.",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 360054.8,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "VENERGY GROUP LLC",
+      "opened_or_announced_date": "2026-01-19",
+      "description": "ADD HVAC TO CORRIDOR B-1, B-3. Awarded by Department of Veterans Affairs. Period of performance through 2026-10-16.",
+      "key_specs": [
+        "Award 36C25626F0049",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72703"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C25626F0049: Add Hvac To Corridor B-1, B-3.",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C25626F0049_3600_GS21F054BA_4732"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72703"
+    },
+    {
+      "id": "ar-usaspending-w9127s24f0078",
+      "name": "Satoc Order #52. Caao Office Remodel, Little Rock Air Force Base Building 325, Pulaski County, Arkansas. 195 Day After N",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 358177.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "OLGOONIK FEDERAL, LLC",
+      "opened_or_announced_date": "2024-05-30",
+      "description": "SATOC ORDER #52. CAAO OFFICE REMODEL, LITTLE ROCK AIR FORCE BASE BUILDING 325, PULASKI COUNTY, ARKANSAS. 195 DAY AFTER NTP IS ISSUED. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-02-09.",
+      "key_specs": [
+        "Award W9127S24F0078",
+        "Awarding agency: Department of the Army",
+        "ZIP 72201"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S24F0078: Satoc Order #52. Caao Office Remodel, Little Rock Air Force Base Building 325, P",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S24F0078_9700_W9127S20D0022_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72201"
+    },
+    {
+      "id": "ar-usaspending-36c25624c0087",
+      "name": "598-23-505 Mobile Pet-Ct Scan Trailer Pad Prep At Jlm",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 328272.0,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "GOLD WAVE INC",
+      "opened_or_announced_date": "2024-09-25",
+      "description": "598-23-505 MOBILE PET-CT SCAN TRAILER PAD PREP AT JLM. Awarded by Department of Veterans Affairs. Period of performance through 2025-10-31.",
+      "key_specs": [
+        "Award 36C25624C0087",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72205"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C25624C0087: 598-23-505 Mobile Pet-Ct Scan Trailer Pad Prep At Jlm",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C25624C0087_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72205"
+    },
+    {
+      "id": "ar-usaspending-140p6225c0001",
+      "name": "Buffalo Nr - Septic System Replacement",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 317400.0,
+      "square_footage": null,
+      "owner": "Department of the Interior",
+      "architect": "",
+      "general_contractor": "HANCE DANNY",
+      "opened_or_announced_date": "2025-09-22",
+      "description": "BUFFALO NR - SEPTIC SYSTEM REPLACEMENT. Awarded by National Park Service (Department of the Interior). Period of performance through 2026-05-16.",
+      "key_specs": [
+        "Award 140P6225C0001",
+        "Awarding agency: National Park Service",
+        "ZIP 72601"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 140P6225C0001: Buffalo Nr - Septic System Replacement",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_140P6225C0001_1443_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72601"
+    },
+    {
+      "id": "ar-usaspending-697dck26c00143",
+      "name": "Txk Access Rd. And Parking Lot",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 315436.0,
+      "square_footage": null,
+      "owner": "Department of Transportation",
+      "architect": "",
+      "general_contractor": "PROW'ESS CONSTRUCTION CORP.",
+      "opened_or_announced_date": "2026-06-01",
+      "description": "TXK ACCESS RD. AND PARKING LOT. Awarded by Federal Aviation Administration (Department of Transportation). Period of performance through 2026-12-31.",
+      "key_specs": [
+        "Award 697DCK26C00143",
+        "Awarding agency: Federal Aviation Administration",
+        "ZIP 71854"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 697DCK26C00143: Txk Access Rd. And Parking Lot",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_697DCK26C00143_6920_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "71854"
+    },
+    {
+      "id": "ar-usaspending-36c78624n0600",
+      "name": "Repair Irrigation Controller At Little Rock National Cemetery",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 271661.88,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "US DIVERSIFIED CONTRACTING SERVICES INC.",
+      "opened_or_announced_date": "2024-06-13",
+      "description": "REPAIR IRRIGATION CONTROLLER AT LITTLE ROCK NATIONAL CEMETERY. Awarded by Department of Veterans Affairs. Period of performance through 2025-05-16.",
+      "key_specs": [
+        "Award 36C78624N0600",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72206"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C78624N0600: Repair Irrigation Controller At Little Rock National Cemetery",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C78624N0600_3600_36C78619D0156_3600"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72206"
+    },
+    {
+      "id": "ar-usaspending-w9127s25fa016",
+      "name": "Guardrail Replacement, Millwood And Gillham Lakes",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 256947.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "OLGOONIK FEDERAL, LLC",
+      "opened_or_announced_date": "2025-08-15",
+      "description": "GUARDRAIL REPLACEMENT, MILLWOOD AND GILLHAM LAKES. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-12-23.",
+      "key_specs": [
+        "Award W9127S25FA016",
+        "Awarding agency: Department of the Army",
+        "ZIP 71822"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S25FA016: Guardrail Replacement, Millwood And Gillham Lakes",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S25FA016_9700_W9127S20D0022_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "71822"
+    },
+    {
+      "id": "ar-usaspending-36c78624n0786",
+      "name": "Repair Dormer, Roofing, And Hail Damage At Fort Smith National Cemetery.",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 255309.0,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "US DIVERSIFIED CONTRACTING SERVICES INC.",
+      "opened_or_announced_date": "2024-08-15",
+      "description": "REPAIR DORMER, ROOFING, AND HAIL DAMAGE AT FORT SMITH NATIONAL CEMETERY. Awarded by Department of Veterans Affairs. Period of performance through 2025-06-30.",
+      "key_specs": [
+        "Award 36C78624N0786",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72901"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C78624N0786: Repair Dormer, Roofing, And Hail Damage At Fort Smith National Cemetery.",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C78624N0786_3600_36C78619D0156_3600"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72901"
+    },
+    {
+      "id": "ar-usaspending-36c78625n0755",
+      "name": "Task Order Award To Repair Irrigation Control System At Fort Smith National Cemetery",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 253951.06,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "US DIVERSIFIED CONTRACTING SERVICES INC.",
+      "opened_or_announced_date": "2025-09-20",
+      "description": "TASK ORDER AWARD TO REPAIR IRRIGATION CONTROL SYSTEM AT FORT SMITH NATIONAL CEMETERY. Awarded by Department of Veterans Affairs. Period of performance through 2026-04-30.",
+      "key_specs": [
+        "Award 36C78625N0755",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72901"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C78625N0755: Task Order Award To Repair Irrigation Control System At Fort Smith National Ceme",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C78625N0755_3600_36C78625D0019_3600"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72901"
+    },
+    {
+      "id": "ar-usaspending-36c25626f0032",
+      "name": "564-25-108 Replace Flooring In 3B Icu",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 208709.32,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "BRISTON CONSTRUCTION, LLC",
+      "opened_or_announced_date": "2025-10-23",
+      "description": "564-25-108 REPLACE FLOORING IN 3B ICU. Awarded by Department of Veterans Affairs. Period of performance through 2026-08-04.",
+      "key_specs": [
+        "Award 36C25626F0032",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72703"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C25626F0032: 564-25-108 Replace Flooring In 3B Icu",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C25626F0032_3600_47QSHA20D0011_4732"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72703"
+    },
+    {
+      "id": "ar-usaspending-36c25625c0019",
+      "name": "598-25-155 Emergency Fiber Cable Replacement To Building 1154 (Pump House)",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 185439.06,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "VENERGY GROUP LLC",
+      "opened_or_announced_date": "2025-02-11",
+      "description": "598-25-155 EMERGENCY FIBER CABLE REPLACEMENT TO BUILDING 1154 (PUMP HOUSE). Awarded by Department of Veterans Affairs. Period of performance through 2025-05-21.",
+      "key_specs": [
+        "Award 36C25625C0019",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72114"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C25625C0019: 598-25-155 Emergency Fiber Cable Replacement To Building 1154 (Pump House)",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C25625C0019_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72114"
+    },
+    {
+      "id": "ar-usaspending-w50s6q25fa030",
+      "name": "Repair Base Supply Building 108. Work Includes Repair Of 3,620 Sqft Of Interior Administrative And Warehouse Space. Remo",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "industrial",
+      "estimated_value_usd": 177610.39,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "AVCOR CONSTRUCTION, LLC",
+      "opened_or_announced_date": "2025-09-30",
+      "description": "REPAIR BASE SUPPLY BUILDING 108. WORK INCLUDES REPAIR OF 3,620 SQFT OF INTERIOR ADMINISTRATIVE AND WAREHOUSE SPACE. REMOVAL, DISPOSAL, AND REPLACEMENT OF DOORS, CARPET, SUSPENDED CEILINGS, LIGHTS, SWITCHES AND FANS IAW THE SOW. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-04-10.",
+      "key_specs": [
+        "Award W50S6Q25FA030",
+        "Awarding agency: Department of the Army",
+        "ZIP 72903"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W50S6Q25FA030: Repair Base Supply Building 108. Work Includes Repair Of 3,620 Sqft Of Interior ",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W50S6Q25FA030_9700_W912JF23D0005_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72903"
+    },
+    {
+      "id": "ar-usaspending-36c78624n0823",
+      "name": "Repair Roads, Access Ramps, And Drains At Fayetteville National Cemetery",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 156261.0,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "US DIVERSIFIED CONTRACTING SERVICES INC.",
+      "opened_or_announced_date": "2024-08-21",
+      "description": "REPAIR ROADS, ACCESS RAMPS, AND DRAINS AT FAYETTEVILLE NATIONAL CEMETERY. Awarded by Department of Veterans Affairs. Period of performance through 2024-11-29.",
+      "key_specs": [
+        "Award 36C78624N0823",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72701"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C78624N0823: Repair Roads, Access Ramps, And Drains At Fayetteville National Cemetery",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C78624N0823_3600_36C78619D0156_3600"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72701"
+    },
+    {
+      "id": "ar-usaspending-w9127s26fa047",
+      "name": "Stairwell Wall Tile Demolition, Norfork Powerhouse In Baxter County, Arkansas. Work Shall Be Completed Within Twenty-Fiv",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 154159.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "OLGOONIK GENERAL, LLC",
+      "opened_or_announced_date": "2026-04-20",
+      "description": "STAIRWELL WALL TILE DEMOLITION, NORFORK POWERHOUSE IN BAXTER COUNTY, ARKANSAS. WORK SHALL BE COMPLETED WITHIN TWENTY-FIVE (25) DAYS OF TASK ORDER AWARD. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-05-15.",
+      "key_specs": [
+        "Award W9127S26FA047",
+        "Awarding agency: Department of the Army",
+        "ZIP 72653"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S26FA047: Stairwell Wall Tile Demolition, Norfork Powerhouse In Baxter County, Arkansas. W",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S26FA047_9700_W9127S25DA004_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72653"
+    },
+    {
+      "id": "ar-usaspending-w9127s24f0138",
+      "name": "Swl Minor Construction Satoc Task Order #53, Work Barge Dock Repairs At Millwood Lake Project Office. Completion Is Expe",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 148850.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "OLGOONIK FEDERAL, LLC",
+      "opened_or_announced_date": "2024-08-30",
+      "description": "SWL MINOR CONSTRUCTION SATOC TASK ORDER #53, WORK BARGE DOCK REPAIRS AT MILLWOOD LAKE PROJECT OFFICE. COMPLETION IS EXPECTED NO LATER THAN 120 CALENDAR DAYS AFTER RECEIPT OF NTP. DATES ON CAR ARE ONLY ESTIMATES. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-01-31.",
+      "key_specs": [
+        "Award W9127S24F0138",
+        "Awarding agency: Department of the Army",
+        "ZIP 72923"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S24F0138: Swl Minor Construction Satoc Task Order #53, Work Barge Dock Repairs At Millwood",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S24F0138_9700_W9127S20D0022_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72923"
+    },
+    {
+      "id": "ar-usaspending-w9127s24f0099",
+      "name": "Swl Minor Construction Satoc #59 Award. Sewer System Repairs, Trimble Lock And Dam, Sebastian County, Arkansas Work To B",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 146296.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "OLGOONIK FEDERAL, LLC",
+      "opened_or_announced_date": "2024-10-15",
+      "description": "SWL MINOR CONSTRUCTION SATOC #59 AWARD. SEWER SYSTEM REPAIRS, TRIMBLE LOCK AND DAM, SEBASTIAN COUNTY, ARKANSAS WORK TO BE COMPLETED IN 120 DAYS. DATES ON CAR ARE ESTIMATED. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-02-12.",
+      "key_specs": [
+        "Award W9127S24F0099",
+        "Awarding agency: Department of the Army",
+        "ZIP 72801"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S24F0099: Swl Minor Construction Satoc #59 Award. Sewer System Repairs, Trimble Lock And D",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S24F0099_9700_W9127S20D0022_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72801"
+    },
+    {
+      "id": "ar-usaspending-w50s6p25ca001",
+      "name": "Fy25 41A6 Repair Bldg 112 Soffit (Project# Nkak242112)",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 143718.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "AVCOR CONSTRUCTION, LLC",
+      "opened_or_announced_date": "2025-09-30",
+      "description": "FY25 41A6 REPAIR BLDG 112 SOFFIT (PROJECT# NKAK242112). Awarded by Department of the Army (Department of Defense). Period of performance through 2026-04-24.",
+      "key_specs": [
+        "Award W50S6P25CA001",
+        "Awarding agency: Department of the Army",
+        "ZIP 72099"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W50S6P25CA001: Fy25 41A6 Repair Bldg 112 Soffit (Project# Nkak242112)",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W50S6P25CA001_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72099"
+    },
+    {
+      "id": "ar-usaspending-w9127s25f0075",
+      "name": "Swl Minor Construction Satoc #64, Spray Foam Insulation, Norfork And Bull Shoals Powerhouse, Baxter County Arkansas. Wor",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 140719.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "OLGOONIK FEDERAL, LLC",
+      "opened_or_announced_date": "2025-07-10",
+      "description": "SWL MINOR CONSTRUCTION SATOC #64, SPRAY FOAM INSULATION, NORFORK AND BULL SHOALS POWERHOUSE, BAXTER COUNTY ARKANSAS. WORK IS TO BE COMPLETE WITHIN 75 CALENDAR DAYS OF NTP. DATES ON CAR ARE ESTIMATES ONLY. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-09-22.",
+      "key_specs": [
+        "Award W9127S25F0075",
+        "Awarding agency: Department of the Army",
+        "ZIP 72653"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S25F0075: Swl Minor Construction Satoc #64, Spray Foam Insulation, Norfork And Bull Shoals",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S25F0075_9700_W9127S20D0022_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72653"
+    },
+    {
+      "id": "ar-usaspending-w9127s24f0120",
+      "name": "Swl Minor Construction Satoc Task Order #55, Roof Gutter Repairs (Copper Gutter Replacement), Norfork Powerhouse. Comple",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 140516.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "OLGOONIK FEDERAL, LLC",
+      "opened_or_announced_date": "2024-10-16",
+      "description": "SWL MINOR CONSTRUCTION SATOC TASK ORDER #55, ROOF GUTTER REPAIRS (COPPER GUTTER REPLACEMENT), NORFORK POWERHOUSE. COMPLETION EXPECTED 90 DAYS AFTER RECEIPT OF NTP. DATES ON CAR ARE ONLY ESTIMATES. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-03-29.",
+      "key_specs": [
+        "Award W9127S24F0120",
+        "Awarding agency: Department of the Army",
+        "ZIP 72658"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S24F0120: Swl Minor Construction Satoc Task Order #55, Roof Gutter Repairs (Copper Gutter ",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S24F0120_9700_W9127S20D0022_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72658"
+    },
+    {
+      "id": "ar-usaspending-w9127s24f0146",
+      "name": "Swl Minor Construction Satoc #56. Restroom & Shower House  Demolition - Cxt Navajo Restroom Installation, Springhill Par",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 132069.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "OLGOONIK FEDERAL, LLC",
+      "opened_or_announced_date": "2024-10-01",
+      "description": "SWL MINOR CONSTRUCTION SATOC #56. RESTROOM & SHOWER HOUSE  DEMOLITION - CXT NAVAJO RESTROOM INSTALLATION, SPRINGHILL PARK, RUSSELLVILLE SITE OFFICE, SEBASTIAN COUNTY, ARKANSAS. TO BE COMPLETED 120 DAYS AFTER NOTICE TO PROCEED. DATES ARE ESTIMATES. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-02-01.",
+      "key_specs": [
+        "Award W9127S24F0146",
+        "Awarding agency: Department of the Army",
+        "ZIP 72923"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S24F0146: Swl Minor Construction Satoc #56. Restroom & Shower House  Demolition - Cxt Nava",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S24F0146_9700_W9127S20D0022_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72923"
+    },
+    {
+      "id": "ar-usaspending-w9127s25fa027",
+      "name": "Breakroom Rehabilitation, Bull Shoals Powerhouse, Baxter County, Arkansas.",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 115648.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "OLGOONIK FEDERAL, LLC",
+      "opened_or_announced_date": "2025-08-29",
+      "description": "BREAKROOM REHABILITATION, BULL SHOALS POWERHOUSE, BAXTER COUNTY, ARKANSAS. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-01-26.",
+      "key_specs": [
+        "Award W9127S25FA027",
+        "Awarding agency: Department of the Army",
+        "ZIP 72642"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S25FA027: Breakroom Rehabilitation, Bull Shoals Powerhouse, Baxter County, Arkansas.",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S25FA027_9700_W9127S20D0022_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72642"
+    },
+    {
+      "id": "ar-usaspending-w9127s25fa017",
+      "name": "Upstream Buoy Line Replacement, Millwood Lake Office",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 112912.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "OLGOONIK FEDERAL, LLC",
+      "opened_or_announced_date": "2025-09-01",
+      "description": "UPSTREAM BUOY LINE REPLACEMENT, MILLWOOD LAKE OFFICE. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-12-01.",
+      "key_specs": [
+        "Award W9127S25FA017",
+        "Awarding agency: Department of the Army",
+        "ZIP 71822"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S25FA017: Upstream Buoy Line Replacement, Millwood Lake Office",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S25FA017_9700_W9127S20D0022_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "71822"
+    },
+    {
+      "id": "ar-usaspending-12363n25f4187",
+      "name": "081000 Ozark-Con-Culvert Replacement 714679",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 110000.0,
+      "square_footage": null,
+      "owner": "Department of Agriculture",
+      "architect": "",
+      "general_contractor": "CARL MCDADE CONSTRUCTION INC",
+      "opened_or_announced_date": "2025-09-25",
+      "description": "081000 OZARK-CON-CULVERT REPLACEMENT 714679. Awarded by Forest Service (Department of Agriculture). Period of performance through 2026-04-30.",
+      "key_specs": [
+        "Award 12363N25F4187",
+        "Awarding agency: Forest Service",
+        "ZIP 72947"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 12363N25F4187: 081000 Ozark-Con-Culvert Replacement 714679",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_12363N25F4187_12C2_12445123D0019_12C2"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72947"
+    },
+    {
+      "id": "ar-usaspending-36c78624n0858",
+      "name": "Repair Lodge Hvac At Fort Smith National Cemetery",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 97177.75,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "DISABLED VETERANS CONSTRUCTION INC",
+      "opened_or_announced_date": "2024-09-05",
+      "description": "REPAIR LODGE HVAC AT FORT SMITH NATIONAL CEMETERY. Awarded by Department of Veterans Affairs. Period of performance through 2025-01-13.",
+      "key_specs": [
+        "Award 36C78624N0858",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72901"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C78624N0858: Repair Lodge Hvac At Fort Smith National Cemetery",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C78624N0858_3600_36C78619D0154_3600"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72901"
+    },
+    {
+      "id": "ar-usaspending-w9127s25fa043",
+      "name": "Satoc Task Order 73. Security Gate Rehab, Mkarns Lock 3 And 6, Jefferson And Pulaski Counties, Arkansas Shall Be Complet",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 85382.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "OLGOONIK FEDERAL, LLC",
+      "opened_or_announced_date": "2025-09-07",
+      "description": "SATOC TASK ORDER 73. SECURITY GATE REHAB, MKARNS LOCK 3 AND 6, JEFFERSON AND PULASKI COUNTIES, ARKANSAS SHALL BE COMPLETE WITHIN 75 CALENDAR DAYS OF RECEIPT OF NOTICE TO PROCEED. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-11-21.",
+      "key_specs": [
+        "Award W9127S25FA043",
+        "Awarding agency: Department of the Army",
+        "ZIP 71611"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S25FA043: Satoc Task Order 73. Security Gate Rehab, Mkarns Lock 3 And 6, Jefferson And Pul",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S25FA043_9700_W9127S20D0022_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "71611"
+    },
+    {
+      "id": "ar-usaspending-w50s6q24f0003",
+      "name": "Rts Pad Repair",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 84616.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "WOHALI LLC",
+      "opened_or_announced_date": "2024-09-30",
+      "description": "RTS PAD REPAIR. Awarded by Department of the Army (Department of Defense). Period of performance through 2024-11-29.",
+      "key_specs": [
+        "Award W50S6Q24F0003",
+        "Awarding agency: Department of the Army",
+        "ZIP 72903"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W50S6Q24F0003: Rts Pad Repair",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W50S6Q24F0003_9700_W912JF23D0008_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72903"
+    },
+    {
+      "id": "ar-usaspending-w9127s25fa032",
+      "name": "Swl Minor Contruction Satoc Task Order #69, Four Building Roof And Envelope Rehabilitation At Mountain Home Project Offi",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 69877.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "OLGOONIK FEDERAL, LLC",
+      "opened_or_announced_date": "2025-08-28",
+      "description": "SWL MINOR CONTRUCTION SATOC TASK ORDER #69, FOUR BUILDING ROOF AND ENVELOPE REHABILITATION AT MOUNTAIN HOME PROJECT OFFICE, BAXTER COUNTY, ARKANSAS. WORK SHALL BE COMPLETE WITHIN 120 CALENDAR DAYS OF RECEIPT OF NOTICE TO PROCEED. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-12-26.",
+      "key_specs": [
+        "Award W9127S25FA032",
+        "Awarding agency: Department of the Army",
+        "ZIP 72653"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S25FA032: Swl Minor Contruction Satoc Task Order #69, Four Building Roof And Envelope Reha",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S25FA032_9700_W9127S20D0022_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72653"
+    },
+    {
+      "id": "ar-usaspending-36c25624f0231",
+      "name": "598-24-515 Replace Resinous Flooring - Or 3 & 22",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 67604.0,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "FLOWSENSE, LLC",
+      "opened_or_announced_date": "2024-09-19",
+      "description": "598-24-515 REPLACE RESINOUS FLOORING - OR 3 & 22. Awarded by Department of Veterans Affairs. Period of performance through 2024-11-28.",
+      "key_specs": [
+        "Award 36C25624F0231",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72205"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C25624F0231: 598-24-515 Replace Resinous Flooring - Or 3 & 22",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C25624F0231_3600_GS21F007AA_4732"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72205"
+    },
+    {
+      "id": "ar-usaspending-6973gh26p02345",
+      "name": "Russellville, Ar - Insulated Metal Paneling (Imp) Installation Services For The Long-Range Radar System Equipment @ Russ",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 55000.0,
+      "square_footage": null,
+      "owner": "Department of Transportation",
+      "architect": "",
+      "general_contractor": "RG TENNEY ELECTRIC INC",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "RUSSELLVILLE, AR - INSULATED METAL PANELING (IMP) INSTALLATION SERVICES FOR THE LONG-RANGE RADAR SYSTEM EQUIPMENT @ RUSSELLVILLE (QXR), AR ARSR IN ACCORDANCE WITH THE SPECIFICATIONS AND ANY ADDITIONAL DOCUMENTATION PROVIDED UPON RECEIPT OF THE AWARD. Awarded by Federal Aviation Administration (Department of Transportation). Period of performance through 2026-08-30.",
+      "key_specs": [
+        "Award 6973GH26P02345",
+        "Awarding agency: Federal Aviation Administration",
+        "ZIP 72801"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 6973GH26P02345: Russellville, Ar - Insulated Metal Paneling (Imp) Installation Services For The ",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_6973GH26P02345_6920_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72801"
+    },
+    {
+      "id": "ar-usaspending-36c78626n0394",
+      "name": "Task Order To Repair Office And Restroom Hvac At Little Rock National Cemetery.",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 54799.87,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "VENERGY GROUP LLC",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "TASK ORDER TO REPAIR OFFICE AND RESTROOM HVAC AT LITTLE ROCK NATIONAL CEMETERY. Awarded by Department of Veterans Affairs. Period of performance through 2026-08-25.",
+      "key_specs": [
+        "Award 36C78626N0394",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72206"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C78626N0394: Task Order To Repair Office And Restroom Hvac At Little Rock National Cemetery.",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C78626N0394_3600_36C78625D0040_3600"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72206"
+    },
+    {
+      "id": "ar-usaspending-w50s6q24f0002",
+      "name": "Replace Munitions Doors",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 52586.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "A & A SERVICES BALDWIN & SHELL JOINT VENTURE LLC",
+      "opened_or_announced_date": "2024-08-22",
+      "description": "REPLACE MUNITIONS DOORS. Awarded by Department of the Army (Department of Defense). Period of performance through 2024-12-20.",
+      "key_specs": [
+        "Award W50S6Q24F0002",
+        "Awarding agency: Department of the Army",
+        "ZIP 72903"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W50S6Q24F0002: Replace Munitions Doors",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W50S6Q24F0002_9700_W912JF23D0001_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72903"
+    },
+    {
+      "id": "ar-usaspending-1232sa26p0126",
+      "name": "Repair To Tank Farm Metal Building (Replacing Panels, Doors, Insulation, Ridge Vent)",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 48598.0,
+      "square_footage": null,
+      "owner": "Department of Agriculture",
+      "architect": "",
+      "general_contractor": "KOALA ROOFING LLC",
+      "opened_or_announced_date": "2026-03-18",
+      "description": "REPAIR TO TANK FARM METAL BUILDING (REPLACING PANELS, DOORS, INSULATION, RIDGE VENT). Awarded by Agricultural Research Service (Department of Agriculture). Period of performance through 2026-09-30.",
+      "key_specs": [
+        "Award 1232SA26P0126",
+        "Awarding agency: Agricultural Research Service",
+        "ZIP 72160"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 1232SA26P0126: Repair To Tank Farm Metal Building (Replacing Panels, Doors, Insulation, Ridge V",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_1232SA26P0126_12H2_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72160"
+    },
+    {
+      "id": "ar-usaspending-12405b24p0371",
+      "name": "Labor And Material To Move 100Kw Generator",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 41499.92,
+      "square_footage": null,
+      "owner": "Department of Agriculture",
+      "architect": "",
+      "general_contractor": "ACE ELECTRIC LLC",
+      "opened_or_announced_date": "2024-09-11",
+      "description": "LABOR AND MATERIAL TO MOVE 100KW GENERATOR. Awarded by Agricultural Research Service (Department of Agriculture). Period of performance through 2024-12-10.",
+      "key_specs": [
+        "Award 12405B24P0371",
+        "Awarding agency: Agricultural Research Service",
+        "ZIP 72160"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 12405B24P0371: Labor And Material To Move 100Kw Generator",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_12405B24P0371_12H2_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72160"
+    },
+    {
+      "id": "ar-usaspending-w50s6p24pa007",
+      "name": "B118 Flooring",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 34700.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "WHITE RIVER FLOORING, INC.",
+      "opened_or_announced_date": "2024-09-26",
+      "description": "B118 FLOORING. Awarded by Department of the Army (Department of Defense). Period of performance through 2024-12-09.",
+      "key_specs": [
+        "Award W50S6P24PA007",
+        "Awarding agency: Department of the Army",
+        "ZIP 72099"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W50S6P24PA007: B118 Flooring",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W50S6P24PA007_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72099"
+    },
+    {
+      "id": "ar-usaspending-w912ee25fa103",
+      "name": "Lift Station Improvement H.K. Thatcher Rec. Comfort Station - Ouachita And Black Project",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 33133.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "GENESIS 360 LLC",
+      "opened_or_announced_date": "2025-09-11",
+      "description": "LIFT STATION IMPROVEMENT H.K. THATCHER REC. COMFORT STATION - OUACHITA AND BLACK PROJECT. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-12-31.",
+      "key_specs": [
+        "Award W912EE25FA103",
+        "Awarding agency: Department of the Army",
+        "ZIP 71730"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W912EE25FA103: Lift Station Improvement H.K. Thatcher Rec. Comfort Station - Ouachita And Black",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W912EE25FA103_9700_W912EE24D0012_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "71730"
+    },
+    {
+      "id": "ar-usaspending-w912ee25fa106",
+      "name": "Lift Station Repairs Felsenthal North Rec. Comfort Station - Ouachita And Black Project",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 32164.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "GENESIS 360 LLC",
+      "opened_or_announced_date": "2025-09-15",
+      "description": "LIFT STATION REPAIRS FELSENTHAL NORTH REC. COMFORT STATION - OUACHITA AND BLACK PROJECT. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-12-31.",
+      "key_specs": [
+        "Award W912EE25FA106",
+        "Awarding agency: Department of the Army",
+        "ZIP 71747"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W912EE25FA106: Lift Station Repairs Felsenthal North Rec. Comfort Station - Ouachita And Black ",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W912EE25FA106_9700_W912EE24D0012_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "71747"
+    },
+    {
+      "id": "ar-usaspending-w9127s25fa042",
+      "name": "Overhead Septic Pipe Replacement, Dardanelle Lock And Dam. Work Shall Be Complete Within 90 Calendar Days Of Receipt Of ",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 28997.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "OLGOONIK FEDERAL, LLC",
+      "opened_or_announced_date": "2025-09-01",
+      "description": "OVERHEAD SEPTIC PIPE REPLACEMENT, DARDANELLE LOCK AND DAM. WORK SHALL BE COMPLETE WITHIN 90 CALENDAR DAYS OF RECEIPT OF NOTICE TO PROCCED. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-12-01.",
+      "key_specs": [
+        "Award W9127S25FA042",
+        "Awarding agency: Department of the Army",
+        "ZIP 72843"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S25FA042: Overhead Septic Pipe Replacement, Dardanelle Lock And Dam. Work Shall Be Complet",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S25FA042_9700_W9127S20D0022_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72843"
+    },
+    {
+      "id": "ar-usaspending-w9127s25fa039",
+      "name": "Repair Sink Hole In Parking Lot, Dardanelle Powerhouse, Yell County, Arkansas. Work Shall Be Complete Within 180 Calenda",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 25184.48,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "OLGOONIK FEDERAL, LLC",
+      "opened_or_announced_date": "2025-09-01",
+      "description": "REPAIR SINK HOLE IN PARKING LOT, DARDANELLE POWERHOUSE, YELL COUNTY, ARKANSAS. WORK SHALL BE COMPLETE WITHIN 180 CALENDAR DAYS OF RECEIPT OF NOTICE TO PROCEED. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-04-27.",
+      "key_specs": [
+        "Award W9127S25FA039",
+        "Awarding agency: Department of the Army",
+        "ZIP 72843"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9127S25FA039: Repair Sink Hole In Parking Lot, Dardanelle Powerhouse, Yell County, Arkansas. W",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9127S25FA039_9700_W9127S20D0022_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72843"
+    },
+    {
+      "id": "ar-usaspending-36c78625n0496",
+      "name": "Task Order To Repair Water Leak In Lodge At Fort Smith National Cemetery.",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 19274.0,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "US DIVERSIFIED CONTRACTING SERVICES INC.",
+      "opened_or_announced_date": "2025-05-30",
+      "description": "TASK ORDER TO REPAIR WATER LEAK IN LODGE AT FORT SMITH NATIONAL CEMETERY. Awarded by Department of Veterans Affairs. Period of performance through 2025-06-30.",
+      "key_specs": [
+        "Award 36C78625N0496",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72901"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C78625N0496: Task Order To Repair Water Leak In Lodge At Fort Smith National Cemetery.",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C78625N0496_3600_36C78625D0019_3600"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72901"
+    },
+    {
+      "id": "ar-usaspending-36c78625n0535",
+      "name": "Task Order To Repair Maintenance Building Hvac At Fayetteville National Cemetery.",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 8722.0,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "US DIVERSIFIED CONTRACTING SERVICES INC.",
+      "opened_or_announced_date": "2025-07-15",
+      "description": "TASK ORDER TO REPAIR MAINTENANCE BUILDING HVAC AT FAYETTEVILLE NATIONAL CEMETERY. Awarded by Department of Veterans Affairs. Period of performance through 2025-07-29.",
+      "key_specs": [
+        "Award 36C78625N0535",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72701"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C78625N0535: Task Order To Repair Maintenance Building Hvac At Fayetteville National Cemetery",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C78625N0535_3600_36C78625D0019_3600"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72701"
+    },
+    {
+      "id": "ar-usaspending-36c25624p1672",
+      "name": "Va-25-00006218 Icu Bathroom Floor New Epoxy",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 7372.6,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "GOODWIN FACILITIES SOLUTIONS, LLC",
+      "opened_or_announced_date": "2024-09-30",
+      "description": "VA-25-00006218 ICU BATHROOM FLOOR NEW EPOXY. Awarded by Department of Veterans Affairs. Period of performance through 2025-03-30.",
+      "key_specs": [
+        "Award 36C25624P1672",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72703"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C25624P1672: Va-25-00006218 Icu Bathroom Floor New Epoxy",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C25624P1672_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72703"
+    },
+    {
+      "id": "ar-usaspending-w50s6q23f0018",
+      "name": "Minimum Obligation Task Order",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 2000.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "WRIGHT BROS LLC",
+      "opened_or_announced_date": "2023-08-08",
+      "description": "MINIMUM OBLIGATION TASK ORDER. Awarded by Department of the Army (Department of Defense). Period of performance through 2028-07-31.",
+      "key_specs": [
+        "Award W50S6Q23F0018",
+        "Awarding agency: Department of the Army",
+        "ZIP 72903"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W50S6Q23F0018: Minimum Obligation Task Order",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W50S6Q23F0018_9700_W912JF23D0009_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72903"
+    },
+    {
+      "id": "ar-usaspending-w50s6q23f0015",
+      "name": "Minimum Obligation Task Order",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 2000.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "FLYNCO INC",
+      "opened_or_announced_date": "2023-08-08",
+      "description": "MINIMUM OBLIGATION TASK ORDER. Awarded by Department of the Army (Department of Defense). Period of performance through 2028-07-31.",
+      "key_specs": [
+        "Award W50S6Q23F0015",
+        "Awarding agency: Department of the Army",
+        "ZIP 72903"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W50S6Q23F0015: Minimum Obligation Task Order",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W50S6Q23F0015_9700_W912JF23D0006_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72903"
+    },
+    {
+      "id": "ar-usaspending-w50s6q23f0013",
+      "name": "Minimum Obligation Task Order",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 2000.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "AMERIND, INC.",
+      "opened_or_announced_date": "2023-08-07",
+      "description": "MINIMUM OBLIGATION TASK ORDER. Awarded by Department of the Army (Department of Defense). Period of performance through 2028-07-31.",
+      "key_specs": [
+        "Award W50S6Q23F0013",
+        "Awarding agency: Department of the Army",
+        "ZIP 72903"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W50S6Q23F0013: Minimum Obligation Task Order",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W50S6Q23F0013_9700_W912JF23D0004_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "AR",
+      "zip": "72903"
+    },
+    {
+      "id": "ar-usaspending-36c78625n0304",
+      "name": "Multiple Award Idiq Contract For Construction Services For The Nca Continental District $40&Lt; Is Total Aggregate Pool ",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 500.0,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "AVCOR CONSTRUCTION, LLC",
+      "opened_or_announced_date": "2025-03-17",
+      "description": "MULTIPLE AWARD IDIQ CONTRACT FOR CONSTRUCTION SERVICES FOR THE NCA CONTINENTAL DISTRICT $40&LT; IS TOTAL AGGREGATE POOL VALUE OVER 10 YEARS OF PERFORMANCE PERIOD. Awarded by Department of Veterans Affairs. Period of performance through 2025-03-31.",
+      "key_specs": [
+        "Award 36C78625N0304",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 72543"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C78625N0304: Multiple Award Idiq Contract For Construction Services For The Nca Continental D",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C78625N0304_3600_36C78625D0017_3600"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "AR",
+      "zip": "72543"
     }
   ],
   "stats": {
-    "total": 10
+    "total": 135
   }
 }

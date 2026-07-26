@@ -1016,9 +1016,1819 @@
       ],
       "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
       "state": "RI"
+    },
+    {
+      "id": "ri-usaspending-n4008524c0002",
+      "name": "Noaa Omao Ship & Repair Facility",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 149686843.13,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "SKANSKA USA CIVIL NORTHEAST INC",
+      "opened_or_announced_date": "2023-12-05",
+      "description": "NOAA OMAO SHIP & REPAIR FACILITY. Awarded by Department of the Navy (Department of Defense). Period of performance through 2027-07-24.",
+      "key_specs": [
+        "Award N4008524C0002",
+        "Awarding agency: Department of the Navy",
+        "ZIP 02841"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award N4008524C0002: Noaa Omao Ship & Repair Facility",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_N4008524C0002_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "RI",
+      "zip": "02841"
+    },
+    {
+      "id": "ri-usaspending-36c24123c0016",
+      "name": "Construction Of Project 650-19-100 Replace Boilers In Bldg. 10, Providence Va Medical Center, Providence Ri.",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "healthcare",
+      "estimated_value_usd": 42920442.55,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "SGJV2, LLC",
+      "opened_or_announced_date": "2023-01-06",
+      "description": "CONSTRUCTION OF PROJECT 650-19-100 REPLACE BOILERS IN BLDG. 10, PROVIDENCE VA MEDICAL CENTER, PROVIDENCE RI. Awarded by Department of Veterans Affairs. Period of performance through 2025-04-13.",
+      "key_specs": [
+        "Award 36C24123C0016",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 02908"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "medical gas",
+        "elevators",
+        "flooring",
+        "lighting",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C24123C0016: Construction Of Project 650-19-100 Replace Boilers In Bldg. 10, Providence Va Me",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C24123C0016_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02908"
+    },
+    {
+      "id": "ri-usaspending-n4008524f4094",
+      "name": "X001 Db Bulkhead Repairs S366 And Pier 1Navsta Newport, Newport,",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 23390327.72,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "J & J CONTRACTORS, INC.",
+      "opened_or_announced_date": "2023-12-15",
+      "description": "X001 DB BULKHEAD REPAIRS S366 AND PIER 1NAVSTA NEWPORT, NEWPORT,. Awarded by Department of the Navy (Department of Defense). Period of performance through 2026-05-13.",
+      "key_specs": [
+        "Award N4008524F4094",
+        "Awarding agency: Department of the Navy",
+        "ZIP 02841"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award N4008524F4094: X001 Db Bulkhead Repairs S366 And Pier 1Navsta Newport, Newport,",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_N4008524F4094_9700_N4008521D0066_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02841"
+    },
+    {
+      "id": "ri-usaspending-36c77626c0020",
+      "name": "Construct And Renovate New Mri At Providence Vamc",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 21386000.0,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "IMPERIAL CONSTRUCTION & ELECTRIC INC.",
+      "opened_or_announced_date": "2025-11-25",
+      "description": "CONSTRUCT AND RENOVATE NEW MRI AT PROVIDENCE VAMC. Awarded by Department of Veterans Affairs. Period of performance through 2027-10-05.",
+      "key_specs": [
+        "Award 36C77626C0020",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 02908"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C77626C0020: Construct And Renovate New Mri At Providence Vamc",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C77626C0020_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "RI",
+      "zip": "02908"
+    },
+    {
+      "id": "ri-usaspending-n4008521f5398",
+      "name": "Dbb Repair Mahan Hall, 3 Chi",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 17947067.65,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "PONTIAC DRYWALL SYSTEMS INC.",
+      "opened_or_announced_date": "2021-05-21",
+      "description": "DBB REPAIR MAHAN HALL, 3 CHI. Awarded by Department of the Navy (Department of Defense). Period of performance through 2025-01-17.",
+      "key_specs": [
+        "Award N4008521F5398",
+        "Awarding agency: Department of the Navy",
+        "ZIP 02841"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award N4008521F5398: Dbb Repair Mahan Hall, 3 Chi",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_N4008521F5398_9700_N4008517D5039_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02841"
+    },
+    {
+      "id": "ri-usaspending-36c24125c0060",
+      "name": "Construction Of A New Electrical Substation.",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 15258062.0,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "BILLY W. JARRETT CONSTRUCTION COMPANY, INC.",
+      "opened_or_announced_date": "2025-08-01",
+      "description": "CONSTRUCTION OF A NEW ELECTRICAL SUBSTATION. Awarded by Department of Veterans Affairs. Period of performance through 2027-05-24.",
+      "key_specs": [
+        "Award 36C24125C0060",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 02908"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C24125C0060: Construction Of A New Electrical Substation.",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C24125C0060_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "RI",
+      "zip": "02908"
+    },
+    {
+      "id": "ri-usaspending-w912wj21c0009",
+      "name": "Quonset Point Fuel Storage Complex Replacement, Ri Air National Guard, N. Kingstown, Ri",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 14627854.54,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "ROCKFORD CORPORATION",
+      "opened_or_announced_date": "2021-04-15",
+      "description": "QUONSET POINT FUEL STORAGE COMPLEX REPLACEMENT, RI AIR NATIONAL GUARD, N. KINGSTOWN, RI. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-09-30.",
+      "key_specs": [
+        "Award W912WJ21C0009",
+        "Awarding agency: Department of the Army",
+        "ZIP 02852"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W912WJ21C0009: Quonset Point Fuel Storage Complex Replacement, Ri Air National Guard, N. Kingst",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W912WJ21C0009_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02852"
+    },
+    {
+      "id": "ri-usaspending-n4008522f4808",
+      "name": "X003 Bulkhead Repairs, S45N, Naval Station Newport, Ri",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 13196103.21,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "DOYON PROJECT SERVICES, LLC",
+      "opened_or_announced_date": "2022-03-29",
+      "description": "X003 BULKHEAD REPAIRS, S45N, NAVAL STATION NEWPORT, RI. Awarded by Department of the Navy (Department of Defense). Period of performance through 2025-01-17.",
+      "key_specs": [
+        "Award N4008522F4808",
+        "Awarding agency: Department of the Navy",
+        "ZIP 02840"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award N4008522F4808: X003 Bulkhead Repairs, S45N, Naval Station Newport, Ri",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_N4008522F4808_9700_N4008518D1157_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02840"
+    },
+    {
+      "id": "ri-usaspending-0001",
+      "name": "Igf::Ot::Igf - Chemistry Laboratory Renovation Phase 2 For The Usepa National Health And Environmental Effects Research ",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "healthcare",
+      "estimated_value_usd": 12761644.51,
+      "square_footage": null,
+      "owner": "Environmental Protection Agency",
+      "architect": "",
+      "general_contractor": "DOYON MANAGEMENT SERVICES, LLC",
+      "opened_or_announced_date": "2017-06-01",
+      "description": "IGF::OT::IGF - CHEMISTRY LABORATORY RENOVATION PHASE 2 FOR THE USEPA NATIONAL HEALTH AND ENVIRONMENTAL EFFECTS RESEARCH LABORATORY (NHEERL), REGION 1, ATLANTIC ECOLOGY DIVISION (AED), NARRAGANSETT RI. Awarded by Environmental Protection Agency. Period of performance through 2023-07-12.",
+      "key_specs": [
+        "Award 0001",
+        "Awarding agency: Environmental Protection Agency",
+        "ZIP 02882"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "medical gas",
+        "elevators",
+        "flooring",
+        "lighting",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 0001: Igf::Ot::Igf - Chemistry Laboratory Renovation Phase 2 For The Usepa National He",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_0001_6800_EPC17008_6800"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02882"
+    },
+    {
+      "id": "ri-usaspending-36e77619c0039",
+      "name": "Providence Harwood Center For Research Renovation",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 11483231.65,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "IRONCLAD SERVICES INC",
+      "opened_or_announced_date": "2019-08-30",
+      "description": "PROVIDENCE HARWOOD CENTER FOR RESEARCH RENOVATION. Awarded by Department of Veterans Affairs. Period of performance through 2022-06-30.",
+      "key_specs": [
+        "Award 36E77619C0039",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 02901"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36E77619C0039: Providence Harwood Center For Research Renovation",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36E77619C0039_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02901"
+    },
+    {
+      "id": "ri-usaspending-36e77620c0030",
+      "name": "Construction Of Clean Core Addition Surgical Suite At The Providence, Rhode Island Veteran Affairs Medical Center.",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "healthcare",
+      "estimated_value_usd": 10529730.06,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "CARRIGG COMMERCIAL BUILDERS LLC",
+      "opened_or_announced_date": "2020-04-08",
+      "description": "CONSTRUCTION OF CLEAN CORE ADDITION SURGICAL SUITE AT THE PROVIDENCE, RHODE ISLAND VETERAN AFFAIRS MEDICAL CENTER. Awarded by Department of Veterans Affairs. Period of performance through 2025-03-19.",
+      "key_specs": [
+        "Award 36E77620C0030",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 02908"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "medical gas",
+        "elevators",
+        "flooring",
+        "lighting",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36E77620C0030: Construction Of Clean Core Addition Surgical Suite At The Providence, Rhode Isla",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36E77620C0030_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02908"
+    },
+    {
+      "id": "ri-usaspending-n4008519f7158",
+      "name": "X099 Design-Build Building 1371, Autonomous Underwater Vehicle Ad",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 8756246.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "ASTURIAN GROUP, INC.",
+      "opened_or_announced_date": "2019-09-28",
+      "description": "X099 DESIGN-BUILD BUILDING 1371, AUTONOMOUS UNDERWATER VEHICLE AD. Awarded by Department of the Navy (Department of Defense). Period of performance through 2026-11-30.",
+      "key_specs": [
+        "Award N4008519F7158",
+        "Awarding agency: Department of the Navy",
+        "ZIP 02841"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award N4008519F7158: X099 Design-Build Building 1371, Autonomous Underwater Vehicle Ad",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_N4008519F7158_9700_N4008516D3041_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "RI",
+      "zip": "02841"
+    },
+    {
+      "id": "ri-usaspending-va24116c0037",
+      "name": "Icu Igf::Ot::Igf",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 8532997.59,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "ALARES CONSTRUCTION INC.",
+      "opened_or_announced_date": "2016-04-28",
+      "description": "ICU IGF::OT::IGF. Awarded by Department of Veterans Affairs. Period of performance through 2025-05-30.",
+      "key_specs": [
+        "Award VA24116C0037",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 02908"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award VA24116C0037: Icu Igf::Ot::Igf",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_VA24116C0037_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02908"
+    },
+    {
+      "id": "ri-usaspending-n4008522f6396",
+      "name": "Nuwc B-1171",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 6349586.72,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "BENAKA, INC.",
+      "opened_or_announced_date": "2022-09-15",
+      "description": "NUWC B-1171. Awarded by Department of the Navy (Department of Defense). Period of performance through 2024-10-01.",
+      "key_specs": [
+        "Award N4008522F6396",
+        "Awarding agency: Department of the Navy",
+        "ZIP 02840"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award N4008522F6396: Nuwc B-1171",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_N4008522F6396_9700_N4008521D0052_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02840"
+    },
+    {
+      "id": "ri-usaspending-n4008520f6541",
+      "name": "Db Nuwc B1320 Joint Workspace Addition",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 6320749.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "J & J CONTRACTORS, INC.",
+      "opened_or_announced_date": "2020-09-30",
+      "description": "DB NUWC B1320 JOINT WORKSPACE ADDITION. Awarded by Department of the Navy (Department of Defense). Period of performance through 2024-10-01.",
+      "key_specs": [
+        "Award N4008520F6541",
+        "Awarding agency: Department of the Navy",
+        "ZIP 02841"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award N4008520F6541: Db Nuwc B1320 Joint Workspace Addition",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_N4008520F6541_9700_N4008517D5050_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02841"
+    },
+    {
+      "id": "ri-usaspending-n4008524c0009",
+      "name": "Tender Agreement - Nuwc B1319 Lab Add",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "healthcare",
+      "estimated_value_usd": 5131425.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "MARON CONSTRUCTION CO., INC.",
+      "opened_or_announced_date": "2024-05-29",
+      "description": "TENDER AGREEMENT - NUWC B1319 LAB ADD. Awarded by Department of the Navy (Department of Defense). Period of performance through 2027-05-09.",
+      "key_specs": [
+        "Award N4008524C0009",
+        "Awarding agency: Department of the Navy",
+        "ZIP 02841"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "medical gas",
+        "elevators",
+        "flooring",
+        "lighting",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award N4008524C0009: Tender Agreement - Nuwc B1319 Lab Add",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_N4008524C0009_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "RI",
+      "zip": "02841"
+    },
+    {
+      "id": "ri-usaspending-n4008525f1383",
+      "name": "The Work Includes To Design Repair And Modernize The Deep Depth Tank Facility (Ddtf) Rail Trackage Infrastructure At Cel",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 3707000.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "J & J CONTRACTORS, INC.",
+      "opened_or_announced_date": "2025-09-30",
+      "description": "THE WORK INCLUDES TO DESIGN REPAIR AND MODERNIZE THE DEEP DEPTH TANK FACILITY (DDTF) RAIL TRACKAGE INFRASTRUCTURE AT CELL 5 OF BUILDING 179. Awarded by Department of the Navy (Department of Defense). Period of performance through 2026-07-27.",
+      "key_specs": [
+        "Award N4008525F1383",
+        "Awarding agency: Department of the Navy",
+        "ZIP 02841"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award N4008525F1383: The Work Includes To Design Repair And Modernize The Deep Depth Tank Facility (D",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_N4008525F1383_9700_N4008521D0066_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "RI",
+      "zip": "02841"
+    },
+    {
+      "id": "ri-usaspending-68herc19f0307",
+      "name": "Narragansett Facility Seawater Pump House Relocation",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 3654404.58,
+      "square_footage": null,
+      "owner": "Environmental Protection Agency",
+      "architect": "",
+      "general_contractor": "DOYON MANAGEMENT SERVICES, LLC",
+      "opened_or_announced_date": "2019-09-19",
+      "description": "NARRAGANSETT FACILITY SEAWATER PUMP HOUSE RELOCATION. Awarded by Environmental Protection Agency. Period of performance through 2024-02-23.",
+      "key_specs": [
+        "Award 68HERC19F0307",
+        "Awarding agency: Environmental Protection Agency",
+        "ZIP 02882"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 68HERC19F0307: Narragansett Facility Seawater Pump House Relocation",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_68HERC19F0307_6800_EPC17008_6800"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02882"
+    },
+    {
+      "id": "ri-usaspending-n4008522f6318",
+      "name": "B114 Nuwc Process Piping And Chiller Replacement",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 1804893.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "SWAN CONTRACTING LLC",
+      "opened_or_announced_date": "2022-09-21",
+      "description": "B114 NUWC PROCESS PIPING AND CHILLER REPLACEMENT. Awarded by Department of the Navy (Department of Defense). Period of performance through 2025-10-30.",
+      "key_specs": [
+        "Award N4008522F6318",
+        "Awarding agency: Department of the Navy",
+        "ZIP 02841"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award N4008522F6318: B114 Nuwc Process Piping And Chiller Replacement",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_N4008522F6318_9700_N4008522D0026_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02841"
+    },
+    {
+      "id": "ri-usaspending-n4008524f6677",
+      "name": "Db B7 Natick Replace Roof",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 1666609.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "ENFIELD ENTERPRISES LLC",
+      "opened_or_announced_date": "2024-09-25",
+      "description": "DB B7 NATICK REPLACE ROOF. Awarded by Department of the Navy (Department of Defense). Period of performance through 2025-06-25.",
+      "key_specs": [
+        "Award N4008524F6677",
+        "Awarding agency: Department of the Navy",
+        "ZIP 02841"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award N4008524F6677: Db B7 Natick Replace Roof",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_N4008524F6677_9700_N4008523D0050_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02841"
+    },
+    {
+      "id": "ri-usaspending-n4008524f6531",
+      "name": "X007 Nuwc Jm24/Cip -- B-3Cc (Gczljd) - Floor, Crane, And Door",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 1663148.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "CCI UTILITY AND CONSTRUCTION SERVICES, LLC",
+      "opened_or_announced_date": "2024-09-25",
+      "description": "X007 NUWC JM24/CIP -- B-3CC (GCZLJD) - FLOOR, CRANE, AND DOOR. Awarded by Department of the Navy (Department of Defense). Period of performance through 2025-06-30.",
+      "key_specs": [
+        "Award N4008524F6531",
+        "Awarding agency: Department of the Navy",
+        "ZIP 02841"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award N4008524F6531: X007 Nuwc Jm24/Cip -- B-3Cc (Gczljd) - Floor, Crane, And Door",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_N4008524F6531_9700_N4008521D0053_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02841"
+    },
+    {
+      "id": "ri-usaspending-n4008524f5985",
+      "name": "B1372 Replace Roof",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 1560840.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "ENFIELD ENTERPRISES LLC",
+      "opened_or_announced_date": "2024-07-30",
+      "description": "B1372 REPLACE ROOF. Awarded by Department of the Navy (Department of Defense). Period of performance through 2025-07-31.",
+      "key_specs": [
+        "Award N4008524F5985",
+        "Awarding agency: Department of the Navy",
+        "ZIP 02841"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award N4008524F5985: B1372 Replace Roof",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_N4008524F5985_9700_N4008523D0050_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02841"
+    },
+    {
+      "id": "ri-usaspending-68herc20f0465",
+      "name": "Hazardous Materials Storage Building Repairs Project In Narragansett, Ri In Accordance With The Attached Statement Of Wo",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 1453776.91,
+      "square_footage": null,
+      "owner": "Environmental Protection Agency",
+      "architect": "",
+      "general_contractor": "DOYON MANAGEMENT SERVICES, LLC",
+      "opened_or_announced_date": "2020-09-29",
+      "description": "HAZARDOUS MATERIALS STORAGE BUILDING REPAIRS PROJECT IN NARRAGANSETT, RI IN ACCORDANCE WITH THE ATTACHED STATEMENT OF WORK, SPECS AND DRAWINGS. Awarded by Environmental Protection Agency. Period of performance through 2022-06-17.",
+      "key_specs": [
+        "Award 68HERC20F0465",
+        "Awarding agency: Environmental Protection Agency",
+        "ZIP 02882"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 68HERC20F0465: Hazardous Materials Storage Building Repairs Project In Narragansett, Ri In Acco",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_68HERC20F0465_6800_EPC17008_6800"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02882"
+    },
+    {
+      "id": "ri-usaspending-36c24125c0007",
+      "name": "Repair & Repoint Two Bldgs. Main Building & Warehouse (10,800Sqft & 4,400Sqft Surface Area). Includes Preparation, Stagi",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "industrial",
+      "estimated_value_usd": 1445799.95,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "VETERANS CONSTRUCTION LLC",
+      "opened_or_announced_date": "2024-12-20",
+      "description": "REPAIR & REPOINT TWO BLDGS. MAIN BUILDING & WAREHOUSE (10,800SQFT & 4,400SQFT SURFACE AREA). INCLUDES PREPARATION, STAGING, SEALING, REPLACING BROKEN BRICKS, REPOINTING BRICKWORK, REMOVE/RESET GUTTERS, TENDING TO JOINT MORTAR AND TUCK FLASHING. Awarded by Department of Veterans Affairs. Period of performance through 2026-01-16.",
+      "key_specs": [
+        "Award 36C24125C0007",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 02907"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C24125C0007: Repair & Repoint Two Bldgs. Main Building & Warehouse (10,800Sqft & 4,400Sqft Su",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C24125C0007_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02907"
+    },
+    {
+      "id": "ri-usaspending-n4008524f6631",
+      "name": "X003 B80 Replace Epdm Roofing System",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 1396461.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "ENFIELD ENTERPRISES LLC",
+      "opened_or_announced_date": "2024-09-23",
+      "description": "X003 B80 REPLACE EPDM ROOFING SYSTEM. Awarded by Department of the Navy (Department of Defense). Period of performance through 2025-03-04.",
+      "key_specs": [
+        "Award N4008524F6631",
+        "Awarding agency: Department of the Navy",
+        "ZIP 02841"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award N4008524F6631: X003 B80 Replace Epdm Roofing System",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_N4008524F6631_9700_N4008523D0050_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02841"
+    },
+    {
+      "id": "ri-usaspending-697dck26c00052",
+      "name": "The Providence (Pvd) Airport Traffic Control Tower (Atct) Has A Project Jcn 1800508 For A Total Roof Replacement Of Atct",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 1322441.92,
+      "square_footage": null,
+      "owner": "Department of Transportation",
+      "architect": "",
+      "general_contractor": "EMMATY, INC",
+      "opened_or_announced_date": "2026-02-02",
+      "description": "THE PROVIDENCE (PVD) AIRPORT TRAFFIC CONTROL TOWER (ATCT) HAS A PROJECT JCN 1800508 FOR A TOTAL ROOF REPLACEMENT OF ATCT BUILDINGS (TOWER CAB, BASE-BUILDING, TECH-OPS, TELCO AND E&G) AND RE-CAULKING OF ATCT BUILDINGS (TOWER, BASE-BUILDING, TECH-O. Awarded by Federal Aviation Administration (Department of Transportation). Period of performance through 2026-07-28.",
+      "key_specs": [
+        "Award 697DCK26C00052",
+        "Awarding agency: Federal Aviation Administration",
+        "ZIP 02886"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 697DCK26C00052: The Providence (Pvd) Airport Traffic Control Tower (Atct) Has A Project Jcn 1800",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_697DCK26C00052_6920_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "RI",
+      "zip": "02886"
+    },
+    {
+      "id": "ri-usaspending-n4008523f4262",
+      "name": "X002 Design-Build Rfp For B1688 Ngis Repairs To Domestic And Laun",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 722690.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "ADDON SERVICES LLC",
+      "opened_or_announced_date": "2022-11-15",
+      "description": "X002 DESIGN-BUILD RFP FOR B1688 NGIS REPAIRS TO DOMESTIC AND LAUN. Awarded by Department of the Navy (Department of Defense). Period of performance through 2026-02-11.",
+      "key_specs": [
+        "Award N4008523F4262",
+        "Awarding agency: Department of the Navy",
+        "ZIP 02841"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award N4008523F4262: X002 Design-Build Rfp For B1688 Ngis Repairs To Domestic And Laun",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_N4008523F4262_9700_N4008522D0021_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02841"
+    },
+    {
+      "id": "ri-usaspending-w912wj20c0020",
+      "name": "Rehabilitate Canal Gates At Fox Point Hurricane Barrier, Providence, Ti",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 695625.98,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "CHAS G. ALLEN INCORPORATED",
+      "opened_or_announced_date": "2020-10-15",
+      "description": "REHABILITATE CANAL GATES AT FOX POINT HURRICANE BARRIER, PROVIDENCE, TI. Awarded by Department of the Army (Department of Defense). Period of performance through 2024-07-23.",
+      "key_specs": [
+        "Award W912WJ20C0020",
+        "Awarding agency: Department of the Army",
+        "ZIP 02901"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W912WJ20C0020: Rehabilitate Canal Gates At Fox Point Hurricane Barrier, Providence, Ti",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W912WJ20C0020_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02901"
+    },
+    {
+      "id": "ri-usaspending-n4008519f6936",
+      "name": "Db Improvements To Relocate Stillwater Waterfront Facilities",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 525113.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "ASTURIAN GROUP, INC.",
+      "opened_or_announced_date": "2019-09-27",
+      "description": "DB IMPROVEMENTS TO RELOCATE STILLWATER WATERFRONT FACILITIES. Awarded by Department of the Navy (Department of Defense). Period of performance through 2022-09-30.",
+      "key_specs": [
+        "Award N4008519F6936",
+        "Awarding agency: Department of the Navy",
+        "ZIP 02841"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award N4008519F6936: Db Improvements To Relocate Stillwater Waterfront Facilities",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_N4008519F6936_9700_N4008516D3041_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02841"
+    },
+    {
+      "id": "ri-usaspending-697dck26c00047",
+      "name": "Replace The Existing Facility Backflow Preventer And Replace With Above Ground Preventer In A Heated Enclosure. Replace ",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 498857.0,
+      "square_footage": null,
+      "owner": "Department of Transportation",
+      "architect": "",
+      "general_contractor": "CORNERSTONE CONSTRUCTION SERVICES, LLC",
+      "opened_or_announced_date": "2026-01-29",
+      "description": "REPLACE THE EXISTING FACILITY BACKFLOW PREVENTER AND REPLACE WITH ABOVE GROUND PREVENTER IN A HEATED ENCLOSURE. REPLACE THE FACILITIES MAIN WATER SHUTOFF VALVE. Awarded by Federal Aviation Administration (Department of Transportation). Period of performance through 2026-01-30.",
+      "key_specs": [
+        "Award 697DCK26C00047",
+        "Awarding agency: Federal Aviation Administration",
+        "ZIP 02886"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 697DCK26C00047: Replace The Existing Facility Backflow Preventer And Replace With Above Ground P",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_697DCK26C00047_6920_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02886"
+    },
+    {
+      "id": "ri-usaspending-n4008525f1298",
+      "name": "Bldg 1112 Replace Chiller",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 368819.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "KOMAN GOVERNMENT SOLUTIONS LLC",
+      "opened_or_announced_date": "2025-09-30",
+      "description": "BLDG 1112 REPLACE CHILLER. Awarded by Department of the Navy (Department of Defense). Period of performance through 2026-07-27.",
+      "key_specs": [
+        "Award N4008525F1298",
+        "Awarding agency: Department of the Navy",
+        "ZIP 02841"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award N4008525F1298: Bldg 1112 Replace Chiller",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_N4008525F1298_9700_N4008525D4001_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "RI",
+      "zip": "02841"
+    },
+    {
+      "id": "ri-usaspending-n4008524f4401",
+      "name": "Boiler Plant 7Cc - Repairs To Boiler 1 Induced Draft (Id) Fan",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 314623.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "CONNECTICUT BOILER REPAIR AND MANUFACTURING CO., INCORPORATED",
+      "opened_or_announced_date": "2023-12-26",
+      "description": "BOILER PLANT 7CC - REPAIRS TO BOILER 1 INDUCED DRAFT (ID) FAN. Awarded by Department of the Navy (Department of Defense). Period of performance through 2025-10-15.",
+      "key_specs": [
+        "Award N4008524F4401",
+        "Awarding agency: Department of the Navy",
+        "ZIP 02841"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award N4008524F4401: Boiler Plant 7Cc - Repairs To Boiler 1 Induced Draft (Id) Fan",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_N4008524F4401_9700_N4008519D5003_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02841"
+    },
+    {
+      "id": "ri-usaspending-n4008524f6535",
+      "name": "Ev Charging Stations",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 284999.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "BENAKA, INC.",
+      "opened_or_announced_date": "2024-09-30",
+      "description": "EV CHARGING STATIONS. Awarded by Department of the Navy (Department of Defense). Period of performance through 2025-10-17.",
+      "key_specs": [
+        "Award N4008524F6535",
+        "Awarding agency: Department of the Navy",
+        "ZIP 02841"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award N4008524F6535: Ev Charging Stations",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_N4008524F6535_9700_N4008521D0052_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02841"
+    },
+    {
+      "id": "ri-usaspending-36c24124c0013",
+      "name": "Construction Services To Provide And Install A New 125Kw Standby Generator. Additionally, Contract Includes Site Prepara",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 209850.0,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "JACKSON RYAN CONSTRUCTION SERVICES, INC.",
+      "opened_or_announced_date": "2024-01-02",
+      "description": "CONSTRUCTION SERVICES TO PROVIDE AND INSTALL A NEW 125KW STANDBY GENERATOR. ADDITIONALLY, CONTRACT INCLUDES SITE PREPARATION AND THE PROVISION OF A CONCRETE EQUIPMENT PAD AND DISPOSAL OF SUBSEQUENT WASTE. Awarded by Department of Veterans Affairs. Period of performance through 2025-02-25.",
+      "key_specs": [
+        "Award 36C24124C0013",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 02908"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C24124C0013: Construction Services To Provide And Install A New 125Kw Standby Generator. Addi",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C24124C0013_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02908"
+    },
+    {
+      "id": "ri-usaspending-36c24123c0034",
+      "name": "A/E Services",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 205270.84,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "ACELA ARCHITECTS + ENGINEERS PC",
+      "opened_or_announced_date": "2023-04-03",
+      "description": "A/E SERVICES. Awarded by Department of Veterans Affairs. Period of performance through 2025-03-05.",
+      "key_specs": [
+        "Award 36C24123C0034",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 02908"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C24123C0034: A/E Services",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C24123C0034_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02908"
+    },
+    {
+      "id": "ri-usaspending-n4008524f6682",
+      "name": "Nuwc B-119 Replace Epdm Roofing System",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 141680.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "ENFIELD ENTERPRISES LLC",
+      "opened_or_announced_date": "2024-09-25",
+      "description": "NUWC B-119 REPLACE EPDM ROOFING SYSTEM. Awarded by Department of the Navy (Department of Defense). Period of performance through 2025-05-25.",
+      "key_specs": [
+        "Award N4008524F6682",
+        "Awarding agency: Department of the Navy",
+        "ZIP 02841"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award N4008524F6682: Nuwc B-119 Replace Epdm Roofing System",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_N4008524F6682_9700_N4008523D0050_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02841"
+    },
+    {
+      "id": "ri-usaspending-w912wj25pa019",
+      "name": "Membrane Roof Replacement And Masonry Repairs, Pump Station At Fox Point Hurricane Barrier, Providence, Ri.",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 131690.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "TRIDENT WATERPROOFING, INC.",
+      "opened_or_announced_date": "2025-06-02",
+      "description": "MEMBRANE ROOF REPLACEMENT AND MASONRY REPAIRS, PUMP STATION AT FOX POINT HURRICANE BARRIER, PROVIDENCE, RI. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-10-20.",
+      "key_specs": [
+        "Award W912WJ25PA019",
+        "Awarding agency: Department of the Army",
+        "ZIP 02901"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W912WJ25PA019: Membrane Roof Replacement And Masonry Repairs, Pump Station At Fox Point Hurrica",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W912WJ25PA019_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02901"
+    },
+    {
+      "id": "ri-usaspending-140p2125c0028",
+      "name": "The Contractor Shall Provide All Services Including Labor, Materials, Facilities, And Travel Necessary To Plan, Design, ",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 108300.0,
+      "square_footage": null,
+      "owner": "Department of the Interior",
+      "architect": "",
+      "general_contractor": "KRENT PAFFETT CARNEY INC",
+      "opened_or_announced_date": "2025-09-12",
+      "description": "THE CONTRACTOR SHALL PROVIDE ALL SERVICES INCLUDING LABOR, MATERIALS, FACILITIES, AND TRAVEL NECESSARY TO PLAN, DESIGN, FABRICATE, TRANSPORT TO SITE, AND INSTALL ALL EXHIBIT ELEMENTS FOR THE DECLARATION HOUSE IN ACCORDANCE WITH THE SPECIFICATIONS AS. Awarded by National Park Service (Department of the Interior). Period of performance through 2027-09-26.",
+      "key_specs": [
+        "Award 140P2125C0028",
+        "Awarding agency: National Park Service",
+        "ZIP 02903"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 140P2125C0028: The Contractor Shall Provide All Services Including Labor, Materials, Facilities",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_140P2125C0028_1443_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "RI",
+      "zip": "02903"
+    },
+    {
+      "id": "ri-usaspending-w912wj26pa041",
+      "name": "Sluice Gate Actuator Replacement, Hamlet District Pumping Station, Woonsocket Flood Reduction Project, Woonsocket, Ri",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 97269.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "JE PRENOSIL & COMPANY",
+      "opened_or_announced_date": "2026-04-06",
+      "description": "SLUICE GATE ACTUATOR REPLACEMENT, HAMLET DISTRICT PUMPING STATION, WOONSOCKET FLOOD REDUCTION PROJECT, WOONSOCKET, RI. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-10-07.",
+      "key_specs": [
+        "Award W912WJ26PA041",
+        "Awarding agency: Department of the Army",
+        "ZIP 02895"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W912WJ26PA041: Sluice Gate Actuator Replacement, Hamlet District Pumping Station, Woonsocket Fl",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W912WJ26PA041_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "RI",
+      "zip": "02895"
+    },
+    {
+      "id": "ri-usaspending-w912wj23p0083",
+      "name": "Sluice Gate B Operator Actuator Replacement, Woonsocket Flood Control Project, Woonsocket, Ri",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 96596.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "JE PRENOSIL & COMPANY",
+      "opened_or_announced_date": "2023-06-01",
+      "description": "SLUICE GATE B OPERATOR ACTUATOR REPLACEMENT, WOONSOCKET FLOOD CONTROL PROJECT, WOONSOCKET, RI. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-02-06.",
+      "key_specs": [
+        "Award W912WJ23P0083",
+        "Awarding agency: Department of the Army",
+        "ZIP 02895"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W912WJ23P0083: Sluice Gate B Operator Actuator Replacement, Woonsocket Flood Control Project, W",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W912WJ23P0083_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02895"
+    },
+    {
+      "id": "ri-usaspending-140p2125c0004",
+      "name": "John Fitzgerald Kennedy Nhp Exhibit Fabrication",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 90074.0,
+      "square_footage": null,
+      "owner": "Department of the Interior",
+      "architect": "",
+      "general_contractor": "KRENT PAFFETT CARNEY INC",
+      "opened_or_announced_date": "2024-12-23",
+      "description": "JOHN FITZGERALD KENNEDY NHP EXHIBIT FABRICATION. Awarded by National Park Service (Department of the Interior). Period of performance through 2026-07-31.",
+      "key_specs": [
+        "Award 140P2125C0004",
+        "Awarding agency: National Park Service",
+        "ZIP 02903"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 140P2125C0004: John Fitzgerald Kennedy Nhp Exhibit Fabrication",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_140P2125C0004_1443_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "RI",
+      "zip": "02903"
+    },
+    {
+      "id": "ri-usaspending-140fc224f0014",
+      "name": "Pergola Installation And Site Work - Ri",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 73800.0,
+      "square_footage": null,
+      "owner": "Department of the Interior",
+      "architect": "",
+      "general_contractor": "CORNERSTONE CONSTRUCTION SERVICES, LLC",
+      "opened_or_announced_date": "2024-05-14",
+      "description": "PERGOLA INSTALLATION AND SITE WORK - RI. Awarded by U.S. Fish and Wildlife Service (Department of the Interior). Period of performance through 2025-04-30.",
+      "key_specs": [
+        "Award 140FC224F0014",
+        "Awarding agency: U.S. Fish and Wildlife Service",
+        "ZIP 02813"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 140FC224F0014: Pergola Installation And Site Work - Ri",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_140FC224F0014_1448_140F0822D0027_1448"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02813"
+    },
+    {
+      "id": "ri-usaspending-36c24125p0181",
+      "name": "Construction: Fabricate And Construct A Small, Metal Staircase And Platform Near Outdoor Hvac Units To Provide Better Ac",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 69620.0,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "ROTHWELL CONSTRUCTION LLC",
+      "opened_or_announced_date": "2025-01-23",
+      "description": "CONSTRUCTION: FABRICATE AND CONSTRUCT A SMALL, METAL STAIRCASE AND PLATFORM NEAR OUTDOOR HVAC UNITS TO PROVIDE BETTER ACCESS TO THE UNITS. Awarded by Department of Veterans Affairs. Period of performance through 2025-05-23.",
+      "key_specs": [
+        "Award 36C24125P0181",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 02908"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C24125P0181: Construction: Fabricate And Construct A Small, Metal Staircase And Platform Near",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C24125P0181_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02908"
+    },
+    {
+      "id": "ri-usaspending-n4008525f4920",
+      "name": "B291 King Hall Roof Rep",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 52558.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "ENFIELD ENTERPRISES LLC",
+      "opened_or_announced_date": "2025-03-07",
+      "description": "B291 KING HALL ROOF REP. Awarded by Department of the Navy (Department of Defense). Period of performance through 2025-06-16.",
+      "key_specs": [
+        "Award N4008525F4920",
+        "Awarding agency: Department of the Navy",
+        "ZIP 02841"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award N4008525F4920: B291 King Hall Roof Rep",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_N4008525F4920_9700_N4008523D0050_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02841"
+    },
+    {
+      "id": "ri-usaspending-n4008525f1318",
+      "name": "Building 1255 Rear Entrance Landing And Stair Repair",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 41425.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "RANGE CONSTRUCTION LLC",
+      "opened_or_announced_date": "2025-09-30",
+      "description": "BUILDING 1255 REAR ENTRANCE LANDING AND STAIR REPAIR. Awarded by Department of the Navy (Department of Defense). Period of performance through 2025-11-30.",
+      "key_specs": [
+        "Award N4008525F1318",
+        "Awarding agency: Department of the Navy",
+        "ZIP 02841"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award N4008525F1318: Building 1255 Rear Entrance Landing And Stair Repair",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_N4008525F1318_9700_N4008525D0041_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02841"
+    },
+    {
+      "id": "ri-usaspending-w912wj25pa036",
+      "name": "Pump Station Platform Rehabilitation, Woonsocket Flood Reduction Project, Woonsocket, Ri",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 31920.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "INTEGRITY SYSTEMS LLC",
+      "opened_or_announced_date": "2025-07-02",
+      "description": "PUMP STATION PLATFORM REHABILITATION, WOONSOCKET FLOOD REDUCTION PROJECT, WOONSOCKET, RI. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-02-27.",
+      "key_specs": [
+        "Award W912WJ25PA036",
+        "Awarding agency: Department of the Army",
+        "ZIP 02895"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W912WJ25PA036: Pump Station Platform Rehabilitation, Woonsocket Flood Reduction Project, Woonso",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W912WJ25PA036_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02895"
+    },
+    {
+      "id": "ri-usaspending-w912wj25pa090",
+      "name": "Security Fencing Installation, Fox Point Hurricane Barrier, Providence, Rhode Island",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 25600.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "CE SOLUTION PLUS CORP.",
+      "opened_or_announced_date": "2025-09-26",
+      "description": "SECURITY FENCING INSTALLATION, FOX POINT HURRICANE BARRIER, PROVIDENCE, RHODE ISLAND. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-05-24.",
+      "key_specs": [
+        "Award W912WJ25PA090",
+        "Awarding agency: Department of the Army",
+        "ZIP 02903"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W912WJ25PA090: Security Fencing Installation, Fox Point Hurricane Barrier, Providence, Rhode Is",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W912WJ25PA090_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02903"
+    },
+    {
+      "id": "ri-usaspending-n4008525f4965",
+      "name": "Roofing Idiq Multiple Roof Inspections",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 24893.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "ENFIELD ENTERPRISES LLC",
+      "opened_or_announced_date": "2025-03-13",
+      "description": "ROOFING IDIQ MULTIPLE ROOF INSPECTIONS. Awarded by Department of the Navy (Department of Defense). Period of performance through 2025-06-30.",
+      "key_specs": [
+        "Award N4008525F4965",
+        "Awarding agency: Department of the Navy",
+        "ZIP 02841"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award N4008525F4965: Roofing Idiq Multiple Roof Inspections",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_N4008525F4965_9700_N4008523D0050_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02841"
+    },
+    {
+      "id": "ri-usaspending-w912wj25p0022",
+      "name": "Bridge Drainage Troughs And Concrete Sealing, Woonsocket Flood Reduction Project, Woonsocket, Ri",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 22135.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "STACIE LYNN BASSETT",
+      "opened_or_announced_date": "2025-02-04",
+      "description": "BRIDGE DRAINAGE TROUGHS AND CONCRETE SEALING, WOONSOCKET FLOOD REDUCTION PROJECT, WOONSOCKET, RI. Awarded by Department of the Army (Department of Defense). Period of performance through 2025-08-04.",
+      "key_specs": [
+        "Award W912WJ25P0022",
+        "Awarding agency: Department of the Army",
+        "ZIP 02895"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W912WJ25P0022: Bridge Drainage Troughs And Concrete Sealing, Woonsocket Flood Reduction Project",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W912WJ25P0022_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "RI",
+      "zip": "02895"
+    },
+    {
+      "id": "ri-usaspending-140p2125c0013",
+      "name": "Everglades Msd Visitor Center Exhibits Planning, Design, Fabrication & Installation",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 1800.0,
+      "square_footage": null,
+      "owner": "Department of the Interior",
+      "architect": "",
+      "general_contractor": "KRENT PAFFETT CARNEY INC",
+      "opened_or_announced_date": "2025-05-19",
+      "description": "EVERGLADES MSD VISITOR CENTER EXHIBITS PLANNING, DESIGN, FABRICATION & INSTALLATION. Awarded by National Park Service (Department of the Interior). Period of performance through 2027-12-21.",
+      "key_specs": [
+        "Award 140P2125C0013",
+        "Awarding agency: National Park Service",
+        "ZIP 02903"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 140P2125C0013: Everglades Msd Visitor Center Exhibits Planning, Design, Fabrication & Installat",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_140P2125C0013_1443_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "RI",
+      "zip": "02903"
     }
   ],
   "stats": {
-    "total": 26
+    "total": 76
   }
 }

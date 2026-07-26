@@ -16,21 +16,58 @@ type ProjectsListResponse = {
   projects: Project[];
 };
 
+// Build-time static generation hits this with many parallel Next.js
+// workers, each independently paginating the full corpus -- under that
+// load the small Cloud Run API (a deliberately small connection pool, see
+// api/main.py's POOL_MAX_CONN comment) occasionally serves a truncated or
+// malformed response for one page rather than a clean error, which
+// otherwise surfaces later as a cryptic ".length of undefined" deep in
+// page rendering. Retrying a bad page here, with validation that it's
+// actually shaped like a project list before trusting it, converts that
+// into "occasionally slower," not "occasionally broken."
+async function fetchPage(offset: number, attempt = 1): Promise<ProjectsListResponse> {
+  const res = await fetch(`${API_BASE}/v1/projects?limit=${PAGE_SIZE}&offset=${offset}`);
+  if (!res.ok) {
+    throw new Error(`specindex-api /v1/projects failed: ${res.status} ${res.statusText}`);
+  }
+  const data = (await res.json()) as ProjectsListResponse;
+  if (!Array.isArray(data.projects) || typeof data.total !== "number") {
+    if (attempt >= 4) {
+      throw new Error(`specindex-api /v1/projects returned a malformed page at offset ${offset}`);
+    }
+    await new Promise((r) => setTimeout(r, 500 * attempt));
+    return fetchPage(offset, attempt + 1);
+  }
+  return data;
+}
+
+// Defensive normalization at the one choke point every project passes
+// through, regardless of exactly why a given API response might be
+// missing an array/object field (seen intermittently during large
+// static-export builds; the API itself checks out clean against direct
+// queries, so this guards against something in the fetch/transport path
+// rather than trying to prove a negative there).
+function normalizeProject(p: Project): Project {
+  return {
+    ...p,
+    key_specs: p.key_specs ?? [],
+    mentioned_brands: p.mentioned_brands ?? [],
+    competitor_watch: p.competitor_watch ?? [],
+    sources: p.sources ?? [],
+    timeline: p.timeline ?? [],
+    news: p.news ?? [],
+    provenance: p.provenance ?? [],
+    score: p.score ?? null,
+  };
+}
+
 async function fetchAllProjects(): Promise<Project[]> {
   const all: Project[] = [];
   let offset = 0;
 
   while (true) {
-    const res = await fetch(
-      `${API_BASE}/v1/projects?limit=${PAGE_SIZE}&offset=${offset}`,
-    );
-    if (!res.ok) {
-      throw new Error(
-        `specindex-api /v1/projects failed: ${res.status} ${res.statusText}`,
-      );
-    }
-    const data = (await res.json()) as ProjectsListResponse;
-    all.push(...data.projects);
+    const data = await fetchPage(offset);
+    all.push(...data.projects.map(normalizeProject));
     offset += PAGE_SIZE;
     if (offset >= data.total) break;
   }

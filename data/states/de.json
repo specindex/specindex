@@ -370,9 +370,661 @@
       ],
       "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
       "state": "DE"
+    },
+    {
+      "id": "de-usaspending-w912bu25f0037",
+      "name": "Base Bid: New Facility At Dover Afb (Pf)",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 25225101.99,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "STAMPEDE VENTURES, INC.",
+      "opened_or_announced_date": "2025-09-22",
+      "description": "BASE BID: NEW FACILITY AT DOVER AFB (PF). Awarded by Department of the Army (Department of Defense). Period of performance through 2028-08-18.",
+      "key_specs": [
+        "Award W912BU25F0037",
+        "Awarding agency: Department of the Army",
+        "ZIP 19902"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W912BU25F0037: Base Bid: New Facility At Dover Afb (Pf)",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W912BU25F0037_9700_W912DY25D0017_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "DE",
+      "zip": "19902"
+    },
+    {
+      "id": "de-usaspending-36c77625c0125",
+      "name": "Ehrm Infrastructure Upgrades Construction- Wilmington",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 18885000.0,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "FDCD II JOINT VENTURE, LLC",
+      "opened_or_announced_date": "2026-02-05",
+      "description": "EHRM INFRASTRUCTURE UPGRADES CONSTRUCTION- WILMINGTON. Awarded by Department of Veterans Affairs. Period of performance through 2027-02-05.",
+      "key_specs": [
+        "Award 36C77625C0125",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 19801"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C77625C0125: Ehrm Infrastructure Upgrades Construction- Wilmington",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C77625C0125_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "DE",
+      "zip": "19801"
+    },
+    {
+      "id": "de-usaspending-fa449723f0034",
+      "name": "Repair Hangar 711",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "aviation",
+      "estimated_value_usd": 17730490.68,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "HERMAN/JCG CO JV",
+      "opened_or_announced_date": "2023-09-28",
+      "description": "REPAIR HANGAR 711. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2026-05-15.",
+      "key_specs": [
+        "Award FA449723F0034",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 19902"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "doors and hardware",
+        "concrete",
+        "lighting"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA449723F0034: Repair Hangar 711",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA449723F0034_9700_FA890317D0029_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "DE",
+      "zip": "19902"
+    },
+    {
+      "id": "de-usaspending-fa890324f0094",
+      "name": "Construct In-Transit Munitions Facility, B1202 At Dover Afb, De Project Number Fjxt210047",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 16890449.68,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "CMS CORPORATION",
+      "opened_or_announced_date": "2024-09-16",
+      "description": "CONSTRUCT IN-TRANSIT MUNITIONS FACILITY, B1202 AT DOVER AFB, DE PROJECT NUMBER FJXT210047. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2027-01-08.",
+      "key_specs": [
+        "Award FA890324F0094",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 19901"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA890324F0094: Construct In-Transit Munitions Facility, B1202 At Dover Afb, De Project Number F",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA890324F0094_9700_FA890317D0027_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "DE",
+      "zip": "19901"
+    },
+    {
+      "id": "de-usaspending-w9128f22f0032",
+      "name": "Tank 731 Repair",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 16410701.03,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "DAWSON ENTERPRISES, INC.",
+      "opened_or_announced_date": "2022-01-18",
+      "description": "TANK 731 REPAIR. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-12-05.",
+      "key_specs": [
+        "Award W9128F22F0032",
+        "Awarding agency: Department of the Army",
+        "ZIP 19902"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F22F0032: Tank 731 Repair",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F22F0032_9700_W9128F21D0058_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "DE",
+      "zip": "19902"
+    },
+    {
+      "id": "de-usaspending-36c24420c0082",
+      "name": "To Construct A New Administration Building For The Wilmington Va Medical Center.",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "healthcare",
+      "estimated_value_usd": 13809465.01,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "SENATE BUILDERS & CONSTRUCTION MANAGERS, INC.",
+      "opened_or_announced_date": "2020-10-30",
+      "description": "TO CONSTRUCT A NEW ADMINISTRATION BUILDING FOR THE WILMINGTON VA MEDICAL CENTER. Awarded by Department of Veterans Affairs. Period of performance through 2026-09-30.",
+      "key_specs": [
+        "Award 36C24420C0082",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 19805"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "medical gas",
+        "elevators",
+        "flooring",
+        "lighting",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C24420C0082: To Construct A New Administration Building For The Wilmington Va Medical Center.",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C24420C0082_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "DE",
+      "zip": "19805"
+    },
+    {
+      "id": "de-usaspending-w9128f22f0089",
+      "name": "Dover Pol Bldg Renovation",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 6638055.62,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "DAWSON ENTERPRISES, INC.",
+      "opened_or_announced_date": "2022-05-12",
+      "description": "DOVER POL BLDG RENOVATION. Awarded by Department of the Army (Department of Defense). Period of performance through 2026-11-26.",
+      "key_specs": [
+        "Award W9128F22F0089",
+        "Awarding agency: Department of the Army",
+        "ZIP 19902"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F22F0089: Dover Pol Bldg Renovation",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F22F0089_9700_W9128F21D0058_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "DE",
+      "zip": "19902"
+    },
+    {
+      "id": "de-usaspending-36c24424c0007",
+      "name": "Replace Steam And Condensate",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 6363717.22,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "HOME MAINTENANCE GROUP LLC",
+      "opened_or_announced_date": "2024-01-15",
+      "description": "REPLACE STEAM AND CONDENSATE. Awarded by Department of Veterans Affairs. Period of performance through 2025-12-31.",
+      "key_specs": [
+        "Award 36C24424C0007",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 19805"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C24424C0007: Replace Steam And Condensate",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C24424C0007_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "DE",
+      "zip": "19805"
+    },
+    {
+      "id": "de-usaspending-140f0221c0045",
+      "name": "Construct Multipurpose Facility,Bombay Hook Nwr,De",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 5608108.34,
+      "square_footage": null,
+      "owner": "Department of the Interior",
+      "architect": "",
+      "general_contractor": "COMMONWEALTH CONSTRUCTION CO INC",
+      "opened_or_announced_date": "2021-09-24",
+      "description": "CONSTRUCT MULTIPURPOSE FACILITY,BOMBAY HOOK NWR,DE. Awarded by U.S. Fish and Wildlife Service (Department of the Interior). Period of performance through 2024-12-06.",
+      "key_specs": [
+        "Award 140F0221C0045",
+        "Awarding agency: U.S. Fish and Wildlife Service",
+        "ZIP 19977"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 140F0221C0045: Construct Multipurpose Facility,Bombay Hook Nwr,De",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_140F0221C0045_1448_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "DE",
+      "zip": "19977"
+    },
+    {
+      "id": "de-usaspending-36c77624c0207",
+      "name": "Mental Health Addition, Wilmington, De",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 5276722.0,
+      "square_footage": null,
+      "owner": "Department of Veterans Affairs",
+      "architect": "",
+      "general_contractor": "FDCD II JOINT VENTURE, LLC",
+      "opened_or_announced_date": "2025-02-06",
+      "description": "MENTAL HEALTH ADDITION, WILMINGTON, DE. Awarded by Department of Veterans Affairs. Period of performance through 2026-08-07.",
+      "key_specs": [
+        "Award 36C77624C0207",
+        "Awarding agency: Department of Veterans Affairs",
+        "ZIP 19805"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 36C77624C0207: Mental Health Addition, Wilmington, De",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_36C77624C0207_3600_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "DE",
+      "zip": "19805"
+    },
+    {
+      "id": "de-usaspending-w9128f24f0167",
+      "name": "Dover Afb Tank Liner Replacement",
+      "city": "",
+      "county": "",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": 3943371.43,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "DAWSON ENTERPRISES, INC.",
+      "opened_or_announced_date": "2024-08-08",
+      "description": "DOVER AFB TANK LINER REPLACEMENT. Awarded by Department of the Army (Department of Defense). Period of performance through 2027-05-31.",
+      "key_specs": [
+        "Award W9128F24F0167",
+        "Awarding agency: Department of the Army",
+        "ZIP 19901"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F24F0167: Dover Afb Tank Liner Replacement",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F24F0167_9700_W9128F21D0058_9700"
+        }
+      ],
+      "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
+      "state": "DE",
+      "zip": "19901"
+    },
+    {
+      "id": "de-usaspending-140fga23f0006",
+      "name": "Gaoa Prime Hook Nwr Contact Station",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 3808793.0,
+      "square_footage": null,
+      "owner": "Department of the Interior",
+      "architect": "",
+      "general_contractor": "REILLY CONSTRUCTION INC",
+      "opened_or_announced_date": "2022-12-01",
+      "description": "GAOA PRIME HOOK NWR CONTACT STATION. Awarded by U.S. Fish and Wildlife Service (Department of the Interior). Period of performance through 2025-05-15.",
+      "key_specs": [
+        "Award 140FGA23F0006",
+        "Awarding agency: U.S. Fish and Wildlife Service",
+        "ZIP 19968"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 140FGA23F0006: Gaoa Prime Hook Nwr Contact Station",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_140FGA23F0006_1448_140F0822D0101_1448"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "DE",
+      "zip": "19968"
+    },
+    {
+      "id": "de-usaspending-fa805123f0004",
+      "name": "Dover Afb Advanced Meter Reading System Program.",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 3428615.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "BHATE ENVIRONMENTAL ASSOCIATES, INC.",
+      "opened_or_announced_date": "2022-11-30",
+      "description": "DOVER AFB ADVANCED METER READING SYSTEM PROGRAM. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2026-06-30.",
+      "key_specs": [
+        "Award FA805123F0004",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 19902"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA805123F0004: Dover Afb Advanced Meter Reading System Program.",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA805123F0004_9700_FA890317D0025_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "DE",
+      "zip": "19902"
+    },
+    {
+      "id": "de-usaspending-w9128f24f0156",
+      "name": "Facility 00753 Tank 753-1 (Mr)",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 2596737.64,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "DAWSON ENTERPRISES, INC.",
+      "opened_or_announced_date": "2024-07-17",
+      "description": "FACILITY 00753 TANK 753-1 (MR). Awarded by Department of the Army (Department of Defense). Period of performance through 2026-04-07.",
+      "key_specs": [
+        "Award W9128F24F0156",
+        "Awarding agency: Department of the Army",
+        "ZIP 19902"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award W9128F24F0156: Facility 00753 Tank 753-1 (Mr)",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_W9128F24F0156_9700_W9128F21D0058_9700"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "DE",
+      "zip": "19902"
+    },
+    {
+      "id": "de-usaspending-fa449725p0017",
+      "name": "The Project Consists Of Providing All Labor, Materials, And Equipment Necessary To Remove Paint And Rubber And To Stripe",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "aviation",
+      "estimated_value_usd": 411563.82,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "HI-LITE AIRFIELD SERVICES, LLC",
+      "opened_or_announced_date": "2025-04-17",
+      "description": "THE PROJECT CONSISTS OF PROVIDING ALL LABOR, MATERIALS, AND EQUIPMENT NECESSARY TO REMOVE PAINT AND RUBBER AND TO STRIPE DOVER AFB AIRFIELD AS WELL AS OTHER HEAVY-DUTY PAVEMENT STRIPING APPLICATIONS. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2026-05-25.",
+      "key_specs": [
+        "Award FA449725P0017",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 19902"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "doors and hardware",
+        "concrete",
+        "lighting"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA449725P0017: The Project Consists Of Providing All Labor, Materials, And Equipment Necessary ",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA449725P0017_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "DE",
+      "zip": "19902"
+    },
+    {
+      "id": "de-usaspending-140a2323p0903",
+      "name": "Transportation Shade & Fencing Replaceme",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 244945.99,
+      "square_footage": null,
+      "owner": "Department of the Interior",
+      "architect": "",
+      "general_contractor": "FIRST AMERICAN FEDERAL CONTRACTING LLC",
+      "opened_or_announced_date": "2023-09-21",
+      "description": "TRANSPORTATION SHADE & FENCING REPLACEME. Awarded by Bureau of Indian Affairs and Bureau of Indian Education (Department of the Interior). Period of performance through 2024-11-15.",
+      "key_specs": [
+        "Award 140A2323P0903",
+        "Awarding agency: Bureau of Indian Affairs and Bureau of Indian Education",
+        "ZIP 19901"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award 140A2323P0903: Transportation Shade & Fencing Replaceme",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_140A2323P0903_1450_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "DE",
+      "zip": "19901"
+    },
+    {
+      "id": "de-usaspending-fa449724p0018",
+      "name": "The Fy24 Base Pavements Preventative Maintenance Requirement Aims To Identify And Replace Deteriorated Pavement Through ",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 166756.0,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "CROWLEY HOLDINGS LLC",
+      "opened_or_announced_date": "2024-06-27",
+      "description": "THE FY24 BASE PAVEMENTS PREVENTATIVE MAINTENANCE REQUIREMENT AIMS TO IDENTIFY AND REPLACE DETERIORATED PAVEMENT THROUGH MILLING AND PAVING, IAW THE SOW (DATED: 7 DEC. 2023) AND MANUFACTURER GUIDELINES. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2025-06-26.",
+      "key_specs": [
+        "Award FA449724P0018",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 19902"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA449724P0018: The Fy24 Base Pavements Preventative Maintenance Requirement Aims To Identify An",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA449724P0018_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "DE",
+      "zip": "19902"
+    },
+    {
+      "id": "de-usaspending-fa449725c0025",
+      "name": "The Requirement Aims To Identify And Replace Deteriorated Pavement Through Milling And Paving, Iaw The Sow And Manufactu",
+      "city": "",
+      "county": "",
+      "status": "completed",
+      "project_type": "commercial",
+      "estimated_value_usd": 148879.4,
+      "square_footage": null,
+      "owner": "Department of Defense",
+      "architect": "",
+      "general_contractor": "CROWLEY HOLDINGS LLC",
+      "opened_or_announced_date": "2025-09-02",
+      "description": "THE REQUIREMENT AIMS TO IDENTIFY AND REPLACE DETERIORATED PAVEMENT THROUGH MILLING AND PAVING, IAW THE SOW AND MANUFACTURER GUIDELINES TO VARIOUS LOCATIONS ON DOVER AIR FORCE BASE. Awarded by Department of the Air Force (Department of Defense). Period of performance through 2026-03-01.",
+      "key_specs": [
+        "Award FA449725C0025",
+        "Awarding agency: Department of the Air Force",
+        "ZIP 19902"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete"
+      ],
+      "sources": [
+        {
+          "title": "USAspending.gov award FA449725C0025: The Requirement Aims To Identify And Replace Deteriorated Pavement Through Milli",
+          "url": "https://www.usaspending.gov/award/CONT_AWD_FA449725C0025_9700_-NONE-_-NONE-"
+        }
+      ],
+      "open_for": "Completed federal contract (period of performance has ended). Not an active spec window -- useful for GC/agency relationship history and competitor-win tracking only.",
+      "state": "DE",
+      "zip": "19902"
     }
   ],
   "stats": {
-    "total": 9
+    "total": 27
   }
 }

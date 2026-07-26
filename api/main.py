@@ -34,21 +34,24 @@ US_COUNTY_TOTALS: dict[str, int] = {
     "WY": 23,
 }
 
-# specindex-db is db-f1-micro: Postgres max_connections=25, ~9 already used by
-# Cloud SQL system overhead. Opening a fresh connection per request (the old
-# behavior) exhausts that fast under concurrent load — verified 2026-07-25:
-# 13/40 truly simultaneous requests returned 500s before this pool was added.
-# maxconn=6 here, paired with `gcloud run services update --max-instances=2`,
-# caps worst-case pooled connections at 12 — safely under the 25 limit even
-# with system overhead included.
+# specindex-db was upgraded 2026-07-26 from db-f1-micro (max_connections=25)
+# to db-custom-2-7680 (max_connections=400) specifically because the old
+# 25-connection ceiling was causing real `next build` failures once the
+# corpus + per-request enrichment queries (project_sources/events/news
+# joins) grew past what a handful of pooled connections could absorb under
+# the many parallel workers a static-export build spawns. maxconn=20 here,
+# paired with `--max-instances=5` on the Cloud Run deploy, caps worst-case
+# pooled connections at 100 — comfortable headroom under 400, not just
+# barely-safe the way the old 6/25 split was.
 #
 # Important: psycopg2's pool does NOT block when exhausted — getconn() raises
 # PoolError immediately. A naive fixed-size pool with no retry is *worse* than
-# no pool under a burst (verified: 35/40 requests failed on first attempt of
-# this fix). get_conn() below retries with backoff so requests queue briefly
-# for a free connection instead of failing the instant the pool is full.
+# no pool under a burst (verified 2026-07-25: 35/40 requests failed on first
+# attempt of this fix). get_conn() below retries with backoff so requests
+# queue briefly for a free connection instead of failing the instant the
+# pool is full.
 POOL_MIN_CONN = 1
-POOL_MAX_CONN = 6
+POOL_MAX_CONN = 20
 POOL_ACQUIRE_TIMEOUT_SECONDS = 5.0
 POOL_ACQUIRE_RETRY_INTERVAL_SECONDS = 0.05
 
@@ -116,11 +119,87 @@ def spx_id(project_sk: int) -> str:
     return f"SPX-{project_sk:06d}"
 
 
-def row_to_project(row: dict[str, Any]) -> dict[str, Any]:
+def fetch_enrichment(conn, sks: list[int]) -> dict[int, dict[str, Any]]:
+    """Bulk-fetch score/timeline/provenance/news for a page of projects in
+    a handful of queries keyed by project_sk, instead of one query per
+    project (N+1) -- same pattern as the rest of this API's list
+    endpoints. Powers the project detail page's Amazon-listing-style
+    sections (see docs/PROJECT_PAGE_REDESIGN.md)."""
+    if not sks:
+        return {}
+    out: dict[int, dict[str, Any]] = {sk: {"score": None, "events": [], "sources": [], "news": []} for sk in sks}
+
+    with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+        cur.execute(
+            "SELECT project_sk, score, value_score, recency_score, news_score "
+            "FROM project_scores WHERE project_sk = ANY(%s)",
+            (sks,),
+        )
+        for r in cur.fetchall():
+            out[r["project_sk"]]["score"] = {
+                "total": r["score"],
+                "value": r["value_score"],
+                "recency": r["recency_score"],
+                "news": r["news_score"],
+            }
+
+        cur.execute(
+            "SELECT project_sk, event_type, event_date, source_name, source_url "
+            "FROM project_events WHERE project_sk = ANY(%s) ORDER BY event_date",
+            (sks,),
+        )
+        for r in cur.fetchall():
+            out[r["project_sk"]]["events"].append(
+                {
+                    "event_type": r["event_type"],
+                    "event_date": r["event_date"].isoformat() if r["event_date"] else None,
+                    "source_name": r["source_name"],
+                    "source_url": r["source_url"],
+                }
+            )
+
+        cur.execute(
+            "SELECT project_sk, source_name, source_url, is_primary "
+            "FROM project_sources WHERE project_sk = ANY(%s)",
+            (sks,),
+        )
+        for r in cur.fetchall():
+            out[r["project_sk"]]["sources"].append(
+                {
+                    "source_name": r["source_name"],
+                    "source_url": r["source_url"],
+                    "is_primary": r["is_primary"],
+                }
+            )
+
+        cur.execute(
+            "SELECT project_sk, title, url, source_name, published_at "
+            "FROM project_news WHERE project_sk = ANY(%s) ORDER BY published_at DESC NULLS LAST",
+            (sks,),
+        )
+        for r in cur.fetchall():
+            out[r["project_sk"]]["news"].append(
+                {
+                    "title": r["title"],
+                    "url": r["url"],
+                    "source_name": r["source_name"],
+                    "published_at": r["published_at"].isoformat() if r["published_at"] else None,
+                }
+            )
+
+    return out
+
+
+def row_to_project(row: dict[str, Any], enrichment: dict[str, Any] | None = None) -> dict[str, Any]:
+    enrichment = enrichment or {"score": None, "events": [], "sources": [], "news": []}
     return {
         "id": row["project_id"],
         "spx_id": spx_id(row["project_sk"]),
         "project_sk": row["project_sk"],
+        "score": enrichment["score"],
+        "timeline": enrichment["events"],
+        "provenance": enrichment["sources"],
+        "news": enrichment["news"],
         "external_ids": row["external_ids"] or {},
         "record_type": row["record_type"],
         "name": row["name"],
@@ -145,6 +224,8 @@ def row_to_project(row: dict[str, Any]) -> dict[str, Any]:
         "competitor_watch": row["competitor_watch"] or [],
         "sources": row["sources"] or [],
         "open_for": row["open_for"] or "",
+        "latitude": float(row["latitude"]) if row.get("latitude") is not None else None,
+        "longitude": float(row["longitude"]) if row.get("longitude") is not None else None,
     }
 
 
@@ -210,12 +291,13 @@ def list_projects(
                 [*params, limit, offset],
             )
             rows = cur.fetchall()
+            enrichment = fetch_enrichment(conn, [r["project_sk"] for r in rows])
 
     return {
         "total": total,
         "limit": limit,
         "offset": offset,
-        "projects": [row_to_project(r) for r in rows],
+        "projects": [row_to_project(r, enrichment.get(r["project_sk"])) for r in rows],
     }
 
 
@@ -555,7 +637,8 @@ def get_project(project_id: str):
         with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
             cur.execute("SELECT * FROM projects WHERE project_id = %s", (project_id,))
             row = cur.fetchone()
+        if not row:
+            raise HTTPException(status_code=404, detail="Project not found")
+        enrichment = fetch_enrichment(conn, [row["project_sk"]])
 
-    if not row:
-        raise HTTPException(status_code=404, detail="Project not found")
-    return row_to_project(row)
+    return row_to_project(row, enrichment.get(row["project_sk"]))
