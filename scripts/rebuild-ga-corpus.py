@@ -12,6 +12,9 @@ Sources merged (commercial only):
     2026-07-25, Atlanta/Cobb/Gwinnett 24mo pulls failed on Accela-side
     network timeouts, see docs/states/ga.md)
   - data/raw/usaspending-ga-construction.json (federal contract awards)
+  - data/raw/sam-gov-bulk-ga-construction.json (federal solicitations, via
+    SAM.gov's public daily CSV extract -- no quota, supersedes the
+    quota-limited scripts/pull-sam-gov-ga.py API approach)
 
 Usage:
     python3 scripts/rebuild-ga-corpus.py
@@ -35,6 +38,7 @@ DRI = ROOT / "data" / "raw" / "ga-dri-projects.json"
 MUNI = ROOT / "data" / "raw" / "ga-municipal-commercial.json"
 ACCELA = ROOT / "data" / "raw" / "ga-accela-commercial.json"
 USASPENDING = ROOT / "data" / "raw" / "usaspending-ga-construction.json"
+SAM_BULK = ROOT / "data" / "raw" / "sam-gov-bulk-ga-construction.json"
 
 NOISE = re.compile(
     r"(seasonal sales|tower co-locate|construction trailer|temp sign|office trailer|"
@@ -88,8 +92,9 @@ def main() -> int:
     muni = filter_noise(load_projects(MUNI))
     accela = filter_noise(load_projects(ACCELA))
     usaspending = filter_noise(load_projects(USASPENDING))
+    sam_bulk = filter_noise(load_projects(SAM_BULK))
 
-    combined = research + dri + muni + accela + usaspending
+    combined = research + dri + muni + accela + usaspending + sam_bulk
     deduped, merges = dedupe_projects(combined, "GA")
 
     ids = [p["id"] for p in deduped]
@@ -114,6 +119,7 @@ def main() -> int:
             "municipal_raw": len(muni),
             "accela_raw": len(accela),
             "usaspending_raw": len(usaspending),
+            "sam_bulk_raw": len(sam_bulk),
             "merges": merges,
         },
     }
@@ -124,7 +130,7 @@ def main() -> int:
     print(
         f"Rebuilt {OUT}: {len(deduped)} projects "
         f"(research {len(research)}, dri {len(dri)}, muni {len(muni)}, "
-        f"accela {len(accela)}, usaspending {len(usaspending)}, merges {merges})"
+        f"accela {len(accela)}, usaspending {len(usaspending)}, sam_bulk {len(sam_bulk)}, merges {merges})"
     )
     return 0
 
