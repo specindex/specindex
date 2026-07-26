@@ -431,6 +431,89 @@ def list_pipeline_runs(
     }
 
 
+MAPBOX_TOKEN = os.environ.get("MAPBOX_TOKEN", "")
+MAPBOX_MONTHLY_QUOTA = 45_000  # ~10% under the Mapbox GL JS free-tier limit
+
+
+@app.get("/v1/ops/mapbox-token")
+def get_mapbox_token():
+    """Gatekeeper for the /map/ admin page's Mapbox GL token -- see
+    db/migrations/011_mapbox_usage.sql. Every map init calls this instead
+    of bundling the token at build time, so a hard monthly quota can stop
+    issuing tokens before Mapbox billing kicks in. Complements (does not
+    replace) URL-restricting the token itself in the Mapbox dashboard."""
+    if not MAPBOX_TOKEN:
+        raise HTTPException(status_code=503, detail="MAPBOX_TOKEN is not configured")
+
+    month = time.strftime("%Y-%m", time.gmtime())
+    with get_conn() as conn:
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                INSERT INTO mapbox_usage (month, load_count) VALUES (%s, 1)
+                ON CONFLICT (month) DO UPDATE SET load_count = mapbox_usage.load_count + 1
+                RETURNING load_count
+                """,
+                (month,),
+            )
+            load_count = cur.fetchone()[0]
+        conn.commit()
+
+    if load_count > MAPBOX_MONTHLY_QUOTA:
+        raise HTTPException(status_code=429, detail="Map quota exceeded for this month")
+
+    return {"token": MAPBOX_TOKEN, "remaining": MAPBOX_MONTHLY_QUOTA - load_count}
+
+
+@app.get("/v1/ops/map-points")
+def map_points(
+    county: str | None = Query(default=None),
+    city: str | None = Query(default=None),
+):
+    """Backs the /map/ admin page. Lightweight -- id/name/coords/location
+    only, not the full project row -- since this returns every geocoded
+    project in one response rather than paginating (cheap at today's
+    scale: a few hundred rows with real lat/lon, see docs/AGENT_STRATEGY.md
+    plan notes on why zip filtering isn't offered here yet)."""
+    clauses = ["latitude IS NOT NULL", "longitude IS NOT NULL"]
+    params: list[Any] = []
+    if county:
+        clauses.append("county = %s")
+        params.append(county)
+    if city:
+        clauses.append("city = %s")
+        params.append(city)
+    where = f"WHERE {' AND '.join(clauses)}"
+
+    with get_conn() as conn:
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+            cur.execute(
+                f"""
+                SELECT project_id, name, state, county, city, latitude, longitude
+                FROM projects
+                {where}
+                """,
+                params,
+            )
+            rows = cur.fetchall()
+
+    return {
+        "total": len(rows),
+        "points": [
+            {
+                "id": r["project_id"],
+                "name": r["name"],
+                "state": r["state"],
+                "county": r["county"],
+                "city": r["city"],
+                "latitude": float(r["latitude"]),
+                "longitude": float(r["longitude"]),
+            }
+            for r in rows
+        ],
+    }
+
+
 @app.get("/v1/ops/db-health")
 def db_health():
     """Live connection-pool utilization -- see the POOL_MIN_CONN/MAX_CONN
