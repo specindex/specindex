@@ -66,6 +66,16 @@ export function getStatesInCorpus(projects: Project[]): string[] {
   ).sort();
 }
 
+/** Distinct years from opened_or_announced_date, most recent first. */
+export function getYearsInCorpus(projects: Project[]): string[] {
+  const years = new Set<string>();
+  for (const p of projects) {
+    const year = p.opened_or_announced_date?.slice(0, 4);
+    if (year && /^\d{4}$/.test(year)) years.add(year);
+  }
+  return Array.from(years).sort((a, b) => b.localeCompare(a));
+}
+
 export function getCountiesForState(projects: Project[], state: string): string[] {
   const code = state.toUpperCase();
   return Array.from(
