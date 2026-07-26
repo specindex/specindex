@@ -1,9 +1,9 @@
 {
   "state": "KS",
   "state_name": "Kansas",
-  "generated_at": "2026-07-25",
+  "generated_at": "2026-07-26",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — Johnson County Post, local news, SAM.gov federal solicitations (bulk CSV extract)",
+  "capture_method": "Public sources — Johnson County Post, local news, SAM.gov federal solicitations (bulk CSV extract), SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "ks-chiefs-olathe-headquarters",

@@ -1,9 +1,9 @@
 {
   "state": "CO",
   "state_name": "Colorado",
-  "generated_at": "2026-07-25",
+  "generated_at": "2026-07-26",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Web research — Mile High CRE, Connect CRE, BusinessDen, Caliber, Construction Review Online, ENR, SAM.gov federal solicitations (bulk CSV extract)",
+  "capture_method": "Web research — Mile High CRE, Connect CRE, BusinessDen, Caliber, Construction Review Online, ENR, SAM.gov federal solicitations (bulk CSV extract), SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "co-fda-lab-denver-federal-center",

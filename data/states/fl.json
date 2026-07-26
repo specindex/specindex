@@ -1,9 +1,9 @@
 {
   "state": "FL",
   "state_name": "Florida",
-  "generated_at": "2026-07-25",
+  "generated_at": "2026-07-26",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Web research — Florida Construction News, REBusinessOnline, Florida YIMBY, WLRN, GrowthSpotter, MCD Magazine, SAM.gov federal solicitations (bulk CSV extract)",
+  "capture_method": "Web research — Florida Construction News, REBusinessOnline, Florida YIMBY, WLRN, GrowthSpotter, MCD Magazine, SAM.gov federal solicitations (bulk CSV extract), SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "fl-jupiter-medical-avenir-hospital",

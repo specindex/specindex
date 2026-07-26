@@ -1,6 +1,45 @@
 {
   "projects": [
     {
+      "id": "ga-sam-f35e617ab4bb41e9-z2da-fy27-nrm-557-23-104-replace-boiler-plant-stea",
+      "name": "Z2DA--FY27 NRM | 557-23-104 | Replace Boiler Plant Steam Boilers | Construction (VA-27-00003633)",
+      "city": "Dublin",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "Null ",
+      "opened_or_announced_date": "2026-07-25",
+      "description": "Federal sources sought 36C24726Q0777. Z2DA--FY27 NRM | 557-23-104 | Replace Boiler Plant Steam Boilers | Construction (VA-27-00003633).",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z2DA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought 36C24726Q0777",
+          "url": "https://sam.gov/workspace/contract/opp/f35e617ab4bb41e9938f868fd4d5161c/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "GA"
+    },
+    {
       "id": "ga-sam-2917329941294514-market-research-design-build-general-construction-",
       "name": "Market Research - Design-Build General Construction Multiple Award Task Order Contract - Savannah District AOR",
       "city": "Savannah",
