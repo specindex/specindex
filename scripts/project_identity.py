@@ -244,6 +244,29 @@ def assign_unique_ids(projects: list[dict], state_code: str) -> list[dict]:
     return out
 
 
+def _stable_canonical_id(a_id: str, b_id: str) -> str:
+    """Pick which of two merging records' ids survives -- independent of
+    field completeness, which can change between corpus rebuilds as
+    sources get enriched. prefer_canonical() picks which record's *fields*
+    seed the merge based on completeness, which is fine and should stay
+    that way; but if the *id* also followed completeness, a project's
+    "permanent" id could silently change identity the next time a source
+    happens to have slightly more data -- exactly what an MLS-style
+    permanent ID can't tolerate (load-corpus-to-postgres.py upserts on
+    project_id, so a changed id looks like a brand-new project: a fresh
+    project_sk gets minted and the old row is orphaned). DRI ids are kept
+    as the canonical source when present (matches prefer_canonical()'s
+    existing DRI preference); otherwise the lexicographically smaller id
+    wins -- arbitrary, but deterministic and order-independent, so the
+    same pair of ids always resolves to the same survivor no matter which
+    run's data happened to be more complete."""
+    if "dri-" in a_id and "dri-" not in b_id:
+        return a_id
+    if "dri-" in b_id and "dri-" not in a_id:
+        return b_id
+    return a_id if a_id <= b_id else b_id
+
+
 def _dedupe_bucket(bucket: list[dict]) -> int:
     """In-place pairwise dedupe within one (state, county) bucket. Returns
     merges performed. Single pass, O(k^2) over the bucket -- see
@@ -255,8 +278,11 @@ def _dedupe_bucket(bucket: list[dict]) -> int:
         j = i + 1
         while j < len(bucket):
             if same_project(bucket[i], bucket[j]):
+                a_id, b_id = bucket[i].get("id", ""), bucket[j].get("id", "")
                 primary, secondary = prefer_canonical(bucket[i], bucket[j])
-                bucket[i] = merge_projects(primary, secondary)
+                merged = merge_projects(primary, secondary)
+                merged["id"] = _stable_canonical_id(a_id, b_id)
+                bucket[i] = merged
                 del bucket[j]
                 merges += 1
                 continue  # re-check the (possibly enriched) record i against the next j
