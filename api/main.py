@@ -255,37 +255,72 @@ def stats():
 
 @app.get("/v1/projects")
 def list_projects(
-    state: str | None = Query(default=None, min_length=2, max_length=2),
+    state: str | None = Query(default=None, description="Comma-separated state codes, e.g. NC,SC,VA"),
     status: str | None = None,
-    limit: int = Query(default=20, ge=1, le=100),
+    project_type: str | None = None,
+    county: str | None = None,
+    category: str | None = Query(default=None, description="Matches any entry in competitor_watch"),
+    year: int | None = None,
+    q: str | None = Query(default=None, description="Free-text search across name/city/owner/GC/description"),
+    sort: str = Query(default="score", pattern="^(score|name|value|recency)$"),
+    limit: int = Query(default=50, ge=1, le=100),
     offset: int = Query(default=0, ge=0),
 ):
     clauses: list[str] = []
     params: list[Any] = []
 
     if state:
-        clauses.append("state = %s")
-        params.append(state.upper())
+        codes = [s.strip().upper() for s in state.split(",") if s.strip()]
+        if codes:
+            clauses.append("p.state = ANY(%s)")
+            params.append(codes)
     if status:
-        clauses.append("status = %s")
+        clauses.append("p.status = %s")
         params.append(status)
+    if project_type:
+        clauses.append("p.project_type = %s")
+        params.append(project_type)
+    if county:
+        clauses.append("p.county = %s")
+        params.append(county)
+    if category:
+        clauses.append(
+            "EXISTS (SELECT 1 FROM jsonb_array_elements_text(p.competitor_watch) elem WHERE elem ILIKE %s)"
+        )
+        params.append(f"%{category}%")
+    if year:
+        clauses.append("EXTRACT(YEAR FROM p.opened_or_announced_date) = %s")
+        params.append(year)
+    if q:
+        clauses.append(
+            "(p.name ILIKE %s OR p.city ILIKE %s OR p.owner ILIKE %s OR "
+            "p.general_contractor ILIKE %s OR p.description ILIKE %s)"
+        )
+        params.extend([f"%{q}%"] * 5)
 
     where = f"WHERE {' AND '.join(clauses)}" if clauses else ""
+    order_by = {
+        "score": "COALESCE(ps.score, 0) DESC, p.name ASC",
+        "name": "p.name ASC",
+        "value": "p.estimated_value_usd DESC NULLS LAST, p.name ASC",
+        "recency": "p.opened_or_announced_date DESC NULLS LAST, p.name ASC",
+    }[sort]
 
     with get_conn() as conn:
         with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
             cur.execute(
-                f"SELECT count(*) AS n FROM projects {where}",
+                f"SELECT count(*) AS n FROM projects p {where}",
                 params,
             )
             total = int(cur.fetchone()["n"])
 
             cur.execute(
                 f"""
-                SELECT *
-                FROM projects
+                SELECT p.*
+                FROM projects p
+                LEFT JOIN project_scores ps ON ps.project_sk = p.project_sk
                 {where}
-                ORDER BY name
+                ORDER BY {order_by}
                 LIMIT %s OFFSET %s
                 """,
                 [*params, limit, offset],
@@ -298,6 +333,62 @@ def list_projects(
         "limit": limit,
         "offset": offset,
         "projects": [row_to_project(r, enrichment.get(r["project_sk"])) for r in rows],
+    }
+
+
+@app.get("/v1/projects/facets")
+def project_facets(state: str | None = Query(default=None, description="Comma-separated state codes")):
+    """Distinct filter values for the /projects search UI -- lets the
+    frontend populate state/county/type/category/year dropdowns without
+    fetching the full corpus (the whole point of paginating list_projects
+    above). county/category/year are scoped to the selected state(s) when
+    provided, matching how the old client-side-filtered UI narrowed county
+    options by state."""
+    state_clause = ""
+    state_params: list[Any] = []
+    if state:
+        codes = [s.strip().upper() for s in state.split(",") if s.strip()]
+        if codes:
+            state_clause = "WHERE state = ANY(%s)"
+            state_params = [codes]
+
+    with get_conn() as conn:
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+            cur.execute("SELECT DISTINCT state FROM projects WHERE state IS NOT NULL ORDER BY state")
+            states = [r["state"] for r in cur.fetchall()]
+
+            cur.execute(
+                f"SELECT DISTINCT county FROM projects {state_clause} "
+                f"{'AND' if state_clause else 'WHERE'} county IS NOT NULL AND county != '' ORDER BY county",
+                state_params,
+            )
+            counties = [r["county"] for r in cur.fetchall()]
+
+            cur.execute("SELECT DISTINCT project_type FROM projects WHERE project_type IS NOT NULL ORDER BY project_type")
+            types = [r["project_type"] for r in cur.fetchall()]
+
+            cur.execute("SELECT DISTINCT status FROM projects WHERE status IS NOT NULL ORDER BY status")
+            statuses = [r["status"] for r in cur.fetchall()]
+
+            cur.execute(
+                "SELECT DISTINCT elem AS category FROM projects, "
+                "jsonb_array_elements_text(competitor_watch) elem ORDER BY category"
+            )
+            categories = [r["category"] for r in cur.fetchall()]
+
+            cur.execute(
+                "SELECT DISTINCT EXTRACT(YEAR FROM opened_or_announced_date)::int AS year "
+                "FROM projects WHERE opened_or_announced_date IS NOT NULL ORDER BY year DESC"
+            )
+            years = [r["year"] for r in cur.fetchall()]
+
+    return {
+        "states": states,
+        "counties": counties,
+        "project_types": types,
+        "statuses": statuses,
+        "categories": categories,
+        "years": years,
     }
 
 

@@ -109,6 +109,22 @@ export async function getProjectsByState(state: string): Promise<Project[]> {
 // The live API doesn't expose corpus-level metadata (generated_at, geography,
 // notes) the way the old static JSON did — those are derived here instead of
 // hardcoded, so they stay accurate as the live corpus grows.
+type Stats = { total: number; states: number; early_stage: number };
+
+// Cheap aggregate query (a single view, not the full corpus) -- used by
+// the /projects header instead of getCorpus(), which requires fetching
+// every project just to derive a total/states count. Kept as a build-time
+// fetch (not client-side) since it's small and the page shell benefits
+// from being pre-rendered even though the actual project list below it is
+// now client-fetched and paginated.
+export async function getStats(): Promise<Stats> {
+  const res = await fetch(`${API_BASE}/v1/stats`);
+  if (!res.ok) {
+    throw new Error(`specindex-api /v1/stats failed: ${res.status} ${res.statusText}`);
+  }
+  return (await res.json()) as Stats;
+}
+
 export async function getCorpus(): Promise<ProjectCorpus> {
   const projects = await getAllProjects();
 
