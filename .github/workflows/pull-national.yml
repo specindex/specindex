@@ -9,6 +9,10 @@ name: Pull national sources + refresh coverage/quality
 # description for exact gcloud commands): a Workload Identity Federation
 # provider + service account with roles/cloudsql.client, and repo secrets
 # WIF_PROVIDER, WIF_SERVICE_ACCOUNT, CLOUDSQL_PASSWORD.
+#
+# A weekly health-check email to asif@specindex.ai also needs
+# EMAIL_SMTP_USERNAME + EMAIL_SMTP_PASSWORD (a Gmail/Workspace app password,
+# not the account's normal login password) as repo secrets.
 
 on:
   schedule:
@@ -51,6 +55,17 @@ jobs:
             (echo > /dev/tcp/127.0.0.1/5433) >/dev/null 2>&1 && break
             sleep 1
           done
+
+      - name: Capture pre-run project count
+        id: before
+        run: |
+          echo "count=$(python3 -c "
+          import os, psycopg2
+          conn = psycopg2.connect(os.environ['DATABASE_URL'])
+          cur = conn.cursor()
+          cur.execute('SELECT count(*) FROM projects')
+          print(cur.fetchone()[0])
+          ")" >> "$GITHUB_OUTPUT"
 
       # Each puller runs independently -- a broken source shouldn't block the
       # others. Failures are recorded and surfaced in the job summary, never
@@ -102,6 +117,26 @@ jobs:
         continue-on-error: true
         run: python3 scripts/compute-state-quality.py --apply-migration
 
+      - name: Capture post-run project count + top county movers
+        id: after
+        if: always()
+        continue-on-error: true
+        run: |
+          python3 -c "
+          import os, psycopg2
+          conn = psycopg2.connect(os.environ['DATABASE_URL'])
+          cur = conn.cursor()
+          cur.execute('SELECT count(*) FROM projects')
+          print(f'count={cur.fetchone()[0]}')
+          cur.execute('''
+              SELECT state, county, delta FROM county_coverage
+              WHERE delta IS NOT NULL AND delta > 0
+              ORDER BY delta DESC LIMIT 5
+          ''')
+          movers = '; '.join(f'{s}/{c}: +{d}' for s, c, d in cur.fetchall()) or 'none'
+          print(f'movers={movers}')
+          " >> "$GITHUB_OUTPUT"
+
       - name: Job summary
         if: always()
         run: |
@@ -117,7 +152,44 @@ jobs:
             echo "| Load to Cloud SQL | ${{ steps.load.outcome }} |"
             echo "| Refresh county coverage | ${{ steps.coverage.outcome }} |"
             echo "| Refresh state quality | ${{ steps.quality.outcome }} |"
+            echo ""
+            echo "Projects: ${{ steps.before.outputs.count }} -> ${{ steps.after.outputs.count }}"
+            echo "Top county gains: ${{ steps.after.outputs.movers }}"
           } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Email weekly health summary
+        if: always()
+        continue-on-error: true
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_SMTP_USERNAME }}
+          password: ${{ secrets.EMAIL_SMTP_PASSWORD }}
+          from: SpecIndex Puller <${{ secrets.EMAIL_SMTP_USERNAME }}>
+          to: asif@specindex.ai
+          subject: "SpecIndex weekly pull: ${{ steps.before.outputs.count }} -> ${{ steps.after.outputs.count }} projects"
+          convert_markdown: true
+          body: |
+            ## SpecIndex weekly pull summary
+
+            **Projects: ${{ steps.before.outputs.count }} -> ${{ steps.after.outputs.count }}**
+
+            | Step | Outcome |
+            |---|---|
+            | SAM.gov (GA) | ${{ steps.pull_sam_ga.outcome }} |
+            | USAspending (GA) | ${{ steps.pull_usaspending_ga.outcome }} |
+            | Rebuild GA corpus | ${{ steps.rebuild_ga.outcome }} |
+            | SAM.gov (other states) | ${{ steps.pull_sam.outcome }} |
+            | Merge national corpus | ${{ steps.merge.outcome }} |
+            | Load to Cloud SQL | ${{ steps.load.outcome }} |
+            | Refresh county coverage | ${{ steps.coverage.outcome }} |
+            | Refresh state quality | ${{ steps.quality.outcome }} |
+
+            **Top county gains this run:** ${{ steps.after.outputs.movers }}
+
+            Full run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            Dashboard: https://specindex.ai/coverage/
 
       # Cloud SQL is reloaded above, before this push -- keeps the
       # deploy-timing rule in docs/ROADMAP.md (reload DB before the
