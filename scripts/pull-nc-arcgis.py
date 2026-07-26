@@ -66,6 +66,10 @@ def fetch_json(url: str) -> dict:
 
 
 def query_layer(base: str, layer: int, where: str, fields: str = "*", page_size: int = 1000) -> list[dict]:
+    """Returns each feature's attributes dict with `_lat`/`_lon` merged in
+    from its geometry (outSR=4326, real WGS84 coordinates -- the same
+    param used during this session's source-verification passes) so
+    callers can persist real coordinates instead of discarding them."""
     out: list[dict] = []
     offset = 0
     while True:
@@ -75,14 +79,20 @@ def query_layer(base: str, layer: int, where: str, fields: str = "*", page_size:
             "f": "json",
             "resultOffset": offset,
             "resultRecordCount": page_size,
-            "returnGeometry": "false",
+            "returnGeometry": "true",
+            "outSR": "4326",
         }
         url = f"{base}/{layer}/query?{urllib.parse.urlencode(params)}"
         data = fetch_json(url)
         if "error" in data:
             raise RuntimeError(str(data["error"])[:200])
         feats = data.get("features") or []
-        out.extend(f.get("attributes") or {} for f in feats)
+        for f in feats:
+            attrs = dict(f.get("attributes") or {})
+            geom = f.get("geometry") or {}
+            if "x" in geom and "y" in geom:
+                attrs["_lon"], attrs["_lat"] = geom["x"], geom["y"]
+            out.append(attrs)
         if len(feats) < page_size or not data.get("exceededTransferLimit"):
             break
         offset += page_size
@@ -188,6 +198,9 @@ def pull_mecklenburg(cutoff: dt.date) -> list[dict]:
                     }
                 ],
                 "open_for": "Active commercial building permit. Early product/spec window.",
+                "latitude": a.get("_lat"),
+                "longitude": a.get("_lon"),
+                "zip": str(a["zipcode"]).strip() or None if a.get("zipcode") else None,
                 "state": "NC",
             }
         )
@@ -258,6 +271,8 @@ def pull_wake(cutoff: dt.date) -> list[dict]:
                 ],
                 "open_for": "Active commercial building permit. Early product/spec window.",
                 "state": "NC",
+                "latitude": a.get("_lat"),
+                "longitude": a.get("_lon"),
             }
         )
     return projects

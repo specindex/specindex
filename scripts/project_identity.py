@@ -25,6 +25,59 @@ MUNI_ID_PREFIXES = (
     "ga-cobb-",
 )
 
+# (prefix, label, is_dedicated_local) -- order matters, first match wins.
+# Add a new tuple here whenever a new state/source-specific pull script is
+# built; DRI-alike statewide filings and hand-curated research default to
+# "thin" via the fallback at the bottom of classify_source(). Shared here
+# (rather than living only in scripts/compute-county-coverage.py, which it
+# originated in) because scripts/load-corpus-to-postgres.py also needs it,
+# to derive project_sources.source_name and project_events.event_type --
+# and compute-county-coverage.py's hyphenated filename can't be imported as
+# a module anyway.
+SOURCE_PATTERNS: list[tuple[str, str, bool]] = [
+    ("ga-fulton-", "Fulton County (ArcGIS)", True),
+    ("ga-alpharetta-", "Alpharetta (ArcGIS)", True),
+    ("ga-johnscreek-", "Johns Creek (ArcGIS)", True),
+    ("ga-marietta-", "Marietta (ArcGIS)", True),
+    ("ga-savannah-", "Savannah/SAGIS (ArcGIS)", True),
+    ("ga-atlanta-", "Atlanta (Accela)", True),
+    ("ga-gwinnett-", "Gwinnett (Accela)", True),
+    ("ga-cobb-", "Cobb (Accela)", True),
+    ("ga-dri-", "Georgia DRI (statewide)", False),
+    ("nc-mecklenburg-", "Mecklenburg County (ArcGIS)", True),
+    ("nc-wake-", "Wake County (ArcGIS)", True),
+]
+
+FEDERAL_HINT = re.compile(r"-(sam|usaspending)-", re.I)
+
+
+def classify_source(project_id: str) -> tuple[str, bool]:
+    """Return (source_label, is_dedicated_local) for a project_id."""
+    for prefix, label, is_local in SOURCE_PATTERNS:
+        if project_id.startswith(prefix):
+            return label, is_local
+    if FEDERAL_HINT.search(project_id):
+        return "Federal (SAM.gov / USAspending)", False
+    return "Prior research", False
+
+
+def derive_event_type(project_id: str, record_type: str | None) -> str:
+    """Heuristic event_type for project_events, derived from project_id/
+    record_type at load time rather than requiring every pull script to
+    emit its own event stream (see docs/AGENT_STRATEGY.md-adjacent plan
+    notes). DRI filings are a pre-permit announcement; SAM.gov postings are
+    a solicitation (bid) stage; USAspending records an actual award;
+    everything else defaults to permit-derived, since that's what most
+    wired sources are (municipal/county ArcGIS/Accela pulls)."""
+    pid = (project_id or "").lower()
+    if "-dri-" in pid or record_type == "dri_filing":
+        return "Announced"
+    if "-sam-" in pid:
+        return "Bid_Opened"
+    if "-usaspending-" in pid:
+        return "Awarded"
+    return "Permit_Issued"
+
 
 def slugify(text: str) -> str:
     text = (text or "").lower().strip()
@@ -120,7 +173,14 @@ def merge_projects(primary: dict, secondary: dict) -> dict:
         elif secondary.get(key) and secondary[key] not in (out.get(key) or ""):
             out[key] = f"{out.get(key, '').rstrip('.')}. {secondary[key]}".strip()
 
-    for key in ("estimated_value_usd", "square_footage", "opened_or_announced_date"):
+    for key in (
+        "estimated_value_usd",
+        "square_footage",
+        "opened_or_announced_date",
+        "latitude",
+        "longitude",
+        "zip",
+    ):
         if out.get(key) in (None, "", 0) and secondary.get(key):
             out[key] = secondary[key]
 

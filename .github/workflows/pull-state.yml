@@ -93,7 +93,7 @@ jobs:
       - name: Load corpus to Cloud SQL
         id: load
         continue-on-error: true
-        run: python3 scripts/load-corpus-to-postgres.py --corpus data/national-commercial-projects.json
+        run: python3 scripts/load-corpus-to-postgres.py --corpus data/national-commercial-projects.json --apply-migrations
 
       - name: Refresh county coverage (Depth agent)
         id: coverage

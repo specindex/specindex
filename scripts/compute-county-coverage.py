@@ -27,42 +27,15 @@ from __future__ import annotations
 
 import argparse
 import os
-import re
 import sys
 from collections import defaultdict
+from pathlib import Path
 
 import psycopg2
 from psycopg2.extras import execute_values
 
-# (prefix, label, is_dedicated_local) -- order matters, first match wins.
-# Add a new tuple here whenever a new state/source-specific pull script is
-# built; DRI-alike statewide filings and hand-curated research default to
-# "thin" via the fallback at the bottom of classify().
-SOURCE_PATTERNS: list[tuple[str, str, bool]] = [
-    ("ga-fulton-", "Fulton County (ArcGIS)", True),
-    ("ga-alpharetta-", "Alpharetta (ArcGIS)", True),
-    ("ga-johnscreek-", "Johns Creek (ArcGIS)", True),
-    ("ga-marietta-", "Marietta (ArcGIS)", True),
-    ("ga-savannah-", "Savannah/SAGIS (ArcGIS)", True),
-    ("ga-atlanta-", "Atlanta (Accela)", True),
-    ("ga-gwinnett-", "Gwinnett (Accela)", True),
-    ("ga-cobb-", "Cobb (Accela)", True),
-    ("ga-dri-", "Georgia DRI (statewide)", False),
-    ("nc-mecklenburg-", "Mecklenburg County (ArcGIS)", True),
-    ("nc-wake-", "Wake County (ArcGIS)", True),
-]
-
-FEDERAL_HINT = re.compile(r"-(sam|usaspending)-", re.I)
-
-
-def classify(project_id: str) -> tuple[str, bool]:
-    """Return (source_label, is_dedicated_local)."""
-    for prefix, label, is_local in SOURCE_PATTERNS:
-        if project_id.startswith(prefix):
-            return label, is_local
-    if FEDERAL_HINT.search(project_id):
-        return "Federal (SAM.gov / USAspending)", False
-    return "Prior research", False
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from project_identity import classify_source as classify  # noqa: E402
 
 
 def main() -> int:
