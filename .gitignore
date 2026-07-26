@@ -47,3 +47,7 @@ next-env.d.ts
 # python
 __pycache__/
 *.pyc
+
+# large scratch downloads -- e.g. pull-sam-gov-bulk-national.py's 230MB CSV
+# cache, exceeds GitHub's 100MB push limit and shouldn't be tracked anyway
+data/raw/.sam-gov-bulk-download.csv
