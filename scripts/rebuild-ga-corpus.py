@@ -6,8 +6,12 @@ Canonical reference: docs/states/ga.md
 Sources merged (commercial only):
   - data/georgia-commercial-projects.json (prior research)
   - data/raw/ga-dri-projects.json
-  - data/raw/ga-municipal-commercial.json
-  - data/raw/ga-accela-commercial.json (when present)
+  - data/raw/ga-municipal-commercial.json (Alpharetta, Johns Creek, Marietta,
+    Savannah, Fulton County)
+  - data/raw/ga-accela-commercial.json (when present -- empty as of
+    2026-07-25, Atlanta/Cobb/Gwinnett 24mo pulls failed on Accela-side
+    network timeouts, see docs/states/ga.md)
+  - data/raw/usaspending-ga-construction.json (federal contract awards)
 
 Usage:
     python3 scripts/rebuild-ga-corpus.py
@@ -30,6 +34,7 @@ RESEARCH = ROOT / "data" / "georgia-commercial-projects.json"
 DRI = ROOT / "data" / "raw" / "ga-dri-projects.json"
 MUNI = ROOT / "data" / "raw" / "ga-municipal-commercial.json"
 ACCELA = ROOT / "data" / "raw" / "ga-accela-commercial.json"
+USASPENDING = ROOT / "data" / "raw" / "usaspending-ga-construction.json"
 
 NOISE = re.compile(
     r"(seasonal sales|tower co-locate|construction trailer|temp sign|office trailer|"
@@ -82,8 +87,9 @@ def main() -> int:
     dri = filter_noise(load_projects(DRI))
     muni = filter_noise(load_projects(MUNI))
     accela = filter_noise(load_projects(ACCELA))
+    usaspending = filter_noise(load_projects(USASPENDING))
 
-    combined = research + dri + muni + accela
+    combined = research + dri + muni + accela + usaspending
     deduped, merges = dedupe_projects(combined, "GA")
 
     ids = [p["id"] for p in deduped]
@@ -94,11 +100,11 @@ def main() -> int:
     payload = {
         "state": "GA",
         "generated_at": date.today().isoformat(),
-        "date_range": "Last 12 months commercial",
+        "date_range": "Last 24 months commercial",
         "capture_method": (
-            "Georgia DRI filings, Alpharetta commercial permits, Johns Creek active "
-            "developments, Marietta commercial/industrial parcels, Accela commercial "
-            "permits (Atlanta, Gwinnett, Cobb), plus prior public research"
+            "Georgia DRI filings, Alpharetta/Fulton County/Savannah/Johns Creek/Marietta "
+            "commercial permits, Accela commercial permits (Atlanta/Gwinnett/Cobb, when "
+            "available), USAspending.gov federal construction awards, plus prior public research"
         ),
         "projects": deduped,
         "stats": {
@@ -107,6 +113,7 @@ def main() -> int:
             "dri_raw": len(dri),
             "municipal_raw": len(muni),
             "accela_raw": len(accela),
+            "usaspending_raw": len(usaspending),
             "merges": merges,
         },
     }
@@ -117,7 +124,7 @@ def main() -> int:
     print(
         f"Rebuilt {OUT}: {len(deduped)} projects "
         f"(research {len(research)}, dri {len(dri)}, muni {len(muni)}, "
-        f"accela {len(accela)}, merges {merges})"
+        f"accela {len(accela)}, usaspending {len(usaspending)}, merges {merges})"
     )
     return 0
 

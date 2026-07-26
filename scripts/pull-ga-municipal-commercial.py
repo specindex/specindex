@@ -8,6 +8,23 @@ Sources currently wired:
   - Alpharetta OpenData_PCE Commercial Permits (EnerGov / Cityworks-style)
   - Johns Creek Active Development Projects (commercial types only)
   - Marietta Developments layer (Industrial / Commercial / Mixed Use only)
+  - Savannah/Chatham SAGIS Site Development Permits (private site work only,
+    text-filtered for commercial signal -- checked 2026-07-25, live as of
+    2026-07-17)
+  - Fulton County "Building Permits Issued" (JobTypeDescription='Commercial')
+    -- checked 2026-07-25, live as of 2026-06-23, includes square footage.
+    Has a real ~1-month ingestion lag (overall dataset max date trails "today"
+    by about a month) -- a --months 1 pull alone will return 0 for this source;
+    use --months 2+ or accept a short lag window. Covers unincorporated Fulton
+    + cities without their own system; may overlap with Alpharetta's separate
+    feed (both are within Fulton County) -- cross-source dedup in
+    project_identity.py handles exact name/address matches but a full-county
+    feed isn't guaranteed to be caught.
+
+Checked and rejected 2026-07-25: Columbus/Muscogee County "BuildingPermits"
+MapServer has a purpose-built Commercial layer with excellent fields (owner,
+contractor, valuation, sqft) but is stale -- most recent record is 2022-04-15,
+so it contributes nothing to any realistic recency window. Not wired.
 
 Residential is hard-filtered out. Window defaults to last 12 months when a date
 field exists; undated layers keep only clearly commercial type labels.
@@ -296,6 +313,125 @@ def pull_marietta() -> list[dict]:
     return projects
 
 
+def pull_savannah(cutoff: dt.date) -> list[dict]:
+    base = "https://pub.sagis.org/arcgis/rest/services/Savannah/BuildingPermit/MapServer"
+    # Layer 0 is "Site Permit by Work Class". No project-name field; WorkClass
+    # distinguishes Full Site-Private (kept) from Subdivision/Grading/Government
+    # (dropped -- Subdivision is residential, Grading is bare site prep, and
+    # Government mixes non-building infrastructure work with actual civic
+    # buildings with no way to tell them apart from WorkClass alone).
+    where = f"WorkClass = 'Full Site-Private' AND IssuedDate_DATE >= DATE '{cutoff.isoformat()}'"
+    rows = query_layer(
+        base, 0, where,
+        fields="PermitNumber,WorkClass,PermitStatus,Address,ApplicantName,Description,Permit_Value,IssuedDate_DATE",
+    )
+    projects = []
+    seen = set()
+    for a in rows:
+        permit_no = (a.get("PermitNumber") or "").strip()
+        addr = (a.get("Address") or "").strip()
+        desc = (a.get("Description") or "").strip()
+        status = (a.get("PermitStatus") or "").strip()
+        applicant = (a.get("ApplicantName") or "").strip()
+        if not permit_no or not desc:
+            continue
+        if is_residential_blob(desc, addr):
+            continue
+        if permit_no in seen:
+            continue
+        seen.add(permit_no)
+        value = a.get("Permit_Value")
+        value = value if value and value > 0 else None
+        opened = epoch_ms_to_date(a.get("IssuedDate_DATE")) or cutoff.isoformat()
+        ptype = project_type_from(desc)
+        name = addr.title() if addr else desc[:60]
+        projects.append(
+            {
+                "id": f"ga-savannah-{slugify(permit_no)}",
+                "name": (f"Site development — {name}")[:120],
+                "city": "Savannah",
+                "county": "Chatham",
+                "status": "permitting" if status.lower() in {"issued", "open"} else "planning",
+                "project_type": ptype,
+                "estimated_value_usd": value,
+                "square_footage": None,
+                "owner": applicant,
+                "architect": "",
+                "general_contractor": "",
+                "opened_or_announced_date": opened,
+                "description": f"Savannah site development permit {permit_no}: {desc[:400]}",
+                "key_specs": [s for s in ["Full Site-Private", addr, f"Permit {permit_no}"] if s],
+                "mentioned_brands": [],
+                "competitor_watch": categories_for(ptype),
+                "sources": [
+                    {
+                        "title": f"Savannah (SAGIS) site development permit {permit_no}",
+                        "url": "https://pub.sagis.org/arcgis/rest/services/Savannah/BuildingPermit/MapServer/0",
+                    }
+                ],
+                "open_for": "Active private site development permit. Early civil/site package window.",
+                "state": "GA",
+            }
+        )
+    return projects
+
+
+def pull_fulton(cutoff: dt.date) -> list[dict]:
+    base = "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer"
+    where = f"JobTypeDescription = 'Commercial' AND ISSUE_DATE >= DATE '{cutoff.isoformat()}'"
+    rows = query_layer(
+        base, 0, where,
+        fields="JobID,JobAddress,JobSquareFootage,JobStatus,ISSUE_DATE",
+    )
+    projects = []
+    seen = set()
+    for a in rows:
+        job_id = (a.get("JobID") or "").strip()
+        addr = (a.get("JobAddress") or "").strip()
+        if not job_id or not addr:
+            continue
+        if is_residential_blob(addr):
+            continue
+        if job_id in seen:
+            continue
+        seen.add(job_id)
+        sqft = a.get("JobSquareFootage")
+        status = (a.get("JobStatus") or "").strip()
+        opened = epoch_ms_to_date(a.get("ISSUE_DATE")) or cutoff.isoformat()
+        projects.append(
+            {
+                "id": f"ga-fulton-{slugify(job_id)}",
+                "name": f"Commercial permit — {addr.title()}"[:120],
+                "city": "",
+                "county": "Fulton",
+                "status": "permitting" if status.lower() in {"issued", "open"} else "planning",
+                "project_type": "commercial",
+                "estimated_value_usd": None,
+                "square_footage": sqft if sqft and sqft > 0 else None,
+                "owner": "",
+                "architect": "",
+                "general_contractor": "",
+                "opened_or_announced_date": opened,
+                "description": (
+                    f"Fulton County commercial building permit {job_id} at {addr}. "
+                    f"{f'{sqft:,} sq ft. ' if sqft else ''}Status {status or 'unknown'}."
+                ),
+                "key_specs": [s for s in ["Commercial", addr, f"Permit {job_id}", f"{sqft} sq ft" if sqft else ""] if s],
+                "mentioned_brands": [],
+                "competitor_watch": categories_for("commercial"),
+                "sources": [
+                    {
+                        "title": f"Fulton County commercial permit {job_id}",
+                        "url": "https://services1.arcgis.com/bqfNVPUK3HOnCFmA/arcgis/rest/services/Building_Permits_Issued/FeatureServer/0",
+                    }
+                ],
+                "open_for": "Active commercial building permit. Early product/spec window.",
+                "state": "GA",
+            }
+        )
+    return projects
+
+
 def merge_into_ga() -> tuple[int, int]:
     """Rebuild ga.json from all raw sources (safe dedupe path)."""
     import subprocess
@@ -325,6 +461,8 @@ def main() -> int:
         "alpharetta": pull_alpharetta(cutoff),
         "johns_creek": pull_johns_creek(),
         "marietta": pull_marietta(),
+        "savannah": pull_savannah(cutoff),
+        "fulton": pull_fulton(cutoff),
     }
     all_projects: list[dict] = []
     for name, rows in buckets.items():

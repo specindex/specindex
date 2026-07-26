@@ -1,12 +1,12 @@
 <!-- AUTO:HEADER START -->
 **State:** GA (Georgia)  
 **Corpus file:** `data/states/ga.json`  
-**Last corpus update:** 2026-07-24  
-**Projects in corpus:** 489  
-**Counties:** 57 · **Cities:** 92  
-**Date range:** Last 12 months commercial  
-**Capture method:** Georgia DRI filings, Alpharetta commercial permits, Johns Creek active developments, Marietta commercial/industrial parcels, Accela commercial permits (Atlanta, Gwinnett, Cobb), plus prior public research  
-**Status mix:** permitting 301, planning 155, under_construction 33
+**Last corpus update:** 2026-07-25  
+**Projects in corpus:** 1377  
+**Counties:** 69 · **Cities:** 128  
+**Date range:** Last 24 months commercial  
+**Capture method:** Georgia DRI filings, Alpharetta/Fulton County/Savannah/Johns Creek/Marietta commercial permits, Accela commercial permits (Atlanta/Gwinnett/Cobb, when available), USAspending.gov federal construction awards, plus prior public research  
+**Status mix:** permitting 519, planning 451, completed 287, under_construction 120
 <!-- AUTO:HEADER END -->
 
 # Georgia Commercial Project Sources Playbook
@@ -103,6 +103,64 @@ Most Georgia sources do not publish zip codes in a consistent field. Where locat
 | 30076 (Roswell / Johns Creek edge) | 36 |
 
 **Takeaway:** "Zip by zip" only works when the upstream feed carries structured addresses. For Georgia, the actionable unit today is **city ArcGIS layer first, county DRI second, Accela portal third**.
+
+---
+
+## 2026-07-25 update: window expanded to 24 months, new sources, Accela outage
+
+Corpus went from 489 → **1,377** projects. Window expanded from 12 to 24 months on all date-filterable sources. Approach: validate every new/changed source at a 1-month window first, confirm real signal, only then scale to 24 months — caught several problems this way that a blind 24-month run would have hidden.
+
+### New sources added
+
+| Source | Script | 24mo yield | Notes |
+|---|---:|---:|---|
+| Fulton County "Building Permits Issued" (ArcGIS) | `pull-ga-municipal-commercial.py` (`pull_fulton`) | 299 | `JobTypeDescription='Commercial'`. Includes square footage (rare field). Has a real **~1-month ingestion lag** — a `--months 1` pull alone returns 0; use `--months 2+`. Covers unincorporated Fulton + cities without their own system; may overlap with Alpharetta (dedup isn't guaranteed to catch a full-county feed against a city-specific one). |
+| Savannah/Chatham SAGIS "Site Permit by Work Class" (ArcGIS) | `pull-ga-municipal-commercial.py` (`pull_savannah`) | 103 | `WorkClass='Full Site-Private'`, text-filtered. No project-name field — synthesized from address. Live as of 2026-07-17. |
+| USAspending.gov federal construction awards | `pull-usaspending-ga.py` | 414 (422 raw, 8 filtered as noise) | **No API key or quota** (unlike SAM.gov's ~10 calls/day limit). PSC filter `{"require": [["Product","Y"]]}`, contract award types A-D. Real top hits: $491M CDC high-containment lab, $221M CDC Chamblee campus, $195M Navy Trident Refit expansion. 75% of 2-year awards already show `completed` status (period of performance ended) — `open_for` text is conditioned on status so completed awards aren't misrepresented as active spec opportunities. |
+| DRI (24mo) | `pull-ga-dri.py` | 252 | Scaled linearly from the 12mo baseline (108 → 252, ~2.3x). |
+
+### Sources checked and rejected
+
+| Source | Why rejected |
+|---|---|
+| Columbus/Muscogee "BuildingPermits" ArcGIS (`ccggisprod.columbusga.org`) | Best-structured schema found all session (owner, contractor, valuation, sqft, dedicated Commercial layer) but **stale — most recent record 2022-04-15**. Confirmed via `outStatistics` max-date query before building anything on it. |
+| Atlanta city Hub "All Building Permits 2019-2024" (`dpcd-coaplangis.opendata.arcgis.com`) | Resolves through the DCAT catalog to a static **CSV upload, last touched 2024-08-08** — not a live feed, same dead-end pattern as Columbus. |
+| Cobb County ArcGIS permits layer | Checked Cobb's open-data DCAT catalog directly for a "permit"/"building" dataset — **none exists**. Cobb's real permit system is Accela. A secondhand research summary claimed otherwise; didn't hold up under direct verification. |
+| Gwinnett County ArcGIS permits layer | Same check on Gwinnett's catalog — only near-match is a generic "Buildings" footprint layer, not permits. Gwinnett's real permit system is Accela. |
+| GDOT Vendor Portal (`vendorportal.dot.ga.gov`) | Login-gated, no public data on the entry page. |
+
+### Gwinnett Accela: root-caused and partially fixed
+
+Gwinnett was returning only ~10 records/month regardless of window (vs. Atlanta's 235/month) — two separate real bugs, not one:
+
+1. **Type-discovery bug (fixed):** the commercial-type filter matched against the dropdown's display *label* only. Gwinnett encodes the category in the option *value* instead (`value="Building/Commercial/NA/NA"` shown to users as just `"Building"`), so the single biggest commercial permit type was silently skipped entirely. Fixed in `pull-ga-accela-commercial.py::commercial_permit_types()` by matching against `value + label` together. Also broadened `COMMERCIAL_TYPE`/`PRIMARY_TYPES` keywords (added hospital/school/church/institutional) for parity with the municipal script — side effect: this also surfaced high-volume trade-permit types for Atlanta/Cobb (Electrical, Fire Alarm, etc.) that weren't there before; see `scripts/tag-trade-permits.py`.
+2. **No date-filter fields at all (root cause of the original bug):** confirmed live in a real browser that Gwinnett's Building-module search form has **no start/end date inputs** — Atlanta and Cobb have them, Gwinnett doesn't. The original raw-POST scraper was posting `txtGSStartDate`/`txtGSEndDate` values that don't correspond to any real control on Gwinnett's page; the server silently ignored them and always returned the same top-10-by-record-number result. Fixed with a **Playwright-based path** (`pull_gwinnett_playwright()`) that paginates the real numbered pager instead (results are sorted newest-first with no filter, so it walks forward and stops once dates cross the cutoff — filtering client-side, not server-side).
+3. **Residual limitation:** high-volume types (e.g. "Building") still hit Accela's ~100-record display ceiling per unbounded query, since the Playwright path doesn't yet subdivide into date sub-windows the way the original Atlanta/Cobb scraper does. Accepted as good-enough for now (10 → 318 records/month on the last successful run) rather than invest further.
+4. Real flakiness also found and mitigated: the search postback intermittently lands back on a reset `--Select--` form instead of executing (confirmed by direct reproduction). Added a verify-and-retry wrapper (checks for the "Showing X-Y of Z" text before trusting a search "succeeded").
+
+### Accela/GPR network outage — data loss, unresolved
+
+Late in the session, **both** `aca-prod.accela.com` (Accela) and `ssl.doas.state.ga.us` (Georgia Procurement Registry) started failing with `Operation timed out` simultaneously — very likely self-inflicted rate-limiting/blocking after a high volume of automated requests (Accela pulls + GPR UI debugging + Playwright network-interception attempts, all in a short window). Consequence: the 24-month Atlanta and Cobb Accela pulls both failed *and*, because all three agencies write to the same `data/raw/ga-accela-commercial.json` with no `--out` override, the failed runs' empty results **overwrote the file and lost the previously-good 318-record Gwinnett test data**. `accela_raw` is 0 in the current corpus as a result.
+
+**Follow-up, not done today:** retry Atlanta/Cobb/Gwinnett Accela pulls once enough backoff time has passed. Consider adding per-agency `--out` paths to `pull-ga-accela-commercial.py` so concurrent/sequential runs can't clobber each other again.
+
+### Georgia Procurement Registry (GPR) — promising, not yet automated
+
+`ssl.doas.state.ga.us/PRSapp/PR_index.jsp` redirects to a real, modern app (`ssl.doas.state.ga.us/gpr/`) with genuine structured bid data — confirmed via a live event detail page (agency, category, NIGP codes, full description, buyer contact, and a **Documents tab** likely holding real bid/spec attachments, directly relevant to the spec-book extraction pipeline). Georgia law requires USG/state capital projects over $100k to post here. Search/filter dropdowns (`govEntity`, `catType`) load inconsistently across page loads — not yet reliably automatable, and now blocked by the outage above besides. Worth a dedicated session with network-request interception (to find the real backend JSON endpoint behind the UI) rather than more blind `select_option` attempts.
+
+### University sources — mostly dead ends for bulk data, one real manual-research lead
+
+USG Board of Regents facilities hub, UGA procurement, and Georgia Tech procurement pages are all **static guidance/landing pages** — no project lists, no bid boards. This is expected: GPR is the actual state-mandated central hub for USG capital-project bids, not individual campus procurement pages. One real find: Georgia Tech's "Current Major Projects" page lists **8 named, current capital projects** (Tech Square Phase 3, Fanning Student-Athlete Performance Center, Curran Street Residence Hall, etc.) — hand-curated, not a bulk API, same tier as the corpus's existing "prior research" entries. Not yet added to the corpus. UGA's equivalent page not yet checked.
+
+### Scripts added/changed today
+
+| File | Change |
+|---|---|
+| `scripts/pull-ga-municipal-commercial.py` | Added `pull_savannah()`, `pull_fulton()` |
+| `scripts/pull-ga-accela-commercial.py` | Fixed value-vs-label type matching; added `pull_gwinnett_playwright()`; broadened commercial keywords |
+| `scripts/pull-usaspending-ga.py` | New |
+| `scripts/tag-trade-permits.py` | New — tags Accela records as `trade` vs `project` post-pull (not yet applied to real data since Accela output was lost) |
+| `scripts/rebuild-ga-corpus.py` | Added `usaspending-ga-construction.json` as a merge source; updated date range to 24mo |
 
 ---
 
