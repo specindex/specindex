@@ -189,6 +189,53 @@ def list_projects(
     }
 
 
+@app.get("/v1/coverage")
+def list_coverage(
+    state: str | None = Query(default=None, min_length=2, max_length=2),
+    coverage_type: str | None = Query(default=None, pattern="^(deep|thin)$"),
+):
+    """Backs the /coverage page -- see scripts/compute-county-coverage.py
+    for how county_coverage is populated (derived from project_id prefixes,
+    not a stored source column; refreshed on demand, not live per-request)."""
+    clauses: list[str] = []
+    params: list[Any] = []
+    if state:
+        clauses.append("state = %s")
+        params.append(state.upper())
+    if coverage_type:
+        clauses.append("coverage_type = %s")
+        params.append(coverage_type)
+    where = f"WHERE {' AND '.join(clauses)}" if clauses else ""
+
+    with get_conn() as conn:
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+            cur.execute(
+                f"""
+                SELECT state, county, project_count, sources, coverage_type, computed_at
+                FROM county_coverage
+                {where}
+                ORDER BY project_count DESC
+                """,
+                params,
+            )
+            rows = cur.fetchall()
+
+    return {
+        "total": len(rows),
+        "coverage": [
+            {
+                "state": r["state"],
+                "county": r["county"],
+                "project_count": r["project_count"],
+                "sources": r["sources"] or [],
+                "coverage_type": r["coverage_type"],
+                "computed_at": r["computed_at"].isoformat() if r["computed_at"] else None,
+            }
+            for r in rows
+        ],
+    }
+
+
 @app.get("/v1/projects/{project_id}")
 def get_project(project_id: str):
     with get_conn() as conn:
