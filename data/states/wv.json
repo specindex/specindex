@@ -1,9 +1,9 @@
 {
   "state": "WV",
   "state_name": "West Virginia",
-  "generated_at": "2026-07-26",
+  "generated_at": "2026-07-27",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — My Buckhannon, West Virginia Daily News, Lede News, state economic development, SAM.gov federal solicitations (bulk CSV extract), SAM.gov federal solicitations (bulk CSV extract), SAM.gov federal solicitations (bulk CSV extract)",
+  "capture_method": "Public sources — My Buckhannon, West Virginia Daily News, Lede News, state economic development, SAM.gov federal solicitations (bulk CSV extract), SAM.gov federal solicitations (bulk CSV extract), SAM.gov federal solicitations (bulk CSV extract), SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "wv-form-energy-weirton-factory",

@@ -1,9 +1,9 @@
 {
   "state": "LA",
   "state_name": "Louisiana",
-  "generated_at": "2026-07-26",
+  "generated_at": "2026-07-27",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
-  "capture_method": "Public sources — Meta Data Centers, WWNO, state economic development, SAM.gov federal solicitations (bulk CSV extract), SAM.gov federal solicitations (bulk CSV extract), SAM.gov federal solicitations (bulk CSV extract)",
+  "capture_method": "Public sources — Meta Data Centers, WWNO, state economic development, SAM.gov federal solicitations (bulk CSV extract), SAM.gov federal solicitations (bulk CSV extract), SAM.gov federal solicitations (bulk CSV extract), SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
     {
       "id": "la-meta-richland-parish-hyperion",
