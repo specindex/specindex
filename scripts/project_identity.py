@@ -23,6 +23,49 @@ MUNI_ID_PREFIXES = (
     "ga-atlanta-",
     "ga-gwinnett-",
     "ga-cobb-",
+    "ga-fulton-",
+    "ga-savannah-",
+    "ga-forsyth-",
+    "nc-durham-",
+    "nc-mecklenburg-",
+    "nc-wake-",
+    "az-maricopa-",
+    "tx-tarrant-",
+    "tx-fortworth-",
+    "co-denver-",
+    "tn-davidson-",
+    "tn-nashville-",
+    "ct-hartford-",
+    "vt-burlington-",
+    "ri-providence-",
+    "de-statewide-",
+    "ks-overlandpark-",
+    "ar-bentonville-",
+    "nd-fargo-",
+    "il-cook-",
+    "nj-dca-",
+    "pa-philadelphia-",
+    "wi-milwaukee-",
+    "ny-nyc-",
+    "wa-seattle-",
+    "md-montgomery-",
+    "fl-miamidade-",
+    "mi-detroit-",
+    "va-fairfax-",
+    "oh-columbus-",
+    "oh-cleveland-",
+    "oh-cincinnati-",
+)
+
+# Every record from these sources carries its own unique per-record ID
+# (a real permit/case/award number from a structured source, not a
+# derived slug) -- two records both matching this pattern are guaranteed
+# different projects without needing an expensive fuzzy-name comparison,
+# same logic as MUNI_ID_PREFIXES above but for infixes that recur across
+# every state (federal sources) rather than one exact per-source prefix.
+MUNI_ID_INFIXES = (
+    "-sam-",
+    "-usaspending-",
 )
 
 # (prefix, label, is_dedicated_local) -- order matters, first match wins.
@@ -217,7 +260,9 @@ def merge_projects(primary: dict, secondary: dict) -> dict:
 
 def _muni_permit_id(pid: str) -> bool:
     pid = (pid or "").lower()
-    return any(pid.startswith(prefix) for prefix in MUNI_ID_PREFIXES)
+    if any(pid.startswith(prefix) for prefix in MUNI_ID_PREFIXES):
+        return True
+    return any(infix in pid for infix in MUNI_ID_INFIXES)
 
 
 def _dri_id(pid: str) -> bool:

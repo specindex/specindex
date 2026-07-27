@@ -20,11 +20,43 @@ Read this file before refreshing `data/states/il.json`. Keep it current so the n
 
 ## What works
 
-- Update after each pull with endpoints, scripts, and filters that produced clean records.
+- **Cook County Assessor's Permits** (Socrata) — `datacatalog.cookcountyil.gov`,
+  resource `6yjf-dfxs`. Verified live 2026-07-27: 711,162 total records
+  across **124 municipalities** (all of Cook County, including Chicago —
+  `municipality='CITY OF CHICAGO'` rows already cover it, so this one
+  source avoids a Chicago-city-portal/Cook-County-portal overlap-dedup
+  problem entirely). Real categorical field: `job_code_primary='COMMERCIAL PERMIT'`
+  — no text-keyword guessing needed. 25,203 commercial records in a
+  24-month window (unfiltered upper bound). **Real data-quality trap**:
+  `property_address` is populated on almost none of the rows (88 of
+  25,203) — most records only carry `municipality`/`township`, not a
+  street address; still fixes the city-field gap (city-level, not
+  address-level). `amount`/`work_description`/`applicant_name` ARE
+  populated on ~99.7% of rows. Also: 18 records across the full dataset
+  have garbage far-future `date_issued` values (up to year 2210) — clamp
+  the upper date bound, don't trust an unfiltered max(). Built into
+  `scripts/pull-il-cook-county.py`.
+- City of Chicago's own permit portal (`data.cityofchicago.org`, resource
+  `ydr8-5enu`, 842,269 records) was researched and verified live too, but
+  deliberately NOT used — same data already exists in the Cook County
+  Assessor feed above, and using both would require a real address/date/
+  amount-proximity dedup pass (different ID schemes) rather than a clean
+  ID match. Worth revisiting if a project-name/description field ends up
+  mattering more than the Cook County source provides.
 
 ## What failed last time
 
-- Update after each pull with dead links, wrong layers, residential noise, and dedupe traps.
+- Illinois DCEO — checked `dceo.illinois.gov` and Socrata catalog search
+  against `data.illinois.gov`; zero structured incentive/project
+  datasets. Press releases and static program pages only, no Tier-0
+  equivalent to Georgia's DRI.
+- Illinois EPA large-facility permitting — the URL surfaced by search
+  404'd; the real page links to an "AFIIS" lookup tool not tested for an
+  API in this pass (not confirmed dead, just not verified usable).
+- Illinois Commerce Commission large-load/data-center filings — live
+  page, but a date-picker search form with no visible API; would need
+  Playwright network-interception (same as this repo's Gwinnett
+  precedent) to find a hidden endpoint, if one exists.
 
 ## Commercial-only filters
 
@@ -35,6 +67,7 @@ Read this file before refreshing `data/states/il.json`. Keep it current so the n
 ## Pull commands
 
 ```bash
+python3 scripts/pull-il-cook-county.py --months 24 --merge
 python3 scripts/merge-national-corpus.py
 npm run build
 ```
@@ -49,3 +82,4 @@ npm run build
 | Date | Source tried | Outcome |
 |------|--------------|---------|
 | 2026-07-24 | Stub synced from corpus | 3 projects |
+| 2026-07-27 | Cook County Assessor's Permits (`job_code_primary='COMMERCIAL PERMIT'`) | +22,191 projects, 22,461 total |
