@@ -20,11 +20,30 @@ Read this file before refreshing `data/states/de.json`. Keep it current so the n
 
 ## What works
 
-- Update after each pull with endpoints, scripts, and filters that produced clean records.
+- **Statewide Building Permits layer** — `https://enterprise.firstmap.delaware.gov/arcgis/rest/services/PlanningCadastre/DE_Planning_Development/MapServer/3`.
+  Verified live 2026-07-26: 79,000 total records, all 3 counties
+  (`COUNTY` field). Real `R_NR` flag (`R`/`NR`/`Mixed`) — filtered to
+  `NR`/`Mixed` for non-residential. Fields: `NR_SF`, `NOTES` (address
+  text, no project name), `RECTYPE`, `P_YEAR`, `JURISDICTION`.
+  **CAVEAT — confirmed stale**: max `P_YEAR` = 2024; `P_YEAR=2025`
+  returns 0 records. Real, but not current — still a substantial one-time
+  depth addition. Built into `scripts/pull-county-arcgis.py`
+  (`pull_delaware`, `--only delaware`). No lat/lon (Table-only fields, no
+  geometry query attempted — should double check whether the layer
+  actually has geometry, since this was pulled with the standard
+  `query_layer()` helper which requests it).
 
 ## What failed last time
 
-- Update after each pull with dead links, wrong layers, residential noise, and dedupe traps.
+- New Castle County ArcGIS Hub "Development Activity- Download" —
+  resolves to a static zip export, not a queryable REST endpoint;
+  catalog metadata last modified 2022-11-03.
+- Wilmington OpenGov "Transparency Portal" — confirmed to exist but is a
+  financial/budget transparency tool, not a permit database; the actual
+  permit lookup wasn't reached.
+- No municipal-level ArcGIS permit layers found for New Castle
+  County/Wilmington/Dover — only parcels/zoning/addressing in their open
+  data catalogs, no permits.
 
 ## Commercial-only filters
 

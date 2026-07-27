@@ -20,11 +20,32 @@ Read this file before refreshing `data/states/ne.json`. Keep it current so the n
 
 ## What works
 
-- Update after each pull with endpoints, scripts, and filters that produced clean records.
+- **Omaha Accela** (slug `OMAHA`) —
+  `https://aca-prod.accela.com/OMAHA/Cap/CapHome.aspx?module=Permits&TabName=Permits`.
+  Verified live 2026-07-26: HTTP 200, real search form (same markers as
+  GA's Atlanta Accela). Case-type dropdown has a clean `COMMERCIAL`
+  category with real construction types: `NEW CONSTRUCTION PROJECT`,
+  `NEW BUILDING`, `NEW TENANT FINISH (First Tenant)`,
+  `SHELL ONLY or SUPERSTRUCTURE`, `MULTI-FAMILY PROJECT`,
+  `REMODEL EXISTING SPACE` (path pattern `Permits/BUILDING/COMMERCIAL/<TYPE>`).
+  Best-verified Accela instance found across the NE/IA/CT/IN/WV research
+  pass. **Not yet built** — reuse `scripts/pull-ga-accela-commercial.py`'s
+  raw-HTTP-form-POST approach rather than starting from scratch.
+- Lincoln building permit search (`app.lincoln.ne.gov/aspx/city/buildperm/default.aspx`)
+  — confirmed live (HTTP 200, real ASP.NET postback form), but the
+  commercial/residential-distinguishing field hasn't been inspected yet.
+  Verify actual form fields before writing a scraper against it.
 
 ## What failed last time
 
-- Update after each pull with dead links, wrong layers, residential noise, and dedupe traps.
+- Omaha/Douglas County ArcGIS open data (`data-dogis.opendata.arcgis.com`)
+  — full DCAT catalog checked: only building-footprint snapshot layers
+  (2007-2022, no permit attributes) and a "Public Buildings" layer. No
+  permit/project dataset.
+- Nebraska DED (`opportunity.nebraska.gov`) — no structured/downloadable
+  incentive-award or project-announcement database found; program
+  description pages only, not a Tier-0 database like GA's DRI or IN's
+  IEDC portal (even though IN's is currently down, see `docs/states/in.md`).
 
 ## Commercial-only filters
 

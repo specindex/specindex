@@ -2826,9 +2826,4936 @@
       "open_for": "Awarded federal construction contract, in progress. Construction-documents phase may still be open for product substitution requests.",
       "state": "RI",
       "zip": "02903"
+    },
+    {
+      "id": "ri-providence-pipeline-integrated-life-sciences-building-233-261-richmond-st",
+      "name": "Integrated Life Sciences Building",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Downtown): Construction of a 7-story life sciences laboratory complex.",
+      "key_specs": [
+        "Downtown",
+        "Under Construction",
+        "233-261 Richmond St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Integrated Life Sciences Building",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8184295,
+      "longitude": -71.4089304
+    },
+    {
+      "id": "ri-providence-pipeline-265-manton-265-manton-ave",
+      "name": "265 Manton",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "institutional",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Olneyville): Adaptive re-use of church into 26 residential units.",
+      "key_specs": [
+        "Olneyville",
+        "Under Construction",
+        "265 Manton Ave"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "glazing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 265 Manton",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8222697,
+      "longitude": -71.4490587
+    },
+    {
+      "id": "ri-providence-pipeline-6-felix-st-6-felix-st",
+      "name": "6 Felix St",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "institutional",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Valley): Conversion of a church into 6 residential units.",
+      "key_specs": [
+        "Valley",
+        "Building Permit Issued",
+        "6 Felix St"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "glazing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 6 Felix St",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.832266,
+      "longitude": -71.427933
+    },
+    {
+      "id": "ri-providence-pipeline-asa-messer-school-1655-westminster-st",
+      "name": "Asa Messer School",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "institutional",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Federal Hill): New construction of 4 story, K-8 school. 36 classrooms..",
+      "key_specs": [
+        "Federal Hill",
+        "Under Construction",
+        "1655 Westminster St"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "glazing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Asa Messer School",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8165037,
+      "longitude": -71.4373443
+    },
+    {
+      "id": "ri-providence-pipeline-mount-pleasant-high-school-434-mount-pleasant-ave",
+      "name": "Mount Pleasant High School",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "institutional",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Mount Pleasant): Demolition and construction of new northern classroom wing.",
+      "key_specs": [
+        "Mount Pleasant",
+        "Commission/Board Review Approved",
+        "434 Mount Pleasant Ave"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "glazing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Mount Pleasant High School",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8395501,
+      "longitude": -71.4527648
+    },
+    {
+      "id": "ri-providence-pipeline-lima-stuart-school-222-daboll-st",
+      "name": "Lima Stuart School",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "institutional",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (West End): New three story K-8 school for 1000 students.",
+      "key_specs": [
+        "West End",
+        "Commission/Board Review Approved",
+        "222 Daboll St"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "glazing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Lima Stuart School",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.803792,
+      "longitude": -71.4289726
+    },
+    {
+      "id": "ri-providence-pipeline-45-america-st-45-america-st",
+      "name": "45 America St",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Federal Hill): New 3-story, 14 unit construction.",
+      "key_specs": [
+        "Federal Hill",
+        "Commission/Board Review Approved",
+        "45 America St"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 45 America St",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8224072,
+      "longitude": -71.4278345
+    },
+    {
+      "id": "ri-providence-pipeline-harry-kizirian-elementary-school-60-camden-ave",
+      "name": "Harry Kizirian Elementary School",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "institutional",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Smith Hill): Demolition of existing building and construction of new K-8 public school.",
+      "key_specs": [
+        "Smith Hill",
+        "Under Construction",
+        "60 Camden Ave."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "glazing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Harry Kizirian Elementary School",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8367267,
+      "longitude": -71.4262679
+    },
+    {
+      "id": "ri-providence-pipeline-mary-e-fogarty-elementary-school-199-oxford-st",
+      "name": "Mary E. Fogarty Elementary School",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "institutional",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Lower South Providence): Demolition of existing building and construction of new K-8 public school.",
+      "key_specs": [
+        "Lower South Providence",
+        "Commission/Board Review Approved",
+        "199 Oxford St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "glazing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Mary E. Fogarty Elementary School",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8026497,
+      "longitude": -71.4109177
+    },
+    {
+      "id": "ri-providence-pipeline-robert-f-kennedy-school-195-nelson-st",
+      "name": "Robert F Kennedy School",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "institutional",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Elmhurst): New four story K-8 school with 49 classrooms.",
+      "key_specs": [
+        "Elmhurst",
+        "Under Commission/Board Review",
+        "195 Nelson St"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "glazing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Robert F Kennedy School",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8430431,
+      "longitude": -71.443832
+    },
+    {
+      "id": "ri-providence-pipeline-536-smith-536-smith-st",
+      "name": "536 Smith",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Smith Hill): Adding second story to existing one-story industrial building. 11 residential units and one commercial unit..",
+      "key_specs": [
+        "Smith Hill",
+        "Under Construction",
+        "536 Smith St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 536 Smith",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8359481,
+      "longitude": -71.4287397
+    },
+    {
+      "id": "ri-providence-pipeline-the-avenue-434-atwells-ave",
+      "name": "The Avenue",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Federal Hill): New construction of a mixed use development including 39 affordable residential units..",
+      "key_specs": [
+        "Federal Hill",
+        "Under Construction",
+        "434 Atwells Ave."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "elevators",
+        "roofing",
+        "lighting",
+        "flooring"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: The Avenue",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.82379742,
+      "longitude": -71.43197662
+    },
+    {
+      "id": "ri-providence-pipeline-envision-school-220-blackstone-st",
+      "name": "Envision School",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "institutional",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Upper South Providence): 90,000 sqft school.",
+      "key_specs": [
+        "Upper South Providence",
+        "Commission/Board Review Approved",
+        "220 Blackstone St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "glazing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Envision School",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8091193,
+      "longitude": -71.4130803
+    },
+    {
+      "id": "ri-providence-pipeline-pine-street-apartments-371-pine-st",
+      "name": "Pine Street Apartments",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Upper South Providence): New construction for 35 affordable residential units and a commercial unit.",
+      "key_specs": [
+        "Upper South Providence",
+        "Under Construction",
+        "371 Pine St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Pine Street Apartments",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.815785,
+      "longitude": -71.4166743
+    },
+    {
+      "id": "ri-providence-pipeline-spaziano-middle-school-254-eastwood-ave",
+      "name": "Spaziano Middle School",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "institutional",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Hartford): Construction of new middle school.",
+      "key_specs": [
+        "Hartford",
+        "Under Construction",
+        "254 Eastwood Ave."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "glazing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Spaziano Middle School",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8147839,
+      "longitude": -71.4574057
+    },
+    {
+      "id": "ri-providence-pipeline-86-spruce-86-spruce-st",
+      "name": "86 Spruce",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Federal Hill): Construction of 10 unit apartment building with ground floor commercial.",
+      "key_specs": [
+        "Federal Hill",
+        "Under Construction",
+        "86 Spruce St"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 86 Spruce",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8241245,
+      "longitude": -71.426322
+    },
+    {
+      "id": "ri-providence-pipeline-roger-williams-park-zoo-education-center-1000-elmwood-ave",
+      "name": "Roger Williams Park Zoo Education Center",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "office",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Washington Park): Construction of 13000 sqft educational facility containing classroom and office space.",
+      "key_specs": [
+        "Washington Park",
+        "Under Construction",
+        "1000 Elmwood Ave"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "elevators",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Roger Williams Park Zoo Education Center",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.7896345,
+      "longitude": -71.4154769
+    },
+    {
+      "id": "ri-providence-pipeline-663-admiral-st-663-admiral-st",
+      "name": "663 Admiral St.",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Wanskuck): New construction of a five story mixed-use building with commercial on the ground floor and 48 residences on the upper stories.",
+      "key_specs": [
+        "Wanskuck",
+        "Under Construction",
+        "663 Admiral St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "elevators",
+        "roofing",
+        "lighting",
+        "flooring"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 663 Admiral St.",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8494219,
+      "longitude": -71.438527
+    },
+    {
+      "id": "ri-providence-pipeline-386-atwells-386-atwells-ave",
+      "name": "386 Atwells",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Federal Hill): Demolition and new four-story construction for 21 residential units with ground-floor commercial..",
+      "key_specs": [
+        "Federal Hill",
+        "Under Construction",
+        "386 Atwells Ave."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 386 Atwells",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8236537,
+      "longitude": -71.430448
+    },
+    {
+      "id": "ri-providence-pipeline-321-knight-321-knight-st",
+      "name": "321 Knight",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (West End): New construction of 41 dwelling units with ground-floor commercial..",
+      "key_specs": [
+        "West End",
+        "Under Construction",
+        "321 Knight St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 321 Knight",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.81760578,
+      "longitude": -71.4268355
+    },
+    {
+      "id": "ri-providence-pipeline-undersea-cable-storage-facility-21-new-york-ave",
+      "name": "Undersea cable storage facility",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Washington Park): Undersea cable storage facility.",
+      "key_specs": [
+        "Washington Park",
+        "Under Construction",
+        "21 New York Ave"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Undersea cable storage facility",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.7929199,
+      "longitude": -71.3874599
+    },
+    {
+      "id": "ri-providence-pipeline-gladding-house-256-broadway",
+      "name": "Gladding House",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Federal Hill): Addition of a new floor to a historic building with 5 units. 10 units to be added.",
+      "key_specs": [
+        "Federal Hill",
+        "Under Construction",
+        "256 Broadway"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Gladding House",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8203357,
+      "longitude": -71.4260479
+    },
+    {
+      "id": "ri-providence-pipeline-signature-residences-217-angell-st",
+      "name": "Signature Residences",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (College Hill): Construction of 32 condominium units within a 5 story building.",
+      "key_specs": [
+        "College Hill",
+        "Under Construction",
+        "217 Angell St"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Signature Residences",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8280248,
+      "longitude": -71.3990142
+    },
+    {
+      "id": "ri-providence-pipeline-providence-public-works-facility-20-ernest-st",
+      "name": "Providence Public Works Facility",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Washington Park): Construction of new public works facility.",
+      "key_specs": [
+        "Washington Park",
+        "Under Construction",
+        "20 Ernest St"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Providence Public Works Facility",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.7944594,
+      "longitude": -71.3966791
+    },
+    {
+      "id": "ri-providence-pipeline-miriam-hospital-new-building-164-summit-ave",
+      "name": "Miriam Hospital New Building",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "healthcare",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Hope): Demolition and reconstruction of Miriam Hospital Building A in 3 floors and 92000 sqft.",
+      "key_specs": [
+        "Hope",
+        "Under Construction",
+        "164 Summit Ave"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "medical gas",
+        "elevators",
+        "flooring",
+        "lighting",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Miriam Hospital New Building",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.852075,
+      "longitude": -71.3984566
+    },
+    {
+      "id": "ri-providence-pipeline-5-richmond-square-5-richmond-sq",
+      "name": "5 Richmond Square",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Fox Point): New construction for 25 units of housing. 6 stories..",
+      "key_specs": [
+        "Fox Point",
+        "Under Construction",
+        "5 Richmond Sq"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 5 Richmond Square",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8264658,
+      "longitude": -71.3831284
+    },
+    {
+      "id": "ri-providence-pipeline-trinity-rep-addition-201-washington-st",
+      "name": "Trinity Rep addition",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Downtown): 5 story addition to existing structure's east elevation adding accessibility features.",
+      "key_specs": [
+        "Downtown",
+        "Under Construction",
+        "201 Washington St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Trinity Rep addition",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8222076,
+      "longitude": -71.4164373
+    },
+    {
+      "id": "ri-providence-pipeline-45-parade-45-parade-st",
+      "name": "45 Parade",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (West End): New construction of four-story building with 26 units.",
+      "key_specs": [
+        "West End",
+        "Commission/Board Review Approved",
+        "45 Parade St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 45 Parade",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8149199,
+      "longitude": -71.4328253
+    },
+    {
+      "id": "ri-providence-pipeline-128-wayland-128-wayland-ave",
+      "name": "128 Wayland",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Wayland): New construction of a 5-story mixed-use building with 23 residential units.",
+      "key_specs": [
+        "Wayland",
+        "Commission/Board Review Approved",
+        "128 Wayland Ave"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "elevators",
+        "roofing",
+        "lighting",
+        "flooring"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 128 Wayland",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8275613,
+      "longitude": -71.3888239
+    },
+    {
+      "id": "ri-providence-pipeline-159-wayland-ave-159-wayland-ave",
+      "name": "159 Wayland Ave",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Wayland): New construction for 12 dwelling units and first-floor commercial.",
+      "key_specs": [
+        "Wayland",
+        "Commission/Board Review Approved",
+        "159 Wayland Ave."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 159 Wayland Ave",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.82881945,
+      "longitude": -71.38811891
+    },
+    {
+      "id": "ri-providence-pipeline-730-douglas-730-douglas-ave",
+      "name": "730 Douglas",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Wanskuck): Contruction of four story mixed use building with 18 units and two commercial units on the ground floor.",
+      "key_specs": [
+        "Wanskuck",
+        "Commission/Board Review Approved",
+        "730 Douglas Ave"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "elevators",
+        "roofing",
+        "lighting",
+        "flooring"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 730 Douglas",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.849053,
+      "longitude": -71.4328001
+    },
+    {
+      "id": "ri-providence-pipeline-327-elmwood-327-elmwood-ave",
+      "name": "327 Elmwood",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (West End): Construction of 5-story, mixed-use building with 44 affordable residential units and 2 streetfront commercial units.",
+      "key_specs": [
+        "West End",
+        "Commission/Board Review Approved",
+        "327 Elmwood Ave."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "elevators",
+        "roofing",
+        "lighting",
+        "flooring"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 327 Elmwood",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8031595,
+      "longitude": -71.42614876
+    },
+    {
+      "id": "ri-providence-pipeline-108-110-waterman-108-110-waterman-st",
+      "name": "108-110 Waterman",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (College Hill): New construction of a five-story mixed use building with 35 housing units.",
+      "key_specs": [
+        "College Hill",
+        "Under Commission/Board Review",
+        "108-110 Waterman St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "elevators",
+        "roofing",
+        "lighting",
+        "flooring"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 108-110 Waterman",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8275604,
+      "longitude": -71.4000578
+    },
+    {
+      "id": "ri-providence-pipeline-1107-westminster-1107-westminster-st",
+      "name": "1107 Westminster",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Federal Hill): Five-story mixed use building with 17 residential units.",
+      "key_specs": [
+        "Federal Hill",
+        "Under Commission/Board Review",
+        "1107 Westminster St"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "elevators",
+        "roofing",
+        "lighting",
+        "flooring"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 1107 Westminster",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8173091,
+      "longitude": -71.4269557
+    },
+    {
+      "id": "ri-providence-pipeline-200-dyer-i-195-parcels-14-and-15-200-dyer-st",
+      "name": "200 Dyer (I-195 Parcels 14 and 15)",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Downtown): Phased mixed use development.",
+      "key_specs": [
+        "Downtown",
+        "Commission/Board Review Approved",
+        "200 Dyer St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "elevators",
+        "roofing",
+        "lighting",
+        "flooring"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 200 Dyer (I-195 Parcels 14 and 15)",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8213046,
+      "longitude": -71.407506
+    },
+    {
+      "id": "ri-providence-pipeline-11-west-friendship-11-west-friendship-st",
+      "name": "11 West Friendship",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Elmwood): Construction of four story mixed use building with commercial on the first floor and dwelling units in the rest of the building.",
+      "key_specs": [
+        "Elmwood",
+        "Commission/Board Review Approved",
+        "11 West Friendship St"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "elevators",
+        "roofing",
+        "lighting",
+        "flooring"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 11 West Friendship",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8099232,
+      "longitude": -71.4216063
+    },
+    {
+      "id": "ri-providence-pipeline-33-bassett-33-bassett-st",
+      "name": "33 Bassett",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Downtown): Demolition and new construction of a 6-story mixed-use building containing 191 units.",
+      "key_specs": [
+        "Downtown",
+        "Commission/Board Review Approved",
+        "33 Bassett St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "elevators",
+        "roofing",
+        "lighting",
+        "flooring"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 33 Bassett",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8174312,
+      "longitude": -71.4119366
+    },
+    {
+      "id": "ri-providence-pipeline-i-195-parcel-2-350-south-water-st",
+      "name": "I-195 Parcel 2",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "retail",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Fox Point): Construction of two mixed-use buildings with ground-level retail and 171 apartments.",
+      "key_specs": [
+        "Fox Point",
+        "Commission/Board Review Approved",
+        "350 South Water St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: I-195 Parcel 2",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.82004228,
+      "longitude": -71.40342695
+    },
+    {
+      "id": "ri-providence-pipeline-269-wickenden-269-wickenden-st",
+      "name": "269 Wickenden",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Fox Point): Mixed-use project with 75 units, commercial space and internal parking, 5 stories + cellar.",
+      "key_specs": [
+        "Fox Point",
+        "Under Commission/Board Review",
+        "269 Wickenden St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "elevators",
+        "roofing",
+        "lighting",
+        "flooring"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 269 Wickenden",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8193256,
+      "longitude": -71.3978291
+    },
+    {
+      "id": "ri-providence-pipeline-885-westminster-885-westminster-st",
+      "name": "885 Westminster",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "office",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Federal Hill): Adaptive re-use and vertical addition to an existing 2 story storefront and office for 74 dwelling units in 5 stories.",
+      "key_specs": [
+        "Federal Hill",
+        "Under Commission/Board Review",
+        "885 Westminster St"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "elevators",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 885 Westminster",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8176268,
+      "longitude": -71.4227033
+    },
+    {
+      "id": "ri-providence-pipeline-361-w-fountain-st-361-w-fountain-st",
+      "name": "361 W Fountain St",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Federal Hill): Adaptive re-use of an existing commercial structure for 12 dwelling units and ground-floor commercial. 5 stories..",
+      "key_specs": [
+        "Federal Hill",
+        "Under Commission/Board Review",
+        "361 W Fountain St"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 361 W Fountain St",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8193017,
+      "longitude": -71.4218918
+    },
+    {
+      "id": "ri-providence-pipeline-300-w-exchange-300-west-exchange-st",
+      "name": "300 W Exchange",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "office",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Federal Hill): Apaptive re-use of existing office for 15 dwelling units.",
+      "key_specs": [
+        "Federal Hill",
+        "Commission/Board Review Approved",
+        "300 West Exchange St"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "elevators",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 300 W Exchange",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8253898,
+      "longitude": -71.4244038
+    },
+    {
+      "id": "ri-providence-pipeline-176-gano-176-gano-st",
+      "name": "176 Gano",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Fox Point): New construction of 2 buildings totalling 10 units.",
+      "key_specs": [
+        "Fox Point",
+        "Under Commission/Board Review",
+        "176 Gano St"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 176 Gano",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8253649,
+      "longitude": -71.3906101
+    },
+    {
+      "id": "ri-providence-pipeline-providence-art-design-center-i-195-parcel-5-400-south-main-st",
+      "name": "Providence Art & Design Center (I-195 Parcel 5)",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "retail",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Fox Point): 5 story mixed-use structure containing 175 dwelling units, 30000 sqft of retail space, and 117 integral parking spaces.",
+      "key_specs": [
+        "Fox Point",
+        "Under Commission/Board Review",
+        "400 South Main St"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Providence Art & Design Center (I-195 Parcel 5)",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8193298,
+      "longitude": -71.4021823
+    },
+    {
+      "id": "ri-providence-pipeline-279-thayer-279-thayer-st",
+      "name": "279 Thayer",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "retail",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (College Hill): New construction of a five-story building with 16 apartments and ground-floor retail..",
+      "key_specs": [
+        "College Hill",
+        "Under Construction",
+        "279 Thayer St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 279 Thayer",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8296119,
+      "longitude": -71.4004882
+    },
+    {
+      "id": "ri-providence-pipeline-american-tourister-site-redevelopment-70-houghton-st",
+      "name": "American Tourister Site Redevelopment",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Wanskuck): New construction business park containing 76,000 sqft of commercial space.",
+      "key_specs": [
+        "Wanskuck",
+        "Under Commission/Board Review",
+        "70 Houghton St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: American Tourister Site Redevelopment",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8577411,
+      "longitude": -71.4367635
+    },
+    {
+      "id": "ri-providence-pipeline-140-prairie-ave-parking-garage-140-prairie-ave",
+      "name": "140 Prairie Ave Parking Garage",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Upper South Providence): Construction of 7 story parking lot with 1,551 spaces.",
+      "key_specs": [
+        "Upper South Providence",
+        "Under Commission/Board Review",
+        "140 Prairie Ave"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 140 Prairie Ave Parking Garage",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8104067,
+      "longitude": -71.4150318
+    },
+    {
+      "id": "ri-providence-pipeline-115-harris-115-harris-ave",
+      "name": "115 Harris",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Smith Hill): Conversion of a commercial building for 21 dwelling units.",
+      "key_specs": [
+        "Smith Hill",
+        "Under Commission/Board Review",
+        "115 Harris Ave."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 115 Harris",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8273253,
+      "longitude": -71.4237647
+    },
+    {
+      "id": "ri-providence-pipeline-superman-building-111-westminster-st",
+      "name": "Superman Building",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Downtown): Interior redevelopment for 308 housing units, 57 affordable.",
+      "key_specs": [
+        "Downtown",
+        "Under Construction",
+        "111 Westminster St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Superman Building",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8244911,
+      "longitude": -71.4111151
+    },
+    {
+      "id": "ri-providence-pipeline-dryden-mill-27-dryden-ln",
+      "name": "Dryden Mill",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Mount Hope): Rehabilitation of former mill building.",
+      "key_specs": [
+        "Mount Hope",
+        "Under Construction",
+        "27 Dryden Ln."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Dryden Mill",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.84293658,
+      "longitude": -71.40993077
+    },
+    {
+      "id": "ri-providence-pipeline-dike-street-residences-7-dike-st",
+      "name": "Dike Street Residences",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Olneyville): Adaptive reuse of existing industrial building for 18 dwelling units.",
+      "key_specs": [
+        "Olneyville",
+        "Under Commission/Board Review",
+        "7 Dike St"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Dike Street Residences",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8156649,
+      "longitude": -71.4403395
+    },
+    {
+      "id": "ri-providence-pipeline-contractor-storage-yard-450-charles-st",
+      "name": "Contractor Storage Yard",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Charles): Construction of two contractor storage buildings with 67,950 sf of space.",
+      "key_specs": [
+        "Charles",
+        "Under Commission/Board Review",
+        "450 Charles St"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Contractor Storage Yard",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.845555,
+      "longitude": -71.4194139
+    },
+    {
+      "id": "ri-providence-pipeline-775-eddy-street-medical-complex-775-eddy-st",
+      "name": "775 Eddy Street Medical Complex",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "planning",
+      "project_type": "healthcare",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Lower South Providence): Construction of 19,450 SF medical building.",
+      "key_specs": [
+        "Lower South Providence",
+        "Under Commission/Board Review",
+        "775 Eddy St"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "medical gas",
+        "elevators",
+        "flooring",
+        "lighting",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 775 Eddy Street Medical Complex",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Pipeline_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8067934,
+      "longitude": -71.4083335
+    },
+    {
+      "id": "ri-providence-completed-dirt-palace-at-the-wedding-cake-house-514-broadway",
+      "name": "Dirt Palace at the Wedding Cake House",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Federal Hill): Restoration of a historic mansion into space for an artist residency program.",
+      "key_specs": [
+        "Federal Hill",
+        "Complete",
+        "514 Broadway"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Dirt Palace at the Wedding Cake House",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8181446,
+      "longitude": -71.435407
+    },
+    {
+      "id": "ri-providence-completed-180-and-200-corliss-180-corliss-st-200-corliss-st",
+      "name": "180 and 200 Corliss",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "office",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Mount Hope): New construction of two commercial office buildings totaling 51,500 sf..",
+      "key_specs": [
+        "Mount Hope",
+        "Complete",
+        "180 Corliss St., 200 Corliss St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "elevators",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 180 and 200 Corliss",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.84285628,
+      "longitude": -71.41246798
+    },
+    {
+      "id": "ri-providence-completed-extra-space-storage-145-corliss-st",
+      "name": "Extra Space Storage",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Mount Hope): Self Storage Facility with 695 storage units.",
+      "key_specs": [
+        "Mount Hope",
+        "Complete",
+        "145 Corliss St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Extra Space Storage",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.84258531,
+      "longitude": -71.41175071
+    },
+    {
+      "id": "ri-providence-completed-1292-westminster-st-1292-westminster-st",
+      "name": "1292 Westminster St.",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "retail",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (West End): New construction of a 5-story, 36-unit apartment building with 7,200 sf of ground-floor retail.",
+      "key_specs": [
+        "West End",
+        "Complete",
+        "1292 Westminster St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 1292 Westminster St.",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8164944,
+      "longitude": -71.430492
+    },
+    {
+      "id": "ri-providence-completed-18-eighth-st-18-eighth-st",
+      "name": "18 Eighth St.",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "institutional",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Hope): Renovation of a historic church building into 18 dwelling units..",
+      "key_specs": [
+        "Hope",
+        "Complete",
+        "18 Eighth St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "glazing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 18 Eighth St.",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.85413042,
+      "longitude": -71.39969742
+    },
+    {
+      "id": "ri-providence-completed-providence-public-library-renovation-150-empire-st",
+      "name": "Providence Public Library Renovation",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Downtown): Complete library renovation.",
+      "key_specs": [
+        "Downtown",
+        "Complete",
+        "150 Empire St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Providence Public Library Renovation",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8217491,
+      "longitude": -71.41712
+    },
+    {
+      "id": "ri-providence-completed-chestnut-commons-i-195-parcel-30-91-chestnut-st-200-friendship-st",
+      "name": "Chestnut Commons (I-195 Parcel 30)",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "retail",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Downtown): New 102,000-square-foot development, with 92 dwelling units and 5,900 sf of retail space.",
+      "key_specs": [
+        "Downtown",
+        "Complete",
+        "91 Chestnut St.\n200 Friendship St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Chestnut Commons (I-195 Parcel 30)",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.81892516,
+      "longitude": -71.41207687
+    },
+    {
+      "id": "ri-providence-completed-the-nightingale-78-fountain-st",
+      "name": "The Nightingale",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "retail",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Downtown): New construction of a 6-story building with 143 apartments and 11,383 square feet of first-floor retail space..",
+      "key_specs": [
+        "Downtown",
+        "Complete",
+        "78 Fountain St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: The Nightingale",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8235509,
+      "longitude": -71.4149779
+    },
+    {
+      "id": "ri-providence-completed-farm-fresh-market-development-498-kinsley-ave",
+      "name": "Farm Fresh Market Development",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Valley): New construction of a 50,000 sf facility for Farm Fresh RI.",
+      "key_specs": [
+        "Valley",
+        "Complete",
+        "498 Kinsley Ave."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Farm Fresh Market Development",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.82709913,
+      "longitude": -71.43311393
+    },
+    {
+      "id": "ri-providence-completed-387-wickenden-st-387-wickenden-st",
+      "name": "387 Wickenden St.",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "retail",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Fox Point): New construction of a mixed-use building with 15 dwelling units and ground-floor retail..",
+      "key_specs": [
+        "Fox Point",
+        "Complete",
+        "387 Wickenden St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 387 Wickenden St.",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.81966244,
+      "longitude": -71.39553421
+    },
+    {
+      "id": "ri-providence-completed-270-290-westminster-st-270-290-westminster-st",
+      "name": "270-290 Westminster St.",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Downtown): Renovation and new construction for 65 residential units with 26,000 sf of commercial space.",
+      "key_specs": [
+        "Downtown",
+        "Complete",
+        "270-290 Westminster St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 270-290 Westminster St.",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8224562,
+      "longitude": -71.4129375
+    },
+    {
+      "id": "ri-providence-completed-345-harris-ave-self-storage-345-harris-ave",
+      "name": "345 Harris Ave. Self Storage",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Valley): New construction of a 5-story building with 100,000 sf of self storage..",
+      "key_specs": [
+        "Valley",
+        "Complete",
+        "345 Harris Ave."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 345 Harris Ave. Self Storage",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8258046,
+      "longitude": -71.4318112
+    },
+    {
+      "id": "ri-providence-completed-225-waterman-st-225-waterman-st",
+      "name": "225 Waterman St.",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Wayland): New construction of a 22-unit apartment building with 1,050 sq. ft. of ground-floor commercial space.",
+      "key_specs": [
+        "Wayland",
+        "Complete",
+        "225 Waterman St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 225 Waterman St.",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.82839847,
+      "longitude": -71.38892596
+    },
+    {
+      "id": "ri-providence-completed-sternlicht-commons-brown-university-wellness-center-450-brook-st",
+      "name": "Sternlicht Commons & Brown University Wellness Center",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (College Hill): New construction of a 96,000 sf Wellness Center & Residence Hall - 162 beds.",
+      "key_specs": [
+        "College Hill",
+        "Complete",
+        "450 Brook St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Sternlicht Commons & Brown University Wellness Center",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.82990792,
+      "longitude": -71.3998997
+    },
+    {
+      "id": "ri-providence-completed-narragansett-brewery-271-tockwotten-st",
+      "name": "Narragansett Brewery",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Fox Point): Renovation of an existing building into a brewery.",
+      "key_specs": [
+        "Fox Point",
+        "Complete",
+        "271 Tockwotten St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Narragansett Brewery",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.81854302,
+      "longitude": -71.39028783
+    },
+    {
+      "id": "ri-providence-completed-the-composition-1043-1045-broad-st",
+      "name": "The Composition",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "office",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Elmwood): New construction of two new mixed use buildings for eight residential units plus two commercial units and one community office..",
+      "key_specs": [
+        "Elmwood",
+        "Complete",
+        "1043-1045 Broad St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "elevators",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: The Composition",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.7963437,
+      "longitude": -71.4127371
+    },
+    {
+      "id": "ri-providence-completed-beatrice-hotel-90-westminster-st",
+      "name": "Beatrice Hotel",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "hospitality",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Downtown): Rehabilitation of a historic Downtown building for a 48-room hotel, restaurant and bank..",
+      "key_specs": [
+        "Downtown",
+        "Complete",
+        "90 Westminster St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "elevators",
+        "flooring",
+        "plumbing fixtures",
+        "lighting",
+        "ff&e"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Beatrice Hotel",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.825225,
+      "longitude": -71.4099376
+    },
+    {
+      "id": "ri-providence-completed-our-lady-of-mt-carmel-church-18-spruce-st",
+      "name": "Our Lady of Mt. Carmel Church",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "institutional",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Federal Hill): Renovation of a historic church for 25 dwelling units..",
+      "key_specs": [
+        "Federal Hill",
+        "Complete",
+        "18 Spruce St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "glazing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Our Lady of Mt. Carmel Church",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8239226,
+      "longitude": -71.4240008
+    },
+    {
+      "id": "ri-providence-completed-cogent-self-storage-1117-eddy-st",
+      "name": "Cogent Self-Storage",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Washington Park): New construction for 150,000 sf self-storage facility.",
+      "key_specs": [
+        "Washington Park",
+        "Complete",
+        "1117 Eddy St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Cogent Self-Storage",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.7956745,
+      "longitude": -71.40552
+    },
+    {
+      "id": "ri-providence-completed-110-dean-st-110-dean-st",
+      "name": "110 Dean St.",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Federal Hill): Three stories mixed use with nine dwelling units, four each on floors 2-3 and one on the first floor. Approximately 1,600 SF of commercial space on the ground floor..",
+      "key_specs": [
+        "Federal Hill",
+        "Complete",
+        "110 Dean St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "elevators",
+        "roofing",
+        "lighting",
+        "flooring"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 110 Dean St.",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8238786,
+      "longitude": -71.4244432
+    },
+    {
+      "id": "ri-providence-completed-128-dean-st-128-dean-st",
+      "name": "128 Dean St.",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Federal Hill): Three stories mixed use with nine dwelling units, four each on floors 2-3 and one on the first floor. Approximately 1,900 SF of commercial space on the ground floor..",
+      "key_specs": [
+        "Federal Hill",
+        "Complete",
+        "128 Dean St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "elevators",
+        "roofing",
+        "lighting",
+        "flooring"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 128 Dean St.",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8236561,
+      "longitude": -71.4241166
+    },
+    {
+      "id": "ri-providence-completed-aloft-hotel-i-195-parcel-22-2-191-dorrance-st",
+      "name": "Aloft Hotel (I-195 Parcel 22-2)",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "hospitality",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Downtown): New construction of a 175 room hotel..",
+      "key_specs": [
+        "Downtown",
+        "Complete",
+        "191 Dorrance St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "elevators",
+        "flooring",
+        "plumbing fixtures",
+        "lighting",
+        "ff&e"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Aloft Hotel (I-195 Parcel 22-2)",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.82130159,
+      "longitude": -71.40885292
+    },
+    {
+      "id": "ri-providence-completed-1492-westminster-st-1492-westminster-st",
+      "name": "1492 Westminster St.",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "retail",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (West End): New construction of a 3-story, mixed-use building with 7 one-bedroom dwelling units and ground-floor retail space.",
+      "key_specs": [
+        "West End",
+        "Complete",
+        "1492 Westminster St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 1492 Westminster St.",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8160472,
+      "longitude": -71.4342504
+    },
+    {
+      "id": "ri-providence-completed-pchc-atwood-health-center-31-atwood-st",
+      "name": "PCHC Atwood Health Center",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Olneyville): New construction of a health center..",
+      "key_specs": [
+        "Olneyville",
+        "Complete",
+        "31 Atwood St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: PCHC Atwood Health Center",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.81519246,
+      "longitude": -71.44471607
+    },
+    {
+      "id": "ri-providence-completed-wind-turbines-0-harborside-blvd-1-fields-point-dr",
+      "name": "Wind Turbines",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Washington Park): New construction of three 1.5 mw wind turbines.",
+      "key_specs": [
+        "Washington Park",
+        "Complete",
+        "0 Harborside Blvd./1 Fields Point Dr."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Wind Turbines",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.7893701,
+      "longitude": -71.3851245
+    },
+    {
+      "id": "ri-providence-completed-national-grid-natural-gas-liquefaction-project-121-terminal-rd",
+      "name": "National Grid Natural Gas Liquefaction Project",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Washington Park): Installation of a liquefaction facility in conjunction with the existing LNG storage tank..",
+      "key_specs": [
+        "Washington Park",
+        "Complete",
+        "121 Terminal Rd."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: National Grid Natural Gas Liquefaction Project",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.7991708,
+      "longitude": -71.3942353
+    },
+    {
+      "id": "ri-providence-completed-gotham-greens-expansion-555-harris-ave",
+      "name": "Gotham Greens Expansion",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Olneyville): 12,000 sq. ft. addition to an existing greenhouse.",
+      "key_specs": [
+        "Olneyville",
+        "Complete",
+        "555 Harris Ave."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Gotham Greens Expansion",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.82372377,
+      "longitude": -71.43779319
+    },
+    {
+      "id": "ri-providence-completed-southside-community-land-trust-404-broad-st",
+      "name": "Southside Community Land Trust",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Upper South Providence): Renovation of a historic building for new headquarters and associated uses.",
+      "key_specs": [
+        "Upper South Providence",
+        "Complete",
+        "404 Broad St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Southside Community Land Trust",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8123555,
+      "longitude": -71.4212421
+    },
+    {
+      "id": "ri-providence-completed-turbine-assembly-facility-7-harborside-blvd",
+      "name": "Turbine Assembly Facility",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Washington Park): New construction of an assembly facility for offshore wind turbines.",
+      "key_specs": [
+        "Washington Park",
+        "Complete",
+        "7 Harborside Blvd."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Turbine Assembly Facility",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.78992321,
+      "longitude": -71.38398065
+    },
+    {
+      "id": "ri-providence-completed-strive-lofts-556-atwells-ave",
+      "name": "Strive Lofts",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Valley): Renovation of a historic mill building for 56 residential and ground-floor commercial uses..",
+      "key_specs": [
+        "Valley",
+        "Complete",
+        "556 Atwells Ave."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Strive Lofts",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.82426039,
+      "longitude": -71.43599181
+    },
+    {
+      "id": "ri-providence-completed-emblem-125-i-195-parcel-28-125-clifford-st",
+      "name": "Emblem 125 (I-195 Parcel 28)",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "retail",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Downtown): New construction of 249 apartments and 19000 sf of ground-floor retail.",
+      "key_specs": [
+        "Downtown",
+        "Complete",
+        "125 Clifford St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Emblem 125 (I-195 Parcel 28)",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.81929135,
+      "longitude": -71.41156281
+    },
+    {
+      "id": "ri-providence-completed-114-bowdoin-st-114-bowdoin-st",
+      "name": "114 Bowdoin St.",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Olneyville): New construction of eight modular homes for affordable housing..",
+      "key_specs": [
+        "Olneyville",
+        "Complete",
+        "114 Bowdoin St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 114 Bowdoin St.",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8230934,
+      "longitude": -71.4433162
+    },
+    {
+      "id": "ri-providence-completed-roger-williams-park-gateway-1197-broad-st",
+      "name": "Roger Williams Park Gateway",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (South Elmwood): New construction of a gateway and vistors center for Roger Willimas Park.",
+      "key_specs": [
+        "South Elmwood",
+        "Complete",
+        "1197 Broad St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Roger Williams Park Gateway",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.79340146,
+      "longitude": -71.40928178
+    },
+    {
+      "id": "ri-providence-completed-mcdonald-s-50-plainfield-st",
+      "name": "McDonald's",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Olneyville): Construction of a ~4,400 sqft drive-thru on a vacant site.",
+      "key_specs": [
+        "Olneyville",
+        "Complete",
+        "50 Plainfield St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: McDonald's",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8161246,
+      "longitude": -71.4443721
+    },
+    {
+      "id": "ri-providence-completed-paragon-mill-39-manton-ave",
+      "name": "Paragon Mill",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Olneyville): Renovation of historic mill for 100 units of affordable and market-rate housing.",
+      "key_specs": [
+        "Olneyville",
+        "Complete",
+        "39 Manton Ave"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Paragon Mill",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.81805342,
+      "longitude": -71.44234402
+    },
+    {
+      "id": "ri-providence-completed-1-195-parcel-6-125-wickenden-st",
+      "name": "1-195 Parcel 6",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "office",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Fox Point): New construction of a 12800 sf grocery store, 9200 sf of retail and office, and 60 dwelling units..",
+      "key_specs": [
+        "Fox Point",
+        "Complete",
+        "125 Wickenden St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "elevators",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 1-195 Parcel 6",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.81824625,
+      "longitude": -71.40069156
+    },
+    {
+      "id": "ri-providence-completed-copley-i-206-broad-st",
+      "name": "Copley I",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "retail",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Upper South Providence): Renovation of existing building to create 26 units and a retail space with ancillary uses on the first floor..",
+      "key_specs": [
+        "Upper South Providence",
+        "Complete",
+        "206 Broad St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Copley I",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8163935,
+      "longitude": -71.4186113
+    },
+    {
+      "id": "ri-providence-completed-96-dupont-self-storage-96-dupont-dr",
+      "name": "96 Dupont Self Storage",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Reservoir): New construction of 605 self-storage units..",
+      "key_specs": [
+        "Reservoir",
+        "Complete",
+        "96 Dupont Dr."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 96 Dupont Self Storage",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.7999165,
+      "longitude": -71.4386977
+    },
+    {
+      "id": "ri-providence-completed-brook-street-residence-halls-250-and-259-brook-st",
+      "name": "Brook Street Residence Halls",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (College Hill): New construction of two dormitory buildings on the west and east sides of Brook Street with 351 beds..",
+      "key_specs": [
+        "College Hill",
+        "Complete",
+        "250 and 259 Brook St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Brook Street Residence Halls",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.82343345,
+      "longitude": -71.39907858
+    },
+    {
+      "id": "ri-providence-completed-shanley-hall-165-eaton-st",
+      "name": "Shanley Hall",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Wanskuck): New construction of a 350-bed residence hall.",
+      "key_specs": [
+        "Wanskuck",
+        "Complete",
+        "165 Eaton St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Shanley Hall",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8417736,
+      "longitude": -71.4325984
+    },
+    {
+      "id": "ri-providence-completed-spaziano-elementary-school-35-merino-st",
+      "name": "Spaziano Elementary School",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "institutional",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Hartford): New construction of an 80,000 sf elementary school.",
+      "key_specs": [
+        "Hartford",
+        "Complete",
+        "35 Merino St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "glazing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Spaziano Elementary School",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8141903,
+      "longitude": -71.4570906
+    },
+    {
+      "id": "ri-providence-completed-17-planet-17-planet-st",
+      "name": "17 Planet",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (College Hill): Construction of a 3-story 6-unit building on a vacant site.",
+      "key_specs": [
+        "College Hill",
+        "Complete",
+        "17 Planet St"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 17 Planet",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8234592,
+      "longitude": -71.4055657
+    },
+    {
+      "id": "ri-providence-completed-lindemann-performing-arts-center-130-angell-st-142-angell-st-p",
+      "name": "Lindemann Performing Arts Center",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (College Hill): Construction of a 80,000 GSF multi-disciplinary performance and learning space.",
+      "key_specs": [
+        "College Hill",
+        "Complete",
+        "130 Angell St.\n142 Angell St. (p)"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Lindemann Performing Arts Center",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.82816312,
+      "longitude": -71.40240757
+    },
+    {
+      "id": "ri-providence-completed-725-branch-ave-wanskuck-mill-725-branch-ave",
+      "name": "725 Branch Ave - Wanskuck Mill",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Wanskuck): Renovation of an existing mill building for 225 residential units and commercial space.",
+      "key_specs": [
+        "Wanskuck",
+        "Complete",
+        "725 Branch Ave."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 725 Branch Ave - Wanskuck Mill",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.85412481,
+      "longitude": -71.42993369
+    },
+    {
+      "id": "ri-providence-completed-66-branch-ave-66-branch-ave",
+      "name": "66 Branch Ave",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Mount Hope): Rehabilitation and expansion of former Benny's plaza into strip-mall.",
+      "key_specs": [
+        "Mount Hope",
+        "Complete",
+        "66 Branch Ave"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 66 Branch Ave",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8435598,
+      "longitude": -71.4091455
+    },
+    {
+      "id": "ri-providence-completed-837-broad-837-broad-st",
+      "name": "837 Broad",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Elmwood): New construction of a 12-unit apartment building with 2,240 sq. ft. of ground-floor commercial space.",
+      "key_specs": [
+        "Elmwood",
+        "Complete",
+        "837 Broad St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 837 Broad",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.801222,
+      "longitude": -71.4184713
+    },
+    {
+      "id": "ri-providence-completed-50-ashburton-50-ashburton-st",
+      "name": "50 Ashburton",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Mount Hope): Renovation of a historic mill building for 23 units of housing..",
+      "key_specs": [
+        "Mount Hope",
+        "Complete",
+        "50 Ashburton St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 50 Ashburton",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8374772,
+      "longitude": -71.4152623
+    },
+    {
+      "id": "ri-providence-completed-tesla-dealership-77-reservoir-ave",
+      "name": "Tesla Dealership",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Reservoir): Tenant fit-out for auto dealership.",
+      "key_specs": [
+        "Reservoir",
+        "Complete",
+        "77 Reservoir Ave."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Tesla Dealership",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.7958817,
+      "longitude": -71.428398
+    },
+    {
+      "id": "ri-providence-completed-g-square-185-187-westminster-st-55-dorrance-st",
+      "name": "G Square",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "office",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Downtown): Converted 2nd-5th floors of existing office building into 46 dwelling units.",
+      "key_specs": [
+        "Downtown",
+        "Complete",
+        "185-187 Westminster St/55 Dorrance St"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "elevators",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: G Square",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8236079,
+      "longitude": -71.4119324
+    },
+    {
+      "id": "ri-providence-completed-community-prep-addition-2-tanner-st",
+      "name": "Community Prep Addition",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Upper South Providence): New construction of an arts and athletic center.",
+      "key_specs": [
+        "Upper South Providence",
+        "Complete",
+        "2 Tanner St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Community Prep Addition",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8117722,
+      "longitude": -71.4157057
+    },
+    {
+      "id": "ri-providence-completed-copley-iii-228-broad-st",
+      "name": "Copley III",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Upper South Providence): New construction of a five story building with 80 affordable housing units and ground floor commercial on a vacant lot.",
+      "key_specs": [
+        "Upper South Providence",
+        "Complete",
+        "228 Broad St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Copley III",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8161141,
+      "longitude": -71.4192413
+    },
+    {
+      "id": "ri-providence-completed-community-music-works-1326-westminster-st",
+      "name": "Community Music Works",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "institutional",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (West End): New construction of an 18,000 sf music school and performance facility..",
+      "key_specs": [
+        "West End",
+        "Complete",
+        "1326 Westminster St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "glazing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Community Music Works",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.81647315,
+      "longitude": -71.4309871
+    },
+    {
+      "id": "ri-providence-completed-870-reserve-870-westminster-st",
+      "name": "870 Reserve",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "office",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (West End): Renovation of and addition to a former bank building to create 58 apartments..",
+      "key_specs": [
+        "West End",
+        "Complete",
+        "870 Westminster St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "elevators",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 870 Reserve",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8171412,
+      "longitude": -71.4228648
+    },
+    {
+      "id": "ri-providence-completed-235-meeting-235-meeting-st",
+      "name": "235 Meeting",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "retail",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (College Hill): New construction of a four-story building with 4 apartments and ground-floor retail..",
+      "key_specs": [
+        "College Hill",
+        "Complete",
+        "235 Meeting St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 235 Meeting",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8290711,
+      "longitude": -71.4004544
+    },
+    {
+      "id": "ri-providence-completed-copley-ii-220-broad-st",
+      "name": "Copley II",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Upper South Providence): New construction of a five story building containing 44 affordable units..",
+      "key_specs": [
+        "Upper South Providence",
+        "Complete",
+        "220 Broad St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Copley II",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8162677,
+      "longitude": -71.418786
+    },
+    {
+      "id": "ri-providence-completed-the-carlyle-116-waterman-st",
+      "name": "The Carlyle",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "mixed_use",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (College Hill): New construction of a five-story mixed use building with 26 housing units.",
+      "key_specs": [
+        "College Hill",
+        "Complete",
+        "116 Waterman St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "elevators",
+        "roofing",
+        "lighting",
+        "flooring"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: The Carlyle",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8275649,
+      "longitude": -71.3995325
+    },
+    {
+      "id": "ri-providence-completed-school-of-nursing-health-sciences-165-eaton-st",
+      "name": "School of Nursing & Health Sciences",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "institutional",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Wanskuck): New construction of a five-story, 100,000 sqft classroom and lab facility..",
+      "key_specs": [
+        "Wanskuck",
+        "Complete",
+        "165 Eaton St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "glazing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: School of Nursing & Health Sciences",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8422493,
+      "longitude": -71.4298243
+    },
+    {
+      "id": "ri-providence-completed-840-manton-ave-840-manton-ave",
+      "name": "840 Manton Ave",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Manton): New construction of three self-storage buildings providing a total of 94,200 SF of storage space..",
+      "key_specs": [
+        "Manton",
+        "Complete",
+        "840 Manton Ave."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 840 Manton Ave",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.83246407,
+      "longitude": -71.46489586
+    },
+    {
+      "id": "ri-providence-completed-cinque-terre-150-stamford-ave",
+      "name": "Cinque Terre",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (South Elmwood): Three story, 24 unit new construction.",
+      "key_specs": [
+        "South Elmwood",
+        "Complete",
+        "150 Stamford Ave"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Cinque Terre",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.7767176,
+      "longitude": -71.4202459
+    },
+    {
+      "id": "ri-providence-completed-brown-university-labor-and-delivery-center-101-dudley-st",
+      "name": "Brown University Labor and Delivery Center",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "healthcare",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Upper South Providence): New construction of a 18,000 sqft, 20-room labor and delivery center to the hospital w/ added academic spaces..",
+      "key_specs": [
+        "Upper South Providence",
+        "Complete",
+        "101 Dudley St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "medical gas",
+        "elevators",
+        "flooring",
+        "lighting",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Brown University Labor and Delivery Center",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8104679,
+      "longitude": -71.411645
+    },
+    {
+      "id": "ri-providence-completed-track-15-1-union-station",
+      "name": "Track 15",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Downtown): Renovation and new construction of a food hall.",
+      "key_specs": [
+        "Downtown",
+        "Complete",
+        "1 Union Station"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Track 15",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.82577844,
+      "longitude": -71.41336394
+    },
+    {
+      "id": "ri-providence-completed-tempo-i-195-parcel-9-1-55-george-m-cohan-blvd",
+      "name": "Tempo (I-195 Parcel 9-1)",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "retail",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Fox Point): New construction for 66 dwelling units plus 1100 sqft of retail and a 6900 sqft daycare..",
+      "key_specs": [
+        "Fox Point",
+        "Complete",
+        "55 George M. Cohan Blvd."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Tempo (I-195 Parcel 9-1)",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8182281,
+      "longitude": -71.3991696
+    },
+    {
+      "id": "ri-providence-completed-1828-westminster-st-1828-westminster-st",
+      "name": "1828 Westminster St",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Olneyville): Adaptive re-use of warehouse into 8 residential units.",
+      "key_specs": [
+        "Olneyville",
+        "Complete",
+        "1828 Westminster St"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 1828 Westminster St",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8159914,
+      "longitude": -71.4404588
+    },
+    {
+      "id": "ri-providence-completed-aylesworth-apartments-190-broad-st",
+      "name": "Aylesworth Apartments",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "office",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Upper South Providence): Adaptive re-use of office building into 7 residential units.",
+      "key_specs": [
+        "Upper South Providence",
+        "Complete",
+        "190 Broad St"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "elevators",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Aylesworth Apartments",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8165829,
+      "longitude": -71.4182253
+    },
+    {
+      "id": "ri-providence-completed-126-adelaide-126-adelaide-ave",
+      "name": "126 Adelaide",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "institutional",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Elmwood): Conversion of a church into 15 dwelling units.",
+      "key_specs": [
+        "Elmwood",
+        "Complete",
+        "126 Adelaide Ave."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "glazing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 126 Adelaide",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.79729046,
+      "longitude": -71.4197776
+    },
+    {
+      "id": "ri-providence-completed-pchc-central-expansion-221-cranston-st",
+      "name": "PCHC Central Expansion",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (West End): Single story addition to PCHC Central.",
+      "key_specs": [
+        "West End",
+        "Complete",
+        "221 Cranston St"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: PCHC Central Expansion",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8140176,
+      "longitude": -71.4275638
+    },
+    {
+      "id": "ri-providence-completed-crossroads-99-stewart-st",
+      "name": "Crossroads",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Upper South Providence): New construction of 176 units of affordable housing.",
+      "key_specs": [
+        "Upper South Providence",
+        "Complete",
+        "99 Stewart St"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Crossroads",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.81581346,
+      "longitude": -71.41802771
+    },
+    {
+      "id": "ri-providence-completed-potters-tigrai-scattered-site",
+      "name": "Potters Tigrai",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Various): Scattered site development adding 20 affordable units in 11 new buildings..",
+      "key_specs": [
+        "Various",
+        "Complete",
+        "Scattered Site"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Potters Tigrai",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.7983952,
+      "longitude": -71.4128547
+    },
+    {
+      "id": "ri-providence-completed-rhode-island-state-laboratories-and-center-for-life-sciences-i-195-parcel-25-150-richmond-st",
+      "name": "Rhode Island State Laboratories and Center for Life Sciences (I-195 Parcel 25)",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "healthcare",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Downtown): Construction of a new 208,000 sqft, 7 floor building including 64,000 sqft of RIDOH medical research laboratory space.",
+      "key_specs": [
+        "Downtown",
+        "Complete",
+        "150 Richmond St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "medical gas",
+        "elevators",
+        "flooring",
+        "lighting",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Rhode Island State Laboratories and Center for Life Sciences (I-195 Parcel 25)",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8199156,
+      "longitude": -71.4097825
+    },
+    {
+      "id": "ri-providence-completed-101-richmond-st-101-richmond-st",
+      "name": "101 Richmond St.",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "retail",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Downtown): Rehabilitation for two retail storefronts and 19 residential units..",
+      "key_specs": [
+        "Downtown",
+        "Complete",
+        "101 Richmond St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 101 Richmond St.",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.82001444,
+      "longitude": -71.4110875
+    },
+    {
+      "id": "ri-providence-completed-brown-indoor-practice-facility-235-hope-st",
+      "name": "Brown Indoor Practice Facility",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (College Hill): New 1-story indoor practice facility w/ mezzanine.",
+      "key_specs": [
+        "College Hill",
+        "Complete",
+        "235 Hope St"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Brown Indoor Practice Facility",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8306877,
+      "longitude": -71.3961332
+    },
+    {
+      "id": "ri-providence-completed-postal-kitchen-1836-westminster-st",
+      "name": "Postal Kitchen",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Olneyville): Adaptive re-use of warehouse into 12 residential units and 1 commercial unit for Centreville Bank.",
+      "key_specs": [
+        "Olneyville",
+        "Complete",
+        "1836 Westminster St"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "roofing",
+        "hvac",
+        "dock equipment",
+        "concrete",
+        "lighting",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: Postal Kitchen",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8160699,
+      "longitude": -71.440586
+    },
+    {
+      "id": "ri-providence-completed-381-wickenden-381-wickenden",
+      "name": "381 Wickenden",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "retail",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Fox Point): New construction of a mixed-use building with 14 dwelling units and ground-floor retail.",
+      "key_specs": [
+        "Fox Point",
+        "Complete",
+        "381 Wickenden"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: 381 Wickenden",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8195555,
+      "longitude": -71.3956306
+    },
+    {
+      "id": "ri-providence-completed-i-195-district-park-pavilion-120-peck-st",
+      "name": "I-195 District Park Pavilion",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Downtown): New 3500 sf pavilion containing dining and other amenities.",
+      "key_specs": [
+        "Downtown",
+        "Complete",
+        "120 Peck St"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: I-195 District Park Pavilion",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.8200926,
+      "longitude": -71.406805
+    },
+    {
+      "id": "ri-providence-completed-the-flynn-220-blackstone-st",
+      "name": "The Flynn",
+      "city": "Providence",
+      "county": "Providence",
+      "status": "under_construction",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Providence development project (Upper South Providence): New construction for 178 units of affordable housing and a 10,000 sqft daycare.",
+      "key_specs": [
+        "Upper South Providence",
+        "Complete",
+        "220 Blackstone St."
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "concrete",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Providence development project: The Flynn",
+          "url": "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services/Completed_Development_Projects/FeatureServer/0"
+        }
+      ],
+      "open_for": "Active Providence development-tracker project. Early product/spec window.",
+      "state": "RI",
+      "latitude": 41.80903215,
+      "longitude": -71.4135627
     }
   ],
   "stats": {
-    "total": 76
+    "total": 204
   }
 }

@@ -20,11 +20,29 @@ Read this file before refreshing `data/states/nd.json`. Keep it current so the n
 
 ## What works
 
-- Update after each pull with endpoints, scripts, and filters that produced clean records.
+- **Fargo Site Plans** — `https://gis.cityoffargo.com/arcgis/rest/services/General/SitePlans/MapServer/0`.
+  Verified live 2026-07-26: 3,279 total records, max `DATE` 2026-06-26.
+  This is a pre-construction site-plan review layer, not a permit feed —
+  minimal schema (`ADDRESS`, `SECTION`, `NAME`, `DATE`), **no
+  commercial/residential categorical field, no valuation**. Fargo doesn't
+  require site-plan review for single-family homes, so the layer skews
+  commercial/institutional by construction, but still needs text
+  classification (`RESIDENTIAL_HINTS`/`COMMERCIAL_HINTS`) since there's
+  no field to filter on directly. Built into
+  `scripts/pull-county-arcgis.py` (`pull_fargo`, `--only fargo`).
 
 ## What failed last time
 
-- Update after each pull with dead links, wrong layers, residential noise, and dedupe traps.
+- West Fargo "Permit Lookup" ArcGIS app — real and live, but confirmed
+  (via Esri's own case study) to track right-of-way excavation permits,
+  not building/commercial construction. Not relevant.
+- Bismarck — a "Building_Permits_gdb" ArcGIS item surfaced in search but
+  is actually owned by a Montgomery, Alabama account — wrong-jurisdiction
+  false positive. No real Bismarck permit dataset found.
+- ND Public Service Commission Energy Conversion/Transmission Facility
+  Siting (50MW+ threshold) — real statutory process confirmed, but no
+  structured docket list/API found on the pages checked; would need to
+  dig into meeting-minutes pages for an actual filing list.
 
 ## Commercial-only filters
 
@@ -35,6 +53,7 @@ Read this file before refreshing `data/states/nd.json`. Keep it current so the n
 ## Pull commands
 
 ```bash
+python3 scripts/pull-county-arcgis.py --only fargo --months 24 --merge
 python3 scripts/merge-national-corpus.py
 npm run build
 ```
@@ -49,3 +68,4 @@ npm run build
 | Date | Source tried | Outcome |
 |------|--------------|---------|
 | 2026-07-24 | Stub synced from corpus | 1 projects |
+| 2026-07-26 | Fargo Site Plans (text-classified) | +1,148 projects, 1,301 total |

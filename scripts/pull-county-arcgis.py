@@ -390,6 +390,452 @@ def pull_nashville(cutoff: dt.date) -> list[dict]:
     return projects
 
 
+def pull_hartford(cutoff: dt.date) -> list[dict]:
+    # Verified live 2026-07-26: a Table (no geometry -- PROPERTY_ADDRESS
+    # only, no lat/lon), RECORD_TYPE_TYPE='Commercial' cleanly separates
+    # commercial/residential/temporary-structure records, DateIssued is
+    # epoch ms. 35,691 total records, fresh to within the last month.
+    base = "https://utility.arcgis.com/usrsvcs/servers/d595ae995fb049d3ac54919ebf24b1ac/rest/services/HartfordOpenDataTables/FeatureServer"
+    where = f"RECORD_TYPE_TYPE='Commercial' AND DateIssued >= DATE '{cutoff.isoformat()}'"
+    rows = query_layer(
+        base, 0, where,
+        fields="RECORD_ID,DESCRIPTION,B1_APP_TYPE_ALIAS,PROPERTY_ADDRESS,PROPERTY_CITY,Total_Construction_Cost,DateIssued",
+    )
+    projects, seen = [], set()
+    for a in rows:
+        record_id = str(a.get("RECORD_ID") or "").strip()
+        if not record_id or record_id in seen:
+            continue
+        seen.add(record_id)
+        desc = (a.get("DESCRIPTION") or "").strip()
+        app_type = (a.get("B1_APP_TYPE_ALIAS") or "").strip()
+        blob = f"{desc} {app_type}"
+        if RESIDENTIAL_HINTS.search(blob) and not COMMERCIAL_HINTS.search(blob):
+            continue
+        opened = epoch_ms_to_date(a.get("DateIssued")) or cutoff.isoformat()
+        ptype = project_type_from(blob)
+        cost = a.get("Total_Construction_Cost")
+        addr = (a.get("PROPERTY_ADDRESS") or "").strip()
+        name = desc[:120] or f"Hartford commercial permit {record_id}"
+        projects.append({
+            "id": f"ct-hartford-{slugify(record_id)}",
+            "name": name,
+            "city": (a.get("PROPERTY_CITY") or "Hartford").title(),
+            "county": "Hartford",
+            "status": "permitting",
+            "project_type": ptype,
+            "estimated_value_usd": cost if cost and cost > 0 else None,
+            "square_footage": None,
+            "owner": "",
+            "architect": "",
+            "general_contractor": "",
+            "opened_or_announced_date": opened,
+            "description": f"Hartford commercial permit {record_id} ({app_type or 'Commercial'}): {desc or 'No description provided'}. {addr}.",
+            "key_specs": [s for s in [app_type, addr, f"Permit {record_id}"] if s],
+            "mentioned_brands": [],
+            "competitor_watch": categories_for(ptype),
+            "sources": [{"title": f"Hartford commercial permit {record_id}", "url": f"{base}/0"}],
+            "open_for": "Active commercial building permit. Early product/spec window.",
+            "state": "CT",
+            "latitude": None,
+            "longitude": None,
+        })
+    return projects
+
+
+def pull_burlington(cutoff: dt.date) -> list[dict]:
+    # Verified live 2026-07-26: Feature Layer with direct Latitude/Longitude
+    # fields (no geometry query needed), PrimaryLUC cleanly flags
+    # commercial/industrial ("C - Commercial", "I - Industrial",
+    # "CC - Comm Condo", "CR - Com/Resident"), fresh to ~Apr 2026.
+    base = "https://services1.arcgis.com/1bO0c7PxQdsGidPK/arcgis/rest/services/OpenGov_Building/FeatureServer"
+    where = (
+        "PrimaryLUC IN ('C - Commercial','I - Industrial','CC - Comm Condo','CR - Com/Resident') "
+        f"AND EstimatedConstructionCost > 25000 AND ApplicationDate >= DATE '{cutoff.isoformat()}'"
+    )
+    rows = query_layer(
+        base, 0, where,
+        fields="ProjectName,Description,StreetAddress,PrimaryLUC,EstimatedConstructionCost,"
+        "ApplicationDate,Latitude,Longitude,ContractorOrOrganizationName,PermitStatus,PermitNo",
+    )
+    projects, seen = [], set()
+    for a in rows:
+        permit_no = str(a.get("PermitNo") or "").strip()
+        if not permit_no or permit_no in seen:
+            continue
+        seen.add(permit_no)
+        desc = (a.get("Description") or "").strip()
+        luc = (a.get("PrimaryLUC") or "").strip()
+        ptype = project_type_from(f"{desc} {luc}")
+        opened = epoch_ms_to_date(a.get("ApplicationDate")) or cutoff.isoformat()
+        cost = a.get("EstimatedConstructionCost")
+        addr = (a.get("StreetAddress") or "").strip()
+        name = (a.get("ProjectName") or "").strip() or f"Burlington commercial permit {permit_no}"
+        projects.append({
+            "id": f"vt-burlington-{slugify(permit_no)}",
+            "name": name[:120],
+            "city": "Burlington",
+            "county": "Chittenden",
+            "status": "permitting",
+            "project_type": ptype,
+            "estimated_value_usd": cost if cost and cost > 0 else None,
+            "square_footage": None,
+            "owner": (a.get("ContractorOrOrganizationName") or "").strip() or "",
+            "architect": "",
+            "general_contractor": "",
+            "opened_or_announced_date": opened,
+            "description": f"Burlington VT commercial permit {permit_no} ({luc}): {desc or 'No description provided'}. {addr}.",
+            "key_specs": [s for s in [luc, addr, f"Permit {permit_no}"] if s],
+            "mentioned_brands": [],
+            "competitor_watch": categories_for(ptype),
+            "sources": [{"title": f"Burlington VT commercial permit {permit_no}", "url": f"{base}/0"}],
+            "open_for": "Active commercial building permit. Early product/spec window.",
+            "state": "VT",
+            "latitude": a.get("Latitude"),
+            "longitude": a.get("Longitude"),
+        })
+    return projects
+
+
+def pull_act250(cutoff: dt.date) -> list[dict]:
+    # Verified live 2026-07-26: Vermont's statewide land-use/pre-construction
+    # review register (the closest VT equivalent to GA's DRI). No date
+    # field on the layer -- pulls the full 8,278-record set and relies on
+    # text classification (same RESIDENTIAL_HINTS/COMMERCIAL_HINTS regex
+    # used everywhere else) since Act 250 covers everything from
+    # commercial buildings to single-family driveway culverts.
+    base = "http://anrmaps.vermont.gov/arcgis/rest/services/map_services/MAP_ANR_ANRATLASBASEMAPLITE_WM_NOCACHE/MapServer"
+    rows = query_layer(
+        base, 2, "1=1",
+        fields="AppNum,AppType,ProjectName,ProjectTown,District,Status,Description,GisLatitude,GisLongitude,LINK",
+    )
+    projects, seen = [], set()
+    for a in rows:
+        app_num = str(a.get("AppNum") or "").strip()
+        if not app_num or app_num in seen:
+            continue
+        seen.add(app_num)
+        desc = (a.get("Description") or "").strip()
+        name = (a.get("ProjectName") or "").strip() or f"Act 250 application {app_num}"
+        blob = f"{desc} {name}"
+        # Act 250 covers everything from commercial buildings to gravel
+        # pits, farms, solid-waste sites, and utility poles -- the usual
+        # "keep unless a residential hint fires" rule let almost all of
+        # that noise through (spot-checked: 6,934 of 8,278 records passed
+        # it). Require a positive commercial/building signal instead.
+        if not COMMERCIAL_HINTS.search(blob):
+            continue
+        if RESIDENTIAL_HINTS.search(blob):
+            continue
+        ptype = project_type_from(blob)
+        town = (a.get("ProjectTown") or "").strip()
+        link = (a.get("LINK") or "").strip() or f"{base}/2"
+        projects.append({
+            "id": f"vt-act250-{slugify(app_num)}",
+            "name": name[:120],
+            "city": town,
+            "county": town,
+            "status": "permitting",
+            "project_type": ptype,
+            "estimated_value_usd": None,
+            "square_footage": None,
+            "owner": "",
+            "architect": "",
+            "general_contractor": "",
+            "opened_or_announced_date": None,
+            "description": f"Vermont Act 250 application {app_num} ({a.get('AppType') or 'Application'}, {town}): {desc or name}.",
+            "key_specs": [s for s in [a.get("AppType"), a.get("District"), f"Application {app_num}"] if s],
+            "mentioned_brands": [],
+            "competitor_watch": categories_for(ptype),
+            "sources": [{"title": f"Vermont Act 250 application {app_num}", "url": link}],
+            "open_for": "Active Act 250 land-use review. Early product/spec window.",
+            "state": "VT",
+            "latitude": a.get("GisLatitude"),
+            "longitude": a.get("GisLongitude"),
+        })
+    return projects
+
+
+def pull_providence(cutoff: dt.date) -> list[dict]:
+    # Verified live 2026-07-26: Providence's hand-curated planning-dept
+    # tracker (not a permit feed -- no date/value/sqft fields), two layers
+    # (Pipeline = in progress, Completed). Actively maintained (parent item
+    # modified 2026-07-15). Small volume (85 + 97 records) but real and
+    # current; needs text classification since it mixes commercial,
+    # institutional, and some residential/mixed-use projects.
+    base = "https://services6.arcgis.com/wv9mHoqblhTsnqdG/arcgis/rest/services"
+    layers = [
+        (f"{base}/Pipeline_Development_Projects/FeatureServer", "pipeline", "planning"),
+        (f"{base}/Completed_Development_Projects/FeatureServer", "completed", "under_construction"),
+    ]
+    projects, seen = [], set()
+    for layer_base, tag, status in layers:
+        rows = query_layer(
+            layer_base, 0, "1=1",
+            fields="Project_Name,Address,Neighborhood,Project_Description,Status,Latitude,Longitude",
+        )
+        for a in rows:
+            name = (a.get("Project_Name") or "").strip()
+            addr = (a.get("Address") or "").strip()
+            if not name:
+                continue
+            uid = slugify(f"{name}-{addr}")
+            if not uid or uid in seen:
+                continue
+            seen.add(uid)
+            desc = (a.get("Project_Description") or "").strip()
+            blob = f"{name} {desc}"
+            if RESIDENTIAL_HINTS.search(blob) and not COMMERCIAL_HINTS.search(blob):
+                continue
+            ptype = project_type_from(blob)
+            neighborhood = (a.get("Neighborhood") or "").strip()
+            projects.append({
+                "id": f"ri-providence-{tag}-{uid}",
+                "name": name[:120],
+                "city": "Providence",
+                "county": "Providence",
+                "status": status,
+                "project_type": ptype,
+                "estimated_value_usd": None,
+                "square_footage": None,
+                "owner": "",
+                "architect": "",
+                "general_contractor": "",
+                "opened_or_announced_date": None,
+                "description": f"Providence development project ({neighborhood or 'Providence'}): {desc or name}.",
+                "key_specs": [s for s in [neighborhood, a.get("Status"), addr] if s],
+                "mentioned_brands": [],
+                "competitor_watch": categories_for(ptype),
+                "sources": [{"title": f"Providence development project: {name}", "url": f"{layer_base}/0"}],
+                "open_for": "Active Providence development-tracker project. Early product/spec window.",
+                "state": "RI",
+                "latitude": a.get("Latitude"),
+                "longitude": a.get("Longitude"),
+            })
+    return projects
+
+
+def pull_delaware(cutoff: dt.date) -> list[dict]:
+    # Verified live 2026-07-26: statewide non-residential building permit
+    # layer covering all 3 counties, real R_NR flag. CAVEAT: confirmed
+    # stale -- max P_YEAR is 2024, P_YEAR=2025 returns 0 records. Still
+    # real historical commercial permits worth having (project value comes
+    # from breadth, not freshness, for this one source).
+    base = "https://enterprise.firstmap.delaware.gov/arcgis/rest/services/PlanningCadastre/DE_Planning_Development/MapServer"
+    rows = query_layer(
+        base, 3, "R_NR IN ('NR','Mixed')",
+        fields="R_NR,NR_SF,NOTES,RECTYPE,P_YEAR,COUNTY,JURISDICTION",
+    )
+    projects, seen = [], set()
+    for i, a in enumerate(rows):
+        notes = (a.get("NOTES") or "").strip()
+        county = (a.get("COUNTY") or "").strip()
+        jurisdiction = (a.get("JURISDICTION") or "").strip()
+        uid = slugify(f"{county}-{jurisdiction}-{notes}-{i}")
+        if not uid or uid in seen:
+            continue
+        seen.add(uid)
+        blob = f"{notes} {a.get('RECTYPE') or ''}"
+        if RESIDENTIAL_HINTS.search(blob) and not COMMERCIAL_HINTS.search(blob) and a.get("R_NR") != "NR":
+            continue
+        ptype = project_type_from(blob) if COMMERCIAL_HINTS.search(blob) else "other"
+        sqft = a.get("NR_SF")
+        year = str(a.get("P_YEAR") or "").strip()
+        opened = f"{year}-01-01" if year.isdigit() and len(year) == 4 else None
+        projects.append({
+            "id": f"de-statewide-{uid}",
+            "name": (notes[:120] or f"{jurisdiction or county} non-residential permit"),
+            "city": jurisdiction or county,
+            "county": county,
+            "status": "permitting",
+            "project_type": ptype,
+            "estimated_value_usd": None,
+            "square_footage": sqft if sqft and sqft > 0 else None,
+            "owner": "",
+            "architect": "",
+            "general_contractor": "",
+            "opened_or_announced_date": opened,
+            "description": f"Delaware statewide non-residential building permit ({jurisdiction or county}): {notes or 'No description provided'}.",
+            "key_specs": [s for s in [a.get("RECTYPE"), jurisdiction, f"Year {year}" if year else None] if s],
+            "mentioned_brands": [],
+            "competitor_watch": categories_for(ptype),
+            "sources": [{"title": f"Delaware statewide building permit, {jurisdiction or county}", "url": f"{base}/3"}],
+            "open_for": "Historical non-residential building permit (source is stale past 2024, still real commercial activity).",
+            "state": "DE",
+            "latitude": a.get("_lat"),
+            "longitude": a.get("_lon"),
+        })
+    return projects
+
+
+def pull_overland_park(cutoff: dt.date) -> list[dict]:
+    # Verified live 2026-07-26: Overland Park (Johnson County KS, KC
+    # metro), max IssueDate 2026-07-23. ReportPermitType cleanly separates
+    # commercial from residential. CAVEAT (per research pass): the
+    # service's own metadata says it was "specifically created for Teri in
+    # IT... for school lookup" -- an unofficial/ad-hoc extract, not a
+    # documented open-data product. Could be renamed/pulled without
+    # notice; re-verify liveness before relying on it long-term.
+    base = "https://maps.opkansas.org/mapping/rest/services/MixedInfo/Building_Permit_Report/MapServer"
+    commercial_types = (
+        "'New Commercial','Other Commercial','New Institutional, Churches, and Schools'"
+    )
+    where = f"ReportPermitType IN ({commercial_types}) AND IssueDate >= DATE '{cutoff.isoformat()}'"
+    rows = query_layer(
+        base, 0, where,
+        fields="CaseNumber,Project,Description,MainAddressLine1,Valuation,SquareFeet,IssueDate,PermitStatus,ReportPermitType",
+    )
+    projects, seen = [], set()
+    for a in rows:
+        case_no = str(a.get("CaseNumber") or "").strip()
+        if not case_no or case_no in seen:
+            continue
+        seen.add(case_no)
+        desc = (a.get("Description") or "").strip()
+        ptype_raw = (a.get("ReportPermitType") or "").strip()
+        ptype = project_type_from(f"{desc} {ptype_raw}")
+        opened = epoch_ms_to_date(a.get("IssueDate")) or cutoff.isoformat()
+        val = a.get("Valuation")
+        sqft = a.get("SquareFeet")
+        addr = (a.get("MainAddressLine1") or "").strip()
+        name = (a.get("Project") or "").strip() or f"Overland Park permit {case_no}"
+        projects.append({
+            "id": f"ks-overlandpark-{slugify(case_no)}",
+            "name": name[:120],
+            "city": "Overland Park",
+            "county": "Johnson",
+            "status": "permitting",
+            "project_type": ptype,
+            "estimated_value_usd": val if val and val > 0 else None,
+            "square_footage": sqft if sqft and sqft > 0 else None,
+            "owner": "",
+            "architect": "",
+            "general_contractor": "",
+            "opened_or_announced_date": opened,
+            "description": f"Overland Park KS commercial permit {case_no} ({ptype_raw}): {desc or name}. {addr}.",
+            "key_specs": [s for s in [ptype_raw, addr, f"Permit {case_no}"] if s],
+            "mentioned_brands": [],
+            "competitor_watch": categories_for(ptype),
+            "sources": [{"title": f"Overland Park KS commercial permit {case_no}", "url": f"{base}/0"}],
+            "open_for": "Active commercial building permit. Early product/spec window.",
+            "state": "KS",
+            "latitude": a.get("_lat"),
+            "longitude": a.get("_lon"),
+        })
+    return projects
+
+
+def pull_bentonville(cutoff: dt.date) -> list[dict]:
+    # Verified live 2026-07-26: 50,456 total historical records, max
+    # ISSUED 2026-07-17. CAVEAT: some records have bad future-dated ISSUED
+    # values (unfiltered max = 2026-12-06) -- clamp to today, don't trust
+    # the raw max. PERMIT_TYPE LIKE '%COM%' separates commercial permits.
+    base = "https://gis.bentonvillear.com/arcgis/rest/services/Planning/Community_Development23/MapServer"
+    today = dt.date.today().isoformat()
+    where = (
+        f"PERMIT_TYPE LIKE '%COM%' AND ISSUED >= DATE '{cutoff.isoformat()}' "
+        f"AND ISSUED <= DATE '{today}'"
+    )
+    rows = query_layer(
+        base, 188, where,
+        fields="PERMIT_NO,PERMIT_TYPE,PERMIT_SUBTYPE,STATUS,SITE_ADDR,ISSUED,LAT,LON",
+    )
+    projects, seen = [], set()
+    for a in rows:
+        permit_no = str(a.get("PERMIT_NO") or "").strip()
+        if not permit_no or permit_no in seen:
+            continue
+        seen.add(permit_no)
+        ptype_raw = (a.get("PERMIT_TYPE") or "").strip()
+        subtype = (a.get("PERMIT_SUBTYPE") or "").strip()
+        ptype = project_type_from(f"{ptype_raw} {subtype}")
+        opened = epoch_ms_to_date(a.get("ISSUED")) or cutoff.isoformat()
+        addr = (a.get("SITE_ADDR") or "").strip()
+        name = f"{ptype_raw} — {addr}" if addr else f"Bentonville permit {permit_no}"
+        projects.append({
+            "id": f"ar-bentonville-{slugify(permit_no)}",
+            "name": name[:120],
+            "city": "Bentonville",
+            "county": "Benton",
+            "status": "permitting",
+            "project_type": ptype,
+            "estimated_value_usd": None,
+            "square_footage": None,
+            "owner": "",
+            "architect": "",
+            "general_contractor": "",
+            "opened_or_announced_date": opened,
+            "description": f"Bentonville AR commercial permit {permit_no} ({ptype_raw}{', ' + subtype if subtype else ''}): {addr}.",
+            "key_specs": [s for s in [ptype_raw, subtype, addr, f"Permit {permit_no}"] if s],
+            "mentioned_brands": [],
+            "competitor_watch": categories_for(ptype),
+            "sources": [{"title": f"Bentonville AR commercial permit {permit_no}", "url": f"{base}/188"}],
+            "open_for": "Active commercial building permit. Early product/spec window.",
+            "state": "AR",
+            "latitude": a.get("LAT"),
+            "longitude": a.get("LON"),
+        })
+    return projects
+
+
+def pull_fargo(cutoff: dt.date) -> list[dict]:
+    # Verified live 2026-07-26: Fargo's site-plan pre-construction review
+    # layer, max DATE 2026-06-26. Minimal schema (no permit-type/valuation
+    # field) -- Fargo doesn't require site-plan review for single-family
+    # homes, so this layer skews commercial/institutional by construction,
+    # but still needs text classification since there's no categorical
+    # field to filter on.
+    base = "https://gis.cityoffargo.com/arcgis/rest/services/General/SitePlans/MapServer"
+    rows = query_layer(base, 0, "1=1", fields="ADDRESS,SECTION,NAME,DATE")
+    projects, seen = [], set()
+    for a in rows:
+        name_raw = (a.get("NAME") or "").strip()
+        addr = (a.get("ADDRESS") or "").strip()
+        if not name_raw:
+            continue
+        uid = slugify(f"{name_raw}-{addr}")
+        if not uid or uid in seen:
+            continue
+        seen.add(uid)
+        if RESIDENTIAL_HINTS.search(name_raw) and not COMMERCIAL_HINTS.search(name_raw):
+            continue
+        # DATE is a string "M/D/YYYY", not epoch ms -- parse directly.
+        opened = None
+        date_str = (a.get("DATE") or "").strip()
+        try:
+            if date_str:
+                opened = dt.datetime.strptime(date_str, "%m/%d/%Y").date().isoformat()
+        except ValueError:
+            opened = None
+        if opened and opened < cutoff.isoformat():
+            continue
+        ptype = project_type_from(name_raw)
+        projects.append({
+            "id": f"nd-fargo-{uid}",
+            "name": name_raw[:120],
+            "city": "Fargo",
+            "county": "Cass",
+            "status": "planning",
+            "project_type": ptype,
+            "estimated_value_usd": None,
+            "square_footage": None,
+            "owner": "",
+            "architect": "",
+            "general_contractor": "",
+            "opened_or_announced_date": opened,
+            "description": f"Fargo ND site plan review: {name_raw}. {addr}.",
+            "key_specs": [s for s in [a.get("SECTION"), addr] if s],
+            "mentioned_brands": [],
+            "competitor_watch": categories_for(ptype),
+            "sources": [{"title": f"Fargo ND site plan: {name_raw}", "url": f"{base}/0"}],
+            "open_for": "Active Fargo site-plan review. Early product/spec window.",
+            "state": "ND",
+            "latitude": a.get("_lat"),
+            "longitude": a.get("_lon"),
+        })
+    return projects
+
+
 def merge_into_state(state: str, new_projects: list[dict]) -> tuple[int, int]:
     path = STATES_DIR / f"{state.lower()}.json"
     data = json.loads(path.read_text()) if path.exists() else {
@@ -415,7 +861,11 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--months", type=int, default=24)
     ap.add_argument("--merge", action="store_true")
-    ap.add_argument("--only", help="Comma-separated subset: durham,maricopa,fortworth,denver,nashville")
+    ap.add_argument(
+        "--only",
+        help="Comma-separated subset: durham,maricopa,fortworth,denver,nashville,hartford,"
+        "burlington,act250,providence,delaware,overland_park,bentonville,fargo",
+    )
     args = ap.parse_args()
     cutoff = dt.date.today() - dt.timedelta(days=int(args.months * 30.44))
 
@@ -425,6 +875,14 @@ def main() -> int:
         "fortworth": ("TX", pull_fortworth),
         "denver": ("CO", pull_denver),
         "nashville": ("TN", pull_nashville),
+        "hartford": ("CT", pull_hartford),
+        "burlington": ("VT", pull_burlington),
+        "act250": ("VT", pull_act250),
+        "providence": ("RI", pull_providence),
+        "delaware": ("DE", pull_delaware),
+        "overland_park": ("KS", pull_overland_park),
+        "bentonville": ("AR", pull_bentonville),
+        "fargo": ("ND", pull_fargo),
     }
     selected = set(args.only.split(",")) if args.only else set(pullers)
 

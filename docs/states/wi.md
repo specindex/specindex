@@ -20,11 +20,27 @@ Read this file before refreshing `data/states/wi.json`. Keep it current so the n
 
 ## What works
 
-- Update after each pull with endpoints, scripts, and filters that produced clean records.
+- **Milwaukee Residential and Commercial Permit Work Data**, CKAN
+  datastore SQL API — `data.milwaukee.gov`, resource id
+  `828e9630-d7cb-42e4-960e-964eae916397`. Verified live 2026-07-26:
+  `metadata_modified` = today, 8,257 total commercial records, max
+  `Date Issued` 2026-06-15. `"Permit Type" LIKE 'Commercial%'` separates
+  `Commercial New Construction Permit`/`Commercial Alteration Permit`
+  from residential types. Address-stub only (no project-name field, same
+  limitation as Hartford/Bentonville). CKAN is a different platform than
+  ArcGIS/Socrata — no shared adapter in this repo, so this is a one-off
+  script: `scripts/pull-wi-milwaukee.py`.
 
 ## What failed last time
 
-- Update after each pull with dead links, wrong layers, residential noise, and dedupe traps.
+- Madison — full ArcGIS Open Data Hub checked (144 datasets via DCAT); no
+  building-permit dataset exists.
+- Milwaukee's own ArcGIS REST server has an "Accela" folder, but its two
+  layers (`AccelaApo`, `AccelaDistrict`) are address/parcel geocoding
+  support layers for the internal Accela system, not permit records.
+- WEDC "Awards Data" searchable database — real per its page copy, but
+  the embedding iframe has an empty `src` in raw HTML; couldn't trace to
+  a static endpoint.
 
 ## Commercial-only filters
 
@@ -35,6 +51,7 @@ Read this file before refreshing `data/states/wi.json`. Keep it current so the n
 ## Pull commands
 
 ```bash
+python3 scripts/pull-wi-milwaukee.py --months 24 --merge
 python3 scripts/merge-national-corpus.py
 npm run build
 ```
@@ -49,3 +66,4 @@ npm run build
 | Date | Source tried | Outcome |
 |------|--------------|---------|
 | 2026-07-24 | Stub synced from corpus | 5 projects |
+| 2026-07-26 | Milwaukee CKAN commercial permits | +1,297 projects, 1,444 total |

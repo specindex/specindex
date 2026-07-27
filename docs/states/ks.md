@@ -20,11 +20,32 @@ Read this file before refreshing `data/states/ks.json`. Keep it current so the n
 
 ## What works
 
-- Update after each pull with endpoints, scripts, and filters that produced clean records.
+- **Overland Park Building Permit Report** — `https://maps.opkansas.org/mapping/rest/services/MixedInfo/Building_Permit_Report/MapServer/0`
+  (Johnson County, KC metro). Verified live 2026-07-26: max `IssueDate`
+  2026-07-23 (3 days old). `ReportPermitType` cleanly separates
+  commercial (`New Commercial`, `Other Commercial`,
+  `New Institutional, Churches, and Schools`) from residential types.
+  **CAVEAT**: the service's own metadata description says it was
+  "specifically created for Teri in IT... for school lookup" — an
+  unofficial/ad-hoc extract, not a documented open-data product. Could be
+  renamed or pulled without notice; re-check liveness before relying on
+  it long-term. Built into `scripts/pull-county-arcgis.py`
+  (`pull_overland_park`, `--only overland_park`).
 
 ## What failed last time
 
-- Update after each pull with dead links, wrong layers, residential noise, and dedupe traps.
+- Wichita city ArcGIS Hub (143 datasets checked via DCAT) and Sedgwick
+  County GIS Hub (43 datasets) — no permit/building/commercial dataset in
+  either. "Wichita Zoning Cases" layer exists but is zoning-case
+  tracking, not permits.
+- Johnson County AIMS open-data portal (89 datasets) — no permit dataset;
+  only boundary/district layers.
+- Unified Government of Wyandotte County (KCK) "Building Permits" page
+  exists but no underlying REST/FeatureServer URL was resolved — needs a
+  headless-browser check, not confirmed dead.
+- Kansas Commerce "Transparency Database Explorer" (BASE) — real
+  incentive-award database described on the page, but loads via JS into
+  a blank iframe with no static endpoint found in raw HTML.
 
 ## Commercial-only filters
 
@@ -35,6 +56,7 @@ Read this file before refreshing `data/states/ks.json`. Keep it current so the n
 ## Pull commands
 
 ```bash
+python3 scripts/pull-county-arcgis.py --only overland_park --months 24 --merge
 python3 scripts/merge-national-corpus.py
 npm run build
 ```
@@ -49,3 +71,4 @@ npm run build
 | Date | Source tried | Outcome |
 |------|--------------|---------|
 | 2026-07-24 | Stub synced from corpus | 1 projects |
+| 2026-07-26 | Overland Park Building Permit Report (`ReportPermitType` commercial set) | +1,047 projects, 1,192 total |

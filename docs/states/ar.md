@@ -20,11 +20,30 @@ Read this file before refreshing `data/states/ar.json`. Keep it current so the n
 
 ## What works
 
-- Update after each pull with endpoints, scripts, and filters that produced clean records.
+- **Bentonville Building Permits** — `https://gis.bentonvillear.com/arcgis/rest/services/Planning/Community_Development23/MapServer/188`.
+  Verified live 2026-07-26: 50,456 total historical records, max `ISSUED`
+  2026-07-17 (9 days old). `PERMIT_TYPE LIKE '%COM%'` separates
+  commercial. **CAVEAT — real data-quality trap**: some records have bad
+  future-dated `ISSUED` values (unfiltered max = 2026-12-06) — the pull
+  script clamps `ISSUED <= today`, don't trust the raw max blindly.
+  Direct `LAT`/`LON` fields, no geometry query needed. Built into
+  `scripts/pull-county-arcgis.py` (`pull_bentonville`, `--only bentonville`).
+  This is Bentonville-only (unincorporated-city-level) — same platform
+  likely exists for Rogers/Fayetteville/Springdale but their GIS
+  hostnames weren't found (DNS failures on guessed URLs).
 
 ## What failed last time
 
-- Update after each pull with dead links, wrong layers, residential noise, and dedupe traps.
+- Rogers (Cityworks PLL) and Fayetteville (Tyler EnerGov) — both real,
+  live portals but surface as login-required Citizen Self Service SPAs;
+  no public JSON search endpoint found via direct HTTP probing. Would
+  need headless-browser network interception to confirm either way.
+- Little Rock (`data.littlerock.gov`, `maps.littlerock.gov`) — every
+  guessed endpoint 404'd. Could not locate a working URL at all; needs
+  fresh discovery, not confirmed dead.
+- Arkansas Economic Development Commission — only narrative program pages
+  and periodic grant-award press releases, no structured/API-backed
+  project database found.
 
 ## Commercial-only filters
 
