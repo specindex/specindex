@@ -113,14 +113,14 @@ def build_provider(state_config: dict[str, Any]) -> BaseIngestionProvider:
             date_field=state_config.get("date_field", "IssueDate"),
             lookback_days=state_config.get("lookback_days", 30),
             max_pages=state_config.get("max_pages", 5),
+            selfservice_path=state_config.get("selfservice_path", "apps/selfservice"),
         )
 
-    if provider_type in ("ckan", "csv"):
+    if provider_type == "csv":
         raise NotImplementedError(
             f"provider_type={provider_type!r} is specced but not yet implemented -- "
             "see docs/AGENT_STRATEGY.md / this session's roadmap notes. "
-            "Socrata and ArcGIS cover NJ + the immediate next-state rollout; "
-            "build CKANProvider/CSVDownloadProvider when a real state needs one, "
+            "build CSVDownloadProvider when a real state needs one, "
             "verified live first (same discipline as every other source this session)."
         )
 

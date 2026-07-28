@@ -296,6 +296,55 @@ CA_GLENDALE_ENERGOV_CONFIG: dict[str, Any] = {
     "max_pages": 5,
 }
 
+# City of Alhambra -- same tylerhost.net/apps/selfservice pattern as El
+# Monte/Glendale, not the self-hosted variant originally assumed. URL
+# confirmed live (2026-07-28) via web search + HTTP 200 check.
+CA_ALHAMBRA_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "CA",
+    "provider_type": "energov",
+    "county": "Los Angeles",
+    "endpoint": "https://alhambraca-energovpub.tylerhost.net",
+    "tenant_id": "1",
+    "tenant_name": "Alhambra",
+    "lookback_days": 900,
+    "max_pages": 5,
+}
+
+# City of Carson -- "Carson Civic Access", live since 2024-06-04, also
+# tylerhost.net (not self-hosted). Confirmed live 2026-07-28.
+CA_CARSON_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "CA",
+    "provider_type": "energov",
+    "county": "Los Angeles",
+    "endpoint": "https://cityofcarsonca-energovweb.tylerhost.net",
+    "tenant_id": "1",
+    "tenant_name": "Carson",
+    "lookback_days": 900,
+    "max_pages": 5,
+}
+
+# City of Pomona -- the genuinely self-hosted EnerGov tenant (own domain
+# connect.pomonaca.gov, not tylerhost.net; path also differs:
+# energov_prod/selfservice, lowercase/underscore -- confirmed live via
+# HTTP 200, and the provider's selfservice_path param handles that fine).
+# NOT wired into STATE_CONFIGS yet -- live testing 2026-07-28 found this
+# specific tenant's own infra is meaningfully slower/flakier than
+# tylerhost.net's hosted tenants: page load alone took ~49s (vs ~3-6s for
+# El Monte/Glendale/Alhambra/Carson) and no search response captured even
+# after that. Config kept here for when this gets revisited with a much
+# longer timeout budget + more debugging; see ROADMAP item 63 backlog note.
+_CA_POMONA_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "CA",
+    "provider_type": "energov",
+    "county": "Los Angeles",
+    "endpoint": "https://connect.pomonaca.gov",
+    "tenant_id": "1",
+    "tenant_name": "Pomona",
+    "lookback_days": 900,
+    "max_pages": 5,
+    "selfservice_path": "energov_prod/selfservice",
+}
+
 # Maricopa County government (unincorporated areas), owner MaricopaCountyGIS
 # confirms this is the county's own GIS org. PermitType='Building (Commercial)'
 # is the real clean filter (vs 'Building (Residential)'/'Grading and
@@ -653,6 +702,10 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "CA-LANCASTER": CA_LANCASTER_ACCELA_CONFIG,
     "CA-ELMONTE": CA_ELMONTE_ENERGOV_CONFIG,
     "CA-GLENDALE": CA_GLENDALE_ENERGOV_CONFIG,
+    "CA-ALHAMBRA": CA_ALHAMBRA_ENERGOV_CONFIG,
+    "CA-CARSON": CA_CARSON_ENERGOV_CONFIG,
+    # "CA-POMONA" intentionally not registered yet -- see
+    # _CA_POMONA_ENERGOV_CONFIG comment above.
     "AZ-MARICOPACOUNTY": AZ_MARICOPACOUNTY_CONFIG,
     "AZ-MESA": AZ_MESA_CONFIG,
     "AZ-SCOTTSDALE": AZ_SCOTTSDALE_CONFIG,

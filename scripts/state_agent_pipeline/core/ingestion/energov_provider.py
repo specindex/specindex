@@ -56,10 +56,16 @@ class EnerGovProvider(BaseIngestionProvider):
         lookback_days: int = 30,
         max_pages: int = 5,
         headless: bool = True,
+        selfservice_path: str = "apps/selfservice",
     ) -> None:
         self.state_code = state_code.upper()
         self.county = county
         self.base_url = base_url.rstrip("/")
+        # tylerhost.net tenants all use "apps/selfservice"; self-hosted
+        # tenants can differ -- e.g. Pomona (connect.pomonaca.gov) serves
+        # from "energov_prod/selfservice" instead ("apps/selfservice"
+        # 404s there, confirmed live 2026-07-28).
+        self.selfservice_path = selfservice_path.strip("/")
         self.tenant_id = tenant_id
         self.tenant_name = tenant_name
         # Real category prefixes confirmed live (El Monte): "Commercial",
@@ -106,7 +112,17 @@ class EnerGovProvider(BaseIngestionProvider):
             if resp.url.endswith("/api/energov/search/search") and resp.request.method == "POST":
                 try:
                     data = resp.json()
-                    captured.append(data.get("Result", {}).get("EntityResults", []))
+                    result = data.get("Result")
+                    if result is None:
+                        # Seen intermittently right after a SearchModule
+                        # change -- looks like a transient/error response
+                        # (Result: null) distinct from a real empty-page
+                        # response (which has Result.EntityResults: []).
+                        # Ignore it and keep waiting for a real response
+                        # rather than short-circuiting the poll loop on it.
+                        print(f"[energov:{self.county}] response had null Result, ignoring", file=sys.stderr)
+                        return
+                    captured.append(result.get("EntityResults", []))
                 except Exception as e:  # noqa: BLE001
                     print(f"[energov:{self.county}] response parse error: {e}", file=sys.stderr)
 
@@ -117,11 +133,31 @@ class EnerGovProvider(BaseIngestionProvider):
             page.on("response", on_response)
             try:
                 page.goto(
-                    f"{self.base_url}/apps/selfservice/#/search",
+                    f"{self.base_url}/{self.selfservice_path}/#/search",
                     timeout=45000,
                     wait_until="networkidle",
                 )
                 page.wait_for_timeout(1500)
+                # Some tenants (confirmed live 2026-07-28: Carson) default
+                # the "SearchModule" dropdown to something other than
+                # "Permit" (Carson defaults to License, returning only
+                # business-license records for the blank search) --
+                # explicitly select "Permit" where the selector exists.
+                # Angular ignores Playwright's select_option() alone here
+                # (it doesn't fire ngModel's change binding), so dispatch a
+                # real "change" event too. No-op / safe to skip on tenants
+                # (El Monte, Glendale) where this selector isn't present or
+                # already defaults to Permit.
+                module_select = page.locator("#SearchModule")
+                if module_select.count() > 0:
+                    try:
+                        module_select.select_option(value="Permit", timeout=5000)
+                        page.eval_on_selector(
+                            "#SearchModule", "el => el.dispatchEvent(new Event('change', {bubbles: true}))"
+                        )
+                        page.wait_for_timeout(300)
+                    except Exception as e:  # noqa: BLE001
+                        print(f"[energov:{self.county}] SearchModule select failed: {e}", file=sys.stderr)
                 page.locator("button:has-text('Search')").first.click(timeout=15000)
                 # Fires anywhere from ~3s to ~6s+ depending on tenant --
                 # confirmed live (2026-07-28) Glendale's SPA is meaningfully
@@ -131,6 +167,20 @@ class EnerGovProvider(BaseIngestionProvider):
                     if captured:
                         break
                     page.wait_for_timeout(500)
+                # Real intermittent flakiness confirmed live on Carson
+                # (2026-07-28, ~50% of runs): the first Search click's
+                # response comes back with a null Result (silently
+                # ignored by on_response, so `captured` stays empty) and
+                # no second response ever fires within the poll window.
+                # One retry click resolves it every time observed. Cheap
+                # and safe -- a no-op if the first click already worked.
+                if not captured:
+                    print(f"[energov:{self.county}] no response captured, retrying Search click", file=sys.stderr)
+                    page.locator("button:has-text('Search')").first.click(timeout=15000)
+                    for _ in range(20):
+                        if captured:
+                            break
+                        page.wait_for_timeout(500)
 
                 for page_num in range(1, self.max_pages + 1):
                     if page_num > 1:
