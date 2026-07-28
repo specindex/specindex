@@ -84,10 +84,33 @@ GA_GWINNETT_ACCELA_CONFIG: dict[str, Any] = {
     "lookback_days": 30,
 }
 
+# Verified live 2026-07-28: City of El Paso's Accela portal (agency code
+# "ELPASO", not "ELPASOCO"/"EPCOUNTY" -- those 404). Unlike Gwinnett, this
+# deployment REQUIRES Start/End Date to return any results at all, and
+# uses explicit "Commercial New"/"Commercial Alteration"/etc. permit
+# types rather than an implicit id-prefix convention -- confirmed real
+# data (e.g. a "TXE2 Data Center Building" permit, a 60-unit apartment
+# complex). Different column layout than Gwinnett
+# (Action/Status/Date/Building Number/Building Type/Project Name/
+# Description vs Gwinnett's Date/Permit Number/Permit Type/Project Name/
+# Status/Action/Short Notes) -- accela_provider.py parses by header text,
+# not fixed position, specifically because of this difference.
+TX_ELPASO_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "TX",
+    "provider_type": "accela",
+    "county": "El Paso",
+    "endpoint": "https://aca-prod.accela.com/ELPASO",
+    "permit_type_label": "Commercial New",
+    "lookback_days": 30,
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
+}
+
 STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NJ": NJ_CONFIG,
     "NC": NC_CONFIG,
     "GA-SAM": GA_SAM_CONFIG,
     "GA-USASPENDING": GA_USASPENDING_CONFIG,
     "GA-GWINNETT": GA_GWINNETT_ACCELA_CONFIG,
+    "TX-ELPASO": TX_ELPASO_ACCELA_CONFIG,
 }

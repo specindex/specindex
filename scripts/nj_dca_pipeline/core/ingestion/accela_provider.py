@@ -36,6 +36,24 @@ from .base_provider import BaseIngestionProvider
 from .hashing import hash_fields
 
 
+# Header text -> canonical field name. Different Accela deployments show
+# different column sets/orders (confirmed live 2026-07-28: Gwinnett's
+# General Search/Short Notes vs El Paso's Action/Status/Building Number/
+# Building Type/Description) -- parse by header text every time, never
+# assume a fixed column index.
+HEADER_ALIASES = {
+    "date": "date",
+    "permit number": "permit_number",
+    "building number": "permit_number",
+    "permit type": "permit_type",
+    "building type": "permit_type",
+    "project name": "project_name",
+    "status": "status",
+    "short notes": "description",
+    "description": "description",
+}
+
+
 class AccelaProvider(BaseIngestionProvider):
     def __init__(
         self,
@@ -47,6 +65,8 @@ class AccelaProvider(BaseIngestionProvider):
         lookback_days: int = 30,
         max_pages: int = 30,
         headless: bool = True,
+        start_date_field_id: str | None = None,
+        end_date_field_id: str | None = None,
     ) -> None:
         self.state_code = state_code.upper()
         self.county = county
@@ -55,6 +75,12 @@ class AccelaProvider(BaseIngestionProvider):
         self.lookback_days = lookback_days
         self.max_pages = max_pages
         self.headless = headless
+        # Some Accela deployments (El Paso) require Start/End Date to
+        # return any results at all; others (Gwinnett) have no usable
+        # date filter on the anonymous General Search form. Only filled
+        # in if the config provides real field ids for this deployment.
+        self.start_date_field_id = start_date_field_id
+        self.end_date_field_id = end_date_field_id
 
     def _cutoff_date(self, last_watermark: str) -> date:
         if last_watermark and last_watermark not in ("0", ""):
@@ -80,6 +106,11 @@ class AccelaProvider(BaseIngestionProvider):
                     timeout=30000,
                     wait_until="networkidle",
                 )
+                if self.start_date_field_id and self.end_date_field_id:
+                    start = cutoff.strftime("%m/%d/%Y")
+                    end = date.today().strftime("%m/%d/%Y")
+                    page.fill(f"#{self.start_date_field_id}", start)
+                    page.fill(f"#{self.end_date_field_id}", end)
                 page.select_option(
                     "#ctl00_PlaceHolderMain_generalSearchForm_ddlGSPermitType",
                     label=self.permit_type_label,
@@ -87,6 +118,7 @@ class AccelaProvider(BaseIngestionProvider):
                 page.click("#ctl00_PlaceHolderMain_btnNewSearch")
                 page.wait_for_load_state("networkidle", timeout=25000)
 
+                col_map: dict[int, str] | None = None
                 stop = False
                 for page_num in range(1, self.max_pages + 1):
                     trs = page.eval_on_selector_all(
@@ -94,38 +126,48 @@ class AccelaProvider(BaseIngestionProvider):
                         "trs => trs.map(tr => Array.from(tr.querySelectorAll('td,th'))"
                         ".map(td => td.innerText.trim()))",
                     )
+                    if col_map is None:
+                        col_map = self._build_column_map(trs)
+                        if col_map is None:
+                            print(f"[accela:{self.county}] no results table/header found on page 1", file=sys.stderr)
+                            break
+                        print(f"[accela:{self.county}] column map: {col_map}", file=sys.stderr)
+
+                    date_idx = next((i for i, f in col_map.items() if f == "date"), None)
                     data_rows = [
                         r for r in trs
-                        if len(r) >= 9 and re.match(r"\d{2}/\d{2}/\d{4}", r[1] or "")
+                        if date_idx is not None
+                        and len(r) > date_idx
+                        and re.match(r"\d{2}/\d{2}/\d{4}", r[date_idx] or "")
                     ]
                     if not data_rows and page_num == 1:
-                        print(f"[accela:{self.county}] no results table found on page 1", file=sys.stderr)
+                        print(f"[accela:{self.county}] no data rows found on page 1", file=sys.stderr)
                         break
 
                     for r in data_rows:
-                        row_date = datetime.strptime(r[1], "%m/%d/%Y").date()
+                        row_date = datetime.strptime(r[date_idx], "%m/%d/%Y").date()
                         if row_date <= cutoff:
                             stop = True
                             break
-                        rows_out.append(
-                            {
-                                "date": r[1],
-                                "permit_number": r[2],
-                                "permit_type": r[3],
-                                "project_name": r[4],
-                                "status": r[5],
-                                "short_notes": r[7],
-                                "address_raw": r[8] if len(r) > 8 else "",
-                                "county": self.county,
-                            }
-                        )
+                        parsed = {field: r[i] for i, field in col_map.items() if i < len(r)}
+                        # Address has no header text in either deployment
+                        # checked so far (Gwinnett/El Paso both leave it
+                        # blank) but is consistently the last cell.
+                        parsed["address_raw"] = r[-1] if r else ""
+                        parsed["county"] = self.county
+                        rows_out.append(parsed)
                     print(f"[accela:{self.county}] page {page_num}: {len(data_rows)} rows, {len(rows_out)} kept so far", file=sys.stderr)
                     if stop:
                         break
 
-                    next_link = page.query_selector("a:has-text('Next >')")
-                    if not next_link:
+                    next_link = page.locator("a:has-text('Next >')").first
+                    if next_link.count() == 0:
                         break
+                    # locator.click() auto-waits/re-queries internally,
+                    # unlike query_selector().click() -- confirmed live
+                    # 2026-07-28 that the latter throws "element is not
+                    # attached to the DOM" on this exact ASP.NET postback
+                    # pattern (the grid re-renders between select and click).
                     next_link.click()
                     page.wait_for_load_state("networkidle", timeout=25000)
                     time.sleep(0.5)
@@ -134,6 +176,19 @@ class AccelaProvider(BaseIngestionProvider):
 
         print(f"[accela:{self.county}] fetched {len(rows_out)} rows", file=sys.stderr)
         return rows_out
+
+    @staticmethod
+    def _build_column_map(trs: list[list[str]]) -> dict[int, str] | None:
+        """Find the header row (matches >=2 known column names) and map
+        column index -> canonical field name, so row parsing never
+        depends on a fixed position that might differ between Accela
+        deployments."""
+        for row in trs:
+            lowered = [c.strip().lower() for c in row]
+            hits = {i: HEADER_ALIASES[c] for i, c in enumerate(lowered) if c in HEADER_ALIASES}
+            if len(hits) >= 2:
+                return hits
+        return None
 
     def compute_deterministic_hash(self, row: dict[str, Any]) -> str:
         return hash_fields(row, ["permit_number"])
@@ -158,14 +213,17 @@ class AccelaProvider(BaseIngestionProvider):
 
         out = []
         for r in rows:
-            addr = r.get("address_raw") or ""
-            # "1008 INDUSTRIAL CT, SUWANEE GA 30024" -> city/zip split
+            # "1008 INDUSTRIAL CT, SUWANEE GA 30024" (Gwinnett) or
+            # "7006 COMMERCE AVE, 0, EL PASO TX 79915 United States"
+            # (El Paso, trailing country + an inline unit-number segment)
+            # -- strip the country suffix before anchoring city/zip at end.
+            addr = re.sub(r"\s+United States\s*$", "", r.get("address_raw") or "")
             city, zip_code = "", ""
             m = re.search(r",\s*([A-Za-z .]+?)\s+[A-Z]{2}\s+(\d{5})\s*$", addr)
             if m:
                 city, zip_code = m.group(1).strip(), m.group(2)
 
-            permit_no = r["permit_number"]
+            permit_no = r.get("permit_number") or ""
             uid = slugify(f"{self.county}-{permit_no}")
             out.append(
                 {
@@ -181,7 +239,7 @@ class AccelaProvider(BaseIngestionProvider):
                     "architect": "",
                     "general_contractor": "",
                     "opened_or_announced_date": r.get("date", "").replace("/", "-") if r.get("date") else None,
-                    "description": (r.get("short_notes") or r.get("project_name") or "Commercial building permit.")[:900],
+                    "description": (r.get("description") or r.get("project_name") or "Commercial building permit.")[:900],
                     "key_specs": [f"Permit type: {r.get('permit_type')}", f"Status: {r.get('status')}"],
                     "mentioned_brands": [],
                     "competitor_watch": ["hvac", "roofing", "lighting", "flooring", "fire suppression"],

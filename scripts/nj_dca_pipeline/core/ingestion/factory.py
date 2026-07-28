@@ -80,6 +80,8 @@ def build_provider(state_config: dict[str, Any]) -> BaseIngestionProvider:
             permit_type_label=state_config.get("permit_type_label", "Building"),
             lookback_days=state_config.get("lookback_days", 30),
             max_pages=state_config.get("max_pages", 30),
+            start_date_field_id=state_config.get("start_date_field_id"),
+            end_date_field_id=state_config.get("end_date_field_id"),
         )
 
     if provider_type in ("ckan", "csv"):
