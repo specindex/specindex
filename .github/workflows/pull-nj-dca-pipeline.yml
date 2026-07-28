@@ -148,4 +148,12 @@ jobs:
           git config user.email "bot@specindex.ai"
           git add data/
           git diff --cached --quiet || git commit -m "Automated NJ DCA pipeline run (Flash+Sonnet)"
-          git push
+          # A concurrent push (another state's cron, or manual work on
+          # main) can land between checkout and here -- rebase onto the
+          # latest main and retry instead of losing this run's watermark
+          # advance to a rejected push.
+          for i in 1 2 3; do
+            git push && break
+            echo "push rejected, pulling and retrying ($i/3)"
+            git pull --rebase --autostash
+          done
