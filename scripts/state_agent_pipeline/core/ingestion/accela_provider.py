@@ -65,6 +65,7 @@ class AccelaProvider(BaseIngestionProvider):
         county: str,
         base_url: str,
         permit_type_label: str = "Building",
+        module: str = "Building",
         lookback_days: int = 30,
         max_pages: int = 30,
         headless: bool = True,
@@ -75,6 +76,10 @@ class AccelaProvider(BaseIngestionProvider):
         self.county = county
         self.base_url = base_url.rstrip("/")
         self.permit_type_label = permit_type_label
+        # Most deployments call the building-permits module "Building",
+        # but some (Lancaster, CA -- confirmed live: module=Building
+        # 404s/errors, only module=Permits exists) name it differently.
+        self.module = module
         self.lookback_days = lookback_days
         self.max_pages = max_pages
         self.headless = headless
@@ -105,7 +110,7 @@ class AccelaProvider(BaseIngestionProvider):
             page = browser.new_page(user_agent="Mozilla/5.0 SpecIndex-StateAgent/0.2")
             try:
                 page.goto(
-                    f"{self.base_url}/Cap/CapHome.aspx?module=Building",
+                    f"{self.base_url}/Cap/CapHome.aspx?module={self.module}",
                     timeout=30000,
                     wait_until="networkidle",
                 )
@@ -259,7 +264,7 @@ class AccelaProvider(BaseIngestionProvider):
                     "sources": [
                         {
                             "title": f"{self.county} County Accela permit {permit_no}",
-                            "url": f"{self.base_url}/Cap/CapHome.aspx?module=Building",
+                            "url": f"{self.base_url}/Cap/CapHome.aspx?module={self.module}",
                         }
                     ],
                     "open_for": "Active commercial building permit application. Early product/spec window.",

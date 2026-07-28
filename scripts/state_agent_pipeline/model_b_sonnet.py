@@ -19,7 +19,11 @@ from .schemas import CandidateEntity, GoldenRecord, SonnetDedupeBatch
 
 
 def canonical_golden_id(
-    municipality: str | None, permit_numbers: list[str], block: str | None, lot: str | None
+    municipality: str | None,
+    permit_numbers: list[str],
+    block: str | None,
+    lot: str | None,
+    prefix: str = "nj-dca",
 ) -> str:
     """Deterministic id, computed in code -- never trust the LLM's own
     golden_id string. Must match pull-nj-dca.py's scheme
@@ -29,11 +33,22 @@ def canonical_golden_id(
     (same_project() in project_identity.py treats two different
     nj-dca-* ids as different projects by design -- it will never catch
     this collision for you).
+
+    `prefix` defaults to "nj-dca" only for backward compatibility with
+    already-persisted NJ ids -- every other state MUST pass its own
+    state_code-derived prefix (see pipeline.py). This used to be
+    hardcoded to "nj-dca" unconditionally, silently mis-labeling every
+    other state's Sonnet-deduped records (622 real records across CA/TX
+    found mis-prefixed 2026-07-28 before this fix) -- a real, not
+    hypothetical, data-lineage bug: it broke the source-attribution
+    convention every other provider's to_projects() relies on, and
+    created a latent cross-state ID-collision risk since unrelated
+    states' records could land in the same "nj-dca-*" id bucket.
     """
     muni = (municipality or "unknown").strip()
     permit_no = permit_numbers[0] if permit_numbers else None
     key = f"{muni}-{permit_no}" if permit_no else f"{muni}-{block or ''}-{lot or ''}"
-    return f"nj-dca-{slugify(key)}"[:80]
+    return f"{prefix}-{slugify(key)}"[:80]
 
 
 def _extract_json(text: str) -> Any:
@@ -102,7 +117,9 @@ CANDIDATES:
 """
 
 
-def dedupe_with_sonnet(entities: list[CandidateEntity], settings: Settings) -> list[GoldenRecord]:
+def dedupe_with_sonnet(
+    entities: list[CandidateEntity], settings: Settings, id_prefix: str = "nj-dca"
+) -> list[GoldenRecord]:
     if not entities:
         return []
     payload = [e.model_dump() for e in entities]
@@ -124,7 +141,7 @@ def dedupe_with_sonnet(entities: list[CandidateEntity], settings: Settings) -> l
                 blob if isinstance(blob, dict) else {"records": blob}
             )
             for r in parsed.records:
-                r.golden_id = canonical_golden_id(r.municipality, r.permit_numbers, r.block, r.lot)
+                r.golden_id = canonical_golden_id(r.municipality, r.permit_numbers, r.block, r.lot, id_prefix)
             all_records.extend(parsed.records)
             print(
                 f"[sonnet] batch {bi}: {len(parsed.records)} golden, "
@@ -133,7 +150,7 @@ def dedupe_with_sonnet(entities: list[CandidateEntity], settings: Settings) -> l
             )
         except Exception as e:
             print(f"[sonnet] parse/validate error batch {bi}: {e}", file=sys.stderr)
-            all_records.extend(_passthrough_golden(batch))
+            all_records.extend(_passthrough_golden(batch, id_prefix))
         time.sleep(0.5)
 
     return all_records
@@ -204,7 +221,7 @@ def _call_gemini_pro(prompt: str, settings: Settings) -> str:
     return getattr(resp, "text", None) or ""
 
 
-def _passthrough_golden(batch: list[dict[str, Any]]) -> list[GoldenRecord]:
+def _passthrough_golden(batch: list[dict[str, Any]], id_prefix: str = "nj-dca") -> list[GoldenRecord]:
     records: list[GoldenRecord] = []
     for e in batch:
         pk = e.get("source_pk") or "unknown"
@@ -212,7 +229,7 @@ def _passthrough_golden(batch: list[dict[str, Any]]) -> list[GoldenRecord]:
         records.append(
             GoldenRecord(
                 golden_id=canonical_golden_id(
-                    e.get("municipality"), permit_numbers, e.get("block"), e.get("lot")
+                    e.get("municipality"), permit_numbers, e.get("block"), e.get("lot"), id_prefix
                 ),
                 source_pks=[pk],
                 permit_numbers=permit_numbers,

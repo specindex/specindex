@@ -1,9 +1,12 @@
-"""Socrata SODA API ingestion provider.
+"""CKAN (datastore_search_sql) ingestion provider.
 
-Refactor of the pipeline's original NJ-specific socrata_incremental.py
-into the generic BaseIngestionProvider interface -- same proven fetch/
-retry/pagination logic (verified live against NJ DCA, w9se-dmra), now
-parameterized by a StateConfig instead of hardcoded to one dataset.
+CKAN is a 5th open-data platform type seen this session (after Socrata/
+ArcGIS/Accela/OpenDataSoft) -- Santa Monica, CA's portal (data.santamonica.
+gov). Structurally close to Socrata: a resource id + a SQL-ish query
+string + JSON response, no auth required for reads. `datastore_search_sql`
+takes a single `sql` query param against a table literally named after the
+resource's UUID (must be double-quoted since it starts with a digit-safe
+but hyphenated identifier).
 """
 
 from __future__ import annotations
@@ -21,59 +24,45 @@ from .base_provider import BaseIngestionProvider
 from .hashing import hash_fields, hash_row
 
 
-class SocrataProvider(BaseIngestionProvider):
+class CkanProvider(BaseIngestionProvider):
     def __init__(
         self,
         *,
-        domain: str,
-        dataset: str,
+        base_url: str,
+        resource_id: str,
         watermark_field: str,
         hash_fields_list: list[str] | None = None,
         commercial_where: str | None = None,
+        date_field: str = "date_entered",
         lookback_days: int = 30,
         page_size: int = 2000,
-        app_token: str | None = None,
         max_retries: int = 4,
-        order_field: str | None = None,
-        date_field: str = "processdate",
         hard_limit: int = 0,
     ) -> None:
-        self.domain = domain
-        self.dataset = dataset
+        self.base_url = base_url.rstrip("/")
+        self.resource_id = resource_id
         self.watermark_field = watermark_field
         self.hash_fields_list = hash_fields_list
         self.commercial_where = commercial_where
+        self.date_field = date_field
         self.lookback_days = lookback_days
         self.page_size = page_size
-        self.app_token = app_token
         self.max_retries = max_retries
-        # First-run cutoff field for the initial lookback window --
-        # defaults to NJ's "processdate" for backward compat, but every
-        # other state's dataset needs its own real date field name here
-        # (e.g. LA's "issue_date"); this used to be hardcoded, which would
-        # silently 400 or scan unbounded on any non-NJ dataset.
-        self.date_field = date_field
         self.hard_limit = hard_limit
-        # Most Socrata watermark fields (recordid, an autoincrementing pk)
-        # sort correctly as plain ASC text; override if a state's field
-        # needs different ordering.
-        self.order_field = order_field or watermark_field
 
     def _build_where(self, last_watermark: str) -> str:
         clauses = [self.commercial_where] if self.commercial_where else []
         last = (last_watermark or "0").strip()
-        if last not in ("", "0"):
-            clauses.append(f"{self.watermark_field} > '{last}'")
+        if last.isdigit() and int(last) > 0:
+            clauses.append(f"{self.watermark_field} > {last}")
         else:
             cutoff = (date.today() - timedelta(days=self.lookback_days)).isoformat()
-            # First run: bound by a date-ish field if the caller didn't
-            # give us a numeric watermark to start from -- never an
-            # unbounded scan of a multi-million-row dataset.
-            clauses.append(f"{self.date_field} >= '{cutoff}T00:00:00'")
+            clauses.append(f"{self.date_field} >= '{cutoff}'")
         return " AND ".join(f"({c})" for c in clauses)
 
-    def _fetch_with_retries(self, url: str, headers: dict[str, str]) -> list[dict[str, Any]]:
+    def _fetch_with_retries(self, url: str) -> dict[str, Any]:
         last_err: Exception | None = None
+        headers = {"Accept": "application/json", "User-Agent": "SpecIndex-StateAgent/0.2"}
         for attempt in range(self.max_retries):
             try:
                 req = urllib.request.Request(url, headers=headers)
@@ -82,40 +71,36 @@ class SocrataProvider(BaseIngestionProvider):
             except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError, json.JSONDecodeError) as e:
                 last_err = e
                 wait = min(60, (2**attempt) * 2)
-                print(f"[socrata:{self.dataset}] retry {attempt + 1}/{self.max_retries}: {e}; sleep {wait}s", file=sys.stderr)
+                print(f"[ckan:{self.resource_id}] retry {attempt + 1}/{self.max_retries}: {e}; sleep {wait}s", file=sys.stderr)
                 time.sleep(wait)
-        raise RuntimeError(f"Socrata fetch failed after {self.max_retries} retries: {last_err}")
+        raise RuntimeError(f"CKAN fetch failed after {self.max_retries} retries: {last_err}")
 
     def fetch_delta(self, last_watermark: str) -> list[dict[str, Any]]:
         where = self._build_where(last_watermark)
-        print(f"[socrata:{self.dataset}] where={where}", file=sys.stderr)
-        base = f"https://{self.domain}/resource/{self.dataset}.json"
-        headers = {"Accept": "application/json", "User-Agent": "SpecIndex-StateAgent/0.2"}
-        if self.app_token:
-            headers["X-App-Token"] = self.app_token
-
         out: list[dict[str, Any]] = []
         offset = 0
         while True:
-            params = {
-                "$where": where,
-                "$order": f"{self.order_field} ASC",
-                "$limit": str(self.page_size),
-                "$offset": str(offset),
-            }
-            url = base + "?" + urllib.parse.urlencode(params)
-            page = self._fetch_with_retries(url, headers)
-            if not page:
+            sql = (
+                f'SELECT * FROM "{self.resource_id}" WHERE {where} '
+                f"ORDER BY {self.watermark_field} ASC LIMIT {self.page_size} OFFSET {offset}"
+            )
+            url = f"{self.base_url}/api/3/action/datastore_search_sql?" + urllib.parse.urlencode({"sql": sql})
+            print(f"[ckan:{self.resource_id}] sql={sql}", file=sys.stderr)
+            data = self._fetch_with_retries(url)
+            if not data.get("success"):
+                raise RuntimeError(f"CKAN query failed: {data.get('error')}")
+            records = data.get("result", {}).get("records", [])
+            if not records:
                 break
-            out.extend(page)
+            out.extend(records)
             if self.hard_limit and len(out) >= self.hard_limit:
                 out = out[: self.hard_limit]
                 break
-            if len(page) < self.page_size:
+            if len(records) < self.page_size:
                 break
             offset += self.page_size
             time.sleep(0.2)
-        print(f"[socrata:{self.dataset}] fetched {len(out)} rows", file=sys.stderr)
+        print(f"[ckan:{self.resource_id}] fetched {len(out)} rows", file=sys.stderr)
         return out
 
     def compute_deterministic_hash(self, row: dict[str, Any]) -> str:

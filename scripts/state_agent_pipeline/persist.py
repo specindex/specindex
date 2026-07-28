@@ -67,7 +67,11 @@ def golden_to_corpus_projects(golden: list[GoldenRecord]) -> list[dict[str, Any]
     """Map golden records into SpecIndex project-shaped dicts for optional merge."""
     projects: list[dict[str, Any]] = []
     for g in golden:
-        pid = g.golden_id if g.golden_id.startswith("nj-") else f"nj-dca-{g.golden_id}"
+        # golden_id already carries the correct state/source prefix from
+        # canonical_golden_id() -- this used to force "nj-dca-" onto
+        # anything not already starting with "nj-", which double-damaged
+        # the same bug fixed in model_b_sonnet.py (see its docstring).
+        pid = g.golden_id
         projects.append(
             {
                 "id": pid[:80],

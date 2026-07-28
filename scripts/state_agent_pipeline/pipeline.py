@@ -27,7 +27,7 @@ from .state import load_state, save_state
 # messy permit-description text. Routing these through Flash/Sonnet would
 # be pure wasted LLM cost for no quality gain; see sam_gov_provider.py /
 # usaspending_provider.py docstrings.
-NO_LLM_PROVIDER_TYPES = {"sam_gov", "usaspending", "accela"}
+NO_LLM_PROVIDER_TYPES = {"sam_gov", "usaspending", "accela", "energov"}
 
 
 def run_pipeline(
@@ -124,15 +124,22 @@ def run_pipeline(
                 summary["notify"] = send_run_email(summary, ok=True)
             return summary
 
+        # golden_id prefix must reflect the real state/source, not a
+        # hardcoded "nj-dca" -- see canonical_golden_id's docstring for
+        # the 2026-07-28 bug this fixes (622 real CA/TX records had been
+        # silently mis-prefixed "nj-dca-..." before this). "NJ" keeps its
+        # existing "nj-dca" prefix so already-persisted NJ ids don't churn.
+        id_prefix = "nj-dca" if state_code == "NJ" else state_code.lower()
+
         if skip_llm:
             from .model_a_flash import _deterministic_entities
             from .model_b_sonnet import _passthrough_golden
 
             entities = _deterministic_entities(rows)
-            golden = _passthrough_golden([e.model_dump() for e in entities])
+            golden = _passthrough_golden([e.model_dump() for e in entities], id_prefix)
         else:
             entities = extract_with_flash(rows, settings)
-            golden = dedupe_with_sonnet(entities, settings)
+            golden = dedupe_with_sonnet(entities, settings, id_prefix)
 
         paths = persist_run(run_id=run_id, raw_rows=rows, entities=entities, golden=golden, state_code=state_code)
 

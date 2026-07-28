@@ -41,6 +41,8 @@ class ArcGISProvider(BaseIngestionProvider):
         max_retries: int = 4,
         include_geometry: bool = True,
         date_field: str | None = None,
+        date_field_is_string: bool = False,
+        date_literal_style: str = "date",
         lookback_days: int = 30,
         hard_limit: int = 0,
     ) -> None:
@@ -60,6 +62,17 @@ class ArcGISProvider(BaseIngestionProvider):
         # "since yesterday." Bound the first run by a real date field,
         # same principle as SocrataProvider's lookback_days.
         self.date_field = date_field
+        # A handful of ArcGIS layers (e.g. Pearland's Commercial_Permits)
+        # store their date column as esriFieldTypeString ("2021-02-23 0:00")
+        # rather than a real Esri Date field -- `DATE '...'` literal syntax
+        # 400s against those, so fall back to a plain string comparison,
+        # which works because the stored format is zero-padded YYYY-MM-DD.
+        self.date_field_is_string = date_field_is_string
+        # Some SQL-Server-backed ArcGIS Servers (e.g. Beaumont's Cityworks
+        # FeatureServer) reject the standard `DATE '...'` literal with a
+        # "Missing operand" error and require `TIMESTAMP '... 00:00:00'`
+        # instead -- verified by direct query against both variants.
+        self.date_literal_style = date_literal_style
         self.lookback_days = lookback_days
         self.hard_limit = hard_limit
 
@@ -72,7 +85,12 @@ class ArcGISProvider(BaseIngestionProvider):
             import datetime as _dt
 
             cutoff = (_dt.date.today() - _dt.timedelta(days=self.lookback_days)).isoformat()
-            clauses.append(f"{self.date_field} >= DATE '{cutoff}'")
+            if self.date_field_is_string:
+                clauses.append(f"{self.date_field} >= '{cutoff}'")
+            elif self.date_literal_style == "timestamp":
+                clauses.append(f"{self.date_field} >= TIMESTAMP '{cutoff} 00:00:00'")
+            else:
+                clauses.append(f"{self.date_field} >= DATE '{cutoff}'")
         else:
             clauses.append(f"{self.watermark_field} > 0")
         return " AND ".join(f"({c})" for c in clauses) if len(clauses) > 1 else clauses[0]

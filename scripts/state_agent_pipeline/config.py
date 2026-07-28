@@ -84,6 +84,6 @@ class Settings:
             anthropic_api_key=os.environ.get("ANTHROPIC_API_KEY"),
             socrata_app_token=os.environ.get("SOCRATA_APP_TOKEN"),
             flash_batch_size=int(os.environ.get("NJ_DCA_FLASH_BATCH") or 40),
-            sonnet_batch_size=int(os.environ.get("NJ_DCA_SONNET_BATCH") or 60),
+            sonnet_batch_size=int(os.environ.get("NJ_DCA_SONNET_BATCH") or 25),
             max_retries=int(os.environ.get("NJ_DCA_MAX_RETRIES") or 4),
         )
