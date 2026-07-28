@@ -158,7 +158,21 @@ def run_pipeline(
 
         merged = None
         if merge_state and golden:
-            projects = golden_to_corpus_projects(golden)
+            # Preserve NJ's existing (human-readable dataset page) title/url
+            # exactly -- persist.py's own defaults already handle NJ. Every
+            # other state gets a real title/url derived from its config
+            # instead of the previously-hardcoded NJ one.
+            source_title = source_url = None
+            if corpus_state_code != "NJ":
+                county = state_config.get("county")
+                source_title = f"{county} {state_config['provider_type']} permit data" if county else None
+                source_url = state_config.get("source_url") or state_config.get("endpoint")
+            projects = golden_to_corpus_projects(
+                golden,
+                state_code=corpus_state_code,
+                source_title=source_title,
+                source_url=source_url,
+            )
             merged = merge_into_state(corpus_state_code, projects)
 
         summary.update(

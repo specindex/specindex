@@ -148,17 +148,31 @@ class SocrataProvider(BaseIngestionProvider):
         return hash_row(row)
 
     def next_watermark(self, rows: list[dict[str, Any]], current: str) -> str:
-        def as_int(v: Any) -> int:
+        def as_int(v: Any) -> int | None:
             try:
                 return int(str(v).strip())
             except (TypeError, ValueError):
-                return -1
+                return None
 
-        best = as_int(current)
-        for r in rows:
-            v = as_int(r.get(self.watermark_field))
-            if v > best:
-                best = v
+        # Real bug found 2026-07-28: for a non-numeric watermark_field
+        # (e.g. Cook County's `pin`, an alphanumeric parcel id), every
+        # row's as_int() silently returned a sentinel, so `best` never
+        # advanced past its starting value -- next_watermark() always
+        # returned "0", meaning _build_where() always took the
+        # first-run/date-cutoff branch and rescanned the full lookback
+        # window on every run instead of ever narrowing to only-new rows.
+        # Safe in practice (merge_into_state()'s exact-id dedup makes
+        # re-seeing already-persisted rows a no-op) but silently wasteful.
+        # Made explicit here rather than fixed silently: a numeric
+        # watermark_field (recordid-style) still advances normally; a
+        # non-numeric one intentionally always rescans, since a string
+        # `>` comparison on something like a parcel id wouldn't track
+        # real-world chronological order anyway.
+        current_int = as_int(current)
+        row_ints = [v for v in (as_int(r.get(self.watermark_field)) for r in rows) if v is not None]
+        if current_int is None and not row_ints:
+            return current or "0"
+        best = max([current_int] + row_ints) if current_int is not None else max(row_ints)
         return str(best) if best >= 0 else current
 
     def to_projects(self, rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
