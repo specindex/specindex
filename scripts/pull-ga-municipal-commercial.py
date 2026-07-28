@@ -21,10 +21,33 @@ Sources currently wired:
     project_identity.py handles exact name/address matches but a full-county
     feed isn't guaranteed to be caught.
 
+  - Forsyth County GA "Public_EnerGovPlans/Building_Permits"
+    (PermitNumber LIKE 'BLDGCOMM%') -- checked 2026-07-26, live as of
+    2026-07-23 on ApplyDate. CONFIRMED via real coordinates (outSR=4326:
+    34.15-34.31N, 84.0-84.2W) this is Forsyth County GA, NOT Forsyth County
+    NC -- two pieces of secondhand research disagreed about this for the
+    exact same URL; see docs/ROADMAP.md item 27. Sparse schema: no address,
+    description, or contractor fields exist despite secondhand research
+    claiming otherwise -- only PermitNumber/ParcelNumber/PermitType/
+    PermitClassDescription/dates/Link are real.
+
 Checked and rejected 2026-07-25: Columbus/Muscogee County "BuildingPermits"
 MapServer has a purpose-built Commercial layer with excellent fields (owner,
 contractor, valuation, sqft) but is stale -- most recent record is 2022-04-15,
 so it contributes nothing to any realistic recency window. Not wired.
+
+Checked and rejected 2026-07-26: a secondhand-research "Hall County GA"
+source (services2.arcgis.com/HdTo6HJqh92wn4D8/.../Building_Permit_
+Applications_Feature_Layer_view) is actually **Nashville/Davidson County,
+Tennessee** -- its own State field says "TN", cities are Nashville/Old
+Hickory/Brentwood, coordinates 36.0-36.2N/86.6-86.9W (real Hall County GA
+is ~34.3N/83.8W). Caught by checking real coordinates before merging, same
+discipline that resolved the Forsyth GA/NC question above -- but this one
+slipped past an earlier, incomplete check (freshness/schema were verified,
+geography wasn't) before being caught here. Lesson reinforced: always
+verify city/state/coordinates on a real sample, not just date freshness
+and field names, especially for sources found via generic web search
+rather than a jurisdiction-specific domain.
 
 Residential is hard-filtered out. Window defaults to last 12 months when a date
 field exists; undated layers keep only clearly commercial type labels.
@@ -432,6 +455,67 @@ def pull_fulton(cutoff: dt.date) -> list[dict]:
     return projects
 
 
+def pull_forsyth_ga(cutoff: dt.date) -> list[dict]:
+    base = "https://geo.forsythco.com/gis3/rest/services/Public_EnerGovPlans/Building_Permits/FeatureServer"
+    where = f"PermitNumber LIKE 'BLDGCOMM%' AND ApplyDate >= DATE '{cutoff.isoformat()}'"
+    rows = query_layer(
+        base, 0, where,
+        fields="PermitNumber,ParcelNumber,PermitType,PermitClassDescription,PermitClass,PermitStatus,ApplyDate,IssueDate,Link",
+    )
+    projects = []
+    seen = set()
+    for a in rows:
+        permit_no = (a.get("PermitNumber") or "").strip()
+        if not permit_no:
+            continue
+        if permit_no in seen:
+            continue
+        seen.add(permit_no)
+        parcel = (a.get("ParcelNumber") or "").strip()
+        class_desc = (a.get("PermitClassDescription") or "").strip()
+        permit_class = (a.get("PermitClass") or "").strip()
+        status = (a.get("PermitStatus") or "").strip()
+        link = (a.get("Link") or "").strip()
+        opened = epoch_ms_to_date(a.get("ApplyDate")) or cutoff.isoformat()
+        ptype = project_type_from(f"{class_desc} {permit_class}")
+        # No address/description/contractor fields exist on this layer --
+        # confirmed 2026-07-26, contradicting a secondhand-research claim
+        # that they did. Name and description are necessarily sparse.
+        name = f"{class_desc or 'Commercial permit'} (parcel {parcel})" if parcel else (class_desc or "Commercial permit")
+        projects.append(
+            {
+                "id": f"ga-forsyth-{slugify(permit_no)}",
+                "name": name[:120],
+                "city": "",
+                "county": "Forsyth",
+                "status": "permitting" if status.lower() == "issued" else "planning",
+                "project_type": ptype,
+                "estimated_value_usd": None,
+                "square_footage": None,
+                "owner": "",
+                "architect": "",
+                "general_contractor": "",
+                "opened_or_announced_date": opened,
+                "description": (
+                    f"Forsyth County GA commercial permit {permit_no}: {class_desc or permit_class}. "
+                    f"Parcel {parcel or 'not listed'}. Status {status or 'unknown'}."
+                ),
+                "key_specs": [s for s in [class_desc, permit_class, f"Parcel {parcel}", f"Permit {permit_no}"] if s],
+                "mentioned_brands": [],
+                "competitor_watch": categories_for(ptype),
+                "sources": [
+                    {
+                        "title": f"Forsyth County GA commercial permit {permit_no}",
+                        "url": link or "https://geo.forsythco.com/gis3/rest/services/Public_EnerGovPlans/Building_Permits/FeatureServer/0",
+                    }
+                ],
+                "open_for": "Active commercial building permit. Early product/spec window.",
+                "state": "GA",
+            }
+        )
+    return projects
+
+
 def merge_into_ga() -> tuple[int, int]:
     """Rebuild ga.json from all raw sources (safe dedupe path)."""
     import subprocess
@@ -463,6 +547,7 @@ def main() -> int:
         "marietta": pull_marietta(),
         "savannah": pull_savannah(cutoff),
         "fulton": pull_fulton(cutoff),
+        "forsyth_ga": pull_forsyth_ga(cutoff),
     }
     all_projects: list[dict] = []
     for name, rows in buckets.items():

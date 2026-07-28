@@ -1,7 +1,7 @@
 {
   "state": "AZ",
   "state_name": "Arizona",
-  "generated_at": "2026-07-27",
+  "generated_at": "2026-07-28",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
   "capture_method": "Web research — Prime Data Centers, AZ Big Media, REBusinessOnline, Colliers, Connect CRE, Hoodline, SAM.gov federal solicitations (bulk CSV extract), SAM.gov federal solicitations (bulk CSV extract), SAM.gov federal solicitations (bulk CSV extract), SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
@@ -23869,9 +23869,4078 @@
       "latitude": 33.55038899981878,
       "longitude": -112.27833900010894,
       "zip": "85307"
+    },
+    {
+      "id": "az-maricopacounty-unknown-bldc260051",
+      "name": "South Building / Pod with Kennels (Pods A-L)",
+      "city": "",
+      "county": "",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Identical address (10161 W Northern Ave, 85307), identical permit_date (2026-07-16) and process_date (2026-04-09), same use_group/permit_type, and shared/adjacent permit numbers (BLDC260051, BLDC260052) across all 13 candidates representing a single kennel-pod site development (Pods A-L plus South Building). All candidates besides the base record are explicitly flagged as possible duplicates of the same permit/project. Costs and square footage are all zero (no additive data available), so max/zero value retained rather than summed.",
+      "key_specs": [
+        "Commercial",
+        "Building (Commercial)"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt19-14977",
+      "name": "Hood Suppression System Installation",
+      "city": "Mesa",
+      "county": "",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "single unique candidate, no duplicates found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 13909548 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt23-07447",
+      "name": "Model Home Complex Parking Lot (Lot 88)",
+      "city": "Mesa",
+      "county": "",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-02",
+      "description": "flagged by source model as duplicate of PMT23-07456, but distinct block/lot (88) and address indicate a separate parcel used for the same complex; kept as its own golden record",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 30430836 Lot 88"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt23-07456",
+      "name": "Model Home Complex Parking Lot (Lot 89)",
+      "city": "Mesa",
+      "county": "",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-02",
+      "description": "flagged by source model as duplicate of PMT23-07447, but distinct block/lot (89) and address indicate a separate parcel used for the same complex; kept as its own golden record",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 30430837 Lot 89"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt24-08243",
+      "name": "Electrical System Refurbishment",
+      "city": "Mesa",
+      "county": "",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "single unique candidate, no duplicates found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 14136001E Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt24-09658",
+      "name": "144-Unit Multi-Family Development",
+      "city": "Mesa",
+      "county": "",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 3876600.0,
+      "square_footage": 25115.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-06",
+      "description": "identical block, address, and project name across 8 permit numbers issued same date; five sub-permits share an identical cost/sqft figure ($3,848,066 / 24,675 SF), indicating repeated captures of the same underlying permit rather than distinct additive buildings; max cost and max square footage retained rather than summed",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 22037005A Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt24-12284",
+      "name": "Automatic Gate Meter Pedestals",
+      "city": "Mesa",
+      "county": "",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "single unique candidate, no duplicates found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 13621166 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt25-02825",
+      "name": "Large Warehouse Tenant Improvement",
+      "city": "Mesa",
+      "county": "",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 12000.0,
+      "square_footage": 202118.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "single unique candidate, no duplicates found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 30401006M Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt25-14852",
+      "name": "Sprinkler Head Addition",
+      "city": "Mesa",
+      "county": "",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "single unique candidate, no duplicates found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 13804001P Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt25-16712",
+      "name": "New Convenience Store & Fuel Canopy",
+      "city": "Mesa",
+      "county": "",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 839770.0,
+      "square_footage": 9415.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "single unique candidate, no duplicates found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 30415925 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt25-16733",
+      "name": "Retention Basins Civil Construction",
+      "city": "Mesa",
+      "county": "",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "single unique candidate, no duplicates found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 30431044C Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt25-19695",
+      "name": "Utility Transformer Replacement",
+      "city": "Mesa",
+      "county": "",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "single unique candidate, no duplicates found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 14017004B Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt25-19822",
+      "name": "Veterinary Office Tenant Improvement",
+      "city": "Mesa",
+      "county": "",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 800000.0,
+      "square_footage": 3060.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "single unique candidate, no duplicates found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 22082018G Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt25-20007",
+      "name": "Fire Damage Repair",
+      "city": "Mesa",
+      "county": "",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "single unique candidate, no duplicates found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 13607178 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt25-21332",
+      "name": "New 3-Story Multifamily Building (BLDG 6)",
+      "city": "Mesa",
+      "county": "",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 6827523.0,
+      "square_footage": 43163.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "single unique candidate, no duplicates found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 14157081B Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt25-22664",
+      "name": "New Office Building Construction",
+      "city": "Mesa",
+      "county": "",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 1500.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "single unique candidate, no duplicates found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 30463004E Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt25-23756",
+      "name": "Vault Tenant Improvements (Vault 1.2 & 2.3)",
+      "city": "Mesa",
+      "county": "",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 4026799.0,
+      "square_footage": 27693.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "same block, address, and unit, all issued same day; source model flagged PMT25-23757 and PMT25-23758 as duplicates of PMT25-23756; PMT25-23757 and PMT25-23758 both labeled 'Vault 1.2' with near-identical square footage, indicating repeated capture of the same TI scope; max cost and max square footage retained rather than summed",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 30401006N Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt25-23759",
+      "name": "Vault 1.3 Tenant Improvement",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 350000.0,
+      "square_footage": 27681.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "no matching candidate in batch; referenced possible_duplicate_of_pk (PMT25-23756) not present in candidate set - kept standalone, flagged uncertain",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 30401006N Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-00998",
+      "name": "Rock Wall Replacement",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "unique block/lot and address, no duplicate found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 21810001P Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-01385",
+      "name": "Manual Barrier Gates Installation",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "unique block/lot and address, no duplicate found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 30430964 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-01548",
+      "name": "Office to Treatment Rooms TI",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 49553.0,
+      "square_footage": 1930.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-02",
+      "description": "unique block/lot and address, no duplicate found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 14020004E Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-02382",
+      "name": "Large Warehouse Interior Fit Out",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 137487409.0,
+      "square_footage": 964098.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "unique block/lot and address, no duplicate found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 31325879A Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-02661",
+      "name": "Restaurant Tenant Improvement",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 1340827.0,
+      "square_footage": 2888.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "unique block/lot and address, no duplicate found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 14066461A Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-03053",
+      "name": "New Restaurant with Drive-Thru",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 406597.0,
+      "square_footage": 2239.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "unique block/lot and address, no duplicate found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 22081998 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-03338",
+      "name": "Kitchen Hood & Equipment TI",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "distinct block/address from similarly-named PMT26-04575 (different site, same generic project template) - not merged",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 14180406 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-03560",
+      "name": "Airport Tenant Kitchen TI",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 633013.0,
+      "square_footage": 1030.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "unique block/lot and address, no duplicate found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 30436002G Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-03601",
+      "name": "Urgent Care X-Ray Room TI",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "unique block/lot and address, no duplicate found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 14043001P Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-04195",
+      "name": "Mental Health Center TI (Serenity Mental Health)",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 9387384.0,
+      "square_footage": 25066.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "unique block/lot and address, no duplicate found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 13538010A Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-04575",
+      "name": "Kitchen Hood & Equipment TI",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "distinct block/address from similarly-named PMT26-03338 (different site, same generic project template) - not merged",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 21813009E Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-05251",
+      "name": "New Parking Canopies",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 395915.0,
+      "square_footage": 11140.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "unique block/lot and address, no duplicate found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 30405019Q Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-05270",
+      "name": "Playground Surfacing & ADA Ramp",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "distinct park location/block from PMT26-05271 (same city-wide program template, different site) - not merged",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 14105005A Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-05271",
+      "name": "Playground Surfacing & ADA Ramp",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "distinct park location/block from PMT26-05270 (same city-wide program template, different site) - not merged",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 30204476 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-05367",
+      "name": "Mesa Dr Carports",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 29322.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "unique address, no block on record, no duplicate found",
+      "key_specs": [
+        "U",
+        "COM - Other Commercial"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-05468",
+      "name": "Holmes Ave Generator Upgrade",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "unique address, no duplicate found",
+      "key_specs": [
+        "Commercial",
+        "COM - Other Commercial"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-05559",
+      "name": "Higley Rd Storage Tanks",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "unique address, no duplicate found",
+      "key_specs": [
+        "Commercial",
+        "COM - Other Commercial"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-05785",
+      "name": "Walmart Online Pickup Remodel",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 1585573.35,
+      "square_footage": 4395.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "unique address, no duplicate found",
+      "key_specs": [
+        "S1, M, A2, B",
+        "COM - Other Commercial"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-06513",
+      "name": "Baseline Rd Townhouse Ramadas",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 30214.08,
+      "square_footage": 288.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "unique address, no duplicate found",
+      "key_specs": [
+        "Commercial",
+        "COM - Other Commercial"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-06529",
+      "name": "Ellsworth Rd Restaurant TI",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 385236.81,
+      "square_footage": 1103.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-06",
+      "description": "unique address, no duplicate found",
+      "key_specs": [
+        "V-B",
+        "COM - Tenant Improvement (Interior Only)"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-06756",
+      "name": "Pecos Rd Manufacturing TI",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "unique address, no duplicate found",
+      "key_specs": [
+        "F1, B",
+        "COM - Commercial/Industrial Projects"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-06859",
+      "name": "Southern Ave Eyeglasses Office TI",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 612411.11,
+      "square_footage": 2299.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "unique address, no duplicate found",
+      "key_specs": [
+        "M",
+        "COM - Tenant Improvement (Interior Only)"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-06976",
+      "name": "Edgecore Data Hall Fitout (Tower3 Level 2 & 3)",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 23302642.76,
+      "square_footage": 58084.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "unique address, no duplicate found",
+      "key_specs": [
+        "B, S-1, S-2",
+        "COM - Tenant Improvement (Interior Only)"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-07034",
+      "name": "Baseline Rd Propane Tanks",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "unique address, no duplicate found",
+      "key_specs": [
+        "Commercial",
+        "COM - Other Commercial"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-07088",
+      "name": "Elliot Rd Residential & Garage Development (4 Carriage House Units + 5 Detached Garages)",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 2884072.32,
+      "square_footage": 27144.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "Same site address (8264 E Elliot Rd), same permit date, sequential permit numbers flagged by Model A as duplicates; distinct new-construction structures (carriage house units + detached garages) on one property project - costs and square footage summed as additive components of the same development",
+      "key_specs": [
+        "R-2, S-2",
+        "COM - Multi-Family Residential",
+        "COM - Other Commercial"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-07252",
+      "name": "Main St Multi-Family Development - 132-Unit Complex (4 Residential Buildings + Clubhouse)",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 18961429.49,
+      "square_footage": 118730.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "Same address (6147 E Main St), sequential permit numbers, explicitly flagged as duplicates by Model A; represents multiple buildings (Bldg 1,2,4,5) plus clubhouse (Bldg 3) of one 132-unit multi-family development - costs and square footage summed as additive structures of the same project",
+      "key_specs": [
+        "R-2, A, B, U",
+        "COM - Multi-Family Residential"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-07175",
+      "name": "Dobson Rd Fire Alarm Devices",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "no duplicates found - unique permit",
+      "key_specs": [
+        "Commercial",
+        "COM - Other Commercial"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-07183",
+      "name": "Ellsworth Rd Telecom Pole",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "no duplicates found - unique permit",
+      "key_specs": [
+        "Commercial",
+        "COM - Other Commercial"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-07278",
+      "name": "Oakland Restroom Breakroom TI",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 2506344.6,
+      "square_footage": 17258.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "no duplicates found - unique permit",
+      "key_specs": [
+        "B, S-1",
+        "COM - Tenant Improvement (Interior Only)"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-07402",
+      "name": "Ray Rd Office TI",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "no duplicates found - unique permit",
+      "key_specs": [
+        "B, S-1",
+        "COM - Tenant Improvement (Interior Only)"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-07461",
+      "name": "Ellsworth Rd Restaurant TI",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 242000.0,
+      "square_footage": 1833.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "no duplicates found - unique permit",
+      "key_specs": [
+        "B",
+        "COM - Tenant Improvement (Interior Only)"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-07522",
+      "name": "Dobson Rd Dentist Suite Remodel",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "no duplicates found - unique permit",
+      "key_specs": [
+        "B",
+        "COM - Tenant Improvement (Interior Only)"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-07556",
+      "name": "Bates St Ramada",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 9098.24,
+      "square_footage": 256.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "no duplicates found - unique permit",
+      "key_specs": [
+        "Commercial",
+        "COM - Other Commercial"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-07572",
+      "name": "Pecos Rd Steel Storage Racks",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "no duplicates found - unique permit",
+      "key_specs": [
+        "B, S-1, F-1",
+        "COM - Tenant Improvement (Interior Only)"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-07667",
+      "name": "Main St Wireless Cell Tower",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "no duplicates found - unique permit",
+      "key_specs": [
+        "Commercial",
+        "COM - Other Commercial"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-07821",
+      "name": "Mountain Rd Parking Canopies",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 383137.62,
+      "square_footage": 5153.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "no duplicates found - unique permit",
+      "key_specs": [
+        "Commercial",
+        "COM - Commercial/Industrial Projects"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-07977",
+      "name": "72nd St Site Lighting",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "no duplicates found - unique permit",
+      "key_specs": [
+        "Commercial",
+        "COM - Other Commercial"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-07994",
+      "name": "Signal Butte Rd Fire Line Loop",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "standalone permit, no duplicate candidates found",
+      "key_specs": [
+        "Commercial",
+        "COM - Commercial/Industrial Projects"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-08028",
+      "name": "Monterey Ave Dog Park",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "standalone permit, no duplicate candidates found",
+      "key_specs": [
+        "Commercial",
+        "COM - Other Commercial"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-08161",
+      "name": "Country Club Dr CMU Wall Repair",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "standalone permit, no duplicate candidates found",
+      "key_specs": [
+        "Commercial",
+        "COM - Other Commercial"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-08435",
+      "name": "Longmore Dance Studio TI",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 516800.65,
+      "square_footage": 2095.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Flagged as possible duplicate of PMT26-08436 by source, but distinct suite number (5 vs 6), differing use_group (B vs A-3), cost, and sqft indicate two separate tenant-improvement permits in the same building; kept separate with reduced confidence",
+      "key_specs": [
+        "B",
+        "COM - Tenant Improvement (Interior Only)"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-08436",
+      "name": "Longmore Karate Studio TI",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 682344.4,
+      "square_footage": 3091.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Flagged as possible duplicate of PMT26-08435, but distinct suite (6 vs 5), use_group, cost, and sqft indicate a separate tenant-improvement permit; kept separate with reduced confidence",
+      "key_specs": [
+        "A-3",
+        "COM - Tenant Improvement (Interior Only)"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-08519",
+      "name": "Batting Cages & Pitching Lab Addition",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 2132764.74,
+      "square_footage": 7762.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-06",
+      "description": "standalone permit, unique block/lot",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 13718001 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-08598",
+      "name": "Wireless Equipment & Light Pole Installation",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "standalone permit, unique block/lot",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 13925004C Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-08629",
+      "name": "Beverage Equipment Replacement",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "standalone permit, unique block/lot",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 14180406 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-08672",
+      "name": "Office Suite Tenant Improvement",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 1499904.14,
+      "square_footage": 4982.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "standalone permit, unique block/lot",
+      "key_specs": [
+        "Group B",
+        "COM",
+        "Block 13911004J Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-08675",
+      "name": "Fire Alarm & Sprinkler System Installation",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "standalone permit; similar project name to PMT26-09065 but different block and address, kept separate",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 30437024N Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-08898",
+      "name": "Break Room & Laser Welder Room TI",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 222763.93,
+      "square_footage": 510.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "standalone permit, unique block/lot",
+      "key_specs": [
+        "A / III-B",
+        "COM",
+        "Block 30430056 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-08901",
+      "name": "Massage Parlor Build-Out",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 249336.35,
+      "square_footage": 1005.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "standalone permit, unique block/lot",
+      "key_specs": [
+        "Group B",
+        "COM",
+        "Block 13419272 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-08970",
+      "name": "Office Complex Tenant Improvement",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 1275932.97,
+      "square_footage": 3661.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "standalone permit, unique block/lot",
+      "key_specs": [
+        "B / II-B",
+        "COM",
+        "Block 13538010A Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-09065",
+      "name": "Fire Alarm & Sprinkler System Installation",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "standalone permit; similar project name to PMT26-08675 but different block and address, kept separate",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 22071916E Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-09153",
+      "name": "Pool Heater Gas Line Installation",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-02",
+      "description": "standalone permit, unique block/lot",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 13855022D Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-09262",
+      "name": "Warehouse Rack Shelving Installation",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "standalone permit, unique block/lot",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 14138043 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-09431",
+      "name": "Curb & Gutter Construction (LeSueur Improvement Plan)",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "standalone permit, unique block/lot",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 13827099A Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-09447",
+      "name": "Cell Tower Electrical Upgrade",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "standalone permit, unique block/lot",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 21856939 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-09448",
+      "name": "Irrigation Well Connection",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-06",
+      "description": "standalone permit, unique block/lot",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 30462001F Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-09458",
+      "name": "Temporary Diesel Generators Installation",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "standalone permit, unique block/lot",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 30461012X Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-09562",
+      "name": "Assembly Line Electrical TI",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-02",
+      "description": "standalone permit, unique block/lot",
+      "key_specs": [
+        "F-1/S-1/B",
+        "COM",
+        "Block 13912058 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-09843",
+      "name": "Fire Alarm System Modification",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "standalone permit, unique block/lot",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 14038004H Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-09858",
+      "name": "Electrical Service Upgrade",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "standalone permit, unique block/lot",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 13867036 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-09913",
+      "name": "Water Meter Installation",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "standalone permit, unique block/lot",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 13842005 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-09926",
+      "name": "Fire Alarm Tie-In",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "standalone permit, unique block/lot",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 30417990 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-09936",
+      "name": "Underground Utility Survey",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "single candidate, no duplicates found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 13801002C Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-09980",
+      "name": "Shade Structures Installation",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 169331.88,
+      "square_footage": 2272.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "single candidate, no duplicates found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 21856936A Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-09989",
+      "name": "Fire Alarm System Replacement",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "single candidate, no duplicates found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 14028010 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-10053",
+      "name": "Demising Wall Installation",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "single candidate, no duplicates found",
+      "key_specs": [
+        "B / S-1",
+        "COM",
+        "Block 30404926 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-10080",
+      "name": "Office Suite Tenant Improvement",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 786629.89,
+      "square_footage": 3107.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "single candidate, no duplicates found",
+      "key_specs": [
+        "Group B",
+        "COM",
+        "Block 14153895A Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-10145",
+      "name": "Telecom Site Electrical Upgrade",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "single candidate, no duplicates found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 13721005C Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-10149",
+      "name": "Warehouse Mezzanine & TI",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 10386677.67,
+      "square_footage": 98938.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "single candidate, no duplicates found",
+      "key_specs": [
+        "F2 / S-2",
+        "COM",
+        "Block 30431142 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-10280",
+      "name": "Office Area Expansion TI",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 4296129.56,
+      "square_footage": 30442.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "single candidate, no duplicates found",
+      "key_specs": [
+        "B / S1",
+        "COM",
+        "Block 14125292 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-10340",
+      "name": "Beverage Equipment Replacement",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "single candidate, no duplicates found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 13947021J Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-10355",
+      "name": "Office & Warehouse Build-Out",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 14569369.3,
+      "square_footage": 112613.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "single candidate, no duplicates found",
+      "key_specs": [
+        "B / S-1",
+        "COM",
+        "Block 31328798 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-10375",
+      "name": "Exhaust Fan & Damper Installation",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "single candidate, no duplicates found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 30434035B Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-10517",
+      "name": "Underground Utility Excavation",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "single candidate; block value appears to be a placeholder/unassigned code, retained as-is since no matching real block found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 99999999 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-10534",
+      "name": "At-Risk Site Grading",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "single candidate, no duplicates found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 31410777 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-10763",
+      "name": "Damaged Joists Repair",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-02",
+      "description": "single candidate, no duplicates found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 13931027 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-10816",
+      "name": "Lobby Door Access Control",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "single candidate, no duplicates found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 14034862A Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-10844",
+      "name": "Foam Sprinkler System Upgrade",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "single candidate; distinct block/address from nearby PMT26-10375, kept separate",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 30434036C Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-10893",
+      "name": "Hotel Units Interior Demo",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "single candidate, no duplicates found",
+      "key_specs": [
+        "COM",
+        "COM",
+        "Block 13812171F Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-10918",
+      "name": "Eden Village Apartments & Community Center Foundation Permits",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 2465567.02,
+      "square_footage": 15927.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "same block (13553003C) and same address; four foundation-phase permits (apartments x3 + community center) for same Eden Village development, flagged as possible duplicates by source model; costs and square footage summed as additive phases of one open project rather than treated as duplicate entries of a single permit",
+      "key_specs": [
+        "R-2 / COM (mixed-use development)",
+        "COM",
+        "Other Commercial",
+        "Block 13553003C Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-10938",
+      "name": "Hanger IT Closet Wall Extension",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "single candidate, no duplicates found",
+      "key_specs": [
+        "COM",
+        "Tenant Improvement (Interior Only)",
+        "Block 30437004E Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-10988",
+      "name": "Eagle Crest Light Pole & Wireless Equipment",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "single candidate, no duplicates found",
+      "key_specs": [
+        "COM",
+        "Other Commercial",
+        "Block 21917142 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-10989",
+      "name": "Guadalupe Rd Communications Facility Mods",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "single candidate, no duplicates found",
+      "key_specs": [
+        "COM",
+        "Other Commercial",
+        "Block 30286516A Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-10998",
+      "name": "MCSO Fire Alarm System",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "single candidate, no duplicates found",
+      "key_specs": [
+        "COM",
+        "Other Commercial",
+        "Block 13949001X Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-11005",
+      "name": "Pecos Rd Warehouse Structural Mods",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "single source, no duplicate found",
+      "key_specs": [
+        "COM",
+        "Commercial/Industrial Projects",
+        "Block 30461018A Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-11033",
+      "name": "Brown Rd Communications Tower Mods",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "single source, no duplicate found",
+      "key_specs": [
+        "COM",
+        "Macro Cell Site",
+        "Block 14111175 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-11208",
+      "name": "Ellsworth Rd Golf Simulator Suite TI",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 588411.96,
+      "square_footage": 2548.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "single source, no duplicate found",
+      "key_specs": [
+        "COM",
+        "Tenant Improvement (Interior Only)",
+        "Block 30403994 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-11375",
+      "name": "Macdonald Commercial Damage Restoration",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "single source, no duplicate found",
+      "key_specs": [
+        "COM",
+        "Other Commercial",
+        "Block 13835047 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-11511",
+      "name": "Power Rd Voice Evacuation Fire Alarm",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "single source, no duplicate found",
+      "key_specs": [
+        "COM",
+        "Other Commercial",
+        "Block 30405021F Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-11535",
+      "name": "Power Rd Retail Store TI",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 561091.48,
+      "square_footage": 2732.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "single source, no duplicate found",
+      "key_specs": [
+        "COM",
+        "Tenant Improvement (Interior Only)",
+        "Block 21925684 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-11553",
+      "name": "Stapley Dr Backflow Replacement",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "single source, no duplicate found",
+      "key_specs": [
+        "COM",
+        "Other Commercial",
+        "Block 13632085 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-11601",
+      "name": "Broadway Rd Electrical Panel Replacement",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "single source, no duplicate found",
+      "key_specs": [
+        "COM",
+        "Other Commercial",
+        "Block 14025483 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-11635",
+      "name": "Country Club Dr Gas Line Replacement",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "single source, no duplicate found",
+      "key_specs": [
+        "COM",
+        "Other Commercial",
+        "Block 13943001D Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-11665",
+      "name": "Crismon Rd Beverage Equipment TI",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "single source, no duplicate found",
+      "key_specs": [
+        "COM",
+        "Tenant Improvement (Interior Only)",
+        "Block 22071916E Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-11668",
+      "name": "Power Rd Beverage Equipment TI",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "single source, no duplicate found",
+      "key_specs": [
+        "COM",
+        "Tenant Improvement (Interior Only)",
+        "Block 21813009E Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-11768",
+      "name": "Alma School Rd Fire Damage Restoration",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "single source, no duplicate found",
+      "key_specs": [
+        "COM",
+        "Other Commercial",
+        "Block 13530057A Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-11989",
+      "name": "Pecos Rd Storm Drain Tank Replacement",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "single source, no duplicate found",
+      "key_specs": [
+        "COM",
+        "Other Commercial",
+        "Block 30463975 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-12040",
+      "name": "Pepper Pl Panelboard Installation",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "single source, no duplicate found; block similar to PMT26-11375 (13835047) but distinct parcel",
+      "key_specs": [
+        "COM",
+        "Other Commercial",
+        "Block 13835056 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-12074",
+      "name": "McKellips Rd Streetlight Replacement",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "single source, no duplicate found",
+      "key_specs": [
+        "COM",
+        "Other Commercial",
+        "Block 14165082 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-12091",
+      "name": "Main St At-Risk Grading",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "single source, no duplicate found",
+      "key_specs": [
+        "COM",
+        "At Risk Grading",
+        "Block 14027028A Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-12271",
+      "name": "Centennial Way 4th Floor Demo",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "single source, no duplicate found",
+      "key_specs": [
+        "COM",
+        "Tenant Improvement (Interior Only)",
+        "Block 13861100 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-12403",
+      "name": "Meridian Rd At-Risk Grading",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "single source, no duplicate found",
+      "key_specs": [
+        "COM",
+        "At Risk Grading",
+        "Block 30434057F Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-12406",
+      "name": "HonorHealth Four Peaks Lab TI",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "single source, no duplicate found; nearby block to PMT26-12622/PMT26-12752 but distinct parcel",
+      "key_specs": [
+        "COM",
+        "Tenant Improvement (Interior Only)",
+        "Block 22081746 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-12504",
+      "name": "1st Ave Fire Sprinkler Modification",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "single source, no duplicate found",
+      "key_specs": [
+        "COM",
+        "Other Commercial",
+        "Block 13842018 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-12622",
+      "name": "Southern Ave Footing & Foundation",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 288358.58,
+      "square_footage": 2122.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "single source, no duplicate found; nearby block to PMT26-12406/PMT26-12752 but distinct parcel",
+      "key_specs": [
+        "COM",
+        "Other Commercial",
+        "Block 22081980 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-12653",
+      "name": "Hawes Rd Restaurant Gas Line Repair",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "single source, no duplicate found",
+      "key_specs": [
+        "COM",
+        "Other Commercial",
+        "Block 21808009 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-12752",
+      "name": "Hampton Ave Apartment Gas Line Repair",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "single source, no duplicate found; nearby block to PMT26-12406/PMT26-12622 but distinct parcel",
+      "key_specs": [
+        "COM",
+        "Other Commercial",
+        "Block 22081989 Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-13127",
+      "name": "Mesa Police HQ Concrete Pour",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "single source, no duplicate found",
+      "key_specs": [
+        "COM",
+        "Other Commercial",
+        "Block 13856001B Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-13555",
+      "name": "Signal Butte Rd At-Risk Grading (1311)",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "flagged as possible duplicate of PMT26-13558, but that source record is not present in this candidate batch; kept standalone pending corroborating data",
+      "key_specs": [
+        "COM",
+        "At Risk Grading",
+        "Block 22082018N Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
+    },
+    {
+      "id": "az-mesa-mesa-pmt26-13558",
+      "name": "Signal Butte Rd At-Risk Grading (1337)",
+      "city": "Mesa",
+      "county": "Maricopa",
+      "status": "permitting",
+      "project_type": "other",
+      "estimated_value_usd": 0.0,
+      "square_footage": 0.0,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "single candidate, no duplicate present in batch (referenced possible_duplicate_of_pk PMT26-13555 not included in provided data set)",
+      "key_specs": [
+        "COM",
+        "At Risk Grading",
+        "Block 22082018N Lot None"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "title": "NJ DCA construction permit data",
+          "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra"
+        }
+      ],
+      "open_for": "Active commercial building permit. Early product/spec window.",
+      "state": "NJ",
+      "latitude": null,
+      "longitude": null
     }
   ],
   "stats": {
-    "total": 632
+    "total": 760
   }
 }
