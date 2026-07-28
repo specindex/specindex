@@ -1,7 +1,7 @@
 {
   "state": "PA",
   "state_name": "Pennsylvania",
-  "generated_at": "2026-07-27",
+  "generated_at": "2026-07-28",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
   "capture_method": "Public sources — local news, PR Newswire, REBusinessOnline, state economic development, SAM.gov federal solicitations (bulk CSV extract), SAM.gov federal solicitations (bulk CSV extract), SAM.gov federal solicitations (bulk CSV extract), SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
@@ -42285,9 +42285,3474 @@
       "latitude": null,
       "longitude": null,
       "zip": "19147"
+    },
+    {
+      "id": "pa-philadelphia-ep-2026-004884",
+      "name": "3632-34 GERMANTOWN AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "Electrical fit-out of commercial space, including the Fire alarm, all work per approved plans NEC 2017 NFPA2016; Addition and/or Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia EP-2026-004884",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-ep-2026-002125",
+      "name": "1501-39 MARKET ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-06",
+      "description": "Fire alarm installed in restaurant per approved plans.\nNo Induction burners installed. A separate permit will be required for any Hood installation and Ansul systems.; Addition and/or Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia EP-2026-002125",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-pp-2026-006809",
+      "name": "4408 LANCASTER AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "CHANGE OF OCCUPANCY TO COMMERCIAL BUILDING. INTERIOR INSTALLATION OF DRAINAGE, WASTE, VENT, AND WATER SUPPLY FOR LISTED FIXTURES. ALL MATERIALS SHALL BE METALLIC TO ROOF EXTENSION. VENTING TO BE DESIGNED AND INSTALLED IN ACCORDANCE WITH SECTION 919 PHILADELPHIA SINGLE STACK VENT SYSTEM. ALL WORK TO BE INSTALLED IN STRICT COMPLIANCE WITH 2018 PPC AND APPROVED PLANS\n\nInstallation of drain and water lines to 1 bi-level water fountain and 1 kitchenette with sink, connect to existing plumbing system.; Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia PP-2026-006809",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-pp-2026-007722",
+      "name": "711-19 N 7TH ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-28",
+      "description": "NEW CONSTGRUCTION OF MIXED USE BUILDING. INTERIOR INSTALLATION OF DRAINAGE, WASTE, VENT, AND WATER SUPPLY FOR LISTED FIXTURES. ALL MATERIALS SHALL BE METALLIC TO ROOF EXTENSION FOR ALL VENTING OF COMMERCIAL SPACE. VENTING TO BE DESIGNED AND INSTALLED IN ACCORDANCE WITH SECTION 919 PHILADELPHIA SINGLE STACK VENT SYSTEM. ALL WORK TO BE INSTALLED IN STRICT COMPLIANCE WITH 2018 PPC AND APPROVED PLANS; New Construction or Additions",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia PP-2026-007722",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-gp-2026-005977",
+      "name": "2551 ORTHODOX ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "FOR ERECTION OF ONE (1) NON-ILLUMINATED ACCESSORY FLAT WALL SIGN ON EXISTING STRUCTURE. SIZE AND LOCATION AS SHOWN ON THE APPLICATION / PLAN. FOR SIGN ACCESSORY TO  BUSINESS AND PROFESSIONAL OFFICE.; Sign",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia GP-2026-005977",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-007581",
+      "name": "1225-27 CHESTNUT ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Retail Sales - Food, Beverages, and Groceries; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-007581",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-mp-2026-002486",
+      "name": "6601-19 CASTOR AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "FOR THE INSTALLATION OF ONE (1) TYPE 1 COMMERCIAL KITCHEN EXHAUST HOODS WITH ASSOCIATED DUCTWORK AND FANS AS PER PLANS.\n***SEPARATE PERMIT SHALL BE REQUIRED FOR INSTALLATION OF AN APPROVED AUTOMATIC FIRE SUPRESSION SYSTEM***; Addition and/or Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia MP-2026-002486",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-007231",
+      "name": "5253 FLORENCE AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-02",
+      "description": "Retail Sales - Convenience Sales; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-007231",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-007414",
+      "name": "2153 E LEHIGH AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Limited Industrial; Eating and Drinking Establishments - Sit-Down Restaurant; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-007414",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-007765",
+      "name": "3009 N 5TH ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "Office - Business and Professional; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-007765",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-dp-2026-000536",
+      "name": "2029 S 20TH ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "COMPLETE DEMOLITION OF AN EXISTING DETACHED ONE-STORY, MASONRY, RUBBLE STONE AND WOOD COMMERCIAL BUILDING BY HANDHELD METHODS. ALL PERMITTED DEMOLITION ACTIVITY TO BE IN ACCORDANCE WITH APPROVED SITE SAFETY DEMOLITION PLAN & SUCH PLAN TO BE MAINTAINED ON SITE AT ALL TIMES IN ACCORDANCE WITH PHILADELPHIA ADMINISTRATIVE CODE. COMPLETE SIDEWALK CLOSURE REQUIRED IN ACCORDANCE WITH SECTION 3306 OF THE IBC. SEPARATE STREET CLOSURE PERMIT REQUIRED PRIOR TO START OF WORK. ANY DEVIATION WILL REQUIRE AN AMENDED DEMOLITION PERMIT.; Minor Demolition",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia DP-2026-000536",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-ep-2026-001822",
+      "name": "1434-36 FEDERAL ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Installation of 1,000 amp service and equipment. electrical wiring of an 8-unit apartment building with a commercial space on the 1st floor.\nInstallation of the fire alarm, all work per approved plans.\n***SEPERATE PERMIT AND SERVICE LOAD CALCULATION  REQUIRED FOR  COMMERCIAL FIT OUT***; Addition and/or Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia EP-2026-001822",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-pp-2025-016376",
+      "name": "915-23 N BROAD ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "Interior installation of drainage, waste, vent, and water supply for listed fixtures connecting to existing metallic piping. All piping utilized in this commercial space shall be metallic to roof extensions. venting to be designed and installed in accordance with section 919 Philadelphia single stack vent system. All work to be performed in strict compliance with 2018 ppc and approved plans.; Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia PP-2025-016376",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-pp-2026-007495",
+      "name": "6214-20 WAYNE AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Plumbing Permit (Interior) for combo CP-2026-000506\nPLUMBING: ALTERATIONS TO EXISTING RESTROOM PROVIDED IN COMMERCIAL BUILDING.INTERIOR INSTALLATION OF DRAINAGE, WASTE, VENT, AND WATER SUPPLY FOR LISTED FIXTURES. ALL MATERIALS SHALL BE METALLIC TO ROOF EXTENSION. VENTING TO BE DESIGNED AND INSTALLED IN ACCORDANCE WITH SECTION 919 PHILADELPHIA SINGLE STACK VENT SYSTEM. ALL WORK TO BE INSTALLED IN STRICT COMPLIANCE WITH 2018 PPC AND APPROVED PLANS; Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia PP-2026-007495",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-ep-2026-005734",
+      "name": "1543 MORRIS ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-06",
+      "description": "Install Additional Fire Alarm Devices In Commercial Kitchen Area And attachment To hood To NFPA 72 And 2017 NEC.; Addition and/or Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia EP-2026-005734",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-007797",
+      "name": "9-37 N 52ND ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Retail Sales - Consumer Goods; Retail Sales - Food, Beverages, and Groceries; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-007797",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-pp-2026-005157",
+      "name": "2828 W GIRARD AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "ALTERATIONS TO EXISTING MIXED USE BUILDING. 1 1/2\" WATER DISTRIBUTION PIPE. INTERIOR INSTALLATION OF DRAINAGE, WASTE, VENT, AND WATER SUPPLY FOR LISTED FIXTURES. ALL MATERIALS SHALL BE METALLIC TO ROOF EXTENSION FOR PIPING SERVING COMMERCIAL FIXTURES. VENTING TO BE DESIGNED AND INSTALLED IN ACCORDANCE WITH SECTION 919 PHILADELPHIA SINGLE STACK VENT SYSTEM. ALL WORK TO BE INSTALLED IN STRICT COMPLIANCE WITH 2018 PPC AND APPROVED PLANS; Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia PP-2026-005157",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-007375",
+      "name": "3401 HAMILTON ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Retail Sales - Food, Beverages, and Groceries; Retail Sales - Consumer Goods; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-007375",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-007897",
+      "name": "6028 LANSDOWNE AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Eating and Drinking Establishments - Sit-Down Restaurant; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-007897",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-006888",
+      "name": "431-35 SOUTH ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "Eating and Drinking Establishments - Sit-Down Restaurant; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-006888",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-pp-2026-007451",
+      "name": "1412 FRANKFORD AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-06",
+      "description": "ALTERATIONS TO EXISTING RESTAURANT. . INTERIOR INSTALLATION OF DRAINAGE, WASTE, VENT, AND WATER SUPPLY FOR LISTED FIXTURES. ALL MATERIALS SHALL BE METALLIC TO ROOF EXTENSION. VENTING TO BE DESIGNED AND INSTALLED IN ACCORDANCE WITH SECTION 919 PHILADELPHIA SINGLE STACK VENT SYSTEM. ALL WORK TO BE INSTALLED IN STRICT COMPLIANCE WITH 2018 PPC AND APPROVED PLANS; Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia PP-2026-007451",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-ap-2026-004463",
+      "name": "4948-50 N BROAD ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "FOR A LAWFUL OCCUPANCY SIGN FOR AN EXISTING SIT-DOWN RESTAURANT/BAR  (GROUP A-2). NO ALTERATIONS WORK UNDER THIS PERMIT.; Lawful Occupancy (LO) ONLY",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia AP-2026-004463",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-pp-2026-007889",
+      "name": "2248 N FRONT ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "NEW CONSTRUCTION OF MIXED USE BUILDING. EXTERIOR INSTALLATION OF CURB TRAP, FAI, MAIN DRAIN, AND WATER DISTRIBUTION PIPE. INTERIOR INSTALLATION OF DRAINAGE, WASTE, VENT, AND WATER SUPPLY FOR LISTED FIXTURES. ALL MATERIALS SHALL BE METALLIC TO ROOF EXTENSION FOR PIPING SERVING FIXTURES LOCATED IN COMMERCIAL SPACE. VENTING TO BE DESIGNED AND INSTALLED IN ACCORDANCE WITH SECTION 919 PHILADELPHIA SINGLE STACK VENT SYSTEM. ALL WORK TO BE INSTALLED IN STRICT COMPLIANCE WITH 2018 PPC AND APPROVED PLANS; New Construction or Additions",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia PP-2026-007889",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-pp-2026-008728",
+      "name": "1845 WALNUT ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-02",
+      "description": "Install (1) water closet, (1) lavatory and (1) sink within 18th floor office space for McEldrew Purtell. ALL WORK PERFORMED IN COMPLIANCE WITH 2018 PPC AND PLUMBING EZ STANDARD; Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia PP-2026-008728",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-008092",
+      "name": "4012 MARKET ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Retail Sales - Food, Beverages, and Groceries; Retail Sales - Consumer Goods; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-008092",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-mp-2026-001949",
+      "name": "1112 N HANCOCK ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "INSTALLATION OF HVAC EQUIPMENT FOR RESTAURANT TENANT AS PER APPROVED PLANS. *2018 IMC REVIEW*; Addition and/or Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia MP-2026-001949",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-mp-2026-003137",
+      "name": "3401 CIVIC CENTER BLVD",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "FOR THE INSTALLATION OF (18) TYPE I COMMERCIAL KITCHEN HOODS. SEPARATE PERMITS REQUIRED FOR ALL DUCTWORK, EXHAUST, MAKEUP AIR FANS AND FIRE SUPPRESSION. ; Addition and/or Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia MP-2026-003137",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-pp-2026-008770",
+      "name": "915-23 N BROAD ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "To install a new restroom and a kitchen sink at the 2nd floor office. ; Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia PP-2026-008770",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-ep-2026-005858",
+      "name": "2005 MARKET ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "Perform an electrical fit-out for a commercial office space on the 30th floor, including a complete rewiring of the space.  Provide complete electrical distribution, including the installation of lighting fixtures, switches, lighting controls, exit signs, emergency lighting, telecommunications wiring, and receptacle outlets.    Install dedicated branch circuits and electrical connections to supply power for heat pumps, water heater, fan-powered variable (FPV) units, and poke-through devices,     All work to be done according to the 2017 NEC and per approved plans.; Addition and/or Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia EP-2026-005858",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-pp-2026-005815",
+      "name": "448 RHAWN ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "NEW CONSTRUCTION OF 4 STORY MIXED USE BUILDING. INTERIOR INSTALLATION OF DRAINAGE, WASTE, VENT, AND WATER SUPPLY FOR LISTED FIXTURES. ALL MATERIALS SHALL BE METALLIC TO ROOF EXTENSION FOR PIPING SERVING FIXTURES IN COMMERCIAL SPACE. VENTING TO BE DESIGNED AND INSTALLED IN ACCORDANCE WITH SECTION 919 PHILADELPHIA SINGLE STACK VENT SYSTEM. ALL WORK TO BE INSTALLED IN STRICT COMPLIANCE WITH 2018 PPC AND APPROVED PLANS; New Construction or Additions",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia PP-2026-005815",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-005197",
+      "name": "8342-52 STATE RD",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "Commercial Vehicle Repair and Maintenance; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-005197",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-007675",
+      "name": "5305 RISING SUN AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Office - Business and Professional; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-007675",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-pp-2026-007092",
+      "name": "2505 E VENANGO ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-02",
+      "description": "ALTERATIONS TO EXISTING MIXED USE BUILDING. INTERIOR INSTALLATION OF DRAINAGE, WASTE, VENT, AND WATER SUPPLY FOR LISTED FIXTURES. ALL MATERIALS SHALL BE METALLIC TO ROOF EXTENSION FOR FOR VENTS SERVING FIXTURES IN COMMERCIAL SPACE. VENTING TO BE DESIGNED AND INSTALLED IN ACCORDANCE WITH SECTION 919 PHILADELPHIA SINGLE STACK VENT SYSTEM. ALL WORK TO BE INSTALLED IN STRICT COMPLIANCE WITH 2018 PPC AND APPROVED PLANS; Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia PP-2026-007092",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-sp-2025-001582",
+      "name": "4201 CHESTNUT ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "COMMERCIAL EXCAVATION PERMIT FOR ZP-2021-016192; Excavation",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia SP-2025-001582",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-ep-2026-005994",
+      "name": "2005 MARKET ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "Interior wiring of office space installation of fire alarm devices. All work per approved plans \nNEC 2017, NFPA 2016; Addition and/or Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia EP-2026-005994",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-008076",
+      "name": "2320 ORTHODOX ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Retail Sales - Consumer Goods; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-008076",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-ep-2026-004990",
+      "name": "5400 FLORENCE AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Proposed commercial space on the first floor, two proposed apartments above, and interior alterations. Installing new 400-amp electrical service with lighting installation, panel installation, and fire alarm installation.  ALL WORK IS TO BE DONE ACCORDING TO APPROVED DRAWINGS-2017 NEC,2016 NFPA-72.\n-NOTED :HEAT DETECTOR REQ'D IN COMMERCIAL BATHROOM- ; Addition and/or Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia EP-2026-004990",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-ap-2026-001568",
+      "name": "8500-10 GERMANTOWN AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "FOR THE CERTIFICATE OF OCCUPANCY FOR A RETAIL SALES OF WEARING APPAREL AND ACCESSORIES (GROUP M). SIZE AND LOCATION AS SHOWN IN THE APPLICATION / PLANS. NO ALTERATIONS ARE APPROVED UNDER THIS APPLICATION.; Certificate of Occupancy (CO) (may include LO)",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia AP-2026-001568",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-007748",
+      "name": "2560 MASSEY ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "Retail Sales - Food, Beverages, and Groceries; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-007748",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-pp-2026-003400",
+      "name": "58 S 2ND ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "ALTERATIONS TO MIXED USE BUILDING. INTERIOR INSTALLATION OF DRAINAGE, WASTE, VENT, AND WATER SUPPLY FOR LISTED FIXTURES. ALL MATERIALS SHALL BE METALLIC TO ROOF EXTENSION FOR FIXTURES SERVING COMMERCIAL SPACE. VENTING TO BE DESIGNED AND INSTALLED IN ACCORDANCE WITH SECTION 919 PHILADELPHIA SINGLE STACK VENT SYSTEM. ALL WORK TO BE INSTALLED IN STRICT COMPLIANCE WITH 2018 PPC AND APPROVED PLANS; Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia PP-2026-003400",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-pp-2025-014329",
+      "name": "5400 FLORENCE AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "First floor is commercial and the two floors are residential. new plumbing fixtures with piping. Plumbing fixtures like tub, dishwasher, mop sink, veggie sink, grease interceptor, floor sink and drains.; Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia PP-2025-014329",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-007288",
+      "name": "21 WOLF ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Artist Studios and Artisan Industrial.; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-007288",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-ep-2025-010551",
+      "name": "1348 S 32ND ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-27",
+      "description": "Install service equipment to serve apartments, commercial spaces, fire pump, elevators, and house panel. Provide complete electrical distribution and wiring throughout the building. Install receptacle outlets, switches, light fixtures, interconnected smoke alarms, emergency lighting, exit signs, and a complete grounding and bonding system. Install a new fire alarm system.  All work to be done according to the 2017 NEC, 2016 NFPA 72 and per approved plans.; New Construction",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia EP-2025-010551",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-007705",
+      "name": "3180 GRANT AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Eating and Drinking Establishments - Sit-Down Restaurant; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-007705",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-004597",
+      "name": "3265-67 KENSINGTON AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-27",
+      "description": "Retail Sales - Food, Beverages, and Groceries; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-004597",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-007270",
+      "name": "5510 WOODLAND AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "Retail Sales - Consumer Goods; Retail Sales - Food, Beverages, and Groceries; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-007270",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-mp-2026-003564",
+      "name": "5520 WHITAKER AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "FOR THE INSTALLATION OF A TYPE 1 COMMERCIAL KITCHEN HOOD (6'-0\") AND ASSOCIATED DUCTWORK, FANS AS PER APPROVED PLANS. SEPARATE PERMITS REQUIRED FOR ELECTRICAL AND FIRE SUPPRESSION WORK.  **IMC 2018**; Addition and/or Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia MP-2026-003564",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-007335",
+      "name": "8022 FRANKFORD AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "Office - Business and Professional; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-007335",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-007388",
+      "name": "1333-37 N FRONT ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Retail Sales - Consumer Goods; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-007388",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-007607",
+      "name": "5049 BALTIMORE AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Retail Sales - Consumer Goods; Retail Sales - Food, Beverages, and Groceries; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-007607",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-006669",
+      "name": "4620R-40 E ROOSEVELT BLVD",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "FOR THE ERECTION OF ONE (1) STATICALLY ILLUMINATED FLAT WALL SIGN, CHANNEL LETTER (7’ H x 38’-4” W = 268.3 SF), ACCESSORY TO RETAIL SALES OF CONSUMER GOODS. SIZE AND LOCATION AS SHOWN ON THE PLAN.; Signs (Accessory / Non-Accessory)",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-006669",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-pp-2026-004772",
+      "name": "7301 CASTOR AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "ALTERATIOS TO EXISTING RESTAURANT. INTERIOR INSTALLATION OF DRAINAGE, WASTE, VENT, AND WATER SUPPLY FOR LISTED FIXTURES. ALL MATERIALS SHALL BE METALLIC TO ROOF EXTENSION. VENTING TO BE DESIGNED AND INSTALLED IN ACCORDANCE WITH SECTION 919 PHILADELPHIA SINGLE STACK VENT SYSTEM. ALL WORK TO BE INSTALLED IN STRICT COMPLIANCE WITH 2018 PPC AND APPROVED PLANS. ; Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia PP-2026-004772",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-005927",
+      "name": "44 S 2ND ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-25",
+      "description": "Retail Sales - Consumer Goods; Retail Sales - Food, Beverages, and Groceries; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-005927",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-pp-2026-007736",
+      "name": "970 N DELAWARE AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "AMENDMENT 7/27/2026\nREMOVAL OF FLOOR DRAINS FROM CONSTRUCTION SCOPE\n\nFIT/OUT FOR COMMERCIAL SPACE ON FIRST FLOOR OF MIXED USE BUILDING. INTERIOR INSTALLATION OF DRAINAGE, WASTE, VENT, AND WATER SUPPLY FOR LISTED FIXTURES. ALL MATERIALS SHALL BE METALLIC TO ROOF EXTENSION. VENTING TO BE DESIGNED AND INSTALLED IN ACCORDANCE WITH SECTION 919 PHILADELPHIA SINGLE STACK VENT SYSTEM. ALL WORK TO BE INSTALLED IN STRICT COMPLIANCE WITH 2018 PPC AND APPROVED PLANS; Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia PP-2026-007736",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-cp-2026-003639",
+      "name": "1001-99 N DELAWARE AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-27",
+      "description": "LEVEL II INTERIOR ALTERATIONS (NO CHANGE OF OCCUPANCY) FOR RENOVATIONS TO EXISTING BAR/RESTAURANT WITHIN EXISTING CASINO BUILDING AS PER APPROVED PLANS. EXISTING BUILDING FULLY SPRINKLERED. *2018 IEBC REVIEW*\n**SEPARATE PERMITS REQUIRED FOR ANY MEP OR FIRE SUPPRESSION WORK**; Addition and/or Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia CP-2026-003639",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-pp-2026-006211",
+      "name": "2844 KENSINGTON AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-03",
+      "description": "ALTERATIONS TO EXISITNG MIXED USE BUILDING. INTERIOR INSTALLATION OF DRAINAGE, WASTE, VENT, AND WATER SUPPLY FOR LISTED FIXTURES. ALL MATERIALS SHALL BE METALLIC TO ROOF EXTENSION FOR FIXTURES AND PIPING SERVING COMMERCIAL SPACE. VENTING TO BE DESIGNED AND INSTALLED IN ACCORDANCE WITH SECTION 919 PHILADELPHIA SINGLE STACK VENT SYSTEM. ALL WORK TO BE INSTALLED IN STRICT COMPLIANCE WITH 2018 PPC AND APPROVED PLANS; Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia PP-2026-006211",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-ep-2026-005978",
+      "name": "17 N 41ST ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Provide electrical installation within a commercial parking garage, including wiring, lighting fixtures, lighting control systems, receptacle outlets, exit signs, and emergency lighting.\n\nInstall branch circuits and electrical connections for equipment, including all required wiring, overcurrent protection, grounding, and terminations. Furnish and install a generator for backup power, including associated transfer equipment, feeders, and connections.\n\nFurnish and install fire alarm devices, including all required wiring, terminations, and integration with the fire alarm system.\n\nAll work shall be performed in accordance with the 2017 NEC, 2016 NFPA 72 and per approved plans.; New Construction",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia EP-2026-005978",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-mp-2026-003108",
+      "name": "1600-22 MARKET ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "ALTERATIONS TO EXISTING HVAC SYSTEM TO ACCOMODATE NEW OFFICE LAYOUT ON THE 15TH FLOOR OF AN EXISTING HIGH-RISE OFFICE BUILDING AS PER APPROVED PLANS. *2018 IMC REVIEW*; Addition and/or Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia MP-2026-003108",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-007992",
+      "name": "7704 CASTOR AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Retail Sales - Consumer Goods; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-007992",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-pp-2026-007855",
+      "name": "222 S 15TH ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "ALTERATIONS TO RESTAURANT. INTERIOR INSTALLATION OF DRAINAGE, WASTE, VENT, AND WATER SUPPLY FOR LISTED FIXTURES. ALL MATERIALS SHALL BE METALLIC TO ROOF EXTENSION. VENTING TO BE DESIGNED AND INSTALLED IN ACCORDANCE WITH SECTION 919 PHILADELPHIA SINGLE STACK VENT SYSTEM. ALL WORK TO BE INSTALLED IN STRICT COMPLIANCE WITH 2018 PPC AND APPROVED PLANS; Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia PP-2026-007855",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-ep-2026-005918",
+      "name": "1 CITIZENS BANK WAY",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "Hook up 12 generators for All Star game as per NEC. tThe generators are for tv networks to broadcast all-star baseball game on July 14,2026. This will power Broadcast trucks for FOX, MLB, Netflix, Game press and some office trailers for sportscasters.; Addition and/or Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia EP-2026-005918",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-ap-2026-005516",
+      "name": "5300 CHESTNUT ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-02",
+      "description": "FOR THE DOCUMENTATIONS OF A CERTIFICATE OF OCCUPANCY FOR RETAIL SALES- CONSUMER GOODS AND RETAIL SALES- FOOD, BEVERAGES, AND GROCERIES AT FIRST FLOOR.\n*********************NO WORK APPROVED ON THIS PERMIT. ***************************; Certificate of Occupancy (CO) (may include LO)",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia AP-2026-005516",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-pp-2026-007707",
+      "name": "1717 W ALLEGHENY AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-27",
+      "description": "ALTERATIONS TO EXISTING COMMERCIAL SPACE. INTERIOR INSTALLATION OF DRAINAGE, WASTE, VENT, AND WATER SUPPLY FOR LISTED FIXTURES. ALL MATERIALS SHALL BE METALLIC TO ROOF EXTENSION. VENTING TO BE DESIGNED AND INSTALLED IN ACCORDANCE WITH SECTION 919 PHILADELPHIA SINGLE STACK VENT SYSTEM. ALL WORK TO BE INSTALLED IN STRICT COMPLIANCE WITH 2018 PPC AND APPROVED PLANS; Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia PP-2026-007707",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-ep-2026-002593",
+      "name": "4700 S 13TH ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Install 120 volt 20 amp power drops for prefab office desks; Addition and/or Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia EP-2026-002593",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-007492",
+      "name": "54 S 60TH ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "Retail Sales - Consumer Goods; Retail Sales - Food, Beverages, and Groceries; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-007492",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-007894",
+      "name": "4124-30 HAVERFORD AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Retail Sales - Food, Beverages, and Groceries; Retail Sales - Consumer Goods; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-007894",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-pp-2025-016473",
+      "name": "3523 KENSINGTON AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "Inside Plumbing work Rough in and install: In the commercial space 1 WC and 1 Lav. In the residential space, 1WC, 1 Lav, 1 Shower, 1 KS, 1 Laundry stand pipe. In stall 1 RP backflow on an existing water distribution pipe. \nInstall 2 water heaters, 1 RP Backflow device; Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia PP-2025-016473",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-007489",
+      "name": "600 MOORE ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "Retail Sales - Consumer Goods; Maintenance and Repair of Consumer Goods; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-007489",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-008003",
+      "name": "1639 N HANCOCK ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "Eating and Drinking Establishments - Prepared Food Shop; Retail Sales - Consumer Goods; Retail Sales - Wearing Apparel and Accessories; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-008003",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-pp-2026-006258",
+      "name": "2000 SOUTH ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "NEW CONSTRUCTION OF MIXED USE BUILDING. EXTERIOR INSTALLATION OF CURB TRAP, FAI, MAIN DRAIN, AND 1 1/2\" WATER DISTRIBUTION PIPE. INTERIOR INSTALLATION OF DRAINAGE, WASTE, VENT, AND WATER SUPPLY FOR LISTED FIXTURES. ALL MATERIALS SHALL BE METALLIC TO ROOF EXTENSION FOR PIPING SERVING COMMERCIAL SPACES. VENTING TO BE DESIGNED AND INSTALLED IN ACCORDANCE WITH SECTION 919 PHILADELPHIA SINGLE STACK VENT SYSTEM. ALL WORK TO BE INSTALLED IN STRICT COMPLIANCE WITH 2018 PPC AND APPROVED PLANS\n\n; New Construction or Additions",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia PP-2026-006258",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-ep-2026-006093",
+      "name": "4023-27 CHESTNUT ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Provide interior electrical wiring for the tenant fit-out of a fourth-floor office space and restroom. Work includes the installation of branch circuit wiring, lighting fixtures, lighting controls, switches, and receptacle outlets.  Furnish and install a fire alarm system, including all required fire alarm control equipment, initiating devices, notification appliances and wiring. \n\nAll work to be perform according to the 2017 NEC, 2016 NFPA 72 and per approved plans.; Addition and/or Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia EP-2026-006093",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-005831",
+      "name": "7100 GERMANTOWN AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "Office - Business and Professional; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-005831",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-ep-2026-005295",
+      "name": "1845 WALNUT ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "Electrical Fit out on 12th floor for truist bank offices.\n New Lighting \nNew Power\n1-Sub Panel. ALL WORK IS TO BE DONE ACCORDING TO APPROVED DRAWINGS-2017 NEC.\n\nAMENDMENT: Install fire alarm per approved drawings.; Addition and/or Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia EP-2026-005295",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-mp-2026-001630",
+      "name": "1437 E PASSYUNK AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "FOR THE INSTALLATION OF ONE (1) 8'-0\" HOOD FOR A RESTAURANT WITH EXHAUST FAN AND A MAKE UP AIR FAN WITH ASSOCIATED DUCTWORK. ALL WORK TO BE DONE PER APPROVED PLANS. IF FIELD CONDITIONS VARY CONTACT DESIGN PROFESSIONAL PRIOR TO THE START OF ANY WORK. SEPARATE PERMITS TO BE OBTAINED FOR ALL OTHER WORK. ** SEPARATE FIRE SUPPRESSION PERMIT REQUIRED FOR FIRE EXTINGUISHING SYSTEM**\n**NO BUILDING ALTERATIONS WITH THIS PERMIT**; Addition and/or Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia MP-2026-001630",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-ep-2025-011088",
+      "name": "5238-50 LANCASTER AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-05",
+      "description": "Interior electrical and fire alarm fitout work for a sit-down restaurant -All work is to be done according to approved drawings-2017 NEC\n-NOTED : Show-window receptacle, ANSUL SYSTEM TO BE MONITORED(SEE MATRIX)-; Addition and/or Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia EP-2025-011088",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-007633",
+      "name": "5603-07 WALNUT ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "Retail Sales - Convenience Sales; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-007633",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-ap-2026-004583",
+      "name": "3601L MARKET ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "FOR A CERTIFICATE OF OCCUPANCY FOR A SIT-DOWN RESTAURANT WITH ASSEMBLY & EMTERTAINMENT ON THE GROUND FLOOR OF AN EXISTING STRUCTURE. NO ALTERATIONS APPROVED ON THIS PERMIT. THE BUILDING SHALL COMPLY WITH THE PHILADELPHIA PROPERTY MAINTENANCE AND FIRE CODES PRIOR TO OCCUPANCY. SEPARATE PERMITS REQUIRED FOR ALTERATIONS.; Certificate of Occupancy (CO) (may include LO)",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia AP-2026-004583",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-007322",
+      "name": "5300 CHESTNUT ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "Retail Sales - Consumer Goods; Retail Sales - Food, Beverages, and Groceries; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-007322",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-005823",
+      "name": "6618 RISING SUN AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "Retail Sales - Food, Beverages, and Groceries; Retail Sales - Consumer Goods; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-005823",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-mp-2025-005862",
+      "name": "8012 CASTOR AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "FOR THE INSTALLATION OF ONE (1) TYPE 1 COMMERCIAL KITCHEN EXHAUST HOODS WITH ASSOCIATED DUCTWORK AND FANS AS PER PLANS.; Addition and/or Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia MP-2025-005862",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-007357",
+      "name": "1134 SANSOM ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Eating and Drinking Establishments - Sit-Down Restaurant; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-007357",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-007290",
+      "name": "1344 N 26TH ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "Retail Sales - Food, Beverages, and Groceries; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-007290",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-pp-2026-007390",
+      "name": "3300 HENRY AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "ALTERATIONS TO THE 6TH FLOOR OF AN EXISTING COMMERCIAL STRUCTURE. INTERIOR INSTALLATION OF DRAINAGE, WASTE, VENT, AND WATER SUPPLY FOR LISTED FIXTURES. ALL MATERIALS SHALL BE METALLIC TO ROOF EXTENSION. VENTING TO BE DESIGNED AND INSTALLED IN ACCORDANCE WITH SECTION 919 PHILADELPHIA SINGLE STACK VENT SYSTEM. ALL WORK TO BE INSTALLED IN STRICT COMPLIANCE WITH 2018 PPC AND APPROVED PLANS; Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia PP-2026-007390",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-ep-2026-002969",
+      "name": "6049 CASTOR AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-03",
+      "description": "Provide electrical installation for a restaurant, including wiring for lighting fixtures, receptacle outlets, switches, emergency lighting, and connections for appliances, all from the existing electrical service.    Furnish and install a fire alarm system, including control equipment (as required), initiating devices, notification appliances and wiring.\nAll work shall be performed in accordance with the 2017 NEC, 2016 NFPA 72 and per approved plans.; Addition and/or Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia EP-2026-002969",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-mp-2026-003565",
+      "name": "2019 SANSOM ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "FOR THE INSTALLATION OF ONE (1) 10'-0\" HOOD FOR A RESTAURANT WITH EXHAUST FAN AND A MAKE UP AIR FAN WITH ASSOCIATED DUCTWORK, ALL WORK TO BE DONE PER APPROVED PLANS. IF FIELD CONDITIONS VARY CONTACT DESIGN PROFESSIONAL PRIOR TO THE START OF ANY WORK. SEPARATE PERMITS TO BE OBTAINED FOR ALL OTHER WORK. ; Addition and/or Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia MP-2026-003565",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-006990",
+      "name": "1631 RIDGE AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "Eating and Drinking Establishments - Sit-Down Restaurant; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-006990",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-pp-2026-008989",
+      "name": "7322-24 FRANKFORD AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-02",
+      "description": "Plumbing Permit (Interior) for combo CP-2026-003346\nPlumbing: Alteration to first floor commercial unit. Second floor not included in plumbing scope.. INTERIOR INSTALLATION OF DRAINAGE, WASTE, VENT, AND WATER SUPPLY FOR LISTED FIXTURES. ALL MATERIALS SHALL BE METALLIC TO ROOF EXTENSION. VENTING TO BE DESIGNED AND INSTALLED IN ACCORDANCE WITH SECTION 919 PHILADELPHIA SINGLE STACK VENT SYSTEM. ALL WORK TO BE INSTALLED IN STRICT COMPLIANCE WITH 2018 PPC AND APPROVED PLANS; Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia PP-2026-008989",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-000697",
+      "name": "4542-46 BALTIMORE AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-27",
+      "description": "Artist Studios and Artisan Industrial.; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-000697",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-007015",
+      "name": "3401 CIVIC CENTER BLVD",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "For the erection of a one story addition to use as receiving/support area for previously approved loading docks and for the installation of  new medical gas tanks and related equipment accessory to an existing hospital complex (CHOP). size and location as shown in the plan.; New construction, addition, GFA change",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-007015",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-pp-2026-008251",
+      "name": "2113 GREEN ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "ALTERATION TO EXISTING COMMERCIAL BUILDING. INTERIOR INSTALLATION OF DRAINAGE, WASTE, VENT, AND WATER SUPPLY FOR LISTED FIXTURES.  VENTING TO BE DESIGNED AND INSTALLED IN ACCORDANCE WITH SECTION 919 PHILADELPHIA SINGLE STACK VENT SYSTEM. ALL WORK TO BE INSTALLED IN STRICT COMPLIANCE WITH 2018 PPC AND APPROVED PLANS; Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia PP-2026-008251",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-pp-2026-009227",
+      "name": "4401 HOLDEN ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "NEW CONSTRUCTION OF 6 STORY MIXED USE BUILDING. . EXTERIOR INSTALLATION OF CURB TRAP, FAI, MAIN DRAIN, AND 4\" WATER DISTRIBUTION PIPE. INTERIOR INSTALLATION OF DRAINAGE, WASTE, VENT, AND WATER SUPPLY FOR LISTED FIXTURES. ALL MATERIALS SHALL BE METALLIC TO ROOF EXTENSION FOR FIXTURES LOCATED IN COMMERCIAL SPACE. VENTING TO BE DESIGNED AND INSTALLED IN ACCORDANCE WITH SECTION 919 PHILADELPHIA SINGLE STACK VENT SYSTEM. ALL WORK TO BE INSTALLED IN STRICT COMPLIANCE WITH 2018 PPC AND APPROVED PLANS; New Construction or Additions",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia PP-2026-009227",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-fp-2026-001205",
+      "name": "1251 SHACKAMAXON ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "INSTALLATION OF FIRE SUPPRESSION SYSTEM COMPLYING WITH NFPA 13 THROUGHOUT THE BASEMENT AND FIRST-FLOOR VACANT COMMERCIAL SPACE AND NFPA 13R THROUGHOUT RESIDENTIAL SPACE TO INCLUDE 2\" MAIN FIRE SERVICE LINE WITH  2\" WILKINS 950XLT2 BACKFLOW PREVENTION ASSEMBLY AND FIRE SYSTEM. ALL WORK TO BE DONE PER APPROVED PLANS. IF FIELD CONDITIONS VARY CONTACT DESIGN ENGINEER PRIOR TO THE START OF ANY WORK. ; New Construction",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia FP-2026-001205",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-007991",
+      "name": "3620 HAVERFORD AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Artist Studios and Artisan Industrial.; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-007991",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-pp-2026-007924",
+      "name": "1901 SPRUCE ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-03",
+      "description": "ALTERATIONS TO RESTAURANT. INTERIOR INSTALLATION OF DRAINAGE, WASTE, VENT, AND WATER SUPPLY FOR LISTED FIXTURES. ALL MATERIALS SHALL BE METALLIC TO ROOF EXTENSION. VENTING TO BE DESIGNED AND INSTALLED IN ACCORDANCE WITH SECTION 919 PHILADELPHIA SINGLE STACK VENT SYSTEM. ALL WORK TO BE INSTALLED IN STRICT COMPLIANCE WITH 2018 PPC AND APPROVED PLANS; Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia PP-2026-007924",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-pp-2026-007720",
+      "name": "711-19 N 7TH ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-06",
+      "description": "NEW CONSTRUCTION OF MIXED USE BUILDING. INTERIOR INSTALLATION OF DRAINAGE, WASTE, VENT, AND WATER SUPPLY FOR LISTED FIXTURES. ALL MATERIALS SHALL BE METALLIC TO ROOF EXTENSION FOR PIPING SERVING FIXTURES IN COMMERCIAL SPACE. VENTING TO BE DESIGNED AND INSTALLED IN ACCORDANCE WITH SECTION 919 PHILADELPHIA SINGLE STACK VENT SYSTEM. ALL WORK TO BE INSTALLED IN STRICT COMPLIANCE WITH 2018 PPC AND APPROVED PLANS; New Construction or Additions",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia PP-2026-007720",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-007557",
+      "name": "7320 FRANKFORD AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "Retail Sales - Consumer Goods; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-007557",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-pp-2026-006042",
+      "name": "6049 CASTOR AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "ALTERATIONS TO EXISTING COMMERCIAL BUILDING. INTERIOR INSTALLATION OF DRAINAGE, WASTE, VENT, AND WATER SUPPLY FOR LISTED FIXTURES. ALL MATERIALS SHALL BE METALLIC TO ROOF EXTENSION. VENTING TO BE DESIGNED AND INSTALLED IN ACCORDANCE WITH SECTION 919 PHILADELPHIA SINGLE STACK VENT SYSTEM. ALL WORK TO BE INSTALLED IN STRICT COMPLIANCE WITH 2018 PPC AND APPROVED PLANS\n\nAccording to the drawing, Piping & Installing: 1 W.C., 1 LAV., 4 Floor drains, 1 three-bay sink, 1 food sink, 1 disposal sink, 1 wok sink, 1 mop sink, 2 hub drains.; Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia PP-2026-006042",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-007631",
+      "name": "405 E GIRARD AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Retail Sales - Consumer Goods; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-007631",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-005814",
+      "name": "6801R NEW STATE RD",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-27",
+      "description": "Commercial Vehicle Repair and Maintenance; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-005814",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-007437",
+      "name": "4333 MAIN ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "Retail Sales - Wearing Apparel and Accessories; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-007437",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-pp-2026-008238",
+      "name": "1251 SHACKAMAXON ST",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "ALTERATIONS TO EXISTING MIXED USE BUILLDING. INSTALLATION OF NEW 1 1/2\" WATER SERVICE. INTERIOR INSTALLATION OF DRAINAGE, WASTE, VENT, AND WATER SUPPLY FOR LISTED FIXTURES. ALL MATERIALS SHALL BE METALLIC TO ROOF EXTENSION FOR PIPING AND FIXTURES SERVING COMMERCIAL SPACE. VENTING TO BE DESIGNED AND INSTALLED IN ACCORDANCE WITH SECTION 919 PHILADELPHIA SINGLE STACK VENT SYSTEM. ALL WORK TO BE INSTALLED IN STRICT COMPLIANCE WITH 2018 PPC AND APPROVED PLANS; Alterations",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia PP-2026-008238",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-gp-2026-006242",
+      "name": "4620R-40 E ROOSEVELT BLVD",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-18",
+      "description": "FOR THE INSTALLATION OF ONE (1) STATICALLY ILLUMINATED FLAT WALL SIGN, CHANNEL LETTER (7’ H x 38’-4” W = 268.3 SF), ACCESSORY TO RETAIL SALES OF CONSUMER GOODS. AS PER APPROVED PLANS.\n*********SEPARATE ELECTRICAL PERMIT REQUIRED. ***********; Sign",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia GP-2026-006242",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-sp-2026-000184",
+      "name": "4430 LANCASTER AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Site / Utility Permit for CP-2025-006354\n\nFOR EXCAVATION WORK ASSOCIATED WITH NEW CONSTRUCTION OF A THREE (3) STORY COMMERCIAL MIXED-USE BUILDING AS PER APPROVED PLANS. WORK TO INCLUDE TEMPORARY EXCAVATION SUPPORT SYSTEM AND UNDERPINNING. NO BUILDING CONSTRUCTION APPROVED ON THIS PERMIT. *2018 IBC REVIEW*\n**SEPARATE PERMITS REQUIRED FOR BUILDING CONSTRUCTION**; Excavation",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia SP-2026-000184",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-gp-2026-001638",
+      "name": "12301-75 ACADEMY RD",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "ERECTION OF TWO (2) ILLUMINATED ACCESSORY FLAT WALL SIGNS ON EXISTING STRUCTURE. SIZE AND LOCATION AS SHOWN ON THE APPLICATION / PLAN. SIGN ACCESSORY TO BUSINESS AND PROFESSIONAL OFFICE USE AS PREVIOUSLY APPROVED. SEPARATE PERMIT REQUIRED FOR ELECTRIC. ; Sign",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia GP-2026-001638",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
+    },
+    {
+      "id": "pa-philadelphia-zp-2026-007852",
+      "name": "2700 GERMANTOWN AVE",
+      "city": "",
+      "county": "Philadelphia",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-18",
+      "description": "Retail Sales - Consumer Goods; Retail Sales - Food, Beverages, and Groceries; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Philadelphia pa-philadelphia ZP-2026-007852",
+          "url": "https://phl.carto.com/api/v2/sql"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "PA",
+      "zip": ""
     }
   ],
   "stats": {
-    "total": 1088
+    "total": 1193
   }
 }

@@ -813,6 +813,209 @@ WA_KING_CONFIG: dict[str, Any] = {
     "source_url": "https://data.seattle.gov/Permitting/Building-Permits/76t5-zqzr",
 }
 
+# Tarrant County (Fort Worth) -- verified live 2026-07-28: 66,848 total
+# commercial-filtered records, 562 in a bounded 30-day window (exact
+# match to the recommendation's estimate), MAX(File_Date) = 2026-07-28.
+TX_TARRANT_CONFIG: dict[str, Any] = {
+    "state_code": "TX",
+    "provider_type": "arcgis",
+    "county": "Tarrant",
+    "endpoint": "https://mapit.fortworthtexas.gov/ags/rest/services/CIVIC/Permits/MapServer",
+    "layer": 0,
+    "watermark_field": "Unique_ID",
+    "hash_fields": ["Permit_No"],
+    "commercial_where": "Permit_Type LIKE '%Commercial%'",
+    "out_fields": "Permit_No,Permit_Type,Permit_SubType,B1_WORK_DESC,Address,File_Date,JobValue,Current_Status,Unique_ID",
+    "date_field": "File_Date",
+    "date_literal_style": "timestamp",
+    "lookback_days": 30,
+    "feed_id": "tx-fortworth-tarrant",
+    "id_field": "Permit_No",
+    "name_fields": ["Address", "B1_WORK_DESC", "Permit_No"],
+    "address_fields": ["Address"],
+    "value_fields": ["JobValue"],
+    "desc_fields": ["B1_WORK_DESC", "Permit_Type", "Current_Status"],
+    "source_url": "https://mapit.fortworthtexas.gov/ags/rest/services/CIVIC/Permits/MapServer/0",
+}
+
+# Franklin County (Columbus, OH) -- verified live 2026-07-28: 139,182
+# total commercial-filtered records, MAX(ISSUED_DT) = 2026-07-26.
+OH_FRANKLIN_CONFIG: dict[str, Any] = {
+    "state_code": "OH",
+    "provider_type": "arcgis",
+    "county": "Franklin",
+    "endpoint": "https://services1.arcgis.com/9yy6msODkIBzkUXU/arcgis/rest/services/Building_Permits/FeatureServer",
+    "layer": 0,
+    "watermark_field": "OBJECTID",
+    "hash_fields": ["B1_ALT_ID"],
+    "commercial_where": "B1_PER_TYPE LIKE '%Commercial%' OR GENERAL_TYPE LIKE '%Commercial%'",
+    "out_fields": "*",
+    "date_field": "ISSUED_DT",
+    "lookback_days": 30,
+    "feed_id": "oh-columbus-franklin",
+    "id_field": "B1_ALT_ID",
+    "name_fields": ["SITE_ADDRESS", "GENERAL_TYPE", "B1_ALT_ID"],
+    "address_fields": ["SITE_ADDRESS"],
+    "value_fields": ["G3_VALUE_TTL"],
+    "desc_fields": ["GENERAL_TYPE", "B1_PER_TYPE", "VALUE_DESC"],
+    "source_url": "https://services1.arcgis.com/9yy6msODkIBzkUXU/arcgis/rest/services/Building_Permits/FeatureServer/0",
+}
+
+# Cuyahoga County (Cleveland, OH) -- verified live 2026-07-28: 1,676
+# total commercial-filtered records, MAX(ISSUE_DATE) = 2026-07-24.
+OH_CUYAHOGA_CONFIG: dict[str, Any] = {
+    "state_code": "OH",
+    "provider_type": "arcgis",
+    "county": "Cuyahoga",
+    "endpoint": "https://services3.arcgis.com/dty2kHktVXHrqO8i/arcgis/rest/services/Building_Permits/FeatureServer",
+    "layer": 0,
+    "watermark_field": "OBJECTID",
+    "hash_fields": ["PERMIT_ID"],
+    "commercial_where": "PERMIT_CATEGORY LIKE 'Commercial%'",
+    "out_fields": "*",
+    "date_field": "ISSUE_DATE",
+    "lookback_days": 30,
+    "feed_id": "oh-cleveland-cuyahoga",
+    "id_field": "PERMIT_ID",
+    "name_fields": ["PRIMARY_ADDRESS", "JOB_DESCRIPTION", "PERMIT_ID"],
+    "address_fields": ["PRIMARY_ADDRESS"],
+    "value_fields": ["JOB_VALUE"],
+    "desc_fields": ["JOB_DESCRIPTION", "PERMIT_CATEGORY", "PERMIT_TYPE"],
+    "source_url": "https://services3.arcgis.com/dty2kHktVXHrqO8i/arcgis/rest/services/Building_Permits/FeatureServer/0",
+}
+
+# Mecklenburg County (Charlotte, NC) -- verified live 2026-07-28: 156,743
+# total commercial-filtered records, MAX(issuedate) = 2026-07-23.
+NC_MECKLENBURG_CONFIG: dict[str, Any] = {
+    "state_code": "NC",
+    "provider_type": "arcgis",
+    "county": "Mecklenburg",
+    "endpoint": "https://meckgis.mecklenburgcountync.gov/server/rest/services/BuildingPermits/FeatureServer",
+    "layer": 0,
+    "watermark_field": "OBJECTID",
+    "hash_fields": ["permitnum"],
+    "commercial_where": "permittype = 'Commercial'",
+    "out_fields": "*",
+    "date_field": "issuedate",
+    "lookback_days": 30,
+    "feed_id": "nc-mecklenburg",
+    "id_field": "permitnum",
+    "name_fields": ["address", "workclass", "permitnum"],
+    "address_fields": ["address"],
+    "value_fields": ["estprojectcost", "value"],
+    "desc_fields": ["workclass", "permittype"],
+    "source_url": "https://meckgis.mecklenburgcountync.gov/server/rest/services/BuildingPermits/FeatureServer/0",
+}
+
+# Wake County (Raleigh, NC) -- verified live 2026-07-28: 47,660 total
+# commercial-filtered records, MAX(issueddate) = 2026-07-24.
+NC_WAKE_CONFIG: dict[str, Any] = {
+    "state_code": "NC",
+    "provider_type": "arcgis",
+    "county": "Wake",
+    "endpoint": "https://services.arcgis.com/v400IkDOw1ad7Yad/arcgis/rest/services/Building_Permits/FeatureServer",
+    "layer": 0,
+    "watermark_field": "OBJECTID",
+    "hash_fields": ["permitnum"],
+    "commercial_where": "permitclassmapped = 'Non-Residential'",
+    "out_fields": "*",
+    "date_field": "issueddate",
+    "lookback_days": 30,
+    "feed_id": "nc-wake",
+    "id_field": "permitnum",
+    "name_fields": ["projectname", "description", "permitnum"],
+    "address_fields": ["streetnum", "streetname", "streettype"],
+    "value_fields": ["estprojectcost"],
+    "desc_fields": ["description", "proposeduse", "permitclassmapped"],
+    "source_url": "https://services.arcgis.com/v400IkDOw1ad7Yad/arcgis/rest/services/Building_Permits/FeatureServer/0",
+}
+
+# Fairfax County (VA) -- verified live 2026-07-28: 3,494 total
+# commercial-filtered records, MAX(ISSUED_DATE) = 2026-07-27.
+VA_FAIRFAX_CONFIG: dict[str, Any] = {
+    "state_code": "VA",
+    "provider_type": "arcgis",
+    "county": "Fairfax",
+    "endpoint": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer",
+    "layer": 5,
+    "watermark_field": "OBJECTID",
+    "hash_fields": ["RECORDID"],
+    "commercial_where": "APPTYPEALIAS IN ('Commercial New','Commercial Addition/Alteration')",
+    "out_fields": "RECORDID,APPTYPEALIAS,PROJECT_NAME,ESTIMATED_COST,ADDRESS_1,CITY,ISSUED_DATE,OBJECTID",
+    "date_field": "ISSUED_DATE",
+    "date_literal_style": "timestamp",
+    "lookback_days": 30,
+    "feed_id": "va-fairfax",
+    "id_field": "RECORDID",
+    "name_fields": ["PROJECT_NAME", "RECORDID"],
+    "address_fields": ["ADDRESS_1"],
+    "value_fields": ["ESTIMATED_COST"],
+    "desc_fields": ["APPTYPEALIAS", "PROJECT_NAME"],
+    "city_fields": ["CITY"],
+    "source_url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5",
+}
+
+# Williamson County (TX) -- a SECOND, different feed from the existing
+# TX_WILLIAMSON_CONFIG (Site_Development/FeatureServer layer 47, org
+# L0MLvN0Ay0iEjnCT). This one is a different org/dataset entirely
+# (Permits/FeatureServer, org 0H6bQdxd9223gQB5) -- verified live
+# 2026-07-28: 3,812 total commercial-filtered records, MAX(ApplyDate) =
+# 2026-07-28. Kept as a separate state key rather than merged/replaced
+# since both are real, live, and cover different record types.
+TX_WILLIAMSON_PERMITS_CONFIG: dict[str, Any] = {
+    "state_code": "TX",
+    "provider_type": "arcgis",
+    "county": "Williamson",
+    "endpoint": "https://services.arcgis.com/0H6bQdxd9223gQB5/arcgis/rest/services/Permits/FeatureServer",
+    "layer": 0,
+    "watermark_field": "OBJECTID",
+    "hash_fields": ["PermitNumber"],
+    "commercial_where": "PermitWorkClass LIKE 'Commercial%'",
+    "out_fields": "*",
+    "date_field": "ApplyDate",
+    "lookback_days": 30,
+    "feed_id": "tx-williamson",
+    "id_field": "PermitNumber",
+    "name_fields": ["Address", "PermitWorkClass", "PermitNumber"],
+    "address_fields": ["Address"],
+    "value_fields": ["Valuation"],
+    "desc_fields": ["PermitWorkClass", "PermitType"],
+    "source_url": "https://services.arcgis.com/0H6bQdxd9223gQB5/arcgis/rest/services/Permits/FeatureServer/0",
+}
+
+# Philadelphia County (PA) -- CARTO SQL API (phl.carto.com), a new
+# platform type (core/ingestion/carto_provider.py). Verified live
+# 2026-07-28: 130 rows in a bounded 30-day window (exact match to the
+# recommendation's estimate), MAX(permitissuedate) = 2026-07-27.
+# `commercialorresidential` is a known-unreliable field on this dataset
+# (asif-test playbook note) -- filters on approvedscopeofwork keywords
+# instead, explicitly excluding household-living/dwelling scope text.
+PA_PHILADELPHIA_CONFIG: dict[str, Any] = {
+    "state_code": "PA",
+    "provider_type": "carto",
+    "county": "Philadelphia",
+    "endpoint": "https://phl.carto.com/api/v2/sql",
+    "table": "permits",
+    "select_fields": "permitnumber, address, permitissuedate, approvedscopeofwork, typeofwork",
+    "where_sql": (
+        "(upper(approvedscopeofwork) LIKE '%RETAIL%' OR upper(approvedscopeofwork) LIKE '%OFFICE%' "
+        "OR upper(approvedscopeofwork) LIKE '%WAREHOUSE%' OR upper(approvedscopeofwork) LIKE '%HOTEL%' "
+        "OR upper(approvedscopeofwork) LIKE '%RESTAURANT%' OR upper(approvedscopeofwork) LIKE '%COMMERCIAL%' "
+        "OR upper(approvedscopeofwork) LIKE '%INDUSTRIAL%' OR upper(approvedscopeofwork) LIKE '%MEDICAL%') "
+        "AND upper(coalesce(approvedscopeofwork,'')) NOT LIKE '%HOUSEHOLD LIVING%' "
+        "AND upper(coalesce(approvedscopeofwork,'')) NOT LIKE '%DWELLING%'"
+    ),
+    "date_field": "permitissuedate",
+    "lookback_days": 30,
+    "hash_fields": ["permitnumber"],
+    "feed_id": "pa-philadelphia",
+    "id_field": "permitnumber",
+    "name_fields": ["address", "typeofwork", "permitnumber"],
+    "address_fields": ["address"],
+    "desc_fields": ["approvedscopeofwork", "typeofwork"],
+    "source_url": "https://phl.carto.com/api/v2/sql",
+}
+
 STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NJ": NJ_CONFIG,
     "NC": NC_CONFIG,
@@ -841,6 +1044,14 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "IL-COOK": IL_COOK_CONFIG,
     "FL-MIAMIDADE": FL_MIAMIDADE_CONFIG,
     "WA-KING": WA_KING_CONFIG,
+    "TX-TARRANT": TX_TARRANT_CONFIG,
+    "OH-FRANKLIN": OH_FRANKLIN_CONFIG,
+    "OH-CUYAHOGA": OH_CUYAHOGA_CONFIG,
+    "NC-MECKLENBURG": NC_MECKLENBURG_CONFIG,
+    "NC-WAKE": NC_WAKE_CONFIG,
+    "VA-FAIRFAX": VA_FAIRFAX_CONFIG,
+    "TX-WILLIAMSON-PERMITS": TX_WILLIAMSON_PERMITS_CONFIG,
+    "PA-PHILADELPHIA": PA_PHILADELPHIA_CONFIG,
     "TX-BRAZORIA": TX_BRAZORIA_CONFIG,
     "TX-MIDLAND": TX_MIDLAND_CONFIG,
     "TX-HAYS": TX_HAYS_CONFIG,

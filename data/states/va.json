@@ -1,7 +1,7 @@
 {
   "state": "VA",
   "state_name": "Virginia",
-  "generated_at": "2026-07-27",
+  "generated_at": "2026-07-28",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
   "capture_method": "Public sources — Commercial Observer, Data Center Knowledge, press releases, state economic development, SAM.gov federal solicitations (bulk CSV extract), SAM.gov federal solicitations (bulk CSV extract), SAM.gov federal solicitations (bulk CSV extract), SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
@@ -98123,9 +98123,2187 @@
       "latitude": null,
       "longitude": null,
       "zip": "20191"
+    },
+    {
+      "id": "va-fairfax-bldc-221080015",
+      "name": "ALEXANDRIA CROSSING",
+      "city": "Alexandria",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 100000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1785110400",
+      "description": "Commercial New; ALEXANDRIA CROSSING",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-221080015",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-221080018",
+      "name": "ALEXANDRIA CROSSING",
+      "city": "Alexandria",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 100000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1785110400",
+      "description": "Commercial New; ALEXANDRIA CROSSING",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-221080018",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-221080026",
+      "name": "ALEXANDRIA CROSSING",
+      "city": "Alexandria",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 100000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1785110400",
+      "description": "Commercial New; ALEXANDRIA CROSSING",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-221080026",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-221080027",
+      "name": "ALEXANDRIA CROSSING",
+      "city": "Alexandria",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 100000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1785110400",
+      "description": "Commercial New; ALEXANDRIA CROSSING",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-221080027",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-221080030",
+      "name": "ALEXANDRIA CROSSING",
+      "city": "Alexandria",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 100000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1785110400",
+      "description": "Commercial New; ALEXANDRIA CROSSING",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-221080030",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-221080037",
+      "name": "ALEXANDRIA CROSSING",
+      "city": "Alexandria",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 100000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1785110400",
+      "description": "Commercial New; ALEXANDRIA CROSSING",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-221080037",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-221080038",
+      "name": "ALEXANDRIA CROSSING",
+      "city": "Alexandria",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 100000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1785110400",
+      "description": "Commercial New; ALEXANDRIA CROSSING",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-221080038",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-221080039",
+      "name": "ALEXANDRIA CROSSING",
+      "city": "Alexandria",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 100000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1785110400",
+      "description": "Commercial New; ALEXANDRIA CROSSING",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-221080039",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-221080040",
+      "name": "ALEXANDRIA CROSSING",
+      "city": "Alexandria",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 100000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1785110400",
+      "description": "Commercial New; ALEXANDRIA CROSSING",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-221080040",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-220820044",
+      "name": "ALEXANDRIA CROSSING",
+      "city": "Alexandria",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 8000000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1785110400",
+      "description": "Commercial New; ALEXANDRIA CROSSING",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-220820044",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-220820057",
+      "name": "ALEXANDRIA CROSSING",
+      "city": "Fairfax",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 8000000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1785110400",
+      "description": "Commercial New; ALEXANDRIA CROSSING",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-220820057",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-221080011",
+      "name": "ALEXANDRIA CROSSING",
+      "city": "Alexandria",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 100000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1785110400",
+      "description": "Commercial New; ALEXANDRIA CROSSING",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-221080011",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-221080013",
+      "name": "ALEXANDRIA CROSSING",
+      "city": "Alexandria",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 100000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1785110400",
+      "description": "Commercial New; ALEXANDRIA CROSSING",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-221080013",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-221080016",
+      "name": "ALEXANDRIA CROSSING",
+      "city": "Alexandria",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 100000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1785110400",
+      "description": "Commercial New; ALEXANDRIA CROSSING",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-221080016",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-221080017",
+      "name": "ALEXANDRIA CROSSING",
+      "city": "Alexandria",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 100000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1785110400",
+      "description": "Commercial New; ALEXANDRIA CROSSING",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-221080017",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-221080028",
+      "name": "ALEXANDRIA CROSSING",
+      "city": "Alexandria",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 100000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1785110400",
+      "description": "Commercial New; ALEXANDRIA CROSSING",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-221080028",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-221080029",
+      "name": "ALEXANDRIA CROSSING",
+      "city": "Alexandria",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 100000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1785110400",
+      "description": "Commercial New; ALEXANDRIA CROSSING",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-221080029",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-221080033",
+      "name": "ALEXANDRIA CROSSING",
+      "city": "Alexandria",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 100000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1785110400",
+      "description": "Commercial New; ALEXANDRIA CROSSING",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-221080033",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-221080034",
+      "name": "ALEXANDRIA CROSSING",
+      "city": "Alexandria",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 100000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1785110400",
+      "description": "Commercial New; ALEXANDRIA CROSSING",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-221080034",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-221080035",
+      "name": "ALEXANDRIA CROSSING",
+      "city": "Alexandria",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 100000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1785110400",
+      "description": "Commercial New; ALEXANDRIA CROSSING",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-221080035",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-221080036",
+      "name": "ALEXANDRIA CROSSING",
+      "city": "Alexandria",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 100000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1785110400",
+      "description": "Commercial New; ALEXANDRIA CROSSING",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-221080036",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2025-01620",
+      "name": "Dominion Plastic Surgery / #200",
+      "city": "Falls Church",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 223000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1783900800",
+      "description": "Commercial Addition/Alteration; Dominion Plastic Surgery / #200",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2025-01620",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2025-01871",
+      "name": "TYSONS CORNER CENTER",
+      "city": "Mclean",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 260000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1783900800",
+      "description": "Commercial Addition/Alteration; TYSONS CORNER CENTER",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2025-01871",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2025-01884",
+      "name": "Future Tenant // M13L",
+      "city": "Mclean",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 100.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1784073600",
+      "description": "Commercial Addition/Alteration; Future Tenant // M13L",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2025-01884",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2025-02274",
+      "name": "SOUTH BLOCK - FALLS CHURCH",
+      "city": "Falls Church",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 650000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1784851200",
+      "description": "Commercial Addition/Alteration; SOUTH BLOCK - FALLS CHURCH",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2025-02274",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2025-02201",
+      "name": "ROCHA BROTHERS LLC - SUITE 16",
+      "city": "Springfield",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 15000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1783296000",
+      "description": "Commercial Addition/Alteration; ROCHA BROTHERS LLC - SUITE 16",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2025-02201",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2025-02463",
+      "name": "George Mason Regional Library Renovation",
+      "city": "Annandale",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 4203371.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1784505600",
+      "description": "Commercial Addition/Alteration; George Mason Regional Library Renovation",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2025-02463",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-2025-00384",
+      "name": "Meadow Lane Park Restroom Replacement",
+      "city": "Vienna",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 329846.96,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1784592000",
+      "description": "Commercial New; Meadow Lane Park Restroom Replacement",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-2025-00384",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2025-02717",
+      "name": "LIDYA CAFE",
+      "city": "Annandale",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 45000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1784592000",
+      "description": "Commercial Addition/Alteration; LIDYA CAFE",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2025-02717",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2026-00092",
+      "name": "PUMP24 FAIRFAX",
+      "city": "Fairfax",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 175000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1783987200",
+      "description": "Commercial Addition/Alteration; PUMP24 FAIRFAX",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2026-00092",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2026-00209",
+      "name": "Northrop Grumman 4th Floor Renovation",
+      "city": "Mclean",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 338000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1783382400",
+      "description": "Commercial Addition/Alteration; Northrop Grumman 4th Floor Renovation",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2026-00209",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2026-00188",
+      "name": "Northrop Grumman 3rd Floor Renovation",
+      "city": "Mclean",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 338000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1783382400",
+      "description": "Commercial Addition/Alteration; Northrop Grumman 3rd Floor Renovation",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2026-00188",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2026-00352",
+      "name": "10th Fl Town Hall Amenity & Spec Suites",
+      "city": "Vienna",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 10000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1783987200",
+      "description": "Commercial Addition/Alteration; 10th Fl Town Hall Amenity & Spec Suites",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2026-00352",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2026-00453",
+      "name": "Chan Bai Mei //Mall #KSK5L",
+      "city": "Mclean",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 15000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1782950400",
+      "description": "Commercial Addition/Alteration; Chan Bai Mei //Mall #KSK5L",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2026-00453",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2026-00468",
+      "name": "DAMSOT",
+      "city": "Centreville",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 7000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1784505600",
+      "description": "Commercial Addition/Alteration; DAMSOT",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2026-00468",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-2026-00033",
+      "name": "515 MAPLE AVENUE RESIDENCES",
+      "city": "Vienna",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 22000000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1782777600",
+      "description": "Commercial New; 515 MAPLE AVENUE RESIDENCES",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-2026-00033",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2026-00496",
+      "name": "WINDOWING CATERING/ Site 1",
+      "city": "Alexandria",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 20000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1783555200",
+      "description": "Commercial Addition/Alteration; WINDOWING CATERING/ Site 1",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2026-00496",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2026-00039",
+      "name": "kitchen wall remove/ #B1",
+      "city": "Alexandria",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 10940.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1782864000",
+      "description": "Commercial Addition/Alteration; kitchen wall remove/ #B1",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2026-00039",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2026-00608",
+      "name": "#O/ LensCrafters / Luxottica - 101297 - 80 BEST BUY METRO CENTER",
+      "city": "Springfield",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 398735.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1783382400",
+      "description": "Commercial Addition/Alteration; #O/ LensCrafters / Luxottica - 101297 - 80 BEST BUY METRO CENTER",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2026-00608",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2026-00687",
+      "name": "Crimson Phoenix Expansion",
+      "city": "Reston",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 38910.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1784851200",
+      "description": "Commercial Addition/Alteration; Crimson Phoenix Expansion",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2026-00687",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2026-00593",
+      "name": "Leidos HQ/ 3rd FL",
+      "city": "Reston",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 10000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1784678400",
+      "description": "Commercial Addition/Alteration; Leidos HQ/ 3rd FL",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2026-00593",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2026-00692",
+      "name": "Tysons Club/ #K,& #C",
+      "city": "Vienna",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 200000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1782691200",
+      "description": "Commercial Addition/Alteration; Tysons Club/ #K,& #C",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2026-00692",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2026-00328",
+      "name": "Evergreen Adult Day Healthcare Center/ #100",
+      "city": "Fairfax",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 15000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1785110400",
+      "description": "Commercial Addition/Alteration; Evergreen Adult Day Healthcare Center/ #100",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2026-00328",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2026-00738",
+      "name": "Toll Brothers Design Studio",
+      "city": "Chantilly",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 649598.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1783900800",
+      "description": "Commercial Addition/Alteration; Toll Brothers Design Studio",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2026-00738",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-220820043",
+      "name": "ALEXANDRIA CROSSING",
+      "city": "Alexandria",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 10000000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1785110400",
+      "description": "Commercial New; ALEXANDRIA CROSSING",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-220820043",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2026-00873",
+      "name": "Newington Leaf Office Renovation",
+      "city": "Lorton",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 21000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1783641600",
+      "description": "Commercial Addition/Alteration; Newington Leaf Office Renovation",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2026-00873",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2026-00883",
+      "name": "Trinity Christian School / upper school building / 2nd fl",
+      "city": "Fairfax",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 12000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1784505600",
+      "description": "Commercial Addition/Alteration; Trinity Christian School / upper school building / 2nd fl",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2026-00883",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2026-00922",
+      "name": "4315A Future Tenant",
+      "city": "Chantilly",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 20000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1782950400",
+      "description": "Commercial Addition/Alteration; 4315A Future Tenant",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2026-00922",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2026-00879",
+      "name": "Hensel Phelps",
+      "city": "Reston",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 1900000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1783296000",
+      "description": "Commercial Addition/Alteration; Hensel Phelps",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2026-00879",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2026-00925",
+      "name": "Joybird Fairfax - Interior Alteration",
+      "city": "Fairfax",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 450000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1784851200",
+      "description": "Commercial Addition/Alteration; Joybird Fairfax - Interior Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2026-00925",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2026-00570",
+      "name": "Unity Family Health Center/ #417",
+      "city": "Centreville",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 29000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1784764800",
+      "description": "Commercial Addition/Alteration; Unity Family Health Center/ #417",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2026-00570",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2026-00947",
+      "name": "Playstreet Museum",
+      "city": "Fairfax",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 69729.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1784505600",
+      "description": "Commercial Addition/Alteration; Playstreet Museum",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2026-00947",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2026-01032",
+      "name": "YOULIKE MALATANG",
+      "city": "Centreville",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 15000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1785110400",
+      "description": "Commercial Addition/Alteration; YOULIKE MALATANG",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2026-01032",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2026-01021",
+      "name": "#LL100 / Modifications to suite for MRI",
+      "city": "Fairfax",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 153855.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1784851200",
+      "description": "Commercial Addition/Alteration; #LL100 / Modifications to suite for MRI",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2026-01021",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2026-01076",
+      "name": "#G / Lakeside 00 G ST",
+      "city": "Centreville",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 1500.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1782950400",
+      "description": "Commercial Addition/Alteration; #G / Lakeside 00 G ST",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2026-01076",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-altc-2026-01077",
+      "name": "# K / Lakeside 53 K SP",
+      "city": "Centreville",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 1500.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1782864000",
+      "description": "Commercial Addition/Alteration; # K / Lakeside 53 K SP",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax ALTC-2026-01077",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-221790222",
+      "name": "RESTON STATION BLOCK C1",
+      "city": "Reston",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 1.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1782864000",
+      "description": "Commercial New; RESTON STATION BLOCK C1",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-221790222",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-221790234",
+      "name": "RESTON STATION BLOCK C1",
+      "city": "Reston",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 1.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1782864000",
+      "description": "Commercial New; RESTON STATION BLOCK C1",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-221790234",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-221790220",
+      "name": "RESTON STATION BLOCK C1",
+      "city": "Reston",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 1.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1782864000",
+      "description": "Commercial New; RESTON STATION BLOCK C1",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-221790220",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-221800295",
+      "name": "RESTON STATION BLOCK C1",
+      "city": "Reston",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 1.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1782864000",
+      "description": "Commercial New; RESTON STATION BLOCK C1",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-221800295",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-221790236",
+      "name": "RESTON STATION BLOCK C1",
+      "city": "Reston",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 1.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1782864000",
+      "description": "Commercial New; RESTON STATION BLOCK C1",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-221790236",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-221790230",
+      "name": "RESTON STATION BLOCK C1",
+      "city": "Reston",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 1.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1782864000",
+      "description": "Commercial New; RESTON STATION BLOCK C1",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-221790230",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-221790240",
+      "name": "RESTON STATION BLOCK C1",
+      "city": "Reston",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 1.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1782864000",
+      "description": "Commercial New; RESTON STATION BLOCK C1",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-221790240",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-221790244",
+      "name": "RESTON STATION BLOCK C1",
+      "city": "Reston",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 1.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1782864000",
+      "description": "Commercial New; RESTON STATION BLOCK C1",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-221790244",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-221790245",
+      "name": "RESTON STATION BLOCK C1",
+      "city": "Reston",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 1.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1782864000",
+      "description": "Commercial New; RESTON STATION BLOCK C1",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-221790245",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
+    },
+    {
+      "id": "va-fairfax-bldc-221790246",
+      "name": "RESTON STATION BLOCK C1",
+      "city": "Reston",
+      "county": "Fairfax",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 1.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "1782864000",
+      "description": "Commercial New; RESTON STATION BLOCK C1",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Fairfax va-fairfax BLDC-221790246",
+          "url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "VA",
+      "zip": ""
     }
   ],
   "stats": {
-    "total": 2563
+    "total": 2629
   }
 }
