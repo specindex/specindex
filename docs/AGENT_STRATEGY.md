@@ -185,18 +185,28 @@ consider a jurisdiction "done" after step 6 alone.
    stage through `data/documents/{state}/` first (the existing NJ script,
    `scripts/fetch-nj-documents.py`, downloads locally then needs a separate
    manual `gcloud storage rsync` — that's the *old* pattern, not the target
-   one). **Status as of 2026-07-28: not yet done for any of the day's ~20
-   new sources.** Only NJ (from an earlier session) has anything built, and
-   that was per-project web research, not a generalized script. Before
-   assuming a source's documents are pullable (e.g. trusting an "Accela
-   Attachments Tab" claim from a Gemini discovery response), verify live
-   whether attachments are actually public without login — **confirmed live
-   for Cleveland (COC) specifically that they are not**: the Attachments tab
-   UI loads for anonymous users, but it's an upload form, and the real
-   backend call that would list existing documents
+   one). Before assuming a source's documents are pullable (e.g. trusting an
+   "Accela Attachments Tab" claim from a Gemini discovery response), verify
+   live whether attachments are actually public without login — **confirmed
+   live for Cleveland (COC) that they are not**: the Attachments tab UI
+   loads for anonymous users, but it's an upload form, and the real backend
+   call that would list existing documents
    (`.../Dpr/Handlers/Api.ashx/ab/records/{id}/planroom`) returns 403
    Forbidden anonymously. Do not skip straight to building a downloader on
    an unverified claim, even one as specific-sounding as Gemini's was here.
+   **First real win, same day:** SAM.gov's public opportunity API
+   (`sam.gov/api/prod/opps/v3/opportunities/{noticeId}/resources`, then
+   `.../resources/files/{resourceId}/download`) genuinely exposes real
+   downloadable attachments (structural drawings, specs, bid abstracts)
+   with zero auth — verified by actually downloading and file-type-checking
+   a real PDF. Built `scripts/fetch-sam-gov-documents.py` (GCS-only, per
+   Asif's instruction above), ran for all 44 GA SAM.gov projects: 30/44 had
+   real documents, 411 files, 752MB uploaded to
+   `gs://specindex-ai-raw-documents/georgia/`. Document access genuinely
+   varies by source type (federal solicitations are public by law;
+   municipal permit attachments often aren't) — verify per source, never
+   assume uniformly good or bad. **Remaining scope:** everything besides
+   GA-SAM and the earlier NJ web-research work.
 
 **Known real limits (be honest about these, don't oversell):** discovery
 still needs a human+Claude verification loop per lead every time — not
