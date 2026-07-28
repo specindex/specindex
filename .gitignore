@@ -60,3 +60,7 @@ data/pipeline/
 # downloaded source documents (RFPs, EIS reports, etc.) -- large binaries,
 # stored in GCS instead of git; see docs/ROADMAP.md
 data/documents/
+
+# Gemini discovery chat session history -- working conversation state,
+# not corpus data. See scripts/gemini_discovery_chat.py.
+data/gemini_sessions/

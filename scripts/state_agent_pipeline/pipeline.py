@@ -27,7 +27,7 @@ from .state import load_state, save_state
 # messy permit-description text. Routing these through Flash/Sonnet would
 # be pure wasted LLM cost for no quality gain; see sam_gov_provider.py /
 # usaspending_provider.py docstrings.
-NO_LLM_PROVIDER_TYPES = {"sam_gov", "usaspending", "accela", "energov"}
+NO_LLM_PROVIDER_TYPES = {"sam_gov", "usaspending", "accela", "energov", "tdlr_tabs"}
 
 
 def run_pipeline(

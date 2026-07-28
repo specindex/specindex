@@ -1188,3 +1188,23 @@ STATE_CONFIGS["TX-SANANTONIO-FINISHOUT"] = TX_SANANTONIO_FINISHOUT_CONFIG
 STATE_CONFIGS["TX-SANANTONIO-REMODEL"] = TX_SANANTONIO_REMODEL_CONFIG
 STATE_CONFIGS["TX-SANANTONIO-SITEWORK"] = TX_SANANTONIO_SITEWORK_CONFIG
 STATE_CONFIGS["TX-SANANTONIO-PROJAPP"] = TX_SANANTONIO_PROJAPP_CONFIG
+
+# TDLR TABS -- statewide Texas commercial-construction registry (>=$50k
+# projects, Texas Architectural Barriers requirement), found 2026-07-28
+# while chasing Harris County dead ends. Verified live: fully stateless
+# (no Playwright needed, unlike every other provider this session),
+# 339,076 total records, 66,749 in Harris County alone, 353 in a real
+# 30-day statewide-vs-Harris test window. Unlike every other config
+# here, this one is NOT scoped to a single county -- county_code is
+# omitted so it pulls ALL Texas counties in one run, with each row's
+# real county attributed from its own County code via a live-fetched
+# lookup table (see tdlr_tabs_provider.py).
+TX_TDLR_TABS_CONFIG: dict[str, Any] = {
+    "state_code": "TX",
+    "provider_type": "tdlr_tabs",
+    "county_code": None,
+    "lookback_days": 30,
+    "page_size": 100,
+    "max_pages": 200,
+}
+STATE_CONFIGS["TX-TDLR-TABS"] = TX_TDLR_TABS_CONFIG
