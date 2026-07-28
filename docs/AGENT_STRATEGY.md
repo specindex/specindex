@@ -179,13 +179,24 @@ consider a jurisdiction "done" after step 6 alone.
    minutes, EIS reports, site plans) the same way — via Gemini
    (`gemini_discovery_chat.py`), live-verified before download, uploaded to
    `gs://specindex-ai-raw-documents/{state}/` (not git — large binaries).
-   **Status as of 2026-07-28: not yet done for any of the day's ~20 new
-   sources.** Only NJ (from an earlier session, `scripts/fetch-nj-documents.py`)
-   has this built, and that was per-project web research, not a generalized
-   script. Before assuming a source's documents are pullable (e.g. trusting
-   an "Accela Attachments Tab" claim from a Gemini discovery response),
-   verify live whether attachments are actually public without login — do
-   not skip straight to building a downloader on an unverified claim.
+   **GCS-only, no local intermediate copy** — Asif explicitly said
+   (2026-07-28) documents should never be saved to a local folder, only to
+   GCS; any future document-pull script should stream/upload directly, not
+   stage through `data/documents/{state}/` first (the existing NJ script,
+   `scripts/fetch-nj-documents.py`, downloads locally then needs a separate
+   manual `gcloud storage rsync` — that's the *old* pattern, not the target
+   one). **Status as of 2026-07-28: not yet done for any of the day's ~20
+   new sources.** Only NJ (from an earlier session) has anything built, and
+   that was per-project web research, not a generalized script. Before
+   assuming a source's documents are pullable (e.g. trusting an "Accela
+   Attachments Tab" claim from a Gemini discovery response), verify live
+   whether attachments are actually public without login — **confirmed live
+   for Cleveland (COC) specifically that they are not**: the Attachments tab
+   UI loads for anonymous users, but it's an upload form, and the real
+   backend call that would list existing documents
+   (`.../Dpr/Handlers/Api.ashx/ab/records/{id}/planroom`) returns 403
+   Forbidden anonymously. Do not skip straight to building a downloader on
+   an unverified claim, even one as specific-sounding as Gemini's was here.
 
 **Known real limits (be honest about these, don't oversell):** discovery
 still needs a human+Claude verification loop per lead every time — not

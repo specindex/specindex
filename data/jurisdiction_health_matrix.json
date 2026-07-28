@@ -551,6 +551,16 @@
       "status": "VERIFIED_WORKING",
       "records_merged": 126,
       "notes": "Separate from Cuyahoga County ArcGIS feed (OH-CUYAHOGA) -- same LA-City-vs-County pattern. 15 real commercial categories in a 98-option dropdown; probed 3, kept 2: Commercial Building Construction Permit (144/30-days, dominant) + COO - New Commercial (2). Commercial Combo was 0."
+    },
+    {
+      "jurisdiction": "City of Cleveland, OH -- Accela Attachments/Digital Plan Room (Step 7 test)",
+      "county": "Cuyahoga",
+      "state": "OH",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/COC/Cap/CapDetail.aspx (Attachments tab)",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Tested step 7 (document pull) against a real captured permit (BCB26-031403, St. Mark Parish). Gemini claimed basic documents are publicly viewable via the Attachments tab -- verified live and found otherwise: the tab UI loads for anonymous users but shows an upload form, not a document list; the real backend call that would list existing documents (.../Dpr/Handlers/Api.ashx/ab/records/{id}/planroom) returns 403 Forbidden anonymously. Confirms the memory/AGENT_STRATEGY.md guidance to verify every document-access claim live, same as URL claims."
     }
   ]
 }
