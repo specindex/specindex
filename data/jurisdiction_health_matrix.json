@@ -1,6 +1,10 @@
 {
   "generated_at": "2026-07-28",
-  "status_values": ["VERIFIED_WORKING", "FAILED_NEED_ALT", "NO_PUBLIC_DATA"],
+  "status_values": [
+    "VERIFIED_WORKING",
+    "FAILED_NEED_ALT",
+    "NO_PUBLIC_DATA"
+  ],
   "notes": "Backfilled 2026-07-28 from this session's live-verification work on ~15 counties. Every entry here was actually probed (HTTP/Playwright), not sourced from an LLM claim without verification. state_agent_pipeline_key maps to scripts/state_agent_pipeline/core/state_configs.py's STATE_CONFIGS dict where applicable.",
   "jurisdictions": [
     {
@@ -454,7 +458,7 @@
       "endpoint": "https://data-harriscounty.opendata.arcgis.com/",
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
-      "notes": "Reachable (HTTP 200) but not yet content-verified for a real permits dataset -- investigation paused."
+      "notes": "HTML page loads (200) via real browser, but the catalog search API (api/search/v1/...) returns 401 Unauthorized (\"private org id... not accessible\") -- not a usable public catalog via the standard API path. Both eng-epermits.harriscountytx.gov and eng.harriscountytx.gov confirmed ERR_CONNECTION_RESET via real Playwright browser too (not just curl) -- some active block, not a UA/bot-detection issue."
     }
   ]
 }
