@@ -1208,3 +1208,34 @@ TX_TDLR_TABS_CONFIG: dict[str, Any] = {
     "max_pages": 200,
 }
 STATE_CONFIGS["TX-TDLR-TABS"] = TX_TDLR_TABS_CONFIG
+
+# Colorado Springs (El Paso County, CO) -- Accela agency code COSPRINGS,
+# confirmed live 2026-07-28. Note: the region's PRIMARY building-permit
+# authority is actually the Pikes Peak Regional Building Department
+# (PPRBD, pprbd.org, covers both Colorado Springs and unincorporated El
+# Paso County) -- its real search form has excellent commercial filters
+# (ProjectType: New/Alt/CO Commercial, a built-in "Last 30 Days" range)
+# but submission is blocked by a real Cloudflare Turnstile CAPTCHA
+# ("Please complete the security check below to verify you are human")
+# -- not pursued, same category as this session's earlier Compton
+# dead-end (CAPTCHA/anti-bot-evasion tooling is out of scope regardless
+# of legitimate purpose). This Accela instance only has ONE permit type
+# in its dropdown ("Building Permit Review", no commercial/residential
+# split) -- Gemini's own description turned out accurate here: COSPRINGS's
+# Accela is for Planning/Public Works/Fire/Stormwater, not the primary
+# building-permit channel. Live-verified anyway: 110 rows in 30 days,
+# 105 real ("Commercial building permit." descriptions with real
+# BLDREV-YY-NNNNN case numbers), 5 administrative noise (re-inspection
+# fee records) -- good enough ratio to keep without building new
+# content-filtering infrastructure for 5 records.
+CO_SPRINGS_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "CO",
+    "provider_type": "accela",
+    "county": "El Paso",
+    "endpoint": "https://aca-prod.accela.com/COSPRINGS",
+    "permit_type_label": "Building Permit Review",
+    "lookback_days": 30,
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
+}
+STATE_CONFIGS["CO-SPRINGS"] = CO_SPRINGS_ACCELA_CONFIG

@@ -509,6 +509,37 @@
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
       "notes": "Real, live, 33 real enumerated folders -- none permit/building/inspection related (ADARamps, Parcels, Parks, Utilities, etc). CityBiz/Parcels and DuvalMaps/DuvalCivilPlanning (both Gemini-claimed) either error (400/500) or do not exist (404)."
+    },
+    {
+      "jurisdiction": "Pikes Peak Regional Building Department (Colorado Springs + El Paso County), CO",
+      "county": "El Paso",
+      "state": "CO",
+      "provider_type": null,
+      "endpoint": "https://www.pprbd.org/Search/Permit",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Real, excellent search form (ProjectType: New/Alt/CO Commercial, built-in Last 30 Days range, covers CO Springs + El Paso County + 6 more jurisdictions in one form) -- but submission is blocked by a real Cloudflare Turnstile CAPTCHA. Not pursued (out of scope, same as Compton)."
+    },
+    {
+      "jurisdiction": "Colorado Springs, CO (Accela, Planning/Public Works/Fire/Stormwater)",
+      "county": "El Paso",
+      "state": "CO",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/COSPRINGS",
+      "state_agent_pipeline_key": "CO-SPRINGS",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 100,
+      "notes": "Only one permit type in dropdown (\"Building Permit Review\", no commercial/residential split) -- confirms Gemini's own description that this Accela instance is not the primary building-permit channel (PPRBD is). Verified live: 110 rows/30 days, 105 real commercial permits, 5 admin noise (re-inspection fees)."
+    },
+    {
+      "jurisdiction": "El Paso County, CO -- EDARP (development applications)",
+      "county": "El Paso",
+      "state": "CO",
+      "provider_type": null,
+      "endpoint": "https://epcdevplanreview.com/",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Real portal, but for development/zoning applications (not building permits) and requires Register/Log in for actual application data -- not investigated further given CO-SPRINGS Accela already provided a working source."
     }
   ]
 }
