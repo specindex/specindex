@@ -1268,3 +1268,28 @@ OH_CLEVELAND_COO_CONFIG: dict[str, Any] = {
 }
 STATE_CONFIGS["OH-CLEVELAND"] = OH_CLEVELAND_CONFIG
 STATE_CONFIGS["OH-CLEVELAND-COO"] = OH_CLEVELAND_COO_CONFIG
+
+# SAM.gov + USAspending for all 50 states (2026-07-28, Asif: "pull all
+# data from USAspending and sam.gov"). Both providers are already
+# architecturally per-state -- GA_SAM_CONFIG/GA_USASPENDING_CONFIG above
+# were just the only ones registered. SamGovProvider filters a single
+# shared, cached (20h) national CSV client-side (no per-state download
+# cost); USASpendingProvider genuinely queries server-side per state, no
+# API key or quota. Generated here rather than 98 manual blocks -- GA
+# excluded (already has its own dedicated config/history above).
+_ALL_US_STATE_CODES = [
+    "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID",
+    "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS",
+    "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK",
+    "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV",
+    "WI", "WY",
+]
+for _sc in _ALL_US_STATE_CODES:
+    if _sc == "GA":
+        continue
+    STATE_CONFIGS[f"{_sc}-SAM"] = {"state_code": _sc, "provider_type": "sam_gov"}
+    STATE_CONFIGS[f"{_sc}-USASPENDING"] = {
+        "state_code": _sc,
+        "provider_type": "usaspending",
+        "lookback_days": 730,
+    }
