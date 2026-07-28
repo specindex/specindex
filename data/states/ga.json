@@ -1,6 +1,6 @@
 {
   "state": "GA",
-  "generated_at": "2026-07-27",
+  "generated_at": "2026-07-28",
   "date_range": "Last 24 months commercial",
   "capture_method": "Georgia DRI filings, Alpharetta/Fulton County/Savannah/Johns Creek/Marietta commercial permits, Accela commercial permits (Atlanta/Gwinnett/Cobb, when available), USAspending.gov federal construction awards, plus prior public research",
   "projects": [
@@ -52321,10 +52321,1484 @@
       ],
       "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
       "state": "GA"
+    },
+    {
+      "id": "ga-sam-2917329941294514-market-research-design-build-general-construction-",
+      "name": "Market Research - Design-Build General Construction Multiple Award Task Order Contract - Savannah District AOR",
+      "city": "Savannah",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Federal sources sought W912HN27RA002. Market Research - Design-Build General Construction Multiple Award Task Order Contract - Savannah District AOR. Response deadline 2026-08-21.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "Classification code Y1JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought W912HN27RA002",
+          "url": "https://sam.gov/workspace/contract/opp/29173299412945149cef581ec59878dc/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "GA"
+    },
+    {
+      "id": "ga-sam-8449c086dd4c4cf3-rfi-notice-thomas-hall-mga-warner-robins-ga",
+      "name": "RFI Notice (Thomas Hall – MGA, Warner Robins, GA)",
+      "city": "",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Federal sources sought FA857926Q0000. RFI Notice (Thomas Hall – MGA, Warner Robins, GA). Response deadline 2026-07-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "No Set aside used",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought FA857926Q0000",
+          "url": "https://sam.gov/workspace/contract/opp/8449c086dd4c4cf3816904b8bd1dbd7f/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "GA"
+    },
+    {
+      "id": "ga-sam-529a4f80a92b4a9a-rfi-notice-thomas-hall-mga-warner-robins-ga",
+      "name": "RFI Notice (Thomas Hall – MGA, Warner Robins, GA)",
+      "city": "",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "Federal sources sought FA857926Q0000. RFI Notice (Thomas Hall – MGA, Warner Robins, GA). Response deadline 2026-07-24.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Sources Sought",
+        "No Set aside used",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Sources Sought FA857926Q0000",
+          "url": "https://sam.gov/workspace/contract/opp/529a4f80a92b4a9a87f6320970aab19d/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "GA"
+    },
+    {
+      "id": "ga-sam-bf1077d133944f36-y1dz-fy26-nrm-557-21-101-36c247-26-ap-0572-correct",
+      "name": "Y1DZ--FY26 NRM|557-21-101|36C247-26-AP-0572|Correct Safety & FCA Def Bldg. 2| CONSTRUCTION",
+      "city": "",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Federal solicitation 36C24726R0033. Y1DZ--FY26 NRM|557-21-101|36C247-26-AP-0572|Correct Safety & FCA Def Bldg. 2| CONSTRUCTION. Response deadline 2026-08-06.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C24726R0033",
+          "url": "https://sam.gov/workspace/contract/opp/bf1077d133944f368f9e541ee55b94c1/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "GA"
+    },
+    {
+      "id": "ga-sam-8290c3032fea47c5-building-164-range-cart-storage-facility",
+      "name": "Building 164 Range Cart Storage Facility",
+      "city": "Brunswick",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "Federal combined synopsis/solicitation 70LGLY26RSSB00019. Building 164 Range Cart Storage Facility. Response deadline 2026-07-31.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 70LGLY26RSSB00019",
+          "url": "https://sam.gov/workspace/contract/opp/8290c3032fea47c5975ebdff8d5af7ea/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "GA"
+    },
+    {
+      "id": "ga-sam-efac883d1c064bcc-building-164-range-cart-storage-facility",
+      "name": "Building 164 Range Cart Storage Facility",
+      "city": "Brunswick",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Homeland Security, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-12",
+      "description": "Federal combined synopsis/solicitation 70LGLY26RSSB00019. Building 164 Range Cart Storage Facility. Response deadline 2026-07-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Combined Synopsis/Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2AA"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Combined Synopsis/Solicitation 70LGLY26RSSB00019",
+          "url": "https://sam.gov/workspace/contract/opp/efac883d1c064bcc832b9cdd83dfc5d4/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "GA"
+    },
+    {
+      "id": "ga-sam-d8202de28d764988-y1dz-renovate-building-9a-for-ehrm-administration-",
+      "name": "Y1DZ--Renovate Building 9A for EHRM Administration- EHRM Project 557-21-703 Carl Vinson VA Medical Center Dublin, GA 310",
+      "city": "Dublin",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-14",
+      "description": "Federal solicitation 36C77626R0031_1. Y1DZ--Renovate Building 9A for EHRM Administration- EHRM Project 557-21-703 Carl Vinson VA Medical Center Dublin, GA 31021. Response deadline 2026-05-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0031_1",
+          "url": "https://sam.gov/workspace/contract/opp/d8202de28d764988a923d705a003c62a/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "GA"
+    },
+    {
+      "id": "ga-sam-ed54ba38cc3140d9-y1dz-renovate-building-9a-for-ehrm-administration-",
+      "name": "Y1DZ--Renovate Building 9A for EHRM Administration- EHRM Project 557-21-703 Carl Vinson VA Medical Center Dublin, GA 310",
+      "city": "Dublin",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-04-03",
+      "description": "Federal solicitation 36C77626R0031_1. Y1DZ--Renovate Building 9A for EHRM Administration- EHRM Project 557-21-703 Carl Vinson VA Medical Center Dublin, GA 31021. Response deadline 2026-05-01.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0031_1",
+          "url": "https://sam.gov/workspace/contract/opp/ed54ba38cc3140d98f981a6139676523/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "GA"
+    },
+    {
+      "id": "ga-sam-8472c1faa05a4575-y1dz-renovate-building-9a-for-ehrm-administration-",
+      "name": "Y1DZ--Renovate Building 9A for EHRM Administration- EHRM Project 557-21-703 Carl Vinson VA Medical Center Dublin, GA 310",
+      "city": "Dublin",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-03-30",
+      "description": "Federal solicitation 36C77626R0031_1. Y1DZ--Renovate Building 9A for EHRM Administration- EHRM Project 557-21-703 Carl Vinson VA Medical Center Dublin, GA 31021. Response deadline 2026-04-10.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0031_1",
+          "url": "https://sam.gov/workspace/contract/opp/8472c1faa05a45759823d91069d95773/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "GA"
+    },
+    {
+      "id": "ga-sam-a9e255f6572a4968-y1dz-renovate-building-9a-for-ehrm-administration-",
+      "name": "Y1DZ--Renovate Building 9A for EHRM Administration- EHRM Project 557-21-703 Carl Vinson VA Medical Center Dublin, GA 310",
+      "city": "Dublin",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-11",
+      "description": "Federal solicitation 36C77626R0031_1. Y1DZ--Renovate Building 9A for EHRM Administration- EHRM Project 557-21-703 Carl Vinson VA Medical Center Dublin, GA 31021. Response deadline 2026-03-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0031_1",
+          "url": "https://sam.gov/workspace/contract/opp/a9e255f6572a49688a4920a2b5cdfb13/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "GA"
+    },
+    {
+      "id": "ga-sam-85e50629af6f4e62-y1dz-renovate-building-9a-for-ehrm-administration-",
+      "name": "Y1DZ--Renovate Building 9A for EHRM Administration- EHRM Project 557-21-703 Carl Vinson VA Medical Center Dublin, GA 310",
+      "city": "Dublin",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-04",
+      "description": "Federal solicitation 36C77626R0031_1. Y1DZ--Renovate Building 9A for EHRM Administration- EHRM Project 557-21-703 Carl Vinson VA Medical Center Dublin, GA 31021. Response deadline 2026-03-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0031_1",
+          "url": "https://sam.gov/workspace/contract/opp/85e50629af6f4e62885e766bc9e6f009/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "GA"
+    },
+    {
+      "id": "ga-sam-e31546b6c85b495b-y1dz-renovate-building-9a-for-ehrm-administration-",
+      "name": "Y1DZ--Renovate Building 9A for EHRM Administration- EHRM Project 557-21-703 Carl Vinson VA Medical Center Dublin, GA 310",
+      "city": "Dublin",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Veterans Affairs, Department Of",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-02-03",
+      "description": "Federal solicitation 36C77626R0031_1. Y1DZ--Renovate Building 9A for EHRM Administration- EHRM Project 557-21-703 Carl Vinson VA Medical Center Dublin, GA 31021. Response deadline 2026-03-20.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Y1DZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation 36C77626R0031_1",
+          "url": "https://sam.gov/workspace/contract/opp/e31546b6c85b495b8d8716bf1d6759e6/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "GA"
+    },
+    {
+      "id": "ga-sam-985a6dceabb44ebc-project-number-107120-repair-barracks-building-283",
+      "name": "Project Number: 107120, Repair Barracks Building 2836 at Fort Benning, GA",
+      "city": "Fort Benning",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-10-02",
+      "description": "Federal solicitation W912HN25RA001. Project Number: 107120, Repair Barracks Building 2836 at Fort Benning, GA. Response deadline 2025-10-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912HN25RA001",
+          "url": "https://sam.gov/workspace/contract/opp/985a6dceabb44ebc9be1b3c33940e6f5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "GA"
+    },
+    {
+      "id": "ga-sam-e47e26c93b6d480e-design-build-to-budget-bldg-24401-fort-gordon-ga",
+      "name": "Design Build to Budget, Bldg. 24401, Fort Gordon, GA",
+      "city": "Fort Gordon",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-09-18",
+      "description": "Federal solicitation W912HN25RA018. Design Build to Budget, Bldg. 24401, Fort Gordon, GA. Response deadline 2025-09-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912HN25RA018",
+          "url": "https://sam.gov/workspace/contract/opp/e47e26c93b6d480e804f405994db65ef/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "GA"
+    },
+    {
+      "id": "ga-sam-258be54700b04de6-project-number-107120-repair-barracks-building-283",
+      "name": "Project Number: 107120, Repair Barracks Building 2836 at Fort Benning, GA",
+      "city": "Fort Benning",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-09-16",
+      "description": "Federal solicitation W912HN25RA001. Project Number: 107120, Repair Barracks Building 2836 at Fort Benning, GA. Response deadline 2025-10-15.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912HN25RA001",
+          "url": "https://sam.gov/workspace/contract/opp/258be54700b04de68bb26bb658274140/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "GA"
+    },
+    {
+      "id": "ga-sam-d49c12b67593480d-design-build-to-budget-bldg-24401-fort-gordon-ga",
+      "name": "Design Build to Budget, Bldg. 24401, Fort Gordon, GA",
+      "city": "Fort Gordon",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-09-03",
+      "description": "Federal solicitation W912HN25RA018. Design Build to Budget, Bldg. 24401, Fort Gordon, GA. Response deadline 2025-09-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912HN25RA018",
+          "url": "https://sam.gov/workspace/contract/opp/d49c12b67593480d9bbda5176d5974f5/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "GA"
+    },
+    {
+      "id": "ga-sam-aa9406b586cc4981-design-build-to-budget-bldg-24401-fort-gordon-ga",
+      "name": "Design Build to Budget, Bldg. 24401, Fort Gordon, GA",
+      "city": "Fort Gordon",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-09-03",
+      "description": "Federal solicitation W912HN25RA018. Design Build to Budget, Bldg. 24401, Fort Gordon, GA. Response deadline 2025-09-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912HN25RA018",
+          "url": "https://sam.gov/workspace/contract/opp/aa9406b586cc4981af712ba117fbc0e4/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "GA"
+    },
+    {
+      "id": "ga-sam-37cda37c56c64099-design-build-to-budget-bldg-24401-fort-gordon-ga",
+      "name": "Design Build to Budget, Bldg. 24401, Fort Gordon, GA",
+      "city": "Fort Gordon",
+      "county": "",
+      "status": "bidding",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-08-26",
+      "description": "Federal solicitation W912HN25RA018. Design Build to Budget, Bldg. 24401, Fort Gordon, GA. Response deadline 2025-09-30.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Solicitation",
+        "Classification code Y1FC"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Solicitation W912HN25RA018",
+          "url": "https://sam.gov/workspace/contract/opp/37cda37c56c64099be9699306b68f2f4/view"
+        }
+      ],
+      "open_for": "Federal solicitation, bid package open. Product substitution requests may still be possible before award -- note: no attachment links in the bulk extract, check the notice page directly for spec/drawing documents.",
+      "state": "GA"
+    },
+    {
+      "id": "ga-sam-70476cedda904143-special-notice-fort-moore-job-order-contract-joc",
+      "name": "Special Notice - Fort Moore Job Order Contract (JOC)",
+      "city": "Fort Moore",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-04-03",
+      "description": "Federal special notice W5168W25BA001. Special Notice - Fort Moore Job Order Contract (JOC).",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice W5168W25BA001",
+          "url": "https://sam.gov/workspace/contract/opp/70476cedda904143be4cc94138f9049f/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "GA"
+    },
+    {
+      "id": "ga-sam-27e122a9d18140b3-special-notice-fort-moore-job-order-contract-joc",
+      "name": "Special Notice - Fort Moore Job Order Contract (JOC)",
+      "city": "Fort Moore",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Dept Of Defense",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2025-03-10",
+      "description": "Federal special notice W5168W25BA001. Special Notice - Fort Moore Job Order Contract (JOC).",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Special Notice",
+        "Total Small Business Set-Aside (FAR 19.5)",
+        "Classification code Z2JZ"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Special Notice W5168W25BA001",
+          "url": "https://sam.gov/workspace/contract/opp/27e122a9d18140b3a53fc314485cc4b1/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "GA"
+    },
+    {
+      "id": "ga-sam-b4c487367f5ee583-cemacc-ii",
+      "name": "CEMACC II",
+      "city": "Robins Air Force Base",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-07-22",
+      "description": "Federal presolicitation FA8501-19-B-A001. CEMACC II. Response deadline 2019-07-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation FA8501-19-B-A001",
+          "url": "https://sam.gov/workspace/contract/opp/b4c487367f5ee583a7edae56d1fd2d1c/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "GA"
+    },
+    {
+      "id": "ga-sam-f4f8e8c034318d3c-cemacc-ii",
+      "name": "CEMACC II",
+      "city": "Robins Air Force Base",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-07-15",
+      "description": "Federal presolicitation FA8501-19-B-A001. CEMACC II. Response deadline 2019-07-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation FA8501-19-B-A001",
+          "url": "https://sam.gov/workspace/contract/opp/f4f8e8c034318d3c5ab25d6db418cca0/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "GA"
+    },
+    {
+      "id": "ga-sam-df7d50717074e08b-cemacc-ii",
+      "name": "CEMACC II",
+      "city": "Robins Air Force Base",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-07-14",
+      "description": "Federal presolicitation FA8501-19-B-A001. CEMACC II. Response deadline 2019-07-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation FA8501-19-B-A001",
+          "url": "https://sam.gov/workspace/contract/opp/df7d50717074e08b5f70838560ebeea4/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "GA"
+    },
+    {
+      "id": "ga-sam-c596240429271260-cemacc-ii",
+      "name": "CEMACC II",
+      "city": "Robins Air Force Base",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-07-13",
+      "description": "Federal presolicitation FA8501-19-B-A001. CEMACC II. Response deadline 2019-07-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation FA8501-19-B-A001",
+          "url": "https://sam.gov/workspace/contract/opp/c596240429271260bd34a054c1bf78b6/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "GA"
+    },
+    {
+      "id": "ga-sam-c11a2e276d2f20d6-cemacc-ii",
+      "name": "CEMACC II",
+      "city": "Robins Air Force Base",
+      "county": "",
+      "status": "planning",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2019-07-13",
+      "description": "Federal presolicitation FA8501-19-B-A001. CEMACC II. Response deadline 2019-07-12.",
+      "key_specs": [
+        "NAICS 236220",
+        "Notice type: Presolicitation",
+        "Service-Disabled Veteran-Owned Small Business Set Aside",
+        "Classification code Z"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "glazing",
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "doors and hardware",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "SAM.gov Presolicitation FA8501-19-B-A001",
+          "url": "https://sam.gov/workspace/contract/opp/c11a2e276d2f20d6f4945e2dc5fe411c/view"
+        }
+      ],
+      "open_for": "Presolicitation/sources-sought notice -- spec window not yet finalized, earliest point to reach the design team.",
+      "state": "GA"
+    },
+    {
+      "id": "ga-gwinnett-accela-gwinnett-combld2026-01807",
+      "name": "WILLDONE LLC",
+      "city": "SUWANEE",
+      "county": "Gwinnett",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "07-28-2026",
+      "description": "WILLDONE LLC",
+      "key_specs": [
+        "Permit type: Building",
+        "Status: Pending Plans Authorization"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Gwinnett County Accela permit COMBLD2026-01807",
+          "url": "https://aca-prod.accela.com/GWINNETT/Cap/CapHome.aspx?module=Building"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "GA",
+      "zip": "30024"
+    },
+    {
+      "id": "ga-gwinnett-accela-gwinnett-combld2026-01806",
+      "name": "GRAYSON PARK ESTATES",
+      "city": "GRAYSON",
+      "county": "Gwinnett",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "07-28-2026",
+      "description": "GRAYSON PARK ESTATES",
+      "key_specs": [
+        "Permit type: Building",
+        "Status: Pending Plans Authorization"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Gwinnett County Accela permit COMBLD2026-01806",
+          "url": "https://aca-prod.accela.com/GWINNETT/Cap/CapHome.aspx?module=Building"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "GA",
+      "zip": "30017"
+    },
+    {
+      "id": "ga-gwinnett-accela-gwinnett-combld2026-01805",
+      "name": "GRAYSON PARK ESTATES",
+      "city": "GRAYSON",
+      "county": "Gwinnett",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "07-28-2026",
+      "description": "GRAYSON PARK ESTATES",
+      "key_specs": [
+        "Permit type: Building",
+        "Status: Pending Plans Authorization"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Gwinnett County Accela permit COMBLD2026-01805",
+          "url": "https://aca-prod.accela.com/GWINNETT/Cap/CapHome.aspx?module=Building"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "GA",
+      "zip": "30017"
+    },
+    {
+      "id": "ga-gwinnett-accela-gwinnett-combld2026-01804",
+      "name": "ATLANTA GAS LIGHT",
+      "city": "LAWRENCEVILLE",
+      "county": "Gwinnett",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "07-27-2026",
+      "description": "ATLANTA GAS LIGHT",
+      "key_specs": [
+        "Permit type: Building",
+        "Status: Pending Plans Authorization"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Gwinnett County Accela permit COMBLD2026-01804",
+          "url": "https://aca-prod.accela.com/GWINNETT/Cap/CapHome.aspx?module=Building"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "GA",
+      "zip": "30044"
+    },
+    {
+      "id": "ga-gwinnett-accela-gwinnett-combld2026-01803",
+      "name": "KIDS ARBOR EARLY LEARNING CENTER",
+      "city": "LOGANVILLE",
+      "county": "Gwinnett",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "07-27-2026",
+      "description": "KIDS ARBOR EARLY LEARNING CENTER",
+      "key_specs": [
+        "Permit type: Building",
+        "Status: Pending License Verification"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Gwinnett County Accela permit COMBLD2026-01803",
+          "url": "https://aca-prod.accela.com/GWINNETT/Cap/CapHome.aspx?module=Building"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "GA",
+      "zip": "30052"
+    },
+    {
+      "id": "ga-gwinnett-accela-gwinnett-combld2026-01802",
+      "name": "SPECULATIVE SUITE C",
+      "city": "PEACHTREE CORNERS",
+      "county": "Gwinnett",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "07-27-2026",
+      "description": "SPECULATIVE SUITE C",
+      "key_specs": [
+        "Permit type: Building",
+        "Status: Pending Plans Authorization"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Gwinnett County Accela permit COMBLD2026-01802",
+          "url": "https://aca-prod.accela.com/GWINNETT/Cap/CapHome.aspx?module=Building"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "GA",
+      "zip": "30071"
+    },
+    {
+      "id": "ga-gwinnett-accela-gwinnett-combld2026-01801",
+      "name": "BUFORD HIGHWAY - MARKET",
+      "city": "NORCROSS",
+      "county": "Gwinnett",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "07-27-2026",
+      "description": "BUFORD HIGHWAY - MARKET",
+      "key_specs": [
+        "Permit type: Building",
+        "Status: Pending Plans Authorization"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Gwinnett County Accela permit COMBLD2026-01801",
+          "url": "https://aca-prod.accela.com/GWINNETT/Cap/CapHome.aspx?module=Building"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "GA",
+      "zip": "30071"
+    },
+    {
+      "id": "ga-gwinnett-accela-gwinnett-combld2026-01800",
+      "name": "PARC 980 APTS - UNIT 821",
+      "city": "LAWRENCEVILLE",
+      "county": "Gwinnett",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "07-27-2026",
+      "description": "PARC 980 APTS - UNIT 821",
+      "key_specs": [
+        "Permit type: Building",
+        "Status: Pending License Verification"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Gwinnett County Accela permit COMBLD2026-01800",
+          "url": "https://aca-prod.accela.com/GWINNETT/Cap/CapHome.aspx?module=Building"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "GA",
+      "zip": "30043"
+    },
+    {
+      "id": "ga-gwinnett-accela-gwinnett-combld2026-01799",
+      "name": "STAR SIGN",
+      "city": "PEACHTREE CORNERS",
+      "county": "Gwinnett",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "07-27-2026",
+      "description": "STAR SIGN",
+      "key_specs": [
+        "Permit type: Building",
+        "Status: Pending Plans Authorization"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Gwinnett County Accela permit COMBLD2026-01799",
+          "url": "https://aca-prod.accela.com/GWINNETT/Cap/CapHome.aspx?module=Building"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "GA",
+      "zip": "30071"
+    },
+    {
+      "id": "ga-gwinnett-accela-gwinnett-combld2026-01798",
+      "name": "AC UNITS FOR LESS",
+      "city": "LAWRENCEVILLE",
+      "county": "Gwinnett",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "07-27-2026",
+      "description": "AC UNITS FOR LESS",
+      "key_specs": [
+        "Permit type: Building",
+        "Status: Pending Plans Authorization"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Gwinnett County Accela permit COMBLD2026-01798",
+          "url": "https://aca-prod.accela.com/GWINNETT/Cap/CapHome.aspx?module=Building"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "GA",
+      "zip": "30046"
+    },
+    {
+      "id": "ga-gwinnett-accela-gwinnett-combld2026-01797",
+      "name": "MCDANIEL PRESERVE -RETAINING WALL A THRU E",
+      "city": "DULUTH",
+      "county": "Gwinnett",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "07-27-2026",
+      "description": "MCDANIEL PRESERVE -RETAINING WALL A THRU E",
+      "key_specs": [
+        "Permit type: Building",
+        "Status: Pending Plans Authorization"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Gwinnett County Accela permit COMBLD2026-01797",
+          "url": "https://aca-prod.accela.com/GWINNETT/Cap/CapHome.aspx?module=Building"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "GA",
+      "zip": "30096"
+    },
+    {
+      "id": "ga-gwinnett-accela-gwinnett-combld2026-01796",
+      "name": "SUWANEE ACUPUNCTURE LLC",
+      "city": "SUWANEE",
+      "county": "Gwinnett",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "07-27-2026",
+      "description": "SUWANEE ACUPUNCTURE LLC",
+      "key_specs": [
+        "Permit type: Building",
+        "Status: Pending Plans Authorization"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Gwinnett County Accela permit COMBLD2026-01796",
+          "url": "https://aca-prod.accela.com/GWINNETT/Cap/CapHome.aspx?module=Building"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "GA",
+      "zip": "30024"
+    },
+    {
+      "id": "ga-gwinnett-accela-gwinnett-combld2026-01795",
+      "name": "T.H.R.I.V.E",
+      "city": "TUCKER",
+      "county": "Gwinnett",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "07-27-2026",
+      "description": "T.H.R.I.V.E",
+      "key_specs": [
+        "Permit type: Building",
+        "Status: Pending Plans Authorization"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Gwinnett County Accela permit COMBLD2026-01795",
+          "url": "https://aca-prod.accela.com/GWINNETT/Cap/CapHome.aspx?module=Building"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "GA",
+      "zip": "30084"
+    },
+    {
+      "id": "ga-gwinnett-accela-gwinnett-combld2026-01794",
+      "name": "BIMMER'S SERVICE CENTER",
+      "city": "PEACHTREE CORNERS",
+      "county": "Gwinnett",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "07-26-2026",
+      "description": "BIMMER'S SERVICE CENTER",
+      "key_specs": [
+        "Permit type: Building",
+        "Status: Pending Plans Authorization"
+      ],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Gwinnett County Accela permit COMBLD2026-01794",
+          "url": "https://aca-prod.accela.com/GWINNETT/Cap/CapHome.aspx?module=Building"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "GA",
+      "zip": "30092"
     }
   ],
   "stats": {
-    "total": 1394,
+    "total": 1433,
     "research": 54,
     "dri_raw": 250,
     "municipal_raw": 793,
