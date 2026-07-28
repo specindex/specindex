@@ -53,7 +53,15 @@ class Settings:
     anthropic_api_key: str | None
     socrata_app_token: str | None
     flash_batch_size: int = 40
-    sonnet_batch_size: int = 60
+    # 60 was the original NJ-only default and worked fine in small manual
+    # tests (5-10 rows), but real full-size cloud runs (2026-07-27, 30-day
+    # NJ lookback) showed EVERY Sonnet batch at size 60 failing to parse
+    # ("Expecting ',' delimiter" at a consistent offset -- max_tokens=16000
+    # truncation, not a fluke). Real per-record JSON verbosity at full
+    # batch size exceeds what small manual tests ever exercised. Dropped
+    # to 25 so a batch's expected output comfortably fits under the token
+    # cap regardless of per-record verbosity.
+    sonnet_batch_size: int = 25
     max_retries: int = 4
 
     @classmethod
