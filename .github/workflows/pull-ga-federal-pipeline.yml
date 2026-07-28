@@ -75,13 +75,13 @@ jobs:
       - name: Run SAM.gov provider (GA)
         id: pull_sam
         continue-on-error: true
-        run: python3 scripts/nj_dca_pipeline/main.py --state GA-SAM --merge-state
+        run: python3 scripts/state_agent_pipeline/main.py --state GA-SAM --merge-state
 
       - name: Run USAspending provider (GA)
         id: pull_usaspending
         continue-on-error: true
         run: |
-          python3 scripts/nj_dca_pipeline/main.py \
+          python3 scripts/state_agent_pipeline/main.py \
             --state GA-USASPENDING \
             --lookback-days "${{ github.event.inputs.lookback_days || '730' }}" \
             --merge-state
