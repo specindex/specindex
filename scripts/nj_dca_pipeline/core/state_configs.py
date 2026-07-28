@@ -71,9 +71,23 @@ GA_USASPENDING_CONFIG: dict[str, Any] = {
     "lookback_days": 730,
 }
 
+# Verified live 2026-07-28: no date-range filter for anonymous users, but
+# results sort newest-first so pagination-until-watermark works without
+# one (see accela_provider.py). "Building" permit type search returns
+# Gwinnett's own COMBLD- (commercial) prefixed permits.
+GA_GWINNETT_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "GA",
+    "provider_type": "accela",
+    "county": "Gwinnett",
+    "endpoint": "https://aca-prod.accela.com/GWINNETT",
+    "permit_type_label": "Building",
+    "lookback_days": 30,
+}
+
 STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NJ": NJ_CONFIG,
     "NC": NC_CONFIG,
     "GA-SAM": GA_SAM_CONFIG,
     "GA-USASPENDING": GA_USASPENDING_CONFIG,
+    "GA-GWINNETT": GA_GWINNETT_ACCELA_CONFIG,
 }
