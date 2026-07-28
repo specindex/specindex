@@ -1,0 +1,533 @@
+{
+  "batch": 2,
+  "states": [
+    {
+      "state": "co",
+      "maturity": "built",
+      "project_count_approx": 5241,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk CSV (national)",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 23,
+          "token_cost": "none",
+          "notes": "Always-on federal solicitations baseline. 23 active CO construction opportunities in current corpus."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending.gov federal awards (national)",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 274,
+          "token_cost": "none",
+          "notes": "Always-on federal construction awards baseline. PSC Y filter, no API key."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "socrata",
+          "name": "Colorado statewide construction register",
+          "endpoint_or_script": "candidate: data.colorado.gov / CDPHE / DOLA",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "No Tier 0 statewide register verified yet (unlike NJ DCA or GA DRI). Playbook still stub. Next pass: live-check data.colorado.gov for permit-level Socrata and CDPHE pre-construction environmental permits for industrial/data-center loads."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Denver commercial construction permits",
+          "endpoint_or_script": "scripts/pull-county-arcgis.py --only denver (https://services1.arcgis.com/zdB7qR0BtYrg0Xpl/arcgis/rest/services/ODC_DEV_COMMERCIALCONSTPERMIT_P/FeatureServer/317)",
+          "status": "built",
+          "est_records_24mo": 4937,
+          "token_cost": "none",
+          "notes": "Verified live 2026-07-26. Entire layer is commercial-only (COMMCON extract). Has lat/lon via geometry query, VALUATION, CONTRACTOR_NAME. Dominates CO corpus today; rest of state uncovered."
+        },
+        {
+          "order": 5,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Aurora / Colorado Springs / Jefferson County permits",
+          "endpoint_or_script": "candidate: municipal ArcGIS hub search",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Denver metro growth corridors outside Denver city limits are the highest-yield next ArcGIS targets. No endpoints verified yet; follow ga.md source-discovery step-by-step before building."
+        },
+        {
+          "order": 6,
+          "tier": 2,
+          "kind": "accela",
+          "name": "Front Range Accela portals",
+          "endpoint_or_script": "candidate: port scripts/pull-ga-accela-commercial.py pattern",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Several Front Range jurisdictions run Accela/EnerGov but none verified live for CO yet. Check Aurora, Lakewood, Colorado Springs after ArcGIS DCAT pass."
+        },
+        {
+          "order": 7,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "Colorado OEDIT / local EDA press releases",
+          "endpoint_or_script": "candidate: oedit.colorado.gov announcements RSS/HTML",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "ROADMAP item 41 checked 10 state EDAs; CO not among the strong Socrata-tier finds. Deterministic HTML scrape of named megaproject announcements only, not a bulk register."
+        },
+        {
+          "order": 8,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named project enrichment (prior web research)",
+          "endpoint_or_script": "capped Sonnet on existing corpus rows only",
+          "status": "built",
+          "est_records_24mo": 7,
+          "token_cost": "medium",
+          "notes": "7 hand-researched marquee projects (FDA lab, Crossroads 25, etc.) predate Denver ArcGIS pull. Use for owner/architect/doc enrichment on named rows only. Forbidden: full-state LLM project discovery scrape."
+        }
+      ],
+      "do_not_use": [
+        "Generic ArcGIS Hub search without verifying Colorado jurisdiction and live max-date",
+        "Zip-code aggregate permit count datasets with no project-level records",
+        "Dual Gemini/Sonnet full-state project list scrapes"
+      ],
+      "next_action": "Live-verify Aurora and Colorado Springs ArcGIS permit layers (stats query max-date first), then add pull functions to pull-county-arcgis.py before any Accela work.",
+      "priority_score": 78
+    },
+    {
+      "state": "ct",
+      "maturity": "built",
+      "project_count_approx": 6127,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk CSV (national)",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 3,
+          "token_cost": "none",
+          "notes": "Always-on federal solicitations baseline."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending.gov federal awards (national)",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 79,
+          "token_cost": "none",
+          "notes": "Always-on federal construction awards baseline."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "socrata",
+          "name": "CT DECD Business Assistance Portfolio",
+          "endpoint_or_script": "https://data.ct.gov/resource/xnw3-nytd.json",
+          "status": "rejected",
+          "est_records_24mo": 0,
+          "token_cost": "none",
+          "notes": "Live but wrong shape: small-business grant/loan recipients, not construction permits. Rejected for relevance 2026-07-26."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Hartford Building Permits",
+          "endpoint_or_script": "scripts/pull-county-arcgis.py --only hartford (https://utility.arcgis.com/usrsvcs/servers/d595ae995fb049d3ac54919ebf24b1ac/rest/services/HartfordOpenDataTables/FeatureServer/0)",
+          "status": "built",
+          "est_records_24mo": 6037,
+          "token_cost": "none",
+          "notes": "Verified live 2026-07-26. RECORD_TYPE_TYPE='Commercial' is a clean categorical filter. Table only, no lat/lon (address text only). First 24mo pull: 6,037 commercial permits; dominates CT corpus."
+        },
+        {
+          "order": 5,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Hartford Planning Permits + Public Works Permits",
+          "endpoint_or_script": "same host FeatureServer/3 and /4 (not yet in pull-county-arcgis.py)",
+          "status": "verified",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Same schema family as building permits, verified live 2026-07-26 but not yet pulled. Low build cost: extend existing pull_hartford pattern."
+        },
+        {
+          "order": 6,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "New Haven / Stamford / Bridgeport municipal permits",
+          "endpoint_or_script": "candidate: targeted jurisdiction search",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "New Haven guessed ArcGIS hub hosts 404 (2026-07-26). Public GIS may exist as embedded apps, not discoverable hub. Stamford and Bridgeport unchecked."
+        },
+        {
+          "order": 7,
+          "tier": 2,
+          "kind": "accela",
+          "name": "Connecticut metro Accela/EnerGov portals",
+          "endpoint_or_script": "candidate: port pull-ga-accela-commercial.py",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Several CT cities use Accela or EnerGov; none verified live for CT yet."
+        },
+        {
+          "order": 8,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named project enrichment (prior web research)",
+          "endpoint_or_script": "capped Sonnet on existing corpus rows only",
+          "status": "built",
+          "est_records_24mo": 8,
+          "token_cost": "medium",
+          "notes": "8 hand-researched projects (Unilever New Haven, etc.). Enrichment only, not discovery."
+        }
+      ],
+      "do_not_use": [
+        "data.ct.gov/xnw3-nytd (DECD business grants, not construction)",
+        "Generic ArcGIS Hub search without Connecticut jurisdiction verification",
+        "Dual Gemini/Sonnet full-state project list scrapes"
+      ],
+      "next_action": "Add Hartford Planning Permits (FeatureServer/3) and Public Works Permits (/4) to pull-county-arcgis.py, then live-search Stamford and New Haven permit systems.",
+      "priority_score": 72
+    },
+    {
+      "state": "de",
+      "maturity": "built",
+      "project_count_approx": 2590,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk CSV (national)",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 5,
+          "token_cost": "none",
+          "notes": "Always-on federal solicitations baseline."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending.gov federal awards (national)",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 18,
+          "token_cost": "none",
+          "notes": "Always-on federal construction awards baseline."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "arcgis",
+          "name": "Delaware FirstMap statewide building permits",
+          "endpoint_or_script": "scripts/pull-county-arcgis.py --only delaware (https://enterprise.firstmap.delaware.gov/arcgis/rest/services/PlanningCadastre/DE_Planning_Development/MapServer/3)",
+          "status": "built",
+          "est_records_24mo": 0,
+          "token_cost": "none",
+          "notes": "Verified live 2026-07-26: 79K total rows, all 3 counties, R_NR flag filters non-residential. CAVEAT: confirmed stale, max P_YEAR=2024, zero 2025 rows. Corpus has ~2,563 historical NR/Mixed permits. Useful depth but not a fresh 24mo feed."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Wilmington / New Castle County municipal permits",
+          "endpoint_or_script": "candidate: New Castle County open data + Wilmington permit lookup",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "No municipal ArcGIS permit layers found 2026-07-26. New Castle hub 'Development Activity' is a static 2022 zip export, not queryable REST. Wilmington actual permit system not reached."
+        },
+        {
+          "order": 5,
+          "tier": 2,
+          "kind": "accela",
+          "name": "Wilmington / Dover Accela or EnerGov portals",
+          "endpoint_or_script": "candidate: port pull-ga-accela-commercial.py",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Small state (3 counties) but I-95 corridor logistics demand is high. Accela/EnerGov check needed for Wilmington and Dover."
+        },
+        {
+          "order": 6,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "Delaware Prosperity Partnership / DEDO announcements",
+          "endpoint_or_script": "candidate: dedo.delaware.gov press releases",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Named megaproject tier (port expansion, pharma, logistics pads). Deterministic HTML only."
+        },
+        {
+          "order": 7,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named project enrichment (prior web research)",
+          "endpoint_or_script": "capped Sonnet on existing corpus rows only",
+          "status": "built",
+          "est_records_24mo": 4,
+          "token_cost": "medium",
+          "notes": "4 hand-researched projects (Edgemoor container terminal, etc.). Enrichment only."
+        }
+      ],
+      "do_not_use": [
+        "New Castle County ArcGIS Hub 'Development Activity' static zip (2022, not live REST)",
+        "Wilmington OpenGov transparency portal (budget/finance, not permits)",
+        "FirstMap statewide layer as a fresh 24mo feed (stale past 2024)",
+        "Dual Gemini/Sonnet full-state project list scrapes"
+      ],
+      "next_action": "Find a fresh Wilmington or New Castle County permit source (Accela portal probe first), because the statewide FirstMap layer stopped updating in 2024.",
+      "priority_score": 60
+    },
+    {
+      "state": "fl",
+      "maturity": "built",
+      "project_count_approx": 21152,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk CSV (national)",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 120,
+          "token_cost": "none",
+          "notes": "Always-on federal solicitations baseline. Strong FL military/Coast Guard volume."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending.gov federal awards (national)",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 655,
+          "token_cost": "none",
+          "notes": "Always-on federal construction awards baseline."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "socrata",
+          "name": "Florida statewide construction register",
+          "endpoint_or_script": "candidate: FloridaCommerce / DBPR / statewide Socrata",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "No PA-RACP-style Tier 0 found. FloridaCommerce portal HTTP 403 (bot-protected, unverified). Florida DEP ERP is environmental/wetland only, not building permits."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Miami-Dade County commercial permits",
+          "endpoint_or_script": "scripts/pull-county-arcgis.py --only miamidade (https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/arcgis/rest/services/miamidade_permit_data/FeatureServer/0)",
+          "status": "built",
+          "est_records_24mo": 20366,
+          "token_cost": "none",
+          "notes": "Verified live 2026-07-27. ResidentialCommercial='C' with ProposedUseDescription residential exclusion and client-side $25K value floor. Has real City field. Table only, no lat/lon. Dominates FL corpus."
+        },
+        {
+          "order": 5,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Florida DEP Environmental Resource Permits",
+          "endpoint_or_script": "https://ca.dep.state.fl.us/arcgis/rest/services/OpenData/ERP/MapServer/1",
+          "status": "verified",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "68,042 records, fresh, but water/wetland permitting only. No building type/valuation/sqft. Supplementary industrial signal at most, not primary driver."
+        },
+        {
+          "order": 6,
+          "tier": 2,
+          "kind": "accela",
+          "name": "Hillsborough County (Tampa) Accela HCFL",
+          "endpoint_or_script": "candidate: port scripts/pull-ga-accela-commercial.py (aca-prod.accela.com/HCFL)",
+          "status": "verified",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Verified live 2026-07-27 (real search-form markers). Same Accela platform as GA. Not yet built. Second-largest FL metro gap after Miami-Dade."
+        },
+        {
+          "order": 7,
+          "tier": 2,
+          "kind": "accela",
+          "name": "Broward / Orange / Duval permit portals",
+          "endpoint_or_script": "candidate: dpepp.broward.org/BCS, JaxEPICS, Orlando Cloudflare-blocked lookup",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Broward: legacy ASP.NET webforms (403 without browser UA). Orange: no county permit dataset in 933 catalog entries; city Orlando Cloudflare 403. Duval/JaxEPICS: Tyler EnerGov, no public API found."
+        },
+        {
+          "order": 8,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "FloridaConstructionNews / GrowthSpotter / trade press",
+          "endpoint_or_script": "deterministic HTML on known announcement URLs",
+          "status": "built",
+          "est_records_24mo": 11,
+          "token_cost": "low",
+          "notes": "11 hand-researched marquee projects pre-Miami-Dade pull. Named-project tier only."
+        },
+        {
+          "order": 9,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named project doc enrichment",
+          "endpoint_or_script": "capped Sonnet on existing corpus rows only",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Use after deterministic feeds saturate. Forbidden: full-state LLM project discovery."
+        }
+      ],
+      "do_not_use": [
+        "Orange County OC_Construction CIP layer (51 county-owned capital projects only)",
+        "Florida DEP ERP as primary commercial building permit source",
+        "FloridaCommerce portal without solving 403 bot protection",
+        "Dual Gemini/Sonnet full-state project list scrapes"
+      ],
+      "next_action": "Port pull-ga-accela-commercial.py to Hillsborough County (HCFL slug), verify with --months 1 test, then scale to 24 months.",
+      "priority_score": 92
+    },
+    {
+      "state": "ga",
+      "maturity": "built",
+      "project_count_approx": 1395,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk CSV",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-ga.py",
+          "status": "built",
+          "est_records_24mo": 19,
+          "token_cost": "none",
+          "notes": "GA-specific bulk CSV pull (also covered by national script for other states). 43 in 24mo per 2026-07-25 playbook; 19 in current corpus after dedupe."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending.gov federal awards",
+          "endpoint_or_script": "scripts/pull-usaspending-ga.py",
+          "status": "built",
+          "est_records_24mo": 375,
+          "token_cost": "none",
+          "notes": "GA-specific pipeline via data/raw/ and rebuild-ga-corpus.py. PSC Y construction filter. 414 raw in 24mo per playbook."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "dri",
+          "name": "Georgia DRI statewide filings",
+          "endpoint_or_script": "scripts/pull-ga-dri.py (https://apps.dca.ga.gov/DRI/Submissions.aspx)",
+          "status": "built",
+          "est_records_24mo": 250,
+          "token_cost": "none",
+          "notes": "Tier 0 statewide pre-construction register. Commercial types only, drop Housing/Withdrawn/Terminated. 252 in 24mo window."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Municipal ArcGIS commercial permits",
+          "endpoint_or_script": "scripts/pull-ga-municipal-commercial.py (Alpharetta, Fulton, Savannah, Marietta, Johns Creek)",
+          "status": "built",
+          "est_records_24mo": 703,
+          "token_cost": "none",
+          "notes": "24mo yields: Alpharetta 358, Fulton 217, Savannah 95, Marietta 26, Johns Creek 7. Forsyth County EnerGov layer verified GA coords (roadmap item 27) but not yet in script."
+        },
+        {
+          "order": 5,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Forsyth County GA commercial permits",
+          "endpoint_or_script": "candidate: geo.forsythco.com/gis3/rest/services/Public_EnerGovPlans/Building_Permits/FeatureServer/0",
+          "status": "verified",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Coordinates confirmed Forsyth GA not NC (2026-07-26). ~244 commercial/90d claimed, unverified 24mo count. Add to pull-ga-municipal-commercial.py."
+        },
+        {
+          "order": 6,
+          "tier": 2,
+          "kind": "accela",
+          "name": "Accela Atlanta / Gwinnett / Cobb commercial",
+          "endpoint_or_script": "scripts/pull-ga-accela-commercial.py (ATLANTA_GA, GWINNETT, Cobb CitizenAccess)",
+          "status": "verified",
+          "est_records_24mo": 0,
+          "token_cost": "low",
+          "notes": "Script built and Gwinnett root-caused/fixed 2026-07-25, but 24mo production run failed (network timeout + shared output file clobbered 318-record Gwinnett test). accela_raw=0 in corpus. Atlanta potentially largest single source (3994 Electrical alone in partial run)."
+        },
+        {
+          "order": 7,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "Georgia Procurement Registry (GPR)",
+          "endpoint_or_script": "https://ssl.doas.state.ga.us/gpr/ (Playwright or network intercept)",
+          "status": "verified",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Real structured bid data with Documents tab (spec PDFs). USG capital projects over $100K. Search UI flaky; blocked by same 2026-07-25 network timeout as Accela."
+        },
+        {
+          "order": 8,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "Prior public research / trade press",
+          "endpoint_or_script": "manual + deterministic HTML",
+          "status": "built",
+          "est_records_24mo": 54,
+          "token_cost": "low",
+          "notes": "Original 54-project research layer; mostly superseded by automated feeds but still catches pre-permit marquee projects."
+        },
+        {
+          "order": 9,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named project + spec doc enrichment",
+          "endpoint_or_script": "capped Sonnet; scripts/extract-spec-book.py when PDFs available",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Enrichment on known rows and GPR/DRI PDFs only. Georgia Tech 8 named capital projects (manual add) still open. Forbidden: full-state LLM scrape."
+        }
+      ],
+      "do_not_use": [
+        "Fulton County Socrata p3f6-ug7s (zip/quarter aggregates, not project records)",
+        "Columbus/Muscogee BuildingPermits ArcGIS (stale since 2022-04-15)",
+        "Atlanta Hub 'All Building Permits 2019-2024' static CSV (last touched 2024-08-08)",
+        "Cobb/Gwinnett ArcGIS permit layer claims (confirmed: Accela only, no ArcGIS permits)",
+        "GDOT Vendor Portal (login-gated)",
+        "geo.forsythco.com for North Carolina (confirmed Georgia coordinates)",
+        "Dual Gemini/Sonnet full-state project list scrapes"
+      ],
+      "next_action": "Fix pull-ga-accela-commercial.py per-agency --out paths (roadmap item 20), then retry Atlanta/Gwinnett/Cobb 24mo pulls in isolation after backoff.",
+      "priority_score": 90
+    }
+  ],
+  "notes": "Batch 2 covers five states with existing deterministic pulls merged into corpus (2026-07-27). Project counts from data/states/{code}.json. NJ pattern applied: Tier 0 register first, municipal ArcGIS second, Accela third, web scraper fourth, LLM enrichment last. National SAM + USAspending always-on at order 1-2. No dual LLM scrapes recommended anywhere."
+}

@@ -1,0 +1,562 @@
+{
+  "batch": 9,
+  "states": [
+    {
+      "state": "sd",
+      "maturity": "baseline_sam_only",
+      "project_count_approx": 174,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national (SD filter)",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py --states SD",
+          "status": "built",
+          "est_records_24mo": 22,
+          "token_cost": "none",
+          "notes": "Federal construction solicitations; baseline coverage only."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national (SD filter)",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 151,
+          "token_cost": "none",
+          "notes": "Dominant source today (Ellsworth AFB, Sioux Falls VAMC, DOE substations)."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "dri",
+          "name": "Statewide structured register",
+          "endpoint_or_script": null,
+          "status": "rejected",
+          "est_records_24mo": 0,
+          "token_cost": "none",
+          "notes": "No DRI/Socrata statewide commercial-permit register found. Playbook lists GOED-style press only."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Sioux Falls municipal permits (candidate)",
+          "endpoint_or_script": "Live-verify before any pull; playbook warns generic ArcGIS Hub search without SD jurisdiction check",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Largest SD metro (I-29 corridor). No endpoint verified live in playbook. ND Fargo ArcGIS pattern (pull-county-arcgis.py fargo) is the nearest built analog."
+        },
+        {
+          "order": 5,
+          "tier": 2,
+          "kind": "accela",
+          "name": "Accela/EnerGov metro sweep",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Not attempted for SD. Low priority until Sioux Falls ArcGIS verified or rejected."
+        },
+        {
+          "order": 6,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "SD GOED / Governor economic-development announcements",
+          "endpoint_or_script": "Deterministic RSS or press-index scraper (not built)",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Playbook source order #1. 1 manual Sioux Falls industrial entry in corpus today."
+        },
+        {
+          "order": 7,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Sonnet named-project enrichment",
+          "endpoint_or_script": "scripts/enrich-news.py pattern; Sonnet only, capped",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Last resort. No dual LLM scrapes. Use only after deterministic IDs exist."
+        }
+      ],
+      "do_not_use": [
+        "Generic ArcGIS Hub search without confirming the layer serves South Dakota",
+        "Zip-code aggregate datasets with no project-level records",
+        "Dual Gemini+Sonnet full-state discovery scrapes"
+      ],
+      "next_action": "Live-verify Sioux Falls building-permit ArcGIS or Socrata endpoint; if fresh, add pull_sioux_falls to pull-county-arcgis.py following Fargo ND pattern.",
+      "priority_score": 28
+    },
+    {
+      "state": "tn",
+      "maturity": "built",
+      "project_count_approx": 397,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national (TN filter)",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py --states TN",
+          "status": "built",
+          "est_records_24mo": 29,
+          "token_cost": "none",
+          "notes": "Federal baseline."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national (TN filter)",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 193,
+          "token_cost": "none",
+          "notes": "Federal awards baseline."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "dri",
+          "name": "Statewide structured register",
+          "endpoint_or_script": null,
+          "status": "rejected",
+          "est_records_24mo": 0,
+          "token_cost": "none",
+          "notes": "No statewide commercial-permit Socrata/DRI equivalent (same as NC/TX)."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Nashville / Davidson County building permits",
+          "endpoint_or_script": "scripts/pull-county-arcgis.py --only nashville",
+          "status": "built",
+          "est_records_24mo": 171,
+          "token_cost": "none",
+          "notes": "Verified live 2026-07-26. Filter: Permit_Subtype_Description LIKE '%Commercial%'. Date_Entered (not Date_Issued) is the reliable date field. Direct Lon/Lat fields."
+        },
+        {
+          "order": 5,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Memphis / Shelby County permits (candidate)",
+          "endpoint_or_script": "Live-verify ArcGIS or Socrata before building",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Second-largest TN metro. No endpoint verified in playbook."
+        },
+        {
+          "order": 6,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Knoxville / Knox County permits (candidate)",
+          "endpoint_or_script": "Live-verify before building",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Third metro target. Unverified."
+        },
+        {
+          "order": 7,
+          "tier": 2,
+          "kind": "accela",
+          "name": "Accela/EnerGov TN metro sweep",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "NC Accela sweep found only CONCORD slug; TN slugs not yet tested systematically."
+        },
+        {
+          "order": 8,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "TN ECD press releases / project announcements",
+          "endpoint_or_script": "Deterministic press-index scraper (not built)",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Playbook source order #1. 4 manual/trade-press entries pre-ArcGIS pull."
+        },
+        {
+          "order": 9,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Sonnet named-project enrichment",
+          "endpoint_or_script": "Capped Sonnet pass on high-value named rows only",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Last resort after deterministic paths. No dual LLM scrapes."
+        }
+      ],
+      "do_not_use": [
+        "Generic ArcGIS Hub search without confirming TN jurisdiction",
+        "Date_Issued filter on Nashville layer (NULL for commercial records; use Date_Entered)",
+        "Dual Gemini+Sonnet full-state discovery scrapes"
+      ],
+      "next_action": "Refresh Nashville via pull-county-arcgis.py --only nashville --merge --months 24; live-verify Memphis Shelby County ArcGIS as second metro.",
+      "priority_score": 62
+    },
+    {
+      "state": "tx",
+      "maturity": "built",
+      "project_count_approx": 8114,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national (TX filter)",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py --states TX",
+          "status": "built",
+          "est_records_24mo": 160,
+          "token_cost": "none",
+          "notes": "Federal baseline."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national (TX filter)",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 727,
+          "token_cost": "none",
+          "notes": "Federal awards baseline."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "dri",
+          "name": "Statewide structured register",
+          "endpoint_or_script": null,
+          "status": "rejected",
+          "est_records_24mo": 0,
+          "token_cost": "none",
+          "notes": "Fully decentralized permitting; no TX DRI/Socrata statewide equivalent (confirmed ROADMAP item 25)."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Fort Worth / Tarrant County commercial permits",
+          "endpoint_or_script": "scripts/pull-county-arcgis.py --only fortworth",
+          "status": "built",
+          "est_records_24mo": 7222,
+          "token_cost": "none",
+          "notes": "VERIFIED LIVE 2026-07-26 and built. Endpoint: mapit.fortworthtexas.gov/ags/rest/services/CIVIC/Permits/MapServer/0. Filter: Permit_Type LIKE '%Commercial%'. SqFt is string-typed; JobValue/Owner_Full_Name/Lat/Lon direct fields. Only verified TX metro source."
+        },
+        {
+          "order": 5,
+          "tier": 1,
+          "kind": "socrata",
+          "name": "Dallas commercial permits (unverified lead)",
+          "endpoint_or_script": "Socrata resource ID from research; NOT verified live",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "UNVERIFIED. First freshness-check returned empty/error. Do not build until live schema + coordinate check passes."
+        },
+        {
+          "order": 6,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Houston / Harris County permits (unverified lead)",
+          "endpoint_or_script": "ArcGIS Hub portal lead from research; NOT verified live",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "UNVERIFIED. Retry with correct query syntax before trusting."
+        },
+        {
+          "order": 7,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Austin / Travis County permits (unverified lead)",
+          "endpoint_or_script": "ArcGIS Hub portal lead from research; NOT verified live",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "UNVERIFIED. Watch for aggregate stats tables masquerading as per-project layers (NC.md Dallas/Austin trap)."
+        },
+        {
+          "order": 8,
+          "tier": 1,
+          "kind": "socrata",
+          "name": "San Antonio / Bexar County permits (unverified lead)",
+          "endpoint_or_script": "Socrata/ArcGIS lead from research; NOT verified live",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "UNVERIFIED. First freshness-check failed."
+        },
+        {
+          "order": 9,
+          "tier": 2,
+          "kind": "accela",
+          "name": "Accela slug sweep (Dallas / San Antonio / Fort Worth)",
+          "endpoint_or_script": "DALLAS, SANANTONIOSA, FORTWORTHTX slugs",
+          "status": "rejected",
+          "est_records_24mo": 0,
+          "token_cost": "low",
+          "notes": "All three slugs 404'd (ROADMAP item 25). Accela not viable for these TX metros without new slug discovery."
+        },
+        {
+          "order": 10,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "TX economic-development press / bid boards",
+          "endpoint_or_script": "Deterministic press-index scraper (not built)",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "5 manual data-center/industrial entries (Temple, etc.) pre-Fort Worth pull."
+        },
+        {
+          "order": 11,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Sonnet named mega-project enrichment",
+          "endpoint_or_script": "Capped Sonnet on named hyperscale/data-center rows missing owner/docs",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Last resort. No dual LLM scrapes. Do not use for bulk TX discovery."
+        }
+      ],
+      "do_not_use": [
+        "Building pull scripts against unverified Dallas/Houston/Austin/San Antonio URLs",
+        "Aggregate Year/Quarter/Geography stats tables (not per-project records)",
+        "Accela slugs DALLAS / SANANTONIOSA / FORTWORTHTX (all 404)",
+        "Dual Gemini+Sonnet full-state discovery scrapes"
+      ],
+      "next_action": "Live-verify one unverified TX metro (Dallas Socrata or Houston ArcGIS) with schema + outSR=4326 coordinate check before writing pull_*(); Fort Worth refresh is maintenance only.",
+      "priority_score": 78
+    },
+    {
+      "state": "ut",
+      "maturity": "baseline_sam_only",
+      "project_count_approx": 202,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national (UT filter)",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py --states UT",
+          "status": "built",
+          "est_records_24mo": 30,
+          "token_cost": "none",
+          "notes": "Federal baseline."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national (UT filter)",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 171,
+          "token_cost": "none",
+          "notes": "Dominant source today (DOE, Hill AFB, federal facilities)."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "dri",
+          "name": "Statewide structured register (GOED)",
+          "endpoint_or_script": "Live-verify UT GOED project database before building",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Playbook lists state economic development as source order #1 but no verified project-level API. AZ/WA pattern: claimed databases often don't exist at record level."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Salt Lake City / SLCO commercial permits (candidate)",
+          "endpoint_or_script": "Live-verify ArcGIS or Socrata before building",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Primary UT metro. No endpoint verified in playbook."
+        },
+        {
+          "order": 5,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Utah County / Provo-Orem permits (candidate)",
+          "endpoint_or_script": "Live-verify before building",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Second metro cluster (Silicon Slopes). Unverified."
+        },
+        {
+          "order": 6,
+          "tier": 2,
+          "kind": "accela",
+          "name": "Accela/EnerGov UT metro sweep",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Not attempted for UT."
+        },
+        {
+          "order": 7,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "UT GOED press releases / EDA announcements",
+          "endpoint_or_script": "Deterministic press-index scraper (not built)",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "1 manual TI fab entry in corpus. Playbook source order #1."
+        },
+        {
+          "order": 8,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Sonnet named-project enrichment",
+          "endpoint_or_script": "Capped Sonnet pass only",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Last resort. No dual LLM scrapes."
+        }
+      ],
+      "do_not_use": [
+        "Generic ArcGIS Hub search without confirming Utah jurisdiction",
+        "Zip-code aggregate datasets with no project-level records",
+        "Dual Gemini+Sonnet full-state discovery scrapes"
+      ],
+      "next_action": "Live-verify Salt Lake City or SLCO building-permit ArcGIS/Socrata endpoint; GOED project DB check in same pass (confirm record-level vs aggregate).",
+      "priority_score": 38
+    },
+    {
+      "state": "va",
+      "maturity": "built",
+      "project_count_approx": 2563,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national (VA filter)",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py --states VA",
+          "status": "built",
+          "est_records_24mo": 101,
+          "token_cost": "none",
+          "notes": "Federal baseline."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national (VA filter)",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 685,
+          "token_cost": "none",
+          "notes": "Federal awards baseline."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "web_scraper",
+          "name": "VEDP incentives reporting (PDF table extraction)",
+          "endpoint_or_script": "scripts/extract-spec-book.py PDF-table pattern (not built for VEDP)",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Real, current, structured company/investment/jobs data but PDF-only (no CSV/API). Tier 0 statewide EDA register equivalent."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Fairfax County commercial permits + DATA_CENTER flag",
+          "endpoint_or_script": "scripts/pull-county-arcgis.py --only fairfax",
+          "status": "built",
+          "est_records_24mo": 1771,
+          "token_cost": "none",
+          "notes": "Verified live 2026-07-27. APPTYPEALIAS IN ('Commercial New','Commercial Addition/Alteration'). DATA_CENTER Yes/No field. Polygon geometry: lat/lon left null. +1,771 on first merge."
+        },
+        {
+          "order": 5,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Virginia Beach building permit applications",
+          "endpoint_or_script": "Add pull_virginia_beach to pull-county-arcgis.py (verified unbuilt)",
+          "status": "verified",
+          "est_records_24mo": 17622,
+          "token_cost": "none",
+          "notes": "Verified live 2026-07-27: 103,116 total, fresh to 3 days. Filter ConstructionType='Commercial' (NOT PermitType). IssueDate is string YYYY/MM/DD, not epoch."
+        },
+        {
+          "order": 6,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Richmond Development Tracker ($1.5M+ projects)",
+          "endpoint_or_script": "Add pull_richmond to pull-county-arcgis.py (verified unbuilt)",
+          "status": "verified",
+          "est_records_24mo": 370,
+          "token_cost": "none",
+          "notes": "Verified live: hand-curated tracker, ~4.5mo stale but actively maintained. Clean LandUse_Type categorical field."
+        },
+        {
+          "order": 7,
+          "tier": 2,
+          "kind": "accela",
+          "name": "Loudoun / Prince William Tyler EnerGov ePortal",
+          "endpoint_or_script": "LandMARC / EnerGov (Data Center Alley)",
+          "status": "rejected",
+          "est_records_24mo": 0,
+          "token_cost": "high",
+          "notes": "Loudoun ArcGIS layers 100% residential categories, stale (max 2018). Real DC volume runs through Tyler EnerGov with no public open-data feed found. PWC use-permits layer is zoning-case scale only."
+        },
+        {
+          "order": 8,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "VA DEQ data-center air permits / permit transparency",
+          "endpoint_or_script": "DEQ issued-air-permits page; Permit Transparency Power BI",
+          "status": "rejected",
+          "est_records_24mo": 0,
+          "token_cost": "low",
+          "notes": "DEQ air-permits page 403s. Permit Transparency is embedded Power BI with no REST API. VA SCC load-queue filing is policy-level, not named-project registry."
+        },
+        {
+          "order": 9,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Sonnet named data-center / mega-project enrichment",
+          "endpoint_or_script": "Capped Sonnet on high-value Fairfax/Loudoun gap rows",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Last resort for named projects missing owner/architect. No dual LLM scrapes."
+        }
+      ],
+      "do_not_use": [
+        "Loudoun County ArcGIS building-permit layers (residential-only schema, stale to 2018)",
+        "PermitType filter on Virginia Beach layer (trade category, not commercial/residential)",
+        "DATE SQL literal on Virginia Beach IssueDate (string field, needs string parsing)",
+        "Dual Gemini+Sonnet full-state discovery scrapes"
+      ],
+      "next_action": "Build pull_virginia_beach into pull-county-arcgis.py (ConstructionType='Commercial', string IssueDate parsing); then Richmond Development Tracker.",
+      "priority_score": 88
+    }
+  ],
+  "notes": "Batch 9 spans one deep built state (VA Fairfax + 2 verified-unbuilt ArcGIS metros), one partial built state (TX Fort Worth verified+built; Dallas/Houston/Austin/San Antonio unverified leads only), one single-metro built state (TN Nashville), and two SAM-only baselines (SD, UT). No dual LLM scrapes. National SAM+USAspending always-on for all five. TX maturity marked built on Fort Worth evidence only; do not treat unverified metro leads as verified."
+}

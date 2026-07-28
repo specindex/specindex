@@ -1,0 +1,457 @@
+{
+  "batch": 7,
+  "states": [
+    {
+      "state": "nj",
+      "maturity": "built",
+      "project_count_approx": 53750,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py --states nj",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Always-on national layer; already merged into nj.json."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Always-on national layer; federal awards already in corpus."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "socrata",
+          "name": "NJDCA statewide construction permits",
+          "endpoint_or_script": "https://data.nj.gov/resource/w9se-dmra.json | scripts/pull-nj-dca.py",
+          "status": "built",
+          "est_records_24mo": 53543,
+          "token_cost": "none",
+          "notes": "Gold Tier 0. Commercial usegroupdesc allowlist, clamped permitdate upper bound (garbage far-future dates in raw data). Fixes jurisdiction granularity via muniname+county; no street address or project name. First 24mo pull 2026-07-27."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Municipal/county permit open data (optional)",
+          "endpoint_or_script": "Jersey City data.jerseycitynj.gov; Middlesex data-middlesex.opendata.arcgis.com; Essex/Bergen parcel GIS only",
+          "status": "rejected",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Checked live 2026-07-26: Jersey City has no permit-issuance dataset (only zoning reference and static dev maps); Middlesex catalog has 19 datasets, none permit-level; county GIS is parcels/MOD-IV only. NJDCA statewide feed already covers these municipalities."
+        },
+        {
+          "order": 5,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Newark Building_Permits FeatureServer trap",
+          "endpoint_or_script": "https://services6.arcgis.com/ONZht79c8QWuX759/arcgis/rest/services/Building_Permits/FeatureServer/0",
+          "status": "rejected",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Confirmed Ontario Canada aggregate stats (Peel Region municipalities), same wrong-jurisdiction trap documented in nc.md. Year/Quarter aggregate table, not per-project records."
+        },
+        {
+          "order": 6,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "NJDEP facility environmental permits",
+          "endpoint_or_script": "https://gisdata-njdep.opendata.arcgis.com",
+          "status": "rejected",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Existing-facility environmental compliance permits, not pre-construction leading indicators. Low expected relevance."
+        },
+        {
+          "order": 7,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "NJEDA awards and NJSDA bid PDF index",
+          "endpoint_or_script": "https://www.njeda.gov/public_information/ | NJSDA bid board PDFs",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Deterministic HTML/PDF harvest target per STATE_CAPTURE gold path. NJEDA Power BI embeds (ERG, Grow NJ, Emerge/Aspire) not verified loadable; static PDF/Excel reports exist but not scraped yet. Tax-credit recipients, not permit-level; use for named mega-project cross-reference only."
+        },
+        {
+          "order": 8,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "NJ BPU large-load filings",
+          "endpoint_or_script": "https://www.njbpu.gov docket search",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Named in research framework, explicitly unresearched after NJDCA find. Next live-check candidate for data-center power-load signals."
+        },
+        {
+          "order": 9,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Sonnet named-project enrichment and doc retrieval",
+          "endpoint_or_script": "claude-sonnet-5 (capped) | data/raw/nj-2026-sonnet.json, nj-2026-docs-sonnet.json",
+          "status": "verified",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "A/B complete: Sonnet beats Gemini on owner/value fields for named web research and public bid PDFs (nj-2026-model-comparison.json). Use ONLY for high-value named rows (pharma, data center, hospital) missing owner/architect/docs. NEVER repeat dual Flash+Sonnet bulk state discovery scrapes."
+        }
+      ],
+      "do_not_use": [
+        "services6.arcgis.com/ONZht79c8QWuX759/.../Building_Permits/FeatureServer (Ontario aggregate trap)",
+        "Jersey City open data for permits (no issuance dataset; use NJDCA)",
+        "Middlesex County open data for permits (no dataset; use NJDCA)",
+        "NJDEP facility environmental permits as pre-construction register",
+        "Unfiltered MAX(permitdate) on NJDCA (garbage far-future dates)",
+        "Dual Gemini Flash + Sonnet bulk project discovery scrapes"
+      ],
+      "next_action": "Build deterministic NJEDA press-release / NJSDA PDF link harvester (Tier 3); live-check NJ BPU docket search; wire capped Sonnet doc-retrieval pass for named high-value rows only.",
+      "priority_score": 95
+    },
+    {
+      "state": "nm",
+      "maturity": "baseline_sam_only",
+      "project_count_approx": 211,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py --states nm",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Dominant corpus layer today (~210 federal solicitations/awards). Playbook stub; no state Tier 0/1 source verified."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Always-on national layer."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "socrata",
+          "name": "Statewide structured register",
+          "endpoint_or_script": "Not found in playbook",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "No DRI/Socrata statewide equivalent documented. Playbook source order lists state EDA first but no endpoint verified live."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Municipal permit open data (Albuquerque, Las Cruces, Santa Fe)",
+          "endpoint_or_script": "Not yet researched",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Playbook placeholder only. Must live-verify endpoint, max-date freshness, and jurisdiction before building pull-county-arcgis.py config."
+        },
+        {
+          "order": 5,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "State EDA / DCD announcements",
+          "endpoint_or_script": "New Mexico Economic Development Department public announcements",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Corpus has 1 named manual row (Stargate Project Jupiter, Doña Ana). Deterministic RSS/press harvest before any LLM discovery."
+        },
+        {
+          "order": 6,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Sonnet named mega-project enrichment",
+          "endpoint_or_script": "claude-sonnet-5 (capped)",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Only after named IDs exist (Stargate, fabs, federal labs). No bulk state LLM scrape. Sonnet preferred per NJ A/B."
+        }
+      ],
+      "do_not_use": [
+        "Generic ArcGIS Hub search without verifying layer covers New Mexico",
+        "Zip-code aggregate datasets with no project-level records",
+        "Dual Gemini Flash + Sonnet bulk project discovery scrapes",
+        "LLM full-state discovery before a verified Tier 0/1 endpoint"
+      ],
+      "next_action": "Live-verify Albuquerque and Las Cruces permit ArcGIS/Socrata endpoints (max-date + jurisdiction check) before writing any pull script.",
+      "priority_score": 35
+    },
+    {
+      "state": "nv",
+      "maturity": "baseline_sam_only",
+      "project_count_approx": 215,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py --states nv",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Dominant corpus layer today. Playbook stub; no state Tier 0/1 source verified."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Always-on national layer."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "socrata",
+          "name": "Statewide structured register",
+          "endpoint_or_script": "Not found in playbook",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "No statewide pre-construction register documented. NV permitting is decentralized; Clark/Washoe county feeds are the likely Tier 1 entry points but unverified."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Clark County (Las Vegas) and Washoe County (Reno) permit layers",
+          "endpoint_or_script": "Not yet researched",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Playbook placeholder only. Data-center pipeline (Reno/Storey, Las Vegas metro) makes these high-value if live-verified. Must confirm freshness and commercial fields before building."
+        },
+        {
+          "order": 5,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "GOED / state EDA announcements",
+          "endpoint_or_script": "Nevada Governor's Office of Economic Development public project announcements",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Corpus has 1 named manual row (Vantage Reno campus). ROADMAP item 41 checked 10 state EDAs; NV not among verified project-level databases. Deterministic press harvest only."
+        },
+        {
+          "order": 6,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Sonnet named data-center enrichment",
+          "endpoint_or_script": "claude-sonnet-5 (capped)",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Only for named hyperscale rows missing owner/power envelope/docs. No bulk state LLM scrape."
+        }
+      ],
+      "do_not_use": [
+        "Generic ArcGIS Hub search without verifying layer covers Nevada",
+        "Zip-code aggregate datasets with no project-level records",
+        "Dual Gemini Flash + Sonnet bulk project discovery scrapes",
+        "LLM full-state discovery before a verified Tier 0/1 endpoint"
+      ],
+      "next_action": "Live-verify Clark County and Washoe County building-permit ArcGIS layers (max-date, commercial valuation fields, lat/lon) as first Tier 1 candidates.",
+      "priority_score": 38
+    },
+    {
+      "state": "ny",
+      "maturity": "built",
+      "project_count_approx": 3497,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py --states ny",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Always-on national layer; merged into ny.json."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Always-on national layer."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "socrata",
+          "name": "NYC Capital Projects Database (CPDB)",
+          "endpoint_or_script": "https://data.cityofnewyork.us/resource/fi59-268w.json | scripts/pull-ny-nyc-capital-projects.py",
+          "status": "built",
+          "est_records_24mo": 2957,
+          "token_cost": "none",
+          "notes": "Verified live 2026-07-26. typecategory=Fixed Asset, totalplannedcommit >= $1M. Geospatial companion h2ic-zdws (~28% have lat/lon). City capital construction (civic/education/healthcare), not private commercial. NYC covers most NY state activity."
+        },
+        {
+          "order": 4,
+          "tier": 0,
+          "kind": "socrata",
+          "name": "NYS Empire State Development project database",
+          "endpoint_or_script": "ROADMAP item 41: verified live Socrata quarterly project DB (endpoint not yet in playbook)",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "ROADMAP item 41 flagged NY state EDA Socrata as strongest of 10 state EDAs checked. Not documented in docs/states/ny.md and no pull script yet. Live re-verify endpoint and schema before building."
+        },
+        {
+          "order": 5,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Upstate metro permit open data (Buffalo, Rochester, Albany, Syracuse)",
+          "endpoint_or_script": "Not yet researched",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Playbook source order item 2, explicitly not yet researched. Required to cover private commercial outside NYC."
+        },
+        {
+          "order": 6,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Sonnet named-project enrichment",
+          "endpoint_or_script": "claude-sonnet-5 (capped)",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Only for named mega-projects (data center, hospital, mixed-use tower) missing owner/architect/docs. No bulk state LLM scrape. Sonnet preferred per NJ A/B."
+        }
+      ],
+      "do_not_use": [
+        "Generic ArcGIS Hub search without verifying layer covers New York",
+        "Zip-code aggregate datasets with no project-level records",
+        "Dual Gemini Flash + Sonnet bulk project discovery scrapes",
+        "Treating CPDB Lump Sum / ITT line items as physical construction (use typecategory=Fixed Asset filter)"
+      ],
+      "next_action": "Live re-verify NYS EDA Socrata endpoint from ROADMAP item 41, document in docs/states/ny.md, and build pull script; then research Buffalo/Rochester/Albany permit feeds.",
+      "priority_score": 88
+    },
+    {
+      "state": "oh",
+      "maturity": "baseline_sam_only",
+      "project_count_approx": 373,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py --states oh",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Dominant corpus layer (~370+ federal records). Playbook stub; no state Tier 0/1 source verified."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Always-on national layer; federal awards (Wright-Patterson, Cleveland VA, etc.) already in corpus."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "socrata",
+          "name": "Statewide structured register",
+          "endpoint_or_script": "Not found in playbook",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "No Ohio DRI/Socrata statewide equivalent documented. STATE_CAPTURE_RECOMMENDATION_PATH lists OH as P2: research then live-verify one metro."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Columbus/Franklin County and Cleveland/Cuyahoga permit layers",
+          "endpoint_or_script": "Not yet researched",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Playbook placeholder only. Corpus has 2 named manual press rows (Canal Crossing Commerce Center, etc.). Must live-verify max-date and commercial fields. Note: aca-prod.accela.com/MONTCOOH is Montgomery County Ohio, not Maryland."
+        },
+        {
+          "order": 5,
+          "tier": 2,
+          "kind": "accela",
+          "name": "Major metro Accela portals (Columbus, Cincinnati, Cleveland)",
+          "endpoint_or_script": "Not yet researched",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Tier 2 only after ArcGIS live-check fails or confirms Accela backend. Rate-limit carefully per GA Accela lessons."
+        },
+        {
+          "order": 6,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "JobsOhio / state EDA announcements",
+          "endpoint_or_script": "Ohio economic development public announcements",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Playbook lists state EDA first but no endpoint verified. Deterministic press/RSS harvest before LLM."
+        },
+        {
+          "order": 7,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Sonnet named-project enrichment",
+          "endpoint_or_script": "claude-sonnet-5 (capped)",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Only for named industrial/data-center/hospital rows missing fields. No bulk state LLM scrape."
+        }
+      ],
+      "do_not_use": [
+        "Generic ArcGIS Hub search without verifying layer covers Ohio",
+        "Zip-code aggregate datasets with no project-level records",
+        "Dual Gemini Flash + Sonnet bulk project discovery scrapes",
+        "aca-prod.accela.com/MONTCOOH for Maryland (that slug is Montgomery County Ohio)"
+      ],
+      "next_action": "Live-verify Columbus/Franklin County building-permit ArcGIS or Accela endpoint as first OH Tier 1 candidate (P2 per STATE_CAPTURE_RECOMMENDATION_PATH).",
+      "priority_score": 55
+    }
+  ],
+  "notes": "NJ is the gold deterministic-first path: built NJDCA Socrata Tier 0 (53,543 commercial permits/24mo), documented municipal traps rejected, Tier 3 web scraper and Tier 4 Sonnet enrichment still open. NY has built NYC CPDB Socrata (2,957 projects). NM, NV, OH remain SAM+USAspending baseline with playbook stubs only; no Tier 0/1 endpoints verified in playbooks. Never repeat dual Flash+Sonnet bulk state scrapes (NJ A/B settled: Sonnet for named enrichment only)."
+}

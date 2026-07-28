@@ -1,0 +1,433 @@
+{
+  "batch": 4,
+  "states": [
+    {
+      "state": "ks",
+      "maturity": "built",
+      "project_count_approx": 1192,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national CSV",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 12,
+          "token_cost": "none",
+          "notes": "Federal construction solicitations; 12 ks-sam records in corpus."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 132,
+          "token_cost": "none",
+          "notes": "Federal award notices; 132 ks-usaspending records in corpus."
+        },
+        {
+          "order": 3,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Overland Park Building Permit Report (Johnson County KC metro)",
+          "endpoint_or_script": "scripts/pull-county-arcgis.py --only overland_park",
+          "status": "built",
+          "est_records_24mo": 1047,
+          "token_cost": "none",
+          "notes": "Verified live 2026-07-26. ReportPermitType IN (New Commercial, Other Commercial, New Institutional). Ad-hoc IT extract per service metadata; re-check liveness before long-term reliance."
+        },
+        {
+          "order": 4,
+          "tier": 2,
+          "kind": "accela",
+          "name": "Unified Government Wyandotte County / KCK building permits",
+          "endpoint_or_script": "TBD — headless-browser / network-interception pass required",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Building Permits page exists but no REST/FeatureServer URL resolved yet (docs/states/ks.md). Covers Kansas City KS side of metro gap."
+        },
+        {
+          "order": 5,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "Kansas Commerce BASE Transparency Database Explorer",
+          "endpoint_or_script": "TBD — JS iframe, no static endpoint found",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Real incentive-award database described on page but loads via JS into blank iframe; failed static HTML scrape 2026-07-26."
+        },
+        {
+          "order": 6,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named mega-project enrichment (Chiefs HQ, Wyandotte stadium)",
+          "endpoint_or_script": "claude-sonnet-5 one-shot, capped",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Sonnet only for named projects already in corpus. No dual Flash+Sonnet bulk scrapes."
+        }
+      ],
+      "do_not_use": [
+        "Wichita city ArcGIS Hub (143 datasets checked, no permit/building/commercial layer)",
+        "Sedgwick County GIS Hub (43 datasets, no permit dataset; Wichita Zoning Cases is zoning tracking only)",
+        "Johnson County AIMS open-data portal (89 datasets, boundary/district layers only)",
+        "Generic ArcGIS Hub search without verifying Kansas jurisdiction",
+        "Zip-code aggregate datasets with no project-level records"
+      ],
+      "next_action": "Re-verify Overland Park MapServer liveness, then resolve Wyandotte County/KCK permit REST or Accela endpoint via headless browser check.",
+      "priority_score": 72
+    },
+    {
+      "state": "ky",
+      "maturity": "baseline_sam_only",
+      "project_count_approx": 199,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national CSV",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 41,
+          "token_cost": "none",
+          "notes": "Only deterministic source in corpus today; 41 ky-sam records."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 156,
+          "token_cost": "none",
+          "notes": "156 ky-usaspending records; Louisville and Lexington federal work dominate."
+        },
+        {
+          "order": 3,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Louisville/Jefferson County + Lexington-Fayette municipal permit open data",
+          "endpoint_or_script": "TBD — live verification pass required",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Playbook stub only (docs/states/ky.md). No endpoint verified yet. Priority metros: Louisville, Lexington."
+        },
+        {
+          "order": 4,
+          "tier": 2,
+          "kind": "accela",
+          "name": "Kentucky metro Accela/EnerGov portals",
+          "endpoint_or_script": "TBD — slug verification pass after ArcGIS/Socrata sweep",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Check slug state suffix before building (MONTCOOH-style trap discipline)."
+        },
+        {
+          "order": 5,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "Kentucky Cabinet for Economic Development press/incentive announcements",
+          "endpoint_or_script": "TBD",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "No statewide structured register equivalent to GA DRI or NJ DCA found in playbook."
+        },
+        {
+          "order": 6,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named project enrichment (Kroger Lexington, Poe Companies)",
+          "endpoint_or_script": "claude-sonnet-5 one-shot, capped",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Sonnet only for named projects already in corpus. No dual Flash+Sonnet bulk scrapes."
+        }
+      ],
+      "do_not_use": [
+        "Generic ArcGIS Hub search without verifying Kentucky jurisdiction",
+        "Zip-code aggregate datasets with no project-level records",
+        "Unverified Accela slug guesses without state-suffix check"
+      ],
+      "next_action": "Live-verify Louisville/Jefferson County and Lexington-Fayette permit Socrata or ArcGIS endpoints before writing any pull script.",
+      "priority_score": 58
+    },
+    {
+      "state": "la",
+      "maturity": "baseline_sam_only",
+      "project_count_approx": 280,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national CSV",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 18,
+          "token_cost": "none",
+          "notes": "18 la-sam records; heavy USACE/New Orleans federal activity."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 261,
+          "token_cost": "none",
+          "notes": "261 la-usaspending records; dominant source today."
+        },
+        {
+          "order": 3,
+          "tier": 1,
+          "kind": "socrata",
+          "name": "New Orleans + East Baton Rouge parish municipal permit open data",
+          "endpoint_or_script": "TBD — live verification pass required",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "socrata_adapter.py lists New Orleans as a Socrata city example but docs/states/la.md has no verified endpoint yet."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Jefferson Parish / Baton Rouge metro ArcGIS permit layers",
+          "endpoint_or_script": "TBD — live verification pass required",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Playbook stub only. No Louisiana parish/city permit feed verified."
+        },
+        {
+          "order": 5,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "Louisiana Economic Development project announcements",
+          "endpoint_or_script": "TBD",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "No statewide structured register found; Meta Richland Parish data center came via press."
+        },
+        {
+          "order": 6,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named mega-project enrichment (Meta Richland Parish data center)",
+          "endpoint_or_script": "claude-sonnet-5 one-shot, capped",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Sonnet only for named projects already in corpus. No dual Flash+Sonnet bulk scrapes."
+        }
+      ],
+      "do_not_use": [
+        "Generic ArcGIS Hub search without verifying Louisiana jurisdiction and parish",
+        "Zip-code aggregate datasets with no project-level records",
+        "Any Socrata dataset ID cited only in adapter comments without live max-date verification"
+      ],
+      "next_action": "Live-verify New Orleans and East Baton Rouge parish Socrata/ArcGIS permit endpoints (max-date + commercial filter) before building pull-la-*.py.",
+      "priority_score": 55
+    },
+    {
+      "state": "ma",
+      "maturity": "baseline_sam_only",
+      "project_count_approx": 239,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national CSV",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 59,
+          "token_cost": "none",
+          "notes": "59 ma-sam records in corpus."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 178,
+          "token_cost": "none",
+          "notes": "178 ma-usaspending records; dominant source today."
+        },
+        {
+          "order": 3,
+          "tier": 1,
+          "kind": "socrata",
+          "name": "Boston / Cambridge municipal permit open data",
+          "endpoint_or_script": "TBD — live verification pass required",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Playbook stub only (docs/states/ma.md). Boston and Cambridge are highest-yield targets but no endpoint verified yet."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Worcester / Springfield / Lowell metro ArcGIS permit layers",
+          "endpoint_or_script": "TBD — live verification pass required",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Secondary metros after Boston/Cambridge; verify jurisdiction before building."
+        },
+        {
+          "order": 5,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "Massachusetts Economic Development / MassDevelopment project announcements",
+          "endpoint_or_script": "TBD",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "No statewide structured register equivalent to GA DRI found in playbook."
+        },
+        {
+          "order": 6,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named project enrichment (Arco Dorchester, Maersk North Reading)",
+          "endpoint_or_script": "claude-sonnet-5 one-shot, capped",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Sonnet only for named projects already in corpus. No dual Flash+Sonnet bulk scrapes."
+        }
+      ],
+      "do_not_use": [
+        "Generic ArcGIS Hub search without verifying Massachusetts municipality",
+        "Zip-code aggregate datasets with no project-level records"
+      ],
+      "next_action": "Live-verify Boston and Cambridge Socrata or ArcGIS permit feeds (max-date, commercial filter, city field) before writing pull-ma-*.py.",
+      "priority_score": 62
+    },
+    {
+      "state": "md",
+      "maturity": "built",
+      "project_count_approx": 4392,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national CSV",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 58,
+          "token_cost": "none",
+          "notes": "58 md-sam records in corpus."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 1133,
+          "token_cost": "none",
+          "notes": "1133 md-usaspending records; heavy federal corridor (DC metro spillover)."
+        },
+        {
+          "order": 3,
+          "tier": 1,
+          "kind": "socrata",
+          "name": "Montgomery County commercial permits",
+          "endpoint_or_script": "scripts/pull-md-montgomery.py",
+          "status": "built",
+          "est_records_24mo": 3198,
+          "token_cost": "none",
+          "notes": "data.montgomerycountymd.gov/resource/i26v-w6bd.json. Pre-scoped to applicationtype=COMMERCIAL BUILDING. Real city field 96.5% fill. Built 2026-07-27."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Baltimore City DHCD Building Permits",
+          "endpoint_or_script": "https://egisdata.baltimorecity.gov/egis/rest/services/Housing/DHCD_Open_Baltimore_Datasets/FeatureServer/3",
+          "status": "verified",
+          "est_records_24mo": 25584,
+          "token_cost": "none",
+          "notes": "Verified live 2026-07-27, max IssuedDate 2026-07-26. Exclude ProposedUse matching Dwelling|Family|Rowhouse|Duplex|Apartment|Townhouse. Not yet built into script."
+        },
+        {
+          "order": 5,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Baltimore County Cityworks Permits",
+          "endpoint_or_script": "https://bcgisdata.baltimorecountymd.gov/arcgis/rest/services/DevelopmentManagement/ActiveDevelopment/MapServer/4",
+          "status": "verified",
+          "est_records_24mo": 3661,
+          "token_cost": "none",
+          "notes": "Verified live 2026-07-27. LANDUSE_TYPE IN (COMMERCIAL, INDUSTRIAL, OFFICE, MIXED variants). Rich schema with EST_COST, TENANT, lat/lon. Not yet built."
+        },
+        {
+          "order": 6,
+          "tier": 1,
+          "kind": "socrata",
+          "name": "Prince George's County DPIE permits",
+          "endpoint_or_script": "https://data.princegeorgescountymd.gov/resource/weik-ttee.json",
+          "status": "verified",
+          "est_records_24mo": 199,
+          "token_cost": "none",
+          "notes": "Verified live 2026-07-27. Low current yield (~199/24mo via commercial permit_type codes). Supplementary only; not primary PG source."
+        },
+        {
+          "order": 7,
+          "tier": 2,
+          "kind": "accela",
+          "name": "Anne Arundel County Land Use Navigator",
+          "endpoint_or_script": "https://aca-prod.accela.com/aaco/Default.aspx",
+          "status": "verified",
+          "est_records_24mo": null,
+          "token_cost": "high",
+          "notes": "Real per-permit Accela portal confirmed live 2026-07-27. Aggregate ArcGIS table rejected (monthly counts only). Needs Playwright/network-interception like GA/NC playbooks."
+        },
+        {
+          "order": 8,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named mega-project enrichment (AWS Calvert, data centers)",
+          "endpoint_or_script": "claude-sonnet-5 one-shot, capped",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Sonnet only for named projects already in corpus. No dual Flash+Sonnet bulk scrapes."
+        }
+      ],
+      "do_not_use": [
+        "data-cityofpg.opendata.arcgis.com Building Permit Applications (City of Prince George, British Columbia, Canada)",
+        "data-montcopa.opendata.arcgis.com (Montgomery County, Pennsylvania)",
+        "aca-prod.accela.com/MONTCOOH (Montgomery County, Ohio)",
+        "Montgomery County Commercial_Permits_since_2010 ArcGIS (stale since 2017-04-17; use Socrata i26v-w6bd instead)",
+        "Prince George's Momentum_DPIE ArcGIS (stale since 2024-06-28; use Socrata weik-ttee instead)",
+        "Anne Arundel Permits Applied and Issued aggregate table (162 monthly count rows, not project-level)",
+        "data.baltimorecity.gov/resource/fesm-tgxf.json dead Socrata redirect (use FeatureServer/3 instead)"
+      ],
+      "next_action": "Build scripts/pull-md-baltimore.py covering Baltimore City FeatureServer/3 and Baltimore County MapServer/4 with documented commercial filters.",
+      "priority_score": 92
+    }
+  ],
+  "notes": ""
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "generated_for": "50-state deterministic-first capture recommendations",
+  "cost_policy": {
+    "forbid_dual_llm_scrapes_per_state": true,
+    "reason": "NJ Gemini vs Sonnet A/B already established: Sonnet better for named web research and public bid PDFs; Gemini complementary. Repeating dual LLM scrapes x50 is wasteful. Prefer Tier 0/1 APIs.",
+    "llm_allowed_when": [
+      "No verified Tier 0/1 endpoint after live check",
+      "Enriching named mega-projects already in corpus (owner/architect/docs)",
+      "One-shot source discovery leads only (then verify live before building)"
+    ],
+    "preferred_llm_for_named_enrichment": "claude-sonnet-5",
+    "preferred_llm_for_cheap_lead_scan": "gemini-2.5-flash via Vertex",
+    "national_always_on": [
+      "scripts/pull-sam-gov-bulk-national.py",
+      "scripts/pull-usaspending-bulk-national.py"
+    ]
+  },
+  "tiers": {
+    "0": "Statewide structured register (DRI/Socrata statewide/Act 250/etc) - deterministic script",
+    "1": "Municipal/county ArcGIS or Socrata record-level permits - deterministic script",
+    "2": "Accela/EnerGov portal automation - deterministic but heavier",
+    "3": "Targeted web scraper for known bid boards / EDA press RSS - deterministic HTML",
+    "4": "LLM web research for named projects + doc retrieval - capped, Sonnet primary"
+  },
+  "state_object_shape": {
+    "state": "nj",
+    "maturity": "built|verified_unbuilt|research_only|baseline_sam_only",
+    "project_count_approx": 0,
+    "path": [
+      {
+        "order": 1,
+        "tier": 0,
+        "kind": "socrata|arcgis|accela|dri|sam|usaspending|web_scraper|llm_enrichment",
+        "name": "short name",
+        "endpoint_or_script": "url or scripts/...",
+        "status": "built|verified|candidate|rejected",
+        "est_records_24mo": null,
+        "token_cost": "none|low|medium|high",
+        "notes": ""
+      }
+    ],
+    "do_not_use": [],
+    "next_action": "one concrete next build step",
+    "priority_score": 0
+  }
+}

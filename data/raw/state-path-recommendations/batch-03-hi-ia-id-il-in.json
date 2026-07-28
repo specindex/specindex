@@ -1,0 +1,489 @@
+{
+  "batch": 3,
+  "states": [
+    {
+      "state": "hi",
+      "maturity": "research_only",
+      "project_count_approx": 338,
+      "path": [
+        {
+          "order": 1,
+          "tier": null,
+          "kind": "sam",
+          "name": "SAM.gov bulk national",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py --states HI",
+          "status": "built",
+          "est_records_24mo": 15,
+          "token_cost": "none",
+          "notes": "15 SAM solicitations in corpus today; federal-heavy state."
+        },
+        {
+          "order": 2,
+          "tier": null,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 321,
+          "token_cost": "none",
+          "notes": "321 federal construction awards dominate HI corpus (military bases, Maui recovery)."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "dri",
+          "name": "Hawaii DBEDT / state EDA announcements",
+          "endpoint_or_script": "https://dbedt.hawaii.gov/",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Playbook lists state EDA press first but no structured statewide register verified yet. Live-check for Socrata or downloadable project register before building."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "socrata",
+          "name": "City and County of Honolulu building permits",
+          "endpoint_or_script": "Not verified — live-check C&C Honolulu DPP open-data catalog",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Honolulu County covers ~70% of state population. Playbook requires live endpoint verification before any bulk pull; no ArcGIS/Socrata URL confirmed in docs/states/hi.md."
+        },
+        {
+          "order": 5,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Maui / Hawaii County / Kauai permit open data",
+          "endpoint_or_script": "Not verified",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Neighbor-island counties un researched. Verify each hub independently; reject zip aggregates."
+        },
+        {
+          "order": 6,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "Trade press (CNR, Star-Advertiser)",
+          "endpoint_or_script": "Manual / deterministic RSS or site scrape",
+          "status": "candidate",
+          "est_records_24mo": 2,
+          "token_cost": "low",
+          "notes": "2 named press projects in corpus (Aloha Stadium, Amazon Kapolei). Supplementary only after permit feeds."
+        },
+        {
+          "order": 7,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Sonnet named-project enrichment",
+          "endpoint_or_script": "Cap per STATE_CAPTURE_RECOMMENDATION_PATH.md",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "LLM last. Enrich Aloha Stadium / Amazon Kapolei owner-architect gaps only; never full-state discovery."
+        }
+      ],
+      "do_not_use": [
+        "Generic ArcGIS Hub search without verifying the layer covers Hawaii",
+        "Zip-code aggregate datasets with no project-level records",
+        "Dual LLM scrape (Gemini vs Sonnet A/B)"
+      ],
+      "next_action": "Live-verify City and County of Honolulu DPP permit open-data endpoint (Socrata or ArcGIS REST); build pull_* only if record-level commercial permits with date and valuation fields pass liveness check.",
+      "priority_score": 32
+    },
+    {
+      "state": "ia",
+      "maturity": "baseline_sam_only",
+      "project_count_approx": 90,
+      "path": [
+        {
+          "order": 1,
+          "tier": null,
+          "kind": "sam",
+          "name": "SAM.gov bulk national",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py --states IA",
+          "status": "built",
+          "est_records_24mo": 8,
+          "token_cost": "none",
+          "notes": "8 SAM solicitations in corpus."
+        },
+        {
+          "order": 2,
+          "tier": null,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 81,
+          "token_cost": "none",
+          "notes": "81 federal awards; primary corpus driver today."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "dri",
+          "name": "Iowa Economic Development Authority announcements",
+          "endpoint_or_script": "https://www.iowaeda.com/",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Playbook lists state EDA first; no Tier-0 structured register verified (unlike GA DRI or NJ DCA)."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "socrata",
+          "name": "Des Moines / Polk County permit open data",
+          "endpoint_or_script": "Not verified",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Largest metro (~850K MSA). No endpoint confirmed in docs/states/ia.md; live-verify Socrata or ArcGIS before building."
+        },
+        {
+          "order": 5,
+          "tier": 2,
+          "kind": "accela",
+          "name": "Des Moines or Cedar Rapids Accela portal",
+          "endpoint_or_script": "Not verified — slug sweep needed",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "NE/IA/CT/IN/WV research pass verified Omaha (NE) and Indianapolis (IN) Accela but not Iowa slugs. Sweep aca-prod.accela.com for DESMOINES/DSM before scripting."
+        },
+        {
+          "order": 6,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "REBusinessOnline / local EDA press",
+          "endpoint_or_script": "Deterministic HTML harvest",
+          "status": "candidate",
+          "est_records_24mo": 1,
+          "token_cost": "low",
+          "notes": "1 press project (ContiTech Mount Pleasant). Supplementary signal only."
+        },
+        {
+          "order": 7,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Sonnet named-project enrichment",
+          "endpoint_or_script": "Cap per STATE_CAPTURE_RECOMMENDATION_PATH.md",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "LLM last. No dual LLM scrape."
+        }
+      ],
+      "do_not_use": [
+        "Generic ArcGIS Hub search without verifying the layer covers Iowa",
+        "Zip-code aggregate datasets with no project-level records",
+        "Dual LLM scrape (Gemini vs Sonnet A/B)",
+        "Building against unverified secondhand ArcGIS URLs"
+      ],
+      "next_action": "Live-verify Des Moines / Polk County building-permit open data (Socrata, ArcGIS REST, or Accela slug); reject residential-only or aggregate feeds before writing pull_*.",
+      "priority_score": 38
+    },
+    {
+      "state": "id",
+      "maturity": "research_only",
+      "project_count_approx": 159,
+      "path": [
+        {
+          "order": 1,
+          "tier": null,
+          "kind": "sam",
+          "name": "SAM.gov bulk national",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py --states ID",
+          "status": "built",
+          "est_records_24mo": 18,
+          "token_cost": "none",
+          "notes": "18 SAM solicitations in corpus."
+        },
+        {
+          "order": 2,
+          "tier": null,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 138,
+          "token_cost": "none",
+          "notes": "138 federal awards in corpus."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "dri",
+          "name": "Idaho Commerce project announcements",
+          "endpoint_or_script": "https://commerce.idaho.gov/",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Playbook lists state EDA first; no statewide structured register verified."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Ada County / City of Boise commercial permits",
+          "endpoint_or_script": "Not verified — live-check Ada County or Boise open-data hub",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Boise metro is fastest-growing ID market; 3 press projects (District at Ten Mile, St. Luke's, Skanska) prove activity but no permit API confirmed in playbook."
+        },
+        {
+          "order": 5,
+          "tier": 2,
+          "kind": "accela",
+          "name": "Boise or Meridian Accela portal",
+          "endpoint_or_script": "Not verified — slug sweep needed",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Check aca-prod.accela.com for BOISE/MERIDIAN before scripting."
+        },
+        {
+          "order": 6,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "BoiseDev / Idaho Statesman / PR Newswire",
+          "endpoint_or_script": "Deterministic HTML harvest",
+          "status": "candidate",
+          "est_records_24mo": 3,
+          "token_cost": "low",
+          "notes": "3 named press projects in corpus. Supplementary only."
+        },
+        {
+          "order": 7,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Sonnet named-project enrichment",
+          "endpoint_or_script": "Cap per STATE_CAPTURE_RECOMMENDATION_PATH.md",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "LLM last for St. Luke's $1.1B expansion and District at Ten Mile doc gaps."
+        }
+      ],
+      "do_not_use": [
+        "Generic ArcGIS Hub search without verifying the layer covers Idaho",
+        "Zip-code aggregate datasets with no project-level records",
+        "Dual LLM scrape (Gemini vs Sonnet A/B)"
+      ],
+      "next_action": "Live-verify Ada County or City of Boise commercial permit ArcGIS/Socrata layer; confirm commercial/residential field map and max issue date before adding pull_* to pull-county-arcgis.py.",
+      "priority_score": 45
+    },
+    {
+      "state": "il",
+      "maturity": "built",
+      "project_count_approx": 22461,
+      "path": [
+        {
+          "order": 1,
+          "tier": null,
+          "kind": "sam",
+          "name": "SAM.gov bulk national",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py --states IL",
+          "status": "built",
+          "est_records_24mo": 71,
+          "token_cost": "none",
+          "notes": "71 SAM solicitations in corpus."
+        },
+        {
+          "order": 2,
+          "tier": null,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 196,
+          "token_cost": "none",
+          "notes": "196 federal awards in corpus."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "dri",
+          "name": "Illinois DCEO incentive database",
+          "endpoint_or_script": "https://dceo.illinois.gov/ + data.illinois.gov Socrata search",
+          "status": "rejected",
+          "est_records_24mo": 0,
+          "token_cost": "none",
+          "notes": "Verified 2026-07-27: zero structured incentive/project datasets; press releases only."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "socrata",
+          "name": "Cook County Assessor commercial permits",
+          "endpoint_or_script": "scripts/pull-il-cook-county.py (datacatalog.cookcountyil.gov resource 6yjf-dfxs)",
+          "status": "built",
+          "est_records_24mo": 25203,
+          "token_cost": "none",
+          "notes": "Built and merged 2026-07-27: 22,191 projects added (22,461 total). job_code_primary='COMMERCIAL PERMIT' is categorical. property_address sparse (88/25,203); municipality populated. Clamp far-future date_issued outliers."
+        },
+        {
+          "order": 5,
+          "tier": 1,
+          "kind": "socrata",
+          "name": "City of Chicago permits (duplicate of Cook County)",
+          "endpoint_or_script": "data.cityofchicago.org resource ydr8-5enu",
+          "status": "rejected",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Verified live but deliberately rejected: Cook County feed already includes municipality='CITY OF CHICAGO' rows; dual pull needs address/date/amount proximity dedup."
+        },
+        {
+          "order": 6,
+          "tier": 1,
+          "kind": "socrata",
+          "name": "Collar counties (DuPage, Will, Lake, Kane)",
+          "endpoint_or_script": "Not verified",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Cook County script covers Chicago metro core only. Live-verify each collar county Socrata/ArcGIS before building."
+        },
+        {
+          "order": 7,
+          "tier": 2,
+          "kind": "accela",
+          "name": "Illinois Commerce Commission large-load filings",
+          "endpoint_or_script": "ICC date-picker search form",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Live page, no visible API; would need Playwright network interception (Gwinnett precedent). Data-center signal only."
+        },
+        {
+          "order": 8,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "REBusinessOnline / DC BLOX filings",
+          "endpoint_or_script": "Deterministic HTML harvest",
+          "status": "candidate",
+          "est_records_24mo": 2,
+          "token_cost": "low",
+          "notes": "2 named press projects (Mapletree Joliet, DC BLOX). Note: DC BLOX Indianapolis row is mis-geocoded to IL in corpus."
+        },
+        {
+          "order": 9,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Sonnet named-project enrichment",
+          "endpoint_or_script": "Cap per STATE_CAPTURE_RECOMMENDATION_PATH.md",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "LLM last. Fix Chicago Permit #NNN naming for rows missing project titles (ROADMAP item 15)."
+        }
+      ],
+      "do_not_use": [
+        "City of Chicago ydr8-5enu alongside Cook County 6yjf-dfxs (double-count without proximity dedup)",
+        "Generic ArcGIS Hub search without verifying the layer covers Illinois",
+        "Zip-code aggregate datasets with no project-level records",
+        "Illinois DCEO as Tier-0 register",
+        "Dual LLM scrape (Gemini vs Sonnet A/B)"
+      ],
+      "next_action": "Schedule pull-il-cook-county.py --months 24 --merge refresh; live-verify DuPage/Will/Lake county Socrata or ArcGIS permit feeds for Tier 1 extension beyond Cook.",
+      "priority_score": 90
+    },
+    {
+      "state": "in",
+      "maturity": "verified_unbuilt",
+      "project_count_approx": 135,
+      "path": [
+        {
+          "order": 1,
+          "tier": null,
+          "kind": "sam",
+          "name": "SAM.gov bulk national",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py --states IN",
+          "status": "built",
+          "est_records_24mo": 53,
+          "token_cost": "none",
+          "notes": "53 SAM solicitations in corpus."
+        },
+        {
+          "order": 2,
+          "tier": null,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 81,
+          "token_cost": "none",
+          "notes": "81 federal awards in corpus."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "dri",
+          "name": "Indiana IEDC Transparency Portal",
+          "endpoint_or_script": "https://transparencyportal.iedc.in.gov/",
+          "status": "rejected",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Verified 2026-07-26: all /api/* paths return HTTP 500 ConfigurationErrorsException (server misconfiguration). Retry later; do not build until confirmed live."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Indianapolis data.indy.gov / IndyGIS permits",
+          "endpoint_or_script": "data.indy.gov DCAT catalog + xmaps.indy.gov/arcgis/rest/services/OpenData",
+          "status": "rejected",
+          "est_records_24mo": 0,
+          "token_cost": "none",
+          "notes": "Full DCAT catalog checked: zero building-permit datasets (only zoning text, footprints, boundaries). IndyGIS REST requires auth token."
+        },
+        {
+          "order": 5,
+          "tier": 2,
+          "kind": "accela",
+          "name": "Indianapolis/Marion County Accela (INDY)",
+          "endpoint_or_script": "https://aca-prod.accela.com/INDY/Cap/CapHome.aspx?module=Permits (port scripts/pull-ga-accela-commercial.py)",
+          "status": "verified",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Verified live 2026-07-26: HTTP 200, real search form (ddlGSPermitType, generalSearchForm). Commercial via Non-Residential path segment (Permits/Structural/Non-Residential/NA, etc.). Not yet built."
+        },
+        {
+          "order": 6,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "WNDU / local news (AWS New Carlisle)",
+          "endpoint_or_script": "Deterministic HTML harvest",
+          "status": "candidate",
+          "est_records_24mo": 1,
+          "token_cost": "low",
+          "notes": "1 named mega-project ($13.8B AWS St. Joseph County campus). Supplementary."
+        },
+        {
+          "order": 7,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Sonnet named-project enrichment",
+          "endpoint_or_script": "Cap per STATE_CAPTURE_RECOMMENDATION_PATH.md",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "LLM last for AWS campus owner/architect/doc gaps. No dual LLM scrape."
+        }
+      ],
+      "do_not_use": [
+        "Indiana IEDC Transparency Portal API (HTTP 500 until server fixed)",
+        "IndyGIS ArcGIS REST without auth token",
+        "data.indy.gov for building permits (no permit datasets in catalog)",
+        "Generic ArcGIS Hub search without verifying the layer covers Indiana",
+        "Zip-code aggregate datasets with no project-level records",
+        "Dual LLM scrape (Gemini vs Sonnet A/B)"
+      ],
+      "next_action": "Port scripts/pull-ga-accela-commercial.py for INDY slug with Non-Residential permit-type filters; run 1-month test before 24-month production pull.",
+      "priority_score": 78
+    }
+  ],
+  "notes": "Batch 3 (HI, IA, ID, IL, IN). Corpus counts from data/states/*.json headers 2026-07-27. IL Cook County is the only built Tier-1 source in this batch; IN Accela is verified-unbuilt. HI/IA/ID remain federal-baseline with no live-verified local permit endpoint in playbooks."
+}

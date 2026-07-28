@@ -1,0 +1,550 @@
+{
+  "batch": 1,
+  "states": [
+    {
+      "state": "ak",
+      "maturity": "baseline_sam_only",
+      "project_count_approx": 250,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov federal solicitations (national bulk)",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Always-on national baseline. AK corpus already includes ak-sam-* IDs."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending federal awards (national bulk)",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Always-on national baseline. AK corpus already includes ak-usaspending-* IDs."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "dri",
+          "name": "Alaska statewide construction register",
+          "endpoint_or_script": null,
+          "status": "rejected",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "No NJ/GA-style statewide permit register found in playbook or ROADMAP research."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Anchorage MOA building permits",
+          "endpoint_or_script": "candidate: muni.municipal.codes or data.muni.org GIS endpoints (unverified)",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Playbook has no verified endpoint. Live-verify before building; generic ArcGIS Hub search rejected per ak.md."
+        },
+        {
+          "order": 5,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Fairbanks / Juneau municipal permits",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Second-tier AK metros only after Anchorage verification pass."
+        },
+        {
+          "order": 6,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "Alaska Business Magazine + ADN + state EDA press",
+          "endpoint_or_script": "docs/states/ak.md (current web-research capture_method)",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Only non-federal source today. 5 named projects from prior LLM web research; do not re-run full LLM scrape."
+        },
+        {
+          "order": 7,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named-project doc retrieval (capped Sonnet)",
+          "endpoint_or_script": "scripts/enrich-news.py or one-shot Sonnet pass",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Only for named mega-projects already in corpus (Port Alaska, Alyeska, etc.). Forbidden as primary capture path."
+        }
+      ],
+      "do_not_use": [
+        "Dual Gemini/Sonnet full-state LLM scrapes",
+        "Generic ArcGIS Hub search without live AK jurisdiction check",
+        "Zip-code aggregate datasets with no project-level records"
+      ],
+      "next_action": "Live-verify Anchorage MOA ArcGIS or Socrata permit layer; if fresh, add pull-anchorage.py before any LLM research.",
+      "priority_score": 18
+    },
+    {
+      "state": "al",
+      "maturity": "baseline_sam_only",
+      "project_count_approx": 479,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov federal solicitations (national bulk)",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Always-on national baseline."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending federal awards (national bulk)",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Always-on national baseline."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "dri",
+          "name": "ADECA / Made in Alabama annual project table (PDF)",
+          "endpoint_or_script": "candidate: ADECA annual economic development report PDF (ROADMAP item 41)",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Strongest AL statewide source per ROADMAP verification pass: full project table in annual PDF. Not yet built; needs deterministic PDF table parser, not LLM scrape."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Jefferson County / Birmingham building permits",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Largest AL metro. No endpoint verified in al.md; verify live before building."
+        },
+        {
+          "order": 5,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Madison County / Huntsville building permits",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Defense/automotive corridor. Verify live before building."
+        },
+        {
+          "order": 6,
+          "tier": 2,
+          "kind": "accela",
+          "name": "Mobile / Montgomery Accela or EnerGov portals",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Tier 2 only after Tier 0/1 pass. Probe for public JSON endpoints before headless browser work."
+        },
+        {
+          "order": 7,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "Governor.alabama.gov + Made in Alabama + al.com press",
+          "endpoint_or_script": "docs/states/al.md (current web-research capture_method)",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Existing named-project layer (Doncasters Auburn, Sports Illustrated Resort, etc.). Do not re-run full LLM scrape."
+        },
+        {
+          "order": 8,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named-project doc retrieval (capped Sonnet)",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Enrich existing named megaprojects only after ADECA PDF parser ships."
+        }
+      ],
+      "do_not_use": [
+        "Dual Gemini/Sonnet full-state LLM scrapes",
+        "Generic ArcGIS Hub search without verifying Alabama jurisdiction",
+        "Zip-code aggregate datasets"
+      ],
+      "next_action": "Build deterministic parser for ADECA annual economic-development PDF project table (ROADMAP item 41 strongest AL statewide lead).",
+      "priority_score": 52
+    },
+    {
+      "state": "ar",
+      "maturity": "built",
+      "project_count_approx": 1373,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov federal solicitations (national bulk)",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Always-on national baseline."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending federal awards (national bulk)",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Always-on national baseline."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "dri",
+          "name": "Arkansas statewide construction register",
+          "endpoint_or_script": null,
+          "status": "rejected",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "AEDC has narrative pages and grant press only; no structured project database (ar.md)."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Bentonville Building Permits",
+          "endpoint_or_script": "https://gis.bentonvillear.com/arcgis/rest/services/Planning/Community_Development23/MapServer/188 | scripts/pull-county-arcgis.py --only bentonville",
+          "status": "built",
+          "est_records_24mo": 1238,
+          "token_cost": "none",
+          "notes": "Verified live 2026-07-26. 1,238 ar-bentonville-* records in corpus. PERMIT_TYPE LIKE '%COM%'. Clamp ISSUED <= today (bad future dates in raw feed)."
+        },
+        {
+          "order": 5,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Rogers / Fayetteville / Springdale NW Arkansas GIS",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Same platform likely as Bentonville but hostnames not found (DNS failures on guessed URLs per ar.md)."
+        },
+        {
+          "order": 6,
+          "tier": 2,
+          "kind": "accela",
+          "name": "Rogers Cityworks PLL + Fayetteville Tyler EnerGov",
+          "endpoint_or_script": null,
+          "status": "rejected",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Live portals but login-required Citizen Self Service SPAs; no public JSON endpoint found via HTTP probing (ar.md)."
+        },
+        {
+          "order": 7,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Little Rock / Pulaski County permits",
+          "endpoint_or_script": "candidate: data.littlerock.gov / maps.littlerock.gov",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "All guessed endpoints 404'd 2026-07-26. Needs fresh discovery, not confirmed dead."
+        },
+        {
+          "order": 8,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "Arkansas Business + ENR + owner press (Serverfarm, AVAIO, etc.)",
+          "endpoint_or_script": "docs/states/ar.md (current web-research capture_method)",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Named data-center and industrial projects. Do not re-run full LLM scrape."
+        },
+        {
+          "order": 9,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named-project doc retrieval (capped Sonnet)",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Enrich Google/Serverfarm/AVAIO records already in corpus only."
+        }
+      ],
+      "do_not_use": [
+        "Dual Gemini/Sonnet full-state LLM scrapes",
+        "Rogers/Fayetteville Accela/EnerGov without public API discovery",
+        "Trusting raw max ISSUED date on Bentonville feed without today-clamp"
+      ],
+      "next_action": "Discover live ArcGIS endpoints for Rogers, Fayetteville, and Springdale (NW Arkansas gap outside Bentonville).",
+      "priority_score": 38
+    },
+    {
+      "state": "az",
+      "maturity": "built",
+      "project_count_approx": 632,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov federal solicitations (national bulk)",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Always-on national baseline."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending federal awards (national bulk)",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Always-on national baseline."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "dri",
+          "name": "Arizona statewide economic development project database",
+          "endpoint_or_script": null,
+          "status": "rejected",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "ROADMAP item 41: AZ does not have a public project-level EDA database despite secondhand claims."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Maricopa County Building Permits",
+          "endpoint_or_script": "https://services.arcgis.com/ykpntM6e3tHvzKRJ/arcgis/rest/services/Building_Permits_(view)/FeatureServer/0 | scripts/pull-county-arcgis.py --only maricopa",
+          "status": "built",
+          "est_records_24mo": 271,
+          "token_cost": "none",
+          "notes": "Verified live 2026-07-26. 271 az-maricopa-* records in corpus. PermitType LIKE '%Commercial%'."
+        },
+        {
+          "order": 5,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Phoenix city building permits (separate from county layer)",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Maricopa county layer may miss in-city-only permits. Verify Phoenix open-data endpoint live."
+        },
+        {
+          "order": 6,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Pima County / Tucson + Pinal County permits",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Second metro tier after Maricopa refresh."
+        },
+        {
+          "order": 7,
+          "tier": 2,
+          "kind": "accela",
+          "name": "Scottsdale / Mesa / Chandler Accela portals",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "East Valley cities likely Accela. Probe public API before browser automation."
+        },
+        {
+          "order": 8,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "AZ Big Media + data-center owner press (Prime, Fluidstack, etc.)",
+          "endpoint_or_script": "docs/states/az.md (current web-research capture_method)",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Named data-center pipeline. Do not re-run full LLM scrape."
+        },
+        {
+          "order": 9,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named-project doc retrieval (capped Sonnet)",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Enrich Prime PHX01, Fluidstack, Formation records already in corpus."
+        }
+      ],
+      "do_not_use": [
+        "Dual Gemini/Sonnet full-state LLM scrapes",
+        "Claimed AZ statewide EDA project database (does not exist per ROADMAP item 41)",
+        "Generic ArcGIS Hub search without Maricopa coordinate verification"
+      ],
+      "next_action": "Re-run scripts/pull-county-arcgis.py --only maricopa --months 24 --merge and sync az.md playbook; then live-verify Phoenix city permit endpoint.",
+      "priority_score": 84
+    },
+    {
+      "state": "ca",
+      "maturity": "baseline_sam_only",
+      "project_count_approx": 1378,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov federal solicitations (national bulk)",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Always-on national baseline."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending federal awards (national bulk)",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Always-on national baseline."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "dri",
+          "name": "California statewide construction register",
+          "endpoint_or_script": null,
+          "status": "rejected",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "CA permitting is decentralized; no NJ DCA-style statewide register identified."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "socrata",
+          "name": "Los Angeles GeoHub building permits",
+          "endpoint_or_script": "candidate: geohub.lacity.org (Socrata; listed in docs/CONTEXT.md, not live-verified)",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Highest-value CA metro. Use scripts/socrata_adapter.py after live schema/freshness check. ROADMAP item 35: adapter exists, no CA pull script wired."
+        },
+        {
+          "order": 5,
+          "tier": 1,
+          "kind": "socrata",
+          "name": "San Francisco DBI permits",
+          "endpoint_or_script": "candidate: data.sfgov.org (unverified)",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Bay Area tier. Verify live before building."
+        },
+        {
+          "order": 6,
+          "tier": 1,
+          "kind": "socrata",
+          "name": "San Diego / Sacramento / San Jose open-data permits",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "SoCal and Central Valley expansion after LA/SF verification."
+        },
+        {
+          "order": 7,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Orange County / Inland Empire county ArcGIS layers",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Industrial/logistics corridor. Verify coordinates and commercial filter live."
+        },
+        {
+          "order": 8,
+          "tier": 2,
+          "kind": "accela",
+          "name": "Accela Citizen Access (major CA cities)",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Tier 2 after Socrata/ArcGIS pass on top metros."
+        },
+        {
+          "order": 9,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "DCD + Prime Data Centers + REBusinessOnline press",
+          "endpoint_or_script": "docs/states/ca.md (current web-research capture_method)",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Named data-center and industrial projects (Prime SMF02, Prologis, Rexford, etc.). Do not re-run full LLM scrape."
+        },
+        {
+          "order": 10,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named-project doc retrieval (capped Sonnet)",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Enrich existing named megaprojects only after deterministic permit feeds ship."
+        }
+      ],
+      "do_not_use": [
+        "Dual Gemini/Sonnet full-state LLM scrapes",
+        "Generic ArcGIS Hub search without California coordinate verification",
+        "Zip-code aggregate datasets",
+        "Inventing project lists without a verified Tier 0/1 endpoint"
+      ],
+      "next_action": "Live-verify Los Angeles GeoHub Socrata building-permit dataset (schema, freshness, commercial filter); if good, build scripts/pull-ca-la-permits.py using socrata_adapter.py.",
+      "priority_score": 96
+    }
+  ],
+  "notes": "National always-on: scripts/pull-sam-gov-bulk-national.py and scripts/pull-usaspending-bulk-national.py run for all states. AR Bentonville and AZ Maricopa ArcGIS pullers exist in scripts/pull-county-arcgis.py and are merged into corpus (1,238 and 271 records respectively). No dual LLM scrapes recommended for any state in this batch."
+}

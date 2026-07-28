@@ -1,0 +1,450 @@
+{
+  "batch": 8,
+  "states": [
+    {
+      "state": "ok",
+      "maturity": "baseline_sam_only",
+      "project_count_approx": 1000,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national CSV",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 175,
+          "token_cost": "none",
+          "notes": "175 ok-sam- records in corpus. Federal solicitations baseline only; no OK-specific Tier 0 register documented in playbook."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 821,
+          "token_cost": "none",
+          "notes": "821 ok-usaspending- records dominate corpus. Federal awards, not local permit pipeline."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "dri",
+          "name": "OK statewide economic development register",
+          "endpoint_or_script": "Not found in playbook",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Playbook lists state EDA announcements as priority 1 but no verified statewide structured register (no OK DRI/RACP equivalent documented). Needs live discovery before building."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "OKC / Tulsa municipal permit open data",
+          "endpoint_or_script": "Not verified",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Playbook priority 2: municipal permit open data with live verification required. No endpoint, layer, or script documented yet."
+        },
+        {
+          "order": 5,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "OK Commerce / EDA press releases",
+          "endpoint_or_script": "Not built",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Playbook priority 1 mentions state economic development announcements. Named mega-projects (Google Mayes County, etc.) already in corpus from prior research; automate only after RSS/HTML structure verified live."
+        },
+        {
+          "order": 6,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named mega-project enrichment (Sonnet)",
+          "endpoint_or_script": "Capped enrichment only",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "LLM last resort for high-value named projects already in corpus. No dual Flash+Sonnet bulk scrapes."
+        }
+      ],
+      "do_not_use": [
+        "Generic ArcGIS Hub search without verifying the layer covers Oklahoma",
+        "Zip-code aggregate datasets with no project-level records"
+      ],
+      "next_action": "Live-verify OKC and Tulsa municipal open-data portals for record-level commercial building permits before building any pull script.",
+      "priority_score": 38
+    },
+    {
+      "state": "or",
+      "maturity": "baseline_sam_only",
+      "project_count_approx": 241,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national CSV",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 16,
+          "token_cost": "none",
+          "notes": "16 or-sam- records in corpus."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 220,
+          "token_cost": "none",
+          "notes": "220 or-usaspending- records dominate corpus."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "dri",
+          "name": "Oregon statewide land-use / EDA register",
+          "endpoint_or_script": "Not found in playbook",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Playbook lists state EDA announcements as priority 1. No verified statewide structured register (no Act 250-style equivalent for OR documented). Needs live discovery."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "socrata",
+          "name": "Portland Bureau of Development Services permits",
+          "endpoint_or_script": "Not verified",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Playbook priority 2: municipal permit open data. Portland is the obvious first target (largest metro) but no endpoint verified live in playbook."
+        },
+        {
+          "order": 5,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Oregon municipal/county ArcGIS permit layers",
+          "endpoint_or_script": "Not verified",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Playbook warns against generic ArcGIS Hub without OR jurisdiction verification. No layer documented yet."
+        },
+        {
+          "order": 6,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "Trade press and owner/developer announcements",
+          "endpoint_or_script": "Not built",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Playbook priority 3. Named projects (Sabey Umatilla, etc.) from prior research; automate after source structure verified."
+        },
+        {
+          "order": 7,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named mega-project enrichment (Sonnet)",
+          "endpoint_or_script": "Capped enrichment only",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "LLM last for high-value named data-center/industrial projects. No dual bulk scrapes."
+        }
+      ],
+      "do_not_use": [
+        "Generic ArcGIS Hub search without verifying the layer covers Oregon",
+        "Zip-code aggregate datasets with no project-level records"
+      ],
+      "next_action": "Live-verify Portland BDS open-data portal and any Oregon DEQ/land-use statewide register for record-level commercial permits.",
+      "priority_score": 42
+    },
+    {
+      "state": "pa",
+      "maturity": "built",
+      "project_count_approx": 1088,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "dri",
+          "name": "PA RACP 2025 round statewide XLSX",
+          "endpoint_or_script": "Not built (XLSX parser needed)",
+          "status": "verified",
+          "est_records_24mo": 840,
+          "token_cost": "none",
+          "notes": "Verified live 2026-07-27: 840 real project rows with County/Municipality/Amount Requested/Amount Awarded/Description. PA equivalent of GA DRI. Supersedes stale cumulative RACP .xls (Last-Modified 2024-07-11). Not yet built; different code path than JSON/SODA sources."
+        },
+        {
+          "order": 2,
+          "tier": 1,
+          "kind": "socrata",
+          "name": "Philadelphia L&I Building & Zoning Permits (Carto SQL)",
+          "endpoint_or_script": "scripts/pull-pa-philadelphia.py",
+          "status": "built",
+          "est_records_24mo": 738,
+          "token_cost": "none",
+          "notes": "https://phl.carto.com/api/v2/sql. Verified live: 928,254 total rows, fresh same-day. Positive-keyword filter on approvedscopeofwork required; commercialorresidential field is misleading (68%+ sampled Commercial new-construction were apartments). No cost/valuation field. Coordinates EPSG:2272, left null."
+        },
+        {
+          "order": 3,
+          "tier": 1,
+          "kind": "socrata",
+          "name": "Pittsburgh PLI Permits (WPRDC CKAN datastore)",
+          "endpoint_or_script": "Not built",
+          "status": "verified",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Verified live: 63,776 rows, fresh to 2026-07-24, real total_project_value field (unlike Philadelphia). Commercial field caveat likely applies. Not yet in a pull script."
+        },
+        {
+          "order": 4,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national CSV",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 68,
+          "token_cost": "none",
+          "notes": "68 pa-sam- records in corpus."
+        },
+        {
+          "order": 5,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 277,
+          "token_cost": "none",
+          "notes": "277 pa-usaspending- records in corpus."
+        },
+        {
+          "order": 6,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "PA PUC large-load dockets",
+          "endpoint_or_script": "Not built (Playwright candidate)",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Real and relevant for data centers/heavy industrial but PUC exposes web-search UI only, no REST/bulk API found. Not yet attempted."
+        },
+        {
+          "order": 7,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named mega-project enrichment (Sonnet)",
+          "endpoint_or_script": "Capped enrichment only",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "LLM last for high-value named projects (NorthPoint Hazleton, etc.). No dual bulk scrapes."
+        }
+      ],
+      "do_not_use": [
+        "Allegheny County-wide building permits (WPRDC confirmed not to exist; only asbestos/plumber licenses)",
+        "Montgomery County PA / Bucks County PA ArcGIS layers (search hits were Montgomery County MARYLAND)",
+        "PA DEP eFACTS Air Emissions Plants (existing-facility inventory, not construction pipeline)",
+        "PA DCED cumulative RACP Past and Present Grantee List .xls (stale, superseded by 2025 round file)",
+        "Philadelphia commercialorresidential field alone as commercial filter"
+      ],
+      "next_action": "Build scripts/pull-pa-racp.py for the verified 2025 RACP XLSX (statewide Tier 0, 840 rows).",
+      "priority_score": 88
+    },
+    {
+      "state": "ri",
+      "maturity": "built",
+      "project_count_approx": 204,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "dri",
+          "name": "RI statewide permit register",
+          "endpoint_or_script": "Not found",
+          "status": "rejected",
+          "est_records_24mo": 0,
+          "token_cost": "none",
+          "notes": "RIGIS DCAT feed checked (387 datasets): zero contain permit in title. No statewide GIS permit layer exists for RI."
+        },
+        {
+          "order": 2,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Providence Development Project Mapper",
+          "endpoint_or_script": "scripts/pull-county-arcgis.py (--only providence)",
+          "status": "built",
+          "est_records_24mo": 129,
+          "token_cost": "none",
+          "notes": "Pipeline_Development_Projects/FeatureServer/0 (85 records) + Completed_Development_Projects/FeatureServer/0 (97 records). Hand-curated planning tracker, not permit feed. Verified live 2026-07-26, modified 2026-07-15. Direct lat/lon. Text classification needed."
+        },
+        {
+          "order": 3,
+          "tier": 1,
+          "kind": "socrata",
+          "name": "Providence data.providenceri.gov permits",
+          "endpoint_or_script": "https://data.providenceri.gov",
+          "status": "rejected",
+          "est_records_24mo": 0,
+          "token_cost": "none",
+          "notes": "Only permit-shaped dataset titled Permits 2009-2018, last updated 2020-01-24. Closed historical range, not live."
+        },
+        {
+          "order": 4,
+          "tier": 2,
+          "kind": "accela",
+          "name": "RI OpenGov per-municipality portals",
+          "endpoint_or_script": "rhodeisland.portal.opengov.com",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "RIBCC E-Permitting routes to per-municipality OpenGov instances. Login-required submission system, not public read API. Individual municipalities not individually tested yet."
+        },
+        {
+          "order": 5,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national CSV",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 21,
+          "token_cost": "none",
+          "notes": "21 ri-sam- records in corpus."
+        },
+        {
+          "order": 6,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 50,
+          "token_cost": "none",
+          "notes": "50 ri-usaspending- records in corpus."
+        },
+        {
+          "order": 7,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named project enrichment (Sonnet)",
+          "endpoint_or_script": "Capped enrichment only",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "LLM last for high-value named projects. No dual bulk scrapes."
+        }
+      ],
+      "do_not_use": [
+        "Providence Socrata Permits 2009-2018 dataset (stale, closed range)",
+        "RI Statewide E-Permitting Portal ribcc.ri.gov as public read API (login-required submission system)",
+        "RIGIS statewide permit search (no permit datasets exist)",
+        "Unscoped Socrata catalog API queries without domains=data.providenceri.gov (returns Chicago/Orlando/NYC false hits)"
+      ],
+      "next_action": "Live-verify one RI OpenGov municipality portal (e.g. Cranston or Warwick) for record-level permit export before building Accela automation.",
+      "priority_score": 52
+    },
+    {
+      "state": "sc",
+      "maturity": "baseline_sam_only",
+      "project_count_approx": 275,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national CSV",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 65,
+          "token_cost": "none",
+          "notes": "65 sc-sam- records in corpus."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 206,
+          "token_cost": "none",
+          "notes": "206 sc-usaspending- records dominate corpus."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "dri",
+          "name": "SC Dept of Commerce project register",
+          "endpoint_or_script": "Not found in playbook",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Playbook lists SC Dept of Commerce as capture method but no verified statewide structured register documented. Needs live discovery."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Charleston / Greenville / Columbia municipal permit layers",
+          "endpoint_or_script": "Not verified",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Playbook priority 2: municipal permit open data with live verification required. SC permitting is decentralized; no endpoint documented yet."
+        },
+        {
+          "order": 5,
+          "tier": 2,
+          "kind": "accela",
+          "name": "SC municipal Accela/EnerGov portals",
+          "endpoint_or_script": "Not verified",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Not researched in playbook. Verify slug and record-level export live before building."
+        },
+        {
+          "order": 6,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "SC Commerce / EDA press releases",
+          "endpoint_or_script": "Not built",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Playbook priority 1. Named industrial projects (SteelFab Florence, etc.) from prior research."
+        },
+        {
+          "order": 7,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named mega-project enrichment (Sonnet)",
+          "endpoint_or_script": "Capped enrichment only",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "LLM last for high-value named projects. No dual bulk scrapes."
+        }
+      ],
+      "do_not_use": [
+        "Generic ArcGIS Hub search without verifying the layer covers South Carolina",
+        "Zip-code aggregate datasets with no project-level records"
+      ],
+      "next_action": "Live-verify Charleston County and Greenville municipal ArcGIS or Socrata permit layers for record-level commercial permits.",
+      "priority_score": 48
+    }
+  ],
+  "notes": "PA is the batch leader: Philadelphia built (+738), RACP and Pittsburgh verified unbuilt. RI has Providence ArcGIS built (+129) but no statewide register. OK/OR/SC remain baseline_sam_only with playbooks still at stub stage; no local endpoints verified yet. No dual LLM scrapes anywhere in this batch."
+}

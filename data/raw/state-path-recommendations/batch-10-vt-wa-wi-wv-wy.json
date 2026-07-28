@@ -1,0 +1,399 @@
+{
+  "batch": 10,
+  "states": [
+    {
+      "state": "vt",
+      "maturity": "built",
+      "project_count_approx": 1650,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py --states VT",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Always-on federal solicitations. Already merged into data/states/vt.json."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py --states VT",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Always-on federal construction awards. Already merged into corpus."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "dri",
+          "name": "Act 250 statewide land-use register",
+          "endpoint_or_script": "http://anrmaps.vermont.gov/arcgis/rest/services/map_services/MAP_ANR_ANRATLASBASEMAPLITE_WM_NOCACHE/MapServer/2",
+          "status": "built",
+          "est_records_24mo": 1457,
+          "token_cost": "none",
+          "notes": "VT statewide DRI equivalent. Built in scripts/pull-county-arcgis.py (pull_act250). Requires positive COMMERCIAL_HINTS match; no date field on layer. 8,278 total, ~1,457 commercial after filter."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Burlington OpenGov Building Permits",
+          "endpoint_or_script": "https://services1.arcgis.com/1bO0c7PxQdsGidPK/arcgis/rest/services/OpenGov_Building/FeatureServer/0",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Built in scripts/pull-county-arcgis.py (pull_burlington). PrimaryLUC commercial filter + EstimatedConstructionCost > $25K. Direct lat/lon fields."
+        },
+        {
+          "order": 5,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Rutland / Montpelier municipal permits",
+          "endpoint_or_script": "docs/states/vt.md (not yet researched)",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Playbook lists other municipal open data as next tier-1 targets. Live-verify DCAT before building."
+        },
+        {
+          "order": 6,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named project doc enrichment",
+          "endpoint_or_script": "claude-sonnet-5 (capped)",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Sonnet only for high-value named rows missing owner/architect/docs. Never dual Flash+Sonnet bulk scrapes."
+        }
+      ],
+      "do_not_use": [
+        "navburl-burlington.opendata.arcgis.com (resolves to Burlington Ontario, not Vermont)",
+        "Generic ArcGIS Hub search without verifying the layer covers Vermont",
+        "Zip-code aggregate datasets with no project-level records",
+        "Act 250 records without positive COMMERCIAL_HINTS (6,934 of 8,278 are noise)"
+      ],
+      "next_action": "Live-verify Rutland and Montpelier municipal permit ArcGIS/CKAN via DCAT; add pull_* to pull-county-arcgis.py if record-level.",
+      "priority_score": 70
+    },
+    {
+      "state": "wa",
+      "maturity": "built",
+      "project_count_approx": 2953,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py --states WA",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Always-on federal solicitations. Already merged into data/states/wa.json."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py --states WA",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Always-on federal construction awards. Already merged into corpus."
+        },
+        {
+          "order": 3,
+          "tier": 1,
+          "kind": "socrata",
+          "name": "Seattle Building Permits",
+          "endpoint_or_script": "scripts/pull-wa-seattle.py (data.seattle.gov/76t5-zqzr)",
+          "status": "built",
+          "est_records_24mo": 2514,
+          "token_cost": "none",
+          "notes": "Verified live 2026-07-27. permitclassmapped='Non-Residential' + permittypedesc construction filter. Direct lat/lon. First pull +2,514 projects."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Tacoma Accela permit data mirror",
+          "endpoint_or_script": "ArcGIS FeatureServer (verified live 2026-07-27; endpoint URL not yet captured in playbook)",
+          "status": "verified",
+          "est_records_24mo": 17016,
+          "token_cost": "none",
+          "notes": "109,988 total, fresh to 3 days. permit_type='Building' AND permit_subtype='Commercial'. Not yet built."
+        },
+        {
+          "order": 5,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Pierce County PALS Permits",
+          "endpoint_or_script": "ArcGIS FeatureServer (verified live 2026-07-27; endpoint URL not yet captured in playbook)",
+          "status": "verified",
+          "est_records_24mo": 22242,
+          "token_cost": "none",
+          "notes": "680,409 total. applicationType='Construction Commercial'. Unincorporated Pierce only; does NOT cover City of Tacoma. Use alongside Tacoma source."
+        },
+        {
+          "order": 6,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Bellevue Permit Data",
+          "endpoint_or_script": "ArcGIS FeatureServer (verified live 2026-07-27; endpoint URL not yet captured in playbook)",
+          "status": "verified",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "32,112 total, fresh to 2 days. Requires positive PERMITTYPEDESCRIPTION signal (Commercial Project, Tenant Improvement, ROW Commercial Development). Not yet built."
+        },
+        {
+          "order": 7,
+          "tier": 2,
+          "kind": "accela",
+          "name": "King County unincorporated Accela",
+          "endpoint_or_script": "https://aca-prod.accela.com/kingco",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Confirmed live. No permit-level open data in King County DCAT (536 datasets checked). Tier 2 Playwright candidate, not yet attempted."
+        },
+        {
+          "order": 8,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named mega-project doc enrichment",
+          "endpoint_or_script": "claude-sonnet-5 (capped)",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Sonnet only for named rows (e.g. Amazon Chehalis) missing architect/GC/docs. Never dual bulk LLM scrapes."
+        }
+      ],
+      "do_not_use": [
+        "ArcGIS org ONZht79c8QWuX759 (Peel Region Ontario, false hit on WA searches)",
+        "ArcGIS org v400IkDOw1ad7Yad (Raleigh NC, false hit on WA searches)",
+        "Spokane Permit FeatureServer (confirmed stale, no records in last 60 days)",
+        "King County DCAT for permit-level data (none exists)",
+        "Generic ArcGIS Hub search without verifying Washington jurisdiction"
+      ],
+      "next_action": "Capture Tacoma/Pierce/Bellevue FeatureServer URLs in playbook and add pull_tacoma, pull_pierce_pals, pull_bellevue to pull-county-arcgis.py.",
+      "priority_score": 88
+    },
+    {
+      "state": "wi",
+      "maturity": "built",
+      "project_count_approx": 1444,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py --states WI",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Always-on federal solicitations. Already merged into data/states/wi.json."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py --states WI",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Always-on federal construction awards. Already merged into corpus."
+        },
+        {
+          "order": 3,
+          "tier": 1,
+          "kind": "socrata",
+          "name": "Milwaukee Commercial Permits (CKAN)",
+          "endpoint_or_script": "scripts/pull-wi-milwaukee.py (data.milwaukee.gov resource 828e9630-d7cb-42e4-960e-964eae916397)",
+          "status": "built",
+          "est_records_24mo": 1297,
+          "token_cost": "none",
+          "notes": "CKAN datastore SQL API (not Socrata). Permit Type LIKE 'Commercial%'. Address-stub only, no project name. First pull +1,297 projects."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Green Bay / Dane County municipal permits",
+          "endpoint_or_script": "docs/states/wi.md (Madison ArcGIS Hub checked, no permit dataset)",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Madison DCAT (144 datasets) has no building-permit dataset. Next: live-verify Green Bay, Racine, or other Tier-1 metros."
+        },
+        {
+          "order": 5,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named mega-project doc enrichment",
+          "endpoint_or_script": "claude-sonnet-5 (capped)",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Sonnet only for named rows (e.g. Stargate Lighthouse Port Washington) missing architect/GC/spec docs. Never dual bulk LLM scrapes."
+        }
+      ],
+      "do_not_use": [
+        "Milwaukee ArcGIS AccelaApo / AccelaDistrict layers (geocoding support, not permits)",
+        "WEDC Awards Data iframe (empty src, no static endpoint traced)",
+        "Madison ArcGIS Open Data Hub for permits (144 datasets, none permit-level)",
+        "Generic ArcGIS Hub search without verifying Wisconsin jurisdiction"
+      ],
+      "next_action": "Live-verify Green Bay or Racine municipal permit open data via DCAT; CKAN or ArcGIS adapter if record-level.",
+      "priority_score": 75
+    },
+    {
+      "state": "wv",
+      "maturity": "baseline_sam_only",
+      "project_count_approx": 113,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py --states WV",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Primary corpus source today (federal VA/USACE solicitations in Huntington, etc.). Already merged."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py --states WV",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Federal construction awards. Already merged into corpus."
+        },
+        {
+          "order": 3,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Charleston / Huntington municipal permits",
+          "endpoint_or_script": "docs/states/wv.md (not yet researched)",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "No verified Tier 0/1 endpoint in playbook. Live-verify DCAT for Charleston, Huntington, Morgantown before building."
+        },
+        {
+          "order": 4,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "WV Department of Economic Development announcements",
+          "endpoint_or_script": "deterministic HTML/RSS (not yet built)",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Playbook capture_method cites state EDA and local press (Form Energy Weirton, etc.). Deterministic scraper, not LLM discovery."
+        },
+        {
+          "order": 5,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named industrial project doc enrichment",
+          "endpoint_or_script": "claude-sonnet-5 (capped)",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Sonnet only for named rows (e.g. Form Energy Weirton) missing owner/architect/docs. Never dual bulk LLM scrapes."
+        }
+      ],
+      "do_not_use": [
+        "Generic ArcGIS Hub search without verifying West Virginia jurisdiction",
+        "Zip-code aggregate datasets with no project-level records",
+        "Dual Gemini+Sonnet full-state web scrapes"
+      ],
+      "next_action": "Live-verify Charleston and Huntington municipal permit DCAT catalogs; document endpoints in docs/states/wv.md before writing pull_*.",
+      "priority_score": 38
+    },
+    {
+      "state": "wy",
+      "maturity": "baseline_sam_only",
+      "project_count_approx": 129,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py --states WY",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Federal solicitations (Cheyenne VA EHRM, etc.). Already merged into data/states/wy.json."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py --states WY",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Federal construction awards. Already merged into corpus."
+        },
+        {
+          "order": 3,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Cheyenne / Laramie County permit GIS",
+          "endpoint_or_script": "docs/states/wy.md (not yet researched)",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "No verified permit API in playbook despite active Cheyenne hyperscale pipeline. Live-verify city/county DCAT first."
+        },
+        {
+          "order": 4,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "Cheyenne LEADS + county planning filings",
+          "endpoint_or_script": "deterministic HTML/RSS (Cap City News, Cowboy State Daily, county planning)",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Playbook capture_method cites county planning filings and local news. Named hyperscale rows (Microsoft, Google, Related Digital) already in corpus from press."
+        },
+        {
+          "order": 5,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Cheyenne hyperscale doc enrichment",
+          "endpoint_or_script": "claude-sonnet-5 (capped)",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Sonnet only for named Cheyenne data-center rows missing architect/GC/spec docs. Never dual bulk LLM scrapes."
+        }
+      ],
+      "do_not_use": [
+        "Generic ArcGIS Hub search without verifying Wyoming jurisdiction",
+        "Zip-code aggregate datasets with no project-level records",
+        "Dual Gemini+Sonnet full-state web scrapes"
+      ],
+      "next_action": "Live-verify Cheyenne and Laramie County permit ArcGIS/Socrata via DCAT; hyperscale activity makes this high-value despite small state population.",
+      "priority_score": 52
+    }
+  ],
+  "notes": "Batch 10 closes the 50-state map. VT/WA/WI have built Tier 0/1 pulls; WA has three verified-unbuilt Puget Sound ArcGIS layers ready to script. WV and WY remain SAM+press baseline until municipal GIS is live-verified. No dual LLM scrapes."
+}
