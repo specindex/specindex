@@ -27,7 +27,7 @@ from .state import load_state, save_state
 # messy permit-description text. Routing these through Flash/Sonnet would
 # be pure wasted LLM cost for no quality gain; see sam_gov_provider.py /
 # usaspending_provider.py docstrings.
-NO_LLM_PROVIDER_TYPES = {"sam_gov", "usaspending"}
+NO_LLM_PROVIDER_TYPES = {"sam_gov", "usaspending", "accela"}
 
 
 def run_pipeline(
@@ -134,7 +134,7 @@ def run_pipeline(
             entities = extract_with_flash(rows, settings)
             golden = dedupe_with_sonnet(entities, settings)
 
-        paths = persist_run(run_id=run_id, raw_rows=rows, entities=entities, golden=golden)
+        paths = persist_run(run_id=run_id, raw_rows=rows, entities=entities, golden=golden, state_code=state_code)
 
         # Only advance the watermark after a successful extract+dedupe --
         # a crash mid-run must not lose rows on the next attempt.

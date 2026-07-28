@@ -7,6 +7,7 @@ from __future__ import annotations
 
 from typing import Any
 
+from .accela_provider import AccelaProvider
 from .arcgis_provider import ArcGISProvider
 from .base_provider import BaseIngestionProvider
 from .sam_gov_provider import SamGovProvider
@@ -69,6 +70,18 @@ def build_provider(state_config: dict[str, Any]) -> BaseIngestionProvider:
             psc_codes=state_config.get("psc_codes"),
             award_type_codes=state_config.get("award_type_codes"),
             lookback_days=state_config.get("lookback_days", 730),
+        )
+
+    if provider_type == "accela":
+        return AccelaProvider(
+            state_code=state_config["state_code"],
+            county=state_config["county"],
+            base_url=state_config["endpoint"],
+            permit_type_label=state_config.get("permit_type_label", "Building"),
+            lookback_days=state_config.get("lookback_days", 30),
+            max_pages=state_config.get("max_pages", 30),
+            start_date_field_id=state_config.get("start_date_field_id"),
+            end_date_field_id=state_config.get("end_date_field_id"),
         )
 
     if provider_type in ("ckan", "csv"):

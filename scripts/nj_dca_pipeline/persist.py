@@ -8,13 +8,22 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
-from .config import GOLDEN_DIR, RAW_DIR, EXTRACTED_DIR, ROOT
+from .config import GOLDEN_DIR, RAW_DIR, EXTRACTED_DIR, PIPELINE_DIR, ROOT
 from .schemas import CandidateEntity, GoldenRecord
 
 
-def ensure_dirs() -> None:
-    for d in (RAW_DIR, EXTRACTED_DIR, GOLDEN_DIR):
-        d.mkdir(parents=True, exist_ok=True)
+def _dirs_for_state(state_code: str) -> tuple[Path, Path, Path]:
+    """NJ keeps the legacy data/pipeline/nj-dca/ layout (existing consumers
+    already point at it); every other state gets its own
+    data/pipeline/{state}/ directory. Real bug found 2026-07-28: these were
+    hardcoded to the NJ path regardless of state, so NC's run was writing
+    (and the daily-commit race then conflicting on) NJ's own
+    golden/latest.json -- exactly the kind of collision the per-state
+    watermark file (state.py) already avoided, just missed here."""
+    if state_code.upper() == "NJ":
+        return RAW_DIR, EXTRACTED_DIR, GOLDEN_DIR
+    base = PIPELINE_DIR.parent / state_code.lower()
+    return base / "raw", base / "extracted", base / "golden"
 
 
 def write_json(path: Path, payload: Any) -> Path:
@@ -29,25 +38,28 @@ def persist_run(
     raw_rows: list[dict[str, Any]],
     entities: list[CandidateEntity],
     golden: list[GoldenRecord],
+    state_code: str = "NJ",
 ) -> dict[str, str]:
-    ensure_dirs()
+    raw_dir, extracted_dir, golden_dir = _dirs_for_state(state_code)
+    for d in (raw_dir, extracted_dir, golden_dir):
+        d.mkdir(parents=True, exist_ok=True)
     paths = {
-        "raw": str(write_json(RAW_DIR / f"{run_id}.json", {"run_id": run_id, "rows": raw_rows})),
+        "raw": str(write_json(raw_dir / f"{run_id}.json", {"run_id": run_id, "rows": raw_rows})),
         "extracted": str(
             write_json(
-                EXTRACTED_DIR / f"{run_id}.json",
+                extracted_dir / f"{run_id}.json",
                 {"run_id": run_id, "entities": [e.model_dump() for e in entities]},
             )
         ),
         "golden": str(
             write_json(
-                GOLDEN_DIR / f"{run_id}.json",
+                golden_dir / f"{run_id}.json",
                 {"run_id": run_id, "records": [g.model_dump() for g in golden]},
             )
         ),
     }
     # Latest pointers for the UI / cron consumers
-    write_json(GOLDEN_DIR / "latest.json", {"run_id": run_id, "records": [g.model_dump() for g in golden]})
+    write_json(golden_dir / "latest.json", {"run_id": run_id, "records": [g.model_dump() for g in golden]})
     return paths
 
 

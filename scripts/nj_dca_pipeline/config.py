@@ -12,7 +12,6 @@ STATE_PATH = PIPELINE_DIR / "state.json"
 RAW_DIR = PIPELINE_DIR / "raw"
 EXTRACTED_DIR = PIPELINE_DIR / "extracted"
 GOLDEN_DIR = PIPELINE_DIR / "golden"
-LOG_PATH = PIPELINE_DIR / "pipeline.log"
 
 SOCRATA_DOMAIN = "data.nj.gov"
 SOCRATA_DATASET = "w9se-dmra"
