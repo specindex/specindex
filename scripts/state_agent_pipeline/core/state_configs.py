@@ -1147,3 +1147,44 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "TX-ELPASO": TX_ELPASO_ACCELA_CONFIG,
     "TX-SANANTONIO": TX_SANANTONIO_ACCELA_CONFIG,
 }
+
+# City of San Antonio (Bexar County) -- TX_SANANTONIO_ACCELA_CONFIG above
+# only ever captured one of 19 real commercial permit-type categories
+# ("Commercial New Building Permit"). Found while investigating why a
+# Gemini-suggested Bexar County lead turned out to be a dead end (the
+# county's own permit process, outside municipal limits, is a manual
+# Fire-Marshal paper-form review -- not a digital portal; the real
+# activity is in the City of San Antonio, which was already wired but
+# thin). Live-probed the other 18 dropdown categories 2026-07-28;
+# real 30-day volume: Addition 5, Finish Out 14, Remodel 73, Sitework
+# 37, Project Application 221 (likely the umbrella application type
+# many projects route through first) -- Shell had 0 and wasn't added.
+# Other lower-signal categories (Fence, Monument, Pad Site, Drive-Thru,
+# Ice-Teller Machine, etc.) not probed -- narrow/niche categories,
+# unlikely to carry meaningful commercial-construction volume.
+TX_SANANTONIO_ADDITION_CONFIG: dict[str, Any] = {
+    **TX_SANANTONIO_ACCELA_CONFIG,
+    "permit_type_label": "Commercial Addition Permit",
+}
+TX_SANANTONIO_FINISHOUT_CONFIG: dict[str, Any] = {
+    **TX_SANANTONIO_ACCELA_CONFIG,
+    "permit_type_label": "Commercial Finish Out Permit",
+}
+TX_SANANTONIO_REMODEL_CONFIG: dict[str, Any] = {
+    **TX_SANANTONIO_ACCELA_CONFIG,
+    "permit_type_label": "Commercial Remodel Permit",
+}
+TX_SANANTONIO_SITEWORK_CONFIG: dict[str, Any] = {
+    **TX_SANANTONIO_ACCELA_CONFIG,
+    "permit_type_label": "Commercial Sitework Permit",
+}
+TX_SANANTONIO_PROJAPP_CONFIG: dict[str, Any] = {
+    **TX_SANANTONIO_ACCELA_CONFIG,
+    "permit_type_label": "Commercial Project Application",
+}
+
+STATE_CONFIGS["TX-SANANTONIO-ADDITION"] = TX_SANANTONIO_ADDITION_CONFIG
+STATE_CONFIGS["TX-SANANTONIO-FINISHOUT"] = TX_SANANTONIO_FINISHOUT_CONFIG
+STATE_CONFIGS["TX-SANANTONIO-REMODEL"] = TX_SANANTONIO_REMODEL_CONFIG
+STATE_CONFIGS["TX-SANANTONIO-SITEWORK"] = TX_SANANTONIO_SITEWORK_CONFIG
+STATE_CONFIGS["TX-SANANTONIO-PROJAPP"] = TX_SANANTONIO_PROJAPP_CONFIG
