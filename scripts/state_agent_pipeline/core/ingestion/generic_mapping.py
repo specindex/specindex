@@ -76,7 +76,20 @@ def field_mapped_to_projects(
                 city = str(row[cf]).title()
                 break
         if not city and address and "," in address:
-            city = address.split(",")[-1].strip()
+            # Real bug found 2026-07-28 (San Diego): "7676 Hazard Center
+            # Dr, San Diego, CA" / "...San Diego, CA 92121" is
+            # "street, city, ST[ zip]" (3 comma parts) -- always taking
+            # the last part gave "CA" or "CA 92121" as the city, not
+            # "San Diego". If the last part starts with a 2-letter state
+            # abbreviation (with or without a trailing zip), use the
+            # second-to-last part instead (still falls back to the plain
+            # last-part split for "street, city" 2-part addresses, e.g.
+            # LA's format).
+            parts = [p.strip() for p in address.split(",")]
+            if len(parts) >= 3 and re.match(r"^[A-Za-z]{2}(\s|$)", parts[-1]):
+                city = parts[-2]
+            else:
+                city = parts[-1]
         slug = re.sub(r"[^a-z0-9]+", "-", f"{feed_id}-{rid}".lower()).strip("-")[:80]
         # feed_id is already state-prefixed by convention (mi-detroit-wayne,
         # ca-losangeles-ladbs, il-cook-assessor, ...) -- don't prefix again.

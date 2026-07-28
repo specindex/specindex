@@ -1016,6 +1016,47 @@ PA_PHILADELPHIA_CONFIG: dict[str, Any] = {
     "source_url": "https://phl.carto.com/api/v2/sql",
 }
 
+# San Diego County/City (CA) -- flat CSV download, new provider type
+# (core/ingestion/csv_download_provider.py). The county-level Socrata
+# catalog entries (dyzh-7eat, eqjy-uqyj) were both dead ends (stale
+# since 2023 / no usable fields) -- this is the CITY of San Diego's
+# separate, actively-maintained open-data pipeline instead, found by
+# checking data.sandiego.gov/datasets/development-permits/ directly
+# (a Gemini/Vertex lead named the URL generically but couldn't browse
+# it; the real dataset had to be found and verified live by hand).
+# Verified live 2026-07-28: last-modified today, MAX(APPROVAL_ISSUE_DATE)
+# = 2026-07-27, 440 commercial-filtered rows in a real 30-day window.
+# JOB_BC_CODE_DESCRIPTION is empty on ~74% of rows (residential permit
+# types dominate the other 26%) -- filtered via include/exclude keyword
+# match on that field rather than a hard exact-match list, since the
+# real category text varies (e.g. "Add/Alt Tenant Improvements",
+# "ACC STRUCT- NON RES", "Demo of NonRes Buildings").
+# NOTE: points at the year-specific 2026 file (15.9MB) rather than the
+# all-years file (590MB, too large to re-download every run) --
+# needs a URL bump to approvals_issued_2027_datasd.csv in January.
+CA_SANDIEGO_CONFIG: dict[str, Any] = {
+    "state_code": "CA",
+    "provider_type": "csv",
+    "county": "San Diego",
+    "endpoint": "https://seshat.datasd.org/development_permits/approvals_issued_2026_datasd.csv",
+    "date_field": "APPROVAL_ISSUE_DATE",
+    "filter_field": "JOB_BC_CODE_DESCRIPTION",
+    "include_keywords": [
+        "tenant improvement", "non res", "nonres", "commercial",
+        "office", "retail", "warehouse", "industrial", "hotel", "restaurant",
+    ],
+    "exclude_keywords": ["1 or 2 fam", "companion unit", "acc apt", "family apt", "pool or spa"],
+    "lookback_days": 30,
+    "hash_fields": ["APPROVAL_ID"],
+    "feed_id": "ca-sandiego",
+    "id_field": "APPROVAL_ID",
+    "name_fields": ["PROJECT_TITLE", "JOB_BC_CODE_DESCRIPTION", "APPROVAL_ID"],
+    "address_fields": ["GIS_ADDRESS"],
+    "value_fields": ["APPROVAL_VALUATION"],
+    "desc_fields": ["PROJECT_SCOPE", "JOB_BC_CODE_DESCRIPTION"],
+    "source_url": "https://data.sandiego.gov/datasets/development-permits/",
+}
+
 STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NJ": NJ_CONFIG,
     "NC": NC_CONFIG,
@@ -1052,6 +1093,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "VA-FAIRFAX": VA_FAIRFAX_CONFIG,
     "TX-WILLIAMSON-PERMITS": TX_WILLIAMSON_PERMITS_CONFIG,
     "PA-PHILADELPHIA": PA_PHILADELPHIA_CONFIG,
+    "CA-SANDIEGO": CA_SANDIEGO_CONFIG,
     "TX-BRAZORIA": TX_BRAZORIA_CONFIG,
     "TX-MIDLAND": TX_MIDLAND_CONFIG,
     "TX-HAYS": TX_HAYS_CONFIG,

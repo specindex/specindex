@@ -12,6 +12,7 @@ from .arcgis_provider import ArcGISProvider
 from .base_provider import BaseIngestionProvider
 from .carto_provider import CartoProvider
 from .ckan_provider import CkanProvider
+from .csv_download_provider import CsvDownloadProvider
 from .energov_provider import EnerGovProvider
 from .sam_gov_provider import SamGovProvider
 from .socrata_provider import SocrataProvider
@@ -160,11 +161,24 @@ def build_provider(state_config: dict[str, Any]) -> BaseIngestionProvider:
         )
 
     if provider_type == "csv":
-        raise NotImplementedError(
-            f"provider_type={provider_type!r} is specced but not yet implemented -- "
-            "see docs/AGENT_STRATEGY.md / this session's roadmap notes. "
-            "build CSVDownloadProvider when a real state needs one, "
-            "verified live first (same discipline as every other source this session)."
+        return CsvDownloadProvider(
+            csv_url=state_config["endpoint"],
+            date_field=state_config["date_field"],
+            filter_field=state_config["filter_field"],
+            include_keywords=state_config["include_keywords"],
+            exclude_keywords=state_config.get("exclude_keywords"),
+            lookback_days=state_config.get("lookback_days", 30),
+            hash_fields_list=state_config.get("hash_fields"),
+            feed_id=state_config.get("feed_id"),
+            state_code=state_config.get("state_code"),
+            county=state_config.get("county"),
+            id_field=state_config.get("id_field"),
+            name_fields=state_config.get("name_fields"),
+            address_fields=state_config.get("address_fields"),
+            desc_fields=state_config.get("desc_fields"),
+            value_fields=state_config.get("value_fields"),
+            city_fields=state_config.get("city_fields"),
+            source_url=state_config.get("source_url"),
         )
 
     raise UnknownProviderType(f"Unknown provider_type: {provider_type!r}")
