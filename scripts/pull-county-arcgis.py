@@ -75,7 +75,11 @@ def query_layer(base: str, layer: int, where: str, fields: str = "*", page_size:
             "returnGeometry": "true",
             "outSR": "4326",
         }
-        url = f"{base}/{layer}/query?{urllib.parse.urlencode(params)}"
+        # quote_via=quote (not the urlencode default quote_plus) -- some
+        # ArcGIS REST servers reject "+"-encoded spaces inside a quoted
+        # LIKE string literal (confirmed live on Cleveland OH's endpoint:
+        # identical query 400s with "+" for spaces, works with "%20").
+        url = f"{base}/{layer}/query?{urllib.parse.urlencode(params, quote_via=urllib.parse.quote)}"
         data = fetch_json(url)
         if "error" in data:
             raise RuntimeError(str(data["error"])[:200])
@@ -836,6 +840,336 @@ def pull_fargo(cutoff: dt.date) -> list[dict]:
     return projects
 
 
+def pull_miamidade(cutoff: dt.date) -> list[dict]:
+    # Verified live 2026-07-27: 139,870 total records, max PermitIssuedDate
+    # = today. ResidentialCommercial='C' is real but buckets 5+-unit
+    # multifamily as "commercial" for permitting purposes -- excluded via
+    # a ProposedUseDescription text check, same class of fix as Chicago/
+    # Philadelphia. EstimatedValue/SquareFootage are STRING-typed fields
+    # needing cast. A Table (no geometry) -- no lat/lon available.
+    base = "https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/arcgis/rest/services/miamidade_permit_data/FeatureServer"
+    # Filtering on CAST(EstimatedValue AS FLOAT) server-side, combined with
+    # deep OFFSET pagination over 139K+ rows, reliably timed out (a
+    # computed predicate can't use an index, so the server re-scans
+    # progressively more rows per page). Filter by value client-side
+    # instead -- pull the cheap categorical/date filter only, then drop
+    # low-value rows in Python.
+    where = (
+        "ResidentialCommercial='C' AND ProposedUseDescription NOT LIKE '%RESIDENTIAL%' "
+        f"AND PermitIssuedDate >= DATE '{cutoff.isoformat()}'"
+    )
+    rows = query_layer(
+        base, 0, where,
+        fields="PermitNumber,PermitType,EstimatedValue,ApplicationTypeDescription,"
+        "ProposedUseDescription,PropertyAddress,OwnerName,City,PermitIssuedDate,SquareFootage",
+    )
+    projects, seen = [], set()
+    for a in rows:
+        permit_no = str(a.get("PermitNumber") or "").strip()
+        if not permit_no or permit_no in seen:
+            continue
+        seen.add(permit_no)
+        use_desc = (a.get("ProposedUseDescription") or "").strip()
+        app_type = (a.get("ApplicationTypeDescription") or "").strip()
+        ptype = project_type_from(f"{use_desc} {app_type}")
+        try:
+            value = float(a.get("EstimatedValue") or 0)
+        except (TypeError, ValueError):
+            value = 0
+        if value <= 25000:
+            continue
+        try:
+            sqft = float(a.get("SquareFootage") or 0)
+        except (TypeError, ValueError):
+            sqft = 0
+        addr = (a.get("PropertyAddress") or "").strip()
+        city = (a.get("City") or "").strip().title() or "Miami-Dade County"
+        owner = (a.get("OwnerName") or "").strip().title()
+        opened = a.get("PermitIssuedDate")
+        opened_str = epoch_ms_to_date(opened) if isinstance(opened, (int, float)) else (str(opened)[:10] if opened else None)
+        name = f"{app_type} — {use_desc}"[:120] if use_desc else f"Miami-Dade commercial permit {permit_no}"
+        projects.append({
+            "id": f"fl-miamidade-{slugify(permit_no)}",
+            "name": name,
+            "city": city,
+            "county": "Miami-Dade",
+            "status": "permitting",
+            "project_type": ptype,
+            "estimated_value_usd": value if value > 0 else None,
+            "square_footage": sqft if sqft > 0 else None,
+            "owner": owner,
+            "architect": "",
+            "general_contractor": "",
+            "opened_or_announced_date": opened_str,
+            "description": f"Miami-Dade County commercial permit {permit_no} ({app_type}, {use_desc}): {addr}.",
+            "key_specs": [s for s in [use_desc, app_type, addr, f"Permit {permit_no}"] if s],
+            "mentioned_brands": [],
+            "competitor_watch": categories_for(ptype),
+            "sources": [{"title": f"Miami-Dade County commercial permit {permit_no}", "url": f"{base}/0"}],
+            "open_for": "Active commercial building permit. Early product/spec window.",
+            "state": "FL",
+            "latitude": None,
+            "longitude": None,
+        })
+    return projects
+
+
+def pull_detroit(cutoff: dt.date) -> list[dict]:
+    # Verified live 2026-07-27: 46,148 total records, max issued_date =
+    # today. `use_group` (real IBC class: M/B/A/E/U vs R-2/R-3) is the
+    # clean categorical field but frequently null (497 records/24mo with
+    # the strict filter alone) -- combined with a positive text match on
+    # `proposed_use_type` as a backstop (1,257 records/24mo combined).
+    # `record_id` prefix (BLD/RES) is NOT a reliable filter on its own --
+    # sampled BLD* records include single-family alterations.
+    base = "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+    where = (
+        "(use_group IN ('M','B','A','E','U') OR proposed_use_type LIKE '%COMMERCIAL%' "
+        "OR proposed_use_type LIKE '%RETAIL%' OR proposed_use_type LIKE '%OFFICE%' "
+        "OR proposed_use_type LIKE '%WAREHOUSE%' OR proposed_use_type LIKE '%INDUSTRIAL%' "
+        "OR proposed_use_type LIKE '%RESTAURANT%') "
+        "AND proposed_use_type NOT LIKE '%RESIDENTIAL%' AND proposed_use_type NOT LIKE '%SINGLE FAMILY%' "
+        f"AND issued_date >= timestamp '{cutoff.isoformat()} 00:00:00'"
+    )
+    rows = query_layer(
+        base, 0, where,
+        fields="record_id,address,issued_date,permit_type,use_group,current_use_type,"
+        "proposed_use_type,zip_code,neighborhood,amt_estimated_contractor_cost",
+    )
+    projects, seen = [], set()
+    for a in rows:
+        record_id = str(a.get("record_id") or "").strip()
+        if not record_id or record_id in seen:
+            continue
+        seen.add(record_id)
+        proposed = (a.get("proposed_use_type") or "").strip()
+        permit_type = (a.get("permit_type") or "").strip()
+        ptype = project_type_from(f"{proposed} {permit_type}")
+        opened = epoch_ms_to_date(a.get("issued_date")) if isinstance(a.get("issued_date"), (int, float)) else None
+        addr = (a.get("address") or "").strip()
+        neighborhood = (a.get("neighborhood") or "").strip()
+        try:
+            cost = float(a.get("amt_estimated_contractor_cost") or 0)
+        except (TypeError, ValueError):
+            cost = 0
+        name = f"{permit_type} — {addr}"[:120] if addr else f"Detroit permit {record_id}"
+        projects.append({
+            "id": f"mi-detroit-{slugify(record_id)}",
+            "name": name,
+            "city": "Detroit",
+            "county": "Wayne",
+            "status": "permitting",
+            "project_type": ptype,
+            "estimated_value_usd": cost if cost > 0 else None,
+            "square_footage": None,
+            "owner": "",
+            "architect": "",
+            "general_contractor": "",
+            "opened_or_announced_date": opened,
+            "description": f"Detroit commercial permit {record_id} ({permit_type}, {proposed or 'use not specified'}): {addr}.",
+            "key_specs": [s for s in [proposed, neighborhood, f"Permit {record_id}"] if s],
+            "mentioned_brands": [],
+            "competitor_watch": categories_for(ptype),
+            "sources": [{"title": f"Detroit commercial permit {record_id}", "url": f"{base}/0"}],
+            "open_for": "Active commercial building permit. Early product/spec window.",
+            "state": "MI",
+            "latitude": a.get("_lat"),
+            "longitude": a.get("_lon"),
+            "zip": str(a.get("zip_code")).strip()[:5] if a.get("zip_code") else None,
+        })
+    return projects
+
+
+def pull_fairfax(cutoff: dt.date) -> list[dict]:
+    # Verified live 2026-07-27: 10,746 total records, max ISSUED_DATE =
+    # 4 days old. APPTYPEALIAS is a clean categorical field. Bonus:
+    # DATA_CENTER Yes/No field -- direct hit on "Data Center Alley"
+    # (Reston/Herndon/Chantilly), e.g. CoreSite VA3-2A Phase 2A ($90M).
+    # Polygon (parcel) geometry, not point -- left lat/lon null rather
+    # than risk a bad centroid extraction.
+    base = "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer"
+    where = (
+        "APPTYPEALIAS IN ('Commercial New','Commercial Addition/Alteration') "
+        f"AND ISSUED_DATE >= timestamp '{cutoff.isoformat()} 00:00:00'"
+    )
+    rows = query_layer(
+        base, 5, where,
+        fields="RECORDID,APPTYPEALIAS,PROJECT_NAME,ESTIMATED_COST,ADDRESS_1,CITY,ZIP_CODE,ISSUED_DATE,DATA_CENTER",
+    )
+    projects, seen = [], set()
+    for a in rows:
+        record_id = str(a.get("RECORDID") or "").strip()
+        if not record_id or record_id in seen:
+            continue
+        seen.add(record_id)
+        app_type = (a.get("APPTYPEALIAS") or "").strip()
+        proj_name = (a.get("PROJECT_NAME") or "").strip()
+        is_data_center = (a.get("DATA_CENTER") or "").strip().upper() == "YES"
+        ptype = "industrial" if is_data_center else project_type_from(f"{proj_name} {app_type}")
+        opened = epoch_ms_to_date(a.get("ISSUED_DATE")) or cutoff.isoformat()
+        try:
+            cost = float(a.get("ESTIMATED_COST") or 0)
+        except (TypeError, ValueError):
+            cost = 0
+        addr = (a.get("ADDRESS_1") or "").strip()
+        city = (a.get("CITY") or "").strip().title() or "Fairfax County"
+        name = proj_name[:120] or f"Fairfax County commercial permit {record_id}"
+        key_specs = [s for s in [app_type, addr, f"Permit {record_id}"] if s]
+        if is_data_center:
+            key_specs.insert(0, "Data center")
+        projects.append({
+            "id": f"va-fairfax-{slugify(record_id)}",
+            "name": name,
+            "city": city,
+            "county": "Fairfax",
+            "status": "permitting",
+            "project_type": ptype,
+            "estimated_value_usd": cost if cost > 0 else None,
+            "square_footage": None,
+            "owner": "",
+            "architect": "",
+            "general_contractor": "",
+            "opened_or_announced_date": opened,
+            "description": f"Fairfax County VA commercial permit {record_id} ({app_type}){' [DATA CENTER]' if is_data_center else ''}: {proj_name or addr}.",
+            "key_specs": key_specs,
+            "mentioned_brands": [],
+            "competitor_watch": categories_for(ptype),
+            "sources": [{"title": f"Fairfax County VA commercial permit {record_id}", "url": f"{base}/5"}],
+            "open_for": "Active commercial building permit. Early product/spec window.",
+            "state": "VA",
+            "latitude": None,
+            "longitude": None,
+            "zip": str(a.get("ZIP_CODE")).strip()[:5] if a.get("ZIP_CODE") else None,
+        })
+    return projects
+
+
+def pull_columbus(cutoff: dt.date) -> list[dict]:
+    # Verified live 2026-07-27: 675,280 total records, max ISSUED_DT =
+    # yesterday. B1_PER_TYPE='Commercial' is real and clean (mutually
+    # exclusive vs 1,2,3-Family/Multi Family/Residential), but most
+    # commercial rows are trade sub-permits (Plumbing/Electrical/
+    # Mechanical) with G3_VALUE_TTL=0 -- filtered with a $25K value floor
+    # to keep real construction-relevant records.
+    base = "https://services1.arcgis.com/9yy6msODkIBzkUXU/arcgis/rest/services/Building_Permits/FeatureServer"
+    where = (
+        "B1_PER_TYPE='Commercial' AND G3_VALUE_TTL>25000 "
+        f"AND ISSUED_DT >= timestamp '{cutoff.isoformat()} 00:00:00'"
+    )
+    rows = query_layer(
+        base, 0, where,
+        fields="B1_PER_CATEGORY,GENERAL_TYPE,SITE_ADDRESS,B1_SITUS_ZIP,PERMIT_STATUS,"
+        "APPLICANT_BUS_NAME,SQFT,G3_VALUE_TTL,ISSUED_DT,ACA_URL",
+    )
+    projects, seen = [], set()
+    for a in rows:
+        addr = (a.get("SITE_ADDRESS") or "").strip()
+        category = (a.get("B1_PER_CATEGORY") or "").strip()
+        opened = epoch_ms_to_date(a.get("ISSUED_DT")) or cutoff.isoformat()
+        uid = slugify(f"{addr}-{category}-{opened}")
+        if not uid or uid in seen:
+            continue
+        seen.add(uid)
+        general_type = (a.get("GENERAL_TYPE") or "").strip()
+        ptype = project_type_from(f"{category} {general_type}")
+        try:
+            value = float(a.get("G3_VALUE_TTL") or 0)
+        except (TypeError, ValueError):
+            value = 0
+        try:
+            sqft = float(a.get("SQFT") or 0)
+        except (TypeError, ValueError):
+            sqft = 0
+        applicant = (a.get("APPLICANT_BUS_NAME") or "").strip().title()
+        name = f"{category} — {addr}"[:120] if addr else f"Columbus commercial permit {uid}"
+        projects.append({
+            "id": f"oh-columbus-{uid}",
+            "name": name,
+            "city": "Columbus",
+            "county": "Franklin",
+            "status": "permitting",
+            "project_type": ptype,
+            "estimated_value_usd": value if value > 0 else None,
+            "square_footage": sqft if sqft > 0 else None,
+            "owner": "",
+            "architect": "",
+            "general_contractor": applicant,
+            "opened_or_announced_date": opened,
+            "description": f"Columbus commercial permit ({category}, {general_type}): {addr}.",
+            "key_specs": [s for s in [category, general_type, addr] if s],
+            "mentioned_brands": [],
+            "competitor_watch": categories_for(ptype),
+            "sources": [{
+                "title": f"Columbus commercial permit: {addr}",
+                "url": a.get("ACA_URL") or f"{base}/0",
+            }],
+            "open_for": "Active commercial building permit. Early product/spec window.",
+            "state": "OH",
+            "latitude": a.get("_lat"),
+            "longitude": a.get("_lon"),
+            "zip": str(a.get("B1_SITUS_ZIP")).strip()[:5] if a.get("B1_SITUS_ZIP") else None,
+        })
+    return projects
+
+
+def pull_cleveland(cutoff: dt.date) -> list[dict]:
+    # Verified live 2026-07-27: 198,276 total records, max ISSUE_DATE =
+    # yesterday. PERMIT_CATEGORY='Commercial...' is a trap -- only ~1,675
+    # records carry that label; the real commercial signal is USE_GROUP_1
+    # (real IBC occupancy classes with descriptive suffixes, e.g.
+    # "B Business", "M Mercantile - Stores...", vs "One Family"/
+    # "R-2 Residential..."). Direct LAT/LON fields, no geocoding needed.
+    base = "https://services3.arcgis.com/dty2kHktVXHrqO8i/arcgis/rest/services/Building_Permits/FeatureServer"
+    commercial_prefixes = ["B ", "M ", "A-", "F-", "I-", "S-", "Commercial", "Mixed Use"]
+    like_clause = " OR ".join(f"USE_GROUP_1 LIKE '{p}%'" for p in commercial_prefixes)
+    where = f"({like_clause}) AND ISSUE_DATE >= timestamp '{cutoff.isoformat()} 00:00:00'"
+    rows = query_layer(
+        base, 0, where,
+        fields="PERMIT_CATEGORY,USE_GROUP_1,PRIMARY_ADDRESS,JOB_VALUE,CONTRACTOR_NAME,ISSUE_DATE,LAT,LON",
+    )
+    projects, seen = [], set()
+    for a in rows:
+        addr = (a.get("PRIMARY_ADDRESS") or "").strip()
+        use_group = (a.get("USE_GROUP_1") or "").strip()
+        opened = epoch_ms_to_date(a.get("ISSUE_DATE")) or cutoff.isoformat()
+        uid = slugify(f"{addr}-{use_group}-{opened}")
+        if not uid or uid in seen:
+            continue
+        seen.add(uid)
+        category = (a.get("PERMIT_CATEGORY") or "").strip()
+        ptype = project_type_from(f"{use_group} {category}")
+        try:
+            value = float(a.get("JOB_VALUE") or 0)
+        except (TypeError, ValueError):
+            value = 0
+        contractor = (a.get("CONTRACTOR_NAME") or "").strip().title()
+        name = f"{category or use_group} — {addr}"[:120] if addr else f"Cleveland commercial permit {uid}"
+        projects.append({
+            "id": f"oh-cleveland-{uid}",
+            "name": name,
+            "city": "Cleveland",
+            "county": "Cuyahoga",
+            "status": "permitting",
+            "project_type": ptype,
+            "estimated_value_usd": value if value > 0 else None,
+            "square_footage": None,
+            "owner": "",
+            "architect": "",
+            "general_contractor": contractor,
+            "opened_or_announced_date": opened,
+            "description": f"Cleveland commercial permit ({use_group}, {category or 'permit'}): {addr}.",
+            "key_specs": [s for s in [use_group, category, addr] if s],
+            "mentioned_brands": [],
+            "competitor_watch": categories_for(ptype),
+            "sources": [{"title": f"Cleveland commercial permit: {addr}", "url": f"{base}/0"}],
+            "open_for": "Active commercial building permit. Early product/spec window.",
+            "state": "OH",
+            "latitude": a.get("LAT"),
+            "longitude": a.get("LON"),
+        })
+    return projects
+
+
 def merge_into_state(state: str, new_projects: list[dict]) -> tuple[int, int]:
     path = STATES_DIR / f"{state.lower()}.json"
     data = json.loads(path.read_text()) if path.exists() else {
@@ -883,6 +1217,11 @@ def main() -> int:
         "overland_park": ("KS", pull_overland_park),
         "bentonville": ("AR", pull_bentonville),
         "fargo": ("ND", pull_fargo),
+        "miamidade": ("FL", pull_miamidade),
+        "detroit": ("MI", pull_detroit),
+        "fairfax": ("VA", pull_fairfax),
+        "columbus": ("OH", pull_columbus),
+        "cleveland": ("OH", pull_cleveland),
     }
     selected = set(args.only.split(",")) if args.only else set(pullers)
 

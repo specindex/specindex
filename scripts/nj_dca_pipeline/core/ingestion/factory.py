@@ -1,0 +1,67 @@
+"""Ingestion Factory: builds the right BaseIngestionProvider from a state's
+config dict, so a State Agent never has to know which platform its state
+actually uses -- only its `provider_type`.
+"""
+
+from __future__ import annotations
+
+from typing import Any
+
+from .arcgis_provider import ArcGISProvider
+from .base_provider import BaseIngestionProvider
+from .socrata_provider import SocrataProvider
+
+
+class UnknownProviderType(ValueError):
+    pass
+
+
+def build_provider(state_config: dict[str, Any]) -> BaseIngestionProvider:
+    provider_type = state_config.get("provider_type")
+
+    if provider_type == "socrata":
+        domain = state_config["endpoint"].split("//", 1)[-1].split("/", 1)[0]
+        dataset = state_config["endpoint"].rstrip("/").rsplit("/", 1)[-1].replace(".json", "")
+        return SocrataProvider(
+            domain=domain,
+            dataset=dataset,
+            watermark_field=state_config.get("watermark_field", "recordid"),
+            hash_fields_list=state_config.get("hash_fields"),
+            commercial_where=state_config.get("commercial_where"),
+            lookback_days=state_config.get("lookback_days", 30),
+            app_token=state_config.get("app_token"),
+            hard_limit=state_config.get("hard_limit", 0),
+        )
+
+    if provider_type == "arcgis":
+        # endpoint is the full .../FeatureServer/{layer}/query-style URL or
+        # base .../FeatureServer -- accept either.
+        endpoint = state_config["endpoint"]
+        layer = state_config.get("layer", 0)
+        base_url = endpoint
+        for suffix in ("/query", f"/{layer}"):
+            if base_url.endswith(suffix):
+                base_url = base_url[: -len(suffix)]
+        return ArcGISProvider(
+            base_url=base_url,
+            layer=layer,
+            out_fields=state_config.get("out_fields", "*"),
+            commercial_where=state_config.get("commercial_where"),
+            watermark_field=state_config.get("watermark_field", "OBJECTID"),
+            hash_fields_list=state_config.get("hash_fields"),
+            include_geometry=state_config.get("include_geometry", True),
+            date_field=state_config.get("date_field"),
+            lookback_days=state_config.get("lookback_days", 30),
+            hard_limit=state_config.get("hard_limit", 0),
+        )
+
+    if provider_type in ("ckan", "csv"):
+        raise NotImplementedError(
+            f"provider_type={provider_type!r} is specced but not yet implemented -- "
+            "see docs/AGENT_STRATEGY.md / this session's roadmap notes. "
+            "Socrata and ArcGIS cover NJ + the immediate next-state rollout; "
+            "build CKANProvider/CSVDownloadProvider when a real state needs one, "
+            "verified live first (same discipline as every other source this session)."
+        )
+
+    raise UnknownProviderType(f"Unknown provider_type: {provider_type!r}")
