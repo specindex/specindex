@@ -15,8 +15,11 @@ name: GA federal sources pipeline (daily)
 # what's new since today.
 
 on:
-  schedule:
-    - cron: "0 9 * * *" # daily, 09:00 UTC (offset from the NJ DCA cron at 08:00)
+  # schedule trigger disabled 2026-07-28 (Asif: "disable all cron jobs,
+  # will come back to it later") -- was: daily, 09:00 UTC (offset from
+  # the NJ DCA cron at 08:00). workflow_dispatch still works for manual runs.
+  # schedule:
+  #   - cron: "0 9 * * *"
   workflow_dispatch:
     inputs:
       lookback_days:

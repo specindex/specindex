@@ -12,8 +12,14 @@ name: NC Mecklenburg Flash+Sonnet pipeline (daily)
 # WIF_SERVICE_ACCOUNT, CLOUDSQL_PASSWORD, ANTHROPIC_API_KEY.
 
 on:
-  schedule:
-    - cron: "0 8 * * *" # daily, 08:00 UTC (same time as NJ -- independent runners)
+  # schedule trigger disabled 2026-07-28 (Asif: "disable all cron jobs,
+  # will come back to it later" -- also flagged: this workflow's --state NC
+  # uses a different id scheme than the new NC-MECKLENBURG deterministic
+  # config added the same day, real forward-duplication risk to resolve
+  # before re-enabling). Was: daily, 08:00 UTC. workflow_dispatch still
+  # works for manual runs.
+  # schedule:
+  #   - cron: "0 8 * * *"
   workflow_dispatch:
     inputs:
       lookback_days:
