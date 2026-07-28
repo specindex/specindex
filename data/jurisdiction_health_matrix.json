@@ -459,6 +459,56 @@
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
       "notes": "HTML page loads (200) via real browser, but the catalog search API (api/search/v1/...) returns 401 Unauthorized (\"private org id... not accessible\") -- not a usable public catalog via the standard API path. Both eng-epermits.harriscountytx.gov and eng.harriscountytx.gov confirmed ERR_CONNECTION_RESET via real Playwright browser too (not just curl) -- some active block, not a UA/bot-detection issue."
+    },
+    {
+      "jurisdiction": "Jacksonville / Duval County, FL -- JaxEPICS AdvancedSearch",
+      "county": "Duval",
+      "state": "FL",
+      "provider_type": null,
+      "endpoint": "https://jaxepics.coj.net/Search/AdvancedSearch",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Real page but is the \"manage saved searches\" feature (calls api/Searches/GetSavedSearches, which itself 504'd), not a permit search. Custom-built Angular app (JaxEPICS), homepage title is literally \"Login\" -- full search/application functionality is account-gated."
+    },
+    {
+      "jurisdiction": "Jacksonville / Duval County, FL -- individual permit detail pages",
+      "county": "Duval",
+      "state": "FL",
+      "provider_type": null,
+      "endpoint": "https://jaxepics.coj.net/Permit/View/{hash}",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Confirmed real and publicly viewable without login (200, Google-indexed, e.g. permit L-16-785825.000), but no confirmed anonymous bulk/date-range search found to enumerate them -- individual-permit-only access is not useful for incremental ingestion."
+    },
+    {
+      "jurisdiction": "Jacksonville / Duval County, FL -- Gemini-claimed Guest Sign In search flow",
+      "county": "Duval",
+      "state": "FL",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Gemini described a specific guest-search UI flow (magnifying-glass search icon, \"Permits Plus\" logo, a quoted guest-mode banner) that could not be located on the live site -- the \"Permits Plus\" branding in particular was never observed anywhere during live inspection, a likely fabrication despite confident, specific phrasing."
+    },
+    {
+      "jurisdiction": "Jacksonville / Duval County, FL -- maps.coj.net BID/PermitBoundary",
+      "county": "Duval",
+      "state": "FL",
+      "provider_type": "arcgis",
+      "endpoint": "https://maps.coj.net/coj/rest/services/BID/PermitBoundary/MapServer",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Real service (not enumerated in the public folder catalog, but directly reachable) -- requires an ArcGIS token (\"error code 499: Token Required\"), not publicly queryable without credentials."
+    },
+    {
+      "jurisdiction": "Jacksonville / Duval County, FL -- maps.coj.net full catalog",
+      "county": "Duval",
+      "state": "FL",
+      "provider_type": "arcgis",
+      "endpoint": "https://maps.coj.net/coj/rest/services",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Real, live, 33 real enumerated folders -- none permit/building/inspection related (ADARamps, Parcels, Parks, Utilities, etc). CityBiz/Parcels and DuvalMaps/DuvalCivilPlanning (both Gemini-claimed) either error (400/500) or do not exist (404)."
     }
   ]
 }
