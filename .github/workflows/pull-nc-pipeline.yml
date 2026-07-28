@@ -1,0 +1,144 @@
+name: NC Mecklenburg Flash+Sonnet pipeline (daily)
+
+# Agent-Per-State framework, ArcGIS proof point -- daily incremental run of
+# Node 1 (Ingestion Factory: ArcGISProvider, Mecklenburg County) -> Node 2
+# (Gemini Flash extract) -> Node 3 (Claude Sonnet dedupe) -> Node 4
+# (persist + watermark checkpoint), auto-merged into data/states/nc.json.
+# Same shape as pull-nj-dca-pipeline.yml -- see that file's comments for
+# the full rationale (watermark persistence via git commit-back is what
+# makes tomorrow's run only capture what's new).
+#
+# Needs the same repo secrets as pull-nj-dca-pipeline.yml: WIF_PROVIDER,
+# WIF_SERVICE_ACCOUNT, CLOUDSQL_PASSWORD, ANTHROPIC_API_KEY.
+
+on:
+  schedule:
+    - cron: "0 8 * * *" # daily, 08:00 UTC (same time as NJ -- independent runners)
+  workflow_dispatch:
+    inputs:
+      lookback_days:
+        description: "First-run fallback window in days (ignored once a watermark exists)"
+        required: false
+        default: "2"
+      limit:
+        description: "Cap rows fetched this run (0 = no cap)"
+        required: false
+        default: "0"
+
+permissions:
+  contents: write
+  id-token: write
+
+env:
+  CLOUDSQL_INSTANCE: specindex-ai:us-central1:specindex-db
+  DATABASE_URL: postgresql://specindex:${{ secrets.CLOUDSQL_PASSWORD }}@127.0.0.1:5433/specindex
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+  GOOGLE_CLOUD_PROJECT: specindex-ai
+
+jobs:
+  nc_pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements-db.txt
+
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+
+      - name: Start Cloud SQL Auth Proxy
+        run: |
+          curl -sL -o cloud-sql-proxy \
+            https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.14.0/cloud-sql-proxy.linux.amd64
+          chmod +x cloud-sql-proxy
+          ./cloud-sql-proxy --port 5433 "$CLOUDSQL_INSTANCE" &
+          for i in $(seq 1 15); do
+            (echo > /dev/tcp/127.0.0.1/5433) >/dev/null 2>&1 && break
+            sleep 1
+          done
+
+      - name: Capture pre-run project count
+        id: before
+        run: |
+          echo "count=$(python3 -c "
+          import os, psycopg2
+          conn = psycopg2.connect(os.environ['DATABASE_URL'])
+          cur = conn.cursor()
+          cur.execute('SELECT count(*) FROM projects')
+          print(cur.fetchone()[0])
+          ")" >> "$GITHUB_OUTPUT"
+
+      - name: Run NC pipeline (Flash extract -> Sonnet dedupe -> merge)
+        id: pipeline
+        continue-on-error: true
+        run: |
+          python3 scripts/nj_dca_pipeline/main.py \
+            --state NC \
+            --lookback-days "${{ github.event.inputs.lookback_days || '2' }}" \
+            --merge-state \
+            --notify \
+            ${{ github.event.inputs.limit && github.event.inputs.limit != '0' && format('--limit {0}', github.event.inputs.limit) || '' }}
+
+      - name: Merge national corpus
+        id: merge
+        continue-on-error: true
+        run: python3 scripts/merge-national-corpus.py
+
+      - name: Load corpus to Cloud SQL
+        id: load
+        continue-on-error: true
+        run: python3 scripts/load-corpus-to-postgres.py --corpus data/national-commercial-projects.json --apply-migrations
+
+      - name: Refresh county coverage (Depth agent)
+        id: coverage
+        continue-on-error: true
+        run: python3 scripts/compute-county-coverage.py --apply-migration
+
+      - name: Refresh state quality (Quality agent)
+        id: quality
+        continue-on-error: true
+        run: python3 scripts/compute-state-quality.py --apply-migration
+
+      - name: Capture post-run project count
+        id: after
+        if: always()
+        continue-on-error: true
+        run: |
+          python3 -c "
+          import os, psycopg2
+          conn = psycopg2.connect(os.environ['DATABASE_URL'])
+          cur = conn.cursor()
+          cur.execute('SELECT count(*) FROM projects')
+          print(f'count={cur.fetchone()[0]}')
+          " >> "$GITHUB_OUTPUT"
+
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo "### NC Mecklenburg pipeline (Flash+Sonnet) — results"
+            echo "| Step | Outcome |"
+            echo "|---|---|"
+            echo "| Pipeline (fetch/extract/dedupe/merge) | ${{ steps.pipeline.outcome }} |"
+            echo "| Merge national corpus | ${{ steps.merge.outcome }} |"
+            echo "| Load to Cloud SQL | ${{ steps.load.outcome }} |"
+            echo "| Refresh county coverage | ${{ steps.coverage.outcome }} |"
+            echo "| Refresh state quality | ${{ steps.quality.outcome }} |"
+            echo ""
+            echo "Projects: ${{ steps.before.outputs.count }} -> ${{ steps.after.outputs.count }}"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit updated corpus + watermark
+        run: |
+          git config user.name "specindex-bot"
+          git config user.email "bot@specindex.ai"
+          git add data/
+          git diff --cached --quiet || git commit -m "Automated NC pipeline run (Flash+Sonnet)"
+          git push
