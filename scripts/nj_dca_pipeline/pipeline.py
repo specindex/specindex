@@ -134,7 +134,7 @@ def run_pipeline(
             entities = extract_with_flash(rows, settings)
             golden = dedupe_with_sonnet(entities, settings)
 
-        paths = persist_run(run_id=run_id, raw_rows=rows, entities=entities, golden=golden)
+        paths = persist_run(run_id=run_id, raw_rows=rows, entities=entities, golden=golden, state_code=state_code)
 
         # Only advance the watermark after a successful extract+dedupe --
         # a crash mid-run must not lose rows on the next attempt.
