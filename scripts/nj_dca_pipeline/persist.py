@@ -108,10 +108,14 @@ def _ptype(use_group: str) -> str:
     return "other"
 
 
-def merge_into_nj_state(projects: list[dict[str, Any]]) -> tuple[int, int]:
-    path = ROOT / "data" / "states" / "nj.json"
+def merge_into_state(state_code: str, projects: list[dict[str, Any]]) -> tuple[int, int]:
+    """Generic per-state merge, id-exact-match only (same as every
+    existing pull-*.py script's merge_into_state()) -- semantic/fuzzy
+    cross-source dedup happens later, at merge-national-corpus.py time,
+    not here."""
+    path = ROOT / "data" / "states" / f"{state_code.lower()}.json"
     data = json.loads(path.read_text()) if path.exists() else {
-        "state": "NJ",
+        "state": state_code.upper(),
         "generated_at": date.today().isoformat(),
         "projects": [],
         "stats": {},
@@ -129,5 +133,9 @@ def merge_into_nj_state(projects: list[dict[str, Any]]) -> tuple[int, int]:
     data["stats"] = {**(data.get("stats") or {}), "total": len(existing)}
     data["generated_at"] = date.today().isoformat()
     path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
-    print(f"[persist] merged into nj.json +{added} (total {len(existing)})", file=sys.stderr)
+    print(f"[persist] merged into {state_code.lower()}.json +{added} (total {len(existing)})", file=sys.stderr)
     return added, len(existing)
+
+
+def merge_into_nj_state(projects: list[dict[str, Any]]) -> tuple[int, int]:
+    return merge_into_state("NJ", projects)
