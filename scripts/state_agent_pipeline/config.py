@@ -78,7 +78,7 @@ class Settings:
             google_cloud_location=os.environ.get("GOOGLE_CLOUD_LOCATION") or "global",
             flash_model=os.environ.get("NJ_DCA_FLASH_MODEL")
             or os.environ.get("VERTEX_GEMINI_MODEL")
-            or "gemini-2.5-flash",
+            or "gemini-3.6-flash",
             sonnet_backend=backend,
             sonnet_model=sonnet_model,
             anthropic_api_key=os.environ.get("ANTHROPIC_API_KEY"),
