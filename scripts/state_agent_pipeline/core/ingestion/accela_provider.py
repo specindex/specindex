@@ -137,6 +137,27 @@ class AccelaProvider(BaseIngestionProvider):
                     if col_map is None:
                         col_map = self._build_column_map(trs)
                         if col_map is None:
+                            # Real bug found live 2026-07-28 (Dallas,
+                            # "Commercial Alteration Addition Permit",
+                            # 100+ results): "networkidle" can return
+                            # before the results grid actually finishes
+                            # rendering on a larger result set -- the
+                            # header row genuinely wasn't in the DOM yet
+                            # on the first read, not a real "no results"
+                            # case. Poll for up to 5s instead of giving
+                            # up on the first miss, same pattern as
+                            # EnerGovProvider's response-capture retry.
+                            for _ in range(10):
+                                page.wait_for_timeout(500)
+                                trs = page.eval_on_selector_all(
+                                    "#ctl00_PlaceHolderMain_dgvPermitList_gdvPermitList tr",
+                                    "trs => trs.map(tr => Array.from(tr.querySelectorAll('td,th'))"
+                                    ".map(td => td.innerText.trim()))",
+                                )
+                                col_map = self._build_column_map(trs)
+                                if col_map is not None:
+                                    break
+                        if col_map is None:
                             print(f"[accela:{self.county}] no results table/header found on page 1", file=sys.stderr)
                             break
                         print(f"[accela:{self.county}] column map: {col_map}", file=sys.stderr)

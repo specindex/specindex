@@ -494,6 +494,42 @@ TX_ELPASO_ACCELA_CONFIG: dict[str, Any] = {
     "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
 
+# City of Dallas -- Accela agency code DALLASTX (a Gemini-suggested code
+# "dallastx8" 404'd; the real one found by trying plausible variants).
+# Every URL in Gemini's first-pass structured JSON payload for Dallas
+# turned out to be fully hallucinated (fabricated domains, 404 pages,
+# an ArcGIS endpoint with no permits data) -- confirmed real here only
+# by direct live verification (DNS + HTTP + inspecting the actual
+# rendered dropdown), not by trusting the model's output. Real
+# ddlGSPermitType dropdown values confirmed live 2026-07-28:
+# "Commercial New Construction Permit" and "Commercial Alteration
+# Addition Permit" (Gemini's guesses were close but not exact --
+# "Commercial New Construction Permit"/"Commercial Alteration" wasn't
+# the literal dropdown text). AccelaProvider only supports one exact
+# permit_type_label per config, so this is split into two state keys to
+# capture both commercial categories.
+TX_DALLAS_NEW_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "TX",
+    "provider_type": "accela",
+    "county": "Dallas",
+    "endpoint": "https://aca-prod.accela.com/DALLASTX",
+    "permit_type_label": "Commercial New Construction Permit",
+    "lookback_days": 30,
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
+}
+
+TX_DALLAS_ALT_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "TX",
+    "provider_type": "accela",
+    "county": "Dallas",
+    "endpoint": "https://aca-prod.accela.com/DALLASTX",
+    "permit_type_label": "Commercial Alteration Addition Permit",
+    "lookback_days": 30,
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
+}
+
 # Verified live 2026-07-28: City of San Antonio's Accela portal (agency
 # code "COSA" -- guessed from "City Of San Antonio" after ELPASOCO-style
 # guesses 404'd; same trial pattern likely needed for the next city).
@@ -1080,6 +1116,8 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "AZ-SCOTTSDALE": AZ_SCOTTSDALE_CONFIG,
     "TX-JEFFERSON": TX_JEFFERSON_CONFIG,
     "TX-ECTOR": TX_ECTOR_CONFIG,
+    "TX-DALLAS-NEW": TX_DALLAS_NEW_ACCELA_CONFIG,
+    "TX-DALLAS-ALT": TX_DALLAS_ALT_ACCELA_CONFIG,
     "TX-WILLIAMSON": TX_WILLIAMSON_CONFIG,
     "MI-WAYNE": MI_WAYNE_CONFIG,
     "IL-COOK": IL_COOK_CONFIG,
