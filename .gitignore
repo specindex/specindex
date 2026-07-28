@@ -51,3 +51,12 @@ __pycache__/
 # large scratch downloads -- e.g. pull-sam-gov-bulk-national.py's 230MB CSV
 # cache, exceeds GitHub's 100MB push limit and shouldn't be tracked anyway
 data/raw/.sam-gov-bulk-download.csv
+
+# per-run pipeline intermediates (raw/extracted/golden snapshots, one-off
+# state-*.json dumps) -- ephemeral, reproducible from source, real output
+# lives in data/states/*.json and public/data/national-commercial-projects.json
+data/pipeline/
+
+# downloaded source documents (RFPs, EIS reports, etc.) -- large binaries,
+# stored in GCS instead of git; see docs/ROADMAP.md
+data/documents/
