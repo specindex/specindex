@@ -133,3 +133,71 @@ Given the sourcing-priority rule, build these in the order they pay off:
 5. Cadence: is weekly right for national, and what's right for state-level
    (weekly per state would mean ~3 states/week today — fine at 3 states,
    needs rethinking past ~10)?
+
+## Gemini-Assisted County/State Source Discovery (IMPLEMENTED, 2026-07-28)
+
+Unlike the rest of this doc, this section describes a real, running process —
+not a draft plan. This is the actual workflow used to find and wire every new
+county/state source added on 2026-07-28 (Wayne MI, Cook IL, Miami-Dade FL,
+King WA, Tarrant TX, Franklin/Cuyahoga OH, Mecklenburg/Wake NC, Fairfax VA,
+Philadelphia PA, San Diego CA, Dallas/Bexar TX, TDLR TABS statewide TX,
+Colorado Springs CO, Cleveland OH). It's a 7-step loop, and **step 7 is a
+required step for every jurisdiction, not an optional follow-up** — do not
+consider a jurisdiction "done" after step 6 alone.
+
+1. **Discovery — Gemini, with context.** Send a query through
+   `scripts/gemini_discovery_chat.py --session <name> "..."`. Not stateless:
+   the script replays the full prior conversation from
+   `data/gemini_sessions/{name}.json` (gitignored) before each new turn, so
+   Gemini keeps context across a multi-step jurisdiction investigation.
+   Google Search grounding always on.
+2. **Verification — always live, never trusted.** Every URL/agency-code/
+   dataset-ID gets an actual probe (curl for simple reachability, Playwright
+   when a real browser is needed). Freshness checked via real `MAX(date)`
+   queries, never catalog metadata. When Gemini's specific guess is
+   close-but-wrong, try plausible variants directly before looping back.
+3. **Feedback loop.** If everything fails, write a `GEMINI_FEEDBACK_REPORT`
+   (status overview, exact failure codes, what's being asked for) back into
+   the *same* persistent session, so Gemini has the full trail of what's
+   already ruled out. Can chain many rounds.
+4. **Provider wiring.** Confirmed sources get an existing provider
+   (`Socrata`/`ArcGIS`/`Accela`/`EnerGov`/`CKAN`/`Carto`/`CSV`/`TdlrTabs` — 8
+   platform types as of 2026-07-28) or a new one if the platform is
+   genuinely novel. Config goes into
+   `scripts/state_agent_pipeline/core/state_configs.py`, dry-run first, then
+   `--merge-state`.
+5. **Data-quality gate.** `scripts/check-corpus-integrity.py` (+ CI on
+   push/PR) checks for duplicate IDs across the whole corpus. Clean
+   structured sources route through `generic_mapping.py`'s no-LLM path
+   instead of paying for Flash/Sonnet.
+6. **Institutional memory.** Every batch — wins *and* dead ends — gets a
+   `docs/ROADMAP.md` entry and a status line in
+   `data/jurisdiction_health_matrix.json`, so the next investigation doesn't
+   re-walk dead paths.
+7. **Project-document pull (REQUIRED, not optional).** For every project
+   captured in step 4, find and pull its real source documents (RFPs, board
+   minutes, EIS reports, site plans) the same way — via Gemini
+   (`gemini_discovery_chat.py`), live-verified before download, uploaded to
+   `gs://specindex-ai-raw-documents/{state}/` (not git — large binaries).
+   **Status as of 2026-07-28: not yet done for any of the day's ~20 new
+   sources.** Only NJ (from an earlier session, `scripts/fetch-nj-documents.py`)
+   has this built, and that was per-project web research, not a generalized
+   script. Before assuming a source's documents are pullable (e.g. trusting
+   an "Accela Attachments Tab" claim from a Gemini discovery response),
+   verify live whether attachments are actually public without login — do
+   not skip straight to building a downloader on an unverified claim.
+
+**Known real limits (be honest about these, don't oversell):** discovery
+still needs a human+Claude verification loop per lead every time — not
+unattended. New platform types cost real debugging time regardless of county
+count. All 4 scheduled crons are disabled as of 2026-07-28 (Asif's explicit
+request), so nothing refreshes automatically yet. Statewide sources like
+TDLR are rare (1 of 49 states fully panned out on a first broad search) but
+by far the highest-leverage target when found. Real CAPTCHA gates (Colorado
+Springs' PPRBD) and login/invitation-only systems (Jacksonville's JaxEPICS,
+El Paso County's EDARP) are hard stops — no anti-bot-evasion tooling,
+regardless of legitimate purpose. asif-test's earlier national scan found
+only ~0.3% of all US counties have a clean deterministic feed at all — full
+"all counties" coverage isn't realistic through this method; national +
+statewide + largest ~100-300 counties by population is the realistic
+scalable target.
