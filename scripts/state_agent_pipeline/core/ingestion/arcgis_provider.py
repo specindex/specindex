@@ -45,8 +45,32 @@ class ArcGISProvider(BaseIngestionProvider):
         date_literal_style: str = "date",
         lookback_days: int = 30,
         hard_limit: int = 0,
+        feed_id: str | None = None,
+        state_code: str | None = None,
+        county: str | None = None,
+        id_field: str | None = None,
+        name_fields: list[str] | None = None,
+        address_fields: list[str] | None = None,
+        desc_fields: list[str] | None = None,
+        value_fields: list[str] | None = None,
+        city_fields: list[str] | None = None,
+        source_url: str | None = None,
     ) -> None:
         self.base_url = base_url.rstrip("/")
+        # Opt-in generic mapping (see generic_mapping.py) -- only used
+        # when a config explicitly sets name_fields/address_fields;
+        # states that don't set these keep going through Flash/Sonnet
+        # exactly as before.
+        self.feed_id = feed_id
+        self.state_code = state_code
+        self.county = county
+        self.id_field = id_field
+        self.name_fields = name_fields
+        self.address_fields = address_fields
+        self.desc_fields = desc_fields
+        self.value_fields = value_fields
+        self.city_fields = city_fields
+        self.source_url = source_url
         self.layer = layer
         self.out_fields = out_fields
         self.commercial_where = commercial_where
@@ -169,3 +193,27 @@ class ArcGISProvider(BaseIngestionProvider):
             if v > best:
                 best = v
         return str(best) if best >= 0 else current
+
+    def to_projects(self, rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        if not self.name_fields or not self.address_fields:
+            raise NotImplementedError(
+                "to_projects() requires name_fields/address_fields in state_config "
+                "-- this state isn't opted into deterministic mapping, route through Flash/Sonnet instead"
+            )
+        from .generic_mapping import field_mapped_to_projects
+
+        return field_mapped_to_projects(
+            rows,
+            feed_id=self.feed_id or "arcgis",
+            state_code=self.state_code or "",
+            county=self.county or "",
+            id_field=self.id_field or "OBJECTID",
+            watermark_field=self.watermark_field,
+            name_fields=self.name_fields,
+            address_fields=self.address_fields,
+            desc_fields=self.desc_fields,
+            value_fields=self.value_fields,
+            date_field=self.date_field,
+            source_url=self.source_url or self.base_url,
+            city_fields=self.city_fields,
+        )

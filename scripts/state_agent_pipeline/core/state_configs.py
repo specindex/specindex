@@ -57,6 +57,15 @@ CA_LOSANGELES_CONFIG: dict[str, Any] = {
     "commercial_where": "permit_sub_type='Commercial'",
     "date_field": "issue_date",
     "lookback_days": 30,
+    # Opt into deterministic (no Flash/Sonnet) mapping -- clean structured
+    # permit data, no free text worth an LLM's judgment. See
+    # generic_mapping.py / roadmap item 66.
+    "feed_id": "ca-losangeles-ladbs",
+    "id_field": "permit_nbr",
+    "name_fields": ["primary_address", "work_description", "permit_type"],
+    "address_fields": ["primary_address"],
+    "value_fields": ["valuation"],
+    "desc_fields": ["work_description", "permit_type"],
 }
 
 # LA County government (unincorporated areas + ~40 contract cities without
@@ -88,6 +97,13 @@ CA_LACOUNTY_CONFIG: dict[str, Any] = {
     "out_fields": "CASENUMBER,PROJECTNAME,PROJECT_NAME,MODULENAME,WORKCLASS_NAME,USE_PROPOSED1,STATUS,MAIN_ADDRESS,APPLY_DATE,ISSUANCE_DATE,PERMIT_VALUATION,DISTRICT_DISPLAY",
     "date_field": "APPLY_DATE",
     "lookback_days": 30,
+    "feed_id": "ca-lacounty-epicla",
+    "id_field": "CASENUMBER",
+    "name_fields": ["PROJECTNAME", "PROJECT_NAME", "CASENUMBER"],
+    "address_fields": ["MAIN_ADDRESS"],
+    "value_fields": ["PERMIT_VALUATION"],
+    "desc_fields": ["USE_PROPOSED1", "STATUS"],
+    "source_url": "https://egis-lacounty.hub.arcgis.com/datasets/la-county-permitting-epic-la-case-history",
 }
 
 # City of Torrance -- owner TorranceCA_GIS confirms this is the city's own
@@ -362,6 +378,11 @@ AZ_MARICOPACOUNTY_CONFIG: dict[str, Any] = {
     "out_fields": "PermitNumber,PermitType,WorkClass,PermitStatus,PermitDescription,FullStreetAddress,ZipCode,ApplicationDate,IssuedDate,ExpirationDate",
     "date_field": "IssuedDate",
     "lookback_days": 30,
+    "feed_id": "az-maricopa",
+    "id_field": "PermitNumber",
+    "name_fields": ["FullStreetAddress", "PermitDescription", "PermitNumber"],
+    "address_fields": ["FullStreetAddress"],
+    "desc_fields": ["PermitDescription", "WorkClass", "PermitType"],
 }
 
 # City of Mesa -- citydata.mesaaz.gov (Socrata), real live building-permit
@@ -688,6 +709,110 @@ TX_WILLIAMSON_CONFIG: dict[str, Any] = {
     "lookback_days": 30,
 }
 
+# Wayne County (Detroit BSEED) -- verified live 2026-07-28: real
+# esriFieldTypeDateOnly `issued_date` field, MAX = 2026-07-27 (fresh).
+# 50 commercial-filtered rows in the last 30 days, confirmed by direct
+# query before wiring. use_group covers Michigan Building Code groups
+# (M/B/A/E/U); proposed_use_type keyword OR covers cases where use_group
+# is null but the free-text use type is clearly commercial.
+MI_WAYNE_CONFIG: dict[str, Any] = {
+    "state_code": "MI",
+    "provider_type": "arcgis",
+    "county": "Wayne",
+    "endpoint": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer",
+    "layer": 0,
+    "watermark_field": "OBJECTID",
+    "hash_fields": ["record_id"],
+    "commercial_where": (
+        "(use_group IN ('M','B','A','E','U') OR proposed_use_type LIKE '%COMMERCIAL%' "
+        "OR proposed_use_type LIKE '%RETAIL%' OR proposed_use_type LIKE '%OFFICE%' "
+        "OR proposed_use_type LIKE '%WAREHOUSE%' OR proposed_use_type LIKE '%INDUSTRIAL%' "
+        "OR proposed_use_type LIKE '%RESTAURANT%') "
+        "AND proposed_use_type NOT LIKE '%RESIDENTIAL%' AND proposed_use_type NOT LIKE '%SINGLE FAMILY%'"
+    ),
+    "out_fields": "record_id,address,issued_date,permit_type,use_group,proposed_use_type,amt_estimated_contractor_cost,OBJECTID",
+    "date_field": "issued_date",
+    "date_literal_style": "timestamp",
+    "lookback_days": 30,
+    "feed_id": "mi-detroit-wayne",
+    "id_field": "record_id",
+    "name_fields": ["address", "proposed_use_type", "permit_type"],
+    "address_fields": ["address"],
+    "value_fields": ["amt_estimated_contractor_cost"],
+    "desc_fields": ["proposed_use_type", "permit_type"],
+}
+
+# Cook County (IL) Assessor's Permits (Socrata) -- verified live
+# 2026-07-28: real, but date_issued has a data-quality bug (4 rows out
+# of 92,437 total have a garbage future date, MAX() = year 2210). Bounded
+# the commercial_where with a sanity upper bound to exclude those rather
+# than trusting an unbounded date filter -- same "bad future timestamp"
+# trap as TX Collin County. Real 30-day count with the bound: 17 (close
+# to the ~21 estimate; small variance expected on a live dataset).
+IL_COOK_CONFIG: dict[str, Any] = {
+    "state_code": "IL",
+    "provider_type": "socrata",
+    "county": "Cook",
+    "endpoint": "https://datacatalog.cookcountyil.gov/resource/6yjf-dfxs.json",
+    "watermark_field": "pin",
+    "hash_fields": ["local_permit_number", "permit_number", "pin"],
+    "commercial_where": "job_code_primary='COMMERCIAL PERMIT' AND date_issued <= '2030-01-01T00:00:00'",
+    "date_field": "date_issued",
+    "lookback_days": 30,
+    "feed_id": "il-cook-assessor",
+    "id_field": "local_permit_number",
+    "name_fields": ["work_description", "local_permit_number"],
+    "address_fields": ["property_address", "municipality"],
+    "value_fields": ["amount"],
+    "desc_fields": ["work_description", "municipality"],
+    "source_url": "https://datacatalog.cookcountyil.gov/Property-Taxation/Cook-County-Assessor-s-Permits/6yjf-dfxs",
+}
+
+# Miami-Dade County (FL) -- verified live 2026-07-28: MAX(PermitIssuedDate)
+# = 2026-07-24 (fresh), 36,944 total commercial-filtered records.
+FL_MIAMIDADE_CONFIG: dict[str, Any] = {
+    "state_code": "FL",
+    "provider_type": "arcgis",
+    "county": "Miami-Dade",
+    "endpoint": "https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/arcgis/rest/services/miamidade_permit_data/FeatureServer",
+    "layer": 0,
+    "watermark_field": "OBJECTID",
+    "hash_fields": ["PermitNumber"],
+    "commercial_where": "ResidentialCommercial='C' AND ProposedUseDescription NOT LIKE '%RESIDENTIAL%'",
+    "out_fields": "PermitNumber,PermitType,EstimatedValue,ApplicationTypeDescription,ProposedUseDescription,PropertyAddress,OwnerName,City,PermitIssuedDate,OBJECTID",
+    "date_field": "PermitIssuedDate",
+    "lookback_days": 30,
+    "feed_id": "fl-miamidade",
+    "id_field": "PermitNumber",
+    "name_fields": ["ApplicationTypeDescription", "ProposedUseDescription", "PermitNumber"],
+    "address_fields": ["PropertyAddress"],
+    "value_fields": ["EstimatedValue"],
+    "desc_fields": ["ProposedUseDescription", "ApplicationTypeDescription"],
+    "city_fields": ["City"],
+}
+
+# King County (WA) via City of Seattle's Building Permits (Socrata) --
+# verified live 2026-07-28: MAX(issueddate) = 2026-07-24 (fresh), 51,673
+# total commercial-filtered records.
+WA_KING_CONFIG: dict[str, Any] = {
+    "state_code": "WA",
+    "provider_type": "socrata",
+    "county": "King",
+    "endpoint": "https://data.seattle.gov/resource/76t5-zqzr.json",
+    "watermark_field": "permitnum",
+    "hash_fields": ["permitnum"],
+    "commercial_where": "permitclassmapped='Non-Residential'",
+    "date_field": "issueddate",
+    "lookback_days": 30,
+    "feed_id": "wa-seattle-king",
+    "id_field": "permitnum",
+    "name_fields": ["originaladdress1", "description", "permitnum"],
+    "address_fields": ["originaladdress1"],
+    "value_fields": ["estprojectcost"],
+    "desc_fields": ["description", "permittypedesc"],
+    "source_url": "https://data.seattle.gov/Permitting/Building-Permits/76t5-zqzr",
+}
+
 STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NJ": NJ_CONFIG,
     "NC": NC_CONFIG,
@@ -712,6 +837,10 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "TX-JEFFERSON": TX_JEFFERSON_CONFIG,
     "TX-ECTOR": TX_ECTOR_CONFIG,
     "TX-WILLIAMSON": TX_WILLIAMSON_CONFIG,
+    "MI-WAYNE": MI_WAYNE_CONFIG,
+    "IL-COOK": IL_COOK_CONFIG,
+    "FL-MIAMIDADE": FL_MIAMIDADE_CONFIG,
+    "WA-KING": WA_KING_CONFIG,
     "TX-BRAZORIA": TX_BRAZORIA_CONFIG,
     "TX-MIDLAND": TX_MIDLAND_CONFIG,
     "TX-HAYS": TX_HAYS_CONFIG,

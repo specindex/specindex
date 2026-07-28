@@ -59,7 +59,12 @@ def run_pipeline(
     summary: dict[str, Any] = {"run_id": run_id, "state_code": state_code, "provider_type": state_config["provider_type"]}
     corpus_state_code = state_config["state_code"]  # e.g. "GA" for the "GA-SAM" config key
 
-    if state_config["provider_type"] in NO_LLM_PROVIDER_TYPES:
+    # arcgis/socrata states opt into the same no-LLM path via
+    # name_fields/address_fields (see generic_mapping.py) -- most permit
+    # feeds are clean structured data with no free text worth Flash's
+    # judgment; states that don't set these keep going through
+    # Flash/Sonnet exactly as before.
+    if state_config["provider_type"] in NO_LLM_PROVIDER_TYPES or state_config.get("name_fields"):
         try:
             rows = provider.fetch_delta(state.last_processed_id)
             if limit:

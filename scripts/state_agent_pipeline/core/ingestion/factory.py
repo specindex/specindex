@@ -37,6 +37,16 @@ def build_provider(state_config: dict[str, Any]) -> BaseIngestionProvider:
             app_token=state_config.get("app_token"),
             date_field=state_config.get("date_field", "processdate"),
             hard_limit=state_config.get("hard_limit", 0),
+            feed_id=state_config.get("feed_id"),
+            state_code=state_config.get("state_code"),
+            county=state_config.get("county"),
+            id_field=state_config.get("id_field"),
+            name_fields=state_config.get("name_fields"),
+            address_fields=state_config.get("address_fields"),
+            desc_fields=state_config.get("desc_fields"),
+            value_fields=state_config.get("value_fields"),
+            city_fields=state_config.get("city_fields"),
+            source_url=state_config.get("source_url"),
         )
 
     if provider_type == "ckan":
@@ -73,6 +83,16 @@ def build_provider(state_config: dict[str, Any]) -> BaseIngestionProvider:
             date_literal_style=state_config.get("date_literal_style", "date"),
             lookback_days=state_config.get("lookback_days", 30),
             hard_limit=state_config.get("hard_limit", 0),
+            feed_id=state_config.get("feed_id"),
+            state_code=state_config.get("state_code"),
+            county=state_config.get("county"),
+            id_field=state_config.get("id_field"),
+            name_fields=state_config.get("name_fields"),
+            address_fields=state_config.get("address_fields"),
+            desc_fields=state_config.get("desc_fields"),
+            value_fields=state_config.get("value_fields"),
+            city_fields=state_config.get("city_fields"),
+            source_url=state_config.get("source_url"),
         )
 
     if provider_type == "sam_gov":

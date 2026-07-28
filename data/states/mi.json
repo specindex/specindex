@@ -1,7 +1,7 @@
 {
   "state": "MI",
   "state_name": "Michigan",
-  "generated_at": "2026-07-27",
+  "generated_at": "2026-07-28",
   "date_range": "2026-04-26 to 2026-07-24 (last 90 days)",
   "capture_method": "Public sources — ENR, industry news, SAM.gov federal solicitations (bulk CSV extract), SAM.gov federal solicitations (bulk CSV extract), SAM.gov federal solicitations (bulk CSV extract), SAM.gov federal solicitations (bulk CSV extract)",
   "projects": [
@@ -56479,9 +56479,1659 @@
       "latitude": 42.395508,
       "longitude": -83.1556935,
       "zip": "48238"
+    },
+    {
+      "id": "mi-detroit-wayne-bld2024-01594",
+      "name": "4131 Moran St",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 2400.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Urban Garden; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2024-01594",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2024-00689",
+      "name": "349 Monroe St",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 5000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-09",
+      "description": "Restaurant; Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2024-00689",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-01006",
+      "name": "8131 E Outer Dr",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 20000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Telecom Facility/Cell Tower; Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-01006",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-01040",
+      "name": "2450 S Beatrice St",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 1325000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "Child Care Center; Alter Revision",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-01040",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00232",
+      "name": "20001 Wexford St",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 100000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "School; Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00232",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-01005",
+      "name": "11426 Kelly Rd",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 20000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Telecom Facility/Cell Tower; Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-01005",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-res2026-02330",
+      "name": "16115 Pierson St",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 14883.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "One Family; Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne RES2026-02330",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-01021",
+      "name": "2665 Brush St",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 125000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-27",
+      "description": "Retail (Art Studio); Change of Occupancy/Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-01021",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00778",
+      "name": "5873 Trenton St",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 65000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Retail; Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00778",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00950",
+      "name": "2894 W Grand Blvd",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 65000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Office (Gaming Studio); Alter Revision",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00950",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00869",
+      "name": "200 Walker St",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 20000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Office/Rental Hall; Add Additional Occupancy/Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00869",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00374",
+      "name": "19501 Berg Rd",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 14595342.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "School; Addition",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00374",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00792",
+      "name": "25 Cadillac Sq",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 1.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "Major Business (Commercial); Alter Revision",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00792",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00973",
+      "name": "13624 E Eight Mile",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 12000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "Retail (Tobacco Specialty Retail Store); Alter Revision",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00973",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00819",
+      "name": "6230 Linsdale St",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 130000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Warehouse; Correct Violation",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00819",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00208",
+      "name": "626 Harper Ave",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 30000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "Restaurant (Cafe); Add Additional Occupancy/Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00208",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00451",
+      "name": "1326 Saint Antoine St",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 21472673.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-23",
+      "description": "Medical Office (Imaging, Theranostics, & RadioPharmacy); New",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00451",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00492",
+      "name": "1110 Calvert St",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 500.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "Outdoor Commercial Recreation Facility; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00492",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2024-01443",
+      "name": "2201 W McNichols Rd",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 75000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-16",
+      "description": "Cell Tower Facility (Monopole); New",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2024-01443",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00178",
+      "name": "1147 E Grand Blvd",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 12000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "CARRY OUT RESTAURANT; Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00178",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00701",
+      "name": "1208 Woodward Ave",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 1800000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-06",
+      "description": "Office; Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00701",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00764",
+      "name": "12650 Livernois Ave",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 2000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "STORE-RETAIL; Correct Violation",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00764",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00918",
+      "name": "1201 W Eight Mile",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 1200000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "Restaurant, Fast Food w/Drive Thru & Outdoor Eating; New Revision",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00918",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-01004",
+      "name": "3415 E McNichols Rd",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 20000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-21",
+      "description": "Telecom Facility/Cell Tower; Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-01004",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-01056",
+      "name": "7309 Fenkell St",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 4000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-07",
+      "description": "Restaurant; Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-01056",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00952",
+      "name": "14411 W Eight Mile",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 12000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Office; Change of Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00952",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-01031",
+      "name": "12200 Ward St",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 8211.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Multi-Family Dwelling; Foundation Only",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-01031",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-01001",
+      "name": "661 Plum St",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 840000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "Office/Cooling Tower for facilities; Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-01001",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00493",
+      "name": "10331 Hamilton Ave",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 2000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Office/Indoor Recreation Facility; Change of Occupancy/Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00493",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2025-02893",
+      "name": "14006 Houston Whittier Ave",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 91630.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "Restaurant (Carry-Out); Change of Occupancy/Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2025-02893",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00642",
+      "name": "19505 Grand River Ave",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 79580.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "Commercial/Multi Family; Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00642",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-01155",
+      "name": "1649 Belvidere St",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 150000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-17",
+      "description": "Retail; Alter Revision",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-01155",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00838",
+      "name": "14101 W McNichols Rd",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 5000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-20",
+      "description": "Office/Restaurant (Coffee House); Add Additional Occupancy/Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00838",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-01041",
+      "name": "11860 E Warren Ave",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 40389.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "SHOPPING CENTER; Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-01041",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00938",
+      "name": "15624 W McNichols Rd",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 195000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-22",
+      "description": "Restaurant (Fast Food w/Drive Thru); Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00938",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00874",
+      "name": "511 Woodward Ave",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 200000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "Office; Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00874",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00960",
+      "name": "28 W Adams Ave",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 184145.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-14",
+      "description": "Office; Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00960",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00469",
+      "name": "20210 W SEVEN MILE",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 2000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-13",
+      "description": "Retail; Change of Occupancy/Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00469",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-01007",
+      "name": "4744 Cadillac Blvd",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 20000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-27",
+      "description": "Telecom Facility/Cell Tower; Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-01007",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00942",
+      "name": "11411 E Jefferson Ave",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 3850.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Office/Clinic/Pharmacy; Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00942",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00755",
+      "name": "18451 Wyoming St",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 250000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-15",
+      "description": "Indoor Commercial & Health Club; Change of Occupancy/Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00755",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2025-00541",
+      "name": "7700 E Vernor Hwy",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 280000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-24",
+      "description": "Retail; Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2025-00541",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2025-02991",
+      "name": "24341 W Seven Mile",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 15000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Retail (SDD/SDM/Carry-Out Restaurant); Add Additional Occupancy/Use",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2025-02991",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00976",
+      "name": "500 Woodward Ave, Fl 23",
+      "city": "Fl 23",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 27000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-05",
+      "description": "Office; Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00976",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00909",
+      "name": "14321 Livernois Ave",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 35000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-29",
+      "description": "ATM Kiosk; Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00909",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2025-01382",
+      "name": "2 Woodward Ave",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 400000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-10",
+      "description": "Office Building; Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2025-01382",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-01071",
+      "name": "9421 Grand River Ave",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 80000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-27",
+      "description": "SDM/SDD w/Accessory Carry-Out Restaurant & Pharmacy; Alter Revision",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-01071",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00774",
+      "name": "16200 Harper Ave",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 64510.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-01",
+      "description": "Retail; Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00774",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00825",
+      "name": "2 Woodward Ave",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 684458.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-07-08",
+      "description": "Office; Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00825",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
+    },
+    {
+      "id": "mi-detroit-wayne-bld2026-00745",
+      "name": "17600 Joy Rd",
+      "city": "",
+      "county": "Wayne",
+      "status": "permitting",
+      "project_type": "commercial",
+      "estimated_value_usd": 50000.0,
+      "square_footage": null,
+      "owner": "",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": "2026-06-30",
+      "description": "Retail Sales of New Merchandise; Alteration",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [
+        "hvac",
+        "roofing",
+        "lighting",
+        "flooring",
+        "fire suppression"
+      ],
+      "sources": [
+        {
+          "title": "Wayne mi-detroit-wayne BLD2026-00745",
+          "url": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer"
+        }
+      ],
+      "open_for": "Active commercial building permit application. Early product/spec window.",
+      "state": "MI",
+      "zip": ""
     }
   ],
   "stats": {
-    "total": 1437
+    "total": 1487
   }
 }
