@@ -79,7 +79,7 @@ jobs:
         id: pipeline
         continue-on-error: true
         run: |
-          python3 scripts/nj_dca_pipeline/main.py \
+          python3 scripts/state_agent_pipeline/main.py \
             --state NC \
             --lookback-days "${{ github.event.inputs.lookback_days || '2' }}" \
             --merge-state \

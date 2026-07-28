@@ -14,11 +14,13 @@ Read this file before refreshing `data/states/nj.json`. Keep it current so the n
 <!-- AUTO:HEADER END -->
 ## Agent-Per-State ingestion pipeline (reference — template for other states)
 
-NJ is the first state running the newer automated pipeline, in `scripts/nj_dca_pipeline/`
-(name is a holdover from when it was NJ-only — see `core/ingestion/` for the
-generalized framework). This is separate from, and in addition to, the
-deterministic `pull-nj-dca.py` documented below. Plain-English version, for
-reference before repeating this for other states:
+NJ is the first state running the newer automated pipeline, in
+`scripts/state_agent_pipeline/` (renamed 2026-07-28 from `nj_dca_pipeline/` —
+that name was a holdover from when it was NJ-only and had become actively
+misleading once NC/GA/TX started running through the same package; see
+`core/ingestion/` for the generalized framework). This is separate from, and
+in addition to, the deterministic `pull-nj-dca.py` documented below.
+Plain-English version, for reference before repeating this for other states:
 
 1. **Where the data comes from.** New Jersey's state government publishes a
    public list of every building permit issued in the state — who applied,

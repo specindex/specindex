@@ -434,7 +434,7 @@ def main() -> int:
     verified_path = OUT_DIR / f"{slug}-county-sources-verified.json"
 
     sys.path.insert(0, str(ROOT / "scripts"))
-    from nj_dca_pipeline.config import load_env
+    from state_agent_pipeline.config import load_env
 
     load_env(ROOT)
     import os
