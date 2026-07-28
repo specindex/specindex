@@ -540,6 +540,17 @@
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
       "notes": "Real portal, but for development/zoning applications (not building permits) and requires Register/Log in for actual application data -- not investigated further given CO-SPRINGS Accela already provided a working source."
+    },
+    {
+      "jurisdiction": "City of Cleveland, OH (Dept. of Building and Housing)",
+      "county": "Cuyahoga",
+      "state": "OH",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/COC",
+      "state_agent_pipeline_key": "OH-CLEVELAND",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 126,
+      "notes": "Separate from Cuyahoga County ArcGIS feed (OH-CUYAHOGA) -- same LA-City-vs-County pattern. 15 real commercial categories in a 98-option dropdown; probed 3, kept 2: Commercial Building Construction Permit (144/30-days, dominant) + COO - New Commercial (2). Commercial Combo was 0."
     }
   ]
 }

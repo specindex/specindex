@@ -1239,3 +1239,32 @@ CO_SPRINGS_ACCELA_CONFIG: dict[str, Any] = {
     "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
 STATE_CONFIGS["CO-SPRINGS"] = CO_SPRINGS_ACCELA_CONFIG
+
+# City of Cleveland, OH (Dept. of Building and Housing) -- Accela agency
+# code COC, confirmed live 2026-07-28. Separate system from Cuyahoga
+# County's own ArcGIS feed (OH-CUYAHOGA above) -- same LA-City-vs-LA-
+# County / San-Antonio-vs-Bexar pattern. 98 total permit-type dropdown
+# options, 15 real commercial categories. Live-probed the 3 most likely:
+# "Commercial Building Construction Permit" 144/30-days (by far the
+# dominant category, kept), "Commercial Combo" 0 (skipped), "COO - New
+# Commercial" 2 (small but free to add). Other 12 commercial categories
+# (Electrical/HVAC/Plumbing/Storm Water/Pools/Historical/On-line trade
+# permits) not probed -- narrower trade-specific permits, unlikely to
+# carry meaningful independent project-discovery volume.
+OH_CLEVELAND_CONFIG: dict[str, Any] = {
+    "state_code": "OH",
+    "provider_type": "accela",
+    "county": "Cuyahoga",
+    "endpoint": "https://aca-prod.accela.com/COC",
+    "module": "BuildingHousing",
+    "permit_type_label": "Commercial Building Construction Permit",
+    "lookback_days": 30,
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
+}
+OH_CLEVELAND_COO_CONFIG: dict[str, Any] = {
+    **OH_CLEVELAND_CONFIG,
+    "permit_type_label": "COO - New Commercial",
+}
+STATE_CONFIGS["OH-CLEVELAND"] = OH_CLEVELAND_CONFIG
+STATE_CONFIGS["OH-CLEVELAND-COO"] = OH_CLEVELAND_COO_CONFIG
