@@ -19,8 +19,15 @@ from .core.state_configs import STATE_CONFIGS
 from .model_a_flash import extract_with_flash
 from .model_b_sonnet import dedupe_with_sonnet
 from .notify import send_run_email
-from .persist import golden_to_corpus_projects, merge_into_nj_state, persist_run
+from .persist import ROOT, golden_to_corpus_projects, merge_into_state, persist_run
 from .state import load_state, save_state
+
+# Sources with no free text worth an LLM's judgment -- clean structured
+# government data (NAICS codes, award dollar amounts, agency names), not
+# messy permit-description text. Routing these through Flash/Sonnet would
+# be pure wasted LLM cost for no quality gain; see sam_gov_provider.py /
+# usaspending_provider.py docstrings.
+NO_LLM_PROVIDER_TYPES = {"sam_gov", "usaspending"}
 
 
 def run_pipeline(
@@ -50,6 +57,57 @@ def run_pipeline(
     state = load_state(state_path)
     run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     summary: dict[str, Any] = {"run_id": run_id, "state_code": state_code, "provider_type": state_config["provider_type"]}
+    corpus_state_code = state_config["state_code"]  # e.g. "GA" for the "GA-SAM" config key
+
+    if state_config["provider_type"] in NO_LLM_PROVIDER_TYPES:
+        try:
+            rows = provider.fetch_delta(state.last_processed_id)
+            if limit:
+                rows = rows[:limit]
+
+            if dry_run:
+                print(
+                    f"[dry-run] {state_code}: would process {len(rows)} rows; no LLMs involved for this "
+                    "provider type, not saving watermark",
+                    file=sys.stderr,
+                )
+                summary.update({"fetched": len(rows), "dry_run": True})
+                if notify:
+                    summary["notify"] = send_run_email(summary, ok=True)
+                return summary
+
+            projects = provider.to_projects(rows)
+            out_path = ROOT / "data" / "pipeline" / state_code.lower() / f"{run_id}.json"
+            out_path.parent.mkdir(parents=True, exist_ok=True)
+            import json as _json
+
+            out_path.write_text(_json.dumps({"run_id": run_id, "projects": projects}, indent=2) + "\n")
+
+            state.last_processed_id = provider.next_watermark(rows, state.last_processed_id)
+            state.last_fetched_count = len(rows)
+            save_state(state_path, state)
+
+            merged = merge_into_state(corpus_state_code, projects) if merge_state and projects else None
+
+            summary.update(
+                {
+                    "fetched": len(rows),
+                    "mapped": len(projects),
+                    "last_processed_id": state.last_processed_id,
+                    "last_run_timestamp": state.last_run_timestamp,
+                    "path": str(out_path),
+                    "merged": merged,
+                }
+            )
+            print(json_summary(summary), file=sys.stderr)
+            if notify:
+                summary["notify"] = send_run_email(summary, ok=True)
+            return summary
+        except Exception as e:
+            summary.update({"fetched": summary.get("fetched"), "last_processed_id": state.last_processed_id})
+            if notify:
+                summary["notify"] = send_run_email(summary, ok=False, error=str(e))
+            raise
 
     try:
         rows = provider.fetch_delta(state.last_processed_id)
@@ -89,15 +147,7 @@ def run_pipeline(
         merged = None
         if merge_state and golden:
             projects = golden_to_corpus_projects(golden)
-            merged = merge_into_nj_state(projects) if state_code == "NJ" else None
-            if merged is None and merge_state:
-                print(
-                    f"[persist] --merge-state requested for {state_code} but no corpus merge "
-                    "path is wired for non-NJ states yet -- golden records were written to "
-                    "data/pipeline/ only, not merged. Wire this deliberately once NJ's output "
-                    "has been reviewed, not as a side effect of adding a new state config.",
-                    file=sys.stderr,
-                )
+            merged = merge_into_state(corpus_state_code, projects)
 
         summary.update(
             {

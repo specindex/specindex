@@ -53,7 +53,27 @@ NC_CONFIG: dict[str, Any] = {
     "lookback_days": 30,
 }
 
+# Federal sources (SAM.gov, USAspending) aren't one-config-per-state the
+# way Socrata/ArcGIS are -- a state can have more than one federal source,
+# so these are keyed by "{STATE}-{SOURCE}" rather than bare state code.
+# GA first: it already had verified, live-tested deterministic pullers
+# (scripts/pull-sam-gov-bulk-ga.py, pull-usaspending-ga.py) before this
+# framework existed, so it's the lowest-risk proof point for porting the
+# same logic into BaseIngestionProvider.
+GA_SAM_CONFIG: dict[str, Any] = {
+    "state_code": "GA",
+    "provider_type": "sam_gov",
+}
+
+GA_USASPENDING_CONFIG: dict[str, Any] = {
+    "state_code": "GA",
+    "provider_type": "usaspending",
+    "lookback_days": 730,
+}
+
 STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NJ": NJ_CONFIG,
     "NC": NC_CONFIG,
+    "GA-SAM": GA_SAM_CONFIG,
+    "GA-USASPENDING": GA_USASPENDING_CONFIG,
 }

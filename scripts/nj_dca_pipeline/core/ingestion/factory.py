@@ -9,7 +9,9 @@ from typing import Any
 
 from .arcgis_provider import ArcGISProvider
 from .base_provider import BaseIngestionProvider
+from .sam_gov_provider import SamGovProvider
 from .socrata_provider import SocrataProvider
+from .usaspending_provider import USASpendingProvider
 
 
 class UnknownProviderType(ValueError):
@@ -53,6 +55,20 @@ def build_provider(state_config: dict[str, Any]) -> BaseIngestionProvider:
             date_field=state_config.get("date_field"),
             lookback_days=state_config.get("lookback_days", 30),
             hard_limit=state_config.get("hard_limit", 0),
+        )
+
+    if provider_type == "sam_gov":
+        return SamGovProvider(
+            state_code=state_config["state_code"],
+            naics_codes=state_config.get("naics_codes"),
+        )
+
+    if provider_type == "usaspending":
+        return USASpendingProvider(
+            state_code=state_config["state_code"],
+            psc_codes=state_config.get("psc_codes"),
+            award_type_codes=state_config.get("award_type_codes"),
+            lookback_days=state_config.get("lookback_days", 730),
         )
 
     if provider_type in ("ckan", "csv"):

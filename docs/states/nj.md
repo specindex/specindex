@@ -12,6 +12,82 @@ Read this file before refreshing `data/states/nj.json`. Keep it current so the n
 **Capture method:** Public sources — BeOne Medicines IR, Business Facilities, local news.  
 **Status mix:** planning 1
 <!-- AUTO:HEADER END -->
+## Agent-Per-State ingestion pipeline (reference — template for other states)
+
+NJ is the first state running the newer automated pipeline, in `scripts/nj_dca_pipeline/`
+(name is a holdover from when it was NJ-only — see `core/ingestion/` for the
+generalized framework). This is separate from, and in addition to, the
+deterministic `pull-nj-dca.py` documented below. Plain-English version, for
+reference before repeating this for other states:
+
+1. **Where the data comes from.** New Jersey's state government publishes a
+   public list of every building permit issued in the state — who applied,
+   what town, what kind of work, when. The pipeline checks this list every day.
+2. **Reading the raw records.** Government permit data is messy — abbreviations,
+   inconsistent formatting, no clean "project name." Each new batch of permits
+   goes to Google's Gemini Flash (fast, cheap) to pull out the useful details:
+   which town, what type of building work, estimated cost, etc.
+3. **Cleaning up duplicates.** The same project often shows up as multiple
+   separate permit filings (an amendment, a follow-up permit). Anthropic's
+   Claude Sonnet looks at everything Flash found and merges anything that's
+   really the same project into one clean record.
+4. **Saving it and remembering where we left off.** Cleaned-up projects get
+   merged into `data/states/nj.json`. The system also writes down a
+   watermark — "processed everything through permit #X" — so tomorrow it
+   only looks at what's new since that watermark, not the whole state's
+   permit history again.
+5. **Running automatically.** Scheduled daily via GitHub Actions
+   (`.github/workflows/pull-nj-dca-pipeline.yml`, 08:00 UTC), hosted on
+   GitHub (code) and GCP (database + AI models) — no manual trigger needed.
+
+Technical reference:
+
+- **Node 1 (Ingestion Factory):** `core/ingestion/base_provider.py` defines
+  the interface; `socrata_provider.py` (NJ) and `arcgis_provider.py` (NC)
+  are the concrete implementations. `core/ingestion/factory.py` picks the
+  right one from a state's `provider_type` config.
+- **Node 2 (Flash extract) / Node 3 (Sonnet dedupe):** `model_a_flash.py`,
+  `model_b_sonnet.py`. Only used for messy free-text sources (permit
+  records) — clean structured government data (SAM.gov, USAspending) skips
+  these nodes entirely, see `docs/states/ga.md`.
+- **Node 4 (persist + checkpoint):** `persist.py`'s `merge_into_state()`
+  (generic, id-exact-match dedup — semantic/fuzzy cross-source dedup
+  happens later at `merge-national-corpus.py` time) + `state.py`'s
+  watermark file (`data/pipeline/state-{code}.json`, or
+  `data/pipeline/nj-dca/state.json` for NJ specifically, a pre-existing
+  path kept for backward compatibility).
+- **Real bugs found and fixed while building this (2026-07-27), worth
+  knowing before repeating for another state:**
+  - `golden_id` was originally LLM-chosen (Sonnet picked its own string) —
+    not deterministic across runs, and didn't match `pull-nj-dca.py`'s
+    `nj-dca-{slugify(muni-permitno)}` id scheme, which would have caused
+    real double-counted duplicates on merge. Fixed: `golden_id` is now
+    computed in code (`canonical_golden_id()` in `model_b_sonnet.py`),
+    never trusted from the LLM.
+  - Flash was free to reformat `permit_no`/`municipality` in its own
+    transcription — since these drive the canonical id, any drift there
+    (stripped leading zeros, different capitalization) would silently
+    break id-matching against the deterministic puller. Fixed: these two
+    fields are now forced verbatim from the raw source row after Flash
+    returns, not trusted from the LLM's output.
+  - `ArcGISProvider` (NC) had no first-run lookback bound — a fresh
+    watermark meant "pull the entire historical layer," not "since N days
+    ago," causing a real hang on first test. Fixed with the same
+    date-field/lookback_days fallback pattern Socrata already had.
+  - `--lookback-days` was silently ignored whenever a state config
+    hardcoded its own `lookback_days` default (`state_config.setdefault()`
+    never overrides an existing key) — affected both the NJ and NC first
+    tests before being caught and fixed.
+- **Cost controls:** Anthropic usage limit (console.anthropic.com →
+  Billing) is the real hard stop on LLM spend. GCP has a $100/month budget
+  alert on `specindex-ai` (notification-only, not an auto-cutoff — see
+  `docs/ROADMAP.md` items 60/61 for why an automatic GCP kill-switch was
+  deliberately not built).
+- **Known gap, not yet resolved:** Sonnet currently runs via the direct
+  Anthropic API (`ANTHROPIC_API_KEY` repo secret). Claude-on-Vertex is
+  coded (`sonnet_backend=vertex`) but blocked on a GCP quota increase —
+  see roadmap item 60.
+
 ## Source order (fill in as you learn)
 
 1. **NJDCA statewide construction permit data (Socrata, `data.nj.gov`)** — Tier 0/1 statewide register covering every NJ municipality including Newark, Jersey City, and all Bergen/Middlesex towns in one feed. Verified live 2026-07-26, built 2026-07-27 (`scripts/pull-nj-dca.py`).

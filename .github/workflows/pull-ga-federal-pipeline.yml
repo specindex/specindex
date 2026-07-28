@@ -1,0 +1,172 @@
+name: GA federal sources pipeline (daily)
+
+# Agent-Per-State framework, federal-source proof point -- replaces the
+# old nationwide pull-national.yml (removed 2026-07-27, moved to a
+# per-state agentic model). SAM.gov and USAspending don't need Flash/
+# Sonnet (clean structured government data, not free text worth an LLM's
+# judgment -- see core/ingestion/sam_gov_provider.py /
+# usaspending_provider.py docstrings), so this runs Node 1 (Ingestion
+# Factory) straight to Node 4 (persist + merge + watermark checkpoint),
+# skipping Nodes 2-3 entirely. No ANTHROPIC_API_KEY needed.
+#
+# Two independent sources, two independent watermarks
+# (data/pipeline/state-ga-sam.json, state-ga-usaspending.json), each
+# committed back to git at the end of every run so tomorrow only picks up
+# what's new since today.
+
+on:
+  schedule:
+    - cron: "0 9 * * *" # daily, 09:00 UTC (offset from the NJ DCA cron at 08:00)
+  workflow_dispatch:
+    inputs:
+      lookback_days:
+        description: "First-run fallback window in days for USAspending (ignored once a watermark exists; SAM.gov ignores this -- it's a full-CSV daily snapshot)"
+        required: false
+        default: "730"
+
+permissions:
+  contents: write
+  id-token: write
+
+env:
+  CLOUDSQL_INSTANCE: specindex-ai:us-central1:specindex-db
+  DATABASE_URL: postgresql://specindex:${{ secrets.CLOUDSQL_PASSWORD }}@127.0.0.1:5433/specindex
+
+jobs:
+  ga_federal_pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements-db.txt
+
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+
+      - name: Start Cloud SQL Auth Proxy
+        run: |
+          curl -sL -o cloud-sql-proxy \
+            https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.14.0/cloud-sql-proxy.linux.amd64
+          chmod +x cloud-sql-proxy
+          ./cloud-sql-proxy --port 5433 "$CLOUDSQL_INSTANCE" &
+          for i in $(seq 1 15); do
+            (echo > /dev/tcp/127.0.0.1/5433) >/dev/null 2>&1 && break
+            sleep 1
+          done
+
+      - name: Capture pre-run project count
+        id: before
+        run: |
+          echo "count=$(python3 -c "
+          import os, psycopg2
+          conn = psycopg2.connect(os.environ['DATABASE_URL'])
+          cur = conn.cursor()
+          cur.execute('SELECT count(*) FROM projects')
+          print(cur.fetchone()[0])
+          ")" >> "$GITHUB_OUTPUT"
+
+      - name: Run SAM.gov provider (GA)
+        id: pull_sam
+        continue-on-error: true
+        run: python3 scripts/nj_dca_pipeline/main.py --state GA-SAM --merge-state
+
+      - name: Run USAspending provider (GA)
+        id: pull_usaspending
+        continue-on-error: true
+        run: |
+          python3 scripts/nj_dca_pipeline/main.py \
+            --state GA-USASPENDING \
+            --lookback-days "${{ github.event.inputs.lookback_days || '730' }}" \
+            --merge-state
+
+      - name: Merge national corpus
+        id: merge
+        continue-on-error: true
+        run: python3 scripts/merge-national-corpus.py
+
+      - name: Load corpus to Cloud SQL
+        id: load
+        continue-on-error: true
+        run: python3 scripts/load-corpus-to-postgres.py --corpus data/national-commercial-projects.json --apply-migrations
+
+      - name: Refresh county coverage (Depth agent)
+        id: coverage
+        continue-on-error: true
+        run: python3 scripts/compute-county-coverage.py --apply-migration
+
+      - name: Refresh state quality (Quality agent)
+        id: quality
+        continue-on-error: true
+        run: python3 scripts/compute-state-quality.py --apply-migration
+
+      - name: Capture post-run project count
+        id: after
+        if: always()
+        continue-on-error: true
+        run: |
+          python3 -c "
+          import os, psycopg2
+          conn = psycopg2.connect(os.environ['DATABASE_URL'])
+          cur = conn.cursor()
+          cur.execute('SELECT count(*) FROM projects')
+          print(f'count={cur.fetchone()[0]}')
+          " >> "$GITHUB_OUTPUT"
+
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo "### GA federal sources pipeline — results"
+            echo "| Step | Outcome |"
+            echo "|---|---|"
+            echo "| SAM.gov (GA) | ${{ steps.pull_sam.outcome }} |"
+            echo "| USAspending (GA) | ${{ steps.pull_usaspending.outcome }} |"
+            echo "| Merge national corpus | ${{ steps.merge.outcome }} |"
+            echo "| Load to Cloud SQL | ${{ steps.load.outcome }} |"
+            echo "| Refresh county coverage | ${{ steps.coverage.outcome }} |"
+            echo "| Refresh state quality | ${{ steps.quality.outcome }} |"
+            echo ""
+            echo "Projects: ${{ steps.before.outputs.count }} -> ${{ steps.after.outputs.count }}"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Email daily GA federal-source summary
+        if: always()
+        continue-on-error: true
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_SMTP_USERNAME }}
+          password: ${{ secrets.EMAIL_SMTP_PASSWORD }}
+          from: SpecIndex Puller <${{ secrets.EMAIL_SMTP_USERNAME }}>
+          to: asif@specindex.ai
+          subject: "SpecIndex GA federal pull: ${{ steps.before.outputs.count }} -> ${{ steps.after.outputs.count }} projects"
+          convert_markdown: true
+          body: |
+            ## GA federal sources pipeline summary
+
+            **Projects: ${{ steps.before.outputs.count }} -> ${{ steps.after.outputs.count }}**
+
+            | Step | Outcome |
+            |---|---|
+            | SAM.gov (GA) | ${{ steps.pull_sam.outcome }} |
+            | USAspending (GA) | ${{ steps.pull_usaspending.outcome }} |
+            | Merge national corpus | ${{ steps.merge.outcome }} |
+            | Load to Cloud SQL | ${{ steps.load.outcome }} |
+
+            Full run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+      - name: Commit updated corpus + watermarks
+        run: |
+          git config user.name "specindex-bot"
+          git config user.email "bot@specindex.ai"
+          git add data/
+          git diff --cached --quiet || git commit -m "Automated GA federal sources pipeline run"
+          git push
