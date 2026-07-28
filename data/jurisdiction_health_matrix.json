@@ -1,0 +1,460 @@
+{
+  "generated_at": "2026-07-28",
+  "status_values": ["VERIFIED_WORKING", "FAILED_NEED_ALT", "NO_PUBLIC_DATA"],
+  "notes": "Backfilled 2026-07-28 from this session's live-verification work on ~15 counties. Every entry here was actually probed (HTTP/Playwright), not sourced from an LLM claim without verification. state_agent_pipeline_key maps to scripts/state_agent_pipeline/core/state_configs.py's STATE_CONFIGS dict where applicable.",
+  "jurisdictions": [
+    {
+      "jurisdiction": "Los Angeles (city), CA",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider_type": "socrata",
+      "endpoint": "https://data.lacity.org/resource/pi9x-tg5x.json",
+      "state_agent_pipeline_key": "CA-LOSANGELES",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 471,
+      "notes": "LADBS commercial permits, permit_sub_type='Commercial'."
+    },
+    {
+      "jurisdiction": "Los Angeles County (unincorporated + contract cities), CA",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider_type": "arcgis",
+      "endpoint": "https://services.arcgis.com/RmCCgQtiZLDCtblq/arcgis/rest/services/EPIC-LA_Case_History_view/FeatureServer",
+      "state_agent_pipeline_key": "CA-LACOUNTY",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 30,
+      "notes": "EPIC-LA (Tyler Technologies) case management."
+    },
+    {
+      "jurisdiction": "Torrance, CA",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider_type": "arcgis",
+      "state_agent_pipeline_key": "CA-TORRANCE",
+      "status": "VERIFIED_WORKING",
+      "notes": "Low-volume curated tracker, not a routine permit feed."
+    },
+    {
+      "jurisdiction": "Downey, CA",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/DOWNEY",
+      "state_agent_pipeline_key": "CA-DOWNEY",
+      "status": "VERIFIED_WORKING"
+    },
+    {
+      "jurisdiction": "Palmdale, CA",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider_type": "accela",
+      "state_agent_pipeline_key": "CA-PALMDALE",
+      "status": "VERIFIED_WORKING",
+      "notes": "Real dropdown label is \"Commercial Permit\", not \"Commercial\" -- verify exact text per jurisdiction, never assume."
+    },
+    {
+      "jurisdiction": "Santa Monica, CA",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider_type": "ckan",
+      "state_agent_pipeline_key": "CA-SANTAMONICA",
+      "status": "VERIFIED_WORKING",
+      "notes": "First CKAN provider built this session series."
+    },
+    {
+      "jurisdiction": "Pasadena, CA",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider_type": "arcgis",
+      "state_agent_pipeline_key": "CA-PASADENA",
+      "status": "VERIFIED_WORKING"
+    },
+    {
+      "jurisdiction": "Long Beach, CA",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider_type": "arcgis",
+      "state_agent_pipeline_key": "CA-LONGBEACH",
+      "status": "VERIFIED_WORKING",
+      "notes": "Very low volume -- curated big-projects tracker, not a routine feed. Initial 'Commercial'-only filter looked fine by row count but was 3+ years stale; real activity was under 'Mixed Use'/'Industrial'."
+    },
+    {
+      "jurisdiction": "El Monte, CA",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider_type": "energov",
+      "endpoint": "https://elmonteca-energovweb.tylerhost.net",
+      "state_agent_pipeline_key": "CA-ELMONTE",
+      "status": "VERIFIED_WORKING",
+      "notes": "Backfill only (lookback_days=900) -- no confirmed server-side date filter on this tenant's Advanced panel."
+    },
+    {
+      "jurisdiction": "Glendale, CA",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider_type": "energov",
+      "endpoint": "https://glendaleca-energovweb.tylerhost.net",
+      "state_agent_pipeline_key": "CA-GLENDALE",
+      "status": "VERIFIED_WORKING"
+    },
+    {
+      "jurisdiction": "Alhambra, CA",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider_type": "energov",
+      "endpoint": "https://alhambraca-energovpub.tylerhost.net",
+      "state_agent_pipeline_key": "CA-ALHAMBRA",
+      "status": "VERIFIED_WORKING",
+      "notes": "tylerhost.net-hosted, not self-hosted as originally assumed."
+    },
+    {
+      "jurisdiction": "Carson, CA",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider_type": "energov",
+      "endpoint": "https://cityofcarsonca-energovweb.tylerhost.net",
+      "state_agent_pipeline_key": "CA-CARSON",
+      "status": "VERIFIED_WORKING",
+      "notes": "Default SearchModule was scoped to 'License', not 'Permit' -- needed explicit select + manual change-event dispatch."
+    },
+    {
+      "jurisdiction": "Pomona, CA",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider_type": "energov",
+      "endpoint": "https://connect.pomonaca.gov",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "The one genuinely self-hosted EnerGov tenant found. Confirmed reachable (HTTP 200) but ~49s page load (vs 3-6s for tylerhost.net tenants) and no search response captured even after 90s wait + force-click. Config kept in state_configs.py as _CA_POMONA_ENERGOV_CONFIG, unregistered. Needs a much larger timeout budget to retry."
+    },
+    {
+      "jurisdiction": "San Diego County, CA (county-level)",
+      "county": "San Diego",
+      "state": "CA",
+      "provider_type": "socrata",
+      "endpoint": "https://internal-sandiegocounty.data.socrata.com/resource/dyzh-7eat.json",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Real commercial categories exist but MAX(issued_date) across all 236,722 rows is 2023-12-05 -- 2.5 years stale."
+    },
+    {
+      "jurisdiction": "San Diego County, CA (contractor trades backup)",
+      "county": "San Diego",
+      "state": "CA",
+      "provider_type": "socrata",
+      "endpoint": "https://internal-sandiegocounty.data.socrata.com/resource/eqjy-uqyj.json",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Contractor-license lookup table -- no address/date/commercial fields, not permit-level data."
+    },
+    {
+      "jurisdiction": "San Diego (city), CA",
+      "county": "San Diego",
+      "state": "CA",
+      "provider_type": "csv",
+      "endpoint": "https://seshat.datasd.org/development_permits/approvals_issued_2026_datasd.csv",
+      "state_agent_pipeline_key": "CA-SANDIEGO",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 440,
+      "notes": "Found by hand after county-level Socrata dead ends -- separate, actively-maintained city pipeline. First flat-CSV provider (csv_download_provider.py). Points at year-specific file; needs URL bump each January."
+    },
+    {
+      "jurisdiction": "Wayne (Detroit), MI",
+      "county": "Wayne",
+      "state": "MI",
+      "provider_type": "arcgis",
+      "endpoint": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer",
+      "state_agent_pipeline_key": "MI-WAYNE",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 50
+    },
+    {
+      "jurisdiction": "Cook, IL",
+      "county": "Cook",
+      "state": "IL",
+      "provider_type": "socrata",
+      "endpoint": "https://datacatalog.cookcountyil.gov/resource/6yjf-dfxs.json",
+      "state_agent_pipeline_key": "IL-COOK",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 17,
+      "notes": "date_issued field has 4 garbage rows (out of 92,437) with a year-2210 timestamp -- bounded with a sanity upper clause in commercial_where."
+    },
+    {
+      "jurisdiction": "Miami-Dade, FL",
+      "county": "Miami-Dade",
+      "state": "FL",
+      "provider_type": "arcgis",
+      "endpoint": "https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/arcgis/rest/services/miamidade_permit_data/FeatureServer",
+      "state_agent_pipeline_key": "FL-MIAMIDADE",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 741,
+      "notes": "741 net after removing 867 accidental duplicates from a retroactive id-rename script that bypassed merge_into_state()'s dedup."
+    },
+    {
+      "jurisdiction": "King (Seattle), WA",
+      "county": "King",
+      "state": "WA",
+      "provider_type": "socrata",
+      "endpoint": "https://data.seattle.gov/resource/76t5-zqzr.json",
+      "state_agent_pipeline_key": "WA-KING",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 108
+    },
+    {
+      "jurisdiction": "Tarrant (Fort Worth), TX",
+      "county": "Tarrant",
+      "state": "TX",
+      "provider_type": "arcgis",
+      "endpoint": "https://mapit.fortworthtexas.gov/ags/rest/services/CIVIC/Permits/MapServer",
+      "state_agent_pipeline_key": "TX-TARRANT",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 366
+    },
+    {
+      "jurisdiction": "Franklin (Columbus), OH",
+      "county": "Franklin",
+      "state": "OH",
+      "provider_type": "arcgis",
+      "endpoint": "https://services1.arcgis.com/9yy6msODkIBzkUXU/arcgis/rest/services/Building_Permits/FeatureServer",
+      "state_agent_pipeline_key": "OH-FRANKLIN",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 550
+    },
+    {
+      "jurisdiction": "Cuyahoga (Cleveland), OH",
+      "county": "Cuyahoga",
+      "state": "OH",
+      "provider_type": "arcgis",
+      "endpoint": "https://services3.arcgis.com/dty2kHktVXHrqO8i/arcgis/rest/services/Building_Permits/FeatureServer",
+      "state_agent_pipeline_key": "OH-CUYAHOGA",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 249
+    },
+    {
+      "jurisdiction": "Mecklenburg (Charlotte), NC",
+      "county": "Mecklenburg",
+      "state": "NC",
+      "provider_type": "arcgis",
+      "endpoint": "https://meckgis.mecklenburgcountync.gov/server/rest/services/BuildingPermits/FeatureServer",
+      "state_agent_pipeline_key": "NC-MECKLENBURG",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 21,
+      "notes": "Same feed as the pre-existing legacy 'NC' Flash+Sonnet daily cron key -- different id scheme, real forward-duplication risk flagged, cron disabled pending resolution."
+    },
+    {
+      "jurisdiction": "Wake (Raleigh), NC",
+      "county": "Wake",
+      "state": "NC",
+      "provider_type": "arcgis",
+      "endpoint": "https://services.arcgis.com/v400IkDOw1ad7Yad/arcgis/rest/services/Building_Permits/FeatureServer",
+      "state_agent_pipeline_key": "NC-WAKE",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 52
+    },
+    {
+      "jurisdiction": "Fairfax, VA",
+      "county": "Fairfax",
+      "state": "VA",
+      "provider_type": "arcgis",
+      "endpoint": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer",
+      "state_agent_pipeline_key": "VA-FAIRFAX",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 66
+    },
+    {
+      "jurisdiction": "Williamson, TX (Permits/FeatureServer, second feed)",
+      "county": "Williamson",
+      "state": "TX",
+      "provider_type": "arcgis",
+      "endpoint": "https://services.arcgis.com/0H6bQdxd9223gQB5/arcgis/rest/services/Permits/FeatureServer",
+      "state_agent_pipeline_key": "TX-WILLIAMSON-PERMITS",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 58,
+      "notes": "Different org/dataset than the pre-existing TX-WILLIAMSON (Site_Development/FeatureServer) -- kept as a separate key."
+    },
+    {
+      "jurisdiction": "Philadelphia, PA",
+      "county": "Philadelphia",
+      "state": "PA",
+      "provider_type": "carto",
+      "endpoint": "https://phl.carto.com/api/v2/sql",
+      "state_agent_pipeline_key": "PA-PHILADELPHIA",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 105,
+      "notes": "First CARTO provider built this session. commercialorresidential field is unreliable -- filters on approvedscopeofwork keywords instead."
+    },
+    {
+      "jurisdiction": "Maricopa, AZ",
+      "county": "Maricopa",
+      "state": "AZ",
+      "provider_type": "arcgis",
+      "state_agent_pipeline_key": "AZ-MARICOPACOUNTY",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 0,
+      "notes": "Pre-existing source, re-verified/refreshed -- both candidate rows this run were already captured by an earlier richer extraction."
+    },
+    {
+      "jurisdiction": "Dallas, TX (Gemini's first structured-JSON attempt, ungrounded)",
+      "county": "Dallas",
+      "state": "TX",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "All 7 URLs from a rigid, non-grounded Gemini prompt were fabricated: dallas-tx-aca.accela.com and data.dallascityhall.com don't resolve (the latter paired with a fake-looking Socrata 4x4 id), 2 dallascounty.org pages 404, gis.dallascounty.org is real infra but has no permits data."
+    },
+    {
+      "jurisdiction": "Dallas, TX (Accela, real source found by hand)",
+      "county": "Dallas",
+      "state": "TX",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/DALLASTX",
+      "state_agent_pipeline_key": "TX-DALLAS-NEW",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 46,
+      "notes": "Agency code DALLASTX found by trying plausible variants after Gemini's 'dallastx8' 404'd. Permit type: Commercial New Construction Permit."
+    },
+    {
+      "jurisdiction": "Dallas, TX (Accela, Alteration category)",
+      "county": "Dallas",
+      "state": "TX",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/DALLASTX",
+      "state_agent_pipeline_key": "TX-DALLAS-ALT",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 251,
+      "notes": "Permit type: Commercial Alteration Addition Permit. Surfaced a real timing-race bug in accela_provider.py (networkidle returning before a 100+-result grid finished rendering) -- fixed with bounded poll-retry."
+    },
+    {
+      "jurisdiction": "Bexar County, TX (county-level direct portal)",
+      "county": "Bexar",
+      "state": "TX",
+      "provider_type": null,
+      "endpoint": "https://www.bexar.org/1463/Building-Permits",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Real page, but the county's own permit process outside city limits is a manual Fire Marshal paper-form review -- not a digital portal."
+    },
+    {
+      "jurisdiction": "Bexar County, TX (SWQ_Permits ArcGIS layer)",
+      "county": "Bexar",
+      "state": "TX",
+      "provider_type": "arcgis",
+      "endpoint": "https://maps.bexar.org/arcgis/rest/services/PW/SWQ_Permits/MapServer",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Real and reachable, but stormwater permits only -- unrelated to commercial building activity."
+    },
+    {
+      "jurisdiction": "San Antonio (Bexar County), TX -- Addition",
+      "county": "Bexar",
+      "state": "TX",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/COSA",
+      "state_agent_pipeline_key": "TX-SANANTONIO-ADDITION",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 5
+    },
+    {
+      "jurisdiction": "San Antonio (Bexar County), TX -- Finish Out",
+      "county": "Bexar",
+      "state": "TX",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/COSA",
+      "state_agent_pipeline_key": "TX-SANANTONIO-FINISHOUT",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 14
+    },
+    {
+      "jurisdiction": "San Antonio (Bexar County), TX -- Remodel",
+      "county": "Bexar",
+      "state": "TX",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/COSA",
+      "state_agent_pipeline_key": "TX-SANANTONIO-REMODEL",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 73
+    },
+    {
+      "jurisdiction": "San Antonio (Bexar County), TX -- Sitework",
+      "county": "Bexar",
+      "state": "TX",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/COSA",
+      "state_agent_pipeline_key": "TX-SANANTONIO-SITEWORK",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 37
+    },
+    {
+      "jurisdiction": "San Antonio (Bexar County), TX -- Project Application",
+      "county": "Bexar",
+      "state": "TX",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/COSA",
+      "state_agent_pipeline_key": "TX-SANANTONIO-PROJAPP",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 201,
+      "notes": "221 fetched, 20 overlap with already-captured records (expected)."
+    },
+    {
+      "jurisdiction": "San Antonio (Bexar County), TX -- Shell",
+      "county": "Bexar",
+      "state": "TX",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/COSA",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Real dropdown category, live-probed, 0 rows in 30-day window -- not wired in."
+    },
+    {
+      "jurisdiction": "Harris (Houston), TX -- ePermits portal",
+      "county": "Harris",
+      "state": "TX",
+      "provider_type": null,
+      "endpoint": "https://eng-epermits.harriscountytx.gov/",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "DNS resolves to a real host (sp-ext.lb.hctx.net), but every curl attempt (plain and with a browser user-agent) returned connection failure (000) -- likely a WAF blocking non-browser requests, unconfirmed. Needs a Playwright-based check, not curl. Investigation paused mid-probe."
+    },
+    {
+      "jurisdiction": "Harris (Houston), TX -- Permits Documents archive",
+      "county": "Harris",
+      "state": "TX",
+      "provider_type": null,
+      "endpoint": "https://eng.harriscountytx.gov/Permits/Documents",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Same host/failure as the ePermits portal above (both alias to sp-ext.lb.hctx.net)."
+    },
+    {
+      "jurisdiction": "Harris (Houston), TX -- Parcels ArcGIS layer",
+      "county": "Harris",
+      "state": "TX",
+      "provider_type": "arcgis",
+      "endpoint": "https://services.arcgis.com/2dc1193996a44dcc80b70818dc668146/arcgis/rest/services/Harris_County_Parcels/FeatureServer/0",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Real and reachable (HTTP 200), but parcel boundaries, not permit records. Not evaluated further."
+    },
+    {
+      "jurisdiction": "Harris (Houston), TX -- BOLO_Holds permits layer",
+      "county": "Harris",
+      "state": "TX",
+      "provider_type": "arcgis",
+      "endpoint": "https://gis.hctx.net/arcgis/rest/services/Permits/BOLO_Holds_Temp_MS_2020/FeatureServer/0",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "404 -- layer doesn't exist at this path."
+    },
+    {
+      "jurisdiction": "Harris (Houston), TX -- Open Data Hub",
+      "county": "Harris",
+      "state": "TX",
+      "provider_type": null,
+      "endpoint": "https://data-harriscounty.opendata.arcgis.com/",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Reachable (HTTP 200) but not yet content-verified for a real permits dataset -- investigation paused."
+    }
+  ]
+}
