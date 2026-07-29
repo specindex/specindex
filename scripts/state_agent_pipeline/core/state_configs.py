@@ -472,6 +472,21 @@ GA_GWINNETT_ACCELA_CONFIG: dict[str, Any] = {
     "lookback_days": 30,
 }
 
+# Ada County, ID (Boise, state's most populous county). Accela agency
+# is NOT at the standard aca-prod.accela.com/boise URL (that 301-
+# redirects); the real, live instance is hosted at Boise's own branded
+# domain, permits.cityofboise.org/CitizenAccess -- confirmed live
+# 2026-07-29, real Building module dropdown has "502-New or Added
+# Commercial" among several Commercial-prefixed record types.
+ID_ADA_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "ID",
+    "provider_type": "accela",
+    "county": "Ada",
+    "endpoint": "https://permits.cityofboise.org/CitizenAccess",
+    "permit_type_label": "502-New or Added Commercial",
+    "lookback_days": 180,
+}
+
 # East Baton Rouge Parish, LA (state's most populous parish/county).
 # Genuine parish-level source (data.brla.gov is the Parish/City-Parish
 # consolidated government's own portal). Verified live 2026-07-29:
@@ -1506,6 +1521,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NE-DOUGLAS": NE_DOUGLAS_ACCELA_CONFIG,
     "LA-EBR": LA_EBR_CONFIG,
     "SC-GREENVILLE": SC_GREENVILLE_CONFIG,
+    "ID-ADA": ID_ADA_ACCELA_CONFIG,
     "FL-MIAMIDADE": FL_MIAMIDADE_CONFIG,
     "WA-KING": WA_KING_CONFIG,
     "TX-TARRANT": TX_TARRANT_CONFIG,

@@ -805,6 +805,37 @@
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
       "notes": "Confirmed no public API exists -- county uses OpenGov (no public endpoint without enterprise agreement), Des Moines uses Tyler EnerGov CSS but Gemini said no public-facing API layer. Worth a fresh check of Des Moines's real EnerGov selfservice subdomain directly (my one guessed URL, selfservice.dsm.city, failed DNS) since other cities' EnerGov instances have had genuine public search APIs this session (Carson CA) -- not confirmed dead, just not dug into further this round."
+    },
+    {
+      "jurisdiction": "Boise, ID (Ada County)",
+      "county": "Ada",
+      "state": "ID",
+      "provider_type": "accela",
+      "endpoint": "https://permits.cityofboise.org/CitizenAccess",
+      "state_agent_pipeline_key": "ID-ADA",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 98,
+      "notes": "Standard aca-prod.accela.com/boise URL 301-redirects -- the real, live Accela instance is hosted at Boise's own branded domain, permits.cityofboise.org/CitizenAccess. Real Building module dropdown has '502-New or Added Commercial' among several Commercial-prefixed types. 180-day window: 118 fetched, 98 new."
+    },
+    {
+      "jurisdiction": "Pulaski County, AR (Little Rock)",
+      "county": "Pulaski",
+      "state": "AR",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Gemini's dataset ID (waw2-4wxz) 404'd, and data.littlerock.gov itself redirects to a plain informational page -- no Socrata portal exists there (dead/fabricated lead, not just a wrong ID). Little Rock's real system is 'Dynamic Portal'/Selectron WebPermits per Gemini, not Accela. Not investigated further this round -- worth checking permitpayment.littlerock.gov or inspections.littlerock.gov directly for a real API."
+    },
+    {
+      "jurisdiction": "Hinds County, MS (Jackson)",
+      "county": "Hinds",
+      "state": "MS",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Genuine dead end -- no Socrata/CKAN/CARTO/ArcGIS layer for either Hinds County or City of Jackson. County uses Accela ACA as a portal-only system (no public REST API). City of Jackson has no digital open-data presence for permits at all, would require a formal MS Public Records Act request. Honest Gemini answer, no fabrication."
     }
   ]
 }
