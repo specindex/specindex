@@ -3,9 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { StatusPill } from "@/components/StatusPill";
-import { ProjectTimeline } from "@/components/ProjectTimeline";
-import { ProjectNews } from "@/components/ProjectNews";
-import { ProjectLocationMap } from "@/components/ProjectLocationMap";
 import { formatDate, formatSf, formatUsd, stateName, typeLabel } from "@/lib/format";
 import type { Project } from "@/lib/types";
 
@@ -132,7 +129,7 @@ function Fact({
   // attention with actual data.
   const isEmpty = EMPTY_FACT_VALUES.has(value);
   return (
-    <div className="rounded-lg border border-[var(--color-border)] p-3">
+    <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)] p-3">
       <dt className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-gray-400)]">
         {label}
       </dt>
@@ -192,6 +189,138 @@ function findTeamFact(project: Project, keyPrefix: string) {
   );
 }
 
+const TIMELINE_EVENT_LABELS: Record<string, string> = {
+  Announced: "Announced",
+  Design_Started: "Design started",
+  Permit_Issued: "Permit issued",
+  Bid_Opened: "Bid opened",
+  Awarded: "Awarded",
+  Groundbroken: "Groundbroken",
+};
+
+type FeedItem = {
+  id: string;
+  type: "AI_SIGNAL" | "NEWS";
+  source: string;
+  time: string;
+  title: string;
+  url?: string | null;
+  body?: string | null;
+};
+
+// The artifact's "Workspace & Activity Feed" mixes two real, already-
+// fetched sources into one filterable timeline rather than each living in
+// its own disconnected section: project.timeline (permit/bid/award
+// milestones, real dates) and enrichment.permit (filings without dates)
+// become AI_SIGNAL entries; project.news becomes NEWS entries. This is
+// the same content previously split across a standalone Timeline section
+// and a standalone "Related news" sidebar card -- merged here to match
+// the artifact's exact section list instead of carrying both old and new
+// versions of the same information.
+function buildFeedItems(project: Project): FeedItem[] {
+  const signals: FeedItem[] = [
+    ...project.timeline.map((t, i) => ({
+      id: `timeline-${i}-${t.event_type}`,
+      type: "AI_SIGNAL" as const,
+      source: t.source_name,
+      time: formatDate(t.event_date ?? undefined),
+      title: TIMELINE_EVENT_LABELS[t.event_type] ?? t.event_type,
+      url: t.source_url,
+      body: null,
+    })),
+    ...(project.enrichment?.permit ?? []).map((f) => ({
+      id: `permit-${f.field_key}`,
+      type: "AI_SIGNAL" as const,
+      source: "Permit filing",
+      time: "",
+      title: f.label,
+      url: null,
+      body: f.value,
+    })),
+  ];
+  const news: FeedItem[] = project.news.map((n) => ({
+    id: `news-${n.url}`,
+    type: "NEWS" as const,
+    source: n.source_name ?? "News",
+    time: n.published_at ? formatDate(n.published_at.slice(0, 10)) : "",
+    title: n.title,
+    url: n.url,
+    body: null,
+  }));
+  return [...signals, ...news];
+}
+
+function ActivityFeed({ project }: { project: Project }) {
+  const [filter, setFilter] = useState<"ALL" | "AI_SIGNAL" | "NEWS">("ALL");
+  const items = buildFeedItems(project);
+  if (items.length === 0) return null;
+  const filtered = items.filter((item) => filter === "ALL" || item.type === filter);
+
+  return (
+    <div className="card p-5">
+      <div className="flex items-center justify-between gap-2 border-b border-[var(--color-border)] pb-3">
+        <h3 className="text-xs font-semibold uppercase tracking-wide text-[var(--color-gray-400)]">
+          Workspace &amp; activity feed
+        </h3>
+        <div className="flex items-center gap-0.5 rounded-lg bg-[var(--color-gray-100)] p-0.5 text-[10px] font-semibold">
+          {(["ALL", "AI_SIGNAL", "NEWS"] as const).map((f) => (
+            <button
+              key={f}
+              type="button"
+              onClick={() => setFilter(f)}
+              aria-pressed={filter === f}
+              className={`rounded-md px-2 py-1 transition ${
+                filter === f ? "bg-white text-[var(--color-ink)] shadow-sm" : "text-[var(--color-gray-600)]"
+              }`}
+            >
+              {f === "ALL" ? "All" : f === "AI_SIGNAL" ? "AI Signals" : "News"}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-3 space-y-3">
+        {filtered.map((item) => (
+          <div
+            key={item.id}
+            className={`rounded-lg border p-3 text-xs ${
+              item.type === "AI_SIGNAL"
+                ? "border-[var(--color-green)]/20 bg-[var(--color-green-light)]/30"
+                : "border-[var(--color-border)] bg-[var(--color-bg)]"
+            }`}
+          >
+            <div className="flex items-center justify-between gap-2">
+              <span className="font-semibold text-[var(--color-ink)]">{item.source}</span>
+              {item.time && (
+                <span className="shrink-0 font-mono text-[10px] text-[var(--color-gray-400)]">{item.time}</span>
+              )}
+            </div>
+            {item.url ? (
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1 flex items-start gap-1 text-xs font-medium leading-snug text-blue-600 hover:text-blue-700 hover:underline"
+              >
+                {item.title}
+                <span className="shrink-0 text-[var(--color-gray-400)]">↗</span>
+              </a>
+            ) : (
+              <p className="mt-1 text-xs font-medium leading-snug text-[var(--color-ink)]">{item.title}</p>
+            )}
+            {item.body && (
+              <p className="mt-1 text-xs leading-relaxed text-[var(--color-gray-600)]">{item.body}</p>
+            )}
+          </div>
+        ))}
+        {filtered.length === 0 && (
+          <p className="py-4 text-center text-xs text-[var(--color-gray-400)]">Nothing in this filter yet.</p>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export function ProjectDetailView({ project }: { project: Project }) {
   const [showBreakdown, setShowBreakdown] = useState(false);
   const scoreRef = useRef<HTMLDivElement>(null);
@@ -203,6 +332,8 @@ export function ProjectDetailView({ project }: { project: Project }) {
         project.enrichment.contact.length ||
         project.enrichment.permit.length),
   );
+  const gcFact = !project.general_contractor ? findTeamFact(project, "general_contractor") : undefined;
+  const architectFact = !project.architect ? findTeamFact(project, "architect") : undefined;
 
   useEffect(() => {
     function onPointerDown(e: MouseEvent) {
@@ -255,171 +386,172 @@ export function ProjectDetailView({ project }: { project: Project }) {
             </div>
           )}
 
-          <div className="card mt-5 flex flex-col gap-6 p-6 md:p-8 lg:flex-row lg:items-start lg:justify-between">
-            <div>
-              <div className="flex flex-wrap items-center gap-3">
-                <StatusPill status={project.status} />
-                <span className="text-sm text-[var(--color-gray-600)]">
-                  {typeLabel(project.project_type)}
-                </span>
+          <div className="card mt-5 space-y-6 p-6 md:p-8">
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
+              <div>
+                <div className="flex flex-wrap items-center gap-3">
+                  <StatusPill status={project.status} />
+                  <span className="text-sm text-[var(--color-gray-600)]">
+                    {typeLabel(project.project_type)}
+                  </span>
+                </div>
+                <h1 className="mt-3 text-2xl font-bold tracking-tight text-[var(--color-ink)] sm:text-3xl">
+                  {project.name}
+                </h1>
+                <p className="mt-2 font-mono text-xs text-[var(--color-gray-400)]">
+                  {project.spx_id}
+                </p>
+                <p className="mt-2 text-sm text-[var(--color-gray-600)]">
+                  {project.city}
+                  {project.county ? `, ${project.county} County` : ""},{" "}
+                  {stateName(project.state)}
+                </p>
               </div>
-              <h1 className="mt-3 text-2xl font-bold tracking-tight text-[var(--color-ink)] sm:text-3xl">
-                {project.name}
-              </h1>
-              <p className="mt-2 font-mono text-xs text-[var(--color-gray-400)]">
-                {project.spx_id}
-              </p>
-              <p className="mt-2 text-sm text-[var(--color-gray-600)]">
-                {project.city}
-                {project.county ? `, ${project.county} County` : ""},{" "}
-                {stateName(project.state)}
-              </p>
+
+              {project.score && (() => {
+                const tier = scoreTier(project.score.total);
+                return (
+                  <div className="relative shrink-0" ref={scoreRef}>
+                    <div
+                      onClick={() => setShowBreakdown((v) => !v)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          setShowBreakdown((v) => !v);
+                        }
+                      }}
+                      role="button"
+                      tabIndex={0}
+                      aria-haspopup="true"
+                      aria-expanded={showBreakdown}
+                      className="flex cursor-pointer items-center gap-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-4 shadow-sm transition hover:bg-[var(--color-gray-100)] focus:outline-none focus:ring-2 focus:ring-[var(--color-green)]"
+                    >
+                      <div className="text-center">
+                        <div className={`font-mono text-3xl font-black tracking-tight ${tier.textCls}`}>
+                          {project.score.total}
+                          <span className="text-xs font-normal text-[var(--color-gray-400)]">/100</span>
+                        </div>
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-[var(--color-gray-600)]">
+                          Priority score
+                        </span>
+                      </div>
+                      <div className="h-10 w-px bg-[var(--color-border)]" />
+                      <div className="space-y-1 text-xs">
+                        <div className={`flex items-center gap-1.5 font-semibold ${tier.textCls}`}>
+                          <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${tier.dotCls}`} />
+                          {tier.label}
+                        </div>
+                        <div className="text-[11px] text-[var(--color-gray-400)]">Click for breakdown</div>
+                      </div>
+                    </div>
+
+                    {showBreakdown && (
+                      <div className="absolute right-0 top-full z-50 mt-2 w-64 space-y-3 rounded-xl border border-[var(--color-border)] bg-white p-4 text-xs shadow-xl">
+                        <div className="flex items-center justify-between border-b border-[var(--color-border)] pb-2">
+                          <strong className="font-bold text-[var(--color-ink)]">Score breakdown</strong>
+                          <button
+                            onClick={() => setShowBreakdown(false)}
+                            aria-label="Close score breakdown"
+                            className="text-[var(--color-gray-400)] hover:text-[var(--color-ink)]"
+                          >
+                            ✕
+                          </button>
+                        </div>
+                        <div className="space-y-2 text-[var(--color-gray-600)]">
+                          <div className="flex items-center justify-between">
+                            <span>Value</span>
+                            <span className="font-mono font-bold text-[var(--color-green)]">
+                              {project.score.value}/40
+                            </span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span>Recency</span>
+                            <span className="font-mono font-bold text-[var(--color-green)]">
+                              {project.score.recency}/35
+                            </span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span>News coverage</span>
+                            <span className="font-mono font-bold text-[var(--color-green)]">
+                              {project.score.news}/25
+                            </span>
+                          </div>
+                        </div>
+                        <div className="flex justify-between border-t border-[var(--color-border)] pt-2 font-bold text-[var(--color-ink)]">
+                          <span>Total</span>
+                          <span className="font-mono text-[var(--color-green)]">{project.score.total} / 100</span>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })()}
             </div>
 
-            {project.score && (() => {
-              const tier = scoreTier(project.score.total);
-              return (
-              <div className="relative shrink-0" ref={scoreRef}>
-                <div
-                  onClick={() => setShowBreakdown((v) => !v)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      e.preventDefault();
-                      setShowBreakdown((v) => !v);
-                    }
-                  }}
-                  role="button"
-                  tabIndex={0}
-                  aria-haspopup="true"
-                  aria-expanded={showBreakdown}
-                  className="flex cursor-pointer items-center gap-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-4 shadow-sm transition hover:bg-[var(--color-gray-100)] focus:outline-none focus:ring-2 focus:ring-[var(--color-green)]"
-                >
-                  <div className="text-center">
-                    <div className={`font-mono text-3xl font-black tracking-tight ${tier.textCls}`}>
-                      {project.score.total}
-                      <span className="text-xs font-normal text-[var(--color-gray-400)]">/100</span>
-                    </div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[var(--color-gray-600)]">
-                      Priority score
-                    </span>
-                  </div>
-                  <div className="h-10 w-px bg-[var(--color-border)]" />
-                  <div className="space-y-1 text-xs">
-                    <div className={`flex items-center gap-1.5 font-semibold ${tier.textCls}`}>
-                      <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${tier.dotCls}`} />
-                      {tier.label}
-                    </div>
-                    <div className="text-[11px] text-[var(--color-gray-400)]">Click for breakdown</div>
-                  </div>
-                </div>
-
-                {showBreakdown && (
-                  <div className="absolute right-0 top-full z-50 mt-2 w-64 space-y-3 rounded-xl border border-[var(--color-border)] bg-white p-4 text-xs shadow-xl">
-                    <div className="flex items-center justify-between border-b border-[var(--color-border)] pb-2">
-                      <strong className="font-bold text-[var(--color-ink)]">Score breakdown</strong>
-                      <button
-                        onClick={() => setShowBreakdown(false)}
-                        aria-label="Close score breakdown"
-                        className="text-[var(--color-gray-400)] hover:text-[var(--color-ink)]"
-                      >
-                        ✕
-                      </button>
-                    </div>
-                    <div className="space-y-2 text-[var(--color-gray-600)]">
-                      <div className="flex items-center justify-between">
-                        <span>Value</span>
-                        <span className="font-mono font-bold text-[var(--color-green)]">
-                          {project.score.value}/40
-                        </span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <span>Recency</span>
-                        <span className="font-mono font-bold text-[var(--color-green)]">
-                          {project.score.recency}/35
-                        </span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <span>News coverage</span>
-                        <span className="font-mono font-bold text-[var(--color-green)]">
-                          {project.score.news}/25
-                        </span>
-                      </div>
-                    </div>
-                    <div className="flex justify-between border-t border-[var(--color-border)] pt-2 font-bold text-[var(--color-ink)]">
-                      <span>Total</span>
-                      <span className="font-mono text-[var(--color-green)]">{project.score.total} / 100</span>
-                    </div>
-                  </div>
-                )}
-              </div>
-              );
-            })()}
+            {/* KPI grid -- moved in from a standalone "Fact grid" section
+                to live inside the hero card, matching the artifact's exact
+                layout (title+score row, then a KPI strip underneath,
+                nothing else in between). */}
+            <dl className="grid grid-cols-2 gap-3 border-t border-[var(--color-border)] pt-6 text-xs md:grid-cols-3 lg:grid-cols-6">
+              <Fact label="Project ID" value={project.spx_id} mono />
+              <Fact label="Estimated value" value={formatUsd(project.estimated_value_usd)} />
+              <Fact label="Square footage" value={formatSf(project.square_footage)} />
+              <Fact label="Opened / announced" value={formatDate(project.opened_or_announced_date)} />
+              <Fact label="Owner" value={project.owner || "Not reported"} />
+              <Fact
+                label="General contractor"
+                value={project.general_contractor || gcFact?.value || "Not reported"}
+                confidence={gcFact?.confidence}
+              />
+              <Fact
+                label="Architect"
+                value={project.architect || architectFact?.value || "Not reported"}
+                confidence={architectFact?.confidence}
+              />
+              <Fact
+                label="Brands mentioned"
+                value={
+                  project.mentioned_brands.length
+                    ? project.mentioned_brands.join(", ")
+                    : "None in public seed"
+                }
+              />
+            </dl>
           </div>
         </div>
       </div>
 
-      <div className="mx-auto grid max-w-6xl gap-8 px-5 py-10 md:px-8 md:py-12 lg:grid-cols-3">
-        {/* Main column */}
-        <div className="lg:col-span-2">
-          {(() => {
-            const gcFact = !project.general_contractor
-              ? findTeamFact(project, "general_contractor")
-              : undefined;
-            const architectFact = !project.architect ? findTeamFact(project, "architect") : undefined;
-            return (
-              <dl className="card grid gap-4 p-6 sm:grid-cols-2">
-                <Fact label="Project ID" value={project.spx_id} mono />
-                <Fact label="Estimated value" value={formatUsd(project.estimated_value_usd)} />
-                <Fact label="Square footage" value={formatSf(project.square_footage)} />
-                <Fact
-                  label="Opened / announced"
-                  value={formatDate(project.opened_or_announced_date)}
-                />
-                <Fact label="Owner" value={project.owner || "Not reported"} />
-                <Fact
-                  label="General contractor"
-                  value={project.general_contractor || gcFact?.value || "Not reported"}
-                  confidence={gcFact?.confidence}
-                />
-                <Fact
-                  label="Architect"
-                  value={project.architect || architectFact?.value || "Not reported"}
-                  confidence={architectFact?.confidence}
-                />
-                <Fact
-                  label="Brands mentioned"
-                  value={
-                    project.mentioned_brands.length
-                      ? project.mentioned_brands.join(", ")
-                      : "None in public seed"
-                  }
-                />
-              </dl>
-            );
-          })()}
+      {/* Two-column workspace layout -- left carries the narrative
+          (executive brief, CSI scope, team), right is the lookup rail
+          (activity feed, permits, contacts). 7/5 split matches the
+          ProjectDetailLight design artifact exactly, rather than the
+          8/4-ish "content column + sidebar" split this page used before. */}
+      <div className="mx-auto grid max-w-6xl gap-8 px-5 py-10 md:px-8 md:py-12 lg:grid-cols-12">
+        {/* LEFT: narrative */}
+        <div className="lg:col-span-7 space-y-8">
+          {/* Raw corpus description/key-specs only stand in for the
+              enrichment pipeline's executive brief when that hasn't run
+              yet for this project -- once it has, the two would say the
+              same thing twice, and the artifact this page matches doesn't
+              carry both. */}
+          {!project.enrichment?.executive_brief.length && (
+            <section>
+              <h2 className="text-base font-bold">Project overview</h2>
+              <p className="mt-3 text-xs leading-relaxed text-[var(--color-gray-600)]">
+                {project.description}
+              </p>
+              {project.key_specs.length > 0 && (
+                <ul className="mt-4 list-disc space-y-2 pl-5 text-xs text-[var(--color-gray-600)]">
+                  {project.key_specs.map((spec) => (
+                    <li key={spec}>{spec}</li>
+                  ))}
+                </ul>
+              )}
+            </section>
+          )}
 
-          <section className="mt-8">
-            <h2 className="text-base font-bold">Project overview</h2>
-            <p className="mt-3 text-xs leading-relaxed text-[var(--color-gray-600)]">
-              {project.description}
-            </p>
-          </section>
-
-          <section className="mt-8">
-            <h2 className="text-base font-bold">Key specs</h2>
-            <ul className="mt-4 list-disc space-y-2 pl-5 text-xs text-[var(--color-gray-600)]">
-              {project.key_specs.map((spec) => (
-                <li key={spec}>{spec}</li>
-              ))}
-            </ul>
-          </section>
-
-          {/* AI-enriched sections -- populated by scripts/enrich-project-details.py
-              via two independent Gemini search passes; only a handful of
-              projects have this yet, so every block below is conditional on
-              actually having data rather than showing an empty section. */}
           {project.enrichment?.executive_brief.length ? (
-            <section className="mt-8">
+            <section>
               <div className="flex flex-wrap items-center gap-2">
                 <h2 className="text-base font-bold">Executive brief</h2>
                 <ConfidenceBadge confidence={project.enrichment.executive_brief[0].confidence} />
@@ -436,7 +568,7 @@ export function ProjectDetailView({ project }: { project: Project }) {
           ) : null}
 
           {project.enrichment?.csi_scope.length ? (
-            <section className="mt-8">
+            <section>
               <h2 className="text-base font-bold">CSI scope matrix</h2>
               <div className="mt-4 space-y-3">
                 {project.enrichment.csi_scope.map((fact) => (
@@ -456,7 +588,7 @@ export function ProjectDetailView({ project }: { project: Project }) {
           ) : null}
 
           {project.enrichment?.team.length ? (
-            <section className="mt-8">
+            <section>
               <h2 className="text-base font-bold">Verified construction team</h2>
               {/* The section title already says "Verified" -- a green
                   Confirmed pill on every single row was flagged in design
@@ -480,28 +612,33 @@ export function ProjectDetailView({ project }: { project: Project }) {
             </section>
           ) : null}
 
-          <div className="mt-6">
-            <ProjectTimeline events={project.timeline} />
-          </div>
-
-          <div className="mt-12 flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-3 pt-4">
             <Link href="/projects/" className="btn btn-outline">
               Back to all projects
             </Link>
           </div>
         </div>
 
-        {/* Sidebar -- reference/lookup content (contacts, permits, documents,
-            map, news) lives here rather than stacked under the narrative in
-            the left column. Moved here 2026-07-29 after the two columns
-            went badly out of balance: every enrichment section had been
-            tacked onto the bottom of the left column, leaving the sidebar
-            empty for ~1500px below the news card while the left column
-            kept going -- exactly the "right column dead space" problem
-            already caught and fixed once in the ProjectDetailLight design
-            exploration, just not carried over when this real page got
-            wired up. */}
-        <div className="space-y-6">
+        {/* RIGHT: workspace / lookup rail */}
+        <div className="lg:col-span-5 space-y-6">
+          <ActivityFeed project={project} />
+
+          {project.enrichment?.permit.length ? (
+            <div className="card p-5">
+              <h3 className="text-xs font-semibold uppercase tracking-wide text-[var(--color-gray-400)]">
+                Permits &amp; filings
+              </h3>
+              <ul className="mt-3 divide-y divide-[var(--color-border)]">
+                {project.enrichment.permit.map((fact) => (
+                  <li key={fact.field_key} className="py-2.5 first:pt-0 last:pb-0">
+                    <p className="text-xs font-semibold">{fact.label}</p>
+                    <p className="mt-0.5 text-xs text-[var(--color-gray-600)]">{fact.value}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+
           {project.enrichment?.contact.length ? (
             <div className="card p-5">
               <h3 className="text-xs font-semibold uppercase tracking-wide text-[var(--color-gray-400)]">
@@ -523,22 +660,6 @@ export function ProjectDetailView({ project }: { project: Project }) {
             </div>
           ) : null}
 
-          {project.enrichment?.permit.length ? (
-            <div className="card p-5">
-              <h3 className="text-xs font-semibold uppercase tracking-wide text-[var(--color-gray-400)]">
-                Permits &amp; filings
-              </h3>
-              <ul className="mt-3 divide-y divide-[var(--color-border)]">
-                {project.enrichment.permit.map((fact) => (
-                  <li key={fact.field_key} className="py-2.5 first:pt-0 last:pb-0">
-                    <p className="text-xs font-semibold">{fact.label}</p>
-                    <p className="mt-0.5 text-xs text-[var(--color-gray-600)]">{fact.value}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
-
           {project.documents && project.documents.length > 0 && (
             <div className="card p-5">
               <h3 className="text-xs font-semibold uppercase tracking-wide text-[var(--color-gray-400)]">
@@ -551,7 +672,7 @@ export function ProjectDetailView({ project }: { project: Project }) {
                       href={doc.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-start gap-2 text-sm text-[var(--color-green)] hover:underline"
+                      className="flex items-start gap-2 text-xs text-[var(--color-green)] hover:underline"
                     >
                       <span aria-hidden="true">📄</span>
                       <span className="break-words">{doc.title}</span>
@@ -561,15 +682,6 @@ export function ProjectDetailView({ project }: { project: Project }) {
               </ul>
             </div>
           )}
-          <ProjectLocationMap
-            latitude={project.latitude}
-            longitude={project.longitude}
-            name={project.name}
-            city={project.city}
-            county={project.county}
-            state={project.state}
-          />
-          <ProjectNews news={project.news} />
         </div>
       </div>
     </article>
