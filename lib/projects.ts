@@ -123,7 +123,14 @@ function normalizeProject(p: Project): Project {
     document_count: p.document_count ?? 0,
     has_documents: p.has_documents ?? false,
     documents: p.documents ?? [],
-    enrichment: p.enrichment ?? { executive_brief: [], csi_scope: [], team: [], permit: [], contact: [] },
+    enrichment: p.enrichment ?? {
+      executive_brief: [],
+      csi_scope: [],
+      team: [],
+      permit: [],
+      contact: [],
+      checked_at: null,
+    },
   };
 }
 

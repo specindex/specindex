@@ -837,13 +837,21 @@ def db_health():
     }
 
 
-def fetch_enrichment_detail(conn, sk: int) -> dict[str, list[dict[str, Any]]]:
+def fetch_enrichment_detail(conn, sk: int) -> dict[str, Any]:
     """Full project_enrichment rows grouped by section, for the detail page
     only -- not included in the bulk list response (fetch_enrichment above)
     since list pages don't render CSI scope/team/permits/contacts text and
-    fetching it for every row on every page load would be wasted work."""
-    sections: dict[str, list[dict[str, Any]]] = {
+    fetching it for every row on every page load would be wasted work.
+
+    Also includes checked_at from project_enrichment_checks -- a real,
+    already-written timestamp of when the pipeline last ran against this
+    project (whether or not that run found anything new), not a fabricated
+    "last verified" claim -- the detail page previously had no freshness
+    indicator at all despite the design artifact it's matching having one.
+    """
+    sections: dict[str, Any] = {
         "executive_brief": [], "csi_scope": [], "team": [], "permit": [], "contact": [],
+        "checked_at": None,
     }
     with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
         cur.execute(
@@ -861,6 +869,13 @@ def fetch_enrichment_detail(conn, sk: int) -> dict[str, list[dict[str, Any]]]:
                     "sources": r["sources"],
                 }
             )
+        cur.execute(
+            "SELECT checked_at FROM project_enrichment_checks WHERE project_sk = %s",
+            (sk,),
+        )
+        checked = cur.fetchone()
+        if checked and checked["checked_at"]:
+            sections["checked_at"] = checked["checked_at"].isoformat()
     return sections
 
 

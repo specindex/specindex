@@ -70,6 +70,10 @@ export type ProjectEnrichment = {
   team: EnrichmentFact[];
   permit: EnrichmentFact[];
   contact: EnrichmentFact[];
+  // When the enrichment pipeline last ran against this project (real
+  // project_enrichment_checks.checked_at, not a fabricated freshness
+  // claim) -- null if it's never been checked.
+  checked_at: string | null;
 };
 
 export type ProjectDocumentFile = {
