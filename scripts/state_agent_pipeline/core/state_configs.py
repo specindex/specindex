@@ -425,21 +425,15 @@ AZ_SCOTTSDALE_CONFIG: dict[str, Any] = {
     "lookback_days": 90,
 }
 
-NC_CONFIG: dict[str, Any] = {
-    "state_code": "NC",
-    "provider_type": "arcgis",
-    "endpoint": "https://meckgis.mecklenburgcountync.gov/server/rest/services/BuildingPermits/FeatureServer",
-    "layer": 0,
-    "watermark_field": "OBJECTID",
-    "hash_fields": ["permitnum"],
-    "commercial_where": "permittype = 'Commercial'",
-    "out_fields": "permitnum,permitdesc,permittype,usdcdesc,projname,projadd,zipcode,issuedate,bldgcost,totalsqft,ownname,worktype,workdesc",
-    # OBJECTID alone is meaningless as a first-run bound on a long-lived
-    # layer (see ArcGISProvider docstring) -- bound the first pull by a
-    # real date field instead, same as NJ's Socrata processdate fallback.
-    "date_field": "issuedate",
-    "lookback_days": 30,
-}
+# NC_CONFIG (the "NC" key, Flash+Sonnet LLM path) was removed 2026-07-29 --
+# it hit this exact same meckgis.mecklenburgcountync.gov endpoint as
+# NC_MECKLENBURG_CONFIG below, just through paid Flash/Sonnet instead of
+# the free deterministic generic_mapping path. Its watermark
+# (data/pipeline/nj-dca/state-nc.json) never actually advanced past 0
+# fetched, so removing it discards no captured data -- this was a landmine
+# defused before it could duplicate-capture on a future cron re-enable,
+# not a cleanup of an active bug. pull-nc-pipeline.yml now runs
+# --state NC-MECKLENBURG instead.
 
 # Federal sources (SAM.gov, USAspending) aren't one-config-per-state the
 # way Socrata/ArcGIS are -- a state can have more than one federal source,
@@ -1481,7 +1475,6 @@ CA_SANDIEGO_CONFIG: dict[str, Any] = {
 
 STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NJ": NJ_CONFIG,
-    "NC": NC_CONFIG,
     "CA-LOSANGELES": CA_LOSANGELES_CONFIG,
     "CA-LACOUNTY": CA_LACOUNTY_CONFIG,
     "CA-TORRANCE": CA_TORRANCE_CONFIG,
