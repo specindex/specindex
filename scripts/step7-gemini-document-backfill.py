@@ -246,7 +246,16 @@ def main(argv: list[str] | None = None) -> int:
                 if args.dry_run:
                     print(f"    [would upload] {url} ({len(data):,} bytes, {content_type})", file=sys.stderr)
                 else:
-                    outcome = upload_to_gcs(bucket, p["state"], p["id"], url, data, content_type)
+                    # A real crash 2026-07-29: GCS auth expired mid-run and
+                    # this call wasn't guarded (only ask_gemini_batch was),
+                    # so an uncaught RefreshError killed an unattended
+                    # multi-hour job on a single bad upload. Never let one
+                    # file's upload failure take down the whole run.
+                    try:
+                        outcome = upload_to_gcs(bucket, p["state"], p["id"], url, data, content_type)
+                    except Exception as e:  # noqa: BLE001
+                        print(f"    [error] GCS upload failed for {url}: {e}", file=sys.stderr)
+                        outcome = "error"
                     if outcome == "uploaded":
                         summary["files_uploaded"] += 1
                 time.sleep(0.3)
