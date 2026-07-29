@@ -55,6 +55,7 @@ MUNI_ID_PREFIXES = (
     "oh-columbus-",
     "oh-cleveland-",
     "oh-cincinnati-",
+    "pa-pittsburgh-pli-",
 )
 
 # Every record from these sources carries its own unique per-record ID
