@@ -1546,7 +1546,24 @@ CA_SANFRANCISCO_CONFIG: dict[str, Any] = {
     "provider_type": "socrata",
     "county": "San Francisco",
     "endpoint": "https://data.sfgov.org/resource/i98e-djp9.json",
-    "watermark_field": "permit_number",
+    # NOT permit_number: this dataset mixes two incompatible formats --
+    # legacy short IDs like "7804170S" (pre-date-prefix era, no leading
+    # digit ordering relationship to the modern scheme) and modern
+    # 12-digit date-prefixed ids like "202607275627". Confirmed live
+    # 2026-07-29: with permit_number as watermark, the incremental cursor
+    # gets permanently stuck -- next_watermark()'s int-cast comparison
+    # (socrata_provider.py) picks the numerically-largest *parseable* id
+    # seen, but a legacy 7-digit id like "8005502" is numerically smaller
+    # than a modern 12-digit one even though Socrata's naive string `>`
+    # filter treats it as "greater" (since '8' > '2' lexicographically) --
+    # so every subsequent run re-fetches the exact same already-merged
+    # batch of legacy rows forever and the watermark never advances again.
+    # permit_creation_date is a real timestamp -- genuinely monotonic both
+    # for the SoQL `>` filter and for next_watermark()'s comparison logic
+    # (which falls back to "always rescan the lookback window" for a
+    # non-numeric field, same documented-safe behavior as Cook County's
+    # `pin`, not the newer bug this field format triggers).
+    "watermark_field": "permit_creation_date",
     "hash_fields": ["permit_number"],
     # proposed_use excludes the residential categories (no clean single
     # "Commercial" flag exists here, unlike LA). permit_type excludes 8
