@@ -918,6 +918,37 @@
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
       "notes": "Genuine dead end -- Cheyenne uses closed OpenGov, county uses Granicus SmartGov, neither exposes a public API. CLC GISC regional GIS has parcels/building footprints only, no permits. County publishes static monthly PDF reports as the only bulk-ish option."
+    },
+    {
+      "jurisdiction": "Pittsburgh, PA (Allegheny County)",
+      "county": "Allegheny",
+      "state": "PA",
+      "provider_type": "ckan",
+      "endpoint": "https://data.wprdc.org",
+      "state_agent_pipeline_key": "PA-PITTSBURGH",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 1779,
+      "notes": "2nd-largest-county-per-state expansion. County has no unified permit system (130 municipalities under PA UCC); Pittsburgh publishes to WPRDC (Western PA Regional Data Center), a CKAN portal. Real commercial_or_residential='Commercial' field (24,024/63,853), fresh (MAX=2026-07-28, today). 180-day window: 1,779 fetched, 1,779 new."
+    },
+    {
+      "jurisdiction": "Fort Lauderdale, FL (Broward County)",
+      "county": "Broward",
+      "state": "FL",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/FTL",
+      "state_agent_pipeline_key": "FL-FORTLAUDERDALE",
+      "status": "FAILED_NEED_ALT",
+      "notes": "2nd-largest-county-per-state expansion. County uses proprietary Computronix POSSE, no API. City's own ArcGIS layer confirmed stale (2021). Accela agency 'FTL' verified reachable with real modules/dropdown options, but search returns 0 rows for every permit type tried -- a genuine unresolved mechanical issue, not a known pattern (not the El Paso missing-date-field case). Config registered but not merged (0 real rows). Needs further debugging."
+    },
+    {
+      "jurisdiction": "Oakland County, MI",
+      "county": "Oakland",
+      "state": "MI",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "2nd-largest-county-per-state expansion. County government does not issue building permits (decentralized to 62 municipalities). County's own Accela instance ('OAKLAND' agency) is real but scoped strictly to Environmental Health (septic/well/food licensing), not building permits. County's Access Oakland ArcGIS portal (350+ datasets) has no permit layer. Municipalities use BS&A Online, no public API. Genuine dead end."
     }
   ]
 }

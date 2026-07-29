@@ -1529,6 +1529,60 @@ CA_SANDIEGO_CONFIG: dict[str, Any] = {
     "source_url": "https://data.sandiego.gov/datasets/development-permits/",
 }
 
+# Fort Lauderdale, FL (Broward County's top jurisdiction -- FL's 2nd most
+# populous county after Miami-Dade). County-level itself uses proprietary
+# Computronix POSSE with no public API. Fort Lauderdale's own ArcGIS
+# permit layer (gis.fortlauderdale.gov, layer 27) is real but confirmed
+# STALE (MAX(APPROVEDT)=2021-01-05, USECLASS entirely NULL) -- ruled out.
+# Accela agency "FTL" verified live and reachable (200s, real module list
+# is Permits, real dropdown options including "Commercial New
+# Construction Permit" and "Commercial Alteration Permit"), but the
+# search itself returns 0 rows for every permit type tried, unlike every
+# other Accela agency wired this session -- a real, NOT YET RESOLVED
+# mechanical issue (not the known El Paso-style missing-Start/End-Date
+# problem; FTL's search page has no matching Start/End Date field pair,
+# just one unrelated hidden date field). Registered but NOT merged --
+# 0 real rows captured. Needs further debugging (e.g. checking whether
+# the results table itself uses a different structure/pagination for
+# this specific agency) before this source is usable.
+FL_FORTLAUDERDALE_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "FL",
+    "provider_type": "accela",
+    "county": "Broward",
+    "endpoint": "https://aca-prod.accela.com/FTL",
+    "module": "Permits",
+    "permit_type_label": "Commercial New Construction Permit",
+    "lookback_days": 180,
+}
+
+# Pittsburgh, PA (Allegheny County's top jurisdiction -- PA's 2nd most
+# populous county after Philadelphia). County-level has no unified permit
+# system (130 independent municipalities under PA's UCC framework);
+# Pittsburgh's own PLI department publishes to WPRDC (Western PA Regional
+# Data Center), a CKAN portal. Verified live 2026-07-29: resource
+# f4d1177a-f597-4c32-8cbf-7885f56253f6 ("PLI Permits"),
+# commercial_or_residential='Commercial' is real (24,024/63,853 total),
+# MAX(issue_date)=2026-07-28 (today).
+PA_PITTSBURGH_CONFIG: dict[str, Any] = {
+    "state_code": "PA",
+    "provider_type": "ckan",
+    "county": "Allegheny",
+    "endpoint": "https://data.wprdc.org",
+    "resource_id": "f4d1177a-f597-4c32-8cbf-7885f56253f6",
+    "watermark_field": "_id",
+    "hash_fields": ["permit_id"],
+    "commercial_where": "commercial_or_residential='Commercial'",
+    "date_field": "issue_date",
+    "lookback_days": 180,
+    "feed_id": "pa-pittsburgh",
+    "id_field": "permit_id",
+    "name_fields": ["work_description", "permit_type", "address"],
+    "address_fields": ["address"],
+    "value_fields": ["total_project_value"],
+    "desc_fields": ["work_description", "work_type"],
+    "source_url": "https://data.wprdc.org/dataset/pli-permits",
+}
+
 STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NJ": NJ_CONFIG,
     "CA-LOSANGELES": CA_LOSANGELES_CONFIG,
@@ -1572,6 +1626,8 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "SC-GREENVILLE": SC_GREENVILLE_CONFIG,
     "ID-ADA": ID_ADA_ACCELA_CONFIG,
     "SD-SIOUXFALLS": SD_SIOUXFALLS_CONFIG,
+    "FL-FORTLAUDERDALE": FL_FORTLAUDERDALE_ACCELA_CONFIG,
+    "PA-PITTSBURGH": PA_PITTSBURGH_CONFIG,
     "IN-INDIANAPOLIS": IN_INDIANAPOLIS_ACCELA_CONFIG,
     "FL-MIAMIDADE": FL_MIAMIDADE_CONFIG,
     "WA-KING": WA_KING_CONFIG,
