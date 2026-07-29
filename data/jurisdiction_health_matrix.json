@@ -711,6 +711,16 @@
       "status": "VERIFIED_WORKING",
       "records_merged": 1,
       "notes": "Portland Permitting & Development does NOT use Accela -- publishes directly via PortlandMaps ArcGIS REST. Layer name is literally 'Commercial Construction Permit', pre-filtered by the city itself (same pattern as MD-MONTGOMERY), no where-clause needed. MAX(ISSUED)=2026-07-24, 7,071 total rows. 180-day window: 75 fetched, only 1 new -- most already captured by earlier manual research."
+    },
+    {
+      "jurisdiction": "Fairfield County, CT",
+      "county": "Fairfield",
+      "state": "CT",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Genuine dead end -- CT abolished county government entirely in 1960, no unified building department exists. Checked all major municipalities (Stamford, Bridgeport, Norwalk, Fairfield town, Greenwich): all use proprietary platforms (OpenGov/ViewPoint Cloud, CitySquared) with zero public API access, no Accela deployment anywhere in the county. State-level data.ct.gov only has aggregated annual town-level housing permit counts, not row-level transactional data. Honest Gemini answer, no fabrication -- ruled out."
     }
   ]
 }
