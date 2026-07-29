@@ -29,6 +29,7 @@ import json
 import os
 import re
 import sys
+import urllib.parse
 from collections import defaultdict
 from pathlib import Path
 
@@ -156,7 +157,13 @@ def files_from_gcs() -> DocMap:
         out[project_id].append(
             {
                 "title": filename,
-                "url": f"https://storage.googleapis.com/{GCS_BUCKET}/{blob.name}",
+                # blob.name is a raw GCS object path built straight from the
+                # real filename ("S02 - RFP Attachment 3.pdf") -- unescaped,
+                # this 403/400s any HTTP client stricter than a browser.
+                # Real bug found 2026-07-29: scripts/extract-document-text.py
+                # rejected these outright ("URL can't contain control
+                # characters") for every filename with a space in it.
+                "url": f"https://storage.googleapis.com/{GCS_BUCKET}/{urllib.parse.quote(blob.name)}",
                 "content_type": blob.content_type,
             }
         )

@@ -31,6 +31,7 @@ import os
 import sys
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from pathlib import Path
 from typing import Any
@@ -62,6 +63,17 @@ def fetch_document_bytes(row: dict[str, Any]) -> bytes:
         url = f"https://storage.googleapis.com/{GCS_BUCKET}/{row['gcs_path']}"
     else:
         url = row["url"]
+    # Real bug found 2026-07-29 running this against GA at scale: many
+    # stored `url` values have literal unescaped spaces (GCS blob names
+    # built straight from real filenames, e.g. "S02 - RFP Attachment
+    # 3.pdf", by compute-project-documents.py's files_from_gcs() -- see
+    # its fix in the same commit). urllib.request rejects those outright
+    # ("URL can't contain control characters"). Quote just the path
+    # component so this is safe on both already-good and already-bad
+    # stored URLs -- quote() is idempotent on characters that don't need
+    # escaping, so a clean URL passes through unchanged.
+    parts = urllib.parse.urlsplit(url)
+    url = urllib.parse.urlunsplit(parts._replace(path=urllib.parse.quote(parts.path)))
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     with urllib.request.urlopen(req, timeout=90) as resp:
         return resp.read()
@@ -127,6 +139,13 @@ def main() -> int:
     ap.add_argument("--document-type", help="--batch only: comma-separated document_type values, e.g. specifications,drawings_plans")
     ap.add_argument("--delay", type=float, default=0.5, help="--batch only: seconds between documents")
     ap.add_argument(
+        "--retry-errors",
+        action="store_true",
+        help="--batch only: include documents that previously failed (normally excluded, to avoid "
+        "re-billing Document AI on a permanently-broken document every run) -- use after fixing a "
+        "bug that caused a batch of transient failures",
+    )
+    ap.add_argument(
         "--database-url",
         default=os.environ.get("DATABASE_URL", "postgresql://specindex:specindex@localhost:5432/specindex"),
     )
@@ -167,7 +186,9 @@ def main() -> int:
                 )
                 candidates = cur.fetchall()
             else:
-                clauses = ["dps.text_extracted_at IS NULL", "dps.error IS NULL"]
+                clauses = ["dps.text_extracted_at IS NULL"]
+                if not args.retry_errors:
+                    clauses.append("dps.error IS NULL")
                 params: list[Any] = []
                 if args.state:
                     clauses.append("p.state = %s")
