@@ -299,6 +299,7 @@ def _project_filter_clauses(
     q: str | None,
     new_since_days: int | None,
     has_documents: bool | None = None,
+    document_type: str | None = None,
 ) -> tuple[list[str], list[Any]]:
     """Shared WHERE-clause builder for /v1/projects and /v1/projects/map-points
     -- both need the same filter set (the map is meant to show pins bounded
@@ -342,6 +343,16 @@ def _project_filter_clauses(
         clauses.append(
             f"{exists} (SELECT 1 FROM project_documents pd WHERE pd.project_sk = p.project_sk AND pd.has_documents)"
         )
+    if document_type:
+        # Deterministic, keyword-based categories from
+        # compute-project-documents.py's classify_document_type() --
+        # 'other' is a real, meaningful bucket (uncategorized documents),
+        # not excluded here.
+        clauses.append(
+            "EXISTS (SELECT 1 FROM project_document_files pdf "
+            "WHERE pdf.project_sk = p.project_sk AND pdf.document_type = %s)"
+        )
+        params.append(document_type)
 
     return clauses, params
 
@@ -361,12 +372,20 @@ def list_projects(
     has_documents: bool | None = Query(
         default=None, description="True = only projects with attached documents, False = only without"
     ),
+    document_type: str | None = Query(
+        default=None,
+        description=(
+            "Filter to projects with at least one document of this type: "
+            "specifications, drawings_plans, structural_engineering, "
+            "staff_report, meeting_agenda, permit_application, other"
+        ),
+    ),
     sort: str = Query(default="score", pattern="^(score|name|value|recency)$"),
     limit: int = Query(default=50, ge=1, le=100),
     offset: int = Query(default=0, ge=0),
 ):
     clauses, params = _project_filter_clauses(
-        state, status, project_type, county, category, year, q, new_since_days, has_documents
+        state, status, project_type, county, category, year, q, new_since_days, has_documents, document_type
     )
 
     where = f"WHERE {' AND '.join(clauses)}" if clauses else ""
@@ -474,6 +493,7 @@ def project_map_points(
     q: str | None = Query(default=None, description="Free-text search across name/city/owner/GC/description"),
     new_since_days: int | None = Query(default=None, ge=1, le=365),
     has_documents: bool | None = Query(default=None),
+    document_type: str | None = Query(default=None),
 ):
     """Public, customer-facing equivalent of /v1/ops/map-points -- bounded
     to whatever filters the visitor currently has set on /projects rather
@@ -482,7 +502,7 @@ def project_map_points(
     same as the ops version, since a map pin doesn't need the full project
     payload."""
     clauses, params = _project_filter_clauses(
-        state, status, project_type, county, category, year, q, new_since_days, has_documents
+        state, status, project_type, county, category, year, q, new_since_days, has_documents, document_type
     )
     clauses += ["p.latitude IS NOT NULL", "p.longitude IS NOT NULL"]
     where = f"WHERE {' AND '.join(clauses)}"
@@ -906,7 +926,7 @@ def fetch_document_files(conn, sk: int, base_url: str) -> list[dict[str, Any]]:
     of its own -- the resolution happens here."""
     with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
         cur.execute(
-            "SELECT id, title, url, content_type, gcs_path FROM project_document_files "
+            "SELECT id, title, url, content_type, document_type, gcs_path FROM project_document_files "
             "WHERE project_sk = %s ORDER BY title",
             (sk,),
         )

@@ -80,6 +80,7 @@ export type ProjectDocumentFile = {
   title: string;
   url: string;
   content_type: string | null;
+  document_type: string;
 };
 
 export type Project = {
