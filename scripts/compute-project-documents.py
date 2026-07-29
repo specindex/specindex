@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
-"""Populate project_documents from the checked-in data/documents/*/*.json
-manifests, so the API/frontend can filter "has attached documents".
+"""Populate project_documents + project_document_files from the checked-in
+data/documents/*/*.json manifests, so the API/frontend can filter "has
+attached documents" (project_documents, aggregate count) and actually link
+to them on the detail page (project_document_files, one row per file).
 
 Three manifest shapes exist today, each parsed differently:
-  - data/documents/georgia/manifest.json: {"projects": [{"project_id", "documents": [...]}]}
-  - data/documents/fulton-county/index.json: {"project_documents": [{"project_id", ...}, ...]} (flat, one row per doc)
-  - data/documents/new-jersey/manifest.json: {"by_project": {project_id: {"documents": [...]}}}
+  - data/documents/georgia/manifest.json: {"projects": [{"project_id", "documents": [{"filename", "url", "content_type"}]}]}
+  - data/documents/fulton-county/index.json: {"project_documents": [{"project_id", "title", "url", "content_type"}, ...]} (flat, one row per doc)
+  - data/documents/new-jersey/manifest.json: {"by_project": {project_id: {"documents": [{"filename", "url", "content_type"}]}}}
 
 Slug prefixes are inconsistent with the DB on purpose-vs-accident: GA and
 Fulton manifests use the bare project slug ("centennial-yards"), but
@@ -26,11 +28,14 @@ import argparse
 import json
 import os
 import sys
-from collections import Counter
+from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS_DIR = ROOT / "data" / "documents"
+
+# project_id -> list of {"title", "url", "content_type"}
+DocMap = dict[str, list[dict]]
 
 
 def _load(path: Path) -> dict | None:
@@ -39,48 +44,62 @@ def _load(path: Path) -> dict | None:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def counts_from_georgia() -> Counter:
+def files_from_georgia() -> DocMap:
     data = _load(DOCS_DIR / "georgia" / "manifest.json")
-    counts: Counter = Counter()
+    out: DocMap = defaultdict(list)
     if not data:
-        return counts
+        return out
     for p in data.get("projects", []):
         pid = p.get("project_id")
-        n = len(p.get("documents") or [])
-        if pid and n:
-            counts[f"ga-{pid}"] += n
-    return counts
+        if not pid:
+            continue
+        for doc in p.get("documents") or []:
+            url = doc.get("url")
+            if not url:
+                continue
+            out[f"ga-{pid}"].append(
+                {"title": doc.get("filename") or url, "url": url, "content_type": doc.get("content_type")}
+            )
+    return out
 
 
-def counts_from_fulton() -> Counter:
+def files_from_fulton() -> DocMap:
     data = _load(DOCS_DIR / "fulton-county" / "index.json")
-    counts: Counter = Counter()
+    out: DocMap = defaultdict(list)
     if not data:
-        return counts
+        return out
     for doc in data.get("project_documents", []):
         pid = doc.get("project_id")
-        if pid:
-            counts[f"ga-{pid}"] += 1
-    return counts
+        url = doc.get("url")
+        if not pid or not url:
+            continue
+        out[f"ga-{pid}"].append(
+            {"title": doc.get("title") or url, "url": url, "content_type": doc.get("content_type")}
+        )
+    return out
 
 
-def counts_from_new_jersey() -> Counter:
+def files_from_new_jersey() -> DocMap:
     data = _load(DOCS_DIR / "new-jersey" / "manifest.json")
-    counts: Counter = Counter()
+    out: DocMap = defaultdict(list)
     if not data:
-        return counts
+        return out
     for pid, p in (data.get("by_project") or {}).items():
-        n = len(p.get("documents") or [])
-        if n:
-            counts[pid] += n  # already nj-prefixed in the manifest
-    return counts
+        for doc in p.get("documents") or []:
+            url = doc.get("url")
+            if not url:
+                continue
+            out[pid].append(  # already nj-prefixed in the manifest
+                {"title": doc.get("title") or doc.get("filename") or url, "url": url, "content_type": doc.get("content_type")}
+            )
+    return out
 
 
-def all_counts() -> Counter:
-    total: Counter = Counter()
-    total.update(counts_from_georgia())
-    total.update(counts_from_fulton())
-    total.update(counts_from_new_jersey())
+def all_files() -> DocMap:
+    total: DocMap = defaultdict(list)
+    for source in (files_from_georgia(), files_from_fulton(), files_from_new_jersey()):
+        for pid, docs in source.items():
+            total[pid].extend(docs)
     return total
 
 
@@ -94,10 +113,10 @@ def main() -> int:
     ap.add_argument("--dry-run", action="store_true", help="print what would be written, don't touch the DB")
     args = ap.parse_args()
 
-    counts = all_counts()
-    print(f"Found document counts for {len(counts)} project_id(s) across GA/Fulton/NJ manifests")
+    files_by_pid = all_files()
+    print(f"Found documents for {len(files_by_pid)} project_id(s) across GA/Fulton/NJ manifests")
 
-    if args.dry_run and not counts:
+    if args.dry_run and not files_by_pid:
         print("(nothing to do)")
         return 0
 
@@ -108,30 +127,37 @@ def main() -> int:
     try:
         if args.apply_migration:
             with conn.cursor() as cur:
-                migration = ROOT / "db" / "migrations" / "017_project_documents.sql"
-                cur.execute(migration.read_text(encoding="utf-8"))
+                for name in ("017_project_documents.sql", "018_project_document_files.sql"):
+                    migration = ROOT / "db" / "migrations" / name
+                    cur.execute(migration.read_text(encoding="utf-8"))
             conn.commit()
 
         with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
-            cur.execute("SELECT project_id, project_sk FROM projects WHERE project_id = ANY(%s)", (list(counts.keys()),))
+            cur.execute(
+                "SELECT project_id, project_sk FROM projects WHERE project_id = ANY(%s)",
+                (list(files_by_pid.keys()),),
+            )
             id_to_sk = {row["project_id"]: row["project_sk"] for row in cur.fetchall()}
 
-        matched = {pid: n for pid, n in counts.items() if pid in id_to_sk}
-        unmatched = [pid for pid in counts if pid not in id_to_sk]
-        print(f"Matched {len(matched)}/{len(counts)} project_id(s) to a real project_sk")
+        matched = {pid: docs for pid, docs in files_by_pid.items() if pid in id_to_sk}
+        unmatched = [pid for pid in files_by_pid if pid not in id_to_sk]
+        print(f"Matched {len(matched)}/{len(files_by_pid)} project_id(s) to a real project_sk")
         for pid in unmatched[:15]:
-            print(f"  no DB match: {pid!r} ({counts[pid]} doc(s))")
+            print(f"  no DB match: {pid!r} ({len(files_by_pid[pid])} doc(s))")
         if len(unmatched) > 15:
             print(f"  ... and {len(unmatched) - 15} more unmatched")
 
         if args.dry_run:
             print("\n--dry-run: not writing to the database")
-            for pid, n in sorted(matched.items(), key=lambda kv: -kv[1])[:10]:
-                print(f"  {pid}: {n} document(s)")
+            for pid, docs in sorted(matched.items(), key=lambda kv: -len(kv[1]))[:10]:
+                print(f"  {pid}: {len(docs)} document(s)")
+                for d in docs[:3]:
+                    print(f"    - {d['title']} -> {d['url']}")
             return 0
 
         with conn.cursor() as cur:
-            for pid, n in matched.items():
+            for pid, docs in matched.items():
+                sk = id_to_sk[pid]
                 cur.execute(
                     """
                     INSERT INTO project_documents (project_sk, document_count, computed_at)
@@ -140,10 +166,22 @@ def main() -> int:
                         document_count = EXCLUDED.document_count,
                         computed_at = now()
                     """,
-                    (id_to_sk[pid], n),
+                    (sk, len(docs)),
                 )
+                for d in docs:
+                    cur.execute(
+                        """
+                        INSERT INTO project_document_files (project_sk, title, url, content_type)
+                        VALUES (%s, %s, %s, %s)
+                        ON CONFLICT (project_sk, url) DO UPDATE SET
+                            title = EXCLUDED.title,
+                            content_type = EXCLUDED.content_type,
+                            computed_at = now()
+                        """,
+                        (sk, d["title"], d["url"], d.get("content_type")),
+                    )
         conn.commit()
-        print(f"\nWrote document counts for {len(matched)} project(s)")
+        print(f"\nWrote document data for {len(matched)} project(s)")
     finally:
         conn.close()
 
