@@ -1067,6 +1067,26 @@
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
       "notes": "2nd-largest-county-per-state expansion. County uses eTrakIt, no API. City of Columbia uses Tyler EnerGov (cityofcolumbiasc-energovweb.tylerhost.net, verified reachable) -- tried live with energov_provider.py, hit the same 'Locator.click: Timeout... Search button' navigation error already seen on CA-Glendale's EnerGov deployment (0 rows, not an outright crash). Registered attempt not saved as a config; needs the same per-jurisdiction Playwright tuning Glendale still needs."
+    },
+    {
+      "jurisdiction": "Canyon County, ID (Nampa/Caldwell)",
+      "county": "Canyon",
+      "state": "ID",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "2nd-largest-county-per-state expansion. No Accela anywhere (county uses ArcGIS DSD tracker, Nampa uses EnerGov, Caldwell uses Citizenserve). Gemini named a real-sounding ArcGIS layer ('Building Permits NEW 2023', owner CanyonCountyMapping) but no matching item found via ArcGIS Online search under that owner or broader terms. Not pursued further this round."
+    },
+    {
+      "jurisdiction": "Fort Wayne, IN (Allen County)",
+      "county": "Allen",
+      "state": "IN",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "2nd-largest-county-per-state expansion. Accela agency 'ACFW' verified reachable, real Building module confirmed via Welcome.aspx module list, but the search page's permit-type dropdown didn't render via curl (Angular SPA, needs real JS) and a live Playwright attempt with a guessed label ('Commercial New Construction') timed out on select_option -- the exact real dropdown label wasn't confirmed. Needs a proper live dropdown-option dump before retry, not attempted further this round."
     }
   ]
 }
