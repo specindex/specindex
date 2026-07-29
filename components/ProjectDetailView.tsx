@@ -95,7 +95,7 @@ function Fact({
   confidence?: string;
 }) {
   return (
-    <div>
+    <div className="rounded-lg border border-[var(--color-border)] p-3">
       <dt className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-gray-400)]">
         {label}
       </dt>
@@ -105,6 +105,36 @@ function Fact({
       </dd>
     </div>
   );
+}
+
+// Same green/amber/gray tier scale ProjectScoreBadge used before the score
+// moved into the hero card -- shared so the sticky bar (visible from the
+// moment the page loads) and the hero's own score box never disagree on
+// what color a given score means, which an independent design review
+// flagged as exactly this kind of mismatch.
+function scoreTier(total: number) {
+  if (total >= 70) {
+    return {
+      label: "High priority",
+      textCls: "text-[var(--color-green)]",
+      dotCls: "bg-[var(--color-green)]",
+      chipCls: "bg-[var(--color-green-light)] text-[var(--color-green)]",
+    };
+  }
+  if (total >= 40) {
+    return {
+      label: "Watch",
+      textCls: "text-[var(--color-amber)]",
+      dotCls: "bg-[var(--color-amber)]",
+      chipCls: "bg-[var(--color-amber)]/10 text-[var(--color-amber)]",
+    };
+  }
+  return {
+    label: "Low signal",
+    textCls: "text-[var(--color-gray-600)]",
+    dotCls: "bg-[var(--color-gray-400)]",
+    chipCls: "bg-[var(--color-gray-100)] text-[var(--color-gray-600)]",
+  };
 }
 
 // The base corpus row for owner/architect/GC can lag behind the enrichment
@@ -159,8 +189,11 @@ export function ProjectDetailView({ project }: { project: Project }) {
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-2.5 md:px-8">
           <p className="truncate text-sm font-medium text-[var(--color-ink)]">{project.name}</p>
           {project.score && (
-            <span className="shrink-0 rounded-full bg-[var(--color-amber)]/10 px-2.5 py-1 text-xs font-semibold text-[var(--color-amber)]">
-              🔥 {project.score.total}/100
+            <span
+              className={`flex shrink-0 items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold ${scoreTier(project.score.total).chipCls}`}
+            >
+              <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${scoreTier(project.score.total).dotCls}`} />
+              {project.score.total}/100
             </span>
           )}
         </div>
@@ -200,7 +233,9 @@ export function ProjectDetailView({ project }: { project: Project }) {
               </p>
             </div>
 
-            {project.score && (
+            {project.score && (() => {
+              const tier = scoreTier(project.score.total);
+              return (
               <div className="relative shrink-0" ref={scoreRef}>
                 <div
                   onClick={() => setShowBreakdown((v) => !v)}
@@ -217,7 +252,7 @@ export function ProjectDetailView({ project }: { project: Project }) {
                   className="flex cursor-pointer items-center gap-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-4 shadow-sm transition hover:bg-[var(--color-gray-100)] focus:outline-none focus:ring-2 focus:ring-[var(--color-green)]"
                 >
                   <div className="text-center">
-                    <div className="font-mono text-3xl font-black tracking-tight text-[var(--color-green)]">
+                    <div className={`font-mono text-3xl font-black tracking-tight ${tier.textCls}`}>
                       {project.score.total}
                       <span className="text-xs font-normal text-[var(--color-gray-400)]">/100</span>
                     </div>
@@ -227,13 +262,9 @@ export function ProjectDetailView({ project }: { project: Project }) {
                   </div>
                   <div className="h-10 w-px bg-[var(--color-border)]" />
                   <div className="space-y-1 text-xs">
-                    <div className="flex items-center gap-1.5 font-semibold text-[var(--color-green)]">
-                      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-green)]" />
-                      {project.score.total >= 70
-                        ? "High priority"
-                        : project.score.total >= 40
-                          ? "Watch"
-                          : "Low signal"}
+                    <div className={`flex items-center gap-1.5 font-semibold ${tier.textCls}`}>
+                      <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${tier.dotCls}`} />
+                      {tier.label}
                     </div>
                     <div className="text-[11px] text-[var(--color-gray-400)]">Click for breakdown</div>
                   </div>
@@ -278,7 +309,8 @@ export function ProjectDetailView({ project }: { project: Project }) {
                   </div>
                 )}
               </div>
-            )}
+              );
+            })()}
           </div>
         </div>
       </div>
