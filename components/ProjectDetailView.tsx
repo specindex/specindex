@@ -83,6 +83,37 @@ function ConfidenceBadge({ confidence }: { confidence: string }) {
   );
 }
 
+// Same information as ConfidenceBadge, quieter presentation -- a filled
+// pill on every row of a dense list (e.g. every contact) was flagged in
+// design review as "badge fatigue": once every item has a high-contrast
+// background, none of them read as a highlight anymore. A small dot plus
+// plain text carries the same signal without the visual weight.
+function ConfidenceDot({ confidence }: { confidence: string }) {
+  const dotCls: Record<string, string> = {
+    confirmed: "bg-[var(--color-green)]",
+    reported: "bg-[var(--color-amber)]",
+    unconfirmed: "bg-[var(--color-gray-400)]",
+  };
+  const textCls: Record<string, string> = {
+    confirmed: "text-[var(--color-green)]",
+    reported: "text-[var(--color-amber)]",
+    unconfirmed: "text-[var(--color-gray-400)]",
+  };
+  const labels: Record<string, string> = {
+    confirmed: "Confirmed",
+    reported: "Sources vary",
+    unconfirmed: "Not confirmed",
+  };
+  return (
+    <span className={`flex shrink-0 items-center gap-1 text-[10px] font-semibold uppercase tracking-wide ${textCls[confidence] ?? textCls.unconfirmed}`}>
+      <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${dotCls[confidence] ?? dotCls.unconfirmed}`} />
+      {labels[confidence] ?? confidence}
+    </span>
+  );
+}
+
+const EMPTY_FACT_VALUES = new Set(["Not reported", "None in public seed"]);
+
 function Fact({
   label,
   value,
@@ -94,12 +125,22 @@ function Fact({
   mono?: boolean;
   confidence?: string;
 }) {
+  // A missing value in the same bordered cell as a real one ($5B next to
+  // "Not reported") gave both equal visual weight -- flagged in design
+  // review as dead-ending the reader's scan path. Muting it keeps the
+  // layout stable (still a cell, still there) without competing for
+  // attention with actual data.
+  const isEmpty = EMPTY_FACT_VALUES.has(value);
   return (
     <div className="rounded-lg border border-[var(--color-border)] p-3">
       <dt className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-gray-400)]">
         {label}
       </dt>
-      <dd className={`mt-1 flex items-center gap-2 text-sm font-medium ${mono ? "font-mono text-xs" : ""}`}>
+      <dd
+        className={`mt-1 flex items-center gap-2 text-sm font-medium ${mono ? "font-mono text-xs" : ""} ${
+          isEmpty ? "text-[var(--color-gray-400)] font-normal" : ""
+        }`}
+      >
         {value}
         {confidence && <ConfidenceBadge confidence={confidence} />}
       </dd>
@@ -417,6 +458,12 @@ export function ProjectDetailView({ project }: { project: Project }) {
           {project.enrichment?.team.length ? (
             <section className="mt-8">
               <h2 className="text-base font-bold">Verified construction team</h2>
+              {/* The section title already says "Verified" -- a green
+                  Confirmed pill on every single row was flagged in design
+                  review as badge fatigue (every row shouting the same
+                  thing the header already said). Only show a badge when
+                  a row is the exception to that header, i.e. NOT
+                  confirmed -- that's the case actually worth flagging. */}
               <dl className="card mt-4 divide-y divide-[var(--color-border)] p-0">
                 {project.enrichment.team.map((fact) => (
                   <div key={fact.field_key} className="flex items-start justify-between gap-3 p-4">
@@ -426,7 +473,7 @@ export function ProjectDetailView({ project }: { project: Project }) {
                       </dt>
                       <dd className="mt-1 text-xs">{fact.value}</dd>
                     </div>
-                    <ConfidenceBadge confidence={fact.confidence} />
+                    {fact.confidence !== "confirmed" && <ConfidenceBadge confidence={fact.confidence} />}
                   </div>
                 ))}
               </dl>
@@ -469,7 +516,7 @@ export function ProjectDetailView({ project }: { project: Project }) {
                       </dt>
                       <dd className="mt-0.5 text-xs break-words">{fact.value}</dd>
                     </div>
-                    <ConfidenceBadge confidence={fact.confidence} />
+                    <ConfidenceDot confidence={fact.confidence} />
                   </div>
                 ))}
               </dl>
