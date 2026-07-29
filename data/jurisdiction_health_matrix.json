@@ -615,6 +615,38 @@
       "status": "VERIFIED_WORKING",
       "records_merged": 250,
       "notes": "IMPORTANT catch: Gemini's first agency-code guess ('SLC') was WRONG -- verified live that aca-prod.accela.com/SLC actually belongs to St. Louis County, MO (error-page links reference stlouiscountymo.gov; module list Licenses/N/PublicWorks/WaterandSewer has no Building module at all). Accela agency codes are shared/global across all cities using the platform and are NOT derivable from a city's initials -- always verify live. Real code is 'SLCREF', confirmed via a corrected Gemini query with the wrong-agency evidence attached; verified live (200 on Welcome.aspx, real Building module present). 180-day window: 300 rows fetched (accela provider's pagination cap), 250 new after merge."
+    },
+    {
+      "jurisdiction": "Montgomery County, MD",
+      "county": "Montgomery",
+      "state": "MD",
+      "provider_type": "socrata",
+      "endpoint": "https://data.montgomerycountymd.gov/resource/7ate-xrxm.json",
+      "state_agent_pipeline_key": "MD-MONTGOMERY",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 0,
+      "notes": "Genuine county-level source (unlike MA/MN/WI, MD county government runs permitting directly). Gemini's answer was fully accurate this time -- MAX(issueddate)=2026-07-24, applicationtype is 100% 'COMMERCIAL BUILDING' (2,272/2,272), pre-filtered by the county itself. 0 new records on merge -- this exact dataset was already captured by an earlier manual-research pull (3,198 pre-existing md-montgomery-* records) -- good corroboration of that prior work, and now wired into the automated pipeline for future incremental refresh via watermark."
+    },
+    {
+      "jurisdiction": "Milwaukee, WI",
+      "county": "Milwaukee",
+      "state": "WI",
+      "provider_type": "ckan",
+      "endpoint": "https://data.milwaukee.gov",
+      "state_agent_pipeline_key": "WI-MILWAUKEE",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 0,
+      "notes": "WI county govt has no permit function -- purely municipal. 6th platform type (CKAN, reused ckan_provider.py first built for Santa Monica CA) -- but that provider had never implemented to_projects()/generic_mapping opt-in before (Santa Monica always went through Flash/Sonnet); added it here (ckan_provider.py + factory.py) since this is clean structured data with a real 'Permit Type' field. Verified live: resource_id 828e9630-d7cb-42e4-960e-964eae916397, MAX('Date Issued')=2026-06-15, 'Permit Type' IN ('Commercial Alteration Permit','Commercial New Construction Permit') = 8,257 real rows. Field names contain spaces, required embedding double-quotes directly in date_field/commercial_where config strings rather than patching the provider's raw-SQL string building. 0 new on merge -- 1,297 wi-milwaukee-* records already existed from earlier manual research, good corroboration, now wired for auto-refresh."
+    },
+    {
+      "jurisdiction": "Honolulu County, HI (City & County of Honolulu)",
+      "county": "Honolulu",
+      "state": "HI",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "HI's top county by population, no config wired. Only building-permit dataset on data.honolulu.gov (4vab-c87q) is a frozen snapshot, verified live MAX(issuedate)=2025-07-01 (stale, >1yr old). DPP's live system (HNL Build/CivCheck AI) is an interactive web portal only, no public API (SODA/REST/OData) -- confirmed by Gemini on a direct feedback round after being shown the staleness evidence (this time gave an honest 'no active API exists' answer instead of guessing). No ArcGIS FeatureServer for permits either (HoLIS only has zoning/TMK/parcel layers). Would require either a UIPA public-records request or scraping HNL Build's UI directly -- not attempted, out of scope for now (not a CAPTCHA/anti-bot case, just genuinely no queryable feed)."
     }
   ]
 }

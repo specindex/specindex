@@ -38,6 +38,16 @@ class CkanProvider(BaseIngestionProvider):
         page_size: int = 2000,
         max_retries: int = 4,
         hard_limit: int = 0,
+        feed_id: str | None = None,
+        state_code: str | None = None,
+        county: str | None = None,
+        id_field: str | None = None,
+        name_fields: list[str] | None = None,
+        address_fields: list[str] | None = None,
+        desc_fields: list[str] | None = None,
+        value_fields: list[str] | None = None,
+        city_fields: list[str] | None = None,
+        source_url: str | None = None,
     ) -> None:
         self.base_url = base_url.rstrip("/")
         self.resource_id = resource_id
@@ -49,6 +59,19 @@ class CkanProvider(BaseIngestionProvider):
         self.page_size = page_size
         self.max_retries = max_retries
         self.hard_limit = hard_limit
+        # Opt-in generic mapping (see generic_mapping.py) -- only used when
+        # a config explicitly sets name_fields/address_fields, same pattern
+        # as SocrataProvider/ArcGISProvider.
+        self.feed_id = feed_id
+        self.state_code = state_code
+        self.county = county
+        self.id_field = id_field
+        self.name_fields = name_fields
+        self.address_fields = address_fields
+        self.desc_fields = desc_fields
+        self.value_fields = value_fields
+        self.city_fields = city_fields
+        self.source_url = source_url
 
     def _build_where(self, last_watermark: str) -> str:
         clauses = [self.commercial_where] if self.commercial_where else []
@@ -102,6 +125,30 @@ class CkanProvider(BaseIngestionProvider):
             time.sleep(0.2)
         print(f"[ckan:{self.resource_id}] fetched {len(out)} rows", file=sys.stderr)
         return out
+
+    def to_projects(self, rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        if not self.name_fields or not self.address_fields:
+            raise NotImplementedError(
+                "to_projects() requires name_fields/address_fields in state_config "
+                "-- this state isn't opted into deterministic mapping, route through Flash/Sonnet instead"
+            )
+        from .generic_mapping import field_mapped_to_projects
+
+        return field_mapped_to_projects(
+            rows,
+            feed_id=self.feed_id or "ckan",
+            state_code=self.state_code or "",
+            county=self.county or "",
+            id_field=self.id_field or self.watermark_field,
+            watermark_field=self.watermark_field,
+            name_fields=self.name_fields,
+            address_fields=self.address_fields,
+            desc_fields=self.desc_fields,
+            value_fields=self.value_fields,
+            date_field=self.date_field,
+            source_url=self.source_url or f"{self.base_url}/dataset/{self.resource_id}",
+            city_fields=self.city_fields,
+        )
 
     def compute_deterministic_hash(self, row: dict[str, Any]) -> str:
         if self.hash_fields_list:

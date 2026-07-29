@@ -918,6 +918,67 @@ MN_HENNEPIN_CONFIG: dict[str, Any] = {
     "source_url": "https://opendata.minneapolismn.gov/datasets/CCS-Permits",
 }
 
+# Montgomery County, MD (state's most populous county -- unlike MA/MN/WI,
+# MD county government DOES run permitting directly, so this is a genuine
+# countywide source, not a top-city proxy). Verified live 2026-07-29:
+# MAX(issueddate)=2026-07-24, and applicationtype is 100% 'COMMERCIAL
+# BUILDING' already (2,272/2,272 rows) -- this dataset is pre-filtered to
+# commercial by the county itself, no where-clause guesswork needed.
+# Rockville and Gaithersburg run independent permitting outside county
+# DPS jurisdiction (per Gemini, not yet verified/wired -- lower priority,
+# county DPS covers the large majority of the county's incorporated area).
+MD_MONTGOMERY_CONFIG: dict[str, Any] = {
+    "state_code": "MD",
+    "provider_type": "socrata",
+    "county": "Montgomery",
+    "endpoint": "https://data.montgomerycountymd.gov/resource/7ate-xrxm.json",
+    "watermark_field": "permitno",
+    "hash_fields": ["permitno"],
+    "commercial_where": "applicationtype='COMMERCIAL BUILDING'",
+    "date_field": "issueddate",
+    "lookback_days": 180,
+    "feed_id": "md-montgomery",
+    "id_field": "permitno",
+    "name_fields": ["description", "worktype", "stno", "stname"],
+    "address_fields": ["stno", "stname", "suffix", "city", "state", "zip"],
+    "value_fields": ["declaredvaluation"],
+    "desc_fields": ["description", "worktype", "usecode"],
+    "source_url": "https://data.montgomerycountymd.gov/d/7ate-xrxm",
+}
+
+# Milwaukee, WI (Milwaukee County's top jurisdiction -- WI, like MA/MN,
+# has no county-level permit function, purely municipal). CKAN platform
+# (6th platform type after Socrata/ArcGIS/Accela/EnerGov/CARTO/CSV --
+# reused ckan_provider.py, first stood up for Santa Monica CA). Verified
+# live 2026-07-29: real CKAN resource_id 828e9630-d7cb-42e4-960e-964eae916397,
+# MAX("Date Issued")=2026-06-15 (monthly refresh, per the portal's own
+# stated cadence), 16,685 total rows, "Permit Type" has real Commercial
+# values: 'Commercial Alteration Permit' (7,512) + 'Commercial New
+# Construction Permit' (745) = 8,257 real commercial rows. Field names
+# contain spaces ("Permit Type", "Date Issued") -- ckan_provider.py
+# inserts date_field/watermark_field literally into raw SQL, so they're
+# pre-quoted with embedded double-quotes in this config rather than
+# patching the provider for one source.
+WI_MILWAUKEE_CONFIG: dict[str, Any] = {
+    "state_code": "WI",
+    "provider_type": "ckan",
+    "county": "Milwaukee",
+    "endpoint": "https://data.milwaukee.gov",
+    "resource_id": "828e9630-d7cb-42e4-960e-964eae916397",
+    "watermark_field": "_id",
+    "hash_fields": ["Record ID"],
+    "commercial_where": '"Permit Type" IN (\'Commercial Alteration Permit\', \'Commercial New Construction Permit\')',
+    "date_field": '"Date Issued"',
+    "lookback_days": 180,
+    "feed_id": "wi-milwaukee",
+    "id_field": "Record ID",
+    "name_fields": ["Address", "Permit Type"],
+    "address_fields": ["Address"],
+    "value_fields": ["Construction Total Cost"],
+    "desc_fields": ["Permit Type", "Use of Building"],
+    "source_url": "https://data.milwaukee.gov/dataset/buildingpermits",
+}
+
 # Miami-Dade County (FL) -- verified live 2026-07-28: MAX(PermitIssuedDate)
 # = 2026-07-24 (fresh), 36,944 total commercial-filtered records.
 FL_MIAMIDADE_CONFIG: dict[str, Any] = {
@@ -1239,6 +1300,8 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "MA-CAMBRIDGE": MA_CAMBRIDGE_CONFIG,
     "MN-HENNEPIN": MN_HENNEPIN_CONFIG,
     "UT-SALTLAKE": UT_SALTLAKE_ACCELA_CONFIG,
+    "MD-MONTGOMERY": MD_MONTGOMERY_CONFIG,
+    "WI-MILWAUKEE": WI_MILWAUKEE_CONFIG,
     "FL-MIAMIDADE": FL_MIAMIDADE_CONFIG,
     "WA-KING": WA_KING_CONFIG,
     "TX-TARRANT": TX_TARRANT_CONFIG,
