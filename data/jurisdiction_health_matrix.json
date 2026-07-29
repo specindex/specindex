@@ -761,8 +761,8 @@
       "provider_type": null,
       "endpoint": null,
       "state_agent_pipeline_key": null,
-      "status": "FAILED_NEED_ALT",
-      "notes": "RI county govt has no permitting function. Gemini's ArcGIS lead (webgis.providenceri.gov) is unreachable (connection failure, similar to the NM/cabq.gov pattern). No Accela deployment in RI per Gemini. Providence's Socrata portal (data.providenceri.gov) only has a static legacy dataset (2009-2018). Not investigated further this round -- worth a fresh ArcGIS Online search or Gemini feedback round with the connection-failure evidence."
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Confirmed genuine dead end on retry. Real current GIS Hub found (pvd-gis-providenceri.hub.arcgis.com, replacing the unreachable webgis.providenceri.gov) but has no permit layer (parcels/zoning/flood/wards/sewer only). Socrata dataset confirmed frozen at 2018-09-18, no newer one exists. Active platform is closed OpenGov, no public API. Thorough Gemini audit this round, no fabrication."
     },
     {
       "jurisdiction": "Johnson County, KS (Olathe/Overland Park)",
@@ -772,7 +772,7 @@
       "endpoint": null,
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
-      "notes": "KS county govt largely defers to municipalities. Gemini's specific Olathe ArcGIS layer path (gis.olatheks.org/.../Planning/Development/MapServer/0) returned HTTP 500 -- wrong service/layer name. Johnson County AIMS lead (maps.jocogov.org) was vague, no specific layer given. Overland Park confirmed Accela-based but Gemini said no public API without authentication (not independently verified). Not investigated further this round -- worth a live ArcGIS REST service-directory browse of gis.olatheks.org to find the real service name."
+      "notes": "Retried with the specific HTTP 500 evidence -- Gemini found a real, well-named service (maps.jocogov.org/arcgis/rest/services/Permits/MapServer/0, Johnson County AIMS, countywide aggregated permits across all cities) but it's administratively stopped server-side ('Service Permits/MapServer not started', confirmed on 2 separate live checks a few seconds apart, not a transient cold-start). This is a real, specific, well-identified service -- worth periodically re-checking in case the county starts it back up, rather than a fully dead lead like IA/RI. Olathe's data.olatheks.org ArcGIS Hub search turned up nothing relevant."
     },
     {
       "jurisdiction": "East Baton Rouge Parish, LA",
@@ -803,8 +803,8 @@
       "provider_type": null,
       "endpoint": null,
       "state_agent_pipeline_key": null,
-      "status": "FAILED_NEED_ALT",
-      "notes": "Confirmed no public API exists -- county uses OpenGov (no public endpoint without enterprise agreement), Des Moines uses Tyler EnerGov CSS but Gemini said no public-facing API layer. Worth a fresh check of Des Moines's real EnerGov selfservice subdomain directly (my one guessed URL, selfservice.dsm.city, failed DNS) since other cities' EnerGov instances have had genuine public search APIs this session (Carson CA) -- not confirmed dead, just not dug into further this round."
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Confirmed genuine dead end on retry. Real EnerGov subdomain found (css.dmgov.org, not selfservice.dsm.city as first guessed) but it's a closed SPA portal with session/CSRF-protected internal endpoints, no public bulk API. Polk County's OpenGov portal is the same story -- internal XHR endpoints only, no public REST/GraphQL without an enterprise API key. Thorough Gemini audit this round, no fabrication."
     },
     {
       "jurisdiction": "Boise, ID (Ada County)",
