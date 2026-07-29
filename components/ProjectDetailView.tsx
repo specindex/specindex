@@ -623,21 +623,10 @@ export function ProjectDetailView({ project }: { project: Project }) {
         <div className="lg:col-span-5 space-y-6">
           <ActivityFeed project={project} />
 
-          {project.enrichment?.permit.length ? (
-            <div className="card p-5">
-              <h3 className="text-xs font-semibold uppercase tracking-wide text-[var(--color-gray-400)]">
-                Permits &amp; filings
-              </h3>
-              <ul className="mt-3 divide-y divide-[var(--color-border)]">
-                {project.enrichment.permit.map((fact) => (
-                  <li key={fact.field_key} className="py-2.5 first:pt-0 last:pb-0">
-                    <p className="text-xs font-semibold">{fact.label}</p>
-                    <p className="mt-0.5 text-xs text-[var(--color-gray-600)]">{fact.value}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
+          {/* Permits used to have their own standalone card here too --
+              removed after design review pointed out it repeated the same
+              permit facts word-for-word that ActivityFeed already surfaces
+              as AI_SIGNAL entries a few dozen pixels above it. */}
 
           {project.enrichment?.contact.length ? (
             <div className="card p-5">
