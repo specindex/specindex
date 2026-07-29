@@ -804,6 +804,37 @@ IL_COOK_CONFIG: dict[str, Any] = {
     "source_url": "https://datacatalog.cookcountyil.gov/Property-Taxation/Cook-County-Assessor-s-Permits/6yjf-dfxs",
 }
 
+# New York City (NY's top jurisdiction by population -- spans New York,
+# Kings, Queens, Bronx, Richmond counties) -- DOB NOW: Build Job Application
+# Filings, verified live 2026-07-28: MAX(filing_date) = 2026-07-27 (fresh),
+# 935,285 total rows. Legacy BIS dataset (ipu4-2q9a) ruled out as stale
+# (MAX(issuance_date) = 2020-06-05). The trade-permit feed (rbx6-tga4,
+# DOB NOW: Build Approved Permits) has no building-classification field at
+# all -- this filings dataset does: building_type='Other' vs '1/2/3 Family'
+# is the real commercial/residential split (mirrors the legacy BIS pattern),
+# confirmed via a real GROUP BY: Other=702,095, 1 Family=91,101,
+# 2 Family=100,437, 3 Family=24,044. id prefix is ny-nycdob (not ny-nyc --
+# that prefix is already used by the earlier NYC Capital Projects Database
+# manual-research batch, fi59-268w, a different source).
+NY_NYC_CONFIG: dict[str, Any] = {
+    "state_code": "NY",
+    "provider_type": "socrata",
+    "county": "New York",
+    "endpoint": "https://data.cityofnewyork.us/resource/w9ak-ipjd.json",
+    "watermark_field": "job_filing_number",
+    "hash_fields": ["job_filing_number"],
+    "commercial_where": "building_type='Other'",
+    "date_field": "filing_date",
+    "lookback_days": 180,
+    "feed_id": "ny-nycdob",
+    "id_field": "job_filing_number",
+    "name_fields": ["job_description", "job_type", "house_no", "street_name"],
+    "address_fields": ["house_no", "street_name", "borough"],
+    "value_fields": ["initial_cost"],
+    "desc_fields": ["job_description", "job_type", "building_type"],
+    "source_url": "https://data.cityofnewyork.us/Housing-Development/DOB-NOW-Build-Job-Application-Filings/w9ak-ipjd",
+}
+
 # Miami-Dade County (FL) -- verified live 2026-07-28: MAX(PermitIssuedDate)
 # = 2026-07-24 (fresh), 36,944 total commercial-filtered records.
 FL_MIAMIDADE_CONFIG: dict[str, Any] = {
@@ -1121,6 +1152,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "TX-WILLIAMSON": TX_WILLIAMSON_CONFIG,
     "MI-WAYNE": MI_WAYNE_CONFIG,
     "IL-COOK": IL_COOK_CONFIG,
+    "NY-NYC": NY_NYC_CONFIG,
     "FL-MIAMIDADE": FL_MIAMIDADE_CONFIG,
     "WA-KING": WA_KING_CONFIG,
     "TX-TARRANT": TX_TARRANT_CONFIG,
