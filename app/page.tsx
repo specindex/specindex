@@ -10,7 +10,7 @@ import { getDivisionRollup, getMappedProjectCount } from "@/lib/divisions";
 const faqs = [
   {
     q: "Where does the project data come from?",
-    a: "County and city permit records, state economic development announcements, owner and developer releases, and construction trade press. We only use public sources, and we don't resell anyone's licensed plan room content.",
+    a: "Public records only. We don't resell anyone's licensed plan room content.",
   },
   {
     q: "How current is the index?",
@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     q: "Can you tell me if my brand is in an actual specification?",
-    a: "Not yet. Right now we report brand names found in public project coverage and in documents we're allowed to read. Reading full specification books is what we're building next, and when it ships every extracted fact will link to the page it came from.",
+    a: "Not yet. Right now we report brand names found in public project coverage. Reading full specification books is what we're building next.",
   },
   {
     q: "What do you need from us to start?",
@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     q: "How much of the country do you cover?",
-    a: "Commercial projects in all 50 states, filtered by state and county. Depth varies a lot by jurisdiction. Some counties publish permits as open data and those are well covered; elsewhere we rely on announcements and trade coverage, which is thinner.",
+    a: "Commercial projects in all 50 states, filterable by state and county. Built from public records only. Depth varies by jurisdiction.",
   },
 ];
 
@@ -148,9 +148,8 @@ export default async function HomePage() {
             happen before a purchase order exists.
           </p>
           <p className="mt-4 text-base leading-relaxed text-[var(--color-gray-600)]">
-            Most of that leaves a public trail: permit filings, groundbreakings,
-            owner announcements, project documents. The trouble is that it&apos;s
-            spread across thousands of counties and cities, and they all publish it
+            Most of that leaves a public trail. The trouble is that it&apos;s spread
+            across thousands of counties and cities, and they all publish it
             differently.
           </p>
         </div>

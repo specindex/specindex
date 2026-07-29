@@ -119,8 +119,8 @@ export function VisibilityPanel({ projects }: Props) {
           How to read a zero here
         </p>
         <p className="mt-1.5 text-sm leading-relaxed text-[var(--color-gray-600)]">
-          Permit filings and press coverage hardly ever say which manufacturer was
-          picked, because that gets written in the spec book instead. If the third
+          The public record hardly ever says which manufacturer was picked, because
+          that gets written in the spec book instead. If the third
           number is zero, it means your brand doesn&apos;t appear in the public record
           we can read. It does not mean you lost the job. Reading spec books is what
           we&apos;re building next, and that is where real mention rates will come

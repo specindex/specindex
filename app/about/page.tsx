@@ -67,9 +67,9 @@ export default async function AboutPage() {
               nobody has been named.
             </li>
             <li>
-              <strong className="text-[var(--color-ink)]">Specification extraction.</strong>{" "}
-              Spec books read division by division, with every fact traceable to its
-              page. Still being built.
+              <strong className="text-[var(--color-ink)]">Specification reading.</strong>{" "}
+              Full specification books, with every fact traceable to its source.
+              Still being built.
             </li>
           </ul>
           <div className="mt-10 flex flex-wrap gap-3">
