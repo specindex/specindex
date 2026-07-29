@@ -258,17 +258,29 @@ def main(argv: list[str] | None = None) -> int:
                         outcome = "error"
                     if outcome == "uploaded":
                         summary["files_uploaded"] += 1
+                        # Real bug found 2026-07-29: state["uploaded_files"]
+                        # was only ever incremented in the final block after
+                        # the ENTIRE candidate list finished -- for a run of
+                        # thousands of projects that can take days, meaning
+                        # the persisted counter stayed frozen at whatever a
+                        # much earlier short test run left it at, even
+                        # though real uploads were landing in GCS the whole
+                        # time. Increment it live, per upload, so the
+                        # counter is never more than one file behind reality.
+                        state["uploaded_files"] = state.get("uploaded_files", 0) + 1
                 time.sleep(0.3)
             if got_one:
                 summary["projects_with_docs"] += 1
+                if not args.dry_run:
+                    state["projects_with_docs"] = state.get("projects_with_docs", 0) + 1
 
         # Save incrementally after every batch, not just at the end -- this
         # is designed to run for many hours (thousands of projects, one
-        # Gemini call each); losing all progress to an interrupt at hour 20
-        # would be a real problem, not a cosmetic one. attempted_ids is the
-        # only field that matters for resumability (which projects to skip
-        # on the next run); cumulative uploaded/with-docs counts are purely
-        # informational and just get set from this run's own summary below.
+        # Gemini call each); losing all progress to an interrupt would be a
+        # real problem, not a cosmetic one. uploaded_files/projects_with_docs
+        # are now incremented live (see above) rather than only totalled up
+        # in a final block after the entire candidate list finishes, which
+        # for a multi-thousand-project run could be days away.
         if not args.dry_run:
             state["attempted_ids"] = sorted(attempted)
             save_state(state)
@@ -276,8 +288,6 @@ def main(argv: list[str] | None = None) -> int:
 
     if not args.dry_run:
         state["attempted_ids"] = sorted(attempted)
-        state["uploaded_files"] = state.get("uploaded_files", 0) + summary["files_uploaded"]
-        state["projects_with_docs"] = state.get("projects_with_docs", 0) + summary["projects_with_docs"]
         save_state(state)
 
     print(json.dumps(summary, indent=2))
