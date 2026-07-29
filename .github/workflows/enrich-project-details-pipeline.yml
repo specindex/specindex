@@ -26,6 +26,10 @@ on:
         description: "Max projects to enrich this run"
         required: false
         default: "25"
+      state:
+        description: "Restrict to one state code, e.g. GA (blank = all states)"
+        required: false
+        default: ""
       dry_run:
         description: "Print results without writing to the database"
         type: boolean
@@ -76,6 +80,7 @@ jobs:
             --batch \
             --apply-migration \
             --limit "${{ github.event.inputs.limit || '25' }}" \
+            ${{ github.event.inputs.state && format('--state {0}', github.event.inputs.state) || '' }} \
             ${{ github.event.inputs.dry_run == 'true' && '--dry-run' || '' }}
 
       - name: Job summary
@@ -83,6 +88,6 @@ jobs:
         run: |
           {
             echo "### Project detail enrichment — results"
-            echo "Limit: ${{ github.event.inputs.limit || '25' }}, dry_run: ${{ github.event.inputs.dry_run || 'false' }}"
+            echo "Limit: ${{ github.event.inputs.limit || '25' }}, state: ${{ github.event.inputs.state || 'all' }}, dry_run: ${{ github.event.inputs.dry_run || 'false' }}"
             echo "See step logs above for per-project fact counts and confidence levels."
           } >> "$GITHUB_STEP_SUMMARY"
