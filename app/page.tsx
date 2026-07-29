@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ProductMock } from "@/components/marketing/ProductMock";
-import { StatsStrip, DemoSection } from "@/components/marketing/DemoSection";
+import { StatsStrip } from "@/components/marketing/DemoSection";
+import { RequestDemoButton } from "@/components/marketing/RequestDemoButton";
 import { FAQ } from "@/components/marketing/FAQ";
 import { getStats, getSampleProjects, getRecentCount, getDistinctCounties } from "@/lib/projects";
 import { getVisibilitySnapshot } from "@/lib/stats";
@@ -105,9 +106,7 @@ export default async function HomePage() {
               database dump of every permit in the state.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#demo" className="btn btn-demo">
-                Request Demo
-              </a>
+              <RequestDemoButton className="btn btn-demo" />
               <Link href="/projects/" className="btn btn-outline">
                 Search the index
               </Link>
@@ -192,11 +191,6 @@ export default async function HomePage() {
           </ol>
         </div>
       </section>
-
-      {/* Demo form -- moved up from the very bottom of the page (was below
-          the FAQ and CSI table) to right after the core "window" pitch,
-          per the "demo form is buried" feedback in docs/ROADMAP.md item 47. */}
-      <DemoSection />
 
       {/* Feature 1 */}
       <section className="border-t border-[var(--color-border)] bg-[var(--color-bg)]">

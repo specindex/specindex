@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { DemoSection } from "@/components/marketing/DemoSection";
+import { RequestDemoButton } from "@/components/marketing/RequestDemoButton";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -104,18 +104,24 @@ export default function PricingPage() {
                   </li>
                 ))}
               </ul>
-              <Link
-                href={plan.href}
-                className={`mt-8 w-full text-center ${plan.highlighted ? "btn btn-primary" : "btn btn-outline"}`}
-              >
-                {plan.cta}
-              </Link>
+              {plan.href === "#demo" ? (
+                <RequestDemoButton
+                  className={`mt-8 w-full text-center ${plan.highlighted ? "btn btn-primary" : "btn btn-outline"}`}
+                >
+                  {plan.cta}
+                </RequestDemoButton>
+              ) : (
+                <Link
+                  href={plan.href}
+                  className={`mt-8 w-full text-center ${plan.highlighted ? "btn btn-primary" : "btn btn-outline"}`}
+                >
+                  {plan.cta}
+                </Link>
+              )}
             </article>
           ))}
         </div>
       </section>
-
-      <DemoSection />
     </>
   );
 }

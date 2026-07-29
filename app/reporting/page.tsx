@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { RequestDemoButton } from "@/components/marketing/RequestDemoButton";
 import { getSampleProjects } from "@/lib/projects";
 import {
   CRH_CATEGORY_KEYWORDS,
@@ -247,9 +248,7 @@ export default async function ReportingPage() {
             you exactly what the index holds on them today, including the gaps.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link href="/#demo" className="btn btn-primary">
-              Request Demo
-            </Link>
+            <RequestDemoButton className="btn btn-primary" />
             <Link href="/projects/" className="btn btn-outline">
               Search the index
             </Link>

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { DemoSection } from "@/components/marketing/DemoSection";
 
 export const metadata: Metadata = {
   title: "Product",
@@ -80,8 +79,6 @@ export default function ProductPage() {
           </div>
         </div>
       </section>
-
-      <DemoSection />
     </>
   );
 }

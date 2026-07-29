@@ -14,7 +14,12 @@ import { SignInButton, useAuth } from "@clerk/clerk-react";
 // those requires either dropping SSG for that route (loses SEO on those
 // pages) or real server-side auth -- a separate infra decision, not done
 // here.
-function SignInWall() {
+// `clerkAvailable` controls whether the Log In trigger renders as a real
+// <SignInButton> (a Clerk component -- throws without a <ClerkProvider>
+// ancestor) or a plain disabled-looking notice. The CLERK_ENABLED-false
+// caller path has no provider mounted at all, so it must never render an
+// actual Clerk component, only this same visual wall.
+function SignInWall({ clerkAvailable }: { clerkAvailable: boolean }) {
   return (
     <div className="mx-auto max-w-3xl px-5 py-16 md:px-8 md:py-24">
       <div className="card mx-auto max-w-lg p-10 text-center">
@@ -22,11 +27,21 @@ function SignInWall() {
         <p className="mt-3 text-[var(--color-gray-600)]">
           Project data is available to signed-in accounts. It&apos;s free to create one.
         </p>
-        <SignInButton mode="modal">
-          <button type="button" className="btn btn-demo mt-6">
-            Log In
-          </button>
-        </SignInButton>
+        {clerkAvailable ? (
+          <SignInButton mode="modal">
+            <button type="button" className="btn btn-demo mt-6">
+              Log In
+            </button>
+          </SignInButton>
+        ) : (
+          <p className="mt-6 text-sm text-[var(--color-gray-400)]">
+            Sign-in is temporarily unavailable. Email{" "}
+            <a href="mailto:hello@specindex.ai" className="underline">
+              hello@specindex.ai
+            </a>{" "}
+            instead.
+          </p>
+        )}
       </div>
     </div>
   );
@@ -35,11 +50,11 @@ function SignInWall() {
 function AuthGate({ children }: { children: React.ReactNode }) {
   const { isLoaded, isSignedIn } = useAuth();
   if (!isLoaded) return null;
-  if (!isSignedIn) return <SignInWall />;
+  if (!isSignedIn) return <SignInWall clerkAvailable />;
   return <>{children}</>;
 }
 
 export function ProjectsGate({ children }: { children: React.ReactNode }) {
-  if (!CLERK_ENABLED) return <SignInWall />;
+  if (!CLERK_ENABLED) return <SignInWall clerkAvailable={false} />;
   return <AuthGate>{children}</AuthGate>;
 }

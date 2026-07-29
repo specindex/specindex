@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Logo } from "@/components/Logo";
 import { CLERK_ENABLED } from "@/components/ClerkProviders";
+import { useDemoModal } from "@/components/marketing/DemoModal";
 import { SignedIn, SignedOut, SignInButton, UserButton, useAuth } from "@clerk/clerk-react";
 
 // "Projects" deliberately excluded -- /projects/ now requires sign-in
@@ -92,6 +93,7 @@ function AuthAwareNav({ pathname, mobile }: { pathname: string | null; mobile?: 
 
 function AuthAwareActions({ mobile }: { mobile?: boolean }) {
   const size = mobile ? "w-full text-center" : "hidden sm:inline-flex";
+  const { openDemoModal } = useDemoModal();
   return (
     <>
       <SignedOut>
@@ -100,9 +102,9 @@ function AuthAwareActions({ mobile }: { mobile?: boolean }) {
             Log In
           </button>
         </SignInButton>
-        <Link href="/#demo" className={`btn btn-demo ${size}`}>
+        <button type="button" onClick={openDemoModal} className={`btn btn-demo ${size}`}>
           Request Demo
-        </Link>
+        </button>
       </SignedOut>
       <SignedIn>
         <UserButton afterSignOutUrl="/" />
@@ -114,6 +116,7 @@ function AuthAwareActions({ mobile }: { mobile?: boolean }) {
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const { openDemoModal } = useDemoModal();
 
   useEffect(() => {
     setOpen(false);
@@ -154,9 +157,9 @@ export function SiteHeader() {
           {CLERK_ENABLED ? (
             <AuthAwareActions />
           ) : (
-            <Link href="/#demo" className="btn btn-demo hidden sm:inline-flex">
+            <button type="button" onClick={openDemoModal} className="btn btn-demo hidden sm:inline-flex">
               Request Demo
-            </Link>
+            </button>
           )}
           <button
             type="button"
@@ -202,9 +205,9 @@ export function SiteHeader() {
                 <AuthAwareActions mobile />
               </div>
             ) : (
-              <Link href="/#demo" className="btn btn-demo mt-4 w-full text-center">
+              <button type="button" onClick={openDemoModal} className="btn btn-demo mt-4 w-full text-center">
                 Request Demo
-              </Link>
+              </button>
             )}
           </nav>
         </div>
