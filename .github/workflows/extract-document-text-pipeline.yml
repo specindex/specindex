@@ -35,6 +35,11 @@ on:
         type: boolean
         required: false
         default: false
+      retry_errors:
+        description: "Include documents that previously failed (use after fixing a bug that caused transient failures)"
+        type: boolean
+        required: false
+        default: false
 
 permissions:
   contents: read
@@ -89,7 +94,8 @@ jobs:
             --limit "${{ github.event.inputs.limit || '20' }}" \
             ${{ github.event.inputs.state && format('--state {0}', github.event.inputs.state) || '' }} \
             ${{ github.event.inputs.document_type && format('--document-type {0}', github.event.inputs.document_type) || '' }} \
-            ${{ github.event.inputs.dry_run == 'true' && '--dry-run' || '' }}
+            ${{ github.event.inputs.dry_run == 'true' && '--dry-run' || '' }} \
+            ${{ github.event.inputs.retry_errors == 'true' && '--retry-errors' || '' }}
 
       - name: Job summary
         if: always()
