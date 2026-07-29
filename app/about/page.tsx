@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { DemoSection } from "@/components/marketing/DemoSection";
 import { StatsStrip } from "@/components/marketing/DemoSection";
+import { RequestDemoButton } from "@/components/marketing/RequestDemoButton";
 import { getStats } from "@/lib/projects";
 
 export const metadata: Metadata = {
@@ -73,17 +73,13 @@ export default async function AboutPage() {
             </li>
           </ul>
           <div className="mt-10 flex flex-wrap gap-3">
-            <Link href="#demo" className="btn btn-primary">
-              Request Demo
-            </Link>
+            <RequestDemoButton className="btn btn-primary" />
             <Link href="/projects/" className="btn btn-outline">
               Search the index
             </Link>
           </div>
         </div>
       </section>
-
-      <DemoSection />
     </>
   );
 }

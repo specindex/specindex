@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { DemoSection } from "@/components/marketing/DemoSection";
+import { RequestDemoButton } from "@/components/marketing/RequestDemoButton";
 
 export const metadata: Metadata = {
   title: "How It Works",
@@ -71,9 +71,7 @@ export default function HowItWorksPage() {
         <div className="mx-auto max-w-3xl px-5 py-16 text-center md:px-8">
           <h2 className="text-section">Want this run against your territory?</h2>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link href="#demo" className="btn btn-primary">
-              Request Demo
-            </Link>
+            <RequestDemoButton className="btn btn-primary" />
             <Link href="/projects/" className="btn btn-outline">
               Search the index
             </Link>
@@ -83,8 +81,6 @@ export default function HowItWorksPage() {
           </div>
         </div>
       </section>
-
-      <DemoSection />
     </>
   );
 }
