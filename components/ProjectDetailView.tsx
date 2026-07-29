@@ -27,7 +27,7 @@ function displaySource(source: string | null | undefined): string | null {
   return source.replace(/\bGemini\b/g, "SpecIndex AI");
 }
 
-function PipelineBar() {
+function PipelineBar({ checkedAt }: { checkedAt: string | null | undefined }) {
   return (
     <div className="card mb-6 flex flex-wrap items-center justify-between gap-3 px-4 py-3 text-xs">
       <div className="flex items-center gap-2">
@@ -48,6 +48,13 @@ function PipelineBar() {
           </span>
         ))}
       </div>
+      {/* Real timestamp from project_enrichment_checks.checked_at -- when
+          this run last happened, not a fabricated freshness claim. */}
+      {checkedAt && (
+        <span className="text-[11px] text-[var(--color-gray-400)]">
+          Page updated {formatDate(checkedAt.slice(0, 10))}
+        </span>
+      )}
     </div>
   );
 }
@@ -382,7 +389,7 @@ export function ProjectDetailView({ project }: { project: Project }) {
 
           {hasEnrichment && (
             <div className="mt-5">
-              <PipelineBar />
+              <PipelineBar checkedAt={project.enrichment?.checked_at} />
             </div>
           )}
 
@@ -400,6 +407,16 @@ export function ProjectDetailView({ project }: { project: Project }) {
                 </h1>
                 <p className="mt-2 font-mono text-xs text-[var(--color-gray-400)]">
                   {project.spx_id}
+                  {/* Real project_sources ingestion date -- when SpecIndex
+                      last pulled/re-loaded this project's record from its
+                      original public source, distinct from the AI
+                      enrichment pipeline's own "page updated" timestamp
+                      shown above in PipelineBar. */}
+                  {project.first_seen_at && (
+                    <span className="ml-2 text-[var(--color-gray-400)]">
+                      · Source data pulled {formatDate(project.first_seen_at.slice(0, 10))}
+                    </span>
+                  )}
                 </p>
                 <p className="mt-2 text-sm text-[var(--color-gray-600)]">
                   {project.city}
