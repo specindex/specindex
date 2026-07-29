@@ -1085,8 +1085,8 @@
       "provider_type": null,
       "endpoint": null,
       "state_agent_pipeline_key": null,
-      "status": "FAILED_NEED_ALT",
-      "notes": "2nd-largest-county-per-state expansion. Accela agency 'ACFW' verified reachable, real Building module confirmed via Welcome.aspx module list, but the search page's permit-type dropdown didn't render via curl (Angular SPA, needs real JS) and a live Playwright attempt with a guessed label ('Commercial New Construction') timed out on select_option -- the exact real dropdown label wasn't confirmed. Needs a proper live dropdown-option dump before retry, not attempted further this round."
+      "status": "NO_PUBLIC_DATA",
+      "notes": "2nd-largest-county-per-state expansion. Accela agency 'ACFW' reachable and real Building module confirmed via Welcome.aspx, but confirmed live via Playwright (not just curl) that anonymous requests to the Building module's CapHome.aspx REDIRECT to Login.aspx -- a genuine login-gated hard stop, same category as Jacksonville JaxEPICS/El Paso EDARP flagged earlier this session. No anti-bot/login-bypass work per standing constraint. Definitively ruled out, not just unresolved."
     },
     {
       "jurisdiction": "Nashville, TN (Davidson County)",
@@ -1138,6 +1138,16 @@
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
       "notes": "2nd-largest-county-per-state expansion. MN county govt has no permit function. Real ArcGIS item found ('Approved Building Permits', CityofSaintPaul), real fields matching Gemini's claims exactly (SUB_TYPE='Commercial' confirmed), BUT the item is genuinely stale -- last modified 2024-06-18, MAX(ISSUEDATE)=2025-06-30. St. Paul's newer system is 'PAULIE' per Gemini; this ArcGIS Hub item appears abandoned. Deferred rather than wire stale data."
+    },
+    {
+      "jurisdiction": "DuPage County, IL",
+      "county": "DuPage",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "2nd-largest-county-per-state expansion. Accela agency 'DUPAGE' reachable, no login-gate (unlike IN-Allen), but the general-search permit-type dropdown is genuinely empty on page load (confirmed via Playwright dropdown dump: only '--Select--' present) -- needs a cascading prior form selection (e.g. a license-type/category picker) before permit-type options populate, not yet investigated further. Also caveat: DUPAGE agency covers unincorporated areas only per Gemini (major commercial centers like Naperville run independent systems), so real value is limited even if fixed."
     }
   ]
 }
