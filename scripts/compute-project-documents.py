@@ -95,9 +95,45 @@ def files_from_new_jersey() -> DocMap:
     return out
 
 
+GCS_BUCKET = "specindex-ai-raw-documents"
+
+
+def files_from_gcs() -> DocMap:
+    """Scan the live GCS bucket directly instead of a local manifest --
+    this is where every document pulled since the GCS-only mandate
+    (2026-07-28: 'I don't want documents saved in my local folder only on
+    Google Cloud Storage') actually lives: GA-SAM's 411 files plus the
+    ongoing Gemini-driven step 7 backfill (data/pipeline/step7-backfill-
+    state.json), none of which ever wrote a local manifest. Blob paths are
+    `{state_dir}/{project_id}/{filename}` -- project_id is already the
+    real corpus id (unlike the old GA/Fulton manifests, no prefix rewrite
+    needed). Bucket made public 2026-07-29 so these URLs are directly
+    clickable (storage.googleapis.com/... returns 200, verified live) --
+    signed URLs would have required an API change to regenerate them
+    per-request, not viable for a stored permanent column.
+    """
+    from google.cloud import storage
+
+    out: DocMap = defaultdict(list)
+    bucket = storage.Client().bucket(GCS_BUCKET)
+    for blob in bucket.list_blobs():
+        parts = blob.name.split("/", 2)
+        if len(parts) != 3:
+            continue  # not {state}/{project_id}/{filename} -- skip stray top-level objects
+        _state_dir, project_id, filename = parts
+        out[project_id].append(
+            {
+                "title": filename,
+                "url": f"https://storage.googleapis.com/{GCS_BUCKET}/{blob.name}",
+                "content_type": blob.content_type,
+            }
+        )
+    return out
+
+
 def all_files() -> DocMap:
     total: DocMap = defaultdict(list)
-    for source in (files_from_georgia(), files_from_fulton(), files_from_new_jersey()):
+    for source in (files_from_georgia(), files_from_fulton(), files_from_new_jersey(), files_from_gcs()):
         for pid, docs in source.items():
             total[pid].extend(docs)
     return total
