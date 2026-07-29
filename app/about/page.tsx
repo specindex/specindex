@@ -31,10 +31,9 @@ export default async function AboutPage() {
             for a quote. The manufacturer usually finds out well after the fact.
           </p>
           <p className="mt-4 text-base leading-relaxed text-[var(--color-gray-600)]">
-            Most of that process leaves a public trail. We read it, turn it into
-            something searchable, and keep the citation attached, so a rep can see how
-            far along a job is, which categories nobody has committed to yet, and who
-            has already been named.
+            We maintain an extensive, continuously updated database of that activity,
+            so a rep can see how far along a job is, which categories nobody has
+            committed to yet, and who has already been named.
           </p>
         </div>
       </section>
@@ -43,7 +42,7 @@ export default async function AboutPage() {
         stats={[
           { value: `${count}+`, label: "Commercial projects in the live index" },
           { value: "50", label: "States covered" },
-          { value: "Public", label: "Only source of project data we use" },
+          { value: "100%", label: "Projects with a source link" },
           { value: "2026", label: "Year SpecIndex launched" },
         ]}
       />

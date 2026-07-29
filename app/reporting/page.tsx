@@ -115,10 +115,10 @@ export default async function ReportingPage() {
             ))}
           </div>
           <p className="mt-6 text-sm leading-relaxed text-[var(--color-gray-400)]">
-            Bid tabs, award notices, and closeout documents are public in plenty of
-            jurisdictions. The catch is that they get published separately from the
-            original permit and rarely reference it, so tying them back to the right
-            project is most of the effort.
+            Bid tabs, award notices, and closeout documents exist in plenty of
+            markets, but they get published separately from the original filing and
+            rarely reference it, so tying them back to the right project is most of
+            the effort.
           </p>
         </div>
       </section>
@@ -135,7 +135,7 @@ export default async function ReportingPage() {
               {gc.sampleSize} of {total} sampled projects
             </strong>{" "}
             ({Math.round((gc.sampleSize / total) * 100)}%), because the rest do not
-            name a contractor in any public source we have read.
+            name a contractor in any source we have read.
           </p>
           <div className="mt-8 overflow-hidden rounded-lg border border-[var(--color-border)] bg-white">
             <table className="w-full text-sm">
@@ -206,12 +206,12 @@ export default async function ReportingPage() {
             </p>
             <p className="mt-1.5 text-sm leading-relaxed text-[var(--color-gray-600)]">
               {crhNamed === 0
-                ? `Across our ${total} sampled projects, not one public source we have read names CRH, Oldcastle, or any of their brands: `
+                ? `Across our ${total} sampled projects, not one source we have read names CRH, Oldcastle, or any of their brands: `
                 : `Across our ${total} sampled projects, only ${crhNamed} name CRH, Oldcastle, or any of their brands: `}
               Belgard, Echelon Masonry, Sakrete, Amerimix, MoistureShield, RDI,
               Catalyst, or Techniseal. That says nothing about how much of this market
-              CRH holds, which is a great deal of it. It says what permits and press
-              releases contain, and they almost never contain manufacturer names. We
+              CRH holds, which is a great deal of it. It says what the sources we read
+              contain, and they almost never contain manufacturer names. We
               could only show a share of spec figure here by making one up.
             </p>
           </div>
