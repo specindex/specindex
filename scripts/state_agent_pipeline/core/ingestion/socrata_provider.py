@@ -35,7 +35,18 @@ class SocrataProvider(BaseIngestionProvider):
         app_token: str | None = None,
         max_retries: int = 4,
         order_field: str | None = None,
+        date_field: str = "processdate",
         hard_limit: int = 0,
+        feed_id: str | None = None,
+        state_code: str | None = None,
+        county: str | None = None,
+        id_field: str | None = None,
+        name_fields: list[str] | None = None,
+        address_fields: list[str] | None = None,
+        desc_fields: list[str] | None = None,
+        value_fields: list[str] | None = None,
+        city_fields: list[str] | None = None,
+        source_url: str | None = None,
     ) -> None:
         self.domain = domain
         self.dataset = dataset
@@ -46,11 +57,31 @@ class SocrataProvider(BaseIngestionProvider):
         self.page_size = page_size
         self.app_token = app_token
         self.max_retries = max_retries
+        # First-run cutoff field for the initial lookback window --
+        # defaults to NJ's "processdate" for backward compat, but every
+        # other state's dataset needs its own real date field name here
+        # (e.g. LA's "issue_date"); this used to be hardcoded, which would
+        # silently 400 or scan unbounded on any non-NJ dataset.
+        self.date_field = date_field
         self.hard_limit = hard_limit
         # Most Socrata watermark fields (recordid, an autoincrementing pk)
         # sort correctly as plain ASC text; override if a state's field
         # needs different ordering.
         self.order_field = order_field or watermark_field
+        # Opt-in generic mapping (see generic_mapping.py) -- only used
+        # when a config explicitly sets name_fields/address_fields;
+        # states that don't set these keep going through Flash/Sonnet
+        # exactly as before.
+        self.feed_id = feed_id
+        self.state_code = state_code
+        self.county = county
+        self.id_field = id_field
+        self.name_fields = name_fields
+        self.address_fields = address_fields
+        self.desc_fields = desc_fields
+        self.value_fields = value_fields
+        self.city_fields = city_fields
+        self.source_url = source_url
 
     def _build_where(self, last_watermark: str) -> str:
         clauses = [self.commercial_where] if self.commercial_where else []
@@ -62,7 +93,7 @@ class SocrataProvider(BaseIngestionProvider):
             # First run: bound by a date-ish field if the caller didn't
             # give us a numeric watermark to start from -- never an
             # unbounded scan of a multi-million-row dataset.
-            clauses.append(f"processdate >= '{cutoff}T00:00:00'")
+            clauses.append(f"{self.date_field} >= '{cutoff}T00:00:00'")
         return " AND ".join(f"({c})" for c in clauses)
 
     def _fetch_with_retries(self, url: str, headers: dict[str, str]) -> list[dict[str, Any]]:
@@ -117,15 +148,53 @@ class SocrataProvider(BaseIngestionProvider):
         return hash_row(row)
 
     def next_watermark(self, rows: list[dict[str, Any]], current: str) -> str:
-        def as_int(v: Any) -> int:
+        def as_int(v: Any) -> int | None:
             try:
                 return int(str(v).strip())
             except (TypeError, ValueError):
-                return -1
+                return None
 
-        best = as_int(current)
-        for r in rows:
-            v = as_int(r.get(self.watermark_field))
-            if v > best:
-                best = v
+        # Real bug found 2026-07-28: for a non-numeric watermark_field
+        # (e.g. Cook County's `pin`, an alphanumeric parcel id), every
+        # row's as_int() silently returned a sentinel, so `best` never
+        # advanced past its starting value -- next_watermark() always
+        # returned "0", meaning _build_where() always took the
+        # first-run/date-cutoff branch and rescanned the full lookback
+        # window on every run instead of ever narrowing to only-new rows.
+        # Safe in practice (merge_into_state()'s exact-id dedup makes
+        # re-seeing already-persisted rows a no-op) but silently wasteful.
+        # Made explicit here rather than fixed silently: a numeric
+        # watermark_field (recordid-style) still advances normally; a
+        # non-numeric one intentionally always rescans, since a string
+        # `>` comparison on something like a parcel id wouldn't track
+        # real-world chronological order anyway.
+        current_int = as_int(current)
+        row_ints = [v for v in (as_int(r.get(self.watermark_field)) for r in rows) if v is not None]
+        if current_int is None and not row_ints:
+            return current or "0"
+        best = max([current_int] + row_ints) if current_int is not None else max(row_ints)
         return str(best) if best >= 0 else current
+
+    def to_projects(self, rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        if not self.name_fields or not self.address_fields:
+            raise NotImplementedError(
+                "to_projects() requires name_fields/address_fields in state_config "
+                "-- this state isn't opted into deterministic mapping, route through Flash/Sonnet instead"
+            )
+        from .generic_mapping import field_mapped_to_projects
+
+        return field_mapped_to_projects(
+            rows,
+            feed_id=self.feed_id or "socrata",
+            state_code=self.state_code or "",
+            county=self.county or "",
+            id_field=self.id_field or self.watermark_field,
+            watermark_field=self.watermark_field,
+            name_fields=self.name_fields,
+            address_fields=self.address_fields,
+            desc_fields=self.desc_fields,
+            value_fields=self.value_fields,
+            date_field=self.date_field,
+            source_url=self.source_url or f"https://{self.domain}/resource/{self.dataset}.json",
+            city_fields=self.city_fields,
+        )

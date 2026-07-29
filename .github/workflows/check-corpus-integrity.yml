@@ -1,0 +1,34 @@
+name: Check corpus integrity (duplicate ids)
+
+# Catches the class of bug fixed 2026-07-28: a retroactive id-cleanup
+# script bypassed persist.py's merge_into_state() dedup and silently
+# wrote 867 duplicate records into fl.json + 2 into az.json. This was
+# caught manually before that commit; this workflow makes the same check
+# automatic on every push/PR touching the corpus so it can't happen
+# silently again. See scripts/check-corpus-integrity.py.
+
+on:
+  pull_request:
+    paths:
+      - "data/states/**"
+      - "public/data/national-commercial-projects.json"
+  push:
+    branches: [main]
+    paths:
+      - "data/states/**"
+      - "public/data/national-commercial-projects.json"
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          lfs: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: python3 scripts/check-corpus-integrity.py

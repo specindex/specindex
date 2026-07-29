@@ -1,0 +1,436 @@
+{
+  "batch": 5,
+  "states": [
+    {
+      "state": "me",
+      "maturity": "baseline_sam_only",
+      "project_count_approx": 94,
+      "path": [
+        {
+          "order": 1,
+          "tier": null,
+          "kind": "sam",
+          "name": "SAM.gov federal solicitations (national bulk)",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Already feeding corpus (~33 ME rows). Always-on national layer."
+        },
+        {
+          "order": 2,
+          "tier": null,
+          "kind": "usaspending",
+          "name": "USAspending.gov federal awards (national bulk)",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Already feeding corpus (~60 ME rows). Always-on national layer."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "dri",
+          "name": "Maine state economic development announcements",
+          "endpoint_or_script": "Not verified — playbook lists state EDA press as source order #1 but no live endpoint documented",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Playbook stub only. Needs live catalog check (DECD/incentive RSS or project list) before scripting."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Municipal permit open data (Portland, Bangor, etc.)",
+          "endpoint_or_script": "Not verified — playbook source order #2, no endpoint yet",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Playbook requires verifying endpoint serves Maine before bulk pull. No Socrata/ArcGIS URL documented."
+        },
+        {
+          "order": 5,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "Trade press and owner/developer announcements",
+          "endpoint_or_script": "Not built — playbook source order #3",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Corpus has 1 GSA federal listing from prior research. Deterministic HTML/RSS only; no LLM bulk scrape."
+        },
+        {
+          "order": 6,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named-project doc retrieval (capped, Sonnet)",
+          "endpoint_or_script": "One-shot enrichment only — no dual Flash+Sonnet bulk scrapes",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Last resort after Tier 0–3 exhausted. For high-value named projects already in corpus."
+        }
+      ],
+      "do_not_use": [
+        "Generic ArcGIS Hub search without verifying the layer covers Maine",
+        "Zip-code aggregate datasets with no project-level records"
+      ],
+      "next_action": "Live-verify Portland and Bangor municipal permit open-data endpoints (Socrata or ArcGIS max-date check) and document in docs/states/me.md before writing a pull script.",
+      "priority_score": 38
+    },
+    {
+      "state": "mi",
+      "maturity": "built",
+      "project_count_approx": 1437,
+      "path": [
+        {
+          "order": 1,
+          "tier": null,
+          "kind": "sam",
+          "name": "SAM.gov federal solicitations (national bulk)",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Always-on national layer (~16 MI rows in corpus)."
+        },
+        {
+          "order": 2,
+          "tier": null,
+          "kind": "usaspending",
+          "name": "USAspending.gov federal awards (national bulk)",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Always-on national layer (~158 MI rows in corpus)."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "dri",
+          "name": "Michigan Business Development Program + Community Revitalization Program lists",
+          "endpoint_or_script": "https://www.michiganbusiness.org/reports-data/",
+          "status": "verified",
+          "est_records_24mo": 700,
+          "token_cost": "low",
+          "notes": "Verified live 2026-07-27: paginated HTML (~460 MBDP + ~240 CRP real projects, city-level, investment amount, approval date). No API/CSV. Needs positive construction-signal filter; not every grant is new construction. Not yet built."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Detroit BSEED Building Permits",
+          "endpoint_or_script": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer/0 — scripts/pull-county-arcgis.py (--only detroit)",
+          "status": "built",
+          "est_records_24mo": 1257,
+          "token_cost": "none",
+          "notes": "Verified live 2026-07-27: 46,148 total, max issued_date = today. Filter: use_group IN (M,B,A,E,U) plus positive-text backstop on proposed_use_type (1,257/24mo combined). record_id BLD/RES prefix alone is NOT reliable."
+        },
+        {
+          "order": 5,
+          "tier": 2,
+          "kind": "accela",
+          "name": "Grand Rapids Accela portal",
+          "endpoint_or_script": "https://aca-prod.accela.com/GRANDRAPIDS",
+          "status": "verified",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Confirmed live 2026-07-27. GRData ArcGIS hub checked (22 datasets, zero permit-related). Needs Playwright or raw HTTP form POST per GA Accela pattern; not yet attempted."
+        },
+        {
+          "order": 6,
+          "tier": 2,
+          "kind": "accela",
+          "name": "Ann Arbor STREAM (Tyler EnerGov)",
+          "endpoint_or_script": "Tyler EnerGov — endpoint not documented in playbook",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Platform confirmed to exist (help-guide PDF) but blocked/unverifiable via direct HTTP (403) in 2026-07-27 pass. Would need real browser session."
+        },
+        {
+          "order": 7,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "MiEnviro/MPSC E-Dockets",
+          "endpoint_or_script": "Not built",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Docket number matched an existing corpus record but portal blocked via direct HTTP in 2026-07-27 pass."
+        },
+        {
+          "order": 8,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named mega-project doc retrieval (Oracle/Saline DC, etc.)",
+          "endpoint_or_script": "Capped Sonnet enrichment — no dual Flash+Sonnet bulk scrapes",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "For high-value named projects already in corpus (ENR/industry news seed). LLM last."
+        }
+      ],
+      "do_not_use": [
+        "services6.arcgis.com/ONZht79c8QWuX759/.../Building_Permits/FeatureServer — generic wrong-jurisdiction decoy (Year/Quarter aggregate, not per-project)",
+        "Wayne County and Washtenaw County ArcGIS Hubs — zero permit/building datasets (imagery, census, tax maps only)",
+        "Grand Rapids GRData ArcGIS hub — 22 datasets checked, none permit-related",
+        "Detroit record_id BLD/RES prefix as sole commercial filter — sampled BLD* rows include single-family alterations"
+      ],
+      "next_action": "Build Grand Rapids Accela pull (aca-prod.accela.com/GRANDRAPIDS) reusing scripts/pull-ga-accela-commercial.py pattern; verify commercial permit-type paths with a 1-month test before 24-month merge.",
+      "priority_score": 88
+    },
+    {
+      "state": "mn",
+      "maturity": "baseline_sam_only",
+      "project_count_approx": 181,
+      "path": [
+        {
+          "order": 1,
+          "tier": null,
+          "kind": "sam",
+          "name": "SAM.gov federal solicitations (national bulk)",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Already feeding corpus (~28 MN rows). Always-on national layer."
+        },
+        {
+          "order": 2,
+          "tier": null,
+          "kind": "usaspending",
+          "name": "USAspending.gov federal awards (national bulk)",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Already feeding corpus (~151 MN rows). Always-on national layer."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "dri",
+          "name": "Minnesota state economic development announcements",
+          "endpoint_or_script": "Not verified — playbook lists state EDA press as source order #1 but no live endpoint documented",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Playbook stub only. DEED/project announcement catalog not yet live-verified."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "socrata",
+          "name": "Municipal permit open data (Minneapolis, St. Paul, etc.)",
+          "endpoint_or_script": "Not verified — playbook source order #2, no endpoint yet",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Playbook requires verifying endpoint serves Minnesota before bulk pull. Twin Cities are the obvious first targets; no URL documented."
+        },
+        {
+          "order": 5,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "Trade press and owner/developer announcements",
+          "endpoint_or_script": "Not built — playbook source order #3",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Corpus has 1 named research record (Google Hermantown data center). Deterministic HTML/RSS only."
+        },
+        {
+          "order": 6,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named-project doc retrieval (capped, Sonnet)",
+          "endpoint_or_script": "One-shot enrichment only — no dual Flash+Sonnet bulk scrapes",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Last resort for high-value named projects (e.g. Google Hermantown DC) after Tier 0–3 exhausted."
+        }
+      ],
+      "do_not_use": [
+        "Generic ArcGIS Hub search without verifying the layer covers Minnesota",
+        "Zip-code aggregate datasets with no project-level records"
+      ],
+      "next_action": "Live-verify Minneapolis and St. Paul permit open-data endpoints (Socrata or ArcGIS FeatureServer with max-date stats query) and document winners in docs/states/mn.md.",
+      "priority_score": 58
+    },
+    {
+      "state": "mo",
+      "maturity": "baseline_sam_only",
+      "project_count_approx": 249,
+      "path": [
+        {
+          "order": 1,
+          "tier": null,
+          "kind": "sam",
+          "name": "SAM.gov federal solicitations (national bulk)",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Already feeding corpus (~32 MO rows). Always-on national layer."
+        },
+        {
+          "order": 2,
+          "tier": null,
+          "kind": "usaspending",
+          "name": "USAspending.gov federal awards (national bulk)",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Already feeding corpus (~216 MO rows). Always-on national layer."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "dri",
+          "name": "Missouri state economic development announcements",
+          "endpoint_or_script": "Not verified — playbook lists state EDA press as source order #1 but no live endpoint documented",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Playbook stub only. DED/project announcement catalog not yet live-verified."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Municipal permit open data (Kansas City, St. Louis, etc.)",
+          "endpoint_or_script": "Not verified — playbook source order #2, no endpoint yet",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Playbook requires verifying endpoint serves Missouri before bulk pull. KC and St. Louis are priority metros; no URL documented."
+        },
+        {
+          "order": 5,
+          "tier": 2,
+          "kind": "accela",
+          "name": "Accela/EnerGov municipal portals (if KC/SL portals resolve to Accela)",
+          "endpoint_or_script": "Not verified",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Tier 2 only after ArcGIS/Socrata catalog check fails. No Missouri Accela slug verified in playbook."
+        },
+        {
+          "order": 6,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "Trade press and owner/developer announcements",
+          "endpoint_or_script": "Not built — playbook source order #3",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Corpus has 1 named research record (Meta Kansas City data center). Deterministic HTML/RSS only."
+        },
+        {
+          "order": 7,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named-project doc retrieval (capped, Sonnet)",
+          "endpoint_or_script": "One-shot enrichment only — no dual Flash+Sonnet bulk scrapes",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Last resort for high-value named projects after Tier 0–3 exhausted."
+        }
+      ],
+      "do_not_use": [
+        "Generic ArcGIS Hub search without verifying the layer covers Missouri",
+        "Zip-code aggregate datasets with no project-level records"
+      ],
+      "next_action": "Live-verify Kansas City and St. Louis municipal permit feeds (Socrata/ArcGIS DCAT catalog + max-date stats) and document in docs/states/mo.md.",
+      "priority_score": 62
+    },
+    {
+      "state": "ms",
+      "maturity": "baseline_sam_only",
+      "project_count_approx": 245,
+      "path": [
+        {
+          "order": 1,
+          "tier": null,
+          "kind": "sam",
+          "name": "SAM.gov federal solicitations (national bulk)",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Already feeding corpus (~33 MS rows). Always-on national layer."
+        },
+        {
+          "order": 2,
+          "tier": null,
+          "kind": "usaspending",
+          "name": "USAspending.gov federal awards (national bulk)",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Already feeding corpus (~211 MS rows). Always-on national layer."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "dri",
+          "name": "Mississippi Development Authority project announcements",
+          "endpoint_or_script": "Not verified — capture_method mentions MDA but playbook has no live endpoint",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Corpus has 1 MDA-sourced named project (Edged Columbus DC). MDA announcement page/API not yet live-verified for bulk pull."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Municipal permit open data (Jackson, Columbus/Golden Triangle, etc.)",
+          "endpoint_or_script": "Not verified — playbook source order #2, no endpoint yet",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Playbook requires verifying endpoint serves Mississippi before bulk pull. No Socrata/ArcGIS URL documented."
+        },
+        {
+          "order": 5,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "Trade press and owner/developer announcements",
+          "endpoint_or_script": "Not built — playbook source order #3",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Deterministic HTML/RSS for named industrial/data-center announcements. No LLM bulk scrape."
+        },
+        {
+          "order": 6,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named-project doc retrieval (capped, Sonnet)",
+          "endpoint_or_script": "One-shot enrichment only — no dual Flash+Sonnet bulk scrapes",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Last resort for high-value named projects (e.g. Edged Columbus DC) after Tier 0–3 exhausted."
+        }
+      ],
+      "do_not_use": [
+        "Generic ArcGIS Hub search without verifying the layer covers Mississippi",
+        "Zip-code aggregate datasets with no project-level records"
+      ],
+      "next_action": "Live-verify Mississippi Development Authority project announcement feed and Jackson municipal permit open-data endpoint; document in docs/states/ms.md.",
+      "priority_score": 48
+    }
+  ],
+  "notes": "Batch 5 is MI-heavy: Detroit BSEED ArcGIS is the only built municipal path (1,437 corpus, ~1,262 from Detroit). ME/MN/MO/MS playbooks are stubs with federal-only corpora (94–249 projects). No dual LLM scrapes. Do not invent endpoints for stub states; next step is live verification per playbook source order."
+}

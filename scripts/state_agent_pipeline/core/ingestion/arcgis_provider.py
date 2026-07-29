@@ -41,10 +41,36 @@ class ArcGISProvider(BaseIngestionProvider):
         max_retries: int = 4,
         include_geometry: bool = True,
         date_field: str | None = None,
+        date_field_is_string: bool = False,
+        date_literal_style: str = "date",
         lookback_days: int = 30,
         hard_limit: int = 0,
+        feed_id: str | None = None,
+        state_code: str | None = None,
+        county: str | None = None,
+        id_field: str | None = None,
+        name_fields: list[str] | None = None,
+        address_fields: list[str] | None = None,
+        desc_fields: list[str] | None = None,
+        value_fields: list[str] | None = None,
+        city_fields: list[str] | None = None,
+        source_url: str | None = None,
     ) -> None:
         self.base_url = base_url.rstrip("/")
+        # Opt-in generic mapping (see generic_mapping.py) -- only used
+        # when a config explicitly sets name_fields/address_fields;
+        # states that don't set these keep going through Flash/Sonnet
+        # exactly as before.
+        self.feed_id = feed_id
+        self.state_code = state_code
+        self.county = county
+        self.id_field = id_field
+        self.name_fields = name_fields
+        self.address_fields = address_fields
+        self.desc_fields = desc_fields
+        self.value_fields = value_fields
+        self.city_fields = city_fields
+        self.source_url = source_url
         self.layer = layer
         self.out_fields = out_fields
         self.commercial_where = commercial_where
@@ -60,6 +86,17 @@ class ArcGISProvider(BaseIngestionProvider):
         # "since yesterday." Bound the first run by a real date field,
         # same principle as SocrataProvider's lookback_days.
         self.date_field = date_field
+        # A handful of ArcGIS layers (e.g. Pearland's Commercial_Permits)
+        # store their date column as esriFieldTypeString ("2021-02-23 0:00")
+        # rather than a real Esri Date field -- `DATE '...'` literal syntax
+        # 400s against those, so fall back to a plain string comparison,
+        # which works because the stored format is zero-padded YYYY-MM-DD.
+        self.date_field_is_string = date_field_is_string
+        # Some SQL-Server-backed ArcGIS Servers (e.g. Beaumont's Cityworks
+        # FeatureServer) reject the standard `DATE '...'` literal with a
+        # "Missing operand" error and require `TIMESTAMP '... 00:00:00'`
+        # instead -- verified by direct query against both variants.
+        self.date_literal_style = date_literal_style
         self.lookback_days = lookback_days
         self.hard_limit = hard_limit
 
@@ -72,7 +109,21 @@ class ArcGISProvider(BaseIngestionProvider):
             import datetime as _dt
 
             cutoff = (_dt.date.today() - _dt.timedelta(days=self.lookback_days)).isoformat()
-            clauses.append(f"{self.date_field} >= DATE '{cutoff}'")
+            if self.date_field_is_string:
+                clauses.append(f"{self.date_field} >= '{cutoff}'")
+            elif self.date_literal_style == "timestamp":
+                clauses.append(f"{self.date_field} >= TIMESTAMP '{cutoff} 00:00:00'")
+            elif self.date_literal_style == "yyyymmdd_int":
+                # Some older ArcGIS Server instances store a "date" field as
+                # a plain esriFieldTypeDouble in YYYYMMDD form (e.g.
+                # Greenville SC's APPLICDATE) and reject DATE/TIMESTAMP
+                # literals on the real date-typed field entirely (a genuine
+                # server-side bug, not a syntax issue -- confirmed by the
+                # same "Failed to execute query" error on every literal
+                # style tried against every date field on that layer).
+                clauses.append(f"{self.date_field} >= {cutoff.replace('-', '')}")
+            else:
+                clauses.append(f"{self.date_field} >= DATE '{cutoff}'")
         else:
             clauses.append(f"{self.watermark_field} > 0")
         return " AND ".join(f"({c})" for c in clauses) if len(clauses) > 1 else clauses[0]
@@ -151,3 +202,27 @@ class ArcGISProvider(BaseIngestionProvider):
             if v > best:
                 best = v
         return str(best) if best >= 0 else current
+
+    def to_projects(self, rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        if not self.name_fields or not self.address_fields:
+            raise NotImplementedError(
+                "to_projects() requires name_fields/address_fields in state_config "
+                "-- this state isn't opted into deterministic mapping, route through Flash/Sonnet instead"
+            )
+        from .generic_mapping import field_mapped_to_projects
+
+        return field_mapped_to_projects(
+            rows,
+            feed_id=self.feed_id or "arcgis",
+            state_code=self.state_code or "",
+            county=self.county or "",
+            id_field=self.id_field or "OBJECTID",
+            watermark_field=self.watermark_field,
+            name_fields=self.name_fields,
+            address_fields=self.address_fields,
+            desc_fields=self.desc_fields,
+            value_fields=self.value_fields,
+            date_field=self.date_field,
+            source_url=self.source_url or self.base_url,
+            city_fields=self.city_fields,
+        )

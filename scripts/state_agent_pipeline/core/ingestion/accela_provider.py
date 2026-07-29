@@ -46,6 +46,14 @@ HEADER_ALIASES = {
     "permit number": "permit_number",
     "building number": "permit_number",
     "record number": "permit_number",
+    # Indianapolis's Accela deployment (IN-INDIANAPOLIS) uses "Case
+    # Number" for the same column -- confirmed live 2026-07-29 via the
+    # search form's own field label ("Case Number:"). Every row got the
+    # identical fallback ID before this was added (permit_number was
+    # never populated, so 326 real rows collapsed into 1 on merge --
+    # caught and fixed same day, no bad data survived past the initial
+    # test run).
+    "case number": "permit_number",
     "permit type": "permit_type",
     "building type": "permit_type",
     "record type": "permit_type",
@@ -65,6 +73,7 @@ class AccelaProvider(BaseIngestionProvider):
         county: str,
         base_url: str,
         permit_type_label: str = "Building",
+        module: str = "Building",
         lookback_days: int = 30,
         max_pages: int = 30,
         headless: bool = True,
@@ -75,6 +84,10 @@ class AccelaProvider(BaseIngestionProvider):
         self.county = county
         self.base_url = base_url.rstrip("/")
         self.permit_type_label = permit_type_label
+        # Most deployments call the building-permits module "Building",
+        # but some (Lancaster, CA -- confirmed live: module=Building
+        # 404s/errors, only module=Permits exists) name it differently.
+        self.module = module
         self.lookback_days = lookback_days
         self.max_pages = max_pages
         self.headless = headless
@@ -105,7 +118,7 @@ class AccelaProvider(BaseIngestionProvider):
             page = browser.new_page(user_agent="Mozilla/5.0 SpecIndex-StateAgent/0.2")
             try:
                 page.goto(
-                    f"{self.base_url}/Cap/CapHome.aspx?module=Building",
+                    f"{self.base_url}/Cap/CapHome.aspx?module={self.module}",
                     timeout=30000,
                     wait_until="networkidle",
                 )
@@ -131,6 +144,27 @@ class AccelaProvider(BaseIngestionProvider):
                     )
                     if col_map is None:
                         col_map = self._build_column_map(trs)
+                        if col_map is None:
+                            # Real bug found live 2026-07-28 (Dallas,
+                            # "Commercial Alteration Addition Permit",
+                            # 100+ results): "networkidle" can return
+                            # before the results grid actually finishes
+                            # rendering on a larger result set -- the
+                            # header row genuinely wasn't in the DOM yet
+                            # on the first read, not a real "no results"
+                            # case. Poll for up to 5s instead of giving
+                            # up on the first miss, same pattern as
+                            # EnerGovProvider's response-capture retry.
+                            for _ in range(10):
+                                page.wait_for_timeout(500)
+                                trs = page.eval_on_selector_all(
+                                    "#ctl00_PlaceHolderMain_dgvPermitList_gdvPermitList tr",
+                                    "trs => trs.map(tr => Array.from(tr.querySelectorAll('td,th'))"
+                                    ".map(td => td.innerText.trim()))",
+                                )
+                                col_map = self._build_column_map(trs)
+                                if col_map is not None:
+                                    break
                         if col_map is None:
                             print(f"[accela:{self.county}] no results table/header found on page 1", file=sys.stderr)
                             break
@@ -259,7 +293,7 @@ class AccelaProvider(BaseIngestionProvider):
                     "sources": [
                         {
                             "title": f"{self.county} County Accela permit {permit_no}",
-                            "url": f"{self.base_url}/Cap/CapHome.aspx?module=Building",
+                            "url": f"{self.base_url}/Cap/CapHome.aspx?module={self.module}",
                         }
                     ],
                     "open_for": "Active commercial building permit application. Early product/spec window.",

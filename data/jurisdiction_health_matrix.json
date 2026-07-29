@@ -1,0 +1,923 @@
+{
+  "generated_at": "2026-07-28",
+  "status_values": [
+    "VERIFIED_WORKING",
+    "FAILED_NEED_ALT",
+    "NO_PUBLIC_DATA"
+  ],
+  "notes": "Backfilled 2026-07-28 from this session's live-verification work on ~15 counties. Every entry here was actually probed (HTTP/Playwright), not sourced from an LLM claim without verification. state_agent_pipeline_key maps to scripts/state_agent_pipeline/core/state_configs.py's STATE_CONFIGS dict where applicable.",
+  "jurisdictions": [
+    {
+      "jurisdiction": "Los Angeles (city), CA",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider_type": "socrata",
+      "endpoint": "https://data.lacity.org/resource/pi9x-tg5x.json",
+      "state_agent_pipeline_key": "CA-LOSANGELES",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 471,
+      "notes": "LADBS commercial permits, permit_sub_type='Commercial'."
+    },
+    {
+      "jurisdiction": "Los Angeles County (unincorporated + contract cities), CA",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider_type": "arcgis",
+      "endpoint": "https://services.arcgis.com/RmCCgQtiZLDCtblq/arcgis/rest/services/EPIC-LA_Case_History_view/FeatureServer",
+      "state_agent_pipeline_key": "CA-LACOUNTY",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 30,
+      "notes": "EPIC-LA (Tyler Technologies) case management."
+    },
+    {
+      "jurisdiction": "Torrance, CA",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider_type": "arcgis",
+      "state_agent_pipeline_key": "CA-TORRANCE",
+      "status": "VERIFIED_WORKING",
+      "notes": "Low-volume curated tracker, not a routine permit feed."
+    },
+    {
+      "jurisdiction": "Downey, CA",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/DOWNEY",
+      "state_agent_pipeline_key": "CA-DOWNEY",
+      "status": "VERIFIED_WORKING"
+    },
+    {
+      "jurisdiction": "Palmdale, CA",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider_type": "accela",
+      "state_agent_pipeline_key": "CA-PALMDALE",
+      "status": "VERIFIED_WORKING",
+      "notes": "Real dropdown label is \"Commercial Permit\", not \"Commercial\" -- verify exact text per jurisdiction, never assume."
+    },
+    {
+      "jurisdiction": "Santa Monica, CA",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider_type": "ckan",
+      "state_agent_pipeline_key": "CA-SANTAMONICA",
+      "status": "VERIFIED_WORKING",
+      "notes": "First CKAN provider built this session series."
+    },
+    {
+      "jurisdiction": "Pasadena, CA",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider_type": "arcgis",
+      "state_agent_pipeline_key": "CA-PASADENA",
+      "status": "VERIFIED_WORKING"
+    },
+    {
+      "jurisdiction": "Long Beach, CA",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider_type": "arcgis",
+      "state_agent_pipeline_key": "CA-LONGBEACH",
+      "status": "VERIFIED_WORKING",
+      "notes": "Very low volume -- curated big-projects tracker, not a routine feed. Initial 'Commercial'-only filter looked fine by row count but was 3+ years stale; real activity was under 'Mixed Use'/'Industrial'."
+    },
+    {
+      "jurisdiction": "El Monte, CA",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider_type": "energov",
+      "endpoint": "https://elmonteca-energovweb.tylerhost.net",
+      "state_agent_pipeline_key": "CA-ELMONTE",
+      "status": "VERIFIED_WORKING",
+      "notes": "Backfill only (lookback_days=900) -- no confirmed server-side date filter on this tenant's Advanced panel."
+    },
+    {
+      "jurisdiction": "Glendale, CA",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider_type": "energov",
+      "endpoint": "https://glendaleca-energovweb.tylerhost.net",
+      "state_agent_pipeline_key": "CA-GLENDALE",
+      "status": "VERIFIED_WORKING"
+    },
+    {
+      "jurisdiction": "Alhambra, CA",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider_type": "energov",
+      "endpoint": "https://alhambraca-energovpub.tylerhost.net",
+      "state_agent_pipeline_key": "CA-ALHAMBRA",
+      "status": "VERIFIED_WORKING",
+      "notes": "tylerhost.net-hosted, not self-hosted as originally assumed."
+    },
+    {
+      "jurisdiction": "Carson, CA",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider_type": "energov",
+      "endpoint": "https://cityofcarsonca-energovweb.tylerhost.net",
+      "state_agent_pipeline_key": "CA-CARSON",
+      "status": "VERIFIED_WORKING",
+      "notes": "Default SearchModule was scoped to 'License', not 'Permit' -- needed explicit select + manual change-event dispatch."
+    },
+    {
+      "jurisdiction": "Pomona, CA",
+      "county": "Los Angeles",
+      "state": "CA",
+      "provider_type": "energov",
+      "endpoint": "https://connect.pomonaca.gov",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "The one genuinely self-hosted EnerGov tenant found. Confirmed reachable (HTTP 200) but ~49s page load (vs 3-6s for tylerhost.net tenants) and no search response captured even after 90s wait + force-click. Config kept in state_configs.py as _CA_POMONA_ENERGOV_CONFIG, unregistered. Needs a much larger timeout budget to retry."
+    },
+    {
+      "jurisdiction": "San Diego County, CA (county-level)",
+      "county": "San Diego",
+      "state": "CA",
+      "provider_type": "socrata",
+      "endpoint": "https://internal-sandiegocounty.data.socrata.com/resource/dyzh-7eat.json",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Real commercial categories exist but MAX(issued_date) across all 236,722 rows is 2023-12-05 -- 2.5 years stale."
+    },
+    {
+      "jurisdiction": "San Diego County, CA (contractor trades backup)",
+      "county": "San Diego",
+      "state": "CA",
+      "provider_type": "socrata",
+      "endpoint": "https://internal-sandiegocounty.data.socrata.com/resource/eqjy-uqyj.json",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Contractor-license lookup table -- no address/date/commercial fields, not permit-level data."
+    },
+    {
+      "jurisdiction": "San Diego (city), CA",
+      "county": "San Diego",
+      "state": "CA",
+      "provider_type": "csv",
+      "endpoint": "https://seshat.datasd.org/development_permits/approvals_issued_2026_datasd.csv",
+      "state_agent_pipeline_key": "CA-SANDIEGO",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 440,
+      "notes": "Found by hand after county-level Socrata dead ends -- separate, actively-maintained city pipeline. First flat-CSV provider (csv_download_provider.py). Points at year-specific file; needs URL bump each January."
+    },
+    {
+      "jurisdiction": "Wayne (Detroit), MI",
+      "county": "Wayne",
+      "state": "MI",
+      "provider_type": "arcgis",
+      "endpoint": "https://services2.arcgis.com/qvkbeam7Wirps6zC/arcgis/rest/services/bseed_building_permits/FeatureServer",
+      "state_agent_pipeline_key": "MI-WAYNE",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 50
+    },
+    {
+      "jurisdiction": "Cook, IL",
+      "county": "Cook",
+      "state": "IL",
+      "provider_type": "socrata",
+      "endpoint": "https://datacatalog.cookcountyil.gov/resource/6yjf-dfxs.json",
+      "state_agent_pipeline_key": "IL-COOK",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 17,
+      "notes": "date_issued field has 4 garbage rows (out of 92,437) with a year-2210 timestamp -- bounded with a sanity upper clause in commercial_where."
+    },
+    {
+      "jurisdiction": "Miami-Dade, FL",
+      "county": "Miami-Dade",
+      "state": "FL",
+      "provider_type": "arcgis",
+      "endpoint": "https://services.arcgis.com/8Pc9XBTAsYuxx9Ny/arcgis/rest/services/miamidade_permit_data/FeatureServer",
+      "state_agent_pipeline_key": "FL-MIAMIDADE",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 741,
+      "notes": "741 net after removing 867 accidental duplicates from a retroactive id-rename script that bypassed merge_into_state()'s dedup."
+    },
+    {
+      "jurisdiction": "King (Seattle), WA",
+      "county": "King",
+      "state": "WA",
+      "provider_type": "socrata",
+      "endpoint": "https://data.seattle.gov/resource/76t5-zqzr.json",
+      "state_agent_pipeline_key": "WA-KING",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 108
+    },
+    {
+      "jurisdiction": "Tarrant (Fort Worth), TX",
+      "county": "Tarrant",
+      "state": "TX",
+      "provider_type": "arcgis",
+      "endpoint": "https://mapit.fortworthtexas.gov/ags/rest/services/CIVIC/Permits/MapServer",
+      "state_agent_pipeline_key": "TX-TARRANT",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 366
+    },
+    {
+      "jurisdiction": "Franklin (Columbus), OH",
+      "county": "Franklin",
+      "state": "OH",
+      "provider_type": "arcgis",
+      "endpoint": "https://services1.arcgis.com/9yy6msODkIBzkUXU/arcgis/rest/services/Building_Permits/FeatureServer",
+      "state_agent_pipeline_key": "OH-FRANKLIN",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 550
+    },
+    {
+      "jurisdiction": "Cuyahoga (Cleveland), OH",
+      "county": "Cuyahoga",
+      "state": "OH",
+      "provider_type": "arcgis",
+      "endpoint": "https://services3.arcgis.com/dty2kHktVXHrqO8i/arcgis/rest/services/Building_Permits/FeatureServer",
+      "state_agent_pipeline_key": "OH-CUYAHOGA",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 249
+    },
+    {
+      "jurisdiction": "Mecklenburg (Charlotte), NC",
+      "county": "Mecklenburg",
+      "state": "NC",
+      "provider_type": "arcgis",
+      "endpoint": "https://meckgis.mecklenburgcountync.gov/server/rest/services/BuildingPermits/FeatureServer",
+      "state_agent_pipeline_key": "NC-MECKLENBURG",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 21,
+      "notes": "Same feed as the pre-existing legacy 'NC' Flash+Sonnet daily cron key -- different id scheme, real forward-duplication risk flagged, cron disabled pending resolution."
+    },
+    {
+      "jurisdiction": "Wake (Raleigh), NC",
+      "county": "Wake",
+      "state": "NC",
+      "provider_type": "arcgis",
+      "endpoint": "https://services.arcgis.com/v400IkDOw1ad7Yad/arcgis/rest/services/Building_Permits/FeatureServer",
+      "state_agent_pipeline_key": "NC-WAKE",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 52
+    },
+    {
+      "jurisdiction": "Fairfax, VA",
+      "county": "Fairfax",
+      "state": "VA",
+      "provider_type": "arcgis",
+      "endpoint": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer",
+      "state_agent_pipeline_key": "VA-FAIRFAX",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 66
+    },
+    {
+      "jurisdiction": "Williamson, TX (Permits/FeatureServer, second feed)",
+      "county": "Williamson",
+      "state": "TX",
+      "provider_type": "arcgis",
+      "endpoint": "https://services.arcgis.com/0H6bQdxd9223gQB5/arcgis/rest/services/Permits/FeatureServer",
+      "state_agent_pipeline_key": "TX-WILLIAMSON-PERMITS",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 58,
+      "notes": "Different org/dataset than the pre-existing TX-WILLIAMSON (Site_Development/FeatureServer) -- kept as a separate key."
+    },
+    {
+      "jurisdiction": "Philadelphia, PA",
+      "county": "Philadelphia",
+      "state": "PA",
+      "provider_type": "carto",
+      "endpoint": "https://phl.carto.com/api/v2/sql",
+      "state_agent_pipeline_key": "PA-PHILADELPHIA",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 105,
+      "notes": "First CARTO provider built this session. commercialorresidential field is unreliable -- filters on approvedscopeofwork keywords instead."
+    },
+    {
+      "jurisdiction": "Maricopa, AZ",
+      "county": "Maricopa",
+      "state": "AZ",
+      "provider_type": "arcgis",
+      "state_agent_pipeline_key": "AZ-MARICOPACOUNTY",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 0,
+      "notes": "Pre-existing source, re-verified/refreshed -- both candidate rows this run were already captured by an earlier richer extraction."
+    },
+    {
+      "jurisdiction": "Dallas, TX (Gemini's first structured-JSON attempt, ungrounded)",
+      "county": "Dallas",
+      "state": "TX",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "All 7 URLs from a rigid, non-grounded Gemini prompt were fabricated: dallas-tx-aca.accela.com and data.dallascityhall.com don't resolve (the latter paired with a fake-looking Socrata 4x4 id), 2 dallascounty.org pages 404, gis.dallascounty.org is real infra but has no permits data."
+    },
+    {
+      "jurisdiction": "Dallas, TX (Accela, real source found by hand)",
+      "county": "Dallas",
+      "state": "TX",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/DALLASTX",
+      "state_agent_pipeline_key": "TX-DALLAS-NEW",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 46,
+      "notes": "Agency code DALLASTX found by trying plausible variants after Gemini's 'dallastx8' 404'd. Permit type: Commercial New Construction Permit."
+    },
+    {
+      "jurisdiction": "Dallas, TX (Accela, Alteration category)",
+      "county": "Dallas",
+      "state": "TX",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/DALLASTX",
+      "state_agent_pipeline_key": "TX-DALLAS-ALT",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 251,
+      "notes": "Permit type: Commercial Alteration Addition Permit. Surfaced a real timing-race bug in accela_provider.py (networkidle returning before a 100+-result grid finished rendering) -- fixed with bounded poll-retry."
+    },
+    {
+      "jurisdiction": "Bexar County, TX (county-level direct portal)",
+      "county": "Bexar",
+      "state": "TX",
+      "provider_type": null,
+      "endpoint": "https://www.bexar.org/1463/Building-Permits",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Real page, but the county's own permit process outside city limits is a manual Fire Marshal paper-form review -- not a digital portal."
+    },
+    {
+      "jurisdiction": "Bexar County, TX (SWQ_Permits ArcGIS layer)",
+      "county": "Bexar",
+      "state": "TX",
+      "provider_type": "arcgis",
+      "endpoint": "https://maps.bexar.org/arcgis/rest/services/PW/SWQ_Permits/MapServer",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Real and reachable, but stormwater permits only -- unrelated to commercial building activity."
+    },
+    {
+      "jurisdiction": "San Antonio (Bexar County), TX -- Addition",
+      "county": "Bexar",
+      "state": "TX",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/COSA",
+      "state_agent_pipeline_key": "TX-SANANTONIO-ADDITION",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 5
+    },
+    {
+      "jurisdiction": "San Antonio (Bexar County), TX -- Finish Out",
+      "county": "Bexar",
+      "state": "TX",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/COSA",
+      "state_agent_pipeline_key": "TX-SANANTONIO-FINISHOUT",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 14
+    },
+    {
+      "jurisdiction": "San Antonio (Bexar County), TX -- Remodel",
+      "county": "Bexar",
+      "state": "TX",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/COSA",
+      "state_agent_pipeline_key": "TX-SANANTONIO-REMODEL",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 73
+    },
+    {
+      "jurisdiction": "San Antonio (Bexar County), TX -- Sitework",
+      "county": "Bexar",
+      "state": "TX",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/COSA",
+      "state_agent_pipeline_key": "TX-SANANTONIO-SITEWORK",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 37
+    },
+    {
+      "jurisdiction": "San Antonio (Bexar County), TX -- Project Application",
+      "county": "Bexar",
+      "state": "TX",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/COSA",
+      "state_agent_pipeline_key": "TX-SANANTONIO-PROJAPP",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 201,
+      "notes": "221 fetched, 20 overlap with already-captured records (expected)."
+    },
+    {
+      "jurisdiction": "San Antonio (Bexar County), TX -- Shell",
+      "county": "Bexar",
+      "state": "TX",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/COSA",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Real dropdown category, live-probed, 0 rows in 30-day window -- not wired in."
+    },
+    {
+      "jurisdiction": "Harris (Houston), TX -- ePermits portal",
+      "county": "Harris",
+      "state": "TX",
+      "provider_type": null,
+      "endpoint": "https://eng-epermits.harriscountytx.gov/",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "DNS resolves to a real host (sp-ext.lb.hctx.net), but every curl attempt (plain and with a browser user-agent) returned connection failure (000) -- likely a WAF blocking non-browser requests, unconfirmed. Needs a Playwright-based check, not curl. Investigation paused mid-probe."
+    },
+    {
+      "jurisdiction": "Harris (Houston), TX -- Permits Documents archive",
+      "county": "Harris",
+      "state": "TX",
+      "provider_type": null,
+      "endpoint": "https://eng.harriscountytx.gov/Permits/Documents",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Same host/failure as the ePermits portal above (both alias to sp-ext.lb.hctx.net)."
+    },
+    {
+      "jurisdiction": "Harris (Houston), TX -- Parcels ArcGIS layer",
+      "county": "Harris",
+      "state": "TX",
+      "provider_type": "arcgis",
+      "endpoint": "https://services.arcgis.com/2dc1193996a44dcc80b70818dc668146/arcgis/rest/services/Harris_County_Parcels/FeatureServer/0",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Real and reachable (HTTP 200), but parcel boundaries, not permit records. Not evaluated further."
+    },
+    {
+      "jurisdiction": "Harris (Houston), TX -- BOLO_Holds permits layer",
+      "county": "Harris",
+      "state": "TX",
+      "provider_type": "arcgis",
+      "endpoint": "https://gis.hctx.net/arcgis/rest/services/Permits/BOLO_Holds_Temp_MS_2020/FeatureServer/0",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "404 -- layer doesn't exist at this path."
+    },
+    {
+      "jurisdiction": "Harris (Houston), TX -- Open Data Hub",
+      "county": "Harris",
+      "state": "TX",
+      "provider_type": null,
+      "endpoint": "https://data-harriscounty.opendata.arcgis.com/",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "HTML page loads (200) via real browser, but the catalog search API (api/search/v1/...) returns 401 Unauthorized (\"private org id... not accessible\") -- not a usable public catalog via the standard API path. Both eng-epermits.harriscountytx.gov and eng.harriscountytx.gov confirmed ERR_CONNECTION_RESET via real Playwright browser too (not just curl) -- some active block, not a UA/bot-detection issue."
+    },
+    {
+      "jurisdiction": "Jacksonville / Duval County, FL -- JaxEPICS AdvancedSearch",
+      "county": "Duval",
+      "state": "FL",
+      "provider_type": null,
+      "endpoint": "https://jaxepics.coj.net/Search/AdvancedSearch",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Real page but is the \"manage saved searches\" feature (calls api/Searches/GetSavedSearches, which itself 504'd), not a permit search. Custom-built Angular app (JaxEPICS), homepage title is literally \"Login\" -- full search/application functionality is account-gated."
+    },
+    {
+      "jurisdiction": "Jacksonville / Duval County, FL -- individual permit detail pages",
+      "county": "Duval",
+      "state": "FL",
+      "provider_type": null,
+      "endpoint": "https://jaxepics.coj.net/Permit/View/{hash}",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Confirmed real and publicly viewable without login (200, Google-indexed, e.g. permit L-16-785825.000), but no confirmed anonymous bulk/date-range search found to enumerate them -- individual-permit-only access is not useful for incremental ingestion."
+    },
+    {
+      "jurisdiction": "Jacksonville / Duval County, FL -- Gemini-claimed Guest Sign In search flow",
+      "county": "Duval",
+      "state": "FL",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Gemini described a specific guest-search UI flow (magnifying-glass search icon, \"Permits Plus\" logo, a quoted guest-mode banner) that could not be located on the live site -- the \"Permits Plus\" branding in particular was never observed anywhere during live inspection, a likely fabrication despite confident, specific phrasing."
+    },
+    {
+      "jurisdiction": "Jacksonville / Duval County, FL -- maps.coj.net BID/PermitBoundary",
+      "county": "Duval",
+      "state": "FL",
+      "provider_type": "arcgis",
+      "endpoint": "https://maps.coj.net/coj/rest/services/BID/PermitBoundary/MapServer",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Real service (not enumerated in the public folder catalog, but directly reachable) -- requires an ArcGIS token (\"error code 499: Token Required\"), not publicly queryable without credentials."
+    },
+    {
+      "jurisdiction": "Jacksonville / Duval County, FL -- maps.coj.net full catalog",
+      "county": "Duval",
+      "state": "FL",
+      "provider_type": "arcgis",
+      "endpoint": "https://maps.coj.net/coj/rest/services",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Real, live, 33 real enumerated folders -- none permit/building/inspection related (ADARamps, Parcels, Parks, Utilities, etc). CityBiz/Parcels and DuvalMaps/DuvalCivilPlanning (both Gemini-claimed) either error (400/500) or do not exist (404)."
+    },
+    {
+      "jurisdiction": "Pikes Peak Regional Building Department (Colorado Springs + El Paso County), CO",
+      "county": "El Paso",
+      "state": "CO",
+      "provider_type": null,
+      "endpoint": "https://www.pprbd.org/Search/Permit",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Real, excellent search form (ProjectType: New/Alt/CO Commercial, built-in Last 30 Days range, covers CO Springs + El Paso County + 6 more jurisdictions in one form) -- but submission is blocked by a real Cloudflare Turnstile CAPTCHA. Not pursued (out of scope, same as Compton)."
+    },
+    {
+      "jurisdiction": "Colorado Springs, CO (Accela, Planning/Public Works/Fire/Stormwater)",
+      "county": "El Paso",
+      "state": "CO",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/COSPRINGS",
+      "state_agent_pipeline_key": "CO-SPRINGS",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 100,
+      "notes": "Only one permit type in dropdown (\"Building Permit Review\", no commercial/residential split) -- confirms Gemini's own description that this Accela instance is not the primary building-permit channel (PPRBD is). Verified live: 110 rows/30 days, 105 real commercial permits, 5 admin noise (re-inspection fees)."
+    },
+    {
+      "jurisdiction": "El Paso County, CO -- EDARP (development applications)",
+      "county": "El Paso",
+      "state": "CO",
+      "provider_type": null,
+      "endpoint": "https://epcdevplanreview.com/",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Real portal, but for development/zoning applications (not building permits) and requires Register/Log in for actual application data -- not investigated further given CO-SPRINGS Accela already provided a working source."
+    },
+    {
+      "jurisdiction": "City of Cleveland, OH (Dept. of Building and Housing)",
+      "county": "Cuyahoga",
+      "state": "OH",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/COC",
+      "state_agent_pipeline_key": "OH-CLEVELAND",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 126,
+      "notes": "Separate from Cuyahoga County ArcGIS feed (OH-CUYAHOGA) -- same LA-City-vs-County pattern. 15 real commercial categories in a 98-option dropdown; probed 3, kept 2: Commercial Building Construction Permit (144/30-days, dominant) + COO - New Commercial (2). Commercial Combo was 0."
+    },
+    {
+      "jurisdiction": "City of Cleveland, OH -- Accela Attachments/Digital Plan Room (Step 7 test)",
+      "county": "Cuyahoga",
+      "state": "OH",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/COC/Cap/CapDetail.aspx (Attachments tab)",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Tested step 7 (document pull) against a real captured permit (BCB26-031403, St. Mark Parish). Gemini claimed basic documents are publicly viewable via the Attachments tab -- verified live and found otherwise: the tab UI loads for anonymous users but shows an upload form, not a document list; the real backend call that would list existing documents (.../Dpr/Handlers/Api.ashx/ab/records/{id}/planroom) returns 403 Forbidden anonymously. Confirms the memory/AGENT_STRATEGY.md guidance to verify every document-access claim live, same as URL claims."
+    },
+    {
+      "jurisdiction": "Georgia -- SAM.gov solicitation documents (Step 7)",
+      "county": null,
+      "state": "GA",
+      "provider_type": "sam_gov",
+      "endpoint": "https://sam.gov/api/prod/opps/v3/opportunities/{noticeId}/resources",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "First real Step 7 document-pull win. SAM.gov public opportunity API exposes real downloadable attachments (structural drawings, specs, bid abstracts) with zero auth -- verified by downloading and file-type-checking a real PDF. scripts/fetch-sam-gov-documents.py streams straight to GCS (gs://specindex-ai-raw-documents/georgia/), never touches local disk. Ran for all 44 GA SAM.gov projects: 30/44 had documents, 411 files, 752MB uploaded."
+    },
+    {
+      "jurisdiction": "New York City (5 boroughs), NY",
+      "county": "New York / Kings / Queens / Bronx / Richmond",
+      "state": "NY",
+      "provider_type": "socrata",
+      "endpoint": "https://data.cityofnewyork.us/resource/w9ak-ipjd.json",
+      "state_agent_pipeline_key": "NY-NYC",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 57758,
+      "notes": "DOB NOW: Build Job Application Filings. Legacy BIS (ipu4-2q9a) ruled out stale (MAX=2020-06-05). Trade-permit feed (rbx6-tga4) has no building-classification field. This filings dataset does: building_type='Other' vs '1/2/3 Family' is the real commercial/residential split (mirrors legacy BIS pattern). Verified live MAX(filing_date)=2026-07-27, 935,285 total rows. 180-day lookback (Tier-1 broadened window): 57,804 rows fetched, 57,758 new after merge."
+    },
+    {
+      "jurisdiction": "Cambridge, MA",
+      "county": "Middlesex",
+      "state": "MA",
+      "provider_type": "socrata",
+      "endpoint": "https://data.cambridgema.gov/resource/9qm7-wbdc.json",
+      "state_agent_pipeline_key": "MA-CAMBRIDGE",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 3,
+      "notes": "MA county govt has no permit function -- purely municipal, no Middlesex-wide source. Gemini's first dataset ID (25q4-7asf) was fabricated/404. Real one found via Cambridge's own Socrata catalog search: 9qm7-wbdc ('Building Permits: New Construction'). MAX(issue_date)=2026-07-20. proposed_building_use='Commercial / Mixed Use' is real (114/355 total rows). Low volume: only 3 rows in 180-day window -- thin but real, new construction specifically is rare. Somerville (nneb-s3f7) checked too: real dataset, MAX(issue_date)=2026-07-27, but no property-use field at all -- skipped, no reliable commercial filter."
+    },
+    {
+      "jurisdiction": "Minneapolis, MN",
+      "county": "Hennepin",
+      "state": "MN",
+      "provider_type": "arcgis",
+      "endpoint": "https://services.arcgis.com/afSMGVsC7QlRK1kZ/arcgis/rest/services/CCS_Permits/FeatureServer",
+      "state_agent_pipeline_key": "MN-HENNEPIN",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 803,
+      "notes": "MN county govt has no permit function -- purely municipal. Gemini gave the correct ArcGIS item GUID but a fabricated org ID (1st35idbL2i24j8I, invalid URL) -- real org ID (afSMGVsC7QlRK1kZ) found via a direct ArcGIS Online item-info lookup on the GUID. MAX(issueDate)=2026-07-27, 400,479 total rows, permitType='Commercial' is real (45,643 rows). 180-day window: 1,787 fetched, 803 new after merge."
+    },
+    {
+      "jurisdiction": "Salt Lake City, UT",
+      "county": "Salt Lake",
+      "state": "UT",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/SLCREF",
+      "state_agent_pipeline_key": "UT-SALTLAKE",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 250,
+      "notes": "IMPORTANT catch: Gemini's first agency-code guess ('SLC') was WRONG -- verified live that aca-prod.accela.com/SLC actually belongs to St. Louis County, MO (error-page links reference stlouiscountymo.gov; module list Licenses/N/PublicWorks/WaterandSewer has no Building module at all). Accela agency codes are shared/global across all cities using the platform and are NOT derivable from a city's initials -- always verify live. Real code is 'SLCREF', confirmed via a corrected Gemini query with the wrong-agency evidence attached; verified live (200 on Welcome.aspx, real Building module present). 180-day window: 300 rows fetched (accela provider's pagination cap), 250 new after merge."
+    },
+    {
+      "jurisdiction": "Montgomery County, MD",
+      "county": "Montgomery",
+      "state": "MD",
+      "provider_type": "socrata",
+      "endpoint": "https://data.montgomerycountymd.gov/resource/7ate-xrxm.json",
+      "state_agent_pipeline_key": "MD-MONTGOMERY",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 0,
+      "notes": "Genuine county-level source (unlike MA/MN/WI, MD county government runs permitting directly). Gemini's answer was fully accurate this time -- MAX(issueddate)=2026-07-24, applicationtype is 100% 'COMMERCIAL BUILDING' (2,272/2,272), pre-filtered by the county itself. 0 new records on merge -- this exact dataset was already captured by an earlier manual-research pull (3,198 pre-existing md-montgomery-* records) -- good corroboration of that prior work, and now wired into the automated pipeline for future incremental refresh via watermark."
+    },
+    {
+      "jurisdiction": "Milwaukee, WI",
+      "county": "Milwaukee",
+      "state": "WI",
+      "provider_type": "ckan",
+      "endpoint": "https://data.milwaukee.gov",
+      "state_agent_pipeline_key": "WI-MILWAUKEE",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 0,
+      "notes": "WI county govt has no permit function -- purely municipal. 6th platform type (CKAN, reused ckan_provider.py first built for Santa Monica CA) -- but that provider had never implemented to_projects()/generic_mapping opt-in before (Santa Monica always went through Flash/Sonnet); added it here (ckan_provider.py + factory.py) since this is clean structured data with a real 'Permit Type' field. Verified live: resource_id 828e9630-d7cb-42e4-960e-964eae916397, MAX('Date Issued')=2026-06-15, 'Permit Type' IN ('Commercial Alteration Permit','Commercial New Construction Permit') = 8,257 real rows. Field names contain spaces, required embedding double-quotes directly in date_field/commercial_where config strings rather than patching the provider's raw-SQL string building. 0 new on merge -- 1,297 wi-milwaukee-* records already existed from earlier manual research, good corroboration, now wired for auto-refresh."
+    },
+    {
+      "jurisdiction": "Honolulu County, HI (City & County of Honolulu)",
+      "county": "Honolulu",
+      "state": "HI",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "HI's top county by population, no config wired. Only building-permit dataset on data.honolulu.gov (4vab-c87q) is a frozen snapshot, verified live MAX(issuedate)=2025-07-01 (stale, >1yr old). DPP's live system (HNL Build/CivCheck AI) is an interactive web portal only, no public API (SODA/REST/OData) -- confirmed by Gemini on a direct feedback round after being shown the staleness evidence (this time gave an honest 'no active API exists' answer instead of guessing). No ArcGIS FeatureServer for permits either (HoLIS only has zoning/TMK/parcel layers). Would require either a UIPA public-records request or scraping HNL Build's UI directly -- not attempted, out of scope for now (not a CAPTCHA/anti-bot case, just genuinely no queryable feed)."
+    },
+    {
+      "jurisdiction": "St. Louis County, MO",
+      "county": "St. Louis",
+      "state": "MO",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/SLC",
+      "state_agent_pipeline_key": "MO-STLOUIS",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 180,
+      "notes": "Same 'SLC' Accela agency code as the Salt Lake City investigation -- coincidence, these are two different real agencies (St. Louis County MO here, Salt Lake City is really 'SLCREF'). Default 'Building' module 404s here; real vertical-construction permits live under the 'PublicWorks' module's search form (record type PublicWorks/Building/Commercial/New Building, visible label 'BUILDING COMMERCIAL NEW BUILDING') -- confirmed live by fetching the module's real dropdown option HTML. 180-day window: 190 fetched, 180 new after merge."
+    },
+    {
+      "jurisdiction": "Shelby County, TN (Memphis)",
+      "county": "Shelby",
+      "state": "TN",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Gemini gave two fabricated/dead domains in a row: 'datamidsouth.org' (DNS failure, does not resolve) and 'aca.memphistn.gov' (also does not resolve). Real Memphis open data portal (data.memphistn.gov) exists but is an ArcGIS Hub with no queryable permit FeatureServer -- the 'DPD Building Permits' tile just links out to develop901.com. Real upstream system is Develop901 (Accela-based) but the real Accela agency code/domain hasn't been found yet -- worth a fresh live-search attempt (try aca-prod.accela.com/{MEMPHIS,SHELBY,DEVELOP901} variants) before ruling out entirely, same pattern that found SLCREF for Salt Lake City."
+    },
+    {
+      "jurisdiction": "Oklahoma County, OK (Oklahoma City)",
+      "county": "Oklahoma",
+      "state": "OK",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Confirmed no public queryable API for OKC or Oklahoma County building permits -- data.okc.gov's open catalog explicitly excludes building permits (only Active Work Zones/Bond Infrastructure). OKC uses Accela (OKC Citizen Access) but the real agency code hasn't been found/verified yet -- same pattern as Memphis, worth a live agency-code search before ruling out (not attempted this round due to time)."
+    },
+    {
+      "jurisdiction": "City of Atlanta, GA (Fulton County)",
+      "county": "Fulton",
+      "state": "GA",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/ATLANTA_GA",
+      "state_agent_pipeline_key": "GA-ATLANTA",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 81,
+      "notes": "Fulton is GA's actual top county by population (Gwinnett, already wired, is #2). Fulton county govt issues almost no permits itself (nearly 100% incorporated into Atlanta/Sandy Springs/Roswell/etc) -- City of Atlanta carries the vast majority of volume. Accela agency code 'ATLANTA_GA' verified live (200 on Welcome.aspx), real Building module dropdown confirmed 20+ Commercial-prefixed record types. 180-day window: 91 fetched, 81 new after merge."
+    },
+    {
+      "jurisdiction": "Louisville Metro, KY (Jefferson County)",
+      "county": "Jefferson",
+      "state": "KY",
+      "provider_type": "arcgis",
+      "endpoint": "https://services1.arcgis.com/79kfd2K6fskCAkyg/arcgis/rest/services/active_construction_permits/FeatureServer",
+      "state_agent_pipeline_key": "KY-JEFFERSON",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 77,
+      "notes": "Louisville Metro is a consolidated city-county government, so this genuinely covers the whole county. Gemini's answer was unusually accurate (dataset name + full field schema all matched exactly) but didn't give the real service URL -- found via ArcGIS Online item search + item-info lookup. MAX(ISSUE_DATE)=2026-07-28 (today, exceptionally fresh), CATEGORY_NAME='Commercial' real (888 total rows; other values Single Family/Multifamily/Condo-Patio/null). 180-day window: 77 fetched, 77 new."
+    },
+    {
+      "jurisdiction": "Portland, OR (Multnomah County)",
+      "county": "Multnomah",
+      "state": "OR",
+      "provider_type": "arcgis",
+      "endpoint": "https://www.portlandmaps.com/arcgis/rest/services/Public/BDS_Permit/MapServer/2",
+      "state_agent_pipeline_key": "OR-MULTNOMAH",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 1,
+      "notes": "Portland Permitting & Development does NOT use Accela -- publishes directly via PortlandMaps ArcGIS REST. Layer name is literally 'Commercial Construction Permit', pre-filtered by the city itself (same pattern as MD-MONTGOMERY), no where-clause needed. MAX(ISSUED)=2026-07-24, 7,071 total rows. 180-day window: 75 fetched, only 1 new -- most already captured by earlier manual research."
+    },
+    {
+      "jurisdiction": "Fairfield County, CT",
+      "county": "Fairfield",
+      "state": "CT",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Genuine dead end -- CT abolished county government entirely in 1960, no unified building department exists. Checked all major municipalities (Stamford, Bridgeport, Norwalk, Fairfield town, Greenwich): all use proprietary platforms (OpenGov/ViewPoint Cloud, CitySquared) with zero public API access, no Accela deployment anywhere in the county. State-level data.ct.gov only has aggregated annual town-level housing permit counts, not row-level transactional data. Honest Gemini answer, no fabrication -- ruled out."
+    },
+    {
+      "jurisdiction": "Bernalillo County, NM (unincorporated + Albuquerque via county Accela)",
+      "county": "Bernalillo",
+      "state": "NM",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/bernco",
+      "state_agent_pipeline_key": "NM-BERNALILLO",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 82,
+      "notes": "Primary Albuquerque lead (gis.cabq.gov ArcGIS) is unreachable -- DNS resolves but TCP connect to 443 times out, confirmed with a 25s timeout retry, not a transient blip. Fell back to Bernalillo County's own Accela portal (agency 'bernco', verified live), real Building module dropdown has 'Commercial Building' (BCBP code, matches what Gemini separately claimed for the bulk CSV export -- good corroboration). 180-day window: 122 fetched, 82 new."
+    },
+    {
+      "jurisdiction": "Jefferson County, AL (Birmingham)",
+      "county": "Jefferson",
+      "state": "AL",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Two real Accela agencies confirmed live: BIRMINGHAM (city) and JCCAL (unincorporated county). Birmingham's Building module dropdown only has a generic 'Building Permit' label, no Commercial/Residential split visible at the top level (may be a cascading second-level dropdown not yet investigated). JCCAL's Building module page loaded (200) but returned zero <option> elements and no <title> -- likely needs a different module param or has an unusual page structure, not yet diagnosed. Deferred rather than guess at an unfiltered permit_type_label that would pollute the corpus with residential noise."
+    },
+    {
+      "jurisdiction": "Omaha, NE (Douglas County)",
+      "county": "Douglas",
+      "state": "NE",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/OMAHA",
+      "state_agent_pipeline_key": "NE-DOUGLAS",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 111,
+      "notes": "Same 404/empty-module symptom as MO-STLOUIS and AL-JCCAL: default 'Building' module returns 200 but zero dropdown options. Real module is 'Permits' (confirmed via OMAHA's Welcome.aspx module list: Enforcement/Fire/Licenses/Permits/Planning/PublicWorks/Rentals -- no Building at all). Real option 'New Building' (Permits/BUILDING/COMMERCIAL/NEW BUILDING) confirmed live. 180-day window: 121 fetched, 111 new. Pattern forming across this backlog: always check an agency's real module list before assuming 'Building' -- it's wrong roughly as often as it's right."
+    },
+    {
+      "jurisdiction": "Providence County, RI (City of Providence)",
+      "county": "Providence",
+      "state": "RI",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Confirmed genuine dead end on retry. Real current GIS Hub found (pvd-gis-providenceri.hub.arcgis.com, replacing the unreachable webgis.providenceri.gov) but has no permit layer (parcels/zoning/flood/wards/sewer only). Socrata dataset confirmed frozen at 2018-09-18, no newer one exists. Active platform is closed OpenGov, no public API. Thorough Gemini audit this round, no fabrication."
+    },
+    {
+      "jurisdiction": "Johnson County, KS (Olathe/Overland Park)",
+      "county": "Johnson",
+      "state": "KS",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Retried with the specific HTTP 500 evidence -- Gemini found a real, well-named service (maps.jocogov.org/arcgis/rest/services/Permits/MapServer/0, Johnson County AIMS, countywide aggregated permits across all cities) but it's administratively stopped server-side ('Service Permits/MapServer not started', confirmed on 2 separate live checks a few seconds apart, not a transient cold-start). This is a real, specific, well-identified service -- worth periodically re-checking in case the county starts it back up, rather than a fully dead lead like IA/RI. Olathe's data.olatheks.org ArcGIS Hub search turned up nothing relevant."
+    },
+    {
+      "jurisdiction": "East Baton Rouge Parish, LA",
+      "county": "East Baton Rouge",
+      "state": "LA",
+      "provider_type": "socrata",
+      "endpoint": "https://data.brla.gov/resource/7fq7-8j7r.json",
+      "state_agent_pipeline_key": "LA-EBR",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 1091,
+      "notes": "Genuine parish-level source, not a top-city proxy -- data.brla.gov is the consolidated City-Parish government's own portal. Gemini's answer fully accurate. MAX(issueddate)=2026-07-24, designation='Commercial' real (46,656/142,426 total). 180-day window: 1,092 fetched, 1,091 new -- one of the largest single-run yields this backlog."
+    },
+    {
+      "jurisdiction": "Greenville County, SC (City of Greenville)",
+      "county": "Greenville",
+      "state": "SC",
+      "provider_type": "arcgis",
+      "endpoint": "https://citygis.greenvillesc.gov/arcgis/rest/services/InfoHUB/BuildingPermits_PriorTwoYears/MapServer/0",
+      "state_agent_pipeline_key": "SC-GREENVILLE",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 77,
+      "notes": "County govt has no public API (eTRAKiT web portal only) -- wired City of Greenville, which nightly-extracts from Accela into a public ArcGIS layer. Found the real service URL via an ArcGIS Online owner-scoped item search after Gemini gave only the layer name. Real dead end found mid-verification: this old ArcGIS Server (10.81) rejects DATE/TIMESTAMP literal queries against the true date field (NewIssueDate) entirely -- a genuine server bug, not a syntax mistake, confirmed by testing every literal style. Worked around using APPLICDATE, a plain numeric YYYYMMDD field, via a new 'yyyymmdd_int' date_literal_style added to arcgis_provider.py. PERMIT_TYPE='BLDC' confirmed real (matches Gemini's claimed code exactly). 77 fetched, 77 new."
+    },
+    {
+      "jurisdiction": "Polk County, IA (Des Moines)",
+      "county": "Polk",
+      "state": "IA",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Confirmed genuine dead end on retry. Real EnerGov subdomain found (css.dmgov.org, not selfservice.dsm.city as first guessed) but it's a closed SPA portal with session/CSRF-protected internal endpoints, no public bulk API. Polk County's OpenGov portal is the same story -- internal XHR endpoints only, no public REST/GraphQL without an enterprise API key. Thorough Gemini audit this round, no fabrication."
+    },
+    {
+      "jurisdiction": "Boise, ID (Ada County)",
+      "county": "Ada",
+      "state": "ID",
+      "provider_type": "accela",
+      "endpoint": "https://permits.cityofboise.org/CitizenAccess",
+      "state_agent_pipeline_key": "ID-ADA",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 98,
+      "notes": "Standard aca-prod.accela.com/boise URL 301-redirects -- the real, live Accela instance is hosted at Boise's own branded domain, permits.cityofboise.org/CitizenAccess. Real Building module dropdown has '502-New or Added Commercial' among several Commercial-prefixed types. 180-day window: 118 fetched, 98 new."
+    },
+    {
+      "jurisdiction": "Pulaski County, AR (Little Rock)",
+      "county": "Pulaski",
+      "state": "AR",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Gemini's dataset ID (waw2-4wxz) 404'd, and data.littlerock.gov itself redirects to a plain informational page -- no Socrata portal exists there (dead/fabricated lead, not just a wrong ID). Little Rock's real system is 'Dynamic Portal'/Selectron WebPermits per Gemini, not Accela. Not investigated further this round -- worth checking permitpayment.littlerock.gov or inspections.littlerock.gov directly for a real API."
+    },
+    {
+      "jurisdiction": "Hinds County, MS (Jackson)",
+      "county": "Hinds",
+      "state": "MS",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Genuine dead end -- no Socrata/CKAN/CARTO/ArcGIS layer for either Hinds County or City of Jackson. County uses Accela ACA as a portal-only system (no public REST API). City of Jackson has no digital open-data presence for permits at all, would require a formal MS Public Records Act request. Honest Gemini answer, no fabrication."
+    },
+    {
+      "jurisdiction": "New Castle County, DE (Wilmington)",
+      "county": "New Castle",
+      "state": "DE",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Genuine dead end -- county uses ProjectDox/ePlans + a web-form-only eServices portal, no Accela, no Socrata/CKAN/CARTO/ArcGIS API. Delaware FirstMap has a periodic (monthly) statewide aggregated layer but it's not a live transaction feed. Honest Gemini answer."
+    },
+    {
+      "jurisdiction": "Hillsborough County, NH (Manchester/Nashua)",
+      "county": "Hillsborough",
+      "state": "NH",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Genuine dead end -- NH counties have no permitting function at all. Manchester processes permits entirely on paper/PDF. Nashua has an ArcGIS Hub (parcels/assessing only, confirmed no permit layer). Honest Gemini answer, correctly caught its own risk of confusing this with Hillsborough County FL (which does use Accela/HillsGovHub)."
+    },
+    {
+      "jurisdiction": "Yellowstone County, MT (Billings)",
+      "county": "Yellowstone",
+      "state": "MT",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "City of Billings (primary commercial jurisdiction) uses CityView, confirmed no public API. Found a real statewide MT DLI Accela agency ('MONTANA', verified live, 200 on Welcome.aspx) but it covers only projects OUTSIDE municipal enforcement (i.e. NOT Billings, the actual commercial center) and its Building module has only a generic 'Building Permit' catch-all record type with no commercial/residential split (only Electrical has a Commercial-specific sub-type) -- deferred rather than wire an unfiltered, low-relevance feed."
+    },
+    {
+      "jurisdiction": "Sioux Falls, SD (Minnehaha County)",
+      "county": "Minnehaha",
+      "state": "SD",
+      "provider_type": "arcgis",
+      "endpoint": "https://gis.siouxfalls.gov/arcgis/rest/services/Data/Community/MapServer/3",
+      "state_agent_pipeline_key": "SD-SIOUXFALLS",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 1368,
+      "notes": "Gemini's domain had a .org/.gov typo (gis.siouxfalls.org doesn't resolve, real is gis.siouxfalls.gov) -- found via an ArcGIS Online item search matching the item ID embedded in Gemini's own GeoJSON download URL. Minnehaha County's own ArcGIS lead was also fabricated (NXDOMAIN), not pursued further since Sioux Falls covers ~85% of the county. MAX(ISSUEDATE)=2026-07-25, PERMITTYPE='Commercial Building' real. 1,368 new -- one of the largest single-run yields in the whole backlog."
+    },
+    {
+      "jurisdiction": "Indianapolis, IN (Marion County -- Unigov)",
+      "county": "Marion",
+      "state": "IN",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/INDY",
+      "state_agent_pipeline_key": "IN-INDIANAPOLIS",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 281,
+      "notes": "Resolves the 'Marion County flagged hard' note from an earlier session -- that assumed the only option was the statewide Oracle Reports CDR system. Indianapolis actually runs its own Accela instance (agency 'INDY', reached via redirect from permitsandcases.indy.gov, same branded-domain pattern as Boise). Same recurring empty-'Building'-module symptom as MO-STLOUIS/NE-DOUGLAS -- real module is 'Permits'. No 'Commercial' terminology at all -- uses 'Improvement Location Permit' (ILP), 'Improvement Location Permit-Non-Residential' is the real commercial-equivalent type. Caught and fixed a real bug during verification: Indianapolis's results table uses 'Case Number' as its permit-number column header, not in accela_provider.py's alias list -- every row got an identical fallback ID and 325 of 326 real records silently collapsed into 1 on the first merge attempt. Fixed the alias list, removed the 1 corrupted record, reset the watermark, and re-ran clean: 281 new, 341 unique of 341 fetched (minus normal within-window re-appearances)."
+    },
+    {
+      "jurisdiction": "Cass County, ND (Fargo)",
+      "county": "Cass",
+      "state": "ND",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Genuine dead end -- no Accela/Socrata/CKAN/CARTO anywhere in the county. Fargo's ArcGIS REST directory has building footprints only, no permit layer. Only public access is Fargo's own web reporting portal (CSV export button, no API)."
+    },
+    {
+      "jurisdiction": "Chittenden County, VT (Burlington)",
+      "county": "Chittenden",
+      "state": "VT",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Genuine dead end -- Burlington uses closed OpenGov, no Accela. CCRPC/VCGI regional GIS has zoning/parcels/housing summaries only, no permit layer. State-level Act 250/Fire Safety portals are web-viewer-only."
+    },
+    {
+      "jurisdiction": "Laramie County, WY (Cheyenne)",
+      "county": "Laramie",
+      "state": "WY",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Genuine dead end -- Cheyenne uses closed OpenGov, county uses Granicus SmartGov, neither exposes a public API. CLC GISC regional GIS has parcels/building footprints only, no permits. County publishes static monthly PDF reports as the only bulk-ish option."
+    }
+  ]
+}

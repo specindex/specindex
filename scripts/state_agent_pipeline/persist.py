@@ -63,11 +63,36 @@ def persist_run(
     return paths
 
 
-def golden_to_corpus_projects(golden: list[GoldenRecord]) -> list[dict[str, Any]]:
-    """Map golden records into SpecIndex project-shaped dicts for optional merge."""
+def golden_to_corpus_projects(
+    golden: list[GoldenRecord],
+    *,
+    state_code: str = "NJ",
+    source_title: str | None = None,
+    source_url: str | None = None,
+) -> list[dict[str, Any]]:
+    """Map golden records into SpecIndex project-shaped dicts for optional merge.
+
+    Real bug fixed 2026-07-28: `sources`/`state` were hardcoded to NJ
+    regardless of which state actually produced the golden record --
+    every non-NJ state that went through the Flash+Sonnet path (most of
+    the corpus before the deterministic-mapping work landed) had its
+    `sources` field mis-attributed to NJ DCA. Caller (pipeline.py) now
+    passes the real state_code plus a source title/url derived from that
+    state's config. NJ defaults preserved for backward compat with the
+    daily cron's existing call site wording.
+    """
+    state_code = state_code.upper()
+    title = source_title or ("NJ DCA construction permit data" if state_code == "NJ" else f"{state_code} permit data")
+    url = source_url or (
+        "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra" if state_code == "NJ" else None
+    )
     projects: list[dict[str, Any]] = []
     for g in golden:
-        pid = g.golden_id if g.golden_id.startswith("nj-") else f"nj-dca-{g.golden_id}"
+        # golden_id already carries the correct state/source prefix from
+        # canonical_golden_id() -- this used to force "nj-dca-" onto
+        # anything not already starting with "nj-", which double-damaged
+        # the same bug fixed in model_b_sonnet.py (see its docstring).
+        pid = g.golden_id
         projects.append(
             {
                 "id": pid[:80],
@@ -82,18 +107,13 @@ def golden_to_corpus_projects(golden: list[GoldenRecord]) -> list[dict[str, Any]
                 "architect": "",
                 "general_contractor": "",
                 "opened_or_announced_date": g.earliest_permit_date,
-                "description": g.merge_reason or "NJ DCA commercial permit golden record.",
+                "description": g.merge_reason or f"{title} golden record.",
                 "key_specs": [s for s in [g.use_group, *g.permit_types, f"Block {g.block} Lot {g.lot}" if g.block else None] if s],
                 "mentioned_brands": [],
                 "competitor_watch": [],
-                "sources": [
-                    {
-                        "title": "NJ DCA construction permit data",
-                        "url": "https://data.nj.gov/Reference-Data/NJ-Construction-Permit-Data/w9se-dmra",
-                    }
-                ],
+                "sources": [{"title": title, "url": url}] if url else [],
                 "open_for": "Active commercial building permit. Early product/spec window.",
-                "state": "NJ",
+                "state": state_code,
                 "latitude": None,
                 "longitude": None,
             }

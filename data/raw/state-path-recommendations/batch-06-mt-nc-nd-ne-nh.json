@@ -1,0 +1,491 @@
+{
+  "batch": 6,
+  "states": [
+    {
+      "state": "mt",
+      "maturity": "baseline_sam_only",
+      "project_count_approx": 193,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 13,
+          "token_cost": "none",
+          "notes": "Federal solicitations only. Dominates MT corpus today."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 179,
+          "token_cost": "none",
+          "notes": "Federal awards at Malmstrom AFB, Fort Harrison VA, Glacier NP, etc."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "dri",
+          "name": "Montana statewide pre-construction register",
+          "endpoint_or_script": null,
+          "status": "rejected",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "No DRI/Socrata statewide register documented in playbook. Playbook lists state EDA press releases only."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Billings / Missoula / Bozeman municipal permits",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Not yet researched or live-verified. Gallatin (Bozeman) is the one hand-researched local entry in corpus. Verify endpoint + coordinates before building."
+        },
+        {
+          "order": 5,
+          "tier": 2,
+          "kind": "accela",
+          "name": "Montana Accela slug sweep",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "No Accela instances verified in playbook. Sweep Billings/Great Falls/Missoula slugs only after ArcGIS pass fails."
+        },
+        {
+          "order": 6,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "Montana DEED / local EDA announcements",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Playbook source order #1. No structured download found yet."
+        },
+        {
+          "order": 7,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named project enrichment (Sonnet, capped)",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Only after deterministic sources wired. No dual Flash+Sonnet bulk scrapes."
+        }
+      ],
+      "do_not_use": [
+        "Generic ArcGIS Hub search without verifying the layer covers Montana",
+        "Zip-code aggregate datasets with no project-level records"
+      ],
+      "next_action": "Live-verify Gallatin County or Billings municipal ArcGIS permit layer (max-date + coordinate check) before any pull script.",
+      "priority_score": 38
+    },
+    {
+      "state": "nc",
+      "maturity": "built",
+      "project_count_approx": 6548,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 44,
+          "token_cost": "none",
+          "notes": "Baseline federal layer; small share of NC corpus."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 376,
+          "token_cost": "none",
+          "notes": "Federal construction awards statewide."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "dri",
+          "name": "NC statewide pre-construction register (SEPA/CAMA)",
+          "endpoint_or_script": null,
+          "status": "rejected",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Confirmed no DRI equivalent. SEPA is state-funded $10M+ only; CAMA is coastal counties only. Real gap, not a research failure."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Mecklenburg County (Charlotte) commercial permits",
+          "endpoint_or_script": "scripts/pull-nc-arcgis.py (pull_mecklenburg)",
+          "status": "built",
+          "est_records_24mo": 4381,
+          "token_cost": "none",
+          "notes": "https://meckgis.mecklenburgcountync.gov/server/rest/services/BuildingPermits/FeatureServer/0 — permittype='Commercial' plus TEMP_EVENT_HINTS exclusion for SPT/no-review event permits."
+        },
+        {
+          "order": 5,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Wake County (Raleigh + county-wide) non-residential permits",
+          "endpoint_or_script": "scripts/pull-nc-arcgis.py (pull_wake)",
+          "status": "built",
+          "est_records_24mo": 2475,
+          "token_cost": "none",
+          "notes": "https://services.arcgis.com/v400IkDOw1ad7Yad/arcgis/rest/services/Building_Permits/FeatureServer/0 — permitclassmapped='Non-Residential' plus RESIDENTIAL_HINTS text layer."
+        },
+        {
+          "order": 6,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Durham County commercial permits",
+          "endpoint_or_script": "scripts/pull-county-arcgis.py (pull_durham, --only durham)",
+          "status": "built",
+          "est_records_24mo": 1044,
+          "token_cost": "none",
+          "notes": "https://webgis2.durhamnc.gov/server/rest/services/PublicServices/Inspections/MapServer/12 — Occupancy field filter verified live 2026-07-26. ~1,044 in corpus; playbook still lists Durham as open but script is wired."
+        },
+        {
+          "order": 7,
+          "tier": 2,
+          "kind": "accela",
+          "name": "Concord (Charlotte metro suburb)",
+          "endpoint_or_script": "https://aca-prod.accela.com/CONCORD/Cap/CapHome.aspx?module=Building",
+          "status": "verified",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Only 1 of 17 NC Accela slugs verified (HTTP 200 + ddlGSPermitType markers). Not yet built; lower priority than county ArcGIS sources."
+        },
+        {
+          "order": 8,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Guilford / Cumberland / Forsyth (Winston-Salem) county permits",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Named in playbook as next counties. Forsyth NC is NOT geo.forsythco.com (that is Forsyth GA — confirmed by coordinates)."
+        },
+        {
+          "order": 9,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "NC statewide public bid/procurement registry",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Georgia GPR equivalent not yet researched for NC."
+        },
+        {
+          "order": 10,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named mega-project enrichment (AbbVie Durham, etc.)",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Sonnet preferred for owner/architect/doc retrieval on high-value named projects already in corpus. No dual LLM bulk scrapes."
+        }
+      ],
+      "do_not_use": [
+        "geo.forsythco.com Building_Permits — Forsyth County GA, not NC (34.15-34.31N confirmed)",
+        "services6.arcgis.com/ONZht79c8QWuX759/Building_Permits — Year/Quarter aggregate stats table, not per-project records",
+        "Accela slugs CHARLOTTENC, RALEIGH, DURHAM, GUILFORDCO, GREENSBORO, WINSTONSALEM and 11 others — all 404 except CONCORD"
+      ],
+      "next_action": "Verify live Guilford County (Greensboro) or Cumberland (Fayetteville) ArcGIS permit layer, then add to pull-county-arcgis.py.",
+      "priority_score": 88
+    },
+    {
+      "state": "nd",
+      "maturity": "built",
+      "project_count_approx": 1301,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 33,
+          "token_cost": "none",
+          "notes": "Federal solicitations baseline."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 119,
+          "token_cost": "none",
+          "notes": "Federal awards (Grand Forks AFB, Minot, etc.)."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "dri",
+          "name": "ND statewide pre-construction register",
+          "endpoint_or_script": null,
+          "status": "rejected",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "No statewide structured register documented. ND PSC Energy Conversion Siting (50MW+) is real but no API/docket list found."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Fargo site-plan review layer",
+          "endpoint_or_script": "scripts/pull-county-arcgis.py (pull_fargo, --only fargo)",
+          "status": "built",
+          "est_records_24mo": 1148,
+          "token_cost": "none",
+          "notes": "https://gis.cityoffargo.com/arcgis/rest/services/General/SitePlans/MapServer/0 — pre-construction site plans, not permits. No commercial/residential field; text classification required. Verified live 2026-07-26."
+        },
+        {
+          "order": 5,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Bismarck / Grand Forks / Minot municipal permits",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Bismarck Building_Permits_gdb search hit was Montgomery AL account — wrong jurisdiction. No real Bismarck dataset found yet."
+        },
+        {
+          "order": 6,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "ND DCD / local economic development announcements",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Playbook source order #1. Natelli hand-researched entry in corpus."
+        },
+        {
+          "order": 7,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named project enrichment (Sonnet, capped)",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Only after deterministic municipal sources. No dual LLM bulk scrapes."
+        }
+      ],
+      "do_not_use": [
+        "West Fargo Permit Lookup ArcGIS app — right-of-way excavation permits, not building/commercial construction",
+        "Montgomery AL Building_Permits_gdb item surfaced for Bismarck — wrong-jurisdiction false positive",
+        "Generic ArcGIS Hub search without verifying North Dakota jurisdiction and coordinates"
+      ],
+      "next_action": "Research live Bismarck or Grand Forks municipal ArcGIS permit layer with outStatistics max-date and coordinate verification.",
+      "priority_score": 52
+    },
+    {
+      "state": "ne",
+      "maturity": "verified_unbuilt",
+      "project_count_approx": 92,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 1,
+          "token_cost": "none",
+          "notes": "Minimal federal solicitations in 24mo window."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 90,
+          "token_cost": "none",
+          "notes": "Dominates NE corpus today (Offutt AFB, FAA, etc.)."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "dri",
+          "name": "Nebraska DED structured project database",
+          "endpoint_or_script": "https://opportunity.nebraska.gov",
+          "status": "rejected",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "No structured/downloadable incentive-award or project-announcement database. Program pages only."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Omaha/Douglas County open data",
+          "endpoint_or_script": "https://data-dogis.opendata.arcgis.com",
+          "status": "rejected",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "DCAT catalog checked: building footprints and Public Buildings layer only. No permit/project dataset."
+        },
+        {
+          "order": 5,
+          "tier": 2,
+          "kind": "accela",
+          "name": "Omaha commercial permits (OMAHA slug)",
+          "endpoint_or_script": "https://aca-prod.accela.com/OMAHA/Cap/CapHome.aspx?module=Permits&TabName=Permits",
+          "status": "verified",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Verified live 2026-07-26: HTTP 200, real search form, clean COMMERCIAL case-type dropdown (NEW CONSTRUCTION, SHELL ONLY, MULTI-FAMILY, etc.). Reuse scripts/pull-ga-accela-commercial.py raw-HTTP-form-POST pattern. Best-verified Accela in NE/IA/CT/IN/WV research pass. Not yet built."
+        },
+        {
+          "order": 6,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "Lincoln building permit search",
+          "endpoint_or_script": "https://app.lincoln.ne.gov/aspx/city/buildperm/default.aspx",
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Confirmed live ASP.NET postback form. Commercial/residential-distinguishing field not yet inspected."
+        },
+        {
+          "order": 7,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named project enrichment (Meta Kearney, etc.)",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "One hand-researched Meta data-center entry in corpus. Sonnet for doc/owner enrichment only. No dual LLM bulk scrapes."
+        }
+      ],
+      "do_not_use": [
+        "data-dogis.opendata.arcgis.com for permit pulls — footprints only, no permit attributes",
+        "opportunity.nebraska.gov as Tier 0 register — no structured project database"
+      ],
+      "next_action": "Build Omaha Accela commercial pull by adapting scripts/pull-ga-accela-commercial.py for OMAHA slug and COMMERCIAL case types.",
+      "priority_score": 72
+    },
+    {
+      "state": "nh",
+      "maturity": "baseline_sam_only",
+      "project_count_approx": 59,
+      "path": [
+        {
+          "order": 1,
+          "tier": 0,
+          "kind": "sam",
+          "name": "SAM.gov bulk national",
+          "endpoint_or_script": "scripts/pull-sam-gov-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 4,
+          "token_cost": "none",
+          "notes": "Minimal federal solicitations."
+        },
+        {
+          "order": 2,
+          "tier": 0,
+          "kind": "usaspending",
+          "name": "USAspending bulk national",
+          "endpoint_or_script": "scripts/pull-usaspending-bulk-national.py",
+          "status": "built",
+          "est_records_24mo": 54,
+          "token_cost": "none",
+          "notes": "Dominates NH corpus (Pease ANGB, Nashua FAA ARTCC, CRREL Hanover, etc.)."
+        },
+        {
+          "order": 3,
+          "tier": 0,
+          "kind": "dri",
+          "name": "NH statewide pre-construction register",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "No statewide register researched yet. Playbook is stub-only."
+        },
+        {
+          "order": 4,
+          "tier": 1,
+          "kind": "arcgis",
+          "name": "Manchester / Nashua / Concord municipal permits",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "Not yet researched or live-verified. Merrimack/Nashua corridor has one hand-researched industrial entry."
+        },
+        {
+          "order": 5,
+          "tier": 2,
+          "kind": "accela",
+          "name": "NH Accela slug sweep (Manchester, Nashua, Concord)",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "none",
+          "notes": "No Accela instances verified. Run slug sweep after ArcGIS Hub pass on top metros."
+        },
+        {
+          "order": 6,
+          "tier": 3,
+          "kind": "web_scraper",
+          "name": "NH EDA / local permit portals",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "low",
+          "notes": "Playbook lists REBusinessOnline and local permits as prior capture method. No deterministic scraper wired."
+        },
+        {
+          "order": 7,
+          "tier": 4,
+          "kind": "llm_enrichment",
+          "name": "Named project enrichment (Sonnet, capped)",
+          "endpoint_or_script": null,
+          "status": "candidate",
+          "est_records_24mo": null,
+          "token_cost": "medium",
+          "notes": "Only after Tier 0-3 paths exhausted. No dual LLM bulk scrapes."
+        }
+      ],
+      "do_not_use": [
+        "Generic ArcGIS Hub search without verifying the layer covers New Hampshire",
+        "Zip-code aggregate datasets with no project-level records"
+      ],
+      "next_action": "Accela slug sweep plus ArcGIS Hub search for Manchester and Nashua; verify liveness (max-date + coordinates) before building.",
+      "priority_score": 48
+    }
+  ],
+  "notes": "Batch 6 spans one deep built state (NC, 3 county ArcGIS feeds wired), one partial built (ND, Fargo site plans only), one verified-unbuilt Accela ready (NE Omaha), and two SAM/USAspending baselines (MT, NH). No state has a Tier-0 statewide register like NJ DCA or GA DRI. NC Durham is built via pull-county-arcgis.py though nc.md still lists it open. LLM enrichment tier reserved for named mega-projects only; no dual Flash+Sonnet bulk scrapes per cost policy."
+}

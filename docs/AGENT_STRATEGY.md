@@ -1,9 +1,34 @@
-# SpecIndex Agent Strategy (draft — working plan, 2026-07-26)
+# SpecIndex Agent Strategy (2026-07-26, updated 2026-07-29)
 
-**Status: DRAFT.** This is a working document to align on approach before building
-anything. Sections marked "Open question" need a decision from Asif before the
-corresponding agent gets built. Related: [[standing goal]] and sourcing-priority
-order in `docs/ROADMAP.md`.
+**Status update, 2026-07-29:** this doc was written as a pre-build plan on
+2026-07-26 and never updated after the plan was actually executed. As of
+today, **all three agents are built**, not drafts:
+
+- **Agent 1 (Quality)** — `scripts/compute-state-quality.py`, writes to
+  the `state_quality` table (migration 005). A raw metrics table, not a
+  rolled-up score, matching the recommendation below.
+- **Agent 2 (Depth)** — `scripts/compute-county-coverage.py`, writes to
+  `county_coverage` (migration 004) with week-over-week diffing via
+  `previous_project_count`/`delta` (migration 006). Surfaced on the
+  Insights tab at `app/coverage`.
+- **Agent 3 (Puller)** — national scope has run for a while via
+  `pull-nj-dca-pipeline.yml`/`pull-ga-federal-pipeline.yml`/
+  `pull-nc-pipeline.yml`. State scope had a real gap until 2026-07-29:
+  `pull-state.yml` was a legacy, hardcoded GA/NC-only workflow predating
+  the `state_agent_pipeline` framework, never extended to the ~30 sources
+  wired since. Closed by `.github/workflows/pull-all-deterministic-
+  sources.yml`, which pulls every no-LLM `state_agent_pipeline` key
+  generically (reads the list from `state_configs.py` at run time, so new
+  sources are picked up with no workflow edit needed).
+
+The sections below are kept as historical record of the original plan and
+its reasoning — most of the "Open questions" were implicitly resolved by
+what actually got built (raw metrics table over a score; countywide
+source-count via the diffing column over a separate binary deep/thin
+metric; GitHub Actions cron over Cloud Scheduler; skip-and-log via
+`continue-on-error: true` per step). All 4 crons remain disabled per
+Asif's 2026-07-28 "disable all cron jobs, will come back to it later" —
+`workflow_dispatch` works for manual runs on every workflow today.
 
 ## Why three agents
 
@@ -133,3 +158,92 @@ Given the sourcing-priority rule, build these in the order they pay off:
 5. Cadence: is weekly right for national, and what's right for state-level
    (weekly per state would mean ~3 states/week today — fine at 3 states,
    needs rethinking past ~10)?
+
+## Gemini-Assisted County/State Source Discovery (IMPLEMENTED, 2026-07-28)
+
+Unlike the rest of this doc, this section describes a real, running process —
+not a draft plan. This is the actual workflow used to find and wire every new
+county/state source added on 2026-07-28 (Wayne MI, Cook IL, Miami-Dade FL,
+King WA, Tarrant TX, Franklin/Cuyahoga OH, Mecklenburg/Wake NC, Fairfax VA,
+Philadelphia PA, San Diego CA, Dallas/Bexar TX, TDLR TABS statewide TX,
+Colorado Springs CO, Cleveland OH). It's a 7-step loop, and **step 7 is a
+required step for every jurisdiction, not an optional follow-up** — do not
+consider a jurisdiction "done" after step 6 alone.
+
+1. **Discovery — Gemini, with context.** Send a query through
+   `scripts/gemini_discovery_chat.py --session <name> "..."`. Not stateless:
+   the script replays the full prior conversation from
+   `data/gemini_sessions/{name}.json` (gitignored) before each new turn, so
+   Gemini keeps context across a multi-step jurisdiction investigation.
+   Google Search grounding always on.
+2. **Verification — always live, never trusted.** Every URL/agency-code/
+   dataset-ID gets an actual probe (curl for simple reachability, Playwright
+   when a real browser is needed). Freshness checked via real `MAX(date)`
+   queries, never catalog metadata. When Gemini's specific guess is
+   close-but-wrong, try plausible variants directly before looping back.
+3. **Feedback loop.** If everything fails, write a `GEMINI_FEEDBACK_REPORT`
+   (status overview, exact failure codes, what's being asked for) back into
+   the *same* persistent session, so Gemini has the full trail of what's
+   already ruled out. Can chain many rounds.
+4. **Provider wiring.** Confirmed sources get an existing provider
+   (`Socrata`/`ArcGIS`/`Accela`/`EnerGov`/`CKAN`/`Carto`/`CSV`/`TdlrTabs` — 8
+   platform types as of 2026-07-28) or a new one if the platform is
+   genuinely novel. Config goes into
+   `scripts/state_agent_pipeline/core/state_configs.py`, dry-run first, then
+   `--merge-state`.
+5. **Data-quality gate.** `scripts/check-corpus-integrity.py` (+ CI on
+   push/PR) checks for duplicate IDs across the whole corpus. Clean
+   structured sources route through `generic_mapping.py`'s no-LLM path
+   instead of paying for Flash/Sonnet.
+6. **Institutional memory.** Every batch — wins *and* dead ends — gets a
+   `docs/ROADMAP.md` entry and a status line in
+   `data/jurisdiction_health_matrix.json`, so the next investigation doesn't
+   re-walk dead paths.
+7. **Project-document pull (REQUIRED, not optional).** For every project
+   captured in step 4, find and pull its real source documents (RFPs, board
+   minutes, EIS reports, site plans) the same way — via Gemini
+   (`gemini_discovery_chat.py`), live-verified before download, uploaded to
+   `gs://specindex-ai-raw-documents/{state}/` (not git — large binaries).
+   **GCS-only, no local intermediate copy** — Asif explicitly said
+   (2026-07-28) documents should never be saved to a local folder, only to
+   GCS; any future document-pull script should stream/upload directly, not
+   stage through `data/documents/{state}/` first (the existing NJ script,
+   `scripts/fetch-nj-documents.py`, downloads locally then needs a separate
+   manual `gcloud storage rsync` — that's the *old* pattern, not the target
+   one). Before assuming a source's documents are pullable (e.g. trusting an
+   "Accela Attachments Tab" claim from a Gemini discovery response), verify
+   live whether attachments are actually public without login — **confirmed
+   live for Cleveland (COC) that they are not**: the Attachments tab UI
+   loads for anonymous users, but it's an upload form, and the real backend
+   call that would list existing documents
+   (`.../Dpr/Handlers/Api.ashx/ab/records/{id}/planroom`) returns 403
+   Forbidden anonymously. Do not skip straight to building a downloader on
+   an unverified claim, even one as specific-sounding as Gemini's was here.
+   **First real win, same day:** SAM.gov's public opportunity API
+   (`sam.gov/api/prod/opps/v3/opportunities/{noticeId}/resources`, then
+   `.../resources/files/{resourceId}/download`) genuinely exposes real
+   downloadable attachments (structural drawings, specs, bid abstracts)
+   with zero auth — verified by actually downloading and file-type-checking
+   a real PDF. Built `scripts/fetch-sam-gov-documents.py` (GCS-only, per
+   Asif's instruction above), ran for all 44 GA SAM.gov projects: 30/44 had
+   real documents, 411 files, 752MB uploaded to
+   `gs://specindex-ai-raw-documents/georgia/`. Document access genuinely
+   varies by source type (federal solicitations are public by law;
+   municipal permit attachments often aren't) — verify per source, never
+   assume uniformly good or bad. **Remaining scope:** everything besides
+   GA-SAM and the earlier NJ web-research work.
+
+**Known real limits (be honest about these, don't oversell):** discovery
+still needs a human+Claude verification loop per lead every time — not
+unattended. New platform types cost real debugging time regardless of county
+count. All 4 scheduled crons are disabled as of 2026-07-28 (Asif's explicit
+request), so nothing refreshes automatically yet. Statewide sources like
+TDLR are rare (1 of 49 states fully panned out on a first broad search) but
+by far the highest-leverage target when found. Real CAPTCHA gates (Colorado
+Springs' PPRBD) and login/invitation-only systems (Jacksonville's JaxEPICS,
+El Paso County's EDARP) are hard stops — no anti-bot-evasion tooling,
+regardless of legitimate purpose. asif-test's earlier national scan found
+only ~0.3% of all US counties have a clean deterministic feed at all — full
+"all counties" coverage isn't realistic through this method; national +
+statewide + largest ~100-300 counties by population is the realistic
+scalable target.

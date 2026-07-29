@@ -10,6 +10,11 @@ from typing import Any
 from .accela_provider import AccelaProvider
 from .arcgis_provider import ArcGISProvider
 from .base_provider import BaseIngestionProvider
+from .carto_provider import CartoProvider
+from .ckan_provider import CkanProvider
+from .csv_download_provider import CsvDownloadProvider
+from .tdlr_tabs_provider import TdlrTabsProvider
+from .energov_provider import EnerGovProvider
 from .sam_gov_provider import SamGovProvider
 from .socrata_provider import SocrataProvider
 from .usaspending_provider import USASpendingProvider
@@ -33,7 +38,40 @@ def build_provider(state_config: dict[str, Any]) -> BaseIngestionProvider:
             commercial_where=state_config.get("commercial_where"),
             lookback_days=state_config.get("lookback_days", 30),
             app_token=state_config.get("app_token"),
+            date_field=state_config.get("date_field", "processdate"),
             hard_limit=state_config.get("hard_limit", 0),
+            feed_id=state_config.get("feed_id"),
+            state_code=state_config.get("state_code"),
+            county=state_config.get("county"),
+            id_field=state_config.get("id_field"),
+            name_fields=state_config.get("name_fields"),
+            address_fields=state_config.get("address_fields"),
+            desc_fields=state_config.get("desc_fields"),
+            value_fields=state_config.get("value_fields"),
+            city_fields=state_config.get("city_fields"),
+            source_url=state_config.get("source_url"),
+        )
+
+    if provider_type == "ckan":
+        return CkanProvider(
+            base_url=state_config["endpoint"],
+            resource_id=state_config["resource_id"],
+            watermark_field=state_config.get("watermark_field", "_id"),
+            hash_fields_list=state_config.get("hash_fields"),
+            commercial_where=state_config.get("commercial_where"),
+            date_field=state_config.get("date_field", "date_entered"),
+            lookback_days=state_config.get("lookback_days", 30),
+            hard_limit=state_config.get("hard_limit", 0),
+            feed_id=state_config.get("feed_id"),
+            state_code=state_config.get("state_code"),
+            county=state_config.get("county"),
+            id_field=state_config.get("id_field"),
+            name_fields=state_config.get("name_fields"),
+            address_fields=state_config.get("address_fields"),
+            desc_fields=state_config.get("desc_fields"),
+            value_fields=state_config.get("value_fields"),
+            city_fields=state_config.get("city_fields"),
+            source_url=state_config.get("source_url"),
         )
 
     if provider_type == "arcgis":
@@ -54,8 +92,20 @@ def build_provider(state_config: dict[str, Any]) -> BaseIngestionProvider:
             hash_fields_list=state_config.get("hash_fields"),
             include_geometry=state_config.get("include_geometry", True),
             date_field=state_config.get("date_field"),
+            date_field_is_string=state_config.get("date_field_is_string", False),
+            date_literal_style=state_config.get("date_literal_style", "date"),
             lookback_days=state_config.get("lookback_days", 30),
             hard_limit=state_config.get("hard_limit", 0),
+            feed_id=state_config.get("feed_id"),
+            state_code=state_config.get("state_code"),
+            county=state_config.get("county"),
+            id_field=state_config.get("id_field"),
+            name_fields=state_config.get("name_fields"),
+            address_fields=state_config.get("address_fields"),
+            desc_fields=state_config.get("desc_fields"),
+            value_fields=state_config.get("value_fields"),
+            city_fields=state_config.get("city_fields"),
+            source_url=state_config.get("source_url"),
         )
 
     if provider_type == "sam_gov":
@@ -78,19 +128,77 @@ def build_provider(state_config: dict[str, Any]) -> BaseIngestionProvider:
             county=state_config["county"],
             base_url=state_config["endpoint"],
             permit_type_label=state_config.get("permit_type_label", "Building"),
+            module=state_config.get("module", "Building"),
             lookback_days=state_config.get("lookback_days", 30),
             max_pages=state_config.get("max_pages", 30),
             start_date_field_id=state_config.get("start_date_field_id"),
             end_date_field_id=state_config.get("end_date_field_id"),
         )
 
-    if provider_type in ("ckan", "csv"):
-        raise NotImplementedError(
-            f"provider_type={provider_type!r} is specced but not yet implemented -- "
-            "see docs/AGENT_STRATEGY.md / this session's roadmap notes. "
-            "Socrata and ArcGIS cover NJ + the immediate next-state rollout; "
-            "build CKANProvider/CSVDownloadProvider when a real state needs one, "
-            "verified live first (same discipline as every other source this session)."
+    if provider_type == "energov":
+        return EnerGovProvider(
+            state_code=state_config["state_code"],
+            county=state_config["county"],
+            base_url=state_config["endpoint"],
+            tenant_id=state_config.get("tenant_id", "1"),
+            tenant_name=state_config.get("tenant_name"),
+            commercial_keywords=state_config.get("commercial_keywords"),
+            date_field=state_config.get("date_field", "IssueDate"),
+            lookback_days=state_config.get("lookback_days", 30),
+            max_pages=state_config.get("max_pages", 5),
+            selfservice_path=state_config.get("selfservice_path", "apps/selfservice"),
+        )
+
+    if provider_type == "carto":
+        return CartoProvider(
+            base_url=state_config["endpoint"],
+            table=state_config["table"],
+            select_fields=state_config.get("select_fields", "*"),
+            where_sql=state_config["where_sql"],
+            date_field=state_config["date_field"],
+            lookback_days=state_config.get("lookback_days", 30),
+            row_limit=state_config.get("row_limit", 5000),
+            hash_fields_list=state_config.get("hash_fields"),
+            feed_id=state_config.get("feed_id"),
+            state_code=state_config.get("state_code"),
+            county=state_config.get("county"),
+            id_field=state_config.get("id_field"),
+            name_fields=state_config.get("name_fields"),
+            address_fields=state_config.get("address_fields"),
+            desc_fields=state_config.get("desc_fields"),
+            value_fields=state_config.get("value_fields"),
+            city_fields=state_config.get("city_fields"),
+            source_url=state_config.get("source_url"),
+        )
+
+    if provider_type == "tdlr_tabs":
+        return TdlrTabsProvider(
+            state_code=state_config.get("state_code", "TX"),
+            county_code=state_config.get("county_code"),
+            lookback_days=state_config.get("lookback_days", 30),
+            page_size=state_config.get("page_size", 100),
+            max_pages=state_config.get("max_pages", 200),
+        )
+
+    if provider_type == "csv":
+        return CsvDownloadProvider(
+            csv_url=state_config["endpoint"],
+            date_field=state_config["date_field"],
+            filter_field=state_config["filter_field"],
+            include_keywords=state_config["include_keywords"],
+            exclude_keywords=state_config.get("exclude_keywords"),
+            lookback_days=state_config.get("lookback_days", 30),
+            hash_fields_list=state_config.get("hash_fields"),
+            feed_id=state_config.get("feed_id"),
+            state_code=state_config.get("state_code"),
+            county=state_config.get("county"),
+            id_field=state_config.get("id_field"),
+            name_fields=state_config.get("name_fields"),
+            address_fields=state_config.get("address_fields"),
+            desc_fields=state_config.get("desc_fields"),
+            value_fields=state_config.get("value_fields"),
+            city_fields=state_config.get("city_fields"),
+            source_url=state_config.get("source_url"),
         )
 
     raise UnknownProviderType(f"Unknown provider_type: {provider_type!r}")

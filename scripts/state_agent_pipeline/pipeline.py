@@ -27,7 +27,7 @@ from .state import load_state, save_state
 # messy permit-description text. Routing these through Flash/Sonnet would
 # be pure wasted LLM cost for no quality gain; see sam_gov_provider.py /
 # usaspending_provider.py docstrings.
-NO_LLM_PROVIDER_TYPES = {"sam_gov", "usaspending", "accela"}
+NO_LLM_PROVIDER_TYPES = {"sam_gov", "usaspending", "accela", "energov", "tdlr_tabs"}
 
 
 def run_pipeline(
@@ -59,7 +59,12 @@ def run_pipeline(
     summary: dict[str, Any] = {"run_id": run_id, "state_code": state_code, "provider_type": state_config["provider_type"]}
     corpus_state_code = state_config["state_code"]  # e.g. "GA" for the "GA-SAM" config key
 
-    if state_config["provider_type"] in NO_LLM_PROVIDER_TYPES:
+    # arcgis/socrata states opt into the same no-LLM path via
+    # name_fields/address_fields (see generic_mapping.py) -- most permit
+    # feeds are clean structured data with no free text worth Flash's
+    # judgment; states that don't set these keep going through
+    # Flash/Sonnet exactly as before.
+    if state_config["provider_type"] in NO_LLM_PROVIDER_TYPES or state_config.get("name_fields"):
         try:
             rows = provider.fetch_delta(state.last_processed_id)
             if limit:
@@ -124,15 +129,22 @@ def run_pipeline(
                 summary["notify"] = send_run_email(summary, ok=True)
             return summary
 
+        # golden_id prefix must reflect the real state/source, not a
+        # hardcoded "nj-dca" -- see canonical_golden_id's docstring for
+        # the 2026-07-28 bug this fixes (622 real CA/TX records had been
+        # silently mis-prefixed "nj-dca-..." before this). "NJ" keeps its
+        # existing "nj-dca" prefix so already-persisted NJ ids don't churn.
+        id_prefix = "nj-dca" if state_code == "NJ" else state_code.lower()
+
         if skip_llm:
             from .model_a_flash import _deterministic_entities
             from .model_b_sonnet import _passthrough_golden
 
             entities = _deterministic_entities(rows)
-            golden = _passthrough_golden([e.model_dump() for e in entities])
+            golden = _passthrough_golden([e.model_dump() for e in entities], id_prefix)
         else:
             entities = extract_with_flash(rows, settings)
-            golden = dedupe_with_sonnet(entities, settings)
+            golden = dedupe_with_sonnet(entities, settings, id_prefix)
 
         paths = persist_run(run_id=run_id, raw_rows=rows, entities=entities, golden=golden, state_code=state_code)
 
@@ -146,7 +158,21 @@ def run_pipeline(
 
         merged = None
         if merge_state and golden:
-            projects = golden_to_corpus_projects(golden)
+            # Preserve NJ's existing (human-readable dataset page) title/url
+            # exactly -- persist.py's own defaults already handle NJ. Every
+            # other state gets a real title/url derived from its config
+            # instead of the previously-hardcoded NJ one.
+            source_title = source_url = None
+            if corpus_state_code != "NJ":
+                county = state_config.get("county")
+                source_title = f"{county} {state_config['provider_type']} permit data" if county else None
+                source_url = state_config.get("source_url") or state_config.get("endpoint")
+            projects = golden_to_corpus_projects(
+                golden,
+                state_code=corpus_state_code,
+                source_title=source_title,
+                source_url=source_url,
+            )
             merged = merge_into_state(corpus_state_code, projects)
 
         summary.update(

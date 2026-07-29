@@ -36,7 +36,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
-from project_identity import slugify  # noqa: E402
+from project_identity import slugify, vt_county_for_town  # noqa: E402
 
 UA = {"User-Agent": "Mozilla/5.0 (SpecIndex research; +https://specindex.ai)"}
 STATES_DIR = ROOT / "data" / "states"
@@ -538,7 +538,7 @@ def pull_act250(cutoff: dt.date) -> list[dict]:
             "id": f"vt-act250-{slugify(app_num)}",
             "name": name[:120],
             "city": town,
-            "county": town,
+            "county": vt_county_for_town(town),
             "status": "permitting",
             "project_type": ptype,
             "estimated_value_usd": None,

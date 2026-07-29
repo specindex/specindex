@@ -71,6 +71,7 @@ export function ProjectsDashboard() {
   const [county, setCounty] = useState("all");
   const [category, setCategory] = useState(() => readStoredValue(CATEGORY_KEY) ?? "all");
   const [year, setYear] = useState("all");
+  const [hasDocuments, setHasDocuments] = useState("all"); // "all" | "yes" | "no"
   const [query, setQuery] = useState("");
   const [debouncedQuery, setDebouncedQuery] = useState("");
   const [sort, setSort] = useState<SortKey>("score");
@@ -132,7 +133,7 @@ export function ProjectsDashboard() {
   }, [query]);
 
   // Any filter change resets to page 1.
-  const filterKey = JSON.stringify([territory, status, projectType, county, category, year, debouncedQuery, sort, newOnly]);
+  const filterKey = JSON.stringify([territory, status, projectType, county, category, year, hasDocuments, debouncedQuery, sort, newOnly]);
   const prevFilterKey = useRef(filterKey);
   useEffect(() => {
     if (prevFilterKey.current !== filterKey) {
@@ -169,6 +170,7 @@ export function ProjectsDashboard() {
       county,
       category,
       year,
+      has_documents: hasDocuments === "all" ? undefined : hasDocuments === "yes" ? "true" : "false",
       q: debouncedQuery,
       sort,
       new_since_days: newOnly ? 7 : undefined,
@@ -194,7 +196,7 @@ export function ProjectsDashboard() {
     return () => {
       cancelled = true;
     };
-  }, [territory, status, projectType, county, category, year, debouncedQuery, sort, newOnly, offset]);
+  }, [territory, status, projectType, county, category, year, hasDocuments, debouncedQuery, sort, newOnly, offset]);
 
   const territoryLabel = useMemo(() => {
     if (territory.length === 0) return "All states";
@@ -287,7 +289,7 @@ export function ProjectsDashboard() {
           placeholder="City, owner, GC, HVAC, glazing, healthcare…"
           className="mt-4 w-full rounded-md border border-[var(--color-border)] bg-white px-4 py-3 text-base outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
         />
-        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
+        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-7">
           <select value={status} onChange={(e) => setStatus(e.target.value)} className="rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm">
             <option value="all">All statuses</option>
             {facets.statuses.map((s) => (
@@ -331,6 +333,11 @@ export function ProjectsDashboard() {
             <option value="recency">Sort: most recent</option>
             <option value="name">Sort: name</option>
           </select>
+          <select value={hasDocuments} onChange={(e) => setHasDocuments(e.target.value)} className="rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm">
+            <option value="all">Documents: any</option>
+            <option value="yes">Has attached documents</option>
+            <option value="no">No attached documents</option>
+          </select>
         </div>
         <div className="mt-4 flex flex-wrap items-center justify-between gap-2">
           <p className="text-sm text-[var(--color-gray-600)]">{resultsLabel}</p>
@@ -365,6 +372,7 @@ export function ProjectsDashboard() {
               county,
               category,
               year,
+              hasDocuments,
               query: debouncedQuery,
               newOnly,
             }}
@@ -392,6 +400,11 @@ export function ProjectsDashboard() {
                       {project.name}
                     </h2>
                     <StatusPill status={project.status} />
+                    {project.has_documents && (
+                      <span className="rounded-full border border-[var(--color-border)] bg-[var(--color-gray-100)] px-2 py-0.5 text-xs font-medium text-[var(--color-gray-600)]">
+                        📎 {project.document_count} doc{project.document_count === 1 ? "" : "s"}
+                      </span>
+                    )}
                   </div>
                   <p className="mt-1 text-sm text-[var(--color-gray-600)]">
                     <span className="font-mono text-xs text-[var(--color-gray-400)]">{project.spx_id}</span>

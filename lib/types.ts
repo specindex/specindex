@@ -78,6 +78,8 @@ export type Project = {
   provenance: ProjectProvenance[];
   news: ProjectNewsItem[];
   first_seen_at?: string | null;
+  document_count?: number;
+  has_documents?: boolean;
 };
 
 export type ProjectCorpus = {

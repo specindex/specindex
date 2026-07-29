@@ -423,3 +423,74 @@ def dedupe_projects(projects: list[dict], state_code: str) -> tuple[list[dict], 
         deduped.extend(bucket)
 
     return assign_unique_ids(deduped, state_code), merges
+
+
+# Vermont has no county-level government function relevant to permitting --
+# Act 250 (scripts/pull-county-arcgis.py's pull_act250) reports a project's
+# *town*, not a county, and using the town name as the `county` field
+# directly inflated county_coverage's distinct-county count for VT from 14
+# (real) to 214 (one per distinct town) before this was caught. Source:
+# Wikipedia's "List of towns in Vermont" (all 14 counties, 251
+# municipalities), 2026-07-27.
+VT_TOWN_TO_COUNTY: dict[str, str] = {
+    "Burlington": "Chittenden", "South Burlington": "Chittenden", "Colchester": "Chittenden", "Rutland": "Rutland",
+    "Bennington": "Bennington", "Brattleboro": "Windham", "Essex": "Chittenden", "Milton": "Chittenden", "Hartford": "Windsor",
+    "Essex Junction": "Chittenden", "Williston": "Chittenden", "Middlebury": "Addison", "Springfield": "Windsor", "Barre": "Washington",
+    "Montpelier": "Washington", "Winooski": "Chittenden", "Shelburne": "Chittenden", "St. Johnsbury": "Caledonia", "St. Albans": "Franklin",
+    "Swanton": "Franklin", "Northfield": "Washington", "Lyndon": "Caledonia", "Morristown": "Lamoille", "Waterbury": "Washington",
+    "Stowe": "Lamoille", "Jericho": "Chittenden", "Fairfax": "Franklin", "Georgia": "Franklin", "Rockingham": "Windham",
+    "Randolph": "Orange", "Hinesburg": "Chittenden", "Derby": "Orleans", "Manchester": "Bennington", "Castleton": "Rutland",
+    "Newport": "Orleans", "Richmond": "Chittenden", "Brandon": "Rutland", "Cambridge": "Lamoille", "Charlotte": "Chittenden",
+    "Bristol": "Addison", "Norwich": "Windsor", "Shaftsbury": "Bennington", "Windsor": "Windsor", "Williamstown": "Orange",
+    "Johnson": "Lamoille", "Highgate": "Franklin", "Hartland": "Windsor", "Pownal": "Bennington", "Underhill": "Chittenden",
+    "Hyde Park": "Lamoille", "Poultney": "Rutland", "Westminster": "Windham", "Chester": "Windsor", "Woodstock": "Windsor",
+    "Hardwick": "Caledonia", "Barton": "Orleans", "Pittsford": "Rutland", "Berlin": "Washington", "Weathersfield": "Windsor",
+    "Enosburgh": "Franklin", "Bradford": "Orange", "Thetford": "Orange", "Royalton": "Windsor", "Fair Haven": "Rutland",
+    "Ferrisburgh": "Addison", "Putney": "Windham", "East Montpelier": "Washington", "Vergennes": "Addison", "Arlington": "Bennington",
+    "Clarendon": "Rutland", "Richford": "Franklin", "Danville": "Caledonia", "Newbury": "Orange", "Wilmington": "Windham",
+    "West Rutland": "Rutland", "Vernon": "Windham", "Ludlow": "Windsor", "Sheldon": "Franklin", "Dorset": "Bennington",
+    "Wallingford": "Rutland", "Guilford": "Windham", "Alburgh": "Grand Isle", "Grand Isle": "Grand Isle", "Monkton": "Addison",
+    "Westford": "Chittenden", "Fairfield": "Franklin", "Warren": "Washington", "Bethel": "Windsor", "Huntington": "Chittenden",
+    "Londonderry": "Windham", "Dummerston": "Windham", "Waitsfield": "Washington", "Dover": "Windham", "Middlesex": "Washington",
+    "Proctor": "Rutland", "Starksboro": "Addison", "Moretown": "Washington", "Marlboro": "Windham", "Troy": "Orleans",
+    "New Haven": "Addison", "South Hero": "Grand Isle", "Wolcott": "Lamoille", "Barnet": "Caledonia", "Calais": "Washington",
+    "Burke": "Caledonia", "Newfane": "Windham", "Marshfield": "Washington", "Sharon": "Windsor", "Berkshire": "Franklin",
+    "Corinth": "Orange", "Cabot": "Washington", "Pawlet": "Rutland", "Duxbury": "Washington", "Killington": "Rutland",
+    "Cavendish": "Windsor", "Mount Holly": "Rutland", "Addison": "Addison", "Fayston": "Washington", "Franklin": "Franklin",
+    "Fletcher": "Franklin", "West Windsor": "Windsor", "Whitingham": "Windham", "Craftsbury": "Orleans", "Eden": "Lamoille",
+    "Tunbridge": "Orange", "Lincoln": "Addison", "Bolton": "Chittenden", "Townshend": "Windham", "Danby": "Rutland",
+    "Bakersfield": "Franklin", "Waterford": "Caledonia", "Shoreham": "Addison", "Lunenburg": "Essex", "Brookfield": "Orange",
+    "Orwell": "Addison", "Chittenden": "Rutland", "Plainfield": "Washington", "Chelsea": "Orange", "Irasburg": "Orleans",
+    "Bridport": "Addison", "Salisbury": "Addison", "Wells": "Rutland", "Braintree": "Orange", "Cornwall": "Addison",
+    "Topsham": "Orange", "Montgomery": "Franklin", "Winhall": "Bennington", "Ryegate": "Caledonia", "Brighton": "Essex",
+    "Mendon": "Rutland", "Concord": "Essex", "Glover": "Orleans", "Coventry": "Orleans", "Rochester": "Windsor",
+    "Shrewsbury": "Rutland", "Strafford": "Orange", "Sunderland": "Bennington", "Orange": "Orange", "Brownington": "Orleans",
+    "Washington": "Orange", "Charleston": "Orleans", "Jamaica": "Windham", "Barnard": "Windsor", "Leicester": "Addison",
+    "Fairlee": "Orange", "Groton": "Caledonia", "Albany": "Orleans", "Benson": "Rutland", "Worcester": "Washington",
+    "Walden": "Caledonia", "North Hero": "Grand Isle", "Woodbury": "Washington", "Pomfret": "Windsor", "Sutton": "Caledonia",
+    "Bridgewater": "Windsor", "Canaan": "Essex", "Lowell": "Orleans", "Elmore": "Lamoille", "Wardsboro": "Windham",
+    "Stamford": "Bennington", "Weybridge": "Addison", "Greensboro": "Orleans", "Middletown Springs": "Rutland", "St. George": "Chittenden",
+    "Halifax": "Windham", "Wheelock": "Caledonia", "Ripton": "Addison", "Hubbardton": "Rutland", "Stockbridge": "Windsor",
+    "Peacham": "Caledonia", "Readsboro": "Bennington", "Rupert": "Bennington", "Reading": "Windsor", "Waterville": "Lamoille",
+    "Sheffield": "Caledonia", "Roxbury": "Washington", "Vershire": "Orange", "Panton": "Addison", "Grafton": "Windham",
+    "Plymouth": "Windsor", "Morgan": "Orleans", "Holland": "Orleans", "Weston": "Windsor", "West Fairlee": "Orange",
+    "Newark": "Caledonia", "Kirby": "Caledonia", "Andover": "Windsor", "Tinmouth": "Rutland", "Jay": "Orleans",
+    "Sudbury": "Rutland", "Brookline": "Windham", "Westfield": "Orleans", "Peru": "Bennington", "Pittsfield": "Rutland",
+    "Isle La Motte": "Grand Isle", "Windham": "Windham", "Waltham": "Addison", "Stratton": "Windham", "Whiting": "Addison",
+    "Sandgate": "Bennington", "Athens": "Windham", "Ira": "Rutland", "Hancock": "Addison", "Belvidere": "Lamoille",
+    "Westmore": "Orleans", "Woodford": "Bennington", "Granville": "Addison", "East Haven": "Essex", "Guildhall": "Essex",
+    "West Haven": "Rutland", "Baltimore": "Windsor", "Bloomfield": "Essex", "Maidstone": "Essex", "Mount Tabor": "Rutland",
+    "Stannard": "Caledonia", "Landgrove": "Bennington", "Goshen": "Addison", "Norton": "Essex", "Searsburg": "Bennington",
+    "Brunswick": "Essex", "Lemington": "Essex", "Granby": "Essex", "Victory": "Essex",
+}
+
+
+def vt_county_for_town(town: str) -> str:
+    """Real Vermont county for a town name, falling back to the town name
+    itself if genuinely unmapped (shouldn't happen -- all 214 towns seen
+    in live Act 250 data resolved cleanly as of 2026-07-27)."""
+    t = (town or "").strip()
+    t = re.sub(r",?\s*Town of$", "", t)
+    t = re.sub(r"\s+(City|Town)$", "", t)
+    t = t.replace("Saint ", "St. ")
+    return VT_TOWN_TO_COUNTY.get(t, town)

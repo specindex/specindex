@@ -1,19 +1,34 @@
-name: NC Mecklenburg Flash+Sonnet pipeline (daily)
+name: NC Mecklenburg pipeline (daily)
 
 # Agent-Per-State framework, ArcGIS proof point -- daily incremental run of
-# Node 1 (Ingestion Factory: ArcGISProvider, Mecklenburg County) -> Node 2
-# (Gemini Flash extract) -> Node 3 (Claude Sonnet dedupe) -> Node 4
+# Node 1 (Ingestion Factory: ArcGISProvider, Mecklenburg County) -> Node 4
 # (persist + watermark checkpoint), auto-merged into data/states/nc.json.
-# Same shape as pull-nj-dca-pipeline.yml -- see that file's comments for
-# the full rationale (watermark persistence via git commit-back is what
-# makes tomorrow's run only capture what's new).
+# Runs --state NC-MECKLENBURG, which opts into generic_mapping.py's
+# deterministic no-LLM path (clean structured permit data) -- no Flash/
+# Sonnet cost. Same shape as pull-nj-dca-pipeline.yml -- see that file's
+# comments for the full rationale (watermark persistence via git
+# commit-back is what makes tomorrow's run only capture what's new).
 #
 # Needs the same repo secrets as pull-nj-dca-pipeline.yml: WIF_PROVIDER,
-# WIF_SERVICE_ACCOUNT, CLOUDSQL_PASSWORD, ANTHROPIC_API_KEY.
+# WIF_SERVICE_ACCOUNT, CLOUDSQL_PASSWORD, ANTHROPIC_API_KEY (kept for the
+# Cloud SQL proxy auth step even though this specific state doesn't call
+# the Anthropic API itself).
 
 on:
-  schedule:
-    - cron: "0 8 * * *" # daily, 08:00 UTC (same time as NJ -- independent runners)
+  # schedule trigger disabled 2026-07-28 (Asif: "disable all cron jobs,
+  # will come back to it later"). Was: daily, 08:00 UTC. workflow_dispatch
+  # still works for manual runs.
+  #
+  # 2026-07-29: this workflow used to run --state NC through the legacy
+  # "NC" config, a separate Flash+Sonnet LLM path hitting the exact same
+  # meckgis.mecklenburgcountync.gov endpoint as the NC-MECKLENBURG
+  # deterministic config added 2026-07-28 -- a real forward-duplication/
+  # wasted-LLM-spend risk if this cron were re-enabled as-is. Fixed by
+  # removing the redundant "NC" config entirely (its watermark never
+  # advanced past 0, so no captured data was discarded) and switching
+  # this workflow to --state NC-MECKLENBURG below.
+  # schedule:
+  #   - cron: "0 8 * * *"
   workflow_dispatch:
     inputs:
       lookback_days:
@@ -75,12 +90,12 @@ jobs:
           print(cur.fetchone()[0])
           ")" >> "$GITHUB_OUTPUT"
 
-      - name: Run NC pipeline (Flash extract -> Sonnet dedupe -> merge)
+      - name: Run NC-MECKLENBURG pipeline (deterministic extract -> merge)
         id: pipeline
         continue-on-error: true
         run: |
           python3 scripts/state_agent_pipeline/main.py \
-            --state NC \
+            --state NC-MECKLENBURG \
             --lookback-days "${{ github.event.inputs.lookback_days || '2' }}" \
             --merge-state \
             --notify \
@@ -123,7 +138,7 @@ jobs:
         if: always()
         run: |
           {
-            echo "### NC Mecklenburg pipeline (Flash+Sonnet) — results"
+            echo "### NC Mecklenburg pipeline — results"
             echo "| Step | Outcome |"
             echo "|---|---|"
             echo "| Pipeline (fetch/extract/dedupe/merge) | ${{ steps.pipeline.outcome }} |"
@@ -140,7 +155,7 @@ jobs:
           git config user.name "specindex-bot"
           git config user.email "bot@specindex.ai"
           git add data/
-          git diff --cached --quiet || git commit -m "Automated NC pipeline run (Flash+Sonnet)"
+          git diff --cached --quiet || git commit -m "Automated NC-MECKLENBURG pipeline run"
           # A concurrent push (another state's cron, or manual work on
           # main) can land between checkout and here -- rebase onto the
           # latest main and retry instead of losing this run's watermark
