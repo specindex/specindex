@@ -194,39 +194,6 @@ export function ProjectDetailView({ project }: { project: Project }) {
             </section>
           ) : null}
 
-          {project.enrichment?.permit.length ? (
-            <section className="mt-8">
-              <h2 className="text-xl font-semibold">Permits &amp; filings</h2>
-              <ul className="card mt-4 divide-y divide-[var(--color-border)] p-0">
-                {project.enrichment.permit.map((fact) => (
-                  <li key={fact.field_key} className="p-4">
-                    <p className="text-sm font-semibold">{fact.label}</p>
-                    <p className="mt-1 text-sm text-[var(--color-gray-600)]">{fact.value}</p>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          ) : null}
-
-          {project.enrichment?.contact.length ? (
-            <section className="mt-8">
-              <h2 className="text-xl font-semibold">Contacts</h2>
-              <dl className="card mt-4 divide-y divide-[var(--color-border)] p-0">
-                {project.enrichment.contact.map((fact) => (
-                  <div key={fact.field_key} className="flex items-start justify-between gap-3 p-4">
-                    <div>
-                      <dt className="text-xs font-semibold uppercase tracking-wide text-[var(--color-gray-400)]">
-                        {fact.label}
-                      </dt>
-                      <dd className="mt-1 text-sm">{fact.value}</dd>
-                    </div>
-                    <ConfidenceBadge confidence={fact.confidence} />
-                  </div>
-                ))}
-              </dl>
-            </section>
-          ) : null}
-
           <section className="mt-8 rounded-lg bg-[var(--color-green)] p-6 text-white">
             <h2 className="text-lg font-semibold text-[var(--color-amber)]">
               Still open for manufacturers
@@ -271,9 +238,56 @@ export function ProjectDetailView({ project }: { project: Project }) {
           </div>
         </div>
 
-        {/* Sidebar */}
+        {/* Sidebar -- reference/lookup content (contacts, permits, documents,
+            map, news) lives here rather than stacked under the narrative in
+            the left column. Moved here 2026-07-29 after the two columns
+            went badly out of balance: every enrichment section had been
+            tacked onto the bottom of the left column, leaving the sidebar
+            empty for ~1500px below the news card while the left column
+            kept going -- exactly the "right column dead space" problem
+            already caught and fixed once in the ProjectDetailLight design
+            exploration, just not carried over when this real page got
+            wired up. */}
         <div className="space-y-6">
           <ProjectScoreBadge score={project.score} />
+
+          {project.enrichment?.contact.length ? (
+            <div className="card p-5">
+              <h3 className="text-xs font-semibold uppercase tracking-wide text-[var(--color-gray-400)]">
+                Contacts
+              </h3>
+              <dl className="mt-3 space-y-3">
+                {project.enrichment.contact.map((fact) => (
+                  <div key={fact.field_key} className="flex items-start justify-between gap-2">
+                    <div className="min-w-0">
+                      <dt className="text-[10px] font-semibold uppercase tracking-wide text-[var(--color-gray-400)]">
+                        {fact.label}
+                      </dt>
+                      <dd className="mt-0.5 text-sm break-words">{fact.value}</dd>
+                    </div>
+                    <ConfidenceBadge confidence={fact.confidence} />
+                  </div>
+                ))}
+              </dl>
+            </div>
+          ) : null}
+
+          {project.enrichment?.permit.length ? (
+            <div className="card p-5">
+              <h3 className="text-xs font-semibold uppercase tracking-wide text-[var(--color-gray-400)]">
+                Permits &amp; filings
+              </h3>
+              <ul className="mt-3 divide-y divide-[var(--color-border)]">
+                {project.enrichment.permit.map((fact) => (
+                  <li key={fact.field_key} className="py-2.5 first:pt-0 last:pb-0">
+                    <p className="text-sm font-semibold">{fact.label}</p>
+                    <p className="mt-0.5 text-xs text-[var(--color-gray-600)]">{fact.value}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+
           {project.documents && project.documents.length > 0 && (
             <div className="card p-5">
               <h3 className="text-xs font-semibold uppercase tracking-wide text-[var(--color-gray-400)]">
