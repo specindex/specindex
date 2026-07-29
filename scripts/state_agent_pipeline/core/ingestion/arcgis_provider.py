@@ -113,6 +113,15 @@ class ArcGISProvider(BaseIngestionProvider):
                 clauses.append(f"{self.date_field} >= '{cutoff}'")
             elif self.date_literal_style == "timestamp":
                 clauses.append(f"{self.date_field} >= TIMESTAMP '{cutoff} 00:00:00'")
+            elif self.date_literal_style == "yyyymmdd_int":
+                # Some older ArcGIS Server instances store a "date" field as
+                # a plain esriFieldTypeDouble in YYYYMMDD form (e.g.
+                # Greenville SC's APPLICDATE) and reject DATE/TIMESTAMP
+                # literals on the real date-typed field entirely (a genuine
+                # server-side bug, not a syntax issue -- confirmed by the
+                # same "Failed to execute query" error on every literal
+                # style tried against every date field on that layer).
+                clauses.append(f"{self.date_field} >= {cutoff.replace('-', '')}")
             else:
                 clauses.append(f"{self.date_field} >= DATE '{cutoff}'")
         else:

@@ -472,6 +472,69 @@ GA_GWINNETT_ACCELA_CONFIG: dict[str, Any] = {
     "lookback_days": 30,
 }
 
+# East Baton Rouge Parish, LA (state's most populous parish/county).
+# Genuine parish-level source (data.brla.gov is the Parish/City-Parish
+# consolidated government's own portal). Verified live 2026-07-29:
+# MAX(issueddate)=2026-07-24, designation='Commercial' is real (46,656
+# of 142,426 total rows; also Residential=93,097).
+LA_EBR_CONFIG: dict[str, Any] = {
+    "state_code": "LA",
+    "provider_type": "socrata",
+    "county": "East Baton Rouge",
+    "endpoint": "https://data.brla.gov/resource/7fq7-8j7r.json",
+    "watermark_field": "permitid",
+    "hash_fields": ["permitid"],
+    "commercial_where": "designation='Commercial'",
+    "date_field": "issueddate",
+    "lookback_days": 180,
+    "feed_id": "la-ebr-batonrouge",
+    "id_field": "permitid",
+    "name_fields": ["projectdescription", "permittype", "streetaddress"],
+    "address_fields": ["streetaddress", "city1", "state1", "zip"],
+    "value_fields": ["projectvalue"],
+    "desc_fields": ["projectdescription", "permittype"],
+    "source_url": "https://data.brla.gov/Housing-and-Development/EBR-Building-Permits/7fq7-8j7r",
+}
+
+# Greenville County, SC (state's most populous county). County
+# government itself has no public API (eTRAKiT web portal only) --
+# wired City of Greenville instead, which extracts nightly from its
+# Accela database into a public ArcGIS layer. Gemini gave the right
+# layer name ("BuildingPermits_PriorTwoYears") but not its real
+# service URL -- found via an ArcGIS Online owner-scoped item search
+# (owner cdurham@greenvillesc.gov_grvlsc). Verified live 2026-07-29:
+# MAX(NewIssueDate)=2026-07-28 (today), PERMIT_TYPE='BLDC' is real and
+# matches Gemini's claimed code exactly (BLDG=residential, DEMR/DEMC=
+# demolition). Real dead end found mid-verification: this old ArcGIS
+# Server (10.81) rejects DATE/TIMESTAMP literal queries against
+# NewIssueDate entirely (a genuine server bug, "Failed to execute
+# query" on every literal style, PERMIT_TYPE-only queries work fine) --
+# used APPLICDATE instead, a plain esriFieldTypeDouble storing YYYYMMDD
+# as a number (e.g. 20260406.0), queryable with a bare numeric
+# comparison. Added a new "yyyymmdd_int" date_literal_style to
+# arcgis_provider.py for this.
+SC_GREENVILLE_CONFIG: dict[str, Any] = {
+    "state_code": "SC",
+    "provider_type": "arcgis",
+    "county": "Greenville",
+    "endpoint": "https://citygis.greenvillesc.gov/arcgis/rest/services/InfoHUB/BuildingPermits_PriorTwoYears/MapServer/0",
+    "layer": 0,
+    "watermark_field": "OBJECTID",
+    "hash_fields": ["PERMIT_NUM"],
+    "commercial_where": "PERMIT_TYPE='BLDC'",
+    "out_fields": "PERMIT_NUM,PERMIT_TYPE,Status,BP_STATUS,APPLIC_DESCRIPTION,PERMIT_VALUATION,STREETADDRESS,PERMIT_LOCATION,APPLICDATE,NewIssueDate,OWNER_NAME",
+    "date_field": "APPLICDATE",
+    "date_literal_style": "yyyymmdd_int",
+    "lookback_days": 180,
+    "feed_id": "sc-greenville",
+    "id_field": "PERMIT_NUM",
+    "name_fields": ["APPLIC_DESCRIPTION", "STREETADDRESS"],
+    "address_fields": ["STREETADDRESS", "PERMIT_LOCATION"],
+    "value_fields": ["PERMIT_VALUATION"],
+    "desc_fields": ["APPLIC_DESCRIPTION"],
+    "source_url": "https://www.greenvillesc.gov/383/Building-Permits-InfoHub",
+}
+
 # Douglas County, NE (Omaha, state's most populous county). Accela
 # agency code "OMAHA" verified live -- but its default "Building"
 # module returns zero dropdown options (200 status, empty page, same
@@ -1441,6 +1504,8 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "OR-MULTNOMAH": OR_MULTNOMAH_CONFIG,
     "NM-BERNALILLO": NM_BERNALILLO_ACCELA_CONFIG,
     "NE-DOUGLAS": NE_DOUGLAS_ACCELA_CONFIG,
+    "LA-EBR": LA_EBR_CONFIG,
+    "SC-GREENVILLE": SC_GREENVILLE_CONFIG,
     "FL-MIAMIDADE": FL_MIAMIDADE_CONFIG,
     "WA-KING": WA_KING_CONFIG,
     "TX-TARRANT": TX_TARRANT_CONFIG,

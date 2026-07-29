@@ -773,6 +773,38 @@
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
       "notes": "KS county govt largely defers to municipalities. Gemini's specific Olathe ArcGIS layer path (gis.olatheks.org/.../Planning/Development/MapServer/0) returned HTTP 500 -- wrong service/layer name. Johnson County AIMS lead (maps.jocogov.org) was vague, no specific layer given. Overland Park confirmed Accela-based but Gemini said no public API without authentication (not independently verified). Not investigated further this round -- worth a live ArcGIS REST service-directory browse of gis.olatheks.org to find the real service name."
+    },
+    {
+      "jurisdiction": "East Baton Rouge Parish, LA",
+      "county": "East Baton Rouge",
+      "state": "LA",
+      "provider_type": "socrata",
+      "endpoint": "https://data.brla.gov/resource/7fq7-8j7r.json",
+      "state_agent_pipeline_key": "LA-EBR",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 1091,
+      "notes": "Genuine parish-level source, not a top-city proxy -- data.brla.gov is the consolidated City-Parish government's own portal. Gemini's answer fully accurate. MAX(issueddate)=2026-07-24, designation='Commercial' real (46,656/142,426 total). 180-day window: 1,092 fetched, 1,091 new -- one of the largest single-run yields this backlog."
+    },
+    {
+      "jurisdiction": "Greenville County, SC (City of Greenville)",
+      "county": "Greenville",
+      "state": "SC",
+      "provider_type": "arcgis",
+      "endpoint": "https://citygis.greenvillesc.gov/arcgis/rest/services/InfoHUB/BuildingPermits_PriorTwoYears/MapServer/0",
+      "state_agent_pipeline_key": "SC-GREENVILLE",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 77,
+      "notes": "County govt has no public API (eTRAKiT web portal only) -- wired City of Greenville, which nightly-extracts from Accela into a public ArcGIS layer. Found the real service URL via an ArcGIS Online owner-scoped item search after Gemini gave only the layer name. Real dead end found mid-verification: this old ArcGIS Server (10.81) rejects DATE/TIMESTAMP literal queries against the true date field (NewIssueDate) entirely -- a genuine server bug, not a syntax mistake, confirmed by testing every literal style. Worked around using APPLICDATE, a plain numeric YYYYMMDD field, via a new 'yyyymmdd_int' date_literal_style added to arcgis_provider.py. PERMIT_TYPE='BLDC' confirmed real (matches Gemini's claimed code exactly). 77 fetched, 77 new."
+    },
+    {
+      "jurisdiction": "Polk County, IA (Des Moines)",
+      "county": "Polk",
+      "state": "IA",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Confirmed no public API exists -- county uses OpenGov (no public endpoint without enterprise agreement), Des Moines uses Tyler EnerGov CSS but Gemini said no public-facing API layer. Worth a fresh check of Des Moines's real EnerGov selfservice subdomain directly (my one guessed URL, selfservice.dsm.city, failed DNS) since other cities' EnerGov instances have had genuine public search APIs this session (Carson CA) -- not confirmed dead, just not dug into further this round."
     }
   ]
 }
