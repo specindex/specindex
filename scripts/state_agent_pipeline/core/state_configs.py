@@ -1680,6 +1680,64 @@ CO_DENVER_CONFIG: dict[str, Any] = {
     "source_url": "https://www.denvergov.org/opendata",
 }
 
+# Lexington-Fayette, KY (Fayette County's top jurisdiction -- KY's 2nd
+# most populous county after Jefferson/Louisville; LFUCG is a
+# consolidated city-county government, genuine full-county coverage).
+# Gemini's module name ("Building Inspection") was wrong -- real module
+# list (via Welcome.aspx) is just Building/NewDevelopment/Planning/
+# WasteManagement. Real dropdown option "Commercial New Construction"
+# confirmed live.
+KY_LEXINGTON_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "KY",
+    "provider_type": "accela",
+    "county": "Fayette",
+    "endpoint": "https://aca-prod.accela.com/LEXKY",
+    "module": "Building",
+    "permit_type_label": "Commercial New Construction",
+    "lookback_days": 180,
+}
+
+# Washington County, OR (Beaverton/Hillsboro -- OR's 2nd most populous
+# county after Multnomah). Genuine countywide source (unlike OR-
+# MULTNOMAH which is Portland-city-scoped) -- unincorporated Washington
+# County runs its own Accela instance on a branded domain
+# (permits.washingtoncountyor.gov), same non-standard-domain pattern as
+# Boise ID. Real dropdown option "Commercial New" confirmed live.
+OR_WASHINGTON_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "OR",
+    "provider_type": "accela",
+    "county": "Washington",
+    "endpoint": "https://permits.washingtoncountyor.gov/CitizenAccess",
+    "module": "Building",
+    "permit_type_label": "Commercial New",
+    "lookback_days": 180,
+}
+
+# New Orleans, LA (Orleans Parish). LA's actual #2-by-population parish,
+# Jefferson Parish, is a confirmed dead end (MyGovernmentOnline, no
+# public API) -- New Orleans is a real, high-value alternative found via
+# Gemini's own cross-reference. Real Socrata dataset "Permits"
+# (rcm3-fn58), updated today. landuseshort='COMM' is real (66,106 of
+# 344,000+ total rows; RSFD/RSF2/RMF/etc are residential variants).
+LA_NEWORLEANS_CONFIG: dict[str, Any] = {
+    "state_code": "LA",
+    "provider_type": "socrata",
+    "county": "Orleans",
+    "endpoint": "https://data.nola.gov/resource/rcm3-fn58.json",
+    "watermark_field": "pin",
+    "hash_fields": ["numstring", "pin"],
+    "commercial_where": "landuseshort='COMM'",
+    "date_field": "issuedate",
+    "lookback_days": 180,
+    "feed_id": "la-neworleans",
+    "id_field": "numstring",
+    "name_fields": ["description", "projectname", "address"],
+    "address_fields": ["address"],
+    "value_fields": ["constrval"],
+    "desc_fields": ["description", "type"],
+    "source_url": "https://data.nola.gov/Building-and-Housing/Permits/rcm3-fn58",
+}
+
 STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NJ": NJ_CONFIG,
     "CA-LOSANGELES": CA_LOSANGELES_CONFIG,
@@ -1728,6 +1786,9 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "WA-PIERCE": WA_PIERCE_CONFIG,
     "VA-VIRGINIABEACH": VA_VIRGINIABEACH_CONFIG,
     "CO-DENVER": CO_DENVER_CONFIG,
+    "KY-LEXINGTON": KY_LEXINGTON_ACCELA_CONFIG,
+    "OR-WASHINGTON": OR_WASHINGTON_ACCELA_CONFIG,
+    "LA-NEWORLEANS": LA_NEWORLEANS_CONFIG,
     "IN-INDIANAPOLIS": IN_INDIANAPOLIS_ACCELA_CONFIG,
     "FL-MIAMIDADE": FL_MIAMIDADE_CONFIG,
     "WA-KING": WA_KING_CONFIG,

@@ -1002,6 +1002,39 @@
       "status": "VERIFIED_WORKING",
       "records_merged": 18,
       "notes": "Colorado's actual most-populous county/city (CO-SPRINGS/El Paso was wired first this session, kept both as genuinely different metros). Dataset name (ODC_DEV_COMMERCIALCONSTPERMIT_P) confirms already commercial-only. Real layer ID is 317, not the default 0. MAX(DATE_ISSUED)=2026-07-28. 1,145 fetched, only 18 new -- most already captured by the earlier statewide CO work."
+    },
+    {
+      "jurisdiction": "Lexington-Fayette, KY (LFUCG)",
+      "county": "Fayette",
+      "state": "KY",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/LEXKY",
+      "state_agent_pipeline_key": "KY-LEXINGTON",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 32,
+      "notes": "2nd-largest-county-per-state expansion. LFUCG is a consolidated city-county government, genuine full-county coverage. Gemini's module name ('Building Inspection') was wrong -- real module list is Building/NewDevelopment/Planning/WasteManagement. Real dropdown 'Commercial New Construction' confirmed. 42 fetched, 32 new."
+    },
+    {
+      "jurisdiction": "Washington County, OR (Beaverton/Hillsboro)",
+      "county": "Washington",
+      "state": "OR",
+      "provider_type": "accela",
+      "endpoint": "https://permits.washingtoncountyor.gov/CitizenAccess",
+      "state_agent_pipeline_key": "OR-WASHINGTON",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 47,
+      "notes": "2nd-largest-county-per-state expansion. Genuine countywide source (unlike OR-MULTNOMAH, Portland-city-scoped) -- runs its own Accela on a branded domain, same non-standard pattern as Boise ID. Real dropdown 'Commercial New' confirmed. 57 fetched, 47 new."
+    },
+    {
+      "jurisdiction": "New Orleans, LA (Orleans Parish)",
+      "county": "Orleans",
+      "state": "LA",
+      "provider_type": "socrata",
+      "endpoint": "https://data.nola.gov/resource/rcm3-fn58.json",
+      "state_agent_pipeline_key": "LA-NEWORLEANS",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 1092,
+      "notes": "LA's actual #2 parish, Jefferson Parish, is a confirmed dead end (MyGovernmentOnline, no API). New Orleans found via Gemini's own cross-reference as a real high-value alternative. landuseshort='COMM' real (66,106 rows). 1,092 fetched, 1,092 new."
     }
   ]
 }
