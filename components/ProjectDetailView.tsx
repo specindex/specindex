@@ -141,12 +141,23 @@ function Fact({
         {label}
       </dt>
       <dd
-        className={`mt-1 flex items-center gap-2 text-sm font-medium ${mono ? "font-mono text-xs" : ""} ${
+        className={`mt-1 text-sm font-medium ${mono ? "font-mono text-xs" : ""} ${
           isEmpty ? "text-[var(--color-gray-400)] font-normal" : ""
         }`}
       >
-        {value}
-        {confidence && <ConfidenceBadge confidence={confidence} />}
+        {/* Badge stacked below the value, not centered beside it -- a
+            long value (e.g. "Hyundai Engineering America, Inc.")
+            wraps to several lines in these narrow KPI cells, and
+            items-center was vertically centering the badge against
+            that whole wrapped block instead of sitting cleanly with
+            it. Stacking keeps the badge inside the box regardless of
+            how many lines the value wraps to. */}
+        <span className="break-words">{value}</span>
+        {confidence && (
+          <span className="mt-1.5 block w-fit">
+            <ConfidenceBadge confidence={confidence} />
+          </span>
+        )}
       </dd>
     </div>
   );
