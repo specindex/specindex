@@ -1,0 +1,59 @@
+name: Refresh project_documents (GCS scan)
+
+# Runs scripts/compute-project-documents.py, which now scans
+# gs://specindex-ai-raw-documents directly (2026-07-29 fix -- it
+# previously only read local data/documents/*/*.json manifests, so the
+# site's "has attached documents" filter only ever reflected ~3 projects
+# even though 593+ real files were already in GCS from GA-SAM.gov and the
+# ongoing Gemini-driven step 7 backfill). Same Cloud SQL Auth Proxy +
+# Workload Identity Federation pattern as every other pull-*.yml workflow
+# -- no new secrets needed.
+
+on:
+  workflow_dispatch: {}
+  # No schedule yet -- run manually until step 7 document work settles
+  # into a steady cadence worth automating on its own trigger.
+
+permissions:
+  contents: read
+  id-token: write
+
+env:
+  CLOUDSQL_INSTANCE: specindex-ai:us-central1:specindex-db
+  DATABASE_URL: postgresql://specindex:${{ secrets.CLOUDSQL_PASSWORD }}@127.0.0.1:5433/specindex
+
+jobs:
+  refresh_project_documents:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements-db.txt
+
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+
+      - name: Start Cloud SQL Auth Proxy
+        run: |
+          curl -sL -o cloud-sql-proxy \
+            https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.14.0/cloud-sql-proxy.linux.amd64
+          chmod +x cloud-sql-proxy
+          ./cloud-sql-proxy --port 5433 "$CLOUDSQL_INSTANCE" &
+          for i in $(seq 1 15); do
+            (echo > /dev/tcp/127.0.0.1/5433) >/dev/null 2>&1 && break
+            sleep 1
+          done
+
+      - name: Refresh project_documents from GCS + local manifests
+        run: python3 scripts/compute-project-documents.py --apply-migration
+
+      - name: Job summary
+        if: always()
+        run: echo "### project_documents refresh complete" >> "$GITHUB_STEP_SUMMARY"
