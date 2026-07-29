@@ -361,6 +361,7 @@ def main() -> int:
     )
     ap.add_argument("--limit", type=int, default=25, help="--batch only: max projects to enrich this run")
     ap.add_argument("--delay", type=float, default=2.0, help="--batch only: seconds between projects")
+    ap.add_argument("--state", help="--batch only: restrict to one state code, e.g. GA")
     ap.add_argument(
         "--database-url",
         default=os.environ.get("DATABASE_URL", "postgresql://specindex:specindex@localhost:5432/specindex"),
@@ -387,17 +388,20 @@ def main() -> int:
             conn.commit()
 
         if args.batch:
+            state_clause = "AND p.state = %s" if args.state else ""
+            params: tuple = (args.state.upper(), args.limit) if args.state else (args.limit,)
             with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
                 cur.execute(
-                    """
+                    f"""
                     SELECT p.project_sk, p.name, p.city, p.county, p.state
                     FROM projects p
                     LEFT JOIN project_enrichment_checks c ON c.project_sk = p.project_sk
-                    WHERE c.checked_at IS NULL OR c.checked_at < now() - interval '30 days'
+                    WHERE (c.checked_at IS NULL OR c.checked_at < now() - interval '30 days')
+                    {state_clause}
                     ORDER BY p.estimated_value_usd DESC NULLS LAST
                     LIMIT %s
                     """,
-                    (args.limit,),
+                    params,
                 )
                 candidates = cur.fetchall()
             for c in candidates:
