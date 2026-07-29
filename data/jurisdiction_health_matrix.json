@@ -866,6 +866,58 @@
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
       "notes": "City of Billings (primary commercial jurisdiction) uses CityView, confirmed no public API. Found a real statewide MT DLI Accela agency ('MONTANA', verified live, 200 on Welcome.aspx) but it covers only projects OUTSIDE municipal enforcement (i.e. NOT Billings, the actual commercial center) and its Building module has only a generic 'Building Permit' catch-all record type with no commercial/residential split (only Electrical has a Commercial-specific sub-type) -- deferred rather than wire an unfiltered, low-relevance feed."
+    },
+    {
+      "jurisdiction": "Sioux Falls, SD (Minnehaha County)",
+      "county": "Minnehaha",
+      "state": "SD",
+      "provider_type": "arcgis",
+      "endpoint": "https://gis.siouxfalls.gov/arcgis/rest/services/Data/Community/MapServer/3",
+      "state_agent_pipeline_key": "SD-SIOUXFALLS",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 1368,
+      "notes": "Gemini's domain had a .org/.gov typo (gis.siouxfalls.org doesn't resolve, real is gis.siouxfalls.gov) -- found via an ArcGIS Online item search matching the item ID embedded in Gemini's own GeoJSON download URL. Minnehaha County's own ArcGIS lead was also fabricated (NXDOMAIN), not pursued further since Sioux Falls covers ~85% of the county. MAX(ISSUEDATE)=2026-07-25, PERMITTYPE='Commercial Building' real. 1,368 new -- one of the largest single-run yields in the whole backlog."
+    },
+    {
+      "jurisdiction": "Indianapolis, IN (Marion County -- Unigov)",
+      "county": "Marion",
+      "state": "IN",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/INDY",
+      "state_agent_pipeline_key": "IN-INDIANAPOLIS",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 281,
+      "notes": "Resolves the 'Marion County flagged hard' note from an earlier session -- that assumed the only option was the statewide Oracle Reports CDR system. Indianapolis actually runs its own Accela instance (agency 'INDY', reached via redirect from permitsandcases.indy.gov, same branded-domain pattern as Boise). Same recurring empty-'Building'-module symptom as MO-STLOUIS/NE-DOUGLAS -- real module is 'Permits'. No 'Commercial' terminology at all -- uses 'Improvement Location Permit' (ILP), 'Improvement Location Permit-Non-Residential' is the real commercial-equivalent type. Caught and fixed a real bug during verification: Indianapolis's results table uses 'Case Number' as its permit-number column header, not in accela_provider.py's alias list -- every row got an identical fallback ID and 325 of 326 real records silently collapsed into 1 on the first merge attempt. Fixed the alias list, removed the 1 corrupted record, reset the watermark, and re-ran clean: 281 new, 341 unique of 341 fetched (minus normal within-window re-appearances)."
+    },
+    {
+      "jurisdiction": "Cass County, ND (Fargo)",
+      "county": "Cass",
+      "state": "ND",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Genuine dead end -- no Accela/Socrata/CKAN/CARTO anywhere in the county. Fargo's ArcGIS REST directory has building footprints only, no permit layer. Only public access is Fargo's own web reporting portal (CSV export button, no API)."
+    },
+    {
+      "jurisdiction": "Chittenden County, VT (Burlington)",
+      "county": "Chittenden",
+      "state": "VT",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Genuine dead end -- Burlington uses closed OpenGov, no Accela. CCRPC/VCGI regional GIS has zoning/parcels/housing summaries only, no permit layer. State-level Act 250/Fire Safety portals are web-viewer-only."
+    },
+    {
+      "jurisdiction": "Laramie County, WY (Cheyenne)",
+      "county": "Laramie",
+      "state": "WY",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Genuine dead end -- Cheyenne uses closed OpenGov, county uses Granicus SmartGov, neither exposes a public API. CLC GISC regional GIS has parcels/building footprints only, no permits. County publishes static monthly PDF reports as the only bulk-ish option."
     }
   ]
 }

@@ -466,6 +466,62 @@ GA_GWINNETT_ACCELA_CONFIG: dict[str, Any] = {
     "lookback_days": 30,
 }
 
+# Indianapolis, IN (Marion County -- consolidated city-county
+# government/Unigov, so this is genuine full-county coverage). A prior
+# session flagged Marion County as hard, assuming the only option was
+# the statewide Indiana CDR system (Oracle Reports, ~92 counties, no
+# "ALL" option, complex HTML parsing per county). Re-investigated
+# 2026-07-29 and found Indianapolis actually runs its own Accela
+# instance (agency code "INDY", reached via a redirect from the city's
+# branded permitsandcases.indy.gov/citizenaccess/ URL -- same non-
+# standard-domain pattern as Boise). Same recurring "Building" module
+# is empty for this agency (0 dropdown options) -- real module is
+# "Permits" (matches the Omaha NE pattern exactly). No "Commercial"
+# terminology in the dropdown at all -- Indianapolis/Indiana zoning
+# uses "Improvement Location Permit" (ILP) terminology instead;
+# "Improvement Location Permit-Non-Residential" is the real commercial-
+# equivalent record type (vs. "...1-2 Family"/"...Multi-Family").
+IN_INDIANAPOLIS_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "IN",
+    "provider_type": "accela",
+    "county": "Marion",
+    "endpoint": "https://aca-prod.accela.com/INDY",
+    "module": "Permits",
+    "permit_type_label": "Improvement Location Permit-Non-Residential",
+    "lookback_days": 180,
+}
+
+# Sioux Falls, SD (Minnehaha County's top jurisdiction, ~85% of the
+# county's population). Gemini's domain had a typo -- gis.siouxfalls.
+# ORG doesn't resolve (NXDOMAIN), real domain is gis.siouxfalls.GOV --
+# found the correct one via an ArcGIS Online item search on the same
+# item ID Gemini referenced in a GeoJSON download URL. Verified live
+# 2026-07-29: MAX(ISSUEDATE)=2026-07-25, PERMITTYPE='Commercial
+# Building' real (vs 'Residential Building', only two values exist).
+# Minnehaha County's own lead (mcgis.minnehahacounty.org) was also
+# fabricated (NXDOMAIN) -- not pursued further given Sioux Falls
+# already covers the large majority of the county.
+SD_SIOUXFALLS_CONFIG: dict[str, Any] = {
+    "state_code": "SD",
+    "provider_type": "arcgis",
+    "county": "Minnehaha",
+    "endpoint": "https://gis.siouxfalls.gov/arcgis/rest/services/Data/Community/MapServer/3",
+    "layer": 3,
+    "watermark_field": "OBJECTID",
+    "hash_fields": ["PERMITNUMBER"],
+    "commercial_where": "PERMITTYPE='Commercial Building'",
+    "out_fields": "PERMITNUMBER,PERMITTYPE,PERMITSTATUS,WORKCLASS,APPLYDATE,ISSUEDATE,VALUATION,MAINADDRESS,contractor_name",
+    "date_field": "ISSUEDATE",
+    "lookback_days": 180,
+    "feed_id": "sd-siouxfalls",
+    "id_field": "PERMITNUMBER",
+    "name_fields": ["WORKCLASS", "MAINADDRESS", "PERMITTYPE"],
+    "address_fields": ["MAINADDRESS"],
+    "value_fields": ["VALUATION"],
+    "desc_fields": ["WORKCLASS", "PERMITTYPE"],
+    "source_url": "https://dataworks.siouxfalls.gov/datasets/cityofsfgis::building-permits",
+}
+
 # Ada County, ID (Boise, state's most populous county). Accela agency
 # is NOT at the standard aca-prod.accela.com/boise URL (that 301-
 # redirects); the real, live instance is hosted at Boise's own branded
@@ -1515,6 +1571,8 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "LA-EBR": LA_EBR_CONFIG,
     "SC-GREENVILLE": SC_GREENVILLE_CONFIG,
     "ID-ADA": ID_ADA_ACCELA_CONFIG,
+    "SD-SIOUXFALLS": SD_SIOUXFALLS_CONFIG,
+    "IN-INDIANAPOLIS": IN_INDIANAPOLIS_ACCELA_CONFIG,
     "FL-MIAMIDADE": FL_MIAMIDADE_CONFIG,
     "WA-KING": WA_KING_CONFIG,
     "TX-TARRANT": TX_TARRANT_CONFIG,

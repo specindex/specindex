@@ -46,6 +46,14 @@ HEADER_ALIASES = {
     "permit number": "permit_number",
     "building number": "permit_number",
     "record number": "permit_number",
+    # Indianapolis's Accela deployment (IN-INDIANAPOLIS) uses "Case
+    # Number" for the same column -- confirmed live 2026-07-29 via the
+    # search form's own field label ("Case Number:"). Every row got the
+    # identical fallback ID before this was added (permit_number was
+    # never populated, so 326 real rows collapsed into 1 on merge --
+    # caught and fixed same day, no bad data survived past the initial
+    # test run).
+    "case number": "permit_number",
     "permit type": "permit_type",
     "building type": "permit_type",
     "record type": "permit_type",
