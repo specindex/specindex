@@ -1738,6 +1738,40 @@ LA_NEWORLEANS_CONFIG: dict[str, Any] = {
     "source_url": "https://data.nola.gov/Building-and-Housing/Permits/rcm3-fn58",
 }
 
+# City of Las Cruces, NM (Doña Ana County's top jurisdiction -- NM's 2nd
+# most populous county after Bernalillo). Accela agency "LASCRUCES"
+# verified live, real Building module dropdown has "Commercial New"
+# among 10+ Commercial-prefixed types. Unincorporated county itself has
+# no public API (per Gemini, county building permits route through the
+# state CID field office) -- Las Cruces covers the real commercial
+# activity.
+NM_LASCRUCES_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "NM",
+    "provider_type": "accela",
+    "county": "Dona Ana",
+    "endpoint": "https://aca-prod.accela.com/LASCRUCES",
+    "module": "Building",
+    "permit_type_label": "Commercial New",
+    "lookback_days": 180,
+}
+
+# Lincoln, NE (Lancaster County's top jurisdiction -- NE's 2nd most
+# populous county after Douglas/Omaha). Lincoln and Lancaster County
+# operate a JOINT Development Services Center on one Accela instance
+# (agency "LINCOLN") -- genuine combined city+county coverage. Real
+# dropdown has both "City - Commercial Building" and "County -
+# Commercial Building" as separate record types; wired the city one
+# (dominant urban commercial volume).
+NE_LINCOLN_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "NE",
+    "provider_type": "accela",
+    "county": "Lancaster",
+    "endpoint": "https://aca-prod.accela.com/LINCOLN",
+    "module": "Building",
+    "permit_type_label": "City - Commercial Building",
+    "lookback_days": 180,
+}
+
 STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NJ": NJ_CONFIG,
     "CA-LOSANGELES": CA_LOSANGELES_CONFIG,
@@ -1789,6 +1823,8 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "KY-LEXINGTON": KY_LEXINGTON_ACCELA_CONFIG,
     "OR-WASHINGTON": OR_WASHINGTON_ACCELA_CONFIG,
     "LA-NEWORLEANS": LA_NEWORLEANS_CONFIG,
+    "NM-LASCRUCES": NM_LASCRUCES_ACCELA_CONFIG,
+    "NE-LINCOLN": NE_LINCOLN_ACCELA_CONFIG,
     "IN-INDIANAPOLIS": IN_INDIANAPOLIS_ACCELA_CONFIG,
     "FL-MIAMIDADE": FL_MIAMIDADE_CONFIG,
     "WA-KING": WA_KING_CONFIG,

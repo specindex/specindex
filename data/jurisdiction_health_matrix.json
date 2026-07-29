@@ -1035,6 +1035,38 @@
       "status": "VERIFIED_WORKING",
       "records_merged": 1092,
       "notes": "LA's actual #2 parish, Jefferson Parish, is a confirmed dead end (MyGovernmentOnline, no API). New Orleans found via Gemini's own cross-reference as a real high-value alternative. landuseshort='COMM' real (66,106 rows). 1,092 fetched, 1,092 new."
+    },
+    {
+      "jurisdiction": "Las Cruces, NM (Dona Ana County)",
+      "county": "Dona Ana",
+      "state": "NM",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/LASCRUCES",
+      "state_agent_pipeline_key": "NM-LASCRUCES",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 11,
+      "notes": "2nd-largest-county-per-state expansion. Unincorporated county itself has no API (routes through state CID). Real dropdown 'Commercial New' confirmed. 21 fetched, 11 new."
+    },
+    {
+      "jurisdiction": "Lincoln, NE (Lancaster County)",
+      "county": "Lancaster",
+      "state": "NE",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/LINCOLN",
+      "state_agent_pipeline_key": "NE-LINCOLN",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 230,
+      "notes": "2nd-largest-county-per-state expansion. Lincoln + Lancaster County run a JOINT Development Services Center on one Accela instance -- genuine combined city+county coverage. Real dropdown has both 'City - Commercial Building' and 'County - Commercial Building' as separate types; wired the city one. 300 fetched, 230 new."
+    },
+    {
+      "jurisdiction": "Richland County, SC (Columbia)",
+      "county": "Richland",
+      "state": "SC",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "2nd-largest-county-per-state expansion. County uses eTrakIt, no API. City of Columbia uses Tyler EnerGov (cityofcolumbiasc-energovweb.tylerhost.net, verified reachable) -- tried live with energov_provider.py, hit the same 'Locator.click: Timeout... Search button' navigation error already seen on CA-Glendale's EnerGov deployment (0 rows, not an outright crash). Registered attempt not saved as a config; needs the same per-jurisdiction Playwright tuning Glendale still needs."
     }
   ]
 }
