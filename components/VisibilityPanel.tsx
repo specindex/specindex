@@ -108,9 +108,9 @@ export function VisibilityPanel({ projects }: Props) {
           hint="In planning or permitting, no manufacturer named"
         />
         <StatCard
-          label="Named in public sources"
+          label="Named in coverage"
           value={String(analysis.mentioned.length)}
-          hint="Usually low, because permits rarely name manufacturers"
+          hint="Usually low, because early records rarely name manufacturers"
         />
       </div>
 
@@ -119,10 +119,10 @@ export function VisibilityPanel({ projects }: Props) {
           How to read a zero here
         </p>
         <p className="mt-1.5 text-sm leading-relaxed text-[var(--color-gray-600)]">
-          The public record hardly ever says which manufacturer was picked, because
+          Early records hardly ever say which manufacturer was picked, because
           that gets written in the spec book instead. If the third
-          number is zero, it means your brand doesn&apos;t appear in the public record
-          we can read. It does not mean you lost the job. Reading spec books is what
+          number is zero, it means your brand doesn&apos;t appear in what we&apos;ve
+          read yet. It does not mean you lost the job. Reading spec books is what
           we&apos;re building next, and that is where real mention rates will come
           from. Until then, work off the middle number.
         </p>
@@ -141,10 +141,10 @@ export function VisibilityPanel({ projects }: Props) {
         empty="Nothing under construction needs this category."
       />
       <ProjectList
-        title="Named in public sources"
+        title="Named in coverage"
         subtitle={`Projects where ${brand || "this brand"} already turns up in coverage or in the project record.`}
         projects={analysis.mentioned}
-        empty={`${brand || "This brand"} doesn't appear in the public record for any indexed project yet.`}
+        empty={`${brand || "This brand"} doesn't appear in coverage for any indexed project yet.`}
       />
     </div>
   );

@@ -10,7 +10,7 @@ import { getDivisionRollup, getMappedProjectCount } from "@/lib/divisions";
 const faqs = [
   {
     q: "Where does the project data come from?",
-    a: "Public records only. We don't resell anyone's licensed plan room content.",
+    a: "We maintain our own extensive, continuously updated database of commercial construction activity. We don't resell anyone's licensed plan room content.",
   },
   {
     q: "How current is the index?",
@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     q: "Can you tell me if my brand is in an actual specification?",
-    a: "Not yet. Right now we report brand names found in public project coverage. Reading full specification books is what we're building next.",
+    a: "Not yet. Right now we report brand names found in project coverage. Reading full specification books is what we're building next.",
   },
   {
     q: "What do you need from us to start?",
@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     q: "How much of the country do you cover?",
-    a: "Commercial projects in all 50 states, filterable by state and county. Built from public records only. Depth varies by jurisdiction.",
+    a: "Commercial projects in all 50 states, filterable by state and county. Depth varies by market.",
   },
 ];
 
@@ -38,7 +38,7 @@ const stages = [
   {
     stage: "Announced",
     window: "Window opening",
-    body: "Owner, site, and scale become public. Nothing is drawn yet.",
+    body: "Owner, site, and scale are announced. Nothing is drawn yet.",
     detail: "Too early for product detail, but early enough to get known by the design team.",
   },
   {
@@ -148,8 +148,8 @@ export default async function HomePage() {
             happen before a purchase order exists.
           </p>
           <p className="mt-4 text-base leading-relaxed text-[var(--color-gray-600)]">
-            Most of that leaves a public trail. The trouble is that it&apos;s spread
-            across thousands of counties and cities, and they all publish it
+            Most of that information exists somewhere. The trouble is that it&apos;s
+            scattered across thousands of markets, and every one of them presents it
             differently.
           </p>
         </div>

@@ -116,7 +116,7 @@ function ConfidenceDot({ confidence }: { confidence: string }) {
   );
 }
 
-const EMPTY_FACT_VALUES = new Set(["Not reported", "None in public seed"]);
+const EMPTY_FACT_VALUES = new Set(["Not reported", "None found yet"]);
 
 function Fact({
   label,
@@ -541,7 +541,7 @@ export function ProjectDetailView({ project }: { project: Project }) {
                 value={
                   project.mentioned_brands.length
                     ? project.mentioned_brands.join(", ")
-                    : "None in public seed"
+                    : "None found yet"
                 }
               />
             </dl>

@@ -5,15 +5,15 @@ import { RequestDemoButton } from "@/components/marketing/RequestDemoButton";
 export const metadata: Metadata = {
   title: "How It Works",
   description:
-    "Commercial projects in all 50 states, filterable by state and county. Built from public records only.",
+    "Commercial projects in all 50 states, filterable by state and county.",
 };
 
 const steps = [
   {
     step: "01",
-    title: "We read the public record",
-    body: "Commercial projects in all 50 states, built from public records only — nothing licensed, nothing pulled from a paid plan room.",
-    detail: "Coverage depth varies by jurisdiction — some publish more than others.",
+    title: "An extensive, growing database",
+    body: "Commercial projects across all 50 states, added continuously as new ones come up — nothing licensed, nothing pulled from a paid plan room.",
+    detail: "Coverage depth varies by market.",
   },
   {
     step: "02",
@@ -25,7 +25,7 @@ const steps = [
     step: "03",
     title: "You filter down to what you sell",
     body: "State, county, stage, project type, and CSI division. A job still in design is a different conversation from one already framed, so the stage sits on every record.",
-    detail: "No login and no plan room subscription for the public index.",
+    detail: "No plan room subscription required.",
   },
   {
     step: "04",
@@ -41,10 +41,10 @@ export default function HowItWorksPage() {
       <section className="border-b border-[var(--color-border)] bg-[var(--color-bg)]">
         <div className="mx-auto max-w-3xl px-5 py-16 text-center md:px-8 md:py-20">
           <p className="text-eyebrow">How It Works</p>
-          <h1 className="mt-4 text-hero">Public filings in. Structured projects out.</h1>
+          <h1 className="mt-4 text-hero">An extensive database of commercial projects, structured and ranked.</h1>
           <p className="mt-5 text-base leading-relaxed text-[var(--color-gray-600)]">
-            There is no private feed behind SpecIndex. Everything in the index comes
-            from records anyone is allowed to read, with a source link kept on every
+            SpecIndex maintains a continuously growing database of commercial
+            construction projects nationwide, with a source link kept on every
             project so you can verify it yourself.
           </p>
         </div>

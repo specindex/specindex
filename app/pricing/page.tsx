@@ -11,8 +11,8 @@ const plans = [
   {
     name: "Free",
     price: "$0",
-    period: "public index",
-    description: "Search the public index and run a brand check now and then.",
+    period: "always free",
+    description: "Search the index and run a brand check now and then.",
     features: [
       "Search commercial projects in all 50 states",
       "Filter by state, county, stage, and category",
@@ -66,7 +66,7 @@ export default function PricingPage() {
           <p className="text-eyebrow">Pricing</p>
           <h1 className="mt-4 text-hero">The index is free to search. Always.</h1>
           <p className="mt-5 text-base leading-relaxed text-[var(--color-gray-600)]">
-            Anyone can search public project data without paying us for it. The paid
+            Anyone can search the index without paying us for it. The paid
             seats cover the work layered on top: brand tracking, competitor compare,
             alerts, and reading the spec books.
           </p>

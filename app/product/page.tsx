@@ -52,7 +52,7 @@ export default function ProductPage() {
           <p className="text-eyebrow">Product</p>
           <h1 className="mt-4 text-hero">Built around one question: is my category still open?</h1>
           <p className="mt-5 text-base leading-relaxed text-[var(--color-gray-600)]">
-            Everything below is either working in the public index today or labelled as
+            Everything below is either working in the index today or labelled as
             still being built. Nothing in between.
           </p>
         </div>
