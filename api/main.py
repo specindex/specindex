@@ -6,6 +6,7 @@ import json
 import os
 import smtplib
 import time
+import urllib.parse
 from contextlib import contextmanager
 from datetime import datetime, timezone
 from email.message import EmailMessage
@@ -14,11 +15,13 @@ from typing import Any
 import psycopg2
 import psycopg2.extras
 import psycopg2.pool
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import Response
 from pydantic import BaseModel, Field, field_validator
 
 DATABASE_URL = os.environ.get("DATABASE_URL", "")
+DOCUMENTS_GCS_BUCKET = "specindex-ai-raw-documents"
 
 # Standard county/county-equivalent counts per state, used only to compute
 # "how much room is left" in the /v1/coverage/insights endpoint -- not
@@ -69,6 +72,21 @@ app.add_middleware(
 )
 
 _pool: psycopg2.pool.ThreadedConnectionPool | None = None
+
+# Lazy singleton -- only imported/constructed the first time a document is
+# actually requested, so the common request path (project reads) doesn't
+# pay for the google-cloud-storage import or a client handshake it never
+# uses.
+_gcs_bucket = None
+
+
+def _get_gcs_bucket():
+    global _gcs_bucket
+    if _gcs_bucket is None:
+        from google.cloud import storage
+
+        _gcs_bucket = storage.Client().bucket(DOCUMENTS_GCS_BUCKET)
+    return _gcs_bucket
 
 
 def _get_pool() -> psycopg2.pool.ThreadedConnectionPool:
@@ -879,17 +897,30 @@ def fetch_enrichment_detail(conn, sk: int) -> dict[str, Any]:
     return sections
 
 
-def fetch_document_files(conn, sk: int) -> list[dict[str, Any]]:
+def fetch_document_files(conn, sk: int, base_url: str) -> list[dict[str, Any]]:
+    """`url` here is what the frontend actually links to -- our own
+    /v1/documents/{id} proxy when the document has been through
+    scripts/fetch-and-store-documents.py (gcs_path set), falling back to
+    the original external URL for documents not yet migrated to that
+    pipeline. Either way the frontend just links to `url` with no branching
+    of its own -- the resolution happens here."""
     with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
         cur.execute(
-            "SELECT title, url, content_type FROM project_document_files WHERE project_sk = %s ORDER BY title",
+            "SELECT id, title, url, content_type, gcs_path FROM project_document_files "
+            "WHERE project_sk = %s ORDER BY title",
             (sk,),
         )
-        return [dict(r) for r in cur.fetchall()]
+        rows = [dict(r) for r in cur.fetchall()]
+    for r in rows:
+        if r.pop("gcs_path", None):
+            r["url"] = f"{base_url}v1/documents/{r.pop('id')}"
+        else:
+            r.pop("id", None)
+    return rows
 
 
 @app.get("/v1/projects/{project_id}")
-def get_project(project_id: str):
+def get_project(project_id: str, request: Request):
     with get_conn() as conn:
         with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
             cur.execute("SELECT * FROM projects WHERE project_id = %s", (project_id,))
@@ -899,9 +930,60 @@ def get_project(project_id: str):
         enrichment = fetch_enrichment(conn, [row["project_sk"]])
         detail = row_to_project(row, enrichment.get(row["project_sk"]))
         detail["enrichment"] = fetch_enrichment_detail(conn, row["project_sk"])
-        detail["documents"] = fetch_document_files(conn, row["project_sk"])
+        # request.base_url reports the scheme Starlette sees on the
+        # connection *inside* Cloud Run, which is plain HTTP -- TLS is
+        # terminated at Cloud Run's edge and forwarded internally over
+        # HTTP, so trusting it directly produces http:// links from an
+        # https-only service. X-Forwarded-Proto (set by Cloud Run's
+        # proxy) has the real client-facing scheme.
+        proto = request.headers.get("x-forwarded-proto", "https")
+        host = request.headers.get("host", request.url.netloc)
+        base_url = f"{proto}://{host}/"
+        detail["documents"] = fetch_document_files(conn, row["project_sk"], base_url)
 
     return detail
+
+
+@app.get("/v1/documents/{document_id}")
+def get_document(document_id: int):
+    """Streams a GCS-stored document straight through Cloud Run -- not a
+    signed-URL redirect, since the service account has roles/editor but
+    not iam.serviceAccounts.signBlob (would need an extra IAM grant to
+    self-impersonate for V4 signing). Proxying works today with existing
+    permissions; revisit as a scaling optimization once document
+    traffic/file sizes justify avoiding the extra egress hop through the
+    API. This is also the seam a future paid document API would gate
+    (auth/rate-limiting/usage tracking), without touching how documents
+    are stored -- see scripts/fetch-and-store-documents.py."""
+    with get_conn() as conn:
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+            cur.execute(
+                "SELECT title, content_type, gcs_path FROM project_document_files WHERE id = %s",
+                (document_id,),
+            )
+            row = cur.fetchone()
+    if not row or not row["gcs_path"]:
+        raise HTTPException(status_code=404, detail="Document not found")
+
+    blob = _get_gcs_bucket().blob(row["gcs_path"])
+    try:
+        data = blob.download_as_bytes()
+    except Exception as e:  # noqa: BLE001 -- surface as a clean 404, not a 500 stack trace
+        raise HTTPException(status_code=404, detail="Document not found in storage") from e
+
+    # HTTP headers are Latin-1 only -- most real document titles here
+    # (scraped from real pages) contain characters like em dashes that
+    # aren't Latin-1-safe, so a plain filename="..." 500s. ASCII fallback
+    # for old clients, RFC 5987 filename* for everything else.
+    ascii_title = row["title"].encode("ascii", "replace").decode("ascii")
+    encoded_title = urllib.parse.quote(row["title"])
+    return Response(
+        content=data,
+        media_type=row["content_type"] or "application/octet-stream",
+        headers={
+            "Content-Disposition": f"inline; filename=\"{ascii_title}\"; filename*=UTF-8''{encoded_title}"
+        },
+    )
 
 
 # Gmail SMTP creds -- same credential pair already used by the pipeline
