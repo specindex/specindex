@@ -10,12 +10,25 @@ import { formatDate, formatSf, formatUsd, stateName, typeLabel } from "@/lib/for
 import type { Project } from "@/lib/types";
 
 // Steps reflect what scripts/enrich-project-details.py actually does: a
-// Gemini search-grounded discovery pass, a second independent pass
-// re-checking the highest-stakes claims (see _team_claims / run_crosscheck),
-// and a real HTTP HEAD check on every cited news URL (url_resolves()) --
-// not a fixed list of aspirational steps. Only shown when a project
+// search-grounded discovery pass, a second independent pass re-checking
+// the highest-stakes claims (see _team_claims / run_crosscheck), and a
+// real HTTP HEAD check on every cited news URL (url_resolves()) -- not a
+// fixed list of aspirational steps. Labels deliberately don't name the
+// underlying model (Gemini) -- an independent design review flagged that
+// as "AI theater" that exposes the vendor rather than reading as a
+// SpecIndex-owned verification process. Only shown when a project
 // actually has enrichment data, since the bar describes that process.
-const PIPELINE_STEPS = ["Gemini search query", "Cross-verified (2nd pass)", "Links live-checked"];
+const PIPELINE_STEPS = ["Search-grounded discovery", "Cross-verified (2nd pass)", "Links live-checked"];
+
+// scripts/enrich-project-details.py stores the model name directly in each
+// fact's `sources` text (e.g. "Gemini search grounding, Jul 2026"). Real
+// provenance, but the same vendor-exposure issue applies to displaying it
+// verbatim -- swap the label at render time without touching the stored
+// data or the underlying research method.
+function displaySource(source: string | null | undefined): string | null {
+  if (!source) return source ?? null;
+  return source.replace(/\bGemini\b/g, "SpecIndex AI");
+}
 
 function PipelineBar() {
   return (
@@ -70,14 +83,41 @@ function ConfidenceBadge({ confidence }: { confidence: string }) {
   );
 }
 
-function Fact({ label, value, mono }: { label: string; value: string; mono?: boolean }) {
+function Fact({
+  label,
+  value,
+  mono,
+  confidence,
+}: {
+  label: string;
+  value: string;
+  mono?: boolean;
+  confidence?: string;
+}) {
   return (
     <div>
       <dt className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-gray-400)]">
         {label}
       </dt>
-      <dd className={`mt-1 text-sm font-medium ${mono ? "font-mono text-xs" : ""}`}>{value}</dd>
+      <dd className={`mt-1 flex items-center gap-2 text-sm font-medium ${mono ? "font-mono text-xs" : ""}`}>
+        {value}
+        {confidence && <ConfidenceBadge confidence={confidence} />}
+      </dd>
     </div>
+  );
+}
+
+// The base corpus row for owner/architect/GC can lag behind the enrichment
+// pipeline's confirmed team data -- this project is a real example: the
+// base row has architect/general_contractor as empty strings while
+// enrichment.team has both confirmed. Rather than show "Not reported"
+// right above a "Confirmed" answer for the same field further down the
+// same page (caught in design review), fall back to the matching team
+// fact and show its confidence badge so it's clear where the value came
+// from.
+function findTeamFact(project: Project, keyPrefix: string) {
+  return project.enrichment?.team.find(
+    (f) => f.field_key === keyPrefix || f.field_key.startsWith(`${keyPrefix}_`),
   );
 }
 
@@ -246,29 +286,42 @@ export function ProjectDetailView({ project }: { project: Project }) {
       <div className="mx-auto grid max-w-6xl gap-8 px-5 py-10 md:px-8 md:py-12 lg:grid-cols-3">
         {/* Main column */}
         <div className="lg:col-span-2">
-          <dl className="card grid gap-4 p-6 sm:grid-cols-2">
-            <Fact label="Project ID" value={project.spx_id} mono />
-            <Fact label="Estimated value" value={formatUsd(project.estimated_value_usd)} />
-            <Fact label="Square footage" value={formatSf(project.square_footage)} />
-            <Fact
-              label="Opened / announced"
-              value={formatDate(project.opened_or_announced_date)}
-            />
-            <Fact label="Owner" value={project.owner || "Not reported"} />
-            <Fact
-              label="General contractor"
-              value={project.general_contractor || "Not reported"}
-            />
-            <Fact label="Architect" value={project.architect || "Not reported"} />
-            <Fact
-              label="Brands mentioned"
-              value={
-                project.mentioned_brands.length
-                  ? project.mentioned_brands.join(", ")
-                  : "None in public seed"
-              }
-            />
-          </dl>
+          {(() => {
+            const gcFact = !project.general_contractor
+              ? findTeamFact(project, "general_contractor")
+              : undefined;
+            const architectFact = !project.architect ? findTeamFact(project, "architect") : undefined;
+            return (
+              <dl className="card grid gap-4 p-6 sm:grid-cols-2">
+                <Fact label="Project ID" value={project.spx_id} mono />
+                <Fact label="Estimated value" value={formatUsd(project.estimated_value_usd)} />
+                <Fact label="Square footage" value={formatSf(project.square_footage)} />
+                <Fact
+                  label="Opened / announced"
+                  value={formatDate(project.opened_or_announced_date)}
+                />
+                <Fact label="Owner" value={project.owner || "Not reported"} />
+                <Fact
+                  label="General contractor"
+                  value={project.general_contractor || gcFact?.value || "Not reported"}
+                  confidence={gcFact?.confidence}
+                />
+                <Fact
+                  label="Architect"
+                  value={project.architect || architectFact?.value || "Not reported"}
+                  confidence={architectFact?.confidence}
+                />
+                <Fact
+                  label="Brands mentioned"
+                  value={
+                    project.mentioned_brands.length
+                      ? project.mentioned_brands.join(", ")
+                      : "None in public seed"
+                  }
+                />
+              </dl>
+            );
+          })()}
 
           <section className="mt-8">
             <h2 className="text-xl font-semibold">Project overview</h2>
@@ -301,7 +354,7 @@ export function ProjectDetailView({ project }: { project: Project }) {
               </p>
               {project.enrichment.executive_brief[0].sources && (
                 <p className="mt-2 text-xs text-[var(--color-gray-400)]">
-                  {project.enrichment.executive_brief[0].sources}
+                  {displaySource(project.enrichment.executive_brief[0].sources)}
                 </p>
               )}
             </section>
@@ -319,7 +372,7 @@ export function ProjectDetailView({ project }: { project: Project }) {
                     </div>
                     <p className="mt-1.5 text-sm leading-relaxed text-[var(--color-gray-600)]">{fact.value}</p>
                     {fact.sources && (
-                      <p className="mt-1.5 text-xs text-[var(--color-gray-400)]">{fact.sources}</p>
+                      <p className="mt-1.5 text-xs text-[var(--color-gray-400)]">{displaySource(fact.sources)}</p>
                     )}
                   </div>
                 ))}
