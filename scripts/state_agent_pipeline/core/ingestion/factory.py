@@ -50,6 +50,8 @@ def build_provider(state_config: dict[str, Any]) -> BaseIngestionProvider:
             value_fields=state_config.get("value_fields"),
             city_fields=state_config.get("city_fields"),
             source_url=state_config.get("source_url"),
+            join_address_fields=state_config.get("join_address_fields", False),
+            default_city=state_config.get("default_city"),
         )
 
     if provider_type == "ckan":

@@ -47,6 +47,8 @@ class SocrataProvider(BaseIngestionProvider):
         value_fields: list[str] | None = None,
         city_fields: list[str] | None = None,
         source_url: str | None = None,
+        join_address_fields: bool = False,
+        default_city: str | None = None,
     ) -> None:
         self.domain = domain
         self.dataset = dataset
@@ -82,6 +84,8 @@ class SocrataProvider(BaseIngestionProvider):
         self.value_fields = value_fields
         self.city_fields = city_fields
         self.source_url = source_url
+        self.join_address_fields = join_address_fields
+        self.default_city = default_city
 
     def _build_where(self, last_watermark: str) -> str:
         clauses = [self.commercial_where] if self.commercial_where else []
@@ -197,4 +201,6 @@ class SocrataProvider(BaseIngestionProvider):
             date_field=self.date_field,
             source_url=self.source_url or f"https://{self.domain}/resource/{self.dataset}.json",
             city_fields=self.city_fields,
+            join_address_fields=self.join_address_fields,
+            default_city=self.default_city,
         )

@@ -1529,6 +1529,60 @@ CA_SANDIEGO_CONFIG: dict[str, Any] = {
     "source_url": "https://data.sandiego.gov/datasets/development-permits/",
 }
 
+# San Francisco DataSF Socrata dataset i98e-djp9 -- confirmed live
+# 2026-07-29: 1,292,835 total rows, real addresses/lat-lon/estimated_cost.
+# No single "Commercial" flag exists (unlike LA's permit_sub_type) --
+# proposed_use is a flat freeform category list dominated by residential
+# terms ('1 family dwelling', 'apartments', '2 family dwelling' are the
+# top 3 by volume), so this excludes the clearly-residential/non-project
+# categories rather than trying to enumerate every commercial one.
+# Recommended by Gemini search-grounded discovery (data/gemini_sessions/
+# ca_coverage_review.json) after confirming CA has no statewide permit
+# aggregator (58 counties + 482 cities, all fragmented vendor portals) --
+# ranked SF #1 by construction economic volume among CA jurisdictions not
+# yet wired.
+CA_SANFRANCISCO_CONFIG: dict[str, Any] = {
+    "state_code": "CA",
+    "provider_type": "socrata",
+    "county": "San Francisco",
+    "endpoint": "https://data.sfgov.org/resource/i98e-djp9.json",
+    "watermark_field": "permit_number",
+    "hash_fields": ["permit_number"],
+    # proposed_use excludes the residential categories (no clean single
+    # "Commercial" flag exists here, unlike LA). permit_type excludes 8
+    # ("otc alterations permit", 971,939 of ~1.29M total rows -- same-day
+    # minor fixes) and 7/4 (signs). estimated_cost floor of $100K keeps
+    # this to real construction-scale work -- unfiltered, this feed's
+    # median row is a $1-$900 placeholder-cost filing, confirmed live
+    # 2026-07-29. estimated_cost is stored as SoQL text, hence the
+    # ::number cast.
+    "commercial_where": (
+        "proposed_use NOT IN ("
+        "'1 family dwelling', '2 family dwelling', 'apartments', "
+        "'vacant lot', 'not applicable', 'misc group residns.'"
+        ") AND proposed_use IS NOT NULL "
+        "AND permit_type NOT IN ('8', '7', '4') "
+        "AND estimated_cost::number >= 100000"
+    ),
+    "date_field": "permit_creation_date",
+    "lookback_days": 30,
+    "feed_id": "ca-sanfrancisco-dbi",
+    "id_field": "permit_number",
+    # No pre-combined address column in this feed (street_number/
+    # street_name/street_suffix are separate) -- join_address_fields=True
+    # makes address_fields concatenate instead of the usual first-match
+    # semantics, and "__ADDRESS__" reuses that joined string as the
+    # project name too (see generic_mapping.py). Also single-city-scoped
+    # with no city column at all, hence default_city.
+    "name_fields": ["__ADDRESS__"],
+    "address_fields": ["street_number", "street_name", "street_suffix"],
+    "join_address_fields": True,
+    "default_city": "San Francisco",
+    "value_fields": ["estimated_cost"],
+    "desc_fields": ["description", "proposed_use", "permit_type_definition"],
+    "source_url": "https://data.sfgov.org/Housing-and-Buildings/Building-Permits/i98e-djp9",
+}
+
 STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NJ": NJ_CONFIG,
     "CA-LOSANGELES": CA_LOSANGELES_CONFIG,
@@ -1584,6 +1638,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "TX-WILLIAMSON-PERMITS": TX_WILLIAMSON_PERMITS_CONFIG,
     "PA-PHILADELPHIA": PA_PHILADELPHIA_CONFIG,
     "CA-SANDIEGO": CA_SANDIEGO_CONFIG,
+    "CA-SANFRANCISCO": CA_SANFRANCISCO_CONFIG,
     "TX-BRAZORIA": TX_BRAZORIA_CONFIG,
     "TX-MIDLAND": TX_MIDLAND_CONFIG,
     "TX-HAYS": TX_HAYS_CONFIG,
