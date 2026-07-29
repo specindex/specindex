@@ -8,12 +8,12 @@ export function Logo({ className, size = 32 }: { className?: string; size?: numb
       className={className}
       aria-hidden="true"
     >
-      <rect x="15" y="10" width="50" height="20" fill="#2F9E5C" />
-      <rect x="65" y="10" width="20" height="20" fill="#F59E0B" />
-      <rect x="15" y="30" width="20" height="10" fill="#166534" />
-      <rect x="15" y="40" width="70" height="20" fill="#2F9E5C" />
-      <rect x="65" y="60" width="20" height="10" fill="#166534" />
-      <rect x="15" y="70" width="70" height="20" fill="#2F9E5C" />
+      <polygon points="15,35 65,35 73,25 23,25" fill="#2F9E5C" />
+      <polygon points="65,35 73,25 85,25 85,35" fill="#F59E0B" />
+      <polygon points="15,35 23,25 23,45 15,55" fill="#166534" />
+      <polygon points="15,55 23,45 83,45 75,55" fill="#2F9E5C" />
+      <polygon points="75,55 83,45 83,65 75,75" fill="#166534" />
+      <polygon points="15,75 15,65 83,65 75,75" fill="#2F9E5C" />
     </svg>
   );
 }
