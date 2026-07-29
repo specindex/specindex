@@ -1118,6 +1118,26 @@
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
       "notes": "2nd-largest-county-per-state expansion. Real, fresh Socrata dataset (weik-ttee, updated yesterday) confirmed, but permit_type values are internal DPIE trade codes (e.g. 'DPIE EC'/'DPIE ER'), not plain-text commercial/residential labels. Confirmed via real sample records that the C/R suffix does encode Commercial/Residential (EC='Electrical Commercial', case_name 'UNDER ARMOUR'; ER='Electrical Residential', case_name a person's name) -- but not all ~15 codes cleanly follow that pattern (RW/FIRW/POF/TGU/HTR don't obviously fit), so a reliable comprehensive commercial-only filter needs more code decoding than done this round. Deferred rather than guess at an incomplete list."
+    },
+    {
+      "jurisdiction": "Madison, WI (Dane County)",
+      "county": "Dane",
+      "state": "WI",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "2nd-largest-county-per-state expansion. WI county govt has no permit function. Gemini's Accela agency code 'MADISON' redirects to an Accela Error.aspx page, wrong. No ArcGIS/Socrata/CKAN alternative found via search either (Gemini confirmed none exists, city keeps permits Accela-only). Not resolved this round -- needs a live agency-code discovery pass like the SLCREF/ACFW corrections found elsewhere this session."
+    },
+    {
+      "jurisdiction": "St. Paul, MN (Ramsey County)",
+      "county": "Ramsey",
+      "state": "MN",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "2nd-largest-county-per-state expansion. MN county govt has no permit function. Real ArcGIS item found ('Approved Building Permits', CityofSaintPaul), real fields matching Gemini's claims exactly (SUB_TYPE='Commercial' confirmed), BUT the item is genuinely stale -- last modified 2024-06-18, MAX(ISSUEDATE)=2025-06-30. St. Paul's newer system is 'PAULIE' per Gemini; this ArcGIS Hub item appears abandoned. Deferred rather than wire stale data."
     }
   ]
 }
