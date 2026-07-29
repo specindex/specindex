@@ -472,6 +472,82 @@ GA_GWINNETT_ACCELA_CONFIG: dict[str, Any] = {
     "lookback_days": 30,
 }
 
+# Fulton County, GA (state's top county by population -- but the county
+# government itself issues almost no permits, since nearly all of Fulton
+# is incorporated into Atlanta/Sandy Springs/Roswell/etc; City of Atlanta
+# carries the vast majority of commercial volume). Also fills a gap in
+# existing GA coverage: GA_GWINNETT_ACCELA_CONFIG is GA's #2 county by
+# population, not #1. Accela agency code "ATLANTA_GA" verified live
+# 2026-07-29 (200 on Welcome.aspx), real Building module dropdown has
+# "Commercial New" among 20+ Commercial-prefixed record types.
+GA_ATLANTA_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "GA",
+    "provider_type": "accela",
+    "county": "Fulton",
+    "endpoint": "https://aca-prod.accela.com/ATLANTA_GA",
+    "permit_type_label": "Commercial New",
+    "lookback_days": 180,
+}
+
+# Jefferson County, KY (Louisville Metro -- consolidated city-county
+# government, so this genuinely covers the whole county, not just a top
+# city). Verified live 2026-07-29: real ArcGIS item confirmed via a
+# direct ArcGIS Online search, real service URL retrieved via item-info
+# lookup (services1.arcgis.com/79kfd2K6fskCAkyg/.../active_construction_
+# permits/FeatureServer -- Gemini didn't give this exact URL, just the
+# dataset name, found the rest by searching). MAX(ISSUE_DATE)=2026-07-28
+# (today -- exceptionally fresh), CATEGORY_NAME='Commercial' is real
+# (888 rows; other values are Single Family/Multifamily/Condo-Patio/null).
+KY_JEFFERSON_CONFIG: dict[str, Any] = {
+    "state_code": "KY",
+    "provider_type": "arcgis",
+    "county": "Jefferson",
+    "endpoint": "https://services1.arcgis.com/79kfd2K6fskCAkyg/arcgis/rest/services/active_construction_permits/FeatureServer",
+    "layer": 0,
+    "watermark_field": "ObjectId",
+    "hash_fields": ["PERMIT_NUMBER"],
+    "commercial_where": "CATEGORY_NAME='Commercial'",
+    "out_fields": "PERMIT_NUMBER,PERMIT_TYPE,PERMIT_STATUS,CONTRACTOR,CATEGORY_NAME,WORK_TYPE,SQFT,PROJECT_COSTS,ADDRESS,CITY,STATE,ZIPCODE,ISSUE_DATE",
+    "date_field": "ISSUE_DATE",
+    "lookback_days": 180,
+    "feed_id": "ky-jefferson-louisville",
+    "id_field": "PERMIT_NUMBER",
+    "name_fields": ["WORK_TYPE", "ADDRESS", "PERMIT_TYPE"],
+    "address_fields": ["ADDRESS", "CITY", "STATE", "ZIPCODE"],
+    "value_fields": ["PROJECT_COSTS"],
+    "desc_fields": ["WORK_TYPE", "PERMIT_TYPE", "CATEGORY_NAME"],
+    "source_url": "https://louisville-metro-opendata-lojic.hub.arcgis.com/",
+}
+
+# Multnomah County, OR (Portland -- top jurisdiction by population, ~95%
+# of commercial permitting volume per Gemini). Portland Permitting &
+# Development (formerly BDS) does NOT use Accela -- publishes directly
+# via PortlandMaps ArcGIS REST services instead. Verified live 2026-07-29:
+# layer name is literally "Commercial Construction Permit" -- already
+# pre-filtered to commercial by the city itself, no where-clause needed
+# (same pattern as MD-MONTGOMERY). MAX(ISSUED)=2026-07-24, 7,071 total
+# rows.
+OR_MULTNOMAH_CONFIG: dict[str, Any] = {
+    "state_code": "OR",
+    "provider_type": "arcgis",
+    "county": "Multnomah",
+    "endpoint": "https://www.portlandmaps.com/arcgis/rest/services/Public/BDS_Permit/MapServer/2",
+    "layer": 2,
+    "watermark_field": "OBJECTID",
+    "hash_fields": ["PERMIT"],
+    "commercial_where": None,
+    "out_fields": "PERMIT,TYPE,STATUS,WORK_DESCRIPTION,ISSUED,HOUSE,DIRECTION,PROPSTREET,STREETTYPE,CITY",
+    "date_field": "ISSUED",
+    "lookback_days": 180,
+    "feed_id": "or-multnomah-portland",
+    "id_field": "PERMIT",
+    "name_fields": ["WORK_DESCRIPTION", "TYPE", "PROPSTREET"],
+    "address_fields": ["HOUSE", "DIRECTION", "PROPSTREET", "STREETTYPE", "CITY"],
+    "value_fields": [],
+    "desc_fields": ["WORK_DESCRIPTION", "TYPE"],
+    "source_url": "https://www.portlandmaps.com/arcgis/rest/services/Public/BDS_Permit_Commercial_Construction/MapServer",
+}
+
 # St. Louis County, MO (state's most populous county, NOT the independent
 # City of St. Louis). Accela agency code is "SLC" -- confusingly the same
 # code the initials-based guess for Salt Lake City hit first (see
@@ -1323,6 +1399,9 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "MD-MONTGOMERY": MD_MONTGOMERY_CONFIG,
     "WI-MILWAUKEE": WI_MILWAUKEE_CONFIG,
     "MO-STLOUIS": MO_STLOUIS_ACCELA_CONFIG,
+    "GA-ATLANTA": GA_ATLANTA_ACCELA_CONFIG,
+    "KY-JEFFERSON": KY_JEFFERSON_CONFIG,
+    "OR-MULTNOMAH": OR_MULTNOMAH_CONFIG,
     "FL-MIAMIDADE": FL_MIAMIDADE_CONFIG,
     "WA-KING": WA_KING_CONFIG,
     "TX-TARRANT": TX_TARRANT_CONFIG,

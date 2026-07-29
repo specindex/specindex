@@ -678,6 +678,39 @@
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
       "notes": "Confirmed no public queryable API for OKC or Oklahoma County building permits -- data.okc.gov's open catalog explicitly excludes building permits (only Active Work Zones/Bond Infrastructure). OKC uses Accela (OKC Citizen Access) but the real agency code hasn't been found/verified yet -- same pattern as Memphis, worth a live agency-code search before ruling out (not attempted this round due to time)."
+    },
+    {
+      "jurisdiction": "City of Atlanta, GA (Fulton County)",
+      "county": "Fulton",
+      "state": "GA",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/ATLANTA_GA",
+      "state_agent_pipeline_key": "GA-ATLANTA",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 81,
+      "notes": "Fulton is GA's actual top county by population (Gwinnett, already wired, is #2). Fulton county govt issues almost no permits itself (nearly 100% incorporated into Atlanta/Sandy Springs/Roswell/etc) -- City of Atlanta carries the vast majority of volume. Accela agency code 'ATLANTA_GA' verified live (200 on Welcome.aspx), real Building module dropdown confirmed 20+ Commercial-prefixed record types. 180-day window: 91 fetched, 81 new after merge."
+    },
+    {
+      "jurisdiction": "Louisville Metro, KY (Jefferson County)",
+      "county": "Jefferson",
+      "state": "KY",
+      "provider_type": "arcgis",
+      "endpoint": "https://services1.arcgis.com/79kfd2K6fskCAkyg/arcgis/rest/services/active_construction_permits/FeatureServer",
+      "state_agent_pipeline_key": "KY-JEFFERSON",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 77,
+      "notes": "Louisville Metro is a consolidated city-county government, so this genuinely covers the whole county. Gemini's answer was unusually accurate (dataset name + full field schema all matched exactly) but didn't give the real service URL -- found via ArcGIS Online item search + item-info lookup. MAX(ISSUE_DATE)=2026-07-28 (today, exceptionally fresh), CATEGORY_NAME='Commercial' real (888 total rows; other values Single Family/Multifamily/Condo-Patio/null). 180-day window: 77 fetched, 77 new."
+    },
+    {
+      "jurisdiction": "Portland, OR (Multnomah County)",
+      "county": "Multnomah",
+      "state": "OR",
+      "provider_type": "arcgis",
+      "endpoint": "https://www.portlandmaps.com/arcgis/rest/services/Public/BDS_Permit/MapServer/2",
+      "state_agent_pipeline_key": "OR-MULTNOMAH",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 1,
+      "notes": "Portland Permitting & Development does NOT use Accela -- publishes directly via PortlandMaps ArcGIS REST. Layer name is literally 'Commercial Construction Permit', pre-filtered by the city itself (same pattern as MD-MONTGOMERY), no where-clause needed. MAX(ISSUED)=2026-07-24, 7,071 total rows. 180-day window: 75 fetched, only 1 new -- most already captured by earlier manual research."
     }
   ]
 }
