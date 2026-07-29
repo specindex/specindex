@@ -472,6 +472,25 @@ GA_GWINNETT_ACCELA_CONFIG: dict[str, Any] = {
     "lookback_days": 30,
 }
 
+# Bernalillo County, NM (Albuquerque, state's most populous county).
+# Gemini's primary lead (City of Albuquerque's gis.cabq.gov ArcGIS
+# service) is unreachable -- DNS resolves but the TCP connection to
+# port 443 times out (confirmed live 2026-07-29, not a transient blip,
+# retried with a 25s timeout). Fell back to Gemini's secondary lead:
+# Bernalillo County's own Accela portal (unincorporated county areas),
+# agency code "bernco" verified live (200 on Welcome.aspx), real
+# Building module dropdown has "Commercial Building" (value=Building/
+# Commercial/BCBP/NA -- the "BCBP" code matches what Gemini separately
+# claimed as the bulk-export module code, good corroboration).
+NM_BERNALILLO_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "NM",
+    "provider_type": "accela",
+    "county": "Bernalillo",
+    "endpoint": "https://aca-prod.accela.com/bernco",
+    "permit_type_label": "Commercial Building",
+    "lookback_days": 180,
+}
+
 # Fulton County, GA (state's top county by population -- but the county
 # government itself issues almost no permits, since nearly all of Fulton
 # is incorporated into Atlanta/Sandy Springs/Roswell/etc; City of Atlanta
@@ -1402,6 +1421,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "GA-ATLANTA": GA_ATLANTA_ACCELA_CONFIG,
     "KY-JEFFERSON": KY_JEFFERSON_CONFIG,
     "OR-MULTNOMAH": OR_MULTNOMAH_CONFIG,
+    "NM-BERNALILLO": NM_BERNALILLO_ACCELA_CONFIG,
     "FL-MIAMIDADE": FL_MIAMIDADE_CONFIG,
     "WA-KING": WA_KING_CONFIG,
     "TX-TARRANT": TX_TARRANT_CONFIG,

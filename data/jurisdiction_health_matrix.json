@@ -721,6 +721,27 @@
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
       "notes": "Genuine dead end -- CT abolished county government entirely in 1960, no unified building department exists. Checked all major municipalities (Stamford, Bridgeport, Norwalk, Fairfield town, Greenwich): all use proprietary platforms (OpenGov/ViewPoint Cloud, CitySquared) with zero public API access, no Accela deployment anywhere in the county. State-level data.ct.gov only has aggregated annual town-level housing permit counts, not row-level transactional data. Honest Gemini answer, no fabrication -- ruled out."
+    },
+    {
+      "jurisdiction": "Bernalillo County, NM (unincorporated + Albuquerque via county Accela)",
+      "county": "Bernalillo",
+      "state": "NM",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/bernco",
+      "state_agent_pipeline_key": "NM-BERNALILLO",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 82,
+      "notes": "Primary Albuquerque lead (gis.cabq.gov ArcGIS) is unreachable -- DNS resolves but TCP connect to 443 times out, confirmed with a 25s timeout retry, not a transient blip. Fell back to Bernalillo County's own Accela portal (agency 'bernco', verified live), real Building module dropdown has 'Commercial Building' (BCBP code, matches what Gemini separately claimed for the bulk CSV export -- good corroboration). 180-day window: 122 fetched, 82 new."
+    },
+    {
+      "jurisdiction": "Jefferson County, AL (Birmingham)",
+      "county": "Jefferson",
+      "state": "AL",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Two real Accela agencies confirmed live: BIRMINGHAM (city) and JCCAL (unincorporated county). Birmingham's Building module dropdown only has a generic 'Building Permit' label, no Commercial/Residential split visible at the top level (may be a cascading second-level dropdown not yet investigated). JCCAL's Building module page loaded (200) but returned zero <option> elements and no <title> -- likely needs a different module param or has an unusual page structure, not yet diagnosed. Deferred rather than guess at an unfiltered permit_type_label that would pollute the corpus with residential noise."
     }
   ]
 }
