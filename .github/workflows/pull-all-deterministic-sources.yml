@@ -1,0 +1,240 @@
+name: Pull all deterministic sources + refresh coverage/quality
+
+# Agent 3 (Puller), state scope -- the real gap identified 2026-07-29 while
+# reviewing docs/AGENT_STRATEGY.md against actual repo state: Agent 1
+# (Quality, scripts/compute-state-quality.py) and Agent 2 (Depth,
+# scripts/compute-county-coverage.py, with week-over-week diffing per
+# migration 006) were ALREADY BUILT in an earlier session -- the doc just
+# hadn't been updated to say so. pull-state.yml exists but is a legacy,
+# hardcoded GA/NC-only workflow predating the state_agent_pipeline
+# framework (8 platform types, ~45 real municipal/county sources + SAM.gov/
+# USAspending for all 50 states as of 2026-07-29) -- it never got extended
+# to the ~30 sources wired across this session and the one before it.
+#
+# This workflow closes that gap generically: it pulls the full no-LLM key
+# list straight from scripts/state_agent_pipeline/core/state_configs.py at
+# run time (same set pipeline.py routes through generic_mapping.py instead
+# of Flash/Sonnet -- see NO_LLM_PROVIDER_TYPES), so newly wired sources are
+# picked up automatically with no workflow edit needed. The 17 sources that
+# still require Flash/Sonnet (NJ, NC statewide, CA-TORRANCE/PASADENA/
+# LONGBEACH, AZ-MESA/SCOTTSDALE, 8 more TX counties) stay on their existing
+# separate, slower-cadence workflows (pull-nj-dca-pipeline.yml,
+# pull-nc-pipeline.yml) given their real LLM cost -- see docs/ROADMAP.md
+# item 92 for the 2026-07-29 backfill of those.
+#
+# Needs the same repo secrets as pull-nj-dca-pipeline.yml: WIF_PROVIDER,
+# WIF_SERVICE_ACCOUNT, CLOUDSQL_PASSWORD, EMAIL_SMTP_USERNAME,
+# EMAIL_SMTP_PASSWORD.
+
+on:
+  # schedule trigger left disabled, matching every other workflow's status
+  # since Asif's 2026-07-28 "disable all cron jobs, will come back to it
+  # later." workflow_dispatch works for manual runs today.
+  # schedule:
+  #   - cron: "0 9 * * *"
+  workflow_dispatch:
+    inputs:
+      lookback_days:
+        description: "First-run fallback window in days (ignored once a watermark exists)"
+        required: false
+        default: "3"
+      state:
+        description: "Limit to one state_agent_pipeline key (e.g. SD-SIOUXFALLS). Leave blank to run all deterministic sources."
+        required: false
+
+permissions:
+  contents: write
+  id-token: write
+
+env:
+  CLOUDSQL_INSTANCE: specindex-ai:us-central1:specindex-db
+  DATABASE_URL: postgresql://specindex:${{ secrets.CLOUDSQL_PASSWORD }}@127.0.0.1:5433/specindex
+  GOOGLE_CLOUD_PROJECT: specindex-ai
+
+jobs:
+  pull_all_deterministic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements-db.txt
+
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+
+      - name: Start Cloud SQL Auth Proxy
+        run: |
+          curl -sL -o cloud-sql-proxy \
+            https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.14.0/cloud-sql-proxy.linux.amd64
+          chmod +x cloud-sql-proxy
+          ./cloud-sql-proxy --port 5433 "$CLOUDSQL_INSTANCE" &
+          for i in $(seq 1 15); do
+            (echo > /dev/tcp/127.0.0.1/5433) >/dev/null 2>&1 && break
+            sleep 1
+          done
+
+      - name: Capture pre-run project count
+        id: before
+        run: |
+          echo "count=$(python3 -c "
+          import os, psycopg2
+          conn = psycopg2.connect(os.environ['DATABASE_URL'])
+          cur = conn.cursor()
+          cur.execute('SELECT count(*) FROM projects')
+          print(cur.fetchone()[0])
+          ")" >> "$GITHUB_OUTPUT"
+
+      - name: Pull every deterministic (no-LLM) state_agent_pipeline source
+        id: pull
+        run: |
+          set -o pipefail
+          FAILED=0
+          TOTAL=0
+          if [ -n "${{ github.event.inputs.state }}" ]; then
+            KEYS="${{ github.event.inputs.state }}"
+          else
+            KEYS=$(python3 -c "
+          from scripts.state_agent_pipeline.core.state_configs import STATE_CONFIGS
+          from scripts.state_agent_pipeline.pipeline import NO_LLM_PROVIDER_TYPES
+          for key, cfg in STATE_CONFIGS.items():
+              if cfg['provider_type'] in NO_LLM_PROVIDER_TYPES or cfg.get('name_fields'):
+                  print(key)
+          ")
+          fi
+          for key in $KEYS; do
+            TOTAL=$((TOTAL+1))
+            echo "::group::$key"
+            python3 -m scripts.state_agent_pipeline.main \
+              --state "$key" \
+              --lookback-days "${{ github.event.inputs.lookback_days || '3' }}" \
+              --merge-state || { echo "FAILED: $key"; FAILED=$((FAILED+1)); }
+            echo "::endgroup::"
+          done
+          echo "total=$TOTAL" >> "$GITHUB_OUTPUT"
+          echo "failed=$FAILED" >> "$GITHUB_OUTPUT"
+          echo "Pulled $TOTAL sources, $FAILED failed"
+
+      - name: Merge national corpus
+        id: merge
+        continue-on-error: true
+        run: python3 scripts/merge-national-corpus.py
+
+      - name: Load corpus to Cloud SQL
+        id: load
+        continue-on-error: true
+        run: python3 scripts/load-corpus-to-postgres.py --corpus data/national-commercial-projects.json --apply-migrations
+
+      - name: Refresh county coverage (Depth agent)
+        id: coverage
+        continue-on-error: true
+        run: python3 scripts/compute-county-coverage.py --apply-migration
+
+      - name: Refresh state quality (Quality agent)
+        id: quality
+        continue-on-error: true
+        run: python3 scripts/compute-state-quality.py --apply-migration
+
+      - name: Capture post-run project count + top county movers
+        id: after
+        if: always()
+        continue-on-error: true
+        run: |
+          python3 -c "
+          import os, psycopg2
+          conn = psycopg2.connect(os.environ['DATABASE_URL'])
+          cur = conn.cursor()
+          cur.execute('SELECT count(*) FROM projects')
+          print(f'count={cur.fetchone()[0]}')
+          cur.execute('''
+              SELECT state, county, delta FROM county_coverage
+              WHERE delta IS NOT NULL AND delta > 0
+              ORDER BY delta DESC LIMIT 8
+          ''')
+          movers = '; '.join(f'{s}/{c}: +{d}' for s, c, d in cur.fetchall()) or 'none'
+          print(f'movers={movers}')
+          " >> "$GITHUB_OUTPUT"
+
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo "### Pull all deterministic sources — results"
+            echo "Sources attempted: ${{ steps.pull.outputs.total }}, failed: ${{ steps.pull.outputs.failed }}"
+            echo ""
+            echo "| Step | Outcome |"
+            echo "|---|---|"
+            echo "| Merge national corpus | ${{ steps.merge.outcome }} |"
+            echo "| Load to Cloud SQL | ${{ steps.load.outcome }} |"
+            echo "| Refresh county coverage | ${{ steps.coverage.outcome }} |"
+            echo "| Refresh state quality | ${{ steps.quality.outcome }} |"
+            echo ""
+            echo "Projects: ${{ steps.before.outputs.count }} -> ${{ steps.after.outputs.count }}"
+            echo "Top county gains: ${{ steps.after.outputs.movers }}"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Log pipeline run
+        if: always()
+        continue-on-error: true
+        run: |
+          python3 scripts/log-pipeline-run.py --apply-migration \
+            --workflow pull-all-deterministic-sources \
+            --run-url "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            --projects-before "${{ steps.before.outputs.count }}" \
+            --projects-after "${{ steps.after.outputs.count }}" \
+            --top-movers "${{ steps.after.outputs.movers }}" \
+            --step deterministic_pull=${{ steps.pull.outputs.failed == '0' && 'success' || 'partial_failure' }} \
+            --step merge=${{ steps.merge.outcome }} \
+            --step load=${{ steps.load.outcome }} \
+            --step coverage=${{ steps.coverage.outcome }} \
+            --step quality=${{ steps.quality.outcome }}
+
+      - name: Email deterministic-pull summary
+        if: always()
+        continue-on-error: true
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_SMTP_USERNAME }}
+          password: ${{ secrets.EMAIL_SMTP_PASSWORD }}
+          from: SpecIndex Puller <${{ secrets.EMAIL_SMTP_USERNAME }}>
+          to: asif@specindex.ai
+          subject: "SpecIndex deterministic pull: ${{ steps.before.outputs.count }} -> ${{ steps.after.outputs.count }} projects (${{ steps.pull.outputs.failed }} sources failed)"
+          convert_markdown: true
+          body: |
+            ## SpecIndex deterministic-sources pull summary
+
+            **Projects: ${{ steps.before.outputs.count }} -> ${{ steps.after.outputs.count }}**
+            **Sources attempted: ${{ steps.pull.outputs.total }}, failed: ${{ steps.pull.outputs.failed }}**
+
+            | Step | Outcome |
+            |---|---|
+            | Merge national corpus | ${{ steps.merge.outcome }} |
+            | Load to Cloud SQL | ${{ steps.load.outcome }} |
+            | Refresh county coverage | ${{ steps.coverage.outcome }} |
+            | Refresh state quality | ${{ steps.quality.outcome }} |
+
+            **Top county gains this run:** ${{ steps.after.outputs.movers }}
+
+            Full run (see the "Pull every deterministic..." step log for
+            which specific sources failed, if any): ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            Dashboard: https://specindex.ai/coverage/
+
+      - name: Commit updated corpus files
+        run: |
+          git config user.name "specindex-bot"
+          git config user.email "bot@specindex.ai"
+          git add data/
+          git diff --cached --quiet || git commit -m "Automated deterministic-sources pull refresh"
+          for i in 1 2 3; do
+            git push && break
+            echo "push rejected, pulling and retrying ($i/3)"
+            git pull --rebase --autostash
+          done

@@ -1,9 +1,34 @@
-# SpecIndex Agent Strategy (draft — working plan, 2026-07-26)
+# SpecIndex Agent Strategy (2026-07-26, updated 2026-07-29)
 
-**Status: DRAFT.** This is a working document to align on approach before building
-anything. Sections marked "Open question" need a decision from Asif before the
-corresponding agent gets built. Related: [[standing goal]] and sourcing-priority
-order in `docs/ROADMAP.md`.
+**Status update, 2026-07-29:** this doc was written as a pre-build plan on
+2026-07-26 and never updated after the plan was actually executed. As of
+today, **all three agents are built**, not drafts:
+
+- **Agent 1 (Quality)** — `scripts/compute-state-quality.py`, writes to
+  the `state_quality` table (migration 005). A raw metrics table, not a
+  rolled-up score, matching the recommendation below.
+- **Agent 2 (Depth)** — `scripts/compute-county-coverage.py`, writes to
+  `county_coverage` (migration 004) with week-over-week diffing via
+  `previous_project_count`/`delta` (migration 006). Surfaced on the
+  Insights tab at `app/coverage`.
+- **Agent 3 (Puller)** — national scope has run for a while via
+  `pull-nj-dca-pipeline.yml`/`pull-ga-federal-pipeline.yml`/
+  `pull-nc-pipeline.yml`. State scope had a real gap until 2026-07-29:
+  `pull-state.yml` was a legacy, hardcoded GA/NC-only workflow predating
+  the `state_agent_pipeline` framework, never extended to the ~30 sources
+  wired since. Closed by `.github/workflows/pull-all-deterministic-
+  sources.yml`, which pulls every no-LLM `state_agent_pipeline` key
+  generically (reads the list from `state_configs.py` at run time, so new
+  sources are picked up with no workflow edit needed).
+
+The sections below are kept as historical record of the original plan and
+its reasoning — most of the "Open questions" were implicitly resolved by
+what actually got built (raw metrics table over a score; countywide
+source-count via the diffing column over a separate binary deep/thin
+metric; GitHub Actions cron over Cloud Scheduler; skip-and-log via
+`continue-on-error: true` per step). All 4 crons remain disabled per
+Asif's 2026-07-28 "disable all cron jobs, will come back to it later" —
+`workflow_dispatch` works for manual runs on every workflow today.
 
 ## Why three agents
 
