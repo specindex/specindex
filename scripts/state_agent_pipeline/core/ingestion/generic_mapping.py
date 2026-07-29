@@ -28,6 +28,17 @@ def _first(row: dict[str, Any], fields: list[str]) -> str:
     return ""
 
 
+def _join(row: dict[str, Any], fields: list[str]) -> str:
+    """Space-join every non-empty field, in order -- for sources that split
+    an address into components (street_number/street_name/street_suffix)
+    instead of providing one pre-combined address column. _first() picking
+    only the first component (e.g. San Francisco's DBI feed: street_number
+    alone, "2331") is wrong here; every other wired source's address_fields
+    is a single already-combined column, which is why _first() has been
+    the right default everywhere else."""
+    return " ".join(str(row[f]).strip() for f in fields if row.get(f) not in (None, ""))
+
+
 def _money(v: Any) -> float | None:
     if v in (None, ""):
         return None
@@ -52,14 +63,23 @@ def field_mapped_to_projects(
     date_field: str | None = None,
     source_url: str,
     city_fields: list[str] | None = None,
+    join_address_fields: bool = False,
+    default_city: str | None = None,
 ) -> list[dict[str, Any]]:
     out: list[dict[str, Any]] = []
     for row in rows:
         rid = _first(row, [id_field]) or str(row.get(watermark_field, ""))
         if not rid:
             continue
-        name = _first(row, name_fields) or f"{county} permit {rid}"
-        address = _first(row, address_fields)
+        address = _join(row, address_fields) if join_address_fields else _first(row, address_fields)
+        # "__ADDRESS__" sentinel: some feeds (e.g. SF DBI) have no
+        # separate project-name-like column at all -- the address itself
+        # is the only sensible per-record name, same convention already
+        # used by feeds whose real "primary_address" field doubles as name.
+        if name_fields == ["__ADDRESS__"]:
+            name = address or f"{county} permit {rid}"
+        else:
+            name = _first(row, name_fields) or f"{county} permit {rid}"
         desc = "; ".join(p for p in (_first(row, [f]) for f in (desc_fields or [])) if p) or name
         value = None
         for vf in value_fields or []:
@@ -90,6 +110,8 @@ def field_mapped_to_projects(
                 city = parts[-2]
             else:
                 city = parts[-1]
+        if not city and default_city:
+            city = default_city
         slug = re.sub(r"[^a-z0-9]+", "-", f"{feed_id}-{rid}".lower()).strip("-")[:80]
         # feed_id is already state-prefixed by convention (mi-detroit-wayne,
         # ca-losangeles-ladbs, il-cook-assessor, ...) -- don't prefix again.
