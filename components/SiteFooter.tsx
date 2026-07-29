@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Logo } from "@/components/Logo";
 
 const product = [
   { href: "/product/", label: "Use Cases" },
@@ -21,7 +20,9 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-4 md:px-8">
         <div className="md:col-span-1">
           <div className="flex items-center gap-2">
-            <Logo size={28} />
+            <span className="flex h-8 w-8 items-center justify-center rounded-md bg-[var(--color-green)] text-sm font-bold text-white">
+              S
+            </span>
             <span className="text-lg font-semibold">SpecIndex</span>
           </div>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-[var(--color-gray-600)]">
