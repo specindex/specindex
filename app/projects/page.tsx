@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ProjectsDashboard } from "@/components/ProjectsDashboard";
+import { ProjectsGate } from "@/components/ProjectsGate";
 import { getStats } from "@/lib/projects";
 
 export const metadata: Metadata = {
@@ -26,7 +27,9 @@ export default async function ProjectsPage() {
         </div>
       </div>
       <div className="mx-auto max-w-6xl px-5 py-10 md:px-8 md:py-12">
-        <ProjectsDashboard />
+        <ProjectsGate>
+          <ProjectsDashboard />
+        </ProjectsGate>
       </div>
     </div>
   );
