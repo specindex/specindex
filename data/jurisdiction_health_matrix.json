@@ -845,7 +845,7 @@
       "endpoint": null,
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
-      "notes": "Genuine dead end -- county uses ProjectDox/ePlans + a web-form-only eServices portal, no Accela, no Socrata/CKAN/CARTO/ArcGIS API. Delaware FirstMap has a periodic (monthly) statewide aggregated layer but it's not a live transaction feed. Honest Gemini answer."
+      "notes": "Genuine dead end -- county uses ProjectDox/ePlans + a web-form-only eServices portal, no Accela, no Socrata/CKAN/CARTO/ArcGIS API. Delaware FirstMap has a periodic (monthly) statewide aggregated layer but it's not a live transaction feed. Honest Gemini answer. UPDATE 2026-07-29: also tried the statewide Delaware FirstMap/OSPC ArcGIS layer (DE_Planning_Development, layer 3 'Building Permits') as an alternative -- real, R_NR='NR' is a genuine non-residential/commercial proxy, but the dataset is confirmed stale (P_YEAR only goes up to 2024, no 2025/2026 data at all -- an annual batch-aggregated dataset, not live). DE confirmed a genuine dead end from every angle tried this session."
     },
     {
       "jurisdiction": "Hillsborough County, NH (Manchester/Nashua)",
