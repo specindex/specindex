@@ -1,13 +1,46 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { StatusPill } from "@/components/StatusPill";
-import { ProjectScoreBadge } from "@/components/ProjectScoreBadge";
 import { ProjectTimeline } from "@/components/ProjectTimeline";
 import { ProjectNews } from "@/components/ProjectNews";
 import { ProjectLocationMap } from "@/components/ProjectLocationMap";
 import { formatDate, formatSf, formatUsd, stateName, typeLabel } from "@/lib/format";
 import type { Project } from "@/lib/types";
+
+// Steps reflect what scripts/enrich-project-details.py actually does: a
+// Gemini search-grounded discovery pass, a second independent pass
+// re-checking the highest-stakes claims (see _team_claims / run_crosscheck),
+// and a real HTTP HEAD check on every cited news URL (url_resolves()) --
+// not a fixed list of aspirational steps. Only shown when a project
+// actually has enrichment data, since the bar describes that process.
+const PIPELINE_STEPS = ["Gemini search query", "Cross-verified (2nd pass)", "Links live-checked"];
+
+function PipelineBar() {
+  return (
+    <div className="card mb-6 flex flex-wrap items-center justify-between gap-3 px-4 py-3 text-xs">
+      <div className="flex items-center gap-2">
+        <span className="h-2 w-2 shrink-0 rounded-full bg-[var(--color-green)]" />
+        <span className="text-[10px] font-bold uppercase tracking-wider text-[var(--color-gray-600)]">
+          AI grounding pipeline
+        </span>
+      </div>
+      <div className="flex flex-wrap items-center gap-1.5 font-mono text-[11px] text-[var(--color-gray-600)]">
+        {PIPELINE_STEPS.map((step, i) => (
+          <span key={step} className="flex items-center gap-1.5">
+            <span className="rounded border border-[var(--color-green)]/25 bg-[var(--color-green-light)] px-2 py-0.5 font-semibold text-[var(--color-green)]">
+              {step}
+            </span>
+            {i < PIPELINE_STEPS.length - 1 && (
+              <span className="text-[var(--color-gray-400)]">→</span>
+            )}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 // Shared render for a single project's detail view -- used by both the
 // small curated set of statically-generated pages (app/projects/[id]/page.tsx,
@@ -49,6 +82,34 @@ function Fact({ label, value, mono }: { label: string; value: string; mono?: boo
 }
 
 export function ProjectDetailView({ project }: { project: Project }) {
+  const [showBreakdown, setShowBreakdown] = useState(false);
+  const scoreRef = useRef<HTMLDivElement>(null);
+  const hasEnrichment = Boolean(
+    project.enrichment &&
+      (project.enrichment.executive_brief.length ||
+        project.enrichment.csi_scope.length ||
+        project.enrichment.team.length ||
+        project.enrichment.contact.length ||
+        project.enrichment.permit.length),
+  );
+
+  useEffect(() => {
+    function onPointerDown(e: MouseEvent) {
+      if (scoreRef.current && !scoreRef.current.contains(e.target as Node)) {
+        setShowBreakdown(false);
+      }
+    }
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") setShowBreakdown(false);
+    }
+    document.addEventListener("mousedown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, []);
+
   return (
     <article className="bg-[var(--color-bg)]">
       {/* Sticky title+score bar -- stays visible while scrolling the long
@@ -65,29 +126,120 @@ export function ProjectDetailView({ project }: { project: Project }) {
         </div>
       </div>
 
-      <div className="border-b border-[var(--color-border)] bg-white">
-        <div className="mx-auto max-w-6xl px-5 py-10 md:px-8 md:py-14">
+      <div className="border-b border-[var(--color-border)] bg-[var(--color-bg)]">
+        <div className="mx-auto max-w-6xl px-5 py-8 md:px-8 md:py-10">
           <Link
             href="/projects/"
             className="text-sm font-medium text-[var(--color-gray-600)] hover:text-[var(--color-ink)]"
           >
             ← All projects
           </Link>
-          <div className="mt-6 flex flex-wrap items-center gap-3">
-            <StatusPill status={project.status} />
-            <span className="text-sm text-[var(--color-gray-600)]">
-              {typeLabel(project.project_type)}
-            </span>
+
+          {hasEnrichment && (
+            <div className="mt-5">
+              <PipelineBar />
+            </div>
+          )}
+
+          <div className="card mt-5 flex flex-col gap-6 p-6 md:p-8 lg:flex-row lg:items-start lg:justify-between">
+            <div>
+              <div className="flex flex-wrap items-center gap-3">
+                <StatusPill status={project.status} />
+                <span className="text-sm text-[var(--color-gray-600)]">
+                  {typeLabel(project.project_type)}
+                </span>
+              </div>
+              <h1 className="mt-3 text-hero">{project.name}</h1>
+              <p className="mt-2 font-mono text-sm text-[var(--color-gray-400)]">
+                {project.spx_id}
+              </p>
+              <p className="mt-2 text-lg text-[var(--color-gray-600)]">
+                {project.city}
+                {project.county ? `, ${project.county} County` : ""},{" "}
+                {stateName(project.state)}
+              </p>
+            </div>
+
+            {project.score && (
+              <div className="relative shrink-0" ref={scoreRef}>
+                <div
+                  onClick={() => setShowBreakdown((v) => !v)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      setShowBreakdown((v) => !v);
+                    }
+                  }}
+                  role="button"
+                  tabIndex={0}
+                  aria-haspopup="true"
+                  aria-expanded={showBreakdown}
+                  className="flex cursor-pointer items-center gap-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-4 shadow-sm transition hover:bg-[var(--color-gray-100)] focus:outline-none focus:ring-2 focus:ring-[var(--color-green)]"
+                >
+                  <div className="text-center">
+                    <div className="font-mono text-3xl font-black tracking-tight text-[var(--color-green)]">
+                      {project.score.total}
+                      <span className="text-xs font-normal text-[var(--color-gray-400)]">/100</span>
+                    </div>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[var(--color-gray-600)]">
+                      Priority score
+                    </span>
+                  </div>
+                  <div className="h-10 w-px bg-[var(--color-border)]" />
+                  <div className="space-y-1 text-xs">
+                    <div className="flex items-center gap-1.5 font-semibold text-[var(--color-green)]">
+                      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-green)]" />
+                      {project.score.total >= 70
+                        ? "High priority"
+                        : project.score.total >= 40
+                          ? "Watch"
+                          : "Low signal"}
+                    </div>
+                    <div className="text-[11px] text-[var(--color-gray-400)]">Click for breakdown</div>
+                  </div>
+                </div>
+
+                {showBreakdown && (
+                  <div className="absolute right-0 top-full z-50 mt-2 w-64 space-y-3 rounded-xl border border-[var(--color-border)] bg-white p-4 text-xs shadow-xl">
+                    <div className="flex items-center justify-between border-b border-[var(--color-border)] pb-2">
+                      <strong className="font-bold text-[var(--color-ink)]">Score breakdown</strong>
+                      <button
+                        onClick={() => setShowBreakdown(false)}
+                        aria-label="Close score breakdown"
+                        className="text-[var(--color-gray-400)] hover:text-[var(--color-ink)]"
+                      >
+                        ✕
+                      </button>
+                    </div>
+                    <div className="space-y-2 text-[var(--color-gray-600)]">
+                      <div className="flex items-center justify-between">
+                        <span>Value</span>
+                        <span className="font-mono font-bold text-[var(--color-green)]">
+                          {project.score.value}/40
+                        </span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span>Recency</span>
+                        <span className="font-mono font-bold text-[var(--color-green)]">
+                          {project.score.recency}/35
+                        </span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span>News coverage</span>
+                        <span className="font-mono font-bold text-[var(--color-green)]">
+                          {project.score.news}/25
+                        </span>
+                      </div>
+                    </div>
+                    <div className="flex justify-between border-t border-[var(--color-border)] pt-2 font-bold text-[var(--color-ink)]">
+                      <span>Total</span>
+                      <span className="font-mono text-[var(--color-green)]">{project.score.total} / 100</span>
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
-          <h1 className="mt-3 text-hero">{project.name}</h1>
-          <p className="mt-2 font-mono text-sm text-[var(--color-gray-400)]">
-            {project.spx_id}
-          </p>
-          <p className="mt-2 text-lg text-[var(--color-gray-600)]">
-            {project.city}
-            {project.county ? `, ${project.county} County` : ""},{" "}
-            {stateName(project.state)}
-          </p>
         </div>
       </div>
 
@@ -222,16 +374,6 @@ export function ProjectDetailView({ project }: { project: Project }) {
           </div>
 
           <div className="mt-12 flex flex-wrap gap-3">
-            <Link
-              href={`/visibility/${
-                project.competitor_watch[0]
-                  ? `?category=${encodeURIComponent(project.competitor_watch[0])}`
-                  : ""
-              }`}
-              className="btn btn-primary"
-            >
-              Run a brand check for this project
-            </Link>
             <Link href="/projects/" className="btn btn-outline">
               Back to all projects
             </Link>
@@ -249,8 +391,6 @@ export function ProjectDetailView({ project }: { project: Project }) {
             exploration, just not carried over when this real page got
             wired up. */}
         <div className="space-y-6">
-          <ProjectScoreBadge score={project.score} />
-
           {project.enrichment?.contact.length ? (
             <div className="card p-5">
               <h3 className="text-xs font-semibold uppercase tracking-wide text-[var(--color-gray-400)]">
