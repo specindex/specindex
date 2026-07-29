@@ -36,7 +36,8 @@ Loaded via `next/font/google` in `app/layout.tsx`.
 | `--color-white` | `#FFFFFF` | Cards, header |
 | `--color-amber` | `#F59E0B` | Primary CTA buttons |
 | `--color-amber-hover` | `#D97706` | CTA hover |
-| `--color-green` | `#166534` | Eyebrows, stats, links, logo mark |
+| `--color-green` | `#166534` | Eyebrows, stats, links, logo mark, Request Demo button |
+| `--color-green-hover` | `#14532D` | Request Demo hover |
 | `--color-green-light` | `#DCFCE7` | Pills, active county cells |
 | `--color-gray-600` | `#57534E` | Body secondary |
 | `--color-gray-400` | `#A8A29E` | Captions, labels |
@@ -48,6 +49,9 @@ Loaded via `next/font/google` in `app/layout.tsx`.
 
 ### Buttons
 - **Primary:** amber bg, ink text, 8px radius
+- **Demo:** green bg (logo mark green), white text -- header + homepage hero
+  "Request Demo" only, pilot before rolling out to other pages' Request Demo
+  CTAs (docs/PROJECT_PAGE_REDESIGN.md's Hyundai-first rollout pattern)
 - **Outline:** white/transparent, border, hover gray-100
 
 ### Cards
