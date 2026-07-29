@@ -1,0 +1,71 @@
+name: Merge + load national corpus
+
+# Manual trigger for when data/states/*.json was hand-edited (not via a
+# pull-*.yml pipeline run) and needs to reach Postgres without re-running
+# any state's fetch/dedupe pipeline. Runs the same merge -> load -> refresh
+# chain as the tail of pull-nj-dca-pipeline.yml, just without the fetch
+# step at the front. Same Cloud SQL Auth Proxy + WIF pattern as every
+# other pull-*.yml workflow -- no new secrets needed.
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  id-token: write
+
+env:
+  CLOUDSQL_INSTANCE: specindex-ai:us-central1:specindex-db
+  DATABASE_URL: postgresql://specindex:${{ secrets.CLOUDSQL_PASSWORD }}@127.0.0.1:5433/specindex
+
+jobs:
+  merge_and_load:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          lfs: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements-db.txt
+
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+
+      - name: Start Cloud SQL Auth Proxy
+        run: |
+          curl -sL -o cloud-sql-proxy \
+            https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.14.0/cloud-sql-proxy.linux.amd64
+          chmod +x cloud-sql-proxy
+          ./cloud-sql-proxy --port 5433 "$CLOUDSQL_INSTANCE" &
+          for i in $(seq 1 15); do
+            (echo > /dev/tcp/127.0.0.1/5433) >/dev/null 2>&1 && break
+            sleep 1
+          done
+
+      - name: Merge national corpus
+        run: python3 scripts/merge-national-corpus.py
+
+      - name: Load corpus to Cloud SQL
+        run: python3 scripts/load-corpus-to-postgres.py --corpus data/national-commercial-projects.json --apply-migrations
+
+      - name: Refresh project_documents from GCS + local manifests
+        run: python3 scripts/compute-project-documents.py --apply-migration
+
+      - name: Refresh county coverage (Depth agent)
+        continue-on-error: true
+        run: python3 scripts/compute-county-coverage.py --apply-migration
+
+      - name: Refresh state quality (Quality agent)
+        continue-on-error: true
+        run: python3 scripts/compute-state-quality.py --apply-migration
+
+      - name: Job summary
+        if: always()
+        run: echo "### Merge + load national corpus complete" >> "$GITHUB_STEP_SUMMARY"

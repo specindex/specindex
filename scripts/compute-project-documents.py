@@ -151,6 +151,8 @@ def files_from_gcs() -> DocMap:
         if len(parts) != 3:
             continue  # not {state}/{project_id}/{filename} -- skip stray top-level objects
         _state_dir, project_id, filename = parts
+        if filename == "manifest.json":
+            continue  # per-project metadata sidecar, not a real document
         out[project_id].append(
             {
                 "title": filename,
