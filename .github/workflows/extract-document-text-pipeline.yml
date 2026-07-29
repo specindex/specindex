@@ -1,0 +1,101 @@
+name: Document text extraction (step 9)
+
+# Runs scripts/extract-document-text.py --batch: populates document_pages,
+# one row per page, for documents already pulled by step 7. Native text
+# (PyMuPDF) first -- free, instant, most spec/RFP PDFs already have a real
+# text layer. Only pages with no meaningful native text (drawing sheets,
+# scans) go to Google Document AI -- settled over self-hosted PaddleOCR
+# after a live head-to-head test (2026-07-29): comparable accuracy, but
+# Document AI's structured block/paragraph output is more useful for
+# layout-aware schedule parsing later, and at real corpus scale it beats
+# operating a CPU OCR worker pool. --limit caps the blast radius (and
+# Document AI billing) of a single run.
+
+on:
+  # No schedule -- every other pipeline workflow in this repo had its cron
+  # disabled 2026-07-28 (Asif: "disable all cron jobs, will come back to
+  # it later") and none have been re-enabled since. workflow_dispatch
+  # works today for on-demand batches.
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Max documents to extract this run"
+        required: false
+        default: "20"
+      state:
+        description: "Restrict to one state code, e.g. GA (blank = all states)"
+        required: false
+        default: ""
+      document_type:
+        description: "Comma-separated document_type values, e.g. specifications,drawings_plans (blank = all types)"
+        required: false
+        default: ""
+      dry_run:
+        description: "Print what would be extracted without writing to the database or calling Document AI"
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: read
+  id-token: write
+
+env:
+  CLOUDSQL_INSTANCE: specindex-ai:us-central1:specindex-db
+  DATABASE_URL: postgresql://specindex:${{ secrets.CLOUDSQL_PASSWORD }}@127.0.0.1:5433/specindex
+  GOOGLE_CLOUD_PROJECT: specindex-ai
+  # Document AI processors are addressed by project *number*, not project
+  # id, unlike most other GCP APIs used in this repo.
+  GOOGLE_CLOUD_PROJECT_NUMBER: "150642273028"
+  # OCR_PROCESSOR, us region, created 2026-07-29 during the PaddleOCR vs.
+  # Document AI comparison test -- this is the real step-9 processor, the
+  # "-comparison-test" display name is a holdover, not a separate one.
+  DOCUMENT_AI_PROCESSOR_ID: "b4fd7c567a32c0e9"
+
+jobs:
+  extract_document_text:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements-db.txt
+
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+
+      - name: Start Cloud SQL Auth Proxy
+        run: |
+          curl -sL -o cloud-sql-proxy \
+            https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.14.0/cloud-sql-proxy.linux.amd64
+          chmod +x cloud-sql-proxy
+          ./cloud-sql-proxy --port 5433 "$CLOUDSQL_INSTANCE" &
+          for i in $(seq 1 15); do
+            (echo > /dev/tcp/127.0.0.1/5433) >/dev/null 2>&1 && break
+            sleep 1
+          done
+
+      - name: Run extraction batch (applies migration first, idempotent)
+        run: |
+          python3 scripts/extract-document-text.py \
+            --batch \
+            --apply-migration \
+            --limit "${{ github.event.inputs.limit || '20' }}" \
+            ${{ github.event.inputs.state && format('--state {0}', github.event.inputs.state) || '' }} \
+            ${{ github.event.inputs.document_type && format('--document-type {0}', github.event.inputs.document_type) || '' }} \
+            ${{ github.event.inputs.dry_run == 'true' && '--dry-run' || '' }}
+
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo "### Document text extraction (step 9) — results"
+            echo "Limit: ${{ github.event.inputs.limit || '20' }}, state: ${{ github.event.inputs.state || 'all' }}, document_type: ${{ github.event.inputs.document_type || 'all' }}, dry_run: ${{ github.event.inputs.dry_run || 'false' }}"
+            echo "See step logs above for per-document page counts and native-vs-Document AI split."
+          } >> "$GITHUB_STEP_SUMMARY"
