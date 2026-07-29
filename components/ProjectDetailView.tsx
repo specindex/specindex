@@ -222,11 +222,13 @@ export function ProjectDetailView({ project }: { project: Project }) {
                   {typeLabel(project.project_type)}
                 </span>
               </div>
-              <h1 className="mt-3 text-hero">{project.name}</h1>
-              <p className="mt-2 font-mono text-sm text-[var(--color-gray-400)]">
+              <h1 className="mt-3 text-2xl font-bold tracking-tight text-[var(--color-ink)] sm:text-3xl">
+                {project.name}
+              </h1>
+              <p className="mt-2 font-mono text-xs text-[var(--color-gray-400)]">
                 {project.spx_id}
               </p>
-              <p className="mt-2 text-lg text-[var(--color-gray-600)]">
+              <p className="mt-2 text-sm text-[var(--color-gray-600)]">
                 {project.city}
                 {project.county ? `, ${project.county} County` : ""},{" "}
                 {stateName(project.state)}
@@ -356,15 +358,15 @@ export function ProjectDetailView({ project }: { project: Project }) {
           })()}
 
           <section className="mt-8">
-            <h2 className="text-xl font-semibold">Project overview</h2>
-            <p className="mt-3 text-base leading-relaxed text-[var(--color-gray-600)]">
+            <h2 className="text-base font-bold">Project overview</h2>
+            <p className="mt-3 text-xs leading-relaxed text-[var(--color-gray-600)]">
               {project.description}
             </p>
           </section>
 
           <section className="mt-8">
-            <h2 className="text-xl font-semibold">Key specs</h2>
-            <ul className="mt-4 list-disc space-y-2 pl-5 text-[var(--color-gray-600)]">
+            <h2 className="text-base font-bold">Key specs</h2>
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-xs text-[var(--color-gray-600)]">
               {project.key_specs.map((spec) => (
                 <li key={spec}>{spec}</li>
               ))}
@@ -378,10 +380,10 @@ export function ProjectDetailView({ project }: { project: Project }) {
           {project.enrichment?.executive_brief.length ? (
             <section className="mt-8">
               <div className="flex flex-wrap items-center gap-2">
-                <h2 className="text-xl font-semibold">Executive brief</h2>
+                <h2 className="text-base font-bold">Executive brief</h2>
                 <ConfidenceBadge confidence={project.enrichment.executive_brief[0].confidence} />
               </div>
-              <p className="mt-3 text-base leading-relaxed text-[var(--color-gray-600)]">
+              <p className="mt-3 text-xs leading-relaxed text-[var(--color-gray-600)]">
                 {project.enrichment.executive_brief[0].value}
               </p>
               {project.enrichment.executive_brief[0].sources && (
@@ -394,15 +396,15 @@ export function ProjectDetailView({ project }: { project: Project }) {
 
           {project.enrichment?.csi_scope.length ? (
             <section className="mt-8">
-              <h2 className="text-xl font-semibold">CSI scope matrix</h2>
+              <h2 className="text-base font-bold">CSI scope matrix</h2>
               <div className="mt-4 space-y-3">
                 {project.enrichment.csi_scope.map((fact) => (
                   <div key={fact.field_key} className="card p-4">
                     <div className="flex items-start justify-between gap-3">
-                      <p className="text-sm font-semibold">{fact.label}</p>
+                      <p className="text-xs font-semibold">{fact.label}</p>
                       <ConfidenceBadge confidence={fact.confidence} />
                     </div>
-                    <p className="mt-1.5 text-sm leading-relaxed text-[var(--color-gray-600)]">{fact.value}</p>
+                    <p className="mt-1.5 text-xs leading-relaxed text-[var(--color-gray-600)]">{fact.value}</p>
                     {fact.sources && (
                       <p className="mt-1.5 text-xs text-[var(--color-gray-400)]">{displaySource(fact.sources)}</p>
                     )}
@@ -414,7 +416,7 @@ export function ProjectDetailView({ project }: { project: Project }) {
 
           {project.enrichment?.team.length ? (
             <section className="mt-8">
-              <h2 className="text-xl font-semibold">Verified construction team</h2>
+              <h2 className="text-base font-bold">Verified construction team</h2>
               <dl className="card mt-4 divide-y divide-[var(--color-border)] p-0">
                 {project.enrichment.team.map((fact) => (
                   <div key={fact.field_key} className="flex items-start justify-between gap-3 p-4">
@@ -422,7 +424,7 @@ export function ProjectDetailView({ project }: { project: Project }) {
                       <dt className="text-xs font-semibold uppercase tracking-wide text-[var(--color-gray-400)]">
                         {fact.label}
                       </dt>
-                      <dd className="mt-1 text-sm">{fact.value}</dd>
+                      <dd className="mt-1 text-xs">{fact.value}</dd>
                     </div>
                     <ConfidenceBadge confidence={fact.confidence} />
                   </div>
@@ -430,29 +432,6 @@ export function ProjectDetailView({ project }: { project: Project }) {
               </dl>
             </section>
           ) : null}
-
-          <section className="mt-8 rounded-lg bg-[var(--color-green)] p-6 text-white">
-            <h2 className="text-lg font-semibold text-[var(--color-amber)]">
-              Still open for manufacturers
-            </h2>
-            <p className="mt-2 text-sm leading-relaxed text-white/90">
-              {project.open_for}
-            </p>
-          </section>
-
-          <section className="mt-8">
-            <h2 className="text-xl font-semibold">Manufacturer watch list</h2>
-            <ul className="mt-4 flex flex-wrap gap-2">
-              {project.competitor_watch.map((item) => (
-                <li
-                  key={item}
-                  className="rounded-full border border-[var(--color-border)] bg-white px-3 py-1.5 text-sm text-[var(--color-gray-600)]"
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </section>
 
           <div className="mt-6">
             <ProjectTimeline events={project.timeline} />
@@ -488,7 +467,7 @@ export function ProjectDetailView({ project }: { project: Project }) {
                       <dt className="text-[10px] font-semibold uppercase tracking-wide text-[var(--color-gray-400)]">
                         {fact.label}
                       </dt>
-                      <dd className="mt-0.5 text-sm break-words">{fact.value}</dd>
+                      <dd className="mt-0.5 text-xs break-words">{fact.value}</dd>
                     </div>
                     <ConfidenceBadge confidence={fact.confidence} />
                   </div>
@@ -505,7 +484,7 @@ export function ProjectDetailView({ project }: { project: Project }) {
               <ul className="mt-3 divide-y divide-[var(--color-border)]">
                 {project.enrichment.permit.map((fact) => (
                   <li key={fact.field_key} className="py-2.5 first:pt-0 last:pb-0">
-                    <p className="text-sm font-semibold">{fact.label}</p>
+                    <p className="text-xs font-semibold">{fact.label}</p>
                     <p className="mt-0.5 text-xs text-[var(--color-gray-600)]">{fact.value}</p>
                   </li>
                 ))}
