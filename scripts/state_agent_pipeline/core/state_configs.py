@@ -1600,6 +1600,38 @@ CA_SANFRANCISCO_CONFIG: dict[str, Any] = {
     "source_url": "https://data.sfgov.org/Housing-and-Buildings/Building-Permits/i98e-djp9",
 }
 
+# City of Pittsburgh (Allegheny County) -- PA's only wired source before
+# this was Philadelphia (1,799 total PA records for the 5th-largest US
+# state; PA's Uniform Construction Code puts permitting at the municipal
+# level, so no county-wide feed exists, same reasoning as CA). Recommended
+# by Gemini search-grounded discovery (data/gemini_sessions/
+# pa_coverage_review.json) after confirming Pittsburgh is the biggest
+# unwired PA jurisdiction. WPRDC (Western PA Regional Data Center) CKAN
+# platform, 7th platform type this codebase has used. Verified live
+# 2026-07-29: resource_id f4d1177a-f597-4c32-8cbf-7885f56253f6, 63,856
+# total rows, clean commercial_or_residential field -- 24,027 real
+# commercial rows, MAX(issue_date)=2026-07-28 (fresh, updated daily per
+# the portal).
+PA_PITTSBURGH_CONFIG: dict[str, Any] = {
+    "state_code": "PA",
+    "provider_type": "ckan",
+    "county": "Allegheny",
+    "endpoint": "https://data.wprdc.org",
+    "resource_id": "f4d1177a-f597-4c32-8cbf-7885f56253f6",
+    "watermark_field": "_id",
+    "hash_fields": ["permit_id"],
+    "commercial_where": "commercial_or_residential = 'Commercial'",
+    "date_field": "issue_date",
+    "lookback_days": 180,
+    "feed_id": "pa-pittsburgh-pli",
+    "id_field": "permit_id",
+    "name_fields": ["address", "work_description", "permit_type"],
+    "address_fields": ["address"],
+    "value_fields": ["total_project_value"],
+    "desc_fields": ["work_description", "work_type"],
+    "source_url": "https://data.wprdc.org/dataset/pli-permits",
+}
+
 STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NJ": NJ_CONFIG,
     "CA-LOSANGELES": CA_LOSANGELES_CONFIG,
@@ -1654,6 +1686,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "VA-FAIRFAX": VA_FAIRFAX_CONFIG,
     "TX-WILLIAMSON-PERMITS": TX_WILLIAMSON_PERMITS_CONFIG,
     "PA-PHILADELPHIA": PA_PHILADELPHIA_CONFIG,
+    "PA-PITTSBURGH": PA_PITTSBURGH_CONFIG,
     "CA-SANDIEGO": CA_SANDIEGO_CONFIG,
     "CA-SANFRANCISCO": CA_SANFRANCISCO_CONFIG,
     "TX-BRAZORIA": TX_BRAZORIA_CONFIG,
