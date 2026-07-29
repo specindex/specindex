@@ -71,9 +71,12 @@ def list_sessions() -> list[str]:
     return sorted(p.stem for p in SESSIONS_DIR.glob("*.json"))
 
 
-def send(session: str, message: str) -> str:
+def send(session: str, message: str, max_retries: int = 3) -> str:
+    import time
+
     from google import genai
     from google.genai import types
+    from google.auth.exceptions import RefreshError
 
     settings = Settings.from_env()
     client = genai.Client(vertexai=True, project=settings.google_cloud_project, location=settings.google_cloud_location)
@@ -86,7 +89,22 @@ def send(session: str, message: str) -> str:
     config = types.GenerateContentConfig(tools=[grounding_tool])
     chat = client.chats.create(model=settings.flash_model, config=config, history=history)
 
-    resp = chat.send_message(message)
+    resp = None
+    for attempt in range(1, max_retries + 1):
+        try:
+            resp = chat.send_message(message)
+            break
+        except RefreshError:
+            # Not transient -- retrying won't fix an expired login. Fail fast
+            # with the real fix (run `gcloud auth application-default login`).
+            raise
+        except Exception as e:  # noqa: BLE001 -- broad on purpose, network/timeout errors vary by transport
+            if attempt == max_retries:
+                raise
+            wait = 2**attempt
+            print(f"  [retry {attempt}/{max_retries}] {e} -- waiting {wait}s", file=sys.stderr)
+            time.sleep(wait)
+
     save_turn(session, "user", message)
     save_turn(session, "model", resp.text)
     return resp.text

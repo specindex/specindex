@@ -835,6 +835,67 @@ NY_NYC_CONFIG: dict[str, Any] = {
     "source_url": "https://data.cityofnewyork.us/Housing-Development/DOB-NOW-Build-Job-Application-Filings/w9ak-ipjd",
 }
 
+# Cambridge, MA (Middlesex County's top jurisdiction by construction volume --
+# MA county government has no building-permit function at all, permits are
+# purely municipal, no single Middlesex-wide source exists). Gemini's first
+# answer gave a fabricated dataset ID (25q4-7asf, 404) -- the real one found
+# via Cambridge's own Socrata catalog search is 9qm7-wbdc ("Building Permits:
+# New Construction"). Verified live 2026-07-28: MAX(issue_date)=2026-07-20,
+# proposed_building_use='Commercial / Mixed Use' is a real, clean commercial
+# split (114 of 355 total rows). Somerville (nneb-s3f7) was also checked --
+# real dataset, MAX(issue_date)=2026-07-27, but has no property-use/building-
+# type field at all (just application_type='Building Permit' vs Electrical/
+# Plumbing/etc, no commercial/residential split) -- skipped rather than guess
+# at a keyword filter with no verified signal.
+MA_CAMBRIDGE_CONFIG: dict[str, Any] = {
+    "state_code": "MA",
+    "provider_type": "socrata",
+    "county": "Middlesex",
+    "endpoint": "https://data.cambridgema.gov/resource/9qm7-wbdc.json",
+    "watermark_field": "id",
+    "hash_fields": ["id"],
+    "commercial_where": "proposed_building_use='Commercial / Mixed Use'",
+    "date_field": "issue_date",
+    "lookback_days": 180,
+    "feed_id": "ma-cambridge",
+    "id_field": "id",
+    "name_fields": ["description_of_work", "full_address"],
+    "address_fields": ["full_address"],
+    "value_fields": ["total_cost_of_construction", "building_cost"],
+    "desc_fields": ["description_of_work", "proposed_building_use"],
+    "source_url": "https://data.cambridgema.gov/Inspectional-Services/Building-Permits-New-Construction/9qm7-wbdc",
+}
+
+# Minneapolis, MN (Hennepin County's top jurisdiction -- MN county government
+# has no building-permit function, purely municipal). Gemini's first answer
+# gave a fabricated ArcGIS org ID (1st35idbL2i24j8I, invalid URL) with the
+# correct item GUID -- the real org ID (afSMGVsC7QlRK1kZ) found via a direct
+# ArcGIS Online item-info lookup on that GUID. Verified live 2026-07-28:
+# MAX(issueDate)=2026-07-27, 400,479 total rows, permitType='Commercial' is a
+# real, clean commercial split (45,643 rows). Field names are camelCase
+# (permitType, issueDate, applicantName) -- not the typical Title Case seen
+# on most other ArcGIS configs in this file.
+MN_HENNEPIN_CONFIG: dict[str, Any] = {
+    "state_code": "MN",
+    "provider_type": "arcgis",
+    "county": "Hennepin",
+    "endpoint": "https://services.arcgis.com/afSMGVsC7QlRK1kZ/arcgis/rest/services/CCS_Permits/FeatureServer",
+    "layer": 0,
+    "watermark_field": "OBJECTID",
+    "hash_fields": ["permitNumber"],
+    "commercial_where": "permitType='Commercial'",
+    "out_fields": "permitNumber,permitType,occupancyType,workType,status,value,comments,issueDate,Display,applicantName",
+    "date_field": "issueDate",
+    "lookback_days": 180,
+    "feed_id": "mn-hennepin-minneapolis",
+    "id_field": "permitNumber",
+    "name_fields": ["comments", "occupancyType", "workType", "Display"],
+    "address_fields": ["Display"],
+    "value_fields": ["value"],
+    "desc_fields": ["comments", "workType", "occupancyType"],
+    "source_url": "https://opendata.minneapolismn.gov/datasets/CCS-Permits",
+}
+
 # Miami-Dade County (FL) -- verified live 2026-07-28: MAX(PermitIssuedDate)
 # = 2026-07-24 (fresh), 36,944 total commercial-filtered records.
 FL_MIAMIDADE_CONFIG: dict[str, Any] = {
@@ -1153,6 +1214,8 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "MI-WAYNE": MI_WAYNE_CONFIG,
     "IL-COOK": IL_COOK_CONFIG,
     "NY-NYC": NY_NYC_CONFIG,
+    "MA-CAMBRIDGE": MA_CAMBRIDGE_CONFIG,
+    "MN-HENNEPIN": MN_HENNEPIN_CONFIG,
     "FL-MIAMIDADE": FL_MIAMIDADE_CONFIG,
     "WA-KING": WA_KING_CONFIG,
     "TX-TARRANT": TX_TARRANT_CONFIG,

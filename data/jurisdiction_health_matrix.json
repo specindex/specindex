@@ -582,6 +582,28 @@
       "status": "VERIFIED_WORKING",
       "records_merged": 57758,
       "notes": "DOB NOW: Build Job Application Filings. Legacy BIS (ipu4-2q9a) ruled out stale (MAX=2020-06-05). Trade-permit feed (rbx6-tga4) has no building-classification field. This filings dataset does: building_type='Other' vs '1/2/3 Family' is the real commercial/residential split (mirrors legacy BIS pattern). Verified live MAX(filing_date)=2026-07-27, 935,285 total rows. 180-day lookback (Tier-1 broadened window): 57,804 rows fetched, 57,758 new after merge."
+    },
+    {
+      "jurisdiction": "Cambridge, MA",
+      "county": "Middlesex",
+      "state": "MA",
+      "provider_type": "socrata",
+      "endpoint": "https://data.cambridgema.gov/resource/9qm7-wbdc.json",
+      "state_agent_pipeline_key": "MA-CAMBRIDGE",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 3,
+      "notes": "MA county govt has no permit function -- purely municipal, no Middlesex-wide source. Gemini's first dataset ID (25q4-7asf) was fabricated/404. Real one found via Cambridge's own Socrata catalog search: 9qm7-wbdc ('Building Permits: New Construction'). MAX(issue_date)=2026-07-20. proposed_building_use='Commercial / Mixed Use' is real (114/355 total rows). Low volume: only 3 rows in 180-day window -- thin but real, new construction specifically is rare. Somerville (nneb-s3f7) checked too: real dataset, MAX(issue_date)=2026-07-27, but no property-use field at all -- skipped, no reliable commercial filter."
+    },
+    {
+      "jurisdiction": "Minneapolis, MN",
+      "county": "Hennepin",
+      "state": "MN",
+      "provider_type": "arcgis",
+      "endpoint": "https://services.arcgis.com/afSMGVsC7QlRK1kZ/arcgis/rest/services/CCS_Permits/FeatureServer",
+      "state_agent_pipeline_key": "MN-HENNEPIN",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 803,
+      "notes": "MN county govt has no permit function -- purely municipal. Gemini gave the correct ArcGIS item GUID but a fabricated org ID (1st35idbL2i24j8I, invalid URL) -- real org ID (afSMGVsC7QlRK1kZ) found via a direct ArcGIS Online item-info lookup on the GUID. MAX(issueDate)=2026-07-27, 400,479 total rows, permitType='Commercial' is real (45,643 rows). 180-day window: 1,787 fetched, 803 new after merge."
     }
   ]
 }
