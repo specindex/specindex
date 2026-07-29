@@ -667,7 +667,7 @@
       "endpoint": null,
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
-      "notes": "Gemini gave two fabricated/dead domains in a row: 'datamidsouth.org' (DNS failure, does not resolve) and 'aca.memphistn.gov' (also does not resolve). Real Memphis open data portal (data.memphistn.gov) exists but is an ArcGIS Hub with no queryable permit FeatureServer -- the 'DPD Building Permits' tile just links out to develop901.com. Real upstream system is Develop901 (Accela-based) but the real Accela agency code/domain hasn't been found yet -- worth a fresh live-search attempt (try aca-prod.accela.com/{MEMPHIS,SHELBY,DEVELOP901} variants) before ruling out entirely, same pattern that found SLCREF for Salt Lake City."
+      "notes": "Gemini gave two fabricated/dead domains in a row: 'datamidsouth.org' (DNS failure, does not resolve) and 'aca.memphistn.gov' (also does not resolve). Real Memphis open data portal (data.memphistn.gov) exists but is an ArcGIS Hub with no queryable permit FeatureServer -- the 'DPD Building Permits' tile just links out to develop901.com. Real upstream system is Develop901 (Accela-based) but the real Accela agency code/domain hasn't been found yet -- worth a fresh live-search attempt (try aca-prod.accela.com/{MEMPHIS,SHELBY,DEVELOP901} variants) before ruling out entirely, same pattern that found SLCREF for Salt Lake City. UPDATE 2026-07-29: TN's top-county target overall resolved via a different city -- Nashville/Davidson County (TN-NASHVILLE) turned out to have far stronger civic-tech infrastructure. Memphis/Shelby itself remains unresolved if ever revisited specifically."
     },
     {
       "jurisdiction": "Oklahoma County, OK (Oklahoma City)",
@@ -1087,6 +1087,37 @@
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
       "notes": "2nd-largest-county-per-state expansion. Accela agency 'ACFW' verified reachable, real Building module confirmed via Welcome.aspx module list, but the search page's permit-type dropdown didn't render via curl (Angular SPA, needs real JS) and a live Playwright attempt with a guessed label ('Commercial New Construction') timed out on select_option -- the exact real dropdown label wasn't confirmed. Needs a proper live dropdown-option dump before retry, not attempted further this round."
+    },
+    {
+      "jurisdiction": "Nashville, TN (Davidson County)",
+      "county": "Davidson",
+      "state": "TN",
+      "provider_type": "arcgis",
+      "endpoint": "https://services2.arcgis.com/HdTo6HJqh92wn4D8/arcgis/rest/services/Building_Permits_Issued_2/FeatureServer",
+      "state_agent_pipeline_key": "TN-NASHVILLE",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 1314,
+      "notes": "Resolves TN's open top-county slot -- Shelby/Memphis was a confirmed dead end earlier this session (fabricated domains), so retried with Nashville (consolidated city-county gov) instead, which has far stronger open-data infrastructure. Metro Nashville migrated off Socrata to ArcGIS Hub. Real item matches Gemini's claimed dataset name exactly. Permit_Type_Description has a real Esri coded-value domain confirmed via field metadata -- 'Building Commercial - *' vs 'Building Residential - *' is the real split. MAX(Date_Issued)=2026-07-28. 1,320 fetched, 1,314 new."
+    },
+    {
+      "jurisdiction": "Jackson County, MO (Kansas City)",
+      "county": "Jackson",
+      "state": "MO",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "2nd-largest-county-per-state expansion. KCMO's Socrata dataset (ntw8-aacc) exists and Gemini's field claims were accurate, but the dataset itself is confirmed stale -- catalog updatedAt=2025-06-13, MAX(issueddate) and MAX(applieddate) both cap at 2025-05-09 regardless of filter. No fresher KCMO permits dataset exists (checked full catalog). Genuine dead end despite Gemini's 'Daily/Nightly' update claim being wrong."
+    },
+    {
+      "jurisdiction": "Prince George's County, MD",
+      "county": "Prince George's",
+      "state": "MD",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "2nd-largest-county-per-state expansion. Real, fresh Socrata dataset (weik-ttee, updated yesterday) confirmed, but permit_type values are internal DPIE trade codes (e.g. 'DPIE EC'/'DPIE ER'), not plain-text commercial/residential labels. Confirmed via real sample records that the C/R suffix does encode Commercial/Residential (EC='Electrical Commercial', case_name 'UNDER ARMOUR'; ER='Electrical Residential', case_name a person's name) -- but not all ~15 codes cleanly follow that pattern (RW/FIRW/POF/TGU/HTR don't obviously fit), so a reliable comprehensive commercial-only filter needs more code decoding than done this round. Deferred rather than guess at an incomplete list."
     }
   ]
 }

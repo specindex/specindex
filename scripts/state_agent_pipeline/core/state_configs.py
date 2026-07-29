@@ -1772,6 +1772,37 @@ NE_LINCOLN_ACCELA_CONFIG: dict[str, Any] = {
     "lookback_days": 180,
 }
 
+# Nashville, TN (Davidson County -- consolidated city-county government;
+# TN's ACTUAL top-population target after Shelby/Memphis turned out to be
+# a genuine dead end earlier this session -- Nashville's civic-tech
+# infrastructure is far stronger). Metro Nashville migrated its open data
+# off Socrata onto ArcGIS Hub (Gemini correctly flagged this). Real item
+# found via ArcGIS Online search, matches Gemini's claimed dataset name
+# exactly. Permit_Type_Description has a real Esri coded-value domain
+# (confirmed via the field's own domain metadata, not just sampled rows)
+# -- "Building Commercial - *" vs "Building Residential - *" is the real
+# split. MAX(Date_Issued)=2026-07-28 (yesterday).
+TN_NASHVILLE_CONFIG: dict[str, Any] = {
+    "state_code": "TN",
+    "provider_type": "arcgis",
+    "county": "Davidson",
+    "endpoint": "https://services2.arcgis.com/HdTo6HJqh92wn4D8/arcgis/rest/services/Building_Permits_Issued_2/FeatureServer",
+    "layer": 0,
+    "watermark_field": "ObjectId",
+    "hash_fields": ["Permit__"],
+    "commercial_where": "Permit_Type_Description LIKE 'Building Commercial%'",
+    "out_fields": "Permit__,Permit_Type_Description,Permit_Subtype_Description,Const_Cost,Date_Entered,Date_Issued,Address,City,State,ZIP,Purpose",
+    "date_field": "Date_Issued",
+    "lookback_days": 180,
+    "feed_id": "tn-nashville",
+    "id_field": "Permit__",
+    "name_fields": ["Purpose", "Permit_Type_Description", "Address"],
+    "address_fields": ["Address", "City", "State", "ZIP"],
+    "value_fields": ["Const_Cost"],
+    "desc_fields": ["Purpose", "Permit_Subtype_Description"],
+    "source_url": "https://data.nashville.gov/",
+}
+
 STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NJ": NJ_CONFIG,
     "CA-LOSANGELES": CA_LOSANGELES_CONFIG,
@@ -1825,6 +1856,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "LA-NEWORLEANS": LA_NEWORLEANS_CONFIG,
     "NM-LASCRUCES": NM_LASCRUCES_ACCELA_CONFIG,
     "NE-LINCOLN": NE_LINCOLN_ACCELA_CONFIG,
+    "TN-NASHVILLE": TN_NASHVILLE_CONFIG,
     "IN-INDIANAPOLIS": IN_INDIANAPOLIS_ACCELA_CONFIG,
     "FL-MIAMIDADE": FL_MIAMIDADE_CONFIG,
     "WA-KING": WA_KING_CONFIG,
