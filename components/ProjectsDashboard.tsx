@@ -24,6 +24,17 @@ type Facets = {
 
 type SortKey = "score" | "name" | "value" | "recency";
 
+// Mirrors compute-project-documents.py's DOCUMENT_TYPE_KEYWORDS categories.
+const DOCUMENT_TYPES: { value: string; label: string }[] = [
+  { value: "specifications", label: "Specifications" },
+  { value: "drawings_plans", label: "Drawings & Plans" },
+  { value: "structural_engineering", label: "Structural / Engineering" },
+  { value: "staff_report", label: "Staff Report" },
+  { value: "meeting_agenda", label: "Meeting Agenda" },
+  { value: "permit_application", label: "Permit Application" },
+  { value: "other", label: "Other" },
+];
+
 const EMPTY_FACETS: Facets = {
   states: [],
   counties: [],
@@ -72,6 +83,7 @@ export function ProjectsDashboard() {
   const [category, setCategory] = useState(() => readStoredValue(CATEGORY_KEY) ?? "all");
   const [year, setYear] = useState("all");
   const [hasDocuments, setHasDocuments] = useState("all"); // "all" | "yes" | "no"
+  const [documentType, setDocumentType] = useState("all"); // "all" | one of DOCUMENT_TYPES below
   const [query, setQuery] = useState("");
   const [debouncedQuery, setDebouncedQuery] = useState("");
   const [sort, setSort] = useState<SortKey>("score");
@@ -133,7 +145,7 @@ export function ProjectsDashboard() {
   }, [query]);
 
   // Any filter change resets to page 1.
-  const filterKey = JSON.stringify([territory, status, projectType, county, category, year, hasDocuments, debouncedQuery, sort, newOnly]);
+  const filterKey = JSON.stringify([territory, status, projectType, county, category, year, hasDocuments, documentType, debouncedQuery, sort, newOnly]);
   const prevFilterKey = useRef(filterKey);
   useEffect(() => {
     if (prevFilterKey.current !== filterKey) {
@@ -171,6 +183,7 @@ export function ProjectsDashboard() {
       category,
       year,
       has_documents: hasDocuments === "all" ? undefined : hasDocuments === "yes" ? "true" : "false",
+      document_type: documentType === "all" ? undefined : documentType,
       q: debouncedQuery,
       sort,
       new_since_days: newOnly ? 7 : undefined,
@@ -196,7 +209,7 @@ export function ProjectsDashboard() {
     return () => {
       cancelled = true;
     };
-  }, [territory, status, projectType, county, category, year, hasDocuments, debouncedQuery, sort, newOnly, offset]);
+  }, [territory, status, projectType, county, category, year, hasDocuments, documentType, debouncedQuery, sort, newOnly, offset]);
 
   const territoryLabel = useMemo(() => {
     if (territory.length === 0) return "All states";
@@ -338,6 +351,12 @@ export function ProjectsDashboard() {
             <option value="yes">Has attached documents</option>
             <option value="no">No attached documents</option>
           </select>
+          <select value={documentType} onChange={(e) => setDocumentType(e.target.value)} className="rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm">
+            <option value="all">Document type: any</option>
+            {DOCUMENT_TYPES.map((t) => (
+              <option key={t.value} value={t.value}>{t.label}</option>
+            ))}
+          </select>
         </div>
         <div className="mt-4 flex flex-wrap items-center justify-between gap-2">
           <p className="text-sm text-[var(--color-gray-600)]">{resultsLabel}</p>
@@ -373,6 +392,7 @@ export function ProjectsDashboard() {
               category,
               year,
               hasDocuments,
+              documentType,
               query: debouncedQuery,
               newOnly,
             }}

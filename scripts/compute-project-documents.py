@@ -27,6 +27,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -36,6 +37,35 @@ DOCS_DIR = ROOT / "data" / "documents"
 
 # project_id -> list of {"title", "url", "content_type"}
 DocMap = dict[str, list[dict]]
+
+# Deterministic, keyword-based classification -- no LLM involved, same
+# discipline as the rest of this pipeline. Order matters: checked
+# top-to-bottom, first match wins, so more specific categories (e.g.
+# "structural") are listed before generic ones that might also match a
+# structural doc's title (e.g. a "Structural Specifications" doc should
+# land in structural_engineering, not specifications).
+DOCUMENT_TYPE_KEYWORDS: list[tuple[str, list[str]]] = [
+    ("structural_engineering", ["structural", "civil engineering", "mep", "calculations", "geotechnical"]),
+    ("drawings_plans", ["drawing", "site plan", "floor plan", "blueprint", "elevation", "survey"]),
+    ("specifications", ["specification", "spec book", "project manual"]),
+    ("staff_report", ["staff report", "staff review", "memo"]),
+    ("meeting_agenda", ["agenda", "minutes", "packet"]),
+    ("permit_application", ["application", "permit form"]),
+]
+
+
+def classify_document_type(title: str) -> str:
+    # Real filenames use underscores/hyphens in place of spaces at least as
+    # often as they use spaces (e.g. "26-116-staff-report.pdf",
+    # "Civil_Engineering_Facility_Requirements.pdf") -- normalize both to
+    # spaces so phrase keywords like "staff report"/"civil engineering"
+    # match regardless of separator style. Confirmed live 2026-07-29: both
+    # of those real filenames fell through to "other" before this fix.
+    haystack = re.sub(r"[_-]+", " ", title.lower())
+    for doc_type, keywords in DOCUMENT_TYPE_KEYWORDS:
+        if any(kw in haystack for kw in keywords):
+            return doc_type
+    return "other"
 
 
 def _load(path: Path) -> dict | None:
@@ -136,6 +166,9 @@ def all_files() -> DocMap:
     for source in (files_from_georgia(), files_from_fulton(), files_from_new_jersey(), files_from_gcs()):
         for pid, docs in source.items():
             total[pid].extend(docs)
+    for docs in total.values():
+        for d in docs:
+            d["document_type"] = classify_document_type(d["title"])
     return total
 
 
@@ -163,7 +196,12 @@ def main() -> int:
     try:
         if args.apply_migration:
             with conn.cursor() as cur:
-                for name in ("017_project_documents.sql", "018_project_document_files.sql"):
+                for name in (
+                    "017_project_documents.sql",
+                    "018_project_document_files.sql",
+                    "019_project_document_files_gcs.sql",
+                    "020_document_types.sql",
+                ):
                     migration = ROOT / "db" / "migrations" / name
                     cur.execute(migration.read_text(encoding="utf-8"))
             conn.commit()
@@ -188,7 +226,7 @@ def main() -> int:
             for pid, docs in sorted(matched.items(), key=lambda kv: -len(kv[1]))[:10]:
                 print(f"  {pid}: {len(docs)} document(s)")
                 for d in docs[:3]:
-                    print(f"    - {d['title']} -> {d['url']}")
+                    print(f"    - [{d['document_type']}] {d['title']} -> {d['url']}")
             return 0
 
         with conn.cursor() as cur:
@@ -207,14 +245,15 @@ def main() -> int:
                 for d in docs:
                     cur.execute(
                         """
-                        INSERT INTO project_document_files (project_sk, title, url, content_type)
-                        VALUES (%s, %s, %s, %s)
+                        INSERT INTO project_document_files (project_sk, title, url, content_type, document_type)
+                        VALUES (%s, %s, %s, %s, %s)
                         ON CONFLICT (project_sk, url) DO UPDATE SET
                             title = EXCLUDED.title,
                             content_type = EXCLUDED.content_type,
+                            document_type = EXCLUDED.document_type,
                             computed_at = now()
                         """,
-                        (sk, d["title"], d["url"], d.get("content_type")),
+                        (sk, d["title"], d["url"], d.get("content_type"), d["document_type"]),
                     )
         conn.commit()
         print(f"\nWrote document data for {len(matched)} project(s)")

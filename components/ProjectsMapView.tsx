@@ -30,6 +30,7 @@ export type ProjectsMapFilters = {
   category: string;
   year: string;
   hasDocuments: string;
+  documentType: string;
   query: string;
   newOnly: boolean;
 };
@@ -57,6 +58,7 @@ export function ProjectsMapView({ filters }: Props) {
       year: filters.year,
       has_documents:
         filters.hasDocuments === "all" ? undefined : filters.hasDocuments === "yes" ? "true" : "false",
+      document_type: filters.documentType === "all" ? undefined : filters.documentType,
       q: filters.query,
       new_since_days: filters.newOnly ? 7 : undefined,
     });
@@ -85,6 +87,7 @@ export function ProjectsMapView({ filters }: Props) {
     filters.category,
     filters.year,
     filters.hasDocuments,
+    filters.documentType,
     filters.query,
     filters.newOnly,
   ]);
