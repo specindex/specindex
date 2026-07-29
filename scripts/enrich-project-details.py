@@ -56,6 +56,21 @@ from state_agent_pipeline.config import Settings  # noqa: E402
 JSON_FENCE = re.compile(r"```json\s*(.*?)\s*```", re.DOTALL)
 
 
+# spx_id isn't a stored column -- api/main.py computes it on the fly from
+# project_sk (f"SPX-{project_sk:06d}"). Mirrored here so this script can
+# take/print the same customer-facing ID without querying a column that
+# doesn't exist.
+def _spx_id(project_sk: int) -> str:
+    return f"SPX-{project_sk:06d}"
+
+
+def _parse_spx_id(value: str) -> int:
+    digits = re.sub(r"\D", "", value)
+    if not digits:
+        raise ValueError(f"not a valid spx_id: {value!r}")
+    return int(digits)
+
+
 # ---------------------------------------------------------------------------
 # Gemini calls
 # ---------------------------------------------------------------------------
@@ -375,7 +390,7 @@ def main() -> int:
             with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
                 cur.execute(
                     """
-                    SELECT p.project_sk, p.spx_id, p.name, p.city, p.county, p.state
+                    SELECT p.project_sk, p.name, p.city, p.county, p.state
                     FROM projects p
                     LEFT JOIN project_enrichment_checks c ON c.project_sk = p.project_sk
                     WHERE c.checked_at IS NULL OR c.checked_at < now() - interval '30 days'
@@ -385,6 +400,8 @@ def main() -> int:
                     (args.limit,),
                 )
                 candidates = cur.fetchall()
+            for c in candidates:
+                c["spx_id"] = _spx_id(c["project_sk"])
 
             print(f"Batch: {len(candidates)} candidate project(s)\n")
             total_facts = 0
@@ -407,14 +424,17 @@ def main() -> int:
             print(f"Batch complete: {len(candidates)} projects, {total_facts} total facts")
             return 0
 
+        project_sk = _parse_spx_id(args.spx_id)
         with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
             cur.execute(
-                "SELECT project_sk, spx_id, name, city, county, state FROM projects WHERE spx_id = %s",
-                (args.spx_id,),
+                "SELECT project_sk, name, city, county, state FROM projects WHERE project_sk = %s",
+                (project_sk,),
             )
             project = cur.fetchone()
+        if project:
+            project["spx_id"] = _spx_id(project["project_sk"])
         if not project:
-            print(f"No project found with spx_id={args.spx_id!r}", file=sys.stderr)
+            print(f"No project found with spx_id={args.spx_id!r} (project_sk={project_sk})", file=sys.stderr)
             return 1
 
         enrich_one(client, settings, conn, project, args.dry_run)

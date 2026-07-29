@@ -29,6 +29,7 @@ export type ProjectsMapFilters = {
   county: string;
   category: string;
   year: string;
+  hasDocuments: string;
   query: string;
   newOnly: boolean;
 };
@@ -54,6 +55,8 @@ export function ProjectsMapView({ filters }: Props) {
       county: filters.county,
       category: filters.category,
       year: filters.year,
+      has_documents:
+        filters.hasDocuments === "all" ? undefined : filters.hasDocuments === "yes" ? "true" : "false",
       q: filters.query,
       new_since_days: filters.newOnly ? 7 : undefined,
     });
@@ -81,6 +84,7 @@ export function ProjectsMapView({ filters }: Props) {
     filters.county,
     filters.category,
     filters.year,
+    filters.hasDocuments,
     filters.query,
     filters.newOnly,
   ]);

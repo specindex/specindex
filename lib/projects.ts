@@ -58,6 +58,8 @@ function normalizeProject(p: Project): Project {
     news: p.news ?? [],
     provenance: p.provenance ?? [],
     score: p.score ?? null,
+    document_count: p.document_count ?? 0,
+    has_documents: p.has_documents ?? false,
   };
 }
 

@@ -131,7 +131,9 @@ def fetch_enrichment(conn, sks: list[int]) -> dict[int, dict[str, Any]]:
     sections (see docs/PROJECT_PAGE_REDESIGN.md)."""
     if not sks:
         return {}
-    out: dict[int, dict[str, Any]] = {sk: {"score": None, "events": [], "sources": [], "news": []} for sk in sks}
+    out: dict[int, dict[str, Any]] = {
+        sk: {"score": None, "events": [], "sources": [], "news": [], "document_count": 0} for sk in sks
+    }
 
     with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
         cur.execute(
@@ -191,11 +193,18 @@ def fetch_enrichment(conn, sks: list[int]) -> dict[int, dict[str, Any]]:
                 }
             )
 
+        cur.execute(
+            "SELECT project_sk, document_count FROM project_documents WHERE project_sk = ANY(%s)",
+            (sks,),
+        )
+        for r in cur.fetchall():
+            out[r["project_sk"]]["document_count"] = r["document_count"]
+
     return out
 
 
 def row_to_project(row: dict[str, Any], enrichment: dict[str, Any] | None = None) -> dict[str, Any]:
-    enrichment = enrichment or {"score": None, "events": [], "sources": [], "news": []}
+    enrichment = enrichment or {"score": None, "events": [], "sources": [], "news": [], "document_count": 0}
     return {
         "id": row["project_id"],
         "spx_id": spx_id(row["project_sk"]),
@@ -204,6 +213,8 @@ def row_to_project(row: dict[str, Any], enrichment: dict[str, Any] | None = None
         "timeline": enrichment["events"],
         "provenance": enrichment["sources"],
         "news": enrichment["news"],
+        "document_count": enrichment["document_count"],
+        "has_documents": enrichment["document_count"] > 0,
         "external_ids": row["external_ids"] or {},
         "record_type": row["record_type"],
         "name": row["name"],
@@ -269,6 +280,7 @@ def _project_filter_clauses(
     year: int | None,
     q: str | None,
     new_since_days: int | None,
+    has_documents: bool | None = None,
 ) -> tuple[list[str], list[Any]]:
     """Shared WHERE-clause builder for /v1/projects and /v1/projects/map-points
     -- both need the same filter set (the map is meant to show pins bounded
@@ -307,6 +319,11 @@ def _project_filter_clauses(
     if new_since_days:
         clauses.append("p.first_seen_at >= now() - make_interval(days => %s)")
         params.append(new_since_days)
+    if has_documents is not None:
+        exists = "EXISTS" if has_documents else "NOT EXISTS"
+        clauses.append(
+            f"{exists} (SELECT 1 FROM project_documents pd WHERE pd.project_sk = p.project_sk AND pd.has_documents)"
+        )
 
     return clauses, params
 
@@ -323,12 +340,15 @@ def list_projects(
     new_since_days: int | None = Query(
         default=None, ge=1, le=365, description="Only projects first seen in the last N days"
     ),
+    has_documents: bool | None = Query(
+        default=None, description="True = only projects with attached documents, False = only without"
+    ),
     sort: str = Query(default="score", pattern="^(score|name|value|recency)$"),
     limit: int = Query(default=50, ge=1, le=100),
     offset: int = Query(default=0, ge=0),
 ):
     clauses, params = _project_filter_clauses(
-        state, status, project_type, county, category, year, q, new_since_days
+        state, status, project_type, county, category, year, q, new_since_days, has_documents
     )
 
     where = f"WHERE {' AND '.join(clauses)}" if clauses else ""
@@ -435,6 +455,7 @@ def project_map_points(
     year: int | None = None,
     q: str | None = Query(default=None, description="Free-text search across name/city/owner/GC/description"),
     new_since_days: int | None = Query(default=None, ge=1, le=365),
+    has_documents: bool | None = Query(default=None),
 ):
     """Public, customer-facing equivalent of /v1/ops/map-points -- bounded
     to whatever filters the visitor currently has set on /projects rather
@@ -443,7 +464,7 @@ def project_map_points(
     same as the ops version, since a map pin doesn't need the full project
     payload."""
     clauses, params = _project_filter_clauses(
-        state, status, project_type, county, category, year, q, new_since_days
+        state, status, project_type, county, category, year, q, new_since_days, has_documents
     )
     clauses += ["p.latitude IS NOT NULL", "p.longitude IS NOT NULL"]
     where = f"WHERE {' AND '.join(clauses)}"
