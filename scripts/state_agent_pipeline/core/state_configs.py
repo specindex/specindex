@@ -1803,6 +1803,41 @@ TN_NASHVILLE_CONFIG: dict[str, Any] = {
     "source_url": "https://data.nashville.gov/",
 }
 
+# Fayetteville, AR (substituted for Pulaski/Little Rock, which turned out
+# to be a genuine dead end -- Gemini's dataset ID 404'd and data.
+# littlerock.gov itself redirects to a plain info page, no Socrata portal
+# exists there at all). Fayetteville is a real, civic-tech-forward city
+# (home of University of Arkansas). Gemini's exact domain (maps.
+# fayetteville-ar.gov/arcgis/rest/...) 404'd but the item ID it gave was
+# real -- found the correct path (.../server/rest/... not .../arcgis/
+# rest/...) via an ArcGIS Online item-info lookup. PM_TYPE='Commercial
+# Building Permit' is real and clean. Hit the same "bad future
+# timestamp" data-quality trap already seen on TX Collin/IL Cook this
+# session -- unbounded MAX(ISSUEDATE) returns 2026-09-11 (garbage, in
+# the future relative to verification day); bounded to <= today it's
+# genuinely 2026-07-29 (today). Sanity-bounded the commercial_where the
+# same way Cook County's config already does.
+AR_FAYETTEVILLE_CONFIG: dict[str, Any] = {
+    "state_code": "AR",
+    "provider_type": "arcgis",
+    "county": "Washington",
+    "endpoint": "https://maps.fayetteville-ar.gov/server/rest/services/Permits/MapServer",
+    "layer": 0,
+    "watermark_field": "OBJECTID",
+    "hash_fields": ["PERMITNUMBER"],
+    "commercial_where": "PM_TYPE='Commercial Building Permit' AND ISSUEDATE <= CURRENT_TIMESTAMP",
+    "out_fields": "PERMITNUMBER,PM_TYPE,FULLADD,DESCRIPTION,PM_STATUS,VALUE,PM_WCLASS,ISSUEDATE",
+    "date_field": "ISSUEDATE",
+    "lookback_days": 180,
+    "feed_id": "ar-fayetteville",
+    "id_field": "PERMITNUMBER",
+    "name_fields": ["DESCRIPTION", "PM_WCLASS", "FULLADD"],
+    "address_fields": ["FULLADD"],
+    "value_fields": ["VALUE"],
+    "desc_fields": ["DESCRIPTION", "PM_WCLASS"],
+    "source_url": "https://fayetteville-ar.opendata.arcgis.com/",
+}
+
 STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NJ": NJ_CONFIG,
     "CA-LOSANGELES": CA_LOSANGELES_CONFIG,
@@ -1857,6 +1892,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NM-LASCRUCES": NM_LASCRUCES_ACCELA_CONFIG,
     "NE-LINCOLN": NE_LINCOLN_ACCELA_CONFIG,
     "TN-NASHVILLE": TN_NASHVILLE_CONFIG,
+    "AR-FAYETTEVILLE": AR_FAYETTEVILLE_CONFIG,
     "IN-INDIANAPOLIS": IN_INDIANAPOLIS_ACCELA_CONFIG,
     "FL-MIAMIDADE": FL_MIAMIDADE_CONFIG,
     "WA-KING": WA_KING_CONFIG,

@@ -825,7 +825,7 @@
       "endpoint": null,
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
-      "notes": "Gemini's dataset ID (waw2-4wxz) 404'd, and data.littlerock.gov itself redirects to a plain informational page -- no Socrata portal exists there (dead/fabricated lead, not just a wrong ID). Little Rock's real system is 'Dynamic Portal'/Selectron WebPermits per Gemini, not Accela. Not investigated further this round -- worth checking permitpayment.littlerock.gov or inspections.littlerock.gov directly for a real API."
+      "notes": "Gemini's dataset ID (waw2-4wxz) 404'd, and data.littlerock.gov itself redirects to a plain informational page -- no Socrata portal exists there (dead/fabricated lead, not just a wrong ID). Little Rock's real system is 'Dynamic Portal'/Selectron WebPermits per Gemini, not Accela. Not investigated further this round -- worth checking permitpayment.littlerock.gov or inspections.littlerock.gov directly for a real API. UPDATE 2026-07-29: AR's top-county target resolved via a different city -- Fayetteville (home of University of Arkansas, real civic-tech infrastructure). Little Rock itself remains a dead end if ever revisited specifically."
     },
     {
       "jurisdiction": "Hinds County, MS (Jackson)",
@@ -1148,6 +1148,27 @@
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
       "notes": "2nd-largest-county-per-state expansion. Accela agency 'DUPAGE' reachable, no login-gate (unlike IN-Allen), but the general-search permit-type dropdown is genuinely empty on page load (confirmed via Playwright dropdown dump: only '--Select--' present) -- needs a cascading prior form selection (e.g. a license-type/category picker) before permit-type options populate, not yet investigated further. Also caveat: DUPAGE agency covers unincorporated areas only per Gemini (major commercial centers like Naperville run independent systems), so real value is limited even if fixed."
+    },
+    {
+      "jurisdiction": "Fayetteville, AR (Washington County)",
+      "county": "Washington",
+      "state": "AR",
+      "provider_type": "arcgis",
+      "endpoint": "https://maps.fayetteville-ar.gov/server/rest/services/Permits/MapServer",
+      "state_agent_pipeline_key": "AR-FAYETTEVILLE",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 100,
+      "notes": "Resolves AR's dead top-county slot -- Little Rock/Pulaski County was confirmed dead (fabricated dataset ID, dead Socrata domain). Substituted Fayetteville instead. Gemini's exact domain 404'd but the item ID was real, found the correct path via item-info lookup (server/rest not arcgis/rest). PM_TYPE='Commercial Building Permit' real and clean. Hit the same 'bad future timestamp' trap as TX-Collin/IL-Cook this session -- unbounded MAX(ISSUEDATE) returns a garbage 2026-09-11, bounded to <=today it's genuinely 2026-07-29 (today). 100 fetched, 100 new."
+    },
+    {
+      "jurisdiction": "Harrison County, MS (Gulfport/Biloxi)",
+      "county": "Harrison",
+      "state": "MS",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Attempted as a substitute for Hinds/Jackson (already a confirmed dead end). Confirmed genuine dead end across the whole region -- county and both major cities (Gulfport, Biloxi) all process permits via static PDF forms with zero public API of any kind, real ArcGIS servers exist but only carry basemap layers, not permit records. No further MS substitution attempted this round."
     }
   ]
 }
