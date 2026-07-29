@@ -166,9 +166,10 @@ not a draft plan. This is the actual workflow used to find and wire every new
 county/state source added on 2026-07-28 (Wayne MI, Cook IL, Miami-Dade FL,
 King WA, Tarrant TX, Franklin/Cuyahoga OH, Mecklenburg/Wake NC, Fairfax VA,
 Philadelphia PA, San Diego CA, Dallas/Bexar TX, TDLR TABS statewide TX,
-Colorado Springs CO, Cleveland OH). It's a 7-step loop, and **step 7 is a
-required step for every jurisdiction, not an optional follow-up** — do not
-consider a jurisdiction "done" after step 6 alone.
+Colorado Springs CO, Cleveland OH). It's now an 8-step loop (step 8 added
+2026-07-29), and **steps 7 and 8 are both required for every project, not
+optional follow-ups** — do not consider a jurisdiction "done" after step 6
+alone, and do not consider an individual project "done" without step 8.
 
 1. **Discovery — Gemini, with context.** Send a query through
    `scripts/gemini_discovery_chat.py --session <name> "..."`. Not stateless:
@@ -232,6 +233,25 @@ consider a jurisdiction "done" after step 6 alone.
    municipal permit attachments often aren't) — verify per source, never
    assume uniformly good or bad. **Remaining scope:** everything besides
    GA-SAM and the earlier NJ web-research work.
+8. **Project enrichment (REQUIRED, not optional) — added 2026-07-29.** For
+   every new project a jurisdiction produces, run
+   `scripts/enrich-project-details.py <spx_id or slug>` (or `--batch
+   --limit N` across many) to populate the AI-enriched detail-page sections
+   — Executive Brief, CSI Scope Matrix, Verified Construction Team,
+   Permits, Contacts — via the same two-pass search-grounded discovery +
+   independent cross-check method used to build the first real page
+   (`SPX-000157`, Hyundai-SK Battery Plant). Writes to `project_enrichment`
+   (per-fact rows with `confidence`/`sources`) and
+   `project_enrichment_checks` (a 30-day recheck cooldown, so a project
+   that genuinely has nothing findable doesn't get re-queried/re-billed
+   every run). This is what makes `components/ProjectDetailView.tsx` —
+   **the adopted default template for every project page, see
+   `docs/PROJECT_PAGE_REDESIGN.md`** — actually render its enriched
+   sections instead of falling back to the raw description; a project
+   without step 8 still gets a working page, just a thinner one. As of
+   2026-07-29 only `SPX-000157` has been through this step; running it
+   across the rest of the corpus is real remaining scope, same as
+   step 7's GA-SAM/NJ-only coverage today.
 
 **Known real limits (be honest about these, don't oversell):** discovery
 still needs a human+Claude verification loop per lead every time — not
