@@ -1,0 +1,19 @@
+export function Logo({ className, size = 32 }: { className?: string; size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 100 100"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect x="15" y="10" width="50" height="20" fill="#2F9E5C" />
+      <rect x="65" y="10" width="20" height="20" fill="#F59E0B" />
+      <rect x="15" y="30" width="20" height="10" fill="#166534" />
+      <rect x="15" y="40" width="70" height="20" fill="#2F9E5C" />
+      <rect x="65" y="60" width="20" height="10" fill="#166534" />
+      <rect x="15" y="70" width="70" height="20" fill="#2F9E5C" />
+    </svg>
+  );
+}

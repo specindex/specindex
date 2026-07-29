@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { Logo } from "@/components/Logo";
 
 const nav = [
   { href: "/product/", label: "Product" },
@@ -33,9 +34,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-[var(--color-border)] bg-white/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3.5 md:px-8">
         <Link href="/" className="flex items-center gap-2">
-          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-[var(--color-green)] text-sm font-bold text-white">
-            S
-          </span>
+          <Logo size={28} />
           <span className="text-lg font-semibold tracking-tight text-[var(--color-ink)]">
             SpecIndex
           </span>
