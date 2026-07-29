@@ -472,6 +472,26 @@ GA_GWINNETT_ACCELA_CONFIG: dict[str, Any] = {
     "lookback_days": 30,
 }
 
+# St. Louis County, MO (state's most populous county, NOT the independent
+# City of St. Louis). Accela agency code is "SLC" -- confusingly the same
+# code the initials-based guess for Salt Lake City hit first (see
+# UT_SALTLAKE_ACCELA_CONFIG's note below -- these are two different real
+# agencies that happen to collide on the same 3-letter code). The default
+# "Building" module 404s for this agency; the real vertical-construction
+# permits live under the "PublicWorks" module's search form, record type
+# "PublicWorks/Building/Commercial/New Building" (visible label "BUILDING
+# COMMERCIAL NEW BUILDING") -- confirmed live 2026-07-29 by fetching the
+# module's real dropdown option list.
+MO_STLOUIS_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "MO",
+    "provider_type": "accela",
+    "county": "St. Louis",
+    "endpoint": "https://aca-prod.accela.com/SLC",
+    "module": "PublicWorks",
+    "permit_type_label": "BUILDING COMMERCIAL NEW BUILDING",
+    "lookback_days": 180,
+}
+
 # Salt Lake City (Salt Lake County's top jurisdiction by population -- UT
 # county government's Municipal Services District handles unincorporated
 # areas only, no clean statewide/countywide ArcGIS building-permit layer
@@ -1302,6 +1322,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "UT-SALTLAKE": UT_SALTLAKE_ACCELA_CONFIG,
     "MD-MONTGOMERY": MD_MONTGOMERY_CONFIG,
     "WI-MILWAUKEE": WI_MILWAUKEE_CONFIG,
+    "MO-STLOUIS": MO_STLOUIS_ACCELA_CONFIG,
     "FL-MIAMIDADE": FL_MIAMIDADE_CONFIG,
     "WA-KING": WA_KING_CONFIG,
     "TX-TARRANT": TX_TARRANT_CONFIG,

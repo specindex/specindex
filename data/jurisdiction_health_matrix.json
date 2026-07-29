@@ -647,6 +647,37 @@
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
       "notes": "HI's top county by population, no config wired. Only building-permit dataset on data.honolulu.gov (4vab-c87q) is a frozen snapshot, verified live MAX(issuedate)=2025-07-01 (stale, >1yr old). DPP's live system (HNL Build/CivCheck AI) is an interactive web portal only, no public API (SODA/REST/OData) -- confirmed by Gemini on a direct feedback round after being shown the staleness evidence (this time gave an honest 'no active API exists' answer instead of guessing). No ArcGIS FeatureServer for permits either (HoLIS only has zoning/TMK/parcel layers). Would require either a UIPA public-records request or scraping HNL Build's UI directly -- not attempted, out of scope for now (not a CAPTCHA/anti-bot case, just genuinely no queryable feed)."
+    },
+    {
+      "jurisdiction": "St. Louis County, MO",
+      "county": "St. Louis",
+      "state": "MO",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/SLC",
+      "state_agent_pipeline_key": "MO-STLOUIS",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 180,
+      "notes": "Same 'SLC' Accela agency code as the Salt Lake City investigation -- coincidence, these are two different real agencies (St. Louis County MO here, Salt Lake City is really 'SLCREF'). Default 'Building' module 404s here; real vertical-construction permits live under the 'PublicWorks' module's search form (record type PublicWorks/Building/Commercial/New Building, visible label 'BUILDING COMMERCIAL NEW BUILDING') -- confirmed live by fetching the module's real dropdown option HTML. 180-day window: 190 fetched, 180 new after merge."
+    },
+    {
+      "jurisdiction": "Shelby County, TN (Memphis)",
+      "county": "Shelby",
+      "state": "TN",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Gemini gave two fabricated/dead domains in a row: 'datamidsouth.org' (DNS failure, does not resolve) and 'aca.memphistn.gov' (also does not resolve). Real Memphis open data portal (data.memphistn.gov) exists but is an ArcGIS Hub with no queryable permit FeatureServer -- the 'DPD Building Permits' tile just links out to develop901.com. Real upstream system is Develop901 (Accela-based) but the real Accela agency code/domain hasn't been found yet -- worth a fresh live-search attempt (try aca-prod.accela.com/{MEMPHIS,SHELBY,DEVELOP901} variants) before ruling out entirely, same pattern that found SLCREF for Salt Lake City."
+    },
+    {
+      "jurisdiction": "Oklahoma County, OK (Oklahoma City)",
+      "county": "Oklahoma",
+      "state": "OK",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Confirmed no public queryable API for OKC or Oklahoma County building permits -- data.okc.gov's open catalog explicitly excludes building permits (only Active Work Zones/Bond Infrastructure). OKC uses Accela (OKC Citizen Access) but the real agency code hasn't been found/verified yet -- same pattern as Memphis, worth a live agency-code search before ruling out (not attempted this round due to time)."
     }
   ]
 }
