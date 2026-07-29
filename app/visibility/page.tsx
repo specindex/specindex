@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { VisibilityPanel } from "@/components/VisibilityPanel";
-import { getProjects } from "@/lib/projects";
+import { getSampleProjects } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "Brand Visibility",
@@ -9,7 +9,15 @@ export const metadata: Metadata = {
 };
 
 export default async function VisibilityPage() {
-  const projects = await getProjects();
+  // getProjects() fetched the ENTIRE corpus (~175K+ rows, headed to 6.5M+)
+  // and embedded it as a prop into this page's client bundle -- timed out
+  // the build the same way /projects/[id] did (docs/ROADMAP.md item 44's
+  // follow-up), and would've been a multi-MB payload even if it hadn't.
+  // Bounded to a representative top-scored sample as a stopgap; the real
+  // fix is VisibilityPanel fetching/paginating client-side against the API
+  // the way components/ProjectsDashboard.tsx already does, instead of
+  // receiving the whole corpus as a prop.
+  const projects = await getSampleProjects(2000);
 
   return (
     <div className="bg-[var(--color-bg)]">

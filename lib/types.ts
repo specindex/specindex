@@ -50,6 +50,34 @@ export type ProjectNewsItem = {
   published_at: string | null;
 };
 
+// "confirmed" = two independent Gemini passes agreed; "reported" = passes
+// disagreed or only one pass ran (shown with the disagreement, not
+// resolved silently); "unconfirmed" = neither pass could find it. See
+// scripts/enrich-project-details.py.
+export type EnrichmentConfidence = "confirmed" | "reported" | "unconfirmed";
+
+export type EnrichmentFact = {
+  field_key: string;
+  label: string;
+  value: string;
+  confidence: EnrichmentConfidence;
+  sources: string | null;
+};
+
+export type ProjectEnrichment = {
+  executive_brief: EnrichmentFact[];
+  csi_scope: EnrichmentFact[];
+  team: EnrichmentFact[];
+  permit: EnrichmentFact[];
+  contact: EnrichmentFact[];
+};
+
+export type ProjectDocumentFile = {
+  title: string;
+  url: string;
+  content_type: string | null;
+};
+
 export type Project = {
   id: string;
   spx_id: string;
@@ -80,6 +108,10 @@ export type Project = {
   first_seen_at?: string | null;
   document_count?: number;
   has_documents?: boolean;
+  // Detail-endpoint only (GET /v1/projects/{id}) -- not present on list-page
+  // rows, which don't fetch this to keep list pagination cheap.
+  enrichment?: ProjectEnrichment;
+  documents?: ProjectDocumentFile[];
 };
 
 export type ProjectCorpus = {

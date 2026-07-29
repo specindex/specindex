@@ -9,6 +9,52 @@ const API_BASE =
   process.env.SPECINDEX_API_URL || "https://specindex-api-gmm6irqe4q-uc.a.run.app";
 const PAGE_SIZE = 100;
 
+// Confirmed live 2026-07-29: even after every individual page's own fetch
+// logic was bounded/paced, the build kept failing on whichever page
+// happened to be generated in the same batch as the others -- each
+// function paces ITSELF, but nothing coordinates how many requests ALL of
+// them fire at once against the API's small connection pool during
+// Next.js's parallel static-generation phase. This process-wide queue caps
+// total concurrent requests regardless of how many pages are building at
+// the same time, which per-function pacing alone can't do.
+// Next.js spawns one static-generation worker PROCESS per CPU core, each
+// with its own copy of this module -- this queue only caps concurrency
+// WITHIN one process, so the real global ceiling is roughly this number
+// times core count. Set low deliberately: 10 cores locally (worse
+// contention than GitHub Actions' runners, typically 2-4 cores) still
+// keeps the effective global cap in a reasonable range.
+const MAX_CONCURRENT_REQUESTS = 2;
+let activeRequests = 0;
+const requestQueue: Array<() => void> = [];
+
+async function acquireSlot(): Promise<void> {
+  if (activeRequests < MAX_CONCURRENT_REQUESTS) {
+    activeRequests++;
+    return;
+  }
+  return new Promise((resolve) => {
+    requestQueue.push(() => {
+      activeRequests++;
+      resolve();
+    });
+  });
+}
+
+function releaseSlot(): void {
+  activeRequests--;
+  const next = requestQueue.shift();
+  if (next) next();
+}
+
+async function limitedFetch(url: string, init?: RequestInit): Promise<Response> {
+  await acquireSlot();
+  try {
+    return await fetch(url, init);
+  } finally {
+    releaseSlot();
+  }
+}
+
 type ProjectsListResponse = {
   total: number;
   limit: number;
@@ -25,8 +71,24 @@ type ProjectsListResponse = {
 // page rendering. Retrying a bad page here, with validation that it's
 // actually shaped like a project list before trusting it, converts that
 // into "occasionally slower," not "occasionally broken."
+//
+// Also retries on the fetch() call itself throwing (ECONNRESET etc) --
+// confirmed live 2026-07-29 fetching the full ~175K-row corpus for
+// /reporting: the connection gets reset partway through the ~1,750
+// sequential page requests that takes, which is a network-level failure
+// before any response object exists, not a malformed one. The original
+// version of this function only retried the latter.
 async function fetchPage(offset: number, attempt = 1): Promise<ProjectsListResponse> {
-  const res = await fetch(`${API_BASE}/v1/projects?limit=${PAGE_SIZE}&offset=${offset}`);
+  let res: Response;
+  try {
+    res = await limitedFetch(`${API_BASE}/v1/projects?limit=${PAGE_SIZE}&offset=${offset}`);
+  } catch (e) {
+    if (attempt >= 5) {
+      throw new Error(`specindex-api /v1/projects fetch failed at offset ${offset}: ${e}`);
+    }
+    await new Promise((r) => setTimeout(r, 500 * attempt));
+    return fetchPage(offset, attempt + 1);
+  }
   if (!res.ok) {
     throw new Error(`specindex-api /v1/projects failed: ${res.status} ${res.statusText}`);
   }
@@ -60,6 +122,8 @@ function normalizeProject(p: Project): Project {
     score: p.score ?? null,
     document_count: p.document_count ?? 0,
     has_documents: p.has_documents ?? false,
+    documents: p.documents ?? [],
+    enrichment: p.enrichment ?? { executive_brief: [], csi_scope: [], team: [], permit: [], contact: [] },
   };
 }
 
@@ -72,6 +136,13 @@ async function fetchAllProjects(): Promise<Project[]> {
     all.push(...data.projects.map(normalizeProject));
     offset += PAGE_SIZE;
     if (offset >= data.total) break;
+    // A full corpus is ~1,750 sequential requests at PAGE_SIZE=100 -- confirmed
+    // live 2026-07-29 that firing them back-to-back exhausts the API's small
+    // connection pool badly enough that retries alone don't reliably recover
+    // (repeated ECONNRESET at different offsets across attempts, not one bad
+    // page). A small gap between requests, not just retry-on-failure, is what
+    // actually fixes sustained pool pressure instead of just papering over it.
+    await new Promise((r) => setTimeout(r, 40));
   }
 
   return all;
@@ -88,7 +159,7 @@ async function fetchAllProjects(): Promise<Project[]> {
 // /v1/projects/{id}} directly avoids the bulk crawl entirely for the one
 // place data correctness matters most.
 export async function getProject(id: string): Promise<Project | undefined> {
-  const res = await fetch(`${API_BASE}/v1/projects/${encodeURIComponent(id)}`);
+  const res = await limitedFetch(`${API_BASE}/v1/projects/${encodeURIComponent(id)}`);
   if (res.status === 404) return undefined;
   if (!res.ok) {
     throw new Error(`specindex-api /v1/projects/${id} failed: ${res.status} ${res.statusText}`);
@@ -116,6 +187,76 @@ export async function getProjectIds(): Promise<string[]> {
   return projects.map((p) => p.id);
 }
 
+// Only the top-scored projects get a real statically-generated HTML page
+// (server-rendered JSON-LD/meta tags, best for SEO and sharing) --
+// everything else renders client-side via app/projects/view/page.tsx +
+// Firebase Hosting's rewrite fallback (see firebase.json). Necessary once
+// the corpus passes a few thousand rows: generateStaticParams over the
+// FULL corpus made `next build`'s "Collecting page data" phase grind for
+// 4+ hours before crashing with a stack overflow at ~175K rows (see
+// docs/ROADMAP.md item 44's follow-up) -- and that number is headed to
+// 6.5M+, where full static generation isn't slow, it's impossible (no CI
+// system builds 6.5M individual HTML files). Static export's actual build
+// cost is now O(this limit), not O(corpus size), regardless of how large
+// the corpus grows.
+export async function getFeaturedProjectIds(count = 200): Promise<string[]> {
+  // /v1/projects caps `limit` at 100 (api/main.py: Query(..., le=100)) --
+  // paginate to reach `count` instead of requesting it in one shot, which
+  // 422s.
+  const ids: string[] = [];
+  for (let offset = 0; offset < count; offset += 100) {
+    const qs = new URLSearchParams({ sort: "score", limit: String(Math.min(100, count - offset)), offset: String(offset) });
+    const res = await limitedFetch(`${API_BASE}/v1/projects?${qs}`);
+    if (!res.ok) break;
+    const data = (await res.json()) as ProjectsListResponse;
+    if (!data.projects?.length) break;
+    ids.push(...data.projects.map((p) => p.id));
+  }
+  return ids;
+}
+
+// Bounded sample for stats/rollups that genuinely need to inspect project
+// fields (brand mentions, CSI divisions, lat/lon) rather than just count
+// rows -- there's no cheap SQL aggregate for those yet. A representative
+// top-scored sample instead of the full corpus is a stopgap, not the real
+// fix (that's dedicated aggregate endpoints, e.g. /v1/stats/brands), but it
+// keeps these illustrative homepage/reporting numbers close enough while
+// not timing out the build the way fetching all ~175K+ (and climbing
+// toward 6.5M+) rows did.
+export async function getSampleProjects(count = 2000): Promise<Project[]> {
+  const out: Project[] = [];
+  for (let offset = 0; offset < count; offset += PAGE_SIZE) {
+    const limit = Math.min(PAGE_SIZE, count - offset);
+    const res = await limitedFetch(`${API_BASE}/v1/projects?sort=score&limit=${limit}&offset=${offset}`);
+    if (!res.ok) break;
+    const data = (await res.json()) as ProjectsListResponse;
+    if (!data.projects?.length) break;
+    out.push(...data.projects.map(normalizeProject));
+    if (data.projects.length < limit) break;
+  }
+  return out;
+}
+
+// Reuses /v1/projects' existing count(*)-before-data-query path (see
+// api/main.py's list_projects) instead of fetching real rows just to
+// discard everything but a length -- `limit=1` still returns the real
+// `total` for the filtered set.
+export async function getRecentCount(days: number): Promise<number> {
+  const res = await limitedFetch(`${API_BASE}/v1/projects?new_since_days=${days}&limit=1`);
+  if (!res.ok) return 0;
+  const data = (await res.json()) as ProjectsListResponse;
+  return data.total ?? 0;
+}
+
+// /v1/projects/facets already runs a cheap `SELECT DISTINCT county` --
+// exact count, no corpus fetch, unlike deriving it from a sample.
+export async function getDistinctCounties(): Promise<string[]> {
+  const res = await limitedFetch(`${API_BASE}/v1/projects/facets`);
+  if (!res.ok) return [];
+  const data = (await res.json()) as { counties?: string[] };
+  return data.counties ?? [];
+}
+
 export async function getProjectsByState(state: string): Promise<Project[]> {
   const code = state.toUpperCase();
   const projects = await getAllProjects();
@@ -134,7 +275,7 @@ type Stats = { total: number; states: number; early_stage: number };
 // from being pre-rendered even though the actual project list below it is
 // now client-fetched and paginated.
 export async function getStats(): Promise<Stats> {
-  const res = await fetch(`${API_BASE}/v1/stats`);
+  const res = await limitedFetch(`${API_BASE}/v1/stats`);
   if (!res.ok) {
     throw new Error(`specindex-api /v1/stats failed: ${res.status} ${res.statusText}`);
   }

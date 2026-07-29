@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { DemoSection } from "@/components/marketing/DemoSection";
 import { StatsStrip } from "@/components/marketing/DemoSection";
-import { getProjects } from "@/lib/projects";
+import { getStats } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "About",
@@ -11,7 +11,11 @@ export const metadata: Metadata = {
 };
 
 export default async function AboutPage() {
-  const count = (await getProjects()).length;
+  // A cheap aggregate query, not the full corpus -- (await getProjects()).length
+  // paginated the entire live index just to count it, which is the same
+  // O(corpus size) mistake that broke /projects/[id] at scale (see
+  // lib/projects.ts's getFeaturedProjectIds comment).
+  const { total: count } = await getStats();
 
   return (
     <>

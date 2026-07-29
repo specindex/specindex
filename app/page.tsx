@@ -2,8 +2,8 @@ import Link from "next/link";
 import { ProductMock } from "@/components/marketing/ProductMock";
 import { StatsStrip, DemoSection } from "@/components/marketing/DemoSection";
 import { FAQ } from "@/components/marketing/FAQ";
-import { getCorpus, getProjects } from "@/lib/projects";
-import { getCountiesInCorpus, getStatesInCorpus, getVisibilitySnapshot } from "@/lib/stats";
+import { getStats, getSampleProjects, getRecentCount, getDistinctCounties } from "@/lib/projects";
+import { getVisibilitySnapshot } from "@/lib/stats";
 import { getDivisionRollup, getMappedProjectCount } from "@/lib/divisions";
 
 const faqs = [
@@ -61,16 +61,31 @@ const stages = [
 ];
 
 export default async function HomePage() {
-  const projects = await getProjects();
-  const corpus = await getCorpus();
-  const count = projects.length;
-  const recent =
-    corpus.stats?.opened_last_90_days ?? corpus.stats?.opened_last_3_months ?? 0;
-  const stateCount = corpus.stats?.states ?? getStatesInCorpus(projects).length;
-  const countyCount = getCountiesInCorpus(projects).length;
-  const brandScan = getVisibilitySnapshot(projects, "Acuity Brands", "lighting");
-  const divisions = getDivisionRollup(projects);
-  const mappedCount = getMappedProjectCount(projects);
+  // getProjects()+getCorpus() used to fetch the ENTIRE corpus (~175K+ rows,
+  // headed to 6.5M+) just to derive a handful of numbers -- timed out the
+  // build the same way /projects/[id] did (see docs/ROADMAP.md item 44's
+  // follow-up). total/states/recent/county-count now come from cheap SQL
+  // aggregates that don't scale with corpus size; only the brand/division/
+  // map rollups -- which need to inspect actual project fields, not just
+  // count rows -- fall back to a bounded representative sample.
+  // Sequential, not Promise.all -- confirmed live 2026-07-29 that the exact
+  // same 4 calls resolve in ~14s standalone in plain Node, but this page
+  // hung for the full 300s timeout on every attempt when they ran
+  // concurrently inside this Server Component during static export.
+  // Whatever the interaction is (React/Next's request-scoped fetch cache
+  // and Promise.all don't seem to be a good mix during prerendering),
+  // sequential awaits sidestep it entirely and cost a few extra seconds,
+  // not 300 of them.
+  const stats = await getStats();
+  const recent = await getRecentCount(90);
+  const counties = await getDistinctCounties();
+  const sample = await getSampleProjects(2000);
+  const count = stats.total;
+  const stateCount = stats.states;
+  const countyCount = counties.length;
+  const brandScan = getVisibilitySnapshot(sample, "Acuity Brands", "lighting");
+  const divisions = getDivisionRollup(sample);
+  const mappedCount = getMappedProjectCount(sample);
 
   return (
     <>
@@ -239,10 +254,10 @@ export default async function HomePage() {
                 <span className="font-semibold">SpecIndex</span>
               </div>
               <p className="mt-3 leading-relaxed text-[var(--color-gray-700)]">
-                {brandScan.categoryHits.length} of {count} indexed projects will need
-                lighting. {brandScan.stillOpen.length} are still in planning or
-                permitting with no manufacturer named, so those are the ones worth a
-                call this week.
+                {brandScan.categoryHits.length} of our {sample.length} highest-priority
+                scored projects will need lighting. {brandScan.stillOpen.length} are
+                still in planning or permitting with no manufacturer named, so those
+                are the ones worth a call this week.
               </p>
               <p className="mt-2 text-[var(--color-gray-400)]">9:42 AM</p>
             </div>
@@ -322,9 +337,10 @@ export default async function HomePage() {
             </table>
           </div>
           <p className="mt-4 text-sm text-[var(--color-gray-400)]">
-            Counted across {count} indexed projects, {mappedCount} of which need at
-            least one of these divisions. A project appears in every division it
-            needs, so the column adds up to more than {count}.
+            Counted across our {sample.length} highest-priority scored projects (of{" "}
+            {count} indexed nationwide), {mappedCount} of which need at least one of
+            these divisions. A project appears in every division it needs, so the
+            column adds up to more than {sample.length}.
           </p>
         </div>
       </section>

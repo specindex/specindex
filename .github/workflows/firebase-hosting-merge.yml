@@ -24,3 +24,18 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SPECINDEX_AI }}
           channelId: live
           projectId: specindex-ai
+      # Added 2026-07-29 after this exact workflow failed silently for 2.5
+      # days (2026-07-27 through 2026-07-29) with nobody noticing -- the
+      # production site just sat on a stale build the whole time. This is
+      # the cheapest possible fix for "someone finds out the same day, not
+      # 2.5 days later": an email the moment build or deploy fails.
+      - name: Notify on failure
+        if: failure()
+        run: python3 scripts/notify-workflow-failure.py
+        env:
+          EMAIL_SMTP_USERNAME: ${{ secrets.EMAIL_SMTP_USERNAME }}
+          EMAIL_SMTP_PASSWORD: ${{ secrets.EMAIL_SMTP_PASSWORD }}
+          WORKFLOW_NAME: ${{ github.workflow }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          COMMIT_SHA: ${{ github.sha }}
+          NOTIFY_TO: asif@specindex.ai
