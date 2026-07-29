@@ -30,8 +30,8 @@ const useCases = [
   },
   {
     label: "In development",
-    title: "Specification-book extraction",
-    body: "Reading spec books division by division to pull out basis of design products, approved manufacturers lists, and substitution language, with a citation on every fact you can open and check.",
+    title: "Specification-book reading",
+    body: "Full specification books, read cover to cover, with every fact traceable to the page it came from.",
     href: "/pricing/",
     cta: "See pricing",
   },
