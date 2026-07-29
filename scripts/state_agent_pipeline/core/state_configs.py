@@ -472,6 +472,28 @@ GA_GWINNETT_ACCELA_CONFIG: dict[str, Any] = {
     "lookback_days": 30,
 }
 
+# Salt Lake City (Salt Lake County's top jurisdiction by population -- UT
+# county government's Municipal Services District handles unincorporated
+# areas only, no clean statewide/countywide ArcGIS building-permit layer
+# found on a direct ArcGIS Online org search; SLC's own Accela portal is
+# the real, live system). IMPORTANT: agency code is "SLCREF", not the
+# obvious guess "SLC" -- "SLC" is already taken on Accela's shared hosting
+# by St. Louis County, MO (confirmed live 2026-07-29: aca-prod.accela.com/
+# SLC's error-page links reference stlouiscountymo.gov, and its module list
+# -- Licenses/N/PublicWorks/WaterandSewer, no Building module -- doesn't
+# match a building-permit portal at all). Accela agency codes are NOT
+# globally unique or guessable from a city's initials -- always verify the
+# real one live, never assume. "SLCREF" verified live: 200 on Welcome.aspx,
+# has a real Building module (plus Engineering/Fire/Planning/etc).
+UT_SALTLAKE_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "UT",
+    "provider_type": "accela",
+    "county": "Salt Lake",
+    "endpoint": "https://aca-prod.accela.com/SLCREF",
+    "permit_type_label": "Commercial Building Permit",
+    "lookback_days": 180,
+}
+
 # Verified live 2026-07-28: City of El Paso's Accela portal (agency code
 # "ELPASO", not "ELPASOCO"/"EPCOUNTY" -- those 404). Unlike Gwinnett, this
 # deployment REQUIRES Start/End Date to return any results at all, and
@@ -1216,6 +1238,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NY-NYC": NY_NYC_CONFIG,
     "MA-CAMBRIDGE": MA_CAMBRIDGE_CONFIG,
     "MN-HENNEPIN": MN_HENNEPIN_CONFIG,
+    "UT-SALTLAKE": UT_SALTLAKE_ACCELA_CONFIG,
     "FL-MIAMIDADE": FL_MIAMIDADE_CONFIG,
     "WA-KING": WA_KING_CONFIG,
     "TX-TARRANT": TX_TARRANT_CONFIG,

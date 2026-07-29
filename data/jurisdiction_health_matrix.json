@@ -604,6 +604,17 @@
       "status": "VERIFIED_WORKING",
       "records_merged": 803,
       "notes": "MN county govt has no permit function -- purely municipal. Gemini gave the correct ArcGIS item GUID but a fabricated org ID (1st35idbL2i24j8I, invalid URL) -- real org ID (afSMGVsC7QlRK1kZ) found via a direct ArcGIS Online item-info lookup on the GUID. MAX(issueDate)=2026-07-27, 400,479 total rows, permitType='Commercial' is real (45,643 rows). 180-day window: 1,787 fetched, 803 new after merge."
+    },
+    {
+      "jurisdiction": "Salt Lake City, UT",
+      "county": "Salt Lake",
+      "state": "UT",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/SLCREF",
+      "state_agent_pipeline_key": "UT-SALTLAKE",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 250,
+      "notes": "IMPORTANT catch: Gemini's first agency-code guess ('SLC') was WRONG -- verified live that aca-prod.accela.com/SLC actually belongs to St. Louis County, MO (error-page links reference stlouiscountymo.gov; module list Licenses/N/PublicWorks/WaterandSewer has no Building module at all). Accela agency codes are shared/global across all cities using the platform and are NOT derivable from a city's initials -- always verify live. Real code is 'SLCREF', confirmed via a corrected Gemini query with the wrong-agency evidence attached; verified live (200 on Welcome.aspx, real Building module present). 180-day window: 300 rows fetched (accela provider's pagination cap), 250 new after merge."
     }
   ]
 }
