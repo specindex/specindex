@@ -949,6 +949,37 @@
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
       "notes": "2nd-largest-county-per-state expansion. County government does not issue building permits (decentralized to 62 municipalities). County's own Accela instance ('OAKLAND' agency) is real but scoped strictly to Environmental Health (septic/well/food licensing), not building permits. County's Access Oakland ArcGIS portal (350+ datasets) has no permit layer. Municipalities use BS&A Online, no public API. Genuine dead end."
+    },
+    {
+      "jurisdiction": "Pierce County, WA",
+      "county": "Pierce",
+      "state": "WA",
+      "provider_type": "arcgis",
+      "endpoint": "https://services2.arcgis.com/1UvBaQ5y1ubjUPmd/arcgis/rest/services/Permits_Pierce_County/FeatureServer",
+      "state_agent_pipeline_key": "WA-PIERCE",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 105,
+      "notes": "2nd-largest-county-per-state expansion. Genuine countywide source (unlike WA-KING, Seattle-city-scoped) -- Pierce County's own PALS Plus system publishes directly to ArcGIS. Gemini's org ID was wrong, found real one via item search. No binary commercial flag -- buildingType is granular occupancy type, used an explicit IN-list of clearly-commercial values. 180-day window: 105 fetched, 105 new."
+    },
+    {
+      "jurisdiction": "Pima County, AZ (Tucson)",
+      "county": "Pima",
+      "state": "AZ",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "2nd-largest-county-per-state expansion. Accela agency 'PIMA' verified live and reachable, real Building module, but same limitation as AL-Birmingham: only a generic 'Building Permit' record type exists, no Commercial/Residential split visible at the top level. Deferred rather than wire an unfiltered feed."
+    },
+    {
+      "jurisdiction": "Suffolk County, NY (Town of Brookhaven)",
+      "county": "Suffolk",
+      "state": "NY",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "2nd-largest-county-per-state expansion. NY county govt has no permitting function (delegated to 10 towns + 32 villages). Town of Brookhaven (largest municipality) has no working Accela domain -- both Gemini-suggested domains (epermits.brookhaven.org, aca.brookhaven.org) are dead/NXDOMAIN, and standard aca-prod.accela.com/BROOKHAVEN{,NY} guesses both 404. Not investigated further this round."
     }
   ]
 }

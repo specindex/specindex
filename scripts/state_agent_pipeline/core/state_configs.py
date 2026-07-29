@@ -1583,6 +1583,44 @@ PA_PITTSBURGH_CONFIG: dict[str, Any] = {
     "source_url": "https://data.wprdc.org/dataset/pli-permits",
 }
 
+# Pierce County, WA (WA's 2nd most populous county after King). Genuine
+# countywide source (unlike WA-KING, which is Seattle-city-scoped) --
+# Pierce County's own PALS Plus system publishes directly to ArcGIS.
+# Gemini's org ID was wrong (Invalid URL), real one found via an ArcGIS
+# Online item search (owner PCWA_OpenData). No binary commercial/
+# residential flag -- buildingType is a granular occupancy-type field
+# (Bank/Restaurant/Office/Warehouse/Hospital/etc vs Apartment/House-plex/
+# Townhouse/Adult Family Home) -- used an explicit IN-list of clearly-
+# commercial types rather than an unreliable single boolean.
+WA_PIERCE_CONFIG: dict[str, Any] = {
+    "state_code": "WA",
+    "provider_type": "arcgis",
+    "county": "Pierce",
+    "endpoint": "https://services2.arcgis.com/1UvBaQ5y1ubjUPmd/arcgis/rest/services/Permits_Pierce_County/FeatureServer",
+    "layer": 0,
+    "watermark_field": "OBJECTID",
+    "hash_fields": ["applicationNumber"],
+    "commercial_where": (
+        "buildingType IN ('Bank','Restaurant','Office','Warehouse','Hospital',"
+        "'Store - Grocery','Store - Retail/Personal Services','Medical Office',"
+        "'Industrial Plant','Hotel/motel','Auditorium','Bowling Alley',"
+        "'Convalescent Hospital','Fire Station','Jail','Library',"
+        "'Nursing/Rest Home','Public Parking Garage','School Higher Education',"
+        "'School K-12','Service Station/Repair Garage',"
+        "'Theaters/Recreational Building','Water Systems-Commercial','Church')"
+    ),
+    "out_fields": "applicationNumber,applicationType,applicationStatus,workType,buildingType,buildingValuation,projectValue,workDescription,siteAddress,projectName,applicationDate,issuedDate",
+    "date_field": "issuedDate",
+    "lookback_days": 180,
+    "feed_id": "wa-pierce",
+    "id_field": "applicationNumber",
+    "name_fields": ["workDescription", "buildingType", "siteAddress"],
+    "address_fields": ["siteAddress"],
+    "value_fields": ["projectValue", "buildingValuation"],
+    "desc_fields": ["workDescription", "buildingType", "workType"],
+    "source_url": "https://gisdata.piercecowa.opendata.arcgis.com/",
+}
+
 STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NJ": NJ_CONFIG,
     "CA-LOSANGELES": CA_LOSANGELES_CONFIG,
@@ -1628,6 +1666,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "SD-SIOUXFALLS": SD_SIOUXFALLS_CONFIG,
     "FL-FORTLAUDERDALE": FL_FORTLAUDERDALE_ACCELA_CONFIG,
     "PA-PITTSBURGH": PA_PITTSBURGH_CONFIG,
+    "WA-PIERCE": WA_PIERCE_CONFIG,
     "IN-INDIANAPOLIS": IN_INDIANAPOLIS_ACCELA_CONFIG,
     "FL-MIAMIDADE": FL_MIAMIDADE_CONFIG,
     "WA-KING": WA_KING_CONFIG,
