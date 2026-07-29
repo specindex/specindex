@@ -1621,6 +1621,65 @@ WA_PIERCE_CONFIG: dict[str, Any] = {
     "source_url": "https://gisdata.piercecowa.opendata.arcgis.com/",
 }
 
+# City of Virginia Beach, VA (an independent city -- Virginia's most
+# populous locality after Fairfax County; VA counties don't contain
+# independent cities). Real ArcGIS item found via search (Gemini's
+# Accela agency code "VB" 404'd). MAX(IssueDate)=2026-07-24, real field
+# is ConstructionType='Commercial' (PermitType is trade category --
+# Building/Electrical/Plumbing/etc, not occupancy). IssueDate is stored
+# as text (sqlTypeNVarchar), not a true date field.
+VA_VIRGINIABEACH_CONFIG: dict[str, Any] = {
+    "state_code": "VA",
+    "provider_type": "arcgis",
+    "county": "Virginia Beach",
+    "endpoint": "https://services2.arcgis.com/CyVvlIiUfRBmMQuu/arcgis/rest/services/Building_Permits_Applications_view/FeatureServer",
+    "layer": 0,
+    "watermark_field": "OBJECTID",
+    "hash_fields": ["PermitNumber"],
+    "commercial_where": "ConstructionType='Commercial'",
+    "out_fields": "PermitNumber,PermitType,ConstructionType,WorkType,Status,WorkDesc,StreetAddress,City,State,Zip,ApplicationDate,IssueDate",
+    "date_field": "IssueDate",
+    "date_literal_style": "string_slash",
+    "lookback_days": 180,
+    "feed_id": "va-virginiabeach",
+    "id_field": "PermitNumber",
+    "name_fields": ["WorkDesc", "PermitType", "StreetAddress"],
+    "address_fields": ["StreetAddress", "City", "State", "Zip"],
+    "value_fields": [],
+    "desc_fields": ["WorkDesc", "WorkType", "ConstructionType"],
+    "source_url": "https://data.virginiabeach.gov/",
+}
+
+# City and County of Denver, CO (Colorado's most populous county/city --
+# effectively the state's #1, though CO-SPRINGS/El Paso was wired first
+# this session; keeping both since they're genuinely different metros).
+# Real dataset name (ODC_DEV_COMMERCIALCONSTPERMIT_P) confirms it's
+# already commercial-only, no where-clause guesswork needed (same
+# pattern as MD-MONTGOMERY/OR-MULTNOMAH). Real layer ID is 317, not the
+# default 0 -- found via the FeatureServer's own layer listing.
+# MAX(DATE_ISSUED)=2026-07-28 (yesterday relative to today), 42,829
+# total rows.
+CO_DENVER_CONFIG: dict[str, Any] = {
+    "state_code": "CO",
+    "provider_type": "arcgis",
+    "county": "Denver",
+    "endpoint": "https://services1.arcgis.com/zdB7qR0BtYrg0Xpl/arcgis/rest/services/ODC_DEV_COMMERCIALCONSTPERMIT_P/FeatureServer",
+    "layer": 317,
+    "watermark_field": "OBJECTID",
+    "hash_fields": ["PERMIT_NUM"],
+    "commercial_where": None,
+    "out_fields": "PERMIT_NUM,ADDRESS,LOCATION,CLASS,VALUATION,CONTRACTOR_NAME,DATE_ISSUED,DATE_RECEIVED,NEIGHBORHOOD",
+    "date_field": "DATE_ISSUED",
+    "lookback_days": 180,
+    "feed_id": "co-denver",
+    "id_field": "PERMIT_NUM",
+    "name_fields": ["LOCATION", "CLASS", "ADDRESS"],
+    "address_fields": ["ADDRESS"],
+    "value_fields": ["VALUATION"],
+    "desc_fields": ["CLASS", "LOCATION"],
+    "source_url": "https://www.denvergov.org/opendata",
+}
+
 STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NJ": NJ_CONFIG,
     "CA-LOSANGELES": CA_LOSANGELES_CONFIG,
@@ -1667,6 +1726,8 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "FL-FORTLAUDERDALE": FL_FORTLAUDERDALE_ACCELA_CONFIG,
     "PA-PITTSBURGH": PA_PITTSBURGH_CONFIG,
     "WA-PIERCE": WA_PIERCE_CONFIG,
+    "VA-VIRGINIABEACH": VA_VIRGINIABEACH_CONFIG,
+    "CO-DENVER": CO_DENVER_CONFIG,
     "IN-INDIANAPOLIS": IN_INDIANAPOLIS_ACCELA_CONFIG,
     "FL-MIAMIDADE": FL_MIAMIDADE_CONFIG,
     "WA-KING": WA_KING_CONFIG,

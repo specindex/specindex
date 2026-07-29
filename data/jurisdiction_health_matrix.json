@@ -980,6 +980,28 @@
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
       "notes": "2nd-largest-county-per-state expansion. NY county govt has no permitting function (delegated to 10 towns + 32 villages). Town of Brookhaven (largest municipality) has no working Accela domain -- both Gemini-suggested domains (epermits.brookhaven.org, aca.brookhaven.org) are dead/NXDOMAIN, and standard aca-prod.accela.com/BROOKHAVEN{,NY} guesses both 404. Not investigated further this round."
+    },
+    {
+      "jurisdiction": "City of Virginia Beach, VA",
+      "county": "Virginia Beach (independent city)",
+      "state": "VA",
+      "provider_type": "arcgis",
+      "endpoint": "https://services2.arcgis.com/CyVvlIiUfRBmMQuu/arcgis/rest/services/Building_Permits_Applications_view/FeatureServer",
+      "state_agent_pipeline_key": "VA-VIRGINIABEACH",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 2641,
+      "notes": "2nd-largest-locality-per-state expansion. Independent city (VA has no counties containing it). Gemini's Accela code 'VB' 404'd; real ArcGIS item found via search. Real split field is ConstructionType='Commercial' (PermitType is trade category, not occupancy). IssueDate stored as slash-formatted text ('2026/07/24') -- silently returned 0 rows with a plain ISO-dash cutoff; added a new 'string_slash' date_literal_style to arcgis_provider.py. 2,663 fetched, 2,641 new."
+    },
+    {
+      "jurisdiction": "City and County of Denver, CO",
+      "county": "Denver",
+      "state": "CO",
+      "provider_type": "arcgis",
+      "endpoint": "https://services1.arcgis.com/zdB7qR0BtYrg0Xpl/arcgis/rest/services/ODC_DEV_COMMERCIALCONSTPERMIT_P/FeatureServer",
+      "state_agent_pipeline_key": "CO-DENVER",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 18,
+      "notes": "Colorado's actual most-populous county/city (CO-SPRINGS/El Paso was wired first this session, kept both as genuinely different metros). Dataset name (ODC_DEV_COMMERCIALCONSTPERMIT_P) confirms already commercial-only. Real layer ID is 317, not the default 0. MAX(DATE_ISSUED)=2026-07-28. 1,145 fetched, only 18 new -- most already captured by the earlier statewide CO work."
     }
   ]
 }

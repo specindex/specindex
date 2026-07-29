@@ -109,7 +109,15 @@ class ArcGISProvider(BaseIngestionProvider):
             import datetime as _dt
 
             cutoff = (_dt.date.today() - _dt.timedelta(days=self.lookback_days)).isoformat()
-            if self.date_field_is_string:
+            if self.date_literal_style == "string_slash":
+                # Some layers store a text-typed date field as "YYYY/MM/DD"
+                # (e.g. Virginia Beach's IssueDate, sqlTypeNVarchar) --
+                # lexicographic string comparison only works if the cutoff
+                # is formatted to match exactly; the plain ISO cutoff
+                # ("YYYY-MM-DD") silently returns 0 rows against a slash-
+                # formatted column instead of erroring.
+                clauses.append(f"{self.date_field} >= '{cutoff.replace('-', '/')}'")
+            elif self.date_field_is_string:
                 clauses.append(f"{self.date_field} >= '{cutoff}'")
             elif self.date_literal_style == "timestamp":
                 clauses.append(f"{self.date_field} >= TIMESTAMP '{cutoff} 00:00:00'")
