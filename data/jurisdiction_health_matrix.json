@@ -742,6 +742,37 @@
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
       "notes": "Two real Accela agencies confirmed live: BIRMINGHAM (city) and JCCAL (unincorporated county). Birmingham's Building module dropdown only has a generic 'Building Permit' label, no Commercial/Residential split visible at the top level (may be a cascading second-level dropdown not yet investigated). JCCAL's Building module page loaded (200) but returned zero <option> elements and no <title> -- likely needs a different module param or has an unusual page structure, not yet diagnosed. Deferred rather than guess at an unfiltered permit_type_label that would pollute the corpus with residential noise."
+    },
+    {
+      "jurisdiction": "Omaha, NE (Douglas County)",
+      "county": "Douglas",
+      "state": "NE",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/OMAHA",
+      "state_agent_pipeline_key": "NE-DOUGLAS",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 111,
+      "notes": "Same 404/empty-module symptom as MO-STLOUIS and AL-JCCAL: default 'Building' module returns 200 but zero dropdown options. Real module is 'Permits' (confirmed via OMAHA's Welcome.aspx module list: Enforcement/Fire/Licenses/Permits/Planning/PublicWorks/Rentals -- no Building at all). Real option 'New Building' (Permits/BUILDING/COMMERCIAL/NEW BUILDING) confirmed live. 180-day window: 121 fetched, 111 new. Pattern forming across this backlog: always check an agency's real module list before assuming 'Building' -- it's wrong roughly as often as it's right."
+    },
+    {
+      "jurisdiction": "Providence County, RI (City of Providence)",
+      "county": "Providence",
+      "state": "RI",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "RI county govt has no permitting function. Gemini's ArcGIS lead (webgis.providenceri.gov) is unreachable (connection failure, similar to the NM/cabq.gov pattern). No Accela deployment in RI per Gemini. Providence's Socrata portal (data.providenceri.gov) only has a static legacy dataset (2009-2018). Not investigated further this round -- worth a fresh ArcGIS Online search or Gemini feedback round with the connection-failure evidence."
+    },
+    {
+      "jurisdiction": "Johnson County, KS (Olathe/Overland Park)",
+      "county": "Johnson",
+      "state": "KS",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "KS county govt largely defers to municipalities. Gemini's specific Olathe ArcGIS layer path (gis.olatheks.org/.../Planning/Development/MapServer/0) returned HTTP 500 -- wrong service/layer name. Johnson County AIMS lead (maps.jocogov.org) was vague, no specific layer given. Overland Park confirmed Accela-based but Gemini said no public API without authentication (not independently verified). Not investigated further this round -- worth a live ArcGIS REST service-directory browse of gis.olatheks.org to find the real service name."
     }
   ]
 }

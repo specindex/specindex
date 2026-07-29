@@ -472,6 +472,24 @@ GA_GWINNETT_ACCELA_CONFIG: dict[str, Any] = {
     "lookback_days": 30,
 }
 
+# Douglas County, NE (Omaha, state's most populous county). Accela
+# agency code "OMAHA" verified live -- but its default "Building"
+# module returns zero dropdown options (200 status, empty page, same
+# symptom seen for MO-STLOUIS and AL-JCCAL); the real module is
+# "Permits" (confirmed by fetching OMAHA's Welcome.aspx module list:
+# Enforcement/Fire/Licenses/Permits/Planning/PublicWorks/Rentals --
+# no "Building" at all). Real dropdown option "New Building" (value=
+# Permits/BUILDING/COMMERCIAL/NEW BUILDING) confirmed live 2026-07-29.
+NE_DOUGLAS_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "NE",
+    "provider_type": "accela",
+    "county": "Douglas",
+    "endpoint": "https://aca-prod.accela.com/OMAHA",
+    "module": "Permits",
+    "permit_type_label": "New Building",
+    "lookback_days": 180,
+}
+
 # Bernalillo County, NM (Albuquerque, state's most populous county).
 # Gemini's primary lead (City of Albuquerque's gis.cabq.gov ArcGIS
 # service) is unreachable -- DNS resolves but the TCP connection to
@@ -1422,6 +1440,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "KY-JEFFERSON": KY_JEFFERSON_CONFIG,
     "OR-MULTNOMAH": OR_MULTNOMAH_CONFIG,
     "NM-BERNALILLO": NM_BERNALILLO_ACCELA_CONFIG,
+    "NE-DOUGLAS": NE_DOUGLAS_ACCELA_CONFIG,
     "FL-MIAMIDADE": FL_MIAMIDADE_CONFIG,
     "WA-KING": WA_KING_CONFIG,
     "TX-TARRANT": TX_TARRANT_CONFIG,
