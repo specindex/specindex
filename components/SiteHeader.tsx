@@ -4,8 +4,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Logo } from "@/components/Logo";
+import { CLERK_ENABLED } from "@/components/ClerkProviders";
+import { SignedIn, SignedOut, SignInButton, UserButton, useAuth } from "@clerk/clerk-react";
 
-const nav = [
+const MARKETING_NAV = [
   { href: "/product/", label: "Product" },
   { href: "/projects/", label: "Projects" },
   { href: "/visibility/", label: "Visibility" },
@@ -14,6 +16,97 @@ const nav = [
   { href: "/pricing/", label: "Pricing" },
   { href: "/about/", label: "About" },
 ];
+
+// Signed-in visitors already have access -- the marketing nav (Pricing,
+// How It Works, About) stops being relevant and swaps to the app surfaces
+// themselves. No dedicated "Account" link: <UserButton>'s own menu already
+// includes "Manage account", so it doubles as that surface.
+const APP_NAV = [
+  { href: "/projects/", label: "Projects" },
+  { href: "/visibility/", label: "Visibility" },
+  { href: "/reporting/", label: "Reporting" },
+];
+
+type NavLink = { href: string; label: string };
+
+function isActive(pathname: string | null, href: string) {
+  return pathname === href || (href !== "/" && !!pathname?.startsWith(href.slice(0, -1)));
+}
+
+function DesktopNavLinks({ items, pathname }: { items: NavLink[]; pathname: string | null }) {
+  return (
+    <>
+      {items.map((link) => (
+        <Link
+          key={link.href}
+          href={link.href}
+          className={`rounded-md px-2.5 py-2 text-sm font-medium transition ${
+            isActive(pathname, link.href)
+              ? "text-[var(--color-ink)]"
+              : "text-[var(--color-gray-600)] hover:text-[var(--color-ink)]"
+          }`}
+        >
+          {link.label}
+        </Link>
+      ))}
+    </>
+  );
+}
+
+function MobileNavLinks({ items, pathname }: { items: NavLink[]; pathname: string | null }) {
+  return (
+    <>
+      {items.map((link) => (
+        <Link
+          key={link.href}
+          href={link.href}
+          className={`rounded-md px-3 py-3 text-base font-medium ${
+            isActive(pathname, link.href)
+              ? "bg-[var(--color-gray-100)] text-[var(--color-ink)]"
+              : "text-[var(--color-gray-600)]"
+          }`}
+        >
+          {link.label}
+        </Link>
+      ))}
+    </>
+  );
+}
+
+// Only ever mounted when CLERK_ENABLED -- useAuth() throws without a
+// <ClerkProvider> ancestor, so the whole auth-aware subtree (this and
+// AuthAwareActions below) must not mount at all when Clerk isn't
+// configured, rather than mount and error.
+function AuthAwareNav({ pathname, mobile }: { pathname: string | null; mobile?: boolean }) {
+  const { isSignedIn } = useAuth();
+  const items = isSignedIn ? APP_NAV : MARKETING_NAV;
+  return mobile ? (
+    <MobileNavLinks items={items} pathname={pathname} />
+  ) : (
+    <DesktopNavLinks items={items} pathname={pathname} />
+  );
+}
+
+function AuthAwareActions({ mobile }: { mobile?: boolean }) {
+  const size = mobile ? "w-full text-center" : "hidden sm:inline-flex";
+  return (
+    <>
+      <SignedOut>
+        <SignInButton mode="modal">
+          <button type="button" className={`btn btn-outline ${size}`}>
+            Log In
+          </button>
+        </SignInButton>
+        <Link href="/#demo" className={`btn btn-primary ${size}`}>
+          Request Demo
+        </Link>
+      </SignedOut>
+      <SignedIn>
+        <UserButton afterSignOutUrl="/" />
+      </SignedIn>
+    </>
+  );
+}
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -41,24 +134,11 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-0.5 lg:flex">
-          {nav.map((link) => {
-            const active =
-              pathname === link.href ||
-              (link.href !== "/" && pathname.startsWith(link.href.slice(0, -1)));
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`rounded-md px-2.5 py-2 text-sm font-medium transition ${
-                  active
-                    ? "text-[var(--color-ink)]"
-                    : "text-[var(--color-gray-600)] hover:text-[var(--color-ink)]"
-                }`}
-              >
-                {link.label}
-              </Link>
-            );
-          })}
+          {CLERK_ENABLED ? (
+            <AuthAwareNav pathname={pathname} />
+          ) : (
+            <DesktopNavLinks items={MARKETING_NAV} pathname={pathname} />
+          )}
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-3">
@@ -68,9 +148,13 @@ export function SiteHeader() {
           >
             hello@specindex.ai
           </a>
-          <Link href="/#demo" className="btn btn-primary hidden sm:inline-flex">
-            Request Demo
-          </Link>
+          {CLERK_ENABLED ? (
+            <AuthAwareActions />
+          ) : (
+            <Link href="/#demo" className="btn btn-primary hidden sm:inline-flex">
+              Request Demo
+            </Link>
+          )}
           <button
             type="button"
             aria-expanded={open}
@@ -105,27 +189,20 @@ export function SiteHeader() {
       {open && (
         <div className="border-t border-[var(--color-border)] bg-white lg:hidden">
           <nav className="mx-auto flex max-w-6xl flex-col px-5 py-4">
-            {nav.map((link) => {
-              const active =
-                pathname === link.href ||
-                (link.href !== "/" && pathname.startsWith(link.href.slice(0, -1)));
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`rounded-md px-3 py-3 text-base font-medium ${
-                    active
-                      ? "bg-[var(--color-gray-100)] text-[var(--color-ink)]"
-                      : "text-[var(--color-gray-600)]"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
-            <Link href="/#demo" className="btn btn-primary mt-4 w-full text-center">
-              Request Demo
-            </Link>
+            {CLERK_ENABLED ? (
+              <AuthAwareNav pathname={pathname} mobile />
+            ) : (
+              <MobileNavLinks items={MARKETING_NAV} pathname={pathname} />
+            )}
+            {CLERK_ENABLED ? (
+              <div className="mt-4 flex flex-col gap-2">
+                <AuthAwareActions mobile />
+              </div>
+            ) : (
+              <Link href="/#demo" className="btn btn-primary mt-4 w-full text-center">
+                Request Demo
+              </Link>
+            )}
           </nav>
         </div>
       )}

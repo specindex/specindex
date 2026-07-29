@@ -6,6 +6,7 @@ import type { Project } from "@/lib/types";
 import { formatDate, formatSf, formatUsd, stateName, typeLabel } from "@/lib/format";
 import { StatusPill } from "./StatusPill";
 import { ProjectsMapView } from "./ProjectsMapView";
+import { PROFILE_SYNC_EVENT, type ProfileSyncDetail } from "@/lib/userProfile";
 
 const API_BASE = "https://specindex-api-gmm6irqe4q-uc.a.run.app";
 const PAGE_SIZE = 50;
@@ -120,6 +121,23 @@ export function ProjectsDashboard() {
     localStorage.setItem(ONBOARDED_KEY, "1");
     setShowOnboarding(false);
   }
+
+  // A signed-in visitor's server profile (AuthSync.tsx) is the source of
+  // truth once it loads -- but if this dashboard is already mounted (e.g.
+  // sign-in happened via the header modal while already on /projects/), the
+  // territory/category state above was already initialized from whatever
+  // localStorage held at mount time and won't otherwise notice the change:
+  // the `storage` event only fires in *other* tabs, never this one.
+  useEffect(() => {
+    function onProfileSync(e: Event) {
+      const { territory: t, category: c } = (e as CustomEvent<ProfileSyncDetail>).detail;
+      setTerritory(t);
+      setCategory(c);
+      dismissOnboarding();
+    }
+    window.addEventListener(PROFILE_SYNC_EVENT, onProfileSync);
+    return () => window.removeEventListener(PROFILE_SYNC_EVENT, onProfileSync);
+  }, []);
 
   // Lightweight separate fetch for the "N new this week" count so it's
   // visible in the header regardless of whether the newOnly toggle is on,
