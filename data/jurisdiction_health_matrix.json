@@ -836,6 +836,36 @@
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
       "notes": "Genuine dead end -- no Socrata/CKAN/CARTO/ArcGIS layer for either Hinds County or City of Jackson. County uses Accela ACA as a portal-only system (no public REST API). City of Jackson has no digital open-data presence for permits at all, would require a formal MS Public Records Act request. Honest Gemini answer, no fabrication."
+    },
+    {
+      "jurisdiction": "New Castle County, DE (Wilmington)",
+      "county": "New Castle",
+      "state": "DE",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Genuine dead end -- county uses ProjectDox/ePlans + a web-form-only eServices portal, no Accela, no Socrata/CKAN/CARTO/ArcGIS API. Delaware FirstMap has a periodic (monthly) statewide aggregated layer but it's not a live transaction feed. Honest Gemini answer."
+    },
+    {
+      "jurisdiction": "Hillsborough County, NH (Manchester/Nashua)",
+      "county": "Hillsborough",
+      "state": "NH",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Genuine dead end -- NH counties have no permitting function at all. Manchester processes permits entirely on paper/PDF. Nashua has an ArcGIS Hub (parcels/assessing only, confirmed no permit layer). Honest Gemini answer, correctly caught its own risk of confusing this with Hillsborough County FL (which does use Accela/HillsGovHub)."
+    },
+    {
+      "jurisdiction": "Yellowstone County, MT (Billings)",
+      "county": "Yellowstone",
+      "state": "MT",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "City of Billings (primary commercial jurisdiction) uses CityView, confirmed no public API. Found a real statewide MT DLI Accela agency ('MONTANA', verified live, 200 on Welcome.aspx) but it covers only projects OUTSIDE municipal enforcement (i.e. NOT Billings, the actual commercial center) and its Building module has only a generic 'Building Permit' catch-all record type with no commercial/residential split (only Electrical has a Commercial-specific sub-type) -- deferred rather than wire an unfiltered, low-relevance feed."
     }
   ]
 }
