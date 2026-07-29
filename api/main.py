@@ -12,16 +12,86 @@ from datetime import datetime, timezone
 from email.message import EmailMessage
 from typing import Any
 
+import jwt  # PyJWT
 import psycopg2
 import psycopg2.extras
 import psycopg2.pool
-from fastapi import FastAPI, HTTPException, Query, Request
+from fastapi import Depends, FastAPI, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import Response
+from jwt import PyJWKClient
 from pydantic import BaseModel, Field, field_validator
 
 DATABASE_URL = os.environ.get("DATABASE_URL", "")
 DOCUMENTS_GCS_BUCKET = "specindex-ai-raw-documents"
+
+# Clerk auth (see db/migrations/021_user_profiles.sql, /v1/me/profile below).
+# No CLERK_SECRET_KEY needed -- verification is pure JWKS signature/claims
+# checking against Clerk's public keys, not a Backend API credential.
+CLERK_ISSUER = os.environ.get("CLERK_ISSUER", "")
+CLERK_AUTHORIZED_PARTY = os.environ.get("CLERK_AUTHORIZED_PARTY", "")
+_jwks_client: PyJWKClient | None = None
+
+
+def _get_jwks_client() -> PyJWKClient:
+    global _jwks_client
+    if _jwks_client is None:
+        _jwks_client = PyJWKClient(f"{CLERK_ISSUER}/.well-known/jwks.json")
+    return _jwks_client
+
+
+def _verify_clerk_token(request: Request) -> dict[str, Any]:
+    """Verifies the bearer token against Clerk's JWKS, returns the full
+    claims dict. Raises 401 on anything wrong. Only wired into /v1/me/*
+    endpoints -- every other endpoint stays untouched/anonymous.
+
+    JWKS lookup is a synchronous HTTP call to Clerk on a cache miss (blocks
+    the handling thread during a Clerk network blip) -- accepted tradeoff at
+    this traffic level; keys are cached in-process after first fetch and
+    rotate rarely."""
+    auth = request.headers.get("authorization", "")
+    if not auth.startswith("Bearer "):
+        raise HTTPException(status_code=401, detail="Missing bearer token")
+    token = auth.removeprefix("Bearer ")
+    try:
+        signing_key = _get_jwks_client().get_signing_key_from_jwt(token)
+        claims = jwt.decode(
+            token,
+            signing_key.key,
+            algorithms=["RS256"],
+            issuer=CLERK_ISSUER,
+            leeway=10,  # clock skew tolerance between Cloud Run and Clerk's issuer
+            options={"require": ["exp", "iat", "sub"]},
+        )
+    except jwt.PyJWTError as e:
+        raise HTTPException(status_code=401, detail=f"Invalid token: {e}") from e
+    # Direct equality, not `not in (None, X)` -- a token with no azp claim at
+    # all must NOT silently pass this check (caught in design review: the
+    # tuple form lets a missing claim slip through undetected).
+    if CLERK_AUTHORIZED_PARTY and claims.get("azp") != CLERK_AUTHORIZED_PARTY:
+        raise HTTPException(status_code=401, detail="Token not issued for this app")
+    return claims
+
+
+def require_clerk_user(request: Request) -> str:
+    """FastAPI dependency returning just the Clerk user id (`sub` claim)."""
+    return _verify_clerk_token(request)["sub"]
+
+
+def require_clerk_user_with_email(request: Request) -> tuple[str, str]:
+    """FastAPI dependency returning (clerk_user_id, email). Requires the
+    Clerk JWT template used by this app to include an `email` claim (one-
+    time Clerk Dashboard config: JWT Templates -> add `email`) -- reading it
+    from the verified token avoids a second network call per request and
+    avoids trusting a client-supplied identity field."""
+    claims = _verify_clerk_token(request)
+    email = claims.get("email")
+    if not email:
+        raise HTTPException(
+            status_code=401,
+            detail="Token missing email claim -- check the Clerk JWT template includes it",
+        )
+    return claims["sub"], email
 
 # Standard county/county-equivalent counts per state, used only to compute
 # "how much room is left" in the /v1/coverage/insights endpoint -- not
@@ -1090,3 +1160,71 @@ def submit_contact(sub: ContactSubmission):
         conn.commit()
 
     return {"ok": True, "id": submission_id, "notified": error is None}
+
+
+class UserProfileUpdate(BaseModel):
+    company: str | None = Field(default=None, max_length=200)
+    territory_states: list[str] = Field(default_factory=list)
+    categories: list[str] = Field(default_factory=list)
+
+    @field_validator("territory_states")
+    @classmethod
+    def states_are_two_letter(cls, v: list[str]) -> list[str]:
+        for s in v:
+            if len(s) != 2:
+                raise ValueError(f"not a valid state code: {s!r}")
+        return [s.upper() for s in v]
+
+
+@app.get("/v1/me/profile")
+def get_my_profile(clerk_user_id: str = Depends(require_clerk_user)):
+    """Backs the first-sign-in ProfileCaptureModal and the personalized
+    /projects/ view (components/ProjectsDashboard.tsx) -- `onboarded: false`
+    with no row yet is the normal, expected state for a brand-new user, not
+    an error."""
+    with get_conn() as conn:
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+            cur.execute(
+                "SELECT company, territory_states, categories, onboarded_at "
+                "FROM user_profiles WHERE clerk_user_id = %s",
+                (clerk_user_id,),
+            )
+            row = cur.fetchone()
+    if row is None:
+        return {"onboarded": False, "company": None, "territory_states": [], "categories": []}
+    return {
+        "onboarded": row["onboarded_at"] is not None,
+        "company": row["company"],
+        "territory_states": row["territory_states"],
+        "categories": row["categories"],
+    }
+
+
+@app.post("/v1/me/profile")
+def upsert_my_profile(
+    body: UserProfileUpdate,
+    user: tuple[str, str] = Depends(require_clerk_user_with_email),
+):
+    """Upsert covers both the first-sign-in capture write and any later
+    'edit your territory' action -- no third endpoint needed. email is
+    re-read from the verified JWT on every call (never trusted from a prior
+    write), so it can't go stale if the user changes it in Clerk later."""
+    clerk_user_id, email = user
+    with get_conn() as conn:
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                INSERT INTO user_profiles (clerk_user_id, email, company, territory_states, categories, onboarded_at)
+                VALUES (%s, %s, %s, %s, %s, now())
+                ON CONFLICT (clerk_user_id) DO UPDATE SET
+                    email = EXCLUDED.email,
+                    company = EXCLUDED.company,
+                    territory_states = EXCLUDED.territory_states,
+                    categories = EXCLUDED.categories,
+                    onboarded_at = COALESCE(user_profiles.onboarded_at, now()),
+                    updated_at = now()
+                """,
+                (clerk_user_id, email, body.company, body.territory_states, body.categories),
+            )
+        conn.commit()
+    return {"ok": True}
