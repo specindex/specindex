@@ -8,7 +8,12 @@ name: Merge + load national corpus
 # other pull-*.yml workflow -- no new secrets needed.
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      state_file:
+        description: "Load one data/states/<code>.json directly, skipping the national merge (avoids NJ's slow dedup when only one state changed). Blank = full national merge+load."
+        required: false
+        default: ""
 
 permissions:
   contents: read
@@ -50,10 +55,16 @@ jobs:
           done
 
       - name: Merge national corpus
+        if: ${{ !github.event.inputs.state_file }}
         run: python3 scripts/merge-national-corpus.py
 
-      - name: Load corpus to Cloud SQL
+      - name: Load corpus to Cloud SQL (national)
+        if: ${{ !github.event.inputs.state_file }}
         run: python3 scripts/load-corpus-to-postgres.py --corpus data/national-commercial-projects.json --apply-migrations
+
+      - name: Load corpus to Cloud SQL (single state)
+        if: ${{ github.event.inputs.state_file }}
+        run: python3 scripts/load-corpus-to-postgres.py --corpus "data/states/${{ github.event.inputs.state_file }}.json" --apply-migrations
 
       - name: Refresh project_documents from GCS + local manifests
         run: python3 scripts/compute-project-documents.py --apply-migration
