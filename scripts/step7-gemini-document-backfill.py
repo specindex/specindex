@@ -162,7 +162,13 @@ def verify_and_fetch(url: str) -> tuple[bytes, str] | None:
         with urllib.request.urlopen(req, timeout=30) as resp:
             content_type = resp.headers.get("Content-Type", "").split(";")[0].strip().lower()
             data = resp.read(50_000_000)  # 50MB safety cap per file
-    except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, ValueError) as e:
+    except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, ValueError, OSError) as e:
+        # OSError covers ConnectionResetError/BrokenPipeError etc -- a real
+        # crash 2026-07-29 (a 50MB Hawaii EIS PDF reset mid-download) killed
+        # the whole run because ConnectionResetError wasn't in this list.
+        # This is designed to run unattended for many hours across
+        # thousands of URLs -- a single bad connection must never take down
+        # the whole batch.
         print(f"    [reject] {url} -- {e}", file=sys.stderr)
         return None
 
