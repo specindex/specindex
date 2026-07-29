@@ -1,0 +1,88 @@
+name: Project detail enrichment (Gemini two-pass)
+
+# Runs scripts/enrich-project-details.py --batch: populates project_enrichment
+# (executive brief, CSI scope, construction team, permits, contacts) plus
+# project_news, for the highest-value projects that haven't been enriched
+# in the last 30 days (project_enrichment_checks cooldown, same pattern as
+# pull-nj-dca-pipeline.yml's Cloud SQL access -- no data or credentials
+# ever touch a local machine, per Asif's 2026-07-29 ask).
+#
+# Two Gemini calls per project (discovery + independent cross-check) plus
+# an HTTP check per news URL -- meaningfully more expensive than the
+# county-source-discovery calls elsewhere in this repo. --limit caps the
+# blast radius of a single run.
+
+on:
+  # schedule intentionally left commented out -- every other pipeline
+  # workflow in this repo had its cron trigger disabled 2026-07-28 (Asif:
+  # "disable all cron jobs, will come back to it later") and none have
+  # been re-enabled since. Uncomment when ready to run this on autopilot;
+  # workflow_dispatch works today for on-demand batches.
+  # schedule:
+  #   - cron: "0 10 * * *"
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Max projects to enrich this run"
+        required: false
+        default: "25"
+      dry_run:
+        description: "Print results without writing to the database"
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: read
+  id-token: write
+
+env:
+  CLOUDSQL_INSTANCE: specindex-ai:us-central1:specindex-db
+  DATABASE_URL: postgresql://specindex:${{ secrets.CLOUDSQL_PASSWORD }}@127.0.0.1:5433/specindex
+  GOOGLE_CLOUD_PROJECT: specindex-ai
+
+jobs:
+  enrich_project_details:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements-db.txt
+
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+
+      - name: Start Cloud SQL Auth Proxy
+        run: |
+          curl -sL -o cloud-sql-proxy \
+            https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.14.0/cloud-sql-proxy.linux.amd64
+          chmod +x cloud-sql-proxy
+          ./cloud-sql-proxy --port 5433 "$CLOUDSQL_INSTANCE" &
+          for i in $(seq 1 15); do
+            (echo > /dev/tcp/127.0.0.1/5433) >/dev/null 2>&1 && break
+            sleep 1
+          done
+
+      - name: Run enrichment batch (applies migration first, idempotent)
+        run: |
+          python3 scripts/enrich-project-details.py \
+            --batch \
+            --apply-migration \
+            --limit "${{ github.event.inputs.limit || '25' }}" \
+            ${{ github.event.inputs.dry_run == 'true' && '--dry-run' || '' }}
+
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo "### Project detail enrichment — results"
+            echo "Limit: ${{ github.event.inputs.limit || '25' }}, dry_run: ${{ github.event.inputs.dry_run || 'false' }}"
+            echo "See step logs above for per-project fact counts and confidence levels."
+          } >> "$GITHUB_STEP_SUMMARY"
