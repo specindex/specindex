@@ -837,6 +837,42 @@ def db_health():
     }
 
 
+def fetch_enrichment_detail(conn, sk: int) -> dict[str, list[dict[str, Any]]]:
+    """Full project_enrichment rows grouped by section, for the detail page
+    only -- not included in the bulk list response (fetch_enrichment above)
+    since list pages don't render CSI scope/team/permits/contacts text and
+    fetching it for every row on every page load would be wasted work."""
+    sections: dict[str, list[dict[str, Any]]] = {
+        "executive_brief": [], "csi_scope": [], "team": [], "permit": [], "contact": [],
+    }
+    with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+        cur.execute(
+            "SELECT section, field_key, field_label, field_value, confidence, sources "
+            "FROM project_enrichment WHERE project_sk = %s ORDER BY id",
+            (sk,),
+        )
+        for r in cur.fetchall():
+            sections.setdefault(r["section"], []).append(
+                {
+                    "field_key": r["field_key"],
+                    "label": r["field_label"],
+                    "value": r["field_value"],
+                    "confidence": r["confidence"],
+                    "sources": r["sources"],
+                }
+            )
+    return sections
+
+
+def fetch_document_files(conn, sk: int) -> list[dict[str, Any]]:
+    with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+        cur.execute(
+            "SELECT title, url, content_type FROM project_document_files WHERE project_sk = %s ORDER BY title",
+            (sk,),
+        )
+        return [dict(r) for r in cur.fetchall()]
+
+
 @app.get("/v1/projects/{project_id}")
 def get_project(project_id: str):
     with get_conn() as conn:
@@ -846,8 +882,11 @@ def get_project(project_id: str):
         if not row:
             raise HTTPException(status_code=404, detail="Project not found")
         enrichment = fetch_enrichment(conn, [row["project_sk"]])
+        detail = row_to_project(row, enrichment.get(row["project_sk"]))
+        detail["enrichment"] = fetch_enrichment_detail(conn, row["project_sk"])
+        detail["documents"] = fetch_document_files(conn, row["project_sk"])
 
-    return row_to_project(row, enrichment.get(row["project_sk"]))
+    return detail
 
 
 # Gmail SMTP creds -- same credential pair already used by the pipeline

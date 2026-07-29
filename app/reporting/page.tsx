@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getProjects } from "@/lib/projects";
+import { getSampleProjects } from "@/lib/projects";
 import {
   CRH_CATEGORY_KEYWORDS,
   countProjectsNamingAny,
@@ -30,7 +30,18 @@ const CRH_BRANDS = [
 ];
 
 export default async function ReportingPage() {
-  const projects = await getProjects();
+  // Was getProjects() (the entire ~175K+-row corpus, ~1,750 sequential API
+  // calls). That's what this page's own copy used to promise ("None of it
+  // is a sample or a projection") -- true until 2026-07-29, when it became
+  // the reason /reporting's build kept failing: that many requests, even
+  // paced, exhausts the API's small connection pool badly enough to starve
+  // *other* pages building in parallel, not just this one (confirmed live:
+  // homepage timed out too, despite needing none of this itself). Bounded
+  // to the same representative sample every other stats page now uses.
+  // Real fix is dedicated SQL aggregate endpoints so this can be both fast
+  // and exact again; until then the copy below says "sample," honestly,
+  // instead of silently breaking its own claim.
+  const projects = await getSampleProjects(2000);
   const total = projects.length;
 
   const captured = getCapturedCoverage(projects);
@@ -58,11 +69,14 @@ export default async function ReportingPage() {
           </p>
           <p className="mt-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-gray-100)] p-4 text-sm leading-relaxed text-[var(--color-gray-600)]">
             <strong className="text-[var(--color-ink)]">
-              Every number on this page is counted from the live index when the site
-              builds.
+              Every number below is a real, live query result — computed from our
+              {" "}{total} highest-priority scored projects, not the full index.
             </strong>{" "}
-            None of it is a sample or a projection. Several figures below are zero,
-            which means we haven&apos;t captured that data yet.
+            None of it is fabricated or projected forward from a formula; it&apos;s
+            counted directly. It&apos;s currently a large representative sample rather
+            than every project in the index, a deliberate tradeoff to keep this page
+            fast while we build dedicated full-index aggregate queries. Several
+            figures below are zero, which means we haven&apos;t captured that data yet.
           </p>
         </div>
       </section>
@@ -72,7 +86,7 @@ export default async function ReportingPage() {
         <div className="mx-auto max-w-4xl px-5 py-16 md:px-8">
           <h2 className="text-section">What the index captures today</h2>
           <p className="mt-3 text-base leading-relaxed text-[var(--color-gray-600)]">
-            Counted across all {total} indexed projects. Coverage is lumpy because
+            Counted across our {total} highest-priority scored projects. Coverage is lumpy because
             permit records name an owner far more reliably than they name an architect
             or a contractor.
           </p>
@@ -117,7 +131,7 @@ export default async function ReportingPage() {
             a real query against real data, and it also shows the problem: it can only
             see{" "}
             <strong className="text-[var(--color-ink)]">
-              {gc.sampleSize} of {total} projects
+              {gc.sampleSize} of {total} sampled projects
             </strong>{" "}
             ({Math.round((gc.sampleSize / total) * 100)}%), because the rest do not
             name a contractor in any public source we have read.
@@ -172,7 +186,7 @@ export default async function ReportingPage() {
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             <Metric
               value={String(crh.projects.length)}
-              label={`of ${total} indexed projects need a CRH product category`}
+              label={`of our ${total} sampled projects need a CRH product category`}
             />
             <Metric
               value={String(crhOpen.length)}
@@ -191,8 +205,8 @@ export default async function ReportingPage() {
             </p>
             <p className="mt-1.5 text-sm leading-relaxed text-[var(--color-gray-600)]">
               {crhNamed === 0
-                ? `Across all ${total} indexed projects, not one public source we have read names CRH, Oldcastle, or any of their brands: `
-                : `Across ${total} indexed projects, only ${crhNamed} name CRH, Oldcastle, or any of their brands: `}
+                ? `Across our ${total} sampled projects, not one public source we have read names CRH, Oldcastle, or any of their brands: `
+                : `Across our ${total} sampled projects, only ${crhNamed} name CRH, Oldcastle, or any of their brands: `}
               Belgard, Echelon Masonry, Sakrete, Amerimix, MoistureShield, RDI,
               Catalyst, or Techniseal. That says nothing about how much of this market
               CRH holds, which is a great deal of it. It says what permits and press

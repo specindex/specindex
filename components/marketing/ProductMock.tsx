@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getCorpus, getProjects } from "@/lib/projects";
+import { getStats, getSampleProjects } from "@/lib/projects";
 import { formatUsd, typeLabel } from "@/lib/format";
 import { getTopCounties, getVisibilitySnapshot } from "@/lib/stats";
 import { StatusPill } from "@/components/StatusPill";
@@ -8,8 +8,15 @@ const DEMO_BRAND = "Acuity Brands";
 const DEMO_CATEGORY = "lighting";
 
 export async function ProductMock() {
-  const projects = await getProjects();
-  const corpus = await getCorpus();
+  // Was getProjects()+getCorpus() -- the full ~175K+-row corpus, ~3,500
+  // sequential requests -- for a marketing mockup that only ever shows 4
+  // preview cards and a handful of counties. This is what was actually
+  // timing out the homepage build the whole time (confirmed live
+  // 2026-07-29): every fix applied directly to app/page.tsx made zero
+  // difference because the real full-corpus crawl was happening here, in a
+  // child component, not there.
+  const stats = await getStats();
+  const projects = await getSampleProjects(500);
   const preview = projects.slice(0, 4);
   const counties = getTopCounties(projects, 6);
   const { categoryHits, stillOpen } = getVisibilitySnapshot(
@@ -17,10 +24,7 @@ export async function ProductMock() {
     DEMO_BRAND,
     DEMO_CATEGORY,
   );
-  const stateLabel =
-    corpus.stats?.states && corpus.stats.states > 1
-      ? `${corpus.stats.states} states`
-      : "national index";
+  const stateLabel = stats.states > 1 ? `${stats.states} states` : "national index";
 
   return (
     <div className="card-elevated overflow-hidden">

@@ -9,6 +9,12 @@
     ],
     "cleanUrls": true,
     "trailingSlash": true,
+    "rewrites": [
+      {
+        "source": "/projects/*/",
+        "destination": "/projects/view/index.html"
+      }
+    ],
     "headers": [
       {
         "source": "**",
