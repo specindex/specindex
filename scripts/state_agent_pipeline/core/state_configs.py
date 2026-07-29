@@ -618,6 +618,41 @@ NE_DOUGLAS_ACCELA_CONFIG: dict[str, Any] = {
     "lookback_days": 180,
 }
 
+# City of Las Vegas, NV (Clark County's top jurisdiction -- unincorporated
+# Clark County/the Strip is a separate Accela agency, "ClarkCo", not yet
+# wired). Real, huge, previously-unexplored gap: Clark County is ~2.3M
+# people, larger than most counties wired this session. Verified live
+# 2026-07-29: APTYPE='Com' is a real commercial/residential split (vs
+# 'Res'/'MTG'/'SFDTract'). Every date field in this dataset is stored as
+# TEXT in DD-MON-YY format (e.g. "01-JAN-26") -- not chronologically
+# sortable via a plain string >= comparison (arcgis_provider.py's
+# date_field_is_string does a naive string compare, which would silently
+# misorder this format). Worked around by filtering on ISSUE_YR (a clean
+# 4-digit-string year field) directly in commercial_where instead of
+# using date_field/lookback_days at all -- real 2026-YTD commercial count:
+# 23,736. Same yearly-bump limitation as the San Diego CSV source (item 70
+# in ROADMAP.md) -- needs manual update to '2027' in January.
+NV_LASVEGAS_CONFIG: dict[str, Any] = {
+    "state_code": "NV",
+    "provider_type": "arcgis",
+    "county": "Clark",
+    "endpoint": "https://services1.arcgis.com/F1v0ufATbBQScMtY/ArcGIS/rest/services/CLV_BLDG_GIS_gdb_view/FeatureServer",
+    "layer": 0,
+    "watermark_field": "OBJECTID",
+    "hash_fields": ["APNO"],
+    "commercial_where": "APTYPE='Com' AND ISSUE_YR='2026'",
+    "out_fields": "APNO,APDESC,VALUATION,STAT,ENTERED_DT,ISSUE_DT,WORKTYPE,WORKDESC,SCOPEOFWORK,FULL_DESC,STRNO,STDIR,STNAME,STRTYPE,APPLICANT",
+    "date_field": None,
+    "lookback_days": 0,
+    "feed_id": "nv-lasvegas",
+    "id_field": "APNO",
+    "name_fields": ["FULL_DESC", "WORKTYPE", "STNAME"],
+    "address_fields": ["STRNO", "STDIR", "STNAME", "STRTYPE"],
+    "value_fields": ["VALUATION"],
+    "desc_fields": ["FULL_DESC", "SCOPEOFWORK", "WORKDESC"],
+    "source_url": "https://opendataportal-lasvegas.opendata.arcgis.com/",
+}
+
 # Bernalillo County, NM (Albuquerque, state's most populous county).
 # Gemini's primary lead (City of Albuquerque's gis.cabq.gov ArcGIS
 # service) is unreachable -- DNS resolves but the TCP connection to
@@ -1872,6 +1907,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "MD-MONTGOMERY": MD_MONTGOMERY_CONFIG,
     "WI-MILWAUKEE": WI_MILWAUKEE_CONFIG,
     "MO-STLOUIS": MO_STLOUIS_ACCELA_CONFIG,
+    "NV-LASVEGAS": NV_LASVEGAS_CONFIG,
     "GA-ATLANTA": GA_ATLANTA_ACCELA_CONFIG,
     "KY-JEFFERSON": KY_JEFFERSON_CONFIG,
     "OR-MULTNOMAH": OR_MULTNOMAH_CONFIG,

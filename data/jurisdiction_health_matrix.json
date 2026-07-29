@@ -1169,6 +1169,17 @@
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
       "notes": "Attempted as a substitute for Hinds/Jackson (already a confirmed dead end). Confirmed genuine dead end across the whole region -- county and both major cities (Gulfport, Biloxi) all process permits via static PDF forms with zero public API of any kind, real ArcGIS servers exist but only carry basemap layers, not permit records. No further MS substitution attempted this round."
+    },
+    {
+      "jurisdiction": "City of Las Vegas, NV (Clark County)",
+      "county": "Clark",
+      "state": "NV",
+      "provider_type": "arcgis",
+      "endpoint": "https://services1.arcgis.com/F1v0ufATbBQScMtY/ArcGIS/rest/services/CLV_BLDG_GIS_gdb_view/FeatureServer",
+      "state_agent_pipeline_key": "NV-LASVEGAS",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 2581,
+      "notes": "Never investigated by either session before -- real, large, previously-unexplored gap (Clark County ~2.3M people, one of the largest counties in the entire backlog). Gemini's answer accurate: real City of Las Vegas ArcGIS layer + a separate unincorporated Clark County Accela agency ('ClarkCo', verified reachable but not yet wired -- worth a follow-up for Strip-area coverage). Every date field in this dataset is stored as TEXT in DD-MON-YY format (e.g. '01-JAN-26'), not chronologically sortable via a naive string comparison -- worked around using the clean 4-digit ISSUE_YR string field directly in commercial_where instead of date_field/lookback_days. APTYPE='Com' real (vs Res/MTG/SFDTract). 2026 YTD: 23,736 commercial rows fetched, 2,581 new after merge -- the single largest new-record yield of any source wired this session."
     }
   ]
 }
