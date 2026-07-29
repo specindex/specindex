@@ -97,7 +97,7 @@ function AuthAwareActions({ mobile }: { mobile?: boolean }) {
             Log In
           </button>
         </SignInButton>
-        <Link href="/#demo" className={`btn btn-primary ${size}`}>
+        <Link href="/#demo" className={`btn btn-demo ${size}`}>
           Request Demo
         </Link>
       </SignedOut>
@@ -151,7 +151,7 @@ export function SiteHeader() {
           {CLERK_ENABLED ? (
             <AuthAwareActions />
           ) : (
-            <Link href="/#demo" className="btn btn-primary hidden sm:inline-flex">
+            <Link href="/#demo" className="btn btn-demo hidden sm:inline-flex">
               Request Demo
             </Link>
           )}
@@ -199,7 +199,7 @@ export function SiteHeader() {
                 <AuthAwareActions mobile />
               </div>
             ) : (
-              <Link href="/#demo" className="btn btn-primary mt-4 w-full text-center">
+              <Link href="/#demo" className="btn btn-demo mt-4 w-full text-center">
                 Request Demo
               </Link>
             )}

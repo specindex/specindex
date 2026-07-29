@@ -105,7 +105,7 @@ export default async function HomePage() {
               database dump of every permit in the state.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#demo" className="btn btn-primary">
+              <a href="#demo" className="btn btn-demo">
                 Request Demo
               </a>
               <Link href="/projects/" className="btn btn-outline">
