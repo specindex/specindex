@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ProjectDetailView } from "@/components/ProjectDetailView";
+import { ProjectsGate } from "@/components/ProjectsGate";
 import { getProject } from "@/lib/projects";
 import type { Project } from "@/lib/types";
 
@@ -22,6 +23,18 @@ import type { Project } from "@/lib/types";
 // unblocks the crash and unlimited scale today; it does not fully replace
 // that migration for search-crawler-quality metadata on the long tail.
 export default function ProjectViewShell() {
+  return (
+    <ProjectsGate>
+      <ProjectViewContent />
+    </ProjectsGate>
+  );
+}
+
+// Split from the default export so the getProject() fetch below only fires
+// once ProjectsGate has confirmed a signed-in session -- it lives inside the
+// gated child, not a parent that mounts unconditionally, so an anonymous
+// visitor never triggers the request that would return real project data.
+function ProjectViewContent() {
   const [project, setProject] = useState<Project | null | undefined>(undefined);
 
   useEffect(() => {

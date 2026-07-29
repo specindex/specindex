@@ -7,9 +7,12 @@ import { Logo } from "@/components/Logo";
 import { CLERK_ENABLED } from "@/components/ClerkProviders";
 import { SignedIn, SignedOut, SignInButton, UserButton, useAuth } from "@clerk/clerk-react";
 
+// "Projects" deliberately excluded -- /projects/ now requires sign-in
+// (ProjectsGate), so it's not a destination to invite anonymous visitors
+// into from the main nav. Still reachable via the hero/feature CTAs, which
+// correctly land on the sign-in wall instead of a 404.
 const MARKETING_NAV = [
   { href: "/product/", label: "Product" },
-  { href: "/projects/", label: "Projects" },
   { href: "/visibility/", label: "Visibility" },
   { href: "/reporting/", label: "Reporting" },
   { href: "/how-it-works/", label: "How It Works" },
