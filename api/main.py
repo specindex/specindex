@@ -1136,6 +1136,152 @@ def get_document(document_id: int):
     )
 
 
+# ---------------------------------------------------------------------------
+# Gemini-grounded "ask" endpoints -- /v1/projects/{id}/ask (one project) and
+# /v1/me/ask (everything in the signed-in user's territory). Deliberately
+# NOT the search-grounded google_search tool used by
+# scripts/enrich-project-details.py -- that pipeline is for *discovering*
+# facts about a project from the open web; this is for *answering questions
+# about what's already in our own database*, so the only context handed to
+# the model is real rows pulled from Postgres. The system prompt tells it
+# to say so rather than guess when the answer isn't in that context, so a
+# question about something SpecIndex doesn't track (e.g. "what's the
+# subcontractor's phone number") gets an honest "not in our data" instead of
+# a fabricated-sounding answer.
+GOOGLE_CLOUD_PROJECT = os.environ.get("GOOGLE_CLOUD_PROJECT") or "specindex-ai"
+GOOGLE_CLOUD_LOCATION = os.environ.get("GOOGLE_CLOUD_LOCATION") or "global"
+GEMINI_ASK_MODEL = "gemini-2.5-flash"
+
+_genai_client = None
+
+
+def _get_genai_client():
+    global _genai_client
+    if _genai_client is None:
+        from google import genai
+
+        _genai_client = genai.Client(
+            vertexai=True, project=GOOGLE_CLOUD_PROJECT, location=GOOGLE_CLOUD_LOCATION
+        )
+    return _genai_client
+
+
+class AskRequest(BaseModel):
+    question: str = Field(min_length=1, max_length=500)
+
+
+def _ask_gemini(context: str, question: str) -> str:
+    from google.genai import types
+
+    prompt = (
+        "You are SpecIndex's project data assistant. Answer the user's question using ONLY "
+        "the project data below -- do not use outside knowledge and do not search the web. "
+        "If the answer isn't in the data, say plainly that SpecIndex doesn't have that "
+        "information yet rather than guessing. Be concise (2-4 sentences unless the question "
+        "asks for a list).\n\n"
+        f"--- PROJECT DATA ---\n{context}\n--- END PROJECT DATA ---\n\n"
+        f"Question: {question}"
+    )
+    client = _get_genai_client()
+    resp = client.models.generate_content(
+        model=GEMINI_ASK_MODEL,
+        contents=prompt,
+        config=types.GenerateContentConfig(temperature=0.2),
+    )
+    return (resp.text or "").strip()
+
+
+def _project_ask_context(conn, project_id: str) -> tuple[str, dict[str, Any]]:
+    with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+        cur.execute("SELECT * FROM projects WHERE project_id = %s", (project_id,))
+        row = cur.fetchone()
+    if not row:
+        raise HTTPException(status_code=404, detail="Project not found")
+    enrichment = fetch_enrichment(conn, [row["project_sk"]])
+    project = row_to_project(row, enrichment.get(row["project_sk"]))
+    project["enrichment"] = fetch_enrichment_detail(conn, row["project_sk"])
+
+    lines = [
+        f"Name: {project['name']}",
+        f"Location: {project['city']}, {project['county']} County, {project['state']}",
+        f"Status: {project['status']} ({project['project_type']})",
+        f"Estimated value: {project['estimated_value_usd']}",
+        f"Square footage: {project['square_footage']}",
+        f"Owner: {project['owner'] or 'not reported'}",
+        f"Architect: {project['architect'] or 'not reported'}",
+        f"General contractor: {project['general_contractor'] or 'not reported'}",
+        f"Description: {project['description']}",
+        f"Key specs: {', '.join(project['key_specs']) or 'none reported'}",
+        f"Mentioned brands: {', '.join(project['mentioned_brands']) or 'none reported'}",
+        f"Priority score: {project['score']['total'] if project['score'] else 'not scored'}/100",
+    ]
+    enr = project.get("enrichment") or {}
+    for fact in (enr.get("executive_brief") or [])[:15]:
+        lines.append(f"Executive brief -- {fact.get('label', '')}: {fact.get('value', '')}")
+    for fact in (enr.get("csi_scope") or [])[:15]:
+        lines.append(f"CSI scope -- {fact.get('label', '')}: {fact.get('value', '')}")
+    for fact in (enr.get("team") or [])[:15]:
+        lines.append(f"Team -- {fact.get('label', '')}: {fact.get('value', '')}")
+    return "\n".join(lines), project
+
+
+@app.post("/v1/projects/{project_id}/ask")
+def ask_about_project(project_id: str, body: AskRequest, clerk_user_id: str = Depends(require_clerk_user)):
+    with get_conn() as conn:
+        context, _ = _project_ask_context(conn, project_id)
+    answer = _ask_gemini(context, body.question)
+    return {"answer": answer}
+
+
+def _territory_ask_context(conn, clerk_user_id: str) -> str:
+    with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+        cur.execute(
+            "SELECT territory_states, categories FROM user_profiles WHERE clerk_user_id = %s",
+            (clerk_user_id,),
+        )
+        profile_row = cur.fetchone()
+    territory = (profile_row or {}).get("territory_states") or []
+    categories = (profile_row or {}).get("categories") or []
+
+    with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+        cur.execute(
+            """
+            SELECT p.project_id, p.name, p.city, p.county, p.state, p.status,
+                   p.estimated_value_usd, ps.score AS score_total, t.stage AS your_stage
+            FROM projects p
+            LEFT JOIN project_scores ps ON ps.project_sk = p.project_sk
+            LEFT JOIN user_tracked_projects t
+                ON t.project_sk = p.project_sk AND t.clerk_user_id = %s
+            WHERE (%s::text[] = '{}' OR p.state = ANY(%s::text[]))
+            ORDER BY (t.id IS NOT NULL) DESC, ps.score DESC NULLS LAST
+            LIMIT 40
+            """,
+            (clerk_user_id, territory, territory),
+        )
+        rows = cur.fetchall()
+
+    lines = [
+        f"User's saved territory: {', '.join(territory) or 'nationwide (no territory set)'}",
+        f"User's saved categories: {', '.join(categories) or 'none set'}",
+        "Projects (highest priority first, tracked projects first):",
+    ]
+    for r in rows:
+        tracked_note = f", you are tracking this at stage '{r['your_stage']}'" if r["your_stage"] else ""
+        lines.append(
+            f"- {r['name']} ({r['city']}, {r['county']} County, {r['state']}) -- {r['status']}, "
+            f"value {r['estimated_value_usd']}, priority score {r['score_total']}{tracked_note}"
+        )
+    return "\n".join(lines)
+
+
+@app.post("/v1/me/ask")
+def ask_about_my_territory(body: AskRequest, clerk_user_id: str = Depends(require_clerk_user)):
+    with get_conn() as conn:
+        context = _territory_ask_context(conn, clerk_user_id)
+    answer = _ask_gemini(context, body.question)
+    return {"answer": answer}
+
+
 # Gmail SMTP creds -- same credential pair already used by the pipeline
 # health-email GitHub Action (EMAIL_SMTP_USERNAME/PASSWORD secrets), set
 # here as Cloud Run env vars instead. Notification is best-effort: a

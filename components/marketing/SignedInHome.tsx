@@ -6,7 +6,9 @@ import { useAuth, useUser } from "@clerk/clerk-react";
 import type { Project } from "@/lib/types";
 import { formatUsd, stateName } from "@/lib/format";
 import { StatusPill } from "@/components/StatusPill";
+import { AskPanel } from "@/components/AskPanel";
 import { fetchMyProfile, type UserProfile } from "@/lib/userProfile";
+import { askAboutMyTerritory } from "@/lib/ask";
 import {
   fetchTrackedProjects,
   upsertTrackedProject,
@@ -226,6 +228,7 @@ export function SignedInHome() {
               feedProjects={feedProjects}
               trackedIds={trackedIds}
               onToggleTrack={toggleTrack}
+              getToken={getToken}
             />
           ) : (
             <TrackedView
@@ -250,6 +253,7 @@ function FeedView({
   feedProjects,
   trackedIds,
   onToggleTrack,
+  getToken,
 }: {
   firstName: string | null;
   territoryLabel: string;
@@ -258,6 +262,7 @@ function FeedView({
   feedProjects: Project[];
   trackedIds: Set<string>;
   onToggleTrack: (project: Project) => void;
+  getToken: (options?: { template?: string }) => Promise<string | null>;
 }) {
   return (
     <div>
@@ -281,6 +286,14 @@ function FeedView({
           <p className="text-sm font-semibold text-[var(--color-green)]">Search full index →</p>
           <p className="text-xs text-[var(--color-gray-400)]">Filters, map view, all states</p>
         </Link>
+      </div>
+
+      <div className="mt-6">
+        <AskPanel
+          title="Ask about your projects"
+          placeholder="e.g. What should I prioritize this week?"
+          onAsk={(question) => askAboutMyTerritory(getToken, question)}
+        />
       </div>
 
       <div className="mt-8 flex flex-col gap-3">

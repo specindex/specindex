@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { useAuth } from "@clerk/clerk-react";
 import { CLERK_ENABLED } from "@/components/ClerkProviders";
 import { StatusPill } from "@/components/StatusPill";
+import { AskPanel } from "@/components/AskPanel";
 import { formatDate, formatSf, formatUsd, stateName, typeLabel } from "@/lib/format";
 import type { Project } from "@/lib/types";
 import {
@@ -15,6 +16,7 @@ import {
   readTriageList,
   type TrackedStage,
 } from "@/lib/tracking";
+import { askAboutProject } from "@/lib/ask";
 
 const STAGE_LABELS: Record<TrackedStage, string> = {
   watching: "Watching",
@@ -109,6 +111,21 @@ function PipelineBox({ projectId }: { projectId: string }) {
         Untrack
       </button>
     </div>
+  );
+}
+
+// useAuth() requires a <ClerkProvider> ancestor, which only exists when
+// CLERK_ENABLED -- kept in its own component (only mounted behind that
+// flag, same pattern as PipelineBox above) rather than called directly in
+// ProjectDetailView's body, which renders unconditionally.
+function ProjectAskPanel({ projectId }: { projectId: string }) {
+  const { getToken } = useAuth();
+  return (
+    <AskPanel
+      title="Ask about this project"
+      placeholder="e.g. Who's the electrical contractor?"
+      onAsk={(question) => askAboutProject(getToken, projectId, question)}
+    />
   );
 }
 
@@ -815,6 +832,8 @@ export function ProjectDetailView({ project }: { project: Project }) {
 
         {/* RIGHT: workspace / lookup rail */}
         <div className="lg:col-span-5 space-y-6">
+          {CLERK_ENABLED && <ProjectAskPanel projectId={project.id} />}
+
           <ActivityFeed project={project} />
 
           {/* Permits used to have their own standalone card here too --
