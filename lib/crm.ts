@@ -20,6 +20,8 @@ export type CrmContact = {
   demo_requested_at: string | null;
   onboarded_at: string | null;
   notes: string | null;
+  is_active: boolean | null;
+  last_login_at: string | null;
 };
 
 type GetToken = (options?: { template?: string }) => Promise<string | null>;

@@ -134,6 +134,8 @@ function CrmTable() {
               <th className="px-3 py-2 font-semibold">Role</th>
               <th className="px-3 py-2 font-semibold">Territory</th>
               <th className="px-3 py-2 font-semibold">Stage</th>
+              <th className="px-3 py-2 font-semibold">Status</th>
+              <th className="px-3 py-2 font-semibold">Last login</th>
               <th className="px-3 py-2 font-semibold">Source</th>
               <th className="px-3 py-2 font-semibold">Onboarded</th>
               <th className="px-3 py-2 font-semibold">Notes</th>
@@ -153,6 +155,20 @@ function CrmTable() {
                 <td className="px-3 py-3">
                   <StageBadge stage={c.lifecycle_stage} />
                 </td>
+                <td className="px-3 py-3">
+                  {c.is_active === null ? (
+                    <span className="text-xs text-[var(--color-gray-400)]">—</span>
+                  ) : c.is_active ? (
+                    <span className="inline-flex whitespace-nowrap rounded-full bg-[var(--color-green-light)] px-2 py-0.5 text-xs font-medium text-[var(--color-green)]">
+                      active
+                    </span>
+                  ) : (
+                    <span className="inline-flex whitespace-nowrap rounded-full bg-red-50 px-2 py-0.5 text-xs font-medium text-red-700">
+                      deactivated
+                    </span>
+                  )}
+                </td>
+                <td className="px-3 py-3 text-xs text-[var(--color-gray-400)]">{fmtDate(c.last_login_at)}</td>
                 <td className="px-3 py-3 text-xs text-[var(--color-gray-400)]">
                   {c.lead_source || c.demo_request_source || "—"}
                 </td>
