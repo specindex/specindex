@@ -1335,3 +1335,74 @@ def untrack_project(project_id: str, clerk_user_id: str = Depends(require_clerk_
             )
         conn.commit()
     return {"ok": True}
+
+
+class SavedViewCreate(BaseModel):
+    name: str = Field(min_length=1, max_length=100)
+    territory_states: list[str] = Field(default_factory=list)
+    categories: list[str] = Field(default_factory=list)
+
+    @field_validator("territory_states")
+    @classmethod
+    def states_are_two_letter(cls, v: list[str]) -> list[str]:
+        for s in v:
+            if len(s) != 2:
+                raise ValueError(f"not a valid state code: {s!r}")
+        return [s.upper() for s in v]
+
+
+@app.get("/v1/me/saved-views")
+def list_my_saved_views(clerk_user_id: str = Depends(require_clerk_user)):
+    with get_conn() as conn:
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+            cur.execute(
+                "SELECT id, name, territory_states, categories, created_at "
+                "FROM user_saved_views WHERE clerk_user_id = %s ORDER BY created_at",
+                (clerk_user_id,),
+            )
+            rows = cur.fetchall()
+    return {
+        "views": [
+            {
+                "id": r["id"],
+                "name": r["name"],
+                "territory_states": r["territory_states"],
+                "categories": r["categories"],
+                "created_at": r["created_at"].isoformat() if r["created_at"] else None,
+            }
+            for r in rows
+        ]
+    }
+
+
+@app.post("/v1/me/saved-views")
+def create_my_saved_view(body: SavedViewCreate, clerk_user_id: str = Depends(require_clerk_user)):
+    with get_conn() as conn:
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                INSERT INTO user_saved_views (clerk_user_id, name, territory_states, categories)
+                VALUES (%s, %s, %s, %s)
+                RETURNING id
+                """,
+                (clerk_user_id, body.name, body.territory_states, body.categories),
+            )
+            new_id = cur.fetchone()[0]
+        conn.commit()
+    return {"ok": True, "id": new_id}
+
+
+@app.delete("/v1/me/saved-views/{view_id}")
+def delete_my_saved_view(view_id: int, clerk_user_id: str = Depends(require_clerk_user)):
+    """clerk_user_id in the WHERE clause, not just view_id, so a user can
+    never delete another user's saved view by guessing an id -- the
+    delete silently no-ops if the id doesn't belong to the caller rather
+    than leaking whether it exists via a 404 vs 200 distinction."""
+    with get_conn() as conn:
+        with conn.cursor() as cur:
+            cur.execute(
+                "DELETE FROM user_saved_views WHERE id = %s AND clerk_user_id = %s",
+                (view_id, clerk_user_id),
+            )
+        conn.commit()
+    return {"ok": True}
