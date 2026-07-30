@@ -1,11 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useAuth } from "@clerk/clerk-react";
 import type { Project } from "@/lib/types";
 import { brandMentioned, formatUsd } from "@/lib/format";
 import { getVisibilitySnapshot } from "@/lib/stats";
 import { StatusPill } from "./StatusPill";
+
+const API_BASE = "https://specindex-api-gmm6irqe4q-uc.a.run.app";
+const SAMPLE_SIZE = 2000;
+const PAGE_SIZE = 100;
 
 /** Building product manufacturers headquartered in Georgia, by CSI division. */
 const demoBrands = [
@@ -22,10 +27,6 @@ const demoBrands = [
   { name: "Southwire", category: "electrical", hq: "Carrollton · wire and cable, Div 26" },
 ];
 
-type Props = {
-  projects: Project[];
-};
-
 // Reads ?category= from the URL on first render (e.g. a "Run a brand
 // check" link from a project detail page) without useSearchParams/Suspense
 // -- this is a static export, so search params can only be read
@@ -37,14 +38,53 @@ function initialCategoryFromUrl(): string {
   return fromUrl || "lighting";
 }
 
-export function VisibilityPanel({ projects }: Props) {
+// No `projects` prop anymore -- this used to receive the full sample baked
+// in at build time by app/visibility/page.tsx, which meant 2,000 real
+// project records shipped in public static HTML with no auth required.
+// Only ever mounted inside <ProjectsGate>, so useAuth() always has a real
+// signed-in session to draw a token from.
+export function VisibilityPanel() {
+  const { getToken } = useAuth();
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState(true);
   const [brand, setBrand] = useState("Acuity Brands");
   const [category, setCategory] = useState(initialCategoryFromUrl);
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      const token = await getToken();
+      const headers = token ? { Authorization: `Bearer ${token}` } : undefined;
+      const collected: Project[] = [];
+      for (let offset = 0; offset < SAMPLE_SIZE; offset += PAGE_SIZE) {
+        const res = await fetch(
+          `${API_BASE}/v1/projects?sort=score&limit=${PAGE_SIZE}&offset=${offset}`,
+          { headers },
+        );
+        if (!res.ok) break;
+        const data = await res.json();
+        const page: Project[] = data.projects ?? [];
+        collected.push(...page);
+        if (page.length < PAGE_SIZE) break;
+      }
+      if (!cancelled) {
+        setProjects(collected);
+        setLoading(false);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [getToken]);
 
   const analysis = useMemo(
     () => getVisibilitySnapshot(projects, brand, category),
     [projects, brand, category],
   );
+
+  if (loading) {
+    return <p className="text-sm text-[var(--color-gray-600)]">Loading the index…</p>;
+  }
 
   return (
     <div className="space-y-8">

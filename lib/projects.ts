@@ -46,10 +46,23 @@ function releaseSlot(): void {
   if (next) next();
 }
 
+// Server-side only (this module never runs in the browser -- see the
+// roadmap #9 comment above). SPECINDEX_BUILD_TOKEN authorizes `next build`'s
+// bulk reads against /v1/projects and /v1/projects/map-points, which now
+// require either this or a signed-in Clerk session (api/main.py's
+// require_clerk_user_or_build_token). Unset locally is fine -- /v1/stats,
+// /v1/projects/facets, and the single-project teaser endpoint stay
+// unauthenticated either way, so local dev without the secret still works
+// for everything except full project listing.
+const BUILD_TOKEN = process.env.SPECINDEX_BUILD_TOKEN || "";
+
 async function limitedFetch(url: string, init?: RequestInit): Promise<Response> {
   await acquireSlot();
   try {
-    return await fetch(url, init);
+    const headers = BUILD_TOKEN
+      ? { ...init?.headers, "X-Build-Token": BUILD_TOKEN }
+      : init?.headers;
+    return await fetch(url, { ...init, headers });
   } finally {
     releaseSlot();
   }
@@ -112,6 +125,15 @@ async function fetchPage(offset: number, attempt = 1): Promise<ProjectsListRespo
 function normalizeProject(p: Project): Project {
   return {
     ...p,
+    // Public teaser rows (gated: true, see lib/types.ts) omit these scalars
+    // entirely rather than sending null, so they'd otherwise be `undefined`
+    // at runtime despite the type saying `string`/`number | null`.
+    estimated_value_usd: p.estimated_value_usd ?? null,
+    square_footage: p.square_footage ?? null,
+    owner: p.owner ?? "",
+    architect: p.architect ?? "",
+    general_contractor: p.general_contractor ?? "",
+    open_for: p.open_for ?? "",
     key_specs: p.key_specs ?? [],
     mentioned_brands: p.mentioned_brands ?? [],
     competitor_watch: p.competitor_watch ?? [],

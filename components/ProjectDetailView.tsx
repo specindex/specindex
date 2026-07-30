@@ -553,6 +553,14 @@ export function ProjectDetailView({ project }: { project: Project }) {
 
           {CLERK_ENABLED && <TriageNav projectId={project.id} />}
 
+          {project.gated && (
+            <div className="mt-5 rounded-lg border border-[var(--color-amber)] bg-[#fffbeb] p-4 text-sm text-[var(--color-ink)]">
+              You&apos;re seeing the public summary. Sign in to see estimated value,
+              square footage, owner, architect, general contractor, and sourced
+              documents for this project.
+            </div>
+          )}
+
           {hasEnrichment && (
             <div className="mt-5">
               <PipelineBar checkedAt={project.enrichment?.checked_at} />
