@@ -17,6 +17,22 @@ gap. See each doc's own "Gemini Review Findings" section for the full list.
 corpus (see Immediate next steps, previously blocked) is now loaded into
 production Postgres — 205,161 → 328,327 real projects live.
 
+**Status update, end of day 2026-07-30: every P0 item in the master
+roadmap is now shipped and live** — 5 new migrations (027-031) applied
+directly to production Postgres, backend redeployed and verified,
+frontend build passing clean. Covers all four areas: the `user_staff_roles`
+authorization foundation, enrichment fingerprint-gating with cost logging,
+first-party attribution capture + JSON-LD structured data, and the
+API-key auth primitive. One real deploy bug was caught and fixed along
+the way (two new endpoints defined before `app = FastAPI(...)` existed,
+crashing the container on boot) — verified via a local module import
+before redeploying, not just a green CI check. See
+`00-MASTER-ROADMAP.md`'s P0 section for the item-by-item list. Two
+manual checks remain the founder's to do, not verifiable from this
+environment: signing into `/ops/crm` to confirm it renders under the new
+role gate, and confirming a UTM-tagged demo submission captures
+correctly.
+
 **Correction carried through from doc 02, applies to doc 04 as well:**
 the repo migrated from Clerk to Firebase Auth (`db/migrations/025_clerk_to_firebase_auth.sql`)
 concurrently with this work. Doc 04's productization plan mentions "wiring

@@ -273,9 +273,9 @@ practical outcome: a founder opening a page and seeing the hottest lead at the t
 
 ## 5. Action Items
 
-- P0: Add `FAQPage` JSON-LD to `components/marketing/FAQ.tsx` and `Organization`/`SoftwareApplication` JSON-LD to `app/page.tsx`.
-- P0: Add `utm_source`/`utm_medium`/`utm_campaign`/`referrer` columns to `contact_submissions` and the `ContactSubmission` model.
-- P0: Add a first-party (non-blockable) `localStorage` UTM/referrer capture script as the primary attribution source — don't rely on PostHog alone (Gemini: ad-blockers drop 20-35% of client-side tracking).
+- ✅ SHIPPED 2026-07-30: Add `FAQPage` JSON-LD to `components/marketing/FAQ.tsx` and `Organization`/`SoftwareApplication` JSON-LD to `app/page.tsx`.
+- ✅ SHIPPED 2026-07-30 as migration 030: Add `utm_source`/`utm_medium`/`utm_campaign`/`referrer` columns to `contact_submissions` and the `ContactSubmission` model.
+- ✅ SHIPPED 2026-07-30 (`lib/attribution.ts`): Add a first-party (non-blockable) `localStorage` UTM/referrer capture script as the primary attribution source — don't rely on PostHog alone (Gemini: ad-blockers drop 20-35% of client-side tracking).
 - P1: Add `generateMetadata` to `app/page.tsx`, `app/visibility/page.tsx`, `app/reporting/page.tsx`.
 - P1: Add PostHog Cloud snippet to `app/layout.tsx` and thread `distinct_id` into the `/v1/contact` POST body (session replay/funnels, not primary attribution).
 - P1: Build programmatic directory/hub pages (`/projects/[state]/[category]`) — Gemini-flagged as the single highest-leverage SEO fix, supersedes the sitemap-index-only approach.

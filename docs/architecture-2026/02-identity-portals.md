@@ -368,10 +368,10 @@ Real requirements, in priority order:
 
 ## 6. Priority action items
 
-- P0: Add `026_user_staff_roles.sql` (staff-only join table) + `subscription_tier`/`is_active` columns on `user_profiles` (revised per Gemini review — two structures, not one mixed table)
-- P0: Build `require_role()` FastAPI dependency factory and re-point `/v1/ops/crm` at it instead of `require_admin_user`
-- P0: Backfill current `ADMIN_EMAILS` allowlist into `user_staff_roles` as `super_admin` rows
-- P0: Check `is_active` inside `require_firebase_user` itself, not just `require_role` — closes the ~1hr JWT-revocation gap Gemini flagged
+- ✅ SHIPPED 2026-07-30 as migration 027 (026 taken by concurrent work): Add `user_staff_roles` (staff-only join table) + `subscription_tier`/`is_active` columns on `user_profiles`.
+- ✅ SHIPPED 2026-07-30: Build `require_role()` FastAPI dependency factory and re-point `/v1/ops/crm` at it instead of `require_admin_user`
+- ✅ SHIPPED 2026-07-30 (live): Backfill current `ADMIN_EMAILS` allowlist into `user_staff_roles` as `super_admin` rows
+- ✅ SHIPPED 2026-07-30: Check `is_active` inside `require_firebase_user` itself, not just `require_role` — closes the ~1hr JWT-revocation gap Gemini flagged
 - P1: Execute `docs/PRD_SIGNUP_CRM.md` Phase 1 migration (full_name, phone, lifecycle_stage, etc. on user_profiles)
 - P1: Build admin portal customer-list page gated on `support_admin`/`super_admin`
 - P1: Build read-only "view as customer" admin query path (never mint a real customer session)
