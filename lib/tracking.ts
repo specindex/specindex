@@ -1,8 +1,8 @@
 // Talks to /v1/me/tracked-projects and /v1/me/saved-views (db/migrations/
 // 022_user_tracked_projects.sql, 024_user_saved_views.sql). Same
-// fresh-token-per-call pattern as lib/userProfile.ts -- Clerk session
-// tokens expire in ~60s, so every call re-fetches via the
-// `fastapi_backend` template rather than reusing a cached token.
+// fresh-token-per-call pattern as lib/userProfile.ts -- see that file for
+// why (short-lived Firebase ID tokens, re-fetched via getIdToken() on every
+// call rather than cached).
 
 const API_BASE = "https://specindex-api-gmm6irqe4q-uc.a.run.app";
 

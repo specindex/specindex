@@ -3,8 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useAuth } from "@clerk/clerk-react";
-import { CLERK_ENABLED } from "@/components/ClerkProviders";
+import { FIREBASE_AUTH_ENABLED, useFirebaseAuth } from "@/components/FirebaseAuthProvider";
 import { StatusPill } from "@/components/StatusPill";
 import { AskPanel } from "@/components/AskPanel";
 import { formatDate, formatSf, formatUsd, stateName, typeLabel } from "@/lib/format";
@@ -32,7 +31,7 @@ const STAGE_LABELS: Record<TrackedStage, string> = {
 // (static SSG pages, the client-rendered fallback, direct links) that don't
 // all have that list in scope.
 function PipelineBox({ projectId }: { projectId: string }) {
-  const { getToken } = useAuth();
+  const { getToken } = useFirebaseAuth();
   const [stage, setStage] = useState<TrackedStage | null>(null);
   const [note, setNote] = useState<string | null>(null);
   const [loaded, setLoaded] = useState(false);
@@ -114,12 +113,12 @@ function PipelineBox({ projectId }: { projectId: string }) {
   );
 }
 
-// useAuth() requires a <ClerkProvider> ancestor, which only exists when
-// CLERK_ENABLED -- kept in its own component (only mounted behind that
-// flag, same pattern as PipelineBox above) rather than called directly in
-// ProjectDetailView's body, which renders unconditionally.
+// useFirebaseAuth() requires a <FirebaseAuthProvider> ancestor, which only
+// exists when FIREBASE_AUTH_ENABLED -- kept in its own component (only
+// mounted behind that flag, same pattern as PipelineBox above) rather than
+// called directly in ProjectDetailView's body, which renders unconditionally.
 function ProjectAskPanel({ projectId }: { projectId: string }) {
-  const { getToken } = useAuth();
+  const { getToken } = useFirebaseAuth();
   return (
     <AskPanel
       title="Ask about this project"
@@ -568,7 +567,7 @@ export function ProjectDetailView({ project }: { project: Project }) {
             ← All projects
           </Link>
 
-          {CLERK_ENABLED && <TriageNav projectId={project.id} />}
+          {FIREBASE_AUTH_ENABLED && <TriageNav projectId={project.id} />}
 
           {project.gated && (
             <div className="mt-5 rounded-lg border border-[var(--color-amber)] bg-[#fffbeb] p-4 text-sm text-[var(--color-ink)]">
@@ -695,7 +694,7 @@ export function ProjectDetailView({ project }: { project: Project }) {
                   </div>
                 );
               })()}
-              {CLERK_ENABLED && <PipelineBox projectId={project.id} />}
+              {FIREBASE_AUTH_ENABLED && <PipelineBox projectId={project.id} />}
               </div>
             </div>
 
@@ -832,7 +831,7 @@ export function ProjectDetailView({ project }: { project: Project }) {
 
         {/* RIGHT: workspace / lookup rail */}
         <div className="lg:col-span-5 space-y-6">
-          {CLERK_ENABLED && <ProjectAskPanel projectId={project.id} />}
+          {FIREBASE_AUTH_ENABLED && <ProjectAskPanel projectId={project.id} />}
 
           <ActivityFeed project={project} />
 

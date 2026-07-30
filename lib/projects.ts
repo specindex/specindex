@@ -49,8 +49,8 @@ function releaseSlot(): void {
 // Server-side only (this module never runs in the browser -- see the
 // roadmap #9 comment above). SPECINDEX_BUILD_TOKEN authorizes `next build`'s
 // bulk reads against /v1/projects and /v1/projects/map-points, which now
-// require either this or a signed-in Clerk session (api/main.py's
-// require_clerk_user_or_build_token). Unset locally is fine -- /v1/stats,
+// require either this or a signed-in Firebase session (api/main.py's
+// require_firebase_user_or_build_token). Unset locally is fine -- /v1/stats,
 // /v1/projects/facets, and the single-project teaser endpoint stay
 // unauthenticated either way, so local dev without the secret still works
 // for everything except full project listing.

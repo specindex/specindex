@@ -1,9 +1,13 @@
 // Talks to the /v1/me/profile endpoints added in PR 2 (api/main.py,
-// db/migrations/021_user_profiles.sql). Every call fetches a fresh token
-// via the `fastapi_backend` Clerk JWT template immediately before the
-// request -- Clerk session tokens expire in ~60s, so a cached/reused token
-// would intermittently 401. The template is what carries the `email`
-// claim upsert_my_profile requires (plain default tokens don't include it).
+// db/migrations/021_user_profiles.sql). Every call fetches a fresh Firebase
+// ID token immediately before the request via getIdToken() -- tokens are
+// short-lived (~1hr) and Firebase's SDK auto-refreshes the underlying
+// session, but re-fetching per call keeps this code from ever holding a
+// stale token across a page that's been open a while. The `template`
+// option on GetToken is a no-op carried over from the Clerk-era signature
+// (a Clerk JWT Template was needed there to add an `email` claim; Firebase
+// ID tokens include it natively) -- kept only so call sites didn't need to
+// change shape during the auth-provider swap.
 
 const API_BASE = "https://specindex-api-gmm6irqe4q-uc.a.run.app";
 

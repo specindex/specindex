@@ -12,108 +12,102 @@ from datetime import datetime, timezone
 from email.message import EmailMessage
 from typing import Any
 
-import jwt  # PyJWT
 import psycopg2
 import psycopg2.extras
 import psycopg2.pool
 from fastapi import Depends, FastAPI, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import Response
-from jwt import PyJWKClient
+from google.auth.transport import requests as google_auth_requests
+from google.oauth2 import id_token as google_id_token
 from pydantic import BaseModel, Field, field_validator
 
 DATABASE_URL = os.environ.get("DATABASE_URL", "")
 DOCUMENTS_GCS_BUCKET = "specindex-ai-raw-documents"
 
-# Clerk auth (see db/migrations/021_user_profiles.sql, /v1/me/profile below).
-# No CLERK_SECRET_KEY needed -- verification is pure JWKS signature/claims
-# checking against Clerk's public keys, not a Backend API credential.
-CLERK_ISSUER = os.environ.get("CLERK_ISSUER", "")
-CLERK_AUTHORIZED_PARTY = os.environ.get("CLERK_AUTHORIZED_PARTY", "")
-_jwks_client: PyJWKClient | None = None
+# Firebase Auth (see db/migrations/021_user_profiles.sql, /v1/me/profile
+# below). Replaced Clerk 2026-07-29 -- same GCP project ("specindex-ai")
+# already backs Postgres/Cloud Run/Vertex, so this is one fewer auth vendor
+# to run, not an additional one. verify_firebase_token checks the token's
+# signature against Google's public certs, its issuer
+# (https://securetoken.google.com/{project}), and its audience (the
+# project id) in one call -- no service-account credential needed for
+# verification itself, the same "public-key verification only" shape the
+# old Clerk JWKS check had.
+FIREBASE_PROJECT_ID = os.environ.get("FIREBASE_PROJECT_ID", "")
+_google_auth_request: google_auth_requests.Request | None = None
 
 
-def _get_jwks_client() -> PyJWKClient:
-    global _jwks_client
-    if _jwks_client is None:
-        _jwks_client = PyJWKClient(f"{CLERK_ISSUER}/.well-known/jwks.json")
-    return _jwks_client
+def _get_google_auth_request() -> google_auth_requests.Request:
+    global _google_auth_request
+    if _google_auth_request is None:
+        _google_auth_request = google_auth_requests.Request()
+    return _google_auth_request
 
 
-def _verify_clerk_token(request: Request) -> dict[str, Any]:
-    """Verifies the bearer token against Clerk's JWKS, returns the full
+def _verify_firebase_token(request: Request) -> dict[str, Any]:
+    """Verifies the bearer token as a Firebase ID token, returns the full
     claims dict. Raises 401 on anything wrong. Only wired into /v1/me/*
     endpoints -- every other endpoint stays untouched/anonymous.
 
-    JWKS lookup is a synchronous HTTP call to Clerk on a cache miss (blocks
-    the handling thread during a Clerk network blip) -- accepted tradeoff at
-    this traffic level; keys are cached in-process after first fetch and
-    rotate rarely."""
+    Google's public certs are cached in-process by the underlying HTTP
+    transport after first fetch (same tradeoff the old Clerk JWKS client
+    had) -- a cache miss is a synchronous network call that blocks the
+    handling thread, accepted at this traffic level."""
     auth = request.headers.get("authorization", "")
     if not auth.startswith("Bearer "):
         raise HTTPException(status_code=401, detail="Missing bearer token")
     token = auth.removeprefix("Bearer ")
     try:
-        signing_key = _get_jwks_client().get_signing_key_from_jwt(token)
-        claims = jwt.decode(
-            token,
-            signing_key.key,
-            algorithms=["RS256"],
-            issuer=CLERK_ISSUER,
-            leeway=10,  # clock skew tolerance between Cloud Run and Clerk's issuer
-            options={"require": ["exp", "iat", "sub"]},
+        claims = google_id_token.verify_firebase_token(
+            token, _get_google_auth_request(), audience=FIREBASE_PROJECT_ID
         )
-    except jwt.PyJWTError as e:
+    except ValueError as e:
         raise HTTPException(status_code=401, detail=f"Invalid token: {e}") from e
-    # Direct equality, not `not in (None, X)` -- a token with no azp claim at
-    # all must NOT silently pass this check (caught in design review: the
-    # tuple form lets a missing claim slip through undetected).
-    if CLERK_AUTHORIZED_PARTY and claims.get("azp") != CLERK_AUTHORIZED_PARTY:
-        raise HTTPException(status_code=401, detail="Token not issued for this app")
+    if claims is None:
+        raise HTTPException(status_code=401, detail="Invalid token")
     return claims
 
 
-def require_clerk_user(request: Request) -> str:
-    """FastAPI dependency returning just the Clerk user id (`sub` claim)."""
-    return _verify_clerk_token(request)["sub"]
+def require_firebase_user(request: Request) -> str:
+    """FastAPI dependency returning just the Firebase user id (`sub` claim,
+    aka the Firebase uid)."""
+    return _verify_firebase_token(request)["sub"]
 
 
 # `next build` (generateStaticParams, getStats/getSampleProjects at build
 # time -- see lib/projects.ts) reads bulk project data server-side with no
-# Clerk session to attach, so a plain require_clerk_user gate on /v1/projects
-# would 401 the build itself. SPECINDEX_BUILD_TOKEN is a second, separate
-# credential (not a user token) the build environment sends instead; either
-# it or a valid Clerk session satisfies this dependency. Rotate by changing
-# the env var on Cloud Run + the CI build secret together -- there's no
-# per-token revocation, it's a single shared static string.
+# Firebase session to attach, so a plain require_firebase_user gate on
+# /v1/projects would 401 the build itself. SPECINDEX_BUILD_TOKEN is a
+# second, separate credential (not a user token) the build environment
+# sends instead; either it or a valid Firebase session satisfies this
+# dependency. Rotate by changing the env var on Cloud Run + the CI build
+# secret together -- there's no per-token revocation, it's a single shared
+# static string.
 SPECINDEX_BUILD_TOKEN = os.environ.get("SPECINDEX_BUILD_TOKEN", "")
 
 
-def require_clerk_user_or_build_token(request: Request) -> str:
-    """FastAPI dependency: accepts either a valid Clerk session (browser,
+def require_firebase_user_or_build_token(request: Request) -> str:
+    """FastAPI dependency: accepts either a valid Firebase session (browser,
     signed-in user) or the build-time shared secret via X-Build-Token
-    (next build's server-side data fetches). Returns the Clerk user id, or
+    (next build's server-side data fetches). Returns the Firebase uid, or
     the literal string "build" when authorized via the build token, so
     callers that don't care which can just depend on this."""
     build_token = request.headers.get("x-build-token", "")
     if SPECINDEX_BUILD_TOKEN and build_token and build_token == SPECINDEX_BUILD_TOKEN:
         return "build"
-    return require_clerk_user(request)
+    return require_firebase_user(request)
 
 
-def require_clerk_user_with_email(request: Request) -> tuple[str, str]:
-    """FastAPI dependency returning (clerk_user_id, email). Requires the
-    Clerk JWT template used by this app to include an `email` claim (one-
-    time Clerk Dashboard config: JWT Templates -> add `email`) -- reading it
-    from the verified token avoids a second network call per request and
-    avoids trusting a client-supplied identity field."""
-    claims = _verify_clerk_token(request)
+def require_firebase_user_with_email(request: Request) -> tuple[str, str]:
+    """FastAPI dependency returning (firebase_uid, email). Firebase ID
+    tokens carry `email` natively for any provider that returns one (Google
+    sign-in, email/password, etc.) -- no dashboard-configured claims
+    template needed, unlike Clerk."""
+    claims = _verify_firebase_token(request)
     email = claims.get("email")
     if not email:
-        raise HTTPException(
-            status_code=401,
-            detail="Token missing email claim -- check the Clerk JWT template includes it",
-        )
+        raise HTTPException(status_code=401, detail="Token missing email claim")
     return claims["sub"], email
 
 # Standard county/county-equivalent counts per state, used only to compute
@@ -374,7 +368,7 @@ def _to_public_teaser(detail: dict[str, Any]) -> dict[str, Any]:
     return {k: detail.get(k) for k in _PUBLIC_TEASER_FIELDS} | {"gated": True}
 
 
-def _has_real_clerk_session(request: Request) -> bool:
+def _has_real_firebase_session(request: Request) -> bool:
     """True only for an actual signed-in browser session -- NOT the build
     token, which authorizes bulk build-time reads but should still only
     ever see the public teaser (the whole point is the static HTML build
@@ -383,7 +377,7 @@ def _has_real_clerk_session(request: Request) -> bool:
     if not auth.startswith("Bearer "):
         return False
     try:
-        _verify_clerk_token(request)
+        _verify_firebase_token(request)
         return True
     except HTTPException:
         return False
@@ -507,7 +501,7 @@ def list_projects(
     sort: str = Query(default="score", pattern="^(score|name|value|recency)$"),
     limit: int = Query(default=50, ge=1, le=100),
     offset: int = Query(default=0, ge=0),
-    _auth: str = Depends(require_clerk_user_or_build_token),
+    _auth: str = Depends(require_firebase_user_or_build_token),
 ):
     clauses, params = _project_filter_clauses(
         state, status, project_type, county, category, year, q, new_since_days, has_documents, document_type
@@ -619,7 +613,7 @@ def project_map_points(
     new_since_days: int | None = Query(default=None, ge=1, le=365),
     has_documents: bool | None = Query(default=None),
     document_type: str | None = Query(default=None),
-    _auth: str = Depends(require_clerk_user_or_build_token),
+    _auth: str = Depends(require_firebase_user_or_build_token),
 ):
     """Customer-facing equivalent of /v1/ops/map-points -- bounded
     to whatever filters the visitor currently has set on /projects rather
@@ -1082,7 +1076,7 @@ def get_project(project_id: str, request: Request):
         # HTTP, so trusting it directly produces http:// links from an
         # https-only service. X-Forwarded-Proto (set by Cloud Run's
         # proxy) has the real client-facing scheme.
-        signed_in = _has_real_clerk_session(request)
+        signed_in = _has_real_firebase_session(request)
         if not signed_in:
             return _to_public_teaser(detail)
 
@@ -1226,18 +1220,18 @@ def _project_ask_context(conn, project_id: str) -> tuple[str, dict[str, Any]]:
 
 
 @app.post("/v1/projects/{project_id}/ask")
-def ask_about_project(project_id: str, body: AskRequest, clerk_user_id: str = Depends(require_clerk_user)):
+def ask_about_project(project_id: str, body: AskRequest, firebase_uid: str = Depends(require_firebase_user)):
     with get_conn() as conn:
         context, _ = _project_ask_context(conn, project_id)
     answer = _ask_gemini(context, body.question)
     return {"answer": answer}
 
 
-def _territory_ask_context(conn, clerk_user_id: str) -> str:
+def _territory_ask_context(conn, firebase_uid: str) -> str:
     with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
         cur.execute(
-            "SELECT territory_states, categories FROM user_profiles WHERE clerk_user_id = %s",
-            (clerk_user_id,),
+            "SELECT territory_states, categories FROM user_profiles WHERE firebase_uid = %s",
+            (firebase_uid,),
         )
         profile_row = cur.fetchone()
     territory = (profile_row or {}).get("territory_states") or []
@@ -1251,12 +1245,12 @@ def _territory_ask_context(conn, clerk_user_id: str) -> str:
             FROM projects p
             LEFT JOIN project_scores ps ON ps.project_sk = p.project_sk
             LEFT JOIN user_tracked_projects t
-                ON t.project_sk = p.project_sk AND t.clerk_user_id = %s
+                ON t.project_sk = p.project_sk AND t.firebase_uid = %s
             WHERE (%s::text[] = '{}' OR p.state = ANY(%s::text[]))
             ORDER BY (t.id IS NOT NULL) DESC, ps.score DESC NULLS LAST
             LIMIT 40
             """,
-            (clerk_user_id, territory, territory),
+            (firebase_uid, territory, territory),
         )
         rows = cur.fetchall()
 
@@ -1275,9 +1269,9 @@ def _territory_ask_context(conn, clerk_user_id: str) -> str:
 
 
 @app.post("/v1/me/ask")
-def ask_about_my_territory(body: AskRequest, clerk_user_id: str = Depends(require_clerk_user)):
+def ask_about_my_territory(body: AskRequest, firebase_uid: str = Depends(require_firebase_user)):
     with get_conn() as conn:
-        context = _territory_ask_context(conn, clerk_user_id)
+        context = _territory_ask_context(conn, firebase_uid)
     answer = _ask_gemini(context, body.question)
     return {"answer": answer}
 
@@ -1383,7 +1377,7 @@ class UserProfileUpdate(BaseModel):
 
 
 @app.get("/v1/me/profile")
-def get_my_profile(clerk_user_id: str = Depends(require_clerk_user)):
+def get_my_profile(firebase_uid: str = Depends(require_firebase_user)):
     """Backs the first-sign-in ProfileCaptureModal and the personalized
     /projects/ view (components/ProjectsDashboard.tsx) -- `onboarded: false`
     with no row yet is the normal, expected state for a brand-new user, not
@@ -1392,8 +1386,8 @@ def get_my_profile(clerk_user_id: str = Depends(require_clerk_user)):
         with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
             cur.execute(
                 "SELECT company, territory_states, categories, onboarded_at "
-                "FROM user_profiles WHERE clerk_user_id = %s",
-                (clerk_user_id,),
+                "FROM user_profiles WHERE firebase_uid = %s",
+                (firebase_uid,),
             )
             row = cur.fetchone()
     if row is None:
@@ -1409,20 +1403,21 @@ def get_my_profile(clerk_user_id: str = Depends(require_clerk_user)):
 @app.post("/v1/me/profile")
 def upsert_my_profile(
     body: UserProfileUpdate,
-    user: tuple[str, str] = Depends(require_clerk_user_with_email),
+    user: tuple[str, str] = Depends(require_firebase_user_with_email),
 ):
     """Upsert covers both the first-sign-in capture write and any later
     'edit your territory' action -- no third endpoint needed. email is
     re-read from the verified JWT on every call (never trusted from a prior
-    write), so it can't go stale if the user changes it in Clerk later."""
-    clerk_user_id, email = user
+    write), so it can't go stale if the user changes it with their sign-in
+    provider later."""
+    firebase_uid, email = user
     with get_conn() as conn:
         with conn.cursor() as cur:
             cur.execute(
                 """
-                INSERT INTO user_profiles (clerk_user_id, email, company, territory_states, categories, onboarded_at)
+                INSERT INTO user_profiles (firebase_uid, email, company, territory_states, categories, onboarded_at)
                 VALUES (%s, %s, %s, %s, %s, now())
-                ON CONFLICT (clerk_user_id) DO UPDATE SET
+                ON CONFLICT (firebase_uid) DO UPDATE SET
                     email = EXCLUDED.email,
                     company = EXCLUDED.company,
                     territory_states = EXCLUDED.territory_states,
@@ -1430,7 +1425,7 @@ def upsert_my_profile(
                     onboarded_at = COALESCE(user_profiles.onboarded_at, now()),
                     updated_at = now()
                 """,
-                (clerk_user_id, email, body.company, body.territory_states, body.categories),
+                (firebase_uid, email, body.company, body.territory_states, body.categories),
             )
         conn.commit()
     return {"ok": True}
@@ -1452,7 +1447,7 @@ class TrackedProjectUpdate(BaseModel):
 
 
 @app.get("/v1/me/tracked-projects")
-def list_my_tracked_projects(clerk_user_id: str = Depends(require_clerk_user)):
+def list_my_tracked_projects(firebase_uid: str = Depends(require_firebase_user)):
     """Backs the signed-in home's 'Tracked' pipeline view. Joins against
     `projects` for display fields rather than the full row_to_project() +
     enrichment fetch used by /v1/projects/{id} -- this list doesn't need
@@ -1468,10 +1463,10 @@ def list_my_tracked_projects(clerk_user_id: str = Depends(require_clerk_user)):
                     t.stage, t.note, t.updated_at
                 FROM user_tracked_projects t
                 JOIN projects p ON p.project_sk = t.project_sk
-                WHERE t.clerk_user_id = %s
+                WHERE t.firebase_uid = %s
                 ORDER BY t.updated_at DESC
                 """,
-                (clerk_user_id,),
+                (firebase_uid,),
             )
             rows = cur.fetchall()
     return {
@@ -1498,7 +1493,7 @@ def list_my_tracked_projects(clerk_user_id: str = Depends(require_clerk_user)):
 def upsert_tracked_project(
     project_id: str,
     body: TrackedProjectUpdate,
-    clerk_user_id: str = Depends(require_clerk_user),
+    firebase_uid: str = Depends(require_firebase_user),
 ):
     """Full-replace upsert (same convention as upsert_my_profile) -- the
     caller always sends the complete stage+note, not a partial patch. The
@@ -1514,30 +1509,30 @@ def upsert_tracked_project(
             project_sk = row[0]
             cur.execute(
                 """
-                INSERT INTO user_tracked_projects (clerk_user_id, project_sk, stage, note)
+                INSERT INTO user_tracked_projects (firebase_uid, project_sk, stage, note)
                 VALUES (%s, %s, %s, %s)
-                ON CONFLICT (clerk_user_id, project_sk) DO UPDATE SET
+                ON CONFLICT (firebase_uid, project_sk) DO UPDATE SET
                     stage = EXCLUDED.stage,
                     note = EXCLUDED.note,
                     updated_at = now()
                 """,
-                (clerk_user_id, project_sk, body.stage, body.note),
+                (firebase_uid, project_sk, body.stage, body.note),
             )
         conn.commit()
     return {"ok": True}
 
 
 @app.delete("/v1/me/tracked-projects/{project_id}")
-def untrack_project(project_id: str, clerk_user_id: str = Depends(require_clerk_user)):
+def untrack_project(project_id: str, firebase_uid: str = Depends(require_firebase_user)):
     with get_conn() as conn:
         with conn.cursor() as cur:
             cur.execute(
                 """
                 DELETE FROM user_tracked_projects
-                WHERE clerk_user_id = %s
+                WHERE firebase_uid = %s
                   AND project_sk = (SELECT project_sk FROM projects WHERE project_id = %s)
                 """,
-                (clerk_user_id, project_id),
+                (firebase_uid, project_id),
             )
         conn.commit()
     return {"ok": True}
@@ -1558,13 +1553,13 @@ class SavedViewCreate(BaseModel):
 
 
 @app.get("/v1/me/saved-views")
-def list_my_saved_views(clerk_user_id: str = Depends(require_clerk_user)):
+def list_my_saved_views(firebase_uid: str = Depends(require_firebase_user)):
     with get_conn() as conn:
         with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
             cur.execute(
                 "SELECT id, name, territory_states, categories, created_at "
-                "FROM user_saved_views WHERE clerk_user_id = %s ORDER BY created_at",
-                (clerk_user_id,),
+                "FROM user_saved_views WHERE firebase_uid = %s ORDER BY created_at",
+                (firebase_uid,),
             )
             rows = cur.fetchall()
     return {
@@ -1582,16 +1577,16 @@ def list_my_saved_views(clerk_user_id: str = Depends(require_clerk_user)):
 
 
 @app.post("/v1/me/saved-views")
-def create_my_saved_view(body: SavedViewCreate, clerk_user_id: str = Depends(require_clerk_user)):
+def create_my_saved_view(body: SavedViewCreate, firebase_uid: str = Depends(require_firebase_user)):
     with get_conn() as conn:
         with conn.cursor() as cur:
             cur.execute(
                 """
-                INSERT INTO user_saved_views (clerk_user_id, name, territory_states, categories)
+                INSERT INTO user_saved_views (firebase_uid, name, territory_states, categories)
                 VALUES (%s, %s, %s, %s)
                 RETURNING id
                 """,
-                (clerk_user_id, body.name, body.territory_states, body.categories),
+                (firebase_uid, body.name, body.territory_states, body.categories),
             )
             new_id = cur.fetchone()[0]
         conn.commit()
@@ -1599,16 +1594,16 @@ def create_my_saved_view(body: SavedViewCreate, clerk_user_id: str = Depends(req
 
 
 @app.delete("/v1/me/saved-views/{view_id}")
-def delete_my_saved_view(view_id: int, clerk_user_id: str = Depends(require_clerk_user)):
-    """clerk_user_id in the WHERE clause, not just view_id, so a user can
+def delete_my_saved_view(view_id: int, firebase_uid: str = Depends(require_firebase_user)):
+    """firebase_uid in the WHERE clause, not just view_id, so a user can
     never delete another user's saved view by guessing an id -- the
     delete silently no-ops if the id doesn't belong to the caller rather
     than leaking whether it exists via a 404 vs 200 distinction."""
     with get_conn() as conn:
         with conn.cursor() as cur:
             cur.execute(
-                "DELETE FROM user_saved_views WHERE id = %s AND clerk_user_id = %s",
-                (view_id, clerk_user_id),
+                "DELETE FROM user_saved_views WHERE id = %s AND firebase_uid = %s",
+                (view_id, firebase_uid),
             )
         conn.commit()
     return {"ok": True}

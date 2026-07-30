@@ -118,7 +118,7 @@ export type Project = {
   enrichment?: ProjectEnrichment;
   documents?: ProjectDocumentFile[];
   // True when GET /v1/projects/{id} returned the public teaser (no signed-in
-  // Clerk session) rather than the full record -- api/main.py's
+  // Firebase session) rather than the full record -- api/main.py's
   // _to_public_teaser. Value/GC/architect/owner/brands/sources/exact
   // coordinates are all omitted in that case, not just empty.
   gated?: boolean;

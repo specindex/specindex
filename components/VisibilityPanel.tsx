@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { useAuth } from "@clerk/clerk-react";
+import { useFirebaseAuth } from "@/components/FirebaseAuthProvider";
 import type { Project } from "@/lib/types";
 import { brandMentioned, formatUsd } from "@/lib/format";
 import { getVisibilitySnapshot } from "@/lib/stats";
@@ -41,10 +41,10 @@ function initialCategoryFromUrl(): string {
 // No `projects` prop anymore -- this used to receive the full sample baked
 // in at build time by app/visibility/page.tsx, which meant 2,000 real
 // project records shipped in public static HTML with no auth required.
-// Only ever mounted inside <ProjectsGate>, so useAuth() always has a real
-// signed-in session to draw a token from.
+// Only ever mounted inside <ProjectsGate>, so useFirebaseAuth() always has
+// a real signed-in session to draw a token from.
 export function VisibilityPanel() {
-  const { getToken } = useAuth();
+  const { getToken } = useFirebaseAuth();
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
   const [brand, setBrand] = useState("Acuity Brands");

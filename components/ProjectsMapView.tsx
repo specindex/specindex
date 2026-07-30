@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { useAuth } from "@clerk/clerk-react";
+import { useFirebaseAuth } from "@/components/FirebaseAuthProvider";
 import "leaflet/dist/leaflet.css";
 import { formatUsd } from "@/lib/format";
 import { buildQuery } from "./ProjectsDashboard";
@@ -39,7 +39,7 @@ export type ProjectsMapFilters = {
 type Props = { filters: ProjectsMapFilters };
 
 export function ProjectsMapView({ filters }: Props) {
-  const { getToken } = useAuth();
+  const { getToken } = useFirebaseAuth();
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<import("leaflet").Map | null>(null);
   const markersRef = useRef<import("leaflet").LayerGroup | null>(null);

@@ -1,7 +1,6 @@
 "use client";
 
-import { CLERK_ENABLED } from "@/components/ClerkProviders";
-import { SignInButton, useAuth } from "@clerk/clerk-react";
+import { FIREBASE_AUTH_ENABLED, useFirebaseAuth } from "@/components/FirebaseAuthProvider";
 
 // Gates access to live project data behind sign-in. Genuinely enforces the
 // gate (not just a UI overlay) because the wrapped children fetch their data
@@ -14,12 +13,14 @@ import { SignInButton, useAuth } from "@clerk/clerk-react";
 // those requires either dropping SSG for that route (loses SEO on those
 // pages) or real server-side auth -- a separate infra decision, not done
 // here.
-// `clerkAvailable` controls whether the Log In trigger renders as a real
-// <SignInButton> (a Clerk component -- throws without a <ClerkProvider>
-// ancestor) or a plain disabled-looking notice. The CLERK_ENABLED-false
-// caller path has no provider mounted at all, so it must never render an
-// actual Clerk component, only this same visual wall.
-function SignInWall({ clerkAvailable }: { clerkAvailable: boolean }) {
+// `onSignIn` controls whether the Log In trigger calls the real Firebase
+// signInWithPopup flow or renders a plain disabled-looking notice. Firebase
+// (unlike Clerk) ships no prebuilt modal sign-in component, so this passes a
+// callback rather than swapping in a vendor component -- the
+// FIREBASE_AUTH_ENABLED-false caller path has no provider mounted at all, so
+// it must never call useFirebaseAuth(), only render this same visual wall
+// with onSignIn={null}.
+function SignInWall({ onSignIn }: { onSignIn: (() => void) | null }) {
   return (
     <div className="mx-auto max-w-3xl px-5 py-16 md:px-8 md:py-24">
       <div className="card mx-auto max-w-lg p-10 text-center">
@@ -27,12 +28,10 @@ function SignInWall({ clerkAvailable }: { clerkAvailable: boolean }) {
         <p className="mt-3 text-[var(--color-gray-600)]">
           Project data is available to signed-in accounts. It&apos;s free to create one.
         </p>
-        {clerkAvailable ? (
-          <SignInButton mode="modal">
-            <button type="button" className="btn btn-demo mt-6">
-              Log In
-            </button>
-          </SignInButton>
+        {onSignIn ? (
+          <button type="button" onClick={onSignIn} className="btn btn-demo mt-6">
+            Log In
+          </button>
         ) : (
           <p className="mt-6 text-sm text-[var(--color-gray-400)]">
             Sign-in is temporarily unavailable. Email{" "}
@@ -48,13 +47,13 @@ function SignInWall({ clerkAvailable }: { clerkAvailable: boolean }) {
 }
 
 function AuthGate({ children }: { children: React.ReactNode }) {
-  const { isLoaded, isSignedIn } = useAuth();
+  const { isLoaded, isSignedIn, signIn } = useFirebaseAuth();
   if (!isLoaded) return null;
-  if (!isSignedIn) return <SignInWall clerkAvailable />;
+  if (!isSignedIn) return <SignInWall onSignIn={signIn} />;
   return <>{children}</>;
 }
 
 export function ProjectsGate({ children }: { children: React.ReactNode }) {
-  if (!CLERK_ENABLED) return <SignInWall clerkAvailable={false} />;
+  if (!FIREBASE_AUTH_ENABLED) return <SignInWall onSignIn={null} />;
   return <AuthGate>{children}</AuthGate>;
 }

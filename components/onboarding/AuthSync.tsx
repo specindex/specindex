@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useAuth } from "@clerk/clerk-react";
+import { useFirebaseAuth } from "@/components/FirebaseAuthProvider";
 import { ProfileCaptureModal } from "./ProfileCaptureModal";
 import {
   fetchMyProfile,
@@ -11,9 +11,9 @@ import {
   type UserProfileUpdate,
 } from "@/lib/userProfile";
 
-// Mounted inside components/ClerkProviders.tsx, only in the branch where a
-// publishable key exists -- useAuth() throws without a <ClerkProvider>
-// ancestor.
+// Mounted inside components/FirebaseAuthProvider.tsx, only in the branch
+// where Firebase config exists -- useFirebaseAuth() throws without a
+// <FirebaseAuthProvider> ancestor.
 
 const TERRITORY_KEY = "specindex:territory";
 const CATEGORY_KEY = "specindex:category";
@@ -38,7 +38,7 @@ function syncProfileToStorage(territory: string[], category: string) {
 }
 
 export function AuthSync() {
-  const { isLoaded, isSignedIn, getToken } = useAuth();
+  const { isLoaded, isSignedIn, getToken } = useFirebaseAuth();
   const wasSignedIn = useRef<boolean | null>(null);
   const checkedThisSignIn = useRef(false);
   const [showModal, setShowModal] = useState(false);

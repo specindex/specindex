@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { useAuth } from "@clerk/clerk-react";
+import { useFirebaseAuth } from "@/components/FirebaseAuthProvider";
 import type { Project } from "@/lib/types";
 import { formatDate, formatSf, formatUsd, stateName, typeLabel } from "@/lib/format";
 import { StatusPill } from "./StatusPill";
@@ -74,11 +74,11 @@ function readStoredValue(key: string): string | null {
 }
 
 export function ProjectsDashboard() {
-  // /v1/projects now requires either a Clerk session or the build-time
-  // token (api/main.py's require_clerk_user_or_build_token) -- this
+  // /v1/projects now requires either a Firebase session or the build-time
+  // token (api/main.py's require_firebase_user_or_build_token) -- this
   // component only ever mounts inside <ProjectsGate>'s signed-in branch,
   // so getToken() here always has a real session to draw from.
-  const { getToken } = useAuth();
+  const { getToken } = useFirebaseAuth();
   const authedFetch = useCallback(
     async (url: string) => {
       const token = await getToken();
