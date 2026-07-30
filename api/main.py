@@ -1455,9 +1455,31 @@ def deactivate_customer(
     functional, since require_api_key never checks user_profiles.is_active
     at all. api_keys.revoked_at already existed and require_api_key already
     checks it, so this is just wiring the existing revoke path in, not new
-    schema."""
+    schema.
+
+    Refuses to deactivate an org owner with active members (409) -- a
+    third review pass flagged that deactivating an org's owner would
+    otherwise leave the organization headless (no one able to manage the
+    roster or resolve billing) while member rows silently keep pointing at
+    it. Ownership must be transferred (or members removed) first; this
+    endpoint deliberately does not do that automatically, since picking a
+    new owner is a business decision, not a safe default to guess at."""
     with get_conn() as conn:
         with conn.cursor() as cur:
+            cur.execute(
+                """
+                SELECT o.id FROM organizations o
+                WHERE o.owner_uid = %s
+                  AND EXISTS (SELECT 1 FROM org_members m WHERE m.org_id = o.id AND m.role = 'member')
+                """,
+                (firebase_uid,),
+            )
+            if cur.fetchone() is not None:
+                raise HTTPException(
+                    status_code=409,
+                    detail="This user owns a team with active members -- transfer ownership or remove members before deactivating",
+                )
+
             cur.execute(
                 "UPDATE user_profiles SET is_active = false WHERE firebase_uid = %s RETURNING firebase_uid",
                 (firebase_uid,),
