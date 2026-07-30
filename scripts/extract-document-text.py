@@ -255,7 +255,7 @@ def main() -> int:
                     )
                 conn.commit()
             except Exception as e:  # noqa: BLE001 -- one bad document shouldn't kill the whole batch
-                print(f"  FAILED: {e}", file=sys.stderr)
+                print(f"  FAILED ({row.get('gcs_path') or row.get('url')}): {e}", file=sys.stderr)
                 if not args.dry_run:
                     with conn.cursor() as cur:
                         cur.execute(
