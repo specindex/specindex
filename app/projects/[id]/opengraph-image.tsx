@@ -65,8 +65,7 @@ export default async function OpengraphImage({ params }: { params: Promise<{ id:
 
         <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
           <div style={{ fontSize: 20, color: "#9a9c94", textTransform: "uppercase", letterSpacing: 2 }}>
-            {[city, state].filter(Boolean).join(", ")}
-            {type ? ` · ${type}` : ""}
+            {[city, state].filter(Boolean).join(", ") + (type ? ` · ${type}` : "")}
           </div>
           <div style={{ fontSize: 52, fontWeight: 700, lineHeight: 1.15, maxWidth: 1000 }}>
             {name}
