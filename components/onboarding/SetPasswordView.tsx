@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import {
   verifyPasswordResetCode,
@@ -142,9 +143,9 @@ export function SetPasswordView() {
       )}
 
       {invalid && (
-        <a href="/" className="btn btn-outline mt-6 block w-full text-center">
+        <Link href="/" className="btn btn-outline mt-6 block w-full text-center">
           Back to SpecIndex
-        </a>
+        </Link>
       )}
     </div>
   );
