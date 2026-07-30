@@ -74,9 +74,28 @@ def fetch_document_bytes(row: dict[str, Any]) -> bytes:
     # escaping, so a clean URL passes through unchanged.
     parts = urllib.parse.urlsplit(url)
     url = urllib.parse.urlunsplit(parts._replace(path=urllib.parse.quote(parts.path)))
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=90) as resp:
-        return resp.read()
+    # Real bug found 2026-07-30: batch of 100/100 uniform 404s, but the
+    # exact same URL curled directly returned 200 immediately after.
+    # step7-gemini-document-backfill.py (still running unattended in the
+    # background) uploads new files to this same bucket concurrently --
+    # if step9 requests a file within moments of it landing, GCS's edge
+    # (Cache-Control: public, max-age=3600, confirmed live on a real
+    # object's response headers) can cache the pre-upload "not found yet"
+    # response for up to an hour, so every retry from the same edge kept
+    # getting a stale 404 for an object that genuinely existed by then.
+    # Cache-Control: no-cache forces revalidation against origin instead
+    # of serving a cached miss; the bounded retry-on-404 below is a
+    # defensive second line in case a request still lands mid-upload.
+    for attempt in range(2):
+        req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Cache-Control": "no-cache"})
+        try:
+            with urllib.request.urlopen(req, timeout=90) as resp:
+                return resp.read()
+        except urllib.error.HTTPError as e:
+            if e.code == 404 and attempt == 0:
+                time.sleep(3)
+                continue
+            raise
 
 
 def native_page_text(page) -> str:
