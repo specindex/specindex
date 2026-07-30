@@ -12,7 +12,6 @@ export function ProfileCaptureModal({
   initialCategory,
   fullName,
   leadSource,
-  onDismiss,
   onSubmit,
 }: {
   initialTerritory: string[];
@@ -23,7 +22,6 @@ export function ProfileCaptureModal({
   // rather than typed.
   fullName: string | null;
   leadSource: string | null;
-  onDismiss: () => void;
   onSubmit: (body: UserProfileUpdate) => Promise<void>;
 }) {
   const [territory, setTerritory] = useState<string[]>(initialTerritory);
@@ -54,6 +52,14 @@ export function ProfileCaptureModal({
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (!phone.trim()) {
+      setError("Phone is required.");
+      return;
+    }
+    if (territory.length === 0) {
+      setError("Select at least one state.");
+      return;
+    }
     setSubmitting(true);
     setError(null);
     try {
@@ -62,7 +68,7 @@ export function ProfileCaptureModal({
         territory_states: territory,
         categories: category !== "all" ? [category] : [],
         full_name: fullName,
-        phone: phone.trim() || null,
+        phone: phone.trim(),
         role_title: roleTitle.trim() || null,
         lead_source: leadSource,
       });
@@ -170,29 +176,26 @@ export function ProfileCaptureModal({
                 htmlFor="profile-phone"
                 className="text-xs font-semibold uppercase tracking-wider text-[var(--color-gray-400)]"
               >
-                Phone <span className="normal-case text-[var(--color-gray-400)]">(optional)</span>
+                Phone
               </label>
               <input
                 id="profile-phone"
                 type="tel"
+                required
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="(555) 555-0123"
                 className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
               />
+              <p className="mt-1 text-xs text-[var(--color-gray-400)]">
+                For account support and setup assistance only.
+              </p>
             </div>
           </div>
 
           {error && <p className="text-sm text-red-600">{error}</p>}
 
-          <div className="flex items-center justify-between gap-3 pt-2">
-            <button
-              type="button"
-              onClick={onDismiss}
-              className="text-sm font-medium text-[var(--color-gray-600)] hover:text-[var(--color-ink)]"
-            >
-              Skip for now
-            </button>
+          <div className="flex items-center justify-end gap-3 pt-2">
             <button type="submit" disabled={submitting} className="btn btn-primary disabled:opacity-60">
               {submitting ? "Saving…" : "Save & continue"}
             </button>
