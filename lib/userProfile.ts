@@ -45,6 +45,10 @@ export type UserProfileUpdate = {
   phone: string | null;
   role_title: string | null;
   lead_source: string | null;
+  // Onboarding wizard step 2 additions (migration 043). See
+  // ProfileCaptureModal's own comments for the full reasoning.
+  territory_refinement: string | null;
+  inferred_lead_source: string | null;
 };
 
 type GetToken = (options?: { template?: string }) => Promise<string | null>;

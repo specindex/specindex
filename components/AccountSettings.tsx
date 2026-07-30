@@ -99,6 +99,8 @@ export function AccountSettings() {
         phone: phone.trim() || null,
         role_title: roleTitle.trim() || null,
         lead_source: null,
+        territory_refinement: null,
+        inferred_lead_source: null,
       });
       setSaved(true);
     } catch {

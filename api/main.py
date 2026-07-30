@@ -2002,6 +2002,14 @@ class UserProfileUpdate(BaseModel):
     phone: str | None = Field(default=None, max_length=50)
     role_title: str | None = Field(default=None, max_length=200)
     lead_source: str | None = Field(default=None, max_length=200)
+    # Wizard step 2 additions (migration 043, Gemini-reviewed design):
+    # territory_refinement is optional free text below the state
+    # multi-select (a rep's real territory is often sub-state -- counties,
+    # metros). inferred_lead_source is the pathname-based guess AuthSync
+    # already computes automatically, kept as a secondary signal now that
+    # lead_source itself is an explicit wizard answer, not replaced by it.
+    territory_refinement: str | None = Field(default=None, max_length=500)
+    inferred_lead_source: str | None = Field(default=None, max_length=200)
 
     @field_validator("territory_states")
     @classmethod
@@ -2223,8 +2231,9 @@ def upsert_my_profile(
                 """
                 INSERT INTO user_profiles
                     (firebase_uid, email, company, territory_states, categories,
-                     full_name, phone, role_title, lead_source, onboarded_at)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, now())
+                     full_name, phone, role_title, lead_source, territory_refinement,
+                     inferred_lead_source, onboarded_at)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, now())
                 ON CONFLICT (firebase_uid) DO UPDATE SET
                     email = EXCLUDED.email,
                     company = EXCLUDED.company,
@@ -2232,15 +2241,17 @@ def upsert_my_profile(
                     categories = EXCLUDED.categories,
                     phone = EXCLUDED.phone,
                     role_title = EXCLUDED.role_title,
-                    -- full_name/lead_source are captured once, client-side,
-                    -- from the signed-in user's own auth state/current page
-                    -- (not asked as a form field a person can leave blank on
-                    -- a later edit) -- COALESCE so a future call that omits
-                    -- them (e.g. an "edit territory" flow reusing this same
-                    -- endpoint) doesn't null out what first-sign-in already
-                    -- captured.
+                    territory_refinement = COALESCE(EXCLUDED.territory_refinement, user_profiles.territory_refinement),
+                    -- full_name/lead_source/inferred_lead_source are captured
+                    -- once, client-side, from the signed-in user's own auth
+                    -- state/wizard answers (not asked as a form field a
+                    -- person can leave blank on a later edit) -- COALESCE so
+                    -- a future call that omits them (e.g. an "edit
+                    -- territory" flow reusing this same endpoint) doesn't
+                    -- null out what first-sign-in already captured.
                     full_name = COALESCE(EXCLUDED.full_name, user_profiles.full_name),
                     lead_source = COALESCE(EXCLUDED.lead_source, user_profiles.lead_source),
+                    inferred_lead_source = COALESCE(EXCLUDED.inferred_lead_source, user_profiles.inferred_lead_source),
                     onboarded_at = COALESCE(user_profiles.onboarded_at, now()),
                     updated_at = now()
                 """,
@@ -2254,6 +2265,8 @@ def upsert_my_profile(
                     body.phone,
                     body.role_title,
                     body.lead_source,
+                    body.territory_refinement,
+                    body.inferred_lead_source,
                 ),
             )
         conn.commit()
