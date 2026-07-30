@@ -130,7 +130,7 @@ function AuthAwareActions({ mobile }: { mobile?: boolean }) {
       <button type="button" onClick={() => signIn()} className={`btn btn-outline ${size}`}>
         Log In
       </button>
-      <button type="button" onClick={openDemoModal} className={`btn btn-demo ${size}`}>
+      <button type="button" onClick={() => openDemoModal()} className={`btn btn-demo ${size}`}>
         Request Demo
       </button>
     </>
@@ -181,7 +181,7 @@ export function SiteHeader() {
           {FIREBASE_AUTH_ENABLED ? (
             <AuthAwareActions />
           ) : (
-            <button type="button" onClick={openDemoModal} className="btn btn-demo hidden sm:inline-flex">
+            <button type="button" onClick={() => openDemoModal()} className="btn btn-demo hidden sm:inline-flex">
               Request Demo
             </button>
           )}
@@ -229,7 +229,7 @@ export function SiteHeader() {
                 <AuthAwareActions mobile />
               </div>
             ) : (
-              <button type="button" onClick={openDemoModal} className="btn btn-demo mt-4 w-full text-center">
+              <button type="button" onClick={() => openDemoModal()} className="btn btn-demo mt-4 w-full text-center">
                 Request Demo
               </button>
             )}
