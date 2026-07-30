@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { FIREBASE_AUTH_ENABLED, useFirebaseAuth } from "@/components/FirebaseAuthProvider";
+import { FIREBASE_AUTH_ENABLED, useFirebaseAuth, useFirebaseAuthOptional } from "@/components/FirebaseAuthProvider";
 import { StatusPill } from "@/components/StatusPill";
 import { AskPanel } from "@/components/AskPanel";
 import { formatDate, formatSf, formatUsd, stateName, typeLabel } from "@/lib/format";
@@ -16,6 +16,7 @@ import {
   type TrackedStage,
 } from "@/lib/tracking";
 import { askAboutProject } from "@/lib/ask";
+import { fetchProjectForSignedInUser } from "@/lib/projects";
 
 const STAGE_LABELS: Record<TrackedStage, string> = {
   watching: "Watching",
@@ -508,9 +509,34 @@ function ActivityFeed({ project }: { project: Project }) {
   );
 }
 
-export function ProjectDetailView({ project }: { project: Project }) {
+export function ProjectDetailView({ project: initialProject }: { project: Project }) {
+  const [project, setProject] = useState(initialProject);
   const [showBreakdown, setShowBreakdown] = useState(false);
   const scoreRef = useRef<HTMLDivElement>(null);
+  const { isSignedIn, getToken } = useFirebaseAuthOptional() ?? {
+    isSignedIn: false,
+    getToken: async () => null,
+  };
+
+  // The static build only ever bakes in the public teaser (see
+  // app/projects/[id]/page.tsx's generateStaticParams, an unauthenticated
+  // build-time fetch) -- a signed-in visitor's session has no effect on
+  // that HTML. Re-fetch with the real bearer token once one is available
+  // and swap in the full record, same pattern PipelineBox already uses for
+  // tracked-project state.
+  useEffect(() => {
+    if (!initialProject.gated || !isSignedIn) return;
+    let cancelled = false;
+    getToken().then((token) => {
+      if (!token || cancelled) return;
+      fetchProjectForSignedInUser(initialProject.id, token).then((full) => {
+        if (!cancelled && full) setProject(full);
+      });
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [initialProject.gated, initialProject.id, isSignedIn, getToken]);
   const hasEnrichment = Boolean(
     project.enrichment &&
       (project.enrichment.executive_brief.length ||
