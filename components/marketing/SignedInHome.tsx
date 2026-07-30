@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { useAuth, useUser } from "@clerk/clerk-react";
+import { useFirebaseAuth } from "@/components/FirebaseAuthProvider";
 import type { Project } from "@/lib/types";
 import { formatUsd, stateName } from "@/lib/format";
 import { StatusPill } from "@/components/StatusPill";
@@ -50,8 +50,7 @@ function scoreTier(total: number) {
 type PaneView = "feed" | "tracked";
 
 export function SignedInHome() {
-  const { getToken } = useAuth();
-  const { user } = useUser();
+  const { getToken, user } = useFirebaseAuth();
 
   const [view, setView] = useState<PaneView>("feed");
   const [profile, setProfile] = useState<UserProfile | null>(null);
@@ -144,7 +143,10 @@ export function SignedInHome() {
     setSavedViews((prev) => prev.filter((v) => v.id !== id));
   }
 
-  const firstName = user?.firstName ?? null;
+  // Firebase's User has displayName (full name from the sign-in provider,
+  // e.g. Google), not a separate firstName field like Clerk did -- split on
+  // the first space as a reasonable approximation.
+  const firstName = user?.displayName?.split(" ")[0] ?? null;
   const territoryLabel =
     profile && profile.territory_states.length > 0
       ? profile.territory_states.map((s) => stateName(s)).join(", ")

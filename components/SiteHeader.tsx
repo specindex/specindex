@@ -4,9 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Logo } from "@/components/Logo";
-import { CLERK_ENABLED } from "@/components/ClerkProviders";
+import { FIREBASE_AUTH_ENABLED, useFirebaseAuth } from "@/components/FirebaseAuthProvider";
 import { useDemoModal } from "@/components/marketing/DemoModal";
-import { SignedIn, SignedOut, SignInButton, UserButton, useAuth } from "@clerk/clerk-react";
 
 // "Projects" deliberately excluded -- /projects/ now requires sign-in
 // (ProjectsGate), so it's not a destination to invite anonymous visitors
@@ -23,8 +22,9 @@ const MARKETING_NAV = [
 
 // Signed-in visitors already have access -- the marketing nav (Pricing,
 // How It Works, About) stops being relevant and swaps to the app surfaces
-// themselves. No dedicated "Account" link: <UserButton>'s own menu already
-// includes "Manage account", so it doubles as that surface.
+// themselves. No dedicated "Account" link or page exists yet -- Firebase
+// Auth alone has no account-management UI to link to (unlike Clerk's
+// <UserButton>), so UserMenu below is just avatar + sign-out for now.
 const APP_NAV = [
   { href: "/projects/", label: "Projects" },
   { href: "/visibility/", label: "Visibility" },
@@ -77,12 +77,12 @@ function MobileNavLinks({ items, pathname }: { items: NavLink[]; pathname: strin
   );
 }
 
-// Only ever mounted when CLERK_ENABLED -- useAuth() throws without a
-// <ClerkProvider> ancestor, so the whole auth-aware subtree (this and
-// AuthAwareActions below) must not mount at all when Clerk isn't
-// configured, rather than mount and error.
+// Only ever mounted when FIREBASE_AUTH_ENABLED -- useFirebaseAuth() throws
+// without a <FirebaseAuthProvider> ancestor, so the whole auth-aware subtree
+// (this and AuthAwareActions below) must not mount at all when Firebase
+// Auth isn't configured, rather than mount and error.
 function AuthAwareNav({ pathname, mobile }: { pathname: string | null; mobile?: boolean }) {
-  const { isSignedIn } = useAuth();
+  const { isSignedIn } = useFirebaseAuth();
   const items = isSignedIn ? APP_NAV : MARKETING_NAV;
   return mobile ? (
     <MobileNavLinks items={items} pathname={pathname} />
@@ -91,24 +91,48 @@ function AuthAwareNav({ pathname, mobile }: { pathname: string | null; mobile?: 
   );
 }
 
+// Firebase ships no prebuilt account-menu component (unlike Clerk's
+// <UserButton>), so this is a minimal hand-rolled equivalent: avatar (or an
+// initial-letter fallback when the sign-in provider didn't return a photo)
+// plus a plain sign-out action -- no dropdown/"Manage account" surface,
+// since Firebase Auth alone has no account-management page to link to.
+function UserMenu() {
+  const { user, signOut } = useFirebaseAuth();
+  const label = user?.displayName ?? user?.email ?? "Account";
+  return (
+    <div className="flex items-center gap-2">
+      {user?.photoURL ? (
+        // eslint-disable-next-line @next/next/no-img-element -- external provider avatar URL, not a local asset
+        <img src={user.photoURL} alt="" className="h-7 w-7 rounded-full" referrerPolicy="no-referrer" />
+      ) : (
+        <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--color-green-light)] text-xs font-semibold text-[var(--color-green)]">
+          {label.charAt(0).toUpperCase()}
+        </span>
+      )}
+      <button
+        type="button"
+        onClick={() => signOut()}
+        className="text-sm text-[var(--color-gray-600)] hover:text-[var(--color-ink)]"
+      >
+        Sign out
+      </button>
+    </div>
+  );
+}
+
 function AuthAwareActions({ mobile }: { mobile?: boolean }) {
   const size = mobile ? "w-full text-center" : "hidden sm:inline-flex";
   const { openDemoModal } = useDemoModal();
+  const { isSignedIn, signIn } = useFirebaseAuth();
+  if (isSignedIn) return <UserMenu />;
   return (
     <>
-      <SignedOut>
-        <SignInButton mode="modal">
-          <button type="button" className={`btn btn-outline ${size}`}>
-            Log In
-          </button>
-        </SignInButton>
-        <button type="button" onClick={openDemoModal} className={`btn btn-demo ${size}`}>
-          Request Demo
-        </button>
-      </SignedOut>
-      <SignedIn>
-        <UserButton afterSignOutUrl="/" />
-      </SignedIn>
+      <button type="button" onClick={() => signIn()} className={`btn btn-outline ${size}`}>
+        Log In
+      </button>
+      <button type="button" onClick={openDemoModal} className={`btn btn-demo ${size}`}>
+        Request Demo
+      </button>
     </>
   );
 }
@@ -140,7 +164,7 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-0.5 lg:flex">
-          {CLERK_ENABLED ? (
+          {FIREBASE_AUTH_ENABLED ? (
             <AuthAwareNav pathname={pathname} />
           ) : (
             <DesktopNavLinks items={MARKETING_NAV} pathname={pathname} />
@@ -154,7 +178,7 @@ export function SiteHeader() {
           >
             hello@specindex.ai
           </a>
-          {CLERK_ENABLED ? (
+          {FIREBASE_AUTH_ENABLED ? (
             <AuthAwareActions />
           ) : (
             <button type="button" onClick={openDemoModal} className="btn btn-demo hidden sm:inline-flex">
@@ -195,12 +219,12 @@ export function SiteHeader() {
       {open && (
         <div className="border-t border-[var(--color-border)] bg-white lg:hidden">
           <nav className="mx-auto flex max-w-6xl flex-col px-5 py-4">
-            {CLERK_ENABLED ? (
+            {FIREBASE_AUTH_ENABLED ? (
               <AuthAwareNav pathname={pathname} mobile />
             ) : (
               <MobileNavLinks items={MARKETING_NAV} pathname={pathname} />
             )}
-            {CLERK_ENABLED ? (
+            {FIREBASE_AUTH_ENABLED ? (
               <div className="mt-4 flex flex-col gap-2">
                 <AuthAwareActions mobile />
               </div>

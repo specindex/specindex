@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { ClerkProviders } from "@/components/ClerkProviders";
+import { FirebaseAuthProvider } from "@/components/FirebaseAuthProvider";
 import { DemoModalProvider } from "@/components/marketing/DemoModal";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -52,13 +52,13 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body>
         <DemoModalProvider>
-          <ClerkProviders>
+          <FirebaseAuthProvider>
             <div className="min-h-screen flex flex-col">
               <SiteHeader />
               <main className="flex-1">{children}</main>
               <SiteFooter />
             </div>
-          </ClerkProviders>
+          </FirebaseAuthProvider>
         </DemoModalProvider>
       </body>
     </html>
