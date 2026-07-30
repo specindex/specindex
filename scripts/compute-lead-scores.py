@@ -9,10 +9,15 @@ the total (docs/architecture-2026/03-growth.md §3a).
   pipeline_depth_score  (0-25): user_tracked_projects count + stage mix
   engagement_score      (0-20): ask_log row count
   territory_score       (0-10): territory_states + categories array length
-  recency_score         (0-10): exponential decay, 125-day half-life, on the
-                                 most recent of tracked-project/ask/demo activity
+  recency_score         (0-100): exponential decay factor (125-day half-life,
+                                  on the most recent of tracked-project/ask/
+                                  demo activity), expressed as a percentage --
+                                  NOT an additive component
 
-  score = sum of the above (0-100)
+  score = round((intent + pipeline_depth + engagement + territory) * decay)
+  -- recency is multiplicative against the total, not additive (growth doc's
+  own Gemini review flagged additive recency as a real flaw: a 6-month-old
+  abandoned demo request would keep its full 35 intent points forever)
 
 Reads crm_contacts (migration 026), user_tracked_projects, ask_log
 (migration 036), user_profiles.
@@ -59,14 +64,18 @@ def territory_score(territory_states: list[str], categories: list[str]) -> int:
     return round(10 * min(1.0, breadth / 8))
 
 
-def recency_score(most_recent: datetime | None) -> int:
+def recency_decay(most_recent: datetime | None) -> float:
+    """Multiplicative decay factor (0-1) applied to the TOTAL score, not an
+    additive 0-10 component -- growth doc's own Gemini review flagged the
+    additive design as a real flaw (a 6-month-old abandoned demo request
+    would keep its full 35 intent points forever) and this was missed on
+    first build; caught by a second review pass and fixed here."""
     if most_recent is None:
-        return 0
+        return 0.0
     if most_recent.tzinfo is None:
         most_recent = most_recent.replace(tzinfo=timezone.utc)
     days_since = max(0, (datetime.now(timezone.utc) - most_recent).days)
-    decay = math.exp(-days_since / RECENCY_HALF_LIFE_DAYS)
-    return round(10 * decay)
+    return math.exp(-days_since / RECENCY_HALF_LIFE_DAYS)
 
 
 def main() -> int:
@@ -131,9 +140,14 @@ def main() -> int:
                 if ask:
                     candidates.append(ask["last_asked"])
                 most_recent = max((d for d in candidates if d is not None), default=None)
-                r_score = recency_score(most_recent)
+                decay = recency_decay(most_recent)
+                # recency_score stored as the decay factor expressed 0-100
+                # (not a points component) -- the actual score impact is the
+                # multiplication below, this column exists so a human can
+                # still see "how stale is this lead" at a glance.
+                r_score = round(100 * decay)
 
-                total = i_score + p_score + e_score + t_score + r_score
+                total = round((i_score + p_score + e_score + t_score) * decay)
 
                 cur.execute(
                     """

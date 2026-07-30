@@ -1201,18 +1201,35 @@ def list_crm_contacts(_admin: str = Depends(require_role("support_admin", "super
     return {"contacts": rows}
 
 
-def _resolve_org_id(cur, firebase_uid: str) -> str:
-    """Team-tier orgs have no separate `orgs` table -- org_id is just the
-    owner's own firebase_uid (migration 039's docstring: "one build" for
-    identity P4 / productization P3). A member who accepted an invite is
-    looked up in org_members; anyone else is their own (single-person) org
-    owner, matching the pre-existing single-user behavior."""
+def _resolve_org_id(cur, firebase_uid: str, create_if_missing: bool = False) -> int | None:
+    """Real `organizations` row (migration 040) -- NOT the earlier "org_id
+    = owner's own firebase_uid" shortcut migration 039 originally shipped
+    with, which a same-day Gemini review flagged as breaking on owner
+    account deletion, ownership transfer, and tier downgrade (an orphaned
+    firebase_uid used as a foreign key has no row of its own to update).
+    A member who accepted an invite is looked up via org_members; an owner
+    who doesn't have an organizations row yet gets one created lazily on
+    their first invite (create_if_missing), not eagerly for every user --
+    most users never invite anyone and shouldn't get a row for it."""
     cur.execute(
         "SELECT org_id FROM org_members WHERE firebase_uid = %s AND role = 'member'",
         (firebase_uid,),
     )
     row = cur.fetchone()
-    return row[0] if row else firebase_uid
+    if row:
+        return row[0]
+
+    cur.execute("SELECT id FROM organizations WHERE owner_uid = %s", (firebase_uid,))
+    row = cur.fetchone()
+    if row:
+        return row[0]
+    if not create_if_missing:
+        return None
+
+    cur.execute(
+        "INSERT INTO organizations (owner_uid) VALUES (%s) RETURNING id", (firebase_uid,)
+    )
+    return cur.fetchone()[0]
 
 
 class OrgInviteRequest(BaseModel):
@@ -1248,11 +1265,16 @@ def _send_org_invite_email(to_email: str, invite_token: str) -> str | None:
 
 @app.get("/v1/org/members")
 def list_org_members(firebase_uid: str = Depends(require_firebase_user)):
-    """Team roster -- the caller's org (their own uid if they're an owner,
-    or the org they accepted an invite into)."""
+    """Team roster -- the caller's org (their own org if they're an owner
+    who has invited before, or the org they accepted an invite into). A
+    caller with no organizations row yet and no accepted invite has no
+    team -- returns an empty roster rather than lazily creating one just
+    to view an empty page."""
     with get_conn() as conn:
         with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
             org_id = _resolve_org_id(cur, firebase_uid)
+            if org_id is None:
+                return {"org_id": None, "members": []}
             cur.execute(
                 """
                 SELECT id, email, role, invited_at, joined_at,
@@ -1272,7 +1294,8 @@ def invite_org_member(
     body: OrgInviteRequest, firebase_uid: str = Depends(require_firebase_user)
 ):
     """Only the org owner can invite -- a member (role='member' in
-    org_members) does not itself own an org to invite into."""
+    org_members) does not itself own an org to invite into. Creates the
+    caller's organizations row on first use (see _resolve_org_id)."""
     import secrets
 
     with get_conn() as conn:
@@ -1284,6 +1307,7 @@ def invite_org_member(
             if cur.fetchone():
                 raise HTTPException(status_code=403, detail="Only the team owner can invite members")
 
+            org_id = _resolve_org_id(cur, firebase_uid, create_if_missing=True)
             invite_token = secrets.token_urlsafe(24)
             cur.execute(
                 """
@@ -1294,7 +1318,7 @@ def invite_org_member(
                     invited_at = now()
                 RETURNING id
                 """,
-                (firebase_uid, body.email, firebase_uid, invite_token),
+                (org_id, body.email, firebase_uid, invite_token),
             )
             member_id = cur.fetchone()["id"]
         conn.commit()
@@ -1327,11 +1351,19 @@ def accept_org_invite(
 
 @app.delete("/v1/org/members/{member_id}")
 def remove_org_member(member_id: int, firebase_uid: str = Depends(require_firebase_user)):
+    """Only the org owner can remove a member -- resolves the caller's own
+    organizations row first rather than comparing against firebase_uid
+    directly (that comparison was only ever correct under the old
+    org_id-is-a-uid shortcut, now replaced by migration 040)."""
     with get_conn() as conn:
         with conn.cursor() as cur:
+            cur.execute("SELECT id FROM organizations WHERE owner_uid = %s", (firebase_uid,))
+            row = cur.fetchone()
+            if row is None:
+                raise HTTPException(status_code=404, detail="Member not found")
             cur.execute(
                 "DELETE FROM org_members WHERE id = %s AND org_id = %s AND role = 'member'",
-                (member_id, firebase_uid),
+                (member_id, row[0]),
             )
             if cur.rowcount == 0:
                 raise HTTPException(status_code=404, detail="Member not found")
@@ -1415,15 +1447,49 @@ def deactivate_customer(
     02-identity-portals.md) AND revokes the user's Firebase refresh tokens,
     so their still-valid ID token can't be silently refreshed into a new
     one either -- belt-and-suspenders: is_active alone already blocks our
-    API, this additionally kills their Firebase session itself."""
+    API, this additionally kills their Firebase session itself.
+
+    Also revokes any live API keys (migration 031) -- caught by a Gemini
+    review pass: deactivating a user only through Firebase/is_active left
+    their API keys (a separate auth path, require_api_key) still fully
+    functional, since require_api_key never checks user_profiles.is_active
+    at all. api_keys.revoked_at already existed and require_api_key already
+    checks it, so this is just wiring the existing revoke path in, not new
+    schema.
+
+    Refuses to deactivate an org owner with active members (409) -- a
+    third review pass flagged that deactivating an org's owner would
+    otherwise leave the organization headless (no one able to manage the
+    roster or resolve billing) while member rows silently keep pointing at
+    it. Ownership must be transferred (or members removed) first; this
+    endpoint deliberately does not do that automatically, since picking a
+    new owner is a business decision, not a safe default to guess at."""
     with get_conn() as conn:
         with conn.cursor() as cur:
+            cur.execute(
+                """
+                SELECT o.id FROM organizations o
+                WHERE o.owner_uid = %s
+                  AND EXISTS (SELECT 1 FROM org_members m WHERE m.org_id = o.id AND m.role = 'member')
+                """,
+                (firebase_uid,),
+            )
+            if cur.fetchone() is not None:
+                raise HTTPException(
+                    status_code=409,
+                    detail="This user owns a team with active members -- transfer ownership or remove members before deactivating",
+                )
+
             cur.execute(
                 "UPDATE user_profiles SET is_active = false WHERE firebase_uid = %s RETURNING firebase_uid",
                 (firebase_uid,),
             )
             if cur.fetchone() is None:
                 raise HTTPException(status_code=404, detail="No profile found for this user")
+            cur.execute(
+                "UPDATE api_keys SET revoked_at = now() WHERE firebase_uid = %s AND revoked_at IS NULL",
+                (firebase_uid,),
+            )
         conn.commit()
 
     try:
