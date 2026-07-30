@@ -53,6 +53,7 @@ if str(_SCRIPTS) not in sys.path:
     sys.path.insert(0, str(_SCRIPTS))
 
 from state_agent_pipeline.config import Settings  # noqa: E402
+import llm_budget  # noqa: E402
 
 JSON_FENCE = re.compile(r"```json\s*(.*?)\s*```", re.DOTALL)
 
@@ -665,6 +666,15 @@ def main() -> int:
             total_facts = 0
             for project in candidates:
                 try:
+                    llm_budget.check_budget(conn)
+                except llm_budget.BudgetExceeded as e:
+                    # Stops the WHOLE batch, not just this project -- a
+                    # circuit breaker that keeps looping past a tripped
+                    # cap (just skipping the current project and moving
+                    # on) isn't actually breaking anything.
+                    print(f"BUDGET CAP HIT, stopping batch early: {e}", file=sys.stderr)
+                    break
+                try:
                     total_facts += enrich_one(client, settings, conn, project, args.dry_run)
                 except Exception as e:  # noqa: BLE001 -- one bad project shouldn't kill the whole batch run
                     print(f"  FAILED ({project['spx_id']}): {e}", file=sys.stderr)
@@ -696,6 +706,11 @@ def main() -> int:
             print(f"No project found with spx_id={args.spx_id!r} (project_sk={project_sk})", file=sys.stderr)
             return 1
 
+        try:
+            llm_budget.check_budget(conn)
+        except llm_budget.BudgetExceeded as e:
+            print(f"BUDGET CAP HIT: {e}", file=sys.stderr)
+            return 1
         enrich_one(client, settings, conn, project, args.dry_run)
     finally:
         conn.close()

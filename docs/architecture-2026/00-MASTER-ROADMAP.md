@@ -68,17 +68,17 @@ verified, not just deployed.**
 - ⛔ **Pro seat/usage limits — nothing to enforce yet, not skipped.** "Seat" isn't a real concept in the schema at all today (confirmed against `user_profiles` and this doc's own P3: `org_id` doesn't exist until the identity doc's P3, the seat/roster flow is P4). Enforcing seat limits requires that model to exist first — this half of the original bullet was premature, not deferred — *productization*
 - ⛔ **A Cloud SQL read replica — blocked on a real infra decision, not code.** Standing one up is a real, billed, standing piece of infrastructure (a second Cloud SQL instance) — not something to provision unprompted the way an idempotent migration is. Needs Asif's go-ahead on the added monthly cost before building — *data platform*
 
-## P2 — After P1
+## P2 — ✅ MOSTLY SHIPPED 2026-07-30 (2 items blocked, not skipped)
 
-- Add a hard daily/monthly LLM budget cap with a circuit breaker in `enrich-project-details.py` and any automated discovery-chat runner — *data platform*
-- Stand up the read replica (if not already done in P1); create an `agent_readonly` Postgres role scoped to `v_*` views only — *data platform*
-- Add query-result caching (hash of normalized query text, TTL) for `gemini_discovery_chat.py` — *data platform*
-- Enforce Free-tier "1 brand check/week" quota server-side with a usage-counter table — *identity* (note: overlaps productization's P1 above — one implementation, not two)
-- Add nullable `org_id` column to `user_profiles` as the forward seam for Team-tier seats — *identity*
-- Add account/settings page to the user portal for post-onboarding profile edits — *identity*
-- Add a `persona` prop to `DemoModal`/`useDemoModal()`, defaulted per page — *growth*
-- Add an `ask_log` table; insert rows from `/v1/projects/{id}/ask` and `/v1/me/ask` — *growth* (this is also a P0-adjacent dependency for productization's MCP usage metering — build once)
-- Ship the MCP server as a thin wrapper over `/v1/projects`, `/v1/projects/{id}`, `/v1/projects/{id}/ask`, `/v1/me/ask`, `/v1/coverage`, `/v1/quality` — *productization*
+- ✅ Added a hard daily/monthly LLM budget cap circuit breaker (`scripts/llm_budget.py`, `LLM_DAILY_BUDGET_USD`/`LLM_MONTHLY_BUDGET_USD` env vars, default $50/day, $1,000/month) — checked BEFORE each call, not after; wired into `enrich-project-details.py`'s batch loop (stops the whole batch, not just the current project) and single-project path. `gemini_discovery_chat.py` deliberately NOT wired to it — that script has no DB connection at all today and is explicitly documented elsewhere in this repo as "a manual tool, not a pipeline stage," run by a person watching output live; giving it DB access just for a budget check would be new surface area for a real interactive tool, not the automated/unattended risk this item is actually about — *data platform*
+- ⛔ **Read replica — still blocked on the same real infra/billing decision flagged in P1.** Nothing changed since then; re-flagging rather than silently dropping — *data platform*
+- ✅ Added query-result caching to `gemini_discovery_chat.py` (`data/gemini_query_cache/`, SHA-256 of `session:normalized_message`, 7-day TTL via `GEMINI_QUERY_CACHE_TTL_DAYS`). Deliberately narrower than caching a full exchange: keyed on message text only, not full conversation history, so it catches the real common case (an identical message re-sent after a crash/retry) without pretending an identical string means the same thing at two different points in one conversation — *data platform*
+- ✅ Free-tier brand-check quota — **already shipped in P1** (productization's bullet), this P2 line was the identity-side duplicate the doc itself flagged as an overlap — *identity*
+- ✅ Added nullable `user_profiles.org_id` (migration 036) — *identity*
+- ✅ Built `/account` — `components/AccountSettings.tsx`, reuses the existing `POST /v1/me/profile` upsert (no new write path), linked from the signed-in home's nav — *identity*
+- ✅ Added a `persona` prop to `DemoModal`/`useDemoModal()` (`DemoPersona` type: `product`/`pricing`/`about`/`general`, defaulted from the page it's opened on) — changes only copy/subhead, rides along as a hidden `persona` field on the same `/v1/contact` POST (migration 037), no new endpoint or field set, exactly per the doc's explicit "don't fork the modal" call — *growth*
+- ✅ Added `ask_log` table (migration 036) + wired into both `/v1/projects/{id}/ask` and `/v1/me/ask` (best-effort insert, never fails the actual answer) — *growth*
+- ⛔ **MCP server — attempted, blocked on tooling, not built blind.** The `mcp` Python SDK requires Python 3.10+; this environment only had 3.9 available to verify against, so `FastMCP`'s actual API surface and an SSE handshake against a real client couldn't be tested. Shipping unverified code for a new deployed service (its own Cloud Run instance, a protocol this session couldn't exercise end-to-end) would be the same mistake as guessing at the read-replica's cost — needs a Python 3.10+ dev environment to build against for real, not a confident-sounding untested file — *productization*
 
 ## P3 — Real, but not urgent
 

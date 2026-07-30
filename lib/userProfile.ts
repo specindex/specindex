@@ -26,6 +26,12 @@ export type UserProfile = {
   company: string | null;
   territory_states: string[];
   categories: string[];
+  // Added for the account/settings page (docs/architecture-2026 P2) --
+  // GET /v1/me/profile now returns these too, previously write-only.
+  full_name: string | null;
+  phone: string | null;
+  role_title: string | null;
+  subscription_tier: string;
 };
 
 export type UserProfileUpdate = {

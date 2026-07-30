@@ -27,8 +27,12 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import os
+import re
 import sys
+import time as _time
 from pathlib import Path
 
 _SCRIPTS = Path(__file__).resolve().parent
@@ -38,6 +42,43 @@ if str(_SCRIPTS) not in sys.path:
 from state_agent_pipeline.config import Settings  # noqa: E402
 
 SESSIONS_DIR = _SCRIPTS.parent / "data" / "gemini_sessions"
+
+# docs/architecture-2026/01-data-platform.md P2: query-result caching. Keyed
+# on (session, normalized message text) ONLY -- not the full conversation
+# history -- so this is deliberately narrower than "cache this exchange":
+# it catches the real, common case (an identical message re-sent to the
+# same session after a crash/retry/duplicate invocation, a genuinely
+# redundant grounded search) without pretending to understand whether an
+# identical string means the same thing at two different points in a
+# conversation's history. TTL, not permanent -- discovery research does go
+# stale.
+CACHE_DIR = _SCRIPTS.parent / "data" / "gemini_query_cache"
+CACHE_TTL_SECONDS = float(os.environ.get("GEMINI_QUERY_CACHE_TTL_DAYS", "7")) * 86400
+
+
+def _normalize_query(text: str) -> str:
+    return re.sub(r"\s+", " ", text.strip().lower())
+
+
+def _cache_path(session: str, message: str) -> Path:
+    key = hashlib.sha256(f"{session}:{_normalize_query(message)}".encode()).hexdigest()
+    return CACHE_DIR / f"{key}.json"
+
+
+def _cache_get(session: str, message: str) -> str | None:
+    path = _cache_path(session, message)
+    if not path.exists():
+        return None
+    data = json.loads(path.read_text())
+    if _time.time() - data["cached_at"] > CACHE_TTL_SECONDS:
+        return None
+    return data["response"]
+
+
+def _cache_put(session: str, message: str, response: str) -> None:
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    path = _cache_path(session, message)
+    path.write_text(json.dumps({"cached_at": _time.time(), "response": response}))
 
 
 def _session_path(name: str) -> Path:
@@ -78,6 +119,13 @@ def send(session: str, message: str, max_retries: int = 3) -> str:
     from google.genai import types
     from google.auth.exceptions import RefreshError
 
+    cached = _cache_get(session, message)
+    if cached is not None:
+        print("  [cache hit -- skipping grounded call]", file=sys.stderr)
+        save_turn(session, "user", message)
+        save_turn(session, "model", cached)
+        return cached
+
     settings = Settings.from_env()
     client = genai.Client(vertexai=True, project=settings.google_cloud_project, location=settings.google_cloud_location)
 
@@ -107,6 +155,7 @@ def send(session: str, message: str, max_retries: int = 3) -> str:
 
     save_turn(session, "user", message)
     save_turn(session, "model", resp.text)
+    _cache_put(session, message, resp.text)
     return resp.text
 
 

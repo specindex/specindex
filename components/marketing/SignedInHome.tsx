@@ -217,6 +217,15 @@ export function SignedInHome() {
               </button>
             </div>
           </div>
+
+          <div className="mt-8 border-t border-[var(--color-border)] pt-4">
+            <Link
+              href="/account/"
+              className="flex items-center rounded-lg px-3 py-2 text-sm font-medium text-[var(--color-gray-600)] hover:bg-white/60"
+            >
+              Account settings
+            </Link>
+          </div>
         </aside>
 
         {/* Main pane */}

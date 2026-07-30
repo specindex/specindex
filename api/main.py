@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import os
 import smtplib
+import sys
 import time
 import urllib.parse
 from contextlib import contextmanager
@@ -1413,6 +1414,23 @@ def _ask_gemini(context: str, question: str) -> str:
     return (resp.text or "").strip()
 
 
+def _log_ask(conn, firebase_uid: str, scope: str, question: str, answer: str, project_id: str | None = None) -> None:
+    """Best-effort -- a logging failure must never fail the actual answer
+    that's already been generated and is about to be returned to the
+    user. Also the shared write path the MCP server's ask_about_territory
+    tool (P2) reuses, so usage is metered once, not twice."""
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "INSERT INTO ask_log (firebase_uid, scope, project_id, question, answer) "
+                "VALUES (%s, %s, %s, %s, %s)",
+                (firebase_uid, scope, project_id, question, answer),
+            )
+        conn.commit()
+    except Exception as e:  # noqa: BLE001
+        print(f"  [warn] ask_log insert failed: {e}", file=sys.stderr)
+
+
 def _project_ask_context(conn, project_id: str) -> tuple[str, dict[str, Any]]:
     with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
         cur.execute("SELECT * FROM projects WHERE project_id = %s", (project_id,))
@@ -1451,7 +1469,8 @@ def _project_ask_context(conn, project_id: str) -> tuple[str, dict[str, Any]]:
 def ask_about_project(project_id: str, body: AskRequest, firebase_uid: str = Depends(require_firebase_user)):
     with get_conn() as conn:
         context, _ = _project_ask_context(conn, project_id)
-    answer = _ask_gemini(context, body.question)
+        answer = _ask_gemini(context, body.question)
+        _log_ask(conn, firebase_uid, "project", body.question, answer, project_id=project_id)
     return {"answer": answer}
 
 
@@ -1500,7 +1519,8 @@ def _territory_ask_context(conn, firebase_uid: str) -> str:
 def ask_about_my_territory(body: AskRequest, firebase_uid: str = Depends(require_firebase_user)):
     with get_conn() as conn:
         context = _territory_ask_context(conn, firebase_uid)
-    answer = _ask_gemini(context, body.question)
+        answer = _ask_gemini(context, body.question)
+        _log_ask(conn, firebase_uid, "territory", body.question, answer)
     return {"answer": answer}
 
 
@@ -1543,6 +1563,9 @@ class ContactSubmission(BaseModel):
     # firebase_uid once identify() fires on sign-in. Session-replay/funnel
     # data only, same non-primary-attribution caveat as above.
     posthog_distinct_id: str | None = Field(default=None, max_length=200)
+    # See components/marketing/DemoModal.tsx's DemoPersona -- copy/context
+    # variant the visitor saw, not a different field set or endpoint.
+    persona: str | None = Field(default=None, max_length=50)
 
     @field_validator("email")
     @classmethod
@@ -1593,8 +1616,8 @@ def submit_contact(sub: ContactSubmission):
                 """
                 INSERT INTO contact_submissions
                     (first_name, last_name, email, company, categories, source_path, firebase_uid,
-                     utm_source, utm_medium, utm_campaign, referrer, posthog_distinct_id)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                     utm_source, utm_medium, utm_campaign, referrer, posthog_distinct_id, persona)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                 RETURNING id
                 """,
                 (
@@ -1610,6 +1633,7 @@ def submit_contact(sub: ContactSubmission):
                     sub.utm_campaign,
                     sub.referrer,
                     sub.posthog_distinct_id,
+                    sub.persona,
                 ),
             )
             submission_id = cur.fetchone()[0]
@@ -1657,18 +1681,26 @@ def get_my_profile(firebase_uid: str = Depends(require_firebase_user)):
     with get_conn() as conn:
         with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
             cur.execute(
-                "SELECT company, territory_states, categories, onboarded_at "
+                "SELECT company, territory_states, categories, onboarded_at, "
+                "full_name, phone, role_title, subscription_tier "
                 "FROM user_profiles WHERE firebase_uid = %s",
                 (firebase_uid,),
             )
             row = cur.fetchone()
     if row is None:
-        return {"onboarded": False, "company": None, "territory_states": [], "categories": []}
+        return {
+            "onboarded": False, "company": None, "territory_states": [], "categories": [],
+            "full_name": None, "phone": None, "role_title": None, "subscription_tier": "free",
+        }
     return {
         "onboarded": row["onboarded_at"] is not None,
         "company": row["company"],
         "territory_states": row["territory_states"],
         "categories": row["categories"],
+        "full_name": row["full_name"],
+        "phone": row["phone"],
+        "role_title": row["role_title"],
+        "subscription_tier": row["subscription_tier"],
     }
 
 
