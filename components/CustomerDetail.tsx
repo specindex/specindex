@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { FIREBASE_AUTH_ENABLED, useFirebaseAuth } from "@/components/FirebaseAuthProvider";
-import { fetchCustomerDetail, type CustomerProfile, type CustomerTrackedProject } from "@/lib/crm";
+import { fetchCustomerDetail, setCustomerActive, type CustomerProfile, type CustomerTrackedProject } from "@/lib/crm";
 
 // Same admin sign-in wall pattern as CrmDashboard -- real enforcement is
 // server-side (require_role in api/main.py), this is UX only.
@@ -36,6 +36,20 @@ export function CustomerDetail() {
   const [tracked, setTracked] = useState<CustomerTrackedProject[]>([]);
   const [error, setError] = useState<"not_authorized" | "not_found" | "other" | null>(null);
   const [loading, setLoading] = useState(false);
+  const [togglingActive, setTogglingActive] = useState(false);
+
+  async function handleToggleActive() {
+    if (!profile) return;
+    setTogglingActive(true);
+    try {
+      await setCustomerActive(getToken, profile.firebase_uid, !profile.is_active);
+      setProfile({ ...profile, is_active: !profile.is_active });
+    } catch {
+      setError("other");
+    } finally {
+      setTogglingActive(false);
+    }
+  }
 
   useEffect(() => {
     if (!uid || !isSignedIn) return;
@@ -118,6 +132,18 @@ export function CustomerDetail() {
                 <span className="font-semibold text-[var(--color-ink)]">Notes: </span>{profile.notes}
               </p>
             )}
+            <button
+              type="button"
+              onClick={handleToggleActive}
+              disabled={togglingActive}
+              className={`mt-4 rounded-md border px-3 py-1.5 text-sm font-medium ${
+                profile.is_active
+                  ? "border-red-200 text-red-600 hover:bg-red-50"
+                  : "border-[var(--color-green)] text-[var(--color-green)] hover:bg-[var(--color-green)]/10"
+              }`}
+            >
+              {togglingActive ? "Working…" : profile.is_active ? "Deactivate account" : "Reactivate account"}
+            </button>
           </div>
 
           <div className="card p-5">

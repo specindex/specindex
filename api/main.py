@@ -38,6 +38,27 @@ DOCUMENTS_GCS_BUCKET = "specindex-ai-raw-documents"
 FIREBASE_PROJECT_ID = os.environ.get("FIREBASE_PROJECT_ID", "")
 _google_auth_request: google_auth_requests.Request | None = None
 
+_firebase_admin_app = None
+
+
+def _get_firebase_admin_auth():
+    """Lazily initializes the firebase_admin SDK (separate from the
+    manual google-auth token verification above, which only checks
+    signatures -- this is needed for revoke_refresh_tokens, which requires
+    an authenticated Admin SDK client, not just public-key verification).
+    Uses Application Default Credentials -- the same Cloud Run service
+    account already used for Cloud SQL/Storage, no new credential to
+    provision."""
+    global _firebase_admin_app
+    import firebase_admin
+    from firebase_admin import auth as firebase_admin_auth
+
+    if _firebase_admin_app is None:
+        _firebase_admin_app = firebase_admin.initialize_app(
+            options={"projectId": FIREBASE_PROJECT_ID} if FIREBASE_PROJECT_ID else None
+        )
+    return firebase_admin_auth
+
 
 def _get_google_auth_request() -> google_auth_requests.Request:
     global _google_auth_request
@@ -1180,6 +1201,167 @@ def list_crm_contacts(_admin: str = Depends(require_role("support_admin", "super
     return {"contacts": rows}
 
 
+def _resolve_org_id(cur, firebase_uid: str) -> str:
+    """Team-tier orgs have no separate `orgs` table -- org_id is just the
+    owner's own firebase_uid (migration 039's docstring: "one build" for
+    identity P4 / productization P3). A member who accepted an invite is
+    looked up in org_members; anyone else is their own (single-person) org
+    owner, matching the pre-existing single-user behavior."""
+    cur.execute(
+        "SELECT org_id FROM org_members WHERE firebase_uid = %s AND role = 'member'",
+        (firebase_uid,),
+    )
+    row = cur.fetchone()
+    return row[0] if row else firebase_uid
+
+
+class OrgInviteRequest(BaseModel):
+    email: str
+
+    @field_validator("email")
+    @classmethod
+    def email_looks_like_email(cls, v: str) -> str:
+        if "@" not in v or " " in v:
+            raise ValueError("not a valid email address")
+        return v
+
+
+def _send_org_invite_email(to_email: str, invite_token: str) -> str | None:
+    if not EMAIL_SMTP_USERNAME or not EMAIL_SMTP_PASSWORD:
+        return "EMAIL_SMTP_USERNAME/PASSWORD not configured"
+    try:
+        msg = EmailMessage()
+        msg["Subject"] = "You've been invited to a SpecIndex team"
+        msg["From"] = EMAIL_SMTP_USERNAME
+        msg["To"] = to_email
+        msg.set_content(
+            "You've been invited to join a team on SpecIndex.\n\n"
+            f"Accept your invite: https://specindex.ai/account/team/accept?token={invite_token}\n"
+        )
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=10) as smtp:
+            smtp.login(EMAIL_SMTP_USERNAME, EMAIL_SMTP_PASSWORD)
+            smtp.send_message(msg)
+        return None
+    except Exception as e:  # noqa: BLE001 -- see _send_contact_notification
+        return str(e)
+
+
+@app.get("/v1/org/members")
+def list_org_members(firebase_uid: str = Depends(require_firebase_user)):
+    """Team roster -- the caller's org (their own uid if they're an owner,
+    or the org they accepted an invite into)."""
+    with get_conn() as conn:
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+            org_id = _resolve_org_id(cur, firebase_uid)
+            cur.execute(
+                """
+                SELECT id, email, role, invited_at, joined_at,
+                       (firebase_uid IS NOT NULL) AS accepted
+                FROM org_members
+                WHERE org_id = %s
+                ORDER BY invited_at
+                """,
+                (org_id,),
+            )
+            members = cur.fetchall()
+    return {"org_id": org_id, "members": members}
+
+
+@app.post("/v1/org/invite")
+def invite_org_member(
+    body: OrgInviteRequest, firebase_uid: str = Depends(require_firebase_user)
+):
+    """Only the org owner can invite -- a member (role='member' in
+    org_members) does not itself own an org to invite into."""
+    import secrets
+
+    with get_conn() as conn:
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+            cur.execute(
+                "SELECT 1 FROM org_members WHERE firebase_uid = %s AND role = 'member'",
+                (firebase_uid,),
+            )
+            if cur.fetchone():
+                raise HTTPException(status_code=403, detail="Only the team owner can invite members")
+
+            invite_token = secrets.token_urlsafe(24)
+            cur.execute(
+                """
+                INSERT INTO org_members (org_id, email, role, invited_by, invite_token)
+                VALUES (%s, %s, 'member', %s, %s)
+                ON CONFLICT (org_id, email) DO UPDATE SET
+                    invite_token = EXCLUDED.invite_token,
+                    invited_at = now()
+                RETURNING id
+                """,
+                (firebase_uid, body.email, firebase_uid, invite_token),
+            )
+            member_id = cur.fetchone()["id"]
+        conn.commit()
+
+    email_error = _send_org_invite_email(body.email, invite_token)
+    return {"id": member_id, "email_sent": email_error is None, "email_error": email_error}
+
+
+@app.post("/v1/org/accept")
+def accept_org_invite(
+    invite_token: str, firebase_uid: str = Depends(require_firebase_user)
+):
+    with get_conn() as conn:
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                UPDATE org_members
+                SET firebase_uid = %s, joined_at = now(), invite_token = NULL
+                WHERE invite_token = %s AND firebase_uid IS NULL
+                RETURNING org_id
+                """,
+                (firebase_uid, invite_token),
+            )
+            row = cur.fetchone()
+            if row is None:
+                raise HTTPException(status_code=404, detail="Invite not found or already accepted")
+        conn.commit()
+    return {"org_id": row[0]}
+
+
+@app.delete("/v1/org/members/{member_id}")
+def remove_org_member(member_id: int, firebase_uid: str = Depends(require_firebase_user)):
+    with get_conn() as conn:
+        with conn.cursor() as cur:
+            cur.execute(
+                "DELETE FROM org_members WHERE id = %s AND org_id = %s AND role = 'member'",
+                (member_id, firebase_uid),
+            )
+            if cur.rowcount == 0:
+                raise HTTPException(status_code=404, detail="Member not found")
+        conn.commit()
+    return {"removed": True}
+
+
+@app.get("/v1/ops/leads")
+def list_leads(_admin: str = Depends(require_role("support_admin", "super_admin"))):
+    """lead_scores (migration 038) joined onto crm_contacts, sorted by score
+    -- docs/architecture-2026/03-growth.md P3. Scores are precomputed by
+    scripts/compute-lead-scores.py, not computed on request."""
+    with get_conn() as conn:
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+            cur.execute(
+                """
+                SELECT c.contact_key, c.name, c.email, c.company, c.lifecycle_stage,
+                       c.demo_requested_at, c.onboarded_at,
+                       s.score, s.intent_score, s.pipeline_depth_score,
+                       s.engagement_score, s.territory_score, s.recency_score,
+                       s.computed_at
+                FROM lead_scores s
+                JOIN crm_contacts c ON c.contact_key = s.contact_key
+                ORDER BY s.score DESC
+                """
+            )
+            rows = cur.fetchall()
+    return {"leads": rows}
+
+
 @app.get("/v1/ops/customer/{firebase_uid}")
 def view_as_customer(
     firebase_uid: str, _admin: str = Depends(require_role("support_admin", "super_admin"))
@@ -1222,6 +1404,51 @@ def view_as_customer(
             tracked = cur.fetchall()
 
     return {"profile": profile, "tracked_projects": tracked}
+
+
+@app.post("/v1/ops/customer/{firebase_uid}/deactivate")
+def deactivate_customer(
+    firebase_uid: str, _admin: str = Depends(require_role("support_admin", "super_admin"))
+):
+    """Sets user_profiles.is_active = false (already enforced on every
+    request by require_firebase_user, docs/architecture-2026/
+    02-identity-portals.md) AND revokes the user's Firebase refresh tokens,
+    so their still-valid ID token can't be silently refreshed into a new
+    one either -- belt-and-suspenders: is_active alone already blocks our
+    API, this additionally kills their Firebase session itself."""
+    with get_conn() as conn:
+        with conn.cursor() as cur:
+            cur.execute(
+                "UPDATE user_profiles SET is_active = false WHERE firebase_uid = %s RETURNING firebase_uid",
+                (firebase_uid,),
+            )
+            if cur.fetchone() is None:
+                raise HTTPException(status_code=404, detail="No profile found for this user")
+        conn.commit()
+
+    try:
+        _get_firebase_admin_auth().revoke_refresh_tokens(firebase_uid)
+        revoked = True
+    except Exception:  # noqa: BLE001 -- deactivation (the DB write above) already succeeded either way
+        revoked = False
+
+    return {"deactivated": True, "tokens_revoked": revoked}
+
+
+@app.post("/v1/ops/customer/{firebase_uid}/reactivate")
+def reactivate_customer(
+    firebase_uid: str, _admin: str = Depends(require_role("support_admin", "super_admin"))
+):
+    with get_conn() as conn:
+        with conn.cursor() as cur:
+            cur.execute(
+                "UPDATE user_profiles SET is_active = true WHERE firebase_uid = %s RETURNING firebase_uid",
+                (firebase_uid,),
+            )
+            if cur.fetchone() is None:
+                raise HTTPException(status_code=404, detail="No profile found for this user")
+        conn.commit()
+    return {"reactivated": True}
 
 
 def fetch_enrichment_detail(conn, sk: int) -> dict[str, Any]:
