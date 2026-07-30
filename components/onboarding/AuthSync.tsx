@@ -18,7 +18,6 @@ import {
 
 const TERRITORY_KEY = "specindex:territory";
 const CATEGORY_KEY = "specindex:category";
-const DISMISS_KEY = "specindex:profile-modal-dismissed";
 
 function readStoredList(key: string): string[] {
   if (typeof window === "undefined") return [];
@@ -59,7 +58,6 @@ export function AuthSync() {
     if (wasSignedIn.current === true && isSignedIn === false) {
       window.localStorage.removeItem(TERRITORY_KEY);
       window.localStorage.removeItem(CATEGORY_KEY);
-      window.sessionStorage.removeItem(DISMISS_KEY);
       checkedThisSignIn.current = false;
       setShowModal(false);
     }
@@ -68,8 +66,11 @@ export function AuthSync() {
 
   // On sign-in, check the server profile once. Onboarded -> server wins,
   // overwrite localStorage (not merge). Not onboarded -> open the capture
-  // modal, pre-filled from any existing anonymous localStorage state, unless
-  // already dismissed this browser session.
+  // modal, pre-filled from any existing anonymous localStorage state.
+  // Not dismissible -- a new account isn't usable until this completes
+  // (docs/architecture-2026/02-identity-portals.md onboarding revision:
+  // an incomplete profile shows an empty, useless product on first login,
+  // which hurts conversion more than a short mandatory form).
   useEffect(() => {
     if (!isLoaded || !isSignedIn || checkedThisSignIn.current) return;
     checkedThisSignIn.current = true;
@@ -79,7 +80,6 @@ export function AuthSync() {
           syncProfileToStorage(profile.territory_states, profile.categories[0] ?? "all");
           return;
         }
-        if (window.sessionStorage.getItem(DISMISS_KEY) === "1") return;
         setPrefill({
           territory: readStoredList(TERRITORY_KEY),
           category: window.localStorage.getItem(CATEGORY_KEY) ?? "all",
@@ -97,10 +97,6 @@ export function AuthSync() {
       initialCategory={prefill.category}
       fullName={user?.displayName ?? null}
       leadSource={pathname}
-      onDismiss={() => {
-        window.sessionStorage.setItem(DISMISS_KEY, "1");
-        setShowModal(false);
-      }}
       onSubmit={async (body: UserProfileUpdate) => {
         await saveMyProfile(getToken, body);
         syncProfileToStorage(body.territory_states, body.categories[0] ?? "all");
