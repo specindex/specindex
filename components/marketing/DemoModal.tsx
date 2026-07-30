@@ -6,10 +6,11 @@
 // at the bottom of five separate pages -- homepage, product, how-it-works,
 // about, pricing). Mounted once in app/layout.tsx.
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useFirebaseAuthOptional } from "@/components/FirebaseAuthProvider";
+import { captureAttributionOnce, readAttribution } from "@/lib/attribution";
 
 const API_BASE = "https://specindex-api-gmm6irqe4q-uc.a.run.app";
 
@@ -30,6 +31,13 @@ export function useDemoModal(): DemoModalContextValue {
 
 export function DemoModalProvider({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
+
+  // Captured once, site-wide, on first mount -- not scoped to the modal
+  // itself, since a visitor's first-touch UTM params may arrive on any
+  // page, long before they ever open Request Demo.
+  useEffect(() => {
+    captureAttributionOnce();
+  }, []);
 
   return (
     <DemoModalContext.Provider
@@ -70,6 +78,7 @@ function DemoRequestModal({ onClose }: { onClose: () => void }) {
           categories: String(data.get("categories") ?? ""),
           source_path: pathname,
           firebase_uid: auth?.isSignedIn ? (auth.user?.uid ?? null) : null,
+          ...readAttribution(),
         }),
       });
       if (!res.ok) throw new Error(`Request failed (${res.status})`);

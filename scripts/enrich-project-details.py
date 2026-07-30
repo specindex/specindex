@@ -45,6 +45,7 @@ import re
 import sys
 import time
 import urllib.request
+from datetime import datetime, timezone
 from pathlib import Path
 
 _SCRIPTS = Path(__file__).resolve().parent
@@ -81,10 +82,53 @@ def _client(settings: Settings):
     return genai.Client(vertexai=True, project=settings.google_cloud_project, location=settings.google_cloud_location)
 
 
-def _grounded_call(client, model: str, prompt: str, max_retries: int = 3) -> str:
+# Rough per-1M-token list prices (USD) for cost estimation only -- not
+# billing-accurate, just enough for the budget-tracking/circuit-breaker
+# use case in docs/architecture-2026/01-data-platform.md. Grounding fee is
+# the real cost dominator on sparse prompts (Gemini review finding): it's
+# a fixed per-search charge, NOT token-based, and can be 10-50x the token
+# cost -- logged as its own column rather than folded into token pricing.
+_FLASH_INPUT_PER_M = 0.30
+_FLASH_OUTPUT_PER_M = 2.50
+_GROUNDING_FEE_PER_REQUEST = 0.035  # ~$35 / 1,000 grounded requests
+
+
+def _log_llm_call(
+    conn, project_sk: int | None, call_site: str, model: str,
+    input_tokens: int | None, output_tokens: int | None, grounded: bool,
+) -> None:
+    if conn is None:
+        return
+    cost = _GROUNDING_FEE_PER_REQUEST if grounded else 0.0
+    if input_tokens:
+        cost += (input_tokens / 1_000_000) * _FLASH_INPUT_PER_M
+    if output_tokens:
+        cost += (output_tokens / 1_000_000) * _FLASH_OUTPUT_PER_M
+    with conn.cursor() as cur:
+        cur.execute(
+            """
+            INSERT INTO llm_call_log
+                (project_sk, call_site, model, input_tokens, output_tokens,
+                 grounding_requests_count, estimated_cost_usd, grounded)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+            """,
+            (project_sk, call_site, model, input_tokens, output_tokens,
+             1 if grounded else 0, round(cost, 6), grounded),
+        )
+    conn.commit()
+
+
+def _grounded_call(
+    client, model: str, prompt: str, max_retries: int = 3,
+    conn=None, project_sk: int | None = None, call_site: str = "enrich_unspecified",
+) -> str:
     """One-shot search-grounded generation, no chat history -- each call is
     independent, which is what makes pass 2 a real cross-check rather than
-    the model just re-reading its own pass-1 answer."""
+    the model just re-reading its own pass-1 answer.
+
+    Logs to llm_call_log when conn is given (batch/single-project runs that
+    pass a real connection) -- best-effort, a logging failure must never
+    fail the actual enrichment call."""
     from google.genai import types
     from google.auth.exceptions import RefreshError
 
@@ -94,6 +138,16 @@ def _grounded_call(client, model: str, prompt: str, max_retries: int = 3) -> str
     for attempt in range(1, max_retries + 1):
         try:
             resp = client.models.generate_content(model=model, contents=prompt, config=config)
+            usage = getattr(resp, "usage_metadata", None)
+            try:
+                _log_llm_call(
+                    conn, project_sk, call_site, model,
+                    getattr(usage, "prompt_token_count", None) if usage else None,
+                    getattr(usage, "candidates_token_count", None) if usage else None,
+                    grounded=True,
+                )
+            except Exception as log_err:  # noqa: BLE001 -- logging must never break enrichment
+                print(f"  [warn] llm_call_log insert failed: {log_err}", file=sys.stderr)
             return resp.text
         except RefreshError:
             raise
@@ -149,14 +203,14 @@ array entirely if you found nothing for it -- do not fabricate placeholder rows)
 """
 
 
-def run_discovery(client, model: str, project: dict) -> dict:
+def run_discovery(client, model: str, project: dict, conn=None) -> dict:
     prompt = DISCOVERY_PROMPT.format(
         name=project["name"],
         city=project.get("city") or "unknown city",
         county=project.get("county") or "unknown county",
         state=project.get("state") or "unknown state",
     )
-    text = _grounded_call(client, model, prompt)
+    text = _grounded_call(client, model, prompt, conn=conn, project_sk=project.get("project_sk"), call_site="enrich_pass1")
     return _extract_json(text)
 
 
@@ -179,14 +233,14 @@ Output ONLY a fenced ```json block, a list in the same order as the claims, no c
 """
 
 
-def run_crosscheck(client, model: str, project: dict, claims: list[str]) -> list[dict]:
+def run_crosscheck(client, model: str, project: dict, claims: list[str], conn=None) -> list[dict]:
     if not claims:
         return []
     numbered = "\n".join(f"{i}. {c}" for i, c in enumerate(claims))
     prompt = CROSSCHECK_PROMPT.format(
         name=project["name"], city=project.get("city") or "unknown city", state=project.get("state") or "unknown state", claims=numbered
     )
-    text = _grounded_call(client, model, prompt)
+    text = _grounded_call(client, model, prompt, conn=conn, project_sk=project.get("project_sk"), call_site="enrich_pass2")
     return _extract_json(text)
 
 
@@ -220,6 +274,43 @@ def url_resolves(url: str, timeout: float = 8.0) -> bool:
             return 200 <= resp.status < 400
     except Exception:  # noqa: BLE001 -- any failure means "don't trust this link"
         return False
+
+
+# ---------------------------------------------------------------------------
+# Fingerprint -- computed here in code, never trusted to the LLM (same
+# discipline as canonical_golden_id() in model_b_sonnet.py). Hashes the
+# concatenation of every field the two Gemini passes actually condition
+# on: name/city/county/state, plus this project's source titles/urls and
+# document filenames -- if none of that changed, the discovery/crosscheck
+# prompts would produce the same input and cost is better spent elsewhere.
+# ---------------------------------------------------------------------------
+
+CURRENT_ENRICHMENT_VERSION = 1
+
+
+def compute_source_fingerprint(conn, project: dict) -> str:
+    import hashlib
+
+    parts = [
+        project.get("name") or "",
+        project.get("city") or "",
+        project.get("county") or "",
+        project.get("state") or "",
+    ]
+    with conn.cursor() as cur:
+        cur.execute(
+            "SELECT title, url FROM project_sources WHERE project_sk = %s ORDER BY id",
+            (project["project_sk"],),
+        )
+        for title, url in cur.fetchall():
+            parts.append(f"{title}|{url}")
+        cur.execute(
+            "SELECT title FROM project_document_files WHERE project_sk = %s ORDER BY id",
+            (project["project_sk"],),
+        )
+        for (title,) in cur.fetchall():
+            parts.append(title)
+    return hashlib.sha256("\n".join(parts).encode("utf-8")).hexdigest()[:32]
 
 
 # ---------------------------------------------------------------------------
@@ -276,7 +367,7 @@ def build_rows(discovery: dict, crosscheck: list[dict]) -> list[dict]:
     return rows
 
 
-def persist(conn, project_sk: int, rows: list[dict], news: list[dict]) -> None:
+def persist(conn, project_sk: int, rows: list[dict], news: list[dict], fingerprint: str | None = None) -> None:
     import psycopg2.extras  # noqa: F401
 
     with conn.cursor() as cur:
@@ -305,23 +396,56 @@ def persist(conn, project_sk: int, rows: list[dict], news: list[dict]) -> None:
             )
         cur.execute(
             """
-            INSERT INTO project_enrichment_checks (project_sk, checked_at) VALUES (%s, now())
-            ON CONFLICT (project_sk) DO UPDATE SET checked_at = now()
+            INSERT INTO project_enrichment_checks
+                (project_sk, checked_at, source_fingerprint, enrichment_version, status, last_enriched_at)
+            VALUES (%s, now(), %s, %s, 'done', now())
+            ON CONFLICT (project_sk) DO UPDATE SET
+                checked_at = now(),
+                source_fingerprint = EXCLUDED.source_fingerprint,
+                enrichment_version = EXCLUDED.enrichment_version,
+                status = 'done',
+                last_enriched_at = now()
             """,
-            (project_sk,),
+            (project_sk, fingerprint, CURRENT_ENRICHMENT_VERSION),
         )
     conn.commit()
 
 
-def enrich_one(client, settings: Settings, conn, project: dict, dry_run: bool) -> int:
+def enrich_one(client, settings: Settings, conn, project: dict, dry_run: bool, force: bool = False) -> int:
     """Run both passes for one project and persist (unless dry_run). Returns
-    the number of facts written, for the batch-mode summary."""
+    the number of facts written, for the batch-mode summary.
+
+    Fingerprint-gated (docs/architecture-2026/01-data-platform.md): if the
+    project's source data hasn't changed since the last successful
+    enrichment (same fingerprint) AND that enrichment was less than 180
+    days ago, skip calling Gemini at all -- the 180-day fallback exists
+    because the fingerprint only hashes LOCAL fields, so a permanently
+    sparse project (nothing in project_sources/project_document_files)
+    would otherwise never be re-checked for newly published external
+    info (a real bug a Gemini review of this design caught)."""
+    fingerprint = compute_source_fingerprint(conn, project)
+    if not force:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT source_fingerprint, last_enriched_at FROM project_enrichment_checks WHERE project_sk = %s",
+                (project["project_sk"],),
+            )
+            existing = cur.fetchone()
+        if existing:
+            prev_fingerprint, last_enriched_at = existing
+            stale = last_enriched_at is None or (
+                datetime.now(timezone.utc) - last_enriched_at
+            ).days >= 180
+            if prev_fingerprint == fingerprint and not stale:
+                print(f"  skip: unchanged fingerprint, enriched {last_enriched_at} (< 180 days) for {project['spx_id']}")
+                return 0
+
     print(f"Pass 1 (discovery): {project['name']!r}")
-    discovery = run_discovery(client, settings.flash_model, project)
+    discovery = run_discovery(client, settings.flash_model, project, conn=conn)
 
     claims = _team_claims(discovery)
     print(f"Pass 2 (cross-check): {len(claims)} claims")
-    crosscheck = run_crosscheck(client, settings.flash_model, project, claims)
+    crosscheck = run_crosscheck(client, settings.flash_model, project, claims, conn=conn)
 
     rows = build_rows(discovery, crosscheck)
 
@@ -341,7 +465,7 @@ def enrich_one(client, settings: Settings, conn, project: dict, dry_run: bool) -
         print("  --dry-run: not writing to the database")
         return len(rows)
 
-    persist(conn, project["project_sk"], rows, verified_news)
+    persist(conn, project["project_sk"], rows, verified_news, fingerprint=fingerprint)
     print(f"  wrote {len(rows)} facts + {len(verified_news)} news rows for {project['spx_id']}")
     return len(rows)
 
@@ -396,7 +520,7 @@ def main() -> int:
                     SELECT p.project_sk, p.name, p.city, p.county, p.state
                     FROM projects p
                     LEFT JOIN project_enrichment_checks c ON c.project_sk = p.project_sk
-                    WHERE (c.checked_at IS NULL OR c.checked_at < now() - interval '30 days')
+                    WHERE (c.project_sk IS NULL OR c.status != 'done' OR c.last_enriched_at < now() - interval '180 days')
                     {state_clause}
                     ORDER BY p.estimated_value_usd DESC NULLS LAST
                     LIMIT %s
@@ -417,8 +541,9 @@ def main() -> int:
                     if not args.dry_run:
                         with conn.cursor() as cur:
                             cur.execute(
-                                "INSERT INTO project_enrichment_checks (project_sk, checked_at) VALUES (%s, now()) "
-                                "ON CONFLICT (project_sk) DO UPDATE SET checked_at = now()",
+                                "INSERT INTO project_enrichment_checks (project_sk, checked_at, status) "
+                                "VALUES (%s, now(), 'failed') "
+                                "ON CONFLICT (project_sk) DO UPDATE SET checked_at = now(), status = 'failed'",
                                 (project["project_sk"],),
                             )
                         conn.commit()

@@ -71,8 +71,23 @@ def _verify_firebase_token(request: Request) -> dict[str, Any]:
 
 def require_firebase_user(request: Request) -> str:
     """FastAPI dependency returning just the Firebase user id (`sub` claim,
-    aka the Firebase uid)."""
-    return _verify_firebase_token(request)["sub"]
+    aka the Firebase uid).
+
+    Also enforces user_profiles.is_active here, not just in require_role --
+    Firebase ID tokens self-expire in ~1hr and the client SDK silently
+    refreshes them, so a role-only check does nothing for a deactivated
+    user's still-valid token on the many endpoints that only depend on
+    this function. Checking is_active at this layer makes deactivation
+    take effect on the very next request instead of up to an hour later.
+    No row in user_profiles yet (e.g. first request before onboarding)
+    is treated as active -- there's nothing to deactivate yet."""
+    uid = _verify_firebase_token(request)["sub"]
+    with get_conn() as conn, conn.cursor() as cur:
+        cur.execute("SELECT is_active FROM user_profiles WHERE firebase_uid = %s", (uid,))
+        row = cur.fetchone()
+    if row is not None and row[0] is False:
+        raise HTTPException(status_code=403, detail="Account deactivated")
+    return uid
 
 
 # `next build` (generateStaticParams, getStats/getSampleProjects at build
@@ -131,11 +146,84 @@ def require_admin_user(request: Request) -> str:
     dependency chain) so this check can't be bypassed by hitting this
     endpoint directly. Returns the email on success; raises 403 (not 401)
     for a valid-but-non-admin session so the two failure modes are
-    distinguishable in logs."""
+    distinguishable in logs.
+
+    Superseded by require_role() below for new endpoints -- kept only
+    because ADMIN_EMAILS is still the bootstrap seed data for
+    user_staff_roles (see db/migrations/027_user_staff_roles.sql). Don't
+    add new callers of this function; use require_role("super_admin")
+    instead so authorization lives in one place (Postgres), not two."""
     _uid, email = require_firebase_user_with_email(request)
     if email.lower() not in ADMIN_EMAILS:
         raise HTTPException(status_code=403, detail="Not authorized")
     return email
+
+
+def require_role(*allowed: str):
+    """Factory: FastAPI dependency requiring one of the given
+    user_staff_roles rows, on top of a valid (and active -- see
+    require_firebase_user) Firebase session. Verifies the token itself
+    rather than trusting an upstream dependency ran first, same
+    non-bypassable-by-hitting-the-endpoint-directly guarantee
+    require_admin_user already documented."""
+
+    def _dep(request: Request) -> str:
+        firebase_uid = require_firebase_user(request)
+        with get_conn() as conn, conn.cursor() as cur:
+            cur.execute(
+                "SELECT role FROM user_staff_roles WHERE firebase_uid = %s",
+                (firebase_uid,),
+            )
+            roles = {r[0] for r in cur.fetchall()}
+        if not roles & set(allowed):
+            raise HTTPException(status_code=403, detail="Not authorized")
+        return firebase_uid
+
+    return _dep
+
+
+# API-key auth foundation (docs/architecture-2026/04-productization.md) --
+# the shared prerequisite for MCP access and Enterprise billing. Not wired
+# into any endpoint yet; this is the primitive other work builds on.
+def _hash_api_key(raw_key: str) -> str:
+    import hashlib
+
+    return hashlib.sha256(raw_key.encode("utf-8")).hexdigest()
+
+
+def require_api_key(request: Request) -> str:
+    """FastAPI dependency: validates an X-Api-Key header against api_keys
+    (hashed, never stored in plaintext). Returns the owning firebase_uid.
+    Records last_used_at best-effort -- a logging failure must never fail
+    the actual request."""
+    raw_key = request.headers.get("x-api-key", "")
+    if not raw_key:
+        raise HTTPException(status_code=401, detail="Missing X-Api-Key header")
+    key_hash = _hash_api_key(raw_key)
+    with get_conn() as conn, conn.cursor() as cur:
+        cur.execute(
+            "SELECT id, firebase_uid FROM api_keys WHERE key_hash = %s AND revoked_at IS NULL",
+            (key_hash,),
+        )
+        row = cur.fetchone()
+        if row is None:
+            raise HTTPException(status_code=401, detail="Invalid or revoked API key")
+        key_id, firebase_uid = row
+        try:
+            cur.execute("UPDATE api_keys SET last_used_at = now() WHERE id = %s", (key_id,))
+            cur.execute(
+                "INSERT INTO api_key_usage (api_key_id, endpoint) VALUES (%s, %s)",
+                (key_id, request.url.path),
+            )
+            conn.commit()
+        except Exception:  # noqa: BLE001 -- usage logging must never fail the request
+            conn.rollback()
+    return firebase_uid
+
+
+class ApiKeyCreate(BaseModel):
+    name: str = Field(min_length=1, max_length=200)
+
 
 # Standard county/county-equivalent counts per state, used only to compute
 # "how much room is left" in the /v1/coverage/insights endpoint -- not
@@ -184,6 +272,52 @@ app.add_middleware(
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
+
+
+@app.post("/v1/me/api-keys")
+def create_api_key(body: ApiKeyCreate, firebase_uid: str = Depends(require_firebase_user)):
+    """Returns the raw key exactly once -- it is not recoverable from the
+    database afterward, only key_prefix is kept for the customer to
+    identify it later in a list view."""
+    import secrets
+
+    raw_key = f"spx_{secrets.token_urlsafe(32)}"
+    key_hash = _hash_api_key(raw_key)
+    with get_conn() as conn:
+        with conn.cursor() as cur:
+            cur.execute(
+                "INSERT INTO api_keys (firebase_uid, key_hash, key_prefix, name) VALUES (%s, %s, %s, %s) RETURNING id",
+                (firebase_uid, key_hash, raw_key[:12], body.name),
+            )
+            key_id = cur.fetchone()[0]
+        conn.commit()
+    return {"id": key_id, "api_key": raw_key, "name": body.name}
+
+
+@app.get("/v1/me/api-keys")
+def list_api_keys(firebase_uid: str = Depends(require_firebase_user)):
+    with get_conn() as conn:
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+            cur.execute(
+                "SELECT id, key_prefix, name, created_at, last_used_at, revoked_at "
+                "FROM api_keys WHERE firebase_uid = %s ORDER BY created_at DESC",
+                (firebase_uid,),
+            )
+            rows = cur.fetchall()
+    return {"keys": rows}
+
+
+@app.delete("/v1/me/api-keys/{key_id}")
+def revoke_api_key(key_id: int, firebase_uid: str = Depends(require_firebase_user)):
+    with get_conn() as conn:
+        with conn.cursor() as cur:
+            cur.execute(
+                "UPDATE api_keys SET revoked_at = now() WHERE id = %s AND firebase_uid = %s AND revoked_at IS NULL",
+                (key_id, firebase_uid),
+            )
+        conn.commit()
+    return {"ok": True}
+
 
 _pool: psycopg2.pool.ThreadedConnectionPool | None = None
 
@@ -1023,7 +1157,7 @@ def db_health():
 
 
 @app.get("/v1/ops/crm")
-def list_crm_contacts(_admin: str = Depends(require_admin_user)):
+def list_crm_contacts(_admin: str = Depends(require_role("support_admin", "super_admin"))):
     """Read-only -- docs/PRD_SIGNUP_CRM.md deliberately cuts a custom
     editable UI in favor of a database GUI/psql directly against Cloud SQL
     for stage/notes updates until real lead volume justifies more. Sorting/
@@ -1351,6 +1485,15 @@ class ContactSubmission(BaseModel):
     # request to the wrong *already-anonymous* row in the internal CRM view,
     # not a security-relevant trust boundary.
     firebase_uid: str | None = Field(default=None, max_length=200)
+    # First-touch attribution, captured client-side into localStorage on
+    # first landing (not PostHog alone) -- a Gemini review of the growth
+    # architecture flagged that ad-blockers silently drop 20-35% of
+    # client-side analytics tracking for this ICP, so this first-party
+    # capture is the primary attribution source, not a PostHog convenience.
+    utm_source: str | None = Field(default=None, max_length=200)
+    utm_medium: str | None = Field(default=None, max_length=200)
+    utm_campaign: str | None = Field(default=None, max_length=200)
+    referrer: str | None = Field(default=None, max_length=500)
 
     @field_validator("email")
     @classmethod
@@ -1400,8 +1543,9 @@ def submit_contact(sub: ContactSubmission):
             cur.execute(
                 """
                 INSERT INTO contact_submissions
-                    (first_name, last_name, email, company, categories, source_path, firebase_uid)
-                VALUES (%s, %s, %s, %s, %s, %s, %s)
+                    (first_name, last_name, email, company, categories, source_path, firebase_uid,
+                     utm_source, utm_medium, utm_campaign, referrer)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                 RETURNING id
                 """,
                 (
@@ -1412,6 +1556,10 @@ def submit_contact(sub: ContactSubmission):
                     sub.categories,
                     sub.source_path,
                     sub.firebase_uid,
+                    sub.utm_source,
+                    sub.utm_medium,
+                    sub.utm_campaign,
+                    sub.referrer,
                 ),
             )
             submission_id = cur.fetchone()[0]
