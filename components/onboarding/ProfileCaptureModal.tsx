@@ -10,17 +10,27 @@ type Facets = { states: string[]; categories: string[] };
 export function ProfileCaptureModal({
   initialTerritory,
   initialCategory,
+  fullName,
+  leadSource,
   onDismiss,
   onSubmit,
 }: {
   initialTerritory: string[];
   initialCategory: string;
+  // Sourced from the signed-in user's own auth state (Firebase's
+  // displayName) and the page they were on at sign-in -- not asked as form
+  // fields, see docs/PRD_SIGNUP_CRM.md Section 4 on why these are captured
+  // rather than typed.
+  fullName: string | null;
+  leadSource: string | null;
   onDismiss: () => void;
   onSubmit: (body: UserProfileUpdate) => Promise<void>;
 }) {
   const [territory, setTerritory] = useState<string[]>(initialTerritory);
   const [category, setCategory] = useState(initialCategory);
   const [company, setCompany] = useState("");
+  const [phone, setPhone] = useState("");
+  const [roleTitle, setRoleTitle] = useState("");
   const [facets, setFacets] = useState<Facets>({ states: [], categories: [] });
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -51,6 +61,10 @@ export function ProfileCaptureModal({
         company: company.trim() || null,
         territory_states: territory,
         categories: category !== "all" ? [category] : [],
+        full_name: fullName,
+        phone: phone.trim() || null,
+        role_title: roleTitle.trim() || null,
+        lead_source: leadSource,
       });
     } catch {
       setError("Couldn't save your profile — try again in a moment.");
@@ -133,6 +147,40 @@ export function ProfileCaptureModal({
               placeholder="Acme Building Products"
               className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
             />
+          </div>
+
+          <div className="grid grid-cols-2 gap-3">
+            <div>
+              <label
+                htmlFor="profile-role"
+                className="text-xs font-semibold uppercase tracking-wider text-[var(--color-gray-400)]"
+              >
+                Role <span className="normal-case text-[var(--color-gray-400)]">(optional)</span>
+              </label>
+              <input
+                id="profile-role"
+                value={roleTitle}
+                onChange={(e) => setRoleTitle(e.target.value)}
+                placeholder="Territory Manager"
+                className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="profile-phone"
+                className="text-xs font-semibold uppercase tracking-wider text-[var(--color-gray-400)]"
+              >
+                Phone <span className="normal-case text-[var(--color-gray-400)]">(optional)</span>
+              </label>
+              <input
+                id="profile-phone"
+                type="tel"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                placeholder="(555) 555-0123"
+                className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
+              />
+            </div>
           </div>
 
           {error && <p className="text-sm text-red-600">{error}</p>}

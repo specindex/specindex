@@ -32,6 +32,13 @@ export type UserProfileUpdate = {
   company: string | null;
   territory_states: string[];
   categories: string[];
+  // CRM fields (docs/PRD_SIGNUP_CRM.md Phase 2). full_name/lead_source are
+  // sourced from the signed-in user's own auth state/current page, not
+  // typed by hand -- see ProfileCaptureModal/AuthSync.
+  full_name: string | null;
+  phone: string | null;
+  role_title: string | null;
+  lead_source: string | null;
 };
 
 type GetToken = (options?: { template?: string }) => Promise<string | null>;

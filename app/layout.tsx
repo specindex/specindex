@@ -51,15 +51,20 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body>
-        <DemoModalProvider>
-          <FirebaseAuthProvider>
+        {/* FirebaseAuthProvider wraps DemoModalProvider (not the reverse) so
+            the demo-request modal can safely call useFirebaseAuth() to link
+            a submission to a signed-in user (docs/PRD_SIGNUP_CRM.md Section
+            2.2) -- it degrades to "no auth" internally when unconfigured,
+            never throws, so nesting it outermost has no downside. */}
+        <FirebaseAuthProvider>
+          <DemoModalProvider>
             <div className="min-h-screen flex flex-col">
               <SiteHeader />
               <main className="flex-1">{children}</main>
               <SiteFooter />
             </div>
-          </FirebaseAuthProvider>
-        </DemoModalProvider>
+          </DemoModalProvider>
+        </FirebaseAuthProvider>
       </body>
     </html>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { useFirebaseAuth } from "@/components/FirebaseAuthProvider";
 import { ProfileCaptureModal } from "./ProfileCaptureModal";
 import {
@@ -38,7 +39,12 @@ function syncProfileToStorage(territory: string[], category: string) {
 }
 
 export function AuthSync() {
-  const { isLoaded, isSignedIn, getToken } = useFirebaseAuth();
+  const { isLoaded, isSignedIn, getToken, user } = useFirebaseAuth();
+  // Snapshot of the page the visitor was on the moment sign-in resolved --
+  // a coarse but zero-friction lead_source, distinct from the demo form's
+  // source_path (which is more directly the page they clicked "Request
+  // Demo" from).
+  const pathname = usePathname();
   const wasSignedIn = useRef<boolean | null>(null);
   const checkedThisSignIn = useRef(false);
   const [showModal, setShowModal] = useState(false);
@@ -89,6 +95,8 @@ export function AuthSync() {
     <ProfileCaptureModal
       initialTerritory={prefill.territory}
       initialCategory={prefill.category}
+      fullName={user?.displayName ?? null}
+      leadSource={pathname}
       onDismiss={() => {
         window.sessionStorage.setItem(DISMISS_KEY, "1");
         setShowModal(false);
