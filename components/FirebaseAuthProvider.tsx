@@ -49,6 +49,17 @@ export function useFirebaseAuth(): FirebaseAuthContextValue {
   return ctx;
 }
 
+// Non-throwing variant for call sites that render regardless of whether
+// Firebase Auth is configured (e.g. DemoModal.tsx, mounted globally in
+// app/layout.tsx, not behind a FIREBASE_AUTH_ENABLED-gated branch like
+// SiteHeader's auth-aware subtree is) -- FirebaseAuthProvider renders
+// children with no context at all when config is missing, so useFirebaseAuth()
+// would throw there; this returns null instead for "auth isn't available,
+// proceed without it" call sites.
+export function useFirebaseAuthOptional(): FirebaseAuthContextValue | null {
+  return useContext(FirebaseAuthContext);
+}
+
 function FirebaseAuthInner({ children }: { children: React.ReactNode }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [user, setUser] = useState<User | null>(null);

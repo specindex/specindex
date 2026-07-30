@@ -9,6 +9,7 @@
 import { createContext, useContext, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useFirebaseAuthOptional } from "@/components/FirebaseAuthProvider";
 
 const API_BASE = "https://specindex-api-gmm6irqe4q-uc.a.run.app";
 
@@ -42,6 +43,10 @@ export function DemoModalProvider({ children }: { children: React.ReactNode }) {
 
 function DemoRequestModal({ onClose }: { onClose: () => void }) {
   const pathname = usePathname();
+  // null whenever Firebase Auth isn't configured, or when the visitor just
+  // isn't signed in -- both are the same "no uid to attach" case from this
+  // form's perspective (docs/PRD_SIGNUP_CRM.md Section 2.2).
+  const auth = useFirebaseAuthOptional();
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [pending, setPending] = useState(false);
@@ -64,6 +69,7 @@ function DemoRequestModal({ onClose }: { onClose: () => void }) {
           company: String(data.get("company") ?? ""),
           categories: String(data.get("categories") ?? ""),
           source_path: pathname,
+          firebase_uid: auth?.isSignedIn ? (auth.user?.uid ?? null) : null,
         }),
       });
       if (!res.ok) throw new Error(`Request failed (${res.status})`);
@@ -172,7 +178,7 @@ function DemoRequestModal({ onClose }: { onClose: () => void }) {
                 />
               </label>
             </div>
-            <button type="submit" disabled={pending} className="btn btn-primary mt-6 w-full disabled:opacity-60">
+            <button type="submit" disabled={pending} className="btn btn-demo mt-6 w-full disabled:opacity-60">
               {pending ? "Sending…" : "Request Demo"}
             </button>
             <p className="mt-3 text-center text-xs text-[var(--color-gray-400)]">

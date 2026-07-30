@@ -110,6 +110,33 @@ def require_firebase_user_with_email(request: Request) -> tuple[str, str]:
         raise HTTPException(status_code=401, detail="Token missing email claim")
     return claims["sub"], email
 
+
+# /ops/crm (docs/PRD_SIGNUP_CRM.md Section 3) renders real names, emails,
+# and phone numbers -- unlike the rest of /v1/ops/*, which is
+# unauthenticated-but-noindex because it exposes only operational metadata
+# nobody could misuse. A page rendering real PII needs actual auth, not
+# just an unlinked URL -- this was a specific finding from an earlier
+# design review of this feature, not a style choice. Comma-separated env
+# var rather than a DB table: the allowlist is expected to stay tiny
+# (founder + maybe one or two people), and changing it via a Cloud Run env
+# var update is simpler than building admin-user management for a list
+# this short.
+ADMIN_EMAILS = {e.strip().lower() for e in os.environ.get("ADMIN_EMAILS", "").split(",") if e.strip()}
+
+
+def require_admin_user(request: Request) -> str:
+    """FastAPI dependency: valid Firebase session AND the caller's email is
+    on the ADMIN_EMAILS allowlist. Verifies the token itself (does not
+    trust a prior require_firebase_user_with_email call elsewhere in the
+    dependency chain) so this check can't be bypassed by hitting this
+    endpoint directly. Returns the email on success; raises 403 (not 401)
+    for a valid-but-non-admin session so the two failure modes are
+    distinguishable in logs."""
+    _uid, email = require_firebase_user_with_email(request)
+    if email.lower() not in ADMIN_EMAILS:
+        raise HTTPException(status_code=403, detail="Not authorized")
+    return email
+
 # Standard county/county-equivalent counts per state, used only to compute
 # "how much room is left" in the /v1/coverage/insights endpoint -- not
 # authoritative for anything billing- or legal-critical. A few states have
@@ -995,6 +1022,29 @@ def db_health():
     }
 
 
+@app.get("/v1/ops/crm")
+def list_crm_contacts(_admin: str = Depends(require_admin_user)):
+    """Read-only -- docs/PRD_SIGNUP_CRM.md deliberately cuts a custom
+    editable UI in favor of a database GUI/psql directly against Cloud SQL
+    for stage/notes updates until real lead volume justifies more. Sorting/
+    filtering is left to the frontend -- table size here is tiny (pre-
+    revenue), so a server-side query-param API isn't worth the surface area
+    yet."""
+    with get_conn() as conn:
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+            cur.execute(
+                """
+                SELECT contact_key, name, email, company, phone, role_title,
+                       territory_states, categories, lifecycle_stage, lead_source,
+                       demo_request_source, demo_requested_at, onboarded_at, notes
+                FROM crm_contacts
+                ORDER BY COALESCE(onboarded_at, demo_requested_at) DESC NULLS LAST
+                """
+            )
+            rows = cur.fetchall()
+    return {"contacts": rows}
+
+
 def fetch_enrichment_detail(conn, sk: int) -> dict[str, Any]:
     """Full project_enrichment rows grouped by section, for the detail page
     only -- not included in the bulk list response (fetch_enrichment above)
@@ -1293,6 +1343,14 @@ class ContactSubmission(BaseModel):
     company: str = Field(min_length=1, max_length=200)
     categories: str = Field(default="", max_length=500)
     source_path: str = Field(default="", max_length=200)
+    # Client sends this when the visitor happens to be signed in at the
+    # moment they submit the demo form -- not verified server-side (this
+    # endpoint stays anonymous/unauthenticated on purpose, same as before),
+    # just a best-effort join key for crm_contacts (db/migrations/
+    # 026_crm_contacts.sql). A forged value here only ever links a demo
+    # request to the wrong *already-anonymous* row in the internal CRM view,
+    # not a security-relevant trust boundary.
+    firebase_uid: str | None = Field(default=None, max_length=200)
 
     @field_validator("email")
     @classmethod
@@ -1342,11 +1400,19 @@ def submit_contact(sub: ContactSubmission):
             cur.execute(
                 """
                 INSERT INTO contact_submissions
-                    (first_name, last_name, email, company, categories, source_path)
-                VALUES (%s, %s, %s, %s, %s, %s)
+                    (first_name, last_name, email, company, categories, source_path, firebase_uid)
+                VALUES (%s, %s, %s, %s, %s, %s, %s)
                 RETURNING id
                 """,
-                (sub.first_name, sub.last_name, sub.email, sub.company, sub.categories, sub.source_path),
+                (
+                    sub.first_name,
+                    sub.last_name,
+                    sub.email,
+                    sub.company,
+                    sub.categories,
+                    sub.source_path,
+                    sub.firebase_uid,
+                ),
             )
             submission_id = cur.fetchone()[0]
         conn.commit()
@@ -1366,6 +1432,14 @@ class UserProfileUpdate(BaseModel):
     company: str | None = Field(default=None, max_length=200)
     territory_states: list[str] = Field(default_factory=list)
     categories: list[str] = Field(default_factory=list)
+    # CRM fields (docs/PRD_SIGNUP_CRM.md Phase 2). full_name/lead_source are
+    # captured client-side from the signed-in user's own auth state/current
+    # page at submit time (ProfileCaptureModal), not asked as separate typed
+    # fields -- phone/role_title are the only genuinely new form inputs.
+    full_name: str | None = Field(default=None, max_length=200)
+    phone: str | None = Field(default=None, max_length=50)
+    role_title: str | None = Field(default=None, max_length=200)
+    lead_source: str | None = Field(default=None, max_length=200)
 
     @field_validator("territory_states")
     @classmethod
@@ -1415,17 +1489,40 @@ def upsert_my_profile(
         with conn.cursor() as cur:
             cur.execute(
                 """
-                INSERT INTO user_profiles (firebase_uid, email, company, territory_states, categories, onboarded_at)
-                VALUES (%s, %s, %s, %s, %s, now())
+                INSERT INTO user_profiles
+                    (firebase_uid, email, company, territory_states, categories,
+                     full_name, phone, role_title, lead_source, onboarded_at)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, now())
                 ON CONFLICT (firebase_uid) DO UPDATE SET
                     email = EXCLUDED.email,
                     company = EXCLUDED.company,
                     territory_states = EXCLUDED.territory_states,
                     categories = EXCLUDED.categories,
+                    phone = EXCLUDED.phone,
+                    role_title = EXCLUDED.role_title,
+                    -- full_name/lead_source are captured once, client-side,
+                    -- from the signed-in user's own auth state/current page
+                    -- (not asked as a form field a person can leave blank on
+                    -- a later edit) -- COALESCE so a future call that omits
+                    -- them (e.g. an "edit territory" flow reusing this same
+                    -- endpoint) doesn't null out what first-sign-in already
+                    -- captured.
+                    full_name = COALESCE(EXCLUDED.full_name, user_profiles.full_name),
+                    lead_source = COALESCE(EXCLUDED.lead_source, user_profiles.lead_source),
                     onboarded_at = COALESCE(user_profiles.onboarded_at, now()),
                     updated_at = now()
                 """,
-                (firebase_uid, email, body.company, body.territory_states, body.categories),
+                (
+                    firebase_uid,
+                    email,
+                    body.company,
+                    body.territory_states,
+                    body.categories,
+                    body.full_name,
+                    body.phone,
+                    body.role_title,
+                    body.lead_source,
+                ),
             )
         conn.commit()
     return {"ok": True}
