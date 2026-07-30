@@ -1228,3 +1228,110 @@ def upsert_my_profile(
             )
         conn.commit()
     return {"ok": True}
+
+
+TRACKED_STAGES = {"watching", "contacted", "quoted", "won", "lost"}
+
+
+class TrackedProjectUpdate(BaseModel):
+    stage: str = Field(default="watching")
+    note: str | None = Field(default=None, max_length=2000)
+
+    @field_validator("stage")
+    @classmethod
+    def stage_is_valid(cls, v: str) -> str:
+        if v not in TRACKED_STAGES:
+            raise ValueError(f"stage must be one of {sorted(TRACKED_STAGES)}")
+        return v
+
+
+@app.get("/v1/me/tracked-projects")
+def list_my_tracked_projects(clerk_user_id: str = Depends(require_clerk_user)):
+    """Backs the signed-in home's 'Tracked' pipeline view. Joins against
+    `projects` for display fields rather than the full row_to_project() +
+    enrichment fetch used by /v1/projects/{id} -- this list doesn't need
+    CSI scope, executive briefs, or contacts, just enough to render a
+    pipeline table."""
+    with get_conn() as conn:
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+            cur.execute(
+                """
+                SELECT
+                    p.project_id, p.project_sk, p.name, p.city, p.county, p.state,
+                    p.status, p.estimated_value_usd,
+                    t.stage, t.note, t.updated_at
+                FROM user_tracked_projects t
+                JOIN projects p ON p.project_sk = t.project_sk
+                WHERE t.clerk_user_id = %s
+                ORDER BY t.updated_at DESC
+                """,
+                (clerk_user_id,),
+            )
+            rows = cur.fetchall()
+    return {
+        "tracked": [
+            {
+                "project_id": r["project_id"],
+                "spx_id": spx_id(r["project_sk"]),
+                "name": r["name"],
+                "city": r["city"] or "",
+                "county": r["county"] or "",
+                "state": r["state"],
+                "status": r["status"],
+                "estimated_value_usd": r["estimated_value_usd"],
+                "stage": r["stage"],
+                "note": r["note"],
+                "updated_at": r["updated_at"].isoformat() if r["updated_at"] else None,
+            }
+            for r in rows
+        ]
+    }
+
+
+@app.put("/v1/me/tracked-projects/{project_id}")
+def upsert_tracked_project(
+    project_id: str,
+    body: TrackedProjectUpdate,
+    clerk_user_id: str = Depends(require_clerk_user),
+):
+    """Full-replace upsert (same convention as upsert_my_profile) -- the
+    caller always sends the complete stage+note, not a partial patch. The
+    frontend already holds the current tracked-project state from the
+    list endpoint before it ever calls this, so this never needs to guess
+    at what to preserve."""
+    with get_conn() as conn:
+        with conn.cursor() as cur:
+            cur.execute("SELECT project_sk FROM projects WHERE project_id = %s", (project_id,))
+            row = cur.fetchone()
+            if not row:
+                raise HTTPException(status_code=404, detail="Project not found")
+            project_sk = row[0]
+            cur.execute(
+                """
+                INSERT INTO user_tracked_projects (clerk_user_id, project_sk, stage, note)
+                VALUES (%s, %s, %s, %s)
+                ON CONFLICT (clerk_user_id, project_sk) DO UPDATE SET
+                    stage = EXCLUDED.stage,
+                    note = EXCLUDED.note,
+                    updated_at = now()
+                """,
+                (clerk_user_id, project_sk, body.stage, body.note),
+            )
+        conn.commit()
+    return {"ok": True}
+
+
+@app.delete("/v1/me/tracked-projects/{project_id}")
+def untrack_project(project_id: str, clerk_user_id: str = Depends(require_clerk_user)):
+    with get_conn() as conn:
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                DELETE FROM user_tracked_projects
+                WHERE clerk_user_id = %s
+                  AND project_sk = (SELECT project_sk FROM projects WHERE project_id = %s)
+                """,
+                (clerk_user_id, project_id),
+            )
+        conn.commit()
+    return {"ok": True}
