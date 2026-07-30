@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { HomePageGate } from "@/components/marketing/HomePageGate";
 import { ProductMock } from "@/components/marketing/ProductMock";
 import { StatsStrip } from "@/components/marketing/DemoSection";
 import { RequestDemoButton } from "@/components/marketing/RequestDemoButton";
@@ -89,7 +90,7 @@ export default async function HomePage() {
   const mappedCount = getMappedProjectCount(sample);
 
   return (
-    <>
+    <HomePageGate>
       {/* Hero */}
       <section className="bg-[var(--color-bg)]">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:grid-cols-2 md:px-8 md:py-24">
@@ -378,6 +379,6 @@ export default async function HomePage() {
       </section>
 
       <FAQ items={faqs} />
-    </>
+    </HomePageGate>
   );
 }
