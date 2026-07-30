@@ -18,21 +18,33 @@ items surfaced BY the review are added in their place.
 approach, since the repo has since migrated off Clerk to Firebase Auth.
 Listed below under its corrected form.
 
+**Update 2026-07-30, end of day: all P0 items shipped and live.** Actual
+migration numbers ended up 027-031 (026 was already taken by
+`crm_contacts.sql` from concurrent work). All 5 migrations applied
+directly to production Postgres, backend redeployed and verified live
+(caught and fixed one real deploy bug along the way — two new endpoints
+were defined before `app = FastAPI(...)` existed, which crashed the
+container on boot; fixed by moving them after, verified with a local
+import before redeploying). Frontend build passes clean. Two manual
+checks remain the founder's to do: signing into `/ops/crm` to confirm it
+renders under the new `require_role` gate, and confirming a UTM-tagged
+demo submission captures correctly.
+
 ---
 
-## P0 — Build before anything else in this package
+## P0 — Build before anything else in this package — ✅ ALL SHIPPED 2026-07-30
 
-- Add `026_user_staff_roles.sql` (staff-only) + `subscription_tier`/`is_active` columns on `user_profiles` — revised per Gemini review, two structures not one mixed table — *identity*
-- Build `require_role()` FastAPI dependency factory; re-point `/v1/ops/crm` at it instead of `require_admin_user` — *identity*
-- Backfill current `ADMIN_EMAILS` allowlist into `user_staff_roles` as `super_admin` rows — *identity*
-- Check `is_active` inside `require_firebase_user` itself, not just `require_role` — closes the ~1hr JWT-revocation gap Gemini flagged — *identity*
-- Add `source_fingerprint`, `enrichment_version`, `status`, `last_enriched_at` columns to `project_enrichment_checks` (migration 027), with a 180-day max-staleness fallback so a fingerprint that never changes doesn't freeze a project out of re-enrichment forever (Gemini: "grounding paradox") — *data platform*
-- Compute/store `source_fingerprint` in `enrich-project-details.py`; gate re-enrichment on fingerprint/version change, not just the 30-day timer — *data platform*
-- Create `llm_call_log` table with a `grounding_requests_count` column priced separately from tokens (Gemini: Vertex Search Grounding is a fixed per-search fee that can dwarf token cost 10-50x, not captured by a token-only cost model); instrument `enrich-project-details.py` (both passes) and `model_a_flash.py`/`model_b_sonnet.py` to write a row per call — *data platform*
-- Add `FAQPage` JSON-LD to `components/marketing/FAQ.tsx` and `Organization`/`SoftwareApplication` JSON-LD to `app/page.tsx` — *growth*
-- Add `utm_source`/`utm_medium`/`utm_campaign`/`referrer` columns to `contact_submissions` and the `ContactSubmission` model — *growth*
-- Add a first-party (non-blockable) `localStorage` UTM/referrer capture script as the PRIMARY attribution source, not PostHog alone (Gemini: ad-blockers silently drop 20-35% of client-side tracking for this ICP) — *growth*
-- Ship API-key auth (`require_api_key` dependency + `api_keys` table) as the shared prerequisite for MCP access and Enterprise billing — *productization*
+- ✅ `027_user_staff_roles.sql` (staff-only) + `subscription_tier`/`is_active` columns on `user_profiles` — revised per Gemini review, two structures not one mixed table — *identity*
+- ✅ `require_role()` FastAPI dependency factory; `/v1/ops/crm` re-pointed at it instead of `require_admin_user` — *identity*
+- ✅ Backfilled `ADMIN_EMAILS` allowlist into `user_staff_roles` as `super_admin` rows (live) — *identity*
+- ✅ `is_active` checked inside `require_firebase_user` itself, not just `require_role` — closes the ~1hr JWT-revocation gap Gemini flagged — *identity*
+- ✅ `source_fingerprint`, `enrichment_version`, `status`, `last_enriched_at` columns on `project_enrichment_checks` (migration 028), with a 180-day max-staleness fallback so a fingerprint that never changes doesn't freeze a project out of re-enrichment forever (Gemini: "grounding paradox") — *data platform*
+- ✅ `source_fingerprint` computed/stored in `enrich-project-details.py`; re-enrichment gated on fingerprint/version change, not just a timer — *data platform*
+- ✅ `llm_call_log` table (migration 029) with a `grounding_requests_count` column priced separately from tokens (Gemini: Vertex Search Grounding is a fixed per-search fee that can dwarf token cost 10-50x); `enrich-project-details.py` (both passes) instrumented to write a row per call — *data platform*
+- ✅ `FAQPage` JSON-LD on `components/marketing/FAQ.tsx` and `Organization`/`SoftwareApplication` JSON-LD on `app/page.tsx` — *growth*
+- ✅ `utm_source`/`utm_medium`/`utm_campaign`/`referrer` columns on `contact_submissions` (migration 030) and the `ContactSubmission` model — *growth*
+- ✅ First-party (non-blockable) `localStorage` UTM/referrer capture (`lib/attribution.ts`) as the PRIMARY attribution source, not PostHog alone (Gemini: ad-blockers silently drop 20-35% of client-side tracking for this ICP) — *growth*
+- ✅ API-key auth shipped (migration 031, `require_api_key` dependency + `/v1/me/api-keys` CRUD) as the shared prerequisite for MCP access and Enterprise billing — not yet wired into any consuming endpoint (MCP itself is still P2) — *productization*
 
 ## P1 — Next, once P0 is done
 

@@ -302,10 +302,10 @@ Be honest about effort: full entity resolution at 6.5M-project scale is a multi-
 
 ## 7. Priority-tagged action items
 
-- P0: Add `source_fingerprint`, `enrichment_version`, `status`, `last_enriched_at` columns to `project_enrichment_checks` (migration 027).
-- P0: Compute and store `source_fingerprint` in `enrich-project-details.py`; gate re-enrichment on fingerprint/version change, not just the 30-day timer.
-- P0: Create `llm_call_log` table (with `grounding_requests_count`, priced separately from tokens — Gemini: Vertex Search Grounding is a fixed per-search fee, not token-based, and can dwarf token cost 10-50x) and instrument `enrich-project-details.py` (both passes) and `model_a_flash.py`/`model_b_sonnet.py` to write a row per call.
-- P0: Add a max-staleness fallback (180 days) to the fingerprint re-enrichment gate — a fingerprint alone can never change for a permanently-sparse project, freezing it out of re-checks forever (Gemini-flagged "grounding paradox").
+- ✅ SHIPPED 2026-07-30 as migration 028 (026 and 027 were taken by concurrent work): Add `source_fingerprint`, `enrichment_version`, `status`, `last_enriched_at` columns to `project_enrichment_checks`.
+- ✅ SHIPPED 2026-07-30: Compute and store `source_fingerprint` in `enrich-project-details.py`; gate re-enrichment on fingerprint/version change, not just the 30-day timer.
+- ✅ SHIPPED 2026-07-30 (migration 029): Create `llm_call_log` table (with `grounding_requests_count`, priced separately from tokens — Gemini: Vertex Search Grounding is a fixed per-search fee, not token-based, and can dwarf token cost 10-50x) and instrument `enrich-project-details.py` (both passes) and `model_a_flash.py`/`model_b_sonnet.py` to write a row per call.
+- ✅ SHIPPED 2026-07-30: Add a max-staleness fallback (180 days) to the fingerprint re-enrichment gate — a fingerprint alone can never change for a permanently-sparse project, freezing it out of re-checks forever (Gemini-flagged "grounding paradox").
 - P1: Add `v_llm_daily_spend`, `v_enrichment_coverage`, `v_pipeline_health` views.
 - P1: Add a Tier-1 cheap-model triage call in `enrich-project-details.py` before Pass 1.
 - P1: Gate Pass 2 (cross-check) behind a `project_scores` value/priority threshold instead of running it unconditionally.

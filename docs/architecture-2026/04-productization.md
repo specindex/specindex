@@ -182,7 +182,7 @@ BuildingRadar public pricing where available) before being quoted to a real pros
 
 ## Action Items
 
-- P0: Ship API-key auth (`require_api_key` dependency + `api_keys` table) as the shared prerequisite for MCP access and Enterprise billing.
+- ✅ SHIPPED 2026-07-30 as migration 031 (`api_keys`/`api_key_usage` tables + `require_api_key` dependency + `/v1/me/api-keys` CRUD): Ship API-key auth as the shared prerequisite for MCP access and Enterprise billing. Not yet wired into any consuming endpoint — MCP itself (P2) still needs to be built.
 - P1: Enforce the Free-tier 1-brand-check/week limit and Pro seat/usage limits already promised on the pricing page but not implemented in `api/main.py`.
 - P2: Ship the MCP server as an SSE-transport (not stdio) thin wrapper over `/v1/projects` (pruned summaries only), `/v1/projects/{id}` (full detail), `/v1/projects/{id}/ask`, a parameterized `ask_about_territory` (not session-bound `/v1/me/ask`), `/v1/coverage`, and `/v1/quality`.
 - P2: Offer a rate-limited MCP tier on Pro/Team (Gemini: don't gate all MCP access to Enterprise-only — blocks a real mid-market use case).
