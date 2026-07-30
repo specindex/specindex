@@ -1192,7 +1192,8 @@ def list_crm_contacts(_admin: str = Depends(require_role("support_admin", "super
                 """
                 SELECT contact_key, name, email, company, phone, role_title,
                        territory_states, categories, lifecycle_stage, lead_source,
-                       demo_request_source, demo_requested_at, onboarded_at, notes
+                       demo_request_source, demo_requested_at, onboarded_at, notes,
+                       is_active, last_login_at
                 FROM crm_contacts
                 ORDER BY COALESCE(onboarded_at, demo_requested_at) DESC NULLS LAST
                 """
@@ -1970,7 +1971,12 @@ def get_my_profile(firebase_uid: str = Depends(require_firebase_user)):
     """Backs the first-sign-in ProfileCaptureModal and the personalized
     /projects/ view (components/ProjectsDashboard.tsx) -- `onboarded: false`
     with no row yet is the normal, expected state for a brand-new user, not
-    an error."""
+    an error.
+
+    Also stamps last_login_at (migration 041) -- called once per sign-in by
+    AuthSync, not on every request, so this is one write per session, not
+    per API call. Best-effort: a logging failure here must never break the
+    actual profile response."""
     with get_conn() as conn:
         with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
             cur.execute(
@@ -1980,6 +1986,14 @@ def get_my_profile(firebase_uid: str = Depends(require_firebase_user)):
                 (firebase_uid,),
             )
             row = cur.fetchone()
+            try:
+                cur.execute(
+                    "UPDATE user_profiles SET last_login_at = now() WHERE firebase_uid = %s",
+                    (firebase_uid,),
+                )
+                conn.commit()
+            except Exception:  # noqa: BLE001 -- last_login_at is telemetry, never worth failing this request over
+                conn.rollback()
     if row is None:
         return {
             "onboarded": False, "company": None, "territory_states": [], "categories": [],
