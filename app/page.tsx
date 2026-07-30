@@ -8,6 +8,35 @@ import { getStats, getSampleProjects, getRecentCount, getDistinctCounties } from
 import { getVisibilitySnapshot } from "@/lib/stats";
 import { getDivisionRollup, getMappedProjectCount } from "@/lib/divisions";
 
+// Organization + SoftwareApplication JSON-LD -- a Gemini-reviewed finding
+// in docs/architecture-2026/03-growth.md flagged this as the single
+// highest-leverage SEO fix: zero marketing pages carry structured data
+// today, so SpecIndex is invisible to rich-result surfaces (AI Overviews,
+// sitelinks) a buyer's query increasingly resolves through. Kept outside
+// HomePageGate so it describes the product/company regardless of
+// signed-in state, not just the anonymous marketing view.
+const homeJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      name: "SpecIndex",
+      url: "https://specindex.ai",
+      logo: "https://specindex.ai/icon.svg",
+      description: "Commercial construction project intelligence for building product manufacturers.",
+    },
+    {
+      "@type": "SoftwareApplication",
+      name: "SpecIndex",
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      description:
+        "SpecIndex ranks open commercial construction projects by a transparent priority score, filtered by territory and product category.",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    },
+  ],
+};
+
 const faqs = [
   {
     q: "Where does the project data come from?",
@@ -90,6 +119,11 @@ export default async function HomePage() {
   const mappedCount = getMappedProjectCount(sample);
 
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
+      />
     <HomePageGate>
       {/* Hero */}
       <section className="bg-[var(--color-bg)]">
@@ -380,5 +414,6 @@ export default async function HomePage() {
 
       <FAQ items={faqs} />
     </HomePageGate>
+    </>
   );
 }
