@@ -18,6 +18,8 @@ export type Division = {
   specifiedBy: string;
   /** Category keywords as they appear in project records. */
   keywords: string[];
+  /** URL-safe identifier for /projects/[state]/[trade]/ pSEO hub pages. */
+  slug: string;
 };
 
 export const DIVISIONS: Division[] = [
@@ -27,6 +29,7 @@ export const DIVISIONS: Division[] = [
     plain: "Heating, cooling, ventilation, chillers, VRF",
     specifiedBy: "Mechanical engineer",
     keywords: ["hvac", "cooling", "chiller", "refrigeration", "ventilation", "heat pump", "vrf", "ptac", "air handling", "lab air", "filtration", "boiler"],
+    slug: "hvac",
   },
   {
     code: "26",
@@ -34,6 +37,7 @@ export const DIVISIONS: Division[] = [
     plain: "Lighting, switchgear, generators, distribution",
     specifiedBy: "Electrical engineer",
     keywords: ["switchgear", "lighting", "generator", "electrical", "ups", "substation", "transformer", "power", "battery storage", "solar", "ev charging", "electrification", "grid interconnection", "trackers"],
+    slug: "electrical",
   },
   {
     code: "08",
@@ -41,6 +45,7 @@ export const DIVISIONS: Division[] = [
     plain: "Glazing, curtain wall, storefront, doors, hardware",
     specifiedBy: "Architect",
     keywords: ["glazing", "curtain wall", "storefront", "window", "door", "hardware", "entry systems", "hangar door"],
+    slug: "openings",
   },
   {
     code: "07",
@@ -48,6 +53,7 @@ export const DIVISIONS: Division[] = [
     plain: "Roofing, insulation, EIFS, cladding, waterproofing",
     specifiedBy: "Architect or roofing consultant",
     keywords: ["roofing", "insulation", "eifs", "cladding", "waterproof", "coating", "corrosion", "storm-resistant"],
+    slug: "roofing-thermal-moisture",
   },
   {
     code: "14",
@@ -55,6 +61,7 @@ export const DIVISIONS: Division[] = [
     plain: "Elevators, escalators, conveyors, cranes",
     specifiedBy: "Architect with elevator consultant",
     keywords: ["elevator", "conveyor", "crane", "material handling", "escalator"],
+    slug: "conveying-equipment",
   },
   {
     code: "21",
@@ -62,6 +69,7 @@ export const DIVISIONS: Division[] = [
     plain: "Sprinklers, ESFR, deluge, fire protection",
     specifiedBy: "Fire protection engineer",
     keywords: ["fire suppression", "fire protection", "sprinkler", "esfr", "deluge", "fire/life safety", "fire safety"],
+    slug: "fire-suppression",
   },
   {
     code: "11",
@@ -69,6 +77,7 @@ export const DIVISIONS: Division[] = [
     plain: "Dock equipment, lab, medical, kitchen, process",
     specifiedBy: "Owner with specialty consultant",
     keywords: ["dock", "lab equipment", "medical equipment", "kitchen equipment", "foodservice", "commercial kitchen", "process equipment", "imaging", "robotics", "stamping", "bottling", "packaging", "laundry", "store fixtures", "racking", "therapy equipment", "dental", "or systems", "industrial furnaces", "fuel systems", "tank farm", "dredging", "arena seating", "seating systems", "sports surfaces", "turf"],
+    slug: "equipment",
   },
   {
     code: "09",
@@ -76,6 +85,7 @@ export const DIVISIONS: Division[] = [
     plain: "Flooring, ceilings, drywall, paint, casework",
     specifiedBy: "Architect or interior designer",
     keywords: ["flooring", "ceiling", "finishes", "drywall", "paint", "acoustic", "fit-out", "build-out", "tenant improvement", "epoxy", "casework", "cabinetry", "countertops", "interior finishes"],
+    slug: "finishes",
   },
   {
     code: "22",
@@ -83,6 +93,7 @@ export const DIVISIONS: Division[] = [
     plain: "Fixtures, piping, medical gas, water systems",
     specifiedBy: "Plumbing engineer",
     keywords: ["plumbing", "medical gas", "water systems", "water/sewer", "water/wastewater", "high-purity piping", "plumbing risers", "bathroom fixtures", "compressed air"],
+    slug: "plumbing",
   },
   {
     code: "03",
@@ -90,6 +101,7 @@ export const DIVISIONS: Division[] = [
     plain: "Cast in place, precast, tilt-up",
     specifiedBy: "Structural engineer",
     keywords: ["concrete", "tilt-up", "tilt-wall", "precast"],
+    slug: "concrete",
   },
   {
     code: "31",
@@ -97,6 +109,7 @@ export const DIVISIONS: Division[] = [
     plain: "Site work, utilities, stormwater, drainage",
     specifiedBy: "Civil engineer",
     keywords: ["site work", "site civil", "site utilities", "site infrastructure", "civil infrastructure", "earthwork", "pad-ready", "site amenities", "stormwater", "drainage"],
+    slug: "earthwork",
   },
   {
     code: "27",
@@ -104,6 +117,7 @@ export const DIVISIONS: Division[] = [
     plain: "Structured cabling, AV, nurse call, automation",
     specifiedBy: "Technology consultant",
     keywords: ["structured cabling", "av systems", "av/conference", "avl technology", "nurse call", "bms", "building automation", "process controls", "quality control systems", "smart-home", "smart access"],
+    slug: "communications",
   },
   {
     code: "12",
@@ -111,6 +125,7 @@ export const DIVISIONS: Division[] = [
     plain: "FF&E, casegoods, window treatments",
     specifiedBy: "Interior designer or owner",
     keywords: ["ff&e", "furnishing", "casegoods", "window treatment", "site furnishings", "museum fit", "exhibit"],
+    slug: "furnishings",
   },
   {
     code: "32",
@@ -118,6 +133,7 @@ export const DIVISIONS: Division[] = [
     plain: "Paving, hardscape, fencing, landscape",
     specifiedBy: "Civil or landscape architect",
     keywords: ["paving", "hardscape", "fencing", "landscap", "barriers", "guardrail", "traffic systems", "road construction", "site lighting", "site/landscape"],
+    slug: "exterior-improvements",
   },
   {
     code: "13",
@@ -125,6 +141,7 @@ export const DIVISIONS: Division[] = [
     plain: "Cleanrooms, shielding, modular, pools",
     specifiedBy: "Specialty consultant",
     keywords: ["cleanroom", "clean room", "bsl-3", "radiation shielding", "shielding", "modular construction", "prefab", "data center shells", "pool"],
+    slug: "special-construction",
   },
   {
     code: "05",
@@ -132,6 +149,7 @@ export const DIVISIONS: Division[] = [
     plain: "Structural steel, metal framing, piling",
     specifiedBy: "Structural engineer",
     keywords: ["structural steel", "metal studs", "metal building", "specialty metals", "piling", "marine piling"],
+    slug: "metals",
   },
   {
     code: "28",
@@ -139,6 +157,7 @@ export const DIVISIONS: Division[] = [
     plain: "Access control, surveillance, fire alarm",
     specifiedBy: "Security consultant",
     keywords: ["security", "access control", "fire alarm"],
+    slug: "electronic-safety-security",
   },
   {
     code: "33",
@@ -146,6 +165,7 @@ export const DIVISIONS: Division[] = [
     plain: "Utility power, gas, process utilities",
     specifiedBy: "Civil engineer",
     keywords: ["utility power", "utility systems", "process utilities", "process piping"],
+    slug: "utilities",
   },
   {
     code: "04",
@@ -153,6 +173,7 @@ export const DIVISIONS: Division[] = [
     plain: "Brick, block, stone",
     specifiedBy: "Architect",
     keywords: ["masonry", "brick"],
+    slug: "masonry",
   },
   {
     code: "10",
@@ -160,8 +181,13 @@ export const DIVISIONS: Division[] = [
     plain: "Signage, lockers, partitions",
     specifiedBy: "Architect",
     keywords: ["signage", "locker", "partition"],
+    slug: "specialties",
   },
 ];
+
+export function divisionBySlug(slug: string): Division | undefined {
+  return DIVISIONS.find((d) => d.slug === slug);
+}
 
 /**
  * First matching division for a raw category string, or null.
@@ -218,4 +244,11 @@ export function getMappedProjectCount(projects: Project[]): number {
   return projects.filter((p) =>
     p.competitor_watch.some((c) => divisionForCategory(c) !== null),
   ).length;
+}
+
+/** Projects whose competitor_watch includes at least one category mapping to this division. */
+export function getProjectsForDivision(projects: Project[], division: Division): Project[] {
+  return projects.filter((p) =>
+    p.competitor_watch.some((c) => divisionForCategory(c)?.code === division.code),
+  );
 }

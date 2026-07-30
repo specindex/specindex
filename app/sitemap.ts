@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
-import { getFeaturedProjectIds } from "@/lib/projects";
+import { getFeaturedProjectIds, getStateSample, getStates } from "@/lib/projects";
+import { DIVISIONS, getProjectsForDivision } from "@/lib/divisions";
 
 export const dynamic = "force-static";
 
@@ -27,6 +28,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // away everything but `.id`.
   const projectIds = await getFeaturedProjectIds(2000);
 
+  // /projects/[state]/[trade]/ pSEO hubs (ROADMAP.md item 49, P1) -- same
+  // per-state-sample reuse as that route's own generateStaticParams(), so
+  // this doesn't re-fetch every state a second time.
+  const states = await getStates();
+  const hubRoutes: { state: string; trade: string }[] = [];
+  for (const state of states) {
+    const sample = await getStateSample(state);
+    for (const division of DIVISIONS) {
+      if (getProjectsForDivision(sample, division).length > 0) {
+        hubRoutes.push({ state: state.toLowerCase(), trade: division.slug });
+      }
+    }
+  }
+
   return [
     ...staticRoutes.map((path) => ({
       url: `${base}/${path}${path ? "/" : ""}`,
@@ -39,6 +54,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date("2026-07-24"),
       changeFrequency: "weekly" as const,
       priority: 0.6,
+    })),
+    ...hubRoutes.map(({ state, trade }) => ({
+      url: `${base}/projects/${state}/${trade}/`,
+      lastModified: new Date("2026-07-30"),
+      changeFrequency: "weekly" as const,
+      priority: 0.5,
     })),
   ];
 }
