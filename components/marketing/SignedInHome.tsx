@@ -14,6 +14,7 @@ import {
   fetchSavedViews,
   createSavedView,
   deleteSavedView,
+  writeTriageList,
   type TrackedProject,
   type TrackedStage,
   type SavedView,
@@ -300,7 +301,11 @@ function FeedView({
             <div key={p.id} className="card flex items-center gap-4 p-4">
               <div className="min-w-0 flex-1">
                 <div className="flex items-center gap-2">
-                  <Link href={`/projects/view/?id=${p.id}`} className="truncate font-semibold hover:underline">
+                  <Link
+                    href={`/projects/view/?id=${p.id}`}
+                    className="truncate font-semibold hover:underline"
+                    onClick={() => writeTriageList(feedProjects.map((fp) => fp.id), p.id)}
+                  >
                     {p.name}
                   </Link>
                   <StatusPill status={p.status} />
@@ -387,7 +392,11 @@ function TrackedView({
               {tracked.map((t) => (
                 <tr key={t.project_id} className="border-b border-[var(--color-border)] last:border-0">
                   <td className="px-3 py-3">
-                    <Link href={`/projects/view/?id=${t.project_id}`} className="font-semibold hover:underline">
+                    <Link
+                      href={`/projects/view/?id=${t.project_id}`}
+                      className="font-semibold hover:underline"
+                      onClick={() => writeTriageList(tracked.map((tp) => tp.project_id), t.project_id)}
+                    >
                       {t.name}
                     </Link>
                     <p className="text-xs text-[var(--color-gray-400)]">
