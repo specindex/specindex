@@ -92,3 +92,29 @@ export async function deleteSavedView(getToken: GetToken, id: number): Promise<v
   const res = await authenticatedFetch(getToken, `/v1/me/saved-views/${id}`, { method: "DELETE" });
   if (!res.ok) throw new Error(`DELETE /v1/me/saved-views failed: ${res.status}`);
 }
+
+// Lets the project detail page show a Prev/Next triage nav when someone
+// arrived by clicking through the signed-in Feed, without threading feed
+// state through routing. Session-scoped (not localStorage) -- a stale list
+// from a previous session shouldn't outlive the tab, and this is purely a
+// navigation convenience, not data worth persisting.
+const TRIAGE_KEY = "specindex:triage-list";
+
+export type TriageList = { ids: string[]; currentId: string };
+
+export function writeTriageList(ids: string[], currentId: string): void {
+  if (typeof window === "undefined") return;
+  window.sessionStorage.setItem(TRIAGE_KEY, JSON.stringify({ ids, currentId }));
+}
+
+export function readTriageList(): TriageList | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = window.sessionStorage.getItem(TRIAGE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed.ids) && typeof parsed.currentId === "string" ? parsed : null;
+  } catch {
+    return null;
+  }
+}

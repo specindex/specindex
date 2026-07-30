@@ -2,9 +2,162 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useAuth } from "@clerk/clerk-react";
+import { CLERK_ENABLED } from "@/components/ClerkProviders";
 import { StatusPill } from "@/components/StatusPill";
 import { formatDate, formatSf, formatUsd, stateName, typeLabel } from "@/lib/format";
 import type { Project } from "@/lib/types";
+import {
+  fetchTrackedProjects,
+  upsertTrackedProject,
+  untrackProject,
+  readTriageList,
+  type TrackedStage,
+} from "@/lib/tracking";
+
+const STAGE_LABELS: Record<TrackedStage, string> = {
+  watching: "Watching",
+  contacted: "Contacted",
+  quoted: "Quoted",
+  won: "Won",
+  lost: "Lost",
+};
+
+// Small, self-contained: fetches this one project's tracked state on mount
+// rather than requiring a caller to pass down the whole tracked-projects
+// list, since ProjectDetailView is reached from many different entry points
+// (static SSG pages, the client-rendered fallback, direct links) that don't
+// all have that list in scope.
+function PipelineBox({ projectId }: { projectId: string }) {
+  const { getToken } = useAuth();
+  const [stage, setStage] = useState<TrackedStage | null>(null);
+  const [note, setNote] = useState<string | null>(null);
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetchTrackedProjects(getToken)
+      .then((rows) => {
+        if (cancelled) return;
+        const match = rows.find((r) => r.project_id === projectId);
+        setStage(match?.stage ?? null);
+        setNote(match?.note ?? null);
+        setLoaded(true);
+      })
+      .catch(() => setLoaded(true));
+    return () => {
+      cancelled = true;
+    };
+  }, [getToken, projectId]);
+
+  async function track() {
+    setStage("watching");
+    await upsertTrackedProject(getToken, projectId, { stage: "watching", note });
+  }
+
+  async function changeStage(next: TrackedStage) {
+    setStage(next);
+    await upsertTrackedProject(getToken, projectId, { stage: next, note });
+  }
+
+  async function stopTracking() {
+    setStage(null);
+    await untrackProject(getToken, projectId);
+  }
+
+  if (!loaded) return null;
+
+  if (!stage) {
+    return (
+      <button
+        type="button"
+        onClick={track}
+        className="flex shrink-0 items-center gap-2 rounded-xl border border-dashed border-[var(--color-border)] p-4 text-sm font-semibold text-[var(--color-gray-600)] transition hover:border-[var(--color-green)] hover:text-[var(--color-green)]"
+      >
+        + Track this project
+      </button>
+    );
+  }
+
+  return (
+    <div className="shrink-0 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-4">
+      <span className="text-[10px] font-bold uppercase tracking-wider text-[var(--color-gray-600)]">
+        Your pipeline
+      </span>
+      <div className="mt-2 flex items-center gap-2">
+        <span className="flex items-center gap-1.5 text-xs font-semibold text-[var(--color-green)]">
+          <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-green)]" />✓ Tracking
+        </span>
+        <select
+          value={stage}
+          onChange={(e) => changeStage(e.target.value as TrackedStage)}
+          className="rounded-full border-0 bg-[var(--color-green-light)] px-2.5 py-1 text-xs font-semibold text-[var(--color-green)]"
+        >
+          {Object.entries(STAGE_LABELS).map(([k, label]) => (
+            <option key={k} value={k}>
+              {label}
+            </option>
+          ))}
+        </select>
+      </div>
+      <button
+        type="button"
+        onClick={stopTracking}
+        className="mt-2 text-[11px] text-[var(--color-gray-400)] hover:text-red-600"
+      >
+        Untrack
+      </button>
+    </div>
+  );
+}
+
+// Prev/Next nav across whatever list a signed-in visitor arrived from (Feed
+// or Tracked), so triaging several projects in a row doesn't require
+// bouncing back to the list view each time. Reads a sessionStorage snapshot
+// SignedInHome writes on click-through (lib/tracking.ts's
+// writeTriageList/readTriageList) -- absent entirely for anyone who didn't
+// arrive that way (direct link, search, anonymous SSG page), in which case
+// this renders nothing rather than a broken/empty nav.
+function TriageNav({ projectId }: { projectId: string }) {
+  const router = useRouter();
+  const [list, setList] = useState<{ ids: string[]; index: number } | null>(null);
+
+  useEffect(() => {
+    const stored = readTriageList();
+    if (!stored || !stored.ids.includes(projectId)) return;
+    setList({ ids: stored.ids, index: stored.ids.indexOf(projectId) });
+  }, [projectId]);
+
+  if (!list || list.ids.length < 2) return null;
+
+  const prevId = list.index > 0 ? list.ids[list.index - 1] : null;
+  const nextId = list.index < list.ids.length - 1 ? list.ids[list.index + 1] : null;
+
+  return (
+    <div className="mt-3 flex items-center gap-3 text-sm">
+      <button
+        type="button"
+        disabled={!prevId}
+        onClick={() => prevId && router.push(`/projects/view/?id=${prevId}`)}
+        className="font-medium text-[var(--color-gray-600)] hover:text-[var(--color-ink)] disabled:opacity-30"
+      >
+        ← Prev
+      </button>
+      <span className="text-xs text-[var(--color-gray-400)]">
+        Item {list.index + 1} of {list.ids.length}
+      </span>
+      <button
+        type="button"
+        disabled={!nextId}
+        onClick={() => nextId && router.push(`/projects/view/?id=${nextId}`)}
+        className="font-medium text-[var(--color-gray-600)] hover:text-[var(--color-ink)] disabled:opacity-30"
+      >
+        Next →
+      </button>
+    </div>
+  );
+}
 
 // Steps reflect what scripts/enrich-project-details.py actually does: a
 // search-grounded discovery pass, a second independent pass re-checking
@@ -398,6 +551,8 @@ export function ProjectDetailView({ project }: { project: Project }) {
             ← All projects
           </Link>
 
+          {CLERK_ENABLED && <TriageNav projectId={project.id} />}
+
           {hasEnrichment && (
             <div className="mt-5">
               <PipelineBar checkedAt={project.enrichment?.checked_at} />
@@ -436,6 +591,7 @@ export function ProjectDetailView({ project }: { project: Project }) {
                 </p>
               </div>
 
+              <div className="flex shrink-0 items-start gap-3">
               {project.score && (() => {
                 const tier = scoreTier(project.score.total);
                 return (
@@ -514,6 +670,8 @@ export function ProjectDetailView({ project }: { project: Project }) {
                   </div>
                 );
               })()}
+              {CLERK_ENABLED && <PipelineBox projectId={project.id} />}
+              </div>
             </div>
 
             {/* KPI grid -- moved in from a standalone "Fact grid" section
