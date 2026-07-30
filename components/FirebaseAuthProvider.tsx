@@ -10,6 +10,7 @@ import {
 } from "firebase/auth";
 import { auth, FIREBASE_AUTH_ENABLED } from "@/lib/firebase";
 import { AuthSync } from "@/components/onboarding/AuthSync";
+import { SignInModal } from "@/components/onboarding/SignInModal";
 
 // Replaces components/ClerkProviders.tsx. Same reasoning carries over: this
 // site is a fully static Next.js export with no Node server, so a
@@ -63,6 +64,7 @@ export function useFirebaseAuthOptional(): FirebaseAuthContextValue | null {
 function FirebaseAuthInner({ children }: { children: React.ReactNode }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [user, setUser] = useState<User | null>(null);
+  const [showSignInModal, setShowSignInModal] = useState(false);
 
   useEffect(() => {
     if (!auth) return;
@@ -83,8 +85,17 @@ function FirebaseAuthInner({ children }: { children: React.ReactNode }) {
     return auth.currentUser.getIdToken();
   }
 
+  // Opens the provider-choice modal instead of firing Google's popup
+  // directly -- every existing call site (SiteHeader, the various
+  // SignInWall components) just calls signIn(), so this change alone gives
+  // all of them the new modal for free, no call-site updates needed.
   async function signIn(): Promise<void> {
+    setShowSignInModal(true);
+  }
+
+  async function signInWithGoogle(): Promise<void> {
     if (!auth) return;
+    setShowSignInModal(false);
     await signInWithPopup(auth, new GoogleAuthProvider());
   }
 
@@ -99,6 +110,9 @@ function FirebaseAuthInner({ children }: { children: React.ReactNode }) {
     <FirebaseAuthContext.Provider value={value}>
       {children}
       <AuthSync />
+      {showSignInModal && (
+        <SignInModal onGoogle={signInWithGoogle} onClose={() => setShowSignInModal(false)} />
+      )}
     </FirebaseAuthContext.Provider>
   );
 }
