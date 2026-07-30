@@ -266,6 +266,38 @@ export async function getSampleProjects(count = 2000): Promise<Project[]> {
   return out;
 }
 
+// Per-state variant of getSampleProjects, for /projects/[state]/[trade]/
+// pSEO hub pages (ROADMAP.md item 49, P1). Memoized per state per worker
+// process -- generateStaticParams() and the page component both need the
+// same state's sample (the former to decide which state+division combos
+// are non-empty, the latter to render one), and there are 17 divisions
+// per state, so without this every state would otherwise be fetched 17x.
+const stateSampleCache = new Map<string, Promise<Project[]>>();
+
+export function getStateSample(state: string, count = 300): Promise<Project[]> {
+  const key = state.toUpperCase();
+  let cached = stateSampleCache.get(key);
+  if (!cached) {
+    cached = (async () => {
+      const out: Project[] = [];
+      for (let offset = 0; offset < count; offset += PAGE_SIZE) {
+        const limit = Math.min(PAGE_SIZE, count - offset);
+        const res = await limitedFetch(
+          `${API_BASE}/v1/projects?state=${key}&sort=score&limit=${limit}&offset=${offset}`,
+        );
+        if (!res.ok) break;
+        const data = (await res.json()) as ProjectsListResponse;
+        if (!data.projects?.length) break;
+        out.push(...data.projects.map(normalizeProject));
+        if (data.projects.length < limit) break;
+      }
+      return out;
+    })();
+    stateSampleCache.set(key, cached);
+  }
+  return cached;
+}
+
 // Reuses /v1/projects' existing count(*)-before-data-query path (see
 // api/main.py's list_projects) instead of fetching real rows just to
 // discard everything but a length -- `limit=1` still returns the real
@@ -284,6 +316,17 @@ export async function getDistinctCounties(): Promise<string[]> {
   if (!res.ok) return [];
   const data = (await res.json()) as { counties?: string[] };
   return data.counties ?? [];
+}
+
+// For /projects/[state]/[trade]/ pSEO hub pages -- the real set of state
+// codes with any indexed projects, not a hardcoded 50-state list (some
+// states have zero coverage today, see docs/ROADMAP.md's per-state
+// backlog).
+export async function getStates(): Promise<string[]> {
+  const res = await limitedFetch(`${API_BASE}/v1/projects/facets`);
+  if (!res.ok) return [];
+  const data = (await res.json()) as { states?: string[] };
+  return data.states ?? [];
 }
 
 export async function getProjectsByState(state: string): Promise<Project[]> {
