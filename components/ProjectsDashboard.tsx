@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useAuth } from "@clerk/clerk-react";
 import type { Project } from "@/lib/types";
 import { formatDate, formatSf, formatUsd, stateName, typeLabel } from "@/lib/format";
 import { StatusPill } from "./StatusPill";
@@ -73,6 +74,19 @@ function readStoredValue(key: string): string | null {
 }
 
 export function ProjectsDashboard() {
+  // /v1/projects now requires either a Clerk session or the build-time
+  // token (api/main.py's require_clerk_user_or_build_token) -- this
+  // component only ever mounts inside <ProjectsGate>'s signed-in branch,
+  // so getToken() here always has a real session to draw from.
+  const { getToken } = useAuth();
+  const authedFetch = useCallback(
+    async (url: string) => {
+      const token = await getToken();
+      return fetch(url, token ? { headers: { Authorization: `Bearer ${token}` } } : undefined);
+    },
+    [getToken],
+  );
+
   // Restored from localStorage so a returning visitor lands straight on
   // their territory+category instead of the full nationwide list every
   // time -- a lightweight stand-in for a saved profile until real
@@ -145,7 +159,7 @@ export function ProjectsDashboard() {
   useEffect(() => {
     let cancelled = false;
     const qs = buildQuery({ state: territory.join(","), new_since_days: 7, limit: 1 });
-    fetch(`${API_BASE}/v1/projects?${qs}`)
+    authedFetch(`${API_BASE}/v1/projects?${qs}`)
       .then((r) => r.json())
       .then((data) => {
         if (!cancelled) setNewThisWeek(typeof data.total === "number" ? data.total : null);
@@ -208,7 +222,7 @@ export function ProjectsDashboard() {
       limit: PAGE_SIZE,
       offset,
     });
-    fetch(`${API_BASE}/v1/projects?${qs}`)
+    authedFetch(`${API_BASE}/v1/projects?${qs}`)
       .then((r) => {
         if (!r.ok) throw new Error(`API returned ${r.status}`);
         return r.json();
