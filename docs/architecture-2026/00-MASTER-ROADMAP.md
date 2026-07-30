@@ -25,10 +25,12 @@ directly to production Postgres, backend redeployed and verified live
 (caught and fixed one real deploy bug along the way — two new endpoints
 were defined before `app = FastAPI(...)` existed, which crashed the
 container on boot; fixed by moving them after, verified with a local
-import before redeploying). Frontend build passes clean. Two manual
-checks remain the founder's to do: signing into `/ops/crm` to confirm it
-renders under the new `require_role` gate, and confirming a UTM-tagged
-demo submission captures correctly.
+import before redeploying). Frontend build passes clean.
+
+Manual verification: ✅ `/ops/crm` confirmed rendering correctly under
+the new `require_role` gate with a real signed-in admin session
+(2026-07-30). Still open: confirming a UTM-tagged demo submission
+(`?utm_source=test`) captures correctly end to end.
 
 ---
 
