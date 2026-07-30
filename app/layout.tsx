@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { FirebaseAuthProvider } from "@/components/FirebaseAuthProvider";
+import { PostHogProvider } from "@/components/PostHogProvider";
 import { DemoModalProvider } from "@/components/marketing/DemoModal";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -56,6 +57,7 @@ export default function RootLayout({
             a submission to a signed-in user (docs/PRD_SIGNUP_CRM.md Section
             2.2) -- it degrades to "no auth" internally when unconfigured,
             never throws, so nesting it outermost has no downside. */}
+        <PostHogProvider />
         <FirebaseAuthProvider>
           <DemoModalProvider>
             <div className="min-h-screen flex flex-col">

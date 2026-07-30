@@ -34,3 +34,50 @@ export async function fetchCrmContacts(getToken: GetToken): Promise<CrmContact[]
   const data = await res.json();
   return data.contacts;
 }
+
+// Read-only "view as customer" admin query path (GET /v1/ops/customer/{uid},
+// api/main.py) -- docs/architecture-2026/02-identity-portals.md Phase 4.
+// Never mints a session for the viewed user; just returns their profile +
+// tracked-pipeline rows for an admin to read.
+export type CustomerTrackedProject = {
+  stage: string;
+  note: string | null;
+  created_at: string;
+  updated_at: string;
+  project_id: string;
+  name: string;
+  state: string | null;
+  status: string;
+};
+
+export type CustomerProfile = {
+  firebase_uid: string;
+  email: string;
+  company: string | null;
+  territory_states: string[];
+  categories: string[];
+  full_name: string | null;
+  phone: string | null;
+  role_title: string | null;
+  lead_source: string | null;
+  lifecycle_stage: string | null;
+  notes: string | null;
+  onboarded_at: string | null;
+  created_at: string;
+  subscription_tier: string;
+  is_active: boolean;
+};
+
+export async function fetchCustomerDetail(
+  getToken: GetToken,
+  firebaseUid: string,
+): Promise<{ profile: CustomerProfile; tracked_projects: CustomerTrackedProject[] }> {
+  const token = await getToken();
+  const res = await fetch(`${API_BASE}/v1/ops/customer/${encodeURIComponent(firebaseUid)}`, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  if (res.status === 403) throw new Error("not_authorized");
+  if (res.status === 404) throw new Error("not_found");
+  if (!res.ok) throw new Error(`GET /v1/ops/customer/${firebaseUid} failed: ${res.status}`);
+  return res.json();
+}

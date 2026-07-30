@@ -15,7 +15,7 @@ export function RequestDemoButton({
 }) {
   const { openDemoModal } = useDemoModal();
   return (
-    <button type="button" onClick={openDemoModal} className={className}>
+    <button type="button" onClick={() => openDemoModal()} className={className}>
       {children}
     </button>
   );

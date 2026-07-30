@@ -5,10 +5,11 @@ from __future__ import annotations
 import json
 import os
 import smtplib
+import sys
 import time
 import urllib.parse
 from contextlib import contextmanager
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from email.message import EmailMessage
 from typing import Any
 
@@ -1179,6 +1180,50 @@ def list_crm_contacts(_admin: str = Depends(require_role("support_admin", "super
     return {"contacts": rows}
 
 
+@app.get("/v1/ops/customer/{firebase_uid}")
+def view_as_customer(
+    firebase_uid: str, _admin: str = Depends(require_role("support_admin", "super_admin"))
+):
+    """Read-only 'view as customer' query path (docs/architecture-2026/
+    02-identity-portals.md Phase 4 -- "explicitly praised as an excellent
+    security control" in that doc's Gemini review, versus live impersonation
+    tokens). Deliberately does NOT mint a real session for this user or
+    return anything that would let the caller act as them (no auth token,
+    no write access) -- it's a read query an admin runs, not a login.
+    Real short-lived createCustomToken-based impersonation is P3, and only
+    if this read-only view proves insufficient."""
+    with get_conn() as conn:
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+            cur.execute(
+                """
+                SELECT firebase_uid, email, company, territory_states, categories,
+                       full_name, phone, role_title, lead_source, lifecycle_stage,
+                       notes, onboarded_at, created_at, subscription_tier, is_active
+                FROM user_profiles
+                WHERE firebase_uid = %s
+                """,
+                (firebase_uid,),
+            )
+            profile = cur.fetchone()
+            if not profile:
+                raise HTTPException(status_code=404, detail="No profile found for this user")
+
+            cur.execute(
+                """
+                SELECT t.stage, t.note, t.created_at, t.updated_at,
+                       p.project_id, p.name, p.state, p.status
+                FROM user_tracked_projects t
+                JOIN projects p ON p.project_sk = t.project_sk
+                WHERE t.firebase_uid = %s
+                ORDER BY t.updated_at DESC
+                """,
+                (firebase_uid,),
+            )
+            tracked = cur.fetchall()
+
+    return {"profile": profile, "tracked_projects": tracked}
+
+
 def fetch_enrichment_detail(conn, sk: int) -> dict[str, Any]:
     """Full project_enrichment rows grouped by section, for the detail page
     only -- not included in the bulk list response (fetch_enrichment above)
@@ -1369,6 +1414,23 @@ def _ask_gemini(context: str, question: str) -> str:
     return (resp.text or "").strip()
 
 
+def _log_ask(conn, firebase_uid: str, scope: str, question: str, answer: str, project_id: str | None = None) -> None:
+    """Best-effort -- a logging failure must never fail the actual answer
+    that's already been generated and is about to be returned to the
+    user. Also the shared write path the MCP server's ask_about_territory
+    tool (P2) reuses, so usage is metered once, not twice."""
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "INSERT INTO ask_log (firebase_uid, scope, project_id, question, answer) "
+                "VALUES (%s, %s, %s, %s, %s)",
+                (firebase_uid, scope, project_id, question, answer),
+            )
+        conn.commit()
+    except Exception as e:  # noqa: BLE001
+        print(f"  [warn] ask_log insert failed: {e}", file=sys.stderr)
+
+
 def _project_ask_context(conn, project_id: str) -> tuple[str, dict[str, Any]]:
     with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
         cur.execute("SELECT * FROM projects WHERE project_id = %s", (project_id,))
@@ -1407,7 +1469,8 @@ def _project_ask_context(conn, project_id: str) -> tuple[str, dict[str, Any]]:
 def ask_about_project(project_id: str, body: AskRequest, firebase_uid: str = Depends(require_firebase_user)):
     with get_conn() as conn:
         context, _ = _project_ask_context(conn, project_id)
-    answer = _ask_gemini(context, body.question)
+        answer = _ask_gemini(context, body.question)
+        _log_ask(conn, firebase_uid, "project", body.question, answer, project_id=project_id)
     return {"answer": answer}
 
 
@@ -1456,7 +1519,8 @@ def _territory_ask_context(conn, firebase_uid: str) -> str:
 def ask_about_my_territory(body: AskRequest, firebase_uid: str = Depends(require_firebase_user)):
     with get_conn() as conn:
         context = _territory_ask_context(conn, firebase_uid)
-    answer = _ask_gemini(context, body.question)
+        answer = _ask_gemini(context, body.question)
+        _log_ask(conn, firebase_uid, "territory", body.question, answer)
     return {"answer": answer}
 
 
@@ -1494,6 +1558,14 @@ class ContactSubmission(BaseModel):
     utm_medium: str | None = Field(default=None, max_length=200)
     utm_campaign: str | None = Field(default=None, max_length=200)
     referrer: str | None = Field(default=None, max_length=500)
+    # PostHog's anonymous distinct_id -- joins this submission to the
+    # visitor's pre-signup session/replay in PostHog, and later to their
+    # firebase_uid once identify() fires on sign-in. Session-replay/funnel
+    # data only, same non-primary-attribution caveat as above.
+    posthog_distinct_id: str | None = Field(default=None, max_length=200)
+    # See components/marketing/DemoModal.tsx's DemoPersona -- copy/context
+    # variant the visitor saw, not a different field set or endpoint.
+    persona: str | None = Field(default=None, max_length=50)
 
     @field_validator("email")
     @classmethod
@@ -1544,8 +1616,8 @@ def submit_contact(sub: ContactSubmission):
                 """
                 INSERT INTO contact_submissions
                     (first_name, last_name, email, company, categories, source_path, firebase_uid,
-                     utm_source, utm_medium, utm_campaign, referrer)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                     utm_source, utm_medium, utm_campaign, referrer, posthog_distinct_id, persona)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                 RETURNING id
                 """,
                 (
@@ -1560,6 +1632,8 @@ def submit_contact(sub: ContactSubmission):
                     sub.utm_medium,
                     sub.utm_campaign,
                     sub.referrer,
+                    sub.posthog_distinct_id,
+                    sub.persona,
                 ),
             )
             submission_id = cur.fetchone()[0]
@@ -1607,19 +1681,83 @@ def get_my_profile(firebase_uid: str = Depends(require_firebase_user)):
     with get_conn() as conn:
         with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
             cur.execute(
-                "SELECT company, territory_states, categories, onboarded_at "
+                "SELECT company, territory_states, categories, onboarded_at, "
+                "full_name, phone, role_title, subscription_tier "
                 "FROM user_profiles WHERE firebase_uid = %s",
                 (firebase_uid,),
             )
             row = cur.fetchone()
     if row is None:
-        return {"onboarded": False, "company": None, "territory_states": [], "categories": []}
+        return {
+            "onboarded": False, "company": None, "territory_states": [], "categories": [],
+            "full_name": None, "phone": None, "role_title": None, "subscription_tier": "free",
+        }
     return {
         "onboarded": row["onboarded_at"] is not None,
         "company": row["company"],
         "territory_states": row["territory_states"],
         "categories": row["categories"],
+        "full_name": row["full_name"],
+        "phone": row["phone"],
+        "role_title": row["role_title"],
+        "subscription_tier": row["subscription_tier"],
     }
+
+
+# docs/architecture-2026/04-productization.md P1: enforces the Free-tier
+# "1 brand check per week" limit stated on app/pricing/page.tsx (Pro/Team
+# say "Unlimited brand checks"). Free is the DEFAULT subscription_tier
+# (migration 027), so a user with no row at all is treated as free, not
+# unlimited -- fail toward the paid promise being real, not toward giving
+# away Pro behavior to an unrecognized state.
+FREE_BRAND_CHECKS_PER_WEEK = 1
+
+
+def _week_start(d: date) -> date:
+    return d - timedelta(days=d.weekday())  # Monday of the current ISO week
+
+
+@app.post("/v1/me/brand-check")
+def record_brand_check(firebase_uid: str = Depends(require_firebase_user)):
+    """Call once per /visibility data pull (components/VisibilityPanel.tsx),
+    BEFORE fetching the sample -- 200 means proceed, 429 means show the
+    upgrade prompt instead of fetching data. Atomic increment via
+    INSERT ... ON CONFLICT DO UPDATE, not a read-then-write, so two rapid
+    requests from the same user can't both read "0 used" and both
+    proceed."""
+    today = _week_start(datetime.now(timezone.utc).date())
+    with get_conn() as conn:
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+            cur.execute(
+                "SELECT subscription_tier FROM user_profiles WHERE firebase_uid = %s",
+                (firebase_uid,),
+            )
+            row = cur.fetchone()
+            tier = row["subscription_tier"] if row else "free"
+
+            if tier != "free":
+                return {"allowed": True, "tier": tier, "remaining": None}
+
+            cur.execute(
+                """
+                INSERT INTO brand_check_usage (firebase_uid, week_start, check_count)
+                VALUES (%s, %s, 1)
+                ON CONFLICT (firebase_uid, week_start) DO UPDATE SET
+                    check_count = brand_check_usage.check_count
+                        + CASE WHEN brand_check_usage.check_count < %s THEN 1 ELSE 0 END
+                RETURNING check_count
+                """,
+                (firebase_uid, today, FREE_BRAND_CHECKS_PER_WEEK),
+            )
+            count = cur.fetchone()["check_count"]
+        conn.commit()
+
+    if count > FREE_BRAND_CHECKS_PER_WEEK:
+        raise HTTPException(
+            status_code=429,
+            detail=f"Free tier is limited to {FREE_BRAND_CHECKS_PER_WEEK} brand check/week. Upgrade to Pro for unlimited.",
+        )
+    return {"allowed": True, "tier": "free", "remaining": FREE_BRAND_CHECKS_PER_WEEK - count}
 
 
 @app.post("/v1/me/profile")

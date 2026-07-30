@@ -10,12 +10,49 @@ import { createContext, useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useFirebaseAuthOptional } from "@/components/FirebaseAuthProvider";
+import { getPostHogDistinctId } from "@/components/PostHogProvider";
 import { captureAttributionOnce, readAttribution } from "@/lib/attribution";
 
 const API_BASE = "https://specindex-api-gmm6irqe4q-uc.a.run.app";
 
+// docs/architecture-2026/03-growth.md §2c: keep ONE shared modal, add a
+// `persona` variant prop rather than forking into per-page forms again
+// (the modal's own history already documents that mistake -- five
+// duplicated full-width sections, one per page, before this component
+// existed). persona changes only copy/subhead and rides along as a
+// hidden POST field -- not a different field set, not a different
+// endpoint. Revisit a true fork only if a persona needs a field the
+// others genuinely don't.
+export type DemoPersona = "product" | "pricing" | "about" | "general";
+
+const PERSONA_COPY: Record<DemoPersona, { title: string; subhead: string }> = {
+  product: {
+    title: "See the product",
+    subhead: "Tell us your brand and the divisions you sell. We'll walk you through the index live.",
+  },
+  pricing: {
+    title: "Talk pricing",
+    subhead: "Tell us your team size and territory, and we'll recommend the right plan.",
+  },
+  about: {
+    title: "Get in touch",
+    subhead: "Tell us your brand and the divisions you sell. We come back with real projects from the index, within one business day.",
+  },
+  general: {
+    title: "Request a Demo",
+    subhead: "Tell us your brand and the divisions you sell. We come back with real projects from the index, within one business day.",
+  },
+};
+
+function defaultPersonaFromPath(pathname: string): DemoPersona {
+  if (pathname.startsWith("/pricing")) return "pricing";
+  if (pathname.startsWith("/about")) return "about";
+  if (pathname.startsWith("/product") || pathname.startsWith("/how-it-works")) return "product";
+  return "general";
+}
+
 type DemoModalContextValue = {
-  openDemoModal: () => void;
+  openDemoModal: (persona?: DemoPersona) => void;
   closeDemoModal: () => void;
 };
 
@@ -31,6 +68,8 @@ export function useDemoModal(): DemoModalContextValue {
 
 export function DemoModalProvider({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
+  const [persona, setPersona] = useState<DemoPersona | undefined>(undefined);
+  const pathname = usePathname();
 
   // Captured once, site-wide, on first mount -- not scoped to the modal
   // itself, since a visitor's first-touch UTM params may arrive on any
@@ -41,16 +80,25 @@ export function DemoModalProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <DemoModalContext.Provider
-      value={{ openDemoModal: () => setOpen(true), closeDemoModal: () => setOpen(false) }}
+      value={{
+        openDemoModal: (p) => {
+          setPersona(p ?? defaultPersonaFromPath(pathname));
+          setOpen(true);
+        },
+        closeDemoModal: () => setOpen(false),
+      }}
     >
       {children}
-      {open && <DemoRequestModal onClose={() => setOpen(false)} />}
+      {open && (
+        <DemoRequestModal persona={persona ?? "general"} onClose={() => setOpen(false)} />
+      )}
     </DemoModalContext.Provider>
   );
 }
 
-function DemoRequestModal({ onClose }: { onClose: () => void }) {
+function DemoRequestModal({ persona, onClose }: { persona: DemoPersona; onClose: () => void }) {
   const pathname = usePathname();
+  const copy = PERSONA_COPY[persona];
   // null whenever Firebase Auth isn't configured, or when the visitor just
   // isn't signed in -- both are the same "no uid to attach" case from this
   // form's perspective (docs/PRD_SIGNUP_CRM.md Section 2.2).
@@ -78,6 +126,8 @@ function DemoRequestModal({ onClose }: { onClose: () => void }) {
           categories: String(data.get("categories") ?? ""),
           source_path: pathname,
           firebase_uid: auth?.isSignedIn ? (auth.user?.uid ?? null) : null,
+          posthog_distinct_id: getPostHogDistinctId(),
+          persona,
           ...readAttribution(),
         }),
       });
@@ -109,12 +159,9 @@ function DemoRequestModal({ onClose }: { onClose: () => void }) {
         <div className="flex items-start justify-between gap-4">
           <div>
             <h2 id="demo-modal-title" className="text-lg font-semibold">
-              Request a Demo
+              {copy.title}
             </h2>
-            <p className="mt-1.5 text-sm text-[var(--color-gray-600)]">
-              Tell us your brand and the divisions you sell. We come back with real
-              projects from the index, within one business day.
-            </p>
+            <p className="mt-1.5 text-sm text-[var(--color-gray-600)]">{copy.subhead}</p>
           </div>
           <button
             type="button"

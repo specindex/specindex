@@ -47,6 +47,7 @@ export function VisibilityPanel() {
   const { getToken } = useFirebaseAuth();
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
+  const [quotaExceeded, setQuotaExceeded] = useState(false);
   const [brand, setBrand] = useState("Acuity Brands");
   const [category, setCategory] = useState(initialCategoryFromUrl);
 
@@ -55,6 +56,20 @@ export function VisibilityPanel() {
     (async () => {
       const token = await getToken();
       const headers = token ? { Authorization: `Bearer ${token}` } : undefined;
+
+      // docs/architecture-2026/04-productization.md P1: Free tier is
+      // limited to 1 brand check/week (app/pricing/page.tsx's exact
+      // copy). Recorded once per mount of this panel, before pulling any
+      // data -- a 429 here means "don't fetch," not "fetch anyway."
+      const quota = await fetch(`${API_BASE}/v1/me/brand-check`, { method: "POST", headers });
+      if (quota.status === 429) {
+        if (!cancelled) {
+          setQuotaExceeded(true);
+          setLoading(false);
+        }
+        return;
+      }
+
       const collected: Project[] = [];
       for (let offset = 0; offset < SAMPLE_SIZE; offset += PAGE_SIZE) {
         const res = await fetch(
@@ -84,6 +99,20 @@ export function VisibilityPanel() {
 
   if (loading) {
     return <p className="text-sm text-[var(--color-gray-600)]">Loading the index…</p>;
+  }
+
+  if (quotaExceeded) {
+    return (
+      <div className="card mx-auto max-w-lg p-10 text-center">
+        <h2 className="text-section">You&apos;ve used this week&apos;s brand check</h2>
+        <p className="mt-3 text-[var(--color-gray-600)]">
+          Free accounts get 1 brand check per week. Upgrade to Pro for unlimited checks.
+        </p>
+        <Link href="/pricing/" className="btn btn-demo mt-6 inline-block">
+          See Pro pricing
+        </Link>
+      </div>
+    );
   }
 
   return (
