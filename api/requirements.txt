@@ -4,3 +4,4 @@ psycopg2-binary==2.9.10
 google-cloud-storage==2.19.0
 google-genai==1.2.0
 google-auth==2.36.0
+firebase-admin==6.6.0

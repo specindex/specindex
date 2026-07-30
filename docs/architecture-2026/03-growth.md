@@ -3,6 +3,8 @@
 Status: Gemini-reviewed 2026-07-30 (the review that actually ran, not just labeled — see findings below). Companion to the ingestion/scoring and admin-portal
 architecture docs in this same directory. Ground truth as of 2026-07-30:
 
+**Build status 2026-07-30: P0-P3 shipped, P4's sitemap item deliberately deferred — see `00-MASTER-ROADMAP.md` for the authoritative per-item breakdown.** In brief: FAQ/Org JSON-LD, first-party UTM capture, PostHog, `ask_log`, and `lead_scores` + `GET /v1/ops/leads` (mirroring `compute-project-scores.py`'s decomposed-score pattern, live-tested against real production leads) are all live. The sitemap-index rework stays unbuilt — its own stated precondition ("once organic project-page traffic is validated") hasn't happened yet.
+
 ## Gemini Review Findings (incorporated 2026-07-30)
 
 1. **Territory/category breadth (+10) rewards tire-kickers, not account size.** Selecting many states/categories at onboarding is more often a casual browser or researcher than a high-value account — real high-converting reps are tightly focused on 1-3 states and 1 category. **Fix applied:** reconsider this signal as *density of engagement within a declared territory* rather than raw breadth (e.g., tracked-project count relative to territory size), not simply "more states = more score." Flagged for revision in `scripts/compute-lead-scores.py` when built — not fully redesigned here, since it needs real usage data to calibrate against.

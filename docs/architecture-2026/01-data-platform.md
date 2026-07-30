@@ -5,6 +5,8 @@ Grounded in the real running system as of 2026-07-29/30: `docs/ROADMAP.md`, `scr
 
 **Review status: Gemini-reviewed 2026-07-30.** Real, substantive findings below — incorporated into the schemas and action items throughout this doc.
 
+**Build status 2026-07-30: P0-P3 shipped, P4's entity-resolution item blocked on live data — see `00-MASTER-ROADMAP.md` for the authoritative per-item breakdown.** In brief: the fingerprint gate, `llm_call_log`/grounding cost tracking, entity directory tables + Phase-1 heuristic normalization, `pg_trgm` fuzzy-match merge-proposal batch, and opt-in multi-project Gemini batching are all live. The `entity_aliases` table this doc's finding #6 flagged as missing is now built (migration 038). The LLM-assisted resolution pass for the fuzzy-match residual is deferred, not skipped — the batch normalization run populating the entity tables was still uncommitted (a real durability bug, since fixed for future runs) when this pass was attempted, so there's no real residual to resolve against yet.
+
 ## Gemini Review Findings (incorporated 2026-07-30)
 
 1. **Grounding paradox in the fingerprint gate (Section 3).** `source_fingerprint` only changes when *local* data changes, but enrichment is supposed to discover *external* web content. A sparse project's fingerprint never changes, so it would be permanently frozen and never re-checked for newly published external info. **Fix applied:** add a max-staleness fallback — re-evaluate if fingerprint changed OR `last_enriched_at < now() - interval '180 days'`, whichever comes first.

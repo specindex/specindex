@@ -4,6 +4,8 @@
 
 **Gemini/Vertex review status: Reviewed 2026-07-30.** Real findings below, incorporated into Section 3.
 
+**Build status 2026-07-30: shipped through P4 — see `00-MASTER-ROADMAP.md` for the authoritative per-item breakdown.** In brief: `require_role`, `is_active` enforcement, `/ops/crm`, read-only "view as customer," `org_id`-based Team invite/roster (`org_members` table + `/v1/org/*` endpoints + `components/TeamRoster.tsx`), and `revokeRefreshTokens` wired into a real admin deactivate/reactivate action (`firebase-admin` added to `api/requirements.txt`) are all live. True `createCustomToken` impersonation stays unbuilt — the read-only view it's conditional on hasn't been reported as insufficient by anyone yet.
+
 ## Gemini Review Findings (incorporated 2026-07-30)
 
 1. **1-hour JWT revocation gap.** Postgres-side role checks don't help if the endpoint only calls `require_firebase_user` — a deactivated/suspended user's Firebase ID token stays cryptographically valid for up to ~60 minutes regardless of Postgres state. **Fix applied:** add `user_profiles.is_active BOOLEAN DEFAULT true`, and have `require_firebase_user` itself check it (not just `require_role`), so deactivation takes effect on the very next request rather than waiting for role-gated endpoints specifically.

@@ -292,6 +292,73 @@ def run_discovery(client, model: str, project: dict, conn=None) -> dict:
     return _extract_json(text)
 
 
+# docs/architecture-2026/01-data-platform.md P3: "Batch multiple projects
+# per Gemini enrichment call instead of one-per-call." Opt-in only
+# (--projects-per-call > 1, default 1 = today's unchanged one-per-call
+# behavior) -- this changes the discovery prompt shape, and the currently
+# running/scheduled single-project pipeline shouldn't have its default
+# behavior altered by a P3 addition. Pass 2 (cross-check) and Tier-1
+# triage stay per-project even in batch mode -- Pass 2's whole point is
+# an INDEPENDENT second look with no shared context (see its own
+# docstring); batching it together with other projects' claims would
+# undermine that by construction, not just be slower to parse.
+BATCH_DISCOVERY_PROMPT = """You are researching {count} commercial construction projects for a \
+project-intelligence database. For EACH project below, search for current, verifiable facts. \
+For anything you cannot verify via search, write "not publicly confirmed" rather than guessing.
+
+Projects:
+{project_list}
+
+For each project, give the same fields as a single-project lookup would: executive_brief, \
+csi_scope, team, permits, contacts, news (see field shapes below). Skip anything you found \
+nothing for -- do not fabricate placeholder rows.
+
+Output ONLY a fenced ```json block: an array, ONE ENTRY PER PROJECT IN THE SAME ORDER LISTED \
+ABOVE, each entry shaped exactly like a single-project lookup:
+
+```json
+[
+  {{
+    "project_index": 0,
+    "executive_brief": "string",
+    "csi_scope": [{{"division": "Div 03", "label": "Concrete", "scope": "string", "sources": "string"}}],
+    "team": [{{"role": "General Contractor", "party": "string", "sources": "string"}}],
+    "permits": [{{"label": "string", "detail": "string"}}],
+    "contacts": [{{"org": "string", "detail": "string", "sources": "string"}}],
+    "news": [{{"title": "string", "source": "string", "date": "string", "url": "string"}}]
+  }}
+]
+```
+"""
+
+
+def run_discovery_batch(client, model: str, projects: list[dict], conn=None) -> dict[int, dict]:
+    """Returns {{project_sk: discovery_dict}}. A project missing from the
+    response (model skipped it, or the batch call failed entirely) is
+    simply absent from the returned dict -- callers must handle a partial
+    result, not assume every input project_sk comes back."""
+    project_list = "\n".join(
+        f"{i}. \"{p['name']}\" in {p.get('city') or 'unknown city'}, "
+        f"{p.get('county') or 'unknown county'} County, {p.get('state') or 'unknown state'}"
+        for i, p in enumerate(projects)
+    )
+    prompt = BATCH_DISCOVERY_PROMPT.format(count=len(projects), project_list=project_list)
+    text = _grounded_call(
+        client, model, prompt, conn=conn, project_sk=None, call_site="enrich_pass1_batch"
+    )
+    m = JSON_FENCE.search(text)
+    if not m:
+        raise ValueError("no ```json fence found in batch discovery response")
+    entries = json.loads(m.group(1))
+    out: dict[int, dict] = {}
+    for entry in entries:
+        idx = entry.get("project_index")
+        if idx is None or not (0 <= idx < len(projects)):
+            continue
+        out[projects[idx]["project_sk"]] = entry
+    return out
+
+
 # ---------------------------------------------------------------------------
 # Pass 2: independent cross-check of the highest-stakes claims
 # ---------------------------------------------------------------------------
@@ -601,6 +668,98 @@ def enrich_one(client, settings: Settings, conn, project: dict, dry_run: bool, f
     return len(rows)
 
 
+def _finish_from_discovery(
+    client, settings: Settings, conn, project: dict, discovery: dict, fingerprint: str, dry_run: bool
+) -> int:
+    """Shared back half of enrich_one/enrich_group once a Pass-1 discovery
+    dict exists, regardless of whether it came from a single-project or
+    batched call -- Pass 2 gating, news verification, and persistence are
+    identical either way."""
+    claims = _team_claims(discovery)
+    score = _project_score(conn, project["project_sk"])
+    if claims and (score is None or score >= PASS2_SCORE_THRESHOLD):
+        print(f"Pass 2 (cross-check): {len(claims)} claims (score={score})")
+        crosscheck = run_crosscheck(client, settings.flash_model, project, claims, conn=conn)
+    else:
+        print(f"  skipping Pass 2 -- score {score} below threshold {PASS2_SCORE_THRESHOLD}")
+        crosscheck = []
+
+    rows = build_rows(discovery, crosscheck)
+    verified_news = []
+    for n in discovery.get("news", []):
+        url = n.get("url")
+        if url and url_resolves(url):
+            verified_news.append(n)
+        else:
+            print(f"  dropping unverified news URL: {n.get('title', '')!r} -> {url!r}")
+
+    print(f"  {len(rows)} facts, {len(verified_news)}/{len(discovery.get('news', []))} news URLs verified live")
+    if dry_run:
+        print("  --dry-run: not writing to the database")
+        return len(rows)
+
+    persist(conn, project["project_sk"], rows, verified_news, fingerprint=fingerprint)
+    print(f"  wrote {len(rows)} facts + {len(verified_news)} news rows for {project['spx_id']}")
+    return len(rows)
+
+
+def enrich_group(client, settings: Settings, conn, projects: list[dict], dry_run: bool, group_size: int) -> int:
+    """docs/architecture-2026/01-data-platform.md P3: batch multiple
+    projects per Gemini Pass-1 call. Fingerprint check and Tier-1 triage
+    still run per-project (both are cheap/local or a single ungrounded
+    call each) -- only the expensive GROUNDED Pass-1 discovery call is
+    actually batched. A project the batch response omits (model skipped
+    it, or the whole batch call failed) is simply left unresolved rather
+    than marked 'done' with nothing -- it stays eligible for the next
+    batch run instead of being silently written off."""
+    survivors: list[tuple[dict, str]] = []  # (project, fingerprint)
+    for project in projects:
+        fingerprint = compute_source_fingerprint(conn, project)
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT source_fingerprint, last_enriched_at FROM project_enrichment_checks WHERE project_sk = %s",
+                (project["project_sk"],),
+            )
+            existing = cur.fetchone()
+        if existing:
+            prev_fingerprint, last_enriched_at = existing
+            stale = last_enriched_at is None or (datetime.now(timezone.utc) - last_enriched_at).days >= 180
+            if prev_fingerprint == fingerprint and not stale:
+                print(f"  skip: unchanged fingerprint for {project['spx_id']}")
+                continue
+
+        triage = run_triage(client, settings.flash_model, project, conn=conn)
+        if not triage.get("worth_full_pass", True):
+            print(f"  triage: skipping full pass for {project['spx_id']} -- {triage.get('reason', '')!r}")
+            if not dry_run:
+                persist_checked_only(conn, project["project_sk"], fingerprint)
+            continue
+        survivors.append((project, fingerprint))
+
+    total_facts = 0
+    for chunk_start in range(0, len(survivors), group_size):
+        chunk = survivors[chunk_start : chunk_start + group_size]
+        chunk_projects = [p for p, _ in chunk]
+        print(f"Pass 1 (batch discovery): {len(chunk_projects)} project(s)")
+        try:
+            batch_results = run_discovery_batch(client, settings.flash_model, chunk_projects, conn=conn)
+        except Exception as e:  # noqa: BLE001 -- one bad batch shouldn't kill the whole run
+            print(f"  BATCH FAILED for {len(chunk_projects)} projects: {e}", file=sys.stderr)
+            continue
+
+        for project, fingerprint in chunk:
+            discovery = batch_results.get(project["project_sk"])
+            if discovery is None:
+                print(f"  {project['spx_id']} missing from batch response -- left pending, not marked done")
+                continue
+            try:
+                total_facts += _finish_from_discovery(client, settings, conn, project, discovery, fingerprint, dry_run)
+            except Exception as e:  # noqa: BLE001
+                print(f"  FAILED ({project['spx_id']}): {e}", file=sys.stderr)
+
+    return total_facts
+
+
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
@@ -616,6 +775,13 @@ def main() -> int:
     )
     ap.add_argument("--limit", type=int, default=25, help="--batch only: max projects to enrich this run")
     ap.add_argument("--delay", type=float, default=2.0, help="--batch only: seconds between projects")
+    ap.add_argument(
+        "--projects-per-call",
+        type=int,
+        default=1,
+        help="--batch only: batch this many projects into one Pass-1 Gemini call (default 1 = today's "
+        "unchanged one-per-call behavior). Pass 2/triage stay per-project even when > 1.",
+    )
     ap.add_argument("--state", help="--batch only: restrict to one state code, e.g. GA")
     ap.add_argument(
         "--database-url",
@@ -663,6 +829,12 @@ def main() -> int:
                 c["spx_id"] = _spx_id(c["project_sk"])
 
             print(f"Batch: {len(candidates)} candidate project(s)\n")
+
+            if args.projects_per_call > 1:
+                total_facts = enrich_group(client, settings, conn, candidates, args.dry_run, args.projects_per_call)
+                print(f"Batch complete: {len(candidates)} projects, {total_facts} total facts")
+                return 0
+
             total_facts = 0
             for project in candidates:
                 try:

@@ -2,6 +2,8 @@
 
 > STATUS: Gemini-reviewed 2026-07-30. Real findings below, incorporated into sections 1-3.
 
+**Build status 2026-07-30: API-key auth (P0) and the Team invite/roster flow (P3, built jointly with identity doc's P4) shipped; MCP, Stripe metering, and the Vertex classifier stay unbuilt — see `00-MASTER-ROADMAP.md` for the authoritative per-item breakdown.** MCP was attempted and blocked on real tooling (the `mcp` SDK needs Python 3.10+, unavailable in this environment) rather than shipped unverified. The Vertex classifier stays unbuilt for the same reason `compute-project-scores.py`/`compute-lead-scores.py` use transparent formulas instead of ML elsewhere in this package: no labeled won/lost outcome history exists yet to train or validate against.
+
 ## Gemini Review Findings (incorporated 2026-07-30)
 
 1. **Training a classifier to "explain" `project_scores` is counterproductive, not just unnecessary.** `project_scores` is a deterministic arithmetic formula — replacing/explaining it with a probabilistic fine-tuned model introduces hallucination risk over SpecIndex's own primary IP. If an enterprise buyer asks "why did this score 82," they want the deterministic component breakdown, not an LLM's guess at reasons. **Fix applied:** drop "priority-score-explain" as a classifier target entirely. The only classifier target Section 1 should pursue is genuinely predictive metadata (spec-window status, unstated product-category requirements from messy permit text) where real ground-truth labels exist and non-determinism adds value — not explaining an already-deterministic number.

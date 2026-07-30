@@ -193,7 +193,19 @@ def main() -> int:
                 counts = process_project(cur, row)
                 for k in total:
                     total[k] += counts[k]
-                if i % 5000 == 0:
+                # Commits every 5000 rows instead of one commit at the very
+                # end -- a 328K-row run held everything in a single
+                # uncommitted transaction for its entire ~10+ hour runtime
+                # in practice (confirmed live: entity tables were still
+                # empty at 43% progress), meaning a crash anywhere lost
+                # ALL progress, not just the unfinished tail, and nothing
+                # was queryable until the whole run finished. --dry-run
+                # still rolls back everything at the end, just via more,
+                # smaller savepoint-free transactions.
+                if not args.dry_run and i % 5000 == 0:
+                    conn.commit()
+                    print(f"  processed {i}/{len(rows)} projects... (committed)", file=sys.stderr)
+                elif i % 5000 == 0:
                     print(f"  processed {i}/{len(rows)} projects...", file=sys.stderr)
 
         print(f"Processed {len(rows)} projects.")

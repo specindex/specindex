@@ -81,3 +81,19 @@ export async function fetchCustomerDetail(
   if (!res.ok) throw new Error(`GET /v1/ops/customer/${firebaseUid} failed: ${res.status}`);
   return res.json();
 }
+
+// POST /v1/ops/customer/{uid}/deactivate|reactivate (api/main.py) --
+// deactivate also revokes the user's Firebase refresh tokens server-side.
+export async function setCustomerActive(
+  getToken: GetToken,
+  firebaseUid: string,
+  active: boolean,
+): Promise<void> {
+  const token = await getToken();
+  const action = active ? "reactivate" : "deactivate";
+  const res = await fetch(`${API_BASE}/v1/ops/customer/${encodeURIComponent(firebaseUid)}/${action}`, {
+    method: "POST",
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  if (!res.ok) throw new Error(`${action} failed: ${res.status}`);
+}

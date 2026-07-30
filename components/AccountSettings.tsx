@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { FIREBASE_AUTH_ENABLED, useFirebaseAuth } from "@/components/FirebaseAuthProvider";
 import { fetchMyProfile, saveMyProfile, type UserProfile } from "@/lib/userProfile";
+import { TeamRoster } from "@/components/TeamRoster";
 
 const API_BASE = "https://specindex-api-gmm6irqe4q-uc.a.run.app";
 
@@ -113,6 +114,7 @@ export function AccountSettings() {
   if (loading) return <p className="text-sm text-[var(--color-gray-600)]">Loading…</p>;
 
   return (
+    <div className="space-y-6">
     <form onSubmit={handleSave} className="space-y-6">
       <div className="card p-5">
         <p className="text-xs font-semibold uppercase tracking-wider text-[var(--color-gray-400)]">Plan</p>
@@ -214,5 +216,8 @@ export function AccountSettings() {
         {saved && <span className="text-sm text-[var(--color-green)]">Saved.</span>}
       </div>
     </form>
+
+      {profile?.subscription_tier === "team" && <TeamRoster />}
+    </div>
   );
 }
