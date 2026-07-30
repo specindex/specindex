@@ -27,10 +27,14 @@ were defined before `app = FastAPI(...)` existed, which crashed the
 container on boot; fixed by moving them after, verified with a local
 import before redeploying). Frontend build passes clean.
 
-Manual verification: ✅ `/ops/crm` confirmed rendering correctly under
-the new `require_role` gate with a real signed-in admin session
-(2026-07-30). Still open: confirming a UTM-tagged demo submission
-(`?utm_source=test`) captures correctly end to end.
+Manual verification: both items closed 2026-07-30. ✅ `/ops/crm`
+confirmed rendering correctly under the new `require_role` gate with a
+real signed-in admin session. ✅ UTM-tagged demo submission confirmed
+end to end — `contact_submissions.id=7` (16:39:41 UTC) shows
+`utm_source='test'`, `utm_medium='manual_check'`,
+`utm_campaign='verification'` captured exactly from the URL, vs. NULL on
+every row before this feature shipped. **All P0 work is now fully
+verified, not just deployed.**
 
 ---
 
