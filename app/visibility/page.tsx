@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { VisibilityPanel } from "@/components/VisibilityPanel";
-import { getSampleProjects } from "@/lib/projects";
+import { ProjectsGate } from "@/components/ProjectsGate";
 
 export const metadata: Metadata = {
   title: "Brand Visibility",
@@ -8,17 +8,14 @@ export const metadata: Metadata = {
     "Check how often your brand appears across commercial projects nationwide, and find the projects where your category is still open.",
 };
 
-export default async function VisibilityPage() {
-  // getProjects() fetched the ENTIRE corpus (~175K+ rows, headed to 6.5M+)
-  // and embedded it as a prop into this page's client bundle -- timed out
-  // the build the same way /projects/[id] did (docs/ROADMAP.md item 44's
-  // follow-up), and would've been a multi-MB payload even if it hadn't.
-  // Bounded to a representative top-scored sample as a stopgap; the real
-  // fix is VisibilityPanel fetching/paginating client-side against the API
-  // the way components/ProjectsDashboard.tsx already does, instead of
-  // receiving the whole corpus as a prop.
-  const projects = await getSampleProjects(2000);
-
+// No server-side data fetch here anymore -- this used to call
+// getSampleProjects(2000) at build time and pass the full raw sample as a
+// prop to VisibilityPanel, which serialized all 2,000 real project records
+// into this page's public static HTML (readable by anyone, signed in or
+// not). VisibilityPanel now fetches its own sample client-side, behind
+// ProjectsGate, against the now-auth-required /v1/projects endpoint --
+// same pattern components/ProjectsDashboard.tsx already used.
+export default function VisibilityPage() {
   return (
     <div className="bg-[var(--color-bg)]">
       <div className="border-b border-[var(--color-border)] bg-white">
@@ -33,7 +30,9 @@ export default async function VisibilityPage() {
         </div>
       </div>
       <div className="mx-auto max-w-6xl px-5 py-10 md:px-8 md:py-12">
-        <VisibilityPanel projects={projects} />
+        <ProjectsGate>
+          <VisibilityPanel />
+        </ProjectsGate>
       </div>
     </div>
   );

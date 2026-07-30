@@ -126,7 +126,7 @@ export default async function HomePage() {
 
       <StatsStrip
         stats={[
-          { value: "1000+", label: "Open commercial projects indexed nationwide" },
+          { value: `${count}+`, label: "Open commercial projects indexed nationwide" },
           { value: `${recent}+`, label: "Projects with activity in the last 90 days" },
           {
             value: `${stateCount}`,

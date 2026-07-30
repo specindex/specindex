@@ -75,6 +75,30 @@ def require_firebase_user(request: Request) -> str:
     return _verify_firebase_token(request)["sub"]
 
 
+# `next build` (generateStaticParams, getStats/getSampleProjects at build
+# time -- see lib/projects.ts) reads bulk project data server-side with no
+# Firebase session to attach, so a plain require_firebase_user gate on
+# /v1/projects would 401 the build itself. SPECINDEX_BUILD_TOKEN is a
+# second, separate credential (not a user token) the build environment
+# sends instead; either it or a valid Firebase session satisfies this
+# dependency. Rotate by changing the env var on Cloud Run + the CI build
+# secret together -- there's no per-token revocation, it's a single shared
+# static string.
+SPECINDEX_BUILD_TOKEN = os.environ.get("SPECINDEX_BUILD_TOKEN", "")
+
+
+def require_firebase_user_or_build_token(request: Request) -> str:
+    """FastAPI dependency: accepts either a valid Firebase session (browser,
+    signed-in user) or the build-time shared secret via X-Build-Token
+    (next build's server-side data fetches). Returns the Firebase uid, or
+    the literal string "build" when authorized via the build token, so
+    callers that don't care which can just depend on this."""
+    build_token = request.headers.get("x-build-token", "")
+    if SPECINDEX_BUILD_TOKEN and build_token and build_token == SPECINDEX_BUILD_TOKEN:
+        return "build"
+    return require_firebase_user(request)
+
+
 def require_firebase_user_with_email(request: Request) -> tuple[str, str]:
     """FastAPI dependency returning (firebase_uid, email). Firebase ID
     tokens carry `email` natively for any provider that returns one (Google
@@ -328,6 +352,37 @@ def row_to_project(row: dict[str, Any], enrichment: dict[str, Any] | None = None
     }
 
 
+# Public fields for an anonymous/build-time view of a single project detail
+# page (app/projects/[id]/page.tsx, ~200 pages pre-rendered at `next build`
+# with no user session available). Everything else -- exact value, square
+# footage, owner/architect/GC names, brand mentions, sources, exact
+# lat/lng, news, documents -- is the reason someone signs in, not SEO
+# copy, so it's dropped here rather than baked into public static HTML.
+_PUBLIC_TEASER_FIELDS = (
+    "id", "spx_id", "name", "state", "city", "county", "status",
+    "project_type", "description", "opened_or_announced_date",
+)
+
+
+def _to_public_teaser(detail: dict[str, Any]) -> dict[str, Any]:
+    return {k: detail.get(k) for k in _PUBLIC_TEASER_FIELDS} | {"gated": True}
+
+
+def _has_real_firebase_session(request: Request) -> bool:
+    """True only for an actual signed-in browser session -- NOT the build
+    token, which authorizes bulk build-time reads but should still only
+    ever see the public teaser (the whole point is the static HTML build
+    output must not contain gated fields)."""
+    auth = request.headers.get("authorization", "")
+    if not auth.startswith("Bearer "):
+        return False
+    try:
+        _verify_firebase_token(request)
+        return True
+    except HTTPException:
+        return False
+
+
 @app.get("/health")
 def health():
     if not DATABASE_URL:
@@ -446,6 +501,7 @@ def list_projects(
     sort: str = Query(default="score", pattern="^(score|name|value|recency)$"),
     limit: int = Query(default=50, ge=1, le=100),
     offset: int = Query(default=0, ge=0),
+    _auth: str = Depends(require_firebase_user_or_build_token),
 ):
     clauses, params = _project_filter_clauses(
         state, status, project_type, county, category, year, q, new_since_days, has_documents, document_type
@@ -557,8 +613,9 @@ def project_map_points(
     new_since_days: int | None = Query(default=None, ge=1, le=365),
     has_documents: bool | None = Query(default=None),
     document_type: str | None = Query(default=None),
+    _auth: str = Depends(require_firebase_user_or_build_token),
 ):
-    """Public, customer-facing equivalent of /v1/ops/map-points -- bounded
+    """Customer-facing equivalent of /v1/ops/map-points -- bounded
     to whatever filters the visitor currently has set on /projects rather
     than returning every geocoded project (that endpoint stays internal,
     used only by the Mapbox GL admin map at /map/). Lightweight rows only,
@@ -1019,6 +1076,10 @@ def get_project(project_id: str, request: Request):
         # HTTP, so trusting it directly produces http:// links from an
         # https-only service. X-Forwarded-Proto (set by Cloud Run's
         # proxy) has the real client-facing scheme.
+        signed_in = _has_real_firebase_session(request)
+        if not signed_in:
+            return _to_public_teaser(detail)
+
         proto = request.headers.get("x-forwarded-proto", "https")
         host = request.headers.get("host", request.url.netloc)
         base_url = f"{proto}://{host}/"

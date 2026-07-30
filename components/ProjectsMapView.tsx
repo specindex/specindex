@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { useFirebaseAuth } from "@/components/FirebaseAuthProvider";
 import "leaflet/dist/leaflet.css";
 import { formatUsd } from "@/lib/format";
 import { buildQuery } from "./ProjectsDashboard";
@@ -38,6 +39,7 @@ export type ProjectsMapFilters = {
 type Props = { filters: ProjectsMapFilters };
 
 export function ProjectsMapView({ filters }: Props) {
+  const { getToken } = useFirebaseAuth();
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<import("leaflet").Map | null>(null);
   const markersRef = useRef<import("leaflet").LayerGroup | null>(null);
@@ -62,7 +64,13 @@ export function ProjectsMapView({ filters }: Props) {
       q: filters.query,
       new_since_days: filters.newOnly ? 7 : undefined,
     });
-    fetch(`${API_BASE}/v1/projects/map-points?${qs}`)
+    getToken()
+      .then((token) =>
+        fetch(
+          `${API_BASE}/v1/projects/map-points?${qs}`,
+          token ? { headers: { Authorization: `Bearer ${token}` } } : undefined,
+        ),
+      )
       .then((r) => {
         if (!r.ok) throw new Error(`API returned ${r.status}`);
         return r.json();
