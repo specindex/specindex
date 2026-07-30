@@ -11,6 +11,8 @@ import {
 import { auth, FIREBASE_AUTH_ENABLED } from "@/lib/firebase";
 import { AuthSync } from "@/components/onboarding/AuthSync";
 import { SignInModal } from "@/components/onboarding/SignInModal";
+import { StartFreeModal } from "@/components/onboarding/StartFreeModal";
+import { startTrial } from "@/lib/userProfile";
 
 // Replaces components/ClerkProviders.tsx. Same reasoning carries over: this
 // site is a fully static Next.js export with no Node server, so a
@@ -33,6 +35,7 @@ type FirebaseAuthContextValue = {
   user: User | null;
   getToken: GetToken;
   signIn: () => Promise<void>;
+  openStartFree: () => void;
   signOut: () => Promise<void>;
 };
 
@@ -65,6 +68,7 @@ function FirebaseAuthInner({ children }: { children: React.ReactNode }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [user, setUser] = useState<User | null>(null);
   const [showSignInModal, setShowSignInModal] = useState(false);
+  const [showStartFreeModal, setShowStartFreeModal] = useState(false);
 
   useEffect(() => {
     if (!auth) return;
@@ -97,6 +101,13 @@ function FirebaseAuthInner({ children }: { children: React.ReactNode }) {
     if (!auth) return;
     setShowSignInModal(false);
     await signInWithPopup(auth, new GoogleAuthProvider());
+    // Unconditional, not tied to which button opened this modal --
+    // /v1/me/start-trial only ever upgrades a user who's still on `free`
+    // with no prior trial, so this is a safe no-op for every returning
+    // user and only actually grants anything the one time it matters: a
+    // brand-new Google sign-in, regardless of whether they clicked "Login"
+    // or "Start for free" to get here.
+    await startTrial(getToken);
   }
 
   async function signOut(): Promise<void> {
@@ -104,7 +115,15 @@ function FirebaseAuthInner({ children }: { children: React.ReactNode }) {
     await firebaseSignOut(auth);
   }
 
-  const value: FirebaseAuthContextValue = { isLoaded, isSignedIn: !!user, user, getToken, signIn, signOut };
+  const value: FirebaseAuthContextValue = {
+    isLoaded,
+    isSignedIn: !!user,
+    user,
+    getToken,
+    signIn,
+    openStartFree: () => setShowStartFreeModal(true),
+    signOut,
+  };
 
   return (
     <FirebaseAuthContext.Provider value={value}>
@@ -113,6 +132,7 @@ function FirebaseAuthInner({ children }: { children: React.ReactNode }) {
       {showSignInModal && (
         <SignInModal onGoogle={signInWithGoogle} onClose={() => setShowSignInModal(false)} />
       )}
+      {showStartFreeModal && <StartFreeModal onClose={() => setShowStartFreeModal(false)} />}
     </FirebaseAuthContext.Provider>
   );
 }

@@ -71,3 +71,12 @@ export async function saveMyProfile(getToken: GetToken, body: UserProfileUpdate)
   });
   if (!res.ok) throw new Error(`POST /v1/me/profile failed: ${res.status}`);
 }
+
+// Backs the "Start for free" Google path -- POST /v1/signup already does
+// this for the email/password path, so the two signup routes both land on
+// the same trial state. Best-effort: called right after a successful
+// Google popup, and a failure here shouldn't block the person from using
+// the app they just signed into.
+export async function startTrial(getToken: GetToken): Promise<void> {
+  await authenticatedFetch(getToken, "/v1/me/start-trial", { method: "POST" }).catch(() => {});
+}

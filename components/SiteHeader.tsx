@@ -120,20 +120,63 @@ function UserMenu() {
   );
 }
 
+// Three signed-out CTAs (Login / Book a demo / Start for free), matching
+// the requested reference layout. "Login" opens the provider-choice modal
+// (Google, sign in). "Start for free" opens the typed signup form
+// (StartFreeModal) instead -- a distinct flow, not just different copy on
+// the same button, since it collects name/company up front and grants a
+// 14-day trial. Google sign-in also grants a trial on first use regardless
+// of which button got someone to the Google popup (see
+// FirebaseAuthProvider's signInWithGoogle), so "Login" isn't a trial-free
+// dead end for a first-time Google user either.
 function AuthAwareActions({ mobile }: { mobile?: boolean }) {
-  const size = mobile ? "w-full text-center" : "hidden sm:inline-flex";
   const { openDemoModal } = useDemoModal();
-  const { isSignedIn, signIn } = useFirebaseAuth();
+  const { isSignedIn, signIn, openStartFree } = useFirebaseAuth();
   if (isSignedIn) return <UserMenu />;
+  if (mobile) {
+    return (
+      <>
+        <button
+          type="button"
+          onClick={() => signIn()}
+          className="w-full py-2 text-left text-sm font-medium text-[var(--color-ink)]"
+        >
+          Login
+        </button>
+        <button
+          type="button"
+          onClick={() => openDemoModal()}
+          className="w-full py-2 text-left text-sm font-medium text-[var(--color-ink)]"
+        >
+          Book a demo
+        </button>
+        <button type="button" onClick={() => openStartFree()} className="btn btn-primary mt-2 w-full text-center">
+          Start for free →
+        </button>
+      </>
+    );
+  }
   return (
-    <>
-      <button type="button" onClick={() => signIn()} className={`btn btn-outline ${size}`}>
-        Log In
+    <div className="hidden items-center gap-4 sm:flex">
+      <button
+        type="button"
+        onClick={() => signIn()}
+        className="text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-green)]"
+      >
+        Login
       </button>
-      <button type="button" onClick={() => openDemoModal()} className={`btn btn-demo ${size}`}>
-        Request Demo
+      <span className="h-4 w-px bg-[var(--color-border)]" aria-hidden="true" />
+      <button
+        type="button"
+        onClick={() => openDemoModal()}
+        className="text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-green)]"
+      >
+        Book a demo
       </button>
-    </>
+      <button type="button" onClick={() => openStartFree()} className="btn btn-primary">
+        Start for free →
+      </button>
+    </div>
   );
 }
 
