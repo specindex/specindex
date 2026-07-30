@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { HomePageGate } from "@/components/marketing/HomePageGate";
 import { ProductMock } from "@/components/marketing/ProductMock";
@@ -90,6 +91,13 @@ const stages = [
     detail: "Interiors, finishes, and FF&E packages are still in play on plenty of jobs.",
   },
 ];
+
+export const metadata: Metadata = {
+  title: "SpecIndex — Commercial construction projects, ranked for manufacturers",
+  description:
+    "SpecIndex ranks open commercial construction projects by a transparent priority score, filtered to your territory and product category — top-of-funnel leads for building product manufacturers.",
+  alternates: { canonical: "/" },
+};
 
 export default async function HomePage() {
   // getProjects()+getCorpus() used to fetch the ENTIRE corpus (~175K+ rows,

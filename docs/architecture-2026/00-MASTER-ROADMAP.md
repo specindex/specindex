@@ -52,20 +52,21 @@ verified, not just deployed.**
 - ✅ First-party (non-blockable) `localStorage` UTM/referrer capture (`lib/attribution.ts`) as the PRIMARY attribution source, not PostHog alone (Gemini: ad-blockers silently drop 20-35% of client-side tracking for this ICP) — *growth*
 - ✅ API-key auth shipped (migration 031, `require_api_key` dependency + `/v1/me/api-keys` CRUD) as the shared prerequisite for MCP access and Enterprise billing — not yet wired into any consuming endpoint (MCP itself is still P2) — *productization*
 
-## P1 — Next, once P0 is done
+## P1 — ✅ MOSTLY SHIPPED 2026-07-30 (2 items blocked on real decisions, not code)
 
-- Add `v_llm_daily_spend`, `v_enrichment_coverage`, `v_pipeline_health` Postgres views — *data platform*
-- Add a Tier-1 cheap-model triage call in `enrich-project-details.py` before Pass 1 — *data platform*
-- Gate Pass 2 (cross-check) behind a `project_scores` value/priority threshold instead of running it unconditionally — *data platform*
-- Create `manufacturers`, `general_contractors`, `people` tables + join tables; Phase-1 heuristic normalization batch over existing `mentioned_brands`/`competitor_watch`/`owner`/`architect`/`general_contractor` fields — *data platform*
-- Execute `docs/PRD_SIGNUP_CRM.md` Phase 1 migration (full_name, phone, lifecycle_stage, etc. on `user_profiles`) — *identity*
-- Build admin portal customer-list page, gated on `support_admin`/`super_admin` — *identity*
-- Build read-only "view as customer" admin query path (never mint a real customer session) — *identity*
-- Keep `/coverage`, `/ops`, `/map` on their current unauthenticated-but-noindex pattern; link them into the admin shell nav rather than rebuilding — *identity*
-- Add `generateMetadata` to `app/page.tsx`, `app/visibility/page.tsx`, `app/reporting/page.tsx` — *growth*
-- Add PostHog Cloud snippet to `app/layout.tsx`; thread `distinct_id` into the `/v1/contact` POST body — *growth*
-- Enforce the Free-tier 1-brand-check/week limit and Pro seat/usage limits already promised on the pricing page but not implemented — *productization*
-- A Cloud SQL read replica for agent/analytics query traffic, isolated from the production API — *data platform* (do this before an agent gets standing query access in a workflow that matters, not before)
+- ✅ Added `v_llm_daily_spend`, `v_enrichment_coverage`, `v_pipeline_health` Postgres views (migration 032) — *data platform*
+- ✅ Added a Tier-1 cheap-model triage call in `enrich-project-details.py` before Pass 1 (ungrounded, fails open to a full pass on error) — *data platform*
+- ✅ Gated Pass 2 (cross-check) behind `project_scores.score >= 50` instead of running it unconditionally — *data platform*
+- ✅ Created `manufacturers`, `general_contractors`, `people` tables + join tables (migration 033); `scripts/normalize-entity-directories.py` Phase-1 heuristic batch. **Deviation from the original plan, verified against live data first**: dropped `competitor_watch` as a manufacturer source entirely — every value in it is CSI-division category taxonomy ("elevators", "ff&e"), never a company name, confirmed by a real 500-project test run before scaling up. Also fixed a quote-stripping bug in `general_contractor` display names found the same way — *data platform*
+- ✅ `docs/PRD_SIGNUP_CRM.md` Phase 1 migration — **already shipped 2026-07-30 as migration 026 (PR #73), before this pass started.** This bullet was stale; verified against the live schema before doing anything — *identity*
+- ✅ Admin portal customer-list page — **already satisfied by `/ops/crm`** (migration 026/PR #73), gated on `support_admin`/`super_admin` via `require_role`, verified live (PR #79). This bullet was also stale — *identity*
+- ✅ Built read-only "view as customer" admin query path: `GET /v1/ops/customer/{firebase_uid}` (never mints a session, `support_admin`+ gated) + `app/ops/customer/page.tsx`, linked from each real signed-in row in the CRM table — *identity*
+- ✅ `/coverage`, `/ops`, `/map` kept on their unauthenticated-but-noindex pattern, consolidated into one nav via a new `app/ops/layout.tsx` admin shell — *identity*
+- ✅ Added `metadata` to `app/page.tsx` (was missing). **`app/visibility/page.tsx` and `app/reporting/page.tsx` already had it** — this bullet was stale on 2 of its 3 targets, verified before building — *growth*
+- ✅ Added `posthog-js` + a graceful-degrade `PostHogProvider` (`app/layout.tsx`); threaded `posthog_distinct_id` into `/v1/contact`'s POST body and `contact_submissions` (migration 034) — *growth*
+- ✅ Enforced the Free-tier 1-brand-check/week limit: `POST /v1/me/brand-check` (migration 035, atomic increment, fails toward free/limited for an unrecognized tier), called from `VisibilityPanel.tsx` before every data pull, 429 shows an upgrade prompt instead of fetching — *productization*
+- ⛔ **Pro seat/usage limits — nothing to enforce yet, not skipped.** "Seat" isn't a real concept in the schema at all today (confirmed against `user_profiles` and this doc's own P3: `org_id` doesn't exist until the identity doc's P3, the seat/roster flow is P4). Enforcing seat limits requires that model to exist first — this half of the original bullet was premature, not deferred — *productization*
+- ⛔ **A Cloud SQL read replica — blocked on a real infra decision, not code.** Standing one up is a real, billed, standing piece of infrastructure (a second Cloud SQL instance) — not something to provision unprompted the way an idempotent migration is. Needs Asif's go-ahead on the added monthly cost before building — *data platform*
 
 ## P2 — After P1
 

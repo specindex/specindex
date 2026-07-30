@@ -168,6 +168,83 @@ def _extract_json(text: str) -> dict:
 
 
 # ---------------------------------------------------------------------------
+# Tier-1 triage: cheap, ungrounded pre-check before Pass 1
+# ---------------------------------------------------------------------------
+
+TRIAGE_PROMPT = """A construction-project database is deciding whether to spend a full \
+search-grounded research pass on this project. Project: "{name}" in {city}, {state}. \
+What we already have on file:
+
+{existing_summary}
+
+Based ONLY on the project name, location, and what's already on file (no search -- just \
+your judgment), is this project specific/identifiable enough that a real web search pass is \
+likely to find team/permit/news facts, or is it too generic/sparse to be worth it (e.g. a \
+one-line permit record with no real project name)?
+
+Output ONLY a fenced ```json block:
+```json
+{{"worth_full_pass": true, "reason": "short string"}}
+```
+"""
+
+
+def _existing_summary(project: dict) -> str:
+    parts = []
+    if project.get("owner"):
+        parts.append(f"owner: {project['owner']}")
+    if project.get("general_contractor"):
+        parts.append(f"GC: {project['general_contractor']}")
+    if project.get("description"):
+        parts.append(f"description: {project['description'][:200]}")
+    return "; ".join(parts) if parts else "(nothing else on file)"
+
+
+def run_triage(client, model: str, project: dict, conn=None) -> dict:
+    """Single cheap, UNGROUNDED call (no google_search tool -- that's the
+    whole point, grounding is the expensive part of Pass 1/2) that decides
+    whether a project is worth a full grounded pass at all.
+    docs/architecture-2026/01-data-platform.md P1: cuts spend on projects
+    too generic/sparse for search to find anything real (a bare permit
+    record with no real project name), before paying for the grounded
+    call that would likely come back empty anyway."""
+    from google.genai import types
+
+    prompt = TRIAGE_PROMPT.format(
+        name=project["name"],
+        city=project.get("city") or "unknown city",
+        state=project.get("state") or "unknown state",
+        existing_summary=_existing_summary(project),
+    )
+    for attempt in range(1, 3):
+        try:
+            resp = client.models.generate_content(
+                model=model, contents=prompt, config=types.GenerateContentConfig()
+            )
+            usage = getattr(resp, "usage_metadata", None)
+            try:
+                _log_llm_call(
+                    conn, project.get("project_sk"), "enrich_triage", model,
+                    getattr(usage, "prompt_token_count", None) if usage else None,
+                    getattr(usage, "candidates_token_count", None) if usage else None,
+                    grounded=False,
+                )
+            except Exception as log_err:  # noqa: BLE001
+                print(f"  [warn] llm_call_log insert failed: {log_err}", file=sys.stderr)
+            return _extract_json(resp.text)
+        except Exception as e:  # noqa: BLE001
+            if attempt == 2:
+                # Triage itself failing shouldn't block enrichment -- fail
+                # open (treat as worth a full pass) rather than silently
+                # starving a project of enrichment because the cheap
+                # pre-check had a bad day.
+                print(f"  [warn] triage call failed, defaulting to full pass: {e}", file=sys.stderr)
+                return {"worth_full_pass": True, "reason": "triage call failed, failing open"}
+            time.sleep(1)
+    return {"worth_full_pass": True, "reason": "unreachable"}
+
+
+# ---------------------------------------------------------------------------
 # Pass 1: discovery
 # ---------------------------------------------------------------------------
 
@@ -367,6 +444,31 @@ def build_rows(discovery: dict, crosscheck: list[dict]) -> list[dict]:
     return rows
 
 
+def persist_checked_only(conn, project_sk: int, fingerprint: str | None) -> None:
+    """Records a real, done attempt with zero facts written -- used when
+    Tier-1 triage decides a project isn't worth a full pass. Distinct from
+    not calling this at all: without it, a triaged-away sparse project
+    would get re-triaged (another cheap call, still real spend) every
+    single batch run forever instead of respecting the same fingerprint/
+    180-day cooldown a normal enrichment gets."""
+    with conn.cursor() as cur:
+        cur.execute(
+            """
+            INSERT INTO project_enrichment_checks
+                (project_sk, checked_at, source_fingerprint, enrichment_version, status, last_enriched_at)
+            VALUES (%s, now(), %s, %s, 'done', now())
+            ON CONFLICT (project_sk) DO UPDATE SET
+                checked_at = now(),
+                source_fingerprint = EXCLUDED.source_fingerprint,
+                enrichment_version = EXCLUDED.enrichment_version,
+                status = 'done',
+                last_enriched_at = now()
+            """,
+            (project_sk, fingerprint, CURRENT_ENRICHMENT_VERSION),
+        )
+    conn.commit()
+
+
 def persist(conn, project_sk: int, rows: list[dict], news: list[dict], fingerprint: str | None = None) -> None:
     import psycopg2.extras  # noqa: F401
 
@@ -411,6 +513,22 @@ def persist(conn, project_sk: int, rows: list[dict], news: list[dict], fingerpri
     conn.commit()
 
 
+# docs/architecture-2026/01-data-platform.md P1: "reserve the expensive
+# independent cross-check for projects actually worth the cost (high
+# score, high estimated_value_usd)". project_scores.score is 0-100 (see
+# api/main.py's score.total); below this, Pass 1's discovery alone still
+# runs and gets written, just without the second, independent verification
+# pass on team/permit claims.
+PASS2_SCORE_THRESHOLD = 50
+
+
+def _project_score(conn, project_sk: int) -> int | None:
+    with conn.cursor() as cur:
+        cur.execute("SELECT score FROM project_scores WHERE project_sk = %s", (project_sk,))
+        row = cur.fetchone()
+    return row[0] if row else None
+
+
 def enrich_one(client, settings: Settings, conn, project: dict, dry_run: bool, force: bool = False) -> int:
     """Run both passes for one project and persist (unless dry_run). Returns
     the number of facts written, for the batch-mode summary.
@@ -440,12 +558,24 @@ def enrich_one(client, settings: Settings, conn, project: dict, dry_run: bool, f
                 print(f"  skip: unchanged fingerprint, enriched {last_enriched_at} (< 180 days) for {project['spx_id']}")
                 return 0
 
+    triage = run_triage(client, settings.flash_model, project, conn=conn)
+    if not triage.get("worth_full_pass", True):
+        print(f"  triage: skipping full pass for {project['spx_id']} -- {triage.get('reason', '')!r}")
+        if not dry_run:
+            persist_checked_only(conn, project["project_sk"], fingerprint)
+        return 0
+
     print(f"Pass 1 (discovery): {project['name']!r}")
     discovery = run_discovery(client, settings.flash_model, project, conn=conn)
 
     claims = _team_claims(discovery)
-    print(f"Pass 2 (cross-check): {len(claims)} claims")
-    crosscheck = run_crosscheck(client, settings.flash_model, project, claims, conn=conn)
+    score = _project_score(conn, project["project_sk"])
+    if claims and (score is None or score >= PASS2_SCORE_THRESHOLD):
+        print(f"Pass 2 (cross-check): {len(claims)} claims (score={score})")
+        crosscheck = run_crosscheck(client, settings.flash_model, project, claims, conn=conn)
+    else:
+        print(f"  skipping Pass 2 -- score {score} below threshold {PASS2_SCORE_THRESHOLD}")
+        crosscheck = []
 
     rows = build_rows(discovery, crosscheck)
 

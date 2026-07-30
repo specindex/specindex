@@ -10,6 +10,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useFirebaseAuthOptional } from "@/components/FirebaseAuthProvider";
+import { getPostHogDistinctId } from "@/components/PostHogProvider";
 import { captureAttributionOnce, readAttribution } from "@/lib/attribution";
 
 const API_BASE = "https://specindex-api-gmm6irqe4q-uc.a.run.app";
@@ -78,6 +79,7 @@ function DemoRequestModal({ onClose }: { onClose: () => void }) {
           categories: String(data.get("categories") ?? ""),
           source_path: pathname,
           firebase_uid: auth?.isSignedIn ? (auth.user?.uid ?? null) : null,
+          posthog_distinct_id: getPostHogDistinctId(),
           ...readAttribution(),
         }),
       });

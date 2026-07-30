@@ -137,6 +137,7 @@ function CrmTable() {
               <th className="px-3 py-2 font-semibold">Source</th>
               <th className="px-3 py-2 font-semibold">Onboarded</th>
               <th className="px-3 py-2 font-semibold">Notes</th>
+              <th className="px-3 py-2 font-semibold"></th>
             </tr>
           </thead>
           <tbody>
@@ -160,6 +161,20 @@ function CrmTable() {
                 </td>
                 <td className="max-w-[220px] px-3 py-3 text-xs text-[var(--color-gray-600)]">
                   {c.notes || <span className="text-[var(--color-gray-400)]">—</span>}
+                </td>
+                <td className="px-3 py-3 text-xs">
+                  {/* contact_key IS the firebase_uid for a real signed-in
+                      user (crm_contacts' COALESCE) -- the synthetic
+                      "anon-<md5>" key means this row is a demo-form-only
+                      lead with no account to view. */}
+                  {!c.contact_key.startsWith("anon-") && (
+                    <a
+                      href={`/ops/customer/?uid=${encodeURIComponent(c.contact_key)}`}
+                      className="font-medium text-[var(--color-green)] hover:underline"
+                    >
+                      View →
+                    </a>
+                  )}
                 </td>
               </tr>
             ))}
