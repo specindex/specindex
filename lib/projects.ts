@@ -196,6 +196,26 @@ export async function getProject(id: string): Promise<Project | undefined> {
   return normalizeProject((await res.json()) as Project);
 }
 
+// Client-side counterpart to getProject -- the static export bakes
+// generateStaticParams's build-time fetch (unauthenticated, always the
+// public teaser) into the HTML forever, so a signed-in visitor's session
+// has no effect on what that page shows unless something re-fetches with
+// their real token after the page loads. See ProjectDetailView.tsx, which
+// calls this once a Firebase session is available and swaps the teaser
+// for the full record. No caching/pacing needed here -- unlike getProject,
+// this runs once per page view in the browser, not hundreds of times
+// during a single build.
+export async function fetchProjectForSignedInUser(
+  id: string,
+  token: string,
+): Promise<Project | undefined> {
+  const res = await fetch(`${API_BASE}/v1/projects/${encodeURIComponent(id)}`, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  if (!res.ok) return undefined;
+  return normalizeProject((await res.json()) as Project);
+}
+
 // Memoized per build process so every page/component sharing this module
 // triggers only one paginated fetch sequence against the API, not one per call.
 let cache: Promise<Project[]> | null = null;
