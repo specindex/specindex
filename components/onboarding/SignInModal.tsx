@@ -1,15 +1,18 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Logo } from "@/components/Logo";
 
-// Matches the "pick a provider, then sign in" pattern requested from
-// concentrate.ai's login modal -- previously signIn() fired Google's popup
-// directly with no intermediate screen. Only Google is wired today;
-// Microsoft needs the OAuth provider enabled in the Firebase Console
-// (Authentication > Sign-in method > Add new provider > Microsoft, backed
-// by an Azure AD app registration for the client id/secret) before
-// GoogleAuthProvider's Microsoft equivalent (OAuthProvider('microsoft.com'))
-// would actually work -- add it here once that's done.
+// Matches the layout pattern requested (valuecase.io's login screen):
+// centered card, wordmark, "Welcome" heading, an email field + Continue as
+// the primary action, a divider, then provider buttons below. Only Google
+// is wired -- email sign-in has no backend today (would need Firebase's
+// Email Link passwordless flow enabled in the Console plus an action URL,
+// the same kind of manual setup Microsoft needs) and Microsoft needs the
+// OAuth provider enabled in Firebase Console + an Azure AD app
+// registration. Both render as real, visible options (not hidden) so the
+// screen matches the target design, but stay disabled until that setup
+// happens rather than silently failing.
 export function SignInModal({
   onGoogle,
   onClose,
@@ -17,6 +20,8 @@ export function SignInModal({
   onGoogle: () => void;
   onClose: () => void;
 }) {
+  const [email, setEmail] = useState("");
+
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       if (e.key === "Escape") onClose();
@@ -27,11 +32,11 @@ export function SignInModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-sm rounded-lg bg-white p-8 shadow-xl"
+        className="relative w-full max-w-sm rounded-xl bg-white p-8 shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -43,14 +48,54 @@ export function SignInModal({
           ✕
         </button>
 
-        <div className="text-center">
-          <h2 className="text-section">Sign in to SpecIndex</h2>
-          <p className="mt-2 text-sm text-[var(--color-gray-600)]">
-            Continue with your Google account to access your territory and tracked projects.
+        <div className="flex flex-col items-center text-center">
+          <div className="flex items-center gap-2">
+            <Logo size={26} />
+            <span className="text-lg font-semibold tracking-tight text-[var(--color-ink)]">
+              SpecIndex
+            </span>
+          </div>
+          <h2 className="mt-5 text-xl font-semibold text-[var(--color-ink)]">Welcome</h2>
+          <p className="mt-1 text-sm text-[var(--color-gray-600)]">
+            Sign in to SpecIndex to continue.
           </p>
         </div>
 
-        <div className="mt-6 flex flex-col gap-3">
+        <form
+          className="mt-6"
+          onSubmit={(e) => e.preventDefault()}
+        >
+          <label
+            htmlFor="signin-email"
+            className="text-xs font-semibold uppercase tracking-wider text-[var(--color-gray-400)]"
+          >
+            Email address
+          </label>
+          <input
+            id="signin-email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="you@company.com"
+            className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2.5 text-sm outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
+          />
+          <button
+            type="submit"
+            disabled
+            title="Email sign-in coming soon -- use Google for now"
+            className="mt-3 w-full cursor-not-allowed rounded-md bg-[var(--color-gray-200)] px-4 py-2.5 text-sm font-semibold text-[var(--color-gray-400)]"
+          >
+            Continue
+          </button>
+        </form>
+
+        <div className="my-5 flex items-center gap-3">
+          <div className="h-px flex-1 bg-[var(--color-border)]" />
+          <span className="text-xs font-medium text-[var(--color-gray-400)]">OR</span>
+          <div className="h-px flex-1 bg-[var(--color-border)]" />
+        </div>
+
+        <div className="flex flex-col gap-3">
           <button
             type="button"
             onClick={onGoogle}
@@ -80,7 +125,7 @@ export function SignInModal({
           <button
             type="button"
             disabled
-            title="Coming soon -- ask your admin if you need Microsoft SSO sooner"
+            title="Coming soon -- ask your admin if you need Microsoft sign-in sooner"
             className="flex cursor-not-allowed items-center justify-center gap-3 rounded-md border border-[var(--color-border)] bg-[var(--color-gray-100)] px-4 py-2.5 text-sm font-medium text-[var(--color-gray-400)]"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
@@ -89,7 +134,7 @@ export function SignInModal({
               <path fill="#00A4EF" d="M0 8.4h7.6V16H0z" />
               <path fill="#FFB900" d="M8.4 8.4H16V16H8.4z" />
             </svg>
-            Continue with Microsoft (coming soon)
+            Continue with Microsoft
           </button>
         </div>
       </div>
