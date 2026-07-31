@@ -1228,6 +1228,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "City of Denton on eTRAKiT (200 OK). City of Frisco on both Avolve Cloud (301, real) and eTRAKiT (301, real) -- Frisco splits application intake (Avolve) from status tracking (eTRAKiT). Puller not yet built."
+    },
+    {
+      "jurisdiction": "Fort Bend County, TX (Sugar Land/Missouri City)",
+      "county": "Fort Bend",
+      "state": "TX",
+      "provider_type": "energov",
+      "endpoint": "https://energovweb.sugarlandtx.gov/EnerGov_prod/SelfService#/home",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Sugar Land confirmed live on EnerGov (200 OK). Missouri City portal page 403s (bot-block, real domain) -- also EnerGov-branded MCTX Self Service. Puller not built."
     }
   ]
 }
