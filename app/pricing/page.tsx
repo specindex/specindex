@@ -105,9 +105,7 @@ export default function PricingPage() {
                 ))}
               </ul>
               {plan.href === "#demo" ? (
-                <RequestDemoButton
-                  className={`mt-8 w-full text-center ${plan.highlighted ? "btn btn-primary" : "btn btn-outline"}`}
-                >
+                <RequestDemoButton className="mt-8 w-full text-center btn btn-demo">
                   {plan.cta}
                 </RequestDemoButton>
               ) : (
