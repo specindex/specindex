@@ -1198,6 +1198,16 @@
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
       "notes": "No candidate survived either deterministic or Flash+Sonnet passes for any of these three (batched with DeKalb/Grundy/Kankakee/Tazewell/Vermilion) -- not yet retried standalone."
+    },
+    {
+      "jurisdiction": "Harris County, TX (Houston)",
+      "county": "Harris",
+      "state": "TX",
+      "provider_type": null,
+      "endpoint": "https://data.houstontx.gov (residential-only aggregate, not usable)",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Re-investigated 2026-07-31 via City of Houston directly (largest city), after 5 prior county-level FAILED_NEED_ALT attempts. Confirmed: (1) data.houstontx.gov CKAN portal is real but only has a residential building permits dataset (monthly/yearly aggregate counts, not individual commercial permit records) -- not usable for named projects. (2) Houston does NOT use Accela (unlike Dallas/San Antonio) -- confirmed no aca-prod agency slug exists. (3) houstonpermittingcenter.org/sold-permits-search is powered by a custom CIVICS/ILMS system, search-only web form, no public API, and the city discontinued bulk Permit Activity Report downloads as of Dec 1 2025. No pullable structured source exists for Harris/Houston without web scraping (out of scope). Real remaining path is Step 6 research fallback for named projects."
     }
   ]
 }
