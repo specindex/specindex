@@ -1,0 +1,39 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Kendall",
+  "state": "IL",
+  "window": "2026-01-31 through 2026-07-31 (last 6 months, dated public action required)",
+  "method": "Step 6 direct project-level research fallback, narrowed to a 6-month dated-action window, same grounded search + mandatory independent cross-check method as the broader 2025-2026 pass in il-kendall-research-fallback.json",
+  "cross_check_summary": "All 7 projects from the broader pass had a dated action in this window (none excluded). One genuinely new project surfaced only by this narrower query: Meyer Data Center Campus, denied/withdrawn. Cross-checked 3 claims: Equinix Minooka (had a real discrepancy between this pass's $6B/7-building/368-acre claim and the earlier pass's CH9-11/300-acre/no-cost claim -- RECONCILED, both true: $6B is a real mayoral quote, CH8-CH14 designation covers the same 7 buildings, 300 vs 368 acres is core site vs. total including a land-bank parcel), Meyer Data Center Campus withdrawal (CONFIRMED), Project Cardinal's July 14 2026 PUD amendment (CONFIRMED). This discrepancy-then-reconciliation is exactly the kind of thing the mandatory cross-check step exists to catch -- an uncritical read would have logged two conflicting Equinix cost/size figures as separate facts.",
+  "load_status": "NOT LOADED -- verified findings only, load path not yet built.",
+  "new_project_not_in_broader_pass": {
+    "name": "Meyer Data Center Campus (WITHDRAWN)",
+    "city_address": "South of Corneils Road and east of Beecher Road, near Caledonia subdivision, Yorkville, IL",
+    "project_type": "Data Center / Industrial",
+    "estimated_cost": "Not identified in public records (a $10M developer impact fee was proposed, not total project cost)",
+    "cost_confidence": "Low",
+    "square_footage_or_acreage": "80-91 acres",
+    "developer_owner": "Yorkville Nexus V LLC / Green Door Capital (petitioner Matt Gilbert, principal Sean Reynolds)",
+    "general_contractor": "Not identified in public records",
+    "architect": "Not identified in public records",
+    "status": "Cancelled / Application Withdrawn (April 14, 2026), after Yorkville Plan & Zoning Commission recommended denial 6-0 on January 14, 2026",
+    "key_tenants": "None -- withdrawn",
+    "expected_completion": "N/A -- project terminated",
+    "source_citation": "United City of Yorkville Community Development Dept, Case No. 2025-13 withdrawal notice (2026-04-14); Shaw Local News Network (2026-04-15)",
+    "cross_checked": true,
+    "cross_check_result": "CONFIRMED -- P&Z denial recommendation date, withdrawal date, and case number all confirmed via independent search"
+  },
+  "updated_facts_from_6mo_pass": {
+    "equinix_minooka": {
+      "estimated_cost": "$6 billion",
+      "cost_confidence": "High -- direct quote from Minooka Mayor Ric Offerman, April 2026 State of the Village Address",
+      "square_footage_or_acreage": "300-310 acres core site; ~368 acres total including a 55-68 acre annexed land-bank parcel",
+      "building_designations": "7 buildings, CH8 through CH14 (includes the CH9/CH10/CH11 names from the earlier pass -- not a conflict, same buildings)",
+      "cross_check_note": "Earlier broader pass reported no cost figure and ~300 acres with only CH9/CH10/CH11 named -- this is not a correction of an error, it's the same project described with different levels of completeness across two separate grounded searches. Resolved via a third, explicit reconciliation cross-check call rather than picking one answer arbitrarily."
+    },
+    "project_cardinal": {
+      "latest_dated_action": "July 14, 2026 Major PUD Amendment approved by Yorkville City Council, changing the 14-warehouse build sequence from counterclockwise to clockwise as part of a litigation settlement (Kendall County Circuit Court Case No. 2025 CH 000028, plaintiff John Bryan)",
+      "cross_check_result": "CONFIRMED"
+    }
+  }
+}
