@@ -78,31 +78,61 @@ MUNI_ID_INFIXES = (
 # to derive project_sources.source_name and project_events.event_type --
 # and compute-county-coverage.py's hyphenated filename can't be imported as
 # a module anyway.
-SOURCE_PATTERNS: list[tuple[str, str, bool]] = [
-    ("ga-fulton-", "Fulton County (ArcGIS)", True),
-    ("ga-alpharetta-", "Alpharetta (ArcGIS)", True),
-    ("ga-johnscreek-", "Johns Creek (ArcGIS)", True),
-    ("ga-marietta-", "Marietta (ArcGIS)", True),
-    ("ga-savannah-", "Savannah/SAGIS (ArcGIS)", True),
-    ("ga-atlanta-", "Atlanta (Accela)", True),
-    ("ga-gwinnett-", "Gwinnett (Accela)", True),
-    ("ga-cobb-", "Cobb (Accela)", True),
-    ("ga-dri-", "Georgia DRI (statewide)", False),
-    ("nc-mecklenburg-", "Mecklenburg County (ArcGIS)", True),
-    ("nc-wake-", "Wake County (ArcGIS)", True),
-]
+#
+# Was originally an allowlist of known-local prefixes (GA/NC only) -- went
+# stale the moment the Agent-Per-State pipeline started adding real local
+# sources for other states, since nothing forced a matching entry here.
+# By 2026-07-31 that had silently misclassified ~90K real dedicated-local
+# rows (TX Travis/Tarrant/Collin/etc., PA Pittsburgh, CA LA/SF, NY NYCDOB)
+# as "thin". A project_id's second hyphen-segment is either a broad
+# source-type token (small, stable vocabulary -- checked below) or a
+# jurisdiction name (city/county -- the common case, and the one that
+# keeps growing). Denylisting the broad tokens and defaulting everything
+# else to local self-maintains as new county/city sources are added,
+# instead of requiring a manual allowlist entry every time.
+BROAD_SOURCE_TOKENS: dict[str, str] = {
+    "sam": "Federal (SAM.gov)",
+    "usaspending": "Federal (USAspending)",
+    "dri": "Georgia DRI (statewide)",
+    "dca": "NJ DCA (statewide)",
+    "tdlr": "Texas TDLR TABS (statewide)",
+    "statewide": "Statewide source",
+    "act250": "Vermont Act 250 (statewide)",
+}
 
-FEDERAL_HINT = re.compile(r"-(sam|usaspending)-", re.I)
+# Optional prettier labels for specific known local prefixes (provider type,
+# where known). Anything not listed here still classifies as local --
+# just with a generic label derived from its jurisdiction segment.
+LOCAL_SOURCE_LABELS: dict[str, str] = {
+    "ga-fulton-": "Fulton County (ArcGIS)",
+    "ga-alpharetta-": "Alpharetta (ArcGIS)",
+    "ga-johnscreek-": "Johns Creek (ArcGIS)",
+    "ga-marietta-": "Marietta (ArcGIS)",
+    "ga-savannah-": "Savannah/SAGIS (ArcGIS)",
+    "ga-atlanta-": "Atlanta (Accela)",
+    "ga-gwinnett-": "Gwinnett (Accela)",
+    "ga-cobb-": "Cobb (Accela)",
+    "nc-mecklenburg-": "Mecklenburg County (ArcGIS)",
+    "nc-wake-": "Wake County (ArcGIS)",
+}
 
 
 def classify_source(project_id: str) -> tuple[str, bool]:
     """Return (source_label, is_dedicated_local) for a project_id."""
-    for prefix, label, is_local in SOURCE_PATTERNS:
-        if project_id.startswith(prefix):
-            return label, is_local
-    if FEDERAL_HINT.search(project_id):
-        return "Federal (SAM.gov / USAspending)", False
-    return "Prior research", False
+    pid = (project_id or "").lower()
+    for prefix, label in LOCAL_SOURCE_LABELS.items():
+        if pid.startswith(prefix):
+            return label, True
+
+    parts = pid.split("-")
+    if len(parts) < 2:
+        return "Prior research", False
+
+    token = parts[1]
+    if token in BROAD_SOURCE_TOKENS:
+        return BROAD_SOURCE_TOKENS[token], False
+
+    return f"{token.replace('.', ' ').title()} (local source)", True
 
 
 def derive_event_type(project_id: str, record_type: str | None) -> str:
