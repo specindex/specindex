@@ -260,7 +260,25 @@ a standardized list of raw project candidates to hand to Phase III.
       response_mime_type caveat in step 1/Flash's docstring above
       (`scripts/research-county-sources.py`) -- the same
       google_search-corrupts-structured-output issue applies here, so
-      this call must NOT set response_mime_type either.
+      this call must NOT set response_mime_type either. **Also ask for a
+      per-project "pullable document" check as part of this same
+      call** -- added 2026-07-31, per Asif's explicit ask ("make sure
+      both projects and docs are captured, especially drawings"): the
+      grounded call must separately state, per project, whether it can
+      find an actual document (site plan PDF, PUD plan set, permit
+      application, RFP, EIS report, drawing set) with a direct URL on
+      the relevant municipal/county planning department's site -- not
+      just a news article about the project. If none is findable, it
+      must say "No pullable document found" explicitly rather than
+      omitting the question. **A "pullable document" claim from this
+      call is not itself verified** -- it still needs the same
+      live-URL check as everything else (confirmed live on McLean
+      County, IL: a first pass returned portal-level domains like
+      `normalil.gov`/`illinois.gov` rather than exact document URLs --
+      those domains being real is not the same as the specific document
+      being reachable at a specific link). Do not treat a document as
+      pulled until it has actually been fetched, the same discipline as
+      step 8 below.
    b. **Independent cross-check (REQUIRED, not optional) -- this is the
       whole point of the step.** Every specific numeric or named-entity
       claim from (a) gets re-verified via a SEPARATE search call, not a
