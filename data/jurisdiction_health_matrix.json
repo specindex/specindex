@@ -3024,6 +3024,39 @@
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
       "notes": "Document fallback: 7 named projects found, 0 documents confirmed live. Pennsylvania building/commercial permits are administered under the PA Uniform Construction Code at the MUNICIPAL level (townships/boroughs/cities), not by county government -- confirmed live via Gemini discovery for Bucks and Delaware (both independently returned the same structural answer: no countywide Accela/Socrata/ArcGIS/EnerGov permit system exists, permits are issued by dozens of individual municipalities each running separate/no software). This matches why only the two PA consolidated city-counties (Philadelphia, Pittsburgh -- both already wired as PA-PHILADELPHIA/PA-PITTSBURGH) have real structured feeds today. Bucks' one county-level ArcGIS candidate (Bucks_County_Proposed_Developments_ FeatureServer, services3.arcgis.com/SP47Tddf7RK32lBU) is real and public (1,229 records) but confirmed stale via live query (MAX(DateReceiv) = 2023-02-27, no records added in 3+ years) -- fails the 90-day lookback freshness bar, not wired. Delaware's county ODMI ArcGIS org (data-delcopa.opendata.arcgis.com) was searched directly for an equivalent land-development layer and none exists. Given this confirmed structural pattern applies statewide under PA law, the remaining 12 counties in this batch were not each individually re-verified via a fresh Gemini call/live probe (time-budget tradeoff) -- flagged FAILED_NEED_ALT rather than NO_PUBLIC_DATA to mark them as needing that direct per-county verification pass before being called a fully closed dead end, not as independently confirmed empty. Part 2 (document research fallback) was run for all 14 counties regardless -- see data/raw/pa-<county>-document-fallback.json."
+    },
+    {
+      "jurisdiction": "St. Lucie County, FL",
+      "county": "St. Lucie",
+      "state": "FL",
+      "provider_type": "energov",
+      "endpoint": "https://stluciecountyfl-energovpub.tylerhost.net",
+      "state_agent_pipeline_key": "FL-STLUCIE",
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "EnerGov endpoint confirmed live 2026-07-31 (200 OK, stluciecountyfl-energovpub.tylerhost.net/Apps/SelfService). Config wired (tenant_id=1, tenant_name='St. Lucie County') but --dry-run --lookback-days 90 returns 0 rows -- 'response had null Result' from energov_provider.py's search flow, same untuned-search symptom as CA_GLENDALE_ENERGOV_CONFIG (registered but not verified working). Needs tenant_name/search-flow debugging, not attempted further given time budget. Config left in place, not merged (0 rows)."
+    },
+    {
+      "jurisdiction": "Osceola County, FL",
+      "county": "Osceola",
+      "state": "FL",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/OSCEOLA",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "Real Accela agency (Default.aspx returns 200), but Playwright probe of the homepage shows a 'Non-PROD1: TEST Environment' banner -- this is Osceola's TEST tenant, not production, despite living at the standard aca-prod.accela.com/OSCEOLA path. CapHome.aspx with module=Building/Permits/Permitting all redirect to Error.aspx regardless of module name, consistent with a non-functional/test tenant rather than a wrong module name. No config wired -- real production Accela instance (if one exists at a different agency code) not found this session, real remaining scope for a future pass."
+    },
+    {
+      "jurisdiction": "St. Lucie County, FL (document fallback)",
+      "county": "St. Lucie",
+      "state": "FL",
+      "provider_type": "research_fallback",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "records_merged": 0,
+      "notes": "document-research-fallback.py run 2026-07-31 (last 30 days): 6 named projects found (Indrio Town Center, Pruitt Commerce Center/Ashley Capital Light Industrial Park, Tradition at Commerce Park Phase 1, Scannell Properties Refrigerated Warehouse/Amazon Distribution Center, NW Commerce Lakes Drive Industrial Park, Costco Direct Distribution Center Phase II) -- 0 with a confirmed pullable document after retry. Output: data/raw/fl-st-lucie-document-fallback.json. Not yet run through load-research-fallback-projects.py cross-check step given time budget."
     }
   ]
 }

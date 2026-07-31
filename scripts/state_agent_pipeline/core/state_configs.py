@@ -1538,6 +1538,21 @@ FL_LEE_ACCELA_CONFIG: dict[str, Any] = {
     "feed_id": "fl-lee",
 }
 
+# St. Lucie County (FL) -- Tyler EnerGov Citizen Self Service, tenant
+# "St. Lucie County". Endpoint confirmed live 2026-07-31 (200 OK):
+# stluciecountyfl-energovpub.tylerhost.net/Apps/SelfService/#/home,
+# same tylerhost.net pattern as the CA EnerGov configs above.
+FL_STLUCIE_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "FL",
+    "provider_type": "energov",
+    "county": "St. Lucie",
+    "endpoint": "https://stluciecountyfl-energovpub.tylerhost.net",
+    "tenant_id": "1",
+    "tenant_name": "St. Lucie County",
+    "lookback_days": 90,
+    "max_pages": 5,
+}
+
 # King County (WA) via City of Seattle's Building Permits (Socrata) --
 # verified live 2026-07-28: MAX(issueddate) = 2026-07-24 (fresh), 51,673
 # total commercial-filtered records.
@@ -2020,6 +2035,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "FL-MANATEE": FL_MANATEE_ACCELA_CONFIG,
     "FL-PASCO": FL_PASCO_ACCELA_CONFIG,
     "FL-LEE": FL_LEE_ACCELA_CONFIG,
+    "FL-STLUCIE": FL_STLUCIE_ENERGOV_CONFIG,
     "WA-KING": WA_KING_CONFIG,
     "TX-TARRANT": TX_TARRANT_CONFIG,
     "OH-FRANKLIN": OH_FRANKLIN_CONFIG,
