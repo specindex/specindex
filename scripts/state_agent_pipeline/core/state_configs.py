@@ -1293,33 +1293,46 @@ FL_BROWARD_ACCELA_CONFIG: dict[str, Any] = {
     "lookback_days": 30,
 }
 
+# Hillsborough (HillsGovHub) uses module=Building, not module=Permits --
+# confirmed live 2026-07-31 (module=Permits 404s to an Error.aspx page).
+# Real dropdown label used: "Commercial New Construction and Additions"
+# (closest broad match among 18 Commercial-prefixed subtypes).
 FL_HILLSBOROUGH_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "FL",
     "provider_type": "accela",
     "county": "Hillsborough",
     "endpoint": "https://aca-prod.accela.com/HCFL",
-    "module": "Permits",
-    "permit_type_label": "Commercial",
+    "module": "Building",
+    "permit_type_label": "Commercial New Construction and Additions",
     "lookback_days": 30,
 }
 
+# Pinellas uses module=Building, not Permits (module=Permits 404s to
+# Error.aspx) -- confirmed live 2026-07-31, same pattern as Hillsborough.
+# Real dropdown label: "Commercial Remodel/Repair/Renovation" (broadest
+# of 19 Commercial-prefixed subtypes).
 FL_PINELLAS_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "FL",
     "provider_type": "accela",
     "county": "Pinellas",
     "endpoint": "https://aca-prod.accela.com/PINELLAS",
-    "module": "Permits",
-    "permit_type_label": "Commercial",
+    "module": "Building",
+    "permit_type_label": "Commercial Remodel/Repair/Renovation",
     "lookback_days": 30,
 }
 
+# Polk uses module=Building, not Permits -- confirmed live 2026-07-31.
+# Real dropdown label: "Commercial Renovation Permit - Ex: Tenant
+# Buildout, Window Changeout, Remodel, Addition, etc." (broadest of 6
+# Commercial-prefixed subtypes; note the label includes trailing
+# examples text, must match exactly).
 FL_POLK_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "FL",
     "provider_type": "accela",
     "county": "Polk",
     "endpoint": "https://aca-prod.accela.com/POLKCO",
-    "module": "Permits",
-    "permit_type_label": "Commercial",
+    "module": "Building",
+    "permit_type_label": "Commercial Renovation Permit - Ex: Tenant Buildout, Window Changeout, Remodel, Addition, etc.",
     "lookback_days": 30,
 }
 
@@ -1333,23 +1346,33 @@ FL_SARASOTA_ACCELA_CONFIG: dict[str, Any] = {
     "lookback_days": 30,
 }
 
+# Manatee uses module=Building, not Permits -- confirmed live 2026-07-31.
+# Has a real plain "Commercial" option (unlike most other FL Accela
+# deployments checked tonight, which split into named subtypes).
 FL_MANATEE_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "FL",
     "provider_type": "accela",
     "county": "Manatee",
     "endpoint": "https://aca-prod.accela.com/MANATEE",
-    "module": "Permits",
+    "module": "Building",
     "permit_type_label": "Commercial",
     "lookback_days": 30,
 }
 
+# Pasco's module=Permits works (unlike Hillsborough/Pinellas/Polk/
+# Manatee/Sarasota, which needed module=Building) -- confirmed live
+# 2026-07-31. No single "Commercial" catch-all; uses a "COM - "
+# prefix across ~50 granular subtypes (new construction split by wall
+# material, additions, interior buildouts, etc.). Using "COM - Interior
+# Build Out Including Concrete Slab" as a common, real-activity proxy --
+# real remaining scope: misses new-construction subtypes entirely.
 FL_PASCO_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "FL",
     "provider_type": "accela",
     "county": "Pasco",
     "endpoint": "https://aca-prod.accela.com/pasco",
     "module": "Permits",
-    "permit_type_label": "Commercial",
+    "permit_type_label": "COM - New Structures Constructed of Frame Walls",
     "lookback_days": 30,
 }
 
