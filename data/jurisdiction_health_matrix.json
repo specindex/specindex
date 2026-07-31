@@ -1107,7 +1107,7 @@
       "endpoint": "https://www.stclaircountyil.gov/departments/building-zoning/building-permits",
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
-      "notes": "The only one of this batch where the exact page loaded correctly (200, real Building Permits subpage). No Accela/EnerGov/SmartGov/CityView link or 'apply online'/'permit search' language found anywhere on the page -- informational only."
+      "notes": "The only one of this batch where the exact page loaded correctly (200, real Building Permits subpage). No Accela/EnerGov/SmartGov/CityView link or 'apply online'/'permit search' language found anywhere on the page -- informational only. Step 6 fallback run 2026-07-31, 30-day window: NO qualifying projects found (honest empty result). Correctly caught a location-confusion trap (a Belleville Costco headline was about Belleville, Ontario, not Belleville, IL) and correctly excluded a below-threshold municipal facility (16,625 SF < 20,000 SF cutoff). Nothing to load this round."
     },
     {
       "jurisdiction": "Madison County, IL (Alton/Edwardsville)",
