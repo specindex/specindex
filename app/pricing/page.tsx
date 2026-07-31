@@ -88,7 +88,7 @@ export default function PricingPage() {
                 <span className="pill mb-4 w-fit">Most popular</span>
               )}
               <h2 className="text-lg font-semibold">{plan.name}</h2>
-              <p className="mt-2 text-3xl font-bold">{plan.price}</p>
+              <p className="text-stat mt-2">{plan.price}</p>
               <p className="text-sm text-[var(--color-gray-400)]">{plan.period}</p>
               <p className="mt-4 text-sm leading-relaxed text-[var(--color-gray-600)]">
                 {plan.description}

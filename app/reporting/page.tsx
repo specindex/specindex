@@ -297,11 +297,7 @@ function Metric({
 }) {
   return (
     <div className="card p-5">
-      <p
-        className={`font-mono text-3xl font-bold ${
-          muted ? "text-[var(--color-gray-400)]" : "text-[var(--color-green)]"
-        }`}
-      >
+      <p className={`text-stat font-mono ${muted ? "!text-[var(--color-gray-400)]" : ""}`}>
         {value}
       </p>
       <p className="mt-2 text-sm leading-snug text-[var(--color-gray-600)]">{label}</p>

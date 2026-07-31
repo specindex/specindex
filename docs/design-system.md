@@ -61,13 +61,16 @@ Loaded via `next/font/google` in `app/layout.tsx`.
 ### Layout patterns
 1. Sticky white header — logo mark + nav + amber CTA
 2. Hero — eyebrow + headline + subcopy + CTA, product mock right
-3. Stats strip — 4-up green numbers on white
-4. Problem statement — centered prose
-5. Feature sections — "Out of the Box" label + split content/mock
-6. 3-step process
-7. Comparison rows (Others / SpecIndex)
-8. FAQ accordion
-9. Demo form + footer columns
+3. **Live stats band** — dark green (`#0F4A25`, one shade darker than `--color-green`) full-bleed section, light-green (`#A7F3C8`) status pill + label, 2×2 (or 4-up on wide) `font-mono tabular-nums` stat tiles in bordered white/5-alpha cards. Real data only — never a placeholder/skeleton bar. Sits directly after the hero, ahead of prose sections, so trust signals land before persuasion copy (added 2026-07-30, homepage redesign).
+4. Stats strip — 4-up green numbers on white (legacy variant of #3; keep the dark band for homepage, this one is fine for lighter-weight pages)
+5. Problem statement — centered prose
+6. Feature sections — "Out of the Box" label + split content/mock
+7. **3-step accordion** — numbered (`01`/`02`/`03`) `<details>` elements, only step one `open` by default, used for genuinely sequential processes only (e.g. discovery → enrichment → delivery). Don't reach for this shape unless the content is actually an ordered sequence. (added 2026-07-30)
+8. 3-step process (static, non-collapsing variant — prefer the accordion above when steps have real supporting detail)
+9. Comparison rows (Others / SpecIndex)
+10. **Mid-page CTA band** — solid `--color-green`, centered white h2 + one line of support copy + white pill button. Use once per page, positioned as a pacing break before the final CTA — not adjacent to another CTA. (added 2026-07-30)
+11. FAQ accordion
+12. Demo form + footer columns
 
 ---
 
