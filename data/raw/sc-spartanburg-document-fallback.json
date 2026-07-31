@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Spartanburg",
+  "state": "SC",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 7,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Power Up Small Business Incubator",
+      "city_address": "351 E. Henry St., Spartanburg, SC 29302",
+      "project_type": "Commercial (Retail and Restaurant Incubator)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Power Up Spartanburg, OneSpartanburg, Inc., City of Spartanburg, Spartanburg County, Joseph McMillin, Clay McDonough",
+      "status": "Under Construction (Site preparation underway)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "OneSpartanburg, Inc. Announcement (June 25, 2026) / The Post and Courier",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Dutch Bros Coffee Shop (1619 John B White Sr Blvd)",
+      "city_address": "1619 John B White Sr Blvd, Spartanburg, SC 29301",
+      "project_type": "Commercial (Drive-Thru Coffee Shop)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "TWP Acquisitions LLC & Brandon Kubalow (Applicant), Ruth Hildom (Property Owner)",
+      "status": "Proposed / Zoning Approval (Docket RZC 25 01100004)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Spartanburg Planning Commission Agenda (January 15, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "NorthMark Strategies High-Performance Computing Facility",
+      "city_address": "South Pine Street (Former Kohler Site), Spartanburg, SC 29302",
+      "project_type": "Industrial / High-Performance Computing Facility",
+      "estimated_cost": "Not specified ($10.5M+ projected annual property tax generation)",
+      "developer_owner": "NorthMark Strategies",
+      "status": "Under Construction (On-site power self-generation & site rehabilitation ongoing)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "NorthMark Strategies Community Update (May 6, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "111 & 109 East Main Street Redevelopment",
+      "city_address": "111 E. Main St. and 109 E. Main St., Spartanburg, SC 29306",
+      "project_type": "Commercial / Mixed-Use (7,000 sq ft retail space, courtyard, 22-28 residential units)",
+      "estimated_cost": "$18,000,000",
+      "developer_owner": "Copper Builders / City of Spartanburg",
+      "status": "Approved / Development Agreement Executed",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Spartanburg City Council / Upstate Business Journal",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Coastal Precast Systems Concrete Manufacturing Facility",
+      "city_address": "Highway 56 & I-26 Interchange, Clinton / Spartanburg County line, SC",
+      "project_type": "Industrial (Pre-cast Concrete Manufacturing Plant)",
+      "estimated_cost": "$9,000,000",
+      "developer_owner": "Coastal Precast Systems LLC / Dubrook Properties LLC",
+      "status": "Under Construction / Joint County Industrial Park Agreement Approved",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Laurens County Council & Clinton City Council Action (July 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Spartanburg City-County Joint Government Complex",
+      "city_address": "South Church Street & West Broad Street, Spartanburg, SC 29306",
+      "project_type": "Civic / Institutional (200,000 sq ft Administrative Complex)",
+      "estimated_cost": "$100,000,000",
+      "developer_owner": "City of Spartanburg & Spartanburg County",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Construction Owners Editorial / Upstate Business Journal",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Project Cruiser Industrial Business Park",
+      "city_address": "Cherokee County / Spartanburg County Joint Industrial Corridor, SC",
+      "project_type": "Industrial / Business Park",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Quarry Propco LLC / Aerowerks Real Estate, Inc.",
+      "status": "Approved / Joint Industrial Park Ordinance & FILOT Agreement Executed",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Cherokee County & Spartanburg County Joint Industrial Park Agreement (June 29, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

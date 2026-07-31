@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Berkeley",
+  "state": "SC",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 5,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Alzchem Group AG U.S. Production Facility",
+      "city_address": "Bushy Park Industrial Complex, Goose Creek, SC (Berkeley County)",
+      "project_type": "Industrial / Specialty Chemical Manufacturing",
+      "estimated_cost": "$150,000,000",
+      "developer_owner": "Alzchem Group AG (Pacolet Milliken, LLC / Bushy Park)",
+      "status": "Announced / Site Selected",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Berkeley Means Business / Area Development Announcement (July 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "The Home Depot Highway 176 Development Site",
+      "city_address": "Highway 176 near Nexton, Summerville, SC (Berkeley County)",
+      "project_type": "Commercial / Retail Development",
+      "estimated_cost": "$11,000,000 (land purchase)",
+      "developer_owner": "The Home Depot",
+      "status": "Land Acquired / Site Planning",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Charleston Daily / Post and Courier Reports (June/July 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Village Square Commercial & Mixed-Use Development",
+      "city_address": "US Highway 52 at Old Moss Grove Plantation, Moncks Corner, SC (Berkeley County)",
+      "project_type": "Commercial / Retail & Mixed-Use (25,000 to 60,000 sq ft retail space)",
+      "estimated_cost": "Unknown",
+      "developer_owner": "Town of Moncks Corner Development Partners",
+      "status": "Approved / Planned Development",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Moncks Corner Town Council / Planning Commission Actions (2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Weathers Tract Commercial & Retail District",
+      "city_address": "US Highway 52 adjacent to Ben Barron Lane, Moncks Corner, SC (Berkeley County)",
+      "project_type": "Commercial / Retail & Mixed-Use (50,000 sq ft commercial space on 8 acres)",
+      "estimated_cost": "Unknown",
+      "developer_owner": "Dream Finders Homes",
+      "status": "Approved / Development Agreement Executed",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Town of Moncks Corner Ordinance & Approval Filings (2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Carolina Avenue Commercial Village",
+      "city_address": "Goose Creek Blvd at St. James Ave & Redbank Rd, Goose Creek, SC (Berkeley County)",
+      "project_type": "Commercial Retail / Retail-Flex / Office (35,000 sq ft across 3 buildings)",
+      "estimated_cost": "Unknown",
+      "developer_owner": "Grescon Development",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Grescon Development Pipeline (2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

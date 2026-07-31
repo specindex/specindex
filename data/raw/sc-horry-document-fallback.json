@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Horry",
+  "state": "SC",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 5,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Highway 905 Commercial & Mixed-Use Development",
+      "city_address": "Highway 905 & Old Reaves Ferry Road, Conway, SC 29526",
+      "project_type": "Commercial / Mixed-Use",
+      "estimated_cost": "N/A",
+      "developer_owner": "Encore Real Estate Development, LLC & Dockit Enterprises, LLC",
+      "status": "Proposed / Under Board Review (Public Hearing held July 2, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://www.horrycountysc.gov",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Grand Shrimp Medieval Farm Rural Tourism Venue",
+      "city_address": "Mill Pond Road, Gallivants Ferry, SC 29544",
+      "project_type": "Commercial Agritourism / Event Venue",
+      "estimated_cost": "N/A",
+      "developer_owner": "Matt McCloud",
+      "status": "Approved (Special Exception granted by Horry County Board of Zoning Appeals on July 13, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://citizenportal.ai",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Highway 9 East Retail Development (Case 2026-06-001)",
+      "city_address": "Highway 9 E, Longs, SC 29568",
+      "project_type": "Commercial / Retail with Outdoor Storage",
+      "estimated_cost": "N/A",
+      "developer_owner": "C.F. Smith Property Group / GLC Holdings LLC",
+      "status": "Proposed / Pending Rezoning Approval (July 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://www.horrycountysc.gov",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Conway Waterfront Redevelopment (Inland Marina & Mixed-Use Village)",
+      "city_address": "Highway 501 at Elm St & Marina Dr, Conway, SC 29526",
+      "project_type": "Mixed-Use / Commercial / Hospitality / Marina",
+      "estimated_cost": "$80,000,000",
+      "developer_owner": "City of Conway",
+      "status": "In Engineering & Design Phase (Advanced July 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://www.conwaysc.gov",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Coastal Centre Retail Outparcels & Grocery Store Development",
+      "city_address": "US-501 & Highway 544, Conway, SC 29526",
+      "project_type": "Commercial / Retail",
+      "estimated_cost": "N/A",
+      "developer_owner": "Rise Partners",
+      "status": "Under Construction (Outparcels & grocery store buildout summer 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://risepartners.net",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

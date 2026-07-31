@@ -1,0 +1,63 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Beaufort",
+  "state": "SC",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 4,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Project Micro Facility Expansion",
+      "city_address": "Beaufort County, SC",
+      "project_type": "Industrial / Advanced Manufacturing",
+      "estimated_cost": "$7,000,000",
+      "developer_owner": "Confidential / Project Micro",
+      "status": "Approved (Multi-County Industrial Park designation and Special Source Revenue Credit agreement approved by Beaufort County Council)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Beaufort County Council Meeting (July 28, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Lavica / Leakes Road Industrial Site Acquisition",
+      "city_address": "Leakes Road (Lavica area), Beaufort County, SC",
+      "project_type": "Industrial / Agribusiness Park Development",
+      "estimated_cost": "$5,000,000",
+      "developer_owner": "Beaufort County / Beaufort County Economic Development Corporation",
+      "status": "Under Review / Proposed (Economic Development staff requested authorization to purchase 117 acres for master planning and shovel-ready site development)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Beaufort County Economic Development Committee Meeting (July 28, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Spartina 449 Headquarters Expansion",
+      "city_address": "Bluffton Town Village, Bluffton, SC 29910",
+      "project_type": "Commercial / Corporate Headquarters & Distribution",
+      "estimated_cost": "$6,100,000",
+      "developer_owner": "Spartina 449",
+      "status": "Under Development (Construction advancing on a 14,100 sq ft expansion facility)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Beaufort County Economic Development Corporation Milestone Report (July 16, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "MasterCorp Commercial Laundry Facility",
+      "city_address": "Beaufort Commerce Park, Beaufort, SC 29906",
+      "project_type": "Industrial / Commercial Laundry Facility",
+      "estimated_cost": "N/A",
+      "developer_owner": "MasterCorp",
+      "status": "Recently Completed / Operational",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Beaufort County Economic Development Update (July 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

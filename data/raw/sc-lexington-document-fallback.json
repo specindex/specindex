@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Lexington",
+  "state": "SC",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 5,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Victory Village Shopping Center",
+      "city_address": "2550 Augusta Highway, Lexington, SC 29072",
+      "project_type": "Commercial / Retail",
+      "estimated_cost": "N/A",
+      "developer_owner": "NAI Columbia (Leasing / Development)",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Lexington County Chronicle & The Post and Courier Columbia",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Gateway 4 at 803 Park",
+      "city_address": "803 Park (Adjacent to Columbia Metropolitan Airport), Lexington County, SC",
+      "project_type": "Industrial (Speculative Industrial Facility)",
+      "estimated_cost": "N/A",
+      "developer_owner": "Magnus Development Partners",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Lexington County Chronicle & Construction Owners",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Courtyard by Marriott Downtown Lexington",
+      "city_address": "116 E. Main St., Lexington, SC 29072",
+      "project_type": "Commercial / Hospitality",
+      "estimated_cost": "N/A",
+      "developer_owner": "Craig Otto / Private Developer",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Construction Owners & Town of Lexington Records",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Satra Properties Commercial Center & Car Dealership",
+      "city_address": "West Main Street & Highway 378, Lexington, SC 29072",
+      "project_type": "Commercial / Retail & Automotive",
+      "estimated_cost": "N/A",
+      "developer_owner": "Satra Properties LLC",
+      "status": "Approved / Land Entitlement",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Citizen Portal & Town of Lexington Council Proceedings",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Meeting Street Commercial Revitalization & Corridor Project",
+      "city_address": "Meeting Street / U.S. 1 (Gervais Street Bridge to Ninth Street), West Columbia, SC 29169",
+      "project_type": "Commercial / Infrastructure Revitalization",
+      "estimated_cost": "$3,500,000",
+      "developer_owner": "City of West Columbia",
+      "status": "In Design / Bidding Phase",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of West Columbia Council / Construction Owners",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

@@ -3266,6 +3266,83 @@
       "status": "FAILED_NEED_ALT",
       "records_merged": 0,
       "notes": "County issues no permits (home-rule). County Planning Dept GIS layers (footprints/flood/tax) have no permit data. City of Elmira permitting is manual. Batched multi-county query, not independently single-county verified -- flag for follow-up if prioritized. Documents (Part 2): document-research-fallback run, 5 projects found, 0 with confirmed pullable documents."
+    },
+    {
+      "jurisdiction": "Horry County, SC",
+      "county": "Horry",
+      "state": "SC",
+      "provider_type": "energov",
+      "endpoint": "https://egweb.horrycounty.org/EnerGov_prod/selfservice",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "Horry County EnerGov CSS (egweb.horrycounty.org) confirmed live (200) but SSO-gated -- Playwright probe of #/search redirects to #/sso.html?redirectUrl=/search, title \"Log In\", same dead-end pattern as Richland/Columbia SC. City of Conway uses BS&A Online (bsaonline.com/?uid=2621, live) but BS&A is not a supported provider_type in state_configs.py and Conway is too small to justify a new provider. City of Myrtle Beach has no online portal at all (email/PDF submission only). Falling back to document-research-fallback.py for direct project research."
+    },
+    {
+      "jurisdiction": "Spartanburg County, SC",
+      "county": "Spartanburg",
+      "state": "SC",
+      "provider_type": "energov",
+      "endpoint": "https://spartanburgcountysc-energovweb.tylerhost.net",
+      "state_agent_pipeline_key": "SC-SPARTANBURG",
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "Tyler EnerGov CSS confirmed live and NOT login-gated (unlike Richland/Columbia/Horry) -- real POST to api/energov/search/search returns genuine 2026-dated commercial case rows when probed manually. Config registered (SC_SPARTANBURG_ENERGOV_CONFIG) and a real timing bug fixed in shared energov_provider.py (300ms->1000ms wait after SearchModule change -- was giving a false 0-row null-Result on this specific tenant). However dry-run with the fix still returns 0-in-window: this tenant default-sorts PermitCriteria by PermitNumber.keyword ascending with no date-range filter set by the provider, so the 5-page/50-row cap only ever surfaces case numbers starting with A (Addressing/Appeal types), never reaching real Building permits alphabetically further down. Needs a follow-up fix (set SortBy=IssueDate/SortAscending=false, or ApplyDateFrom/To criteria fields already visible in the request schema) before this can be merged -- left as a real, verified-live, not-yet-mergeable source, not a dead end. Falling back to document-research-fallback.py for direct project research in the meantime."
+    },
+    {
+      "jurisdiction": "Lexington County, SC",
+      "county": "Lexington",
+      "state": "SC",
+      "provider_type": null,
+      "endpoint": "https://www.lex-co.sc.gov/departments/community-development",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "County Community Development dept confirmed live (200) but uses BluePrince (CityView/Harris Local Government), not one of the 8 supported provider_types (Accela/Socrata/ArcGIS/EnerGov/CKAN/Carto/CSV/TdlrTabs). City of Columbia EnerGov fallback (which partially overlaps Lexington) already logged as a dead end under SC-RICHLAND (login-gated). No structured source wired; falling back to document-research-fallback.py."
+    },
+    {
+      "jurisdiction": "York County, SC",
+      "county": "York",
+      "state": "SC",
+      "provider_type": null,
+      "endpoint": "https://www.yorkcountysc.gov/435/Development-Services",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "Gemini-suggested URL 404s live; county and City of Rock Hill both reportedly run Evolve (InfoVision Software), not a supported provider_type. No structured source wired; falling back to document-research-fallback.py."
+    },
+    {
+      "jurisdiction": "Anderson County, SC",
+      "county": "Anderson",
+      "state": "SC",
+      "provider_type": null,
+      "endpoint": "https://countyofandersonsc.portal.opengov.com",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "County and City of Anderson both reportedly run OpenGov/ViewPoint Cloud, not a supported provider_type. No structured source wired; falling back to document-research-fallback.py."
+    },
+    {
+      "jurisdiction": "Berkeley County, SC",
+      "county": "Berkeley",
+      "state": "SC",
+      "provider_type": "energov",
+      "endpoint": "https://berkeleycountysc.gov/energovinfo",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "County-reported EnerGov info page 403s live; the actual tenant hostname was not discoverable via the standard tylerhost.net guess pattern (berkeleycountysc-energovweb.tylerhost.net does not resolve, ERR_NAME_NOT_RESOLVED). City of Goose Creek EnerGov (permitting.cityofgoosecreek.com) also does not resolve live. No working portal found; falling back to document-research-fallback.py."
+    },
+    {
+      "jurisdiction": "Beaufort County, SC",
+      "county": "Beaufort",
+      "state": "SC",
+      "provider_type": "energov",
+      "endpoint": "https://beaufortcountysc-energovpub.tylerhost.net",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "Tyler EnerGov CSS confirmed live, NOT login-gated (title \"Public Information\"). Verified real and large (PermitsFound=210955 in a blank All-module search), but not yet mergeable: selecting the Permit module and searching returns a genuine server-side error (\"Specified argument was out of the range of valid values\", Result:null, Success:false) rather than rows, and the default blank All-module search returns EntityResults:[] despite TotalFound=439070 -- this tenant requires either a keyword or additional criteria neither the generic energov_provider.py UI flow nor a quick manual probe supplied successfully. Needs a follow-up UI-flow fix (find the right minimal criteria/keyword this tenant accepts) before merging. Falling back to document-research-fallback.py in the meantime."
     }
   ]
 }

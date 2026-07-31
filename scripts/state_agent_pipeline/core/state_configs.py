@@ -631,6 +631,25 @@ SC_COLUMBIA_ENERGOV_CONFIG: dict[str, Any] = {
     "max_pages": 5,
 }
 
+# Spartanburg County, SC. Tyler EnerGov CSS at
+# spartanburgcountysc-energovweb.tylerhost.net/apps/selfservice --
+# confirmed live and NOT login-gated (unlike SC_COLUMBIA_ENERGOV_CONFIG
+# above): Playwright probe of #/search loads with page title "Public
+# Information" (no SSO redirect), and a real click-triggered search
+# captured a genuine POST to .../api/energov/search/search returning
+# live case rows (e.g. CaseNumber MANUHMPARK-000035-2022, IssueDate
+# 2026-05-14), confirmed 2026-07-31.
+SC_SPARTANBURG_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "SC",
+    "provider_type": "energov",
+    "county": "Spartanburg",
+    "endpoint": "https://spartanburgcountysc-energovweb.tylerhost.net",
+    "tenant_id": "1",
+    "tenant_name": "Spartanburg County",
+    "lookback_days": 900,
+    "max_pages": 5,
+}
+
 SC_GREENVILLE_CONFIG: dict[str, Any] = {
     "state_code": "SC",
     "provider_type": "arcgis",
@@ -2124,6 +2143,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "LA-EBR": LA_EBR_CONFIG,
     "SC-GREENVILLE": SC_GREENVILLE_CONFIG,
     "SC-RICHLAND": SC_COLUMBIA_ENERGOV_CONFIG,
+    "SC-SPARTANBURG": SC_SPARTANBURG_ENERGOV_CONFIG,
     "ID-ADA": ID_ADA_ACCELA_CONFIG,
     "SD-SIOUXFALLS": SD_SIOUXFALLS_CONFIG,
     "IN-INDIANAPOLIS": IN_INDIANAPOLIS_ACCELA_CONFIG,
