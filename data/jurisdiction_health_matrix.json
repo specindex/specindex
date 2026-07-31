@@ -2226,6 +2226,36 @@
       "status": "VERIFIED_WORKING",
       "notes": "rifleco.org/Cloudpermit redirect page itself 404s on curl 2026-07-31, but the underlying Cloudpermit platform us.cloudpermit.com is confirmed live (200) -- Rifle is a genuine Cloudpermit customer. No Cloudpermit provider class in pipeline -- discovery-only.",
       "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "City of Mobile, AL / Mobile County",
+      "county": "Mobile",
+      "state": "AL",
+      "provider_type": "energov",
+      "endpoint": "https://www.buildmobile.org/customer-self-service/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Mobile runs Tyler EnerGov Citizen Self Service, confirmed live: https://urban.cityofmobile.org/portal/ returns 301 redirecting to https://www.buildmobile.org/customer-self-service/ (200, real EnerGov CSS portal branding). Covers the large majority of county population. Mobile County unincorporated area separately uses OpenGov for ROW permits (https://mobilecountyal.portal.opengov.com/, 200, verified live) plus manual/PDF/email intake for general building permits per https://www.mobilecountyal.gov/government/departments/inspection-services/permits/ (200, verified live). EnerGov provider class not built in this pipeline yet -- out of scope per task instructions (Accela-only wiring this session) -- logging discovery only, not wired to state_configs.py."
+    },
+    {
+      "jurisdiction": "Madison County, AL / City of Huntsville",
+      "county": "Madison",
+      "state": "AL",
+      "provider_type": "cityview",
+      "endpoint": "https://cityview.madisoncountyal.gov/Portal",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Madison County runs CityView (Harris Computer) permit portal, confirmed live 200 at https://cityview.madisoncountyal.gov/Portal. City of Huntsville (largest city) has a separate inspections/permit map portal at https://maps.huntsvilleal.gov/inspections/, confirmed live 200. Huntsville ePlans review URL Gemini gave (huntsvilleal.gov/development/building-construction/eplans-review/) was fabricated/stale -- 404, not used. Neither CityView nor Huntsville custom portal has a provider class built in this pipeline -- out of scope per task instructions (Accela-only wiring this session), logging discovery only."
+    },
+    {
+      "jurisdiction": "City of Montgomery, AL / Montgomery County",
+      "county": "Montgomery",
+      "state": "AL",
+      "provider_type": "arcgis",
+      "endpoint": "https://open-data-montgomeryal.hub.arcgis.com/datasets/construction-permit-data",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Gemini first claimed a permit portal at permits.montgomeryal.gov -- verified live, DNS failure (curl 000), fabricated. Fed back to Gemini; second answer pointed to a real, live (200) City of Montgomery ArcGIS Open Data Hub dataset page (Construction Permit Data) at https://open-data-montgomeryal.hub.arcgis.com/datasets/construction-permit-data, but Gemini could only give a placeholder REST FeatureServer URL with [Org_ID] unfilled -- fabricated the specific endpoint both times. Tried to resolve the real org/item ID via arcgis.com sharing/rest search API directly (item appears private/not publicly searchable that way, 0 results for multiple query variants). Montgomery County unincorporated permits confirmed manual/phone intake only (mc-ala.org building-permits page, 403 bot-block but real domain). Marking FAILED_NEED_ALT rather than guessing the REST endpoint -- needs a Playwright pass on the hub dataset page to extract the real service URL from page JS/network requests, not attempted this session."
     }
   ]
 }
