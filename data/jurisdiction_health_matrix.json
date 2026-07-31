@@ -2356,6 +2356,46 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "City of Anniston building department page confirmed live (301 redirect, real domain), reportedly runs GovWell per Gemini (not independently verified beyond the info page). City of Oxford's specific URL (oxfordal.gov/building-services) 404d, not verified; reportedly runs iWorQ per Gemini. No Accela found. GovWell/iWorQ provider classes not built in this pipeline -- logging discovery only, out of scope for wiring this session. Anniston page live-verified enough to call VERIFIED_WORKING at the discovery level; Oxford's iWorQ claim unverified."
+    },
+    {
+      "jurisdiction": "Orange County unincorporated (OC Development Services), CA",
+      "county": "Orange",
+      "state": "CA",
+      "provider_type": "custom",
+      "endpoint": "https://myoceservices.ocgov.com/",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Domain live (curl 200). This is myOCeServices, a custom in-house land management portal, not one of our built provider types (not Accela/Socrata/ArcGIS/EnerGov/CKAN). No structured API endpoint identified within scope of this pass. Needs a dedicated custom-scraper investigation, out of scope here."
+    },
+    {
+      "jurisdiction": "Anaheim, CA",
+      "county": "Orange",
+      "state": "CA",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/ANAHEIM/Cap/CapHome.aspx?module=Building",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Domain and Accela backend confirmed live (curl 200; the site's own nav links reference module=Building). BUT Anaheim has replaced the standard ACA general-search UI with a fully custom front-end ('Anaheim Next') -- navigating directly to CapHome.aspx?module=Building bounces back to https://aca-prod.accela.com/anaheim/default.aspx every time (verified via Playwright with load and domcontentloaded waits, with and without visiting default.aspx first to seed cookies). The #ctl00_PlaceHolderMain_generalSearchForm_ddlGSPermitType dropdown never renders, so the standard Accela permit-type-label scraping pattern used elsewhere in this repo does not apply here without further front-end investigation."
+    },
+    {
+      "jurisdiction": "Santa Ana, CA",
+      "county": "Orange",
+      "state": "CA",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/SANTAANA/",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Domain confirmed live (curl 301 redirect, real Accela tenant). BUT navigating to Cap/CapHome.aspx?module=Building redirects to https://login.accela.com/oauth2/authorize... (FusionAuth SSO login page) -- Santa Ana's ACA general search requires an authenticated session, not publicly browsable like other CA Accela deployments checked this session. Not usable as an anonymous public data source without further auth investigation."
+    },
+    {
+      "jurisdiction": "Irvine, CA",
+      "county": "Orange",
+      "state": "CA",
+      "provider_type": "unknown",
+      "endpoint": "https://irvinequickrecords.com/",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Gemini also claimed https://epermit.cityofirvine.org/PermitsInquiry.aspx which returned curl code 000 (DNS/connection failure -- fabricated or dead). irvinequickrecords.com is confirmed live (curl 200) but is a generic public-records-request portal, not a structured permit search/API; no provider type identified. Needs deeper investigation, out of scope for this pass."
     }
   ]
 }
