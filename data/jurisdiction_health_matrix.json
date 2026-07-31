@@ -1887,6 +1887,15 @@
       "endpoint": "https://www.gilacountyaz.gov",
       "status": "NO_PUBLIC_DATA",
       "notes": "Unincorporated Gila County confirmed no automated permit search/API -- manual email (communitydevelopment@gilacountyaz.gov) and in-person intake, issued-permit lists only as periodic downloadable PDFs. City of Globe (Citizenserve) and Town of Payson (Cityworks) are the real structured sources within the county and are logged as their own jurisdiction entries."
+    },
+    {
+      "jurisdiction": "Navajo, AZ",
+      "county": "Navajo",
+      "state": "AZ",
+      "provider_type": "unknown",
+      "endpoint": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "No verified structured/API source found this session. Gemini proposed MaintStar at https://maintstar.co/ -- DNS fail (000), fabricated. Also proposed Show Low permits page https://www.showlowaz.gov/165/City-Permits-Applications -- 404, fabricated. navajocountyaz.gov/170/Planning-Development-Services loads (200) but its scraped HTML has no permit-platform outbound link (page content did not match expected Planning/Development section -- possibly a stale/renumbered CivicPlus page ID). Winslow, Snowflake/Taylor, Holbrook reported paper/PDF-only per Gemini, not independently verified. Needs a fresh, more targeted pass (e.g. Playwright crawl of the live navajocountyaz.gov site map) before this can be resolved either way -- left honestly unresolved rather than guessed."
     }
   ]
 }
