@@ -1558,6 +1558,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Fort Myers confirmed live on EnerGov (302, real). Cape Coral confirmed live on EnerGov (301, real). Lee County's eConnect/Accela -- first URL (aca.leegov.com) is fabricated (000 DNS fail), alt (accelaaca.leegov.com) is real but returned 503 (service exists, temporarily erroring). Puller not yet built."
+    },
+    {
+      "jurisdiction": "Polk County, FL (Lakeland)",
+      "county": "Polk",
+      "state": "FL",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/POLKCO/Default.aspx",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Polk County confirmed live on Accela (200 OK). Lakeland confirmed live on iMS (Intuitive Municipal Solutions, 302 redirect, new platform type). Puller not built."
     }
   ]
 }
