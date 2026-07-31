@@ -1628,6 +1628,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Marion County (EP&L/Civic Access) confirmed real (403 bot-block, real domain). Ocala's eTRAKiT permit page and eplans.ocalafl.gov both real domain but specific eplans subdomain 000 -- ocalafl.gov base confirmed real (403 bot-block). Puller not built."
+    },
+    {
+      "jurisdiction": "Escambia County, FL (Pensacola)",
+      "county": "Escambia",
+      "state": "FL",
+      "provider_type": "mgoconnect",
+      "endpoint": "https://myescambia.com/our-services/building-services/permitting",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Escambia County confirmed live via myescambia.com (200 OK), uses MGO Connect (also confirmed real, 200). Pensacola's specific permit page 404s but is on the same real cityofpensacola.com domain -- exact path not yet found. Puller not built."
     }
   ]
 }
