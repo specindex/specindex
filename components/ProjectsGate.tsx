@@ -34,11 +34,7 @@ function SignInWall({ onSignIn }: { onSignIn: (() => void) | null }) {
           </button>
         ) : (
           <p className="mt-6 text-sm text-[var(--color-gray-400)]">
-            Sign-in is temporarily unavailable. Email{" "}
-            <a href="mailto:hello@specindex.ai" className="underline">
-              hello@specindex.ai
-            </a>{" "}
-            instead.
+            Sign-in is temporarily unavailable. Please try again shortly.
           </p>
         )}
       </div>

@@ -4,16 +4,12 @@ import { Logo } from "@/components/Logo";
 const product = [
   { href: "/product/", label: "Use Cases" },
   { href: "/how-it-works/", label: "How It Works" },
-  { href: "/pricing/", label: "Pricing" },
   { href: "/projects/", label: "Projects" },
   { href: "/visibility/", label: "Brand Visibility" },
   { href: "/reporting/", label: "Reporting" },
 ];
 
-const company = [
-  { href: "/about/", label: "About" },
-  { href: "mailto:hello@specindex.ai", label: "Contact" },
-];
+const company = [{ href: "/about/", label: "About" }];
 
 export function SiteFooter() {
   return (
@@ -26,11 +22,6 @@ export function SiteFooter() {
           </div>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-[var(--color-gray-600)]">
             Specification intelligence for building product manufacturers.
-          </p>
-          <p className="mt-3 max-w-xs text-sm leading-relaxed text-[var(--color-gray-400)]">
-            <a href="mailto:hello@specindex.ai" className="hover:text-[var(--color-ink)]">
-              hello@specindex.ai
-            </a>
           </p>
         </div>
 
@@ -78,14 +69,6 @@ export function SiteFooter() {
                 className="text-sm text-[var(--color-gray-600)] hover:text-[var(--color-ink)]"
               >
                 Search the index
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/about/"
-                className="text-sm text-[var(--color-gray-600)] hover:text-[var(--color-ink)]"
-              >
-                How we source data
               </Link>
             </li>
           </ul>
