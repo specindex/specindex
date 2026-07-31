@@ -1278,6 +1278,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "City of El Paso confirmed live on Accela (200 OK), plus a real city-domain redirect (301). Puller not yet built."
+    },
+    {
+      "jurisdiction": "Nueces County, TX (City of Corpus Christi)",
+      "county": "Nueces",
+      "state": "TX",
+      "provider_type": "infor_rhythm",
+      "endpoint": "https://corpuschristi-prd.rhythmlabs.infor.com/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Corpus Christi confirmed live on Infor Rhythm for Civics (200 OK), locally branded 'Dynamic Portal'. New platform type tonight (5th). Puller not yet built."
     }
   ]
 }
