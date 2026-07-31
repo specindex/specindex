@@ -1658,6 +1658,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Indian River County confirmed live (301, real), uses MGO Connect/MyGovernmentOnline (both real domains, confirmed earlier this session). Vero Beach has no separate building department -- shares county permitting, consistent with the 404 on its own page. Puller not built."
+    },
+    {
+      "jurisdiction": "Manatee County, FL (Bradenton)",
+      "county": "Manatee",
+      "state": "FL",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/MANATEE/Default.aspx",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Manatee County confirmed live on Accela (200 OK). Bradenton confirmed live on Accela (200 OK). Puller not built."
     }
   ]
 }
