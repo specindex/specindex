@@ -2276,6 +2276,26 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Gemini first two answers (buildingdepartment.com and tuscaloosa.com/departments/.../building-and-inspections) were fabricated -- DNS fail and 404 respectively. Fed back live-verification failures; third answer gave https://www.blueprinceportal.com/login (200, real CityView BluePrince multi-jurisdiction portal, select Tuscaloosa) and https://www.tuscaloosa.com/building (200, real city building/inspections page). Unincorporated Tuscaloosa County confirmed manual/PDF submittals via Public Works, no online search platform (tuscco.com/departments/public-works/, 301 real domain redirect). BluePrince/CityView provider class not built in this pipeline -- out of scope for Accela-only wiring this session, logging discovery only."
+    },
+    {
+      "jurisdiction": "Baldwin County, AL (Foley/Daphne/Fairhope/Gulf Shores)",
+      "county": "Baldwin",
+      "state": "AL",
+      "provider_type": "citizenserve",
+      "endpoint": "https://www.baldwincountyal.gov/CSP",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Baldwin County's own site (baldwincountyal.gov/CSP, 301) redirects live to https://www.citizenserve.com/BaldwinCountyAL -- confirms a real, live Citizenserve deployment (root citizenserve.com is 200) even though that specific redirected path alone 404s without session/query params (typical for Citizenserve's stateful portal flow). Gemini's other guessed direct URLs (citizenserve.com/baldwincounty, PortalClientSearch.aspx?SearchID=429) were fabricated -- 404. City of Foley and City of Daphne also reportedly on Citizenserve per Gemini, not independently verified. Citizenserve provider class not built in this pipeline -- out of scope for Accela-only wiring this session, logging discovery only. Needs Playwright pass on baldwincountyal.gov/CSP to capture the real session-bound search URL before this could be wired as a scraping/API source."
+    },
+    {
+      "jurisdiction": "Lee County, AL / City of Auburn / City of Opelika",
+      "county": "Lee",
+      "state": "AL",
+      "provider_type": "cityworks_pll_arcgis",
+      "endpoint": "https://webgis.auburnalabama.org/permits",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Auburn (largest city) runs Trimble Cityworks PLL integrated with ArcGIS WebGIS, confirmed live 200 at https://webgis.auburnalabama.org/permits. City of Opelika (2nd largest) runs Tyler EnerGov Self Service, confirmed live 200 at https://ss.opelika-al.gov/EnerGovProd/SelfService#/home. Unincorporated Lee County confirmed manual/PDF/email intake (buildinginspection@leeco.us) with fee payment only via governmentwindow.com, no searchable permit platform. Neither Cityworks PLL nor EnerGov provider class is built in this pipeline -- out of scope for Accela-only wiring this session, logging discovery only."
     }
   ]
 }
