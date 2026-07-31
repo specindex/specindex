@@ -1728,6 +1728,36 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "CT has no county government; Torrington is Litchfield Countys largest town. Uses OpenGov Permitting & Licensing portal, live-verified 200 via curl (real Torrington branding, not a generic OpenGov landing). OpenGov is a closed proprietary portal (no public read API surfaced), and not Accela, so out of scope to build a new provider class per task instructions -- logged as discovery only."
+    },
+    {
+      "jurisdiction": "Norwich (city), CT",
+      "county": "New London",
+      "state": "CT",
+      "provider_type": "other",
+      "endpoint": "https://norwichct.portal.opengov.com",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "CT has no county government; Norwich cited by Gemini as New London Countys largest municipality (~40k, close to Groton). Uses OpenGov Permitting & Licensing (formerly ViewPoint Cloud), live-verified 200 via curl. Closed proprietary portal, no public API, not Accela -- logged as discovery only per task instructions."
+    },
+    {
+      "jurisdiction": "Middletown (city), CT",
+      "county": "Middlesex",
+      "state": "CT",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "CT has no county government; Middletown is Middlesex Countys largest city. First Gemini answer (CivicPlus Building-Department page) verified live but was just a department info page with no permit-portal link anywhere in its HTML -- fed back as GEMINI_FEEDBACK_REPORT. Second-pass answer confirms genuine manual/hybrid process: PDF forms emailed to building-permits@middletownct.gov or submitted by mail/in-person, payment by check/money order only, inspections scheduled by phone. No Accela/EnerGov/OpenGov/CityView/BS&A found. Genuine dead end, not a fabrication -- ruled out."
+    },
+    {
+      "jurisdiction": "Vernon (town), CT",
+      "county": "Tolland",
+      "state": "CT",
+      "provider_type": "other",
+      "endpoint": "https://vernonct.portal.opengov.com",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "CT has no county government; Vernon cited by Gemini as Tolland Countys largest town. Uses OpenGov Permitting & Licensing (formerly ViewPoint Cloud), live-verified 200 via curl (Vernon-branded portal, not generic landing). Closed proprietary portal, no public API, not Accela -- logged as discovery only per task instructions."
     }
   ]
 }
