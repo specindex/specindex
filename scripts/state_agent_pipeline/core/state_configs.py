@@ -1942,6 +1942,29 @@ CO_SPRINGS_ACCELA_CONFIG: dict[str, Any] = {
 }
 STATE_CONFIGS["CO-SPRINGS"] = CO_SPRINGS_ACCELA_CONFIG
 
+# City and County of Denver, CO (state's #1 county by population) --
+# Accela agency code DENVER, confirmed live 2026-07-30 (200 on
+# aca-prod.accela.com/DENVER). NOTE: module=Building 404s to Error.aspx
+# here (unlike most deployments) -- Denver's real module name is
+# "Development" (found via nav-link probe: CapHome.aspx?module=
+# Development&TabName=Home). The permit-type dropdown has a genuine
+# single catch-all commercial option, "Commercial Construction Permit"
+# (distinct from Electrical/Mechanical/Plumbing/Roofing/Residential
+# Construction Permit etc. in the same dropdown), so no subtype
+# fan-out needed.
+CO_DENVER_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "CO",
+    "provider_type": "accela",
+    "county": "Denver",
+    "endpoint": "https://aca-prod.accela.com/DENVER",
+    "module": "Development",
+    "permit_type_label": "Commercial Construction Permit",
+    "lookback_days": 30,
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
+}
+STATE_CONFIGS["CO-DENVER"] = CO_DENVER_ACCELA_CONFIG
+
 # City of Cleveland, OH (Dept. of Building and Housing) -- Accela agency
 # code COC, confirmed live 2026-07-28. Separate system from Cuyahoga
 # County's own ArcGIS feed (OH-CUYAHOGA above) -- same LA-City-vs-LA-

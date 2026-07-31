@@ -1976,6 +1976,36 @@
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
       "notes": "Checked all major cities and county, found no structured/API permit source anywhere. Cabot (largest city): Gemini-suggested page cabotar.gov/220/City-of-Cabot-Permit-Applications returned live-verified HTTP 404 (fabricated path -- base cabotar.gov domain is real, HTTP 200, but that permit page does not exist); Cabot's actual system is a CivicPlus Form Center (plain web form submission, not a queryable API/database, so no ingestible source even if the correct URL were found). Lonoke, Ward: PDF/manual intake only, confirmed via city sites. Unincorporated Lonoke County: no building code enforcement / no permit portal, only paper floodplain permits via County Clerk. Concluding NO_PUBLIC_DATA per task instructions -- confirmed no structured source exists after checking city + county domains; not pursuing Step 6 research fallback (out of scope)."
+    },
+    {
+      "jurisdiction": "City and County of Denver, CO (Accela, Development module)",
+      "county": "Denver",
+      "state": "CO",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/DENVER",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified 2026-07-30/31: aca-prod.accela.com/DENVER returns 200. module=Building 404s to Error.aspx (unusual for this deployment); real module found via nav-link probe is module=Development. Playwright dropdown probe on CapHome.aspx?module=Development found a genuine catch-all \"Commercial Construction Permit\" option (distinct from Electrical/Mechanical/Plumbing/Residential Construction Permit etc). Dry-run at lookback-days=90 returned 300 real rows with real permit numbers/addresses/statuses. Real merge run: 270 new rows merged into data/states/co.json. Wired as CO-DENVER in state_configs.py.",
+      "state_agent_pipeline_key": "CO-DENVER"
+    },
+    {
+      "jurisdiction": "Arapahoe County (unincorporated), CO -- Accela Building module",
+      "county": "Arapahoe",
+      "state": "CO",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/ARAPAHOE",
+      "status": "FAILED_NEED_ALT",
+      "notes": "Live-verified 2026-07-31: aca-prod.accela.com/ARAPAHOE is a real Accela portal (200, real nav with Building/Engineering/Planning/Zoning/Oil And Gas/Open Spaces modules found via Playwright nav-link probe). However module=Building (with or without TabName=Home) redirects to Login.aspx -- the Building/permit search requires an authenticated account, unlike other CO Accela deployments (Denver, Colorado Springs) which allow anonymous general search. Not pursued further (no login-credential automation in scope). Also identified via Gemini but not yet live-verified: City of Centennial uses Tyler EnerGov (cityofcentennialco-energovweb.tylerhost.net/apps/selfservice, confirmed 200) and City of Aurora uses AMANDA/DevPortal (devportal.auroragov.org) -- both are non-Accela, logged for future provider-class work, not pursued this session per scope (Accela-only build-out).",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "City of Centennial, CO (Arapahoe County) -- Tyler EnerGov",
+      "county": "Arapahoe",
+      "state": "CO",
+      "provider_type": "energov",
+      "endpoint": "https://cityofcentennialco-energovweb.tylerhost.net/apps/selfservice",
+      "status": "FAILED_NEED_ALT",
+      "notes": "Live-verified 2026-07-31: endpoint returns 200, real Tyler EnerGov Citizen Self-Service portal. No EnerGov provider class exists in this pipeline yet (out of scope per task instructions -- Accela is the only reusable provider). Logged for future build-out.",
+      "state_agent_pipeline_key": null
     }
   ]
 }
