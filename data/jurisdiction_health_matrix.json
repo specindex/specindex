@@ -2256,6 +2256,26 @@
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
       "notes": "Gemini first claimed a permit portal at permits.montgomeryal.gov -- verified live, DNS failure (curl 000), fabricated. Fed back to Gemini; second answer pointed to a real, live (200) City of Montgomery ArcGIS Open Data Hub dataset page (Construction Permit Data) at https://open-data-montgomeryal.hub.arcgis.com/datasets/construction-permit-data, but Gemini could only give a placeholder REST FeatureServer URL with [Org_ID] unfilled -- fabricated the specific endpoint both times. Tried to resolve the real org/item ID via arcgis.com sharing/rest search API directly (item appears private/not publicly searchable that way, 0 results for multiple query variants). Montgomery County unincorporated permits confirmed manual/phone intake only (mc-ala.org building-permits page, 403 bot-block but real domain). Marking FAILED_NEED_ALT rather than guessing the REST endpoint -- needs a Playwright pass on the hub dataset page to extract the real service URL from page JS/network requests, not attempted this session."
+    },
+    {
+      "jurisdiction": "Shelby County, AL / City of Pelham / City of Alabaster",
+      "county": "Shelby",
+      "state": "AL",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Permitting is decentralized to municipalities in Shelby County. Unincorporated county confirmed manual/PDF/email intake (no searchable platform); shelbyal.com root is real (200) but every specific sub-page slug Gemini gave (217/492/495 Permits-and-Inspections variants) 404d -- fabricated/stale slugs, not resolved live. City of Alabaster uses LAMA (alabaster.onlama.com, 403 bot-block but real live domain) -- plausible real source, not further pursued. City of Pelham reportedly runs Tyler EnerGov CSS branded as Citizen Access Portal but every specific URL Gemini gave (229/566 variants) 404d; root pelhamalabama.gov is real (200). Not marking VERIFIED_WORKING since no exact endpoint survived live verification within budget; not NO_PUBLIC_DATA since Alabaster/Pelham plausibly have real platforms just not pinned down. Needs a follow-up direct site-navigation pass (not Gemini-guessed slugs) to find Alabaster/Pelham real permit URLs."
+    },
+    {
+      "jurisdiction": "City of Tuscaloosa, AL / Tuscaloosa County",
+      "county": "Tuscaloosa",
+      "state": "AL",
+      "provider_type": "cityview_blueprince",
+      "endpoint": "https://www.blueprinceportal.com/login",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Gemini first two answers (buildingdepartment.com and tuscaloosa.com/departments/.../building-and-inspections) were fabricated -- DNS fail and 404 respectively. Fed back live-verification failures; third answer gave https://www.blueprinceportal.com/login (200, real CityView BluePrince multi-jurisdiction portal, select Tuscaloosa) and https://www.tuscaloosa.com/building (200, real city building/inspections page). Unincorporated Tuscaloosa County confirmed manual/PDF submittals via Public Works, no online search platform (tuscco.com/departments/public-works/, 301 real domain redirect). BluePrince/CityView provider class not built in this pipeline -- out of scope for Accela-only wiring this session, logging discovery only."
     }
   ]
 }
