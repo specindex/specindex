@@ -2186,6 +2186,26 @@
       "status": "VERIFIED_WORKING",
       "notes": "Live-verified 2026-07-31: 200 (both pueblocountyco.portal.opengov.com and pueblopermits.com redirect). Real OpenGov Permitting & Licensing platform. No OpenGov provider class in pipeline -- discovery-only.",
       "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "Mesa County Building Dept (serves Mesa County & Grand Junction), CO -- MaintStar",
+      "county": "Mesa",
+      "state": "CO",
+      "provider_type": "maintstar",
+      "endpoint": "https://h9.maintstar.co/MesaCounty/portal/#/",
+      "status": "VERIFIED_WORKING",
+      "notes": "Gemini first claimed mesacountyco.maintstar.co (live-verified 000 DNS failure, fabricated). Fed back via GEMINI_FEEDBACK_REPORT; corrected h9.maintstar.co/MesaCounty/portal/#/ live-verified 200. No Accela used here -- building permits for the whole county (incl. Grand Junction) are unified under this MaintStar county portal. No MaintStar provider class in pipeline -- discovery-only.",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "City of Grand Junction, CO (Mesa County, planning/zoning clearances only) -- Tyler EnerGov",
+      "county": "Mesa",
+      "state": "CO",
+      "provider_type": "energov",
+      "endpoint": "https://grandjunctionco-energovweb.tylerhost.net/apps/selfservice",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified 2026-07-31: 200. Real Tyler EnerGov portal, but scoped to planning/zoning clearances only -- actual building permits for Grand Junction go through the county MaintStar portal above. Discovery-only.",
+      "state_agent_pipeline_key": null
     }
   ]
 }
