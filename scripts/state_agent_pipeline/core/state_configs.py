@@ -515,6 +515,67 @@ IN_INDIANAPOLIS_ACCELA_CONFIG: dict[str, Any] = {
     "lookback_days": 180,
 }
 
+# Crown Point, IN -- Lake County seat, Tyler EnerGov Citizen Self Service,
+# same tylerhost.net/apps/selfservice hosted pattern as the CA EnerGov
+# tenants above. Gemini's URL guessed the wrong subdomain form
+# ("crownpointin-energov.tylerhost.net" -- SSL connect error); the real,
+# live one follows the standard "{tenant}-energovweb.tylerhost.net"
+# pattern used elsewhere, confirmed via curl (HTTP 200) 2026-07-31. Lake
+# County itself and its other cities (Gary/Hammond/East Chicago/
+# Merrillville) have no live structured permit API (Gary uses OpenGov,
+# unverified as pullable; the rest are paper/in-person only) -- Crown
+# Point is the only confirmed live source in the county so far.
+IN_CROWNPOINT_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "IN",
+    "provider_type": "energov",
+    "county": "Lake",
+    "endpoint": "https://crownpointin-energovweb.tylerhost.net",
+    "tenant_id": "1",
+    "tenant_name": "Crown Point",
+    "lookback_days": 900,
+    "max_pages": 5,
+}
+
+# Allen County / Fort Wayne, IN -- joint city-county Accela instance,
+# agency code ACFW. Confirmed live 2026-07-31: module=Building AND
+# module=Permits both redirect to Login.aspx/Error.aspx (login-gated or
+# not configured), but module=Planning loads the general search form
+# with no login wall and has a real permit-type dropdown
+# (#ctl00_PlaceHolderMain_generalSearchForm_ddlGSPermitType). No single
+# "Commercial" catch-all option exists; broadest real non-residential
+# label is "08. Site Plan Review (Commercial, Industrial, Multifamily,
+# School, Religious Institution)" (vs. residential-only options like
+# "04. Improvement Location Permit (Residential decks...)" and "05. New
+# Single Family Dwelling").
+IN_ALLEN_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "IN",
+    "provider_type": "accela",
+    "county": "Allen",
+    "endpoint": "https://aca-prod.accela.com/ACFW",
+    "module": "Planning",
+    "permit_type_label": "08. Site Plan Review (Commercial, Industrial, Multifamily, School, Religious Institution)",
+    "lookback_days": 180,
+}
+
+# City of Noblesville, IN -- Hamilton County seat, Tyler EnerGov Citizen
+# Self Service, "-energovpub.tylerhost.net" subdomain form (not
+# "-energovweb", which fails DNS for this tenant) -- confirmed live via
+# curl HTTP 200 2026-07-31. Other Hamilton County cities (Fishers uses
+# OpenGov Permitting & Licensing, Carmel uses Cityworks PLL, Westfield
+# has no structured portal) are not one of the 8 existing provider
+# types, not wired this pass.
+IN_NOBLESVILLE_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "IN",
+    "provider_type": "energov",
+    "county": "Hamilton",
+    "endpoint": "https://noblesvillein-energovpub.tylerhost.net",
+    "selfservice_path": "Apps/SelfService",
+    "tenant_id": "1",
+    "tenant_name": "Noblesville",
+    "lookback_days": 900,
+    "max_pages": 5,
+}
+
 # Sioux Falls, SD (Minnehaha County's top jurisdiction, ~85% of the
 # county's population). Gemini's domain had a typo -- gis.siouxfalls.
 # ORG doesn't resolve (NXDOMAIN), real domain is gis.siouxfalls.GOV --
@@ -2147,6 +2208,9 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "ID-ADA": ID_ADA_ACCELA_CONFIG,
     "SD-SIOUXFALLS": SD_SIOUXFALLS_CONFIG,
     "IN-INDIANAPOLIS": IN_INDIANAPOLIS_ACCELA_CONFIG,
+    "IN-CROWNPOINT": IN_CROWNPOINT_ENERGOV_CONFIG,
+    "IN-ALLEN": IN_ALLEN_ACCELA_CONFIG,
+    "IN-NOBLESVILLE": IN_NOBLESVILLE_ENERGOV_CONFIG,
     "FL-MIAMIDADE": FL_MIAMIDADE_CONFIG,
     "FL-BROWARD": FL_BROWARD_ACCELA_CONFIG,
     "FL-HILLSBOROUGH": FL_HILLSBOROUGH_ACCELA_CONFIG,

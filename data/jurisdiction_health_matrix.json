@@ -3343,6 +3343,37 @@
       "status": "FAILED_NEED_ALT",
       "records_merged": 0,
       "notes": "Tyler EnerGov CSS confirmed live, NOT login-gated (title \"Public Information\"). Verified real and large (PermitsFound=210955 in a blank All-module search), but not yet mergeable: selecting the Permit module and searching returns a genuine server-side error (\"Specified argument was out of the range of valid values\", Result:null, Success:false) rather than rows, and the default blank All-module search returns EntityResults:[] despite TotalFound=439070 -- this tenant requires either a keyword or additional criteria neither the generic energov_provider.py UI flow nor a quick manual probe supplied successfully. Needs a follow-up UI-flow fix (find the right minimal criteria/keyword this tenant accepts) before merging. Falling back to document-research-fallback.py in the meantime."
+    },
+    {
+      "jurisdiction": "Allen County, IN (Fort Wayne -- joint city-county Accela ACFW)",
+      "county": "Allen",
+      "state": "IN",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/ACFW",
+      "state_agent_pipeline_key": "IN-ALLEN",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 142,
+      "notes": "module=Building and module=Permits both login-gate/error on this ACFW instance; module=Planning loads the general search form with no login wall. No single 'Commercial' option in the ddlGSPermitType dropdown -- used the broadest real non-residential label '08. Site Plan Review (Commercial, Industrial, Multifamily, School, Religious Institution)'. Caught and fixed the same silent-collapse bug documented for Indianapolis: this deployment's results table uses 'Application Number' as its permit-number column header, not in accela_provider.py's HEADER_ALIASES -- every row got an identical fallback id and the first merge attempt collapsed 192 real rows into 1. Added 'application number'->permit_number and 'application type'->permit_type aliases, removed the corrupted record, reset the watermark, re-ran clean: 192 fetched, 142 new unique merged (total in.json now 560). Document fallback run: 0 of ~5 named projects had a confirmed pullable document."
+    },
+    {
+      "jurisdiction": "Lake County, IN (Crown Point -- Tyler EnerGov)",
+      "county": "Lake",
+      "state": "IN",
+      "provider_type": "energov",
+      "endpoint": "https://crownpointin-energovweb.tylerhost.net",
+      "state_agent_pipeline_key": "IN-CROWNPOINT",
+      "status": "FAILED_NEED_ALT",
+      "notes": "Gemini's first URL (crownpointin-energov.tylerhost.net) was a fabricated/wrong subdomain -- real SSL-live endpoint follows the standard '{tenant}-energovweb.tylerhost.net' pattern used elsewhere (confirmed via curl HTTP 200). Wired as a real EnerGov config, but a live dry-run returns 0 rows -- same 'response had null Result' symptom as CA-GLENDALE's EnerGov config (registered but not yet debugged; likely a theme/flow difference in the click-triggered XHR this deployment's search button uses). County government itself and the other major Lake County cities have no live structured source: unincorporated county is PDF/webform-only, Hammond and East Chicago have no public portal at all, Gary uses OpenGov Permitting & Licensing (garyin.portal.opengov.com, HTTP 200 live) which was not evaluated as a provider type this pass -- worth a follow-up as OpenGov is not one of the 8 existing provider types. Document fallback run: 0 of ~5 named projects had a confirmed pullable document."
+    },
+    {
+      "jurisdiction": "Hamilton County, IN (Noblesville -- Tyler EnerGov)",
+      "county": "Hamilton",
+      "state": "IN",
+      "provider_type": "energov",
+      "endpoint": "https://noblesvillein-energovpub.tylerhost.net",
+      "state_agent_pipeline_key": "IN-NOBLESVILLE",
+      "status": "FAILED_NEED_ALT",
+      "notes": "Noblesville's EnerGov tenant is real and live (curl HTTP 200; note it uses the '-energovpub.tylerhost.net' subdomain form and 'Apps/SelfService' path casing, not the more common '-energovweb.tylerhost.net'/'apps/selfservice' pattern used by the CA tenants). Wired and dry-run fetched 50 real rows across 5 pages, but 0 matched the commercial-keyword filter and 0 fell within the lookback window -- a raw unfiltered probe (bypassing the pipeline's SearchModule selector) showed the blank/default search returns Code Enforcement cases (ModuleName=5, e.g. 'Grass and Weeds'), not Building permits; the pipeline's existing SearchModule='Permit' select-and-dispatch logic did not surface commercial permit rows for this tenant within the time spent debugging. Other Hamilton County cities not evaluated as providers this pass: Fishers runs OpenGov Permitting & Licensing (fishersin.portal.opengov.com, confirmed live HTTP 200, not one of the 8 existing provider types), Carmel runs Cityworks PLL/Avolve ProjectDox (not evaluated), Westfield has no structured portal found. Document fallback run: 0 of ~6 named projects had a confirmed live pullable document (2 retried candidate URLs were dead 404s off a stale plan-commission agenda page)."
     }
   ]
 }

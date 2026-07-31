@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Allen",
+  "state": "IN",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 5,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Northpoint Apartments",
+      "city_address": "2900 Block of West Ludwig Road, Fort Wayne, IN",
+      "project_type": "Commercial / Multi-Family Residential",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Birge & Held",
+      "status": "Approved (Fort Wayne Plan Commission recommendation & initial City Council approval)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Fort Wayne Plan Commission Agenda (July 13, 2026); The Local FW (July 28, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Family Express (North Clinton & Mayhew)",
+      "city_address": "Intersection of North Clinton Street and Mayhew Road, Fort Wayne, IN",
+      "project_type": "Commercial (Convenience Store / Gas Station)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Family Express Corporation / Pete Andreou",
+      "status": "Secondary Development Plan Approved (SDP-2026-0005)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Allen County Plan Commission Business Meeting Agenda (July 16, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Sonic Drive-In (Bass Road)",
+      "city_address": "4615 Bass Road, Fort Wayne, IN 46804",
+      "project_type": "Commercial (Restaurant / Retail)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Alex Richardson (Owner) / CME Construction (Design-Builder)",
+      "status": "Under Construction / Pre-Construction (Targeted Fall 2026 completion)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Building Contractors Association of Fort Wayne / CME Construction Announcement (July 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "The Lutheran Foundation Headquarters",
+      "city_address": "6600 North Clinton Street, Fort Wayne, IN",
+      "project_type": "Commercial / Office (8,500 sq ft headquarters facility)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "The Lutheran Foundation",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Building Contractors Association of Fort Wayne (July 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Downtown Fort Wayne Homeless Resource Center",
+      "city_address": "333 E. Washington Blvd, Fort Wayne, IN",
+      "project_type": "Commercial / Institutional Civic Renovation",
+      "estimated_cost": "Not specified",
+      "developer_owner": "City of Fort Wayne",
+      "status": "Proposed / Under City Council Review",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Fort Wayne Press Release / The Local FW (July 28, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

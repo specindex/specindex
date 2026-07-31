@@ -65,10 +65,18 @@ HEADER_ALIASES = {
     # caught and fixed same day, no bad data survived past the initial
     # test run).
     "case number": "permit_number",
+    # Allen County/Fort Wayne, IN's ACFW deployment (Planning module,
+    # used since Building/Permits modules are login-gated) uses
+    # "Application Number" for the same column -- confirmed live
+    # 2026-07-31. Without this alias every row falls back to an
+    # identical id and 192 real rows collapse into 1 on merge, the same
+    # failure mode documented above for Indianapolis's "Case Number".
+    "application number": "permit_number",
     "permit type": "permit_type",
     "permits type": "permit_type",  # Cabarrus County NC plural header
     "building type": "permit_type",
     "record type": "permit_type",
+    "application type": "permit_type",
     "project name": "project_name",
     "status": "status",
     "short notes": "description",
