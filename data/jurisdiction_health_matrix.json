@@ -1518,6 +1518,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "West Palm Beach confirmed live on EnerGov/EPL (302, real). Palm Beach County's own custom ePZB portal (unincorporated areas) also confirmed live (302, real). Puller not yet built for either."
+    },
+    {
+      "jurisdiction": "Orange County, FL (Orlando)",
+      "county": "Orange",
+      "state": "FL",
+      "provider_type": "fasttrack",
+      "endpoint": "https://fasttrack.ocfl.net/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Orange County FastTrack confirmed live (302, real), new platform type. City of Orlando has a real Socrata open-data portal (data.cityoforlando.net, 200 OK) with genuine permit-related dataset titles in catalog search (Permit Applications, Building Permits x2, Issued Construction Permits, Development Permits), but all 3 specific resource IDs tested returned 404 -- catalog metadata appears stale/resources renamed. Needs a fresh catalog lookup before building a puller against Orlando's Socrata data specifically; FastTrack (county) is the confirmed-working path for now."
     }
   ]
 }
