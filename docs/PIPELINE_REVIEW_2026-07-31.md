@@ -224,3 +224,15 @@ programmatic pipeline --
 review above; both point toward the same underlying architecture (small
 batches, structured output, mandatory automated cross-check) rather than
 either a hand-run linear pipeline or an unattended bulk sweep.
+
+**Decision, 2026-07-31: full coverage of the ~500-county target list is
+the priority** -- the batching/verification restructuring above is how to
+get there safely, not a reason to shrink the goal. Kimi's list (the most
+commercially active counties by MSA population, permit volume, and
+economic output, ~10-35 per state) stays the target scope. Execution
+plan: 4-5 counties per batch, Texas -> Florida -> California -> rest
+alphabetically (matching Kimi's own prioritization), each batch run
+through the grounded-research + mandatory-independent-cross-check
+method validated on DuPage/Cook, written to `data/raw/` (not just chat
+output) so nothing is lost between batches, no auto-load into the
+production DB until step 9's load path (still not built) exists.
