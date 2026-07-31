@@ -1606,6 +1606,34 @@ NC_MECKLENBURG_CONFIG: dict[str, Any] = {
 
 # Wake County (Raleigh, NC) -- verified live 2026-07-28: 47,660 total
 # commercial-filtered records, MAX(issueddate) = 2026-07-24.
+NC_GUILFORD_CONFIG: dict[str, Any] = {
+    # City of Greensboro (largest city in Guilford County) Building Permits
+    # table, published via ArcGIS Hub open data. Live-verified 2026-07-31:
+    # MapServer/2 ("BI_Permits") has a clean PermitType='Commercial' value,
+    # real cost/sqft/occupancy fields, and MAX(IssuedDate) = 2026-07-30 (1
+    # day fresh). Guilford County itself (unincorporated + contract towns)
+    # runs Tyler EnerGov Civic Access, not a queryable REST feed -- not
+    # wired here, city coverage only.
+    "state_code": "NC",
+    "provider_type": "arcgis",
+    "county": "Guilford",
+    "endpoint": "https://gis.greensboro-nc.gov/arcgis/rest/services/OpenGateCity/OpenData_HRES_DS/MapServer",
+    "layer": 2,
+    "watermark_field": "Sakey",
+    "hash_fields": ["PermitNum"],
+    "commercial_where": "PermitType = 'Commercial'",
+    "out_fields": "*",
+    "date_field": "IssuedDate",
+    "lookback_days": 90,
+    "feed_id": "nc-guilford-greensboro",
+    "id_field": "PermitNum",
+    "name_fields": ["FullAddress", "Description", "PermitNum"],
+    "address_fields": ["FullAddress"],
+    "value_fields": ["TotalCost", "GeneralCost"],
+    "desc_fields": ["Description", "OccupancyDesc", "TypeConstructionDesc"],
+    "source_url": "https://gis.greensboro-nc.gov/arcgis/rest/services/OpenGateCity/OpenData_HRES_DS/MapServer/2",
+}
+
 NC_WAKE_CONFIG: dict[str, Any] = {
     "state_code": "NC",
     "provider_type": "arcgis",
@@ -1921,6 +1949,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "OH-CUYAHOGA": OH_CUYAHOGA_CONFIG,
     "NC-MECKLENBURG": NC_MECKLENBURG_CONFIG,
     "NC-WAKE": NC_WAKE_CONFIG,
+    "NC-GUILFORD": NC_GUILFORD_CONFIG,
     "VA-FAIRFAX": VA_FAIRFAX_CONFIG,
     "TX-WILLIAMSON-PERMITS": TX_WILLIAMSON_PERMITS_CONFIG,
     "PA-PHILADELPHIA": PA_PHILADELPHIA_CONFIG,

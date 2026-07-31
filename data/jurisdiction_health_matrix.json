@@ -2641,6 +2641,37 @@
       "status": "FAILED_NEED_ALT",
       "records_merged": 0,
       "notes": "NY county government does not issue building permits (purely town/village level, confirmed by Gemini + live checks). Gemini's first guess (aca.brookhaven.org Accela portal) was fabricated -- NXDOMAIN, caught via curl. Real Town of Brookhaven permit-status lookup (https://www.brookhavenny.gov/1245/Lookup-Building-Permit-Status, HTTP 200) and Town of Huntington OpenGov portal (https://townofhuntingtonny.portal.opengov.com/, HTTP 200) are both real and live, but neither is a bulk/API-friendly source on one of the 8 supported provider types (Brookhaven is a search-by-address lookup form, Huntington is OpenGov which isn't a wired provider type yet) -- would need a new provider type or scraping, not a config-only fix. No county-wide source exists; largest town (Brookhaven) has no wireable data feed. Documents (Part 2): ran grounded research fallback, found 4 named projects (Suffolk Technology Park/Bristol Group $250M, Orbic Electronics Hauppauge ~$110M, Pollo Campero Bay Shore, Shoppes at Triangle Park Farmingville). documents_confirmed: 0 -- both claimed 'pullable document' URLs failed live verification (Babylon DEIS/FEIS URL 404s, Brookhaven CivicClerk URL is a live portal homepage, not a direct document link)."
+    },
+    {
+      "jurisdiction": "Guilford (Greensboro), NC",
+      "county": "Guilford",
+      "state": "NC",
+      "provider_type": "arcgis",
+      "endpoint": "https://gis.greensboro-nc.gov/arcgis/rest/services/OpenGateCity/OpenData_HRES_DS/MapServer",
+      "state_agent_pipeline_key": "NC-GUILFORD",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 296,
+      "notes": "City of Greensboro Building Permits table (MapServer/2, layer BI_Permits), live-verified: PermitType=Commercial is a real distinct value, MAX(IssuedDate) was 2026-07-30 (1 day fresh) at verification time. Unincorporated Guilford County + contract towns run Tyler EnerGov Civic Access instead -- no queryable REST feed found, not wired; city-only coverage."
+    },
+    {
+      "jurisdiction": "Forsyth (Winston-Salem), NC",
+      "county": "Forsyth",
+      "state": "NC",
+      "provider_type": null,
+      "endpoint": "https://maps.co.forsyth.nc.us/arcgis/rest/services/Planning_Inspection/Development_And_Permits/FeatureServer/0",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Real ArcGIS FeatureServer found (maps.co.forsyth.nc.us is the correct domain -- first Gemini pass fabricated gis.forsyth.nc.us, confirmed NXDOMAIN via live curl/nslookup, corrected via feedback-loop round). But MAX(IssueDate)/MAX(Permit_Yea) on the live layer = 2021 -- dataset has not been updated in 5 years, not usable for coverage despite being reachable. Actual live permitting is behind BuildIT (inspectionsportal.cityofws.org) and GeoCivix (winston-salem.geocivix.com) portals, both login/contractor-gated with no public REST API found. Not wired."
+    },
+    {
+      "jurisdiction": "Cumberland (Fayetteville), NC",
+      "county": "Cumberland",
+      "state": "NC",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Cumberland County GIS (gis.co.cumberland.nc.us, real domain) has no permit-records layer -- Planning/EnerGovMap only exposes inspection-zone boundaries, not case records. County Socrata domain (cumberlandcounty-nc-cc.connect.socrata.com) resolves live but has zero datasets in the catalog API. City of Fayetteville ArcGIS Permits MapServer/0 (gismaps.ci.fayetteville.nc.us/opendata/rest/services/DevelopmentServices/SPA_Dashboard_Permits/MapServer/0, live-verified, MAX(DATE_INITIATED) fresh as of 2026-07-30) is dominated by Solid Waste code-enforcement cases -- only 16 rows total match CASE_TYPE_DESC LIKE Building, too thin to be a real commercial permit feed. Not wired. Live permitting appears to run through Fayetteville IDT Plans (fayetteville.idtplans.com) and County EnerGov CSS, both login-gated with no public REST API found."
     }
   ]
 }
