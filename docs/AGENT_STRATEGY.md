@@ -166,11 +166,15 @@ not a draft plan. This is the actual workflow used to find and wire every new
 county/state source added on 2026-07-28 (Wayne MI, Cook IL, Miami-Dade FL,
 King WA, Tarrant TX, Franklin/Cuyahoga OH, Mecklenburg/Wake NC, Fairfax VA,
 Philadelphia PA, San Diego CA, Dallas/Bexar TX, TDLR TABS statewide TX,
-Colorado Springs CO, Cleveland OH). It's now a 9-step loop (step 8 added
-2026-07-29, step 9 added 2026-07-29), and **steps 7, 8, and 9 are all
-required for every project, not optional follow-ups** — do not consider a
+Colorado Springs CO, Cleveland OH). It's now a 10-step loop (step 8 added
+2026-07-29, step 9 [text extraction] added 2026-07-29, step 9 [research
+fallback] added 2026-07-31 and the former step 9 renumbered to step 10),
+and **steps 7, 8, and 10 are all required for every project pulled via a
+structured source, not optional follow-ups** — do not consider a
 jurisdiction "done" after step 6 alone, and do not consider an individual
-project "done" without steps 8 and 9.
+project "done" without steps 8 and 10. **Step 9 (research fallback) is
+conditional, not required for every project** — it only applies when
+steps 1-6 find no structured source at all for a jurisdiction.
 
 1. **Discovery — Gemini, with context.** Send a query through
    `scripts/gemini_discovery_chat.py --session <name> "..."`. Not stateless:
@@ -253,7 +257,59 @@ project "done" without steps 8 and 9.
    2026-07-29 only `SPX-000157` has been through this step; running it
    across the rest of the corpus is real remaining scope, same as
    step 7's GA-SAM/NJ-only coverage today.
-9. **Document text extraction — added 2026-07-29.** For every document
+9. **Direct project-level research fallback — added 2026-07-31, for any
+   state, not just Illinois.** Triggers when steps 1-6 exhaust every lead
+   for a jurisdiction (deterministic ArcGIS/Socrata search, then Flash,
+   then Sonnet audit) without finding a live, structured, queryable data
+   source — a real and common outcome for smaller counties/cities that
+   simply have no digitized permit system at all (confirmed live for
+   ~20 IL jurisdictions in this batch: DuPage/Lake resolved to false
+   positives, McHenry/Kane/Will named the right platform but wrong exact
+   URL, McLean/Rock Island/St. Clair are real sites with no online
+   application system, Winnebago/Madison gave dead URLs). When a
+   jurisdiction has no pullable source, that doesn't mean it has no real
+   commercial construction activity worth capturing -- this step
+   researches specific named projects directly instead of a feed:
+
+   a. **Grounded research call.** One `google_search`-grounded Gemini
+      call per county (or per project, for a deeper follow-up), asking
+      for named projects with a fixed field set (name, address, type,
+      cost + confidence level, SF/acreage, developer, contractor,
+      architect, status, tenants, completion date, source citation) and
+      an explicit instruction to write "Not identified in public
+      records" rather than guess at any field it can't find. See
+      response_mime_type caveat in step 1/Flash's docstring above
+      (`scripts/research-county-sources.py`) -- the same
+      google_search-corrupts-structured-output issue applies here, so
+      this call must NOT set response_mime_type either.
+   b. **Independent cross-check (REQUIRED, not optional) -- this is the
+      whole point of the step.** Every specific numeric or named-entity
+      claim from (a) gets re-verified via a SEPARATE search call, not a
+      second read of the same grounded response -- trusting one model's
+      self-reported "High confidence" is exactly the failure mode this
+      whole doc exists to prevent. Verified live 2026-07-31 across 8
+      claims (DuPage + Cook County test batch): 6 fully confirmed
+      (Block 59 $53M redevelopment cost, Joanne B. Wagner Community
+      Center's $84.95M/Dewberry/McHugh+Nacional JV/fall 2027, Meadowbrook
+      Shopping Center's $9.5M TIF cost, Amazon Oak Brook's 225,000 SF/27
+      acres/Oct 2028, Obama Presidential Center's June 19 2026 opening,
+      111 W. Monroe's developer/architect/contractor), but 1 real
+      discrepancy caught (111 W. Monroe's hotel room count: Gemini
+      claimed 308 keys, independent search found the real figure is 226)
+      and 1 claim left unconfirmable (111 W. Monroe's $345.7M total
+      project cost -- only the $40M+$50M TIF funding pieces are publicly
+      documented, no total project figure exists in public sources).
+      This ~75% clean/~25% needs-a-second-look rate is exactly why the
+      cross-check is mandatory, not optional, and why nothing from (a)
+      gets treated as fact until (b) confirms it.
+   c. **Load path -- not yet built, real remaining scope.** Cross-checked
+      projects still need to be matched against existing corpus rows
+      (dedupe) or queued as new entries through the normal load pipeline
+      (`scripts/load-corpus-to-postgres.py`) -- this step currently
+      produces verified findings in conversation/file output, not rows
+      in `projects` yet. Do not skip straight from (b) to treating
+      output as already-loaded data.
+10. **Document text extraction — added 2026-07-29.** For every document
    already pulled by step 7, extract real per-page text into
    `document_pages` (pgvector-ready, embedding column added but not yet
    populated) via `scripts/extract-document-text.py --document-file-id` (or
