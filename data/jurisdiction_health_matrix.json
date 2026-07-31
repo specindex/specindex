@@ -1468,6 +1468,16 @@
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
       "notes": "Hunt County's own domain confirmed real (huntcounty.net, 301) but is manual/PDF-email intake only, no digital platform (matches Gemini's own claim). City of Greenville's domain could not be resolved across 4 attempts (greenvilletx.gov, cityofgreenville.net, greenvilletexas.gov all 000; ci.greenville.tx.us resolves but the specific permit page 404s) -- either the domain claim is wrong or the real permit page path is. Needs a fresh discovery pass, not just a URL-variant retry."
+    },
+    {
+      "jurisdiction": "Kaufman County, TX (Forney/Terrell)",
+      "county": "Kaufman",
+      "state": "TX",
+      "provider_type": "mygov",
+      "endpoint": "https://public.mygov.us/tx_forney",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Forney confirmed live on MyGov (200 OK). Terrell confirmed live on CivicGov (200 OK, new platform type). Unincorporated county confirmed on MGO Connect. Puller not yet built."
     }
   ]
 }
