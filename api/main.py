@@ -1439,12 +1439,10 @@ def view_as_customer(
     return {"profile": profile, "tracked_projects": tracked}
 
 
-@app.post("/v1/ops/customer/{firebase_uid}/deactivate")
-def deactivate_customer(
-    firebase_uid: str, _admin: str = Depends(require_role("support_admin", "super_admin"))
-):
-    """Sets user_profiles.is_active = false (already enforced on every
-    request by require_firebase_user, docs/architecture-2026/
+def _deactivate_account(firebase_uid: str) -> dict:
+    """Shared by the admin ops action and the self-service delete-account
+    endpoint below. Sets user_profiles.is_active = false (already enforced
+    on every request by require_firebase_user, docs/architecture-2026/
     02-identity-portals.md) AND revokes the user's Firebase refresh tokens,
     so their still-valid ID token can't be silently refreshed into a new
     one either -- belt-and-suspenders: is_active alone already blocks our
@@ -1464,7 +1462,14 @@ def deactivate_customer(
     roster or resolve billing) while member rows silently keep pointing at
     it. Ownership must be transferred (or members removed) first; this
     endpoint deliberately does not do that automatically, since picking a
-    new owner is a business decision, not a safe default to guess at."""
+    new owner is a business decision, not a safe default to guess at.
+
+    This is a soft delete (is_active=false), not a row-level DELETE -- no
+    hard-delete exists anywhere in this codebase yet. Matches the existing
+    admin-side deactivation pattern rather than introducing a second,
+    inconsistent deletion model; a real data-erasure pass (e.g. for a
+    formal privacy/GDPR request) is separate, deliberate work, not
+    something to bundle into a self-service button."""
     with get_conn() as conn:
         with conn.cursor() as cur:
             cur.execute(
@@ -1500,6 +1505,23 @@ def deactivate_customer(
         revoked = False
 
     return {"deactivated": True, "tokens_revoked": revoked}
+
+
+@app.post("/v1/ops/customer/{firebase_uid}/deactivate")
+def deactivate_customer(
+    firebase_uid: str, _admin: str = Depends(require_role("support_admin", "super_admin"))
+):
+    return _deactivate_account(firebase_uid)
+
+
+@app.post("/v1/me/delete-account")
+def delete_own_account(firebase_uid: str = Depends(require_firebase_user)):
+    """Self-service equivalent of deactivate_customer above, scoped to the
+    caller's own account only -- firebase_uid comes from the verified
+    token (require_firebase_user), never from a request body/path param,
+    so a signed-in user can only ever deactivate themselves, not someone
+    else's account."""
+    return _deactivate_account(firebase_uid)
 
 
 @app.post("/v1/ops/customer/{firebase_uid}/reactivate")
