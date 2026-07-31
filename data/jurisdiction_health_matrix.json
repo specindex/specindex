@@ -1098,6 +1098,66 @@
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
       "notes": "No candidate survived either the deterministic or Flash+Sonnet pass -- not yet retried standalone (was batched with 6 others, Sonnet's audit may have deprioritized it against clearer wins in the same batch)."
+    },
+    {
+      "jurisdiction": "Kankakee County, IL",
+      "county": "Kankakee",
+      "state": "IL",
+      "provider_type": "smartgov",
+      "endpoint": "https://co-kankakee-il.smartgovcommunity.com/",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Real, live SmartGov portal (200, redirects to /Public/Home) -- but it's a JS-rendered SPA shell, raw HTML is only 15KB with no permit data or links in it. Tried common REST guesses (api/permits, Public/Permits) -- both 404. Same difficulty tier as Accela/BidBuy, needs Playwright, not a simple ingest script."
+    },
+    {
+      "jurisdiction": "DeKalb County, IL",
+      "county": "DeKalb",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": "https://dekalbcounty.org/departments/community-development/building-resources/building-reports-of-construction/",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Given URL 404s."
+    },
+    {
+      "jurisdiction": "Grundy County, IL (Morris)",
+      "county": "Grundy",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": "https://www.grundycountyil.gov/document_center/index.php",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Given URL 404s."
+    },
+    {
+      "jurisdiction": "Vermilion County, IL (Danville)",
+      "county": "Vermilion",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": "https://www4.citizenserve.com/danville",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Real platform (CitizenServe) named, city (Danville) rather than county -- but this exact subdomain 404s. Second Flash candidate (vercounty.org floodplain page) also 404s and isn't permit-related anyway."
+    },
+    {
+      "jurisdiction": "Tazewell County, IL (Pekin)",
+      "county": "Tazewell",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": "https://services.arcgis.com/LIEind9C2d6XYeOY/arcgis/rest/services/Road_Closures_View/FeatureServer",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Same relevance-filter false-positive pattern as DuPage/Lake/Williamson -- the only 'relevant' deterministic hit was a Road Closures layer, not permits. Never reached Flash for this county specifically (batched with others that did)."
+    },
+    {
+      "jurisdiction": "Kendall / LaSalle / Macon Counties, IL",
+      "county": null,
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "No candidate survived either deterministic or Flash+Sonnet passes for any of these three (batched with DeKalb/Grundy/Kankakee/Tazewell/Vermilion) -- not yet retried standalone."
     }
   ]
 }
