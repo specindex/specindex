@@ -1448,6 +1448,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "City of Abilene confirmed live on MyGov (200 OK). Unincorporated county has no permitting authority. Puller not yet built."
+    },
+    {
+      "jurisdiction": "Grayson County, TX (Denison/Sherman)",
+      "county": "Grayson",
+      "state": "TX",
+      "provider_type": "mgoconnect",
+      "endpoint": "https://www.mgoconnect.org/cp?JID=195",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Denison confirmed live on MGO Connect (base domain real, 200). Grayson County itself (commercial/multi-family in unincorporated areas via Fire Marshal/Dev Services) also on MGO Connect, county-specific portal link confirmed live (200 OK). City of Sherman's claimed sherman.tx.us domain does not resolve (000) -- fabricated, real Sherman domain not yet found. Puller not yet built."
     }
   ]
 }
