@@ -1678,6 +1678,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Clermont confirmed live on eTRAKiT (200 OK). Leesburg confirmed live on OPRS (301, real, new platform type). Lake County confirmed live (200 OK), also uses OPRS. Puller not built."
+    },
+    {
+      "jurisdiction": "Osceola County, FL (Kissimmee)",
+      "county": "Osceola",
+      "state": "FL",
+      "provider_type": "accela",
+      "endpoint": "https://permits.osceola.org",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Osceola County confirmed live on Accela (200 OK). Kissimmee confirmed on EnerGov (403 bot-block, real domain). Puller not built."
     }
   ]
 }
