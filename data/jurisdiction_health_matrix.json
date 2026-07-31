@@ -1268,6 +1268,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "McAllen confirmed live on Accela (301, real). Edinburg confirmed live on EnerGov (200 OK). Puller not yet built for either."
+    },
+    {
+      "jurisdiction": "El Paso County, TX (City of El Paso)",
+      "county": "El Paso",
+      "state": "TX",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/ELPASO/Default.aspx",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of El Paso confirmed live on Accela (200 OK), plus a real city-domain redirect (301). Puller not yet built."
     }
   ]
 }
