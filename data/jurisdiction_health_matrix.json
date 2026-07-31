@@ -1946,6 +1946,26 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Live-verified: Jonesboro (largest city) uses iWorQ Systems at https://portal.iworq.net/JONESBOROAR/permits/600 -- HTTP 200 (real), plus Avolve ProjectDox for plan review (jonesboro-ar-us.avolvecloud.com, not separately curl-checked as it's a login-gated review tool, not a permit search source). No Accela anywhere in county. Brookland and Bono both have no digitized portals -- in-person/paper intake only. Unincorporated Craighead County has no general building permit portal -- only floodplain/septic via PDF forms. iWorQ has no provider class built in this pipeline -- logging discovery only per task scope, no config wired."
+    },
+    {
+      "jurisdiction": "Garland County, AR (Hot Springs)",
+      "county": "Garland",
+      "state": "AR",
+      "provider_type": "bsa_online",
+      "endpoint": "https://bsaonline.com/Home/MunicipalityHome?uid=3235",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified: Hot Springs (largest and effectively only significant city) uses BS&A Software Online at https://bsaonline.com/Home/MunicipalityHome?uid=3235 -- HTTP 200 (real). No Accela. Unincorporated Garland County does not enforce general building codes / issue building permits outside municipal boundaries -- only floodplain permits via paper/PDF. BS&A has no provider class built in this pipeline -- logging discovery only per task scope, no config wired."
+    },
+    {
+      "jurisdiction": "White County, AR (Beebe; Searcy has no portal)",
+      "county": "White",
+      "state": "AR",
+      "provider_type": "iworq",
+      "endpoint": "https://beebe.portal.iworq.net/portalhome/beebe",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified but limited: Searcy (the county's largest city) has NO digitized portal -- confirmed via cityofsearcy.org permits page, email/PDF intake only (permits@cityofsearcy.gov). Beebe (smaller city) uses iWorQ Systems at https://beebe.portal.iworq.net/portalhome/beebe -- HTTP 200 (real), covers residential/commercial/trade permits. Bald Knob has no portal -- manual intake. Unincorporated White County has no general building permit enforcement -- only floodplain/septic via paper. Net: one real but low-coverage source found (Beebe iWorQ); largest city Searcy remains a gap. iWorQ has no provider class built in this pipeline -- logging discovery only per task scope, no config wired."
     }
   ]
 }
