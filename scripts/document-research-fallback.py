@@ -41,7 +41,20 @@ from gemini_discovery_chat import send  # noqa: E402
 ROOT = _SCRIPTS.parent
 RAW_DIR = ROOT / "data" / "raw"
 USER_AGENT = "Mozilla/5.0 SpecIndex-DocumentBot/1.0 (+https://specindex.ai)"
-REJECTED_CONTENT_TYPES = ("text/html",)
+
+# A blanket "reject all text/html" rule was rejecting real, specific
+# government record pages (e.g. TDLR TABS project registration pages --
+# manually confirmed real for Harris County TX earlier this session, then
+# auto-rejected here on a later run) alongside genuine error/login/homepage
+# junk. Distinguish them instead: reject only when the final URL or body
+# actually looks like an error/login/generic-landing page.
+ERROR_PAGE_SIGNALS = (
+    "page not found", "404 not found", "requested entity was not found",
+    "please sign in", "please log in", "you must be logged in",
+    "login required", "session expired", "access denied",
+)
+GENERIC_URL_PATH_SIGNALS = ("/error", "/login", "/signin", "/notfound", "/404", "/home", "/search")
+MIN_HTML_RECORD_BYTES = 800
 
 PROMPT_TEMPLATE = """You are researching named commercial/industrial construction \
 projects in {county} County, {state}, within {lookback}.
@@ -100,11 +113,30 @@ def fetch_and_check(url: str, timeout: int = 30) -> tuple[bool, str]:
         with urllib.request.urlopen(req, timeout=timeout) as resp:
             content_type = resp.headers.get("Content-Type", "").split(";")[0].strip().lower()
             data = resp.read()
+            final_url = resp.geturl()
     except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError) as e:
         return False, f"dead ({e})"
-    if content_type in REJECTED_CONTENT_TYPES:
-        return False, f"rejected (served as {content_type}, not a document)"
-    return True, f"real ({content_type}, {len(data):,} bytes)"
+
+    if content_type != "text/html":
+        return True, f"real file ({content_type}, {len(data):,} bytes)"
+
+    # text/html: could be a genuine, specific government record page (a
+    # TDLR/HFSRB-style filing, a Legistar/agenda-item detail page) or a
+    # generic error/login/landing page. Reject the latter, accept the
+    # former as a real citable source, not a downloadable file.
+    final_path = final_url.lower()
+    if any(sig in final_path for sig in GENERIC_URL_PATH_SIGNALS):
+        return False, f"rejected (redirected to a generic page: {final_url})"
+    path_after_domain = re.sub(r"^https?://[^/]+/?", "", final_url).strip("/")
+    if len(path_after_domain) < 4:
+        return False, f"rejected (bare homepage, no specific record path: {final_url})"
+    if len(data) < MIN_HTML_RECORD_BYTES:
+        return False, f"rejected (HTML body too short to be a real record page, {len(data)} bytes)"
+    body_lower = data.decode("utf-8", errors="ignore").lower()
+    hit = next((sig for sig in ERROR_PAGE_SIGNALS if sig in body_lower), None)
+    if hit:
+        return False, f"rejected (page body contains error/login signal {hit!r})"
+    return True, f"real citable record page (html, {len(data):,} bytes)"
 
 
 def structured_prompt_suffix() -> str:
