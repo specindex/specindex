@@ -963,11 +963,11 @@
       "jurisdiction": "DuPage County, IL",
       "county": "DuPage",
       "state": "IL",
-      "provider_type": null,
-      "endpoint": null,
+      "provider_type": "energov",
+      "endpoint": "https://napervilleil-energovweb.tylerhost.net/apps/SelfService#/home",
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
-      "notes": "Deterministic ArcGIS search's only 'relevant' hit (county name matched) was an Off-Leash Dog Parks layer -- a false positive the relevance filter passed on name-match alone, with no topical check. This wrongly marked the county 'resolved' and skipped it past the Flash fallback; never actually search-grounded. IL building permits are municipal, not county-level -- next attempt should target Naperville/Wheaton directly."
+      "notes": "Deterministic ArcGIS search's only 'relevant' hit (county name matched) was an Off-Leash Dog Parks layer -- a false positive the relevance filter passed on name-match alone, with no topical check. This wrongly marked the county 'resolved' and skipped it past the Flash fallback; never actually search-grounded. IL building permits are municipal, not county-level -- next attempt should target Naperville/Wheaton directly. RESOLVED 2026-07-31 (city-level retry, City of Naperville -- largest city in county): real, live Tyler EnerGov Civic Access portal confirmed (200 OK via direct curl). This is a genuine structured-source candidate, one of the 8 recognized platform types -- NOT yet wired as a real provider (needs an EnerGov-specific puller built and tested, likely Playwright-level since Civic Access is a client-rendered SPA with no obvious REST API), so status stays FAILED_NEED_ALT until that happens rather than VERIFIED_WORKING, but this is real remaining upside, not a dead end like most of this batch."
     },
     {
       "jurisdiction": "Lake County, IL",
