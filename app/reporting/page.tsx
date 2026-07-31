@@ -248,7 +248,7 @@ export default async function ReportingPage() {
             you exactly what the index holds on them today, including the gaps.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <RequestDemoButton className="btn btn-primary" />
+            <RequestDemoButton className="btn btn-demo" />
             <Link href="/projects/" className="btn btn-outline">
               Search the index
             </Link>
