@@ -920,6 +920,46 @@
       "notes": "Genuine dead end -- Cheyenne uses closed OpenGov, county uses Granicus SmartGov, neither exposes a public API. CLC GISC regional GIS has parcels/building footprints only, no permits. County publishes static monthly PDF reports as the only bulk-ish option."
     },
     {
+      "jurisdiction": "Kendall County, IL",
+      "county": "Kendall",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Gemini first cited gis.kendall.il.us/arcgis/... -- NXDOMAIN, fabricated. On feedback, correctly found neither Kendall County (manual paper/PDF permits, FOIA-only for GIS) nor Village of Oswego (largest municipality) publish an open API/Socrata/ArcGIS permit feed. kendallcountyil.gov and oswegoil.org both live (403 bot-block, not fake). Step 6 research fallback run 2026-07-31: 7 named projects found (dominated by large data-center campuses -- CyrusOne, Prologis, Pioneer Development, Equinix), 4 largest independently cross-checked and CONFIRMED, findings written to data/raw/il-kendall-research-fallback.json, NOT loaded into corpus yet (no load path built). 6-month-window re-run (2026-01-31 to 2026-07-31) 2026-07-31: surfaced 1 new project not in the broader pass (Meyer Data Center Campus -- denied by P&Z Jan 2026, withdrawn Apr 2026), plus a real Equinix cost/size discrepancy across the two passes that was independently reconciled (both figures true, different completeness levels, not an error) -- findings in data/raw/il-kendall-research-fallback-6mo.json, not loaded."
+    },
+    {
+      "jurisdiction": "LaSalle County, IL",
+      "county": "LaSalle",
+      "state": "IL",
+      "provider_type": "cloudpermit",
+      "endpoint": "https://us.cloudpermit.com/gov/login",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "City of Ottawa (largest city) confirmed via cited cityofottawa.org text to use Cloudpermit for all permitting, public records viewable 24/7 -- first new platform type seen (not yet one of the 8 wired providers). NOT YET VERIFIED at browser level (curl redirects are inconclusive for this SPA/SSO login flow, doc convention requires Playwright for this). lasallecounty.org/arcgis/rest/services does not resolve (TLS hang); gis-lasallecoil.opendata.arcgis.com loads but has no configured catalog (empty). Peru and LaSalle city: PDF/email only, no digital platform. Next step: Playwright against us.cloudpermit.com to confirm Ottawa is selectable and permit records are actually public before treating as VERIFIED_WORKING or building a provider."
+    },
+    {
+      "jurisdiction": "Whiteside County, IL",
+      "county": "Whiteside",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Whiteside County (manual, in-person only), City of Sterling (submission portal but no open data feed), City of Rock Falls (email/paper only) -- all three real domains (301s), none publish an API or open permit dataset. County ArcGIS platform exists but only for parcels/zoning/floodplain, no permit layer."
+    },
+    {
+      "jurisdiction": "McLean County, IL",
+      "county": "McLean",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "No digitized structured permit source at county or Bloomington/Normal level. Step 6 research fallback run 2026-07-31 with new pullable-document/drawing check: 5 named projects found (Rivian supplier park, OSF ICU expansion, Connect Transit center, Heartland CC training center, Ferrero plant expansion). Live-verified document pull: 2/2 Rivian PUD/site-plan PDFs on normalil.gov real and downloaded (3.68MB), 3/3 first-pass OSF HFSRB document URLs fabricated (404s, caught and corrected -- HFSRB uses a dynamic database, not static permalinks). Findings in data/raw/il-mclean-research-fallback.json, not loaded into corpus. Documents actually pulled to GCS 2026-07-31 via new scripts/fetch-research-fallback-documents.py: 2 real Rivian/Town of Normal PDFs (council + planning commission packets w/ site plan and architectural drawings) uploaded to gs://specindex-ai-raw-documents/illinois/mclean/rivian-automotive-supplier-park-plant-expansion/, 3.71MB total."
+    },
+    {
       "jurisdiction": "DuPage County, IL",
       "county": "DuPage",
       "state": "IL",
@@ -976,8 +1016,8 @@
       "provider_type": null,
       "endpoint": null,
       "state_agent_pipeline_key": null,
-      "status": "FAILED_NEED_ALT",
-      "notes": "Flash's candidate was dropped entirely by the Sonnet audit pass (0 of the county's candidates kept) -- not yet re-investigated with a direct city-level query (Springfield)."
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Re-investigated with direct Springfield city-level query 2026-07-31 (prior note flagged this as not yet tried). Gemini first cited 4 fabricated URLs (springfield.il.us/PublicAccess/, maps.springfield.il.us ArcGIS root + 2 sub-endpoints), all 404, caught and corrected. Confirmed no digitized permit system at Springfield or Sangamon County level -- both real domains (200), manual/PDF-only. Step 6 research fallback run: 5 named projects found (Legacy Pointe sports complex, CyrusOne data center, REEL USA manufacturing, Springfield-Sangamon Transportation Center, BOS Center/hotel expansion). Document check: 0/3 claimed pullable documents verified real -- 2 were generic county pages with only site-wide nav-footer PDFs, 1 was a dead 404. Findings in data/raw/il-sangamon-research-fallback.json, not loaded, cost/SF/date facts not yet independently cross-checked (only the document claims were verified this round)."
     },
     {
       "jurisdiction": "Peoria County, IL (Peoria)",
