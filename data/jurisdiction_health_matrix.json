@@ -1298,6 +1298,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "City of Laredo confirmed live on Click2Gov (CentralSquare/Superion, 200 OK), plus Avolve/ProjectDox for e-plan review. 6th new platform type tonight. Puller not built."
+    },
+    {
+      "jurisdiction": "McLennan County, TX (City of Waco)",
+      "county": "McLennan",
+      "state": "TX",
+      "provider_type": "energov",
+      "endpoint": "https://selfservice.wacotx.gov/EnerGov/SelfService/#/home",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Waco confirmed live on EnerGov (200 OK). Puller not yet built."
     }
   ]
 }
