@@ -663,11 +663,12 @@
       "jurisdiction": "Shelby County, TN (Memphis)",
       "county": "Shelby",
       "state": "TN",
-      "provider_type": null,
-      "endpoint": null,
-      "state_agent_pipeline_key": null,
-      "status": "FAILED_NEED_ALT",
-      "notes": "Gemini gave two fabricated/dead domains in a row: 'datamidsouth.org' (DNS failure, does not resolve) and 'aca.memphistn.gov' (also does not resolve). Real Memphis open data portal (data.memphistn.gov) exists but is an ArcGIS Hub with no queryable permit FeatureServer -- the 'DPD Building Permits' tile just links out to develop901.com. Real upstream system is Develop901 (Accela-based) but the real Accela agency code/domain hasn't been found yet -- worth a fresh live-search attempt (try aca-prod.accela.com/{MEMPHIS,SHELBY,DEVELOP901} variants) before ruling out entirely, same pattern that found SLCREF for Salt Lake City."
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/SHELBYCO",
+      "state_agent_pipeline_key": "TN-SHELBY",
+      "status": "VERIFIED_WORKING",
+      "notes": "RESOLVED 2026-07-31, following up on the prior FAILED_NEED_ALT lead below. Gemini (grounded, tn_batch1 session) named the real agency code as SHELBYCO -- none of the earlier guessed variants (MEMPHIS/SHELBY/DEVELOP901). Live-verified: aca-prod.accela.com/SHELBYCO/Cap/CapHome.aspx?module=Building returns 200 with a real 50-option permit-type dropdown; used 'Commercial New Construction Permit' (broadest non-residential/non-trade-specific catch-all -- other Commercial-prefixed options are trade-specific Electrical/Mechanical/Plumbing/Accessory/Addition/Alteration). Dry-run fetched 100 real rows (90-day lookback); --merge-state added 51 new rows into tn.json (total 1763). Covers City of Memphis + Arlington/Germantown/Lakeland/Millington + unincorporated Shelby County under one Accela agency, per Develop901's own coverage description. Prior dead-end context preserved: Gemini's original two guesses ('datamidsouth.org', 'aca.memphistn.gov') were fabricated/non-resolving; data.memphistn.gov ArcGIS Hub has no queryable permit FeatureServer. Document check (step 6 style, tn_shelby_docs session): 5 real named LUCB/City Council planning-board projects found (case numbers MJR 2026-010, MJR 2026-009, SUP 2026-008, ZTA 2026-002, S 2026-016) but 0/5 had a directly pullable document URL -- all behind a dynamic agenda-packet portal with no static PDF link. documents_confirmed=0.",
+      "records_merged": 51
     },
     {
       "jurisdiction": "Oklahoma County, OK (Oklahoma City)",
@@ -2672,6 +2673,136 @@
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
       "notes": "Cumberland County GIS (gis.co.cumberland.nc.us, real domain) has no permit-records layer -- Planning/EnerGovMap only exposes inspection-zone boundaries, not case records. County Socrata domain (cumberlandcounty-nc-cc.connect.socrata.com) resolves live but has zero datasets in the catalog API. City of Fayetteville ArcGIS Permits MapServer/0 (gismaps.ci.fayetteville.nc.us/opendata/rest/services/DevelopmentServices/SPA_Dashboard_Permits/MapServer/0, live-verified, MAX(DATE_INITIATED) fresh as of 2026-07-30) is dominated by Solid Waste code-enforcement cases -- only 16 rows total match CASE_TYPE_DESC LIKE Building, too thin to be a real commercial permit feed. Not wired. Live permitting appears to run through Fayetteville IDT Plans (fayetteville.idtplans.com) and County EnerGov CSS, both login-gated with no public REST API found."
+    },
+    {
+      "jurisdiction": "Knox County, TN (Knoxville)",
+      "county": "Knox",
+      "state": "TN",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Gemini's aca.knoxvilletn.gov guess does not resolve (DNS failure, confirmed live curl). knoxplanning.org/data/open-data is real (200) but its ArcGIS org (knoxgis.maps.arcgis.com) only hosts zoning/parks/greenways FeatureServers -- no permit or development-activity layer found via item-metadata probe of every open-data-page link, nor via org search for 'permit'. City of Knoxville's own licenses_permits_inspections page lists only PDF-form permits (beer, ROW, mobile food, fire) with no online application/search system found. knoxcountytn.gov itself failed to resolve (000) at check time. Document check (batched with Williamson/Montgomery/Sumner/Sullivan) came back generic/non-specific -- no real named projects found, not logged. Not fully exhausted -- worth a feedback-loop Gemini round targeting Knox County Codes Administration specifically."
+    },
+    {
+      "jurisdiction": "Sumner County, TN (Gallatin/Hendersonville)",
+      "county": "Sumner",
+      "state": "TN",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "City of Hendersonville confirmed on Tyler EnerGov (hendersonvilletn-energovweb.tylerhost.net/apps/SelfService, 200 live). Wired TN-HENDERSONVILLE config and hit two real, fixed-in-place provider bugs (scripts/state_agent_pipeline/core/ingestion/energov_provider.py): a blocking #globalMessageDialog modal intercepted the Search button click (added a dismiss-before-click step, now generic to all EnerGov tenants) and the retry click needed force=True to get past the same modal reappearing. After both fixes the click succeeds but the search API response still comes back with a null Result both times -- tenant likely needs a different default SearchModule value or has no public unauthenticated search configured; not resolved this session, real remaining scope. City of Gallatin (gallatintn.gov, 200 live) claims a Customer Self Service portal under Planning & Building but no direct EnerGov/Accela URL found yet. County-level (unincorporated Sumner) confirmed PDF/manual-only, plus TDEC septic portal for environmental only. Document check came back generic/non-specific, not logged."
+    },
+    {
+      "jurisdiction": "Williamson County, TN (Franklin)",
+      "county": "Williamson",
+      "state": "TN",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Both City of Franklin and Williamson County use GeoCivix electronic plan review (franklintn.geocivix.com/secure, williamson.geocivix.com/secure -- both confirmed live 200, Gemini's original 'idtplans.com' guess actually redirects to these geocivix.com domains). Both are login-gated secure portals (empty page/no public title on curl fetch, consistent with an auth-only SPA) -- no public unauthenticated search/records endpoint found. Document check came back generic/non-specific, not logged. Not deeply Playwright-probed this session for a possible public-read mode; worth a follow-up before ruling out entirely."
+    },
+    {
+      "jurisdiction": "Montgomery County, TN (Clarksville)",
+      "county": "Montgomery",
+      "state": "TN",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Gemini found only parcel/boundary GIS services (gis.apsu.edu MontViewer FeatureServer, mcgtn.org ClarksvilleBoundary MapServer), not a permit dataset. City of Clarksville reportedly uses EnerGov/Tyler Civic Access Self Service under clarksvilletn.gov (200 live) but the exact selfservice subdomain wasn't confirmed this session. Document check came back generic/non-specific, not logged. Real remaining scope: find Clarksville's exact EnerGov tenant URL and probe it with the (now modal-aware) energov_provider.py."
+    },
+    {
+      "jurisdiction": "Sullivan County, TN (Kingsport/Bristol)",
+      "county": "Sullivan",
+      "state": "TN",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Gemini found only unrelated ArcGIS Hub sites (Bristol MPO transportation hub, Kingsport lead-service-line inventory) -- no permit dataset. Document check came back generic/non-specific, not logged. Not deeply probed for Accela/EnerGov this session; real remaining scope."
+    },
+    {
+      "jurisdiction": "Washington County, TN (Johnson City)",
+      "county": "Washington",
+      "state": "TN",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Gemini-claimed Johnson City ArcGIS opendata hub (data-jcgis.opendata.arcgis.com) 404s live -- fabricated/dead URL, caught via curl. No permit dataset found. Document research fallback not run this session (time budget). Not deeply probed for Accela/EnerGov; real remaining scope."
+    },
+    {
+      "jurisdiction": "Madison County, TN (Jackson)",
+      "county": "Madison",
+      "state": "TN",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Gemini reports no Socrata/CKAN/ArcGIS Hub open-data feed for Madison County or City of Jackson; permitting is PDF/form-based only. Not independently live-verified beyond the Gemini claim this session (no positive URL to check) -- treat as provisional NO_PUBLIC_DATA pending a direct Accela/EnerGov-specific follow-up query. Document research fallback not run this session (time budget)."
+    },
+    {
+      "jurisdiction": "Blount County, TN (Maryville/Alcoa)",
+      "county": "Blount",
+      "state": "TN",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Gemini-claimed blountgis.org/arcgis/rest/services/ directory returns a non-JSON response on ?f=json (not a working ArcGIS REST root as claimed) -- caught via live curl. No permit dataset found. Document research fallback not run this session (time budget). Real remaining scope: retry with a corrected root URL or Accela/EnerGov-specific query."
+    },
+    {
+      "jurisdiction": "Bradley County, TN (Cleveland TN)",
+      "county": "Bradley",
+      "state": "TN",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Gemini found only an ArcGIS web-map group page (arcgis.com/home/group.html), not a queryable FeatureServer/REST API -- no permit dataset. Document research fallback not run this session (time budget). Not deeply probed for Accela/EnerGov; real remaining scope."
+    },
+    {
+      "jurisdiction": "Sevier County, TN (Pigeon Forge/Gatlinburg/Sevierville)",
+      "county": "Sevier",
+      "state": "TN",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Sevier County Public GIS Hub (sevier-county-gis-public-sc-gis.hub.arcgis.com) confirmed live (200) but its DCAT feed lists 0 datasets -- empty catalog, no permit data. Document research fallback not run this session (time budget). Real remaining scope: check individual city (Sevierville/Pigeon Forge/Gatlinburg) permit systems directly, not yet probed."
+    },
+    {
+      "jurisdiction": "Maury County, TN (Columbia/Spring Hill)",
+      "county": "Maury",
+      "state": "TN",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Gemini reports no open-data REST/Socrata/CKAN portal for Maury County, Columbia, or Spring Hill; Columbia Development Services relies on tnmap.tn.gov (statewide parcel viewer, not a permit feed) plus offline requests. Not independently live-verified beyond the Gemini claim this session -- provisional, pending an Accela/EnerGov-specific follow-up (Spring Hill in particular is a fast-growing Nashville-adjacent suburb, worth a second look). Document research fallback not run this session (time budget)."
+    },
+    {
+      "jurisdiction": "Wilson County, TN (Lebanon/Mt Juliet)",
+      "county": "Wilson",
+      "state": "TN",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Wilson County GIS explicitly paywalls shapefile/geodatabase downloads ($75/layer); Mt. Juliet publishes only an administrative-boundary ArcGIS item, not a permit dataset. No permit feed found. Document research fallback not run this session (time budget). Real remaining scope: Accela/EnerGov-specific follow-up for City of Lebanon/Mt. Juliet, not yet probed."
+    },
+    {
+      "jurisdiction": "Robertson County, TN (Springfield TN)",
+      "county": "Robertson",
+      "state": "TN",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Gemini reports no Socrata/CKAN/ArcGIS Hub open-data portal for Robertson County or City of Springfield TN; permitting/planning is paper/PDF-based. Not independently live-verified beyond the Gemini claim this session -- provisional. Document research fallback not run this session (time budget)."
     }
   ]
 }

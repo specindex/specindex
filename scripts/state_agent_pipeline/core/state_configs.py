@@ -2231,6 +2231,49 @@ CT_HARTFORD_ACCELA_CONFIG: dict[str, Any] = {
 }
 STATE_CONFIGS["CT-HARTFORD"] = CT_HARTFORD_ACCELA_CONFIG
 
+# Shelby County, TN (Memphis) -- Accela agency code SHELBYCO, confirmed
+# live 2026-07-31 (prior session's SHELBY/MEMPHIS/DEVELOP901 variant
+# guesses were all wrong; SHELBYCO is the real code, found via Gemini +
+# live curl verification: aca-prod.accela.com/SHELBYCO/Cap/CapHome.aspx?
+# module=Building returns 200 with a real permit-type dropdown).
+# module=Building has 50 real options; "Commercial New Construction
+# Permit" is the broadest non-residential/non-trade-specific catch-all
+# (other Commercial-prefixed options are trade-specific: Electrical/
+# Mechanical/Plumbing/Accessory/Addition/Alteration). Covers City of
+# Memphis + Arlington/Germantown/Lakeland/Millington + unincorporated
+# Shelby County under one Accela agency, per Develop901's own coverage
+# description.
+TN_SHELBY_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "TN",
+    "provider_type": "accela",
+    "county": "Shelby",
+    "endpoint": "https://aca-prod.accela.com/SHELBYCO",
+    "permit_type_label": "Commercial New Construction Permit",
+    "lookback_days": 90,
+}
+STATE_CONFIGS["TN-SHELBY"] = TN_SHELBY_ACCELA_CONFIG
+
+# City of Hendersonville, TN (Sumner County) -- Tyler EnerGov Citizen Self
+# Service, same tylerhost.net/apps/selfservice pattern as the CA EnerGov
+# tenants above. Live-verified 2026-07-31: hendersonvilletn-energovweb.
+# tylerhost.net/apps/SelfService resolves 200. tenant_id left at provider
+# default "1" (unconfirmed -- El Monte/Glendale/etc. all also used "1";
+# no live UI probe done yet to confirm this tenant's actual ID). Search
+# still returns a null Result after fixing the blocking modal (see
+# energov_provider.py) -- kept registered for future debugging, but see
+# jurisdiction_health_matrix.json: Sumner stays FAILED_NEED_ALT.
+TN_HENDERSONVILLE_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "TN",
+    "provider_type": "energov",
+    "county": "Sumner",
+    "endpoint": "https://hendersonvilletn-energovweb.tylerhost.net",
+    "tenant_id": "1",
+    "tenant_name": "Hendersonville",
+    "lookback_days": 90,
+    "max_pages": 5,
+}
+STATE_CONFIGS["TN-HENDERSONVILLE"] = TN_HENDERSONVILLE_ENERGOV_CONFIG
+
 # SAM.gov + USAspending for all 50 states (2026-07-28, Asif: "pull all
 # data from USAspending and sam.gov"). Both providers are already
 # architecturally per-state -- GA_SAM_CONFIG/GA_USASPENDING_CONFIG above
