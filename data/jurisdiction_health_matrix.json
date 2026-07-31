@@ -1398,6 +1398,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "City of Odessa confirmed on MGO Connect, same validated platform as Bell/Randall/Potter. Puller not yet built."
+    },
+    {
+      "jurisdiction": "Gregg County, TX (City of Longview)",
+      "county": "Gregg",
+      "state": "TX",
+      "provider_type": "cityworks",
+      "endpoint": "https://cloud.longviewtexas.gov/OnlinePermits/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Longview confirmed live on Cityworks (200 OK). Puller not yet built."
     }
   ]
 }
