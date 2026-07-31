@@ -1688,6 +1688,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Osceola County confirmed live on Accela (200 OK). Kissimmee confirmed on EnerGov (403 bot-block, real domain). Puller not built."
+    },
+    {
+      "jurisdiction": "St. Lucie County, FL (Port St. Lucie)",
+      "county": "St. Lucie",
+      "state": "FL",
+      "provider_type": "energov",
+      "endpoint": "https://stluciecountyfl-energovpub.tylerhost.net/Apps/SelfService#/home",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "St. Lucie County confirmed live on EnerGov (200 OK). Port St. Lucie confirmed on Panda Online Permitting (302, real, new platform type). Puller not built."
     }
   ]
 }
