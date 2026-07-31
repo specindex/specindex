@@ -1478,6 +1478,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Forney confirmed live on MyGov (200 OK). Terrell confirmed live on CivicGov (200 OK, new platform type). Unincorporated county confirmed on MGO Connect. Puller not yet built."
+    },
+    {
+      "jurisdiction": "Ellis County, TX (City of Waxahachie)",
+      "county": "Ellis",
+      "state": "TX",
+      "provider_type": "energov",
+      "endpoint": "https://waxahachietx-energovpub.tylerhost.net/Apps/SelfService#/home",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Waxahachie confirmed live on EnerGov (200 OK). Puller not yet built."
     }
   ]
 }
