@@ -1238,6 +1238,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Sugar Land confirmed live on EnerGov (200 OK). Missouri City portal page 403s (bot-block, real domain) -- also EnerGov-branded MCTX Self Service. Puller not built."
+    },
+    {
+      "jurisdiction": "Montgomery County, TX (Conroe/The Woodlands)",
+      "county": "Montgomery",
+      "state": "TX",
+      "provider_type": "opengov",
+      "endpoint": "https://conroetx.portal.opengov.com",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Conroe confirmed live on OpenGov (200 OK, migrated from BluePrince Dec 2025). The Woodlands Township confirmed live on EnerGov Civic Access (200 OK). Unincorporated county has no general commercial permitting authority in TX (fire marshal/health only). Puller not yet built for either."
     }
   ]
 }
