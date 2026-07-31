@@ -1638,6 +1638,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Escambia County confirmed live via myescambia.com (200 OK), uses MGO Connect (also confirmed real, 200). Pensacola's specific permit page 404s but is on the same real cityofpensacola.com domain -- exact path not yet found. Puller not built."
+    },
+    {
+      "jurisdiction": "Santa Rosa County, FL",
+      "county": "Santa Rosa",
+      "state": "FL",
+      "provider_type": "mgo",
+      "endpoint": "https://www.mygovernmentonline.org",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Santa Rosa County confirmed on MyGovernmentOnline (301, real), county domain also confirmed (200). Puller not built."
     }
   ]
 }
