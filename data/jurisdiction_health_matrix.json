@@ -2126,6 +2126,36 @@
       "status": "FAILED_NEED_ALT",
       "notes": "Gemini-suggested URL live-verified 404 on curl 2026-07-31 -- fabricated/stale path. City is confirmed via general knowledge to use Tyler EnerGov but the correct live endpoint was not found this session (deprioritized after Longmont/Boulder-County-unincorporated Accela blockers consumed the time budget for this county).",
       "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "City of Lone Tree, CO (Douglas County) -- Accela",
+      "county": "Douglas",
+      "state": "CO",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/LONETREE",
+      "status": "FAILED_NEED_ALT",
+      "notes": "Live-verified 2026-07-31: 200, real portal, real nav (Building Permits/Planning/Zoning/Public Works via Playwright). Real module is module=Permits&TabName=Home (not Building). However the standard permit-type dropdown selector (#...ddlGSPermitType) was not found on that page -- different UI structure than other CO deployments checked this session. Not pursued further given time budget; also Lone Tree is a small city (~14k pop), not the main Douglas County permit volume driver.",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "Town of Castle Rock, CO (Douglas County, county seat) -- eTRAKiT",
+      "county": "Douglas",
+      "state": "CO",
+      "provider_type": "etrakit",
+      "endpoint": "https://etrakit.crgov.com/eTRAKiT",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified 2026-07-31: 200. Real CentralSquare eTRAKiT portal. No eTRAKiT provider class in pipeline -- discovery-only, not wired.",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "Douglas County (unincorporated incl. Highlands Ranch), CO -- custom eSubmittal",
+      "county": "Douglas",
+      "state": "CO",
+      "provider_type": "custom",
+      "endpoint": "https://apps.douglas.co.us/apps/buildingonlineservices/",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified 2026-07-31: 200. Real custom in-house Douglas County Building Online Services portal (not a known reusable provider type -- Accela/Socrata/ArcGIS/etc). Discovery-only, no provider class exists for this platform.",
+      "state_agent_pipeline_key": null
     }
   ]
 }
