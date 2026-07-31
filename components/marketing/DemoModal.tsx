@@ -136,9 +136,7 @@ function DemoRequestModal({ persona, onClose }: { persona: DemoPersona; onClose:
       setSubmitted(true);
     } catch (err) {
       setError(
-        err instanceof Error
-          ? `${err.message} — email us directly at hello@specindex.ai instead.`
-          : "Something went wrong — email us directly at hello@specindex.ai instead."
+        err instanceof Error ? err.message : "Something went wrong. Please try again."
       );
     } finally {
       setPending(false);
@@ -178,11 +176,7 @@ function DemoRequestModal({ persona, onClose }: { persona: DemoPersona; onClose:
         {submitted ? (
           <p className="mt-5 rounded-md bg-[var(--color-green-light)] px-4 py-3 text-sm text-[var(--color-green)]">
             Thanks — we&apos;ve got your request and will follow up within one business
-            day. You can also write to us directly at{" "}
-            <a href="mailto:hello@specindex.ai" className="underline">
-              hello@specindex.ai
-            </a>
-            .
+            day.
           </p>
         ) : (
           <form className="mt-5" onSubmit={handleSubmit}>

@@ -16,7 +16,6 @@ const MARKETING_NAV = [
   { href: "/visibility/", label: "Visibility" },
   { href: "/reporting/", label: "Reporting" },
   { href: "/how-it-works/", label: "How It Works" },
-  { href: "/pricing/", label: "Pricing" },
   { href: "/about/", label: "About" },
 ];
 
@@ -172,12 +171,6 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-3">
-          <a
-            href="mailto:hello@specindex.ai"
-            className="hidden text-sm text-[var(--color-gray-600)] hover:text-[var(--color-ink)] xl:inline"
-          >
-            hello@specindex.ai
-          </a>
           {FIREBASE_AUTH_ENABLED ? (
             <AuthAwareActions />
           ) : (
