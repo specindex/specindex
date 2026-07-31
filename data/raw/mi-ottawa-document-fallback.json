@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Ottawa",
+  "state": "MI",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 5,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Chinook Pier Redevelopment",
+      "city_address": "301 N Harbor Dr, Grand Haven, MI 49417",
+      "project_type": "Commercial / Mixed-Use",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Chinook Pier Development Team / City of Grand Haven",
+      "status": "Under Review / Pre-public hearing site plan discussion",
+      "document_url": "",
+      "document_type": "City Planning Commission Work Session Agenda & Memo",
+      "source_citation": "City of Grand Haven Planning Commission Work Session Agenda & Planner Report (July 14, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Polyply Composites Facility Expansion & Retaining Wall",
+      "city_address": "1540 Marion Ave, Grand Haven, MI 49417",
+      "project_type": "Industrial / Manufacturing",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Polyply Composites / Jon Newmyer",
+      "status": "Special Land Use Under Review / Construction Permits Processing",
+      "document_url": "",
+      "document_type": "City Planning Commission Agenda & Public Hearing Notice",
+      "source_citation": "City of Grand Haven Planning Commission Meeting Agenda & Public Hearing Notice (July 14, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Paradigm Dog School Facility",
+      "city_address": "3225 132nd Ave, Holland, MI 49424",
+      "project_type": "Commercial",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Robert Crough (Paradigm Dog School) / Deb Lewis (Heitman Properties LLC)",
+      "status": "Special Land Use Permit Under Review",
+      "document_url": "",
+      "document_type": "Township Planning Commission Agenda",
+      "source_citation": "Holland Charter Township Planning Commission Meeting Agenda (July 7, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Woodlands Crossing",
+      "city_address": "12330 James St, Holland, MI 49424",
+      "project_type": "Commercial / Mixed-Use Planned Unit Development",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Nick Nykerk (HBPC-OB LLC)",
+      "status": "Preliminary Development Plan Review",
+      "document_url": "",
+      "document_type": "Township Planning Commission Agenda",
+      "source_citation": "Holland Charter Township Planning Commission Meeting Agenda (July 7, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Holland Charter Township Public Works Facility Renovation and Expansion",
+      "city_address": "Holland, MI 49424",
+      "project_type": "Commercial / Municipal Infrastructure",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Holland Charter Township",
+      "status": "Bidding / Under Consideration",
+      "document_url": "",
+      "document_type": "Township Board Meeting Packet",
+      "source_citation": "Holland Charter Township Board Packet (July 16, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

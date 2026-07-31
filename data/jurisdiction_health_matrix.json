@@ -2467,7 +2467,7 @@
       "endpoint": "https://bsaonline.com",
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
-      "notes": "County GIS hub (gis.oakgov.com) has parcel/zoning layers but no permit FeatureServer -- county explicitly states permitting is a local-community responsibility. All checked cities (Troy, Southfield, Farmington Hills, Novi, Rochester Hills, Auburn Hills) run BS&A Online, an interactive-only portal with no public REST API or bulk feed. Pontiac uses a plain department page, no portal at all. No live structured source found."
+      "notes": "County GIS hub (gis.oakgov.com) has parcel/zoning layers but no permit FeatureServer -- county explicitly states permitting is a local-community responsibility. All checked cities (Troy, Southfield, Farmington Hills, Novi, Rochester Hills, Auburn Hills) run BS&A Online, an interactive-only portal with no public REST API or bulk feed. Pontiac uses a plain department page, no portal at all. No live structured source found. RE-VERIFIED 2026-07-31 (per instruction to individually re-check the batched Gemini finding): live curl of gis.oakgov.com/arcgis/rest/services returned 404 (no ArcGIS REST catalog); curl of aca-prod.accela.com/troy/Default.aspx and /southfield/Default.aspx both 404 (no Accela deployment, ruling out a Grand-Rapids-style city-level exception); ArcGIS Hub search API for 'Oakland County Michigan permits' returned only a SEMCOG building-footprints layer, not a permits dataset; bsaonline.com confirmed live (200) as the dominant real platform. Batched dead-end finding stands on independent re-check. DOCUMENTS (part 2, 2026-07-31): document-research-fallback.py found 5 named projects (FANUC America Robotics & Advanced Manufacturing Facility Expansion in Pontiac; $130M Pontiac Redevelopment/Judson Building; $87M Lear Corp Seat Assembly Facility in Auburn Hills; The Townes at Haggerty multi-family in Novi; Forma Beauty Salon Expansion JSP26-14 in Novi). documents_confirmed=0/5 -- no pullable document URL found/verified for any. Recorded as leads only per output file data/raw/mi-oakland-document-fallback.json; NOT independently cross-checked per Phase II step 6b, do not treat cost/date facts as confirmed."
     },
     {
       "jurisdiction": "Macomb County, MI (Warren, Sterling Heights, Clinton Twp)",
@@ -2477,7 +2477,7 @@
       "endpoint": "https://bsaonline.com",
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
-      "notes": "No countywide permitting; Warren, Sterling Heights, Clinton Township all use BS&A Online (interactive search only, no API). No ArcGIS FeatureServer or Socrata feed identified by Gemini-assisted discovery. Not yet independently re-probed for a city-specific ArcGIS Hub the same way Grand Rapids' Accela deployment was found for Kent -- worth a follow-up pass."
+      "notes": "No countywide permitting; Warren, Sterling Heights, Clinton Township all use BS&A Online (interactive search only, no API). No ArcGIS FeatureServer or Socrata feed identified by Gemini-assisted discovery. RE-VERIFIED 2026-07-31: live curl of aca-prod.accela.com/warren/Default.aspx returned 404 -- no city-level Accela exception found (the follow-up this entry previously flagged as unexplored). bsaonline.com confirmed live (200). No ArcGIS/Socrata alternative surfaced. Batched dead-end finding stands on independent re-check. DOCUMENTS (part 2, 2026-07-31): document-research-fallback.py found 6 named projects ($163M SAPA Transmission Advanced Manufacturing Expansion in Shelby Twp; $270.7M Lakeside Town Center redevelopment of the former Lakeside Mall in Sterling Heights; DiMercurio Industrial Building Phase II; $23.7M CQT Weapon Systems Expansion; Marios Company Trucking Facility; Lake Michigan Credit Union Branch, both in Macomb Twp). documents_confirmed=0/6. Recorded as leads only in data/raw/mi-macomb-document-fallback.json; NOT independently cross-checked per Phase II step 6b."
     },
     {
       "jurisdiction": "Genesee County, MI (Flint)",
@@ -2497,7 +2497,7 @@
       "endpoint": "https://bsaonline.com",
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
-      "notes": "Lansing and East Lansing both on BS&A Online (interactive only). No county-level API or ArcGIS FeatureServer identified."
+      "notes": "Lansing and East Lansing both on BS&A Online (interactive only). No county-level API or ArcGIS FeatureServer identified. RE-VERIFIED 2026-07-31: gis.ingham.org/arcgis/rest/services does not resolve (curl exit 6, DNS failure); curl of aca-prod.accela.com/lansing/Default.aspx returned 404 (no Accela exception). bsaonline.com confirmed live (200). Batched dead-end finding stands on independent re-check. DOCUMENTS (part 2, 2026-07-31): document-research-fallback.py found 6 named projects (Holt Farmers Market Building Expansion; $48.1M Green Development Ventures rental housing project in Holt; Tailgaters Gas Station/Convenience Store in Okemos; Brightwell Behavioral Health Facility Expansion in East Lansing; Lansing Cedar/Larch data-center industrial redevelopment; Huntington National Bank Okemos Branch). documents_confirmed=0/6. Recorded as leads only in data/raw/mi-ingham-document-fallback.json; NOT independently cross-checked per Phase II step 6b."
     },
     {
       "jurisdiction": "Ottawa County, MI (Holland, Grand Haven)",
@@ -2507,7 +2507,7 @@
       "endpoint": "https://bsaonline.com",
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
-      "notes": "Holland, Holland Charter Township, Grand Haven all on BS&A Online (interactive only). No structured feed identified at county or city level."
+      "notes": "Holland, Holland Charter Township, Grand Haven all on BS&A Online (interactive only). No structured feed identified at county or city level. RE-VERIFIED 2026-07-31: ArcGIS Hub search API for 'Ottawa County Michigan building permits' returned zero results; bsaonline.com confirmed live (200) as the dominant real platform used by miottawa.org-linked municipalities. Note: this is Ottawa County MI, distinct from the separate La Salle County IL 'City of Ottawa' Cloudpermit entry elsewhere in this file -- not the same jurisdiction. Batched dead-end finding stands on independent re-check. DOCUMENTS (part 2, 2026-07-31): document-research-fallback.py found 5 named projects (Chinook Pier Redevelopment in Grand Haven; Polyply Composites Facility Expansion & Retaining Wall in Grand Haven; Paradigm Dog School Facility in Holland; Woodlands Crossing in Holland; Holland Charter Township Public Works Facility Renovation and Expansion). documents_confirmed=0/5. Recorded as leads only in data/raw/mi-ottawa-document-fallback.json; NOT independently cross-checked per Phase II step 6b."
     },
     {
       "jurisdiction": "Kalamazoo County, MI (Kalamazoo, Portage)",
