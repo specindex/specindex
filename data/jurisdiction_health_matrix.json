@@ -821,11 +821,11 @@
       "jurisdiction": "Pulaski County, AR (Little Rock)",
       "county": "Pulaski",
       "state": "AR",
-      "provider_type": null,
-      "endpoint": null,
+      "provider_type": "infor_public_sector",
+      "endpoint": "https://permitpayment.littlerock.gov/ips_PD/",
       "state_agent_pipeline_key": null,
-      "status": "FAILED_NEED_ALT",
-      "notes": "Gemini's dataset ID (waw2-4wxz) 404'd, and data.littlerock.gov itself redirects to a plain informational page -- no Socrata portal exists there (dead/fabricated lead, not just a wrong ID). Little Rock's real system is 'Dynamic Portal'/Selectron WebPermits per Gemini, not Accela. Not investigated further this round -- worth checking permitpayment.littlerock.gov or inspections.littlerock.gov directly for a real API."
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified: https://permitpayment.littlerock.gov/ips_PD/Public/Lookup/ApplicationLookup.aspx returns HTTP 302 (real ASP.NET/IIS app, Infor Public Sector 'Dynamic Portal'), redirecting to /ips_PD/Views/Login.aspx -- confirms a real, live City of Little Rock permitting backend, but public lookup requires an authenticated session (no anonymous API/search). Root domain permitpayment.littlerock.gov serves default IIS page (dead lead) -- must use /ips_PD/ subpath. Separate Selectron/WebPermits IVR system at inspections.littlerock.gov/webpermits/ returns 403 (bot-blocked but real). Not Accela, not Socrata/ArcGIS/CKAN -- Infor Public Sector has no reusable provider class in this pipeline (out of scope per task instructions), so logging discovery only, no config wired. Pulaski County itself (unincorporated) has no separate structured permit source; municipalities within the county manage permits individually."
     },
     {
       "jurisdiction": "Hinds County, MS (Jackson)",
@@ -1896,6 +1896,16 @@
       "endpoint": null,
       "status": "FAILED_NEED_ALT",
       "notes": "No verified structured/API source found this session. Gemini proposed MaintStar at https://maintstar.co/ -- DNS fail (000), fabricated. Also proposed Show Low permits page https://www.showlowaz.gov/165/City-Permits-Applications -- 404, fabricated. navajocountyaz.gov/170/Planning-Development-Services loads (200) but its scraped HTML has no permit-platform outbound link (page content did not match expected Planning/Development section -- possibly a stale/renumbered CivicPlus page ID). Winslow, Snowflake/Taylor, Holbrook reported paper/PDF-only per Gemini, not independently verified. Needs a fresh, more targeted pass (e.g. Playwright crawl of the live navajocountyaz.gov site map) before this can be resolved either way -- left honestly unresolved rather than guessed."
+    },
+    {
+      "jurisdiction": "Benton County, AR (Bentonville / Rogers / Siloam Springs)",
+      "county": "Benton",
+      "state": "AR",
+      "provider_type": "etrakit",
+      "endpoint": "https://bent.csqrcloud.com/community-etrakit/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified three separate city platforms, no county-wide source: (1) Bentonville -- CentralSquare eTRAKiT at https://bent.csqrcloud.com/community-etrakit/ returns HTTP 200 (real). (2) Rogers -- Cityworks Public Portal at https://permitting.rogersar.gov/publicportal/ returns HTTP 200 (real). (3) Siloam Springs -- BS&A Online at https://www.bsaonline.com/?MunicipalityId=2609 returns HTTP 302 (real, redirects into BS&A app). Unincorporated Benton County has no digitized portal -- PDF/email intake only (building@bentoncountyar.gov), confirmed via https://bentoncountyar.gov/building-safety/permits/. None of these platforms (eTRAKiT, Cityworks, BS&A) have a built provider class in this pipeline yet -- logging discovery only per task scope, no config wired."
     }
   ]
 }
