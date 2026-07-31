@@ -1860,6 +1860,15 @@
       "endpoint": "https://citizenaccess.flagstaffaz.gov/citizenaccess/",
       "status": "VERIFIED_WORKING",
       "notes": "Live portal (200), but NOT Accela despite the citizenaccess.* domain -- HTML is a JSP frameset (secure/home.jsp), the signature of Harris/Innoprise Citizen Access, a different vendor entirely. Gemini initially mislabeled this as Accela; caught via structural HTML inspection (Accela pages are ASP.NET .aspx with App_Themes, this is not) before trusting it, per the never-trust-a-provider-label-either lesson. No provider class exists for Innoprise -- logged as a discovery, not data-pulled."
+    },
+    {
+      "jurisdiction": "Cochise, AZ",
+      "county": "Cochise",
+      "state": "AZ",
+      "provider_type": "citizenserve",
+      "endpoint": "https://www.citizenserve.com/Portal/PortalController?Action=showHomePage&ctzPagePrefix=Portal_&installationID=335&original_iid=0&original_contactID=0",
+      "status": "VERIFIED_WORKING",
+      "notes": "Gemini repeatedly fabricated vanity-path Citizenserve URLs (citizenserve.com/cochisecounty, /sierravista, and Bisbee Cloudpermit path) -- all 404/DNS-failed on live curl. Abandoned Gemini for this one and scraped cochise.az.gov Building Safety page directly for the real outbound link, which resolved the correct installationID=335 PortalController URL -- confirmed 200 live. Sierra Vista (largest city) reportedly runs a SEPARATE Citizenserve instance per Gemini but sierravistaaz.gov returned 403 (bot-blocked, real domain) on direct scrape attempts -- could not extract its installationID this session; not resolved, would need a browser-based (Playwright) crawl to get past the block. Douglas and Bisbee confirmed no structured platform (manual/email/in-person per Gemini, not independently re-verified)."
     }
   ]
 }
