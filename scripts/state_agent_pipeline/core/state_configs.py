@@ -1193,6 +1193,43 @@ NY_NYC_CONFIG: dict[str, Any] = {
     "source_url": "https://data.cityofnewyork.us/Housing-Development/DOB-NOW-Build-Job-Application-Filings/w9ak-ipjd",
 }
 
+# Kings (Brooklyn), Bronx, and Richmond (Staten Island) counties -- same
+# citywide DOB NOW Socrata dataset as NY_NYC_CONFIG above (w9ak-ipjd), just
+# filtered to each borough via commercial_where (Socrata AND-combines this
+# with the base commercial filter, confirmed by reading
+# socrata_provider.py's _build_where). Added 2026-07-31: NY_NYC_CONFIG
+# always wrote county="New York" (a fixed per-config string, not derived
+# per-row from the borough field -- confirmed in generic_mapping.py, county
+# is a passed-in parameter, not read off each row) even though the
+# dataset's `borough` field has real per-borough data (live GROUP BY
+# 2026-07-31: Bronx=90,621, Brooklyn=256,787, Manhattan=360,014,
+# Queens=182,425, Staten Island=46,792 total rows). That's why Kings/
+# Bronx/Richmond showed as no-coverage in county_coverage despite the
+# citywide source already existing -- a classification/wiring gap, not a
+# missing source, exactly as flagged in the task brief. feed_id is unique
+# per borough (not reused from ny-nycdob) so each gets its own watermark
+# and doesn't collide with the Manhattan config's incremental cursor.
+NY_KINGS_CONFIG: dict[str, Any] = {
+    **NY_NYC_CONFIG,
+    "county": "Kings",
+    "commercial_where": "building_type='Other' AND borough='Brooklyn'",
+    "feed_id": "ny-nycdob-kings",
+}
+
+NY_BRONX_CONFIG: dict[str, Any] = {
+    **NY_NYC_CONFIG,
+    "county": "Bronx",
+    "commercial_where": "building_type='Other' AND borough='Bronx'",
+    "feed_id": "ny-nycdob-bronx",
+}
+
+NY_RICHMOND_CONFIG: dict[str, Any] = {
+    **NY_NYC_CONFIG,
+    "county": "Richmond",
+    "commercial_where": "building_type='Other' AND borough='Staten Island'",
+    "feed_id": "ny-nycdob-richmond",
+}
+
 # Cambridge, MA (Middlesex County's top jurisdiction by construction volume --
 # MA county government has no building-permit function at all, permits are
 # purely municipal, no single Middlesex-wide source exists). Gemini's first
@@ -1850,6 +1887,9 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "MI-KENT": MI_KENT_CONFIG,
     "IL-COOK": IL_COOK_CONFIG,
     "NY-NYC": NY_NYC_CONFIG,
+    "NY-KINGS": NY_KINGS_CONFIG,
+    "NY-BRONX": NY_BRONX_CONFIG,
+    "NY-RICHMOND": NY_RICHMOND_CONFIG,
     "MA-CAMBRIDGE": MA_CAMBRIDGE_CONFIG,
     "MN-HENNEPIN": MN_HENNEPIN_CONFIG,
     "UT-SALTLAKE": UT_SALTLAKE_ACCELA_CONFIG,

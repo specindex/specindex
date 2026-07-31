@@ -2597,6 +2597,50 @@
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
       "notes": "Port Huron and Port Huron Township both on BS&A Online (interactive only). No structured feed identified."
+    },
+    {
+      "jurisdiction": "Kings (Brooklyn), NY",
+      "county": "Kings",
+      "state": "NY",
+      "provider_type": "socrata",
+      "endpoint": "https://data.cityofnewyork.us/resource/w9ak-ipjd.json",
+      "state_agent_pipeline_key": "NY-KINGS",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 6962,
+      "notes": "Reused citywide DOB NOW dataset (already wired as NY_NYC_CONFIG for Manhattan) filtered to borough='Brooklyn' via commercial_where -- county_coverage previously missed Kings because the existing config wrote a fixed county='New York' for every row regardless of borough. New config (NY_KINGS_CONFIG) fixes the county tag. Dry-run confirmed 6965 real rows before merge. documents_confirmed: not run separately (structured source, not research-fallback path)."
+    },
+    {
+      "jurisdiction": "Bronx, NY",
+      "county": "Bronx",
+      "state": "NY",
+      "provider_type": "socrata",
+      "endpoint": "https://data.cityofnewyork.us/resource/w9ak-ipjd.json",
+      "state_agent_pipeline_key": "NY-BRONX",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 3221,
+      "notes": "Same citywide DOB NOW dataset, filtered borough='Bronx'. Dry-run confirmed 3223 real rows before merge."
+    },
+    {
+      "jurisdiction": "Richmond (Staten Island), NY",
+      "county": "Richmond",
+      "state": "NY",
+      "provider_type": "socrata",
+      "endpoint": "https://data.cityofnewyork.us/resource/w9ak-ipjd.json",
+      "state_agent_pipeline_key": "NY-RICHMOND",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 673,
+      "notes": "Same citywide DOB NOW dataset, filtered borough='Staten Island'. Dry-run confirmed 673 real rows before merge."
+    },
+    {
+      "jurisdiction": "Suffolk County, NY",
+      "county": "Suffolk",
+      "state": "NY",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "NY county government does not issue building permits (purely town/village level, confirmed by Gemini + live checks). Gemini's first guess (aca.brookhaven.org Accela portal) was fabricated -- NXDOMAIN, caught via curl. Real Town of Brookhaven permit-status lookup (https://www.brookhavenny.gov/1245/Lookup-Building-Permit-Status, HTTP 200) and Town of Huntington OpenGov portal (https://townofhuntingtonny.portal.opengov.com/, HTTP 200) are both real and live, but neither is a bulk/API-friendly source on one of the 8 supported provider types (Brookhaven is a search-by-address lookup form, Huntington is OpenGov which isn't a wired provider type yet) -- would need a new provider type or scraping, not a config-only fix. No county-wide source exists; largest town (Brookhaven) has no wireable data feed. Documents (Part 2): ran grounded research fallback, found 4 named projects (Suffolk Technology Park/Bristol Group $250M, Orbic Electronics Hauppauge ~$110M, Pollo Campero Bay Shore, Shoppes at Triangle Park Farmingville). documents_confirmed: 0 -- both claimed 'pullable document' URLs failed live verification (Babylon DEIS/FEIS URL 404s, Brookhaven CivicClerk URL is a live portal homepage, not a direct document link)."
     }
   ]
 }
