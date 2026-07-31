@@ -1966,6 +1966,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Live-verified but limited: Searcy (the county's largest city) has NO digitized portal -- confirmed via cityofsearcy.org permits page, email/PDF intake only (permits@cityofsearcy.gov). Beebe (smaller city) uses iWorQ Systems at https://beebe.portal.iworq.net/portalhome/beebe -- HTTP 200 (real), covers residential/commercial/trade permits. Bald Knob has no portal -- manual intake. Unincorporated White County has no general building permit enforcement -- only floodplain/septic via paper. Net: one real but low-coverage source found (Beebe iWorQ); largest city Searcy remains a gap. iWorQ has no provider class built in this pipeline -- logging discovery only per task scope, no config wired."
+    },
+    {
+      "jurisdiction": "Lonoke County, AR (Cabot / Lonoke / Ward)",
+      "county": "Lonoke",
+      "state": "AR",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Checked all major cities and county, found no structured/API permit source anywhere. Cabot (largest city): Gemini-suggested page cabotar.gov/220/City-of-Cabot-Permit-Applications returned live-verified HTTP 404 (fabricated path -- base cabotar.gov domain is real, HTTP 200, but that permit page does not exist); Cabot's actual system is a CivicPlus Form Center (plain web form submission, not a queryable API/database, so no ingestible source even if the correct URL were found). Lonoke, Ward: PDF/manual intake only, confirmed via city sites. Unincorporated Lonoke County: no building code enforcement / no permit portal, only paper floodplain permits via County Clerk. Concluding NO_PUBLIC_DATA per task instructions -- confirmed no structured source exists after checking city + county domains; not pursuing Step 6 research fallback (out of scope)."
     }
   ]
 }
