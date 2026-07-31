@@ -1842,6 +1842,24 @@
       "endpoint": "https://yumaaz-energovweb.tylerhost.net/apps/SelfService#/",
       "status": "VERIFIED_WORKING",
       "notes": "City of Yuma Tyler EnerGov Civic Access self-service portal confirmed live (200) via curl. San Luis and Somerton confirmed manual/PDF-only intake per Gemini, not independently verified beyond city-domain spot checks -- treated as informational, not logged as NO_PUBLIC_DATA entries pending direct confirmation."
+    },
+    {
+      "jurisdiction": "Coconino, AZ",
+      "county": "Coconino",
+      "state": "AZ",
+      "provider_type": "smartgov",
+      "endpoint": "https://co-coconino-az.smartgovcommunity.com/Public/Home",
+      "status": "VERIFIED_WORKING",
+      "notes": "Gemini first fabricated coconinoaz.smartgovcommunity.com (404); corrected subdomain co-coconino-az confirmed live, page title \"Coconino County Public Portal\". No SmartGov provider class built yet -- logged for future work."
+    },
+    {
+      "jurisdiction": "City of Flagstaff, AZ",
+      "county": "Coconino",
+      "state": "AZ",
+      "provider_type": "other",
+      "endpoint": "https://citizenaccess.flagstaffaz.gov/citizenaccess/",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live portal (200), but NOT Accela despite the citizenaccess.* domain -- HTML is a JSP frameset (secure/home.jsp), the signature of Harris/Innoprise Citizen Access, a different vendor entirely. Gemini initially mislabeled this as Accela; caught via structural HTML inspection (Accela pages are ASP.NET .aspx with App_Themes, this is not) before trusting it, per the never-trust-a-provider-label-either lesson. No provider class exists for Innoprise -- logged as a discovery, not data-pulled."
     }
   ]
 }
