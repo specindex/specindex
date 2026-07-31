@@ -2436,6 +2436,16 @@
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
       "notes": "Gemini also claimed https://epermit.cityofirvine.org/PermitsInquiry.aspx which returned curl code 000 (DNS/connection failure -- fabricated or dead). irvinequickrecords.com is confirmed live (curl 200) but is a generic public-records-request portal, not a structured permit search/API; no provider type identified. Needs deeper investigation, out of scope for this pass."
+    },
+    {
+      "jurisdiction": "Richland County, SC (City of Columbia)",
+      "county": "Richland",
+      "state": "SC",
+      "provider_type": "energov",
+      "endpoint": "https://cityofcolumbiasc-energovweb.tylerhost.net",
+      "state_agent_pipeline_key": "SC-RICHLAND",
+      "status": "FAILED_NEED_ALT",
+      "notes": "Richland County itself: CentralSquare eTRAKiT (etrakit.rcgov.us/etrakit/, live 200) with no public API -- login-gated search UI, dead end. City of Columbia: Tyler EnerGov on tylerhost.net (same platform as CA-ELMONTE/CA-GLENDALE), wired via energov_provider.py, but dry-run --lookback-days 90 returned 0 rows -- direct Playwright probe confirmed the search route SSO-redirects to a login page (title 'Log In'), unlike El Monte/Glendale/Carson's anonymous search. Config left registered in state_configs.py (SC_COLUMBIA_ENERGOV_CONFIG) in case Tyler's tenant auth changes later. Needs an alternate source (Richland County Assessor GIS parcel data or a FOIA-based bulk pull) not yet attempted. DOCUMENTS (part 2, 2026-07-31): grounded Gemini call found 5 named projects with a dated public action in the last 30 days (Richland Fire Capital bond $12M, $6.36M road-widening contract, Lake Murray Blvd site plan SPL-2026-00009, Eastover solar facility, 532-534 Santee Ave addition) -- all 5 claimed 'pullable document' URLs were homepage-level domains (richlandcountysc.gov / columbiasc.gov), not exact links. Live-verification (curl + Playwright) of the actual navigation paths Gemini implied (columbiasc.gov/planning-boards-commissions/pc/pc-agendas-minutes/, richlandcountysc.gov/Government/County-Council/Agendas-Minutes) both 404'd -- Gemini's site structure guesses were wrong. documents_confirmed=0/5; a follow-up feedback-loop round to find the real agendas/packets URL structure on both sites is real remaining scope. The 5 named projects themselves are being recorded as leads only, NOT independently cross-checked per Phase II step 6b -- do not treat cost/date facts above as confirmed."
     }
   ]
 }

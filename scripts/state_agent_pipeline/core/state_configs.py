@@ -602,6 +602,35 @@ LA_EBR_CONFIG: dict[str, Any] = {
 # as a number (e.g. 20260406.0), queryable with a bare numeric
 # comparison. Added a new "yyyymmdd_int" date_literal_style to
 # arcgis_provider.py for this.
+# City of Columbia, SC (Richland County seat / state capital). Richland
+# County itself (unincorporated areas) runs CentralSquare eTRAKiT
+# (https://etrakit.rcgov.us/etrakit/, confirmed live 200 2026-07-31) with
+# no public API/open-data feed -- eTRAKiT here is a plain login-gated
+# search UI, same class of dead end as other eTRAKiT county deployments
+# in this codebase. City of Columbia (the county's largest incorporated
+# jurisdiction) redirects access.columbiasc.gov/selfservice to
+# https://cityofcolumbiasc-energovweb.tylerhost.net/apps/selfservice --
+# same tylerhost.net Tyler EnerGov Citizen Self Service pattern as the
+# CA EnerGov configs above. REAL DEAD END, confirmed live 2026-07-31: a
+# dry-run's Search-button click timed out (0 rows); a direct Playwright
+# probe of the search route shows why -- it 302s to
+# .../apps/selfservice/#/sso.html?redirectUrl=%2Fsearch (page title "Log
+# In"), i.e. this tenant's search is login-gated unlike El Monte/Glendale/
+# Carson's anonymous-accessible search. Left registered (same as
+# CA-GLENDALE's real 0-row dead end above) in case Tyler changes the
+# tenant's auth config later, but do NOT call this VERIFIED_WORKING --
+# logged FAILED_NEED_ALT in jurisdiction_health_matrix.json.
+SC_COLUMBIA_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "SC",
+    "provider_type": "energov",
+    "county": "Richland",
+    "endpoint": "https://cityofcolumbiasc-energovweb.tylerhost.net",
+    "tenant_id": "1",
+    "tenant_name": "City of Columbia",
+    "lookback_days": 900,
+    "max_pages": 5,
+}
+
 SC_GREENVILLE_CONFIG: dict[str, Any] = {
     "state_code": "SC",
     "provider_type": "arcgis",
@@ -1811,6 +1840,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NE-DOUGLAS": NE_DOUGLAS_ACCELA_CONFIG,
     "LA-EBR": LA_EBR_CONFIG,
     "SC-GREENVILLE": SC_GREENVILLE_CONFIG,
+    "SC-RICHLAND": SC_COLUMBIA_ENERGOV_CONFIG,
     "ID-ADA": ID_ADA_ACCELA_CONFIG,
     "SD-SIOUXFALLS": SD_SIOUXFALLS_CONFIG,
     "IN-INDIANAPOLIS": IN_INDIANAPOLIS_ACCELA_CONFIG,
