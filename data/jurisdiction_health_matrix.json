@@ -1598,7 +1598,7 @@
       "endpoint": "https://www.fortmyers.gov/EnerGov",
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
-      "notes": "Fort Myers confirmed live on EnerGov (302, real). Cape Coral confirmed live on EnerGov (301, real). Lee County's eConnect/Accela -- first URL (aca.leegov.com) is fabricated (000 DNS fail), alt (accelaaca.leegov.com) is real but returned 503 (service exists, temporarily erroring). Puller not yet built."
+      "notes": "Fort Myers confirmed live on EnerGov (302, real). Cape Coral confirmed live on EnerGov (301, real). Lee County's eConnect/Accela -- first URL (aca.leegov.com) is fabricated (000 DNS fail), alt (accelaaca.leegov.com) is real but returned 503 (service exists, temporarily erroring). Puller not yet built. FOLLOW-UP 2026-07-31: checked whether Accela's grid supports a \"customize columns\" UI to add the missing Date column -- no real clickable customize control exists on this deployment's results grid (the string \"customize\" only appears in inert page JS, not a usable feature). Getting a per-record date here would require fetching each record's detail page individually rather than the grid, a meaningfully bigger lift than the other date-column gaps closed this session -- still real remaining scope, not attempted this pass."
     },
     {
       "jurisdiction": "Polk County, FL (Lakeland)",
@@ -1646,9 +1646,9 @@
       "state": "FL",
       "provider_type": "accela",
       "endpoint": "https://aca-prod.accela.com/pasco/Default.aspx",
-      "state_agent_pipeline_key": null,
+      "state_agent_pipeline_key": "FL-PASCO",
       "status": "VERIFIED_WORKING",
-      "notes": "Pasco County (PascoGateway) confirmed live on Accela (200 OK). Puller not yet built."
+      "notes": "Pasco County (PascoGateway) confirmed live on Accela (200 OK). Puller not yet built. RESOLVED 2026-07-31: 'COM - New Structures Constructed of Frame Walls' and 'COM - General Minor Repair Interior or Exterior' (100+ results but confirmed stale, newest 04/18/2024) both dead ends. Live dropdown probe found 'COM - Interior Build Out With no Change to Existing Slab-Remodel' -- confirmed fresh (newest record 06/10/2026). Real yield is thin (1 row in a 90-day window, Pasco's commercial volume in this subtype is genuinely low) but real and merged. data/states/fl.json 26400 -> 26401."
     },
     {
       "jurisdiction": "Sarasota County, FL",

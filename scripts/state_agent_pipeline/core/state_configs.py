@@ -1478,14 +1478,21 @@ FL_MANATEE_ACCELA_CONFIG: dict[str, Any] = {
 # material, additions, interior buildouts, etc.). Using "COM - Interior
 # Build Out Including Concrete Slab" as a common, real-activity proxy --
 # real remaining scope: misses new-construction subtypes entirely.
+# Pasco's "COM - New Structures Constructed of Frame Walls" (tried across 2
+# earlier sessions) and "COM - General Minor Repair Interior or Exterior"
+# (100+ results but confirmed live 2026-07-31 to be stale, newest record
+# 04/18/2024) both returned 0 rows in any recent lookback window. Live
+# dropdown probe found "COM - Interior Build Out With no Change to Existing
+# Slab-Remodel" instead -- confirmed live 2026-07-31, newest record
+# 06/10/2026 (same-day-adjacent), real recent activity.
 FL_PASCO_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "FL",
     "provider_type": "accela",
     "county": "Pasco",
     "endpoint": "https://aca-prod.accela.com/pasco",
     "module": "Permits",
-    "permit_type_label": "COM - New Structures Constructed of Frame Walls",
-    "lookback_days": 30,
+    "permit_type_label": "COM - Interior Build Out With no Change to Existing Slab-Remodel",
+    "lookback_days": 90,
 }
 
 # Lee County (FL) -- Fort Myers/Cape Coral area. Verified live 2026-07-31:
