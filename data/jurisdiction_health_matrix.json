@@ -1074,10 +1074,10 @@
       "county": "Winnebago",
       "state": "IL",
       "provider_type": null,
-      "endpoint": "https://www.wincoil.gov/departments/community-development-department/building-division",
+      "endpoint": null,
       "state_agent_pipeline_key": null,
-      "status": "FAILED_NEED_ALT",
-      "notes": "URL given by Gemini doesn't resolve at all (DNS failure, confirmed with curl -v) -- dead/hallucinated domain, real Winnebago County site not yet found."
+      "status": "NO_PUBLIC_DATA",
+      "notes": "URL given by Gemini doesn't resolve at all (DNS failure, confirmed with curl -v) -- dead/hallucinated domain, real Winnebago County site not yet found. RE-INVESTIGATED 2026-07-31: original dead/hallucinated URL replaced with 3 real, live domains (rockfordil.gov 200, wincoil.gov 403 bot-block/real, wingis.org 200) but none is a structured permit feed -- Rockford uses manual online intake + ProjectDox for plan review, county uses PDF/email submittal, WinGIS is parcel/GIS data only. Confirmed no digitized permit system, not just a wrong URL -- status changed from FAILED_NEED_ALT to NO_PUBLIC_DATA. Step 6 research fallback not yet run for this county."
     },
     {
       "jurisdiction": "McLean County, IL (Bloomington)",
