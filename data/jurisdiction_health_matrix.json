@@ -2884,6 +2884,146 @@
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
       "notes": "Melbourne's EnerGov domain resolves (200) and Titusville's BS&A URL redirects (302, plausibly real BS&A pattern), but neither was probed further (dropdown/API structure, actual date-range query) within this session's time budget -- real remaining scope, not confirmed working or dead."
+    },
+    {
+      "jurisdiction": "Bucks County, PA",
+      "county": "Bucks",
+      "state": "PA",
+      "provider_type": "unknown",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Directly Gemini-verified + live-probed. Bucks_County_Proposed_Developments_ ArcGIS FeatureServer (https://services3.arcgis.com/SP47Tddf7RK32lBU/arcgis/rest/services/Bucks_County_Proposed_Developments_/FeatureServer/0) is real, public, 1,229 records, has DateReceiv/MunicName/Proposal/Applicant fields -- but confirmed stale (MAX(DateReceiv)=2023-02-27 via outStatistics query), not updated in 3+ years, fails 90-day lookback. buckscounty.gov/398/Act-247-Applications-Portal (Gemini's other claim) is a dead 404. No live municipal-level Accela/Socrata found for the county's largest townships in this pass. Document fallback: 7 named projects found (incl. AWS data center at Keystone Trade Center), 0 documents confirmed live. Pennsylvania building/commercial permits are administered under the PA Uniform Construction Code at the MUNICIPAL level (townships/boroughs/cities), not by county government -- confirmed live via Gemini discovery for Bucks and Delaware (both independently returned the same structural answer: no countywide Accela/Socrata/ArcGIS/EnerGov permit system exists, permits are issued by dozens of individual municipalities each running separate/no software). This matches why only the two PA consolidated city-counties (Philadelphia, Pittsburgh -- both already wired as PA-PHILADELPHIA/PA-PITTSBURGH) have real structured feeds today. Bucks' one county-level ArcGIS candidate (Bucks_County_Proposed_Developments_ FeatureServer, services3.arcgis.com/SP47Tddf7RK32lBU) is real and public (1,229 records) but confirmed stale via live query (MAX(DateReceiv) = 2023-02-27, no records added in 3+ years) -- fails the 90-day lookback freshness bar, not wired. Delaware's county ODMI ArcGIS org (data-delcopa.opendata.arcgis.com) was searched directly for an equivalent land-development layer and none exists. Given this confirmed structural pattern applies statewide under PA law, the remaining 12 counties in this batch were not each individually re-verified via a fresh Gemini call/live probe (time-budget tradeoff) -- flagged FAILED_NEED_ALT rather than NO_PUBLIC_DATA to mark them as needing that direct per-county verification pass before being called a fully closed dead end, not as independently confirmed empty. Part 2 (document research fallback) was run for all 14 counties regardless -- see data/raw/pa-<county>-document-fallback.json."
+    },
+    {
+      "jurisdiction": "Delaware County, PA",
+      "county": "Delaware",
+      "state": "PA",
+      "provider_type": "unknown",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Directly Gemini-verified + live-probed. No countywide permit feed; data-delcopa.opendata.arcgis.com (Delaware County ODMI) searched directly via ArcGIS org search API for a land-development/permit-equivalent layer (as found for Bucks) -- none exists. Municipal-level leads (Haverford Traisr portal, Springfield Twp OpenGov) named but not live-verified as queryable/scrapable in this pass. Document fallback: 7 named projects found, 0 documents confirmed live. Pennsylvania building/commercial permits are administered under the PA Uniform Construction Code at the MUNICIPAL level (townships/boroughs/cities), not by county government -- confirmed live via Gemini discovery for Bucks and Delaware (both independently returned the same structural answer: no countywide Accela/Socrata/ArcGIS/EnerGov permit system exists, permits are issued by dozens of individual municipalities each running separate/no software). This matches why only the two PA consolidated city-counties (Philadelphia, Pittsburgh -- both already wired as PA-PHILADELPHIA/PA-PITTSBURGH) have real structured feeds today. Bucks' one county-level ArcGIS candidate (Bucks_County_Proposed_Developments_ FeatureServer, services3.arcgis.com/SP47Tddf7RK32lBU) is real and public (1,229 records) but confirmed stale via live query (MAX(DateReceiv) = 2023-02-27, no records added in 3+ years) -- fails the 90-day lookback freshness bar, not wired. Delaware's county ODMI ArcGIS org (data-delcopa.opendata.arcgis.com) was searched directly for an equivalent land-development layer and none exists. Given this confirmed structural pattern applies statewide under PA law, the remaining 12 counties in this batch were not each individually re-verified via a fresh Gemini call/live probe (time-budget tradeoff) -- flagged FAILED_NEED_ALT rather than NO_PUBLIC_DATA to mark them as needing that direct per-county verification pass before being called a fully closed dead end, not as independently confirmed empty. Part 2 (document research fallback) was run for all 14 counties regardless -- see data/raw/pa-<county>-document-fallback.json."
+    },
+    {
+      "jurisdiction": "Chester County, PA",
+      "county": "Chester",
+      "state": "PA",
+      "provider_type": "unknown",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Document fallback: 5 named projects found, 0 documents confirmed live. Pennsylvania building/commercial permits are administered under the PA Uniform Construction Code at the MUNICIPAL level (townships/boroughs/cities), not by county government -- confirmed live via Gemini discovery for Bucks and Delaware (both independently returned the same structural answer: no countywide Accela/Socrata/ArcGIS/EnerGov permit system exists, permits are issued by dozens of individual municipalities each running separate/no software). This matches why only the two PA consolidated city-counties (Philadelphia, Pittsburgh -- both already wired as PA-PHILADELPHIA/PA-PITTSBURGH) have real structured feeds today. Bucks' one county-level ArcGIS candidate (Bucks_County_Proposed_Developments_ FeatureServer, services3.arcgis.com/SP47Tddf7RK32lBU) is real and public (1,229 records) but confirmed stale via live query (MAX(DateReceiv) = 2023-02-27, no records added in 3+ years) -- fails the 90-day lookback freshness bar, not wired. Delaware's county ODMI ArcGIS org (data-delcopa.opendata.arcgis.com) was searched directly for an equivalent land-development layer and none exists. Given this confirmed structural pattern applies statewide under PA law, the remaining 12 counties in this batch were not each individually re-verified via a fresh Gemini call/live probe (time-budget tradeoff) -- flagged FAILED_NEED_ALT rather than NO_PUBLIC_DATA to mark them as needing that direct per-county verification pass before being called a fully closed dead end, not as independently confirmed empty. Part 2 (document research fallback) was run for all 14 counties regardless -- see data/raw/pa-<county>-document-fallback.json."
+    },
+    {
+      "jurisdiction": "Lancaster County, PA",
+      "county": "Lancaster",
+      "state": "PA",
+      "provider_type": "unknown",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Document fallback: 7 named projects found, 0 documents confirmed live. Pennsylvania building/commercial permits are administered under the PA Uniform Construction Code at the MUNICIPAL level (townships/boroughs/cities), not by county government -- confirmed live via Gemini discovery for Bucks and Delaware (both independently returned the same structural answer: no countywide Accela/Socrata/ArcGIS/EnerGov permit system exists, permits are issued by dozens of individual municipalities each running separate/no software). This matches why only the two PA consolidated city-counties (Philadelphia, Pittsburgh -- both already wired as PA-PHILADELPHIA/PA-PITTSBURGH) have real structured feeds today. Bucks' one county-level ArcGIS candidate (Bucks_County_Proposed_Developments_ FeatureServer, services3.arcgis.com/SP47Tddf7RK32lBU) is real and public (1,229 records) but confirmed stale via live query (MAX(DateReceiv) = 2023-02-27, no records added in 3+ years) -- fails the 90-day lookback freshness bar, not wired. Delaware's county ODMI ArcGIS org (data-delcopa.opendata.arcgis.com) was searched directly for an equivalent land-development layer and none exists. Given this confirmed structural pattern applies statewide under PA law, the remaining 12 counties in this batch were not each individually re-verified via a fresh Gemini call/live probe (time-budget tradeoff) -- flagged FAILED_NEED_ALT rather than NO_PUBLIC_DATA to mark them as needing that direct per-county verification pass before being called a fully closed dead end, not as independently confirmed empty. Part 2 (document research fallback) was run for all 14 counties regardless -- see data/raw/pa-<county>-document-fallback.json."
+    },
+    {
+      "jurisdiction": "York County, PA",
+      "county": "York",
+      "state": "PA",
+      "provider_type": "unknown",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Document fallback: 6 named projects found, 0 documents confirmed live. Pennsylvania building/commercial permits are administered under the PA Uniform Construction Code at the MUNICIPAL level (townships/boroughs/cities), not by county government -- confirmed live via Gemini discovery for Bucks and Delaware (both independently returned the same structural answer: no countywide Accela/Socrata/ArcGIS/EnerGov permit system exists, permits are issued by dozens of individual municipalities each running separate/no software). This matches why only the two PA consolidated city-counties (Philadelphia, Pittsburgh -- both already wired as PA-PHILADELPHIA/PA-PITTSBURGH) have real structured feeds today. Bucks' one county-level ArcGIS candidate (Bucks_County_Proposed_Developments_ FeatureServer, services3.arcgis.com/SP47Tddf7RK32lBU) is real and public (1,229 records) but confirmed stale via live query (MAX(DateReceiv) = 2023-02-27, no records added in 3+ years) -- fails the 90-day lookback freshness bar, not wired. Delaware's county ODMI ArcGIS org (data-delcopa.opendata.arcgis.com) was searched directly for an equivalent land-development layer and none exists. Given this confirmed structural pattern applies statewide under PA law, the remaining 12 counties in this batch were not each individually re-verified via a fresh Gemini call/live probe (time-budget tradeoff) -- flagged FAILED_NEED_ALT rather than NO_PUBLIC_DATA to mark them as needing that direct per-county verification pass before being called a fully closed dead end, not as independently confirmed empty. Part 2 (document research fallback) was run for all 14 counties regardless -- see data/raw/pa-<county>-document-fallback.json."
+    },
+    {
+      "jurisdiction": "Berks County, PA",
+      "county": "Berks",
+      "state": "PA",
+      "provider_type": "unknown",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Document fallback: 5 named projects found, 0 documents confirmed live. Pennsylvania building/commercial permits are administered under the PA Uniform Construction Code at the MUNICIPAL level (townships/boroughs/cities), not by county government -- confirmed live via Gemini discovery for Bucks and Delaware (both independently returned the same structural answer: no countywide Accela/Socrata/ArcGIS/EnerGov permit system exists, permits are issued by dozens of individual municipalities each running separate/no software). This matches why only the two PA consolidated city-counties (Philadelphia, Pittsburgh -- both already wired as PA-PHILADELPHIA/PA-PITTSBURGH) have real structured feeds today. Bucks' one county-level ArcGIS candidate (Bucks_County_Proposed_Developments_ FeatureServer, services3.arcgis.com/SP47Tddf7RK32lBU) is real and public (1,229 records) but confirmed stale via live query (MAX(DateReceiv) = 2023-02-27, no records added in 3+ years) -- fails the 90-day lookback freshness bar, not wired. Delaware's county ODMI ArcGIS org (data-delcopa.opendata.arcgis.com) was searched directly for an equivalent land-development layer and none exists. Given this confirmed structural pattern applies statewide under PA law, the remaining 12 counties in this batch were not each individually re-verified via a fresh Gemini call/live probe (time-budget tradeoff) -- flagged FAILED_NEED_ALT rather than NO_PUBLIC_DATA to mark them as needing that direct per-county verification pass before being called a fully closed dead end, not as independently confirmed empty. Part 2 (document research fallback) was run for all 14 counties regardless -- see data/raw/pa-<county>-document-fallback.json."
+    },
+    {
+      "jurisdiction": "Westmoreland County, PA",
+      "county": "Westmoreland",
+      "state": "PA",
+      "provider_type": "unknown",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Document fallback: 0 named projects found, 0 documents confirmed live. Pennsylvania building/commercial permits are administered under the PA Uniform Construction Code at the MUNICIPAL level (townships/boroughs/cities), not by county government -- confirmed live via Gemini discovery for Bucks and Delaware (both independently returned the same structural answer: no countywide Accela/Socrata/ArcGIS/EnerGov permit system exists, permits are issued by dozens of individual municipalities each running separate/no software). This matches why only the two PA consolidated city-counties (Philadelphia, Pittsburgh -- both already wired as PA-PHILADELPHIA/PA-PITTSBURGH) have real structured feeds today. Bucks' one county-level ArcGIS candidate (Bucks_County_Proposed_Developments_ FeatureServer, services3.arcgis.com/SP47Tddf7RK32lBU) is real and public (1,229 records) but confirmed stale via live query (MAX(DateReceiv) = 2023-02-27, no records added in 3+ years) -- fails the 90-day lookback freshness bar, not wired. Delaware's county ODMI ArcGIS org (data-delcopa.opendata.arcgis.com) was searched directly for an equivalent land-development layer and none exists. Given this confirmed structural pattern applies statewide under PA law, the remaining 12 counties in this batch were not each individually re-verified via a fresh Gemini call/live probe (time-budget tradeoff) -- flagged FAILED_NEED_ALT rather than NO_PUBLIC_DATA to mark them as needing that direct per-county verification pass before being called a fully closed dead end, not as independently confirmed empty. Part 2 (document research fallback) was run for all 14 counties regardless -- see data/raw/pa-<county>-document-fallback.json."
+    },
+    {
+      "jurisdiction": "Lehigh County, PA",
+      "county": "Lehigh",
+      "state": "PA",
+      "provider_type": "unknown",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Document fallback: 5 named projects found, 0 documents confirmed live. Pennsylvania building/commercial permits are administered under the PA Uniform Construction Code at the MUNICIPAL level (townships/boroughs/cities), not by county government -- confirmed live via Gemini discovery for Bucks and Delaware (both independently returned the same structural answer: no countywide Accela/Socrata/ArcGIS/EnerGov permit system exists, permits are issued by dozens of individual municipalities each running separate/no software). This matches why only the two PA consolidated city-counties (Philadelphia, Pittsburgh -- both already wired as PA-PHILADELPHIA/PA-PITTSBURGH) have real structured feeds today. Bucks' one county-level ArcGIS candidate (Bucks_County_Proposed_Developments_ FeatureServer, services3.arcgis.com/SP47Tddf7RK32lBU) is real and public (1,229 records) but confirmed stale via live query (MAX(DateReceiv) = 2023-02-27, no records added in 3+ years) -- fails the 90-day lookback freshness bar, not wired. Delaware's county ODMI ArcGIS org (data-delcopa.opendata.arcgis.com) was searched directly for an equivalent land-development layer and none exists. Given this confirmed structural pattern applies statewide under PA law, the remaining 12 counties in this batch were not each individually re-verified via a fresh Gemini call/live probe (time-budget tradeoff) -- flagged FAILED_NEED_ALT rather than NO_PUBLIC_DATA to mark them as needing that direct per-county verification pass before being called a fully closed dead end, not as independently confirmed empty. Part 2 (document research fallback) was run for all 14 counties regardless -- see data/raw/pa-<county>-document-fallback.json."
+    },
+    {
+      "jurisdiction": "Northampton County, PA",
+      "county": "Northampton",
+      "state": "PA",
+      "provider_type": "unknown",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Document fallback: 8 named projects found, 0 documents confirmed live. Pennsylvania building/commercial permits are administered under the PA Uniform Construction Code at the MUNICIPAL level (townships/boroughs/cities), not by county government -- confirmed live via Gemini discovery for Bucks and Delaware (both independently returned the same structural answer: no countywide Accela/Socrata/ArcGIS/EnerGov permit system exists, permits are issued by dozens of individual municipalities each running separate/no software). This matches why only the two PA consolidated city-counties (Philadelphia, Pittsburgh -- both already wired as PA-PHILADELPHIA/PA-PITTSBURGH) have real structured feeds today. Bucks' one county-level ArcGIS candidate (Bucks_County_Proposed_Developments_ FeatureServer, services3.arcgis.com/SP47Tddf7RK32lBU) is real and public (1,229 records) but confirmed stale via live query (MAX(DateReceiv) = 2023-02-27, no records added in 3+ years) -- fails the 90-day lookback freshness bar, not wired. Delaware's county ODMI ArcGIS org (data-delcopa.opendata.arcgis.com) was searched directly for an equivalent land-development layer and none exists. Given this confirmed structural pattern applies statewide under PA law, the remaining 12 counties in this batch were not each individually re-verified via a fresh Gemini call/live probe (time-budget tradeoff) -- flagged FAILED_NEED_ALT rather than NO_PUBLIC_DATA to mark them as needing that direct per-county verification pass before being called a fully closed dead end, not as independently confirmed empty. Part 2 (document research fallback) was run for all 14 counties regardless -- see data/raw/pa-<county>-document-fallback.json."
+    },
+    {
+      "jurisdiction": "Dauphin County, PA",
+      "county": "Dauphin",
+      "state": "PA",
+      "provider_type": "unknown",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Document fallback: 6 named projects found, 0 documents confirmed live. Pennsylvania building/commercial permits are administered under the PA Uniform Construction Code at the MUNICIPAL level (townships/boroughs/cities), not by county government -- confirmed live via Gemini discovery for Bucks and Delaware (both independently returned the same structural answer: no countywide Accela/Socrata/ArcGIS/EnerGov permit system exists, permits are issued by dozens of individual municipalities each running separate/no software). This matches why only the two PA consolidated city-counties (Philadelphia, Pittsburgh -- both already wired as PA-PHILADELPHIA/PA-PITTSBURGH) have real structured feeds today. Bucks' one county-level ArcGIS candidate (Bucks_County_Proposed_Developments_ FeatureServer, services3.arcgis.com/SP47Tddf7RK32lBU) is real and public (1,229 records) but confirmed stale via live query (MAX(DateReceiv) = 2023-02-27, no records added in 3+ years) -- fails the 90-day lookback freshness bar, not wired. Delaware's county ODMI ArcGIS org (data-delcopa.opendata.arcgis.com) was searched directly for an equivalent land-development layer and none exists. Given this confirmed structural pattern applies statewide under PA law, the remaining 12 counties in this batch were not each individually re-verified via a fresh Gemini call/live probe (time-budget tradeoff) -- flagged FAILED_NEED_ALT rather than NO_PUBLIC_DATA to mark them as needing that direct per-county verification pass before being called a fully closed dead end, not as independently confirmed empty. Part 2 (document research fallback) was run for all 14 counties regardless -- see data/raw/pa-<county>-document-fallback.json."
+    },
+    {
+      "jurisdiction": "Washington County, PA",
+      "county": "Washington",
+      "state": "PA",
+      "provider_type": "unknown",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Document fallback: 5 named projects found, 0 documents confirmed live. Pennsylvania building/commercial permits are administered under the PA Uniform Construction Code at the MUNICIPAL level (townships/boroughs/cities), not by county government -- confirmed live via Gemini discovery for Bucks and Delaware (both independently returned the same structural answer: no countywide Accela/Socrata/ArcGIS/EnerGov permit system exists, permits are issued by dozens of individual municipalities each running separate/no software). This matches why only the two PA consolidated city-counties (Philadelphia, Pittsburgh -- both already wired as PA-PHILADELPHIA/PA-PITTSBURGH) have real structured feeds today. Bucks' one county-level ArcGIS candidate (Bucks_County_Proposed_Developments_ FeatureServer, services3.arcgis.com/SP47Tddf7RK32lBU) is real and public (1,229 records) but confirmed stale via live query (MAX(DateReceiv) = 2023-02-27, no records added in 3+ years) -- fails the 90-day lookback freshness bar, not wired. Delaware's county ODMI ArcGIS org (data-delcopa.opendata.arcgis.com) was searched directly for an equivalent land-development layer and none exists. Given this confirmed structural pattern applies statewide under PA law, the remaining 12 counties in this batch were not each individually re-verified via a fresh Gemini call/live probe (time-budget tradeoff) -- flagged FAILED_NEED_ALT rather than NO_PUBLIC_DATA to mark them as needing that direct per-county verification pass before being called a fully closed dead end, not as independently confirmed empty. Part 2 (document research fallback) was run for all 14 counties regardless -- see data/raw/pa-<county>-document-fallback.json."
+    },
+    {
+      "jurisdiction": "Beaver County, PA",
+      "county": "Beaver",
+      "state": "PA",
+      "provider_type": "unknown",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Document fallback: 6 named projects found, 0 documents confirmed live. Pennsylvania building/commercial permits are administered under the PA Uniform Construction Code at the MUNICIPAL level (townships/boroughs/cities), not by county government -- confirmed live via Gemini discovery for Bucks and Delaware (both independently returned the same structural answer: no countywide Accela/Socrata/ArcGIS/EnerGov permit system exists, permits are issued by dozens of individual municipalities each running separate/no software). This matches why only the two PA consolidated city-counties (Philadelphia, Pittsburgh -- both already wired as PA-PHILADELPHIA/PA-PITTSBURGH) have real structured feeds today. Bucks' one county-level ArcGIS candidate (Bucks_County_Proposed_Developments_ FeatureServer, services3.arcgis.com/SP47Tddf7RK32lBU) is real and public (1,229 records) but confirmed stale via live query (MAX(DateReceiv) = 2023-02-27, no records added in 3+ years) -- fails the 90-day lookback freshness bar, not wired. Delaware's county ODMI ArcGIS org (data-delcopa.opendata.arcgis.com) was searched directly for an equivalent land-development layer and none exists. Given this confirmed structural pattern applies statewide under PA law, the remaining 12 counties in this batch were not each individually re-verified via a fresh Gemini call/live probe (time-budget tradeoff) -- flagged FAILED_NEED_ALT rather than NO_PUBLIC_DATA to mark them as needing that direct per-county verification pass before being called a fully closed dead end, not as independently confirmed empty. Part 2 (document research fallback) was run for all 14 counties regardless -- see data/raw/pa-<county>-document-fallback.json."
+    },
+    {
+      "jurisdiction": "Centre County, PA",
+      "county": "Centre",
+      "state": "PA",
+      "provider_type": "unknown",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Document fallback: 7 named projects found, 0 documents confirmed live. Pennsylvania building/commercial permits are administered under the PA Uniform Construction Code at the MUNICIPAL level (townships/boroughs/cities), not by county government -- confirmed live via Gemini discovery for Bucks and Delaware (both independently returned the same structural answer: no countywide Accela/Socrata/ArcGIS/EnerGov permit system exists, permits are issued by dozens of individual municipalities each running separate/no software). This matches why only the two PA consolidated city-counties (Philadelphia, Pittsburgh -- both already wired as PA-PHILADELPHIA/PA-PITTSBURGH) have real structured feeds today. Bucks' one county-level ArcGIS candidate (Bucks_County_Proposed_Developments_ FeatureServer, services3.arcgis.com/SP47Tddf7RK32lBU) is real and public (1,229 records) but confirmed stale via live query (MAX(DateReceiv) = 2023-02-27, no records added in 3+ years) -- fails the 90-day lookback freshness bar, not wired. Delaware's county ODMI ArcGIS org (data-delcopa.opendata.arcgis.com) was searched directly for an equivalent land-development layer and none exists. Given this confirmed structural pattern applies statewide under PA law, the remaining 12 counties in this batch were not each individually re-verified via a fresh Gemini call/live probe (time-budget tradeoff) -- flagged FAILED_NEED_ALT rather than NO_PUBLIC_DATA to mark them as needing that direct per-county verification pass before being called a fully closed dead end, not as independently confirmed empty. Part 2 (document research fallback) was run for all 14 counties regardless -- see data/raw/pa-<county>-document-fallback.json."
+    },
+    {
+      "jurisdiction": "Monroe County, PA",
+      "county": "Monroe",
+      "state": "PA",
+      "provider_type": "unknown",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Document fallback: 7 named projects found, 0 documents confirmed live. Pennsylvania building/commercial permits are administered under the PA Uniform Construction Code at the MUNICIPAL level (townships/boroughs/cities), not by county government -- confirmed live via Gemini discovery for Bucks and Delaware (both independently returned the same structural answer: no countywide Accela/Socrata/ArcGIS/EnerGov permit system exists, permits are issued by dozens of individual municipalities each running separate/no software). This matches why only the two PA consolidated city-counties (Philadelphia, Pittsburgh -- both already wired as PA-PHILADELPHIA/PA-PITTSBURGH) have real structured feeds today. Bucks' one county-level ArcGIS candidate (Bucks_County_Proposed_Developments_ FeatureServer, services3.arcgis.com/SP47Tddf7RK32lBU) is real and public (1,229 records) but confirmed stale via live query (MAX(DateReceiv) = 2023-02-27, no records added in 3+ years) -- fails the 90-day lookback freshness bar, not wired. Delaware's county ODMI ArcGIS org (data-delcopa.opendata.arcgis.com) was searched directly for an equivalent land-development layer and none exists. Given this confirmed structural pattern applies statewide under PA law, the remaining 12 counties in this batch were not each individually re-verified via a fresh Gemini call/live probe (time-budget tradeoff) -- flagged FAILED_NEED_ALT rather than NO_PUBLIC_DATA to mark them as needing that direct per-county verification pass before being called a fully closed dead end, not as independently confirmed empty. Part 2 (document research fallback) was run for all 14 counties regardless -- see data/raw/pa-<county>-document-fallback.json."
     }
   ]
 }

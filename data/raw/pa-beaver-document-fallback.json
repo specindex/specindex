@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Beaver",
+  "state": "PA",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 6,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "McCarl's Industrial Fabrication Hub & Headquarters Expansion",
+      "city_address": "210 Bet-Tech Drive, Aliquippa, PA 15001",
+      "project_type": "Industrial Manufacturing / Pipe Fabrication",
+      "estimated_cost": "$15,000,000",
+      "developer_owner": "McCarl's LLC",
+      "status": "Under Construction / Expansion Active",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Pennsylvania Governor's Office Press Release (July 21, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Bet-Tec Industrial Park Warehouse Project",
+      "city_address": "100 Bet Tech Drive / Woodlawn Road, Aliquippa, PA 15001",
+      "project_type": "Industrial Warehouse & Logistics",
+      "estimated_cost": "$3,500,000",
+      "developer_owner": "Betters Real Estate Holdings, LP",
+      "status": "Approved / Infrastructure & Site Prep Active",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Redevelopment Authority of Beaver County Board Minutes (July 14, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Center Township Police Department Facility Renovation",
+      "city_address": "200 Fairview Drive, Center Township, PA 15001",
+      "project_type": "Commercial / Municipal Facility Renovation",
+      "estimated_cost": "$2,250,000",
+      "developer_owner": "Center Township",
+      "status": "Planning / RACP Grant Awarded",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "PA House Democratic Caucus Announcement (July 16, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Aliquippa East End Gateway Interchange Improvements",
+      "city_address": "Route 51 (Constitution Blvd) & Franklin Ave, Aliquippa, PA 15001",
+      "project_type": "Commercial Infrastructure / Highway & Industrial Access",
+      "estimated_cost": "$15,000,000",
+      "developer_owner": "PennDOT District 11 / Beaver County Corporation for Economic Development",
+      "status": "Active Design & Engineering",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Southwestern Pennsylvania Commission Transportation Improvement Program Update",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Beaver County Career and Technology Center Expansion",
+      "city_address": "145 Poplar Avenue, Monaca, PA 15061",
+      "project_type": "Educational / Industrial Technical Training Facility Expansion",
+      "estimated_cost": "$250,000",
+      "developer_owner": "Beaver County Career and Technology Center",
+      "status": "Planning / Grant Awarded",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Pennsylvania Office of the Governor RACP Award Announcement (July 16, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Aliquippa High School Academic & Athletic Training Center (Phase II)",
+      "city_address": "100 Harding Avenue, Aliquippa, PA 15001",
+      "project_type": "Institutional / Commercial Athletic & Educational Facility",
+      "estimated_cost": "$500,000",
+      "developer_owner": "Aliquippa School District",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Pennsylvania Office of the Governor RACP Award Announcement (July 16, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

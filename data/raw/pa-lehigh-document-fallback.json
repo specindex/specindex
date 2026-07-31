@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Lehigh",
+  "state": "PA",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 5,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Project Atlas Data Center Campus",
+      "city_address": "North Cedar Crest Boulevard, South Whitehall Township, PA 18104",
+      "project_type": "Industrial / Hyperscale Data Center",
+      "estimated_cost": "$9,000,000,000",
+      "developer_owner": "CDE Acquisitions, LLC / Edged Data Centers (Developer); Jeras Corporation (Property Owner)",
+      "status": "Proposed / Under Planning Review",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "South Whitehall Township Planning Commission Public Hearing Review (July 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Former Lehigh Valley Dairy Site Redevelopment",
+      "city_address": "1026 MacArthur Road, Whitehall Township, PA 18052",
+      "project_type": "Commercial / Mixed-Use Redevelopment",
+      "estimated_cost": "$1,200,000 (State Grant Allocation)",
+      "developer_owner": "Redevelopment Authority of Lehigh County / Whitehall Township",
+      "status": "Proposed / Pre-Development",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Pennsylvania Redevelopment Assistance Capital Program (RCAP) Grant Announcement (July 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Silo Drive Industrial Building",
+      "city_address": "5270 Silo Drive, Whitehall Township, PA 18052",
+      "project_type": "Industrial / Light Manufacturing / Flex Warehouse",
+      "estimated_cost": "TBD",
+      "developer_owner": "Blue Creek Investments / Benchmark Engineering",
+      "status": "Proposed / Under Planning Review",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Whitehall Township Planning Commission Meeting Records (Index #2071-25A)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Axium Packaging Manufacturing Hub",
+      "city_address": "Bethlehem (Lehigh County), PA 18017",
+      "project_type": "Industrial / Advanced Manufacturing",
+      "estimated_cost": "$20,000,000",
+      "developer_owner": "Axium Packaging / SAGE Design-Build",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "SAGE Design-Build Project Announcement & Construction Update",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Industrial Park Way Light Manufacturing Facility",
+      "city_address": "Industrial Park Way & Schoeneck Rd, Lower Macungie Township, PA 18062",
+      "project_type": "Industrial / Speculative Light Manufacturing",
+      "estimated_cost": "TBD",
+      "developer_owner": "NP Land Holdings / KCE Engineering",
+      "status": "Proposed / Land Development Review",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Lower Macungie Township Planning Commission Land Development Application Review",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}
