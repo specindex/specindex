@@ -1,8 +1,15 @@
-# SpecIndex Agent Strategy (2026-07-26, updated 2026-07-29)
+# SpecIndex Agent Strategy (2026-07-26, updated 2026-07-31)
+
+**Looking for the current discovery/acquisition pipeline?** Skip to
+[Gemini-Assisted County/State Source Discovery](#gemini-assisted-countystate-source-discovery-implemented-2026-07-28)
+below — the 3-phase, 10-step loop is the live, actively-used process.
+Everything above it (Agents 1/2/3) is the original pre-build plan, kept
+as historical record now that all three agents exist as described in the
+2026-07-29 status update directly below.
 
 **Status update, 2026-07-29:** this doc was written as a pre-build plan on
 2026-07-26 and never updated after the plan was actually executed. As of
-today, **all three agents are built**, not drafts:
+that date, **all three agents are built**, not drafts:
 
 - **Agent 1 (Quality)** — `scripts/compute-state-quality.py`, writes to
   the `state_quality` table (migration 005). A raw metrics table, not a
@@ -177,6 +184,21 @@ jurisdiction "done" after step 7 alone, and do not consider an individual
 project "done" without steps 8-10. **Step 6 (research fallback) is
 conditional, not required for every project** — it only applies when
 steps 1-4 find no structured source at all for a jurisdiction.
+
+At a glance, the three phases answer three different questions:
+
+- **Phase I — Source Discovery** (steps 1-4): *Does a live, pullable data
+  source exist for this jurisdiction?* Ends with either a confirmed
+  source or a logged dead end — never both left open.
+- **Phase II — Project Acquisition** (steps 5-7): *Given Phase I's
+  answer, how do we turn that into a deduplicated list of real
+  candidate projects?* Forks into provider wiring (a source exists) or
+  research fallback (it doesn't) — both paths converge on the same
+  deduped output before Phase III starts.
+- **Phase III — Project Processing & Enrichment** (steps 8-10): *For
+  each new project, what do we now go pull, extract, and enrich to make
+  its page useful?* Runs only on what Phase II already deduplicated, so
+  nothing here is spent twice on the same project.
 
 ### Phase I — Source Discovery
 
