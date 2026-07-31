@@ -2518,6 +2518,62 @@ OH_CLEVELAND_COO_CONFIG: dict[str, Any] = {
 STATE_CONFIGS["OH-CLEVELAND"] = OH_CLEVELAND_CONFIG
 STATE_CONFIGS["OH-CLEVELAND-COO"] = OH_CLEVELAND_COO_CONFIG
 
+# Montgomery County, OH (Dayton) -- Accela agency code MONTCOOH, verified
+# live 2026-07-31: portal reachable (200), Building module's General
+# Search permit-type dropdown has a single broad commercial catch-all
+# option, "Commercial Building" (the only Commercial-prefixed label of
+# 16 total options; the rest are trade-specific -- Electrical/Gas/
+# Mechanical/Sign/Fire Protection/Hood-Paint-Booth -- or residential).
+OH_MONTGOMERY_CONFIG: dict[str, Any] = {
+    "state_code": "OH",
+    "provider_type": "accela",
+    "county": "Montgomery",
+    "endpoint": "https://aca-prod.accela.com/MONTCOOH",
+    "module": "Building",
+    "permit_type_label": "Commercial Building",
+    "lookback_days": 90,
+    "feed_id": "oh-dayton-montgomery",
+}
+STATE_CONFIGS["OH-MONTGOMERY"] = OH_MONTGOMERY_CONFIG
+
+# Butler County, OH -- Accela agency code BUTLER, verified live
+# 2026-07-31: no single "Commercial" catch-all option exists (46 total
+# labels, county names permit types Building/{Commercial|Residential}/
+# {subtype}/{detail}). Probed 4 plausible Commercial-prefixed labels
+# directly: "Building/Commercial/Alterations/Other" (55 rows/90 days,
+# broadest -- used here), "Commercial Tenant Finish" (37 rows),
+# "Commercial Footer Foundation, Shell, and TF" (7 rows, new-construction
+# shell permits), "Building/Commercial/New/Multi Family" (0 rows, dead).
+OH_BUTLER_CONFIG: dict[str, Any] = {
+    "state_code": "OH",
+    "provider_type": "accela",
+    "county": "Butler",
+    "endpoint": "https://aca-prod.accela.com/BUTLER",
+    "module": "Building",
+    "permit_type_label": "Building/Commercial/Alterations/Other",
+    "lookback_days": 90,
+    "feed_id": "oh-butler",
+}
+STATE_CONFIGS["OH-BUTLER"] = OH_BUTLER_CONFIG
+
+# Clermont County, OH -- Tyler EnerGov Self Service. Gemini's first guess
+# (clermontoh-energov.tylerhost.net) was a dead DNS name -- real live host
+# found via independent web search: clermontcountyoh-energovpub
+# .tylerhost.net/apps/selfservice (200 OK, verified 2026-07-31).
+# tenant_name unconfirmed via UI probe -- trying "Clermont County" first.
+OH_CLERMONT_CONFIG: dict[str, Any] = {
+    "state_code": "OH",
+    "provider_type": "energov",
+    "county": "Clermont",
+    "endpoint": "https://clermontcountyoh-energovpub.tylerhost.net",
+    "tenant_id": "1",
+    "tenant_name": "Clermont County",
+    "lookback_days": 900,
+    "max_pages": 5,
+    "feed_id": "oh-clermont",
+}
+STATE_CONFIGS["OH-CLERMONT"] = OH_CLERMONT_CONFIG
+
 # City of Hartford, CT (Hartford County's largest city; CT has no
 # county government -- towns/cities issue permits directly) -- Accela
 # agency code HARTFORD, confirmed live 2026-07-31 (module=Building loads

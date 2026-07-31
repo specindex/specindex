@@ -3454,6 +3454,149 @@
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
       "notes": "Initial Gemini guess (Tyler EnerGov, jeffersoncountymo-energov.tylerhost.net) does not resolve via DNS at all -- fabricated, confirmed dead via curl (multiple -energovweb/-energovpub variants also tried, all DNS failures). Feedback round corrected: county actually uses CivicGov/CivicPlus, real live portal at https://www.civicgov4.com/mo_jeffersoncounty/portal/ (confirmed HTTP 200). CivicGov is not one of the 8 supported provider types (Accela/Socrata/ArcGIS/EnerGov/CKAN/Carto/CSV/TdlrTabs) -- would need a new provider built, not attempted this batch. Document research fallback script was launched but stalled/hung past a 2x background-wait budget (~9 min, 0:00.46 CPU time unchanged) without producing output -- not completed, no document-fallback data collected for this county this batch. Worth a retry with a fresh run."
+    },
+    {
+      "jurisdiction": "Montgomery (Dayton), OH",
+      "county": "Montgomery",
+      "state": "OH",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/MONTCOOH",
+      "state_agent_pipeline_key": "OH-MONTGOMERY",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 109,
+      "notes": "Accela agency MONTCOOH, module=Building, permit_type_label='Commercial Building' (only Commercial-prefixed option of 16). Dry-run 149 rows/90d, merged 109 new."
+    },
+    {
+      "jurisdiction": "Butler, OH",
+      "county": "Butler",
+      "state": "OH",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/BUTLER",
+      "state_agent_pipeline_key": "OH-BUTLER",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 55,
+      "notes": "Accela agency BUTLER, module=Building. No single 'Commercial' catch-all; probed 4 candidate labels live, used broadest real one 'Building/Commercial/Alterations/Other' (55 rows/90d). Other options: 'Commercial Tenant Finish' (37), 'Commercial Footer Foundation, Shell, and TF' (7), 'Building/Commercial/New/Multi Family' (0, dead)."
+    },
+    {
+      "jurisdiction": "Clermont, OH",
+      "county": "Clermont",
+      "state": "OH",
+      "provider_type": "energov",
+      "endpoint": "https://clermontcountyoh-energovpub.tylerhost.net",
+      "state_agent_pipeline_key": "OH-CLERMONT",
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "Real live Tyler EnerGov Self Service site confirmed (200 OK, title 'Clermont County, Ohio Permit Central'); Gemini's first guess (clermontoh-energov.tylerhost.net) was dead DNS, real host found via independent web search (clermontcountyoh-energovpub.tylerhost.net). energov_provider.py's Search-click flow returns null Result on both the initial click and the built-in retry -- 0 rows captured. Source exists and is real; automated pull not yet working, needs further debugging."
+    },
+    {
+      "jurisdiction": "Summit (Akron), OH",
+      "county": "Summit",
+      "state": "OH",
+      "provider_type": "none",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "records_merged": 0,
+      "notes": "Summit County Dept of Building Standards and City of Akron both run proprietary/custom portals, no ArcGIS FeatureServer, Socrata, or Accela instance found."
+    },
+    {
+      "jurisdiction": "Lucas (Toledo), OH",
+      "county": "Lucas",
+      "state": "OH",
+      "provider_type": "none",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "records_merged": 0,
+      "notes": "City of Toledo uses a Cityworks-backed portal (not one of our 8 supported platform types); Lucas County outlying-township permitting is paper/PDF-only. No ArcGIS/Socrata/Accela found."
+    },
+    {
+      "jurisdiction": "Stark (Canton), OH",
+      "county": "Stark",
+      "state": "OH",
+      "provider_type": "none",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "records_merged": 0,
+      "notes": "City of Canton uses iWorQ (not a supported provider type); Stark County Building Inspection has a direct permit-search portal only, no open API. No ArcGIS/Socrata/Accela found."
+    },
+    {
+      "jurisdiction": "Lorain (Elyria), OH",
+      "county": "Lorain",
+      "state": "OH",
+      "provider_type": "none",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "records_merged": 0,
+      "notes": "Permitting decentralized to individual municipal building departments (City of Lorain, Avon, Elyria); County Engineer handles ROW/utility work via PDF/paper. No ArcGIS/Socrata/Accela found."
+    },
+    {
+      "jurisdiction": "Warren (Lebanon), OH",
+      "county": "Warren",
+      "state": "OH",
+      "provider_type": "none",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "records_merged": 0,
+      "notes": "Warren County Building & Zoning uses iWorQ (not a supported provider type). County Health District's Accela instance covers food service/septic, not building permits. No ArcGIS/Socrata found."
+    },
+    {
+      "jurisdiction": "Medina, OH",
+      "county": "Medina",
+      "state": "OH",
+      "provider_type": "none",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "records_merged": 0,
+      "notes": "Medina County Building Dept uses internal software/direct plan submittals; county GIS is an ArcGIS Hub for parcel/zoning only, not a permit FeatureServer. No ArcGIS/Socrata/Accela found for permits."
+    },
+    {
+      "jurisdiction": "Greene (Xenia/Beavercreek), OH",
+      "county": "Greene",
+      "state": "OH",
+      "provider_type": "none",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "records_merged": 0,
+      "notes": "Greene County Dept of Building Regulation uses iWorQ (not a supported provider type). No ArcGIS/Socrata/Accela found."
+    },
+    {
+      "jurisdiction": "Clark (Springfield), OH",
+      "county": "Clark",
+      "state": "OH",
+      "provider_type": "none",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "records_merged": 0,
+      "notes": "Clark County Community Development uses a custom portal; City of Springfield uses Cityworks. Neither is a supported provider type. No ArcGIS/Socrata/Accela found."
+    },
+    {
+      "jurisdiction": "Miami (Troy/Piqua), OH",
+      "county": "Miami",
+      "state": "OH",
+      "provider_type": "none",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "records_merged": 0,
+      "notes": "Miami County Dept of Development (Building Regulations) uses iWorQ (not a supported provider type). No ArcGIS/Socrata/Accela found."
+    },
+    {
+      "jurisdiction": "Delaware, OH",
+      "county": "Delaware",
+      "state": "OH",
+      "provider_type": "none",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "records_merged": 0,
+      "notes": "Delaware County Building Safety runs a dedicated custom public portal; county GIS (delco-gis.org) has parcel/zoning layers only, not a permit FeatureServer. No ArcGIS/Socrata/Accela found."
     }
   ]
 }

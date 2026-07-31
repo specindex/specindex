@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Montgomery",
+  "state": "OH",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 6,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Huber Heights Indoor Music Center",
+      "city_address": "7151 Executive Blvd, Huber Heights, OH 45424",
+      "project_type": "Commercial / Entertainment Venue",
+      "estimated_cost": "$50,000,000",
+      "developer_owner": "City of Huber Heights",
+      "status": "Detailed Development Plan Approved",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Huber Heights Planning Commission Meeting (July 14, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "City of Vandalia New Public Works Facility",
+      "city_address": "810 Northwoods Blvd, Vandalia, OH 45377",
+      "project_type": "Industrial / Municipal Operations Facility",
+      "estimated_cost": "Unspecified",
+      "developer_owner": "City of Vandalia",
+      "status": "Under Evaluation / Contract Award Pending",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Vandalia Development & Engineering Services Project Updates (July 10, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "5001 Old Troy Pike Commercial & Mixed Development",
+      "city_address": "5001 Old Troy Pike, Huber Heights, OH 45424",
+      "project_type": "Commercial / Mixed-Use Development",
+      "estimated_cost": "Unspecified",
+      "developer_owner": "City of Huber Heights / Private Developer",
+      "status": "Rezoning & Basic Development Plan Approved",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Huber Heights Ordinance Case BDP 26-13 (July 13, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Killer Brownie Industrial Bakery Facility",
+      "city_address": "Austin Landing / Springboro South Corridor, Dayton, OH 45458",
+      "project_type": "Industrial / Food Processing Facility",
+      "estimated_cost": "Unspecified",
+      "developer_owner": "Brennan Investment Group / Killer Brownie",
+      "status": "Acquired / Tenant Expansion & Relocation",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Commercial Property Executive & Dayton Daily News (July 31, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Techmetals Next Generation Coatings Center",
+      "city_address": "Dayton, OH 45404",
+      "project_type": "Industrial / Advanced Manufacturing & Defense",
+      "estimated_cost": "Unspecified",
+      "developer_owner": "Techmetals, Inc.",
+      "status": "Tax Credit Approved / Planning Phase",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Ohio Tax Credit Authority & Governor's Office Press Release (June 29, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Montgomery County Juvenile Justice Center 4th Floor Renovation",
+      "city_address": "330 W 2nd St, Dayton, OH 45422",
+      "project_type": "Commercial / Public Infrastructure Renovation",
+      "estimated_cost": "Unspecified",
+      "developer_owner": "Montgomery County Board of County Commissioners",
+      "status": "Completed / Unveiled",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Montgomery County Board of Commissioners Official Announcement (July 9, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}
