@@ -1,0 +1,63 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Kankakee",
+  "state": "IL",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 4,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "QuikTrip Convenience Store & Fuel Station",
+      "city_address": "1340 May Rd, Kankakee, IL 60901",
+      "project_type": "Commercial (Convenience Store / Gas Station)",
+      "estimated_cost": "$20,000,000",
+      "developer_owner": "QuikTrip Corporation",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://citykankakee-il.gov/news-detail.php?id=381",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "CSL Behring Kankakee Campus Expansion",
+      "city_address": "Route 50 Commercial Corridor, Kankakee, IL 60901",
+      "project_type": "Industrial / Life Sciences (Biopharmaceutical Manufacturing)",
+      "estimated_cost": "$1,500,000,000",
+      "developer_owner": "CSL Behring",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://rebusinessonline.com/csl-breaks-ground-on-1-5b-expansion-of-pharmaceutical-manufacturing-campus-in-kankakee-illinois/",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Used Car Sales Dealership",
+      "city_address": "260 N. Bradley Blvd, Bradley, IL 60915",
+      "project_type": "Commercial (Automotive Sales)",
+      "estimated_cost": "Unknown",
+      "developer_owner": "Private Applicant",
+      "status": "Proposed / Under Review",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://bradleyil.org/government/agendas-minutes/",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Bradley Blvd Gas Station Development",
+      "city_address": "820 N. Bradley Blvd, Bradley, IL 60915",
+      "project_type": "Commercial (Gas Station)",
+      "estimated_cost": "Unknown",
+      "developer_owner": "Private Applicant",
+      "status": "Proposed / Under Review",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://bradleyil.org/departments/community-development/planning-and-zoning-commission/",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

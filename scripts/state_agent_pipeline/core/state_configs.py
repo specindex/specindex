@@ -2711,6 +2711,26 @@ TN_HENDERSONVILLE_ENERGOV_CONFIG: dict[str, Any] = {
 }
 STATE_CONFIGS["TN-HENDERSONVILLE"] = TN_HENDERSONVILLE_ENERGOV_CONFIG
 
+# City of Naperville, IL (DuPage County) -- Tyler EnerGov Citizen Self
+# Service, same tylerhost.net/apps/SelfService pattern as the other
+# EnerGov tenants above. Live-verified 2026-07-31 via direct curl (200 OK,
+# napervilleil-energovweb.tylerhost.net/apps/SelfService#/home). tenant_id
+# left at provider default "1", unconfirmed against a live UI probe (same
+# caveat as Hendersonville). DuPage County itself has no county-level
+# digital permit system -- Naperville is the largest city and closest
+# real candidate. See jurisdiction_health_matrix.json for status.
+IL_NAPERVILLE_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "IL",
+    "provider_type": "energov",
+    "county": "DuPage",
+    "endpoint": "https://napervilleil-energovweb.tylerhost.net",
+    "tenant_id": "1",
+    "tenant_name": "Naperville",
+    "lookback_days": 90,
+    "max_pages": 5,
+}
+STATE_CONFIGS["IL-NAPERVILLE"] = IL_NAPERVILLE_ENERGOV_CONFIG
+
 # SAM.gov + USAspending for all 50 states (2026-07-28, Asif: "pull all
 # data from USAspending and sam.gov"). Both providers are already
 # architecturally per-state -- GA_SAM_CONFIG/GA_USASPENDING_CONFIG above

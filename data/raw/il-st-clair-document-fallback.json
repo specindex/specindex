@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "St. Clair",
+  "state": "IL",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 5,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "MidAmerica St. Louis Airport International Federal Inspection Station & General Aviation Facility",
+      "city_address": "9660 Airport Blvd, Mascoutah, IL 62258",
+      "project_type": "Commercial Aviation / Airport Facility",
+      "estimated_cost": "$29,100,000",
+      "developer_owner": "St. Clair County / MidAmerica St. Louis Airport",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "MidAmerica St. Louis Airport & Illinois Department of Transportation Project Updates",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "MetroLink Red Line Light Rail Extension to MidAmerica St. Louis Airport",
+      "city_address": "Shiloh-Scott Station to 9660 Airport Blvd, Mascoutah, IL 62258",
+      "project_type": "Commercial Rail / Transit Infrastructure",
+      "estimated_cost": "$96,000,000",
+      "developer_owner": "St. Clair County Transit District / Metro Transit",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "St. Clair County Transit District & State of Illinois Capital Improvement Program",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Air Mobility Drive Extension (Illinois Route 158 Extension)",
+      "city_address": "Air Mobility Drive from IL-161 to IL-158/177, Belleville, IL 62221",
+      "project_type": "Commercial Access Corridor / Roadway Construction",
+      "estimated_cost": "$19,900,000",
+      "developer_owner": "Illinois Department of Transportation (IDOT) / St. Clair County",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "IDOT Rebuild Illinois Capital Program St. Clair County Project Report",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Village of Shiloh New Police Station & Municipal Capital Improvements",
+      "city_address": "1 Park Drive, Shiloh, IL 62269",
+      "project_type": "Municipal / Public Building Construction",
+      "estimated_cost": "$8,000,000",
+      "developer_owner": "Village of Shiloh",
+      "status": "Approved / Planning",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Village of Shiloh Board of Trustees Series 2026 Bond Authorization Resolution",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "I-55/70 Corridor Infrastructure & Bridge Reconstruction",
+      "city_address": "I-55/70 from I-64 to IL Route 203, East St. Louis, IL 62201",
+      "project_type": "Transportation & Logistics Infrastructure",
+      "estimated_cost": "$99,900,000",
+      "developer_owner": "Illinois Department of Transportation (IDOT)",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "IDOT Rebuild Illinois Highway & Multimodal Program",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}
