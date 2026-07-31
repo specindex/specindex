@@ -72,7 +72,7 @@ export default async function AboutPage() {
             </li>
           </ul>
           <div className="mt-10 flex flex-wrap gap-3">
-            <RequestDemoButton className="btn btn-primary" />
+            <RequestDemoButton className="btn btn-demo" />
             <Link href="/projects/" className="btn btn-outline">
               Search the index
             </Link>
