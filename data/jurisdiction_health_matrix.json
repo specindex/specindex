@@ -3354,6 +3354,56 @@
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
       "notes": "MN has no county-level permitting; Eagan is Dakota County's major commercial hub. City of Eagan's ArcGIS Construction & Development FeatureServer confirmed live (200) -- notably has direct document link fields (SitePlanLink, StaffRpt_Link, APCAgendaLink, CCLink) that would have been a genuine dual coverage+document win if fresh. Live MAX(LASTUPDATE) check returns 2018-08-29 -- confirmed stale, not updated in 8 years. Other Dakota cities not yet checked: Lakeville (BS&A Online, not a supported provider type), Burnsville (OpenGov/CivicPlus, not supported)."
+    },
+    {
+      "jurisdiction": "Jefferson Parish, LA (Metairie/Kenner/Gretna)",
+      "county": "Jefferson",
+      "state": "LA",
+      "provider_type": null,
+      "endpoint": "https://www.mgoconnect.org/cp/portal",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Jefferson Parish and its incorporated cities (Metairie via parish, Kenner separately paper-based, Gretna/Harahan) run on MGO Connect (MyGovernmentOnline, api.mgoconnect.org), the dominant LA parish permitting platform. Confirmed live 2026-07-31 via Playwright: the portal (mgoconnect.org/cp/portal) lets a Guest pick State=Louisiana/Jurisdiction=<any> and browse jurisdiction landing pages with no login, but clicking 'Search Permits' redirects to /cp/login (Sign In page) -- the actual permit search/records endpoint is login-gated for anonymous users, confirmed by watching network requests (no permit-record API call fires before the redirect). Jefferson Parish's own GIS (geoportal.jeffparish.net/arcgis/rest/services) returned a bare '500 - Internal server error' on the REST services root (curl, 2026-07-31) -- not a working ArcGIS feed. Not one of the 8 existing provider types (Accela/Socrata/ArcGIS/EnerGov/CKAN/Carto/CSV/TdlrTabs); would need new engineering to build an MGO Connect provider even if login were solved, and login is a hard stop per AGENT_STRATEGY.md policy on login-gated sources. REAL DEAD END. Document-research-fallback run 2026-07-31 (--lookback \"the last 30 days\"): 4 named projects captured (West End Waterfront Redevelopment, Perrier Esquerre Contractors HQ/fabrication facility, +2 others), 0 documents_confirmed (no live-fetchable PDF/DOCX found for any, all either had no URL or failed the content-type check). Output: data/raw/la-jefferson-document-fallback.json."
+    },
+    {
+      "jurisdiction": "Caddo Parish, LA (Shreveport, joint Shreveport/Caddo permitting)",
+      "county": "Caddo",
+      "state": "LA",
+      "provider_type": null,
+      "endpoint": "https://www.mgoconnect.org/cp/portal",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "City of Shreveport handles all permitting for both Shreveport and unincorporated Caddo Parish (intergovernmental agreement), also on MGO Connect. Confirmed live 2026-07-31 via Playwright: selected Louisiana -> Shreveport jurisdiction (ID 178) with no login required to reach the jurisdiction landing page (GetJurisdictionByID/178 etc. all 200 as Guest), but clicking 'Search Permits' redirects to /cp/login -- same login gate as every other MGO Connect jurisdiction. Shreveport-Caddo MPC's public GIS (arcgis.com webappviewer, no dedicated FeatureServer for permits per Gemini) and Caddo Parish's subdivision portal (subdivisions.caddo.gov) are plat/subdivision-only, not building-permit data. REAL DEAD END on the same MGO Connect login gate as Jefferson Parish -- this is a statewide LA platform pattern, not a one-off; other LA target counties (Rapides, St. Tammany, Tangipahoa, Terrebonne) also list as MGO Connect jurisdictions in the portal's jurisdiction picker and will very likely hit the same gate. Document-research-fallback run 2026-07-31 (--lookback \"the last 30 days\"): 5 named projects captured, 0 documents_confirmed. Output: data/raw/la-caddo-document-fallback.json."
+    },
+    {
+      "jurisdiction": "Lafayette Parish, LA (Lafayette Consolidated Government)",
+      "county": "Lafayette",
+      "state": "LA",
+      "provider_type": null,
+      "endpoint": "https://www.mgoconnect.org/cp/portal",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Lafayette Consolidated Government (city/parish merged 1996) and surrounding municipalities (Broussard, Youngsville, Carencro, Scott, Duson) also run on MGO Connect -- same login-gated 'Search Permits' dead end confirmed for Jefferson/Caddo above. LCG's own GIS host (lcgmaps.lafayettela.gov/arcgis/rest/services) failed to resolve entirely (curl exit 6, DNS/host failure, 2026-07-31), not a working ArcGIS feed as Gemini's first answer implied. REAL DEAD END."
+    },
+    {
+      "jurisdiction": "Calcasieu Parish, LA (Lake Charles)",
+      "county": "Calcasieu",
+      "state": "LA",
+      "provider_type": null,
+      "endpoint": "https://www.calcasieu.gov/civicaccessportal",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Unincorporated Calcasieu Parish runs Tyler Civic Access / Enterprise Permitting & Licensing at www.calcasieu.gov/civicaccessportal (per Gemini, migrated off legacy EnerGov CSS/tylerhost.net Oct 2023). Confirmed live 2026-07-31: the legacy calcasieuparishla-energov.tylerhost.net hostname Gemini first suggested does NOT resolve (curl: 'Could not resolve host'). The current www.calcasieu.gov/civicaccessportal URL returns HTTP 403 'Access Denied' from Akamai's edge WAF/Bot Manager on every automated access attempt tried (curl with -v, and a full headless-Chromium Playwright load) -- this is a real Akamai bot-block, not a broken link (curl got a clean Akamai error page with a reference ID, not a connection failure). City of Lake Charles (the parish's largest incorporated city) runs MGO Connect, same login-gated dead end already confirmed for Jefferson/Caddo/Lafayette. REAL DEAD END -- Akamai bot protection is a hard stop per AGENT_STRATEGY.md policy (no anti-bot-evasion tooling), same class of blocker as Colorado Springs' PPRBD CAPTCHA."
+    },
+    {
+      "jurisdiction": "Ouachita Parish, LA (Monroe/West Monroe)",
+      "county": "Ouachita",
+      "state": "LA",
+      "provider_type": null,
+      "endpoint": "https://oppj.org/departments/permit_office/building_permits/",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Unincorporated Ouachita Parish is managed in-house by the Ouachita Parish Police Jury (OPPJ) Permit Office -- confirmed live 2026-07-31 (HTTP 200), but the page is a plain navigation hub linking to Commercial Building / Mobile Home / New Home Construction / Third-Party Providers subpages with no queryable online permit database, search tool, or open-data feed of any kind -- not Accela/EnerGov/Socrata/ArcGIS/CKAN/Carto. City of Monroe runs MGO Connect (same login-gated dead end as other LA jurisdictions above). City of West Monroe uses paper/PDF submission only, per Gemini, not independently verified live (no online system to verify). REAL DEAD END -- genuinely no digitized public permit system for the parish government, distinct from a blocked/login-gated one."
     }
   ]
 }
