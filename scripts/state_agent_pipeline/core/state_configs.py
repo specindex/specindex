@@ -1114,6 +1114,28 @@ MI_WAYNE_CONFIG: dict[str, Any] = {
     "desc_fields": ["proposed_use_type", "permit_type"],
 }
 
+# Kent County MI (Grand Rapids) Accela -- verified live 2026-07-31.
+# County-level check found no county-wide feed (Kent County itself doesn't
+# centralize permitting; most other Kent cities use BS&A Online, which has
+# no public API). Grand Rapids, the county's largest city, runs Accela
+# Citizen Access -- confirmed via Playwright (endpoint case-sensitive
+# lowercase "grandrapids" in the path; module=Building 404s, only
+# module=Permits works, same gotcha as other MI/GA Accela deployments).
+# No single "Commercial" catch-all option in the #ddlGSPermitType dropdown
+# -- picked the broadest real Commercial-prefixed label after probing all
+# ~70 real options live: "Building Permit - Commercial or 3+ Family New or
+# Addition".
+MI_KENT_CONFIG: dict[str, Any] = {
+    "state_code": "MI",
+    "provider_type": "accela",
+    "county": "Kent",
+    "endpoint": "https://aca-prod.accela.com/grandrapids",
+    "module": "Permits",
+    "permit_type_label": "Building Permit - Commercial or 3+ Family New or Addition",
+    "lookback_days": 90,
+    "feed_id": "mi-grandrapids-kent",
+}
+
 # Cook County (IL) Assessor's Permits (Socrata) -- verified live
 # 2026-07-28: real, but date_issued has a data-quality bug (4 rows out
 # of 92,437 total have a garbage future date, MAX() = year 2210). Bounded
@@ -1825,6 +1847,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "TX-DALLAS-ALT": TX_DALLAS_ALT_ACCELA_CONFIG,
     "TX-WILLIAMSON": TX_WILLIAMSON_CONFIG,
     "MI-WAYNE": MI_WAYNE_CONFIG,
+    "MI-KENT": MI_KENT_CONFIG,
     "IL-COOK": IL_COOK_CONFIG,
     "NY-NYC": NY_NYC_CONFIG,
     "MA-CAMBRIDGE": MA_CAMBRIDGE_CONFIG,

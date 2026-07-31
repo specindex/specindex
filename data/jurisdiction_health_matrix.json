@@ -2446,6 +2446,157 @@
       "state_agent_pipeline_key": "SC-RICHLAND",
       "status": "FAILED_NEED_ALT",
       "notes": "Richland County itself: CentralSquare eTRAKiT (etrakit.rcgov.us/etrakit/, live 200) with no public API -- login-gated search UI, dead end. City of Columbia: Tyler EnerGov on tylerhost.net (same platform as CA-ELMONTE/CA-GLENDALE), wired via energov_provider.py, but dry-run --lookback-days 90 returned 0 rows -- direct Playwright probe confirmed the search route SSO-redirects to a login page (title 'Log In'), unlike El Monte/Glendale/Carson's anonymous search. Config left registered in state_configs.py (SC_COLUMBIA_ENERGOV_CONFIG) in case Tyler's tenant auth changes later. Needs an alternate source (Richland County Assessor GIS parcel data or a FOIA-based bulk pull) not yet attempted. DOCUMENTS (part 2, 2026-07-31): grounded Gemini call found 5 named projects with a dated public action in the last 30 days (Richland Fire Capital bond $12M, $6.36M road-widening contract, Lake Murray Blvd site plan SPL-2026-00009, Eastover solar facility, 532-534 Santee Ave addition) -- all 5 claimed 'pullable document' URLs were homepage-level domains (richlandcountysc.gov / columbiasc.gov), not exact links. Live-verification (curl + Playwright) of the actual navigation paths Gemini implied (columbiasc.gov/planning-boards-commissions/pc/pc-agendas-minutes/, richlandcountysc.gov/Government/County-Council/Agendas-Minutes) both 404'd -- Gemini's site structure guesses were wrong. documents_confirmed=0/5; a follow-up feedback-loop round to find the real agendas/packets URL structure on both sites is real remaining scope. The 5 named projects themselves are being recorded as leads only, NOT independently cross-checked per Phase II step 6b -- do not treat cost/date facts above as confirmed."
+    },
+    {
+      "jurisdiction": "Kent County, MI (Grand Rapids)",
+      "county": "Kent",
+      "state": "MI",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/grandrapids",
+      "state_agent_pipeline_key": "MI-KENT",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 28,
+      "notes": "County itself doesn't centralize permitting; Wyoming (2nd largest Kent city) uses BS&A Online (no API). Grand Rapids runs Accela Citizen Access -- confirmed live via Playwright (lowercase 'grandrapids' path is case-sensitive, module=Building 404s/errors, only module=Permits works). No single Commercial catch-all in #ddlGSPermitType; picked broadest real non-residential label 'Building Permit - Commercial or 3+ Family New or Addition' out of ~70 real options. Dry-run confirmed 28 real rows (90-day lookback), merged for real: mi.json 1753->1781."
+    },
+    {
+      "jurisdiction": "Oakland County, MI",
+      "county": "Oakland",
+      "state": "MI",
+      "provider_type": null,
+      "endpoint": "https://bsaonline.com",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "County GIS hub (gis.oakgov.com) has parcel/zoning layers but no permit FeatureServer -- county explicitly states permitting is a local-community responsibility. All checked cities (Troy, Southfield, Farmington Hills, Novi, Rochester Hills, Auburn Hills) run BS&A Online, an interactive-only portal with no public REST API or bulk feed. Pontiac uses a plain department page, no portal at all. No live structured source found."
+    },
+    {
+      "jurisdiction": "Macomb County, MI (Warren, Sterling Heights, Clinton Twp)",
+      "county": "Macomb",
+      "state": "MI",
+      "provider_type": null,
+      "endpoint": "https://bsaonline.com",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "No countywide permitting; Warren, Sterling Heights, Clinton Township all use BS&A Online (interactive search only, no API). No ArcGIS FeatureServer or Socrata feed identified by Gemini-assisted discovery. Not yet independently re-probed for a city-specific ArcGIS Hub the same way Grand Rapids' Accela deployment was found for Kent -- worth a follow-up pass."
+    },
+    {
+      "jurisdiction": "Genesee County, MI (Flint)",
+      "county": "Genesee",
+      "state": "MI",
+      "provider_type": null,
+      "endpoint": "https://bsaonline.com/?uid=287",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "City of Flint Building & Safety uses BS&A Online (interactive only). No county-level aggregated feed. No structured API found."
+    },
+    {
+      "jurisdiction": "Ingham County, MI (Lansing, East Lansing)",
+      "county": "Ingham",
+      "state": "MI",
+      "provider_type": null,
+      "endpoint": "https://bsaonline.com",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Lansing and East Lansing both on BS&A Online (interactive only). No county-level API or ArcGIS FeatureServer identified."
+    },
+    {
+      "jurisdiction": "Ottawa County, MI (Holland, Grand Haven)",
+      "county": "Ottawa",
+      "state": "MI",
+      "provider_type": null,
+      "endpoint": "https://bsaonline.com",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Holland, Holland Charter Township, Grand Haven all on BS&A Online (interactive only). No structured feed identified at county or city level."
+    },
+    {
+      "jurisdiction": "Kalamazoo County, MI (Kalamazoo, Portage)",
+      "county": "Kalamazoo",
+      "state": "MI",
+      "provider_type": null,
+      "endpoint": "https://bsaonline.com",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "City of Kalamazoo reportedly runs Tyler EnerGov on the backend but public-facing record lookup is BS&A Online (interactive only); Portage same. No public EnerGov API endpoint surfaced -- would need a dedicated live probe of a self-service portal URL before ruling out entirely, flagged for a follow-up round rather than fully exhausted."
+    },
+    {
+      "jurisdiction": "Saginaw County, MI (Saginaw)",
+      "county": "Saginaw",
+      "state": "MI",
+      "provider_type": null,
+      "endpoint": "https://bsaonline.com",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "County and City of Saginaw both on BS&A Online (interactive only). No structured feed identified."
+    },
+    {
+      "jurisdiction": "Livingston County, MI (Howell, Brighton)",
+      "county": "Livingston",
+      "state": "MI",
+      "provider_type": null,
+      "endpoint": "https://bsaonline.com",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "County Building Department and Howell/Brighton all on BS&A Online (interactive only). No structured feed identified."
+    },
+    {
+      "jurisdiction": "Muskegon County, MI (Muskegon)",
+      "county": "Muskegon",
+      "state": "MI",
+      "provider_type": null,
+      "endpoint": "https://bsaonline.com",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "County and City of Muskegon both on BS&A Online (interactive only). No structured feed identified."
+    },
+    {
+      "jurisdiction": "Monroe County, MI (Monroe)",
+      "county": "Monroe",
+      "state": "MI",
+      "provider_type": null,
+      "endpoint": "https://bsaonline.com",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "County and City of Monroe both on BS&A Online (interactive only). No structured feed identified."
+    },
+    {
+      "jurisdiction": "Calhoun County, MI (Battle Creek)",
+      "county": "Calhoun",
+      "state": "MI",
+      "provider_type": null,
+      "endpoint": "https://bsaonline.com",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "City of Battle Creek on BS&A Online (interactive only). No structured feed identified."
+    },
+    {
+      "jurisdiction": "Jackson County, MI (Jackson)",
+      "county": "Jackson",
+      "state": "MI",
+      "provider_type": null,
+      "endpoint": "https://bsaonline.com",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "City of Jackson and surrounding municipalities on BS&A Online (interactive only). No structured feed identified."
+    },
+    {
+      "jurisdiction": "Berrien County, MI (St. Joseph, Benton Harbor)",
+      "county": "Berrien",
+      "state": "MI",
+      "provider_type": null,
+      "endpoint": "https://bsaonline.com",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "St. Joseph, Benton Harbor, Benton Charter Township all on BS&A Online (interactive only). No structured feed identified."
+    },
+    {
+      "jurisdiction": "St. Clair County, MI (Port Huron)",
+      "county": "St. Clair",
+      "state": "MI",
+      "provider_type": null,
+      "endpoint": "https://bsaonline.com",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Port Huron and Port Huron Township both on BS&A Online (interactive only). No structured feed identified."
     }
   ]
 }
