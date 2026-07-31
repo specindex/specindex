@@ -166,15 +166,19 @@ not a draft plan. This is the actual workflow used to find and wire every new
 county/state source added on 2026-07-28 (Wayne MI, Cook IL, Miami-Dade FL,
 King WA, Tarrant TX, Franklin/Cuyahoga OH, Mecklenburg/Wake NC, Fairfax VA,
 Philadelphia PA, San Diego CA, Dallas/Bexar TX, TDLR TABS statewide TX,
-Colorado Springs CO, Cleveland OH). It's now a 10-step loop (step 8 added
-2026-07-29, step 9 [text extraction] added 2026-07-29, step 9 [research
-fallback] added 2026-07-31 and the former step 9 renumbered to step 10),
-and **steps 7, 8, and 10 are all required for every project pulled via a
-structured source, not optional follow-ups** — do not consider a
-jurisdiction "done" after step 6 alone, and do not consider an individual
-project "done" without steps 8 and 10. **Step 9 (research fallback) is
+Colorado Springs CO, Cleveland OH). It's now a 10-step loop, **reordered
+2026-07-31 into 3 phases per an external review** (recorded in full at
+`docs/PIPELINE_REVIEW_2026-07-31.md`) — the step numbers below are not the
+order these steps were originally added in; see that doc for the history
+and reasoning behind each move. **Steps 8 (document pull), 9 (text
+extraction), and 10 (enrichment) are all required for every project pulled
+via a structured source, not optional follow-ups** — do not consider a
+jurisdiction "done" after step 7 alone, and do not consider an individual
+project "done" without steps 8-10. **Step 6 (research fallback) is
 conditional, not required for every project** — it only applies when
-steps 1-6 find no structured source at all for a jurisdiction.
+steps 1-4 find no structured source at all for a jurisdiction.
+
+### Phase I — Source Discovery
 
 1. **Discovery — Gemini, with context.** Send a query through
    `scripts/gemini_discovery_chat.py --session <name> "..."`. Not stateless:
@@ -191,85 +195,38 @@ steps 1-6 find no structured source at all for a jurisdiction.
    (status overview, exact failure codes, what's being asked for) back into
    the *same* persistent session, so Gemini has the full trail of what's
    already ruled out. Can chain many rounds.
-4. **Provider wiring.** Confirmed sources get an existing provider
-   (`Socrata`/`ArcGIS`/`Accela`/`EnerGov`/`CKAN`/`Carto`/`CSV`/`TdlrTabs` — 8
-   platform types as of 2026-07-28) or a new one if the platform is
-   genuinely novel. Config goes into
-   `scripts/state_agent_pipeline/core/state_configs.py`, dry-run first, then
-   `--merge-state`.
-5. **Data-quality gate.** `scripts/check-corpus-integrity.py` (+ CI on
-   push/PR) checks for duplicate IDs across the whole corpus. Clean
-   structured sources route through `generic_mapping.py`'s no-LLM path
-   instead of paying for Flash/Sonnet.
-6. **Institutional memory.** Every batch — wins *and* dead ends — gets a
-   `docs/ROADMAP.md` entry and a status line in
-   `data/jurisdiction_health_matrix.json`, so the next investigation doesn't
-   re-walk dead paths.
-7. **Project-document pull (REQUIRED, not optional).** For every project
-   captured in step 4, find and pull its real source documents (RFPs, board
-   minutes, EIS reports, site plans) the same way — via Gemini
-   (`gemini_discovery_chat.py`), live-verified before download, uploaded to
-   `gs://specindex-ai-raw-documents/{state}/` (not git — large binaries).
-   **GCS-only, no local intermediate copy** — Asif explicitly said
-   (2026-07-28) documents should never be saved to a local folder, only to
-   GCS; any future document-pull script should stream/upload directly, not
-   stage through `data/documents/{state}/` first (the existing NJ script,
-   `scripts/fetch-nj-documents.py`, downloads locally then needs a separate
-   manual `gcloud storage rsync` — that's the *old* pattern, not the target
-   one). Before assuming a source's documents are pullable (e.g. trusting an
-   "Accela Attachments Tab" claim from a Gemini discovery response), verify
-   live whether attachments are actually public without login — **confirmed
-   live for Cleveland (COC) that they are not**: the Attachments tab UI
-   loads for anonymous users, but it's an upload form, and the real backend
-   call that would list existing documents
-   (`.../Dpr/Handlers/Api.ashx/ab/records/{id}/planroom`) returns 403
-   Forbidden anonymously. Do not skip straight to building a downloader on
-   an unverified claim, even one as specific-sounding as Gemini's was here.
-   **First real win, same day:** SAM.gov's public opportunity API
-   (`sam.gov/api/prod/opps/v3/opportunities/{noticeId}/resources`, then
-   `.../resources/files/{resourceId}/download`) genuinely exposes real
-   downloadable attachments (structural drawings, specs, bid abstracts)
-   with zero auth — verified by actually downloading and file-type-checking
-   a real PDF. Built `scripts/fetch-sam-gov-documents.py` (GCS-only, per
-   Asif's instruction above), ran for all 44 GA SAM.gov projects: 30/44 had
-   real documents, 411 files, 752MB uploaded to
-   `gs://specindex-ai-raw-documents/georgia/`. Document access genuinely
-   varies by source type (federal solicitations are public by law;
-   municipal permit attachments often aren't) — verify per source, never
-   assume uniformly good or bad. **Remaining scope:** everything besides
-   GA-SAM and the earlier NJ web-research work.
-8. **Project enrichment (REQUIRED, not optional) — added 2026-07-29.** For
-   every new project a jurisdiction produces, run
-   `scripts/enrich-project-details.py <spx_id or slug>` (or `--batch
-   --limit N` across many) to populate the AI-enriched detail-page sections
-   — Executive Brief, CSI Scope Matrix, Verified Construction Team,
-   Permits, Contacts — via the same two-pass search-grounded discovery +
-   independent cross-check method used to build the first real page
-   (`SPX-000157`, Hyundai-SK Battery Plant). Writes to `project_enrichment`
-   (per-fact rows with `confidence`/`sources`) and
-   `project_enrichment_checks` (a 30-day recheck cooldown, so a project
-   that genuinely has nothing findable doesn't get re-queried/re-billed
-   every run). This is what makes `components/ProjectDetailView.tsx` —
-   **the adopted default template for every project page, see
-   `docs/PROJECT_PAGE_REDESIGN.md`** — actually render its enriched
-   sections instead of falling back to the raw description; a project
-   without step 8 still gets a working page, just a thinner one. As of
-   2026-07-29 only `SPX-000157` has been through this step; running it
-   across the rest of the corpus is real remaining scope, same as
-   step 7's GA-SAM/NJ-only coverage today.
-9. **Direct project-level research fallback — added 2026-07-31, for any
-   state, not just Illinois.** Triggers when steps 1-6 exhaust every lead
-   for a jurisdiction (deterministic ArcGIS/Socrata search, then Flash,
-   then Sonnet audit) without finding a live, structured, queryable data
-   source — a real and common outcome for smaller counties/cities that
-   simply have no digitized permit system at all (confirmed live for
-   ~20 IL jurisdictions in this batch: DuPage/Lake resolved to false
-   positives, McHenry/Kane/Will named the right platform but wrong exact
-   URL, McLean/Rock Island/St. Clair are real sites with no online
-   application system, Winnebago/Madison gave dead URLs). When a
-   jurisdiction has no pullable source, that doesn't mean it has no real
-   commercial construction activity worth capturing -- this step
-   researches specific named projects directly instead of a feed:
+4. **Institutional memory — moved up from the former step 6.** Every batch
+   — wins *and* dead ends — gets a `docs/ROADMAP.md` entry and a status
+   line in `data/jurisdiction_health_matrix.json`, logged **immediately
+   upon a lead being confirmed dead (step 2/3), not batched to the end** —
+   if step 2 fails and the run is aborted, logging that only happens later
+   in the sequence never executes for that failure. This is the first
+   phase's actual output: a jurisdiction is either resolved to a live
+   source, or logged as a dead end with evidence, before anything else
+   happens.
+
+### Phase II — Project Acquisition (the fork)
+
+Two mutually exclusive paths out of Phase I, both producing the same thing:
+a standardized list of raw project candidates to hand to Phase III.
+
+5. **Provider wiring** *(path A — a structured source was found)*.
+   Confirmed sources get an existing provider (`Socrata`/`ArcGIS`/
+   `Accela`/`EnerGov`/`CKAN`/`Carto`/`CSV`/`TdlrTabs` — 8 platform types
+   as of 2026-07-28) or a new one if the platform is genuinely novel.
+   Config goes into `scripts/state_agent_pipeline/core/state_configs.py`,
+   dry-run first, then `--merge-state`.
+6. **Direct project-level research fallback** *(path B — moved up from the
+   former step 9; fires only when steps 1-4 find no structured source at
+   all)* **— added 2026-07-31, for any state, not just Illinois.** A real
+   and common outcome for smaller counties/cities with no digitized permit
+   system at all (confirmed live for ~20 IL jurisdictions in one batch:
+   DuPage/Lake resolved to false positives, McHenry/Kane/Will named the
+   right platform but wrong exact URL, McLean/Rock Island/St. Clair are
+   real sites with no online application system, Winnebago/Madison gave
+   dead URLs). No pullable source doesn't mean no real commercial
+   construction activity worth capturing — this path researches specific
+   named projects directly instead of a feed:
 
    a. **Grounded research call.** One `google_search`-grounded Gemini
       call per county (or per project, for a deeper follow-up), asking
@@ -309,22 +266,95 @@ steps 1-6 find no structured source at all for a jurisdiction.
       produces verified findings in conversation/file output, not rows
       in `projects` yet. Do not skip straight from (b) to treating
       output as already-loaded data.
-10. **Document text extraction — added 2026-07-29.** For every document
-   already pulled by step 7, extract real per-page text into
-   `document_pages` (pgvector-ready, embedding column added but not yet
-   populated) via `scripts/extract-document-text.py --document-file-id` (or
-   `--batch --state --document-type`) — the foundation for the chat agent's
-   retrieval and, later, structured material extraction. Native text
-   (PyMuPDF) is tried first — free, instant, and most real documents in the
-   corpus already carry an embedded text layer, including CAD-exported
-   drawing sheets. Only pages with no meaningful native text (<20 chars)
-   render to a one-page PDF and go to Google Document AI, chosen over a
-   self-hosted OCR pool after a live head-to-head test (comparable
-   accuracy, better layout-aware output, ~$360 total at the corpus's
-   estimated ~240K OCR-needing pages vs. the engineering cost of running a
-   CPU OCR worker pool). Automated via
-   `.github/workflows/extract-document-text-pipeline.yml`, same WIF + Cloud
-   SQL Auth Proxy pattern as every other pull-*.yml workflow.
+7. **Data-quality gate / dedup — moved up from the former step 5.**
+   `scripts/check-corpus-integrity.py` (+ CI on push/PR) checks for
+   duplicate IDs across the whole corpus. Run **right after acquisition
+   (step 5 or 6), before any of Phase III's expensive per-project work** —
+   not just via CI on push after documents/enrichment have already been
+   paid for. Clean structured sources route through `generic_mapping.py`'s
+   no-LLM path instead of paying for Flash/Sonnet.
+
+### Phase III — Project Processing & Enrichment
+
+Runs only on the new, deduplicated projects Phase II produced.
+
+8. **Project-document pull (REQUIRED, not optional) — moved up from the
+   former step 7.** For every new project, find and pull its real source
+   documents (RFPs, board minutes, EIS reports, site plans) the same way —
+   via Gemini (`gemini_discovery_chat.py`), live-verified before download,
+   uploaded to `gs://specindex-ai-raw-documents/{state}/` (not git — large
+   binaries). **GCS-only, no local intermediate copy** — Asif explicitly
+   said (2026-07-28) documents should never be saved to a local folder,
+   only to GCS; any future document-pull script should stream/upload
+   directly, not stage through `data/documents/{state}/` first (the
+   existing NJ script, `scripts/fetch-nj-documents.py`, downloads locally
+   then needs a separate manual `gcloud storage rsync` — that's the *old*
+   pattern, not the target one). Before assuming a source's documents are
+   pullable (e.g. trusting an "Accela Attachments Tab" claim from a Gemini
+   discovery response), verify live whether attachments are actually
+   public without login — **confirmed live for Cleveland (COC) that they
+   are not**: the Attachments tab UI loads for anonymous users, but it's
+   an upload form, and the real backend call that would list existing
+   documents (`.../Dpr/Handlers/Api.ashx/ab/records/{id}/planroom`)
+   returns 403 Forbidden anonymously. Do not skip straight to building a
+   downloader on an unverified claim, even one as specific-sounding as
+   Gemini's was here. **First real win, same day:** SAM.gov's public
+   opportunity API (`sam.gov/api/prod/opps/v3/opportunities/{noticeId}/
+   resources`, then `.../resources/files/{resourceId}/download`)
+   genuinely exposes real downloadable attachments (structural drawings,
+   specs, bid abstracts) with zero auth — verified by actually
+   downloading and file-type-checking a real PDF. Built
+   `scripts/fetch-sam-gov-documents.py` (GCS-only, per Asif's instruction
+   above), ran for all 44 GA SAM.gov projects: 30/44 had real documents,
+   411 files, 752MB uploaded to `gs://specindex-ai-raw-documents/
+   georgia/`. Document access genuinely varies by source type (federal
+   solicitations are public by law; municipal permit attachments often
+   aren't) — verify per source, never assume uniformly good or bad.
+   **Remaining scope:** everything besides GA-SAM and the earlier NJ
+   web-research work.
+9. **Document text extraction — moved up from the former step 10, added
+   2026-07-29.** For every document just pulled in step 8, extract real
+   per-page text into `document_pages` (pgvector-ready, embedding column
+   added but not yet populated) via
+   `scripts/extract-document-text.py --document-file-id` (or `--batch
+   --state --document-type`) — feeds step 10 below as its primary source,
+   and is the foundation for the chat agent's retrieval and, later,
+   structured material extraction. Native text (PyMuPDF) is tried first —
+   free, instant, and most real documents in the corpus already carry an
+   embedded text layer, including CAD-exported drawing sheets. Only pages
+   with no meaningful native text (<20 chars) render to a one-page PDF
+   and go to Google Document AI, chosen over a self-hosted OCR pool after
+   a live head-to-head test (comparable accuracy, better layout-aware
+   output, ~$360 total at the corpus's estimated ~240K OCR-needing pages
+   vs. the engineering cost of running a CPU OCR worker pool). Automated
+   via `.github/workflows/extract-document-text-pipeline.yml`, same WIF +
+   Cloud SQL Auth Proxy pattern as every other pull-*.yml workflow.
+10. **Project enrichment (REQUIRED, not optional) — moved down from the
+    former step 8, added 2026-07-29.** Run
+    `scripts/enrich-project-details.py <spx_id or slug>` (or `--batch
+    --limit N` across many) to populate the AI-enriched detail-page
+    sections — Executive Brief, CSI Scope Matrix, Verified Construction
+    Team, Permits, Contacts — via the same two-pass search-grounded
+    discovery + independent cross-check method used to build the first
+    real page (`SPX-000157`, Hyundai-SK Battery Plant). **Should read step
+    9's extracted document text as its primary source, using web search
+    only to fill gaps or cross-check** — a project's own RFP/spec sheet is
+    higher-fidelity than the open web for facts like architect or
+    contractor; this reordering (previously enrichment ran before text
+    extraction, forcing it to search the open web first) hasn't been
+    re-implemented in `enrich-project-details.py` itself yet, only
+    reflected here in step order — **real remaining scope**. Writes to
+    `project_enrichment` (per-fact rows with `confidence`/`sources`) and
+    `project_enrichment_checks` (a 30-day recheck cooldown, so a project
+    that genuinely has nothing findable doesn't get re-queried/re-billed
+    every run). This is what makes `components/ProjectDetailView.tsx` —
+    **the adopted default template for every project page, see
+    `docs/PROJECT_PAGE_REDESIGN.md`** — actually render its enriched
+    sections instead of falling back to the raw description; a project
+    without step 10 still gets a working page, just a thinner one. As of
+    2026-07-29 only `SPX-000157` has been through this step; running it
+    across the rest of the corpus is real remaining scope, same as
+    step 8's GA-SAM/NJ-only coverage today.
 
 **Known real limits (be honest about these, don't oversell):** discovery
 still needs a human+Claude verification loop per lead every time — not
