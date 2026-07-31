@@ -1568,6 +1568,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Polk County confirmed live on Accela (200 OK). Lakeland confirmed live on iMS (Intuitive Municipal Solutions, 302 redirect, new platform type). Puller not built."
+    },
+    {
+      "jurisdiction": "Brevard County, FL (Melbourne/Palm Bay)",
+      "county": "Brevard",
+      "state": "FL",
+      "provider_type": "accela",
+      "endpoint": "https://acaweb.brevardcounty.us/CitizenAccess/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Brevard County confirmed live on Accela (302, real). Melbourne confirmed live on EnerGov (200 OK). Palm Bay on iMS (403 bot-block, real domain). Puller not built."
     }
   ]
 }
