@@ -1815,6 +1815,33 @@
       "endpoint": "https://www.prescottpermits.com",
       "status": "VERIFIED_WORKING",
       "notes": "Live eTRAKiT (CentralSquare) portal confirmed via curl -- page title literally \"eTRAKiT\". No eTRAKiT provider class built (out of scope this session); logged for future work."
+    },
+    {
+      "jurisdiction": "Mohave, AZ",
+      "county": "Mohave",
+      "state": "AZ",
+      "provider_type": "smartgov",
+      "endpoint": "https://co-mohave-az.smartgovcommunity.com/Public/Home",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live Granicus SmartGov public portal confirmed via curl -- page title literally \"Mohave County, AZ Public Portal\". Kingman also on SmartGov (ci-kingman-az.smartgovcommunity.com, not individually re-verified beyond the pattern). Bullhead City confirmed no structured platform (Gemini reports manual/phone-based intake; permits in surrounding unincorporated areas route through the county SmartGov). No SmartGov provider class built yet (out of scope this session); logged for future work."
+    },
+    {
+      "jurisdiction": "Yuma, AZ",
+      "county": "Yuma",
+      "state": "AZ",
+      "provider_type": "etrakit",
+      "endpoint": "https://yuma-trk.aspgov.com/etrakit/",
+      "status": "VERIFIED_WORKING",
+      "notes": "Yuma County unincorporated-area eTRAKiT portal confirmed live (200) via curl. No eTRAKiT provider class built yet -- logged for future work."
+    },
+    {
+      "jurisdiction": "City of Yuma, AZ",
+      "county": "Yuma",
+      "state": "AZ",
+      "provider_type": "energov",
+      "endpoint": "https://yumaaz-energovweb.tylerhost.net/apps/SelfService#/",
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Yuma Tyler EnerGov Civic Access self-service portal confirmed live (200) via curl. San Luis and Somerton confirmed manual/PDF-only intake per Gemini, not independently verified beyond city-domain spot checks -- treated as informational, not logged as NO_PUBLIC_DATA entries pending direct confirmation."
     }
   ]
 }
