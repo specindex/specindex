@@ -1016,8 +1016,8 @@
       "provider_type": null,
       "endpoint": null,
       "state_agent_pipeline_key": null,
-      "status": "FAILED_NEED_ALT",
-      "notes": "Flash's candidate was dropped entirely by the Sonnet audit pass (0 of the county's candidates kept) -- not yet re-investigated with a direct city-level query (Springfield)."
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Re-investigated with direct Springfield city-level query 2026-07-31 (prior note flagged this as not yet tried). Gemini first cited 4 fabricated URLs (springfield.il.us/PublicAccess/, maps.springfield.il.us ArcGIS root + 2 sub-endpoints), all 404, caught and corrected. Confirmed no digitized permit system at Springfield or Sangamon County level -- both real domains (200), manual/PDF-only. Step 6 research fallback run: 5 named projects found (Legacy Pointe sports complex, CyrusOne data center, REEL USA manufacturing, Springfield-Sangamon Transportation Center, BOS Center/hotel expansion). Document check: 0/3 claimed pullable documents verified real -- 2 were generic county pages with only site-wide nav-footer PDFs, 1 was a dead 404. Findings in data/raw/il-sangamon-research-fallback.json, not loaded, cost/SF/date facts not yet independently cross-checked (only the document claims were verified this round)."
     },
     {
       "jurisdiction": "Peoria County, IL (Peoria)",
