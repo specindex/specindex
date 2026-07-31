@@ -2039,6 +2039,25 @@ CO_LONGMONT_ACCELA_CONFIG: dict[str, Any] = {
 }
 STATE_CONFIGS["CO-LONGMONT"] = CO_LONGMONT_ACCELA_CONFIG
 
+# Weld County, CO (unincorporated; state's #8 county by population,
+# high oil/gas + residential/commercial growth) -- Accela agency code
+# WELD, confirmed live 2026-07-31 (200). module=Building&TabName=Home
+# dropdown has a clean, real "Commercial New Construction" catch-all
+# label (distinct from Commercial Alteration/Electrical and Oil and Gas
+# subtypes).
+CO_WELD_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "CO",
+    "provider_type": "accela",
+    "county": "Weld",
+    "endpoint": "https://aca-prod.accela.com/WELD",
+    "module": "Building",
+    "permit_type_label": "Commercial New Construction",
+    "lookback_days": 30,
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
+}
+STATE_CONFIGS["CO-WELD"] = CO_WELD_ACCELA_CONFIG
+
 # City of Cleveland, OH (Dept. of Building and Housing) -- Accela agency
 # code COC, confirmed live 2026-07-28. Separate system from Cuyahoga
 # County's own ArcGIS feed (OH-CUYAHOGA above) -- same LA-City-vs-LA-

@@ -2156,6 +2156,16 @@
       "status": "VERIFIED_WORKING",
       "notes": "Live-verified 2026-07-31: 200. Real custom in-house Douglas County Building Online Services portal (not a known reusable provider type -- Accela/Socrata/ArcGIS/etc). Discovery-only, no provider class exists for this platform.",
       "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "Weld County (unincorporated), CO -- Accela Building module",
+      "county": "Weld",
+      "state": "CO",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/WELD",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified 2026-07-31: 200, real nav (Building/Enforcement/Health/Oil And Gas/Planning/Public Works/Dev Review via Playwright). module=Building&TabName=Home dropdown has a clean real \"Commercial New Construction\" catch-all label. Dry-run lookback-days=90 returned 30 rows; real merge returned 23 new rows into data/states/co.json. Wired as CO-WELD.",
+      "state_agent_pipeline_key": "CO-WELD"
     }
   ]
 }
