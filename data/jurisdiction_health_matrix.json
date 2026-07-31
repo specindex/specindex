@@ -1758,6 +1758,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "CT has no county government; Vernon cited by Gemini as Tolland Countys largest town. Uses OpenGov Permitting & Licensing (formerly ViewPoint Cloud), live-verified 200 via curl (Vernon-branded portal, not generic landing). Closed proprietary portal, no public API, not Accela -- logged as discovery only per task instructions."
+    },
+    {
+      "jurisdiction": "Windham (town), CT",
+      "county": "Windham",
+      "state": "CT",
+      "provider_type": "other",
+      "endpoint": "https://permitlinkonline.com/csp/windhamct/DocumentLink.PublicWelcome.cls",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "CT has no county government; Windham town (~24,105 pop, WebSearch-confirmed) is Windham Countys largest. Gemini fabricated two URL guesses in a row (permitlinkonline.com/windhamct/ and bare permitlinkonline.com/ both 404d, fed back via GEMINI_FEEDBACK_REPORT twice) before I found the real link myself by crawling windhamct.gov building-services page HTML directly: https://permitlinkonline.com/csp/windhamct/DocumentLink.PublicWelcome.cls, confirmed live 200. PermitLink (Point Software Inc), closed proprietary portal, no public API, not Accela -- logged as discovery only per task instructions."
     }
   ]
 }
