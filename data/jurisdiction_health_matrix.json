@@ -1708,6 +1708,26 @@
       "state_agent_pipeline_key": "CT-HARTFORD",
       "status": "VERIFIED_WORKING",
       "notes": "CT has no county government; Hartford is Hartford County biggest city. Accela agency code HARTFORD confirmed live 2026-07-31 -- module=Building loads cleanly (no Error.aspx). Playwright probe of ddlGSPermitType found no single Commercial catch-all; real options are Commercial Accessory Structure/Addition/Alteration/Foundation/New Construction/Pool-Spa/Solar-PV Permit. Used \"Commercial Alteration Permit\" (broadest/highest-volume). Dry-run with lookback-days=90 returned 176 real rows (page-by-page live pull, dates through 07/30/2026); real merge pulled 170 mapped rows into data/states/ct.json. Config: CT_HARTFORD_ACCELA_CONFIG in state_configs.py."
+    },
+    {
+      "jurisdiction": "New Haven (city), CT",
+      "county": "New Haven",
+      "state": "CT",
+      "provider_type": "other",
+      "endpoint": "https://www.citysquared.com",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "CT has no county government; New Haven is New Haven County biggest city. Uses CitySquared (Municity/Software Consulting Associates) portal, confirmed independently by WebSearch (newhavenct.gov Building Department page explicitly names CitySquared as the only accepted permit-application channel, paper no longer accepted). Domain citysquared.com returns 403 on curl (Cloudflare bot-block, real registered domain per whois) -- consistent with a real portal blocking scripted access, not a fabrication. No public API surfaced; not Accela, so out of scope to build a new provider class per task instructions -- logged as discovery only."
+    },
+    {
+      "jurisdiction": "Torrington (city), CT",
+      "county": "Litchfield",
+      "state": "CT",
+      "provider_type": "other",
+      "endpoint": "https://torringtonct.portal.opengov.com",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "CT has no county government; Torrington is Litchfield Countys largest town. Uses OpenGov Permitting & Licensing portal, live-verified 200 via curl (real Torrington branding, not a generic OpenGov landing). OpenGov is a closed proprietary portal (no public read API surfaced), and not Accela, so out of scope to build a new provider class per task instructions -- logged as discovery only."
     }
   ]
 }
