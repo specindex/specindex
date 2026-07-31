@@ -1508,6 +1508,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Fort Lauderdale confirmed live on Accela, agency code FTL (301, real). Broward County ePermits OneStop (Computronix POSSE backend, handles unincorporated + countywide regulatory approvals) confirmed live (302, real), new platform type. Puller not built."
+    },
+    {
+      "jurisdiction": "Palm Beach County, FL (West Palm Beach)",
+      "county": "Palm Beach",
+      "state": "FL",
+      "provider_type": "energov",
+      "endpoint": "https://www.wpb.org/epl",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "West Palm Beach confirmed live on EnerGov/EPL (302, real). Palm Beach County's own custom ePZB portal (unincorporated areas) also confirmed live (302, real). Puller not yet built for either."
     }
   ]
 }
