@@ -2206,6 +2206,26 @@
       "status": "VERIFIED_WORKING",
       "notes": "Live-verified 2026-07-31: 200. Real Tyler EnerGov portal, but scoped to planning/zoning clearances only -- actual building permits for Grand Junction go through the county MaintStar portal above. Discovery-only.",
       "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "Garfield County (unincorporated), CO -- manual/staff submittal",
+      "county": "Garfield",
+      "state": "CO",
+      "provider_type": null,
+      "endpoint": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Confirmed via Gemini: only minor permits (re-roofing, demolition, signs) have online e-forms; all full residential/commercial/land-use building permits are coordinated via direct staff submittal (email/in-person), no structured/API-backed system. Consistent with a genuinely small/manual county.",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "City of Rifle, CO (Garfield County, largest municipality) -- Cloudpermit",
+      "county": "Garfield",
+      "state": "CO",
+      "provider_type": "cloudpermit",
+      "endpoint": "https://us.cloudpermit.com",
+      "status": "VERIFIED_WORKING",
+      "notes": "rifleco.org/Cloudpermit redirect page itself 404s on curl 2026-07-31, but the underlying Cloudpermit platform us.cloudpermit.com is confirmed live (200) -- Rifle is a genuine Cloudpermit customer. No Cloudpermit provider class in pipeline -- discovery-only.",
+      "state_agent_pipeline_key": null
     }
   ]
 }
