@@ -958,6 +958,246 @@
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
       "notes": "No digitized structured permit source at county or Bloomington/Normal level. Step 6 research fallback run 2026-07-31 with new pullable-document/drawing check: 5 named projects found (Rivian supplier park, OSF ICU expansion, Connect Transit center, Heartland CC training center, Ferrero plant expansion). Live-verified document pull: 2/2 Rivian PUD/site-plan PDFs on normalil.gov real and downloaded (3.68MB), 3/3 first-pass OSF HFSRB document URLs fabricated (404s, caught and corrected -- HFSRB uses a dynamic database, not static permalinks). Findings in data/raw/il-mclean-research-fallback.json, not loaded into corpus. Documents actually pulled to GCS 2026-07-31 via new scripts/fetch-research-fallback-documents.py: 2 real Rivian/Town of Normal PDFs (council + planning commission packets w/ site plan and architectural drawings) uploaded to gs://specindex-ai-raw-documents/illinois/mclean/rivian-automotive-supplier-park-plant-expansion/, 3.71MB total."
+    },
+    {
+      "jurisdiction": "DuPage County, IL",
+      "county": "DuPage",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Deterministic ArcGIS search's only 'relevant' hit (county name matched) was an Off-Leash Dog Parks layer -- a false positive the relevance filter passed on name-match alone, with no topical check. This wrongly marked the county 'resolved' and skipped it past the Flash fallback; never actually search-grounded. IL building permits are municipal, not county-level -- next attempt should target Naperville/Wheaton directly."
+    },
+    {
+      "jurisdiction": "Lake County, IL",
+      "county": "Lake",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Same false-positive-skips-Flash bug as DuPage above -- all 5 deterministic 'relevant' hits were Forest Preserve facility inventory (PRESERVE/BLDGTYPE/LIFEESTATE fields, owner=LakeCounty_ForestPreserves) or wetland restoration layers, none permit data. Never reached Flash."
+    },
+    {
+      "jurisdiction": "McHenry County, IL",
+      "county": "McHenry",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": "https://services1.arcgis.com/6iYC5AXXYapRVNzl/arcgis/rest/services/Woodstock_OpenGov_Permit/FeatureServer",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Misleading service name -- despite 'OpenGov_Permit' in the title, live inspection of every layer (0-13: zoning, TIF district, floodway, parcels, historic district, wetlands, township/corporate boundaries) found zero permit records. Likely built to support an OpenGov permit application's map widget, not a data source itself."
+    },
+    {
+      "jurisdiction": "Will County, IL",
+      "county": "Will",
+      "state": "IL",
+      "provider_type": "smartgov",
+      "endpoint": "https://willcountyil.smartgovcommunity.com/",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Real platform (SmartGov) named correctly by Gemini Flash after the Flash JSON-parsing bug fix, but this exact subdomain 404s. Worth a quick retry with a slightly different SmartGov URL pattern before ruling out."
+    },
+    {
+      "jurisdiction": "Kane County, IL",
+      "county": "Kane",
+      "state": "IL",
+      "provider_type": "cityview",
+      "endpoint": "https://www.kanecountyil.gov/Pages/webPortal.aspx",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Real platform (CityView) confirmed by two separate Gemini queries, but both guessed exact paths 404 (webPortal.aspx and, separately, onlinePortal.aspx) -- the portal exists at kanecountyil.gov somewhere, exact live path not yet found."
+    },
+    {
+      "jurisdiction": "Sangamon County, IL (Springfield)",
+      "county": "Sangamon",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Flash's candidate was dropped entirely by the Sonnet audit pass (0 of the county's candidates kept) -- not yet re-investigated with a direct city-level query (Springfield)."
+    },
+    {
+      "jurisdiction": "Peoria County, IL (Peoria)",
+      "county": "Peoria",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Same as Sangamon -- Sonnet dropped Flash's candidate, not yet re-investigated with a direct city-level query."
+    },
+    {
+      "jurisdiction": "Champaign County, IL (Champaign/Urbana/Savoy via CCRPC)",
+      "county": "Champaign",
+      "state": "IL",
+      "provider_type": "ckan",
+      "endpoint": "https://data.ccrpc.org/dataset/building-permits",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "CKAN catalog listing is real and live (200) -- Champaign County Regional Planning Commission's 'Building Permits' dataset, covering City of Champaign + City of Urbana + Village of Savoy since 2015. But the actual data backend (maps.ccrpc.org GeoServer, referenced by the catalog's own resource URLs) returns 403/404 on every path tried, including the token-bearing export URL from the catalog metadata itself -- data genuinely inaccessible despite the listing looking perfect. metadata_modified=2019-03-07 is also a staleness flag independent of the access failure. City of Urbana's own former portal (data.urbanaillinois.us, which this CCRPC dataset's notes say it mirrors) is separately confirmed dead -- DNS does not resolve at all (verified against working Socrata domains and general connectivity to rule out a local network issue)."
+    },
+    {
+      "jurisdiction": "Naperville / Wheaton / Waukegan / Aurora / Elgin / Joliet / Springfield / Peoria (city) / Crystal Lake, IL",
+      "county": null,
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "8 of Illinois's largest non-Chicago cities checked via deterministic ArcGIS Online + Socrata catalog search (the same jurisdiction-name relevance filter as _looks_relevant()) -- zero relevant hits for any of them. Not yet retried through the (now-fixed) Flash+Sonnet pass, which is the logical next step given deterministic search is exhausted for this list."
+    },
+    {
+      "jurisdiction": "Illinois -- BidBuy (statewide eProcurement)",
+      "county": null,
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": "https://www.bidbuy.illinois.gov/bso/view/search/external/advancedSearchBid.xhtml?openBids=true",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Real, live state eProcurement portal, but no RSS/XML bulletin feed exists anywhere on the site (checked homepage + search page directly) despite that being a plausible-sounding idea. It's a JSF/PrimeFaces AJAX interface -- results only render via a session-ViewState-driven POST (confirmed: raw GET response has an empty results template, 1 <tr>), same difficulty tier as an Accela source (needs Playwright), not a simple ingest script. Also would only be a 'thin' statewide source (state building solicitations, like GA-DRI/SAM.gov), not the deep county-level coverage IL actually needs. data.illinois.gov checked as a fallback -- essentially dead, 1 dataset total in Socrata's catalog."
+    },
+    {
+      "jurisdiction": "research-county-sources.py -- Flash JSON parsing bug",
+      "county": null,
+      "state": null,
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Not a jurisdiction -- logging the tooling fix found/applied during this IL pass since every state's Flash discovery step depends on it. response_mime_type='application/json' combined with the google_search tool silently corrupts Gemini 3.5 Flash's output (confirmed live: returned literal garbage '{}\"}end}' instead of raising) -- every prior county that fell through to Flash and came back with a parse error (not just IL; this bug predates this session) was hitting this. Separately, even without that flag, multi-part responses (a reasoning preamble + the real final JSON as a separate part) were naively concatenated before JSON extraction, which spans the regex match across part boundaries and produces garbled text. Fixed both: dropped response_mime_type entirely when google_search is enabled, and added extract_json_blob_from_parts() to try each part independently (last-to-first) before falling back to concatenation. Verified live against a real Kane County query post-fix -- clean, correctly-parsed JSON with a real, on-topic candidate (CityView portal name and platform correctly identified, even though the specific guessed URL 404'd -- see the Kane County entry above)."
+    },
+    {
+      "jurisdiction": "Winnebago County, IL (Rockford)",
+      "county": "Winnebago",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": "https://www.wincoil.gov/departments/community-development-department/building-division",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "URL given by Gemini doesn't resolve at all (DNS failure, confirmed with curl -v) -- dead/hallucinated domain, real Winnebago County site not yet found."
+    },
+    {
+      "jurisdiction": "McLean County, IL (Bloomington)",
+      "county": "McLean",
+      "state": "IL",
+      "provider_type": "manual_portal",
+      "endpoint": "https://www.mcleancountyil.gov/94/Building-Zoning",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Real, live site (200), but the given numbered CivicPlus URL redirects to an unrelated 'Recording Division' page (numbered-ID CMS URLs on these county sites are unstable). Checked page content for any Accela/EnerGov/SmartGov/CityView link or 'apply online' language -- none found. Informational/paper-application only, best evidence available."
+    },
+    {
+      "jurisdiction": "Rock Island County, IL",
+      "county": "Rock Island",
+      "state": "IL",
+      "provider_type": "manual_portal",
+      "endpoint": "https://www.rockislandcountyil.gov/163/Zoning-Building-Safety",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Same pattern as McLean -- real site (200), given URL redirects to a generic 'Overview' page, no digital permit system found in page content."
+    },
+    {
+      "jurisdiction": "St. Clair County, IL (Belleville)",
+      "county": "St. Clair",
+      "state": "IL",
+      "provider_type": "manual_portal",
+      "endpoint": "https://www.stclaircountyil.gov/departments/building-zoning/building-permits",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "The only one of this batch where the exact page loaded correctly (200, real Building Permits subpage). No Accela/EnerGov/SmartGov/CityView link or 'apply online'/'permit search' language found anywhere on the page -- informational only."
+    },
+    {
+      "jurisdiction": "Madison County, IL (Alton/Edwardsville)",
+      "county": "Madison",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": "https://www.madisoncountyil.gov/departments/planning_and_development/permits___inspections.php",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Given URL 404s."
+    },
+    {
+      "jurisdiction": "Williamson County, IL (Marion)",
+      "county": "Williamson",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Real false-positive bug in the deterministic relevance filter -- all 3 'relevant' hits were San Mateo County CA's unrelated 'Williamson Act' land-conservation datasets (the county-name substring check matched 'Williamson Act' text, not the actual Williamson County IL). _looks_relevant() checks jurisdiction-name substring only, not state/topic -- same class of gap that let DogParks/Forest-Preserve-Buildings through earlier in this session, worth a real fix (require the state name too, or a topic keyword) if this keeps recurring."
+    },
+    {
+      "jurisdiction": "Jackson County, IL (Carbondale)",
+      "county": "Jackson",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "No candidate survived either the deterministic or Flash+Sonnet pass -- not yet retried standalone (was batched with 6 others, Sonnet's audit may have deprioritized it against clearer wins in the same batch)."
+    },
+    {
+      "jurisdiction": "Kankakee County, IL",
+      "county": "Kankakee",
+      "state": "IL",
+      "provider_type": "smartgov",
+      "endpoint": "https://co-kankakee-il.smartgovcommunity.com/",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Real, live SmartGov portal (200, redirects to /Public/Home) -- but it's a JS-rendered SPA shell, raw HTML is only 15KB with no permit data or links in it. Tried common REST guesses (api/permits, Public/Permits) -- both 404. Same difficulty tier as Accela/BidBuy, needs Playwright, not a simple ingest script."
+    },
+    {
+      "jurisdiction": "DeKalb County, IL",
+      "county": "DeKalb",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": "https://dekalbcounty.org/departments/community-development/building-resources/building-reports-of-construction/",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Given URL 404s."
+    },
+    {
+      "jurisdiction": "Grundy County, IL (Morris)",
+      "county": "Grundy",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": "https://www.grundycountyil.gov/document_center/index.php",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Given URL 404s."
+    },
+    {
+      "jurisdiction": "Vermilion County, IL (Danville)",
+      "county": "Vermilion",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": "https://www4.citizenserve.com/danville",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Real platform (CitizenServe) named, city (Danville) rather than county -- but this exact subdomain 404s. Second Flash candidate (vercounty.org floodplain page) also 404s and isn't permit-related anyway."
+    },
+    {
+      "jurisdiction": "Tazewell County, IL (Pekin)",
+      "county": "Tazewell",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": "https://services.arcgis.com/LIEind9C2d6XYeOY/arcgis/rest/services/Road_Closures_View/FeatureServer",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Same relevance-filter false-positive pattern as DuPage/Lake/Williamson -- the only 'relevant' deterministic hit was a Road Closures layer, not permits. Never reached Flash for this county specifically (batched with others that did)."
+    },
+    {
+      "jurisdiction": "Kendall / LaSalle / Macon Counties, IL",
+      "county": null,
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "No candidate survived either deterministic or Flash+Sonnet passes for any of these three (batched with DeKalb/Grundy/Kankakee/Tazewell/Vermilion) -- not yet retried standalone."
     }
   ]
 }
