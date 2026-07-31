@@ -1134,10 +1134,10 @@
       "county": "Jackson",
       "state": "IL",
       "provider_type": null,
-      "endpoint": null,
+      "endpoint": "https://www.explorecarbondale.com/222/Permits-Applications",
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
-      "notes": "No candidate survived either the deterministic or Flash+Sonnet pass -- not yet retried standalone (was batched with 6 others, Sonnet's audit may have deprioritized it against clearer wins in the same batch)."
+      "notes": "No candidate survived either the deterministic or Flash+Sonnet pass -- not yet retried standalone (was batched with 6 others, Sonnet's audit may have deprioritized it against clearer wins in the same batch). RESOLVED 2026-07-31: City of Carbondale (largest city) confirmed live (301 hub, 200 on the specific commercial form) -- real CivicPlus FormCenter-based online application system, not a structured data feed/API. Unincorporated county areas confirmed manual, no portal. Not one of the 8 recognized platform types (form-submission only, no queryable records) -- would need Step 6 research fallback for actual project data rather than a structured puller."
     },
     {
       "jurisdiction": "Kankakee County, IL",
