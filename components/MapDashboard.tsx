@@ -4,6 +4,12 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 
+// Mapbox GL paint properties can't read CSS custom properties, so these
+// mirror --color-green / --color-amber / --color-white from app/globals.css.
+const MAP_COLOR_GREEN = "#166534";
+const MAP_COLOR_AMBER = "#f59e0b";
+const MAP_COLOR_WHITE = "#ffffff";
+
 const API_BASE = "https://specindex-api-gmm6irqe4q-uc.a.run.app";
 
 type MapPoint = {
@@ -116,7 +122,7 @@ export function MapDashboard() {
         source: "projects",
         filter: ["has", "point_count"],
         paint: {
-          "circle-color": "#2f9e5b",
+          "circle-color": MAP_COLOR_GREEN,
           "circle-radius": ["step", ["get", "point_count"], 16, 10, 22, 50, 28],
           "circle-opacity": 0.85,
         },
@@ -127,7 +133,7 @@ export function MapDashboard() {
         source: "projects",
         filter: ["has", "point_count"],
         layout: { "text-field": "{point_count_abbreviated}", "text-size": 12 },
-        paint: { "text-color": "#fff" },
+        paint: { "text-color": MAP_COLOR_WHITE },
       });
       map.addLayer({
         id: "unclustered-point",
@@ -135,10 +141,10 @@ export function MapDashboard() {
         source: "projects",
         filter: ["!", ["has", "point_count"]],
         paint: {
-          "circle-color": "#d97706",
+          "circle-color": MAP_COLOR_AMBER,
           "circle-radius": 6,
           "circle-stroke-width": 1,
-          "circle-stroke-color": "#fff",
+          "circle-stroke-color": MAP_COLOR_WHITE,
         },
       });
 

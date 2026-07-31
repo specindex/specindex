@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { HomePageGate } from "@/components/marketing/HomePageGate";
 import { ProductMock } from "@/components/marketing/ProductMock";
-import { StatsStrip } from "@/components/marketing/DemoSection";
 import { RequestDemoButton } from "@/components/marketing/RequestDemoButton";
 import { FAQ } from "@/components/marketing/FAQ";
 import { getStats, getSampleProjects, getRecentCount, getDistinctCounties } from "@/lib/projects";
@@ -92,6 +91,24 @@ const stages = [
   },
 ];
 
+const pipeline = [
+  {
+    n: "01",
+    title: "Discovery",
+    body: "We scan state and municipal permit, bid, and award sources continuously — not a weekly batch pull.",
+  },
+  {
+    n: "02",
+    title: "Enrichment & scoring",
+    body: "Each project is scored by stage, value, and product-category fit, so early-stage work with an open decision surfaces first.",
+  },
+  {
+    n: "03",
+    title: "Delivery",
+    body: "Filtered to your territory and category, with a source link on every record so a rep can verify it before making the call.",
+  },
+];
+
 export const metadata: Metadata = {
   title: "SpecIndex — Commercial construction projects, ranked for manufacturers",
   description:
@@ -100,21 +117,6 @@ export const metadata: Metadata = {
 };
 
 export default async function HomePage() {
-  // getProjects()+getCorpus() used to fetch the ENTIRE corpus (~175K+ rows,
-  // headed to 6.5M+) just to derive a handful of numbers -- timed out the
-  // build the same way /projects/[id] did (see docs/ROADMAP.md item 44's
-  // follow-up). total/states/recent/county-count now come from cheap SQL
-  // aggregates that don't scale with corpus size; only the brand/division/
-  // map rollups -- which need to inspect actual project fields, not just
-  // count rows -- fall back to a bounded representative sample.
-  // Sequential, not Promise.all -- confirmed live 2026-07-29 that the exact
-  // same 4 calls resolve in ~14s standalone in plain Node, but this page
-  // hung for the full 300s timeout on every attempt when they ran
-  // concurrently inside this Server Component during static export.
-  // Whatever the interaction is (React/Next's request-scoped fetch cache
-  // and Promise.all don't seem to be a good mix during prerendering),
-  // sequential awaits sidestep it entirely and cost a few extra seconds,
-  // not 300 of them.
   const stats = await getStats();
   const recent = await getRecentCount(90);
   const counties = await getDistinctCounties();
@@ -141,42 +143,61 @@ export default async function HomePage() {
               Top of funnel leads for building product manufacturers
             </p>
             <h1 className="mt-4 text-hero">
-              The commercial projects your sales team should chase this week, ranked.
+              Every project in the ground, before your competitors find it.
             </h1>
             <p className="mt-5 max-w-lg text-base leading-relaxed text-[var(--color-gray-600)]">
-              SpecIndex ranks open commercial projects by a transparent priority
-              score, filtered to your territory and product category — not a
-              database dump of every permit in the state.
+              SpecIndex tracks permits, bids, and awards across{" "}
+              {stateCount === 1 ? "1 state" : `${stateCount} states`} — scored,
+              enriched, and delivered before they hit the trade press.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <RequestDemoButton className="btn btn-demo" />
               <Link href="/projects/" className="btn btn-outline">
-                Search the index
+                See live coverage →
               </Link>
               <Link href="/visibility/" className="btn btn-outline">
                 Run a brand check
               </Link>
             </div>
-            <p className="mt-6 text-sm text-[var(--color-gray-400)]">
-              Currently tracking commercial work in{" "}
-              {stateCount === 1 ? "1 state" : `${stateCount} states`}.
-            </p>
           </div>
           <ProductMock />
         </div>
       </section>
 
-      <StatsStrip
-        stats={[
-          { value: `${count}+`, label: "Open commercial projects indexed nationwide" },
-          { value: `${recent}+`, label: "Projects with activity in the last 90 days" },
-          {
-            value: `${stateCount}`,
-            label: stateCount === 1 ? "State with active commercial work" : "States with active commercial work",
-          },
-          { value: `${countyCount}`, label: "Counties with indexed projects" },
-        ]}
-      />
+      {/* Live stats band -- real numbers, moved up per Gemini review feedback */}
+      <section className="bg-[#0f4a25] py-16 text-white">
+        <div className="mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-2 md:px-8">
+          <div>
+            <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-[#a7f3c8]">
+              <span className="inline-block h-2 w-2 rounded-full bg-[#a7f3c8]" />
+              Coverage active
+            </p>
+            <h2 className="mt-3 text-2xl font-bold">Numbers that update themselves.</h2>
+            <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/90">
+              Every figure here is pulled live from the index, not a stale
+              &quot;as of&quot; screenshot.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="rounded-lg border border-white/15 p-4">
+              <div className="font-mono text-2xl font-bold tabular-nums">{count}+</div>
+              <div className="mt-1 text-xs text-white/80">tracked projects</div>
+            </div>
+            <div className="rounded-lg border border-white/15 p-4">
+              <div className="font-mono text-2xl font-bold tabular-nums">{stateCount}</div>
+              <div className="mt-1 text-xs text-white/80">states covered</div>
+            </div>
+            <div className="rounded-lg border border-white/15 p-4">
+              <div className="font-mono text-2xl font-bold tabular-nums">{recent}+</div>
+              <div className="mt-1 text-xs text-white/80">projects active last 90 days</div>
+            </div>
+            <div className="rounded-lg border border-white/15 p-4">
+              <div className="font-mono text-2xl font-bold tabular-nums">{countyCount}</div>
+              <div className="mt-1 text-xs text-white/80">counties indexed</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Problem */}
       <section className="bg-white">
@@ -198,8 +219,39 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Spec window timeline */}
+      {/* Pipeline accordion */}
       <section className="border-t border-[var(--color-border)] bg-[var(--color-gray-100)]">
+        <div className="mx-auto max-w-3xl px-5 py-20 md:px-8">
+          <p className="section-label">The pipeline</p>
+          <h2 className="text-section">From permit filing to your desk.</h2>
+          <div className="mt-10">
+            {pipeline.map((step, i) => (
+              <details
+                key={step.n}
+                className="group border-t border-[var(--color-border)] py-5 last:border-b"
+                open={i === 0}
+              >
+                <summary className="flex cursor-pointer list-none items-center gap-4">
+                  <span className="font-mono text-sm font-bold text-[var(--color-green)]">
+                    {step.n}
+                  </span>
+                  <span className="flex-1 text-base font-semibold">{step.title}</span>
+                  <span className="text-[var(--color-gray-400)] group-open:hidden">+</span>
+                  <span className="hidden text-[var(--color-gray-400)] group-open:inline">
+                    &minus;
+                  </span>
+                </summary>
+                <p className="mt-3 ml-9 max-w-xl text-sm leading-relaxed text-[var(--color-gray-600)]">
+                  {step.body}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Spec window timeline */}
+      <section className="border-t border-[var(--color-border)] bg-white">
         <div className="mx-auto max-w-6xl px-5 py-20 md:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-section">Every project has a window. Then it closes.</h2>
@@ -235,7 +287,7 @@ export default async function HomePage() {
       </section>
 
       {/* Feature 1 */}
-      <section className="border-t border-[var(--color-border)] bg-[var(--color-bg)]">
+      <section className="border-t border-[var(--color-border)] bg-[var(--color-gray-100)]">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 md:grid-cols-2 md:px-8">
           <div>
             <p className="section-label">The index</p>
@@ -417,6 +469,19 @@ export default async function HomePage() {
             organized the index around stage, product category, and whether anyone
             has been named.
           </p>
+        </div>
+      </section>
+
+      {/* Mid-page CTA band */}
+      <section className="bg-[var(--color-green)] py-16 text-center text-white">
+        <div className="mx-auto max-w-2xl px-5">
+          <h2 className="text-2xl font-bold">
+            Ready to see what&apos;s breaking ground in your territory?
+          </h2>
+          <p className="mt-2 text-sm opacity-85">15-minute walkthrough, no commitment.</p>
+          <div className="mt-6 flex justify-center">
+            <RequestDemoButton className="btn bg-white !text-[var(--color-green)] hover:opacity-90" />
+          </div>
         </div>
       </section>
 
