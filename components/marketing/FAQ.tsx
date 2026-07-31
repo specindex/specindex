@@ -23,7 +23,15 @@ function faqJsonLd(items: FaqItem[]) {
   };
 }
 
-export function FAQ({ items }: { items: FaqItem[] }) {
+export function FAQ({
+  items,
+  eyebrow,
+  heading = "Frequently Asked Questions",
+}: {
+  items: FaqItem[];
+  eyebrow?: string;
+  heading?: string;
+}) {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
@@ -33,7 +41,8 @@ export function FAQ({ items }: { items: FaqItem[] }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(items)) }}
       />
       <div className="mx-auto max-w-3xl px-5 py-20 md:px-8">
-        <h2 className="text-center text-section">Frequently Asked Questions</h2>
+        {eyebrow && <p className="section-label text-center">{eyebrow}</p>}
+        <h2 className="mt-2 text-center text-section">{heading}</h2>
         <ul className="mt-10 divide-y divide-[var(--color-border)]">
           {items.map((item, i) => (
             <li key={item.q}>

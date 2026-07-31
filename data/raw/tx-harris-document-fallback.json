@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Harris",
+  "state": "TX",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 5,
+  "documents_confirmed": 3,
+  "projects": [
+    {
+      "name": "University of Houston, Hobby School of Public Affairs",
+      "city_address": "4101 Martin Luther King Blvd, Houston, TX 77204 (Harris County)",
+      "project_type": "Commercial / Educational Facility (New 46,000 SF building and surrounding landscape)",
+      "estimated_cost": "$42,800,000",
+      "developer_owner": "University of Houston",
+      "status": "Project Registered / Planning",
+      "document_url": "https://www.tdlr.texas.gov/TABS/Projects/TABS2026026015",
+      "document_type": "State Regulatory Filing (TDLR TABS)",
+      "source_citation": "Texas Department of Licensing and Regulation (TDLR) TABS Project TABS2026026015, Registered July 23, 2026",
+      "document_status": "real citable record page (html, 16,824 bytes)",
+      "document_verified": true
+    },
+    {
+      "name": "Orem Rd - Building B",
+      "city_address": "11630 South Freeway, Houston, TX 77047 (Harris County)",
+      "project_type": "Industrial (New 1-story tiltwall shell building for future office & high-pile storage)",
+      "estimated_cost": "$14,000,000",
+      "developer_owner": "Fidelis Industrial Partners, LLC",
+      "status": "Project Registered / Scheduled Construction",
+      "document_url": "https://www.tdlr.texas.gov/TABS/Projects/TABS2026024807",
+      "document_type": "State Regulatory Filing (TDLR TABS)",
+      "source_citation": "Texas Department of Licensing and Regulation (TDLR) TABS Project TABS2026024807, Registered July 8, 2026",
+      "document_status": "real citable record page (html, 16,735 bytes)",
+      "document_verified": true
+    },
+    {
+      "name": "Speculative Office Suite No. 120 (Crossroads at Pearland Center)",
+      "city_address": "3200 S Sam Houston Parkway E, Suite No. 120, Houston, TX 77047 (Harris County)",
+      "project_type": "Commercial / Industrial (Tenant interior improvements to existing spec industrial building)",
+      "estimated_cost": "$500,000",
+      "developer_owner": "Welcome Industrial Sub 73, LLC",
+      "status": "Project Registered",
+      "document_url": "https://www.tdlr.texas.gov/TABS/Projects/TABS2026026066",
+      "document_type": "State Regulatory Filing (TDLR TABS)",
+      "source_citation": "Texas Department of Licensing and Regulation (TDLR) TABS Project TABS2026026066, Registered July 23, 2026",
+      "document_status": "real citable record page (html, 16,764 bytes)",
+      "document_verified": true
+    },
+    {
+      "name": "Kirby 288 Industrial Spec Project",
+      "city_address": "NW corner of Kirby Drive and Mowry Road, Houston, TX 77054 (Harris County)",
+      "project_type": "Industrial (213,425 SF speculative cross-dock industrial facility)",
+      "estimated_cost": "Unspecified",
+      "developer_owner": "Hanover Co. & Transwestern Investment Group (TIG)",
+      "status": "Recently Completed",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "REBusinessOnline Commercial Real Estate News Announcement, July 31, 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Inwood Rose Hill / Rose Hill Village",
+      "city_address": "Southeast corner of Grand Parkway and Cypress Rose Hill Road, Harris County, TX 77429",
+      "project_type": "Commercial / Retail & Mixed-Use Development",
+      "estimated_cost": "Unspecified",
+      "developer_owner": "Radius Development / Inwood Partners",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "KHOU / Houston Business Journal, July 29, 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

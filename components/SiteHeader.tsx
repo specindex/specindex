@@ -130,7 +130,7 @@ function AuthAwareActions({ mobile }: { mobile?: boolean }) {
         Log In
       </button>
       <button type="button" onClick={() => openDemoModal()} className={`btn btn-demo ${size}`}>
-        Request Demo
+        Get early access
       </button>
     </>
   );
@@ -158,7 +158,7 @@ export function SiteHeader() {
         <Link href="/" className="flex items-center gap-2">
           <Logo size={28} />
           <span className="text-lg font-semibold tracking-tight text-[var(--color-ink)]">
-            SpecIndex
+            Spec<span className="text-[var(--color-green)]">Index</span>
           </span>
         </Link>
 
@@ -175,7 +175,7 @@ export function SiteHeader() {
             <AuthAwareActions />
           ) : (
             <button type="button" onClick={() => openDemoModal()} className="btn btn-demo hidden sm:inline-flex">
-              Request Demo
+              Get early access
             </button>
           )}
           <button
@@ -223,7 +223,7 @@ export function SiteHeader() {
               </div>
             ) : (
               <button type="button" onClick={() => openDemoModal()} className="btn btn-demo mt-4 w-full text-center">
-                Request Demo
+                Get early access
               </button>
             )}
           </nav>
