@@ -1,0 +1,63 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Anderson",
+  "state": "SC",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 4,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Project Next (Arthrex Expansion)",
+      "city_address": "130 Arthrex Way, Belton / Sandy Springs, SC 29627 (Anderson County)",
+      "project_type": "Industrial / Medical Device Manufacturing Expansion",
+      "estimated_cost": "$150,000,000+",
+      "developer_owner": "Arthrex, Inc.",
+      "status": "Approved (Fee-in-lieu-of-tax agreement given final approval by Anderson County Council on July 21, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Anderson Observer, July 22, 2026 reporting on the July 21, 2026 Anderson County Council meeting.",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Project Health (International Vitamin Corporation / Nutra Manufacturing)",
+      "city_address": "460 Industrial Council Dr, Anderson, SC 29621",
+      "project_type": "Industrial / Pharmaceutical & Vitamin Manufacturing Expansion & Equipment Upgrade",
+      "estimated_cost": "$31,000,000",
+      "developer_owner": "International Vitamin Corporation / Nutra Manufacturing",
+      "status": "Approved (Fee-in-lieu-of-tax agreement given final approval by Anderson County Council on July 21, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Anderson Observer, July 22, 2026 reporting on the July 21, 2026 Anderson County Council meeting.",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Project Flat Rock",
+      "city_address": "Anderson County, SC",
+      "project_type": "Industrial / Advanced Manufacturing Facility",
+      "estimated_cost": "$28,000,000",
+      "developer_owner": "Undisclosed / Anderson County Economic Development",
+      "status": "Active / Under Review (Economic development project presented at Anderson County Council special meeting late June/July 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Anderson Observer, June 29, 2026 reporting on Anderson County Council special budget session.",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Anderson County Amphitheater Renovation",
+      "city_address": "302 Martin Luther King Jr Blvd, Anderson, SC 29625",
+      "project_type": "Commercial / Outdoor Entertainment Facility Renovation & Expansion",
+      "estimated_cost": "$2,500,000+",
+      "developer_owner": "Anderson County / Peachtree Entertainment",
+      "status": "Approved (Renovation & public-private partnership approved by Anderson County Council on July 21, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Anderson Observer, July 22, 2026 reporting on the July 21, 2026 Anderson County Council meeting.",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

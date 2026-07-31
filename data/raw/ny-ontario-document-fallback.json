@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Ontario",
+  "state": "NY",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 6,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "New Energy Lynnfish Solar Project",
+      "city_address": "Mount Payne Road, Farmington, NY 14425",
+      "project_type": "Commercial Solar Energy Facility (4.72 MW AC)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "New Energy Equity / Farmington NY CSG 1, LLC",
+      "status": "Under Environmental Review / Special Use Permit & Site Plan Public Hearing (Farmington Planning Board July 15, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Town of Farmington Planning Board Public Hearing (July 15, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "5601 State Route 96 Commercial Solar Project",
+      "city_address": "5601 State Route 96, Farmington, NY 14425",
+      "project_type": "Commercial / Renewable Energy Construction (3.6 MW AC Large-Scale Solar Facility)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Farmington NY CSG 1, LLC",
+      "status": "Special Use Permit and Site Plan under local planning review (Ontario County Planning Board Referral July 8, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Ontario County Planning Board Referral 102.0-2026 / 102.1-2026 Review (July 8, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "825 Phillips Road Wholesale Electrical Supply Parking Expansion",
+      "city_address": "825 Phillips Road, Victor, NY 14564",
+      "project_type": "Commercial / Light Industrial Parking Expansion & Site Renovation",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Donahoe Management / Phillips Road Victor LLC",
+      "status": "Site Plan Approved with conditions by Victor Planning Board on July 28, 2026",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Town of Victor Planning Board Action (July 28, 2026) / Ontario County Planning Board Referral 108-2026",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Van Bortel Subaru Facility & Parking Expansion",
+      "city_address": "6305 State Route 96, Victor, NY 14564",
+      "project_type": "Commercial Automotive Dealership Expansion",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Van Bortel Subaru",
+      "status": "Area Variance and Site Plan re-approval review (Ontario County Planning Board Referral July 8, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Ontario County Planning Board Referral 107.0-2026 / 107.1-2026 (July 8, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "East Lake Landing Waterfront Park Renovation",
+      "city_address": "3990-4024 State Route 364, Canandaigua, NY 14424",
+      "project_type": "Municipal / Commercial Recreational Infrastructure Construction",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Ontario County Department of Public Works / NYS OPRHP",
+      "status": "Under Construction (Closed July 2026 for summer renovation; target completion Fall 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Ontario County Department of Public Works Construction Announcement (July 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "400-441 Commerce Drive Wireless Telecommunications Facility Upgrade",
+      "city_address": "400-441 Commerce Drive, Victor, NY 14564",
+      "project_type": "Commercial Telecommunications Infrastructure Construction",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Bell Atlantic / Verizon Wireless",
+      "status": "Site Plan and Special Use Permit Approved by Victor Planning Board on July 28, 2026",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Town of Victor Planning Board Meeting Approval (July 28, 2026) / Ontario County Planning Board Referral 109.0-2026",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

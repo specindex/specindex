@@ -1,0 +1,63 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "York",
+  "state": "SC",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 4,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Octapharma U.S. Biomedical Campus (Project Palmetto Rock)",
+      "city_address": "3286 Palmetto Parkway, Rock Hill, SC 29730",
+      "project_type": "Industrial / Life Sciences (Plasma Fractionation, Manufacturing Facility & Headquarters)",
+      "estimated_cost": "$1,500,000,000",
+      "developer_owner": "Octapharma / Octapharma USA",
+      "status": "Approved / Pre-construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "South Carolina Department of Commerce announcement (July 29, 2026) and Rock Hill City Council approvals (July 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Novant Health Rock Hill Medical Campus",
+      "city_address": "Palmetto Parkway (Palmetto Research Park), Rock Hill, SC 29730",
+      "project_type": "Commercial / Healthcare Facility",
+      "estimated_cost": "$300,000,000",
+      "developer_owner": "Novant Health",
+      "status": "Land Acquisition / Planning",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Rock Hill City Council property disposition and regional news reporting (July 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "GMRI Inc. Distribution Facility (Project Brisk)",
+      "city_address": "3623 Lazy Hawk Road (Karis Cold Storage Facility), Rock Hill, SC 29730",
+      "project_type": "Industrial / Cold Storage & Food Distribution",
+      "estimated_cost": "$9,350,000",
+      "developer_owner": "GMRI Inc. (Darden Restaurants)",
+      "status": "Approved / Building Upfit",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "York County Council / SC Coordinating Council for Economic Development Set-Aside Grant proceedings",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Aspen Business Park Infrastructure & International Drive Extension",
+      "city_address": "International Drive (Celanese Rd & Museum Rd to Heckle Blvd), Rock Hill, SC 29732",
+      "project_type": "Industrial Infrastructure / Business Park Road & Utilities Extension",
+      "estimated_cost": "$8,400,000",
+      "developer_owner": "City of Rock Hill / RHEDC / Childress Klein",
+      "status": "Approved / Pre-construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Rock Hill / SC Department of Commerce grant announcement",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

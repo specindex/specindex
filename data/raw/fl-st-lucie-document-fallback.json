@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "St. Lucie",
+  "state": "FL",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 6,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Indrio Town Center",
+      "city_address": "Indrio Road & Russakis Road, Fort Pierce / Unincorporated St. Lucie County, FL",
+      "project_type": "Commercial / Retail / Mixed-Use",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Glassman Holdings LLC",
+      "status": "Planning / Rezoning Approval Pending",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://www.wqcs.org/wqcs-news/2026-06-29/indrio-town-center-proposal-advances-to-st-lucie-county-commissioners",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Pruitt Commerce Center (Ashley Capital Light Industrial Park)",
+      "city_address": "Kings Highway (between Orange Ave & Okeechobee Rd), St. Lucie County, FL",
+      "project_type": "Industrial / Light Industrial Park",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Ashley Capital",
+      "status": "Under Entitlement / Rezoning Review",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://youredc.com/images/uploads/documents/2026_EDC_Mid-Year_Report_FINAL.pdf",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Tradition at Commerce Park (TCP) - Phase 1",
+      "city_address": "12051 SW Tom Mackie Blvd, Port St. Lucie, FL 34987",
+      "project_type": "Industrial / Shallow Bay Logistics Center",
+      "estimated_cost": "$14,990,000",
+      "developer_owner": "BTH Development Partners",
+      "status": "Under Construction / Financed",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://cre-sources.com/forman-capital-provides-14-99m-construction-loan-for-tradition-at-commerce-park/",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Scannell Properties Refrigerated Warehouse (Amazon Distribution Center)",
+      "city_address": "2300 S. Kings Highway, Fort Pierce, FL 34945",
+      "project_type": "Industrial / Cold Storage & Distribution Facility",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Scannell Properties #553 LLC / Jeff Iravani Inc.",
+      "status": "Major Site Plan Amendment Approved",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://www.cityoffortpierce.com/",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "NW Commerce Lakes Drive Industrial Park",
+      "city_address": "NW Commerce Lakes Drive, Port St. Lucie, FL 34986",
+      "project_type": "Industrial / Multi-Tenant Flex Warehouse",
+      "estimated_cost": "$6,400,000",
+      "developer_owner": "Private Developer",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://treasurecoastcommercialrealestate.com/properties/nw-commerce-lakes-dr-port-st-lucie-fl-34986/",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Costco Direct Distribution Center - Phase II",
+      "city_address": "Port St. Lucie, FL",
+      "project_type": "Industrial / Logistics & Distribution Center",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Costco Wholesale / SEI Construction",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://seiconstruction.com/news/sei-keeps-costcos-port-st-lucie-project-moving-forward/",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Oneida",
+  "state": "NY",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 5,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "THRIVE Cornhill",
+      "city_address": "Cornhill Neighborhood, Utica, NY",
+      "project_type": "Commercial / Mixed-Use Housing & Community Centers",
+      "estimated_cost": "$80,000,000",
+      "developer_owner": "People First, The Community Foundation of Herkimer and Oneida Counties, and Edgemere Development",
+      "status": "Under Construction / Groundbroken (July 23, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "New York State Governor's Office Press Release (July 23, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Indus Hospitality Group Commercial Subdivision & Hotels Project",
+      "city_address": "Intersection of Geiger Road and Hill Road (Tax ID# 243.000-1-1.2), Rome, NY",
+      "project_type": "Commercial (3-Lot Subdivision, 91-Room Hotel, 100-Room Hotel, Commercial Building)",
+      "estimated_cost": "Unknown",
+      "developer_owner": "Indus Hospitality Group",
+      "status": "Under Planning Board & SEQR Review",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Rome Planning Board Agendas & Public Notices",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Neighborhood Convenience Store Development",
+      "city_address": "343-345 Bleecker Street, Utica, NY",
+      "project_type": "Commercial / Retail Store Front Renovation",
+      "estimated_cost": "Unknown",
+      "developer_owner": "Waleed Saleh (Applicant) / Joel DeJesus Castro (Owner)",
+      "status": "Under Planning Board & Zoning Board Review",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Utica Planning Board Meeting Agenda (July 16, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "506 Nichols Street Mixed-Use Redevelopment (Former Victor Conte Sales Building)",
+      "city_address": "506 Nichols Street, Utica, NY",
+      "project_type": "Commercial / Mixed-Use (40 Apartments, Restaurant, Health/Wellness Spa, Retail)",
+      "estimated_cost": "Unknown",
+      "developer_owner": "Castlerock Capital, LLC",
+      "status": "Under Planning Board & Zoning Board Review",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Utica Planning Board Meeting Agendas & Public Notices",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Summit Fire Equipment Vehicle Sales Facility",
+      "city_address": "36 Wurz Avenue, Utica, NY",
+      "project_type": "Commercial / Industrial (Vehicle Sales & Commercial Facility)",
+      "estimated_cost": "Unknown",
+      "developer_owner": "Summit Fire Equipment, Inc. (Applicant) / ESK Realty LLC (Owner)",
+      "status": "Under Site Plan Review",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Utica Planning Board Meeting Agendas & Public Notices",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

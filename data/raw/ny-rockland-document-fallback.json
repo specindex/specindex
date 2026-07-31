@@ -1,0 +1,63 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Rockland",
+  "state": "NY",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 4,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Haverstraw Chair Factory Redevelopment Project",
+      "city_address": "Hudson River Waterfront, Village of Haverstraw, NY 10927",
+      "project_type": "Mixed-Use Commercial, Hotel & Residential Redevelopment",
+      "estimated_cost": "$348,000,000",
+      "developer_owner": "Pennrose NY LLC & MPACT Haverstraw LLC / Empire State Development",
+      "status": "General Project Plan Affirmed as Modified / Pre-Construction Approval",
+      "document_url": "https://esd.ny.gov/sites/default/files/Haverstraw-Chair-Factory-GPP-Modified.pdf",
+      "document_type": "State Regulatory Filing (Empire State Development General Project Plan PDF)",
+      "source_citation": "Empire State Development (ESD) / Village of Haverstraw",
+      "document_status": "dead (HTTP Error 404: Not Found)",
+      "document_verified": false
+    },
+    {
+      "name": "Cedar Corners Warehouse & Commercial Development",
+      "city_address": "Meola Road & NYS Route 303, Congers, NY 10920",
+      "project_type": "Industrial Warehouses & Commercial Drive-Thru",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Vanta Developers / Congers Estates LLC",
+      "status": "Under Planning Board Review (Supplemental DEIS Public Hearing)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Rockland County Business Journal / Town of Clarkstown Planning Board",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Sain Building Property Redevelopment",
+      "city_address": "18 New Hempstead Road, New City, NY 10956",
+      "project_type": "Mixed-Use Commercial & Residential (3,100 SF retail, 48 rental units, public park space)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Regan Development Corporation & Rockland Housing Action Coalition (RHAC)",
+      "status": "Developer Selected / Pending Exclusive Negotiating Agreement & Legislative Approval",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Rockland County Department of Community Development / Rockland News",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "DataBank Orangeburg Data Center Expansion (Phase 2)",
+      "city_address": "2000 Corporate Drive, Orangeburg, NY 10962",
+      "project_type": "Commercial Data Center (146,480 SF data center, office, standby power yard & substation)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "DataBank Holdings Ltd.",
+      "status": "Under Planning Board Review / Environmental Review (SEQRA)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Town of Orangetown Planning Board / Rockland County Planning Department",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

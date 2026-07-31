@@ -173,7 +173,15 @@ class EnerGovProvider(BaseIngestionProvider):
                         page.eval_on_selector(
                             "#SearchModule", "el => el.dispatchEvent(new Event('change', {bubbles: true}))"
                         )
-                        page.wait_for_timeout(300)
+                        # 300ms was enough for El Monte/Glendale/Carson but not
+                        # for Spartanburg County, SC (confirmed live 2026-07-31):
+                        # a Search click fired too soon after the module change
+                        # returned a transient null-Result response on both the
+                        # first click AND the retry click, a 0-row false
+                        # negative. 1000ms fixed it in manual repro; bumping
+                        # universally since it's a bounded one-time wait, not a
+                        # per-poll cost.
+                        page.wait_for_timeout(1000)
                     except Exception as e:  # noqa: BLE001
                         print(f"[energov:{self.county}] SearchModule select failed: {e}", file=sys.stderr)
                 page.locator("button:has-text('Search')").first.click(timeout=15000)

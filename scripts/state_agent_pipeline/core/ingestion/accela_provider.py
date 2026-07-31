@@ -43,7 +43,18 @@ from .hashing import hash_fields
 # assume a fixed column index.
 HEADER_ALIASES = {
     "date": "date",
+    # Buncombe County NC (BUNCOMBECONC) uses "App Date" for the same
+    # column -- confirmed live 2026-07-31, real 100+ commercial rows
+    # were silently reported as 0 because date_idx never matched.
+    "app date": "date",
     "permit number": "permit_number",
+    # Cabarrus County NC (CABARRUS, module=Permits) uses "Permits Number"
+    # (plural) for the same column -- confirmed live 2026-07-31. Without
+    # this alias, permit_number never gets mapped, every row falls back
+    # to the same synthetic hash, and 19 real distinct rows collapse to
+    # 1 on merge (same failure class as the Indianapolis "Case Number"
+    # bug documented above).
+    "permits number": "permit_number",
     "building number": "permit_number",
     "record number": "permit_number",
     # Indianapolis's Accela deployment (IN-INDIANAPOLIS) uses "Case
@@ -54,9 +65,18 @@ HEADER_ALIASES = {
     # caught and fixed same day, no bad data survived past the initial
     # test run).
     "case number": "permit_number",
+    # Allen County/Fort Wayne, IN's ACFW deployment (Planning module,
+    # used since Building/Permits modules are login-gated) uses
+    # "Application Number" for the same column -- confirmed live
+    # 2026-07-31. Without this alias every row falls back to an
+    # identical id and 192 real rows collapse into 1 on merge, the same
+    # failure mode documented above for Indianapolis's "Case Number".
+    "application number": "permit_number",
     "permit type": "permit_type",
+    "permits type": "permit_type",  # Cabarrus County NC plural header
     "building type": "permit_type",
     "record type": "permit_type",
+    "application type": "permit_type",
     "project name": "project_name",
     "status": "status",
     "short notes": "description",

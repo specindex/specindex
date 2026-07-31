@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Macomb",
+  "state": "MI",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 6,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "SAPA Transmission Advanced Manufacturing Facility Expansion",
+      "city_address": "Shelby Township, Macomb County, MI",
+      "project_type": "Industrial / Advanced Manufacturing Facility (200,000 sq ft)",
+      "estimated_cost": "$163,000,000",
+      "developer_owner": "SAPA Transmission, Inc.",
+      "status": "Approved / Michigan Strategic Fund Board Grant Incentive Awarded",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Michigan Economic Development Corporation / Governor's Office Press Release (July 28, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Lakeside Town Center Redevelopment (Former Lakeside Mall)",
+      "city_address": "14000 Lakeside Circle, Sterling Heights, Macomb County, MI",
+      "project_type": "Commercial / Mixed-Use Development (154,007 sq ft retail, 1,545 residential units, central park)",
+      "estimated_cost": "$270,678,999",
+      "developer_owner": "Lionheart Town Center LLC / City of Sterling Heights",
+      "status": "Transformational Brownfield Plan Approved",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Michigan Strategic Fund / City of Sterling Heights Official Release (June 23, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "DiMercurio Industrial Building \u2013 Phase II",
+      "city_address": "23 Mile Road (east of Hayes Road), Macomb Township, MI",
+      "project_type": "Industrial / Light Manufacturing (14,580 sq ft multi-tenant industrial facility)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "DiMercurio Properties",
+      "status": "Site Plan Approved (Macomb Township Planning Commission)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Macomb Township Planning Commission Meeting (July 7, 2026) / C&G Newspapers (July 14, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "CQT Weapon Systems Expansion",
+      "city_address": "Macomb Township, Macomb County, MI",
+      "project_type": "Industrial / Advanced Defense Manufacturing Expansion",
+      "estimated_cost": "$23,700,000",
+      "developer_owner": "CQT Weapon Systems",
+      "status": "Approved / Michigan Business Development Program Grant Approved",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Michigan Strategic Fund / Michigan Economic Development Corporation (June 10, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Marios Company Trucking Facility & Repair Shop",
+      "city_address": "25200 Easy Street, Warren, Macomb County, MI",
+      "project_type": "Commercial / Industrial Repair Shop and Trucking Facility (3 at-grade truck bays)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Mario Isshac / Marios Company LLC",
+      "status": "Site Plan Under Review (City of Warren Planning Commission)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Warren Planning Commission Agenda Notice (July 13/27, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Lake Michigan Credit Union Branch",
+      "city_address": "23 Mile Road & Hayes Road, Macomb Township, MI",
+      "project_type": "Commercial (5,106 sq ft Financial Branch with Drive-Thru ATM)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Lake Michigan Credit Union",
+      "status": "Site Plan Approved",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Macomb Township Planning Commission Action / C&G Newspapers (July 1, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

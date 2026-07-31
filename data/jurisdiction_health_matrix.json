@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28",
+  "generated_at": "2026-07-31T21:30:00Z",
   "status_values": [
     "VERIFIED_WORKING",
     "FAILED_NEED_ALT",
@@ -923,46 +923,6 @@
     {
       "jurisdiction": "Kendall County, IL",
       "county": "Kendall",
-      "state": "IL",
-      "provider_type": null,
-      "endpoint": null,
-      "state_agent_pipeline_key": null,
-      "status": "NO_PUBLIC_DATA",
-      "notes": "Gemini first cited gis.kendall.il.us/arcgis/... -- NXDOMAIN, fabricated. On feedback, correctly found neither Kendall County (manual paper/PDF permits, FOIA-only for GIS) nor Village of Oswego (largest municipality) publish an open API/Socrata/ArcGIS permit feed. kendallcountyil.gov and oswegoil.org both live (403 bot-block, not fake). Step 6 research fallback run 2026-07-31: 7 named projects found (dominated by large data-center campuses -- CyrusOne, Prologis, Pioneer Development, Equinix), 4 largest independently cross-checked and CONFIRMED, findings written to data/raw/il-kendall-research-fallback.json, NOT loaded into corpus yet (no load path built). 6-month-window re-run (2026-01-31 to 2026-07-31) 2026-07-31: surfaced 1 new project not in the broader pass (Meyer Data Center Campus -- denied by P&Z Jan 2026, withdrawn Apr 2026), plus a real Equinix cost/size discrepancy across the two passes that was independently reconciled (both figures true, different completeness levels, not an error) -- findings in data/raw/il-kendall-research-fallback-6mo.json, not loaded."
-    },
-    {
-      "jurisdiction": "LaSalle County, IL",
-      "county": "LaSalle",
-      "state": "IL",
-      "provider_type": "cloudpermit",
-      "endpoint": "https://us.cloudpermit.com/gov/login",
-      "state_agent_pipeline_key": null,
-      "status": "FAILED_NEED_ALT",
-      "notes": "City of Ottawa (largest city) confirmed via cited cityofottawa.org text to use Cloudpermit for all permitting, public records viewable 24/7 -- first new platform type seen (not yet one of the 8 wired providers). NOT YET VERIFIED at browser level (curl redirects are inconclusive for this SPA/SSO login flow, doc convention requires Playwright for this). lasallecounty.org/arcgis/rest/services does not resolve (TLS hang); gis-lasallecoil.opendata.arcgis.com loads but has no configured catalog (empty). Peru and LaSalle city: PDF/email only, no digital platform. Next step: Playwright against us.cloudpermit.com to confirm Ottawa is selectable and permit records are actually public before treating as VERIFIED_WORKING or building a provider."
-    },
-    {
-      "jurisdiction": "Whiteside County, IL",
-      "county": "Whiteside",
-      "state": "IL",
-      "provider_type": null,
-      "endpoint": null,
-      "state_agent_pipeline_key": null,
-      "status": "NO_PUBLIC_DATA",
-      "notes": "Whiteside County (manual, in-person only), City of Sterling (submission portal but no open data feed), City of Rock Falls (email/paper only) -- all three real domains (301s), none publish an API or open permit dataset. County ArcGIS platform exists but only for parcels/zoning/floodplain, no permit layer."
-    },
-    {
-      "jurisdiction": "McLean County, IL",
-      "county": "McLean",
-      "state": "IL",
-      "provider_type": null,
-      "endpoint": null,
-      "state_agent_pipeline_key": null,
-      "status": "NO_PUBLIC_DATA",
-      "notes": "No digitized structured permit source at county or Bloomington/Normal level. Step 6 research fallback run 2026-07-31 with new pullable-document/drawing check: 5 named projects found (Rivian supplier park, OSF ICU expansion, Connect Transit center, Heartland CC training center, Ferrero plant expansion). Live-verified document pull: 2/2 Rivian PUD/site-plan PDFs on normalil.gov real and downloaded (3.68MB), 3/3 first-pass OSF HFSRB document URLs fabricated (404s, caught and corrected -- HFSRB uses a dynamic database, not static permalinks). Findings in data/raw/il-mclean-research-fallback.json, not loaded into corpus. Documents actually pulled to GCS 2026-07-31 via new scripts/fetch-research-fallback-documents.py: 2 real Rivian/Town of Normal PDFs (council + planning commission packets w/ site plan and architectural drawings) uploaded to gs://specindex-ai-raw-documents/illinois/mclean/rivian-automotive-supplier-park-plant-expansion/, 3.71MB total."
-    },
-    {
-      "jurisdiction": "DuPage County, IL",
-      "county": "DuPage",
       "state": "IL",
       "provider_type": null,
       "endpoint": null,
@@ -2467,7 +2427,7 @@
       "endpoint": "https://bsaonline.com",
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
-      "notes": "County GIS hub (gis.oakgov.com) has parcel/zoning layers but no permit FeatureServer -- county explicitly states permitting is a local-community responsibility. All checked cities (Troy, Southfield, Farmington Hills, Novi, Rochester Hills, Auburn Hills) run BS&A Online, an interactive-only portal with no public REST API or bulk feed. Pontiac uses a plain department page, no portal at all. No live structured source found."
+      "notes": "County GIS hub (gis.oakgov.com) has parcel/zoning layers but no permit FeatureServer -- county explicitly states permitting is a local-community responsibility. All checked cities (Troy, Southfield, Farmington Hills, Novi, Rochester Hills, Auburn Hills) run BS&A Online, an interactive-only portal with no public REST API or bulk feed. Pontiac uses a plain department page, no portal at all. No live structured source found. RE-VERIFIED 2026-07-31 (per instruction to individually re-check the batched Gemini finding): live curl of gis.oakgov.com/arcgis/rest/services returned 404 (no ArcGIS REST catalog); curl of aca-prod.accela.com/troy/Default.aspx and /southfield/Default.aspx both 404 (no Accela deployment, ruling out a Grand-Rapids-style city-level exception); ArcGIS Hub search API for 'Oakland County Michigan permits' returned only a SEMCOG building-footprints layer, not a permits dataset; bsaonline.com confirmed live (200) as the dominant real platform. Batched dead-end finding stands on independent re-check. DOCUMENTS (part 2, 2026-07-31): document-research-fallback.py found 5 named projects (FANUC America Robotics & Advanced Manufacturing Facility Expansion in Pontiac; $130M Pontiac Redevelopment/Judson Building; $87M Lear Corp Seat Assembly Facility in Auburn Hills; The Townes at Haggerty multi-family in Novi; Forma Beauty Salon Expansion JSP26-14 in Novi). documents_confirmed=0/5 -- no pullable document URL found/verified for any. Recorded as leads only per output file data/raw/mi-oakland-document-fallback.json; NOT independently cross-checked per Phase II step 6b, do not treat cost/date facts as confirmed."
     },
     {
       "jurisdiction": "Macomb County, MI (Warren, Sterling Heights, Clinton Twp)",
@@ -2477,7 +2437,7 @@
       "endpoint": "https://bsaonline.com",
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
-      "notes": "No countywide permitting; Warren, Sterling Heights, Clinton Township all use BS&A Online (interactive search only, no API). No ArcGIS FeatureServer or Socrata feed identified by Gemini-assisted discovery. Not yet independently re-probed for a city-specific ArcGIS Hub the same way Grand Rapids' Accela deployment was found for Kent -- worth a follow-up pass."
+      "notes": "No countywide permitting; Warren, Sterling Heights, Clinton Township all use BS&A Online (interactive search only, no API). No ArcGIS FeatureServer or Socrata feed identified by Gemini-assisted discovery. RE-VERIFIED 2026-07-31: live curl of aca-prod.accela.com/warren/Default.aspx returned 404 -- no city-level Accela exception found (the follow-up this entry previously flagged as unexplored). bsaonline.com confirmed live (200). No ArcGIS/Socrata alternative surfaced. Batched dead-end finding stands on independent re-check. DOCUMENTS (part 2, 2026-07-31): document-research-fallback.py found 6 named projects ($163M SAPA Transmission Advanced Manufacturing Expansion in Shelby Twp; $270.7M Lakeside Town Center redevelopment of the former Lakeside Mall in Sterling Heights; DiMercurio Industrial Building Phase II; $23.7M CQT Weapon Systems Expansion; Marios Company Trucking Facility; Lake Michigan Credit Union Branch, both in Macomb Twp). documents_confirmed=0/6. Recorded as leads only in data/raw/mi-macomb-document-fallback.json; NOT independently cross-checked per Phase II step 6b."
     },
     {
       "jurisdiction": "Genesee County, MI (Flint)",
@@ -2497,7 +2457,7 @@
       "endpoint": "https://bsaonline.com",
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
-      "notes": "Lansing and East Lansing both on BS&A Online (interactive only). No county-level API or ArcGIS FeatureServer identified."
+      "notes": "Lansing and East Lansing both on BS&A Online (interactive only). No county-level API or ArcGIS FeatureServer identified. RE-VERIFIED 2026-07-31: gis.ingham.org/arcgis/rest/services does not resolve (curl exit 6, DNS failure); curl of aca-prod.accela.com/lansing/Default.aspx returned 404 (no Accela exception). bsaonline.com confirmed live (200). Batched dead-end finding stands on independent re-check. DOCUMENTS (part 2, 2026-07-31): document-research-fallback.py found 6 named projects (Holt Farmers Market Building Expansion; $48.1M Green Development Ventures rental housing project in Holt; Tailgaters Gas Station/Convenience Store in Okemos; Brightwell Behavioral Health Facility Expansion in East Lansing; Lansing Cedar/Larch data-center industrial redevelopment; Huntington National Bank Okemos Branch). documents_confirmed=0/6. Recorded as leads only in data/raw/mi-ingham-document-fallback.json; NOT independently cross-checked per Phase II step 6b."
     },
     {
       "jurisdiction": "Ottawa County, MI (Holland, Grand Haven)",
@@ -2507,7 +2467,7 @@
       "endpoint": "https://bsaonline.com",
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
-      "notes": "Holland, Holland Charter Township, Grand Haven all on BS&A Online (interactive only). No structured feed identified at county or city level."
+      "notes": "Holland, Holland Charter Township, Grand Haven all on BS&A Online (interactive only). No structured feed identified at county or city level. RE-VERIFIED 2026-07-31: ArcGIS Hub search API for 'Ottawa County Michigan building permits' returned zero results; bsaonline.com confirmed live (200) as the dominant real platform used by miottawa.org-linked municipalities. Note: this is Ottawa County MI, distinct from the separate La Salle County IL 'City of Ottawa' Cloudpermit entry elsewhere in this file -- not the same jurisdiction. Batched dead-end finding stands on independent re-check. DOCUMENTS (part 2, 2026-07-31): document-research-fallback.py found 5 named projects (Chinook Pier Redevelopment in Grand Haven; Polyply Composites Facility Expansion & Retaining Wall in Grand Haven; Paradigm Dog School Facility in Holland; Woodlands Crossing in Holland; Holland Charter Township Public Works Facility Renovation and Expansion). documents_confirmed=0/5. Recorded as leads only in data/raw/mi-ottawa-document-fallback.json; NOT independently cross-checked per Phase II step 6b."
     },
     {
       "jurisdiction": "Kalamazoo County, MI (Kalamazoo, Portage)",
@@ -2913,7 +2873,7 @@
       "endpoint": null,
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
-      "notes": "Document fallback: 5 named projects found, 0 documents confirmed live. Pennsylvania building/commercial permits are administered under the PA Uniform Construction Code at the MUNICIPAL level (townships/boroughs/cities), not by county government -- confirmed live via Gemini discovery for Bucks and Delaware (both independently returned the same structural answer: no countywide Accela/Socrata/ArcGIS/EnerGov permit system exists, permits are issued by dozens of individual municipalities each running separate/no software). This matches why only the two PA consolidated city-counties (Philadelphia, Pittsburgh -- both already wired as PA-PHILADELPHIA/PA-PITTSBURGH) have real structured feeds today. Bucks' one county-level ArcGIS candidate (Bucks_County_Proposed_Developments_ FeatureServer, services3.arcgis.com/SP47Tddf7RK32lBU) is real and public (1,229 records) but confirmed stale via live query (MAX(DateReceiv) = 2023-02-27, no records added in 3+ years) -- fails the 90-day lookback freshness bar, not wired. Delaware's county ODMI ArcGIS org (data-delcopa.opendata.arcgis.com) was searched directly for an equivalent land-development layer and none exists. Given this confirmed structural pattern applies statewide under PA law, the remaining 12 counties in this batch were not each individually re-verified via a fresh Gemini call/live probe (time-budget tradeoff) -- flagged FAILED_NEED_ALT rather than NO_PUBLIC_DATA to mark them as needing that direct per-county verification pass before being called a fully closed dead end, not as independently confirmed empty. Part 2 (document research fallback) was run for all 14 counties regardless -- see data/raw/pa-<county>-document-fallback.json."
+      "notes": "INDIVIDUALLY RE-VERIFIED 2026-07-31 (was batch-logged only). Chester County's largest municipality by population is Tredyffrin Township (~32K, not West Chester Borough ~22.8K as commonly assumed) -- Gemini-confirmed via search-grounded query. Tredyffrin uses Clariti (www.tredyffrin.org/departments/permits-inspections/building-construction-permits, live 200) and West Chester Borough uses SmartGov (smartgovcommunity.com/PublicPortal/WestChesterPA) -- SmartGov's domain TLS-handshake-fails from this environment (SSL_ERROR_SYSCALL on every smartgovcommunity.com host tried, consistent with bot-defense/TLS-fingerprinting, not a dead site) so it could not be live-verified as queryable here. Tredyffrin's Clariti page loads but is a permit-application/info page, not a confirmed public searchable records database in this pass. Structural PA municipal-permitting pattern holds; still no county-wide feed. Real remaining work: verify SmartGov from an environment that isn't TLS-blocked, and confirm whether Clariti exposes a public query API."
     },
     {
       "jurisdiction": "Lancaster County, PA",
@@ -2923,7 +2883,7 @@
       "endpoint": null,
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
-      "notes": "Document fallback: 7 named projects found, 0 documents confirmed live. Pennsylvania building/commercial permits are administered under the PA Uniform Construction Code at the MUNICIPAL level (townships/boroughs/cities), not by county government -- confirmed live via Gemini discovery for Bucks and Delaware (both independently returned the same structural answer: no countywide Accela/Socrata/ArcGIS/EnerGov permit system exists, permits are issued by dozens of individual municipalities each running separate/no software). This matches why only the two PA consolidated city-counties (Philadelphia, Pittsburgh -- both already wired as PA-PHILADELPHIA/PA-PITTSBURGH) have real structured feeds today. Bucks' one county-level ArcGIS candidate (Bucks_County_Proposed_Developments_ FeatureServer, services3.arcgis.com/SP47Tddf7RK32lBU) is real and public (1,229 records) but confirmed stale via live query (MAX(DateReceiv) = 2023-02-27, no records added in 3+ years) -- fails the 90-day lookback freshness bar, not wired. Delaware's county ODMI ArcGIS org (data-delcopa.opendata.arcgis.com) was searched directly for an equivalent land-development layer and none exists. Given this confirmed structural pattern applies statewide under PA law, the remaining 12 counties in this batch were not each individually re-verified via a fresh Gemini call/live probe (time-budget tradeoff) -- flagged FAILED_NEED_ALT rather than NO_PUBLIC_DATA to mark them as needing that direct per-county verification pass before being called a fully closed dead end, not as independently confirmed empty. Part 2 (document research fallback) was run for all 14 counties regardless -- see data/raw/pa-<county>-document-fallback.json."
+      "notes": "INDIVIDUALLY RE-VERIFIED 2026-07-31 (was batch-logged only). City of Lancaster (largest municipality, ~58-61K, confirmed) uses CityView Plans Drop for online submission (cityoflancasterpa.gov/site-plan-submission/) but has no public, unauthenticated query/search portal for historical permits by address/date -- confirmed live: cityoflancasterpa.gov/permits-licensing/ 404s, only a submission form exists. Same structural dead end as before, now individually confirmed at the city level rather than assumed from the county-level pattern."
     },
     {
       "jurisdiction": "York County, PA",
@@ -2933,7 +2893,7 @@
       "endpoint": null,
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
-      "notes": "Document fallback: 6 named projects found, 0 documents confirmed live. Pennsylvania building/commercial permits are administered under the PA Uniform Construction Code at the MUNICIPAL level (townships/boroughs/cities), not by county government -- confirmed live via Gemini discovery for Bucks and Delaware (both independently returned the same structural answer: no countywide Accela/Socrata/ArcGIS/EnerGov permit system exists, permits are issued by dozens of individual municipalities each running separate/no software). This matches why only the two PA consolidated city-counties (Philadelphia, Pittsburgh -- both already wired as PA-PHILADELPHIA/PA-PITTSBURGH) have real structured feeds today. Bucks' one county-level ArcGIS candidate (Bucks_County_Proposed_Developments_ FeatureServer, services3.arcgis.com/SP47Tddf7RK32lBU) is real and public (1,229 records) but confirmed stale via live query (MAX(DateReceiv) = 2023-02-27, no records added in 3+ years) -- fails the 90-day lookback freshness bar, not wired. Delaware's county ODMI ArcGIS org (data-delcopa.opendata.arcgis.com) was searched directly for an equivalent land-development layer and none exists. Given this confirmed structural pattern applies statewide under PA law, the remaining 12 counties in this batch were not each individually re-verified via a fresh Gemini call/live probe (time-budget tradeoff) -- flagged FAILED_NEED_ALT rather than NO_PUBLIC_DATA to mark them as needing that direct per-county verification pass before being called a fully closed dead end, not as independently confirmed empty. Part 2 (document research fallback) was run for all 14 counties regardless -- see data/raw/pa-<county>-document-fallback.json."
+      "notes": "INDIVIDUALLY RE-VERIFIED 2026-07-31 (was batch-logged only). City of York (largest municipality, ~44.8K, confirmed) uses OpenGov/ViewPoint Cloud (yorkpa.portal.opengov.com, live 200) for permit applications. Live-probed but is an Angular SPA shell -- WebFetch could not confirm a public search/browse feature for existing permit records (page shows only the OpenGov app container, no visible public records search). Typical of OpenGov/ViewPoint Cloud deployments elsewhere in this corpus: application + applicant-account tracking, not a public permit database. Treated as a dead end on that basis, consistent with the municipal-not-county structural pattern, but NOT confirmed with the same rigor as a full Playwright network-capture probe (budget-limited this pass) -- real remaining work if revisited."
     },
     {
       "jurisdiction": "Berks County, PA",
@@ -2943,7 +2903,7 @@
       "endpoint": null,
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
-      "notes": "Document fallback: 5 named projects found, 0 documents confirmed live. Pennsylvania building/commercial permits are administered under the PA Uniform Construction Code at the MUNICIPAL level (townships/boroughs/cities), not by county government -- confirmed live via Gemini discovery for Bucks and Delaware (both independently returned the same structural answer: no countywide Accela/Socrata/ArcGIS/EnerGov permit system exists, permits are issued by dozens of individual municipalities each running separate/no software). This matches why only the two PA consolidated city-counties (Philadelphia, Pittsburgh -- both already wired as PA-PHILADELPHIA/PA-PITTSBURGH) have real structured feeds today. Bucks' one county-level ArcGIS candidate (Bucks_County_Proposed_Developments_ FeatureServer, services3.arcgis.com/SP47Tddf7RK32lBU) is real and public (1,229 records) but confirmed stale via live query (MAX(DateReceiv) = 2023-02-27, no records added in 3+ years) -- fails the 90-day lookback freshness bar, not wired. Delaware's county ODMI ArcGIS org (data-delcopa.opendata.arcgis.com) was searched directly for an equivalent land-development layer and none exists. Given this confirmed structural pattern applies statewide under PA law, the remaining 12 counties in this batch were not each individually re-verified via a fresh Gemini call/live probe (time-budget tradeoff) -- flagged FAILED_NEED_ALT rather than NO_PUBLIC_DATA to mark them as needing that direct per-county verification pass before being called a fully closed dead end, not as independently confirmed empty. Part 2 (document research fallback) was run for all 14 counties regardless -- see data/raw/pa-<county>-document-fallback.json."
+      "notes": "INDIVIDUALLY RE-VERIFIED 2026-07-31 (was batch-logged only) -- genuinely different finding this time, real remaining work flagged. City of Reading (largest municipality, ~95K, PA's 4th largest city, confirmed) runs a LIVE Tyler EnerGov Citizen Self Service deployment (readingpa-energovweb.tylerhost.net/apps/selfservice) with a REAL public search API -- confirmed via actual Playwright network capture of POST .../api/energov/search/search returning genuine unauthenticated case records (e.g. CaseNumber FPOP-2506-0007, address '700 PENN ST READING PA 19602', real ApplyDate). This is NOT a dead end structurally -- it is a real, live, queryable municipal permit system, unlike every other PA county in this batch. BUT: the default/blank search's pagination surfaces oldest-first legacy records (2004- 2006 permits on pages 1-3 of the default search, same class of issue previously seen on CA's El Monte EnerGov tenant) -- a dry-run with the existing EnerGov provider (900-day lookback) returned 0 rows within window despite 23-34 real commercial-keyword matches per page. Attempted a keyword search ('2026') and a hand-crafted sorted API POST (SortBy=ApplyDate, SortAscending=false) to reach current records -- keyword search matched on address text not year; the hand-crafted sorted POST 500'd (same unexplained Angular-only-XHR quirk documented in energov_provider.py for El Monte). NOT wired into state_configs.py -- doesn't yet meet the '>0 real rows on dry-run' bar. Real remaining work: find a working sort/filter path (server-side date-descending sort or a working keyword that surfaces 2025-2026 permits) to make this a usable rolling feed, the same class of problem already open for El Monte."
     },
     {
       "jurisdiction": "Westmoreland County, PA",
@@ -2983,7 +2943,7 @@
       "endpoint": null,
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
-      "notes": "Document fallback: 6 named projects found, 0 documents confirmed live. Pennsylvania building/commercial permits are administered under the PA Uniform Construction Code at the MUNICIPAL level (townships/boroughs/cities), not by county government -- confirmed live via Gemini discovery for Bucks and Delaware (both independently returned the same structural answer: no countywide Accela/Socrata/ArcGIS/EnerGov permit system exists, permits are issued by dozens of individual municipalities each running separate/no software). This matches why only the two PA consolidated city-counties (Philadelphia, Pittsburgh -- both already wired as PA-PHILADELPHIA/PA-PITTSBURGH) have real structured feeds today. Bucks' one county-level ArcGIS candidate (Bucks_County_Proposed_Developments_ FeatureServer, services3.arcgis.com/SP47Tddf7RK32lBU) is real and public (1,229 records) but confirmed stale via live query (MAX(DateReceiv) = 2023-02-27, no records added in 3+ years) -- fails the 90-day lookback freshness bar, not wired. Delaware's county ODMI ArcGIS org (data-delcopa.opendata.arcgis.com) was searched directly for an equivalent land-development layer and none exists. Given this confirmed structural pattern applies statewide under PA law, the remaining 12 counties in this batch were not each individually re-verified via a fresh Gemini call/live probe (time-budget tradeoff) -- flagged FAILED_NEED_ALT rather than NO_PUBLIC_DATA to mark them as needing that direct per-county verification pass before being called a fully closed dead end, not as independently confirmed empty. Part 2 (document research fallback) was run for all 14 counties regardless -- see data/raw/pa-<county>-document-fallback.json."
+      "notes": "INDIVIDUALLY RE-VERIFIED 2026-07-31 (was batch-logged only). Dauphin County's largest municipality by population is Lower Paxton Township (~55.6K), not the City of Harrisburg (~50K, the state capital but only 2nd-largest by population) -- Gemini-confirmed. Lower Paxton uses SmartGov (smartgovcommunity.com/PublicPortal/LowerPaxtonPA) -- same SmartGov domain TLS-handshake failure seen for Chester's West Chester Borough (SSL_ERROR_SYSCALL from this environment on every smartgovcommunity.com host tried), so not live-verified as queryable here. Harrisburg's Bureau of Codes is paper/in-person only, no online portal (Gemini-reported, consistent with the structural PA pattern). Real remaining work: verify SmartGov (Lower Paxton + West Chester) from an environment without the TLS block -- SmartGov recurs across at least 2 of these counties and is worth resolving rather than re-hitting the same wall."
     },
     {
       "jurisdiction": "Washington County, PA",
@@ -3024,6 +2984,356 @@
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
       "notes": "Document fallback: 7 named projects found, 0 documents confirmed live. Pennsylvania building/commercial permits are administered under the PA Uniform Construction Code at the MUNICIPAL level (townships/boroughs/cities), not by county government -- confirmed live via Gemini discovery for Bucks and Delaware (both independently returned the same structural answer: no countywide Accela/Socrata/ArcGIS/EnerGov permit system exists, permits are issued by dozens of individual municipalities each running separate/no software). This matches why only the two PA consolidated city-counties (Philadelphia, Pittsburgh -- both already wired as PA-PHILADELPHIA/PA-PITTSBURGH) have real structured feeds today. Bucks' one county-level ArcGIS candidate (Bucks_County_Proposed_Developments_ FeatureServer, services3.arcgis.com/SP47Tddf7RK32lBU) is real and public (1,229 records) but confirmed stale via live query (MAX(DateReceiv) = 2023-02-27, no records added in 3+ years) -- fails the 90-day lookback freshness bar, not wired. Delaware's county ODMI ArcGIS org (data-delcopa.opendata.arcgis.com) was searched directly for an equivalent land-development layer and none exists. Given this confirmed structural pattern applies statewide under PA law, the remaining 12 counties in this batch were not each individually re-verified via a fresh Gemini call/live probe (time-budget tradeoff) -- flagged FAILED_NEED_ALT rather than NO_PUBLIC_DATA to mark them as needing that direct per-county verification pass before being called a fully closed dead end, not as independently confirmed empty. Part 2 (document research fallback) was run for all 14 counties regardless -- see data/raw/pa-<county>-document-fallback.json."
+    },
+    {
+      "jurisdiction": "St. Lucie County, FL",
+      "county": "St. Lucie",
+      "state": "FL",
+      "provider_type": "energov",
+      "endpoint": "https://stluciecountyfl-energovpub.tylerhost.net",
+      "state_agent_pipeline_key": "FL-STLUCIE",
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "EnerGov endpoint confirmed live 2026-07-31 (200 OK, stluciecountyfl-energovpub.tylerhost.net/Apps/SelfService). Config wired (tenant_id=1, tenant_name='St. Lucie County') but --dry-run --lookback-days 90 returns 0 rows -- 'response had null Result' from energov_provider.py's search flow, same untuned-search symptom as CA_GLENDALE_ENERGOV_CONFIG (registered but not verified working). Needs tenant_name/search-flow debugging, not attempted further given time budget. Config left in place, not merged (0 rows)."
+    },
+    {
+      "jurisdiction": "Osceola County, FL",
+      "county": "Osceola",
+      "state": "FL",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/OSCEOLA",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "Real Accela agency (Default.aspx returns 200), but Playwright probe of the homepage shows a 'Non-PROD1: TEST Environment' banner -- this is Osceola's TEST tenant, not production, despite living at the standard aca-prod.accela.com/OSCEOLA path. CapHome.aspx with module=Building/Permits/Permitting all redirect to Error.aspx regardless of module name, consistent with a non-functional/test tenant rather than a wrong module name. No config wired -- real production Accela instance (if one exists at a different agency code) not found this session, real remaining scope for a future pass."
+    },
+    {
+      "jurisdiction": "St. Lucie County, FL (document fallback)",
+      "county": "St. Lucie",
+      "state": "FL",
+      "provider_type": "research_fallback",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "records_merged": 0,
+      "notes": "document-research-fallback.py run 2026-07-31 (last 30 days): 6 named projects found (Indrio Town Center, Pruitt Commerce Center/Ashley Capital Light Industrial Park, Tradition at Commerce Park Phase 1, Scannell Properties Refrigerated Warehouse/Amazon Distribution Center, NW Commerce Lakes Drive Industrial Park, Costco Direct Distribution Center Phase II) -- 0 with a confirmed pullable document after retry. Output: data/raw/fl-st-lucie-document-fallback.json. Not yet run through load-research-fallback-projects.py cross-check step given time budget."
+    },
+    {
+      "jurisdiction": "Contra Costa County, CA (county DCD Accela)",
+      "county": "Contra Costa",
+      "state": "CA",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/CCCOUNTY/... (agency code CCCOUNTY does not exist -- 404)",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "Live-verified 2026-07-31: Gemini suggested agency code CCCOUNTY for the county DCD's Accela instance (covers unincorporated + Clayton/Hercules/Lafayette/Moraga/Orinda) -- curl returns 404, no working agency code found. A second candidate, CCC, returns 302 to a login-gated instance (aca-prod.accela.com/CCC/Login.aspx) -- no public access without an account, hard stop per AGENT_STRATEGY.md's login/invitation-only dead-stop rule."
+    },
+    {
+      "jurisdiction": "City of Concord, CA (Contra Costa County's largest city, Accela)",
+      "county": "Contra Costa",
+      "state": "CA",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/CONCORD/Cap/CapHome.aspx?module=Building",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "Live-verified 2026-07-31 via curl + Playwright: agency code CONCORD is a real, public, no-login Accela instance (200 OK). Playwright-probed the Building module's General Search: unlike other CA Accela sites, this deployment has NO ddlGSPermitType dropdown at all (grep for both 'commercial' and 'ddlGSPermitType' across the landing page and the post-search results HTML returned zero hits). Clicking Search returns a flat 'Record Type' list (Building/Miscellaneous MEP/Solar PV/Reroof/etc, 100+ rows) mixing residential (water heater replacements, reroofs) and commercial permits with no available filter to isolate commercial-only records -- wiring this would mean pulling mostly-residential noise, the exact failure mode AGENT_STRATEGY.md warns against. Not wired; would need a second investigation pass (e.g. an 'Advanced Search' flow or a different module param) to find a real commercial filter before this is usable."
+    },
+    {
+      "jurisdiction": "City of Antioch, CA (Contra Costa County's 3rd-largest city, Tyler EnerGov)",
+      "county": "Contra Costa",
+      "state": "CA",
+      "provider_type": "energov",
+      "endpoint": "https://antiochca-energovweb.tylerhost.net",
+      "state_agent_pipeline_key": "CA-ANTIOCH",
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "Live-verified 2026-07-31: antiochca-energovweb.tylerhost.net returns 200, wired via the existing generic EnerGov provider (tenant_name='Antioch', same pattern as El Monte/Alhambra/Carson). Dry-run with --lookback-days 90 fetched 50 real rows across 5 pages but 0 flagged commercial and 0 within the lookback window -- same unresolved 'navigation/search returns 0 despite no error' issue already logged against CA-GLENDALE's EnerGov config in state_configs.py, not yet debugged. Config left registered in state_configs.py (CA_ANTIOCH_ENERGOV_CONFIG / CA-ANTIOCH) but NOT merged (0 real rows) -- matches the Glendale precedent of registering-but-not-verified rather than deleting the investigation."
+    },
+    {
+      "jurisdiction": "Buncombe County, NC",
+      "county": "Buncombe",
+      "state": "NC",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/BUNCOMBECONC",
+      "state_agent_pipeline_key": "NC-BUNCOMBE",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 72,
+      "notes": "Accela agency code BUNCOMBECONC (aca-prod.accela.com/BUNCOMBE 404s -- not the real code). County GIS FeatureServer (gis.buncombecounty.org/.../permits) is a dead end, 38 layers all zoning/districts/sewer/flood, no permits layer. permit_type_label='Commercial New Building' (no single Commercial catch-all). Found+fixed a real HEADER_ALIASES bug in accela_provider.py: this deployment's date column header is 'App Date' not 'Date', so date_idx never matched and 82 real rows were silently reported as 0 -- added 'app date' alias."
+    },
+    {
+      "jurisdiction": "Union County, NC",
+      "county": "Union",
+      "state": "NC",
+      "provider_type": null,
+      "endpoint": "https://ucinspect.unioncountync.gov/evolvepublic/",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "Real, live public permit search exists (Evolve Permitting by InfoVision Software, no login required to search) but Evolve is not one of the 8 wired provider types (Accela/Socrata/ArcGIS/EnerGov/CKAN/Carto/CSV/TdlrTabs) -- would need a new provider class, out of scope for this pass. County's ArcGIS server (atlas.unioncountync.gov/server/rest/services, confirmed live) has no permits layer -- only zoning/districts/parcels/utilities (BCE_Commercial_Inspections_Zones is a zone boundary layer, not permit records). Gemini's first-answer guesses (epermits.unioncountync.gov, permits.unioncountync.gov, gis.unioncountync.gov) were all dead/wrong hostnames."
+    },
+    {
+      "jurisdiction": "Cabarrus County, NC",
+      "county": "Cabarrus",
+      "state": "NC",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/CABARRUS",
+      "state_agent_pipeline_key": "NC-CABARRUS",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 19,
+      "notes": "Accela agency code CABARRUS, shared by county + Concord/Kannapolis/Harrisburg (module=COC/COK/HB/Permits). module=Building 404s here -- only module=Permits works. permit_type_label='Building Commercial New'. County's own ArcGIS server (location.cabarruscounty.us/arcgisservices/rest/services, the real live host -- gis.cabarruscounty.us just redirects to a web map viewer) has Permits/MapServer with 0 layers and Current_Accela_Permits/Plan_Reviews only -- dead end, Accela portal is the real source. Found+fixed two more HEADER_ALIASES gaps in accela_provider.py: this deployment uses 'Permits Number'/'Permits Type' (plural) not 'Permit Number'/'Permit Type' -- without the fix, permit_number never mapped and all 19 real distinct rows collapsed into 1 synthetic-hash record on merge (same failure class as the earlier Indianapolis case-number bug). Removed the 1 bad collapsed record and re-merged clean after the fix."
+    },
+    {
+      "jurisdiction": "Nassau County, NY",
+      "county": "Nassau",
+      "state": "NY",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "Confirmed structurally like Suffolk: Nassau County government issues no general building permits (NY home-rule pattern) -- permitting is split across 3 towns (Hempstead, North Hempstead, Oyster Bay), 2 cities (Glen Cove, Long Beach), 64 villages. No county GIS/open-data portal publishes permit records. Largest town (Hempstead) uses OpenGov/ViewPoint Cloud (live, HTTP 200 at hempsteadny.viewpointcloud.com) -- not one of the 8 supported provider types, search-form only, no bulk API. North Hempstead (MyToNH portal, HTTP 200) and Oyster Bay (buildingportal, HTTP 200) same pattern. Would need a new scraper/provider type per town, not a config-only fix. Documents (Part 2) not yet run for Nassau this session. Documents (Part 2): document-research-fallback run, 5 projects found, 0 with confirmed pullable documents."
+    },
+    {
+      "jurisdiction": "Westchester County, NY",
+      "county": "Westchester",
+      "state": "NY",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "48 independent municipalities (Yonkers, New Rochelle, White Plains, Mount Vernon, etc.), each with its own building dept -- no county-level permit system. County GIS (Westchester GeoHub) only has parcel/zoning/infra layers, no permits. None of the top 4 cities by population publish a Socrata/ArcGIS/CKAN bulk permit feed -- FOIL request is the only documented access path per Gemini's grounded research. Documents (Part 2) not yet run this session. Documents (Part 2): document-research-fallback run, 5 projects found, 0 with confirmed pullable documents."
+    },
+    {
+      "jurisdiction": "Erie County (Buffalo), NY",
+      "county": "Erie",
+      "state": "NY",
+      "provider_type": "socrata",
+      "endpoint": "https://data.buffalony.gov/resource/9p2d-f3yt.json",
+      "state_agent_pipeline_key": "NY-ERIE-BUFFALO",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 409,
+      "notes": "County government issues no permits (same NY home-rule pattern as every other county this batch), but City of Buffalo's Open Data Buffalo Socrata portal has a real, live permits dataset (9p2d-f3yt, 'Permits'). Verified live 2026-07-31: MAX(issued)=2026-07-30 (fresh, 1 day old). No boolean commercial field -- used property_class_code (NY state assessment roll numeric code) between 400-499 as the commercial classifier instead of the narrower aptype='NEW COM' bucket (only 338 total rows). Dry-run confirmed 409 real rows over a 90-day lookback. Not yet merged -- dry-run only as of this session; --merge-state still pending."
+    },
+    {
+      "jurisdiction": "Monroe County (Rochester), NY",
+      "county": "Monroe",
+      "state": "NY",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "County issues no permits (home-rule). City of Rochester's DataROC ArcGIS Hub portal (data-cityofrochester.opendata.arcgis.com) was checked live via the ArcGIS Hub search API for 'permit' -- only result found was an unrelated community-gardens permit layer, no building-permit dataset exists. Rochester's real permit system (BuildingBlocks / CIVICS ePermitting) is parcel-lookup only, no bulk API or CSV export. Documents (Part 2) not yet run this session. Documents (Part 2): document-research-fallback run, 6 projects found, 0 with confirmed pullable documents."
+    },
+    {
+      "jurisdiction": "Albany County (City of Albany), NY",
+      "county": "Albany",
+      "state": "NY",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "County issues no permits (home-rule). City of Albany uses a Tyler EnerGov Citizen Self-Service portal, but Gemini's guessed URL (albanyny-energov.tylerhost.net/apps/selfservice) 404'd live and the city's own portal landing page (albanyny.gov/507/Citizens-Self-Service-Portal) also 404'd -- could not locate the real live CSS URL within this session's scope, and even if found, EnerGov CSS instances are typically address-lookup-only (confirmed pattern from OH Cleveland COO in this same codebase, 403 on the underlying records API). The only permit dataset on data.ny.gov (kb9s-4gzd) is confirmed stale, static 2009-2013 snapshot, not updated since 2014-03-27. Documents (Part 2) not yet run this session. Documents (Part 2): document-research-fallback run, 7 projects found, 0 with confirmed pullable documents."
+    },
+    {
+      "jurisdiction": "Rockland County, NY",
+      "county": "Rockland",
+      "state": "NY",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "County issues no general permits (home-rule; 5 towns + 19 villages each run independent building depts). County does maintain a Tyler EnerGov portal (rocklandcountyny-energovpub.tylerhost.net) but it's scoped to narrow county-level functions (sewer district connections, highway work, and temporary administration of the Village of Spring Valley's code) -- live-checked, returns HTTP 403, not publicly queryable. No county-wide bulk source. Documents (Part 2) not yet run this session. Documents (Part 2): document-research-fallback run, 4+ projects found (1 dead link caught: Haverstraw Chair Factory GPP), 0 with confirmed pullable documents."
+    },
+    {
+      "jurisdiction": "Dutchess County (Poughkeepsie), NY",
+      "county": "Dutchess",
+      "state": "NY",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "County issues no permits (home-rule). County ArcGIS Hub (opendata-dcny.hub.arcgis.com) limited to parcels/zoning/roads/footprints, no permit data. City and Town of Poughkeepsie both process permits via paper/PDF forms with no open data system. FOIL is the only documented access path. Documents (Part 2) not yet run this session. Documents (Part 2): document-research-fallback run, 7 projects found, 1 confirmed pullable document (Six Senses Conference Center & Wellness Resort Expansion, Laserfiche portal record page). 2 dead links caught (Town of Poughkeepsie Police/Court EAF, OnSemi East Fishkill DEC notice, both 404)."
+    },
+    {
+      "jurisdiction": "Oneida County (Utica), NY",
+      "county": "Oneida",
+      "state": "NY",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "County issues no permits (home-rule). City of Utica Codes Enforcement has no Socrata/ArcGIS/Accela/EnerGov/CKAN presence per grounded research; FOIL-only. Not independently live-verified beyond the grounded search (batched multi-county query, lower confidence than single-county sessions -- flag for a follow-up single-county pass if this becomes a priority). Documents (Part 2): document-research-fallback run, 5 projects found, 0 with confirmed pullable documents."
+    },
+    {
+      "jurisdiction": "Broome County (Binghamton), NY",
+      "county": "Broome",
+      "state": "NY",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "County issues no permits (home-rule), but Broome County GIS does publish a real, live, public ArcGIS FeatureServer aggregating municipal construction data countywide (muni_const_data, https://services1.arcgis.com/AwJV4OxDewNPk46b/arcgis/rest/services/muni_const_data/FeatureServer -- verified live, item last modified 2026). However it is NOT project-level: schema is (Muni, Year, Category, WorkType, StructureType, Permits[count], Units[count], Value[sum]) -- an annual aggregate/dashboard rollup per municipality, no addresses, no individual permit records. Not usable as a project feed with the current provider types (no per-row entity to map to a project). Would need Broome's individual municipal source systems for real project rows, not found this session. Documents (Part 2): document-research-fallback run, 7 projects found, 0 with confirmed pullable documents."
+    },
+    {
+      "jurisdiction": "Saratoga County (Saratoga Springs), NY",
+      "county": "Saratoga",
+      "state": "NY",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "County issues no permits (home-rule). City of Saratoga Springs Building Dept has no open permit dataset (only an MS4 stormwater/construction-site ArcGIS layer, unrelated). FOIL-only. Batched multi-county query, not independently single-county verified -- flag for follow-up if prioritized. Documents (Part 2): document-research-fallback run, projects found, 0 with confirmed pullable documents."
+    },
+    {
+      "jurisdiction": "Niagara County (Niagara Falls), NY",
+      "county": "Niagara",
+      "state": "NY",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "County issues no permits (home-rule). City of Niagara Falls NY Code Enforcement has no bulk open data system (note: niagaraopendata.ca is Niagara Falls, ONTARIO, CANADA -- a different jurisdiction, correctly excluded). Batched multi-county query, not independently single-county verified -- flag for follow-up if prioritized. Documents (Part 2): document-research-fallback run, 4+ projects found, 0 with confirmed pullable documents."
+    },
+    {
+      "jurisdiction": "Ontario County (Canandaigua), NY",
+      "county": "Ontario",
+      "state": "NY",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "County issues no permits (home-rule). OnCOR county GIS portal is parcel/tax/zoning only. City of Canandaigua permitting is manual, no open data system. Batched multi-county query, not independently single-county verified -- flag for follow-up if prioritized. Documents (Part 2): document-research-fallback run, 6 projects found, 0 with confirmed pullable documents."
+    },
+    {
+      "jurisdiction": "Chemung County (Elmira), NY",
+      "county": "Chemung",
+      "state": "NY",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "County issues no permits (home-rule). County Planning Dept GIS layers (footprints/flood/tax) have no permit data. City of Elmira permitting is manual. Batched multi-county query, not independently single-county verified -- flag for follow-up if prioritized. Documents (Part 2): document-research-fallback run, 5 projects found, 0 with confirmed pullable documents."
+    },
+    {
+      "jurisdiction": "Horry County, SC",
+      "county": "Horry",
+      "state": "SC",
+      "provider_type": "energov",
+      "endpoint": "https://egweb.horrycounty.org/EnerGov_prod/selfservice",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "Horry County EnerGov CSS (egweb.horrycounty.org) confirmed live (200) but SSO-gated -- Playwright probe of #/search redirects to #/sso.html?redirectUrl=/search, title \"Log In\", same dead-end pattern as Richland/Columbia SC. City of Conway uses BS&A Online (bsaonline.com/?uid=2621, live) but BS&A is not a supported provider_type in state_configs.py and Conway is too small to justify a new provider. City of Myrtle Beach has no online portal at all (email/PDF submission only). Falling back to document-research-fallback.py for direct project research."
+    },
+    {
+      "jurisdiction": "Spartanburg County, SC",
+      "county": "Spartanburg",
+      "state": "SC",
+      "provider_type": "energov",
+      "endpoint": "https://spartanburgcountysc-energovweb.tylerhost.net",
+      "state_agent_pipeline_key": "SC-SPARTANBURG",
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "Tyler EnerGov CSS confirmed live and NOT login-gated (unlike Richland/Columbia/Horry) -- real POST to api/energov/search/search returns genuine 2026-dated commercial case rows when probed manually. Config registered (SC_SPARTANBURG_ENERGOV_CONFIG) and a real timing bug fixed in shared energov_provider.py (300ms->1000ms wait after SearchModule change -- was giving a false 0-row null-Result on this specific tenant). However dry-run with the fix still returns 0-in-window: this tenant default-sorts PermitCriteria by PermitNumber.keyword ascending with no date-range filter set by the provider, so the 5-page/50-row cap only ever surfaces case numbers starting with A (Addressing/Appeal types), never reaching real Building permits alphabetically further down. Needs a follow-up fix (set SortBy=IssueDate/SortAscending=false, or ApplyDateFrom/To criteria fields already visible in the request schema) before this can be merged -- left as a real, verified-live, not-yet-mergeable source, not a dead end. Falling back to document-research-fallback.py for direct project research in the meantime."
+    },
+    {
+      "jurisdiction": "Lexington County, SC",
+      "county": "Lexington",
+      "state": "SC",
+      "provider_type": null,
+      "endpoint": "https://www.lex-co.sc.gov/departments/community-development",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "County Community Development dept confirmed live (200) but uses BluePrince (CityView/Harris Local Government), not one of the 8 supported provider_types (Accela/Socrata/ArcGIS/EnerGov/CKAN/Carto/CSV/TdlrTabs). City of Columbia EnerGov fallback (which partially overlaps Lexington) already logged as a dead end under SC-RICHLAND (login-gated). No structured source wired; falling back to document-research-fallback.py."
+    },
+    {
+      "jurisdiction": "York County, SC",
+      "county": "York",
+      "state": "SC",
+      "provider_type": null,
+      "endpoint": "https://www.yorkcountysc.gov/435/Development-Services",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "Gemini-suggested URL 404s live; county and City of Rock Hill both reportedly run Evolve (InfoVision Software), not a supported provider_type. No structured source wired; falling back to document-research-fallback.py."
+    },
+    {
+      "jurisdiction": "Anderson County, SC",
+      "county": "Anderson",
+      "state": "SC",
+      "provider_type": null,
+      "endpoint": "https://countyofandersonsc.portal.opengov.com",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "County and City of Anderson both reportedly run OpenGov/ViewPoint Cloud, not a supported provider_type. No structured source wired; falling back to document-research-fallback.py."
+    },
+    {
+      "jurisdiction": "Berkeley County, SC",
+      "county": "Berkeley",
+      "state": "SC",
+      "provider_type": "energov",
+      "endpoint": "https://berkeleycountysc.gov/energovinfo",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "County-reported EnerGov info page 403s live; the actual tenant hostname was not discoverable via the standard tylerhost.net guess pattern (berkeleycountysc-energovweb.tylerhost.net does not resolve, ERR_NAME_NOT_RESOLVED). City of Goose Creek EnerGov (permitting.cityofgoosecreek.com) also does not resolve live. No working portal found; falling back to document-research-fallback.py."
+    },
+    {
+      "jurisdiction": "Beaufort County, SC",
+      "county": "Beaufort",
+      "state": "SC",
+      "provider_type": "energov",
+      "endpoint": "https://beaufortcountysc-energovpub.tylerhost.net",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "Tyler EnerGov CSS confirmed live, NOT login-gated (title \"Public Information\"). Verified real and large (PermitsFound=210955 in a blank All-module search), but not yet mergeable: selecting the Permit module and searching returns a genuine server-side error (\"Specified argument was out of the range of valid values\", Result:null, Success:false) rather than rows, and the default blank All-module search returns EntityResults:[] despite TotalFound=439070 -- this tenant requires either a keyword or additional criteria neither the generic energov_provider.py UI flow nor a quick manual probe supplied successfully. Needs a follow-up UI-flow fix (find the right minimal criteria/keyword this tenant accepts) before merging. Falling back to document-research-fallback.py in the meantime."
+    },
+    {
+      "jurisdiction": "Allen County, IN (Fort Wayne -- joint city-county Accela ACFW)",
+      "county": "Allen",
+      "state": "IN",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/ACFW",
+      "state_agent_pipeline_key": "IN-ALLEN",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 142,
+      "notes": "module=Building and module=Permits both login-gate/error on this ACFW instance; module=Planning loads the general search form with no login wall. No single 'Commercial' option in the ddlGSPermitType dropdown -- used the broadest real non-residential label '08. Site Plan Review (Commercial, Industrial, Multifamily, School, Religious Institution)'. Caught and fixed the same silent-collapse bug documented for Indianapolis: this deployment's results table uses 'Application Number' as its permit-number column header, not in accela_provider.py's HEADER_ALIASES -- every row got an identical fallback id and the first merge attempt collapsed 192 real rows into 1. Added 'application number'->permit_number and 'application type'->permit_type aliases, removed the corrupted record, reset the watermark, re-ran clean: 192 fetched, 142 new unique merged (total in.json now 560). Document fallback run: 0 of ~5 named projects had a confirmed pullable document."
+    },
+    {
+      "jurisdiction": "Lake County, IN (Crown Point -- Tyler EnerGov)",
+      "county": "Lake",
+      "state": "IN",
+      "provider_type": "energov",
+      "endpoint": "https://crownpointin-energovweb.tylerhost.net",
+      "state_agent_pipeline_key": "IN-CROWNPOINT",
+      "status": "FAILED_NEED_ALT",
+      "notes": "Gemini's first URL (crownpointin-energov.tylerhost.net) was a fabricated/wrong subdomain -- real SSL-live endpoint follows the standard '{tenant}-energovweb.tylerhost.net' pattern used elsewhere (confirmed via curl HTTP 200). Wired as a real EnerGov config, but a live dry-run returns 0 rows -- same 'response had null Result' symptom as CA-GLENDALE's EnerGov config (registered but not yet debugged; likely a theme/flow difference in the click-triggered XHR this deployment's search button uses). County government itself and the other major Lake County cities have no live structured source: unincorporated county is PDF/webform-only, Hammond and East Chicago have no public portal at all, Gary uses OpenGov Permitting & Licensing (garyin.portal.opengov.com, HTTP 200 live) which was not evaluated as a provider type this pass -- worth a follow-up as OpenGov is not one of the 8 existing provider types. Document fallback run: 0 of ~5 named projects had a confirmed pullable document."
+    },
+    {
+      "jurisdiction": "Hamilton County, IN (Noblesville -- Tyler EnerGov)",
+      "county": "Hamilton",
+      "state": "IN",
+      "provider_type": "energov",
+      "endpoint": "https://noblesvillein-energovpub.tylerhost.net",
+      "state_agent_pipeline_key": "IN-NOBLESVILLE",
+      "status": "FAILED_NEED_ALT",
+      "notes": "Noblesville's EnerGov tenant is real and live (curl HTTP 200; note it uses the '-energovpub.tylerhost.net' subdomain form and 'Apps/SelfService' path casing, not the more common '-energovweb.tylerhost.net'/'apps/selfservice' pattern used by the CA tenants). Wired and dry-run fetched 50 real rows across 5 pages, but 0 matched the commercial-keyword filter and 0 fell within the lookback window -- a raw unfiltered probe (bypassing the pipeline's SearchModule selector) showed the blank/default search returns Code Enforcement cases (ModuleName=5, e.g. 'Grass and Weeds'), not Building permits; the pipeline's existing SearchModule='Permit' select-and-dispatch logic did not surface commercial permit rows for this tenant within the time spent debugging. Other Hamilton County cities not evaluated as providers this pass: Fishers runs OpenGov Permitting & Licensing (fishersin.portal.opengov.com, confirmed live HTTP 200, not one of the 8 existing provider types), Carmel runs Cityworks PLL/Avolve ProjectDox (not evaluated), Westfield has no structured portal found. Document fallback run: 0 of ~6 named projects had a confirmed live pullable document (2 retried candidate URLs were dead 404s off a stale plan-commission agenda page)."
     }
   ]
 }

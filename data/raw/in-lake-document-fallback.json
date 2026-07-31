@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Lake",
+  "state": "IN",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 5,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Sentinel Data Center (Project Shirley Campus)",
+      "city_address": "South side of State Road 2 (E. 181st Ave), approx. 0.2 miles east of Clay Street, Eagle Creek Township, Lake County, IN",
+      "project_type": "Industrial / Data Center (500 MW Facility)",
+      "estimated_cost": "$5,000,000,000",
+      "developer_owner": "Sentinel Data Centers (Developer) / Johnson Sunnybrook Farm LLC (Landowner)",
+      "status": "Proposed / Rezoning to M-1 Light Industrial approved by Lake County Council in June 2026; subject to Special Exception approval",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "NWI Times and Indiana Economic Digest reporting on Lake County Council rezoning action and Lake County Plan Commission hearings.",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Foundry Works Battery Energy Storage System",
+      "city_address": "East side of Clay Street, approx. 0.2 miles north of E. 181st Avenue (State Road 2), Eagle Creek Township, Lake County, IN",
+      "project_type": "Industrial / Clean Energy & Battery Storage (200 MW BESS)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Foundry Works Energy Storage, LLC / Invenergy (Developer) / Van Kalker Family Limited Partnership (Landowner)",
+      "status": "Proposed / Under Study Session review by Lake County Plan Commission (Petition 26-SS-14 PC, July 15, 2026) for Special Exception",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Lake County Plan Commission July 15, 2026 Meeting Agenda and Indiana Utility Regulatory Commission (IURC) filings.",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Ozinga Low-Carbon Slag Cement Mill",
+      "city_address": "East Chicago, Lake County, IN",
+      "project_type": "Industrial / Manufacturing Mill",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Ozinga (Owner) / Morrison Construction Company (General Contractor)",
+      "status": "Under Construction (Completion target Summer 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Building Indiana Industry News reporting on Northwest Indiana heavy industrial construction.",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "John Deere Northwest Indiana Distribution Center",
+      "city_address": "234-acre site off I-65 and State Road 2, Lowell-Hebron Area, Lake County, IN",
+      "project_type": "Industrial Warehouse & Distribution Center (1.2 Million Sq. Ft.)",
+      "estimated_cost": "$125,000,000",
+      "developer_owner": "John Deere (Owner/Operator) / Venture One Real Estate (Developer)",
+      "status": "Under Construction (Groundbroken)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Indiana Governor's Office Press Release and Inside Indiana Business announcements.",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "FBN Properties Solid Fill Deposit Site",
+      "city_address": "6410 W. 114th Court (approx. 1 mile east of Cline St), Center Township, Lake County, IN",
+      "project_type": "Industrial / Earthworks & Land Reclamation",
+      "estimated_cost": "Not specified",
+      "developer_owner": "FBN Properties, LLC / Richard Rueth (Owner) / Torrenga Engineering (Petitioner)",
+      "status": "Proposed / Under Study Session review by Lake County Plan Commission (Petition 26-SS-13 PC, July 15, 2026) for Special Exception",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Lake County Plan Commission July 15, 2026 Tentative Agenda.",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Buncombe",
+  "state": "NC",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 5,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "WNC Futures Factory (A-B Tech Advanced Manufacturing Workforce & Innovation Hub)",
+      "city_address": "Biltmore Park West (13-acre site near Pratt & Whitney), Asheville, NC 28801",
+      "project_type": "Industrial / Advanced Manufacturing & Innovation Center",
+      "estimated_cost": "$34,200,000",
+      "developer_owner": "Asheville-Buncombe Technical Community College (A-B Tech) / Buncombe County / Biltmore Farms",
+      "status": "Proposed / Federal EDA Disaster Grant Awarded",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "U.S. Economic Development Administration Press Release (July 27, 2026); BPR News (July 29, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Buncombe County EMS West Regional Base",
+      "city_address": "359 Brevard Road, Asheville, NC 28806",
+      "project_type": "Commercial / Government Emergency Services Facility",
+      "estimated_cost": "$16,594,000",
+      "developer_owner": "Buncombe County",
+      "status": "Design Phase / Architectural Contract Approved",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Buncombe County Board of Commissioners Meeting Resolution & Recap (July 21, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Asheville Mall Redevelopment / Rezoning",
+      "city_address": "3 S Tunnel Rd, Asheville, NC 28805",
+      "project_type": "Commercial / Regional Business & Retail Redevelopment",
+      "estimated_cost": "Not specified ($90,000,000 property value)",
+      "developer_owner": "CBL Properties / Asheville Mall Ownership",
+      "status": "Rezoning Approved",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Asheville City Council Meeting (July 28, 2026); BPR News (July 29, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Swannanoa Commercial Corridor Pedestrian Infrastructure Project",
+      "city_address": "U.S. 70 Corridor (between Whitson Ave and Warren Wilson Rd), Swannanoa, NC 28778",
+      "project_type": "Infrastructure / Commercial Corridor Revitalization",
+      "estimated_cost": "$10,000,000",
+      "developer_owner": "Buncombe County / NC Department of Commerce CDBG-DR Program",
+      "status": "CDBG-DR Grant Application Approved by Commissioners",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Buncombe County Board of Commissioners Meeting (July 21, 2026); BPR News (July 22, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Buncombe County Unincorporated Commercial Corridor Remediation & Revitalization",
+      "city_address": "Unincorporated Buncombe County Commercial Corridors (Barnardsville, Fairview, Leicester, Swannanoa), NC",
+      "project_type": "Commercial / Infrastructure & Site Remediation",
+      "estimated_cost": "$8,966,557",
+      "developer_owner": "Buncombe County / NC Department of Commerce CDBG-DR Program",
+      "status": "CDBG-DR Grant Application Approved by Commissioners",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Buncombe County Board of Commissioners Meeting (July 21, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

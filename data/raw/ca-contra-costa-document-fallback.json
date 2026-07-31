@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Contra Costa",
+  "state": "CA",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 6,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Bridgehead Industrial Project",
+      "city_address": "5801 Bridgehead Road, Oakley, CA 94561 (Contra Costa County)",
+      "project_type": "Industrial / Logistics Campus (3.12M - 3.2M sq ft across 10 buildings)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "JB2 Partners / Oxfoot Oakley LLC",
+      "status": "Approved",
+      "document_url": "",
+      "document_type": "City Council Agenda Packet / Planning Commission Staff Report",
+      "source_citation": "City of Oakley City Council & Planning Commission Actions (GPA 02-23, RZ 04-23, TM 10-23, DR 11-23)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "FSRE Industrial Concord Project",
+      "city_address": "Marsh Drive and Sally Ride Drive (APN 125-010-023), Concord / Unincorporated Contra Costa County, CA 94520",
+      "project_type": "Industrial / Warehouse (223,145 sq ft concrete tilt-up logistics warehouse)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "FSRE Industrial Concord Company, LLC / Contra Costa County",
+      "status": "Under Environmental Review / Pending Approvals",
+      "document_url": "",
+      "document_type": "Environmental Impact Report / State Clearinghouse Filing",
+      "source_citation": "Contra Costa County Department of Conservation & Development (County File DP21-3022 / SCH #2024070591)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Live Oak Industrial Park Phase 2",
+      "city_address": "5400 Live Oak Avenue (APN 037-100-066 / 037-100-065), Oakley, CA 94561",
+      "project_type": "Commercial / Light Industrial (31,513 sq ft light industrial building)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Colt Alvernaz / Live Oak Investors, LLC",
+      "status": "Under Review / Approved Maintenance Agreements",
+      "document_url": "",
+      "document_type": "Design Review Application (DR 2026-001) / City Resolution",
+      "source_citation": "City of Oakley Community Development Department",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "City Center Hotel",
+      "city_address": "SE Corner of Camino Ramon & Bishop Drive (Parcel M, APN 213-133-098), San Ramon, CA 94583",
+      "project_type": "Commercial Hospitality (114,392 sq ft, 5-story, 169-key hotel)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "LodgeWorks / BR3A, LLC",
+      "status": "Approved / Under Active Construction",
+      "document_url": "",
+      "document_type": "Development Plan / Architectural Review Application",
+      "source_citation": "City of San Ramon Current Commercial Project List",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "L'Academy Preschool Facility",
+      "city_address": "620 Contra Costa Boulevard (APN 153-270-004), Pleasant Hill, CA 94523",
+      "project_type": "Commercial / Childcare Facility",
+      "estimated_cost": "Not specified",
+      "developer_owner": "L'Academy Preschool",
+      "status": "Under Review / Variance Hearing (ENT-2026-0006)",
+      "document_url": "",
+      "document_type": "Planning Commission Notice of Public Hearing",
+      "source_citation": "City of Pleasant Hill Planning Commission",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "San Ramon Pavement Management 2026 Project",
+      "city_address": "Citywide Commercial Corridors & Arterials, San Ramon, CA 94583",
+      "project_type": "Civil / Infrastructure Construction",
+      "estimated_cost": "$6,975,400",
+      "developer_owner": "City of San Ramon Public Works Department",
+      "status": "Bidding Completed / Contract Award Pending (Bids Opened July 15, 2026)",
+      "document_url": "",
+      "document_type": "Notice Inviting Bids / Addendum No. 1",
+      "source_citation": "City of San Ramon Public Works Department (CIP 000017 & CIP 000019)",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

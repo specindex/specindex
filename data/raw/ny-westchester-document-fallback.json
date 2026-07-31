@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Westchester",
+  "state": "NY",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 5,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "North White Plains Transit-Oriented Development",
+      "city_address": "Across from North White Plains Metro-North Station, White Plains, NY 10601",
+      "project_type": "Commercial / Mixed-Use (296 residential units, ground-floor retail, 1,000 sq ft cafe, 15,000 sq ft public park, 383-space parking garage)",
+      "estimated_cost": "$178,300,000",
+      "developer_owner": "BRP Companies",
+      "status": "Financed ($178.3M financing package secured July 31, 2026); construction starting late summer 2026",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://www.multihousingnews.com/brp-cos-gets-178m-for-westchester-county-mixed-use-project/",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Westchester Crossing",
+      "city_address": "406-408 Boston Post Road & High Street, Port Chester, NY 10573",
+      "project_type": "Commercial / Mixed-Use Infrastructure (Site readiness, utility, stormwater and roadway upgrades for 957 housing units, 120-room hotel, retail, and community space)",
+      "estimated_cost": "$65,000,000 (Infrastructure Phase)",
+      "developer_owner": "Boston Post Road Owner LLC (Rose Associates, BedRock Real Estate Partners, Rafferty Real Estate)",
+      "status": "Under Construction / Groundbroken",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://www.ny.gov/press-release/governor-hochul-announces-groundbreaking-westchester-crossing-port-chester",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "NYC DEP Field Operations & Utility Building Conversion",
+      "city_address": "601 Midland Avenue, Yonkers, NY 10704",
+      "project_type": "Industrial / Utility Infrastructure (Construction of 2-story Field Operations Building and conversion/repurposing of vacant fluoride building into a utility building)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "New York City Department of Environmental Protection (NYC DEP)",
+      "status": "Under Review (Site Plan Review on City of Yonkers Planning Board Agenda, July 8, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Yonkers Planning Board Meeting Agenda (July 8, 2026), https://www.yonkersny.gov",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Brookfield Commons Phase 3",
+      "city_address": "159-161 South Lexington Avenue, White Plains, NY 10601",
+      "project_type": "Commercial / Mixed-Use Residential Development",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Trinity Brookfield Commons Phase Three Limited Partnership / White Plains Housing Authority",
+      "status": "Under Review (One-year Extension of Site Plan and Special Permit Approval on White Plains Planning Board Agenda, July 21, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of White Plains Planning Board Agenda (July 21, 2026) & Design Review Board Agenda (July 13, 2026), https://www.cityofwhiteplains.com",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "98 Broad Parkway Residential Development",
+      "city_address": "98 Broad Parkway, White Plains, NY 10601",
+      "project_type": "Commercial / Multi-Family Residential (6-story, 27-unit residence with 44 parking spaces)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "98 Broad Parkway Development LLC",
+      "status": "Under Review (Site Plan Application on White Plains Planning Board Agenda, July 21, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of White Plains Planning Board Agenda (July 21, 2026), https://www.cityofwhiteplains.com",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

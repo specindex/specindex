@@ -1,0 +1,63 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Niagara",
+  "state": "NY",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 4,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "The Nest",
+      "city_address": "333 First Street, Niagara Falls, NY 14301",
+      "project_type": "Mixed-Use Commercial / Residential",
+      "estimated_cost": "$39,500,000",
+      "developer_owner": "Community Services for Every1 & Edgemere Development",
+      "status": "Under Construction (Groundbroken July 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "New York State Executive Chamber Press Release (July 7, 2026); WGRZ News (July 11, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "3425 Hyde Park Boulevard Industrial Renovation",
+      "city_address": "3425 Hyde Park Boulevard, Town of Niagara, NY 14305",
+      "project_type": "Industrial / Commercial Renovation",
+      "estimated_cost": "Not specified",
+      "developer_owner": "3425 Hyde Park Boulevard LLC",
+      "status": "Under Review / Proposed (Public Hearing held July 28, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Niagara County Industrial Development Agency Public Hearing Notice (July 28, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Amazon Fulfillment Center",
+      "city_address": "Town of Niagara, Niagara County, NY",
+      "project_type": "Industrial / Logistics Fulfillment Center",
+      "estimated_cost": "$500,000,000",
+      "developer_owner": "Amazon",
+      "status": "Construction Complete / Equipment Fit-Out Phase (July 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "WGRZ News / Buffalo Business First (July 22, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "South Transit Road Development",
+      "city_address": "6583 (a/k/a 6563) & 6893 South Transit Road, Town of Lockport, NY 14094",
+      "project_type": "Commercial",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Not specified",
+      "status": "Under Review / Proposed (Public Hearing held July 21, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Town of Lockport Planning Board Public Hearing Notice (July 21, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

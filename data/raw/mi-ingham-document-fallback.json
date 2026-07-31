@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Ingham",
+  "state": "MI",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 6,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Holt Farmers Market Building Expansion",
+      "city_address": "2150 Cedar Street, Holt, MI 48842",
+      "project_type": "Commercial / Public Market Facility Expansion",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Delhi Charter Township Downtown Development Authority (DDA)",
+      "status": "Approved / Construction Commencing",
+      "document_url": "",
+      "document_type": "Downtown Development Authority Agenda Packet & Activity Report",
+      "source_citation": "Delhi Charter Township Downtown Development Authority Meeting Packet & 2026 Activity Report (July 28, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Green Development Ventures Rental Housing Project",
+      "city_address": "Corner of College Road and Holt Road, Holt, MI 48842",
+      "project_type": "Commercial / Residential Rental Community (148 units)",
+      "estimated_cost": "$48,100,000",
+      "developer_owner": "Green Development Ventures, LLC",
+      "status": "Approved by Township Board and Brownfield Redevelopment Authority",
+      "document_url": "",
+      "document_type": "Brownfield Redevelopment Authority Activity Report",
+      "source_citation": "Delhi Charter Township Brownfield Redevelopment Authority Report (July 28, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Tailgaters Gas Station and Convenience Store",
+      "city_address": "1614 & 1622 W. Grand River Avenue, Okemos, MI 48864",
+      "project_type": "Commercial / Retail & Fueling Facility",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Tailgaters Meridian LLC",
+      "status": "Special Use Permit & Site Plan Under Review (SUP #26007)",
+      "document_url": "",
+      "document_type": "Planning Commission Staff Report / Meeting Packet",
+      "source_citation": "Charter Township of Meridian Planning Commission Meeting Packet (April 27, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Brightwell Behavioral Health Facility Expansion",
+      "city_address": "3512 Coolidge Road, East Lansing, MI 48823",
+      "project_type": "Commercial / Healthcare Facility",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Brightwell Group LLC / Lansing Senior Partners",
+      "status": "Site Plan Review / Public Hearing",
+      "document_url": "",
+      "document_type": "Planning Commission Public Hearing Notice",
+      "source_citation": "City of East Lansing Planning Commission Public Hearing Notice (May 27, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Lansing Cedar/Larch Data Center Industrial Redevelopment",
+      "city_address": "229 S. Larch Street & 200 blocks of S. Cedar Street, Lansing, MI 48933",
+      "project_type": "Industrial / Data Center",
+      "estimated_cost": "Not specified",
+      "developer_owner": "City of Lansing / Private Developer",
+      "status": "Conditional Rezoning Approved (Z-3-2026) / Pre-Construction Planning",
+      "document_url": "",
+      "document_type": "City Council Public Hearing Notice & Ordinance Resolution",
+      "source_citation": "City of Lansing City Council Notice of Public Hearing Z-3-2026 (April 6, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Huntington National Bank Okemos Branch",
+      "city_address": "1938 W. Grand River Avenue, Okemos, MI 48864",
+      "project_type": "Commercial / Financial Facility",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Huntington National Bank",
+      "status": "Special Use Permit & Site Plan Submitted",
+      "document_url": "",
+      "document_type": "Planning Commission Preliminary Site Plan",
+      "source_citation": "Charter Township of Meridian Planning Commission Site Plan Review (2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

@@ -515,6 +515,67 @@ IN_INDIANAPOLIS_ACCELA_CONFIG: dict[str, Any] = {
     "lookback_days": 180,
 }
 
+# Crown Point, IN -- Lake County seat, Tyler EnerGov Citizen Self Service,
+# same tylerhost.net/apps/selfservice hosted pattern as the CA EnerGov
+# tenants above. Gemini's URL guessed the wrong subdomain form
+# ("crownpointin-energov.tylerhost.net" -- SSL connect error); the real,
+# live one follows the standard "{tenant}-energovweb.tylerhost.net"
+# pattern used elsewhere, confirmed via curl (HTTP 200) 2026-07-31. Lake
+# County itself and its other cities (Gary/Hammond/East Chicago/
+# Merrillville) have no live structured permit API (Gary uses OpenGov,
+# unverified as pullable; the rest are paper/in-person only) -- Crown
+# Point is the only confirmed live source in the county so far.
+IN_CROWNPOINT_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "IN",
+    "provider_type": "energov",
+    "county": "Lake",
+    "endpoint": "https://crownpointin-energovweb.tylerhost.net",
+    "tenant_id": "1",
+    "tenant_name": "Crown Point",
+    "lookback_days": 900,
+    "max_pages": 5,
+}
+
+# Allen County / Fort Wayne, IN -- joint city-county Accela instance,
+# agency code ACFW. Confirmed live 2026-07-31: module=Building AND
+# module=Permits both redirect to Login.aspx/Error.aspx (login-gated or
+# not configured), but module=Planning loads the general search form
+# with no login wall and has a real permit-type dropdown
+# (#ctl00_PlaceHolderMain_generalSearchForm_ddlGSPermitType). No single
+# "Commercial" catch-all option exists; broadest real non-residential
+# label is "08. Site Plan Review (Commercial, Industrial, Multifamily,
+# School, Religious Institution)" (vs. residential-only options like
+# "04. Improvement Location Permit (Residential decks...)" and "05. New
+# Single Family Dwelling").
+IN_ALLEN_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "IN",
+    "provider_type": "accela",
+    "county": "Allen",
+    "endpoint": "https://aca-prod.accela.com/ACFW",
+    "module": "Planning",
+    "permit_type_label": "08. Site Plan Review (Commercial, Industrial, Multifamily, School, Religious Institution)",
+    "lookback_days": 180,
+}
+
+# City of Noblesville, IN -- Hamilton County seat, Tyler EnerGov Citizen
+# Self Service, "-energovpub.tylerhost.net" subdomain form (not
+# "-energovweb", which fails DNS for this tenant) -- confirmed live via
+# curl HTTP 200 2026-07-31. Other Hamilton County cities (Fishers uses
+# OpenGov Permitting & Licensing, Carmel uses Cityworks PLL, Westfield
+# has no structured portal) are not one of the 8 existing provider
+# types, not wired this pass.
+IN_NOBLESVILLE_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "IN",
+    "provider_type": "energov",
+    "county": "Hamilton",
+    "endpoint": "https://noblesvillein-energovpub.tylerhost.net",
+    "selfservice_path": "Apps/SelfService",
+    "tenant_id": "1",
+    "tenant_name": "Noblesville",
+    "lookback_days": 900,
+    "max_pages": 5,
+}
+
 # Sioux Falls, SD (Minnehaha County's top jurisdiction, ~85% of the
 # county's population). Gemini's domain had a typo -- gis.siouxfalls.
 # ORG doesn't resolve (NXDOMAIN), real domain is gis.siouxfalls.GOV --
@@ -627,6 +688,25 @@ SC_COLUMBIA_ENERGOV_CONFIG: dict[str, Any] = {
     "endpoint": "https://cityofcolumbiasc-energovweb.tylerhost.net",
     "tenant_id": "1",
     "tenant_name": "City of Columbia",
+    "lookback_days": 900,
+    "max_pages": 5,
+}
+
+# Spartanburg County, SC. Tyler EnerGov CSS at
+# spartanburgcountysc-energovweb.tylerhost.net/apps/selfservice --
+# confirmed live and NOT login-gated (unlike SC_COLUMBIA_ENERGOV_CONFIG
+# above): Playwright probe of #/search loads with page title "Public
+# Information" (no SSO redirect), and a real click-triggered search
+# captured a genuine POST to .../api/energov/search/search returning
+# live case rows (e.g. CaseNumber MANUHMPARK-000035-2022, IssueDate
+# 2026-05-14), confirmed 2026-07-31.
+SC_SPARTANBURG_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "SC",
+    "provider_type": "energov",
+    "county": "Spartanburg",
+    "endpoint": "https://spartanburgcountysc-energovweb.tylerhost.net",
+    "tenant_id": "1",
+    "tenant_name": "Spartanburg County",
     "lookback_days": 900,
     "max_pages": 5,
 }
@@ -1230,6 +1310,35 @@ NY_RICHMOND_CONFIG: dict[str, Any] = {
     "feed_id": "ny-nycdob-richmond",
 }
 
+# Erie County, NY (Buffalo) -- county government issues no permits (NY
+# building permitting is municipal-only, confirmed by Gemini + matches
+# every other NY county investigated so far). City of Buffalo's own
+# Open Data Buffalo Socrata portal does have a real permits dataset
+# though, verified live 2026-07-31: MAX(issued)=2026-07-30 (fresh).
+# No commercial/residential boolean field -- aptype has a narrow
+# 'NEW COM' bucket (338 rows total) but property_class_code (NY state
+# assessment roll numeric code, 4xx=commercial) is the broader, more
+# reliable classifier, confirmed via live query: 415 real rows with
+# property_class_code 400-499 in the last ~90 days (issued>=2026-05-01).
+NY_ERIE_BUFFALO_CONFIG: dict[str, Any] = {
+    "state_code": "NY",
+    "provider_type": "socrata",
+    "county": "Erie",
+    "endpoint": "https://data.buffalony.gov/resource/9p2d-f3yt.json",
+    "watermark_field": "apno",
+    "hash_fields": ["apno"],
+    "commercial_where": "property_class_code between 400 and 499",
+    "date_field": "issued",
+    "lookback_days": 90,
+    "feed_id": "ny-erie-buffalo",
+    "id_field": "apno",
+    "name_fields": ["aptype", "stname"],
+    "address_fields": ["stname", "city", "zip"],
+    "value_fields": ["value"],
+    "desc_fields": ["aptype", "lictype"],
+    "source_url": "https://data.buffalony.gov/Economic-Neighborhood-Development/Permits/9p2d-f3yt",
+}
+
 # Cambridge, MA (Middlesex County's top jurisdiction by construction volume --
 # MA county government has no building-permit function at all, permits are
 # purely municipal, no single Middlesex-wide source exists). Gemini's first
@@ -1538,6 +1647,21 @@ FL_LEE_ACCELA_CONFIG: dict[str, Any] = {
     "feed_id": "fl-lee",
 }
 
+# St. Lucie County (FL) -- Tyler EnerGov Citizen Self Service, tenant
+# "St. Lucie County". Endpoint confirmed live 2026-07-31 (200 OK):
+# stluciecountyfl-energovpub.tylerhost.net/Apps/SelfService/#/home,
+# same tylerhost.net pattern as the CA EnerGov configs above.
+FL_STLUCIE_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "FL",
+    "provider_type": "energov",
+    "county": "St. Lucie",
+    "endpoint": "https://stluciecountyfl-energovpub.tylerhost.net",
+    "tenant_id": "1",
+    "tenant_name": "St. Lucie County",
+    "lookback_days": 90,
+    "max_pages": 5,
+}
+
 # King County (WA) via City of Seattle's Building Permits (Socrata) --
 # verified live 2026-07-28: MAX(issueddate) = 2026-07-24 (fresh), 51,673
 # total commercial-filtered records.
@@ -1682,6 +1806,49 @@ NC_GUILFORD_CONFIG: dict[str, Any] = {
     "value_fields": ["TotalCost", "GeneralCost"],
     "desc_fields": ["Description", "OccupancyDesc", "TypeConstructionDesc"],
     "source_url": "https://gis.greensboro-nc.gov/arcgis/rest/services/OpenGateCity/OpenData_HRES_DS/MapServer/2",
+}
+
+# Buncombe County (Asheville, NC) -- Accela Citizen Access, agency code
+# BUNCOMBECONC (confirmed via live web search + curl 2026-07-31; the
+# aca-prod.accela.com/BUNCOMBE guess from Gemini's first answer 404s).
+# Buncombe's county GIS FeatureServer (gis.buncombecounty.org/.../permits)
+# is a dead end -- confirmed live: that MapServer's 38 layers are all
+# zoning/districts/sewer/flood, no actual permit records layer. No single
+# "Commercial" catch-all option on the ddlGSPermitType dropdown (same
+# gotcha as other counties) -- picked "Commercial New Building"
+# (Building/Commercial/New Construction/Commercial Building), the
+# broadest new-construction commercial label; other Commercial-prefixed
+# labels exist (Combo, Addition, Interior Alteration, etc.) if this one
+# proves too narrow.
+NC_BUNCOMBE_CONFIG: dict[str, Any] = {
+    "state_code": "NC",
+    "provider_type": "accela",
+    "county": "Buncombe",
+    "endpoint": "https://aca-prod.accela.com/BUNCOMBECONC",
+    "permit_type_label": "Commercial Combo Permit",
+    "lookback_days": 90,
+}
+
+# Cabarrus County (Concord/Kannapolis, NC) -- Accela Citizen Access,
+# agency code CABARRUS. County/Concord/Kannapolis/Harrisburg all share
+# this one instance (module=COC/COK/HB/Permits). module=Building 404s
+# for this deployment (unlike most others) -- only module=Permits works;
+# confirmed live 2026-07-31. The county's own ArcGIS server
+# (location.cabarruscounty.us/arcgisservices/rest/services, real live
+# host -- gis.cabarruscounty.us just redirects to a web map viewer, not
+# a REST root) has a "Permits" MapServer and a "Current_Accela_Permits"
+# folder, but both are dead: Permits/MapServer has 0 layers, and
+# Current_Accela_Permits only exposes a Plan_Reviews sub-layer, no
+# permit-issuance layer. permit_type_label='Building Commercial New',
+# broadest label under Permits/Building/Commercial/*.
+NC_CABARRUS_CONFIG: dict[str, Any] = {
+    "state_code": "NC",
+    "provider_type": "accela",
+    "county": "Cabarrus",
+    "endpoint": "https://aca-prod.accela.com/CABARRUS",
+    "module": "Permits",
+    "permit_type_label": "Building Commercial New",
+    "lookback_days": 90,
 }
 
 NC_WAKE_CONFIG: dict[str, Any] = {
@@ -1910,6 +2077,34 @@ CA_SANFRANCISCO_CONFIG: dict[str, Any] = {
 # real commercial rows with issued_date > 2026-05-01 alone. city_town
 # field covers Novato/San Rafael/Mill Valley/Sausalito/etc, so this is
 # genuinely countywide, not one city.
+# City of Antioch (Contra Costa County's 3rd-largest city, ~115K pop) --
+# Tyler EnerGov, same tylerhost.net/apps/selfservice pattern as El Monte.
+# Live-verified 2026-07-31: aca-prod.accela.com/CCCOUNTY (county itself)
+# 404s (wrong agency code, no working variant found), aca-prod.accela.com/
+# CCC redirects to a login-gated instance (dead end, no public access
+# without an account), and aca-prod.accela.com/CONCORD (largest city,
+# 2nd-largest in county) is a live 200 Accela instance but its Building
+# module search UI has no ddlGSPermitType commercial-catchall dropdown at
+# all (grep for "commercial"/"ddlGSPermitType" on both the landing page
+# and post-search HTML returned zero hits) -- default "Search" returns a
+# flat "Building" record-type list mixing residential (water heaters,
+# reroofs) and commercial permits with no clean filter, so Concord was not
+# wired to avoid the "wrong label -> silent 0-row" and "unfiltered ->
+# mostly-residential noise" failure modes this doc warns about. Antioch's
+# EnerGov endpoint (https://antiochca-energovweb.tylerhost.net) returned a
+# live 200; wired via the existing generic EnerGov provider (same as El
+# Monte/Alhambra/Carson) rather than a bespoke Accela integration.
+CA_ANTIOCH_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "CA",
+    "provider_type": "energov",
+    "county": "Contra Costa",
+    "endpoint": "https://antiochca-energovweb.tylerhost.net",
+    "tenant_id": "1",
+    "tenant_name": "Antioch",
+    "lookback_days": 900,
+    "max_pages": 5,
+}
+
 CA_MARIN_CONFIG: dict[str, Any] = {
     "state_code": "CA",
     "provider_type": "socrata",
@@ -1994,6 +2189,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NY-KINGS": NY_KINGS_CONFIG,
     "NY-BRONX": NY_BRONX_CONFIG,
     "NY-RICHMOND": NY_RICHMOND_CONFIG,
+    "NY-ERIE-BUFFALO": NY_ERIE_BUFFALO_CONFIG,
     "MA-CAMBRIDGE": MA_CAMBRIDGE_CONFIG,
     "MN-HENNEPIN": MN_HENNEPIN_CONFIG,
     "UT-SALTLAKE": UT_SALTLAKE_ACCELA_CONFIG,
@@ -2008,9 +2204,13 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "LA-EBR": LA_EBR_CONFIG,
     "SC-GREENVILLE": SC_GREENVILLE_CONFIG,
     "SC-RICHLAND": SC_COLUMBIA_ENERGOV_CONFIG,
+    "SC-SPARTANBURG": SC_SPARTANBURG_ENERGOV_CONFIG,
     "ID-ADA": ID_ADA_ACCELA_CONFIG,
     "SD-SIOUXFALLS": SD_SIOUXFALLS_CONFIG,
     "IN-INDIANAPOLIS": IN_INDIANAPOLIS_ACCELA_CONFIG,
+    "IN-CROWNPOINT": IN_CROWNPOINT_ENERGOV_CONFIG,
+    "IN-ALLEN": IN_ALLEN_ACCELA_CONFIG,
+    "IN-NOBLESVILLE": IN_NOBLESVILLE_ENERGOV_CONFIG,
     "FL-MIAMIDADE": FL_MIAMIDADE_CONFIG,
     "FL-BROWARD": FL_BROWARD_ACCELA_CONFIG,
     "FL-HILLSBOROUGH": FL_HILLSBOROUGH_ACCELA_CONFIG,
@@ -2020,6 +2220,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "FL-MANATEE": FL_MANATEE_ACCELA_CONFIG,
     "FL-PASCO": FL_PASCO_ACCELA_CONFIG,
     "FL-LEE": FL_LEE_ACCELA_CONFIG,
+    "FL-STLUCIE": FL_STLUCIE_ENERGOV_CONFIG,
     "WA-KING": WA_KING_CONFIG,
     "TX-TARRANT": TX_TARRANT_CONFIG,
     "OH-FRANKLIN": OH_FRANKLIN_CONFIG,
@@ -2027,6 +2228,8 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NC-MECKLENBURG": NC_MECKLENBURG_CONFIG,
     "NC-WAKE": NC_WAKE_CONFIG,
     "NC-GUILFORD": NC_GUILFORD_CONFIG,
+    "NC-BUNCOMBE": NC_BUNCOMBE_CONFIG,
+    "NC-CABARRUS": NC_CABARRUS_CONFIG,
     "VA-FAIRFAX": VA_FAIRFAX_CONFIG,
     "TX-WILLIAMSON-PERMITS": TX_WILLIAMSON_PERMITS_CONFIG,
     "PA-PHILADELPHIA": PA_PHILADELPHIA_CONFIG,
@@ -2034,6 +2237,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "CA-SANDIEGO": CA_SANDIEGO_CONFIG,
     "CA-SANFRANCISCO": CA_SANFRANCISCO_CONFIG,
     "CA-MARIN": CA_MARIN_CONFIG,
+    "CA-ANTIOCH": CA_ANTIOCH_ENERGOV_CONFIG,
     "TX-BRAZORIA": TX_BRAZORIA_CONFIG,
     "TX-MIDLAND": TX_MIDLAND_CONFIG,
     "TX-HAYS": TX_HAYS_CONFIG,

@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Oakland",
+  "state": "MI",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 5,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "FANUC America Robotics & Advanced Manufacturing Facility Expansion",
+      "city_address": "Pontiac, MI",
+      "project_type": "Industrial / Advanced Manufacturing & Robotics Facility",
+      "estimated_cost": "Unknown",
+      "developer_owner": "FANUC America Corporation",
+      "status": "Approved / Announced (Michigan Strategic Fund board approved July 28, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "State of Michigan Executive Office / MEDC Press Release (July 28, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Pontiac Redevelopment Project (Judson Building & Downtown Parking Decks)",
+      "city_address": "31 E. Judson Street & 51111 Woodward Ave, Pontiac, MI 48342",
+      "project_type": "Commercial / Government Campus & Parking Structure Redevelopment",
+      "estimated_cost": "$130,000,000",
+      "developer_owner": "Oakland County / City of Pontiac",
+      "status": "Under Construction (Above ground deck construction began July 29, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Oakland County Executive Office Progress Report (July 29, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Lear Corporation Seat Assembly Facility",
+      "city_address": "3600 Giddings Road, Auburn Hills, MI 48326",
+      "project_type": "Industrial / Automotive Manufacturing & Seating Assembly",
+      "estimated_cost": "$87,000,000",
+      "developer_owner": "Lear Corporation",
+      "status": "Approved / Under Development",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Auburn Hills Planning Commission Meeting Packet / Staff Report",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "The Townes at Haggerty",
+      "city_address": "Haggerty Road & High Pointe Boulevard, Novi, MI 48375",
+      "project_type": "Commercial / High-Density Multiple-Family Mixed Development",
+      "estimated_cost": "Unknown",
+      "developer_owner": "The Avedon Company",
+      "status": "Under Planning Commission Review / Public Hearing",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Novi Planning Commission Agenda & Public Hearing Records",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Forma Beauty Salon Expansion (JSP26-14)",
+      "city_address": "26179 Novi Road, Novi, MI 48375",
+      "project_type": "Commercial / Service & Retail Expansion",
+      "estimated_cost": "Unknown",
+      "developer_owner": "Jakup Islami / Forma Beauty Salon",
+      "status": "Preliminary Site Plan Approved",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Novi Planning Commission Action Summary",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

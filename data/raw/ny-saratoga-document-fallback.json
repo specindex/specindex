@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Saratoga",
+  "state": "NY",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 0,
+  "documents_confirmed": 0,
+  "projects": []
+}

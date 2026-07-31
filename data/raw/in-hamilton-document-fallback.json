@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Hamilton",
+  "state": "IN",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 6,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Fishers District Expansion - JD Finish Line Headquarters & Fishers Fieldhouse",
+      "city_address": "11100 USA Parkway, Fishers, IN 46037",
+      "project_type": "Commercial (Corporate Headquarters & Sports/Event Fieldhouse)",
+      "estimated_cost": "$169,000,000",
+      "developer_owner": "JD Finish Line / Buckingham Properties / City of Fishers",
+      "status": "Approved / Pre-construction (Incentive agreements approved by Fishers Common Council in June 2026; groundbreaking set for late 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Fishers Common Council Project Agreement Resolutions (June 2026) & City of Fishers Economic Development Announcements",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Noblesville Police Station Development",
+      "city_address": "1715 Division Street, Noblesville, IN 46060",
+      "project_type": "Commercial / Municipal Civic Building",
+      "estimated_cost": "Not specified",
+      "developer_owner": "City of Noblesville",
+      "status": "Under Plan Commission Review (Public hearing held July 20, 2026 for Government Use Overlay & preliminary development plan, Application LEGP 0088-2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Noblesville Plan Commission Meeting Agenda (July 20, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Calvary Apostolic Church & Community Facility",
+      "city_address": "9854 Cumberland Pointe Boulevard, Noblesville, IN 46060",
+      "project_type": "Commercial / Institutional (Place of Worship & Community Center)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Calvary Apostolic Church",
+      "status": "Under Plan Commission Review (Special Consideration public hearing held July 20, 2026, Application LEGP 0091-2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Noblesville Plan Commission Meeting Agenda (July 20, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Park and Poplar Phase I",
+      "city_address": "Southeast corner of Park Street and Westfield Boulevard, Westfield, IN 46074",
+      "project_type": "Commercial / Mixed-Use (Retail, Office, Multi-Family & Parking Structure)",
+      "estimated_cost": "$123,000,000",
+      "developer_owner": "Old Town Companies, LLC",
+      "status": "Under Advisory Plan Commission Review (Detailed Development Plan review, Petition 2602-DDP-04)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Westfield Washington Township Advisory Plan Commission Agenda (Petition 2602-DDP-04)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Schaaf CPA Office Building",
+      "city_address": "302 North Union Street, Westfield, IN 46074",
+      "project_type": "Commercial Office",
+      "estimated_cost": "Not specified",
+      "developer_owner": "SCG Property Group / Schaaf CPA",
+      "status": "Under Advisory Plan Commission Review (Detailed Development Plan review for 9,300 sq. ft. office building, Petition 2605-DDP-12)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Westfield Washington Township Advisory Plan Commission Agenda (Petition 2605-DDP-12)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Evolve Transporters Headquarters & Manufacturing Facility",
+      "city_address": "Washington Business Park (Cumberland Road north of East 150th Street), Noblesville, IN 46060",
+      "project_type": "Industrial / Advanced Manufacturing & Showroom",
+      "estimated_cost": "$39,000,000",
+      "developer_owner": "Evolve Transporters / Patch Development",
+      "status": "Under Construction (250,000 sq. ft. facility with targeted completion in H2 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Noblesville Common Council Filings & Economic Development Directorate",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}
