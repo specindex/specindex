@@ -994,10 +994,10 @@
       "county": "Will",
       "state": "IL",
       "provider_type": "smartgov",
-      "endpoint": "https://willcountyil.smartgovcommunity.com/",
+      "endpoint": "https://co-will-il.smartgovcommunity.com/Public/Home",
       "state_agent_pipeline_key": null,
-      "status": "FAILED_NEED_ALT",
-      "notes": "Real platform (SmartGov) named correctly by Gemini Flash after the Flash JSON-parsing bug fix, but this exact subdomain 404s. Worth a quick retry with a slightly different SmartGov URL pattern before ruling out."
+      "status": "VERIFIED_WORKING",
+      "notes": "Real platform (SmartGov) named correctly by Gemini Flash after the Flash JSON-parsing bug fix, but this exact subdomain 404s. Worth a quick retry with a slightly different SmartGov URL pattern before ruling out. RESOLVED 2026-07-31: exact subdomain was co-will-il, not willcountyil -- confirmed live (200 OK final URL after redirect). Covers unincorporated Will County only (municipalities like Joliet handle their own permits separately -- Joliet confirmed NOT on SmartGov, uses PDF/email + ProjectDox for commercial ePlans instead). This is a real, working structured source -- next step is building/testing an actual SmartGov puller (not yet done), not just a discovery win."
     },
     {
       "jurisdiction": "Kane County, IL",
