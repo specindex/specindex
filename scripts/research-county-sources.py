@@ -51,18 +51,32 @@ OUT_DIR = ROOT / "data" / "raw"
 FLASH_BATCH = 6
 
 
-def response_text(resp: Any) -> str:
-    text = getattr(resp, "text", None)
-    if text:
-        return text
-    parts = []
+def response_text_parts(resp: Any) -> list[str]:
+    """Gemini + google_search grounding routinely returns multiple text
+    parts for one response -- a "thinking out loud" preamble (sometimes
+    including a draft/markdown-fenced JSON blob it then second-guesses)
+    followed by the real final answer as a separate part. Concatenating
+    all parts (the old behavior) and regex-extracting {...} from the
+    result spans across part boundaries and produces exactly the garbled
+    JSON this was silently failing on (confirmed live 2026-07-31: a Kane
+    County query returned a 2-part response, part 0 a multi-paragraph
+    reasoning trace with an abandoned draft JSON blob inside it, part 1
+    the clean final JSON -- naive concatenation mangled both). Returns
+    parts in response order; caller should try parsing each independently,
+    last-to-first, since the final part is the one actually meant as the
+    answer."""
+    parts: list[str] = []
     for c in getattr(resp, "candidates", None) or []:
         content = getattr(c, "content", None)
         for p in getattr(content, "parts", None) or []:
             t = getattr(p, "text", None)
             if t:
                 parts.append(t)
-    return "\n".join(parts)
+    if not parts:
+        text = getattr(resp, "text", None)
+        if text:
+            parts = [text]
+    return parts
 
 
 def extract_json_blob(text: str) -> Any:
@@ -81,6 +95,26 @@ def extract_json_blob(text: str) -> Any:
         if not m:
             raise
         return json.loads(m.group(1))
+
+
+def extract_json_blob_from_parts(parts: list[str]) -> Any:
+    """Try each response part independently, last-to-first (see
+    response_text_parts' docstring for why) -- only fall back to
+    concatenating everything if no single part parses cleanly, since
+    concatenation is what produced garbled JSON in the first place."""
+    last_err: Exception | None = None
+    for part in reversed(parts):
+        try:
+            return extract_json_blob(part)
+        except (json.JSONDecodeError, AttributeError) as e:
+            last_err = e
+            continue
+    try:
+        return extract_json_blob("\n".join(parts))
+    except (json.JSONDecodeError, AttributeError):
+        if last_err:
+            raise last_err
+        raise
 
 
 def _http_get_json(url: str, timeout: int = 20) -> Any:
@@ -273,26 +307,24 @@ COUNTIES:
 {county_list}
 """
         print(f"[flash] batch {bi}/{len(batches)} ({len(batch)} counties)...", file=sys.stderr)
-        text = ""
+        parts: list[str] = []
         last_err: Exception | None = None
         for attempt in range(4):
             try:
-                try:
-                    resp = client.models.generate_content(
-                        model=model,
-                        contents=prompt,
-                        config=types.GenerateContentConfig(
-                            tools=tools, temperature=0.2, response_mime_type="application/json"
-                        ),
-                    )
-                except Exception:
-                    resp = client.models.generate_content(
-                        model=model,
-                        contents=prompt + "\n\nReturn ONLY the JSON object. No markdown fences.",
-                        config=types.GenerateContentConfig(tools=tools, temperature=0.2),
-                    )
-                text = response_text(resp)
-                if text.strip():
+                # response_mime_type="application/json" combined with the
+                # google_search tool corrupts Gemini 3.5 Flash's output --
+                # confirmed live 2026-07-31, it silently returns malformed
+                # JSON like '{}"}end}"' instead of raising. Prompt-only JSON
+                # instructions (already stated above) is the only reliable
+                # path with grounding enabled; do not re-add response_mime_type
+                # here without re-verifying live against a real query first.
+                resp = client.models.generate_content(
+                    model=model,
+                    contents=prompt,
+                    config=types.GenerateContentConfig(tools=tools, temperature=0.2),
+                )
+                parts = response_text_parts(resp)
+                if any(p.strip() for p in parts):
                     break
                 raise RuntimeError("empty Flash response text")
             except Exception as e:
@@ -308,9 +340,10 @@ COUNTIES:
             print(f"[flash] batch {bi} failed after retries ({last_err}) -- skipping, counties stay unresolved", file=sys.stderr)
             continue
 
-        raw_chunks.append(f"=== batch {bi} ===\n{text}\n")
+        parts_joined = "\n---\n".join(parts)
+        raw_chunks.append(f"=== batch {bi} ===\n{parts_joined}\n")
         try:
-            blob = extract_json_blob(text)
+            blob = extract_json_blob_from_parts(parts)
             cands = blob.get("candidates") if isinstance(blob, dict) else blob
             if isinstance(cands, list):
                 for c in cands:
@@ -320,7 +353,8 @@ COUNTIES:
             else:
                 print(f"[flash] batch {bi}: JSON had no candidates list", file=sys.stderr)
         except Exception as e:
-            print(f"[flash] parse error batch {bi}: {e}; text_preview={text[:240]!r}", file=sys.stderr)
+            preview = (parts[-1] if parts else "")[:240]
+            print(f"[flash] parse error batch {bi}: {e}; last_part_preview={preview!r}", file=sys.stderr)
         time.sleep(2)
 
     return {
