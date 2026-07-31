@@ -1588,6 +1588,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Daytona Beach confirmed live on iMS (302, real). Volusia County's specific connectlivepermits.org URL is fabricated (000 DNS fail), but the county's real base domain volusia.org is confirmed live (200) -- needs a follow-up query for the county's actual permit system name/URL. Puller not yet built for Daytona."
+    },
+    {
+      "jurisdiction": "Seminole County, FL (Sanford)",
+      "county": "Seminole",
+      "state": "FL",
+      "provider_type": "click2gov",
+      "endpoint": "https://www.seminolecountyfl.gov",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Seminole County confirmed live (200 OK), uses Click2Gov + ProjectDox/ePlan. Sanford's Citizenserve platform confirmed real (base domain 200), but the specific tenant slug '/sanford' 404s and an alt guess also 404s -- exact Sanford URL not yet found. Puller not built."
     }
   ]
 }
