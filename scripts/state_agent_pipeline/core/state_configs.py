@@ -1946,6 +1946,28 @@ OH_CLEVELAND_COO_CONFIG: dict[str, Any] = {
 STATE_CONFIGS["OH-CLEVELAND"] = OH_CLEVELAND_CONFIG
 STATE_CONFIGS["OH-CLEVELAND-COO"] = OH_CLEVELAND_COO_CONFIG
 
+# City of Hartford, CT (Hartford County's largest city; CT has no
+# county government -- towns/cities issue permits directly) -- Accela
+# agency code HARTFORD, confirmed live 2026-07-31 (module=Building loads
+# cleanly, no Error.aspx redirect). Playwright dropdown probe of
+# #ctl00_PlaceHolderMain_generalSearchForm_ddlGSPermitType shows no
+# single "Commercial" catch-all -- real options are split into
+# Commercial Accessory Structure/Addition/Alteration/Foundation/New
+# Construction/Pool-Spa/Solar-PV Permit. Picked "Commercial Alteration
+# Permit" as the broadest, highest-volume real label (same pattern used
+# for TX_BROWNSVILLE_ACCELA_CONFIG).
+CT_HARTFORD_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "CT",
+    "provider_type": "accela",
+    "county": "Hartford",
+    "endpoint": "https://aca-prod.accela.com/HARTFORD",
+    "permit_type_label": "Commercial Alteration Permit",
+    "lookback_days": 90,
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
+}
+STATE_CONFIGS["CT-HARTFORD"] = CT_HARTFORD_ACCELA_CONFIG
+
 # SAM.gov + USAspending for all 50 states (2026-07-28, Asif: "pull all
 # data from USAspending and sam.gov"). Both providers are already
 # architecturally per-state -- GA_SAM_CONFIG/GA_USASPENDING_CONFIG above

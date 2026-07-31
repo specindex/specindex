@@ -1698,6 +1698,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "St. Lucie County confirmed live on EnerGov (200 OK). Port St. Lucie confirmed on Panda Online Permitting (302, real, new platform type). Puller not built."
+    },
+    {
+      "jurisdiction": "Hartford (city), CT",
+      "county": "Hartford",
+      "state": "CT",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/HARTFORD",
+      "state_agent_pipeline_key": "CT-HARTFORD",
+      "status": "VERIFIED_WORKING",
+      "notes": "CT has no county government; Hartford is Hartford County biggest city. Accela agency code HARTFORD confirmed live 2026-07-31 -- module=Building loads cleanly (no Error.aspx). Playwright probe of ddlGSPermitType found no single Commercial catch-all; real options are Commercial Accessory Structure/Addition/Alteration/Foundation/New Construction/Pool-Spa/Solar-PV Permit. Used \"Commercial Alteration Permit\" (broadest/highest-volume). Dry-run with lookback-days=90 returned 176 real rows (page-by-page live pull, dates through 07/30/2026); real merge pulled 170 mapped rows into data/states/ct.json. Config: CT_HARTFORD_ACCELA_CONFIG in state_configs.py."
     }
   ]
 }
