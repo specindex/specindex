@@ -1990,6 +1990,30 @@ CO_ADAMS_ACCELA_CONFIG: dict[str, Any] = {
 }
 STATE_CONFIGS["CO-ADAMS"] = CO_ADAMS_ACCELA_CONFIG
 
+# City of Fort Collins, CO (Larimer County, largest city) -- Accela on
+# a custom host domain (not aca-prod.accela.com), confirmed live
+# 2026-07-31: https://accela-aca.fcgov.com/CitizenAccess/Welcome.aspx
+# returns 200. Base path is "/CitizenAccess" (not an agency-code path
+# segment like most deployments) -- endpoint here is the full base
+# including that segment so accela_provider.py's f"{base_url}/Cap/
+# CapHome.aspx" construction resolves correctly. module=Building&
+# TabName=HOME dropdown has a genuine broad new-construction-commercial
+# label: "Commercial New Com-Ind-Mixed-Use Building" (distinct from
+# narrower Commercial Electrical/Mechanical/Plumbing/Roofing/Addition/
+# Alteration subtypes also present).
+CO_FORTCOLLINS_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "CO",
+    "provider_type": "accela",
+    "county": "Larimer",
+    "endpoint": "https://accela-aca.fcgov.com/CitizenAccess",
+    "module": "Building",
+    "permit_type_label": "Commercial New Com-Ind-Mixed-Use Building",
+    "lookback_days": 30,
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
+}
+STATE_CONFIGS["CO-FORTCOLLINS"] = CO_FORTCOLLINS_ACCELA_CONFIG
+
 # City of Cleveland, OH (Dept. of Building and Housing) -- Accela agency
 # code COC, confirmed live 2026-07-28. Separate system from Cuyahoga
 # County's own ArcGIS feed (OH-CUYAHOGA above) -- same LA-City-vs-LA-
