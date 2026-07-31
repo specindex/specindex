@@ -1418,6 +1418,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "City of Midland's PermitMidland (EnerGov CSS) -- first exact URL 404'd, alternate /permits path confirmed live (301, real). Puller not yet built."
+    },
+    {
+      "jurisdiction": "Angelina County, TX (City of Lufkin)",
+      "county": "Angelina",
+      "state": "TX",
+      "provider_type": "citysourced",
+      "endpoint": "https://lufkintx.citysourced.com",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Lufkin confirmed live on CitySourced/MyLufkinTX (200 OK). New platform type. Puller not yet built."
     }
   ]
 }
