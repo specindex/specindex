@@ -166,10 +166,11 @@ not a draft plan. This is the actual workflow used to find and wire every new
 county/state source added on 2026-07-28 (Wayne MI, Cook IL, Miami-Dade FL,
 King WA, Tarrant TX, Franklin/Cuyahoga OH, Mecklenburg/Wake NC, Fairfax VA,
 Philadelphia PA, San Diego CA, Dallas/Bexar TX, TDLR TABS statewide TX,
-Colorado Springs CO, Cleveland OH). It's now an 8-step loop (step 8 added
-2026-07-29), and **steps 7 and 8 are both required for every project, not
-optional follow-ups** — do not consider a jurisdiction "done" after step 6
-alone, and do not consider an individual project "done" without step 8.
+Colorado Springs CO, Cleveland OH). It's now a 9-step loop (step 8 added
+2026-07-29, step 9 added 2026-07-29), and **steps 7, 8, and 9 are all
+required for every project, not optional follow-ups** — do not consider a
+jurisdiction "done" after step 6 alone, and do not consider an individual
+project "done" without steps 8 and 9.
 
 1. **Discovery — Gemini, with context.** Send a query through
    `scripts/gemini_discovery_chat.py --session <name> "..."`. Not stateless:
@@ -252,6 +253,22 @@ alone, and do not consider an individual project "done" without step 8.
    2026-07-29 only `SPX-000157` has been through this step; running it
    across the rest of the corpus is real remaining scope, same as
    step 7's GA-SAM/NJ-only coverage today.
+9. **Document text extraction — added 2026-07-29.** For every document
+   already pulled by step 7, extract real per-page text into
+   `document_pages` (pgvector-ready, embedding column added but not yet
+   populated) via `scripts/extract-document-text.py --document-file-id` (or
+   `--batch --state --document-type`) — the foundation for the chat agent's
+   retrieval and, later, structured material extraction. Native text
+   (PyMuPDF) is tried first — free, instant, and most real documents in the
+   corpus already carry an embedded text layer, including CAD-exported
+   drawing sheets. Only pages with no meaningful native text (<20 chars)
+   render to a one-page PDF and go to Google Document AI, chosen over a
+   self-hosted OCR pool after a live head-to-head test (comparable
+   accuracy, better layout-aware output, ~$360 total at the corpus's
+   estimated ~240K OCR-needing pages vs. the engineering cost of running a
+   CPU OCR worker pool). Automated via
+   `.github/workflows/extract-document-text-pipeline.yml`, same WIF + Cloud
+   SQL Auth Proxy pattern as every other pull-*.yml workflow.
 
 **Known real limits (be honest about these, don't oversell):** discovery
 still needs a human+Claude verification loop per lead every time — not
