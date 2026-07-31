@@ -1488,6 +1488,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "City of Waxahachie confirmed live on EnerGov (200 OK). Puller not yet built."
+    },
+    {
+      "jurisdiction": "Johnson County, TX (Burleson/Cleburne)",
+      "county": "Johnson",
+      "state": "TX",
+      "provider_type": "etrakit",
+      "endpoint": "https://etrakit.burlesontx.com",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Burleson confirmed live on eTRAKiT (200 OK). Cleburne's exact permit page 404s but cleburne.net base domain confirmed real (200) -- exact Cityworks path needs a retry. Puller not yet built for Burleson."
     }
   ]
 }
