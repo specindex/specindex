@@ -1965,6 +1965,31 @@ CO_DENVER_ACCELA_CONFIG: dict[str, Any] = {
 }
 STATE_CONFIGS["CO-DENVER"] = CO_DENVER_ACCELA_CONFIG
 
+# Adams County, CO (unincorporated; state's #4 county by population) --
+# Accela agency code ADAMSCO, confirmed live 2026-07-31 (200 on
+# aca-prod.accela.com/ADAMSCO). Real module/tab is
+# module=Building&TabName=Building (found via nav-link probe). Dropdown
+# has NO single "Commercial" catch-all label (mostly residential-trade
+# subtypes: A/C, Furnace, Reroof, Siding, EV Charger, Solar, etc.) --
+# the broadest non-residential-specific option is "Building Permit -
+# Plan Review Required" (the generic new-construction/commercial bucket
+# that requires full plan review, as opposed to the over-the-counter
+# residential trade permits listed alongside it). Also present:
+# "Commercial EV Charger" and "Commercial Solar" as narrow commercial
+# subtypes, but "Plan Review Required" is the broad catch-all used here.
+CO_ADAMS_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "CO",
+    "provider_type": "accela",
+    "county": "Adams",
+    "endpoint": "https://aca-prod.accela.com/ADAMSCO",
+    "module": "Building",
+    "permit_type_label": "Building Permit - Plan Review Required",
+    "lookback_days": 30,
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
+}
+STATE_CONFIGS["CO-ADAMS"] = CO_ADAMS_ACCELA_CONFIG
+
 # City of Cleveland, OH (Dept. of Building and Housing) -- Accela agency
 # code COC, confirmed live 2026-07-28. Separate system from Cuyahoga
 # County's own ArcGIS feed (OH-CUYAHOGA above) -- same LA-City-vs-LA-

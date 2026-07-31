@@ -2006,6 +2006,66 @@
       "status": "FAILED_NEED_ALT",
       "notes": "Live-verified 2026-07-31: endpoint returns 200, real Tyler EnerGov Citizen Self-Service portal. No EnerGov provider class exists in this pipeline yet (out of scope per task instructions -- Accela is the only reusable provider). Logged for future build-out.",
       "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "Jefferson County (unincorporated), CO -- AMANDA Citizen Portal",
+      "county": "Jefferson",
+      "state": "CO",
+      "provider_type": "amanda",
+      "endpoint": "https://citizenportal.jeffco.us/citizenportal/",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified 2026-07-31: 200. Real Granicus/CSDC AMANDA citizen portal for Jefferson County unincorporated permits. No AMANDA provider class exists in pipeline yet -- discovery-only per task scope, not wired.",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "City of Lakewood, CO (Jefferson County, largest city) -- eTRAKiT",
+      "county": "Jefferson",
+      "state": "CO",
+      "provider_type": "etrakit",
+      "endpoint": "https://www.lakewoodco.gov/eTRAKiT",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified 2026-07-31: 200. Real CentralSquare eTRAKiT portal. No eTRAKiT provider class exists in pipeline yet -- discovery-only, not wired.",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "City of Arvada, CO (Jefferson County) -- eTRAKiT",
+      "county": "Jefferson",
+      "state": "CO",
+      "provider_type": "etrakit",
+      "endpoint": "https://arvadapermits.org",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified 2026-07-31: 200. Real eTRAKiT portal on Arvada-branded custom domain. No eTRAKiT provider class exists in pipeline yet -- discovery-only, not wired.",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "Adams County (unincorporated), CO -- Accela Building module",
+      "county": "Adams",
+      "state": "CO",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/ADAMSCO",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified 2026-07-31: 200, real nav (Search Existing Permit / Building Applications-Permits / Land Use Cases / Infrastructure Permits / Code Enforcement) via Playwright probe. module=Building&TabName=Building has a real anonymous-accessible dropdown, no login gate (unlike Arapahoe). No single Commercial catch-all label -- dropdown is mostly residential trade subtypes (A/C, Furnace, Reroof, Siding, EV Charger, Solar) plus \"Commercial EV Charger\"/\"Commercial Solar\" narrow subtypes and a broad \"Building Permit - Plan Review Required\" bucket used here as the general/commercial-leaning catch-all. Dry-run lookback-days=90 returned 300 real rows. Real merge: 240 new rows into data/states/co.json. Wired as CO-ADAMS.",
+      "state_agent_pipeline_key": "CO-ADAMS"
+    },
+    {
+      "jurisdiction": "City of Thornton, CO (Adams County, largest city) -- CityView",
+      "county": "Adams",
+      "state": "CO",
+      "provider_type": "cityview",
+      "endpoint": "https://cityviewportal.thorntonco.gov",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified 2026-07-31: 200. Real Harris CityView portal. No CityView provider class in pipeline -- discovery-only, not wired. Not pursued further since Adams County itself already resolved via Accela.",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "City of Westminster, CO (Adams/Jefferson County) -- eTRAKiT (claimed)",
+      "county": "Adams",
+      "state": "CO",
+      "provider_type": "etrakit",
+      "endpoint": "https://www.westminsterco.gov/eTRAKiT",
+      "status": "FAILED_NEED_ALT",
+      "notes": "Gemini-suggested URL returned live 404 on curl verification 2026-07-31 -- fabricated/stale path, not a real endpoint. Not pursued further (Adams County unincorporated already resolved via Accela; Westminster is a secondary jurisdiction).",
+      "state_agent_pipeline_key": null
     }
   ]
 }
