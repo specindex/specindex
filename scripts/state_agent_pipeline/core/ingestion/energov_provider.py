@@ -138,6 +138,24 @@ class EnerGovProvider(BaseIngestionProvider):
                     wait_until="networkidle",
                 )
                 page.wait_for_timeout(1500)
+                # Some tenants (confirmed live 2026-07-31: Hendersonville TN)
+                # show a blocking "globalMessageDialog" modal (e.g. a terms/
+                # announcement dialog) on load that intercepts pointer events
+                # and times out the Search button click below. Dismiss it if
+                # present -- no-op/safe on tenants that don't show one.
+                message_dialog = page.locator("#globalMessageDialog")
+                if message_dialog.count() > 0 and message_dialog.is_visible():
+                    try:
+                        close_btn = message_dialog.locator(
+                            "button.close, button:has-text('OK'), button:has-text('Close'), [data-dismiss='modal']"
+                        ).first
+                        if close_btn.count() > 0:
+                            close_btn.click(timeout=5000)
+                        else:
+                            page.keyboard.press("Escape")
+                        page.wait_for_timeout(300)
+                    except Exception as e:  # noqa: BLE001
+                        print(f"[energov:{self.county}] modal dismiss failed: {e}", file=sys.stderr)
                 # Some tenants (confirmed live 2026-07-28: Carson) default
                 # the "SearchModule" dropdown to something other than
                 # "Permit" (Carson defaults to License, returning only
@@ -176,7 +194,14 @@ class EnerGovProvider(BaseIngestionProvider):
                 # and safe -- a no-op if the first click already worked.
                 if not captured:
                     print(f"[energov:{self.county}] no response captured, retrying Search click", file=sys.stderr)
-                    page.locator("button:has-text('Search')").first.click(timeout=15000)
+                    retry_dialog = page.locator("#globalMessageDialog")
+                    if retry_dialog.count() > 0 and retry_dialog.is_visible():
+                        try:
+                            page.keyboard.press("Escape")
+                            page.wait_for_timeout(300)
+                        except Exception as e:  # noqa: BLE001
+                            print(f"[energov:{self.county}] retry modal dismiss failed: {e}", file=sys.stderr)
+                    page.locator("button:has-text('Search')").first.click(timeout=15000, force=retry_dialog.count() > 0)
                     for _ in range(20):
                         if captured:
                             break

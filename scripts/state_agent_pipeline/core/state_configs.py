@@ -602,6 +602,35 @@ LA_EBR_CONFIG: dict[str, Any] = {
 # as a number (e.g. 20260406.0), queryable with a bare numeric
 # comparison. Added a new "yyyymmdd_int" date_literal_style to
 # arcgis_provider.py for this.
+# City of Columbia, SC (Richland County seat / state capital). Richland
+# County itself (unincorporated areas) runs CentralSquare eTRAKiT
+# (https://etrakit.rcgov.us/etrakit/, confirmed live 200 2026-07-31) with
+# no public API/open-data feed -- eTRAKiT here is a plain login-gated
+# search UI, same class of dead end as other eTRAKiT county deployments
+# in this codebase. City of Columbia (the county's largest incorporated
+# jurisdiction) redirects access.columbiasc.gov/selfservice to
+# https://cityofcolumbiasc-energovweb.tylerhost.net/apps/selfservice --
+# same tylerhost.net Tyler EnerGov Citizen Self Service pattern as the
+# CA EnerGov configs above. REAL DEAD END, confirmed live 2026-07-31: a
+# dry-run's Search-button click timed out (0 rows); a direct Playwright
+# probe of the search route shows why -- it 302s to
+# .../apps/selfservice/#/sso.html?redirectUrl=%2Fsearch (page title "Log
+# In"), i.e. this tenant's search is login-gated unlike El Monte/Glendale/
+# Carson's anonymous-accessible search. Left registered (same as
+# CA-GLENDALE's real 0-row dead end above) in case Tyler changes the
+# tenant's auth config later, but do NOT call this VERIFIED_WORKING --
+# logged FAILED_NEED_ALT in jurisdiction_health_matrix.json.
+SC_COLUMBIA_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "SC",
+    "provider_type": "energov",
+    "county": "Richland",
+    "endpoint": "https://cityofcolumbiasc-energovweb.tylerhost.net",
+    "tenant_id": "1",
+    "tenant_name": "City of Columbia",
+    "lookback_days": 900,
+    "max_pages": 5,
+}
+
 SC_GREENVILLE_CONFIG: dict[str, Any] = {
     "state_code": "SC",
     "provider_type": "arcgis",
@@ -1085,6 +1114,28 @@ MI_WAYNE_CONFIG: dict[str, Any] = {
     "desc_fields": ["proposed_use_type", "permit_type"],
 }
 
+# Kent County MI (Grand Rapids) Accela -- verified live 2026-07-31.
+# County-level check found no county-wide feed (Kent County itself doesn't
+# centralize permitting; most other Kent cities use BS&A Online, which has
+# no public API). Grand Rapids, the county's largest city, runs Accela
+# Citizen Access -- confirmed via Playwright (endpoint case-sensitive
+# lowercase "grandrapids" in the path; module=Building 404s, only
+# module=Permits works, same gotcha as other MI/GA Accela deployments).
+# No single "Commercial" catch-all option in the #ddlGSPermitType dropdown
+# -- picked the broadest real Commercial-prefixed label after probing all
+# ~70 real options live: "Building Permit - Commercial or 3+ Family New or
+# Addition".
+MI_KENT_CONFIG: dict[str, Any] = {
+    "state_code": "MI",
+    "provider_type": "accela",
+    "county": "Kent",
+    "endpoint": "https://aca-prod.accela.com/grandrapids",
+    "module": "Permits",
+    "permit_type_label": "Building Permit - Commercial or 3+ Family New or Addition",
+    "lookback_days": 90,
+    "feed_id": "mi-grandrapids-kent",
+}
+
 # Cook County (IL) Assessor's Permits (Socrata) -- verified live
 # 2026-07-28: real, but date_issued has a data-quality bug (4 rows out
 # of 92,437 total have a garbage future date, MAX() = year 2210). Bounded
@@ -1140,6 +1191,43 @@ NY_NYC_CONFIG: dict[str, Any] = {
     "value_fields": ["initial_cost"],
     "desc_fields": ["job_description", "job_type", "building_type"],
     "source_url": "https://data.cityofnewyork.us/Housing-Development/DOB-NOW-Build-Job-Application-Filings/w9ak-ipjd",
+}
+
+# Kings (Brooklyn), Bronx, and Richmond (Staten Island) counties -- same
+# citywide DOB NOW Socrata dataset as NY_NYC_CONFIG above (w9ak-ipjd), just
+# filtered to each borough via commercial_where (Socrata AND-combines this
+# with the base commercial filter, confirmed by reading
+# socrata_provider.py's _build_where). Added 2026-07-31: NY_NYC_CONFIG
+# always wrote county="New York" (a fixed per-config string, not derived
+# per-row from the borough field -- confirmed in generic_mapping.py, county
+# is a passed-in parameter, not read off each row) even though the
+# dataset's `borough` field has real per-borough data (live GROUP BY
+# 2026-07-31: Bronx=90,621, Brooklyn=256,787, Manhattan=360,014,
+# Queens=182,425, Staten Island=46,792 total rows). That's why Kings/
+# Bronx/Richmond showed as no-coverage in county_coverage despite the
+# citywide source already existing -- a classification/wiring gap, not a
+# missing source, exactly as flagged in the task brief. feed_id is unique
+# per borough (not reused from ny-nycdob) so each gets its own watermark
+# and doesn't collide with the Manhattan config's incremental cursor.
+NY_KINGS_CONFIG: dict[str, Any] = {
+    **NY_NYC_CONFIG,
+    "county": "Kings",
+    "commercial_where": "building_type='Other' AND borough='Brooklyn'",
+    "feed_id": "ny-nycdob-kings",
+}
+
+NY_BRONX_CONFIG: dict[str, Any] = {
+    **NY_NYC_CONFIG,
+    "county": "Bronx",
+    "commercial_where": "building_type='Other' AND borough='Bronx'",
+    "feed_id": "ny-nycdob-bronx",
+}
+
+NY_RICHMOND_CONFIG: dict[str, Any] = {
+    **NY_NYC_CONFIG,
+    "county": "Richmond",
+    "commercial_where": "building_type='Other' AND borough='Staten Island'",
+    "feed_id": "ny-nycdob-richmond",
 }
 
 # Cambridge, MA (Middlesex County's top jurisdiction by construction volume --
@@ -1400,6 +1488,49 @@ FL_PASCO_ACCELA_CONFIG: dict[str, Any] = {
     "lookback_days": 30,
 }
 
+# Lee County (FL) -- Fort Myers/Cape Coral area. Verified live 2026-07-31:
+# aca-prod.accela.com/LEECO/Cap/CapHome.aspx?module=Permitting (module=
+# Building 302-redirects, same recurring symptom as Lancaster CA/Omaha
+# NE/Indianapolis IN -- real module name here is "Permitting"). Dropdown
+# #ctl00_PlaceHolderMain_generalSearchForm_ddlGSPermitType has no single
+# "Commercial" catch-all; "Commercial New Building" is the broadest real
+# new-construction commercial label (value
+# "Permitting/Commercial/New Buildings/NA"). Gemini's claimed Fort
+# Myers/Cape Coral EnerGov tenant URLs
+# (fortmyersfl-energovpub.tylerhost.net, capecoralfl-energovpub.
+# tylerhost.net) were both fabricated -- NXDOMAIN on curl, not pursued.
+#
+# KNOWN LIMITATION, verified live 2026-07-31 via direct Playwright probe
+# (not just the pipeline's dry-run): search for "Commercial New Building"
+# returns 100+ real rows ("Showing 1-10 of 100+", real permit numbers
+# e.g. COM000806366/17050 WILLIAMS RD/STORAGE BLDG) -- the source is
+# genuinely live and has real data. But the default results grid columns
+# are only Record Number/Address/Description/Status/Action/Related
+# Records/Submittal Type -- NO Date column at all, unlike every other
+# LEECO-pattern Accela deployment wired so far. accela_provider.py's
+# HEADER_ALIASES has no "date" match, so date_idx is always None and
+# fetch_delta silently returns 0 rows regardless of lookback_days (same
+# silent-0-row failure mode called out in the run brief, but caused here
+# by a missing column rather than a wrong permit_type_label). Fixing this
+# needs either an Accela "customize columns" UI flow (untested whether
+# Date can be added) or per-record detail-page fetches to get a date --
+# real remaining scope, not done here given time budget. Config kept
+# in place (real source, real label, real module) for whoever picks this
+# up next; do not run --merge-state on FL-LEE until the date-column gap
+# is closed, it will merge 0 rows.
+FL_LEE_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "FL",
+    "provider_type": "accela",
+    "county": "Lee",
+    "endpoint": "https://aca-prod.accela.com/LEECO",
+    "module": "Permitting",
+    "permit_type_label": "Commercial New Building",
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
+    "lookback_days": 90,
+    "feed_id": "fl-lee",
+}
+
 # King County (WA) via City of Seattle's Building Permits (Socrata) --
 # verified live 2026-07-28: MAX(issueddate) = 2026-07-24 (fresh), 51,673
 # total commercial-filtered records.
@@ -1518,6 +1649,34 @@ NC_MECKLENBURG_CONFIG: dict[str, Any] = {
 
 # Wake County (Raleigh, NC) -- verified live 2026-07-28: 47,660 total
 # commercial-filtered records, MAX(issueddate) = 2026-07-24.
+NC_GUILFORD_CONFIG: dict[str, Any] = {
+    # City of Greensboro (largest city in Guilford County) Building Permits
+    # table, published via ArcGIS Hub open data. Live-verified 2026-07-31:
+    # MapServer/2 ("BI_Permits") has a clean PermitType='Commercial' value,
+    # real cost/sqft/occupancy fields, and MAX(IssuedDate) = 2026-07-30 (1
+    # day fresh). Guilford County itself (unincorporated + contract towns)
+    # runs Tyler EnerGov Civic Access, not a queryable REST feed -- not
+    # wired here, city coverage only.
+    "state_code": "NC",
+    "provider_type": "arcgis",
+    "county": "Guilford",
+    "endpoint": "https://gis.greensboro-nc.gov/arcgis/rest/services/OpenGateCity/OpenData_HRES_DS/MapServer",
+    "layer": 2,
+    "watermark_field": "Sakey",
+    "hash_fields": ["PermitNum"],
+    "commercial_where": "PermitType = 'Commercial'",
+    "out_fields": "*",
+    "date_field": "IssuedDate",
+    "lookback_days": 90,
+    "feed_id": "nc-guilford-greensboro",
+    "id_field": "PermitNum",
+    "name_fields": ["FullAddress", "Description", "PermitNum"],
+    "address_fields": ["FullAddress"],
+    "value_fields": ["TotalCost", "GeneralCost"],
+    "desc_fields": ["Description", "OccupancyDesc", "TypeConstructionDesc"],
+    "source_url": "https://gis.greensboro-nc.gov/arcgis/rest/services/OpenGateCity/OpenData_HRES_DS/MapServer/2",
+}
+
 NC_WAKE_CONFIG: dict[str, Any] = {
     "state_code": "NC",
     "provider_type": "arcgis",
@@ -1737,6 +1896,32 @@ CA_SANFRANCISCO_CONFIG: dict[str, Any] = {
     "source_url": "https://data.sfgov.org/Housing-and-Buildings/Building-Permits/i98e-djp9",
 }
 
+# Marin County (unincorporated + all cities/towns, county-run building
+# permit system) -- Socrata dataset mkbn-caye, verified live 2026-07-31.
+# Clean type_permit='COMMERCIAL' flag (only two values: COMMERCIAL/
+# RESIDENTIAL). MAX(issued_date)=2026-07-30 (fresh, updated same-day), 85
+# real commercial rows with issued_date > 2026-05-01 alone. city_town
+# field covers Novato/San Rafael/Mill Valley/Sausalito/etc, so this is
+# genuinely countywide, not one city.
+CA_MARIN_CONFIG: dict[str, Any] = {
+    "state_code": "CA",
+    "provider_type": "socrata",
+    "county": "Marin",
+    "endpoint": "https://data.marincounty.gov/resource/mkbn-caye.json",
+    "watermark_field": "permit_tracking_id",
+    "hash_fields": ["permit_tracking_id"],
+    "commercial_where": "type_permit='COMMERCIAL'",
+    "date_field": "issued_date",
+    "lookback_days": 90,
+    "feed_id": "ca-marin-building",
+    "id_field": "permit_tracking_id",
+    "name_fields": ["address", "description", "construction"],
+    "address_fields": ["address"],
+    "value_fields": ["construction_value"],
+    "desc_fields": ["description", "construction", "permit_category"],
+    "source_url": "https://data.marincounty.gov/Property-Land-Management/Building-Permit/mkbn-caye",
+}
+
 # City of Pittsburgh (Allegheny County) -- PA's only wired source before
 # this was Philadelphia (1,799 total PA records for the 5th-largest US
 # state; PA's Uniform Construction Code puts permitting at the municipal
@@ -1796,8 +1981,12 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "TX-DALLAS-ALT": TX_DALLAS_ALT_ACCELA_CONFIG,
     "TX-WILLIAMSON": TX_WILLIAMSON_CONFIG,
     "MI-WAYNE": MI_WAYNE_CONFIG,
+    "MI-KENT": MI_KENT_CONFIG,
     "IL-COOK": IL_COOK_CONFIG,
     "NY-NYC": NY_NYC_CONFIG,
+    "NY-KINGS": NY_KINGS_CONFIG,
+    "NY-BRONX": NY_BRONX_CONFIG,
+    "NY-RICHMOND": NY_RICHMOND_CONFIG,
     "MA-CAMBRIDGE": MA_CAMBRIDGE_CONFIG,
     "MN-HENNEPIN": MN_HENNEPIN_CONFIG,
     "UT-SALTLAKE": UT_SALTLAKE_ACCELA_CONFIG,
@@ -1811,6 +2000,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NE-DOUGLAS": NE_DOUGLAS_ACCELA_CONFIG,
     "LA-EBR": LA_EBR_CONFIG,
     "SC-GREENVILLE": SC_GREENVILLE_CONFIG,
+    "SC-RICHLAND": SC_COLUMBIA_ENERGOV_CONFIG,
     "ID-ADA": ID_ADA_ACCELA_CONFIG,
     "SD-SIOUXFALLS": SD_SIOUXFALLS_CONFIG,
     "IN-INDIANAPOLIS": IN_INDIANAPOLIS_ACCELA_CONFIG,
@@ -1822,18 +2012,21 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "FL-SARASOTA": FL_SARASOTA_ACCELA_CONFIG,
     "FL-MANATEE": FL_MANATEE_ACCELA_CONFIG,
     "FL-PASCO": FL_PASCO_ACCELA_CONFIG,
+    "FL-LEE": FL_LEE_ACCELA_CONFIG,
     "WA-KING": WA_KING_CONFIG,
     "TX-TARRANT": TX_TARRANT_CONFIG,
     "OH-FRANKLIN": OH_FRANKLIN_CONFIG,
     "OH-CUYAHOGA": OH_CUYAHOGA_CONFIG,
     "NC-MECKLENBURG": NC_MECKLENBURG_CONFIG,
     "NC-WAKE": NC_WAKE_CONFIG,
+    "NC-GUILFORD": NC_GUILFORD_CONFIG,
     "VA-FAIRFAX": VA_FAIRFAX_CONFIG,
     "TX-WILLIAMSON-PERMITS": TX_WILLIAMSON_PERMITS_CONFIG,
     "PA-PHILADELPHIA": PA_PHILADELPHIA_CONFIG,
     "PA-PITTSBURGH": PA_PITTSBURGH_CONFIG,
     "CA-SANDIEGO": CA_SANDIEGO_CONFIG,
     "CA-SANFRANCISCO": CA_SANFRANCISCO_CONFIG,
+    "CA-MARIN": CA_MARIN_CONFIG,
     "TX-BRAZORIA": TX_BRAZORIA_CONFIG,
     "TX-MIDLAND": TX_MIDLAND_CONFIG,
     "TX-HAYS": TX_HAYS_CONFIG,
@@ -2108,6 +2301,49 @@ CT_HARTFORD_ACCELA_CONFIG: dict[str, Any] = {
     "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
 STATE_CONFIGS["CT-HARTFORD"] = CT_HARTFORD_ACCELA_CONFIG
+
+# Shelby County, TN (Memphis) -- Accela agency code SHELBYCO, confirmed
+# live 2026-07-31 (prior session's SHELBY/MEMPHIS/DEVELOP901 variant
+# guesses were all wrong; SHELBYCO is the real code, found via Gemini +
+# live curl verification: aca-prod.accela.com/SHELBYCO/Cap/CapHome.aspx?
+# module=Building returns 200 with a real permit-type dropdown).
+# module=Building has 50 real options; "Commercial New Construction
+# Permit" is the broadest non-residential/non-trade-specific catch-all
+# (other Commercial-prefixed options are trade-specific: Electrical/
+# Mechanical/Plumbing/Accessory/Addition/Alteration). Covers City of
+# Memphis + Arlington/Germantown/Lakeland/Millington + unincorporated
+# Shelby County under one Accela agency, per Develop901's own coverage
+# description.
+TN_SHELBY_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "TN",
+    "provider_type": "accela",
+    "county": "Shelby",
+    "endpoint": "https://aca-prod.accela.com/SHELBYCO",
+    "permit_type_label": "Commercial New Construction Permit",
+    "lookback_days": 90,
+}
+STATE_CONFIGS["TN-SHELBY"] = TN_SHELBY_ACCELA_CONFIG
+
+# City of Hendersonville, TN (Sumner County) -- Tyler EnerGov Citizen Self
+# Service, same tylerhost.net/apps/selfservice pattern as the CA EnerGov
+# tenants above. Live-verified 2026-07-31: hendersonvilletn-energovweb.
+# tylerhost.net/apps/SelfService resolves 200. tenant_id left at provider
+# default "1" (unconfirmed -- El Monte/Glendale/etc. all also used "1";
+# no live UI probe done yet to confirm this tenant's actual ID). Search
+# still returns a null Result after fixing the blocking modal (see
+# energov_provider.py) -- kept registered for future debugging, but see
+# jurisdiction_health_matrix.json: Sumner stays FAILED_NEED_ALT.
+TN_HENDERSONVILLE_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "TN",
+    "provider_type": "energov",
+    "county": "Sumner",
+    "endpoint": "https://hendersonvilletn-energovweb.tylerhost.net",
+    "tenant_id": "1",
+    "tenant_name": "Hendersonville",
+    "lookback_days": 90,
+    "max_pages": 5,
+}
+STATE_CONFIGS["TN-HENDERSONVILLE"] = TN_HENDERSONVILLE_ENERGOV_CONFIG
 
 # SAM.gov + USAspending for all 50 states (2026-07-28, Asif: "pull all
 # data from USAspending and sam.gov"). Both providers are already

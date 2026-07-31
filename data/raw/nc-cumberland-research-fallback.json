@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Cumberland",
+  "state": "NC",
+  "method": "Step 6 direct project-level research fallback (session nc_cumberland_docs), run because no usable structured commercial-permit feed was found for Cumberland (county GIS has no permit-records layer, county Socrata domain has zero datasets, Fayetteville's ArcGIS Permits MapServer is code-enforcement-dominated -- logged FAILED_NEED_ALT).",
+  "cross_check_summary": "3 named projects found (SteelFab industrial expansion/rezoning, Skyeton drone manufacturing HQ, Kinlaw's Supermarket rebuild). Live-checked the one specific claimed document URL (NC Governor's Office press release) -- returned HTTP 404, fabricated. The other two claimed 'pullable documents' are generic portal landing pages (fayetteville.legistar.com/Calendar.aspx, cumberlandcountync.civicclerk.com), not specific document URLs. 0 of 3 documents verified real.",
+  "load_status": "NOT LOADED -- verified findings only, load path not yet built.",
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "SteelFab Industrial Expansion & Rezoning (Project Superman)",
+      "city_address": "950 Country Club Drive / Distribution Drive & Shaw Mill Road area, Fayetteville, NC 28301",
+      "project_type": "Industrial / structural steel fabrication facility expansion",
+      "estimated_cost": "$22,000,000",
+      "cost_confidence": "High",
+      "square_footage_or_acreage": "123-acre tract rezoning; ~75-acre initial building footprint",
+      "developer_owner": "SteelFab, Inc.; property owner Pelican Property Holdings LLC",
+      "general_contractor": "SteelFab, Inc. (self-build)",
+      "architect": "Not identified in public records",
+      "status": "Fayetteville Zoning Commission voted 4-1 to recommend narrowed rezoning to Heavy Industrial, July 14, 2026",
+      "key_tenants": "SteelFab, Inc.",
+      "expected_completion": "Multi-phase through 2027-2028",
+      "source_citation": "CityView Today, 2026-07-21; City of Fayetteville Zoning Commission agenda, 2026-07-14",
+      "pullable_document_status": "NOT VERIFIED -- generic Legistar calendar page, not a specific document URL",
+      "pullable_documents": []
+    },
+    {
+      "name": "Skyeton Inc. U.S. Drone Manufacturing Headquarters (Project Odesa)",
+      "city_address": "223 Dedication Drive, Fayetteville, NC 28301",
+      "project_type": "Advanced industrial / UAS manufacturing",
+      "estimated_cost": "$3.1M-$3.4M capital investment",
+      "cost_confidence": "High",
+      "square_footage_or_acreage": "28,479 sq ft building",
+      "developer_owner": "Skyeton, Inc.",
+      "general_contractor": "Not identified in public records",
+      "architect": "Not identified in public records",
+      "status": "County incentive grant approved July 20, 2026; state OneNC grant announced July 27, 2026",
+      "key_tenants": "Skyeton, Inc.",
+      "expected_completion": "Ramping late 2026, 162 employees by 2030",
+      "source_citation": "NC Governor's Office / NC Dept of Commerce release, 2026-07-27; BizFayetteville/CityView NC, 2026-07-22 to 07-27",
+      "pullable_document_status": "NOT VERIFIED -- claimed governor.nc.gov press release URL returned HTTP 404 on live check (fabricated); CivicClerk link is a generic portal, not a specific agenda item",
+      "pullable_documents": []
+    },
+    {
+      "name": "Kinlaw's Supermarket Ground-Up Rebuild",
+      "city_address": "1800 block of Sapona Road, Fayetteville, NC 28301",
+      "project_type": "Commercial retail / supermarket ground-up reconstruction",
+      "estimated_cost": "$2M-$3.5M (estimated)",
+      "cost_confidence": "Medium",
+      "square_footage_or_acreage": "7,500 sq ft building, 34 parking spaces",
+      "developer_owner": "Tommy Kinlaw & Bobby Kinlaw (Kinlaw's Supermarket, Inc.)",
+      "general_contractor": "Not identified in public records",
+      "architect": "Crawford Design Company",
+      "status": "Site/landscape plans passed City of Fayetteville TRC final staff review, late June/July 2026",
+      "key_tenants": "Kinlaw's Supermarket",
+      "expected_completion": "Groundbreaking 2026, 10-12 month construction",
+      "source_citation": "CityView NC, 2026-07-24; FayToday News, 2026-07-27",
+      "pullable_document_status": "No pullable document found (per Gemini's own answer -- TRC filings not published as direct PDFs prior to board presentation)",
+      "pullable_documents": []
+    }
+  ]
+}

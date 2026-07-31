@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Dauphin",
+  "state": "PA",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 6,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Storage Five Harrisburg Self-Storage Facility",
+      "city_address": "1171 South Cameron Street, Harrisburg, PA 17104",
+      "project_type": "Commercial / Self-Storage Facility Conversion & Expansion",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Storage Five Harrisburg, LLC (Chris Catania)",
+      "status": "Proposed / Under Planning Review",
+      "document_url": "",
+      "document_type": "Planning Commission Agenda PDF",
+      "source_citation": "Harrisburg Planning Commission Meeting Agendas & City Records",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Susquehanna Union Green - Phase IID",
+      "city_address": "Susquehanna Union Green, Vartan Way, Susquehanna Township, PA 17110",
+      "project_type": "Commercial / Mixed-Use Development (1,140 sq ft pavilion/kiosk and commercial structures)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Susquehanna Union Green / Vartan Group",
+      "status": "Approved",
+      "document_url": "",
+      "document_type": "Board of Commissioners Meeting Agenda Packet",
+      "source_citation": "Susquehanna Township Board of Commissioners Records",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "NHS Middletown Parking Lot & Facility Expansion",
+      "city_address": "NHS Middletown, Lower Swatara Township, PA 17057",
+      "project_type": "Commercial / Institutional Infrastructure & Parking Expansion",
+      "estimated_cost": "Not specified",
+      "developer_owner": "NHS Middletown",
+      "status": "Proposed / Under Planning Commission Review",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Lower Swatara Township Planning Commission Minutes & Agendas",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Steelton Terminal Warehouse Facilities",
+      "city_address": "Steelton Terminal site (spanning Lower Swatara Township, Steelton Borough, and Swatara Township), PA 17057",
+      "project_type": "Industrial / Warehouse & Distribution Facilities (3 buildings totaling 1,115,460 sq ft)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Steelton Terminal / Landworks Civil Design",
+      "status": "Under Planning & Subdivision Review",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Lower Swatara Township & Swatara Township Planning Commission Records",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Route 22/322 & SR 225 Warehouse Facility",
+      "city_address": "Lot 2, SR 22/322 & SR 225 Interchange (Allegheny Street), Middle Paxton Township, PA 17018",
+      "project_type": "Industrial / Warehouse Facility (~248,000 sq ft)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Pocono Business Partners (Nathan Pipitone) / RETTEW Associates",
+      "status": "Proposed / Rezoning Review",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Middle Paxton Township Zoning Hearing Board & Planning Commission Records",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "The Pond on Fulling Mill - Phase 2 Commercial Space",
+      "city_address": "1400 & 1500 Fulling Mill Road, Middletown, PA 17057",
+      "project_type": "Commercial / Mixed-Use (10,000 sq ft commercial space, restaurant, community center)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Vistablock The Pond, LLC",
+      "status": "Approved / Under Development",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Lower Swatara Township Board of Commissioners Agenda & Minutes",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

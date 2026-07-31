@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Delaware",
+  "state": "PA",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 7,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "The Shoppes at Concord",
+      "city_address": "Southwest corner of Ridge Road and Route 202, Concord Township, PA",
+      "project_type": "Commercial / Retail & Restaurant Development",
+      "estimated_cost": "Unknown",
+      "developer_owner": "Unknown",
+      "status": "Under Review / Final Land Development Application",
+      "document_url": "",
+      "document_type": "Planning Commission Agenda",
+      "source_citation": "Delaware County Planning Commission Meeting Agenda (July 16, 2026), File #12-5943-05-06-07-25-26",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "New Hudson Industrial Building Addition",
+      "city_address": "Southeast corner of Blueball and Columbia Avenues, Lower Chichester Township, PA",
+      "project_type": "Industrial Expansion",
+      "estimated_cost": "Unknown",
+      "developer_owner": "Columbia Ave Fa\u00e7ade Land LP",
+      "status": "Under Review / Final Land Development Application",
+      "document_url": "",
+      "document_type": "Planning Commission Agenda",
+      "source_citation": "Delaware County Planning Commission Meeting Agenda (July 16, 2026), File #22-1132~04-08-10-11-14-15-16-18-26",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Riddle Hospital Emergency Facility",
+      "city_address": "1068 W Baltimore Pike, Media, PA 19063 (Middletown Township, PA)",
+      "project_type": "Healthcare / Outpatient Facility Construction",
+      "estimated_cost": "$4,000,000 (RACP Grant Award)",
+      "developer_owner": "Main Line Health / Riddle Hospital",
+      "status": "Proposed / Grant Awarded",
+      "document_url": "",
+      "document_type": "State Regulatory / Grant Funding Announcement",
+      "source_citation": "Commonwealth of Pennsylvania RACP Capital Grant Award Announcement (July 16, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Shoppes at LaSalle Improvements",
+      "city_address": "Delaware County, PA",
+      "project_type": "Mixed-Use Commercial Redevelopment",
+      "estimated_cost": "$1,500,000 (RACP Grant Award)",
+      "developer_owner": "Unknown",
+      "status": "Proposed / Grant Awarded",
+      "document_url": "",
+      "document_type": "State Regulatory / Grant Funding Announcement",
+      "source_citation": "Commonwealth of Pennsylvania RACP Capital Grant Award Announcement (July 16, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Widener University Lathem Hall Modernization",
+      "city_address": "13th St & Potter St, Chester, PA 19013",
+      "project_type": "Institutional / Commercial Renovation",
+      "estimated_cost": "$2,500,000 (RACP Grant Award)",
+      "developer_owner": "Widener University",
+      "status": "Proposed / Grant Awarded",
+      "document_url": "",
+      "document_type": "State Regulatory / Grant Funding Announcement",
+      "source_citation": "Commonwealth of Pennsylvania RACP Capital Grant Award Announcement (July 16, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Elwyn Specialized Inpatient Unit",
+      "city_address": "111 Elwyn Rd, Elwyn, PA 19063 (Middletown Township, PA)",
+      "project_type": "Healthcare / Commercial Inpatient Treatment Unit Renovation",
+      "estimated_cost": "$500,000 (RACP Grant Award)",
+      "developer_owner": "Elwyn",
+      "status": "Proposed / Grant Awarded",
+      "document_url": "",
+      "document_type": "State Regulatory / Grant Funding Announcement",
+      "source_citation": "Commonwealth of Pennsylvania RACP Capital Grant Award Announcement (July 16, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Chester Upland Athletic Complex",
+      "city_address": "Chester, PA",
+      "project_type": "Commercial / Institutional Athletic Complex Construction",
+      "estimated_cost": "$1,500,000 (RACP Grant Award)",
+      "developer_owner": "Chester Upland School District / City of Chester",
+      "status": "Proposed / Grant Awarded",
+      "document_url": "",
+      "document_type": "State Regulatory / Grant Funding Announcement",
+      "source_citation": "Commonwealth of Pennsylvania RACP Capital Grant Award Announcement (July 16, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

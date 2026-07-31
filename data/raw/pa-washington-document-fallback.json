@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Washington",
+  "state": "PA",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 5,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Washington County Public Safety Building",
+      "city_address": "95 W Beau Street, Suite 430, Washington, PA 15301",
+      "project_type": "Commercial / Public Safety Infrastructure",
+      "estimated_cost": "Unknown",
+      "developer_owner": "Washington County Commissioners",
+      "status": "Bidding / Under Evaluation (Bid opening held July 22, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://www.washingtoncopa.gov",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Cool Valley Development",
+      "city_address": "Cecil Township, PA 15321",
+      "project_type": "Commercial / Mixed-Use Development",
+      "estimated_cost": "Unknown",
+      "developer_owner": "Cool Valley Development, LLC",
+      "status": "Under Municipal Review (Board of Supervisors Conditional Use Application Hearing held July 7, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://www.ceciltownship-pa.gov/AgendaCenter",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Costco Warehouse Store (Washington Mall Redevelopment)",
+      "city_address": "1500 Washington Road, South Strabane Township, PA 15301",
+      "project_type": "Commercial Retail Warehouse",
+      "estimated_cost": "$5,900,000 (Demolition & Site Prep)",
+      "developer_owner": "79/70 Associates / Chapman Properties / Costco Wholesale",
+      "status": "Approved / Demolition & Site Preparation (Revised Land Development Plan approved June 2026, demolition ongoing July 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://racw.net",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Lambert Fiser Pep Road Land Development",
+      "city_address": "Pep Road, Cecil Township, PA 15321",
+      "project_type": "Commercial / Land Development",
+      "estimated_cost": "Unknown",
+      "developer_owner": "Lambert Fiser",
+      "status": "Under Review / Tabled (Tabled at July 16, 2026 Planning Commission meeting pending Gateway Engineers review)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://www.ceciltownship-pa.gov",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Smith Packett Assisted Living and Memory Care Facility",
+      "city_address": "Peters Township, PA 15317",
+      "project_type": "Commercial Senior Housing / Healthcare Facility",
+      "estimated_cost": "Unknown",
+      "developer_owner": "Smith/Packett Med-Com, LLC",
+      "status": "Under Review (Presented to Peters Township Planning Commission in mid-2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://www.peterstownship.com",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}
