@@ -1368,6 +1368,26 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Brownsville confirmed live on Accela (301, real). Harlingen confirmed live on Click2Gov (302, real). County-level Click2Gov URL (cameron-egov.aspgov.com) is fabricated -- DNS does not resolve. Puller not yet built for either working city."
+    },
+    {
+      "jurisdiction": "Randall County, TX (City of Amarillo)",
+      "county": "Randall",
+      "state": "TX",
+      "provider_type": "mgoconnect",
+      "endpoint": "https://mgoconnect.org/cp/portal",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Amarillo (spans both Randall and Potter counties) confirmed live on MGO Connect (301 real redirect on city info page). Same platform already confirmed for Bell County tonight. Puller not yet built."
+    },
+    {
+      "jurisdiction": "Potter County, TX (City of Amarillo)",
+      "county": "Potter",
+      "state": "TX",
+      "provider_type": "mgoconnect",
+      "endpoint": "https://mgoconnect.org/cp/portal",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Amarillo (spans both Randall and Potter counties) confirmed live on MGO Connect (301 real redirect on city info page). Same platform already confirmed for Bell County tonight. Puller not yet built."
     }
   ]
 }
