@@ -1,0 +1,96 @@
+{
+  "generated_at": "2026-07-31T14:04:11.483952+00:00",
+  "projects": [
+    {
+      "id": "il-winnebago-research-hard-rock-hotel-convention-center-expansion-hard-rock-casino-rockford-campus",
+      "name": "Hard Rock Hotel & Convention Center Expansion (Hard Rock Casino Rockford Campus)",
+      "state": "IL",
+      "city": "7801 E. State St",
+      "county": "Winnebago",
+      "status": "permitting",
+      "project_type": "Hospitality / Convention Center",
+      "estimated_value_usd": 90000000,
+      "square_footage": 15000,
+      "owner": "City of Rockford (bond structure) / 815 Entertainment, LLC (Hard Rock Casino Rockford operator)",
+      "architect": "Klai Juba Wald Architecture / Hard Rock Design Services",
+      "general_contractor": "Ringland-Johnson Construction / Stenstrom Companies (preliminary)",
+      "opened_or_announced_date": null,
+      "description": "Hospitality / Convention Center project found via Step 6 direct research (grounded search  + independent cross-check, not a structured permit feed). Key tenants: Hard Rock Hotel, Hard Rock Convention Center. Expected completion: Late 2027.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "City of Rockford public hearing & council records (2026-07-21); Chicago Tribune; CDC Gaming Reports; WTVO"
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "il-winnebago-research-rockford-logistics-park-20-building-1",
+      "name": "Rockford Logistics Park 20 -- Building 1",
+      "state": "IL",
+      "city": "3321 Integrity Drive",
+      "county": "Winnebago",
+      "status": "under_construction",
+      "project_type": "Industrial / Logistics / Spec Warehouse",
+      "estimated_value_usd": 30,
+      "square_footage": 334800,
+      "owner": "Hillwood (Industrial VI Enterprises, LLC)",
+      "architect": "Jacob and Hefner Associates, Inc.",
+      "general_contractor": "Unspecified / Hillwood Construction Services",
+      "opened_or_announced_date": null,
+      "description": "Industrial / Logistics / Spec Warehouse project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: Speculative (air cargo/distribution/logistics near Chicago Rockford Intl Airport). Expected completion: Late 2026/2027.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "STAT Times / UniEx Expo (2026-07-09); City of Rockford Council records"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "il-winnebago-research-south-rockford-industrial-tif-venture-one-industrial-park",
+      "name": "South Rockford Industrial TIF & Venture One Industrial Park",
+      "state": "IL",
+      "city": "S. Main Street & Samuelson Rd corridor",
+      "county": "Winnebago",
+      "status": "planning",
+      "project_type": "Industrial / Infrastructure",
+      "estimated_value_usd": 50000000,
+      "square_footage": null,
+      "owner": "Venture One Real Estate / City of Rockford",
+      "architect": "Unspecified",
+      "general_contractor": "TBD per site buildout",
+      "opened_or_announced_date": null,
+      "description": "Industrial / Infrastructure project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: Manufacturing, warehousing, rail-oriented logistics. Expected completion: Phased 2027-2029.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "City of Rockford Council Proceedings & TIF Redevelopment Plan (2026-07-20/21); WTVO"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    }
+  ]
+}
