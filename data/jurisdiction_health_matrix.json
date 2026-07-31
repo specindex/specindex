@@ -1926,6 +1926,26 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Live-verified: Fort Smith (largest city) uses CityView (Harris Local Government), NOT Accela -- confirmed domain is real: https://www.fortsmithar.gov/cityview and the /cityview-help page both return HTTP 403 consistently (bot-blocked real domain, verified with browser UA too, not a DNS/404 fabrication). Greenwood (2nd city) uses TEKConnectGov at https://www.tekconnectgov.com -- HTTP 301 (real, redirects into app). Barling has no digitized portal -- PDF/phone intake only, confirmed via barlingar.gov. Unincorporated Sebastian County has no online permit portal -- manual intake through County Judge/Road Dept offices, confirmed via sebastiancountyar.gov. CityView and TEKConnect have no provider class built in this pipeline -- logging discovery only per task scope, no config wired."
+    },
+    {
+      "jurisdiction": "Faulkner County, AR (Conway)",
+      "county": "Faulkner",
+      "state": "AR",
+      "provider_type": "energov",
+      "endpoint": "https://conwayar-energovweb.tylerhost.net/apps/SelfService#/search",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified: Conway (largest city) uses Tyler EnerGov Citizen Self-Service at https://conwayar-energovweb.tylerhost.net/apps/SelfService#/search -- HTTP 200 (real). No Accela anywhere in county. Greenbrier and Vilonia both have no digitized portals -- manual/PDF intake only, confirmed via city sites. Unincorporated Faulkner County has no countywide building permit system (no general building code enforcement outside floodplain/septic). EnerGov has no provider class built in this pipeline -- logging discovery only per task scope, no config wired."
+    },
+    {
+      "jurisdiction": "Craighead County, AR (Jonesboro)",
+      "county": "Craighead",
+      "state": "AR",
+      "provider_type": "iworq",
+      "endpoint": "https://portal.iworq.net/JONESBOROAR/permits/600",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified: Jonesboro (largest city) uses iWorQ Systems at https://portal.iworq.net/JONESBOROAR/permits/600 -- HTTP 200 (real), plus Avolve ProjectDox for plan review (jonesboro-ar-us.avolvecloud.com, not separately curl-checked as it's a login-gated review tool, not a permit search source). No Accela anywhere in county. Brookland and Bono both have no digitized portals -- in-person/paper intake only. Unincorporated Craighead County has no general building permit portal -- only floodplain/septic via PDF forms. iWorQ has no provider class built in this pipeline -- logging discovery only per task scope, no config wired."
     }
   ]
 }
