@@ -1428,6 +1428,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "City of Lufkin confirmed live on CitySourced/MyLufkinTX (200 OK). New platform type. Puller not yet built."
+    },
+    {
+      "jurisdiction": "Bowie County, TX (City of Texarkana TX)",
+      "county": "Bowie",
+      "state": "TX",
+      "provider_type": "mygov",
+      "endpoint": "https://public.mygov.us/tx_texarkana",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Texarkana TX confirmed live on MyGov (200 OK), same platform family as Alvin/Brazoria. Puller not yet built."
     }
   ]
 }
