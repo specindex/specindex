@@ -1616,8 +1616,8 @@
       "provider_type": "accela",
       "endpoint": "https://aca-prod.accela.com/SARASOTACO/Default.aspx",
       "state_agent_pipeline_key": null,
-      "status": "VERIFIED_WORKING",
-      "notes": "Sarasota County confirmed live on Accela (200 OK). Puller not yet built."
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Sarasota County confirmed live on Accela (200 OK). Puller not yet built. RE-CHECKED 2026-07-31: Sarasota's Accela Building module (aca-prod.accela.com/SARASOTACO/Cap/CapHome.aspx?module=Building) redirects anonymous users to a login page -- confirmed live, not a URL/config error. Unlike other FL Accela counties (Broward/Hillsborough/Pinellas/Polk), Sarasota does not expose anonymous General Search for Building permits. Real hard stop for this provider, matches the documented no-anti-bot-evasion rule."
     },
     {
       "jurisdiction": "Marion County, FL (Ocala)",
