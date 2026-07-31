@@ -1,0 +1,64 @@
+{
+  "generated_at": "2026-07-31T14:01:03.085397+00:00",
+  "projects": [
+    {
+      "id": "il-champaign-research-champaign-county-long-term-care-medical-facility-advocates-for-aging-care-fayprop-llc",
+      "name": "Champaign County Long-Term Care Medical Facility (Advocates for Aging Care / Fayprop LLC)",
+      "state": "IL",
+      "city": "Savoy",
+      "county": "Champaign",
+      "status": "planning",
+      "project_type": "Medical / Long-Term Care Facility",
+      "estimated_value_usd": 26587816,
+      "square_footage": null,
+      "owner": "Advocates for Aging Care (AAC) / Fayprop, LLC",
+      "architect": "Not specified in permit filing",
+      "general_contractor": "Not specified in permit filing",
+      "opened_or_announced_date": null,
+      "description": "Medical / Long-Term Care Facility project found via Step 6 direct research (grounded search  + independent cross-check, not a structured permit feed). Key tenants: Long-term care provider, addressing regional 310-bed LTC deficit. Expected completion: 2028-12-31.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Illinois Health Facilities and Services Review Board (HFSRB) Application for Permit & Executive Summary"
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "il-champaign-research-ccrpc-new-administrative-training-center-expansion",
+      "name": "CCRPC New Administrative & Training Center Expansion",
+      "state": "IL",
+      "city": "Glen Park Drive",
+      "county": "Champaign",
+      "status": "under_construction",
+      "project_type": "Office / Special-Purpose Educational & Training Facility",
+      "estimated_value_usd": null,
+      "square_footage": 25000,
+      "owner": "Champaign County Regional Planning Commission (CCRPC)",
+      "architect": "Not specified",
+      "general_contractor": "Not specified",
+      "opened_or_announced_date": null,
+      "description": "Office / Special-Purpose Educational & Training Facility project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: CCRPC staff, Illinois Home Weatherization Assistance Program Training Network. Expected completion: Phase 1 by late January 2027.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "CCRPC official announcement (2026-06-30); CCRPC board meeting (2026-07-27)"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    }
+  ]
+}

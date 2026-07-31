@@ -1,0 +1,163 @@
+{
+  "generated_at": "2026-07-31T05:59:14.252478+00:00",
+  "projects": [
+    {
+      "id": "il-mclean-research-rivian-automotive-supplier-park-plant-expansion",
+      "name": "Rivian Automotive Supplier Park & Plant Expansion",
+      "state": "IL",
+      "city": "100 N. Rivian Motorway",
+      "county": "McLean",
+      "status": "under_construction",
+      "project_type": "Industrial / Automotive Manufacturing",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Rivian Automotive",
+      "architect": "Skidmore, Owings & Merrill (SOM) / Lamar Johnson Collaborative (LJC)",
+      "general_contractor": "Not identified in public records",
+      "opened_or_announced_date": null,
+      "description": "Industrial / Automotive Manufacturing project found via Step 6 direct research (grounded search  + independent cross-check, not a structured permit feed). Key tenants: Rivian and co-located Tier-1 EV component suppliers. Expected completion: 2025-2026, phased.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Illinois.gov press release (2025-05-05); Clayco Construction"
+        },
+        {
+          "name": "Town Council meeting packet, Item 11: amended site plan resolution incl. architectural elevation drawings and site utility plan",
+          "url": "https://www.normalil.gov/ArchiveCenter/ViewFile/Item/4811"
+        },
+        {
+          "name": "Planning Commission action packet & minutes, Case 24-08-05-PC: amended site plan",
+          "url": "https://www.normalil.gov/ArchiveCenter/ViewFile/Item/4802"
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "il-mclean-research-osf-st-joseph-medical-center-icu-expansion",
+      "name": "OSF St. Joseph Medical Center ICU Expansion",
+      "state": "IL",
+      "city": "2200 E. Washington Street",
+      "county": "McLean",
+      "status": "completed",
+      "project_type": "Medical / Healthcare Facility Expansion",
+      "estimated_value_usd": 17772653,
+      "square_footage": 17419,
+      "owner": "OSF HealthCare System",
+      "architect": "Kahler Slater / BSA LifeStructures",
+      "general_contractor": "PointeCore Construction",
+      "opened_or_announced_date": null,
+      "description": "Medical / Healthcare Facility Expansion project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: OSF St. Joseph Medical Center. Expected completion: Opened 2025-06-17.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Illinois Health Facilities and Services Review Board, CON Permit #23-037; WGLT News (2025-06-17)"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "il-mclean-research-downtown-bloomington-connect-transit-transfer-center",
+      "name": "Downtown Bloomington Connect Transit Transfer Center",
+      "state": "IL",
+      "city": "202 W. Market Street",
+      "county": "McLean",
+      "status": "permitting",
+      "project_type": "Mixed-Use Transit / Municipal Infrastructure",
+      "estimated_value_usd": 28000000,
+      "square_footage": null,
+      "owner": "Connect Transit / City of Bloomington",
+      "architect": "Hanson Professional Services",
+      "general_contractor": "TBD (bidding pending 60%+ design)",
+      "opened_or_announced_date": null,
+      "description": "Mixed-Use Transit / Municipal Infrastructure project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: Connect Transit, City of Bloomington (incl. police office space). Expected completion: Groundbreaking late 2026/early 2027, completion 2028.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Connect Transit Board of Trustees action reports (April 2026); WGLT News"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "il-mclean-research-heartland-community-college-advanced-manufacturing-training-center",
+      "name": "Heartland Community College Advanced Manufacturing Training Center",
+      "state": "IL",
+      "city": "1500 W. Raab Road",
+      "county": "McLean",
+      "status": "completed",
+      "project_type": "Educational / Industrial Technology Lab",
+      "estimated_value_usd": 15000000,
+      "square_footage": 45000,
+      "owner": "Heartland Community College",
+      "architect": "Farnsworth Group",
+      "general_contractor": "Felmley-Dickerson Co.",
+      "opened_or_announced_date": null,
+      "description": "Educational / Industrial Technology Lab project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: Heartland CC Career & Technical Education, State Farm EV Lab. Expected completion: 2024-2025.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Illinois DCEO press release; Heartland Community College Facilities Master Plan"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "il-mclean-research-ferrero-kinder-bueno-production-facility-expansion",
+      "name": "Ferrero Kinder Bueno Production Facility Expansion",
+      "state": "IL",
+      "city": "2501 Beich Road",
+      "county": "McLean",
+      "status": "completed",
+      "project_type": "Industrial / Food Processing",
+      "estimated_value_usd": 214400000,
+      "square_footage": 169000,
+      "owner": "Ferrero Group / Ferrero North America",
+      "architect": "Ghafari Associates",
+      "general_contractor": "The Austin Company (design-builder)",
+      "opened_or_announced_date": null,
+      "description": "Industrial / Food Processing project found via Step 6 direct research (grounded search  + independent cross-check, not a structured permit feed). Key tenants: Ferrero (Kinder Bueno manufacturing). Expected completion: 2024-2025.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Ferrero Corporate Newsroom; State of Illinois Executive Office releases"
+        }
+      ],
+      "open_for": ""
+    }
+  ]
+}

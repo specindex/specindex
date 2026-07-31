@@ -1,0 +1,103 @@
+name: Fetch step 6 research-fallback documents (GCS)
+
+# Runs scripts/fetch-research-fallback-documents.py automatically whenever
+# a data/raw/*-research-fallback*.json findings file is added or changed
+# on main -- closes the loop so a Step 6 (research fallback) batch's
+# claimed "pullable_documents" URLs get live-verified and uploaded to GCS
+# without a manual run, the same day the findings file lands.
+#
+# Push-triggered on a path filter, not a schedule cron -- every other
+# scheduled workflow in this repo had its cron disabled 2026-07-28
+# (Asif: "disable all cron jobs, will come back to it later") and none
+# have been re-enabled since. This isn't a cron, it's event-driven off a
+# real file change, so it doesn't reopen that decision.
+#
+# No DB/Cloud SQL Auth Proxy needed here (unlike most pull-*.yml
+# workflows) -- this script only reads a local JSON file and writes to
+# GCS, so auth is just Workload Identity Federation for storage access.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/raw/*-research-fallback*.json"
+  workflow_dispatch:
+    inputs:
+      findings_file:
+        description: "Single findings file to run (blank = every changed file in this push)"
+        required: false
+        default: ""
+      dry_run:
+        description: "Verify URLs without uploading to GCS"
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  fetch_documents:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 2
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install google-cloud-storage
+
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+
+      - name: Determine which findings file(s) changed
+        id: changed
+        run: |
+          if [ -n "${{ github.event.inputs.findings_file }}" ]; then
+            echo "files=${{ github.event.inputs.findings_file }}" >> "$GITHUB_OUTPUT"
+          else
+            files=$(git diff --name-only HEAD^ HEAD -- 'data/raw/*-research-fallback*.json' || true)
+            echo "files=$files" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Fetch and upload documents for each changed findings file
+        run: |
+          files="${{ steps.changed.outputs.files }}"
+          if [ -z "$files" ]; then
+            echo "No research-fallback findings files changed in this push -- nothing to do."
+            exit 0
+          fi
+          for f in $files; do
+            # state/county both come from the findings file's own "state"
+            # field via a tiny inline lookup -- state names in GCS paths
+            # are lowercase full names (illinois, georgia, ...) to match
+            # the existing fetch-sam-gov-documents.py convention, not the
+            # 2-letter code the findings file stores.
+            state_code=$(python3 -c "import json,sys; print(json.load(open(sys.argv[1])).get('state',''))" "$f")
+            case "$state_code" in
+              IL) state_name="illinois" ;;
+              *) state_name=$(echo "$state_code" | tr '[:upper:]' '[:lower:]') ;;
+            esac
+            echo "::group::$f (state=$state_name)"
+            python3 scripts/fetch-research-fallback-documents.py \
+              --findings-file "$f" \
+              --state "$state_name" \
+              ${{ github.event.inputs.dry_run == 'true' && '--dry-run' || '' }}
+            echo "::endgroup::"
+          done
+
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo "### Step 6 research-fallback document fetch — results"
+            echo "Files processed: ${{ steps.changed.outputs.files }}"
+            echo "See step logs above for per-URL verify/upload results."
+          } >> "$GITHUB_STEP_SUMMARY"

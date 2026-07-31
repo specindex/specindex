@@ -1,0 +1,573 @@
+{
+  "generated_at": "2026-07-31T05:58:06.648691+00:00",
+  "projects": [
+    {
+      "id": "il-sangamon-research-legacy-pointe-scheels-anchored-sports-entertainment-complex",
+      "name": "Legacy Pointe (SCHEELS-anchored sports/entertainment complex)",
+      "state": "IL",
+      "city": "Springfield",
+      "county": "Sangamon",
+      "status": "completed",
+      "project_type": "Mixed-Use / Sports & Entertainment",
+      "estimated_value_usd": null,
+      "square_footage": 196625,
+      "owner": "Legacy Pointe Development LLC (Steve Luker & Dirk McCormick), public-private w/ City of Springfield, Sangamon County, Pinnacle Partners",
+      "architect": "Crawford, Murphy & Tilly (CMT) / BLDD Architects",
+      "general_contractor": "Mammoth Sports Construction",
+      "opened_or_announced_date": null,
+      "description": "Mixed-Use / Sports & Entertainment project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: SCHEELS, Springfield Clinic, Sports Facilities Companies, Springfield District 186. Expected completion: April/May 2026.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Crawford, Murphy & Tilly project overview; Springfield Business Journal; Illinois Times"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "il-sangamon-research-cyrusone-sangamon-data-center-campus",
+      "name": "CyrusOne Sangamon Data Center Campus",
+      "state": "IL",
+      "city": "Unincorporated Sangamon County (near Pawnee/Chatham)",
+      "county": "Sangamon",
+      "status": "completed",
+      "project_type": "Data Center",
+      "estimated_value_usd": 500000000,
+      "square_footage": null,
+      "owner": "CyrusOne LLC",
+      "architect": "CyrusOne in-house / engineering consultants",
+      "general_contractor": "TBD",
+      "opened_or_announced_date": null,
+      "description": "Data Center project found via Step 6 direct research (grounded search  + independent cross-check, not a structured permit feed). Key tenants: Cloud service providers / enterprise IT tenants. Expected completion: Phased buildout starting late 2026-2027.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Sangamon County official data center portal; Capitol News Illinois; NPR Illinois"
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "il-sangamon-research-reel-usa-north-american-manufacturing-center",
+      "name": "REEL USA North American Manufacturing Center",
+      "state": "IL",
+      "city": "3501 W. Mayflower Blvd",
+      "county": "Sangamon",
+      "status": "under_construction",
+      "project_type": "Industrial Manufacturing & Corporate Office",
+      "estimated_value_usd": 2000000,
+      "square_footage": 65800,
+      "owner": "REEL USA Corp. / REEL International",
+      "architect": "TBD",
+      "general_contractor": "O'Shea Builders",
+      "opened_or_announced_date": null,
+      "description": "Industrial Manufacturing & Corporate Office project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: REEL USA Corp.. Expected completion: Q3/Q4 2026.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Illinois Times (2026-01-07); City of Springfield Public Works Permit Dept"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "il-sangamon-research-springfield-sangamon-county-transportation-center-sctc-the-hub",
+      "name": "Springfield-Sangamon County Transportation Center (SCTC / \"The HUB\")",
+      "state": "IL",
+      "city": "9th-11th St",
+      "county": "Sangamon",
+      "status": "under_construction",
+      "project_type": "Mixed-Use Transit / Office / Parking",
+      "estimated_value_usd": 80,
+      "square_footage": null,
+      "owner": "Sangamon County, City of Springfield, Sangamon Mass Transit District",
+      "architect": "Hanson Professional Services",
+      "general_contractor": "O'Shea Builders",
+      "opened_or_announced_date": null,
+      "description": "Mixed-Use Transit / Office / Parking project found via Step 6 direct research (grounded search  + independent cross-check, not a structured permit feed). Key tenants: SMTD, Amtrak, intercity bus lines, Sangamon County Administration. Expected completion: 2025-2026.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "springfieldrailroad.com; Sangamon County Board resolutions"
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "il-sangamon-research-bank-of-springfield-bos-center-expansion-downtown-hotel",
+      "name": "Bank of Springfield (BOS) Center Expansion & Downtown Hotel",
+      "state": "IL",
+      "city": "1 Convention Center Plaza",
+      "county": "Sangamon",
+      "status": "planning",
+      "project_type": "Hospitality / Mixed-Use / Convention Center",
+      "estimated_value_usd": 200000000,
+      "square_footage": null,
+      "owner": "Capital Area Tourism Authority (new, via SB 3499) / SMEAA",
+      "architect": "CSL International (feasibility)",
+      "general_contractor": "TBD",
+      "opened_or_announced_date": null,
+      "description": "Hospitality / Mixed-Use / Convention Center project found via Step 6 direct research (grounded search  + independent cross-check, not a structured permit feed). Key tenants: Hotel operator TBD, SMEAA. Expected completion: 2027-2028.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "NPR Illinois (2026-03-31); Illinois Times (2026-04-02); Capitol News Illinois (2026-04-23)"
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "il-peoria-research-meadowview-behavioral-hospital",
+      "name": "Meadowview Behavioral Hospital",
+      "state": "IL",
+      "city": "9014 N. Wood Sage Road",
+      "county": "Peoria",
+      "status": "under_construction",
+      "project_type": "Medical",
+      "estimated_value_usd": 35,
+      "square_footage": 55000,
+      "owner": "OSF HealthCare & US HealthVest (JV)",
+      "architect": "EOP Architects / Healthcare Design Group",
+      "general_contractor": "PJ Hoerr / River City Construction",
+      "opened_or_announced_date": null,
+      "description": "Medical project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: OSF HealthCare / US HealthVest. Expected completion: First half 2026.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "OSF HealthCare press release (2025-05-15); WCBU"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "il-peoria-research-osf-saint-francis-cancer-institute-expansion",
+      "name": "OSF Saint Francis Cancer Institute Expansion",
+      "state": "IL",
+      "city": "Peoria",
+      "county": "Peoria",
+      "status": "permitting",
+      "project_type": "Medical",
+      "estimated_value_usd": 17797440,
+      "square_footage": null,
+      "owner": "OSF HealthCare / OSF Saint Francis Medical Center",
+      "architect": "CannonDesign / BSA LifeStructures",
+      "general_contractor": "CORE Construction / PJ Hoerr",
+      "opened_or_announced_date": null,
+      "description": "Medical project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: OSF Cancer Institute. Expected completion: Spring 2027.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "IL HFSRB Notice (Project #25-045); WCBU (2026-02-20)"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "il-peoria-research-peoria-county-health-human-services-building-campus",
+      "name": "Peoria County Health & Human Services Building Campus",
+      "state": "IL",
+      "city": "2116 N. Sheridan Road",
+      "county": "Peoria",
+      "status": "completed",
+      "project_type": "Medical/Government/Office",
+      "estimated_value_usd": 22300000,
+      "square_footage": 45000,
+      "owner": "Peoria County Government",
+      "architect": "Farnsworth Group / FGMA Architects",
+      "general_contractor": "River City Construction",
+      "opened_or_announced_date": null,
+      "description": "Medical/Government/Office project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: Peoria City/County Health Dept, Coroner's Office, Regional Office of Education. Expected completion: Completed 2025-01-22.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "pcchd.org; WCBU"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "il-peoria-research-peoria-international-airport-atc-tower-phase-2-airfield-upgrades",
+      "name": "Peoria International Airport ATC Tower (Phase 2) & Airfield Upgrades",
+      "state": "IL",
+      "city": "6100 W. Dirksen Parkway",
+      "county": "Peoria",
+      "status": "under_construction",
+      "project_type": "Aviation/Government Infrastructure",
+      "estimated_value_usd": 34800000,
+      "square_footage": null,
+      "owner": "Metropolitan Airport Authority of Peoria (MAAP)",
+      "architect": "Hanson Professional Services / Crawford, Murphy & Tilly",
+      "general_contractor": "PJ Hoerr / civil-aviation contractors (bid phase)",
+      "opened_or_announced_date": null,
+      "description": "Aviation/Government Infrastructure project found via Step 6 direct research (grounded search  + independent cross-check, not a structured permit feed). Key tenants: FAA, MAAP. Expected completion: Late summer 2027.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "FlyPIA.com; WCBU (2026-01-22)"
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "il-peoria-research-illinois-army-national-guard-peoria-readiness-center-armory",
+      "name": "Illinois Army National Guard Peoria Readiness Center / Armory",
+      "state": "IL",
+      "city": "Peoria International Airport Complex",
+      "county": "Peoria",
+      "status": "planning",
+      "project_type": "Industrial/Government/Military",
+      "estimated_value_usd": 40000000,
+      "square_footage": null,
+      "owner": "U.S. DoD / Illinois Army National Guard",
+      "architect": "USACE",
+      "general_contractor": "TBD (federal contracting)",
+      "opened_or_announced_date": null,
+      "description": "Industrial/Government/Military project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: Illinois Army National Guard. Expected completion: 2028.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "DoD construction announcements; GovMarketNews (2024-12)"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "il-peoria-research-tower-on-adams-redevelopment-pnc-bank-building-complex",
+      "name": "Tower on Adams Redevelopment (PNC Bank Building Complex)",
+      "state": "IL",
+      "city": "301 SW Adams Street",
+      "county": "Peoria",
+      "status": "planning",
+      "project_type": "Mixed-Use",
+      "estimated_value_usd": 50,
+      "square_footage": null,
+      "owner": "City of Peoria (current), developer selection in progress",
+      "architect": "TBD",
+      "general_contractor": "TBD, shortlist includes Baldovin Construction",
+      "opened_or_announced_date": null,
+      "description": "Mixed-Use project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: PNC Bank (lease through 2031), 100+ multi-family units. Expected completion: Late 2027/2028.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Chicago Construction News (2025-08-05); WCBU (2025-05, 2025-07)"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "il-peoria-research-war-memorial-university-commercial-redevelopment-center",
+      "name": "War Memorial & University Commercial Redevelopment Center",
+      "state": "IL",
+      "city": "W. War Memorial Dr & N. University St",
+      "county": "Peoria",
+      "status": "permitting",
+      "project_type": "Retail",
+      "estimated_value_usd": 5,
+      "square_footage": null,
+      "owner": "RSCC Group Inc.",
+      "architect": "Local civil engineering firm",
+      "general_contractor": "RSCC Group / subcontractors",
+      "opened_or_announced_date": null,
+      "description": "Retail project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: Dutch Bros Coffee (Phase 1), QSR drive-thru (Phase 2). Expected completion: Late 2026.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "City of Peoria City Council actions; WCBU"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "il-kendall-research-benderson-grocery-anchored-retail-development",
+      "name": "Benderson Grocery-Anchored Retail Development",
+      "state": "IL",
+      "city": "SW corner of U.S. Route 34 and Kendall Point Drive",
+      "county": "Kendall",
+      "status": "under_construction",
+      "project_type": "Commercial / Retail",
+      "estimated_value_usd": null,
+      "square_footage": 22500,
+      "owner": "Benderson Development Company, LLC",
+      "architect": "Not identified in public records",
+      "general_contractor": "Not identified in public records",
+      "opened_or_announced_date": null,
+      "description": "Commercial / Retail project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: Unnamed grocer, restaurant, financial institution. Expected completion: Fall / mid-to-late 2026.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Village of Oswego Economic Development (oswegoil.org); Patch.com"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "il-kendall-research-homegoods-building-addition-prairie-market-east",
+      "name": "HomeGoods Building Addition (Prairie Market East)",
+      "state": "IL",
+      "city": "Prairie Market East Shopping Center",
+      "county": "Kendall",
+      "status": "permitting",
+      "project_type": "Retail",
+      "estimated_value_usd": null,
+      "square_footage": 25000,
+      "owner": "Prairie Market East Shopping Center Owners / TJX Companies",
+      "architect": "Not identified in public records",
+      "general_contractor": "Not identified in public records",
+      "opened_or_announced_date": null,
+      "description": "Retail project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: HomeGoods. Expected completion: Late 2026 / early 2027 (occupancy required by July 1, 2027).",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Shaw Local News Network; Village of Oswego Economic Development (oswegoil.org)"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "il-kendall-research-harrison-street-square-hsq",
+      "name": "Harrison Street Square (HSQ)",
+      "state": "IL",
+      "city": "174 S. Harrison Street",
+      "county": "Kendall",
+      "status": "under_construction",
+      "project_type": "Mixed-Use / Retail / Entertainment / Fitness",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Harrison Street Square LLC",
+      "architect": "Not identified in public records",
+      "general_contractor": "Not identified in public records",
+      "opened_or_announced_date": null,
+      "description": "Mixed-Use / Retail / Entertainment / Fitness project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: Barkville Buddies, TermiNader Fitness. Expected completion: Fall 2026 (Phase 1).",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "harrisonstreetsquare.com; Village of Oswego Economic Development (oswegoil.org)"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "il-kendall-research-cyrusone-c1-yorkville-data-center-campus",
+      "name": "CyrusOne 'C1 Yorkville' Data Center Campus",
+      "state": "IL",
+      "city": "East of Eldamain Rd",
+      "county": "Kendall",
+      "status": "under_construction",
+      "project_type": "Data Center",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "CyrusOne (C1 Yorkville, LLC)",
+      "architect": "Not identified in public records",
+      "general_contractor": "Not identified in public records",
+      "opened_or_announced_date": null,
+      "description": "Data Center project found via Step 6 direct research (grounded search  + independent cross-check, not a structured permit feed). Key tenants: CyrusOne enterprise cloud/colocation. Expected completion: Phased multi-year.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "United City of Yorkville PUD Amendment filings (May/June 2026); Shaw Local News Network (2026-07-14)"
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "il-kendall-research-project-steel-prologis-data-center-campus",
+      "name": "'Project Steel' Prologis Data Center Campus",
+      "state": "IL",
+      "city": "East of Eldamain Rd",
+      "county": "Kendall",
+      "status": "permitting",
+      "project_type": "Data Center / Industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Prologis, L.P.",
+      "architect": "Not identified in public records",
+      "general_contractor": "Not identified in public records",
+      "opened_or_announced_date": null,
+      "description": "Data Center / Industrial project found via Step 6 direct research (grounded search  + independent cross-check, not a structured permit feed). Key tenants: Not identified in public records. Expected completion: Phased buildout, initial mobilization 2026-2027.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Yorkville Herald (2026-03-26); Shaw Local News Network (2026-03-27); Chronicle Illinois (2026-05-30)"
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "il-kendall-research-project-cardinal-data-center-campus",
+      "name": "'Project Cardinal' Data Center Campus",
+      "state": "IL",
+      "city": "NW of IL Route 47 and Galena Rd",
+      "county": "Kendall",
+      "status": "permitting",
+      "project_type": "Data Center / Industrial",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Pioneer Development, LLC (Matt McCarron)",
+      "architect": "Not identified in public records",
+      "general_contractor": "Not identified in public records",
+      "opened_or_announced_date": null,
+      "description": "Data Center / Industrial project found via Step 6 direct research (grounded search  + independent cross-check, not a structured permit feed). Key tenants: Not identified in public records. Expected completion: Multi-phase, closing extended through Dec 31 2027.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "United City of Yorkville Ordinance 2025-78 & PUD filings; Shaw Local News Network (2026-06-24)"
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "il-kendall-research-equinix-minooka-data-center-campus",
+      "name": "Equinix Minooka Data Center Campus",
+      "state": "IL",
+      "city": "NE corner of Holt Rd and Ridge Rd (Kendall County portion)",
+      "county": "Kendall",
+      "status": "planning",
+      "project_type": "Data Center",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Equinix",
+      "architect": "Not identified in public records",
+      "general_contractor": "Not identified in public records",
+      "opened_or_announced_date": null,
+      "description": "Data Center project found via Step 6 direct research (grounded search  + independent cross-check, not a structured permit feed). Key tenants: Equinix (CH9, CH10, CH11 facilities). Expected completion: Multi-year phased buildout starting 2026.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Village of Minooka Development Transparency Portal; Morris Herald-News/Shaw Local (Sept 2025, Jan 2026); Baxtel Data Center Directory"
+        }
+      ],
+      "open_for": ""
+    }
+  ]
+}

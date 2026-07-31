@@ -444,11 +444,11 @@ def compute_source_fingerprint(conn, project: dict) -> str:
     ]
     with conn.cursor() as cur:
         cur.execute(
-            "SELECT title, url FROM project_sources WHERE project_sk = %s ORDER BY id",
+            "SELECT source_name, source_url FROM project_sources WHERE project_sk = %s ORDER BY id",
             (project["project_sk"],),
         )
-        for title, url in cur.fetchall():
-            parts.append(f"{title}|{url}")
+        for source_name, source_url in cur.fetchall():
+            parts.append(f"{source_name}|{source_url}")
         cur.execute(
             "SELECT title FROM project_document_files WHERE project_sk = %s ORDER BY id",
             (project["project_sk"],),

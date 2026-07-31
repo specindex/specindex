@@ -1,0 +1,131 @@
+{
+  "generated_at": "2026-07-31T13:45:53.930303+00:00",
+  "projects": [
+    {
+      "id": "tx-harris-research-university-of-houston-hobby-school-of-public-affairs-building",
+      "name": "University of Houston Hobby School of Public Affairs Building",
+      "state": "TX",
+      "city": "4101 Martin Luther King Blvd",
+      "county": "Harris",
+      "status": "permitting",
+      "project_type": "Office / Educational",
+      "estimated_value_usd": 42800000,
+      "square_footage": 46000,
+      "owner": "University of Houston (Facilities Planning & Construction)",
+      "architect": "Lake Flato Architects",
+      "general_contractor": "Not specified in registration filing / TBD",
+      "opened_or_announced_date": null,
+      "description": "Office / Educational project found via Step 6 direct research (grounded search  + independent cross-check, not a structured permit feed). Key tenants: UH Hobby School of Public Affairs. Expected completion: 2028-07-30.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Texas Dept of Licensing and Regulation, TABS2026026015"
+        },
+        {
+          "name": "TDLR TABS project registration page",
+          "url": "https://www.tdlr.texas.gov/TABS/Projects/TABS2026026015"
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "tx-harris-research-orem-rd-industrial-development-building-b",
+      "name": "Orem Rd Industrial Development (Building B)",
+      "state": "TX",
+      "city": "11630 South Freeway",
+      "county": "Harris",
+      "status": "permitting",
+      "project_type": "Industrial",
+      "estimated_value_usd": 14000000,
+      "square_footage": 175300,
+      "owner": "Fidelis Industrial Partners, LLC",
+      "architect": "Powers Brown Architecture",
+      "general_contractor": "Not specified in state filing",
+      "opened_or_announced_date": null,
+      "description": "Industrial project found via Step 6 direct research (grounded search  + independent cross-check, not a structured permit feed). Key tenants: Speculative (future industrial/logistics/office tenants). Expected completion: 2027-10-15.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Texas Dept of Licensing and Regulation, TABS2026024807"
+        },
+        {
+          "name": "TDLR TABS project registration page",
+          "url": "https://www.tdlr.texas.gov/TABS/Projects/TABS2026024807"
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "tx-harris-research-greenside-retail-redevelopment",
+      "name": "Greenside Retail Redevelopment",
+      "state": "TX",
+      "city": "Memorial City district",
+      "county": "Harris",
+      "status": "under_construction",
+      "project_type": "Retail / Adaptive Reuse Mixed-Use",
+      "estimated_value_usd": 5000000,
+      "square_footage": 35000,
+      "owner": "MetroNational / Radom Capital (JV)",
+      "architect": "Michael Hsu Office of Architecture",
+      "general_contractor": "Not specified",
+      "opened_or_announced_date": null,
+      "description": "Retail / Adaptive Reuse Mixed-Use project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: Merit Coffee, Tifa Chocolate & Gelato, Epic Cycles, Swish Dental, Original ChopShop. Expected completion: Late 2026.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "REBusinessOnline (2026-07-30)"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "tx-harris-research-harris-county-swift-water-rescue-training-facility",
+      "name": "Harris County Swift Water Rescue Training Facility",
+      "state": "TX",
+      "city": "1731 Hugh Road",
+      "county": "Harris",
+      "status": "planning",
+      "project_type": "Public Safety / Special Purpose Training Campus",
+      "estimated_value_usd": 7000000,
+      "square_footage": null,
+      "owner": "Harris County (Sheriff's Office & County Engineer)",
+      "architect": "PGAL",
+      "general_contractor": "Kitchell",
+      "opened_or_announced_date": null,
+      "description": "Public Safety / Special Purpose Training Campus project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: Harris County Sheriff's Office & regional first responders. Expected completion: Q2 2027.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Virtual Builders Exchange (VirtualBX)"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    }
+  ]
+}

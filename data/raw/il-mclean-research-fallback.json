@@ -1,0 +1,112 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "McLean",
+  "state": "IL",
+  "method": "Step 6 direct project-level research fallback, extended 2026-07-31 to also require a per-project pullable-document check (site plans, PUD packets, permit applications, drawings) per Asif's request, not just named-project facts with news citations.",
+  "cross_check_summary": "5 named projects found. Document-pullability claims were independently live-verified (not just cross-checked as facts) -- 2 of 3 claimed-pullable documents were real (Rivian/Town of Normal packets, confirmed via direct PDF download), 1 was fabricated on the first pass (OSF HFSRB CON #23-037 -- 3 plausible-looking URLs, all 404) and corrected on a feedback-loop round to 'no direct static URL, must search a dynamic database by project number.' This is the same catch-and-correct discipline as the DuPage/Cook cost-figure work, applied to document URLs instead of project facts.",
+  "load_status": "NOT LOADED -- verified findings only, load path not yet built. The 2 real Rivian PDFs were downloaded locally to /tmp for verification only, NOT uploaded to GCS -- per the GCS-only rule (step 8), a real document-pull script would need to stream directly to gs://specindex-ai-raw-documents/illinois/, this was a one-off verification, not a production pull.",
+  "projects": [
+    {
+      "name": "Rivian Automotive Supplier Park & Plant Expansion",
+      "city_address": "100 N. Rivian Motorway, Normal, IL",
+      "project_type": "Industrial / Automotive Manufacturing",
+      "estimated_cost": "Not identified in public records",
+      "cost_confidence": "Low",
+      "square_footage_or_acreage": "380-acre site",
+      "developer_owner": "Rivian Automotive",
+      "general_contractor": "Not identified in public records",
+      "architect": "Skidmore, Owings & Merrill (SOM) / Lamar Johnson Collaborative (LJC)",
+      "status": "Under Construction",
+      "key_tenants": "Rivian and co-located Tier-1 EV component suppliers",
+      "expected_completion": "2025-2026, phased",
+      "source_citation": "Illinois.gov press release (2025-05-05); Clayco Construction",
+      "pullable_document_status": "CONFIRMED PULLABLE -- verified live",
+      "pullable_documents": [
+        {
+          "description": "Town Council meeting packet, Item 11: amended site plan resolution incl. architectural elevation drawings and site utility plan",
+          "url": "https://www.normalil.gov/ArchiveCenter/ViewFile/Item/4811",
+          "date": "2024-08-19",
+          "verified": "200 OK, downloaded, valid PDF, 3.68MB"
+        },
+        {
+          "description": "Planning Commission action packet & minutes, Case 24-08-05-PC: amended site plan",
+          "url": "https://www.normalil.gov/ArchiveCenter/ViewFile/Item/4802",
+          "date": "2024-08-08",
+          "verified": "200 OK"
+        }
+      ],
+      "cross_checked": true,
+      "cross_check_result": "CONFIRMED -- 380-acre site, SOM/Lamar Johnson Collaborative as architects confirmed via independent search"
+    },
+    {
+      "name": "OSF St. Joseph Medical Center ICU Expansion",
+      "city_address": "2200 E. Washington Street, Bloomington, IL",
+      "project_type": "Medical / Healthcare Facility Expansion",
+      "estimated_cost": "$17,772,653",
+      "cost_confidence": "High -- Certificate of Need filing",
+      "square_footage_or_acreage": "17,419 SF (13,749 SF renovation + 3,670 SF new addition, 25 ICU/Med-Surg rooms)",
+      "developer_owner": "OSF HealthCare System",
+      "general_contractor": "PointeCore Construction",
+      "architect": "Kahler Slater / BSA LifeStructures",
+      "status": "Completed (opened June 2025)",
+      "key_tenants": "OSF St. Joseph Medical Center",
+      "expected_completion": "Opened 2025-06-17",
+      "source_citation": "Illinois Health Facilities and Services Review Board, CON Permit #23-037; WGLT News (2025-06-17)",
+      "pullable_document_status": "REAL DOCUMENT EXISTS BUT NO DIRECT URL -- first-pass claim of 3 exact PDF URLs was fabricated (all 404, caught live). Corrected: HFSRB serves documents via a dynamic database search (hfsrb.illinois.gov/projects.html, search Project #23-037, Documents tab), not permalinked static paths. Not pulled this session.",
+      "pullable_documents": []
+    },
+    {
+      "name": "Downtown Bloomington Connect Transit Transfer Center",
+      "city_address": "202 W. Market Street, Bloomington, IL",
+      "project_type": "Mixed-Use Transit / Municipal Infrastructure",
+      "estimated_cost": "$28 million",
+      "cost_confidence": "High -- committed FTA/IDOT Rebuild Illinois capital grants",
+      "square_footage_or_acreage": "~2.5-acre site, 10 bus bays",
+      "developer_owner": "Connect Transit / City of Bloomington",
+      "general_contractor": "TBD (bidding pending 60%+ design)",
+      "architect": "Hanson Professional Services",
+      "status": "Permitted / Final Design",
+      "key_tenants": "Connect Transit, City of Bloomington (incl. police office space)",
+      "expected_completion": "Groundbreaking late 2026/early 2027, completion 2028",
+      "source_citation": "Connect Transit Board of Trustees action reports (April 2026); WGLT News",
+      "pullable_document_status": "CLAIMED PULLABLE, NOT YET LIVE-VERIFIED -- Gemini cited connect-transit.com and bloomingtonil.gov board packets but did not give exact URLs this round; needs a follow-up query for exact links before treating as confirmed.",
+      "pullable_documents": []
+    },
+    {
+      "name": "Heartland Community College Advanced Manufacturing Training Center",
+      "city_address": "1500 W. Raab Road, Normal, IL",
+      "project_type": "Educational / Industrial Technology Lab",
+      "estimated_cost": "$15 million ($7.5M DCEO capital grant + matching college investment)",
+      "cost_confidence": "High -- Illinois DCEO",
+      "square_footage_or_acreage": "45,000 SF",
+      "developer_owner": "Heartland Community College",
+      "general_contractor": "Felmley-Dickerson Co.",
+      "architect": "Farnsworth Group",
+      "status": "Completed (opened late 2024, phase 2 buildout 2025)",
+      "key_tenants": "Heartland CC Career & Technical Education, State Farm EV Lab",
+      "expected_completion": "2024-2025",
+      "source_citation": "Illinois DCEO press release; Heartland Community College Facilities Master Plan",
+      "pullable_document_status": "CLAIMED PULLABLE, NOT YET LIVE-VERIFIED -- cited heartland.edu board packets/master plan, exact URL not yet obtained.",
+      "pullable_documents": []
+    },
+    {
+      "name": "Ferrero Kinder Bueno Production Facility Expansion",
+      "city_address": "2501 Beich Road, Bloomington, IL",
+      "project_type": "Industrial / Food Processing",
+      "estimated_cost": "$214.4 million",
+      "cost_confidence": "High -- Ferrero corporate announcements + Illinois DCEO agreements",
+      "square_footage_or_acreage": "169,000 SF expansion",
+      "developer_owner": "Ferrero Group / Ferrero North America",
+      "general_contractor": "The Austin Company (design-builder)",
+      "architect": "Ghafari Associates",
+      "status": "Completed (2024-2025)",
+      "key_tenants": "Ferrero (Kinder Bueno manufacturing)",
+      "expected_completion": "2024-2025",
+      "source_citation": "Ferrero Corporate Newsroom; State of Illinois Executive Office releases",
+      "pullable_document_status": "NO PULLABLE DOCUMENT FOUND -- private facility expansion, no public site plan/PUD packet located in Bloomington planning archives (Gemini stated this explicitly rather than omitting the check).",
+      "pullable_documents": [],
+      "cross_checked": true,
+      "cross_check_result": "CONFIRMED -- $214.4M cost, 169,000 SF expansion, The Austin Company as design-builder confirmed via independent search"
+    }
+  ]
+}

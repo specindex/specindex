@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { FIREBASE_AUTH_ENABLED, useFirebaseAuth } from "@/components/FirebaseAuthProvider";
-import { fetchMyProfile, saveMyProfile, type UserProfile } from "@/lib/userProfile";
+import { deleteMyAccount, fetchMyProfile, saveMyProfile, type UserProfile } from "@/lib/userProfile";
 import { TeamRoster } from "@/components/TeamRoster";
 
 const API_BASE = "https://specindex-api-gmm6irqe4q-uc.a.run.app";
@@ -38,7 +38,7 @@ const TIER_LABELS: Record<string, string> = {
 };
 
 export function AccountSettings() {
-  const { getToken, isSignedIn, isLoaded, signIn, user } = useFirebaseAuth();
+  const { getToken, isSignedIn, isLoaded, signIn, signOut, user } = useFirebaseAuth();
   const [profile, setProfile] = useState<UserProfile | null>(null);
   const [facets, setFacets] = useState<Facets>({ states: [], categories: [] });
   const [territory, setTerritory] = useState<string[]>([]);
@@ -50,6 +50,23 @@ export function AccountSettings() {
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [deleteOpen, setDeleteOpen] = useState(false);
+  const [deleteConfirmText, setDeleteConfirmText] = useState("");
+  const [deleting, setDeleting] = useState(false);
+  const [deleteError, setDeleteError] = useState<string | null>(null);
+
+  async function handleDeleteAccount() {
+    setDeleting(true);
+    setDeleteError(null);
+    try {
+      await deleteMyAccount(getToken);
+      await signOut();
+      window.location.assign("/");
+    } catch (err) {
+      setDeleteError(err instanceof Error ? err.message : "Couldn't delete your account — try again in a moment.");
+      setDeleting(false);
+    }
+  }
 
   useEffect(() => {
     if (!isSignedIn) return;
@@ -218,6 +235,63 @@ export function AccountSettings() {
     </form>
 
       {profile?.subscription_tier === "team" && <TeamRoster />}
+
+      <div className="card space-y-4 border-red-200 p-5">
+        <p className="text-xs font-semibold uppercase tracking-wider text-red-600">Danger zone</p>
+        {!deleteOpen ? (
+          <div className="flex items-center justify-between gap-4">
+            <p className="text-sm text-[var(--color-gray-600)]">
+              Deactivates your account and signs you out. Your data isn&apos;t erased —{" "}
+              <a href="mailto:hello@specindex.ai" className="underline hover:text-[var(--color-ink)]">
+                contact us
+              </a>{" "}
+              for a full data-deletion request.
+            </p>
+            <button
+              type="button"
+              onClick={() => setDeleteOpen(true)}
+              className="btn shrink-0 border border-red-300 text-red-600 hover:bg-red-50"
+            >
+              Delete account
+            </button>
+          </div>
+        ) : (
+          <div className="space-y-3">
+            <p className="text-sm text-[var(--color-gray-600)]">
+              This deactivates your account, revokes your API keys, and signs you out immediately.
+              Type <strong className="text-[var(--color-ink)]">DELETE</strong> to confirm.
+            </p>
+            <input
+              value={deleteConfirmText}
+              onChange={(e) => setDeleteConfirmText(e.target.value)}
+              placeholder="DELETE"
+              className="w-full max-w-xs rounded-md border border-red-300 bg-white px-3 py-2 text-sm"
+            />
+            {deleteError && <p className="text-sm text-red-600">{deleteError}</p>}
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                disabled={deleteConfirmText !== "DELETE" || deleting}
+                onClick={handleDeleteAccount}
+                className="btn bg-red-600 text-white hover:bg-red-700 disabled:opacity-50"
+              >
+                {deleting ? "Deleting…" : "Permanently delete account"}
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setDeleteOpen(false);
+                  setDeleteConfirmText("");
+                  setDeleteError(null);
+                }}
+                className="btn btn-outline"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

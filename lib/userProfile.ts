@@ -71,3 +71,19 @@ export async function saveMyProfile(getToken: GetToken, body: UserProfileUpdate)
   });
   if (!res.ok) throw new Error(`POST /v1/me/profile failed: ${res.status}`);
 }
+
+// Self-service equivalent of the admin ops deactivate action
+// (api/main.py's _deactivate_account) -- a soft delete (is_active=false +
+// API keys/Firebase tokens revoked), not a row-level DELETE. Throws with
+// the server's detail message on failure so the caller can surface e.g.
+// the "transfer team ownership first" 409.
+export async function deleteMyAccount(getToken: GetToken): Promise<void> {
+  const res = await authenticatedFetch(getToken, "/v1/me/delete-account", { method: "POST" });
+  if (!res.ok) {
+    const detail = await res
+      .json()
+      .then((d) => d.detail)
+      .catch(() => null);
+    throw new Error(detail || `POST /v1/me/delete-account failed: ${res.status}`);
+  }
+}
