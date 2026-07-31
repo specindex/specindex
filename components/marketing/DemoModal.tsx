@@ -232,11 +232,10 @@ function DemoRequestModal({ persona, onClose }: { persona: DemoPersona; onClose:
               {pending ? "Sending…" : "Request Demo"}
             </button>
             <p className="mt-3 text-center text-xs text-[var(--color-gray-400)]">
-              Or{" "}
-              <Link href="/projects/" className="underline hover:text-[var(--color-ink)]" onClick={onClose}>
-                search the index
-              </Link>{" "}
-              — sign-in required.
+              Contact us at{" "}
+              <a href="mailto:hello@specindex.ai" className="underline hover:text-[var(--color-ink)]">
+                hello@specindex.ai
+              </a>
             </p>
           </form>
         )}
