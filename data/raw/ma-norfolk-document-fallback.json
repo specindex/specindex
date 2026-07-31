@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Norfolk",
+  "state": "MA",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 5,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "0 Maple Street Light Industrial Development",
+      "city_address": "0 Maple Street, Bellingham, MA",
+      "project_type": "Light Industrial",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Maple Street Development / Independence Engineering, LLC",
+      "status": "Approved (Special Permit & Development Plan Major Modification filed May 29, 2026)",
+      "document_url": "",
+      "document_type": "Planning Board Special Permit & Development Plan Decision",
+      "source_citation": "Town of Bellingham Planning Board Decision filed with Town Clerk on May 29, 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "105 Cabot Street Self-Storage Facility Renovation",
+      "city_address": "105 Cabot Street, Needham, MA",
+      "project_type": "Commercial / Self-Storage Facility (Adaptive Reuse)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "RJ Kelly Acquisition LLC / Digital Cabot, LLC",
+      "status": "Under Review (Major Project Site Plan Review Amendment Hearing April 2026)",
+      "document_url": "",
+      "document_type": "Planning Board Notice of Hearing & Site Plan Review Application",
+      "source_citation": "Town of Needham Planning Board Notice of Public Hearing, Application No. 2000-02 Amendment",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Brookside Shooting Sports Commercial Building & Facility",
+      "city_address": "262 Dedham Street, Norfolk, MA",
+      "project_type": "Commercial (13,500 sq. ft. addition, retail gun shop, shooting range & training facility)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Brookside Shooting Sports",
+      "status": "Approved (Site Plan and Special Permit Decision #2024-10 approved January 2025)",
+      "document_url": "",
+      "document_type": "Planning Board Meeting Minutes / Site Plan Approval Decision",
+      "source_citation": "Town of Norfolk Planning Board Decision #2024-10 & Meeting Minutes",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "99 and 107 Hancock Street Commercial & Residential Development",
+      "city_address": "99 and 107 Hancock Street, Braintree, MA",
+      "project_type": "Mixed-Use Commercial / Residential Development",
+      "estimated_cost": "Not specified",
+      "developer_owner": "107 Hancock, LLC",
+      "status": "Approved (Minor Modification to Special Permit & Site Plan Review approved May 2026)",
+      "document_url": "",
+      "document_type": "Planning Board Decision Notice",
+      "source_citation": "Town of Braintree Planning Board Decision File #24-01 (filed May 13, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "21-31 Beale Street Mixed-Use Commercial Storefront & Residential Project",
+      "city_address": "21-31 Beale Street, Quincy, MA",
+      "project_type": "Commercial / Mixed-Use (6 commercial storefronts, 80 residential units & structured parking)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "BCC Acquisition, LLC",
+      "status": "Under Review (Planning Board Site Plan Review & Special Permit Case No. 2021-08)",
+      "document_url": "",
+      "document_type": "Planning Board Public Hearing Agenda",
+      "source_citation": "City of Quincy Planning Board Case No. 2021-08 Agenda Notice",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

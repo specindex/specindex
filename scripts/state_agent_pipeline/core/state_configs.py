@@ -1397,6 +1397,47 @@ MA_CAMBRIDGE_CONFIG: dict[str, Any] = {
     "source_url": "https://data.cambridgema.gov/Inspectional-Services/Building-Permits-New-Construction/9qm7-wbdc",
 }
 
+# City of Boston, MA (Suffolk County's only real jurisdiction -- MA county
+# government has no permit function, purely municipal, same pattern as
+# Cambridge/Middlesex above). CKAN platform (Analyze Boston, data.boston.gov)
+# -- Gemini's answer verified live 2026-07-31: real resource_id
+# 6ddcd912-32a0-43df-9908-63574f8c7e77 ("Approved Building Permits"),
+# confirmed via datastore_search and datastore_search_sql. occupancytype
+# is the real commercial filter -- values are inconsistent case/abbreviation
+# ('Comm' 186,939 rows + 'COMM' 101 rows, also 'Mixed' 27,189), so the where
+# clause covers both. MAX(issued_date)=2026-07-25T01:50:01, live and fresh.
+MA_BOSTON_CONFIG: dict[str, Any] = {
+    "state_code": "MA",
+    "provider_type": "ckan",
+    "county": "Suffolk",
+    "endpoint": "https://data.boston.gov",
+    "resource_id": "6ddcd912-32a0-43df-9908-63574f8c7e77",
+    "watermark_field": "_id",
+    "hash_fields": ["permitnumber"],
+    "commercial_where": "occupancytype IN ('Comm', 'COMM', 'Mixed')",
+    "date_field": "issued_date",
+    "lookback_days": 90,
+    "feed_id": "ma-boston",
+    "id_field": "permitnumber",
+    "name_fields": ["description", "worktype", "address"],
+    "address_fields": ["address"],
+    "value_fields": ["declared_valuation"],
+    "desc_fields": ["description", "permittypedescr", "comments"],
+    "source_url": "https://data.boston.gov/dataset/approved-building-permits",
+}
+
+# NOTE: Town of Brookline, MA (Norfolk County) has a live Accela portal
+# (aca-prod.accela.com/BROOKLINE, module=Building loads cleanly, confirmed
+# live 2026-07-31) with a real "Commercial Building" dropdown option
+# (Playwright-probed #ctl00_PlaceHolderMain_generalSearchForm_ddlGSPermitType,
+# 27 total options). But both the automated provider (0 rows at 90-day and
+# 365-day lookback) and a manual Playwright search-button click (dropdown
+# resets to "--Select--" post-search, no results table) failed to return
+# real data -- looks like a search-submission quirk specific to this
+# deployment, not a data problem. Not wired as a config -- would need
+# deeper debugging (network-tab inspection of the actual postback) beyond
+# this batch's scope. Logged as FAILED_NEED_ALT in the health matrix.
+
 # Minneapolis, MN (Hennepin County's top jurisdiction -- MN county government
 # has no building-permit function, purely municipal). Gemini's first answer
 # gave a fabricated ArcGIS org ID (1st35idbL2i24j8I, invalid URL) with the
@@ -2247,6 +2288,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NY-RICHMOND": NY_RICHMOND_CONFIG,
     "NY-ERIE-BUFFALO": NY_ERIE_BUFFALO_CONFIG,
     "MA-CAMBRIDGE": MA_CAMBRIDGE_CONFIG,
+    "MA-BOSTON": MA_BOSTON_CONFIG,
     "MN-HENNEPIN": MN_HENNEPIN_CONFIG,
     "UT-SALTLAKE": UT_SALTLAKE_ACCELA_CONFIG,
     "MD-MONTGOMERY": MD_MONTGOMERY_CONFIG,

@@ -3708,6 +3708,50 @@
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
       "notes": "webgis.bedfordcountyva.gov is live (200) with a real EnerGov case-history layer (ENERGOVPointHistory, layer 39) including CaseType='Building (Commercial)' -- but all 9 commercial records are BLDC19-* case numbers dated Nov-Dec 2019 (MAX ApplicationDate ~2019-12), i.e. a stale one-time export, not an actively updated feed. No fresh data in any recent lookback window."
+    },
+    {
+      "jurisdiction": "Boston, MA",
+      "county": "Suffolk",
+      "state": "MA",
+      "provider_type": "ckan",
+      "endpoint": "https://data.boston.gov/api/3/action/datastore_search_sql?resource_id=6ddcd912-32a0-43df-9908-63574f8c7e77",
+      "state_agent_pipeline_key": "MA-BOSTON",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 2775,
+      "notes": "MA county govt has no permit function -- purely municipal, Suffolk County = Boston essentially. Gemini's answer (Analyze Boston CKAN, resource_id 6ddcd912-32a0-43df-9908-63574f8c7e77) verified live via datastore_search and datastore_search_sql -- real, high-volume dataset. occupancytype field has inconsistent case/abbreviation ('Comm' 186,939 rows + 'COMM' 101 rows + 'Mixed' 27,189) -- where clause covers all three. MAX(issued_date)=2026-07-25T01:50:01, live and fresh. 90-day lookback dry-run found 2775 real rows, merged for real -- by far the highest-yield MA jurisdiction so far."
+    },
+    {
+      "jurisdiction": "Essex County, MA (Lynn/Lawrence/Salem/Haverhill/Peabody)",
+      "county": "Essex",
+      "state": "MA",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "records_merged": 0,
+      "notes": "MA county govt has no permit function. Checked all 5 largest Essex cities by population (Lynn ~101-104k, Lawrence ~89k, Haverhill ~68k, Peabody ~54k, Salem ~44k) -- none expose a bulk/API open-data building-permit feed. Lynn uses SmartGov (lynnisdportal.com, live-curled 405 on root -- transactional portal only, single-applicant workflow, no SODA/CKAN/ArcGIS endpoint). Lawrence/Salem/Haverhill/Peabody use OpenGov Citizen Services (live-curled salemma.portal.opengov.com -- 200 OK but a search-form portal, no bulk export). Salem's separate ArcGIS Open Data Hub only has parcel/utility layers, not permits. Ran document-research-fallback.py for the county: 6 named projects captured (Lynn/Salem area), 0 with confirmed pullable documents -- output at data/raw/ma-essex-document-fallback.json. No cross-check pass run, so not loaded into corpus per the phase II(c) verification bar."
+    },
+    {
+      "jurisdiction": "Norfolk County, MA (Quincy/Brookline)",
+      "county": "Norfolk",
+      "state": "MA",
+      "provider_type": null,
+      "endpoint": "https://aca-prod.accela.com/BROOKLINE",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "MA county govt has no permit function. Quincy (largest, ~101k) only has static ArcGIS spatial layers (parcels/zoning), no permit dataset. Brookline (2nd largest, ~63k) has a live Accela portal (aca-prod.accela.com/BROOKLINE, module=Building, confirmed live 200 OK) with a real Commercial Building dropdown option (Playwright-probed ddlGSPermitType, 27 total options, no fabrication). BUT both the automated accela_provider (0 rows at 90-day and 365-day lookback) and a manual Playwright click-through (search resets dropdown to --Select-- post-submit, no results table rendered) failed to pull real data -- looks like a search-submission/postback quirk specific to this Accela deployment, not a fabricated source. Needs deeper network-tab debugging beyond this batch budget. Not wired into state_configs.py. Real fallback: document-research-fallback.py run for the county instead."
+    },
+    {
+      "jurisdiction": "Plymouth County, MA (Brockton/Plymouth)",
+      "county": "Plymouth",
+      "state": "MA",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "records_merged": 0,
+      "notes": "MA county govt has no permit function. Brockton (largest, ~105k) uses Citizenserve (cobma.us) -- transactional portal, no SODA/CKAN/REST API. Plymouth town (county seat, ~64k) uses OpenGov Citizen Services -- web application workflow only, annual PDF summaries but no bulk feed. Other municipalities (Hingham/Marshfield/Scituate/Bridgewater/Wareham) use OpenGov/PermitEyes/custom forms, same pattern -- no open-data endpoints. No live-curl spot-check needed beyond Gemini research given the consistent no-bulk-API pattern already confirmed across Essex/Norfolk in this same batch. Fallback: document-research-fallback.py run for the county."
     }
   ]
 }
