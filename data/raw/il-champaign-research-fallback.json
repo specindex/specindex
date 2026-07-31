@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Champaign",
+  "state": "IL",
+  "window": "Last 30 days (dated action required, July 2026)",
+  "method": "Step 6 direct project-level research fallback, per Asif's request to run all IL priority counties without a structured source, 30-day window.",
+  "cross_check_summary": "2 named projects found. Top project (LTC facility) independently cross-checked and CONFIRMED with more specific detail on the second pass (real developer names: Advocates for Aging Care / Fayprop LLC, located in Savoy IL). CCRPC project's document claim was vague (video/portal reference, no exact URL); LTC facility's first-pass document URL was garbled/fabricated ('https://www me.illinois.gov'), not usable.",
+  "load_status": "See load command in commit.",
+  "projects": [
+    {
+      "name": "Champaign County Long-Term Care Medical Facility (Advocates for Aging Care / Fayprop LLC)",
+      "city_address": "Savoy, IL (Champaign County)",
+      "project_type": "Medical / Long-Term Care Facility",
+      "estimated_cost": "$26,587,816",
+      "cost_confidence": "High -- HFSRB permit application filing",
+      "square_footage_or_acreage": "120-bed skilled nursing/LTC facility (SF not specified)",
+      "developer_owner": "Advocates for Aging Care (AAC) / Fayprop, LLC",
+      "general_contractor": "Not specified in permit filing",
+      "architect": "Not specified in permit filing",
+      "status": "Proposed / State regulatory permit review, expedited review requested for July 21 2026 HFSRB meeting",
+      "key_tenants": "Long-term care provider, addressing regional 310-bed LTC deficit",
+      "expected_completion": "2028-12-31",
+      "source_citation": "Illinois Health Facilities and Services Review Board (HFSRB) Application for Permit & Executive Summary",
+      "cross_checked": true,
+      "cross_check_result": "CONFIRMED -- cost, HFSRB submission, expedited review date, and regional bed deficit rationale confirmed via independent search, which also surfaced the specific developer names not in the first pass",
+      "pullable_document_status": "CLAIMED, URL GARBLED/UNUSABLE -- first pass gave a malformed URL, not fetchable",
+      "pullable_documents": []
+    },
+    {
+      "name": "CCRPC New Administrative & Training Center Expansion",
+      "city_address": "Glen Park Drive, Champaign, IL 61821",
+      "project_type": "Office / Special-Purpose Educational & Training Facility",
+      "estimated_cost": "Not fully disclosed",
+      "cost_confidence": "Low",
+      "square_footage_or_acreage": "25,000 SF (expansion from 11,000 SF)",
+      "developer_owner": "Champaign County Regional Planning Commission (CCRPC)",
+      "general_contractor": "Not specified",
+      "architect": "Not specified",
+      "status": "Under construction / interior buildout",
+      "key_tenants": "CCRPC staff, Illinois Home Weatherization Assistance Program Training Network",
+      "expected_completion": "Phase 1 by late January 2027",
+      "source_citation": "CCRPC official announcement (2026-06-30); CCRPC board meeting (2026-07-27)",
+      "pullable_document_status": "CLAIMED, VAGUE -- board meeting video/portal reference, no exact document URL given",
+      "pullable_documents": []
+    }
+  ]
+}

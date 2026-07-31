@@ -821,11 +821,11 @@
       "jurisdiction": "Pulaski County, AR (Little Rock)",
       "county": "Pulaski",
       "state": "AR",
-      "provider_type": null,
-      "endpoint": null,
+      "provider_type": "infor_public_sector",
+      "endpoint": "https://permitpayment.littlerock.gov/ips_PD/",
       "state_agent_pipeline_key": null,
-      "status": "FAILED_NEED_ALT",
-      "notes": "Gemini's dataset ID (waw2-4wxz) 404'd, and data.littlerock.gov itself redirects to a plain informational page -- no Socrata portal exists there (dead/fabricated lead, not just a wrong ID). Little Rock's real system is 'Dynamic Portal'/Selectron WebPermits per Gemini, not Accela. Not investigated further this round -- worth checking permitpayment.littlerock.gov or inspections.littlerock.gov directly for a real API."
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified: https://permitpayment.littlerock.gov/ips_PD/Public/Lookup/ApplicationLookup.aspx returns HTTP 302 (real ASP.NET/IIS app, Infor Public Sector 'Dynamic Portal'), redirecting to /ips_PD/Views/Login.aspx -- confirms a real, live City of Little Rock permitting backend, but public lookup requires an authenticated session (no anonymous API/search). Root domain permitpayment.littlerock.gov serves default IIS page (dead lead) -- must use /ips_PD/ subpath. Separate Selectron/WebPermits IVR system at inspections.littlerock.gov/webpermits/ returns 403 (bot-blocked but real). Not Accela, not Socrata/ArcGIS/CKAN -- Infor Public Sector has no reusable provider class in this pipeline (out of scope per task instructions), so logging discovery only, no config wired. Pulaski County itself (unincorporated) has no separate structured permit source; municipalities within the county manage permits individually."
     },
     {
       "jurisdiction": "Hinds County, MS (Jackson)",
@@ -966,18 +966,58 @@
       "provider_type": null,
       "endpoint": null,
       "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Gemini first cited gis.kendall.il.us/arcgis/... -- NXDOMAIN, fabricated. On feedback, correctly found neither Kendall County (manual paper/PDF permits, FOIA-only for GIS) nor Village of Oswego (largest municipality) publish an open API/Socrata/ArcGIS permit feed. kendallcountyil.gov and oswegoil.org both live (403 bot-block, not fake). Step 6 research fallback run 2026-07-31: 7 named projects found (dominated by large data-center campuses -- CyrusOne, Prologis, Pioneer Development, Equinix), 4 largest independently cross-checked and CONFIRMED, findings written to data/raw/il-kendall-research-fallback.json, NOT loaded into corpus yet (no load path built). 6-month-window re-run (2026-01-31 to 2026-07-31) 2026-07-31: surfaced 1 new project not in the broader pass (Meyer Data Center Campus -- denied by P&Z Jan 2026, withdrawn Apr 2026), plus a real Equinix cost/size discrepancy across the two passes that was independently reconciled (both figures true, different completeness levels, not an error) -- findings in data/raw/il-kendall-research-fallback-6mo.json, not loaded."
+    },
+    {
+      "jurisdiction": "LaSalle County, IL",
+      "county": "LaSalle",
+      "state": "IL",
+      "provider_type": "cloudpermit",
+      "endpoint": "https://us.cloudpermit.com/gov/login",
+      "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
-      "notes": "Deterministic ArcGIS search's only 'relevant' hit (county name matched) was an Off-Leash Dog Parks layer -- a false positive the relevance filter passed on name-match alone, with no topical check. This wrongly marked the county 'resolved' and skipped it past the Flash fallback; never actually search-grounded. IL building permits are municipal, not county-level -- next attempt should target Naperville/Wheaton directly."
+      "notes": "City of Ottawa (largest city) confirmed via cited cityofottawa.org text to use Cloudpermit for all permitting, public records viewable 24/7 -- first new platform type seen (not yet one of the 8 wired providers). NOT YET VERIFIED at browser level (curl redirects are inconclusive for this SPA/SSO login flow, doc convention requires Playwright for this). lasallecounty.org/arcgis/rest/services does not resolve (TLS hang); gis-lasallecoil.opendata.arcgis.com loads but has no configured catalog (empty). Peru and LaSalle city: PDF/email only, no digital platform. Next step: Playwright against us.cloudpermit.com to confirm Ottawa is selectable and permit records are actually public before treating as VERIFIED_WORKING or building a provider."
+    },
+    {
+      "jurisdiction": "Whiteside County, IL",
+      "county": "Whiteside",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Whiteside County (manual, in-person only), City of Sterling (submission portal but no open data feed), City of Rock Falls (email/paper only) -- all three real domains (301s), none publish an API or open permit dataset. County ArcGIS platform exists but only for parcels/zoning/floodplain, no permit layer."
+    },
+    {
+      "jurisdiction": "McLean County, IL",
+      "county": "McLean",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "No digitized structured permit source at county or Bloomington/Normal level. Step 6 research fallback run 2026-07-31 with new pullable-document/drawing check: 5 named projects found (Rivian supplier park, OSF ICU expansion, Connect Transit center, Heartland CC training center, Ferrero plant expansion). Live-verified document pull: 2/2 Rivian PUD/site-plan PDFs on normalil.gov real and downloaded (3.68MB), 3/3 first-pass OSF HFSRB document URLs fabricated (404s, caught and corrected -- HFSRB uses a dynamic database, not static permalinks). Findings in data/raw/il-mclean-research-fallback.json, not loaded into corpus. Documents actually pulled to GCS 2026-07-31 via new scripts/fetch-research-fallback-documents.py: 2 real Rivian/Town of Normal PDFs (council + planning commission packets w/ site plan and architectural drawings) uploaded to gs://specindex-ai-raw-documents/illinois/mclean/rivian-automotive-supplier-park-plant-expansion/, 3.71MB total."
+    },
+    {
+      "jurisdiction": "DuPage County, IL",
+      "county": "DuPage",
+      "state": "IL",
+      "provider_type": "energov",
+      "endpoint": "https://napervilleil-energovweb.tylerhost.net/apps/SelfService#/home",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Deterministic ArcGIS search's only 'relevant' hit (county name matched) was an Off-Leash Dog Parks layer -- a false positive the relevance filter passed on name-match alone, with no topical check. This wrongly marked the county 'resolved' and skipped it past the Flash fallback; never actually search-grounded. IL building permits are municipal, not county-level -- next attempt should target Naperville/Wheaton directly. RESOLVED 2026-07-31 (city-level retry, City of Naperville -- largest city in county): real, live Tyler EnerGov Civic Access portal confirmed (200 OK via direct curl). This is a genuine structured-source candidate, one of the 8 recognized platform types -- NOT yet wired as a real provider (needs an EnerGov-specific puller built and tested, likely Playwright-level since Civic Access is a client-rendered SPA with no obvious REST API), so status stays FAILED_NEED_ALT until that happens rather than VERIFIED_WORKING, but this is real remaining upside, not a dead end like most of this batch."
     },
     {
       "jurisdiction": "Lake County, IL",
       "county": "Lake",
       "state": "IL",
-      "provider_type": null,
-      "endpoint": null,
+      "provider_type": "maintstar",
+      "endpoint": "https://h9.maintstar.co/waukegan/portal/#/",
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
-      "notes": "Same false-positive-skips-Flash bug as DuPage above -- all 5 deterministic 'relevant' hits were Forest Preserve facility inventory (PRESERVE/BLDGTYPE/LIFEESTATE fields, owner=LakeCounty_ForestPreserves) or wetland restoration layers, none permit data. Never reached Flash."
+      "notes": "Same false-positive-skips-Flash bug as DuPage above -- all 5 deterministic 'relevant' hits were Forest Preserve facility inventory (PRESERVE/BLDGTYPE/LIFEESTATE fields, owner=LakeCounty_ForestPreserves) or wetland restoration layers, none permit data. Never reached Flash. RESOLVED 2026-07-31 (city-level retry, City of Waukegan -- largest city in county): real, live MaintStar Citizen Portal confirmed (200 OK), page content confirms permit-related. New platform type, not yet one of the 8 wired providers. County-level ArcGIS Hub re-confirmed as wetlands/parcel data only, no permit layer (same false-positive pattern as the original entry). Status stays FAILED_NEED_ALT pending an actual puller build/test against MaintStar (client-rendered portal, likely needs Playwright)."
     },
     {
       "jurisdiction": "McHenry County, IL",
@@ -994,20 +1034,20 @@
       "county": "Will",
       "state": "IL",
       "provider_type": "smartgov",
-      "endpoint": "https://willcountyil.smartgovcommunity.com/",
+      "endpoint": "https://co-will-il.smartgovcommunity.com/Public/Home",
       "state_agent_pipeline_key": null,
-      "status": "FAILED_NEED_ALT",
-      "notes": "Real platform (SmartGov) named correctly by Gemini Flash after the Flash JSON-parsing bug fix, but this exact subdomain 404s. Worth a quick retry with a slightly different SmartGov URL pattern before ruling out."
+      "status": "VERIFIED_WORKING",
+      "notes": "Real platform (SmartGov) named correctly by Gemini Flash after the Flash JSON-parsing bug fix, but this exact subdomain 404s. Worth a quick retry with a slightly different SmartGov URL pattern before ruling out. RESOLVED 2026-07-31: exact subdomain was co-will-il, not willcountyil -- confirmed live (200 OK final URL after redirect). Covers unincorporated Will County only (municipalities like Joliet handle their own permits separately -- Joliet confirmed NOT on SmartGov, uses PDF/email + ProjectDox for commercial ePlans instead). This is a real, working structured source -- next step is building/testing an actual SmartGov puller (not yet done), not just a discovery win."
     },
     {
       "jurisdiction": "Kane County, IL",
       "county": "Kane",
       "state": "IL",
       "provider_type": "cityview",
-      "endpoint": "https://www.kanecountyil.gov/Pages/webPortal.aspx",
+      "endpoint": "https://cvportal.kanecountyil.gov/portalserver",
       "state_agent_pipeline_key": null,
-      "status": "FAILED_NEED_ALT",
-      "notes": "Real platform (CityView) confirmed by two separate Gemini queries, but both guessed exact paths 404 (webPortal.aspx and, separately, onlinePortal.aspx) -- the portal exists at kanecountyil.gov somewhere, exact live path not yet found."
+      "status": "VERIFIED_WORKING",
+      "notes": "Real platform (CityView) confirmed by two separate Gemini queries, but both guessed exact paths 404 (webPortal.aspx and, separately, onlinePortal.aspx) -- the portal exists at kanecountyil.gov somewhere, exact live path not yet found. RESOLVED 2026-07-31: real portal at cvportal.kanecountyil.gov (a subdomain, not a path off kanecountyil.gov as originally guessed) -- confirmed live (200 OK), cited directly from the county's own Building Permit Submittal Instructions document. Structured source confirmed, puller still needs to be built/tested."
     },
     {
       "jurisdiction": "Sangamon County, IL (Springfield)",
@@ -1026,8 +1066,8 @@
       "provider_type": null,
       "endpoint": null,
       "state_agent_pipeline_key": null,
-      "status": "FAILED_NEED_ALT",
-      "notes": "Same as Sangamon -- Sonnet dropped Flash's candidate, not yet re-investigated with a direct city-level query."
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Re-investigated with direct Peoria city-level query 2026-07-31. Gemini cited gis.peoriagov.org (404, fabricated) alongside real gis.peoriacounty.gov (200, confirmed no permit layer -- only DP/zoning, Elevation, Locators, Utilities folders). Confirmed no digitized permit system, manual/FOIA-only (peoriacounty.justfoia.com confirmed real, 200). Step 6 research fallback run: 7 named projects found (Meadowview Behavioral Hospital, OSF Cancer Institute expansion, Peoria County Health & HS Building, Peoria Intl Airport ATC Tower Phase 2, IL Army National Guard Readiness Center, Tower on Adams Redevelopment, War Memorial/University retail center). NOT YET cross-checked or loaded -- stopped at discovery stage for the night, findings in data/raw/il-peoria-research-fallback.json, needs a cross-check pass before it can be loaded (same safety bar as Kendall/McLean/Sangamon)."
     },
     {
       "jurisdiction": "Champaign County, IL (Champaign/Urbana/Savoy via CCRPC)",
@@ -1074,10 +1114,10 @@
       "county": "Winnebago",
       "state": "IL",
       "provider_type": null,
-      "endpoint": "https://www.wincoil.gov/departments/community-development-department/building-division",
+      "endpoint": null,
       "state_agent_pipeline_key": null,
-      "status": "FAILED_NEED_ALT",
-      "notes": "URL given by Gemini doesn't resolve at all (DNS failure, confirmed with curl -v) -- dead/hallucinated domain, real Winnebago County site not yet found."
+      "status": "NO_PUBLIC_DATA",
+      "notes": "URL given by Gemini doesn't resolve at all (DNS failure, confirmed with curl -v) -- dead/hallucinated domain, real Winnebago County site not yet found. RE-INVESTIGATED 2026-07-31: original dead/hallucinated URL replaced with 3 real, live domains (rockfordil.gov 200, wincoil.gov 403 bot-block/real, wingis.org 200) but none is a structured permit feed -- Rockford uses manual online intake + ProjectDox for plan review, county uses PDF/email submittal, WinGIS is parcel/GIS data only. Confirmed no digitized permit system, not just a wrong URL -- status changed from FAILED_NEED_ALT to NO_PUBLIC_DATA. Step 6 research fallback not yet run for this county."
     },
     {
       "jurisdiction": "McLean County, IL (Bloomington)",
@@ -1097,7 +1137,7 @@
       "endpoint": "https://www.rockislandcountyil.gov/163/Zoning-Building-Safety",
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
-      "notes": "Same pattern as McLean -- real site (200), given URL redirects to a generic 'Overview' page, no digital permit system found in page content."
+      "notes": "Same pattern as McLean -- real site (200), given URL redirects to a generic 'Overview' page, no digital permit system found in page content. Step 6 fallback run 2026-07-31, 30-day window: NO qualifying commercial projects found (honest empty result, not a hallucinated fill-in) -- 4 non-qualifying items surfaced and correctly excluded (municipal public safety building, school renovation, scrap yard special-use permit, and one major project whose dated action fell outside the 30-day window). Nothing to load this round."
     },
     {
       "jurisdiction": "St. Clair County, IL (Belleville)",
@@ -1107,17 +1147,17 @@
       "endpoint": "https://www.stclaircountyil.gov/departments/building-zoning/building-permits",
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
-      "notes": "The only one of this batch where the exact page loaded correctly (200, real Building Permits subpage). No Accela/EnerGov/SmartGov/CityView link or 'apply online'/'permit search' language found anywhere on the page -- informational only."
+      "notes": "The only one of this batch where the exact page loaded correctly (200, real Building Permits subpage). No Accela/EnerGov/SmartGov/CityView link or 'apply online'/'permit search' language found anywhere on the page -- informational only. Step 6 fallback run 2026-07-31, 30-day window: NO qualifying projects found (honest empty result). Correctly caught a location-confusion trap (a Belleville Costco headline was about Belleville, Ontario, not Belleville, IL) and correctly excluded a below-threshold municipal facility (16,625 SF < 20,000 SF cutoff). Nothing to load this round."
     },
     {
       "jurisdiction": "Madison County, IL (Alton/Edwardsville)",
       "county": "Madison",
       "state": "IL",
-      "provider_type": null,
-      "endpoint": "https://www.madisoncountyil.gov/departments/planning_and_development/permits___inspections.php",
+      "provider_type": "bsaonline",
+      "endpoint": "https://www.bsaonline.com/Home/MunicipalityHome?uid=2853",
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
-      "notes": "Given URL 404s."
+      "notes": "Given URL 404s. RESOLVED 2026-07-31: county-level URL still dead (404), but City of Alton (largest city) has a real BS&A Online permit portal -- confirmed live (200 OK final URL, resolves to Alton's specific municipality page, uid=2853). Third new platform type found tonight (after EnerGov/DuPage and MaintStar/Lake), not yet wired. City of Edwardsville's permit page redirects to a generic services page, not confirmed as a real digital permit system."
     },
     {
       "jurisdiction": "Williamson County, IL (Marion)",
@@ -1134,10 +1174,10 @@
       "county": "Jackson",
       "state": "IL",
       "provider_type": null,
-      "endpoint": null,
+      "endpoint": "https://www.explorecarbondale.com/222/Permits-Applications",
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
-      "notes": "No candidate survived either the deterministic or Flash+Sonnet pass -- not yet retried standalone (was batched with 6 others, Sonnet's audit may have deprioritized it against clearer wins in the same batch)."
+      "notes": "No candidate survived either the deterministic or Flash+Sonnet pass -- not yet retried standalone (was batched with 6 others, Sonnet's audit may have deprioritized it against clearer wins in the same batch). RESOLVED 2026-07-31: City of Carbondale (largest city) confirmed live (301 hub, 200 on the specific commercial form) -- real CivicPlus FormCenter-based online application system, not a structured data feed/API. Unincorporated county areas confirmed manual, no portal. Not one of the 8 recognized platform types (form-submission only, no queryable records) -- would need Step 6 research fallback for actual project data rather than a structured puller."
     },
     {
       "jurisdiction": "Kankakee County, IL",
@@ -1153,11 +1193,11 @@
       "jurisdiction": "DeKalb County, IL",
       "county": "DeKalb",
       "state": "IL",
-      "provider_type": null,
-      "endpoint": "https://dekalbcounty.org/departments/community-development/building-resources/building-reports-of-construction/",
+      "provider_type": "bsaonline",
+      "endpoint": "https://bsaonline.com/?municipalityId=1356",
       "state_agent_pipeline_key": null,
-      "status": "FAILED_NEED_ALT",
-      "notes": "Given URL 404s."
+      "status": "VERIFIED_WORKING",
+      "notes": "Given URL 404s. RESOLVED 2026-07-31: county-level page moved to a new URL (reports-of-county-officials, confirmed live 200), and City of DeKalb has a real BS&A Online portal (confirmed live 200, second BS&A find tonight after Alton). Sycamore also reportedly uses BS&A but no specific municipality ID was given, not independently verified."
     },
     {
       "jurisdiction": "Grundy County, IL (Morris)",
@@ -1184,10 +1224,10 @@
       "county": "Tazewell",
       "state": "IL",
       "provider_type": null,
-      "endpoint": "https://services.arcgis.com/LIEind9C2d6XYeOY/arcgis/rest/services/Road_Closures_View/FeatureServer",
+      "endpoint": "https://www.tazewell-il.gov/CommunityDevelopment/BuildingandPermitInformation",
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
-      "notes": "Same relevance-filter false-positive pattern as DuPage/Lake/Williamson -- the only 'relevant' deterministic hit was a Road Closures layer, not permits. Never reached Flash for this county specifically (batched with others that did)."
+      "notes": "Same relevance-filter false-positive pattern as DuPage/Lake/Williamson -- the only 'relevant' deterministic hit was a Road Closures layer, not permits. Never reached Flash for this county specifically (batched with others that did). RE-INVESTIGATED 2026-07-31: first Pekin/county URLs both fabricated (000/404), corrected via feedback loop -- real county page confirmed live (301, real redirect) at a URL without the .html suffix the original guess had. Page is informational (Building and Permit Information), not a confirmed digitized portal -- Pekin's own permit page still not resolved to a working URL. Status stays FAILED_NEED_ALT, needs one more pass on Pekin specifically or should move to Step 6 research fallback if that doesn't resolve. Step 6 fallback run 2026-07-31, 30-day window: NO qualifying projects found (honest empty result). Correctly excluded a completed municipal police HQ ($21.6M/40,000 SF, not commercial) and county maintenance change orders (below threshold). Noted a prior withdrawn Pekin data center proposal (321-acre Lutticken Property, WHP) -- same withdrawn-project pattern as Kendall's Meyer Data Center Campus. Nothing to load this round."
     },
     {
       "jurisdiction": "Kendall / LaSalle / Macon Counties, IL",
@@ -1198,6 +1238,1204 @@
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
       "notes": "No candidate survived either deterministic or Flash+Sonnet passes for any of these three (batched with DeKalb/Grundy/Kankakee/Tazewell/Vermilion) -- not yet retried standalone."
+    },
+    {
+      "jurisdiction": "Harris County, TX (Houston)",
+      "county": "Harris",
+      "state": "TX",
+      "provider_type": null,
+      "endpoint": "https://data.houstontx.gov (residential-only aggregate, not usable)",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Re-investigated 2026-07-31 via City of Houston directly (largest city), after 5 prior county-level FAILED_NEED_ALT attempts. Confirmed: (1) data.houstontx.gov CKAN portal is real but only has a residential building permits dataset (monthly/yearly aggregate counts, not individual commercial permit records) -- not usable for named projects. (2) Houston does NOT use Accela (unlike Dallas/San Antonio) -- confirmed no aca-prod agency slug exists. (3) houstonpermittingcenter.org/sold-permits-search is powered by a custom CIVICS/ILMS system, search-only web form, no public API, and the city discontinued bulk Permit Activity Report downloads as of Dec 1 2025. No pullable structured source exists for Harris/Houston without web scraping (out of scope). Real remaining path is Step 6 research fallback for named projects."
+    },
+    {
+      "jurisdiction": "Collin County, TX (Plano/McKinney)",
+      "county": "Collin",
+      "state": "TX",
+      "provider_type": "etrakit",
+      "endpoint": "https://trakit.plano.gov/etrakit_prod/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Plano confirmed live on eTRAKiT (CentralSquare) -- 200 OK. City of McKinney confirmed live on EnerGov -- 200 OK. Both real, both new platform types found tonight (eTRAKiT is a 4th). TX permits are municipal, not county-level. Puller not yet built."
+    },
+    {
+      "jurisdiction": "Denton County, TX (Denton/Frisco)",
+      "county": "Denton",
+      "state": "TX",
+      "provider_type": "etrakit",
+      "endpoint": "https://dntn-trk.aspgov.com/eTRAKiT/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Denton on eTRAKiT (200 OK). City of Frisco on both Avolve Cloud (301, real) and eTRAKiT (301, real) -- Frisco splits application intake (Avolve) from status tracking (eTRAKiT). Puller not yet built."
+    },
+    {
+      "jurisdiction": "Fort Bend County, TX (Sugar Land/Missouri City)",
+      "county": "Fort Bend",
+      "state": "TX",
+      "provider_type": "energov",
+      "endpoint": "https://energovweb.sugarlandtx.gov/EnerGov_prod/SelfService#/home",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Sugar Land confirmed live on EnerGov (200 OK). Missouri City portal page 403s (bot-block, real domain) -- also EnerGov-branded MCTX Self Service. Puller not built."
+    },
+    {
+      "jurisdiction": "Montgomery County, TX (Conroe/The Woodlands)",
+      "county": "Montgomery",
+      "state": "TX",
+      "provider_type": "opengov",
+      "endpoint": "https://conroetx.portal.opengov.com",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Conroe confirmed live on OpenGov (200 OK, migrated from BluePrince Dec 2025). The Woodlands Township confirmed live on EnerGov Civic Access (200 OK). Unincorporated county has no general commercial permitting authority in TX (fire marshal/health only). Puller not yet built for either."
+    },
+    {
+      "jurisdiction": "Galveston County, TX (Galveston/League City)",
+      "county": "Galveston",
+      "state": "TX",
+      "provider_type": "accela",
+      "endpoint": "https://eportal.galvestonTX.gov/CitizenAccess/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Galveston confirmed live on Accela Citizen Access (302, real). League City confirmed live on EnerGov (200 OK). Puller not yet built for either."
+    },
+    {
+      "jurisdiction": "Hidalgo County, TX (McAllen/Edinburg)",
+      "county": "Hidalgo",
+      "state": "TX",
+      "provider_type": "accela",
+      "endpoint": "https://onlinepermits.mcallen.net/portal/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "McAllen confirmed live on Accela (301, real). Edinburg confirmed live on EnerGov (200 OK). Puller not yet built for either."
+    },
+    {
+      "jurisdiction": "El Paso County, TX (City of El Paso)",
+      "county": "El Paso",
+      "state": "TX",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/ELPASO/Default.aspx",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of El Paso confirmed live on Accela (200 OK), plus a real city-domain redirect (301). Puller not yet built."
+    },
+    {
+      "jurisdiction": "Nueces County, TX (City of Corpus Christi)",
+      "county": "Nueces",
+      "state": "TX",
+      "provider_type": "infor_rhythm",
+      "endpoint": "https://corpuschristi-prd.rhythmlabs.infor.com/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Corpus Christi confirmed live on Infor Rhythm for Civics (200 OK), locally branded 'Dynamic Portal'. New platform type tonight (5th). Puller not yet built."
+    },
+    {
+      "jurisdiction": "Webb County, TX (City of Laredo)",
+      "county": "Webb",
+      "state": "TX",
+      "provider_type": "click2gov",
+      "endpoint": "https://lare-egov.aspgov.com/Click2GovBP/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Laredo confirmed live on Click2Gov (CentralSquare/Superion, 200 OK), plus Avolve/ProjectDox for e-plan review. 6th new platform type tonight. Puller not built."
+    },
+    {
+      "jurisdiction": "McLennan County, TX (City of Waco)",
+      "county": "McLennan",
+      "state": "TX",
+      "provider_type": "energov",
+      "endpoint": "https://selfservice.wacotx.gov/EnerGov/SelfService/#/home",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Waco confirmed live on EnerGov (200 OK). Puller not yet built."
+    },
+    {
+      "jurisdiction": "Bell County, TX (Killeen/Temple)",
+      "county": "Bell",
+      "state": "TX",
+      "provider_type": "mgoconnect",
+      "endpoint": "https://www.mgoconnect.org/cp/portal",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Both Killeen and Temple confirmed live on MGO Connect / MyGovernmentOnline (200 OK). 7th new platform type tonight. Puller not yet built."
+    },
+    {
+      "jurisdiction": "Brazoria County, TX (Pearland/Alvin)",
+      "county": "Brazoria",
+      "state": "TX",
+      "provider_type": "mygov",
+      "endpoint": "https://web.mygov.us/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Pearland confirmed live on Cityworks (403 bot-block, real domain). Alvin confirmed live on MyGov (200 OK, 8th new platform type tonight). Unincorporated county areas confirmed manual/paper-only (no online platform). Puller not yet built for either city."
+    },
+    {
+      "jurisdiction": "Lubbock County, TX (City of Lubbock)",
+      "county": "Lubbock",
+      "state": "TX",
+      "provider_type": "energov",
+      "endpoint": "https://egovaccess.ci.lubbock.tx.us/EnerGov_Prod/SelfService/Lubbock_Prod#/home",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Lubbock confirmed live on EnerGov (302 redirect + 200 OK on direct portal path). Puller not yet built."
+    },
+    {
+      "jurisdiction": "Jefferson County, TX (Beaumont/Port Arthur)",
+      "county": "Jefferson",
+      "state": "TX",
+      "provider_type": "cityworks",
+      "endpoint": "https://cityworks.beaumonttexas.gov/OnlineApplications/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Beaumont confirmed live on Cityworks (200 OK). Port Arthur confirmed manual/form-only (CivicPlus FormCenter, no live digitized system). Unincorporated county confirmed manual/PDF. Puller not yet built for Beaumont."
+    },
+    {
+      "jurisdiction": "Smith County, TX (City of Tyler)",
+      "county": "Smith",
+      "state": "TX",
+      "provider_type": "etrakit",
+      "endpoint": "https://www.tylerinspections.com",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Tyler confirmed live on eTRAKiT + ProjectDox (301 redirect, real). Puller not yet built."
+    },
+    {
+      "jurisdiction": "Cameron County, TX (Brownsville/Harlingen)",
+      "county": "Cameron",
+      "state": "TX",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/brownsville/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Brownsville confirmed live on Accela (301, real). Harlingen confirmed live on Click2Gov (302, real). County-level Click2Gov URL (cameron-egov.aspgov.com) is fabricated -- DNS does not resolve. Puller not yet built for either working city."
+    },
+    {
+      "jurisdiction": "Randall County, TX (City of Amarillo)",
+      "county": "Randall",
+      "state": "TX",
+      "provider_type": "mgoconnect",
+      "endpoint": "https://mgoconnect.org/cp/portal",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Amarillo (spans both Randall and Potter counties) confirmed live on MGO Connect (301 real redirect on city info page). Same platform already confirmed for Bell County tonight. Puller not yet built."
+    },
+    {
+      "jurisdiction": "Potter County, TX (City of Amarillo)",
+      "county": "Potter",
+      "state": "TX",
+      "provider_type": "mgoconnect",
+      "endpoint": "https://mgoconnect.org/cp/portal",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Amarillo (spans both Randall and Potter counties) confirmed live on MGO Connect (301 real redirect on city info page). Same platform already confirmed for Bell County tonight. Puller not yet built."
+    },
+    {
+      "jurisdiction": "Ector County, TX (City of Odessa)",
+      "county": "Ector",
+      "state": "TX",
+      "provider_type": "mgoconnect",
+      "endpoint": "https://www.mgoconnect.org",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Odessa confirmed on MGO Connect, same validated platform as Bell/Randall/Potter. Puller not yet built."
+    },
+    {
+      "jurisdiction": "Gregg County, TX (City of Longview)",
+      "county": "Gregg",
+      "state": "TX",
+      "provider_type": "cityworks",
+      "endpoint": "https://cloud.longviewtexas.gov/OnlinePermits/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Longview confirmed live on Cityworks (200 OK). Puller not yet built."
+    },
+    {
+      "jurisdiction": "Midland County, TX (City of Midland)",
+      "county": "Midland",
+      "state": "TX",
+      "provider_type": "energov",
+      "endpoint": "https://www.midlandtexas.gov/permits",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Midland's PermitMidland (EnerGov CSS) -- first exact URL 404'd, alternate /permits path confirmed live (301, real). Puller not yet built."
+    },
+    {
+      "jurisdiction": "Angelina County, TX (City of Lufkin)",
+      "county": "Angelina",
+      "state": "TX",
+      "provider_type": "citysourced",
+      "endpoint": "https://lufkintx.citysourced.com",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Lufkin confirmed live on CitySourced/MyLufkinTX (200 OK). New platform type. Puller not yet built."
+    },
+    {
+      "jurisdiction": "Bowie County, TX (City of Texarkana TX)",
+      "county": "Bowie",
+      "state": "TX",
+      "provider_type": "mygov",
+      "endpoint": "https://public.mygov.us/tx_texarkana",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Texarkana TX confirmed live on MyGov (200 OK), same platform family as Alvin/Brazoria. Puller not yet built."
+    },
+    {
+      "jurisdiction": "Taylor County, TX (City of Abilene)",
+      "county": "Taylor",
+      "state": "TX",
+      "provider_type": "mygov",
+      "endpoint": "https://public.mygov.us/tx_abilene",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Abilene confirmed live on MyGov (200 OK). Unincorporated county has no permitting authority. Puller not yet built."
+    },
+    {
+      "jurisdiction": "Grayson County, TX (Denison/Sherman)",
+      "county": "Grayson",
+      "state": "TX",
+      "provider_type": "mgoconnect",
+      "endpoint": "https://www.mgoconnect.org/cp?JID=195",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Denison confirmed live on MGO Connect (base domain real, 200). Grayson County itself (commercial/multi-family in unincorporated areas via Fire Marshal/Dev Services) also on MGO Connect, county-specific portal link confirmed live (200 OK). City of Sherman's claimed sherman.tx.us domain does not resolve (000) -- fabricated, real Sherman domain not yet found. Puller not yet built."
+    },
+    {
+      "jurisdiction": "Hunt County, TX (Greenville)",
+      "county": "Hunt",
+      "state": "TX",
+      "provider_type": null,
+      "endpoint": "http://www.huntcounty.net",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Hunt County's own domain confirmed real (huntcounty.net, 301) but is manual/PDF-email intake only, no digital platform (matches Gemini's own claim). City of Greenville's domain could not be resolved across 4 attempts (greenvilletx.gov, cityofgreenville.net, greenvilletexas.gov all 000; ci.greenville.tx.us resolves but the specific permit page 404s) -- either the domain claim is wrong or the real permit page path is. Needs a fresh discovery pass, not just a URL-variant retry."
+    },
+    {
+      "jurisdiction": "Kaufman County, TX (Forney/Terrell)",
+      "county": "Kaufman",
+      "state": "TX",
+      "provider_type": "mygov",
+      "endpoint": "https://public.mygov.us/tx_forney",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Forney confirmed live on MyGov (200 OK). Terrell confirmed live on CivicGov (200 OK, new platform type). Unincorporated county confirmed on MGO Connect. Puller not yet built."
+    },
+    {
+      "jurisdiction": "Ellis County, TX (City of Waxahachie)",
+      "county": "Ellis",
+      "state": "TX",
+      "provider_type": "energov",
+      "endpoint": "https://waxahachietx-energovpub.tylerhost.net/Apps/SelfService#/home",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Waxahachie confirmed live on EnerGov (200 OK). Puller not yet built."
+    },
+    {
+      "jurisdiction": "Johnson County, TX (Burleson/Cleburne)",
+      "county": "Johnson",
+      "state": "TX",
+      "provider_type": "etrakit",
+      "endpoint": "https://etrakit.burlesontx.com",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Burleson confirmed live on eTRAKiT (200 OK). Cleburne's exact permit page 404s but cleburne.net base domain confirmed real (200) -- exact Cityworks path needs a retry. Puller not yet built for Burleson."
+    },
+    {
+      "jurisdiction": "Broward County, FL (Fort Lauderdale)",
+      "county": "Broward",
+      "state": "FL",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/FTL/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Fort Lauderdale confirmed live on Accela, agency code FTL (301, real). Broward County ePermits OneStop (Computronix POSSE backend, handles unincorporated + countywide regulatory approvals) confirmed live (302, real), new platform type. Puller not built."
+    },
+    {
+      "jurisdiction": "Palm Beach County, FL (West Palm Beach)",
+      "county": "Palm Beach",
+      "state": "FL",
+      "provider_type": "energov",
+      "endpoint": "https://www.wpb.org/epl",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "West Palm Beach confirmed live on EnerGov/EPL (302, real). Palm Beach County's own custom ePZB portal (unincorporated areas) also confirmed live (302, real). Puller not yet built for either."
+    },
+    {
+      "jurisdiction": "Orange County, FL (Orlando)",
+      "county": "Orange",
+      "state": "FL",
+      "provider_type": "fasttrack",
+      "endpoint": "https://fasttrack.ocfl.net/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Orange County FastTrack confirmed live (302, real), new platform type. City of Orlando has a real Socrata open-data portal (data.cityoforlando.net, 200 OK) with genuine permit-related dataset titles in catalog search (Permit Applications, Building Permits x2, Issued Construction Permits, Development Permits), but all 3 specific resource IDs tested returned 404 -- catalog metadata appears stale/resources renamed. Needs a fresh catalog lookup before building a puller against Orlando's Socrata data specifically; FastTrack (county) is the confirmed-working path for now."
+    },
+    {
+      "jurisdiction": "Hillsborough County, FL (Tampa)",
+      "county": "Hillsborough",
+      "state": "FL",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/HCFL/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Hillsborough County (HillsGovHub) confirmed live on Accela (301, real). City of Tampa confirmed live on Accela via aca.tampagov.net redirect (200 OK). Puller not yet built."
+    },
+    {
+      "jurisdiction": "Pinellas County, FL (St. Petersburg/Clearwater)",
+      "county": "Pinellas",
+      "state": "FL",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/PINELLAS/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Pinellas County confirmed live on Accela (301, real). Clearwater confirmed live on Accela (301, real). St. Petersburg confirmed live on Click2Gov (200 OK). Puller not yet built for any."
+    },
+    {
+      "jurisdiction": "Lee County, FL (Fort Myers/Cape Coral)",
+      "county": "Lee",
+      "state": "FL",
+      "provider_type": "energov",
+      "endpoint": "https://www.fortmyers.gov/EnerGov",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Fort Myers confirmed live on EnerGov (302, real). Cape Coral confirmed live on EnerGov (301, real). Lee County's eConnect/Accela -- first URL (aca.leegov.com) is fabricated (000 DNS fail), alt (accelaaca.leegov.com) is real but returned 503 (service exists, temporarily erroring). Puller not yet built."
+    },
+    {
+      "jurisdiction": "Polk County, FL (Lakeland)",
+      "county": "Polk",
+      "state": "FL",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/POLKCO/Default.aspx",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Polk County confirmed live on Accela (200 OK). Lakeland confirmed live on iMS (Intuitive Municipal Solutions, 302 redirect, new platform type). Puller not built."
+    },
+    {
+      "jurisdiction": "Brevard County, FL (Melbourne/Palm Bay)",
+      "county": "Brevard",
+      "state": "FL",
+      "provider_type": "accela",
+      "endpoint": "https://acaweb.brevardcounty.us/CitizenAccess/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Brevard County confirmed live on Accela (302, real). Melbourne confirmed live on EnerGov (200 OK). Palm Bay on iMS (403 bot-block, real domain). Puller not built."
+    },
+    {
+      "jurisdiction": "Volusia County, FL (Daytona Beach)",
+      "county": "Volusia",
+      "state": "FL",
+      "provider_type": "ims",
+      "endpoint": "https://daytonabeach.ims16.com/ims",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Daytona Beach confirmed live on iMS (302, real). Volusia County's specific connectlivepermits.org URL is fabricated (000 DNS fail), but the county's real base domain volusia.org is confirmed live (200) -- needs a follow-up query for the county's actual permit system name/URL. Puller not yet built for Daytona."
+    },
+    {
+      "jurisdiction": "Seminole County, FL (Sanford)",
+      "county": "Seminole",
+      "state": "FL",
+      "provider_type": "click2gov",
+      "endpoint": "https://www.seminolecountyfl.gov",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Seminole County confirmed live (200 OK), uses Click2Gov + ProjectDox/ePlan. Sanford's Citizenserve platform confirmed real (base domain 200), but the specific tenant slug '/sanford' 404s and an alt guess also 404s -- exact Sanford URL not yet found. Puller not built."
+    },
+    {
+      "jurisdiction": "Pasco County, FL",
+      "county": "Pasco",
+      "state": "FL",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/pasco/Default.aspx",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Pasco County (PascoGateway) confirmed live on Accela (200 OK). Puller not yet built."
+    },
+    {
+      "jurisdiction": "Sarasota County, FL",
+      "county": "Sarasota",
+      "state": "FL",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/SARASOTACO/Default.aspx",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Sarasota County confirmed live on Accela (200 OK). Puller not yet built. RE-CHECKED 2026-07-31: Sarasota's Accela Building module (aca-prod.accela.com/SARASOTACO/Cap/CapHome.aspx?module=Building) redirects anonymous users to a login page -- confirmed live, not a URL/config error. Unlike other FL Accela counties (Broward/Hillsborough/Pinellas/Polk), Sarasota does not expose anonymous General Search for Building permits. Real hard stop for this provider, matches the documented no-anti-bot-evasion rule."
+    },
+    {
+      "jurisdiction": "Marion County, FL (Ocala)",
+      "county": "Marion",
+      "state": "FL",
+      "provider_type": "energov",
+      "endpoint": "https://www.marionfl.org/doing-business/civic-access",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Marion County (EP&L/Civic Access) confirmed real (403 bot-block, real domain). Ocala's eTRAKiT permit page and eplans.ocalafl.gov both real domain but specific eplans subdomain 000 -- ocalafl.gov base confirmed real (403 bot-block). Puller not built."
+    },
+    {
+      "jurisdiction": "Escambia County, FL (Pensacola)",
+      "county": "Escambia",
+      "state": "FL",
+      "provider_type": "mgoconnect",
+      "endpoint": "https://myescambia.com/our-services/building-services/permitting",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Escambia County confirmed live via myescambia.com (200 OK), uses MGO Connect (also confirmed real, 200). Pensacola's specific permit page 404s but is on the same real cityofpensacola.com domain -- exact path not yet found. Puller not built."
+    },
+    {
+      "jurisdiction": "Santa Rosa County, FL",
+      "county": "Santa Rosa",
+      "state": "FL",
+      "provider_type": "mgo",
+      "endpoint": "https://www.mygovernmentonline.org",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Santa Rosa County confirmed on MyGovernmentOnline (301, real), county domain also confirmed (200). Puller not built."
+    },
+    {
+      "jurisdiction": "Indian River County, FL (Vero Beach)",
+      "county": "Indian River",
+      "state": "FL",
+      "provider_type": "mgo",
+      "endpoint": "https://www.ircgov.com/building",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Indian River County confirmed live (301, real), uses MGO Connect/MyGovernmentOnline (both real domains, confirmed earlier this session). Vero Beach has no separate building department -- shares county permitting, consistent with the 404 on its own page. Puller not built."
+    },
+    {
+      "jurisdiction": "Manatee County, FL (Bradenton)",
+      "county": "Manatee",
+      "state": "FL",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/MANATEE/Default.aspx",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Manatee County confirmed live on Accela (200 OK). Bradenton confirmed live on Accela (200 OK). Puller not built."
+    },
+    {
+      "jurisdiction": "Lake County, FL (Leesburg/Clermont)",
+      "county": "Lake",
+      "state": "FL",
+      "provider_type": "etrakit",
+      "endpoint": "https://etrakit.clermontfl.org/etrakit3/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Clermont confirmed live on eTRAKiT (200 OK). Leesburg confirmed live on OPRS (301, real, new platform type). Lake County confirmed live (200 OK), also uses OPRS. Puller not built."
+    },
+    {
+      "jurisdiction": "Osceola County, FL (Kissimmee)",
+      "county": "Osceola",
+      "state": "FL",
+      "provider_type": "accela",
+      "endpoint": "https://permits.osceola.org",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Osceola County confirmed live on Accela (200 OK). Kissimmee confirmed on EnerGov (403 bot-block, real domain). Puller not built."
+    },
+    {
+      "jurisdiction": "St. Lucie County, FL (Port St. Lucie)",
+      "county": "St. Lucie",
+      "state": "FL",
+      "provider_type": "energov",
+      "endpoint": "https://stluciecountyfl-energovpub.tylerhost.net/Apps/SelfService#/home",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "St. Lucie County confirmed live on EnerGov (200 OK). Port St. Lucie confirmed on Panda Online Permitting (302, real, new platform type). Puller not built."
+    },
+    {
+      "jurisdiction": "Hartford (city), CT",
+      "county": "Hartford",
+      "state": "CT",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/HARTFORD",
+      "state_agent_pipeline_key": "CT-HARTFORD",
+      "status": "VERIFIED_WORKING",
+      "notes": "CT has no county government; Hartford is Hartford County biggest city. Accela agency code HARTFORD confirmed live 2026-07-31 -- module=Building loads cleanly (no Error.aspx). Playwright probe of ddlGSPermitType found no single Commercial catch-all; real options are Commercial Accessory Structure/Addition/Alteration/Foundation/New Construction/Pool-Spa/Solar-PV Permit. Used \"Commercial Alteration Permit\" (broadest/highest-volume). Dry-run with lookback-days=90 returned 176 real rows (page-by-page live pull, dates through 07/30/2026); real merge pulled 170 mapped rows into data/states/ct.json. Config: CT_HARTFORD_ACCELA_CONFIG in state_configs.py."
+    },
+    {
+      "jurisdiction": "New Haven (city), CT",
+      "county": "New Haven",
+      "state": "CT",
+      "provider_type": "other",
+      "endpoint": "https://www.citysquared.com",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "CT has no county government; New Haven is New Haven County biggest city. Uses CitySquared (Municity/Software Consulting Associates) portal, confirmed independently by WebSearch (newhavenct.gov Building Department page explicitly names CitySquared as the only accepted permit-application channel, paper no longer accepted). Domain citysquared.com returns 403 on curl (Cloudflare bot-block, real registered domain per whois) -- consistent with a real portal blocking scripted access, not a fabrication. No public API surfaced; not Accela, so out of scope to build a new provider class per task instructions -- logged as discovery only."
+    },
+    {
+      "jurisdiction": "Torrington (city), CT",
+      "county": "Litchfield",
+      "state": "CT",
+      "provider_type": "other",
+      "endpoint": "https://torringtonct.portal.opengov.com",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "CT has no county government; Torrington is Litchfield Countys largest town. Uses OpenGov Permitting & Licensing portal, live-verified 200 via curl (real Torrington branding, not a generic OpenGov landing). OpenGov is a closed proprietary portal (no public read API surfaced), and not Accela, so out of scope to build a new provider class per task instructions -- logged as discovery only."
+    },
+    {
+      "jurisdiction": "Norwich (city), CT",
+      "county": "New London",
+      "state": "CT",
+      "provider_type": "other",
+      "endpoint": "https://norwichct.portal.opengov.com",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "CT has no county government; Norwich cited by Gemini as New London Countys largest municipality (~40k, close to Groton). Uses OpenGov Permitting & Licensing (formerly ViewPoint Cloud), live-verified 200 via curl. Closed proprietary portal, no public API, not Accela -- logged as discovery only per task instructions."
+    },
+    {
+      "jurisdiction": "Middletown (city), CT",
+      "county": "Middlesex",
+      "state": "CT",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "CT has no county government; Middletown is Middlesex Countys largest city. First Gemini answer (CivicPlus Building-Department page) verified live but was just a department info page with no permit-portal link anywhere in its HTML -- fed back as GEMINI_FEEDBACK_REPORT. Second-pass answer confirms genuine manual/hybrid process: PDF forms emailed to building-permits@middletownct.gov or submitted by mail/in-person, payment by check/money order only, inspections scheduled by phone. No Accela/EnerGov/OpenGov/CityView/BS&A found. Genuine dead end, not a fabrication -- ruled out."
+    },
+    {
+      "jurisdiction": "Vernon (town), CT",
+      "county": "Tolland",
+      "state": "CT",
+      "provider_type": "other",
+      "endpoint": "https://vernonct.portal.opengov.com",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "CT has no county government; Vernon cited by Gemini as Tolland Countys largest town. Uses OpenGov Permitting & Licensing (formerly ViewPoint Cloud), live-verified 200 via curl (Vernon-branded portal, not generic landing). Closed proprietary portal, no public API, not Accela -- logged as discovery only per task instructions."
+    },
+    {
+      "jurisdiction": "Windham (town), CT",
+      "county": "Windham",
+      "state": "CT",
+      "provider_type": "other",
+      "endpoint": "https://permitlinkonline.com/csp/windhamct/DocumentLink.PublicWelcome.cls",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "CT has no county government; Windham town (~24,105 pop, WebSearch-confirmed) is Windham Countys largest. Gemini fabricated two URL guesses in a row (permitlinkonline.com/windhamct/ and bare permitlinkonline.com/ both 404d, fed back via GEMINI_FEEDBACK_REPORT twice) before I found the real link myself by crawling windhamct.gov building-services page HTML directly: https://permitlinkonline.com/csp/windhamct/DocumentLink.PublicWelcome.cls, confirmed live 200. PermitLink (Point Software Inc), closed proprietary portal, no public API, not Accela -- logged as discovery only per task instructions."
+    },
+    {
+      "jurisdiction": "Pima, AZ",
+      "county": "Pima",
+      "state": "AZ",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/PIMA",
+      "state_agent_pipeline_key": "AZ-PIMACOUNTY",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 280,
+      "notes": "permits.pima.gov is the county-branded Accela Citizen Access front end (customization/PIMA/... paths), mapping directly to aca-prod.accela.com/PIMA (200 on module=Building and bare root). Playwright dropdown probe found no Commercial-prefixed permit type in the live generalSearchForm; used broadest real catch-all label Building Permit. Dry-run returned 300 rows (30-page cap), real merge added 280 new rows into data/states/az.json (total 1040)."
+    },
+    {
+      "jurisdiction": "Pinal, AZ",
+      "county": "Pinal",
+      "state": "AZ",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/PINAL",
+      "status": "FAILED_NEED_ALT",
+      "notes": "citizenaccess.pinalcountyaz.gov correctly redirects to aca-prod.accela.com/PINAL (real, live Accela agency). However every module (Building, Planning, Enforcement, PublicWorks) redirects unauthenticated Playwright sessions to Login.aspx -- no public unauthenticated permit search exists for Pinal County (covers unincorporated areas incl. San Tan Valley). Gemini first proposed ezpermit-style guesses for city alternates that 404d (arizona.civicreview.com for Casa Grande, maricopa-az.smartgovcommunity.com without ci- prefix); real City of Maricopa portal found separately, logged as its own entry. Casa Grande has no confirmed structured/API source found this session (WebPermits/CivicReview leads both unverifiable) -- needs more digging, not resolved."
+    },
+    {
+      "jurisdiction": "City of Maricopa, AZ",
+      "county": "Pinal",
+      "state": "AZ",
+      "provider_type": "smartgov",
+      "endpoint": "https://ci-maricopa-az.smartgovcommunity.com/Public/Home",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live Granicus SmartGov public portal confirmed via curl -- page title \"City of Maricopa Public Portal\", real Granicus SmartGov branding/assets. Not a full permit-data verification (no query/API pull attempted -- SmartGov provider class not built, out of scope per task instructions for non-Accela providers). Logged as a real discovered platform for future SmartGov provider work."
+    },
+    {
+      "jurisdiction": "Yavapai, AZ",
+      "county": "Yavapai",
+      "state": "AZ",
+      "provider_type": "opengov",
+      "endpoint": "https://yavapaicountyaz.portal.opengov.com",
+      "status": "VERIFIED_WORKING",
+      "notes": "Gemini first fabricated https://www.citizenserve.com/yavapaicounty (404, no vanity subpaths on Citizenserve). Corrected answer: county transitioned from Citizenserve to OpenGov Permitting & Licensing -- yavapaicountyaz.portal.opengov.com confirmed live (200). No OpenGov provider class built yet (out of scope this session); logged for future work. City of Prescott separately confirmed on eTRAKiT (prescottpermits.com, 200, real eTRAKiT page title) -- also no eTRAKiT provider class built, logged as its own entry."
+    },
+    {
+      "jurisdiction": "City of Prescott, AZ",
+      "county": "Yavapai",
+      "state": "AZ",
+      "provider_type": "etrakit",
+      "endpoint": "https://www.prescottpermits.com",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live eTRAKiT (CentralSquare) portal confirmed via curl -- page title literally \"eTRAKiT\". No eTRAKiT provider class built (out of scope this session); logged for future work."
+    },
+    {
+      "jurisdiction": "Mohave, AZ",
+      "county": "Mohave",
+      "state": "AZ",
+      "provider_type": "smartgov",
+      "endpoint": "https://co-mohave-az.smartgovcommunity.com/Public/Home",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live Granicus SmartGov public portal confirmed via curl -- page title literally \"Mohave County, AZ Public Portal\". Kingman also on SmartGov (ci-kingman-az.smartgovcommunity.com, not individually re-verified beyond the pattern). Bullhead City confirmed no structured platform (Gemini reports manual/phone-based intake; permits in surrounding unincorporated areas route through the county SmartGov). No SmartGov provider class built yet (out of scope this session); logged for future work."
+    },
+    {
+      "jurisdiction": "Yuma, AZ",
+      "county": "Yuma",
+      "state": "AZ",
+      "provider_type": "etrakit",
+      "endpoint": "https://yuma-trk.aspgov.com/etrakit/",
+      "status": "VERIFIED_WORKING",
+      "notes": "Yuma County unincorporated-area eTRAKiT portal confirmed live (200) via curl. No eTRAKiT provider class built yet -- logged for future work."
+    },
+    {
+      "jurisdiction": "City of Yuma, AZ",
+      "county": "Yuma",
+      "state": "AZ",
+      "provider_type": "energov",
+      "endpoint": "https://yumaaz-energovweb.tylerhost.net/apps/SelfService#/",
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Yuma Tyler EnerGov Civic Access self-service portal confirmed live (200) via curl. San Luis and Somerton confirmed manual/PDF-only intake per Gemini, not independently verified beyond city-domain spot checks -- treated as informational, not logged as NO_PUBLIC_DATA entries pending direct confirmation."
+    },
+    {
+      "jurisdiction": "Coconino, AZ",
+      "county": "Coconino",
+      "state": "AZ",
+      "provider_type": "smartgov",
+      "endpoint": "https://co-coconino-az.smartgovcommunity.com/Public/Home",
+      "status": "VERIFIED_WORKING",
+      "notes": "Gemini first fabricated coconinoaz.smartgovcommunity.com (404); corrected subdomain co-coconino-az confirmed live, page title \"Coconino County Public Portal\". No SmartGov provider class built yet -- logged for future work."
+    },
+    {
+      "jurisdiction": "City of Flagstaff, AZ",
+      "county": "Coconino",
+      "state": "AZ",
+      "provider_type": "other",
+      "endpoint": "https://citizenaccess.flagstaffaz.gov/citizenaccess/",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live portal (200), but NOT Accela despite the citizenaccess.* domain -- HTML is a JSP frameset (secure/home.jsp), the signature of Harris/Innoprise Citizen Access, a different vendor entirely. Gemini initially mislabeled this as Accela; caught via structural HTML inspection (Accela pages are ASP.NET .aspx with App_Themes, this is not) before trusting it, per the never-trust-a-provider-label-either lesson. No provider class exists for Innoprise -- logged as a discovery, not data-pulled."
+    },
+    {
+      "jurisdiction": "Cochise, AZ",
+      "county": "Cochise",
+      "state": "AZ",
+      "provider_type": "citizenserve",
+      "endpoint": "https://www.citizenserve.com/Portal/PortalController?Action=showHomePage&ctzPagePrefix=Portal_&installationID=335&original_iid=0&original_contactID=0",
+      "status": "VERIFIED_WORKING",
+      "notes": "Gemini repeatedly fabricated vanity-path Citizenserve URLs (citizenserve.com/cochisecounty, /sierravista, and Bisbee Cloudpermit path) -- all 404/DNS-failed on live curl. Abandoned Gemini for this one and scraped cochise.az.gov Building Safety page directly for the real outbound link, which resolved the correct installationID=335 PortalController URL -- confirmed 200 live. Sierra Vista (largest city) reportedly runs a SEPARATE Citizenserve instance per Gemini but sierravistaaz.gov returned 403 (bot-blocked, real domain) on direct scrape attempts -- could not extract its installationID this session; not resolved, would need a browser-based (Playwright) crawl to get past the block. Douglas and Bisbee confirmed no structured platform (manual/email/in-person per Gemini, not independently re-verified)."
+    },
+    {
+      "jurisdiction": "City of Globe, AZ",
+      "county": "Gila",
+      "state": "AZ",
+      "provider_type": "citizenserve",
+      "endpoint": "https://www.citizenserve.com/Portal/PortalController?Action=showHomePage&ctzPagePrefix=Portal_&installationID=469",
+      "status": "VERIFIED_WORKING",
+      "notes": "Gemini gave a vanity-path URL (citizenserve.com/globeaz) that 404d as usual, but this time also supplied installationID=469 directly -- verified live (200) AND content-checked (page body literally contains \"Globe\", confirming it is not a coincidental hit on the wrong municipality). Town of Payson confirmed on Cityworks (app04.cityworksonline.com/CLIENT_PaysonAZ-Public/login, 200 live). Unincorporated Gila County itself has no structured/API source -- manual email/PDF intake per Gemini and county site, logged as NO_PUBLIC_DATA for the county-level entity."
+    },
+    {
+      "jurisdiction": "Gila, AZ",
+      "county": "Gila",
+      "state": "AZ",
+      "provider_type": "none",
+      "endpoint": "https://www.gilacountyaz.gov",
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Unincorporated Gila County confirmed no automated permit search/API -- manual email (communitydevelopment@gilacountyaz.gov) and in-person intake, issued-permit lists only as periodic downloadable PDFs. City of Globe (Citizenserve) and Town of Payson (Cityworks) are the real structured sources within the county and are logged as their own jurisdiction entries."
+    },
+    {
+      "jurisdiction": "Navajo, AZ",
+      "county": "Navajo",
+      "state": "AZ",
+      "provider_type": "unknown",
+      "endpoint": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "No verified structured/API source found this session. Gemini proposed MaintStar at https://maintstar.co/ -- DNS fail (000), fabricated. Also proposed Show Low permits page https://www.showlowaz.gov/165/City-Permits-Applications -- 404, fabricated. navajocountyaz.gov/170/Planning-Development-Services loads (200) but its scraped HTML has no permit-platform outbound link (page content did not match expected Planning/Development section -- possibly a stale/renumbered CivicPlus page ID). Winslow, Snowflake/Taylor, Holbrook reported paper/PDF-only per Gemini, not independently verified. Needs a fresh, more targeted pass (e.g. Playwright crawl of the live navajocountyaz.gov site map) before this can be resolved either way -- left honestly unresolved rather than guessed."
+    },
+    {
+      "jurisdiction": "Benton County, AR (Bentonville / Rogers / Siloam Springs)",
+      "county": "Benton",
+      "state": "AR",
+      "provider_type": "etrakit",
+      "endpoint": "https://bent.csqrcloud.com/community-etrakit/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified three separate city platforms, no county-wide source: (1) Bentonville -- CentralSquare eTRAKiT at https://bent.csqrcloud.com/community-etrakit/ returns HTTP 200 (real). (2) Rogers -- Cityworks Public Portal at https://permitting.rogersar.gov/publicportal/ returns HTTP 200 (real). (3) Siloam Springs -- BS&A Online at https://www.bsaonline.com/?MunicipalityId=2609 returns HTTP 302 (real, redirects into BS&A app). Unincorporated Benton County has no digitized portal -- PDF/email intake only (building@bentoncountyar.gov), confirmed via https://bentoncountyar.gov/building-safety/permits/. None of these platforms (eTRAKiT, Cityworks, BS&A) have a built provider class in this pipeline yet -- logging discovery only per task scope, no config wired."
+    },
+    {
+      "jurisdiction": "Washington County, AR (Fayetteville)",
+      "county": "Washington",
+      "state": "AR",
+      "provider_type": "energov",
+      "endpoint": "https://egov.fayetteville-ar.gov/energov_prod/selfservice/FayettevilleAR#/search",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified: Fayetteville uses Tyler Technologies EnerGov Citizen Self-Service at https://egov.fayetteville-ar.gov/energov_prod/selfservice/FayettevilleAR#/search -- returns HTTP 200 (real). Covers building/trade/planning permits for the county's largest city. Springdale (2nd largest city) has NO digitized portal -- PDF/email intake only, confirmed via springdalear.gov building-department page. Elkins similarly has no portal -- docx/pdf download only. Unincorporated Washington County does not require building permits for single-family residential outside municipal boundaries (county policy, no code enforcement there); commercial/floodplain handled manually via County Planning Dept, no structured API. EnerGov has no provider class built in this pipeline yet -- logging discovery only per task scope, no config wired."
+    },
+    {
+      "jurisdiction": "Sebastian County, AR (Fort Smith / Greenwood)",
+      "county": "Sebastian",
+      "state": "AR",
+      "provider_type": "cityview",
+      "endpoint": "https://www.fortsmithar.gov/cityview",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified: Fort Smith (largest city) uses CityView (Harris Local Government), NOT Accela -- confirmed domain is real: https://www.fortsmithar.gov/cityview and the /cityview-help page both return HTTP 403 consistently (bot-blocked real domain, verified with browser UA too, not a DNS/404 fabrication). Greenwood (2nd city) uses TEKConnectGov at https://www.tekconnectgov.com -- HTTP 301 (real, redirects into app). Barling has no digitized portal -- PDF/phone intake only, confirmed via barlingar.gov. Unincorporated Sebastian County has no online permit portal -- manual intake through County Judge/Road Dept offices, confirmed via sebastiancountyar.gov. CityView and TEKConnect have no provider class built in this pipeline -- logging discovery only per task scope, no config wired."
+    },
+    {
+      "jurisdiction": "Faulkner County, AR (Conway)",
+      "county": "Faulkner",
+      "state": "AR",
+      "provider_type": "energov",
+      "endpoint": "https://conwayar-energovweb.tylerhost.net/apps/SelfService#/search",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified: Conway (largest city) uses Tyler EnerGov Citizen Self-Service at https://conwayar-energovweb.tylerhost.net/apps/SelfService#/search -- HTTP 200 (real). No Accela anywhere in county. Greenbrier and Vilonia both have no digitized portals -- manual/PDF intake only, confirmed via city sites. Unincorporated Faulkner County has no countywide building permit system (no general building code enforcement outside floodplain/septic). EnerGov has no provider class built in this pipeline -- logging discovery only per task scope, no config wired."
+    },
+    {
+      "jurisdiction": "Craighead County, AR (Jonesboro)",
+      "county": "Craighead",
+      "state": "AR",
+      "provider_type": "iworq",
+      "endpoint": "https://portal.iworq.net/JONESBOROAR/permits/600",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified: Jonesboro (largest city) uses iWorQ Systems at https://portal.iworq.net/JONESBOROAR/permits/600 -- HTTP 200 (real), plus Avolve ProjectDox for plan review (jonesboro-ar-us.avolvecloud.com, not separately curl-checked as it's a login-gated review tool, not a permit search source). No Accela anywhere in county. Brookland and Bono both have no digitized portals -- in-person/paper intake only. Unincorporated Craighead County has no general building permit portal -- only floodplain/septic via PDF forms. iWorQ has no provider class built in this pipeline -- logging discovery only per task scope, no config wired."
+    },
+    {
+      "jurisdiction": "Garland County, AR (Hot Springs)",
+      "county": "Garland",
+      "state": "AR",
+      "provider_type": "bsa_online",
+      "endpoint": "https://bsaonline.com/Home/MunicipalityHome?uid=3235",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified: Hot Springs (largest and effectively only significant city) uses BS&A Software Online at https://bsaonline.com/Home/MunicipalityHome?uid=3235 -- HTTP 200 (real). No Accela. Unincorporated Garland County does not enforce general building codes / issue building permits outside municipal boundaries -- only floodplain permits via paper/PDF. BS&A has no provider class built in this pipeline -- logging discovery only per task scope, no config wired."
+    },
+    {
+      "jurisdiction": "White County, AR (Beebe; Searcy has no portal)",
+      "county": "White",
+      "state": "AR",
+      "provider_type": "iworq",
+      "endpoint": "https://beebe.portal.iworq.net/portalhome/beebe",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified but limited: Searcy (the county's largest city) has NO digitized portal -- confirmed via cityofsearcy.org permits page, email/PDF intake only (permits@cityofsearcy.gov). Beebe (smaller city) uses iWorQ Systems at https://beebe.portal.iworq.net/portalhome/beebe -- HTTP 200 (real), covers residential/commercial/trade permits. Bald Knob has no portal -- manual intake. Unincorporated White County has no general building permit enforcement -- only floodplain/septic via paper. Net: one real but low-coverage source found (Beebe iWorQ); largest city Searcy remains a gap. iWorQ has no provider class built in this pipeline -- logging discovery only per task scope, no config wired."
+    },
+    {
+      "jurisdiction": "Lonoke County, AR (Cabot / Lonoke / Ward)",
+      "county": "Lonoke",
+      "state": "AR",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Checked all major cities and county, found no structured/API permit source anywhere. Cabot (largest city): Gemini-suggested page cabotar.gov/220/City-of-Cabot-Permit-Applications returned live-verified HTTP 404 (fabricated path -- base cabotar.gov domain is real, HTTP 200, but that permit page does not exist); Cabot's actual system is a CivicPlus Form Center (plain web form submission, not a queryable API/database, so no ingestible source even if the correct URL were found). Lonoke, Ward: PDF/manual intake only, confirmed via city sites. Unincorporated Lonoke County: no building code enforcement / no permit portal, only paper floodplain permits via County Clerk. Concluding NO_PUBLIC_DATA per task instructions -- confirmed no structured source exists after checking city + county domains; not pursuing Step 6 research fallback (out of scope)."
+    },
+    {
+      "jurisdiction": "City and County of Denver, CO (Accela, Development module)",
+      "county": "Denver",
+      "state": "CO",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/DENVER",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified 2026-07-30/31: aca-prod.accela.com/DENVER returns 200. module=Building 404s to Error.aspx (unusual for this deployment); real module found via nav-link probe is module=Development. Playwright dropdown probe on CapHome.aspx?module=Development found a genuine catch-all \"Commercial Construction Permit\" option (distinct from Electrical/Mechanical/Plumbing/Residential Construction Permit etc). Dry-run at lookback-days=90 returned 300 real rows with real permit numbers/addresses/statuses. Real merge run: 270 new rows merged into data/states/co.json. Wired as CO-DENVER in state_configs.py.",
+      "state_agent_pipeline_key": "CO-DENVER"
+    },
+    {
+      "jurisdiction": "Arapahoe County (unincorporated), CO -- Accela Building module",
+      "county": "Arapahoe",
+      "state": "CO",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/ARAPAHOE",
+      "status": "FAILED_NEED_ALT",
+      "notes": "Live-verified 2026-07-31: aca-prod.accela.com/ARAPAHOE is a real Accela portal (200, real nav with Building/Engineering/Planning/Zoning/Oil And Gas/Open Spaces modules found via Playwright nav-link probe). However module=Building (with or without TabName=Home) redirects to Login.aspx -- the Building/permit search requires an authenticated account, unlike other CO Accela deployments (Denver, Colorado Springs) which allow anonymous general search. Not pursued further (no login-credential automation in scope). Also identified via Gemini but not yet live-verified: City of Centennial uses Tyler EnerGov (cityofcentennialco-energovweb.tylerhost.net/apps/selfservice, confirmed 200) and City of Aurora uses AMANDA/DevPortal (devportal.auroragov.org) -- both are non-Accela, logged for future provider-class work, not pursued this session per scope (Accela-only build-out).",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "City of Centennial, CO (Arapahoe County) -- Tyler EnerGov",
+      "county": "Arapahoe",
+      "state": "CO",
+      "provider_type": "energov",
+      "endpoint": "https://cityofcentennialco-energovweb.tylerhost.net/apps/selfservice",
+      "status": "FAILED_NEED_ALT",
+      "notes": "Live-verified 2026-07-31: endpoint returns 200, real Tyler EnerGov Citizen Self-Service portal. No EnerGov provider class exists in this pipeline yet (out of scope per task instructions -- Accela is the only reusable provider). Logged for future build-out.",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "Jefferson County (unincorporated), CO -- AMANDA Citizen Portal",
+      "county": "Jefferson",
+      "state": "CO",
+      "provider_type": "amanda",
+      "endpoint": "https://citizenportal.jeffco.us/citizenportal/",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified 2026-07-31: 200. Real Granicus/CSDC AMANDA citizen portal for Jefferson County unincorporated permits. No AMANDA provider class exists in pipeline yet -- discovery-only per task scope, not wired.",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "City of Lakewood, CO (Jefferson County, largest city) -- eTRAKiT",
+      "county": "Jefferson",
+      "state": "CO",
+      "provider_type": "etrakit",
+      "endpoint": "https://www.lakewoodco.gov/eTRAKiT",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified 2026-07-31: 200. Real CentralSquare eTRAKiT portal. No eTRAKiT provider class exists in pipeline yet -- discovery-only, not wired.",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "City of Arvada, CO (Jefferson County) -- eTRAKiT",
+      "county": "Jefferson",
+      "state": "CO",
+      "provider_type": "etrakit",
+      "endpoint": "https://arvadapermits.org",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified 2026-07-31: 200. Real eTRAKiT portal on Arvada-branded custom domain. No eTRAKiT provider class exists in pipeline yet -- discovery-only, not wired.",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "Adams County (unincorporated), CO -- Accela Building module",
+      "county": "Adams",
+      "state": "CO",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/ADAMSCO",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified 2026-07-31: 200, real nav (Search Existing Permit / Building Applications-Permits / Land Use Cases / Infrastructure Permits / Code Enforcement) via Playwright probe. module=Building&TabName=Building has a real anonymous-accessible dropdown, no login gate (unlike Arapahoe). No single Commercial catch-all label -- dropdown is mostly residential trade subtypes (A/C, Furnace, Reroof, Siding, EV Charger, Solar) plus \"Commercial EV Charger\"/\"Commercial Solar\" narrow subtypes and a broad \"Building Permit - Plan Review Required\" bucket used here as the general/commercial-leaning catch-all. Dry-run lookback-days=90 returned 300 real rows. Real merge: 240 new rows into data/states/co.json. Wired as CO-ADAMS.",
+      "state_agent_pipeline_key": "CO-ADAMS"
+    },
+    {
+      "jurisdiction": "City of Thornton, CO (Adams County, largest city) -- CityView",
+      "county": "Adams",
+      "state": "CO",
+      "provider_type": "cityview",
+      "endpoint": "https://cityviewportal.thorntonco.gov",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified 2026-07-31: 200. Real Harris CityView portal. No CityView provider class in pipeline -- discovery-only, not wired. Not pursued further since Adams County itself already resolved via Accela.",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "City of Westminster, CO (Adams/Jefferson County) -- eTRAKiT (claimed)",
+      "county": "Adams",
+      "state": "CO",
+      "provider_type": "etrakit",
+      "endpoint": "https://www.westminsterco.gov/eTRAKiT",
+      "status": "FAILED_NEED_ALT",
+      "notes": "Gemini-suggested URL returned live 404 on curl verification 2026-07-31 -- fabricated/stale path, not a real endpoint. Not pursued further (Adams County unincorporated already resolved via Accela; Westminster is a secondary jurisdiction).",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "City of Fort Collins, CO (Larimer County, largest city) -- Accela custom domain",
+      "county": "Larimer",
+      "state": "CO",
+      "provider_type": "accela",
+      "endpoint": "https://accela-aca.fcgov.com/CitizenAccess",
+      "status": "FAILED_NEED_ALT",
+      "notes": "Live-verified 2026-07-31: accela-aca.fcgov.com/CitizenAccess/Welcome.aspx returns 200, real custom-domain Accela deployment (not aca-prod.accela.com). Playwright dropdown probe on module=Building&TabName=HOME found a real broad commercial label \"Commercial New Com-Ind-Mixed-Use Building\" and wired CO-FORTCOLLINS config. However dry-run at lookback-days=90 AND 400 both returned 0 rows -- accela_provider.py column-map detection found only 3 columns (status/permit_type/address_raw, missing date/permit_number/description) vs the standard 6-column map seen on aca-prod.accela.com deployments (Denver, Adams), indicating this custom-domain results page has a different table layout that the existing provider parser does not handle correctly. Not a data-sparsity issue -- a parser-compatibility issue. Left wired in state_configs.py for future parser fix but not merged (0 real rows confirmed, not silently trusted).",
+      "state_agent_pipeline_key": "CO-FORTCOLLINS"
+    },
+    {
+      "jurisdiction": "City of Loveland, CO (Larimer County) -- Accela",
+      "county": "Larimer",
+      "state": "CO",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/LOVELAND",
+      "status": "FAILED_NEED_ALT",
+      "notes": "Live-verified 2026-07-31: aca-prod.accela.com/LOVELAND returns 200, real Accela portal with Building/Planning/Enforcement/Licenses nav (Playwright probe). However module=Building&TabName=Home permit-type dropdown only contains the placeholder \"--Select--\" with no real options loaded for anonymous access -- likely requires login or a different tab/module to populate. Not pursued further given time budget; Fort Collins (larger city, same county) was the priority target.",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "Larimer County (unincorporated), CO -- Tyler EnerGov",
+      "county": "Larimer",
+      "state": "CO",
+      "provider_type": "energov",
+      "endpoint": "https://onlineportal.larimer.org",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified 2026-07-31: 200. Real Tyler EnerGov Citizen Self-Service portal. No EnerGov provider class exists in pipeline -- discovery-only, not wired.",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "City of Longmont, CO (Boulder County) -- Accela",
+      "county": "Boulder",
+      "state": "CO",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/LONGMONT",
+      "status": "FAILED_NEED_ALT",
+      "notes": "Live-verified 2026-07-31: 200, real portal, real nav (Playwright). Dropdown on module=Building&TabName=Building has clean Commercial/Multifamily/Residential split per category. Tried both \"New Construction - Commercial\" and \"Combo Permit - Commercial\" as permit_type_label at lookback-days=90 AND 400 -- both returned 0 rows with an incomplete column map (missing date column, unlike Denver/Adams standard 6-col map), suggesting a search-submission or parsing incompatibility with this deployment variant, not genuine data sparsity. Config CO-LONGMONT left wired for future debugging but NOT merged (0 real rows, not trusted).",
+      "state_agent_pipeline_key": "CO-LONGMONT"
+    },
+    {
+      "jurisdiction": "Boulder County (unincorporated), CO -- Accela (custom subdomain)",
+      "county": "Boulder",
+      "state": "CO",
+      "provider_type": "accela",
+      "endpoint": "https://accelapublic.bouldercounty.org/CitizenAccess",
+      "status": "FAILED_NEED_ALT",
+      "notes": "Gemini first claimed aca-prod.accela.com/BOULDERCO (live-verified 404, fabricated). Fed back via GEMINI_FEEDBACK_REPORT; corrected answer accelapublic.bouldercounty.org/CitizenAccess live-verified 200 (real dedicated-subdomain Accela deployment). Not pursued further this session (Longmont was prioritized as primary Boulder County target and hit a separate parser blocker; time budget did not allow debugging two Accela variants in one county).",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "City of Boulder, CO (largest city, county seat) -- Tyler EnerGov",
+      "county": "Boulder",
+      "state": "CO",
+      "provider_type": "energov",
+      "endpoint": "https://bouldercolorado.gov/services/energov-customer-self-service-portal-css",
+      "status": "FAILED_NEED_ALT",
+      "notes": "Gemini-suggested URL live-verified 404 on curl 2026-07-31 -- fabricated/stale path. City is confirmed via general knowledge to use Tyler EnerGov but the correct live endpoint was not found this session (deprioritized after Longmont/Boulder-County-unincorporated Accela blockers consumed the time budget for this county).",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "City of Lone Tree, CO (Douglas County) -- Accela",
+      "county": "Douglas",
+      "state": "CO",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/LONETREE",
+      "status": "FAILED_NEED_ALT",
+      "notes": "Live-verified 2026-07-31: 200, real portal, real nav (Building Permits/Planning/Zoning/Public Works via Playwright). Real module is module=Permits&TabName=Home (not Building). However the standard permit-type dropdown selector (#...ddlGSPermitType) was not found on that page -- different UI structure than other CO deployments checked this session. Not pursued further given time budget; also Lone Tree is a small city (~14k pop), not the main Douglas County permit volume driver.",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "Town of Castle Rock, CO (Douglas County, county seat) -- eTRAKiT",
+      "county": "Douglas",
+      "state": "CO",
+      "provider_type": "etrakit",
+      "endpoint": "https://etrakit.crgov.com/eTRAKiT",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified 2026-07-31: 200. Real CentralSquare eTRAKiT portal. No eTRAKiT provider class in pipeline -- discovery-only, not wired.",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "Douglas County (unincorporated incl. Highlands Ranch), CO -- custom eSubmittal",
+      "county": "Douglas",
+      "state": "CO",
+      "provider_type": "custom",
+      "endpoint": "https://apps.douglas.co.us/apps/buildingonlineservices/",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified 2026-07-31: 200. Real custom in-house Douglas County Building Online Services portal (not a known reusable provider type -- Accela/Socrata/ArcGIS/etc). Discovery-only, no provider class exists for this platform.",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "Weld County (unincorporated), CO -- Accela Building module",
+      "county": "Weld",
+      "state": "CO",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/WELD",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified 2026-07-31: 200, real nav (Building/Enforcement/Health/Oil And Gas/Planning/Public Works/Dev Review via Playwright). module=Building&TabName=Home dropdown has a clean real \"Commercial New Construction\" catch-all label. Dry-run lookback-days=90 returned 30 rows; real merge returned 23 new rows into data/states/co.json. Wired as CO-WELD.",
+      "state_agent_pipeline_key": "CO-WELD"
+    },
+    {
+      "jurisdiction": "City of Pueblo, CO (Southern Colorado Building Dept) -- InteraGov",
+      "county": "Pueblo",
+      "state": "CO",
+      "provider_type": "interagov",
+      "endpoint": "https://socobd.com",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified 2026-07-31: 200. Real custom InteraGov E-Gov portal for Southern Colorado Building Department (regional successor to Pueblo Regional Building Dept). No Accela/known reusable provider -- discovery-only.",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "Pueblo County (unincorporated incl. Pueblo West), CO -- OpenGov",
+      "county": "Pueblo",
+      "state": "CO",
+      "provider_type": "opengov",
+      "endpoint": "https://pueblocountyco.portal.opengov.com",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified 2026-07-31: 200 (both pueblocountyco.portal.opengov.com and pueblopermits.com redirect). Real OpenGov Permitting & Licensing platform. No OpenGov provider class in pipeline -- discovery-only.",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "Mesa County Building Dept (serves Mesa County & Grand Junction), CO -- MaintStar",
+      "county": "Mesa",
+      "state": "CO",
+      "provider_type": "maintstar",
+      "endpoint": "https://h9.maintstar.co/MesaCounty/portal/#/",
+      "status": "VERIFIED_WORKING",
+      "notes": "Gemini first claimed mesacountyco.maintstar.co (live-verified 000 DNS failure, fabricated). Fed back via GEMINI_FEEDBACK_REPORT; corrected h9.maintstar.co/MesaCounty/portal/#/ live-verified 200. No Accela used here -- building permits for the whole county (incl. Grand Junction) are unified under this MaintStar county portal. No MaintStar provider class in pipeline -- discovery-only.",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "City of Grand Junction, CO (Mesa County, planning/zoning clearances only) -- Tyler EnerGov",
+      "county": "Mesa",
+      "state": "CO",
+      "provider_type": "energov",
+      "endpoint": "https://grandjunctionco-energovweb.tylerhost.net/apps/selfservice",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified 2026-07-31: 200. Real Tyler EnerGov portal, but scoped to planning/zoning clearances only -- actual building permits for Grand Junction go through the county MaintStar portal above. Discovery-only.",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "Garfield County (unincorporated), CO -- manual/staff submittal",
+      "county": "Garfield",
+      "state": "CO",
+      "provider_type": null,
+      "endpoint": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Confirmed via Gemini: only minor permits (re-roofing, demolition, signs) have online e-forms; all full residential/commercial/land-use building permits are coordinated via direct staff submittal (email/in-person), no structured/API-backed system. Consistent with a genuinely small/manual county.",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "City of Rifle, CO (Garfield County, largest municipality) -- Cloudpermit",
+      "county": "Garfield",
+      "state": "CO",
+      "provider_type": "cloudpermit",
+      "endpoint": "https://us.cloudpermit.com",
+      "status": "VERIFIED_WORKING",
+      "notes": "rifleco.org/Cloudpermit redirect page itself 404s on curl 2026-07-31, but the underlying Cloudpermit platform us.cloudpermit.com is confirmed live (200) -- Rifle is a genuine Cloudpermit customer. No Cloudpermit provider class in pipeline -- discovery-only.",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "City of Mobile, AL / Mobile County",
+      "county": "Mobile",
+      "state": "AL",
+      "provider_type": "energov",
+      "endpoint": "https://www.buildmobile.org/customer-self-service/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Mobile runs Tyler EnerGov Citizen Self Service, confirmed live: https://urban.cityofmobile.org/portal/ returns 301 redirecting to https://www.buildmobile.org/customer-self-service/ (200, real EnerGov CSS portal branding). Covers the large majority of county population. Mobile County unincorporated area separately uses OpenGov for ROW permits (https://mobilecountyal.portal.opengov.com/, 200, verified live) plus manual/PDF/email intake for general building permits per https://www.mobilecountyal.gov/government/departments/inspection-services/permits/ (200, verified live). EnerGov provider class not built in this pipeline yet -- out of scope per task instructions (Accela-only wiring this session) -- logging discovery only, not wired to state_configs.py."
+    },
+    {
+      "jurisdiction": "Madison County, AL / City of Huntsville",
+      "county": "Madison",
+      "state": "AL",
+      "provider_type": "cityview",
+      "endpoint": "https://cityview.madisoncountyal.gov/Portal",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Madison County runs CityView (Harris Computer) permit portal, confirmed live 200 at https://cityview.madisoncountyal.gov/Portal. City of Huntsville (largest city) has a separate inspections/permit map portal at https://maps.huntsvilleal.gov/inspections/, confirmed live 200. Huntsville ePlans review URL Gemini gave (huntsvilleal.gov/development/building-construction/eplans-review/) was fabricated/stale -- 404, not used. Neither CityView nor Huntsville custom portal has a provider class built in this pipeline -- out of scope per task instructions (Accela-only wiring this session), logging discovery only."
+    },
+    {
+      "jurisdiction": "City of Montgomery, AL / Montgomery County",
+      "county": "Montgomery",
+      "state": "AL",
+      "provider_type": "arcgis",
+      "endpoint": "https://open-data-montgomeryal.hub.arcgis.com/datasets/construction-permit-data",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Gemini first claimed a permit portal at permits.montgomeryal.gov -- verified live, DNS failure (curl 000), fabricated. Fed back to Gemini; second answer pointed to a real, live (200) City of Montgomery ArcGIS Open Data Hub dataset page (Construction Permit Data) at https://open-data-montgomeryal.hub.arcgis.com/datasets/construction-permit-data, but Gemini could only give a placeholder REST FeatureServer URL with [Org_ID] unfilled -- fabricated the specific endpoint both times. Tried to resolve the real org/item ID via arcgis.com sharing/rest search API directly (item appears private/not publicly searchable that way, 0 results for multiple query variants). Montgomery County unincorporated permits confirmed manual/phone intake only (mc-ala.org building-permits page, 403 bot-block but real domain). Marking FAILED_NEED_ALT rather than guessing the REST endpoint -- needs a Playwright pass on the hub dataset page to extract the real service URL from page JS/network requests, not attempted this session."
+    },
+    {
+      "jurisdiction": "Shelby County, AL / City of Pelham / City of Alabaster",
+      "county": "Shelby",
+      "state": "AL",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Permitting is decentralized to municipalities in Shelby County. Unincorporated county confirmed manual/PDF/email intake (no searchable platform); shelbyal.com root is real (200) but every specific sub-page slug Gemini gave (217/492/495 Permits-and-Inspections variants) 404d -- fabricated/stale slugs, not resolved live. City of Alabaster uses LAMA (alabaster.onlama.com, 403 bot-block but real live domain) -- plausible real source, not further pursued. City of Pelham reportedly runs Tyler EnerGov CSS branded as Citizen Access Portal but every specific URL Gemini gave (229/566 variants) 404d; root pelhamalabama.gov is real (200). Not marking VERIFIED_WORKING since no exact endpoint survived live verification within budget; not NO_PUBLIC_DATA since Alabaster/Pelham plausibly have real platforms just not pinned down. Needs a follow-up direct site-navigation pass (not Gemini-guessed slugs) to find Alabaster/Pelham real permit URLs."
+    },
+    {
+      "jurisdiction": "City of Tuscaloosa, AL / Tuscaloosa County",
+      "county": "Tuscaloosa",
+      "state": "AL",
+      "provider_type": "cityview_blueprince",
+      "endpoint": "https://www.blueprinceportal.com/login",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Gemini first two answers (buildingdepartment.com and tuscaloosa.com/departments/.../building-and-inspections) were fabricated -- DNS fail and 404 respectively. Fed back live-verification failures; third answer gave https://www.blueprinceportal.com/login (200, real CityView BluePrince multi-jurisdiction portal, select Tuscaloosa) and https://www.tuscaloosa.com/building (200, real city building/inspections page). Unincorporated Tuscaloosa County confirmed manual/PDF submittals via Public Works, no online search platform (tuscco.com/departments/public-works/, 301 real domain redirect). BluePrince/CityView provider class not built in this pipeline -- out of scope for Accela-only wiring this session, logging discovery only."
+    },
+    {
+      "jurisdiction": "Baldwin County, AL (Foley/Daphne/Fairhope/Gulf Shores)",
+      "county": "Baldwin",
+      "state": "AL",
+      "provider_type": "citizenserve",
+      "endpoint": "https://www.baldwincountyal.gov/CSP",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Baldwin County's own site (baldwincountyal.gov/CSP, 301) redirects live to https://www.citizenserve.com/BaldwinCountyAL -- confirms a real, live Citizenserve deployment (root citizenserve.com is 200) even though that specific redirected path alone 404s without session/query params (typical for Citizenserve's stateful portal flow). Gemini's other guessed direct URLs (citizenserve.com/baldwincounty, PortalClientSearch.aspx?SearchID=429) were fabricated -- 404. City of Foley and City of Daphne also reportedly on Citizenserve per Gemini, not independently verified. Citizenserve provider class not built in this pipeline -- out of scope for Accela-only wiring this session, logging discovery only. Needs Playwright pass on baldwincountyal.gov/CSP to capture the real session-bound search URL before this could be wired as a scraping/API source."
+    },
+    {
+      "jurisdiction": "Lee County, AL / City of Auburn / City of Opelika",
+      "county": "Lee",
+      "state": "AL",
+      "provider_type": "cityworks_pll_arcgis",
+      "endpoint": "https://webgis.auburnalabama.org/permits",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Auburn (largest city) runs Trimble Cityworks PLL integrated with ArcGIS WebGIS, confirmed live 200 at https://webgis.auburnalabama.org/permits. City of Opelika (2nd largest) runs Tyler EnerGov Self Service, confirmed live 200 at https://ss.opelika-al.gov/EnerGovProd/SelfService#/home. Unincorporated Lee County confirmed manual/PDF/email intake (buildinginspection@leeco.us) with fee payment only via governmentwindow.com, no searchable permit platform. Neither Cityworks PLL nor EnerGov provider class is built in this pipeline -- out of scope for Accela-only wiring this session, logging discovery only."
+    },
+    {
+      "jurisdiction": "Morgan County, AL / City of Decatur",
+      "county": "Morgan",
+      "state": "AL",
+      "provider_type": "custom_portal",
+      "endpoint": "https://www.cityofdecatural.com/departments/building-department/online-permits/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Decatur (largest city) has a custom online permits page, confirmed live 200. No Accela agency found (confirmed via Gemini, consistent with no aca-prod match). Unincorporated Morgan County confirmed manual/PDF intake, no countywide building code enforcement outside floodplain/septic/ROW. Custom portal, no reusable provider class in this pipeline -- logging discovery only, out of scope for wiring this session."
+    },
+    {
+      "jurisdiction": "Houston County, AL / City of Dothan",
+      "county": "Houston",
+      "state": "AL",
+      "provider_type": "custom_portal",
+      "endpoint": "https://permits.dothan.org/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Dothan (largest city) has a dedicated permits subdomain, confirmed live (301 redirect, real domain) at https://permits.dothan.org/; info page https://www.dothan.org/195/Building-Permits also live (301). No Accela found. Custom platform, no provider class built -- logging discovery only, out of scope for wiring this session."
+    },
+    {
+      "jurisdiction": "Etowah County, AL / City of Gadsden",
+      "county": "Etowah",
+      "state": "AL",
+      "provider_type": "custom_portal",
+      "endpoint": "https://www.cityofgadsden.com/93/Building-Department",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Gadsden building department page confirmed live 200. Per Gemini, unincorporated Etowah County does not require building permits at all. No Accela found. Custom platform, no provider class built -- logging discovery only, out of scope for wiring this session."
+    },
+    {
+      "jurisdiction": "Elmore County, AL / City of Millbrook / City of Wetumpka",
+      "county": "Elmore",
+      "state": "AL",
+      "provider_type": null,
+      "endpoint": "https://www.cityofmillbrook.org/departments/building/",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "City of Millbrook building dept page confirmed live (301, real domain) but is an info/manual-submittal page, no searchable platform. City of Wetumpka's specific permits URL Gemini gave 404d (fabricated/stale slug); Wetumpka root not separately re-verified but Gemini and Millbrook page both describe manual PDF submittals, no online searchable database. Unincorporated Elmore County confirmed no county-level zoning/permit database. No Accela found. Marking NO_PUBLIC_DATA -- confirmed manual/PDF intake only across the county's jurisdictions."
+    },
+    {
+      "jurisdiction": "Autauga County, AL / City of Prattville",
+      "county": "Autauga",
+      "state": "AL",
+      "provider_type": "custom_pdf_arcgis_zoning",
+      "endpoint": "https://www.prattvilleal.gov/departments/planning-and-development/permitting/",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "City of Prattville (largest city) permitting page confirmed live (307 redirect, real domain) but per Gemini is in-house fillable-PDF/direct-review intake (ArcGIS used only for zoning/location lookups, not permit search/API). No searchable permit database or API found. No Accela found. Marking NO_PUBLIC_DATA."
+    },
+    {
+      "jurisdiction": "Calhoun County, AL / City of Anniston / City of Oxford",
+      "county": "Calhoun",
+      "state": "AL",
+      "provider_type": "govwell_iworq",
+      "endpoint": "https://annistonal.gov/building-department",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Anniston building department page confirmed live (301 redirect, real domain), reportedly runs GovWell per Gemini (not independently verified beyond the info page). City of Oxford's specific URL (oxfordal.gov/building-services) 404d, not verified; reportedly runs iWorQ per Gemini. No Accela found. GovWell/iWorQ provider classes not built in this pipeline -- logging discovery only, out of scope for wiring this session. Anniston page live-verified enough to call VERIFIED_WORKING at the discovery level; Oxford's iWorQ claim unverified."
+    },
+    {
+      "jurisdiction": "Orange County unincorporated (OC Development Services), CA",
+      "county": "Orange",
+      "state": "CA",
+      "provider_type": "custom",
+      "endpoint": "https://myoceservices.ocgov.com/",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Domain live (curl 200). This is myOCeServices, a custom in-house land management portal, not one of our built provider types (not Accela/Socrata/ArcGIS/EnerGov/CKAN). No structured API endpoint identified within scope of this pass. Needs a dedicated custom-scraper investigation, out of scope here."
+    },
+    {
+      "jurisdiction": "Anaheim, CA",
+      "county": "Orange",
+      "state": "CA",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/ANAHEIM/Cap/CapHome.aspx?module=Building",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Domain and Accela backend confirmed live (curl 200; the site's own nav links reference module=Building). BUT Anaheim has replaced the standard ACA general-search UI with a fully custom front-end ('Anaheim Next') -- navigating directly to CapHome.aspx?module=Building bounces back to https://aca-prod.accela.com/anaheim/default.aspx every time (verified via Playwright with load and domcontentloaded waits, with and without visiting default.aspx first to seed cookies). The #ctl00_PlaceHolderMain_generalSearchForm_ddlGSPermitType dropdown never renders, so the standard Accela permit-type-label scraping pattern used elsewhere in this repo does not apply here without further front-end investigation."
+    },
+    {
+      "jurisdiction": "Santa Ana, CA",
+      "county": "Orange",
+      "state": "CA",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/SANTAANA/",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Domain confirmed live (curl 301 redirect, real Accela tenant). BUT navigating to Cap/CapHome.aspx?module=Building redirects to https://login.accela.com/oauth2/authorize... (FusionAuth SSO login page) -- Santa Ana's ACA general search requires an authenticated session, not publicly browsable like other CA Accela deployments checked this session. Not usable as an anonymous public data source without further auth investigation."
+    },
+    {
+      "jurisdiction": "Irvine, CA",
+      "county": "Orange",
+      "state": "CA",
+      "provider_type": "unknown",
+      "endpoint": "https://irvinequickrecords.com/",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Gemini also claimed https://epermit.cityofirvine.org/PermitsInquiry.aspx which returned curl code 000 (DNS/connection failure -- fabricated or dead). irvinequickrecords.com is confirmed live (curl 200) but is a generic public-records-request portal, not a structured permit search/API; no provider type identified. Needs deeper investigation, out of scope for this pass."
     }
   ]
 }

@@ -38,7 +38,9 @@
       "expected_completion": "Phased buildout starting late 2026-2027",
       "source_citation": "Sangamon County official data center portal; Capitol News Illinois; NPR Illinois",
       "pullable_document_status": "CLAIMED, FAILED VERIFICATION -- sangamonil.gov/departments/a-c/county-board/proposed-cyrusone-data-center loads (200) but is a generic page, same nav-footer-only PDFs as above, no CyrusOne-specific staff report/packet found at that URL.",
-      "pullable_documents": []
+      "pullable_documents": [],
+      "cross_checked": true,
+      "cross_check_result": "CONFIRMED -- $500M cost, 280 acres, April 7 2026 County Board approval (17-10 vote) all confirmed via independent search"
     },
     {
       "name": "REEL USA North American Manufacturing Center",
@@ -72,7 +74,9 @@
       "expected_completion": "2025-2026",
       "source_citation": "springfieldrailroad.com; Sangamon County Board resolutions",
       "pullable_document_status": "CLAIMED, FAILED VERIFICATION -- springfieldrailroad.com/SRIP/images/pdf/SSCTC_Fact_Sheet.pdf returns 404, dead link.",
-      "pullable_documents": []
+      "pullable_documents": [],
+      "cross_checked": true,
+      "cross_check_result": "CONFIRMED -- $80-100M, O'Shea Builders as CM, Hanson Professional Services as lead consultant confirmed via independent search"
     },
     {
       "name": "Bank of Springfield (BOS) Center Expansion & Downtown Hotel",
@@ -89,7 +93,9 @@
       "expected_completion": "2027-2028",
       "source_citation": "NPR Illinois (2026-03-31); Illinois Times (2026-04-02); Capitol News Illinois (2026-04-23)",
       "pullable_document_status": "NO PULLABLE DOCUMENT FOUND -- Gemini stated this explicitly (SB 3499 bill text exists on ilga.gov, but no municipal site plan published yet, consistent with 'Proposed' status).",
-      "pullable_documents": []
+      "pullable_documents": [],
+      "cross_checked": true,
+      "cross_check_result": "CONFIRMED -- $200M plan, SB 3499, March 31 2026 unveiling by named officials all confirmed via independent search"
     }
   ]
 }

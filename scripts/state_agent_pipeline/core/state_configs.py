@@ -425,6 +425,30 @@ AZ_SCOTTSDALE_CONFIG: dict[str, Any] = {
     "lookback_days": 90,
 }
 
+# Pima County (Tucson metro) -- Accela agency code PIMA. Verified live:
+# permits.pima.gov is Pima's own Accela Citizen Access front end
+# (customization/PIMA/... paths, apikey embedded), which maps directly
+# to the standard aca-prod.accela.com/PIMA backend (200 on both
+# CapHome.aspx?module=Building and the bare root). Playwright dropdown
+# probe on the live generalSearchForm found no Commercial-prefixed
+# permit type at all (options are Aquatic Facility, Building Permit,
+# C of O Historical, Construction Noise Permit, COT Plan Review,
+# Damage/Demo Permit, Electrical/Mechanical Permit, Floodplain Use
+# Permit, Green Building Certification, Historical Permit, Manufactured
+# Building Permit, Model Plan Approval, Other Structures Permit,
+# Oversize Overweight Vehicle, Public Records Request, Registered
+# Plant, Revision, Right of Way Permit, Septic, Site Work Permit,
+# Special Event Permit) -- "Building Permit" is the broadest real
+# catch-all covering commercial work here, used as permit_type_label.
+AZ_PIMACOUNTY_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "AZ",
+    "provider_type": "accela",
+    "county": "Pima",
+    "endpoint": "https://aca-prod.accela.com/PIMA",
+    "permit_type_label": "Building Permit",
+    "lookback_days": 90,
+}
+
 # NC_CONFIG (the "NC" key, Flash+Sonnet LLM path) was removed 2026-07-29 --
 # it hit this exact same meckgis.mecklenburgcountync.gov endpoint as
 # NC_MECKLENBURG_CONFIG below, just through paid Flash/Sonnet instead of
@@ -1263,6 +1287,119 @@ FL_MIAMIDADE_CONFIG: dict[str, Any] = {
     "city_fields": ["City"],
 }
 
+# 7 FL counties confirmed on Accela 2026-07-31 (live curl checks against
+# aca-prod.accela.com/{code} -- domain-level only, not the DOM/dropdown
+# level accela_provider.py actually needs). permit_type_label below is a
+# best-guess placeholder ("Commercial"), NOT yet confirmed against each
+# portal's real dropdown option text the way Palmdale/Indianapolis were
+# -- every one of these MUST be run with --dry-run first to catch a
+# wrong label before a real --merge-state run, same discipline as every
+# other Accela config in this file.
+# Fort Lauderdale's Accela deployment has no single "Commercial" catch-
+# all option -- confirmed live 2026-07-31 by listing the real dropdown
+# (200+ options, split by permit subtype: Commercial New Construction/
+# Alteration/Addition/Demolition/Miscellaneous/Paving/Pool-Spa-Fountain
+# Permit). "Commercial New Construction Permit" was tried first but is
+# too narrow -- confirmed live it has zero Broward records newer than
+# Dec 2023, so any lookback window returns 0 rows (not a bug, genuinely
+# that rare in this specific subtype). "Commercial Alteration Permit"
+# has real, current activity (confirmed live: newest record Sept 2025,
+# correctly newest-first) -- using that instead. Real remaining scope:
+# this single-label approach still misses Addition/Demolition/
+# Miscellaneous subtypes, which can also be $5M+ projects.
+FL_BROWARD_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "FL",
+    "provider_type": "accela",
+    "county": "Broward",
+    "endpoint": "https://aca-prod.accela.com/FTL",
+    "module": "Permits",
+    "permit_type_label": "Commercial Alteration Permit",
+    "lookback_days": 30,
+}
+
+# Hillsborough (HillsGovHub) uses module=Building, not module=Permits --
+# confirmed live 2026-07-31 (module=Permits 404s to an Error.aspx page).
+# Real dropdown label used: "Commercial New Construction and Additions"
+# (closest broad match among 18 Commercial-prefixed subtypes).
+FL_HILLSBOROUGH_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "FL",
+    "provider_type": "accela",
+    "county": "Hillsborough",
+    "endpoint": "https://aca-prod.accela.com/HCFL",
+    "module": "Building",
+    "permit_type_label": "Commercial New Construction and Additions",
+    "lookback_days": 30,
+}
+
+# Pinellas uses module=Building, not Permits (module=Permits 404s to
+# Error.aspx) -- confirmed live 2026-07-31, same pattern as Hillsborough.
+# Real dropdown label: "Commercial Remodel/Repair/Renovation" (broadest
+# of 19 Commercial-prefixed subtypes).
+FL_PINELLAS_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "FL",
+    "provider_type": "accela",
+    "county": "Pinellas",
+    "endpoint": "https://aca-prod.accela.com/PINELLAS",
+    "module": "Building",
+    "permit_type_label": "Commercial Remodel/Repair/Renovation",
+    "lookback_days": 30,
+}
+
+# Polk uses module=Building, not Permits -- confirmed live 2026-07-31.
+# Real dropdown label: "Commercial Renovation Permit - Ex: Tenant
+# Buildout, Window Changeout, Remodel, Addition, etc." (broadest of 6
+# Commercial-prefixed subtypes; note the label includes trailing
+# examples text, must match exactly).
+FL_POLK_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "FL",
+    "provider_type": "accela",
+    "county": "Polk",
+    "endpoint": "https://aca-prod.accela.com/POLKCO",
+    "module": "Building",
+    "permit_type_label": "Commercial Renovation Permit - Ex: Tenant Buildout, Window Changeout, Remodel, Addition, etc.",
+    "lookback_days": 30,
+}
+
+FL_SARASOTA_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "FL",
+    "provider_type": "accela",
+    "county": "Sarasota",
+    "endpoint": "https://aca-prod.accela.com/SARASOTACO",
+    "module": "Permits",
+    "permit_type_label": "Commercial",
+    "lookback_days": 30,
+}
+
+# Manatee uses module=Building, not Permits -- confirmed live 2026-07-31.
+# Has a real plain "Commercial" option (unlike most other FL Accela
+# deployments checked tonight, which split into named subtypes).
+FL_MANATEE_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "FL",
+    "provider_type": "accela",
+    "county": "Manatee",
+    "endpoint": "https://aca-prod.accela.com/MANATEE",
+    "module": "Building",
+    "permit_type_label": "Commercial",
+    "lookback_days": 30,
+}
+
+# Pasco's module=Permits works (unlike Hillsborough/Pinellas/Polk/
+# Manatee/Sarasota, which needed module=Building) -- confirmed live
+# 2026-07-31. No single "Commercial" catch-all; uses a "COM - "
+# prefix across ~50 granular subtypes (new construction split by wall
+# material, additions, interior buildouts, etc.). Using "COM - Interior
+# Build Out Including Concrete Slab" as a common, real-activity proxy --
+# real remaining scope: misses new-construction subtypes entirely.
+FL_PASCO_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "FL",
+    "provider_type": "accela",
+    "county": "Pasco",
+    "endpoint": "https://aca-prod.accela.com/pasco",
+    "module": "Permits",
+    "permit_type_label": "COM - New Structures Constructed of Frame Walls",
+    "lookback_days": 30,
+}
+
 # King County (WA) via City of Seattle's Building Permits (Socrata) --
 # verified live 2026-07-28: MAX(issueddate) = 2026-07-24 (fresh), 51,673
 # total commercial-filtered records.
@@ -1652,6 +1789,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "AZ-MARICOPACOUNTY": AZ_MARICOPACOUNTY_CONFIG,
     "AZ-MESA": AZ_MESA_CONFIG,
     "AZ-SCOTTSDALE": AZ_SCOTTSDALE_CONFIG,
+    "AZ-PIMACOUNTY": AZ_PIMACOUNTY_ACCELA_CONFIG,
     "TX-JEFFERSON": TX_JEFFERSON_CONFIG,
     "TX-ECTOR": TX_ECTOR_CONFIG,
     "TX-DALLAS-NEW": TX_DALLAS_NEW_ACCELA_CONFIG,
@@ -1677,6 +1815,13 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "SD-SIOUXFALLS": SD_SIOUXFALLS_CONFIG,
     "IN-INDIANAPOLIS": IN_INDIANAPOLIS_ACCELA_CONFIG,
     "FL-MIAMIDADE": FL_MIAMIDADE_CONFIG,
+    "FL-BROWARD": FL_BROWARD_ACCELA_CONFIG,
+    "FL-HILLSBOROUGH": FL_HILLSBOROUGH_ACCELA_CONFIG,
+    "FL-PINELLAS": FL_PINELLAS_ACCELA_CONFIG,
+    "FL-POLK": FL_POLK_ACCELA_CONFIG,
+    "FL-SARASOTA": FL_SARASOTA_ACCELA_CONFIG,
+    "FL-MANATEE": FL_MANATEE_ACCELA_CONFIG,
+    "FL-PASCO": FL_PASCO_ACCELA_CONFIG,
     "WA-KING": WA_KING_CONFIG,
     "TX-TARRANT": TX_TARRANT_CONFIG,
     "OH-FRANKLIN": OH_FRANKLIN_CONFIG,
@@ -1797,6 +1942,122 @@ CO_SPRINGS_ACCELA_CONFIG: dict[str, Any] = {
 }
 STATE_CONFIGS["CO-SPRINGS"] = CO_SPRINGS_ACCELA_CONFIG
 
+# City and County of Denver, CO (state's #1 county by population) --
+# Accela agency code DENVER, confirmed live 2026-07-30 (200 on
+# aca-prod.accela.com/DENVER). NOTE: module=Building 404s to Error.aspx
+# here (unlike most deployments) -- Denver's real module name is
+# "Development" (found via nav-link probe: CapHome.aspx?module=
+# Development&TabName=Home). The permit-type dropdown has a genuine
+# single catch-all commercial option, "Commercial Construction Permit"
+# (distinct from Electrical/Mechanical/Plumbing/Roofing/Residential
+# Construction Permit etc. in the same dropdown), so no subtype
+# fan-out needed.
+CO_DENVER_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "CO",
+    "provider_type": "accela",
+    "county": "Denver",
+    "endpoint": "https://aca-prod.accela.com/DENVER",
+    "module": "Development",
+    "permit_type_label": "Commercial Construction Permit",
+    "lookback_days": 30,
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
+}
+STATE_CONFIGS["CO-DENVER"] = CO_DENVER_ACCELA_CONFIG
+
+# Adams County, CO (unincorporated; state's #4 county by population) --
+# Accela agency code ADAMSCO, confirmed live 2026-07-31 (200 on
+# aca-prod.accela.com/ADAMSCO). Real module/tab is
+# module=Building&TabName=Building (found via nav-link probe). Dropdown
+# has NO single "Commercial" catch-all label (mostly residential-trade
+# subtypes: A/C, Furnace, Reroof, Siding, EV Charger, Solar, etc.) --
+# the broadest non-residential-specific option is "Building Permit -
+# Plan Review Required" (the generic new-construction/commercial bucket
+# that requires full plan review, as opposed to the over-the-counter
+# residential trade permits listed alongside it). Also present:
+# "Commercial EV Charger" and "Commercial Solar" as narrow commercial
+# subtypes, but "Plan Review Required" is the broad catch-all used here.
+CO_ADAMS_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "CO",
+    "provider_type": "accela",
+    "county": "Adams",
+    "endpoint": "https://aca-prod.accela.com/ADAMSCO",
+    "module": "Building",
+    "permit_type_label": "Building Permit - Plan Review Required",
+    "lookback_days": 30,
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
+}
+STATE_CONFIGS["CO-ADAMS"] = CO_ADAMS_ACCELA_CONFIG
+
+# City of Fort Collins, CO (Larimer County, largest city) -- Accela on
+# a custom host domain (not aca-prod.accela.com), confirmed live
+# 2026-07-31: https://accela-aca.fcgov.com/CitizenAccess/Welcome.aspx
+# returns 200. Base path is "/CitizenAccess" (not an agency-code path
+# segment like most deployments) -- endpoint here is the full base
+# including that segment so accela_provider.py's f"{base_url}/Cap/
+# CapHome.aspx" construction resolves correctly. module=Building&
+# TabName=HOME dropdown has a genuine broad new-construction-commercial
+# label: "Commercial New Com-Ind-Mixed-Use Building" (distinct from
+# narrower Commercial Electrical/Mechanical/Plumbing/Roofing/Addition/
+# Alteration subtypes also present).
+CO_FORTCOLLINS_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "CO",
+    "provider_type": "accela",
+    "county": "Larimer",
+    "endpoint": "https://accela-aca.fcgov.com/CitizenAccess",
+    "module": "Building",
+    "permit_type_label": "Commercial New Com-Ind-Mixed-Use Building",
+    "lookback_days": 30,
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
+}
+STATE_CONFIGS["CO-FORTCOLLINS"] = CO_FORTCOLLINS_ACCELA_CONFIG
+
+# City of Longmont, CO (Boulder County, 2nd largest city) -- Accela
+# agency code LONGMONT (lowercase /longmont/ also resolves), confirmed
+# live 2026-07-31 (200). Real module/tab is module=Building&
+# TabName=Building. Dropdown has a clean Commercial/Multifamily/
+# Residential split across every permit category -- "New Construction -
+# Commercial" is the exact broad catch-all used here. NOTE: unincorporated
+# Boulder County itself also runs Accela, but on a dedicated subdomain
+# (accelapublic.bouldercounty.org/CitizenAccess, confirmed live) rather
+# than aca-prod.accela.com/BOULDERCO (Gemini's first guess, confirmed
+# 404 -- fabricated agency code, corrected via GEMINI_FEEDBACK_REPORT
+# loop) -- not wired this session, Longmont was prioritized as the
+# larger/simpler target.
+CO_LONGMONT_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "CO",
+    "provider_type": "accela",
+    "county": "Boulder",
+    "endpoint": "https://aca-prod.accela.com/LONGMONT",
+    "module": "Building",
+    "permit_type_label": "New Construction - Commercial",
+    "lookback_days": 30,
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
+}
+STATE_CONFIGS["CO-LONGMONT"] = CO_LONGMONT_ACCELA_CONFIG
+
+# Weld County, CO (unincorporated; state's #8 county by population,
+# high oil/gas + residential/commercial growth) -- Accela agency code
+# WELD, confirmed live 2026-07-31 (200). module=Building&TabName=Home
+# dropdown has a clean, real "Commercial New Construction" catch-all
+# label (distinct from Commercial Alteration/Electrical and Oil and Gas
+# subtypes).
+CO_WELD_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "CO",
+    "provider_type": "accela",
+    "county": "Weld",
+    "endpoint": "https://aca-prod.accela.com/WELD",
+    "module": "Building",
+    "permit_type_label": "Commercial New Construction",
+    "lookback_days": 30,
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
+}
+STATE_CONFIGS["CO-WELD"] = CO_WELD_ACCELA_CONFIG
+
 # City of Cleveland, OH (Dept. of Building and Housing) -- Accela agency
 # code COC, confirmed live 2026-07-28. Separate system from Cuyahoga
 # County's own ArcGIS feed (OH-CUYAHOGA above) -- same LA-City-vs-LA-
@@ -1825,6 +2086,28 @@ OH_CLEVELAND_COO_CONFIG: dict[str, Any] = {
 }
 STATE_CONFIGS["OH-CLEVELAND"] = OH_CLEVELAND_CONFIG
 STATE_CONFIGS["OH-CLEVELAND-COO"] = OH_CLEVELAND_COO_CONFIG
+
+# City of Hartford, CT (Hartford County's largest city; CT has no
+# county government -- towns/cities issue permits directly) -- Accela
+# agency code HARTFORD, confirmed live 2026-07-31 (module=Building loads
+# cleanly, no Error.aspx redirect). Playwright dropdown probe of
+# #ctl00_PlaceHolderMain_generalSearchForm_ddlGSPermitType shows no
+# single "Commercial" catch-all -- real options are split into
+# Commercial Accessory Structure/Addition/Alteration/Foundation/New
+# Construction/Pool-Spa/Solar-PV Permit. Picked "Commercial Alteration
+# Permit" as the broadest, highest-volume real label (same pattern used
+# for TX_BROWNSVILLE_ACCELA_CONFIG).
+CT_HARTFORD_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "CT",
+    "provider_type": "accela",
+    "county": "Hartford",
+    "endpoint": "https://aca-prod.accela.com/HARTFORD",
+    "permit_type_label": "Commercial Alteration Permit",
+    "lookback_days": 90,
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
+}
+STATE_CONFIGS["CT-HARTFORD"] = CT_HARTFORD_ACCELA_CONFIG
 
 # SAM.gov + USAspending for all 50 states (2026-07-28, Asif: "pull all
 # data from USAspending and sam.gov"). Both providers are already

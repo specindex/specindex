@@ -22,9 +22,21 @@
       "source_citation": "Illinois.gov press release (2025-05-05); Clayco Construction",
       "pullable_document_status": "CONFIRMED PULLABLE -- verified live",
       "pullable_documents": [
-        {"description": "Town Council meeting packet, Item 11: amended site plan resolution incl. architectural elevation drawings and site utility plan", "url": "https://www.normalil.gov/ArchiveCenter/ViewFile/Item/4811", "date": "2024-08-19", "verified": "200 OK, downloaded, valid PDF, 3.68MB"},
-        {"description": "Planning Commission action packet & minutes, Case 24-08-05-PC: amended site plan", "url": "https://www.normalil.gov/ArchiveCenter/ViewFile/Item/4802", "date": "2024-08-08", "verified": "200 OK"}
-      ]
+        {
+          "description": "Town Council meeting packet, Item 11: amended site plan resolution incl. architectural elevation drawings and site utility plan",
+          "url": "https://www.normalil.gov/ArchiveCenter/ViewFile/Item/4811",
+          "date": "2024-08-19",
+          "verified": "200 OK, downloaded, valid PDF, 3.68MB"
+        },
+        {
+          "description": "Planning Commission action packet & minutes, Case 24-08-05-PC: amended site plan",
+          "url": "https://www.normalil.gov/ArchiveCenter/ViewFile/Item/4802",
+          "date": "2024-08-08",
+          "verified": "200 OK"
+        }
+      ],
+      "cross_checked": true,
+      "cross_check_result": "CONFIRMED -- 380-acre site, SOM/Lamar Johnson Collaborative as architects confirmed via independent search"
     },
     {
       "name": "OSF St. Joseph Medical Center ICU Expansion",
@@ -92,7 +104,9 @@
       "expected_completion": "2024-2025",
       "source_citation": "Ferrero Corporate Newsroom; State of Illinois Executive Office releases",
       "pullable_document_status": "NO PULLABLE DOCUMENT FOUND -- private facility expansion, no public site plan/PUD packet located in Bloomington planning archives (Gemini stated this explicitly rather than omitting the check).",
-      "pullable_documents": []
+      "pullable_documents": [],
+      "cross_checked": true,
+      "cross_check_result": "CONFIRMED -- $214.4M cost, 169,000 SF expansion, The Austin Company as design-builder confirmed via independent search"
     }
   ]
 }

@@ -181,6 +181,42 @@ class AccelaProvider(BaseIngestionProvider):
                         print(f"[accela:{self.county}] no data rows found on page 1", file=sys.stderr)
                         break
 
+                    # Sort-order sanity check -- everything below assumes
+                    # newest-first (confirmed live on Gwinnett/El Paso),
+                    # but that's a per-deployment default, not a platform
+                    # guarantee. Confirmed live 2026-07-31 on Broward
+                    # (FTL): results came back oldest-first (page 1's
+                    # first row was from 2023), and neither a single nor
+                    # a double click on the "Date" column's sort link
+                    # changed the order -- this deployment's General
+                    # Search doesn't actually support client-triggerable
+                    # re-sorting the way the ASP.NET postback link
+                    # implies. Silently running the newest-first "stop at
+                    # first old row" logic against ascending data means
+                    # it stops on row 1 and reports 0 results for a
+                    # county that actually has recent permits -- a false
+                    # "no data" that's worse than an error, since nothing
+                    # downstream would ever notice. Fail loud instead:
+                    # detect the order from the first page and abort
+                    # cleanly rather than fetch wrong data. Real fix for
+                    # ascending deployments (reverse pagination from the
+                    # last page, since newest are at the end) is
+                    # unbuilt -- real remaining scope.
+                    if page_num == 1 and len(data_rows) >= 2:
+                        first_date = datetime.strptime(data_rows[0][date_idx], "%m/%d/%Y").date()
+                        last_date = datetime.strptime(data_rows[-1][date_idx], "%m/%d/%Y").date()
+                        if first_date < last_date:
+                            print(
+                                f"[accela:{self.county}] ABORT: results are sorted oldest-first "
+                                f"(page 1 runs {first_date.isoformat()} -> {last_date.isoformat()}), "
+                                "not newest-first as this provider assumes -- the incremental "
+                                "cutoff logic would silently under-report. Needs reverse-pagination "
+                                "support (real remaining scope), not implemented yet.",
+                                file=sys.stderr,
+                            )
+                            stop = True
+                            break
+
                     for r in data_rows:
                         row_date = datetime.strptime(r[date_idx], "%m/%d/%Y").date()
                         if row_date <= cutoff:
