@@ -85,14 +85,90 @@ const pipeline = [
 ];
 
 // Only REST API is real today (see docs/ROADMAP.md item 92) -- MCP server,
-// Snowflake, and Databricks are logged as roadmap items, not shipped, so
-// they're marked "coming" rather than presented as live integrations.
+// Snowflake, Databricks, Salesforce, and HubSpot are logged as roadmap
+// items, not shipped, so they're marked "coming" rather than presented as
+// live integrations. Brand-color inline SVGs reused from the Claude-
+// Projects mockup (specindex_sample.html) -- self-contained, no external
+// logo requests.
 const integrations = [
-  { name: "REST API", live: true },
-  { name: "CSV / Excel export", live: false },
-  { name: "MCP server", live: false },
-  { name: "Snowflake", live: false },
-  { name: "Databricks", live: false },
+  {
+    name: "REST API",
+    live: true,
+    svg: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="#3B4658" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="9 8 5 12 9 16" />
+        <polyline points="15 8 19 12 15 16" />
+      </svg>
+    ),
+  },
+  {
+    name: "CSV / Excel export",
+    live: false,
+    svg: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="#217346" strokeWidth="1.7">
+        <rect x="4" y="5" width="16" height="14" rx="2" />
+        <line x1="4" y1="10" x2="20" y2="10" />
+        <line x1="4" y1="14.5" x2="20" y2="14.5" />
+        <line x1="12.5" y1="10" x2="12.5" y2="19" />
+      </svg>
+    ),
+  },
+  {
+    name: "MCP server",
+    live: false,
+    svg: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="#3B4658" strokeWidth="1.7" strokeLinecap="round">
+        <line x1="8" y1="11.4" x2="15.4" y2="7" />
+        <line x1="8" y1="12.6" x2="15.4" y2="17" />
+        <circle cx="6" cy="12" r="2.5" fill="#3B4658" stroke="none" />
+        <circle cx="17.5" cy="6" r="2.5" fill="#3B4658" stroke="none" />
+        <circle cx="17.5" cy="18" r="2.5" fill="#3B4658" stroke="none" />
+      </svg>
+    ),
+  },
+  {
+    name: "Snowflake",
+    live: false,
+    svg: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="#29B5E8" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2v20" />
+        <path d="M3.4 7l17.2 10" />
+        <path d="M20.6 7L3.4 17" />
+        <path d="M12 6l-2.2-2M12 6l2.2-2M12 18l-2.2 2M12 18l2.2 2M4.9 8.3l.2-2.9M4.9 8.3L2 8.9M19.1 8.3l-.2-2.9M19.1 8.3l2.9.6M4.9 15.7l-2.9.6M4.9 15.7l.2 2.9M19.1 15.7l2.9-.6M19.1 15.7l-.2 2.9" />
+      </svg>
+    ),
+  },
+  {
+    name: "Databricks",
+    live: false,
+    svg: (
+      <svg viewBox="0 0 24 24" fill="#FF3621">
+        <path d="M3 8.2 12 4l9 4.2-9 4.2z" opacity=".5" />
+        <path d="M3 13 12 8.8l9 4.2-9 4.2z" />
+      </svg>
+    ),
+  },
+  {
+    name: "Salesforce",
+    live: false,
+    svg: (
+      <svg viewBox="0 0 24 24" fill="#00A1E0">
+        <path d="M7.5 16a3 3 0 0 1 .3-6 4 4 0 0 1 7.5-1.1A3.2 3.2 0 0 1 18 16H7.5z" />
+      </svg>
+    ),
+  },
+  {
+    name: "HubSpot",
+    live: false,
+    svg: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="#FF7A59" strokeWidth="1.8">
+        <circle cx="9.5" cy="15" r="3.8" />
+        <line x1="15.3" y1="8" x2="11.8" y2="12.5" />
+        <circle cx="16.5" cy="6.8" r="2" fill="#FF7A59" stroke="none" />
+        <line x1="9.5" y1="11.2" x2="9.5" y2="7.5" />
+      </svg>
+    ),
+  },
 ];
 
 export const metadata: Metadata = {
@@ -259,43 +335,44 @@ export default async function HomePage() {
               </p>
             </div>
 
-            <div className="mt-14 grid items-start gap-12 md:grid-cols-2">
+            <div className="mt-14 grid items-center gap-12 md:grid-cols-2">
               <div>
-                <h3 className="text-lg font-semibold">Check where your name already shows up</h3>
-                <p className="mt-3 text-sm leading-relaxed text-[var(--color-gray-600)]">
-                  Run your brand against the index and you&apos;ll see how many projects
-                  need your category, how many are still early, and how many name a
-                  manufacturer at all.
-                </p>
-                <div className="card mt-5 p-4 font-mono text-xs">
-                  <p className="text-[var(--color-gray-400)]">9:41</p>
-                  <div className="mt-3 flex items-center gap-2">
-                    <span className="flex h-5 w-5 items-center justify-center rounded bg-[var(--color-green)] text-[8px] font-bold text-white">
-                      S
-                    </span>
-                    <span className="font-semibold">SpecIndex</span>
-                  </div>
-                  <p className="mt-3 leading-relaxed text-[var(--color-gray-700)]">
-                    {brandScan.categoryHits.length} of our {sample.length} highest-priority
-                    scored projects will need lighting. {brandScan.stillOpen.length} are
-                    still in planning or permitting with no manufacturer named, so those
-                    are the ones worth a call this week.
-                  </p>
-                </div>
-                <Link href="/visibility/" className="mt-5 inline-block text-sm font-semibold text-[var(--color-green)] hover:underline">
-                  Run a brand check &rarr;
-                </Link>
+                <ul className="grid gap-5">
+                  <li className="flex gap-3.5">
+                    <span className="flex h-9 w-9 flex-none items-center justify-center rounded-lg border border-[#bfe6cf] bg-[#e8f6ee] text-base font-bold text-[var(--color-green)]">&#9678;</span>
+                    <div>
+                      <h4 className="text-base font-semibold">Brand visibility</h4>
+                      <p className="mt-1 text-sm text-[var(--color-gray-600)]">
+                        See every indexed project where your products, or your competitors&apos;, are named. {brandScan.categoryHits.length} of our {sample.length} highest-priority scored projects need lighting, {brandScan.stillOpen.length} of those still have no manufacturer named.
+                      </p>
+                      <Link href="/visibility/" className="mt-1.5 inline-block text-sm font-semibold text-[var(--color-green)] hover:underline">
+                        Run a brand check &rarr;
+                      </Link>
+                    </div>
+                  </li>
+                  <li className="flex gap-3.5">
+                    <span className="flex h-9 w-9 flex-none items-center justify-center rounded-lg border border-[#bfe6cf] bg-[#e8f6ee] text-base font-bold text-[var(--color-green)]">&#10530;</span>
+                    <div>
+                      <h4 className="text-base font-semibold">Spec share by MasterFormat division</h4>
+                      <p className="mt-1 text-sm text-[var(--color-gray-600)]">
+                        Measure your win rate against category benchmarks across the index&apos;s CSI divisions.
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex gap-3.5">
+                    <span className="flex h-9 w-9 flex-none items-center justify-center rounded-lg border border-[#bfe6cf] bg-[#e8f6ee] text-base font-bold text-[var(--color-green)]">&#9689;</span>
+                    <div>
+                      <h4 className="text-base font-semibold">The window, before it closes</h4>
+                      <p className="mt-1 text-sm text-[var(--color-gray-600)]">
+                        Announced &rarr; Permitting &rarr; Bidding &rarr; Under construction. We flag the moment influence is still possible.
+                      </p>
+                    </div>
+                  </li>
+                </ul>
               </div>
 
               <div>
-                <h3 className="text-lg font-semibold">Spec share by MasterFormat division</h3>
-                <p className="mt-3 text-sm leading-relaxed text-[var(--color-gray-600)]">
-                  A spec book is organized by CSI MasterFormat division, so that&apos;s how
-                  we organize the index. Each row shows how many indexed projects need
-                  it, how many are still early enough to influence, and who normally
-                  writes it into the spec.
-                </p>
-                <div className="card mt-5 overflow-hidden">
+                <div className="card overflow-hidden">
                   <div className="flex items-center justify-between border-b border-[var(--color-border)] bg-[var(--color-gray-100)] px-4 py-3 text-xs text-[var(--color-gray-600)]">
                     <span>Product category coverage</span>
                     <span className="flex items-center gap-1.5">
@@ -303,7 +380,7 @@ export default async function HomePage() {
                       Early stage
                     </span>
                   </div>
-                  <div className="max-h-[280px] overflow-y-auto">
+                  <div className="max-h-[340px] overflow-y-auto">
                     {divisions.slice(0, 8).map((d) => (
                       <div
                         key={d.code}
@@ -420,8 +497,9 @@ export default async function HomePage() {
               {integrations.map((i) => (
                 <span
                   key={i.name}
-                  className="inline-flex items-center gap-2 rounded-lg border border-[var(--color-border)] bg-white px-4 py-3 text-sm font-medium text-[var(--color-ink)] shadow-sm"
+                  className="inline-flex items-center gap-2.5 rounded-lg border border-[var(--color-border)] bg-white px-4 py-3 text-sm font-medium text-[var(--color-ink)] shadow-sm"
                 >
+                  <span className="h-[22px] w-[22px] flex-none">{i.svg}</span>
                   {i.name}
                   {!i.live && <span className="font-normal text-[var(--color-gray-400)]">&middot; coming</span>}
                 </span>
@@ -476,7 +554,7 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <FAQ items={faqs} />
+        <FAQ items={faqs} eyebrow="FAQ" heading="Frequently Asked Questions" />
       </HomePageGate>
     </>
   );

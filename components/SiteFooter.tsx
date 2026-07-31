@@ -18,10 +18,12 @@ export function SiteFooter() {
         <div className="md:col-span-1">
           <div className="flex items-center gap-2">
             <Logo size={28} />
-            <span className="text-lg font-semibold">SpecIndex</span>
+            <span className="text-lg font-semibold">
+              Spec<span className="text-[var(--color-green)]">Index</span>
+            </span>
           </div>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-[var(--color-gray-600)]">
-            Specification intelligence for building product manufacturers.
+            AI construction project intelligence for building product manufacturers. Win the spec before your competitors find the project.
           </p>
         </div>
 
