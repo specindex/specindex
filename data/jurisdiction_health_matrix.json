@@ -1308,6 +1308,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "City of Waco confirmed live on EnerGov (200 OK). Puller not yet built."
+    },
+    {
+      "jurisdiction": "Bell County, TX (Killeen/Temple)",
+      "county": "Bell",
+      "state": "TX",
+      "provider_type": "mgoconnect",
+      "endpoint": "https://www.mgoconnect.org/cp/portal",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Both Killeen and Temple confirmed live on MGO Connect / MyGovernmentOnline (200 OK). 7th new platform type tonight. Puller not yet built."
     }
   ]
 }
