@@ -1288,6 +1288,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "City of Corpus Christi confirmed live on Infor Rhythm for Civics (200 OK), locally branded 'Dynamic Portal'. New platform type tonight (5th). Puller not yet built."
+    },
+    {
+      "jurisdiction": "Webb County, TX (City of Laredo)",
+      "county": "Webb",
+      "state": "TX",
+      "provider_type": "click2gov",
+      "endpoint": "https://lare-egov.aspgov.com/Click2GovBP/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Laredo confirmed live on Click2Gov (CentralSquare/Superion, 200 OK), plus Avolve/ProjectDox for e-plan review. 6th new platform type tonight. Puller not built."
     }
   ]
 }
