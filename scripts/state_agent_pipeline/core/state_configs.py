@@ -1263,6 +1263,96 @@ FL_MIAMIDADE_CONFIG: dict[str, Any] = {
     "city_fields": ["City"],
 }
 
+# 7 FL counties confirmed on Accela 2026-07-31 (live curl checks against
+# aca-prod.accela.com/{code} -- domain-level only, not the DOM/dropdown
+# level accela_provider.py actually needs). permit_type_label below is a
+# best-guess placeholder ("Commercial"), NOT yet confirmed against each
+# portal's real dropdown option text the way Palmdale/Indianapolis were
+# -- every one of these MUST be run with --dry-run first to catch a
+# wrong label before a real --merge-state run, same discipline as every
+# other Accela config in this file.
+# Fort Lauderdale's Accela deployment has no single "Commercial" catch-
+# all option -- confirmed live 2026-07-31 by listing the real dropdown
+# (200+ options, split by permit subtype: Commercial New Construction/
+# Alteration/Addition/Demolition/Miscellaneous/Paving/Pool-Spa-Fountain
+# Permit). "Commercial New Construction Permit" was tried first but is
+# too narrow -- confirmed live it has zero Broward records newer than
+# Dec 2023, so any lookback window returns 0 rows (not a bug, genuinely
+# that rare in this specific subtype). "Commercial Alteration Permit"
+# has real, current activity (confirmed live: newest record Sept 2025,
+# correctly newest-first) -- using that instead. Real remaining scope:
+# this single-label approach still misses Addition/Demolition/
+# Miscellaneous subtypes, which can also be $5M+ projects.
+FL_BROWARD_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "FL",
+    "provider_type": "accela",
+    "county": "Broward",
+    "endpoint": "https://aca-prod.accela.com/FTL",
+    "module": "Permits",
+    "permit_type_label": "Commercial Alteration Permit",
+    "lookback_days": 30,
+}
+
+FL_HILLSBOROUGH_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "FL",
+    "provider_type": "accela",
+    "county": "Hillsborough",
+    "endpoint": "https://aca-prod.accela.com/HCFL",
+    "module": "Permits",
+    "permit_type_label": "Commercial",
+    "lookback_days": 30,
+}
+
+FL_PINELLAS_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "FL",
+    "provider_type": "accela",
+    "county": "Pinellas",
+    "endpoint": "https://aca-prod.accela.com/PINELLAS",
+    "module": "Permits",
+    "permit_type_label": "Commercial",
+    "lookback_days": 30,
+}
+
+FL_POLK_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "FL",
+    "provider_type": "accela",
+    "county": "Polk",
+    "endpoint": "https://aca-prod.accela.com/POLKCO",
+    "module": "Permits",
+    "permit_type_label": "Commercial",
+    "lookback_days": 30,
+}
+
+FL_SARASOTA_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "FL",
+    "provider_type": "accela",
+    "county": "Sarasota",
+    "endpoint": "https://aca-prod.accela.com/SARASOTACO",
+    "module": "Permits",
+    "permit_type_label": "Commercial",
+    "lookback_days": 30,
+}
+
+FL_MANATEE_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "FL",
+    "provider_type": "accela",
+    "county": "Manatee",
+    "endpoint": "https://aca-prod.accela.com/MANATEE",
+    "module": "Permits",
+    "permit_type_label": "Commercial",
+    "lookback_days": 30,
+}
+
+FL_PASCO_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "FL",
+    "provider_type": "accela",
+    "county": "Pasco",
+    "endpoint": "https://aca-prod.accela.com/pasco",
+    "module": "Permits",
+    "permit_type_label": "Commercial",
+    "lookback_days": 30,
+}
+
 # King County (WA) via City of Seattle's Building Permits (Socrata) --
 # verified live 2026-07-28: MAX(issueddate) = 2026-07-24 (fresh), 51,673
 # total commercial-filtered records.
@@ -1677,6 +1767,13 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "SD-SIOUXFALLS": SD_SIOUXFALLS_CONFIG,
     "IN-INDIANAPOLIS": IN_INDIANAPOLIS_ACCELA_CONFIG,
     "FL-MIAMIDADE": FL_MIAMIDADE_CONFIG,
+    "FL-BROWARD": FL_BROWARD_ACCELA_CONFIG,
+    "FL-HILLSBOROUGH": FL_HILLSBOROUGH_ACCELA_CONFIG,
+    "FL-PINELLAS": FL_PINELLAS_ACCELA_CONFIG,
+    "FL-POLK": FL_POLK_ACCELA_CONFIG,
+    "FL-SARASOTA": FL_SARASOTA_ACCELA_CONFIG,
+    "FL-MANATEE": FL_MANATEE_ACCELA_CONFIG,
+    "FL-PASCO": FL_PASCO_ACCELA_CONFIG,
     "WA-KING": WA_KING_CONFIG,
     "TX-TARRANT": TX_TARRANT_CONFIG,
     "OH-FRANKLIN": OH_FRANKLIN_CONFIG,
