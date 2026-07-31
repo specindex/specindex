@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Loudoun",
+  "state": "VA",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 6,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Spring Valley Technology Park",
+      "city_address": "Evergreen Mills Road, Leesburg, VA 20175 (Loudoun County)",
+      "project_type": "Industrial / Data Center Campus (3.54 million sq ft, 780MW)",
+      "estimated_cost": "Unknown",
+      "developer_owner": "Active Infrastructure",
+      "status": "Recommended for Denial by Planning Commission on July 23, 2026; Pending Board of Supervisors decision",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Loudoun County Planning Commission Hearing, July 23, 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Eastern Loudoun Service Center & Internal Operations Support (Lakeside II & III)",
+      "city_address": "21345 & 21355 Ridgetop Circle, Sterling, VA 20166",
+      "project_type": "Commercial / Government Services & Administrative Facility Acquisition and Buildout",
+      "estimated_cost": "Unknown",
+      "developer_owner": "Loudoun County Government",
+      "status": "Acquired / Announcement of facility consolidation and conversion on July 29, 2026",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Loudoun County Government News Release, July 29, 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Route 7 Eastbound Widening Project",
+      "city_address": "Route 7 between Loudoun County Parkway and Route 28, Ashburn / Sterling, VA",
+      "project_type": "Infrastructure / Transportation Construction",
+      "estimated_cost": "Unknown",
+      "developer_owner": "Loudoun County / Virginia Department of Transportation (VDOT)",
+      "status": "In Design / Public Comment Period opened July 28, 2026",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Loudoun County Department of Transportation and Capital Infrastructure, July 28, 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Montresor Road Sidewalk Project",
+      "city_address": "Montresor Road between Beningbrough Place and Limestone Branch Place, Leesburg, VA 20176",
+      "project_type": "Infrastructure / Pedestrian Safety Improvement",
+      "estimated_cost": "Unknown",
+      "developer_owner": "Loudoun County Government",
+      "status": "In Design / Public Comment Period opened July 27, 2026",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Loudoun County Government News Release, July 27, 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Sheetz at Belmont Greene",
+      "city_address": "Belmont Ridge Road and Portsmouth Boulevard, Ashburn, VA 20147",
+      "project_type": "Commercial / Convenience Store & Fuel Station",
+      "estimated_cost": "Unknown",
+      "developer_owner": "Sheetz, Inc.",
+      "status": "Completed / Opening July 2026",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Loudoun County Commercial Real Estate Updates, July 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "General Government Office Complex (Phase 1)",
+      "city_address": "Kincaid Boulevard and Adoption Drive, Leesburg, VA 20175",
+      "project_type": "Commercial / Municipal Office Facility (125,000 sq ft)",
+      "estimated_cost": "$117,000,000",
+      "developer_owner": "Loudoun County Department of General Services",
+      "status": "Under Construction (Groundbroken May 2026, ongoing construction activities July 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Loudoun County Department of General Services Project Announcement, July 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

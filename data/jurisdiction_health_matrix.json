@@ -3597,6 +3597,117 @@
       "status": "NO_PUBLIC_DATA",
       "records_merged": 0,
       "notes": "Delaware County Building Safety runs a dedicated custom public portal; county GIS (delco-gis.org) has parcel/zoning layers only, not a permit FeatureServer. No ArcGIS/Socrata/Accela found."
+    },
+    {
+      "jurisdiction": "Arlington County, VA",
+      "county": "Arlington",
+      "state": "VA",
+      "provider_type": "arcgis",
+      "endpoint": "https://arlgis.arlingtonva.us/arcgis/rest/services/Open_Data/od_Development_Tracking_Points/FeatureServer/0",
+      "state_agent_pipeline_key": "VA-ARLINGTON",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 2,
+      "notes": "Development Tracking Points layer, 19,930 total pts, 1,136 non-residential (office/retail SF > 0), MAX(site_plan_date)=2026-06-13. Low-volume curated tracker (2 rows in 90-day lookback), not a high-frequency permit feed -- genuine live data, verified via direct FeatureServer query."
+    },
+    {
+      "jurisdiction": "Chesterfield County, VA",
+      "county": "Chesterfield",
+      "state": "VA",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "ArcGIS org services3.arcgis.com/TsynfzBSE6sXfoLq is live (200) but has no permits/building-permit layer among ~80 services (parcels, CIP, stormwater, historic landmarks -- no permit data). Accela ELM portal (elm.chesterfield.gov/CitizenAccess) DNS/connect failure at time of check. No live structured source found. Document-research-fallback (step 6) run 2026-07-31: 6 named projects found (Proctors Creek WWTP $30M, Southside Speedway site plan, West Ridge High School $60M roadway infra, WestDulles Data Center Complex, XL Sports World Turf Fields, Uphoff Car & Air Museum), 0 documents_confirmed -- captured unconditionally per project-not-a-gate policy, not yet cross-checked/loaded to corpus."
+    },
+    {
+      "jurisdiction": "Henrico County, VA",
+      "county": "Henrico",
+      "state": "VA",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "All Gemini-suggested hostnames (gis.henrico.us, gis.co.henrico.va.us, gis.henricocounty.gov, data.henrico.us) failed DNS/connection. Henrico publishes permit data only as monthly CSV/XLSX downloads per Gemini (unverified exact URL); no live REST/Socrata endpoint found this pass."
+    },
+    {
+      "jurisdiction": "Stafford County, VA",
+      "county": "Stafford",
+      "state": "VA",
+      "provider_type": null,
+      "endpoint": "https://gismapping.stafford.va.us/arcgis/rest/services/Permit_View",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "gismapping.stafford.va.us ArcGIS REST is live (200) and has a Permit_View folder, but it returns 'Token Required' (code 499) -- not publicly accessible without auth. WebApp_DataCenDevPro layer exists (data center parcels/outlines) but has no permit dates/costs. EnerGov CSS portal exists but no open API found."
+    },
+    {
+      "jurisdiction": "Frederick County, VA",
+      "county": "Frederick",
+      "state": "VA",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "fredcogis.fcva.us/maps/rest/services is live (200) but FC_Planning folder only has CIP/comp-plan/ag-district map layers, no permit data. No commercial permit feed found."
+    },
+    {
+      "jurisdiction": "Roanoke County, VA",
+      "county": "Roanoke",
+      "state": "VA",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Both Gemini-suggested hosts (gisweb.roanokecountyva.gov, arcgisweb01.roanokecountyva.gov) failed to connect (timeout/DNS). No live source found this pass."
+    },
+    {
+      "jurisdiction": "Richmond City, VA",
+      "county": "Richmond City",
+      "state": "VA",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "gis.richmondgov.com failed to connect. Richmond publishes GIS via ArcGIS Online Hub, not a self-hosted REST directory; permitting is via Tyler EnerGov CSS portal (energov.richmondgov.com), no open API found. Note: task said 'Richmond' -- resolved to Richmond City (independent city), not Richmond County (a separate, much smaller VA county on the Northern Neck) since Richmond City is the far more relevant construction-activity jurisdiction."
+    },
+    {
+      "jurisdiction": "Rockingham County, VA",
+      "county": "Rockingham",
+      "state": "VA",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "gis.rockinghamcountyva.gov failed to connect. Per Gemini, Rockingham has no standalone GIS REST directory -- uses a joint Harrisonburg/Rockingham viewer; permitting via CivicGov portal with no open API found."
+    },
+    {
+      "jurisdiction": "Augusta County, VA",
+      "county": "Augusta",
+      "state": "VA",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "gis.co.augusta.va.us is live (200) but only serves parcels/zoning/comp-plan/flood-pool layers, no permit data. No commercial permit feed found."
+    },
+    {
+      "jurisdiction": "Loudoun County, VA",
+      "county": "Loudoun",
+      "state": "VA",
+      "provider_type": null,
+      "endpoint": "https://logis.loudoun.gov/gis/rest/services/Projects/PermitDashboard",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "logis.loudoun.gov ArcGIS REST is live (200). LMARC/LandMARC_Permits MapServer only exposes a county boundary polygon (no permit records). Projects/PermitDashboard and Projects/ResBuildingPermits layers exist and are live but are residential-only (UNIT_TYPE values: single/multi-family, group quarter) -- no commercial layer found. LandMARC Accela portal (landmarc.loudoun.gov) failed to connect. Document-research-fallback (step 6) run 2026-07-31: 6 named projects found (Spring Valley Technology Park data center campus, Eastern Loudoun Service Center, Route 7 Eastbound Widening, Montresor Road Sidewalk, Sheetz at Belmont Greene, General Government Office Complex Phase 1 $117M), 0 documents_confirmed -- captured unconditionally per project-not-a-gate policy, not yet cross-checked/loaded to corpus."
+    },
+    {
+      "jurisdiction": "Bedford County, VA",
+      "county": "Bedford",
+      "state": "VA",
+      "provider_type": null,
+      "endpoint": "https://webgis.bedfordcountyva.gov/arcgis/rest/services/EnerGov/EnerGov_DataMap/MapServer/39",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "webgis.bedfordcountyva.gov is live (200) with a real EnerGov case-history layer (ENERGOVPointHistory, layer 39) including CaseType='Building (Commercial)' -- but all 9 commercial records are BLDC19-* case numbers dated Nov-Dec 2019 (MAX ApplicationDate ~2019-12), i.e. a stale one-time export, not an actively updated feed. No fresh data in any recent lookback window."
     }
   ]
 }

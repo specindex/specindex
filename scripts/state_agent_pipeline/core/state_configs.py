@@ -1924,6 +1924,35 @@ VA_FAIRFAX_CONFIG: dict[str, Any] = {
     "source_url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5",
 }
 
+# Arlington County (VA) -- verified live 2026-07-31: Arlington County GIS
+# "Development Tracking Points" layer, 19,930 total records, 1,136 with
+# office/retail SF > 0 (non-residential), MAX(site_plan_date) = 2026-06-13.
+# Low volume in any 90-day window (only 2 records with a recent
+# site_plan_date) -- a genuine curated development tracker, not a
+# high-frequency permit feed, same pattern as other low-volume trackers
+# already in the corpus (e.g. CA-Torrance).
+VA_ARLINGTON_CONFIG: dict[str, Any] = {
+    "state_code": "VA",
+    "provider_type": "arcgis",
+    "county": "Arlington",
+    "endpoint": "https://arlgis.arlingtonva.us/arcgis/rest/services/Open_Data/od_Development_Tracking_Points/FeatureServer",
+    "layer": 0,
+    "watermark_field": "OBJECTID",
+    "hash_fields": ["development_project_id"],
+    "commercial_where": "(office_square_feet_qty > 0 OR retail_square_feet_qty > 0)",
+    "out_fields": "*",
+    "date_field": "site_plan_date",
+    "date_literal_style": "timestamp",
+    "lookback_days": 90,
+    "feed_id": "va-arlington",
+    "id_field": "development_project_id",
+    "name_fields": ["development_project_name", "development_project_address_tex"],
+    "address_fields": ["development_project_address_tex", "street_display_name"],
+    "value_fields": ["office_square_feet_qty", "retail_square_feet_qty"],
+    "desc_fields": ["status_dsc", "general_land_use_plan_dsc", "zoning_type_dsc"],
+    "source_url": "https://arlgis.arlingtonva.us/arcgis/rest/services/Open_Data/od_Development_Tracking_Points/FeatureServer/0",
+}
+
 # Williamson County (TX) -- a SECOND, different feed from the existing
 # TX_WILLIAMSON_CONFIG (Site_Development/FeatureServer layer 47, org
 # L0MLvN0Ay0iEjnCT). This one is a different org/dataset entirely
@@ -2259,6 +2288,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NC-CABARRUS": NC_CABARRUS_CONFIG,
     "VA-FAIRFAX": VA_FAIRFAX_CONFIG,
     "TX-WILLIAMSON-PERMITS": TX_WILLIAMSON_PERMITS_CONFIG,
+    "VA-ARLINGTON": VA_ARLINGTON_CONFIG,
     "PA-PHILADELPHIA": PA_PHILADELPHIA_CONFIG,
     "PA-PITTSBURGH": PA_PITTSBURGH_CONFIG,
     "CA-SANDIEGO": CA_SANDIEGO_CONFIG,
