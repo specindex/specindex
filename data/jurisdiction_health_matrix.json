@@ -1869,6 +1869,24 @@
       "endpoint": "https://www.citizenserve.com/Portal/PortalController?Action=showHomePage&ctzPagePrefix=Portal_&installationID=335&original_iid=0&original_contactID=0",
       "status": "VERIFIED_WORKING",
       "notes": "Gemini repeatedly fabricated vanity-path Citizenserve URLs (citizenserve.com/cochisecounty, /sierravista, and Bisbee Cloudpermit path) -- all 404/DNS-failed on live curl. Abandoned Gemini for this one and scraped cochise.az.gov Building Safety page directly for the real outbound link, which resolved the correct installationID=335 PortalController URL -- confirmed 200 live. Sierra Vista (largest city) reportedly runs a SEPARATE Citizenserve instance per Gemini but sierravistaaz.gov returned 403 (bot-blocked, real domain) on direct scrape attempts -- could not extract its installationID this session; not resolved, would need a browser-based (Playwright) crawl to get past the block. Douglas and Bisbee confirmed no structured platform (manual/email/in-person per Gemini, not independently re-verified)."
+    },
+    {
+      "jurisdiction": "City of Globe, AZ",
+      "county": "Gila",
+      "state": "AZ",
+      "provider_type": "citizenserve",
+      "endpoint": "https://www.citizenserve.com/Portal/PortalController?Action=showHomePage&ctzPagePrefix=Portal_&installationID=469",
+      "status": "VERIFIED_WORKING",
+      "notes": "Gemini gave a vanity-path URL (citizenserve.com/globeaz) that 404d as usual, but this time also supplied installationID=469 directly -- verified live (200) AND content-checked (page body literally contains \"Globe\", confirming it is not a coincidental hit on the wrong municipality). Town of Payson confirmed on Cityworks (app04.cityworksonline.com/CLIENT_PaysonAZ-Public/login, 200 live). Unincorporated Gila County itself has no structured/API source -- manual email/PDF intake per Gemini and county site, logged as NO_PUBLIC_DATA for the county-level entity."
+    },
+    {
+      "jurisdiction": "Gila, AZ",
+      "county": "Gila",
+      "state": "AZ",
+      "provider_type": "none",
+      "endpoint": "https://www.gilacountyaz.gov",
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Unincorporated Gila County confirmed no automated permit search/API -- manual email (communitydevelopment@gilacountyaz.gov) and in-person intake, issued-permit lists only as periodic downloadable PDFs. City of Globe (Citizenserve) and Town of Payson (Cityworks) are the real structured sources within the county and are logged as their own jurisdiction entries."
     }
   ]
 }
