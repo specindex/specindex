@@ -1618,6 +1618,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Sarasota County confirmed live on Accela (200 OK). Puller not yet built."
+    },
+    {
+      "jurisdiction": "Marion County, FL (Ocala)",
+      "county": "Marion",
+      "state": "FL",
+      "provider_type": "energov",
+      "endpoint": "https://www.marionfl.org/doing-business/civic-access",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Marion County (EP&L/Civic Access) confirmed real (403 bot-block, real domain). Ocala's eTRAKiT permit page and eplans.ocalafl.gov both real domain but specific eplans subdomain 000 -- ocalafl.gov base confirmed real (403 bot-block). Puller not built."
     }
   ]
 }
