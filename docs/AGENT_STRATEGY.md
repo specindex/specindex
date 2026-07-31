@@ -299,13 +299,23 @@ a standardized list of raw project candidates to hand to Phase III.
       This ~75% clean/~25% needs-a-second-look rate is exactly why the
       cross-check is mandatory, not optional, and why nothing from (a)
       gets treated as fact until (b) confirms it.
-   c. **Load path -- not yet built, real remaining scope.** Cross-checked
-      projects still need to be matched against existing corpus rows
-      (dedupe) or queued as new entries through the normal load pipeline
-      (`scripts/load-corpus-to-postgres.py`) -- this step currently
-      produces verified findings in conversation/file output, not rows
-      in `projects` yet. Do not skip straight from (b) to treating
-      output as already-loaded data.
+   c. **Load path -- built and run 2026-07-31.**
+      `scripts/load-research-fallback-projects.py` converts a findings
+      file's projects into the corpus schema
+      `load-corpus-to-postgres.py` already expects, with a hard safety
+      rule: only projects with `cross_checked: true` AND a `CONFIRMED`
+      result are included by default (`--include-unverified` is an
+      explicit opt-out, not the default) -- a claim from (a) that
+      never went through (b) does not meet the bar every other source
+      in this corpus meets. project_id convention:
+      `{state}-{county}-research-{slug}`, e.g.
+      `il-kendall-research-cyrusone-c1-yorkville-data-center-campus`,
+      so these stay visibly distinct from structured-source IDs.
+      First real run: 8 of 21 total projects found across
+      Kendall/McLean/Sangamon, IL met the cross-checked bar and are
+      now loaded, verified live in `projects`. Run
+      `compute-county-coverage.py` after loading, same as any other
+      corpus change, so `/coverage` reflects the new rows.
 7. **Data-quality gate / dedup — moved up from the former step 5.**
    `scripts/check-corpus-integrity.py` (+ CI on push/PR) checks for
    duplicate IDs across the whole corpus. Run **right after acquisition
