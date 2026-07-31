@@ -1184,10 +1184,10 @@
       "county": "Tazewell",
       "state": "IL",
       "provider_type": null,
-      "endpoint": "https://services.arcgis.com/LIEind9C2d6XYeOY/arcgis/rest/services/Road_Closures_View/FeatureServer",
+      "endpoint": "https://www.tazewell-il.gov/CommunityDevelopment/BuildingandPermitInformation",
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
-      "notes": "Same relevance-filter false-positive pattern as DuPage/Lake/Williamson -- the only 'relevant' deterministic hit was a Road Closures layer, not permits. Never reached Flash for this county specifically (batched with others that did)."
+      "notes": "Same relevance-filter false-positive pattern as DuPage/Lake/Williamson -- the only 'relevant' deterministic hit was a Road Closures layer, not permits. Never reached Flash for this county specifically (batched with others that did). RE-INVESTIGATED 2026-07-31: first Pekin/county URLs both fabricated (000/404), corrected via feedback loop -- real county page confirmed live (301, real redirect) at a URL without the .html suffix the original guess had. Page is informational (Building and Permit Information), not a confirmed digitized portal -- Pekin's own permit page still not resolved to a working URL. Status stays FAILED_NEED_ALT, needs one more pass on Pekin specifically or should move to Step 6 research fallback if that doesn't resolve."
     },
     {
       "jurisdiction": "Kendall / LaSalle / Macon Counties, IL",
