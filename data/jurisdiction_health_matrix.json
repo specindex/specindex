@@ -957,7 +957,7 @@
       "endpoint": null,
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
-      "notes": "No digitized structured permit source at county or Bloomington/Normal level. Step 6 research fallback run 2026-07-31 with new pullable-document/drawing check: 5 named projects found (Rivian supplier park, OSF ICU expansion, Connect Transit center, Heartland CC training center, Ferrero plant expansion). Live-verified document pull: 2/2 Rivian PUD/site-plan PDFs on normalil.gov real and downloaded (3.68MB), 3/3 first-pass OSF HFSRB document URLs fabricated (404s, caught and corrected -- HFSRB uses a dynamic database, not static permalinks). Findings in data/raw/il-mclean-research-fallback.json, not loaded into corpus."
+      "notes": "No digitized structured permit source at county or Bloomington/Normal level. Step 6 research fallback run 2026-07-31 with new pullable-document/drawing check: 5 named projects found (Rivian supplier park, OSF ICU expansion, Connect Transit center, Heartland CC training center, Ferrero plant expansion). Live-verified document pull: 2/2 Rivian PUD/site-plan PDFs on normalil.gov real and downloaded (3.68MB), 3/3 first-pass OSF HFSRB document URLs fabricated (404s, caught and corrected -- HFSRB uses a dynamic database, not static permalinks). Findings in data/raw/il-mclean-research-fallback.json, not loaded into corpus. Documents actually pulled to GCS 2026-07-31 via new scripts/fetch-research-fallback-documents.py: 2 real Rivian/Town of Normal PDFs (council + planning commission packets w/ site plan and architectural drawings) uploaded to gs://specindex-ai-raw-documents/illinois/mclean/rivian-automotive-supplier-park-plant-expansion/, 3.71MB total."
     }
   ]
 }
