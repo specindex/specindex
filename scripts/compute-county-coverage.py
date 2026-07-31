@@ -27,6 +27,7 @@ from __future__ import annotations
 
 import argparse
 import os
+import re
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -36,6 +37,23 @@ from psycopg2.extras import execute_values
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from project_identity import classify_source as classify  # noqa: E402
+
+_COUNTY_SUFFIX_RE = re.compile(r"\s+(county|parish|borough)$", re.IGNORECASE)
+
+
+def normalize_county(county: str) -> str:
+    """Collapse case/suffix variants of the same county to one label.
+
+    Source feeds are inconsistent about trailing "County"/"Parish"/"Borough"
+    and casing (e.g. "Bergen" vs "BERGEN", "New Castle" vs "New Castle
+    County") -- left unnormalized these inflate counties_covered past the
+    real county count for a state. This does not fix rows where the wrong
+    *state* was recorded against a real county name (see the "persist_run()
+    wrote every state's output to NJ's directory" data-cleanup item on the
+    roadmap) -- that's a source-data bug, not a text-formatting one.
+    """
+    c = _COUNTY_SUFFIX_RE.sub("", county.strip())
+    return " ".join(word.capitalize() for word in c.split())
 
 
 def main() -> int:
@@ -80,7 +98,7 @@ def main() -> int:
             )
             for project_id, state, county in rows:
                 label, is_local = classify(project_id)
-                key = (state, county)
+                key = (state, normalize_county(county))
                 agg[key]["count"] += 1
                 agg[key]["sources"].add(label)
                 agg[key]["deep"] = agg[key]["deep"] or is_local
