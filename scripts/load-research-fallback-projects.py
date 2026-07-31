@@ -130,7 +130,7 @@ def is_verified(project: dict[str, Any], include_unverified: bool) -> bool:
     return result.startswith("CONFIRMED")
 
 
-def convert_project(project: dict[str, Any], county: str, state_code: str, county_slug: str) -> dict[str, Any]:
+def convert_project(project: dict[str, Any], county: str, state_code: str, county_slug: str, verified: bool) -> dict[str, Any]:
     slug = slugify(project["name"])
     project_id = f"{state_code.lower()}-{county_slug}-research-{slug}"
 
@@ -141,6 +141,16 @@ def convert_project(project: dict[str, Any], county: str, state_code: str, count
     for doc in project.get("pullable_documents") or []:
         if doc.get("url"):
             sources.append({"name": doc.get("description", "Pullable document"), "url": doc["url"]})
+
+    # PENDING_DEEP_AUDIT tag (2026-07-31, Asif: "we will do a deep audit
+    # later") -- these rows skipped the per-project independent
+    # cross-check pass to move faster. Not dropped, not treated as equal
+    # to a confirmed row either -- tagged in both the description (so it
+    # shows on the page itself) and sources (so it's a queryable marker,
+    # not just prose) for a future audit pass to find and re-verify.
+    audit_tag = "" if verified else " [PENDING DEEP AUDIT -- not independently cross-checked]"
+    if not verified:
+        sources.append({"name": "PENDING_DEEP_AUDIT", "url": "", "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."})
 
     return {
         "id": project_id,
@@ -158,7 +168,8 @@ def convert_project(project: dict[str, Any], county: str, state_code: str, count
         "opened_or_announced_date": None,
         "description": (
             f"{project.get('project_type', 'Commercial')} project found via Step 6 direct research "
-            f"(grounded search + independent cross-check, not a structured permit feed). "
+            f"(grounded search{'  + independent cross-check' if verified else ', NOT independently cross-checked'}, "
+            f"not a structured permit feed).{audit_tag} "
             f"Key tenants: {project.get('key_tenants') or 'not identified'}. "
             f"Expected completion: {project.get('expected_completion') or 'not identified'}."
         ),
@@ -174,12 +185,22 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--input", action="append", required=True, help="A data/raw/*-research-fallback*.json file (repeatable)")
     parser.add_argument("--output", required=True, help="Combined corpus-shaped JSON file to write")
-    parser.add_argument("--include-unverified", action="store_true", help="Also load projects that were never independently cross-checked (not recommended)")
+    parser.add_argument(
+        "--include-unverified",
+        action="store_true",
+        help=(
+            "Load projects that were never independently cross-checked too, tagged "
+            "PENDING_DEEP_AUDIT (both in the description and as a sources row) instead "
+            "of excluded. Per Asif's 2026-07-31 'we will do a deep audit later' decision -- "
+            "this is a deliberate speed/rigor tradeoff, not the default."
+        ),
+    )
     args = parser.parse_args(argv)
 
     all_projects: list[dict[str, Any]] = []
     seen_ids: set[str] = set()
     skipped_unverified = 0
+    included_unverified = 0
 
     for input_path in args.input:
         findings = json.loads(Path(input_path).read_text())
@@ -194,17 +215,22 @@ def main(argv: list[str] | None = None) -> int:
             projects = [findings["new_project_not_in_broader_pass"]]
 
         for p in projects:
-            if not is_verified(p, args.include_unverified):
+            verified = is_verified(p, include_unverified=False)
+            if not verified and not args.include_unverified:
                 skipped_unverified += 1
                 print(f"  [skip, unverified] {p.get('name')} ({input_path})", file=sys.stderr)
                 continue
-            row = convert_project(p, county, state_code, county_slug)
+            row = convert_project(p, county, state_code, county_slug, verified)
             if row["id"] in seen_ids:
                 print(f"  [dedup, same id already added] {row['id']}", file=sys.stderr)
                 continue
             seen_ids.add(row["id"])
             all_projects.append(row)
-            print(f"  [included] {row['id']}", file=sys.stderr)
+            if verified:
+                print(f"  [included, confirmed] {row['id']}", file=sys.stderr)
+            else:
+                included_unverified += 1
+                print(f"  [included, PENDING_DEEP_AUDIT] {row['id']}", file=sys.stderr)
 
     output = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
@@ -217,6 +243,7 @@ def main(argv: list[str] | None = None) -> int:
             {
                 "inputs": args.input,
                 "projects_included": len(all_projects),
+                "projects_included_pending_audit": included_unverified,
                 "projects_skipped_unverified": skipped_unverified,
                 "output": args.output,
             },
