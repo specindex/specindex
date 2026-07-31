@@ -1548,6 +1548,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Pinellas County confirmed live on Accela (301, real). Clearwater confirmed live on Accela (301, real). St. Petersburg confirmed live on Click2Gov (200 OK). Puller not yet built for any."
+    },
+    {
+      "jurisdiction": "Lee County, FL (Fort Myers/Cape Coral)",
+      "county": "Lee",
+      "state": "FL",
+      "provider_type": "energov",
+      "endpoint": "https://www.fortmyers.gov/EnerGov",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Fort Myers confirmed live on EnerGov (302, real). Cape Coral confirmed live on EnerGov (301, real). Lee County's eConnect/Accela -- first URL (aca.leegov.com) is fabricated (000 DNS fail), alt (accelaaca.leegov.com) is real but returned 503 (service exists, temporarily erroring). Puller not yet built."
     }
   ]
 }
