@@ -918,6 +918,36 @@
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
       "notes": "Genuine dead end -- Cheyenne uses closed OpenGov, county uses Granicus SmartGov, neither exposes a public API. CLC GISC regional GIS has parcels/building footprints only, no permits. County publishes static monthly PDF reports as the only bulk-ish option."
+    },
+    {
+      "jurisdiction": "Kendall County, IL",
+      "county": "Kendall",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Gemini first cited gis.kendall.il.us/arcgis/... -- NXDOMAIN, fabricated. On feedback, correctly found neither Kendall County (manual paper/PDF permits, FOIA-only for GIS) nor Village of Oswego (largest municipality) publish an open API/Socrata/ArcGIS permit feed. kendallcountyil.gov and oswegoil.org both live (403 bot-block, not fake)."
+    },
+    {
+      "jurisdiction": "LaSalle County, IL",
+      "county": "LaSalle",
+      "state": "IL",
+      "provider_type": "cloudpermit",
+      "endpoint": "https://us.cloudpermit.com/gov/login",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "City of Ottawa (largest city) confirmed via cited cityofottawa.org text to use Cloudpermit for all permitting, public records viewable 24/7 -- first new platform type seen (not yet one of the 8 wired providers). NOT YET VERIFIED at browser level (curl redirects are inconclusive for this SPA/SSO login flow, doc convention requires Playwright for this). lasallecounty.org/arcgis/rest/services does not resolve (TLS hang); gis-lasallecoil.opendata.arcgis.com loads but has no configured catalog (empty). Peru and LaSalle city: PDF/email only, no digital platform. Next step: Playwright against us.cloudpermit.com to confirm Ottawa is selectable and permit records are actually public before treating as VERIFIED_WORKING or building a provider."
+    },
+    {
+      "jurisdiction": "Whiteside County, IL",
+      "county": "Whiteside",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Whiteside County (manual, in-person only), City of Sterling (submission portal but no open data feed), City of Rock Falls (email/paper only) -- all three real domains (301s), none publish an API or open permit dataset. County ArcGIS platform exists but only for parcels/zoning/floodplain, no permit layer."
     }
   ]
 }
