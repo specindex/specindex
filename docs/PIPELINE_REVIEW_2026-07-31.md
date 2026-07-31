@@ -164,3 +164,63 @@ it live.
    session today.
 
 </details>
+
+## Addendum: reviewed a proposed 500-county single-sweep prompt (Kimi/Moonshot AI, 2026-07-31)
+
+A colleague-proposed prompt (via Kimi) asked for one continuous chat session
+to research ~500 of the most commercially active US counties, extract
+named projects with cost/contractor/architect/tenant facts, and emit a
+JSON array per project -- no independent verification step, no load path,
+"CONTINUE FROM [county]" if output limits are hit. The prompt wording
+itself was solid (good field schema, a real "Not identified in public
+records" instruction, sound source-priority ordering) but the *execution
+plan* repeats the unattended-bulk-generation pattern already rejected
+twice earlier this session (the "all 50 states, all 9 steps" and "all 102
+IL counties" requests).
+
+**Sent to Gemini for a second opinion, given the reliability data above.**
+Verdict: **execution plan is unsound as proposed.** Concrete risks raised:
+
+- **The accuracy math**: applying this session's measured ~1-in-8 error
+  rate on numeric facts to a dataset of this size (~500 counties x ~4
+  projects average = ~2,000 projects) implies roughly 250 projects with
+  wrong cost/square-footage/capacity figures if published without
+  verification -- enough to damage credibility once users spot obvious
+  errors.
+- **The "CONTINUE FROM" trap**: a single long-running chat session hits
+  real, hard limits before 500 counties -- context-window degradation
+  (the model starts forgetting its own system rules deep into a long
+  session) and per-response output-token limits (a markdown table + JSON
+  block per county will eventually truncate mid-JSON, silently corrupting
+  the array). Not a hypothetical -- a structural failure mode of the
+  single-session approach itself.
+- **Search-tool bottlenecks**: LLM-integrated search tools are built for
+  ad-hoc conversational queries, not systematic high-throughput research
+  across 500 jurisdictions -- expect shallow, rate-limited searching that
+  misses the primary-source municipal/county documents the prompt asks to
+  prioritize, defaulting to whatever ranks first in a generic search.
+- **No load path** (same gap as step 9 above) -- raw chat output requires
+  manual copy/paste/validation, negating the speed advantage of using an
+  LLM in the first place.
+
+**Recommended restructuring** (aligns with and extends this doc's earlier
+reordering discussion): move from one manual chat session to a
+programmatic pipeline --
+1. County-by-county (or small-batch) API calls, not one continuous
+   session -- isolates failures, avoids context/token limits entirely.
+2. Enforced structured output (JSON schema/tool-calling), not
+   markdown-table-then-JSON.
+3. Decouple search from extraction -- run a real search API first
+   (e.g. targeted `site:.gov` queries), feed results into the model's
+   context, then extract -- rather than letting the model free-search.
+4. Automate the cross-check as its own programmatic pass per project
+   (a second, independent call specifically targeting numeric facts),
+   rather than a human doing it by hand -- this is the piece the
+   proposed prompt skipped entirely, and the one this session's live
+   test showed is load-bearing (it's what caught the 308-vs-226-room
+   discrepancy).
+
+**Not yet acted on** -- recorded for reference alongside the ordering
+review above; both point toward the same underlying architecture (small
+batches, structured output, mandatory automated cross-check) rather than
+either a hand-run linear pipeline or an unattended bulk sweep.
