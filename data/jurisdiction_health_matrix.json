@@ -1248,6 +1248,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Conroe confirmed live on OpenGov (200 OK, migrated from BluePrince Dec 2025). The Woodlands Township confirmed live on EnerGov Civic Access (200 OK). Unincorporated county has no general commercial permitting authority in TX (fire marshal/health only). Puller not yet built for either."
+    },
+    {
+      "jurisdiction": "Galveston County, TX (Galveston/League City)",
+      "county": "Galveston",
+      "state": "TX",
+      "provider_type": "accela",
+      "endpoint": "https://eportal.galvestonTX.gov/CitizenAccess/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Galveston confirmed live on Accela Citizen Access (302, real). League City confirmed live on EnerGov (200 OK). Puller not yet built for either."
     }
   ]
 }
