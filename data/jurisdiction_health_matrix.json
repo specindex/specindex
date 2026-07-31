@@ -1528,6 +1528,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Orange County FastTrack confirmed live (302, real), new platform type. City of Orlando has a real Socrata open-data portal (data.cityoforlando.net, 200 OK) with genuine permit-related dataset titles in catalog search (Permit Applications, Building Permits x2, Issued Construction Permits, Development Permits), but all 3 specific resource IDs tested returned 404 -- catalog metadata appears stale/resources renamed. Needs a fresh catalog lookup before building a puller against Orlando's Socrata data specifically; FastTrack (county) is the confirmed-working path for now."
+    },
+    {
+      "jurisdiction": "Hillsborough County, FL (Tampa)",
+      "county": "Hillsborough",
+      "state": "FL",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/HCFL/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Hillsborough County (HillsGovHub) confirmed live on Accela (301, real). City of Tampa confirmed live on Accela via aca.tampagov.net redirect (200 OK). Puller not yet built."
     }
   ]
 }
