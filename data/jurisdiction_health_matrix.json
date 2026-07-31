@@ -1498,6 +1498,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Burleson confirmed live on eTRAKiT (200 OK). Cleburne's exact permit page 404s but cleburne.net base domain confirmed real (200) -- exact Cityworks path needs a retry. Puller not yet built for Burleson."
+    },
+    {
+      "jurisdiction": "Broward County, FL (Fort Lauderdale)",
+      "county": "Broward",
+      "state": "FL",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/FTL/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Fort Lauderdale confirmed live on Accela, agency code FTL (301, real). Broward County ePermits OneStop (Computronix POSSE backend, handles unincorporated + countywide regulatory approvals) confirmed live (302, real), new platform type. Puller not built."
     }
   ]
 }
