@@ -1388,6 +1388,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "City of Amarillo (spans both Randall and Potter counties) confirmed live on MGO Connect (301 real redirect on city info page). Same platform already confirmed for Bell County tonight. Puller not yet built."
+    },
+    {
+      "jurisdiction": "Ector County, TX (City of Odessa)",
+      "county": "Ector",
+      "state": "TX",
+      "provider_type": "mgoconnect",
+      "endpoint": "https://www.mgoconnect.org",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Odessa confirmed on MGO Connect, same validated platform as Bell/Randall/Potter. Puller not yet built."
     }
   ]
 }
