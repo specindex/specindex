@@ -1328,6 +1328,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Pearland confirmed live on Cityworks (403 bot-block, real domain). Alvin confirmed live on MyGov (200 OK, 8th new platform type tonight). Unincorporated county areas confirmed manual/paper-only (no online platform). Puller not yet built for either city."
+    },
+    {
+      "jurisdiction": "Lubbock County, TX (City of Lubbock)",
+      "county": "Lubbock",
+      "state": "TX",
+      "provider_type": "energov",
+      "endpoint": "https://egovaccess.ci.lubbock.tx.us/EnerGov_Prod/SelfService/Lubbock_Prod#/home",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Lubbock confirmed live on EnerGov (302 redirect + 200 OK on direct portal path). Puller not yet built."
     }
   ]
 }
