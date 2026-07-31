@@ -948,6 +948,16 @@
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
       "notes": "Whiteside County (manual, in-person only), City of Sterling (submission portal but no open data feed), City of Rock Falls (email/paper only) -- all three real domains (301s), none publish an API or open permit dataset. County ArcGIS platform exists but only for parcels/zoning/floodplain, no permit layer."
+    },
+    {
+      "jurisdiction": "McLean County, IL",
+      "county": "McLean",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "No digitized structured permit source at county or Bloomington/Normal level. Step 6 research fallback run 2026-07-31 with new pullable-document/drawing check: 5 named projects found (Rivian supplier park, OSF ICU expansion, Connect Transit center, Heartland CC training center, Ferrero plant expansion). Live-verified document pull: 2/2 Rivian PUD/site-plan PDFs on normalil.gov real and downloaded (3.68MB), 3/3 first-pass OSF HFSRB document URLs fabricated (404s, caught and corrected -- HFSRB uses a dynamic database, not static permalinks). Findings in data/raw/il-mclean-research-fallback.json, not loaded into corpus."
     }
   ]
 }
