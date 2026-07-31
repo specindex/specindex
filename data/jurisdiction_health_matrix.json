@@ -973,11 +973,11 @@
       "jurisdiction": "Lake County, IL",
       "county": "Lake",
       "state": "IL",
-      "provider_type": null,
-      "endpoint": null,
+      "provider_type": "maintstar",
+      "endpoint": "https://h9.maintstar.co/waukegan/portal/#/",
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
-      "notes": "Same false-positive-skips-Flash bug as DuPage above -- all 5 deterministic 'relevant' hits were Forest Preserve facility inventory (PRESERVE/BLDGTYPE/LIFEESTATE fields, owner=LakeCounty_ForestPreserves) or wetland restoration layers, none permit data. Never reached Flash."
+      "notes": "Same false-positive-skips-Flash bug as DuPage above -- all 5 deterministic 'relevant' hits were Forest Preserve facility inventory (PRESERVE/BLDGTYPE/LIFEESTATE fields, owner=LakeCounty_ForestPreserves) or wetland restoration layers, none permit data. Never reached Flash. RESOLVED 2026-07-31 (city-level retry, City of Waukegan -- largest city in county): real, live MaintStar Citizen Portal confirmed (200 OK), page content confirms permit-related. New platform type, not yet one of the 8 wired providers. County-level ArcGIS Hub re-confirmed as wetlands/parcel data only, no permit layer (same false-positive pattern as the original entry). Status stays FAILED_NEED_ALT pending an actual puller build/test against MaintStar (client-rendered portal, likely needs Playwright)."
     },
     {
       "jurisdiction": "McHenry County, IL",
