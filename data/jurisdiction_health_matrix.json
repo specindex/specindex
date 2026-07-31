@@ -2834,6 +2834,56 @@
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
       "notes": "Run alongside the successful Socrata coverage wire, per the strategy doc's rule that documents are best-effort regardless of coverage outcome. scripts/document-research-fallback.py --county Marin --state CA --lookback 'the last 30 days': 5 named projects found, documents_confirmed=0 after retry -- no claimed document URL survived live-fetch verification. Findings in data/raw/ca-marin-document-fallback.json, not loaded into corpus."
+    },
+    {
+      "jurisdiction": "Lee County, FL -- Accela Citizen Access (LEECO)",
+      "county": "Lee",
+      "state": "FL",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/LEECO",
+      "state_agent_pipeline_key": "FL-LEE",
+      "status": "FAILED_NEED_ALT",
+      "notes": "Real, live source -- verified live 2026-07-31 via direct Playwright probe (not just pipeline dry-run): module=Permitting (module=Building 302-redirects), record type 'Commercial New Building' returns 100+ real rows (e.g. COM000806366/17050 WILLIAMS RD/STORAGE BLDG, Closed-Conversion). But the default results grid has NO Date column at all (only Record Number/Address/Description/Status/Action/Related Records/Submittal Type), so accela_provider.py's HEADER_ALIASES never finds a date field and fetch_delta silently returns 0 rows for any lookback_days. Config wired into state_configs.py as FL-LEE (real endpoint/module/label documented) but not merged -- needs either an Accela column-customization flow or per-record detail-page date fetches to close the gap, real remaining scope."
+    },
+    {
+      "jurisdiction": "Fort Myers / Cape Coral, FL -- Gemini-claimed EnerGov tenants",
+      "county": "Lee",
+      "state": "FL",
+      "provider_type": null,
+      "endpoint": "https://fortmyersfl-energovpub.tylerhost.net/apps/selfservice/",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Both claimed EnerGov tenant hostnames (fortmyersfl-energovpub.tylerhost.net, capecoralfl-energovpub.tylerhost.net) are fabricated -- NXDOMAIN on curl. Not pursued further since Lee County's own Accela instance already covers unincorporated + likely much of both cities' commercial permitting."
+    },
+    {
+      "jurisdiction": "Brevard County, FL -- Accela Citizen Access (BREVARD)",
+      "county": "Brevard",
+      "state": "FL",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/BREVARD/Cap/CapHome.aspx?module=Building",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Real, live site (200, module=Building loads unlike Lee's redirect). But unlike every other LEECO-pattern deployment wired so far, the General Search tab's initial HTML has no #ctl00_PlaceHolderMain_generalSearchForm_ddlGSPermitType at all -- record-type filtering appears to live under the 'Search by Record Information' tab (ddlSearchType=3), but a Playwright probe selecting that tab still did not surface a permit-type dropdown within the time spent. Not wired into state_configs.py -- real remaining scope to find the correct record-type selection flow for this deployment."
+    },
+    {
+      "jurisdiction": "Palm Bay, FL -- Gemini-claimed ArcGIS Building_Permits MapServer",
+      "county": "Brevard",
+      "state": "FL",
+      "provider_type": "arcgis",
+      "endpoint": "https://gis.palmbayflorida.org/arcgis/rest/services/Shared/Building_Permits/MapServer",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Service endpoint itself is real (200, real serviceDescription 'Public Building Permit information'), but the service's own metadata returns empty layers:[] and tables:[] -- the claimed Layer 0 does not actually exist. Confirmed dead end via direct query to the service root, not just trusting Gemini's claimed sub-URL."
+    },
+    {
+      "jurisdiction": "Melbourne / Titusville, FL -- Gemini-claimed EnerGov / BS&A portals",
+      "county": "Brevard",
+      "state": "FL",
+      "provider_type": null,
+      "endpoint": "https://energovweb25.mlbfl.org/energov_prod/selfservice/",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Melbourne's EnerGov domain resolves (200) and Titusville's BS&A URL redirects (302, plausibly real BS&A pattern), but neither was probed further (dropdown/API structure, actual date-range query) within this session's time budget -- real remaining scope, not confirmed working or dead."
     }
   ]
 }

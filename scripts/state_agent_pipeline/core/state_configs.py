@@ -1488,6 +1488,49 @@ FL_PASCO_ACCELA_CONFIG: dict[str, Any] = {
     "lookback_days": 30,
 }
 
+# Lee County (FL) -- Fort Myers/Cape Coral area. Verified live 2026-07-31:
+# aca-prod.accela.com/LEECO/Cap/CapHome.aspx?module=Permitting (module=
+# Building 302-redirects, same recurring symptom as Lancaster CA/Omaha
+# NE/Indianapolis IN -- real module name here is "Permitting"). Dropdown
+# #ctl00_PlaceHolderMain_generalSearchForm_ddlGSPermitType has no single
+# "Commercial" catch-all; "Commercial New Building" is the broadest real
+# new-construction commercial label (value
+# "Permitting/Commercial/New Buildings/NA"). Gemini's claimed Fort
+# Myers/Cape Coral EnerGov tenant URLs
+# (fortmyersfl-energovpub.tylerhost.net, capecoralfl-energovpub.
+# tylerhost.net) were both fabricated -- NXDOMAIN on curl, not pursued.
+#
+# KNOWN LIMITATION, verified live 2026-07-31 via direct Playwright probe
+# (not just the pipeline's dry-run): search for "Commercial New Building"
+# returns 100+ real rows ("Showing 1-10 of 100+", real permit numbers
+# e.g. COM000806366/17050 WILLIAMS RD/STORAGE BLDG) -- the source is
+# genuinely live and has real data. But the default results grid columns
+# are only Record Number/Address/Description/Status/Action/Related
+# Records/Submittal Type -- NO Date column at all, unlike every other
+# LEECO-pattern Accela deployment wired so far. accela_provider.py's
+# HEADER_ALIASES has no "date" match, so date_idx is always None and
+# fetch_delta silently returns 0 rows regardless of lookback_days (same
+# silent-0-row failure mode called out in the run brief, but caused here
+# by a missing column rather than a wrong permit_type_label). Fixing this
+# needs either an Accela "customize columns" UI flow (untested whether
+# Date can be added) or per-record detail-page fetches to get a date --
+# real remaining scope, not done here given time budget. Config kept
+# in place (real source, real label, real module) for whoever picks this
+# up next; do not run --merge-state on FL-LEE until the date-column gap
+# is closed, it will merge 0 rows.
+FL_LEE_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "FL",
+    "provider_type": "accela",
+    "county": "Lee",
+    "endpoint": "https://aca-prod.accela.com/LEECO",
+    "module": "Permitting",
+    "permit_type_label": "Commercial New Building",
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
+    "lookback_days": 90,
+    "feed_id": "fl-lee",
+}
+
 # King County (WA) via City of Seattle's Building Permits (Socrata) --
 # verified live 2026-07-28: MAX(issueddate) = 2026-07-24 (fresh), 51,673
 # total commercial-filtered records.
@@ -1969,6 +2012,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "FL-SARASOTA": FL_SARASOTA_ACCELA_CONFIG,
     "FL-MANATEE": FL_MANATEE_ACCELA_CONFIG,
     "FL-PASCO": FL_PASCO_ACCELA_CONFIG,
+    "FL-LEE": FL_LEE_ACCELA_CONFIG,
     "WA-KING": WA_KING_CONFIG,
     "TX-TARRANT": TX_TARRANT_CONFIG,
     "OH-FRANKLIN": OH_FRANKLIN_CONFIG,
