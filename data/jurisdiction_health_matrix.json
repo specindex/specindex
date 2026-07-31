@@ -1358,6 +1358,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "City of Tyler confirmed live on eTRAKiT + ProjectDox (301 redirect, real). Puller not yet built."
+    },
+    {
+      "jurisdiction": "Cameron County, TX (Brownsville/Harlingen)",
+      "county": "Cameron",
+      "state": "TX",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/brownsville/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Brownsville confirmed live on Accela (301, real). Harlingen confirmed live on Click2Gov (302, real). County-level Click2Gov URL (cameron-egov.aspgov.com) is fabricated -- DNS does not resolve. Puller not yet built for either working city."
     }
   ]
 }
