@@ -1458,6 +1458,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Denison confirmed live on MGO Connect (base domain real, 200). Grayson County itself (commercial/multi-family in unincorporated areas via Fire Marshal/Dev Services) also on MGO Connect, county-specific portal link confirmed live (200 OK). City of Sherman's claimed sherman.tx.us domain does not resolve (000) -- fabricated, real Sherman domain not yet found. Puller not yet built."
+    },
+    {
+      "jurisdiction": "Hunt County, TX (Greenville)",
+      "county": "Hunt",
+      "state": "TX",
+      "provider_type": null,
+      "endpoint": "http://www.huntcounty.net",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Hunt County's own domain confirmed real (huntcounty.net, 301) but is manual/PDF-email intake only, no digital platform (matches Gemini's own claim). City of Greenville's domain could not be resolved across 4 attempts (greenvilletx.gov, cityofgreenville.net, greenvilletexas.gov all 000; ci.greenville.tx.us resolves but the specific permit page 404s) -- either the domain claim is wrong or the real permit page path is. Needs a fresh discovery pass, not just a URL-variant retry."
     }
   ]
 }
