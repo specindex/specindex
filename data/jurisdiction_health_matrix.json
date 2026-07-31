@@ -1348,6 +1348,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Beaumont confirmed live on Cityworks (200 OK). Port Arthur confirmed manual/form-only (CivicPlus FormCenter, no live digitized system). Unincorporated county confirmed manual/PDF. Puller not yet built for Beaumont."
+    },
+    {
+      "jurisdiction": "Smith County, TX (City of Tyler)",
+      "county": "Smith",
+      "state": "TX",
+      "provider_type": "etrakit",
+      "endpoint": "https://www.tylerinspections.com",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Tyler confirmed live on eTRAKiT + ProjectDox (301 redirect, real). Puller not yet built."
     }
   ]
 }
