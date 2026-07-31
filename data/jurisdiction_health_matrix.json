@@ -1028,6 +1028,76 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Not a jurisdiction -- logging the tooling fix found/applied during this IL pass since every state's Flash discovery step depends on it. response_mime_type='application/json' combined with the google_search tool silently corrupts Gemini 3.5 Flash's output (confirmed live: returned literal garbage '{}\"}end}' instead of raising) -- every prior county that fell through to Flash and came back with a parse error (not just IL; this bug predates this session) was hitting this. Separately, even without that flag, multi-part responses (a reasoning preamble + the real final JSON as a separate part) were naively concatenated before JSON extraction, which spans the regex match across part boundaries and produces garbled text. Fixed both: dropped response_mime_type entirely when google_search is enabled, and added extract_json_blob_from_parts() to try each part independently (last-to-first) before falling back to concatenation. Verified live against a real Kane County query post-fix -- clean, correctly-parsed JSON with a real, on-topic candidate (CityView portal name and platform correctly identified, even though the specific guessed URL 404'd -- see the Kane County entry above)."
+    },
+    {
+      "jurisdiction": "Winnebago County, IL (Rockford)",
+      "county": "Winnebago",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": "https://www.wincoil.gov/departments/community-development-department/building-division",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "URL given by Gemini doesn't resolve at all (DNS failure, confirmed with curl -v) -- dead/hallucinated domain, real Winnebago County site not yet found."
+    },
+    {
+      "jurisdiction": "McLean County, IL (Bloomington)",
+      "county": "McLean",
+      "state": "IL",
+      "provider_type": "manual_portal",
+      "endpoint": "https://www.mcleancountyil.gov/94/Building-Zoning",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Real, live site (200), but the given numbered CivicPlus URL redirects to an unrelated 'Recording Division' page (numbered-ID CMS URLs on these county sites are unstable). Checked page content for any Accela/EnerGov/SmartGov/CityView link or 'apply online' language -- none found. Informational/paper-application only, best evidence available."
+    },
+    {
+      "jurisdiction": "Rock Island County, IL",
+      "county": "Rock Island",
+      "state": "IL",
+      "provider_type": "manual_portal",
+      "endpoint": "https://www.rockislandcountyil.gov/163/Zoning-Building-Safety",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Same pattern as McLean -- real site (200), given URL redirects to a generic 'Overview' page, no digital permit system found in page content."
+    },
+    {
+      "jurisdiction": "St. Clair County, IL (Belleville)",
+      "county": "St. Clair",
+      "state": "IL",
+      "provider_type": "manual_portal",
+      "endpoint": "https://www.stclaircountyil.gov/departments/building-zoning/building-permits",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "The only one of this batch where the exact page loaded correctly (200, real Building Permits subpage). No Accela/EnerGov/SmartGov/CityView link or 'apply online'/'permit search' language found anywhere on the page -- informational only."
+    },
+    {
+      "jurisdiction": "Madison County, IL (Alton/Edwardsville)",
+      "county": "Madison",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": "https://www.madisoncountyil.gov/departments/planning_and_development/permits___inspections.php",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Given URL 404s."
+    },
+    {
+      "jurisdiction": "Williamson County, IL (Marion)",
+      "county": "Williamson",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Real false-positive bug in the deterministic relevance filter -- all 3 'relevant' hits were San Mateo County CA's unrelated 'Williamson Act' land-conservation datasets (the county-name substring check matched 'Williamson Act' text, not the actual Williamson County IL). _looks_relevant() checks jurisdiction-name substring only, not state/topic -- same class of gap that let DogParks/Forest-Preserve-Buildings through earlier in this session, worth a real fix (require the state name too, or a topic keyword) if this keeps recurring."
+    },
+    {
+      "jurisdiction": "Jackson County, IL (Carbondale)",
+      "county": "Jackson",
+      "state": "IL",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "No candidate survived either the deterministic or Flash+Sonnet pass -- not yet retried standalone (was batched with 6 others, Sonnet's audit may have deprioritized it against clearer wins in the same batch)."
     }
   ]
 }
