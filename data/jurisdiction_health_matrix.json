@@ -1598,6 +1598,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Seminole County confirmed live (200 OK), uses Click2Gov + ProjectDox/ePlan. Sanford's Citizenserve platform confirmed real (base domain 200), but the specific tenant slug '/sanford' 404s and an alt guess also 404s -- exact Sanford URL not yet found. Puller not built."
+    },
+    {
+      "jurisdiction": "Pasco County, FL",
+      "county": "Pasco",
+      "state": "FL",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/pasco/Default.aspx",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Pasco County (PascoGateway) confirmed live on Accela (200 OK). Puller not yet built."
     }
   ]
 }
