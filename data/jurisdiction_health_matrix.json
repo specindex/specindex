@@ -1113,11 +1113,11 @@
       "jurisdiction": "Madison County, IL (Alton/Edwardsville)",
       "county": "Madison",
       "state": "IL",
-      "provider_type": null,
-      "endpoint": "https://www.madisoncountyil.gov/departments/planning_and_development/permits___inspections.php",
+      "provider_type": "bsaonline",
+      "endpoint": "https://www.bsaonline.com/Home/MunicipalityHome?uid=2853",
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
-      "notes": "Given URL 404s."
+      "notes": "Given URL 404s. RESOLVED 2026-07-31: county-level URL still dead (404), but City of Alton (largest city) has a real BS&A Online permit portal -- confirmed live (200 OK final URL, resolves to Alton's specific municipality page, uid=2853). Third new platform type found tonight (after EnerGov/DuPage and MaintStar/Lake), not yet wired. City of Edwardsville's permit page redirects to a generic services page, not confirmed as a real digital permit system."
     },
     {
       "jurisdiction": "Williamson County, IL (Marion)",
