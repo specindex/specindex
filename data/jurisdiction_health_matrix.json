@@ -2166,6 +2166,26 @@
       "status": "VERIFIED_WORKING",
       "notes": "Live-verified 2026-07-31: 200, real nav (Building/Enforcement/Health/Oil And Gas/Planning/Public Works/Dev Review via Playwright). module=Building&TabName=Home dropdown has a clean real \"Commercial New Construction\" catch-all label. Dry-run lookback-days=90 returned 30 rows; real merge returned 23 new rows into data/states/co.json. Wired as CO-WELD.",
       "state_agent_pipeline_key": "CO-WELD"
+    },
+    {
+      "jurisdiction": "City of Pueblo, CO (Southern Colorado Building Dept) -- InteraGov",
+      "county": "Pueblo",
+      "state": "CO",
+      "provider_type": "interagov",
+      "endpoint": "https://socobd.com",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified 2026-07-31: 200. Real custom InteraGov E-Gov portal for Southern Colorado Building Department (regional successor to Pueblo Regional Building Dept). No Accela/known reusable provider -- discovery-only.",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "Pueblo County (unincorporated incl. Pueblo West), CO -- OpenGov",
+      "county": "Pueblo",
+      "state": "CO",
+      "provider_type": "opengov",
+      "endpoint": "https://pueblocountyco.portal.opengov.com",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified 2026-07-31: 200 (both pueblocountyco.portal.opengov.com and pueblopermits.com redirect). Real OpenGov Permitting & Licensing platform. No OpenGov provider class in pipeline -- discovery-only.",
+      "state_agent_pipeline_key": null
     }
   ]
 }
