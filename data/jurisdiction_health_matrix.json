@@ -927,7 +927,7 @@
       "endpoint": null,
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
-      "notes": "Gemini first cited gis.kendall.il.us/arcgis/... -- NXDOMAIN, fabricated. On feedback, correctly found neither Kendall County (manual paper/PDF permits, FOIA-only for GIS) nor Village of Oswego (largest municipality) publish an open API/Socrata/ArcGIS permit feed. kendallcountyil.gov and oswegoil.org both live (403 bot-block, not fake)."
+      "notes": "Gemini first cited gis.kendall.il.us/arcgis/... -- NXDOMAIN, fabricated. On feedback, correctly found neither Kendall County (manual paper/PDF permits, FOIA-only for GIS) nor Village of Oswego (largest municipality) publish an open API/Socrata/ArcGIS permit feed. kendallcountyil.gov and oswegoil.org both live (403 bot-block, not fake). Step 6 research fallback run 2026-07-31: 7 named projects found (dominated by large data-center campuses -- CyrusOne, Prologis, Pioneer Development, Equinix), 4 largest independently cross-checked and CONFIRMED, findings written to data/raw/il-kendall-research-fallback.json, NOT loaded into corpus yet (no load path built)."
     },
     {
       "jurisdiction": "LaSalle County, IL",
