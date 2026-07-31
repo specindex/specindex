@@ -1318,6 +1318,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Both Killeen and Temple confirmed live on MGO Connect / MyGovernmentOnline (200 OK). 7th new platform type tonight. Puller not yet built."
+    },
+    {
+      "jurisdiction": "Brazoria County, TX (Pearland/Alvin)",
+      "county": "Brazoria",
+      "state": "TX",
+      "provider_type": "mygov",
+      "endpoint": "https://web.mygov.us/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Pearland confirmed live on Cityworks (403 bot-block, real domain). Alvin confirmed live on MyGov (200 OK, 8th new platform type tonight). Unincorporated county areas confirmed manual/paper-only (no online platform). Puller not yet built for either city."
     }
   ]
 }
