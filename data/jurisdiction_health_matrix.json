@@ -2296,6 +2296,66 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "City of Auburn (largest city) runs Trimble Cityworks PLL integrated with ArcGIS WebGIS, confirmed live 200 at https://webgis.auburnalabama.org/permits. City of Opelika (2nd largest) runs Tyler EnerGov Self Service, confirmed live 200 at https://ss.opelika-al.gov/EnerGovProd/SelfService#/home. Unincorporated Lee County confirmed manual/PDF/email intake (buildinginspection@leeco.us) with fee payment only via governmentwindow.com, no searchable permit platform. Neither Cityworks PLL nor EnerGov provider class is built in this pipeline -- out of scope for Accela-only wiring this session, logging discovery only."
+    },
+    {
+      "jurisdiction": "Morgan County, AL / City of Decatur",
+      "county": "Morgan",
+      "state": "AL",
+      "provider_type": "custom_portal",
+      "endpoint": "https://www.cityofdecatural.com/departments/building-department/online-permits/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Decatur (largest city) has a custom online permits page, confirmed live 200. No Accela agency found (confirmed via Gemini, consistent with no aca-prod match). Unincorporated Morgan County confirmed manual/PDF intake, no countywide building code enforcement outside floodplain/septic/ROW. Custom portal, no reusable provider class in this pipeline -- logging discovery only, out of scope for wiring this session."
+    },
+    {
+      "jurisdiction": "Houston County, AL / City of Dothan",
+      "county": "Houston",
+      "state": "AL",
+      "provider_type": "custom_portal",
+      "endpoint": "https://permits.dothan.org/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Dothan (largest city) has a dedicated permits subdomain, confirmed live (301 redirect, real domain) at https://permits.dothan.org/; info page https://www.dothan.org/195/Building-Permits also live (301). No Accela found. Custom platform, no provider class built -- logging discovery only, out of scope for wiring this session."
+    },
+    {
+      "jurisdiction": "Etowah County, AL / City of Gadsden",
+      "county": "Etowah",
+      "state": "AL",
+      "provider_type": "custom_portal",
+      "endpoint": "https://www.cityofgadsden.com/93/Building-Department",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Gadsden building department page confirmed live 200. Per Gemini, unincorporated Etowah County does not require building permits at all. No Accela found. Custom platform, no provider class built -- logging discovery only, out of scope for wiring this session."
+    },
+    {
+      "jurisdiction": "Elmore County, AL / City of Millbrook / City of Wetumpka",
+      "county": "Elmore",
+      "state": "AL",
+      "provider_type": null,
+      "endpoint": "https://www.cityofmillbrook.org/departments/building/",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "City of Millbrook building dept page confirmed live (301, real domain) but is an info/manual-submittal page, no searchable platform. City of Wetumpka's specific permits URL Gemini gave 404d (fabricated/stale slug); Wetumpka root not separately re-verified but Gemini and Millbrook page both describe manual PDF submittals, no online searchable database. Unincorporated Elmore County confirmed no county-level zoning/permit database. No Accela found. Marking NO_PUBLIC_DATA -- confirmed manual/PDF intake only across the county's jurisdictions."
+    },
+    {
+      "jurisdiction": "Autauga County, AL / City of Prattville",
+      "county": "Autauga",
+      "state": "AL",
+      "provider_type": "custom_pdf_arcgis_zoning",
+      "endpoint": "https://www.prattvilleal.gov/departments/planning-and-development/permitting/",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "City of Prattville (largest city) permitting page confirmed live (307 redirect, real domain) but per Gemini is in-house fillable-PDF/direct-review intake (ArcGIS used only for zoning/location lookups, not permit search/API). No searchable permit database or API found. No Accela found. Marking NO_PUBLIC_DATA."
+    },
+    {
+      "jurisdiction": "Calhoun County, AL / City of Anniston / City of Oxford",
+      "county": "Calhoun",
+      "state": "AL",
+      "provider_type": "govwell_iworq",
+      "endpoint": "https://annistonal.gov/building-department",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Anniston building department page confirmed live (301 redirect, real domain), reportedly runs GovWell per Gemini (not independently verified beyond the info page). City of Oxford's specific URL (oxfordal.gov/building-services) 404d, not verified; reportedly runs iWorQ per Gemini. No Accela found. GovWell/iWorQ provider classes not built in this pipeline -- logging discovery only, out of scope for wiring this session. Anniston page live-verified enough to call VERIFIED_WORKING at the discovery level; Oxford's iWorQ claim unverified."
     }
   ]
 }
