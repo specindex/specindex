@@ -1779,6 +1779,24 @@
       "status": "VERIFIED_WORKING",
       "records_merged": 280,
       "notes": "permits.pima.gov is the county-branded Accela Citizen Access front end (customization/PIMA/... paths), mapping directly to aca-prod.accela.com/PIMA (200 on module=Building and bare root). Playwright dropdown probe found no Commercial-prefixed permit type in the live generalSearchForm; used broadest real catch-all label Building Permit. Dry-run returned 300 rows (30-page cap), real merge added 280 new rows into data/states/az.json (total 1040)."
+    },
+    {
+      "jurisdiction": "Pinal, AZ",
+      "county": "Pinal",
+      "state": "AZ",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/PINAL",
+      "status": "FAILED_NEED_ALT",
+      "notes": "citizenaccess.pinalcountyaz.gov correctly redirects to aca-prod.accela.com/PINAL (real, live Accela agency). However every module (Building, Planning, Enforcement, PublicWorks) redirects unauthenticated Playwright sessions to Login.aspx -- no public unauthenticated permit search exists for Pinal County (covers unincorporated areas incl. San Tan Valley). Gemini first proposed ezpermit-style guesses for city alternates that 404d (arizona.civicreview.com for Casa Grande, maricopa-az.smartgovcommunity.com without ci- prefix); real City of Maricopa portal found separately, logged as its own entry. Casa Grande has no confirmed structured/API source found this session (WebPermits/CivicReview leads both unverifiable) -- needs more digging, not resolved."
+    },
+    {
+      "jurisdiction": "City of Maricopa, AZ",
+      "county": "Pinal",
+      "state": "AZ",
+      "provider_type": "smartgov",
+      "endpoint": "https://ci-maricopa-az.smartgovcommunity.com/Public/Home",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live Granicus SmartGov public portal confirmed via curl -- page title \"City of Maricopa Public Portal\", real Granicus SmartGov branding/assets. Not a full permit-data verification (no query/API pull attempted -- SmartGov provider class not built, out of scope per task instructions for non-Accela providers). Logged as a real discovered platform for future SmartGov provider work."
     }
   ]
 }
