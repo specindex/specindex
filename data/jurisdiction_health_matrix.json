@@ -1648,6 +1648,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Santa Rosa County confirmed on MyGovernmentOnline (301, real), county domain also confirmed (200). Puller not built."
+    },
+    {
+      "jurisdiction": "Indian River County, FL (Vero Beach)",
+      "county": "Indian River",
+      "state": "FL",
+      "provider_type": "mgo",
+      "endpoint": "https://www.ircgov.com/building",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Indian River County confirmed live (301, real), uses MGO Connect/MyGovernmentOnline (both real domains, confirmed earlier this session). Vero Beach has no separate building department -- shares county permitting, consistent with the 404 on its own page. Puller not built."
     }
   ]
 }
