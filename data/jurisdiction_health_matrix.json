@@ -1906,6 +1906,26 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Live-verified three separate city platforms, no county-wide source: (1) Bentonville -- CentralSquare eTRAKiT at https://bent.csqrcloud.com/community-etrakit/ returns HTTP 200 (real). (2) Rogers -- Cityworks Public Portal at https://permitting.rogersar.gov/publicportal/ returns HTTP 200 (real). (3) Siloam Springs -- BS&A Online at https://www.bsaonline.com/?MunicipalityId=2609 returns HTTP 302 (real, redirects into BS&A app). Unincorporated Benton County has no digitized portal -- PDF/email intake only (building@bentoncountyar.gov), confirmed via https://bentoncountyar.gov/building-safety/permits/. None of these platforms (eTRAKiT, Cityworks, BS&A) have a built provider class in this pipeline yet -- logging discovery only per task scope, no config wired."
+    },
+    {
+      "jurisdiction": "Washington County, AR (Fayetteville)",
+      "county": "Washington",
+      "state": "AR",
+      "provider_type": "energov",
+      "endpoint": "https://egov.fayetteville-ar.gov/energov_prod/selfservice/FayettevilleAR#/search",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified: Fayetteville uses Tyler Technologies EnerGov Citizen Self-Service at https://egov.fayetteville-ar.gov/energov_prod/selfservice/FayettevilleAR#/search -- returns HTTP 200 (real). Covers building/trade/planning permits for the county's largest city. Springdale (2nd largest city) has NO digitized portal -- PDF/email intake only, confirmed via springdalear.gov building-department page. Elkins similarly has no portal -- docx/pdf download only. Unincorporated Washington County does not require building permits for single-family residential outside municipal boundaries (county policy, no code enforcement there); commercial/floodplain handled manually via County Planning Dept, no structured API. EnerGov has no provider class built in this pipeline yet -- logging discovery only per task scope, no config wired."
+    },
+    {
+      "jurisdiction": "Sebastian County, AR (Fort Smith / Greenwood)",
+      "county": "Sebastian",
+      "state": "AR",
+      "provider_type": "cityview",
+      "endpoint": "https://www.fortsmithar.gov/cityview",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Live-verified: Fort Smith (largest city) uses CityView (Harris Local Government), NOT Accela -- confirmed domain is real: https://www.fortsmithar.gov/cityview and the /cityview-help page both return HTTP 403 consistently (bot-blocked real domain, verified with browser UA too, not a DNS/404 fabrication). Greenwood (2nd city) uses TEKConnectGov at https://www.tekconnectgov.com -- HTTP 301 (real, redirects into app). Barling has no digitized portal -- PDF/phone intake only, confirmed via barlingar.gov. Unincorporated Sebastian County has no online permit portal -- manual intake through County Judge/Road Dept offices, confirmed via sebastiancountyar.gov. CityView and TEKConnect have no provider class built in this pipeline -- logging discovery only per task scope, no config wired."
     }
   ]
 }
