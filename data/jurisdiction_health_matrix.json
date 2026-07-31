@@ -3057,6 +3057,39 @@
       "status": "NO_PUBLIC_DATA",
       "records_merged": 0,
       "notes": "document-research-fallback.py run 2026-07-31 (last 30 days): 6 named projects found (Indrio Town Center, Pruitt Commerce Center/Ashley Capital Light Industrial Park, Tradition at Commerce Park Phase 1, Scannell Properties Refrigerated Warehouse/Amazon Distribution Center, NW Commerce Lakes Drive Industrial Park, Costco Direct Distribution Center Phase II) -- 0 with a confirmed pullable document after retry. Output: data/raw/fl-st-lucie-document-fallback.json. Not yet run through load-research-fallback-projects.py cross-check step given time budget."
+    },
+    {
+      "jurisdiction": "Contra Costa County, CA (county DCD Accela)",
+      "county": "Contra Costa",
+      "state": "CA",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/CCCOUNTY/... (agency code CCCOUNTY does not exist -- 404)",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "Live-verified 2026-07-31: Gemini suggested agency code CCCOUNTY for the county DCD's Accela instance (covers unincorporated + Clayton/Hercules/Lafayette/Moraga/Orinda) -- curl returns 404, no working agency code found. A second candidate, CCC, returns 302 to a login-gated instance (aca-prod.accela.com/CCC/Login.aspx) -- no public access without an account, hard stop per AGENT_STRATEGY.md's login/invitation-only dead-stop rule."
+    },
+    {
+      "jurisdiction": "City of Concord, CA (Contra Costa County's largest city, Accela)",
+      "county": "Contra Costa",
+      "state": "CA",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/CONCORD/Cap/CapHome.aspx?module=Building",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "Live-verified 2026-07-31 via curl + Playwright: agency code CONCORD is a real, public, no-login Accela instance (200 OK). Playwright-probed the Building module's General Search: unlike other CA Accela sites, this deployment has NO ddlGSPermitType dropdown at all (grep for both 'commercial' and 'ddlGSPermitType' across the landing page and the post-search results HTML returned zero hits). Clicking Search returns a flat 'Record Type' list (Building/Miscellaneous MEP/Solar PV/Reroof/etc, 100+ rows) mixing residential (water heater replacements, reroofs) and commercial permits with no available filter to isolate commercial-only records -- wiring this would mean pulling mostly-residential noise, the exact failure mode AGENT_STRATEGY.md warns against. Not wired; would need a second investigation pass (e.g. an 'Advanced Search' flow or a different module param) to find a real commercial filter before this is usable."
+    },
+    {
+      "jurisdiction": "City of Antioch, CA (Contra Costa County's 3rd-largest city, Tyler EnerGov)",
+      "county": "Contra Costa",
+      "state": "CA",
+      "provider_type": "energov",
+      "endpoint": "https://antiochca-energovweb.tylerhost.net",
+      "state_agent_pipeline_key": "CA-ANTIOCH",
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "Live-verified 2026-07-31: antiochca-energovweb.tylerhost.net returns 200, wired via the existing generic EnerGov provider (tenant_name='Antioch', same pattern as El Monte/Alhambra/Carson). Dry-run with --lookback-days 90 fetched 50 real rows across 5 pages but 0 flagged commercial and 0 within the lookback window -- same unresolved 'navigation/search returns 0 despite no error' issue already logged against CA-GLENDALE's EnerGov config in state_configs.py, not yet debugged. Config left registered in state_configs.py (CA_ANTIOCH_ENERGOV_CONFIG / CA-ANTIOCH) but NOT merged (0 real rows) -- matches the Glendale precedent of registering-but-not-verified rather than deleting the investigation."
     }
   ]
 }

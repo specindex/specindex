@@ -1925,6 +1925,34 @@ CA_SANFRANCISCO_CONFIG: dict[str, Any] = {
 # real commercial rows with issued_date > 2026-05-01 alone. city_town
 # field covers Novato/San Rafael/Mill Valley/Sausalito/etc, so this is
 # genuinely countywide, not one city.
+# City of Antioch (Contra Costa County's 3rd-largest city, ~115K pop) --
+# Tyler EnerGov, same tylerhost.net/apps/selfservice pattern as El Monte.
+# Live-verified 2026-07-31: aca-prod.accela.com/CCCOUNTY (county itself)
+# 404s (wrong agency code, no working variant found), aca-prod.accela.com/
+# CCC redirects to a login-gated instance (dead end, no public access
+# without an account), and aca-prod.accela.com/CONCORD (largest city,
+# 2nd-largest in county) is a live 200 Accela instance but its Building
+# module search UI has no ddlGSPermitType commercial-catchall dropdown at
+# all (grep for "commercial"/"ddlGSPermitType" on both the landing page
+# and post-search HTML returned zero hits) -- default "Search" returns a
+# flat "Building" record-type list mixing residential (water heaters,
+# reroofs) and commercial permits with no clean filter, so Concord was not
+# wired to avoid the "wrong label -> silent 0-row" and "unfiltered ->
+# mostly-residential noise" failure modes this doc warns about. Antioch's
+# EnerGov endpoint (https://antiochca-energovweb.tylerhost.net) returned a
+# live 200; wired via the existing generic EnerGov provider (same as El
+# Monte/Alhambra/Carson) rather than a bespoke Accela integration.
+CA_ANTIOCH_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "CA",
+    "provider_type": "energov",
+    "county": "Contra Costa",
+    "endpoint": "https://antiochca-energovweb.tylerhost.net",
+    "tenant_id": "1",
+    "tenant_name": "Antioch",
+    "lookback_days": 900,
+    "max_pages": 5,
+}
+
 CA_MARIN_CONFIG: dict[str, Any] = {
     "state_code": "CA",
     "provider_type": "socrata",
@@ -2050,6 +2078,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "CA-SANDIEGO": CA_SANDIEGO_CONFIG,
     "CA-SANFRANCISCO": CA_SANFRANCISCO_CONFIG,
     "CA-MARIN": CA_MARIN_CONFIG,
+    "CA-ANTIOCH": CA_ANTIOCH_ENERGOV_CONFIG,
     "TX-BRAZORIA": TX_BRAZORIA_CONFIG,
     "TX-MIDLAND": TX_MIDLAND_CONFIG,
     "TX-HAYS": TX_HAYS_CONFIG,
