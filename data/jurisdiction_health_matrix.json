@@ -1408,6 +1408,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "City of Longview confirmed live on Cityworks (200 OK). Puller not yet built."
+    },
+    {
+      "jurisdiction": "Midland County, TX (City of Midland)",
+      "county": "Midland",
+      "state": "TX",
+      "provider_type": "energov",
+      "endpoint": "https://www.midlandtexas.gov/permits",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "City of Midland's PermitMidland (EnerGov CSS) -- first exact URL 404'd, alternate /permits path confirmed live (301, real). Puller not yet built."
     }
   ]
 }
