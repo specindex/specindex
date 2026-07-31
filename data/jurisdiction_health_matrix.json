@@ -1026,8 +1026,8 @@
       "provider_type": null,
       "endpoint": null,
       "state_agent_pipeline_key": null,
-      "status": "FAILED_NEED_ALT",
-      "notes": "Same as Sangamon -- Sonnet dropped Flash's candidate, not yet re-investigated with a direct city-level query."
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Re-investigated with direct Peoria city-level query 2026-07-31. Gemini cited gis.peoriagov.org (404, fabricated) alongside real gis.peoriacounty.gov (200, confirmed no permit layer -- only DP/zoning, Elevation, Locators, Utilities folders). Confirmed no digitized permit system, manual/FOIA-only (peoriacounty.justfoia.com confirmed real, 200). Step 6 research fallback run: 7 named projects found (Meadowview Behavioral Hospital, OSF Cancer Institute expansion, Peoria County Health & HS Building, Peoria Intl Airport ATC Tower Phase 2, IL Army National Guard Readiness Center, Tower on Adams Redevelopment, War Memorial/University retail center). NOT YET cross-checked or loaded -- stopped at discovery stage for the night, findings in data/raw/il-peoria-research-fallback.json, needs a cross-check pass before it can be loaded (same safety bar as Kendall/McLean/Sangamon)."
     },
     {
       "jurisdiction": "Champaign County, IL (Champaign/Urbana/Savoy via CCRPC)",
