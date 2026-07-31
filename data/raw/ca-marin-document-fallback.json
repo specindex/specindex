@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Marin",
+  "state": "CA",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 5,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Marin County Progressive Design-Build Fire Headquarters",
+      "city_address": "5800 Sir Francis Drake Blvd, San Geronimo, CA 94963",
+      "project_type": "Commercial / Institutional / Government (Fire Station & Headquarters)",
+      "estimated_cost": "$71,000,000",
+      "developer_owner": "County of Marin / Marin County Fire Department / McCarthy Building Companies & COAR Design Group",
+      "status": "Approved / Phase 1 Progressive Design-Build Contract Awarded (July 7, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Marin County Board of Supervisors News Release, July 7, 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Oak Hill Workforce & Affordable Housing Development",
+      "city_address": "193 East Sir Francis Drake Blvd, Larkspur, CA 94939",
+      "project_type": "Commercial / Residential (250-Unit Mixed-Income & Workforce Housing Community)",
+      "estimated_cost": "$115,000,000",
+      "developer_owner": "Eden Housing & Educational Housing Partners / Marin County Public Financing Authority",
+      "status": "Approved / Revenue Bond Financing Resolution Adopted (July 7, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Marin County Board of Supervisors Resolution & Public Hearing Notice, July 7, 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "5 Commercial Blvd Self-Storage",
+      "city_address": "5 Commercial Blvd, Novato, CA 94949",
+      "project_type": "Commercial / Industrial (14,303 SF Self-Storage Facility)",
+      "estimated_cost": "Not Disclosed",
+      "developer_owner": "5 Commercial Blvd LLC / Jack Suski",
+      "status": "Under Environmental & Design Review / CEQA Notice of Exemption Filed (July 16, 2026)",
+      "document_url": "",
+      "document_type": "CEQA Notice of Exemption (State/County Regulatory Filing)",
+      "source_citation": "City of Novato / Marin County Clerk ARCC CEQA Filing #2026-127, July 16, 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Marin County Jail Cell Improvements & Related Work (Project No. 41C2408)",
+      "city_address": "13 Peter Behr Drive, San Rafael, CA 94903",
+      "project_type": "Commercial / Institutional / Government Renovation",
+      "estimated_cost": "$5,776,000",
+      "developer_owner": "County of Marin Department of Public Works",
+      "status": "Bidding / RFP Issued (Pre-bid Walkthrough July 16, 2026; Bids Due August 6, 2026)",
+      "document_url": "",
+      "document_type": "Notice to Bidders / Government Solicitation RFP",
+      "source_citation": "Marin County Department of Public Works Solicitation CAP 41C2408, July 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Marinwood Apartments (Marinwood Plaza Redevelopment)",
+      "city_address": "175 Marinwood Avenue, San Rafael, CA 94903",
+      "project_type": "Commercial / Residential & Retail (125-Unit Affordable Housing Community & 1,040 SF Retail Space)",
+      "estimated_cost": "Not Disclosed",
+      "developer_owner": "David Hood / Hoyt (Marinwood Plaza) / Milestone Construction Group",
+      "status": "Approved / Building Permits Issued & Construction Management Plan Approved (June 26, 2026)",
+      "document_url": "",
+      "document_type": "Approved Construction Management Plan & Building Permit Approval Notice",
+      "source_citation": "Marin County Community Development Agency Press Release & Project Update, June 26, 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

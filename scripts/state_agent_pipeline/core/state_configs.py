@@ -1853,6 +1853,32 @@ CA_SANFRANCISCO_CONFIG: dict[str, Any] = {
     "source_url": "https://data.sfgov.org/Housing-and-Buildings/Building-Permits/i98e-djp9",
 }
 
+# Marin County (unincorporated + all cities/towns, county-run building
+# permit system) -- Socrata dataset mkbn-caye, verified live 2026-07-31.
+# Clean type_permit='COMMERCIAL' flag (only two values: COMMERCIAL/
+# RESIDENTIAL). MAX(issued_date)=2026-07-30 (fresh, updated same-day), 85
+# real commercial rows with issued_date > 2026-05-01 alone. city_town
+# field covers Novato/San Rafael/Mill Valley/Sausalito/etc, so this is
+# genuinely countywide, not one city.
+CA_MARIN_CONFIG: dict[str, Any] = {
+    "state_code": "CA",
+    "provider_type": "socrata",
+    "county": "Marin",
+    "endpoint": "https://data.marincounty.gov/resource/mkbn-caye.json",
+    "watermark_field": "permit_tracking_id",
+    "hash_fields": ["permit_tracking_id"],
+    "commercial_where": "type_permit='COMMERCIAL'",
+    "date_field": "issued_date",
+    "lookback_days": 90,
+    "feed_id": "ca-marin-building",
+    "id_field": "permit_tracking_id",
+    "name_fields": ["address", "description", "construction"],
+    "address_fields": ["address"],
+    "value_fields": ["construction_value"],
+    "desc_fields": ["description", "construction", "permit_category"],
+    "source_url": "https://data.marincounty.gov/Property-Land-Management/Building-Permit/mkbn-caye",
+}
+
 # City of Pittsburgh (Allegheny County) -- PA's only wired source before
 # this was Philadelphia (1,799 total PA records for the 5th-largest US
 # state; PA's Uniform Construction Code puts permitting at the municipal
@@ -1956,6 +1982,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "PA-PITTSBURGH": PA_PITTSBURGH_CONFIG,
     "CA-SANDIEGO": CA_SANDIEGO_CONFIG,
     "CA-SANFRANCISCO": CA_SANFRANCISCO_CONFIG,
+    "CA-MARIN": CA_MARIN_CONFIG,
     "TX-BRAZORIA": TX_BRAZORIA_CONFIG,
     "TX-MIDLAND": TX_MIDLAND_CONFIG,
     "TX-HAYS": TX_HAYS_CONFIG,

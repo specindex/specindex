@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Orange",
+  "state": "CA",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 5,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Philz Coffee Drive-Thru Conversion (Minor Modification 00977353-PCPM)",
+      "city_address": "3050 Main Street, Irvine, CA 92614",
+      "project_type": "Commercial (Drive-Thru Restaurant Conversion & Tenant Improvement)",
+      "estimated_cost": "N/A",
+      "developer_owner": "Philz Coffee / Property Owner",
+      "status": "Approved (Notice of Exemption issued July 24, 2026; effective July 31, 2026)",
+      "document_url": "",
+      "document_type": "City Notice of Exemption / Approval Letter",
+      "source_citation": "City of Irvine Community Development Department Public Notice (File No. 00977353-PCPM), July 24, 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Lincoln Avenue Adult Day Care Center (Development Application No. 2025-00054)",
+      "city_address": "3150 West Lincoln Avenue, Unit 160, Anaheim, CA 92801",
+      "project_type": "Commercial / Institutional (Adult Day Care Center Conditional Use Permit)",
+      "estimated_cost": "N/A",
+      "developer_owner": "Applicant (DEV2025-00054)",
+      "status": "Under Review / Public Hearing (Anaheim Planning Commission, July 27, 2026)",
+      "document_url": "",
+      "document_type": "Planning Commission Meeting Agenda",
+      "source_citation": "City of Anaheim Planning Commission Regular Meeting Agenda, July 27, 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Bolsa Pacific at Westminster (Former Westminster Mall Redevelopment)",
+      "city_address": "1025 Westminster Mall, Westminster, CA 92683",
+      "project_type": "Commercial & Residential Mixed-Use (220,000 sq. ft. retail/restaurant space, 120-room hotel, 15,000 sq. ft. food hall, and 2,250 residential units)",
+      "estimated_cost": "$2,500,000,000",
+      "developer_owner": "Shopoff Realty Investments",
+      "status": "Under Construction (Mall demolition actively underway in mid-2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Shopping Center Business / OC Real Estate Inc., July 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "OC Vibe (The Weave & Katella Commons)",
+      "city_address": "2610 E Katella Ave, Anaheim, CA 92806",
+      "project_type": "Commercial / Entertainment & Office District (168,000 sq. ft. mass timber office, 50,000 sq. ft. market hall, 5,700-seat concert venue)",
+      "estimated_cost": "$4,000,000,000",
+      "developer_owner": "Samueli Family / Anaheim Arena Management",
+      "status": "Under Construction (Active construction ongoing July 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "OCVIBE / Urbanize LA / OC Real Estate Inc., July 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "2120 Main Street Mixed-Use Development",
+      "city_address": "2120 Main St, Huntington Beach, CA 92648",
+      "project_type": "Commercial / Residential Mixed-Use (214-unit development with ground-floor commercial space)",
+      "estimated_cost": "N/A",
+      "developer_owner": "Not specified",
+      "status": "Under Construction (Construction commenced late June/July 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Urbanize LA, June 19, 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

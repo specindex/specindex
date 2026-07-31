@@ -2803,6 +2803,37 @@
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
       "notes": "Gemini reports no Socrata/CKAN/ArcGIS Hub open-data portal for Robertson County or City of Springfield TN; permitting/planning is paper/PDF-based. Not independently live-verified beyond the Gemini claim this session -- provisional. Document research fallback not run this session (time budget)."
+    },
+    {
+      "jurisdiction": "Marin County, CA (countywide building permits)",
+      "county": "Marin",
+      "state": "CA",
+      "provider_type": "socrata",
+      "endpoint": "https://data.marincounty.gov/resource/mkbn-caye.json",
+      "state_agent_pipeline_key": "CA-MARIN",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 85,
+      "notes": "Live-verified 2026-07-31: Socrata dataset mkbn-caye, clean type_permit='COMMERCIAL' flag, MAX(issued_date)=2026-07-30 (fresh). Covers unincorporated Marin plus cities/towns via city_town field (Novato, San Rafael, Mill Valley, Sausalito, etc). Dry-run confirmed 85 real rows in a 90-day lookback, --merge-state run merged all 85 into ca.json (total corpus 8303). Wired as CA-MARIN in state_configs.py."
+    },
+    {
+      "jurisdiction": "Orange County, CA -- Step 6 document research fallback",
+      "county": "Orange",
+      "state": "CA",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Coverage side already logged FAILED_NEED_ALT by a prior agent this session (county-level myoceservices.ocgov.com Accela requires login site-wide; Anaheim's Accela Building search has no ddlGSPermitType dropdown so the standard provider pattern doesn't apply; Santa Ana forces FusionAuth SSO login; Irvine's claimed epermit URL is dead/fabricated) -- independently re-verified the same dead ends via curl/Playwright 2026-07-31 before finding the existing log entries. Ran scripts/document-research-fallback.py --county Orange --state CA --lookback 'the last 30 days': 5 named projects found (Philz Coffee Irvine conversion, Lincoln Ave Anaheim adult day care CUP, Bolsa Pacific/former Westminster Mall $2.5B mixed-use redevelopment, OC Vibe Anaheim $4B entertainment district, plus a 5th), documents_confirmed=0 after retry -- no claimed document URL survived live-fetch verification. Findings in data/raw/ca-orange-document-fallback.json, not loaded into corpus."
+    },
+    {
+      "jurisdiction": "Marin County, CA -- Step 6 document research fallback",
+      "county": "Marin",
+      "state": "CA",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Run alongside the successful Socrata coverage wire, per the strategy doc's rule that documents are best-effort regardless of coverage outcome. scripts/document-research-fallback.py --county Marin --state CA --lookback 'the last 30 days': 5 named projects found, documents_confirmed=0 after retry -- no claimed document URL survived live-fetch verification. Findings in data/raw/ca-marin-document-fallback.json, not loaded into corpus."
     }
   ]
 }
