@@ -3404,6 +3404,56 @@
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
       "notes": "Unincorporated Ouachita Parish is managed in-house by the Ouachita Parish Police Jury (OPPJ) Permit Office -- confirmed live 2026-07-31 (HTTP 200), but the page is a plain navigation hub linking to Commercial Building / Mobile Home / New Home Construction / Third-Party Providers subpages with no queryable online permit database, search tool, or open-data feed of any kind -- not Accela/EnerGov/Socrata/ArcGIS/CKAN/Carto. City of Monroe runs MGO Connect (same login-gated dead end as other LA jurisdictions above). City of West Monroe uses paper/PDF submission only, per Gemini, not independently verified live (no online system to verify). REAL DEAD END -- genuinely no digitized public permit system for the parish government, distinct from a blocked/login-gated one."
+    },
+    {
+      "jurisdiction": "St. Charles County, MO",
+      "county": "St. Charles",
+      "state": "MO",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "County runs Citizenserve (https://www.citizenserve.com/stcharles, live 200) for permits -- not one of the 8 supported provider types (Accela/Socrata/ArcGIS/EnerGov/CKAN/Carto/CSV/TdlrTabs), no new provider built this batch. County's ArcGIS Open Data Hub (sccmo.org) confirmed via Gemini to only expose static spatial layers (parcels/zoning/building footprints), no permits FeatureServer. No Socrata feed either. Document research fallback run (30-day lookback): 7 real named projects found (Lauderdale Outdoor Wedding Venue, McCreery Private School, Good Day Farm Dispensary, Muegge Road Townhomes, Avalon Park Senior Care/Cottleville Trails Corners, American Iron Fabrication Facility, Sawtooth Building Redevelopment/C3 Campus) -- all captured regardless of doc status per policy; documents_confirmed=0 (no live pullable document found for any). Output: data/raw/mo-st-charles-document-fallback.json."
+    },
+    {
+      "jurisdiction": "Greene County, MO (Springfield)",
+      "county": "Greene",
+      "state": "MO",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "County itself has no online permit system (manual paper/PDF per Gemini). City of Springfield runs 'eCity' portal (permits.springfieldmo.gov) -- not a supported provider type, no ArcGIS FeatureServer/Socrata feed found on a direct search either. Document research fallback run (30-day lookback): 3 real named projects found (Andy's Frozen Custard Headquarters, Maranatha Village Expansion, B&B Rental Drive-Thru Coffee Shop); documents_confirmed=0. Output: data/raw/mo-greene-document-fallback.json."
+    },
+    {
+      "jurisdiction": "Clay County, MO (Kansas City area)",
+      "county": "Clay",
+      "state": "MO",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "County uses Cityworks for permit search (claycountymo.cityworksonline.com) -- not a supported provider type; county's public ArcGIS REST services only host parcel layers (ClayCountyParcelService), no permits FeatureServer, confirmed via direct Gemini search. Kansas City's CompassKC portal covers only the KCMO-incorporated slice, also not a supported provider type. Document research fallback run (30-day lookback): 6 real named projects found (Metrobloks Liberty Data Center Campus, Front Line Safety Distribution Center, Project Rocket Ship manufacturing facility, Smithville Plaza Retail Development, Smithville Battery Energy Storage Facility, 14890 Industrial Drive Commercial Building); documents_confirmed=0. Output: data/raw/mo-clay-document-fallback.json."
+    },
+    {
+      "jurisdiction": "Boone County, MO (Columbia)",
+      "county": "Boone",
+      "state": "MO",
+      "provider_type": "energov",
+      "endpoint": "https://energov.como.gov",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "County itself has no online permit system (departmental info page only). City of Columbia runs a self-hosted Tyler EnerGov instance (energov.como.gov/energov_prod/selfservice, same self-hosted pattern as Pomona CA) -- confirmed live (HTTP 200, real EnerGov app) and the provider DOES fetch real rows (50 across 5 pages, real CaseNumber/CaseType/dates). Same known limitation as El Monte CA/Pomona CA: the Advanced search panel isn't reachable, so only the fixed blank-search sample returns, and on this tenant that sample is 100% Fire/Open-Burning and Deck-Only residential permits across every page and both a 90-day and 900-day lookback -- 0 commercial rows found. Config kept in state_configs.py as `_MO_COLUMBIA_ENERGOV_CONFIG` (underscore-prefixed, not wired into STATE_CONFIGS) for when Advanced-panel access gets solved generally. Not attempted for document fallback this batch -- deprioritized after St. Charles/Greene/Clay/Jefferson yielded better structured-source signal to chase first."
+    },
+    {
+      "jurisdiction": "Jefferson County, MO",
+      "county": "Jefferson",
+      "state": "MO",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Initial Gemini guess (Tyler EnerGov, jeffersoncountymo-energov.tylerhost.net) does not resolve via DNS at all -- fabricated, confirmed dead via curl (multiple -energovweb/-energovpub variants also tried, all DNS failures). Feedback round corrected: county actually uses CivicGov/CivicPlus, real live portal at https://www.civicgov4.com/mo_jeffersoncounty/portal/ (confirmed HTTP 200). CivicGov is not one of the 8 supported provider types (Accela/Socrata/ArcGIS/EnerGov/CKAN/Carto/CSV/TdlrTabs) -- would need a new provider built, not attempted this batch. Document research fallback script was launched but stalled/hung past a 2x background-wait budget (~9 min, 0:00.46 CPU time unchanged) without producing output -- not completed, no document-fallback data collected for this county this batch. Worth a retry with a fresh run."
     }
   ]
 }

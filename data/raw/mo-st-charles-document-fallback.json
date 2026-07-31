@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "St. Charles",
+  "state": "MO",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 7,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Lauderdale Outdoor Wedding Venue & Event Center",
+      "city_address": "1203 & 1231 Highway DD, Defiance, MO 63341 (St. Charles County)",
+      "project_type": "Commercial (Event Venue)",
+      "estimated_cost": "Unknown",
+      "developer_owner": "Dan Lauderdale, Kelly Lauderdale, and Tom Howard LLC",
+      "status": "Under County Council Review (Conditional Use Permit CUP26-03 / Bill No. 5506, July 27, 2026 meeting)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "St. Charles County Council Agenda & Planning Division Staff Summary Report (July 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "McCreery Private School Development",
+      "city_address": "3849 Highway D, Defiance, MO 63341 (St. Charles County)",
+      "project_type": "Commercial / Institutional (Private School)",
+      "estimated_cost": "Unknown",
+      "developer_owner": "Glennon McCreery",
+      "status": "Under County Council Review (Conditional Use Permit CUP26-04 / Bill No. 5507, July 27, 2026 meeting)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "St. Charles County Council Agenda (July 27, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Good Day Farm Marijuana Dispensary Drive-Through",
+      "city_address": "301 Little Hills Expressway, St. Charles, MO 63301",
+      "project_type": "Commercial (Retail / In-Vehicle Service Drive-Through)",
+      "estimated_cost": "Unknown",
+      "developer_owner": "Good Day Farm / Regan Etheridge",
+      "status": "Planning & Zoning Commission Review (Case No. CU-2026-18, Public Hearing July 13, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of St. Charles Planning and Zoning Commission Notice of Public Hearing (July 13, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Muegge Road Attached Townhome Development",
+      "city_address": "1704, 1710 & 1712 Muegge Road, St. Charles, MO 63303",
+      "project_type": "Commercial / Residential (50-Unit Planned Development - Residential)",
+      "estimated_cost": "Unknown",
+      "developer_owner": "Larson Development, LLC",
+      "status": "Planning & Zoning Commission Review (Case No. Z-2026-15, Public Hearing July 13, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of St. Charles Planning and Zoning Commission Notice of Public Hearing (July 13, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Avalon Park Senior Care Development (Cottleville Trails Corners)",
+      "city_address": "11001 Cottleville Trails Drive, Cottleville, MO 63304",
+      "project_type": "Commercial / Senior Care Facility (PUD Amendment & Final Plat)",
+      "estimated_cost": "Unknown",
+      "developer_owner": "Covenant Senior Care Development, LLC (Applicant: St. Charles Engineering & Surveying)",
+      "status": "Approved (Passed by Board of Aldermen Ordinances 26-026, 26-027, and 26-028, July 15, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Cottleville Board of Aldermen Work Session and Regular Meeting Agenda (July 15, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "American Iron Fabrication Facility & Office",
+      "city_address": "Ecology Drive (East of Mid Rivers Mall Dr.), St. Peters, MO 63376",
+      "project_type": "Industrial / Manufacturing (5,000 sq ft office + 29,911 sq ft fabrication facility)",
+      "estimated_cost": "Unknown",
+      "developer_owner": "American Iron",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of St. Peters FasTrac Economic Update (June/July 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Sawtooth Building Redevelopment & Main Street Extension (C3 Campus)",
+      "city_address": "Historic Main Street / ACF Campus, St. Charles, MO 63301",
+      "project_type": "Commercial Redevelopment & Infrastructure (Year-Round Farmers Market & Civic Complex Connectivity)",
+      "estimated_cost": "Unknown",
+      "developer_owner": "City of St. Charles",
+      "status": "Construction Phase Commenced (Infrastructure work July 2026 - May 2027)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of St. Charles C3 Redevelopment Project Updates (July 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

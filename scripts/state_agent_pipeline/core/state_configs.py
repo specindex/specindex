@@ -866,6 +866,33 @@ MO_STLOUIS_ACCELA_CONFIG: dict[str, Any] = {
     "lookback_days": 180,
 }
 
+# City of Columbia, MO -- Boone County's seat/largest city (county itself
+# has no online permit system per Gemini, only a departmental info page).
+# Self-hosted Tyler EnerGov (own domain energov.como.gov, not
+# tylerhost.net), same energov_prod/selfservice path convention as the
+# Pomona CA tenant. Verified live 2026-07-31: HTTP 200, page title
+# "SelfService Public Site", real EnerGov Angular app markup present, and
+# the provider successfully fetches real rows (50 across 5 pages, real
+# CaseNumber/CaseType/dates). BUT: same known limitation as El Monte CA --
+# the Advanced search panel isn't reachable, so the blank/default search
+# is the only query possible, and on this tenant that fixed sample is
+# 100% Fire/Open-Burning and Deck-Only residential permits, 0 commercial,
+# across every page and both a 90-day and 900-day lookback tried
+# 2026-07-31. NOT wired into STATE_CONFIGS -- would need Advanced-panel
+# access (same open problem as Pomona/El Monte) before this becomes a
+# usable commercial source. Kept here for when that gets solved.
+_MO_COLUMBIA_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "MO",
+    "provider_type": "energov",
+    "county": "Boone",
+    "endpoint": "https://energov.como.gov",
+    "tenant_id": "1",
+    "tenant_name": "Columbia",
+    "lookback_days": 900,
+    "max_pages": 5,
+    "selfservice_path": "energov_prod/selfservice",
+}
+
 # Salt Lake City (Salt Lake County's top jurisdiction by population -- UT
 # county government's Municipal Services District handles unincorporated
 # areas only, no clean statewide/countywide ArcGIS building-permit layer
