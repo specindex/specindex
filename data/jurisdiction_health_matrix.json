@@ -1153,11 +1153,11 @@
       "jurisdiction": "DeKalb County, IL",
       "county": "DeKalb",
       "state": "IL",
-      "provider_type": null,
-      "endpoint": "https://dekalbcounty.org/departments/community-development/building-resources/building-reports-of-construction/",
+      "provider_type": "bsaonline",
+      "endpoint": "https://bsaonline.com/?municipalityId=1356",
       "state_agent_pipeline_key": null,
-      "status": "FAILED_NEED_ALT",
-      "notes": "Given URL 404s."
+      "status": "VERIFIED_WORKING",
+      "notes": "Given URL 404s. RESOLVED 2026-07-31: county-level page moved to a new URL (reports-of-county-officials, confirmed live 200), and City of DeKalb has a real BS&A Online portal (confirmed live 200, second BS&A find tonight after Alton). Sycamore also reportedly uses BS&A but no specific municipality ID was given, not independently verified."
     },
     {
       "jurisdiction": "Grundy County, IL (Morris)",
