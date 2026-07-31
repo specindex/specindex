@@ -425,6 +425,30 @@ AZ_SCOTTSDALE_CONFIG: dict[str, Any] = {
     "lookback_days": 90,
 }
 
+# Pima County (Tucson metro) -- Accela agency code PIMA. Verified live:
+# permits.pima.gov is Pima's own Accela Citizen Access front end
+# (customization/PIMA/... paths, apikey embedded), which maps directly
+# to the standard aca-prod.accela.com/PIMA backend (200 on both
+# CapHome.aspx?module=Building and the bare root). Playwright dropdown
+# probe on the live generalSearchForm found no Commercial-prefixed
+# permit type at all (options are Aquatic Facility, Building Permit,
+# C of O Historical, Construction Noise Permit, COT Plan Review,
+# Damage/Demo Permit, Electrical/Mechanical Permit, Floodplain Use
+# Permit, Green Building Certification, Historical Permit, Manufactured
+# Building Permit, Model Plan Approval, Other Structures Permit,
+# Oversize Overweight Vehicle, Public Records Request, Registered
+# Plant, Revision, Right of Way Permit, Septic, Site Work Permit,
+# Special Event Permit) -- "Building Permit" is the broadest real
+# catch-all covering commercial work here, used as permit_type_label.
+AZ_PIMACOUNTY_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "AZ",
+    "provider_type": "accela",
+    "county": "Pima",
+    "endpoint": "https://aca-prod.accela.com/PIMA",
+    "permit_type_label": "Building Permit",
+    "lookback_days": 90,
+}
+
 # NC_CONFIG (the "NC" key, Flash+Sonnet LLM path) was removed 2026-07-29 --
 # it hit this exact same meckgis.mecklenburgcountync.gov endpoint as
 # NC_MECKLENBURG_CONFIG below, just through paid Flash/Sonnet instead of
@@ -1765,6 +1789,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "AZ-MARICOPACOUNTY": AZ_MARICOPACOUNTY_CONFIG,
     "AZ-MESA": AZ_MESA_CONFIG,
     "AZ-SCOTTSDALE": AZ_SCOTTSDALE_CONFIG,
+    "AZ-PIMACOUNTY": AZ_PIMACOUNTY_ACCELA_CONFIG,
     "TX-JEFFERSON": TX_JEFFERSON_CONFIG,
     "TX-ECTOR": TX_ECTOR_CONFIG,
     "TX-DALLAS-NEW": TX_DALLAS_NEW_ACCELA_CONFIG,

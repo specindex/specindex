@@ -1768,6 +1768,17 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "CT has no county government; Windham town (~24,105 pop, WebSearch-confirmed) is Windham Countys largest. Gemini fabricated two URL guesses in a row (permitlinkonline.com/windhamct/ and bare permitlinkonline.com/ both 404d, fed back via GEMINI_FEEDBACK_REPORT twice) before I found the real link myself by crawling windhamct.gov building-services page HTML directly: https://permitlinkonline.com/csp/windhamct/DocumentLink.PublicWelcome.cls, confirmed live 200. PermitLink (Point Software Inc), closed proprietary portal, no public API, not Accela -- logged as discovery only per task instructions."
+    },
+    {
+      "jurisdiction": "Pima, AZ",
+      "county": "Pima",
+      "state": "AZ",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/PIMA",
+      "state_agent_pipeline_key": "AZ-PIMACOUNTY",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 280,
+      "notes": "permits.pima.gov is the county-branded Accela Citizen Access front end (customization/PIMA/... paths), mapping directly to aca-prod.accela.com/PIMA (200 on module=Building and bare root). Playwright dropdown probe found no Commercial-prefixed permit type in the live generalSearchForm; used broadest real catch-all label Building Permit. Dry-run returned 300 rows (30-page cap), real merge added 280 new rows into data/states/az.json (total 1040)."
     }
   ]
 }
