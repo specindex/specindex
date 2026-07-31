@@ -1797,6 +1797,24 @@
       "endpoint": "https://ci-maricopa-az.smartgovcommunity.com/Public/Home",
       "status": "VERIFIED_WORKING",
       "notes": "Live Granicus SmartGov public portal confirmed via curl -- page title \"City of Maricopa Public Portal\", real Granicus SmartGov branding/assets. Not a full permit-data verification (no query/API pull attempted -- SmartGov provider class not built, out of scope per task instructions for non-Accela providers). Logged as a real discovered platform for future SmartGov provider work."
+    },
+    {
+      "jurisdiction": "Yavapai, AZ",
+      "county": "Yavapai",
+      "state": "AZ",
+      "provider_type": "opengov",
+      "endpoint": "https://yavapaicountyaz.portal.opengov.com",
+      "status": "VERIFIED_WORKING",
+      "notes": "Gemini first fabricated https://www.citizenserve.com/yavapaicounty (404, no vanity subpaths on Citizenserve). Corrected answer: county transitioned from Citizenserve to OpenGov Permitting & Licensing -- yavapaicountyaz.portal.opengov.com confirmed live (200). No OpenGov provider class built yet (out of scope this session); logged for future work. City of Prescott separately confirmed on eTRAKiT (prescottpermits.com, 200, real eTRAKiT page title) -- also no eTRAKiT provider class built, logged as its own entry."
+    },
+    {
+      "jurisdiction": "City of Prescott, AZ",
+      "county": "Yavapai",
+      "state": "AZ",
+      "provider_type": "etrakit",
+      "endpoint": "https://www.prescottpermits.com",
+      "status": "VERIFIED_WORKING",
+      "notes": "Live eTRAKiT (CentralSquare) portal confirmed via curl -- page title literally \"eTRAKiT\". No eTRAKiT provider class built (out of scope this session); logged for future work."
     }
   ]
 }
