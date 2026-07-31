@@ -1097,7 +1097,7 @@
       "endpoint": "https://www.rockislandcountyil.gov/163/Zoning-Building-Safety",
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
-      "notes": "Same pattern as McLean -- real site (200), given URL redirects to a generic 'Overview' page, no digital permit system found in page content."
+      "notes": "Same pattern as McLean -- real site (200), given URL redirects to a generic 'Overview' page, no digital permit system found in page content. Step 6 fallback run 2026-07-31, 30-day window: NO qualifying commercial projects found (honest empty result, not a hallucinated fill-in) -- 4 non-qualifying items surfaced and correctly excluded (municipal public safety building, school renovation, scrap yard special-use permit, and one major project whose dated action fell outside the 30-day window). Nothing to load this round."
     },
     {
       "jurisdiction": "St. Clair County, IL (Belleville)",
