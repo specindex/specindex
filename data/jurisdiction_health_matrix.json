@@ -2096,6 +2096,36 @@
       "status": "VERIFIED_WORKING",
       "notes": "Live-verified 2026-07-31: 200. Real Tyler EnerGov Citizen Self-Service portal. No EnerGov provider class exists in pipeline -- discovery-only, not wired.",
       "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "City of Longmont, CO (Boulder County) -- Accela",
+      "county": "Boulder",
+      "state": "CO",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/LONGMONT",
+      "status": "FAILED_NEED_ALT",
+      "notes": "Live-verified 2026-07-31: 200, real portal, real nav (Playwright). Dropdown on module=Building&TabName=Building has clean Commercial/Multifamily/Residential split per category. Tried both \"New Construction - Commercial\" and \"Combo Permit - Commercial\" as permit_type_label at lookback-days=90 AND 400 -- both returned 0 rows with an incomplete column map (missing date column, unlike Denver/Adams standard 6-col map), suggesting a search-submission or parsing incompatibility with this deployment variant, not genuine data sparsity. Config CO-LONGMONT left wired for future debugging but NOT merged (0 real rows, not trusted).",
+      "state_agent_pipeline_key": "CO-LONGMONT"
+    },
+    {
+      "jurisdiction": "Boulder County (unincorporated), CO -- Accela (custom subdomain)",
+      "county": "Boulder",
+      "state": "CO",
+      "provider_type": "accela",
+      "endpoint": "https://accelapublic.bouldercounty.org/CitizenAccess",
+      "status": "FAILED_NEED_ALT",
+      "notes": "Gemini first claimed aca-prod.accela.com/BOULDERCO (live-verified 404, fabricated). Fed back via GEMINI_FEEDBACK_REPORT; corrected answer accelapublic.bouldercounty.org/CitizenAccess live-verified 200 (real dedicated-subdomain Accela deployment). Not pursued further this session (Longmont was prioritized as primary Boulder County target and hit a separate parser blocker; time budget did not allow debugging two Accela variants in one county).",
+      "state_agent_pipeline_key": null
+    },
+    {
+      "jurisdiction": "City of Boulder, CO (largest city, county seat) -- Tyler EnerGov",
+      "county": "Boulder",
+      "state": "CO",
+      "provider_type": "energov",
+      "endpoint": "https://bouldercolorado.gov/services/energov-customer-self-service-portal-css",
+      "status": "FAILED_NEED_ALT",
+      "notes": "Gemini-suggested URL live-verified 404 on curl 2026-07-31 -- fabricated/stale path. City is confirmed via general knowledge to use Tyler EnerGov but the correct live endpoint was not found this session (deprioritized after Longmont/Boulder-County-unincorporated Accela blockers consumed the time budget for this county).",
+      "state_agent_pipeline_key": null
     }
   ]
 }

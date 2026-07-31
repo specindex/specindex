@@ -2014,6 +2014,31 @@ CO_FORTCOLLINS_ACCELA_CONFIG: dict[str, Any] = {
 }
 STATE_CONFIGS["CO-FORTCOLLINS"] = CO_FORTCOLLINS_ACCELA_CONFIG
 
+# City of Longmont, CO (Boulder County, 2nd largest city) -- Accela
+# agency code LONGMONT (lowercase /longmont/ also resolves), confirmed
+# live 2026-07-31 (200). Real module/tab is module=Building&
+# TabName=Building. Dropdown has a clean Commercial/Multifamily/
+# Residential split across every permit category -- "New Construction -
+# Commercial" is the exact broad catch-all used here. NOTE: unincorporated
+# Boulder County itself also runs Accela, but on a dedicated subdomain
+# (accelapublic.bouldercounty.org/CitizenAccess, confirmed live) rather
+# than aca-prod.accela.com/BOULDERCO (Gemini's first guess, confirmed
+# 404 -- fabricated agency code, corrected via GEMINI_FEEDBACK_REPORT
+# loop) -- not wired this session, Longmont was prioritized as the
+# larger/simpler target.
+CO_LONGMONT_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "CO",
+    "provider_type": "accela",
+    "county": "Boulder",
+    "endpoint": "https://aca-prod.accela.com/LONGMONT",
+    "module": "Building",
+    "permit_type_label": "New Construction - Commercial",
+    "lookback_days": 30,
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
+}
+STATE_CONFIGS["CO-LONGMONT"] = CO_LONGMONT_ACCELA_CONFIG
+
 # City of Cleveland, OH (Dept. of Building and Housing) -- Accela agency
 # code COC, confirmed live 2026-07-28. Separate system from Cuyahoga
 # County's own ArcGIS feed (OH-CUYAHOGA above) -- same LA-City-vs-LA-
