@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Monroe",
+  "state": "PA",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 7,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Walmart Expansion",
+      "city_address": "Mount Pocono Borough, Monroe County, PA",
+      "project_type": "Commercial / Retail Expansion",
+      "estimated_cost": "Not stated",
+      "developer_owner": "Walmart Inc.",
+      "status": "Land Development Plan under review",
+      "document_url": "",
+      "document_type": "County Planning Commission Meeting Agenda",
+      "source_citation": "Monroe County Planning Commission Agenda (July 14, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Monroe County Waste Authority Facility",
+      "city_address": "Hamilton Township and Stroud Township, Monroe County, PA",
+      "project_type": "Industrial / Municipal Waste Management Facility",
+      "estimated_cost": "Not stated",
+      "developer_owner": "Monroe County Municipal Waste Management Authority",
+      "status": "Land Development Plan under review",
+      "document_url": "",
+      "document_type": "County Planning Commission Meeting Agenda",
+      "source_citation": "Monroe County Planning Commission Agenda (July 14, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Alaska Pete's Roadhouse Grille Land Development (LDP# 1387)",
+      "city_address": "173 Camelback Road, Tannersville, Pocono Township, Monroe County, PA 18372",
+      "project_type": "Commercial / Restaurant Development",
+      "estimated_cost": "Not stated",
+      "developer_owner": "Alaska Pete's Roadhouse Grille",
+      "status": "Land Development Plan under review (Tabled at July 13, 2026 meeting; extension through Dec 31, 2026)",
+      "document_url": "",
+      "document_type": "Township Planning Commission Meeting Agenda",
+      "source_citation": "Pocono Township Planning Commission Agenda (July 13, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Glacial Till Data Center",
+      "city_address": "Tobyhanna Township, Monroe County, PA",
+      "project_type": "Commercial / Industrial Data Center",
+      "estimated_cost": "Not stated",
+      "developer_owner": "Glacial Till LLC / Developer",
+      "status": "Land Development Plan under review",
+      "document_url": "",
+      "document_type": "County Planning Commission Meeting Agenda",
+      "source_citation": "Monroe County Planning Commission Agenda (May 12, 2026 / 2026 Review Cycle)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Four Olives Holding Commercial Development",
+      "city_address": "Tobyhanna Township, Monroe County, PA",
+      "project_type": "Commercial Development",
+      "estimated_cost": "Not stated",
+      "developer_owner": "Four Olives Holding, LLC",
+      "status": "Land Development Plan under review",
+      "document_url": "",
+      "document_type": "Township / County Planning Commission Meeting Agenda",
+      "source_citation": "Tobyhanna Township Planning Commission Agenda (May 7, 2026) & Monroe County Planning Commission Agenda",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Members 1st Federal Credit Union Facility",
+      "city_address": "Chestnuthill Township, Monroe County, PA",
+      "project_type": "Commercial / Financial Services Branch",
+      "estimated_cost": "Not stated",
+      "developer_owner": "Members 1st Federal Credit Union",
+      "status": "Land Development Plan under review",
+      "document_url": "",
+      "document_type": "County Planning Commission Meeting Agenda",
+      "source_citation": "Monroe County Planning Commission Agenda (May 12, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Polk-Holdings Self-Storage",
+      "city_address": "Polk Township, Monroe County, PA",
+      "project_type": "Commercial / Self-Storage Facility",
+      "estimated_cost": "Not stated",
+      "developer_owner": "Polk-Holdings LLC",
+      "status": "Land Development Plan under review",
+      "document_url": "",
+      "document_type": "County Planning Commission Meeting Agenda",
+      "source_citation": "Monroe County Planning Commission Agenda (May 12, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

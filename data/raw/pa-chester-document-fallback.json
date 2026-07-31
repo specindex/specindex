@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Chester",
+  "state": "PA",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 5,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "West Chester Kia Commercial Vehicle Service Building Expansion",
+      "city_address": "721 E. Nields Street, West Goshen Township, PA 19382",
+      "project_type": "Commercial",
+      "estimated_cost": "Undisclosed",
+      "developer_owner": "West Chester Kia",
+      "status": "Under Planning Review (SALDO Application submitted July 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "West Goshen Township Planning Commission Meeting Agenda (July 14, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "300 Snyder Avenue Construction Equipment Parking & Stormwater Facility",
+      "city_address": "300 Snyder Avenue, West Goshen Township, PA 19382",
+      "project_type": "Industrial",
+      "estimated_cost": "Undisclosed",
+      "developer_owner": "Richard & Emma Smith",
+      "status": "Under Planning Review (Initial SALDO Application submitted July 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "West Goshen Township Planning Commission Meeting Agenda (July 14, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "The Concept School Campus Renovations & Facility Expansion",
+      "city_address": "Thornbury Township, Chester County, PA 19382",
+      "project_type": "Commercial / Educational",
+      "estimated_cost": "$350,000 (RACP Funding Award)",
+      "developer_owner": "The Concept School",
+      "status": "State RACP Grant Awarded / Design & Planning",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Commonwealth of Pennsylvania Governor's Office RACP Grant Announcement (July 16, 2026) & PA Senate District 9 Release (July 20, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "East Vincent Township 24/7 Regional EMS Station",
+      "city_address": "East Vincent Township, Chester County, PA 19465",
+      "project_type": "Commercial / Healthcare / Public Safety",
+      "estimated_cost": "$1,950,000 (RACP Funding Award)",
+      "developer_owner": "Chester County / East Vincent Township",
+      "status": "State RACP Grant Awarded / Design & Planning",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Commonwealth of Pennsylvania Governor's Office RACP Grant Announcement (July 16, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Downingtown Borough Municipal & Public Works Facilities Modernization",
+      "city_address": "Downingtown Borough, Chester County, PA 19335",
+      "project_type": "Commercial / Municipal Infrastructure",
+      "estimated_cost": "$700,000 (RACP Funding Award)",
+      "developer_owner": "Borough of Downingtown",
+      "status": "State RACP Grant Awarded / Design & Planning",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Commonwealth of Pennsylvania Governor's Office RACP Grant Announcement (July 16, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

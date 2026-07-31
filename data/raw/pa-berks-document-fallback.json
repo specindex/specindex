@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Berks",
+  "state": "PA",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 5,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Southern Berks Industrial Park (Phase 1)",
+      "city_address": "Route 10, New Morgan Borough, PA (Berks County)",
+      "project_type": "Industrial / Logistics Park (5.5M sq ft / 9 buildings)",
+      "estimated_cost": "$2,000,000,000 (Total economic impact)",
+      "developer_owner": "Panattoni Development Company",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Bohler Engineering / ConstructConnect (https://www.bohlerengineering.com/news/construction-begins-on-5-5m-sf-southern-berks-industrial-park-in-pennsylvania/)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "North Reading Plaza Redevelopment (Former Glidden Site)",
+      "city_address": "1853 N 3rd St, Reading, PA 19601",
+      "project_type": "Commercial / Industrial / Retail (19.4-acre site)",
+      "estimated_cost": "Undisclosed",
+      "developer_owner": "Berks County Industrial Development Authority (Berks IDA) & Shuman Development Group",
+      "status": "In Planning / Preliminary Land Development Plan Review",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Reading Planning Commission July 28, 2026 Agenda (https://www.readingpa.gov)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "American House Redevelopment - Reading CollegeTowne Phase 3",
+      "city_address": "354 Penn St, Reading, PA 19601",
+      "project_type": "Commercial / Multiuse Healthcare Facility (45,000 sq ft)",
+      "estimated_cost": "$750,000 (State RACP Grant awarded July 2026)",
+      "developer_owner": "Alvernia University & Berks Community Health Center",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Pennsylvania Office of the Governor / Berks Weekly (July 17, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Next-Generation Distribution Hub",
+      "city_address": "Sinking Spring, Berks County, PA",
+      "project_type": "Industrial / Warehouse Distribution Facility (120,000 sq ft)",
+      "estimated_cost": "$20,561,786 ($750,000 State RACP Grant awarded July 2026)",
+      "developer_owner": "F.M. Brown's Sons Inc. / Berks County Industrial Development Authority",
+      "status": "Pre-Construction / Grant Awarded",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Commonwealth of Pennsylvania RACP Award Announcement (July 16, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Exeter Township Emergency Services Building",
+      "city_address": "4975 DeMoss Rd / Gibraltar Rd, Reading, PA 19606 (Exeter Township)",
+      "project_type": "Commercial / Emergency Services Municipal Facility (22,000 sq ft)",
+      "estimated_cost": "$21,966,580 ($1,500,000 State RACP Grant awarded July 2026)",
+      "developer_owner": "Exeter Township / Exeter Township Volunteer Fire Department",
+      "status": "In Design / Pre-Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Exeter Township Volunteer Fire Department / Commonwealth of Pennsylvania RACP Announcement (July 16, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

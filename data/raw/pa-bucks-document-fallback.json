@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Bucks",
+  "state": "PA",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 7,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Amazon Web Services Data Center at Keystone Trade Center",
+      "city_address": "Keystone Trade Center (former U.S. Steel plant), Falls Township, Bucks County, PA",
+      "project_type": "Industrial / Hyperscale Data Center Campus",
+      "estimated_cost": "$827,000,000+ (part of multi-billion dollar AWS PA development)",
+      "developer_owner": "Amazon Web Services (AWS) / NorthPoint Development",
+      "status": "Under Construction / State Environmental Air Quality Permit Review",
+      "document_url": "",
+      "document_type": "State Environmental Agency Notice",
+      "source_citation": "Pennsylvania Department of Environmental Protection / LevittownNow (July 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "109 Radcliffe Street Family Entertainment Complex",
+      "city_address": "109 Radcliffe Street, Bristol Borough, PA 19007",
+      "project_type": "Commercial / Adaptive Reuse & Addition",
+      "estimated_cost": "$1,000,000",
+      "developer_owner": "B. Mazzocchi Development",
+      "status": "Approved / State RACP Grant Awarded",
+      "document_url": "",
+      "document_type": "State RACP Grant Authorization",
+      "source_citation": "Commonwealth of Pennsylvania Office of the Governor & PA House Press Office (July 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Levittown Bristol Pike Industrial Logistics Redevelopment (Phase II)",
+      "city_address": "Bristol Pike (former Hammock Hotel site), Bristol Township, PA",
+      "project_type": "Industrial / Logistics Park Infrastructure",
+      "estimated_cost": "$1,000,000",
+      "developer_owner": "HP Bristol Pike LLC",
+      "status": "Approved / Pre-Construction Site Preparation",
+      "document_url": "",
+      "document_type": "State RACP Grant Authorization",
+      "source_citation": "Commonwealth of Pennsylvania Office of the Governor & LevittownNow (July 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "DiaVac Biotech Cleanroom & Laboratory Expansion (Phase 2)",
+      "city_address": "3805 Old Easton Road, Doylestown, PA 18902 / Plumstead Township, PA",
+      "project_type": "Commercial / Biotech & Life Sciences Laboratory",
+      "estimated_cost": "$500,000",
+      "developer_owner": "DiaVac Biotech LLC",
+      "status": "Approved / State RACP Grant Awarded",
+      "document_url": "",
+      "document_type": "State RACP Grant Authorization",
+      "source_citation": "Doylestown-Buckingham Record / Office of State Rep. Shelby Labs (July 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "York Snack Food Distribution Facility",
+      "city_address": "1120 Industrial Boulevard, Bucks County, PA",
+      "project_type": "Industrial / Food Distribution Facility",
+      "estimated_cost": "$1,250,000",
+      "developer_owner": "York Snack Food Distribution Inc. / Ihor Jaryi",
+      "status": "Financing Approved",
+      "document_url": "",
+      "document_type": "Industrial Development Authority Agenda",
+      "source_citation": "Bucks County Industrial Development Authority (July 23, 2026 Board Meeting Agenda)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Dublin Diner Commercial Redevelopment",
+      "city_address": "North Main Street, Dublin Borough, PA 18917",
+      "project_type": "Commercial / Restaurant Adaptive Reuse",
+      "estimated_cost": "$1,000,000",
+      "developer_owner": "Dublin Borough / Private Developer",
+      "status": "Approved / State RACP Grant Awarded",
+      "document_url": "",
+      "document_type": "State RACP Grant Authorization",
+      "source_citation": "Commonwealth of Pennsylvania Office of the Governor & Patch.com (July 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Doylestown Waste Recycling Facility Reconstruction",
+      "city_address": "New Britain Township / Doylestown Area, Bucks County, PA",
+      "project_type": "Industrial / Waste Recycling & Sorting Facility",
+      "estimated_cost": "$750,000",
+      "developer_owner": "Doylestown Waste Recycling",
+      "status": "Approved / State RACP Grant Awarded",
+      "document_url": "",
+      "document_type": "State RACP Grant Authorization",
+      "source_citation": "Commonwealth of Pennsylvania Office of the Governor & Patch.com (July 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

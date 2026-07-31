@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "York",
+  "state": "PA",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 6,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "BAE Systems New Office Building (T-909)",
+      "city_address": "1100 Bairs Road, West Manchester Township, PA",
+      "project_type": "Commercial / Industrial Office",
+      "estimated_cost": null,
+      "developer_owner": "BAE Systems Land and Armaments",
+      "status": "Under Review",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "West Manchester Township Planning Commission Meeting Agenda / Legal Notice",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Sheetz Store #224 Rebuild (CU-2026-0002)",
+      "city_address": "405 Memory Lane, Springettsbury Township, PA",
+      "project_type": "Commercial Retail / Gas Station",
+      "estimated_cost": null,
+      "developer_owner": "Sheetz, Inc.",
+      "status": "Under Review",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Springettsbury Township Planning Commission Agenda",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "110 Yoe Drive Final Subdivision (P2026-6-1)",
+      "city_address": "110 Yoe Drive, York Township, PA",
+      "project_type": "Commercial / Self-Storage Subdivision",
+      "estimated_cost": null,
+      "developer_owner": "Yoe Drive Acq Co, LLC",
+      "status": "Under Review",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "York Township Planning Commission Agenda (July 21, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "York Galleria Mall Subdivision & Redevelopment (SD-2026-0003)",
+      "city_address": "2899 Whiteford Rd, Springettsbury Township, PA",
+      "project_type": "Commercial / Mixed-Use Subdivision",
+      "estimated_cost": null,
+      "developer_owner": "York Galleria Limited Partnership / CBL Properties",
+      "status": "Approved",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Springettsbury Township Planning Commission Agenda",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Leader Square Shoppes",
+      "city_address": "19 Reynolds Mill Road, York Township, PA",
+      "project_type": "Commercial Retail",
+      "estimated_cost": null,
+      "developer_owner": "Leader Square Shoppes",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "York Township Development Update",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "15 North Commercial & Mixed-Use Development",
+      "city_address": "15 Ore Bank Road, Carroll Township, PA",
+      "project_type": "Commercial & Mixed-Use",
+      "estimated_cost": "$20,000,000",
+      "developer_owner": "Inch & Co. Development",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Inch & Co. Development Project Announcement",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

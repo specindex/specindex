@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Lancaster",
+  "state": "PA",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 7,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Smucker Farm Market and Greenhouse",
+      "city_address": "2110 Rockvale Road, East Lampeter Township, PA 17602",
+      "project_type": "Commercial / Agricultural Retail",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Smucker / Landvision LLC",
+      "status": "Approved (Stormwater Management Plan approved June 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "East Lampeter Township Board of Supervisors Minutes, June 1, 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Greenfield Warehouse #423",
+      "city_address": "Ben Franklin Boulevard, Greenfield, East Lampeter Township, PA",
+      "project_type": "Industrial / Distribution Facility",
+      "estimated_cost": "Not specified",
+      "developer_owner": "High Construction / Greenfield Architects",
+      "status": "Completed / Project Announced",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "High Construction Company Project Announcement",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Sheetz Commercial Development",
+      "city_address": "Veterans Drive & Old Hershey Road, Mount Joy Township, PA",
+      "project_type": "Commercial / Retail & Fueling Station",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Sheetz, Inc.",
+      "status": "Under Construction / Site Preparation (Blasting plan submitted July 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Mount Joy Township Board of Supervisors Official Monthly Report, July 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Lancaster Parts and Equipment Land Development",
+      "city_address": "2008 Horseshoe Road, East Lampeter Township, PA",
+      "project_type": "Commercial / Industrial Equipment Facility",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Lancaster Parts and Equipment",
+      "status": "Conditionally Approved (180-day time extension granted to record plan)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "East Lampeter Township Board of Supervisors Meeting Minutes, June 1, 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Cocalico Creek Land Development",
+      "city_address": "2331 Lincoln Highway East, East Lampeter Township, PA",
+      "project_type": "Commercial / Mixed Development",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Cocalico Creek",
+      "status": "Conditionally Approved (90-day time extension granted to record plan)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "East Lampeter Township Board of Supervisors Meeting Minutes, June 1, 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "New Lancaster County Correctional Facility",
+      "city_address": "78-acre site, Lancaster County, PA",
+      "project_type": "Government / Institutional / Industrial Construction",
+      "estimated_cost": "Estimated $150M+",
+      "developer_owner": "Lancaster County Government",
+      "status": "Design Development / Groundbreaking Targeted Q3 2026",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Lancaster County Government Public Procurement Notice",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Penn Medicine Lancaster General Health Emergency Department Expansion",
+      "city_address": "Duke Street, City of Lancaster, PA",
+      "project_type": "Commercial / Healthcare Facility",
+      "estimated_cost": "$182,500,000",
+      "developer_owner": "Penn Medicine Lancaster General Health",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Lancaster General Health Capital Improvement Filings",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

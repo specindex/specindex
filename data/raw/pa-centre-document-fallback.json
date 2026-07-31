@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Centre",
+  "state": "PA",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 7,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Park Home Furniture at Shiloh Commercial Park",
+      "city_address": "Shiloh Commercial Park, Shiloh Road & East Trout Road, College Township, PA 16801",
+      "project_type": "Commercial / Retail Furniture Store",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Park Home Furniture / Ed Maxwell",
+      "status": "Recommended for conditional approval by Planning Commission; under township review",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "College Township Planning Commission July 2026 meeting records and College Township Proposed Plans register.",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Oak Hall Equestrian Facility",
+      "city_address": "Oak Hall, College Township, PA 16801",
+      "project_type": "Commercial / Agricultural Private Equestrian Facility",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Oak Hall Equestrian Facility",
+      "status": "Recommended for conditional approval by Planning Commission; under review",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "College Township Planning Commission July 2026 land development review proceedings.",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Home2 Suites by Hilton - Shiloh Commercial Park",
+      "city_address": "Lot 3, Shiloh Road and East Trout Road, College Township, PA 16801",
+      "project_type": "Commercial / Hotel (115-room Home2 Suites)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Hospitality Asset Management Company / Ed Maxwell",
+      "status": "Preliminary/Final Land Development Plan under review; Phase 1 subdivision approved",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "College Township Council and Planning Department land development updates.",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Stuckey/Poole Commercial Development - Phase 1",
+      "city_address": "Benner Pike (SR 0150) at Shoppes at Paradise traffic signal, Benner Township, PA 16823",
+      "project_type": "Commercial / Motor Vehicle Sales and Service (49,313 sq ft facility)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Stuckey / Poole (Engineered by PennTerra Engineering)",
+      "status": "Final Subdivision & Land Development Plan approved (CCPCDO File #44-26)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Centre County Planning Commission agendas and Centre County Board of Commissioners MOU approval records.",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Benner Pike Car Wash (RNW Car Wash, LLC)",
+      "city_address": "Southeastern corner of Amberleigh Lane (T-330) and Benner Pike (SR 0150), Benner Township, PA 16823",
+      "project_type": "Commercial / Car Wash (4,760 sq ft building)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "RNW Car Wash, LLC / Rodney Wellar",
+      "status": "Final Land Development Plan approved; Sewer Extension Agreement executed (CCPCDO File #45-26)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Centre County Planning Commission and Board of Commissioners filings (CCPCDO File #45-26) & Spring-Benner-Walker Joint Authority.",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Mark's Custom Meats Retail Building",
+      "city_address": "Nittany Valley Drive (SR 0064) & Pike Road (SR 0445), Walker Township, PA 16823",
+      "project_type": "Commercial / Retail Meat Market (8,920 sq ft building with drive-thru/porch)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Mark's Custom Meats",
+      "status": "Final Land Development Plan conditionally approved (CCPCDO File #153-25)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Centre County Board of Commissioners Memorandum of Understanding & Walker Township Planning Commission records.",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Blaise Alexander Hyundai",
+      "city_address": "Ferguson Township, PA 16801",
+      "project_type": "Commercial / Auto Dealership & Service Center",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Blaise Alexander Family Dealerships",
+      "status": "Preliminary Land Development Plan submitted and under review",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Ferguson Township Board of Supervisors and Planning Commission agenda portal.",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}
