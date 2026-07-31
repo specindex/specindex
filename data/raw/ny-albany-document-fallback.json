@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Albany",
+  "state": "NY",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 7,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Central Warehouse Demolition & Redevelopment",
+      "city_address": "143 Montgomery Street, Albany, NY 12207",
+      "project_type": "Industrial / Commercial Demolition & Site Redevelopment",
+      "estimated_cost": "$14,600,000",
+      "developer_owner": "Advance Albany County Alliance / Albany County / Gramercy Group",
+      "status": "Active / Asbestos Remediation Underway (Demolition targeted 2026\u20132027)",
+      "document_url": "",
+      "document_type": null,
+      "source_citation": "Advance Albany County Alliance / Gramercy Group Project Announcement",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "43 & 45 Columbia Street Mixed-Use Conversion",
+      "city_address": "43-45 Columbia Street, Albany, NY 12207",
+      "project_type": "Commercial / Mixed-Use Residential Conversion (37 workforce housing units, 59 total units)",
+      "estimated_cost": null,
+      "developer_owner": "Redburn Development Partners / 45 Columbia Street Assoc. LLC",
+      "status": "Approved (Albany IDA Board Approval)",
+      "document_url": "",
+      "document_type": null,
+      "source_citation": "City of Albany Industrial Development Agency (IDA) Board Records",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "NYSTRS Office Building & Parking Lot Expansion (DPR-2026-22)",
+      "city_address": "10 Corporate Woods Boulevard, Albany, NY 12211",
+      "project_type": "Commercial Office Infrastructure & Renovation (113 new parking spaces, stormwater redesign, interior office renovations)",
+      "estimated_cost": null,
+      "developer_owner": "New York State Teachers' Retirement System (NYSTRS)",
+      "status": "Approved (City of Albany Planning Board Approval)",
+      "document_url": "",
+      "document_type": null,
+      "source_citation": "City of Albany Planning Board Minutes",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "650 Warren Street Multi-Unit Addition (DPR-2026-18)",
+      "city_address": "650 Warren Street, Albany, NY 12208",
+      "project_type": "Commercial / Multi-Family Residential (3-story wing addition to vacant building for 44 residential units)",
+      "estimated_cost": null,
+      "developer_owner": "Patrick Chiou / Upstate General Construction",
+      "status": "Under Review (Development Plan Review)",
+      "document_url": "",
+      "document_type": null,
+      "source_citation": "City of Albany Planning Board Public Agenda",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "142 Green Street St. John's Church Adaptive Reuse (DPR-2026-10)",
+      "city_address": "142 Green Street, Albany, NY 12202",
+      "project_type": "Commercial / Residential Adaptive Reuse (Conversion of historic St. John's Church structure into 17 multi-unit dwellings)",
+      "estimated_cost": null,
+      "developer_owner": "Patrick Chiou / Upstate General Construction",
+      "status": "Under Review (Development Plan Review)",
+      "document_url": "",
+      "document_type": null,
+      "source_citation": "City of Albany Planning Board Public Agenda",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "52-54 State Street Commercial Conversion (DPR-2026-5)",
+      "city_address": "52-54 State Street, Albany, NY 12207",
+      "project_type": "Commercial / Multi-Family Residential Conversion (Conversion of floors 3-10 into 120 residential dwelling units)",
+      "estimated_cost": null,
+      "developer_owner": "Ryan Jankow / Jankow Companies",
+      "status": "Under Review (Concept Review / Development Plan Review)",
+      "document_url": "",
+      "document_type": null,
+      "source_citation": "City of Albany Planning Board Minutes",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Al Tech Steel Site Advanced Manufacturing Park Redevelopment",
+      "city_address": "Lincoln Avenue & Spring Street Road, Colonie, NY 12189",
+      "project_type": "Industrial / Advanced Manufacturing Site Preparation & Infrastructure",
+      "estimated_cost": "$14,500,000+",
+      "developer_owner": "Advance Albany County Alliance / Town of Colonie",
+      "status": "Pre-Development / Environmental Review & Site Master Planning",
+      "document_url": "",
+      "document_type": null,
+      "source_citation": "Advance Albany County Alliance / NYSDEC Superfund Records",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

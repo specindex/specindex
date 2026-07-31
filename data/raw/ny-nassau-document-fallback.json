@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Nassau",
+  "state": "NY",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 5,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "BDC BOSFA Valley Stream Senior Housing Development",
+      "city_address": "Intersection of Valley Stream Blvd and Hicks St, Valley Stream, NY 11580",
+      "project_type": "Senior Housing / Mixed-Use Residential Development",
+      "estimated_cost": "$60,000,000",
+      "developer_owner": "BDC BOSFA Valley Stream LLC (The Benjamin Companies & BOSFA Properties)",
+      "status": "Preliminarily approved for IDA economic development/tax incentive package on July 21, 2026",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Innovate Long Island (July 31, 2026); Town of Hempstead Industrial Development Agency Meeting (July 21, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Main Street Hempstead Apartments",
+      "city_address": "257 Main Street, Hempstead, NY 11550",
+      "project_type": "Mixed-Use Commercial & Residential Development (331,584 sq ft, 246 apartment units, 6,114 sq ft retail space, 109,975 sq ft parking garage)",
+      "estimated_cost": "$123,000,000",
+      "developer_owner": "Main Street Hempstead Apartments LLC (Rashid Walker)",
+      "status": "Final modified IDA financial incentives approved; construction scheduled to break ground July 2026",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "New York Real Estate Journal (NYREJ, April 14, 2026); Town of Hempstead Industrial Development Agency (March 24, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Mineola Community Center Renovation",
+      "city_address": "155 Washington Avenue, Mineola, NY 11501",
+      "project_type": "Municipal / Community Facility Renovation (General, Electrical, and Plumbing Works)",
+      "estimated_cost": "$2,907,800",
+      "developer_owner": "Incorporated Village of Mineola",
+      "status": "Public construction contracts awarded at Village Board of Trustees meeting on July 8, 2026",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Incorporated Village of Mineola Board Meeting Minutes/Agenda (July 8, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "975 Stewart Avenue Commercial / Medical Office Project",
+      "city_address": "975 Stewart Avenue, Garden City, NY 11530",
+      "project_type": "Commercial / Medical Office Redevelopment",
+      "estimated_cost": "N/A",
+      "developer_owner": "975 Stewart LLC",
+      "status": "IDA Approving Resolution and SEQRA approvals adopted by Nassau County IDA",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Nassau County Industrial Development Agency (NCIDA) Board Proceedings",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "2150 Grand Avenue Mixed-Use Apartment Development",
+      "city_address": "2150 Grand Avenue, Baldwin, NY 11510",
+      "project_type": "Mixed-Use Commercial / Multi-Family Development (57,000 sq ft building, 58 residential units, 609 sq ft retail space)",
+      "estimated_cost": "N/A",
+      "developer_owner": "2150 Grand LLC (Joe Anzalone)",
+      "status": "Site Plan approved by Town of Hempstead; Inducement Resolution adopted by Hempstead IDA",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Town of Hempstead Industrial Development Agency (TOHIDA) Public Records",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

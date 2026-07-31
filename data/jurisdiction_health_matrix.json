@@ -3123,6 +3123,149 @@
       "status": "VERIFIED_WORKING",
       "records_merged": 19,
       "notes": "Accela agency code CABARRUS, shared by county + Concord/Kannapolis/Harrisburg (module=COC/COK/HB/Permits). module=Building 404s here -- only module=Permits works. permit_type_label='Building Commercial New'. County's own ArcGIS server (location.cabarruscounty.us/arcgisservices/rest/services, the real live host -- gis.cabarruscounty.us just redirects to a web map viewer) has Permits/MapServer with 0 layers and Current_Accela_Permits/Plan_Reviews only -- dead end, Accela portal is the real source. Found+fixed two more HEADER_ALIASES gaps in accela_provider.py: this deployment uses 'Permits Number'/'Permits Type' (plural) not 'Permit Number'/'Permit Type' -- without the fix, permit_number never mapped and all 19 real distinct rows collapsed into 1 synthetic-hash record on merge (same failure class as the earlier Indianapolis case-number bug). Removed the 1 bad collapsed record and re-merged clean after the fix."
+    },
+    {
+      "jurisdiction": "Nassau County, NY",
+      "county": "Nassau",
+      "state": "NY",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "Confirmed structurally like Suffolk: Nassau County government issues no general building permits (NY home-rule pattern) -- permitting is split across 3 towns (Hempstead, North Hempstead, Oyster Bay), 2 cities (Glen Cove, Long Beach), 64 villages. No county GIS/open-data portal publishes permit records. Largest town (Hempstead) uses OpenGov/ViewPoint Cloud (live, HTTP 200 at hempsteadny.viewpointcloud.com) -- not one of the 8 supported provider types, search-form only, no bulk API. North Hempstead (MyToNH portal, HTTP 200) and Oyster Bay (buildingportal, HTTP 200) same pattern. Would need a new scraper/provider type per town, not a config-only fix. Documents (Part 2) not yet run for Nassau this session. Documents (Part 2): document-research-fallback run, 5 projects found, 0 with confirmed pullable documents."
+    },
+    {
+      "jurisdiction": "Westchester County, NY",
+      "county": "Westchester",
+      "state": "NY",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "48 independent municipalities (Yonkers, New Rochelle, White Plains, Mount Vernon, etc.), each with its own building dept -- no county-level permit system. County GIS (Westchester GeoHub) only has parcel/zoning/infra layers, no permits. None of the top 4 cities by population publish a Socrata/ArcGIS/CKAN bulk permit feed -- FOIL request is the only documented access path per Gemini's grounded research. Documents (Part 2) not yet run this session. Documents (Part 2): document-research-fallback run, 5 projects found, 0 with confirmed pullable documents."
+    },
+    {
+      "jurisdiction": "Erie County (Buffalo), NY",
+      "county": "Erie",
+      "state": "NY",
+      "provider_type": "socrata",
+      "endpoint": "https://data.buffalony.gov/resource/9p2d-f3yt.json",
+      "state_agent_pipeline_key": "NY-ERIE-BUFFALO",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 409,
+      "notes": "County government issues no permits (same NY home-rule pattern as every other county this batch), but City of Buffalo's Open Data Buffalo Socrata portal has a real, live permits dataset (9p2d-f3yt, 'Permits'). Verified live 2026-07-31: MAX(issued)=2026-07-30 (fresh, 1 day old). No boolean commercial field -- used property_class_code (NY state assessment roll numeric code) between 400-499 as the commercial classifier instead of the narrower aptype='NEW COM' bucket (only 338 total rows). Dry-run confirmed 409 real rows over a 90-day lookback. Not yet merged -- dry-run only as of this session; --merge-state still pending."
+    },
+    {
+      "jurisdiction": "Monroe County (Rochester), NY",
+      "county": "Monroe",
+      "state": "NY",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "County issues no permits (home-rule). City of Rochester's DataROC ArcGIS Hub portal (data-cityofrochester.opendata.arcgis.com) was checked live via the ArcGIS Hub search API for 'permit' -- only result found was an unrelated community-gardens permit layer, no building-permit dataset exists. Rochester's real permit system (BuildingBlocks / CIVICS ePermitting) is parcel-lookup only, no bulk API or CSV export. Documents (Part 2) not yet run this session. Documents (Part 2): document-research-fallback run, 6 projects found, 0 with confirmed pullable documents."
+    },
+    {
+      "jurisdiction": "Albany County (City of Albany), NY",
+      "county": "Albany",
+      "state": "NY",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "County issues no permits (home-rule). City of Albany uses a Tyler EnerGov Citizen Self-Service portal, but Gemini's guessed URL (albanyny-energov.tylerhost.net/apps/selfservice) 404'd live and the city's own portal landing page (albanyny.gov/507/Citizens-Self-Service-Portal) also 404'd -- could not locate the real live CSS URL within this session's scope, and even if found, EnerGov CSS instances are typically address-lookup-only (confirmed pattern from OH Cleveland COO in this same codebase, 403 on the underlying records API). The only permit dataset on data.ny.gov (kb9s-4gzd) is confirmed stale, static 2009-2013 snapshot, not updated since 2014-03-27. Documents (Part 2) not yet run this session. Documents (Part 2): document-research-fallback run, 7 projects found, 0 with confirmed pullable documents."
+    },
+    {
+      "jurisdiction": "Rockland County, NY",
+      "county": "Rockland",
+      "state": "NY",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "County issues no general permits (home-rule; 5 towns + 19 villages each run independent building depts). County does maintain a Tyler EnerGov portal (rocklandcountyny-energovpub.tylerhost.net) but it's scoped to narrow county-level functions (sewer district connections, highway work, and temporary administration of the Village of Spring Valley's code) -- live-checked, returns HTTP 403, not publicly queryable. No county-wide bulk source. Documents (Part 2) not yet run this session. Documents (Part 2): document-research-fallback run, 4+ projects found (1 dead link caught: Haverstraw Chair Factory GPP), 0 with confirmed pullable documents."
+    },
+    {
+      "jurisdiction": "Dutchess County (Poughkeepsie), NY",
+      "county": "Dutchess",
+      "state": "NY",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "County issues no permits (home-rule). County ArcGIS Hub (opendata-dcny.hub.arcgis.com) limited to parcels/zoning/roads/footprints, no permit data. City and Town of Poughkeepsie both process permits via paper/PDF forms with no open data system. FOIL is the only documented access path. Documents (Part 2) not yet run this session. Documents (Part 2): document-research-fallback run, 7 projects found, 1 confirmed pullable document (Six Senses Conference Center & Wellness Resort Expansion, Laserfiche portal record page). 2 dead links caught (Town of Poughkeepsie Police/Court EAF, OnSemi East Fishkill DEC notice, both 404)."
+    },
+    {
+      "jurisdiction": "Oneida County (Utica), NY",
+      "county": "Oneida",
+      "state": "NY",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "County issues no permits (home-rule). City of Utica Codes Enforcement has no Socrata/ArcGIS/Accela/EnerGov/CKAN presence per grounded research; FOIL-only. Not independently live-verified beyond the grounded search (batched multi-county query, lower confidence than single-county sessions -- flag for a follow-up single-county pass if this becomes a priority). Documents (Part 2): document-research-fallback run, 5 projects found, 0 with confirmed pullable documents."
+    },
+    {
+      "jurisdiction": "Broome County (Binghamton), NY",
+      "county": "Broome",
+      "state": "NY",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "County issues no permits (home-rule), but Broome County GIS does publish a real, live, public ArcGIS FeatureServer aggregating municipal construction data countywide (muni_const_data, https://services1.arcgis.com/AwJV4OxDewNPk46b/arcgis/rest/services/muni_const_data/FeatureServer -- verified live, item last modified 2026). However it is NOT project-level: schema is (Muni, Year, Category, WorkType, StructureType, Permits[count], Units[count], Value[sum]) -- an annual aggregate/dashboard rollup per municipality, no addresses, no individual permit records. Not usable as a project feed with the current provider types (no per-row entity to map to a project). Would need Broome's individual municipal source systems for real project rows, not found this session. Documents (Part 2): document-research-fallback run, 7 projects found, 0 with confirmed pullable documents."
+    },
+    {
+      "jurisdiction": "Saratoga County (Saratoga Springs), NY",
+      "county": "Saratoga",
+      "state": "NY",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "County issues no permits (home-rule). City of Saratoga Springs Building Dept has no open permit dataset (only an MS4 stormwater/construction-site ArcGIS layer, unrelated). FOIL-only. Batched multi-county query, not independently single-county verified -- flag for follow-up if prioritized. Documents (Part 2): document-research-fallback run, projects found, 0 with confirmed pullable documents."
+    },
+    {
+      "jurisdiction": "Niagara County (Niagara Falls), NY",
+      "county": "Niagara",
+      "state": "NY",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "County issues no permits (home-rule). City of Niagara Falls NY Code Enforcement has no bulk open data system (note: niagaraopendata.ca is Niagara Falls, ONTARIO, CANADA -- a different jurisdiction, correctly excluded). Batched multi-county query, not independently single-county verified -- flag for follow-up if prioritized. Documents (Part 2): document-research-fallback run, 4+ projects found, 0 with confirmed pullable documents."
+    },
+    {
+      "jurisdiction": "Ontario County (Canandaigua), NY",
+      "county": "Ontario",
+      "state": "NY",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "County issues no permits (home-rule). OnCOR county GIS portal is parcel/tax/zoning only. City of Canandaigua permitting is manual, no open data system. Batched multi-county query, not independently single-county verified -- flag for follow-up if prioritized. Documents (Part 2): document-research-fallback run, 6 projects found, 0 with confirmed pullable documents."
+    },
+    {
+      "jurisdiction": "Chemung County (Elmira), NY",
+      "county": "Chemung",
+      "state": "NY",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "County issues no permits (home-rule). County Planning Dept GIS layers (footprints/flood/tax) have no permit data. City of Elmira permitting is manual. Batched multi-county query, not independently single-county verified -- flag for follow-up if prioritized. Documents (Part 2): document-research-fallback run, 5 projects found, 0 with confirmed pullable documents."
     }
   ]
 }

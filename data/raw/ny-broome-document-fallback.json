@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Broome",
+  "state": "NY",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 7,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Shank Brother's Transportation Facility",
+      "city_address": "2305 Vestal Road, Vestal, NY 13850",
+      "project_type": "Industrial / Transportation & Logistics",
+      "estimated_cost": "Not disclosed",
+      "developer_owner": "Shank Brother's Transportation",
+      "status": "Under Review / Site Plan Review",
+      "document_url": "",
+      "document_type": "Town Planning Board Agenda",
+      "source_citation": "Town of Vestal Planning Board Meeting Agenda (July 14, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Williams Auto Group Commercial Facility (3401 Vestal Rd)",
+      "city_address": "3401 Vestal Road, Vestal, NY 13850",
+      "project_type": "Commercial / Automotive Dealership",
+      "estimated_cost": "Not disclosed",
+      "developer_owner": "Williams Auto Group",
+      "status": "Under Review / Site Plan Review",
+      "document_url": "",
+      "document_type": "Town Planning Board Agenda",
+      "source_citation": "Town of Vestal Planning Board Meeting Agenda (July 14, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Williams Auto Group Facility Expansion (2200 Vestal Pkwy E)",
+      "city_address": "2200 Vestal Parkway East, Vestal, NY 13850",
+      "project_type": "Commercial / Automotive Dealership",
+      "estimated_cost": "Not disclosed",
+      "developer_owner": "Williams Auto Group",
+      "status": "Under Review / Site Plan Review",
+      "document_url": "",
+      "document_type": "Town Planning Board Agenda",
+      "source_citation": "Town of Vestal Planning Board Meeting Agenda (July 14, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Sugar Lips Food Truck Park",
+      "city_address": "105 Annetta Street, Vestal, NY 13850",
+      "project_type": "Commercial / Hospitality & Dining",
+      "estimated_cost": "Not disclosed",
+      "developer_owner": "Sugar Lips Food Truck Park",
+      "status": "Under Review / Site Plan Follow Up",
+      "document_url": "",
+      "document_type": "Town Planning Board Agenda",
+      "source_citation": "Town of Vestal Planning Board Meeting Agenda (July 14, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "RPNY Solar 8 - Jensen Road Solar Project",
+      "city_address": "840 Jensen Road, Vestal, NY 13850",
+      "project_type": "Commercial / Renewable Energy (Solar Facility)",
+      "estimated_cost": "Not disclosed",
+      "developer_owner": "RPNY Solar 8, LLC / Renewable Properties",
+      "status": "Under Review / SEQR Lead Agency & Site Plan Review",
+      "document_url": "",
+      "document_type": "Town Planning Board Agenda & SEQR Resolution",
+      "source_citation": "Town of Vestal Planning Board Meeting Agenda (June 9, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Broome Technology Park",
+      "city_address": "Airport Road & East Maine Road, Towns of Union and Maine, NY",
+      "project_type": "Industrial / High-Tech & Advanced Manufacturing Park",
+      "estimated_cost": "$500,000,000+",
+      "developer_owner": "Broome County Industrial Development Agency (The Agency)",
+      "status": "Planning / Environmental Review (DGEIS Released)",
+      "document_url": "",
+      "document_type": "State Environmental Quality Review Act (SEQRA) Filing",
+      "source_citation": "Broome County Industrial Development Agency (The Agency)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Crowley Factory Lofts Adaptive Reuse",
+      "city_address": "135 Conklin Avenue, Binghamton, NY 13903",
+      "project_type": "Commercial / Mixed-Use Commercial & Adaptive Reuse",
+      "estimated_cost": "$10,000,000+",
+      "developer_owner": "Crowley Factory Lofts, LLC",
+      "status": "Approved / Active Development",
+      "document_url": "",
+      "document_type": "IDA PILOT Agreement & Grant Filing",
+      "source_citation": "The Agency - Broome County Industrial Development Agency",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Monroe",
+  "state": "NY",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 6,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Sydor Optics Manufacturing Facility Expansion",
+      "city_address": "Jet View Drive, Rochester (Town of Chili), NY, Monroe County",
+      "project_type": "Industrial / Manufacturing",
+      "estimated_cost": "$32,000,000",
+      "developer_owner": "Sydor Optics / 39 Jet View Drive LLC",
+      "status": "Announced / Planning",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Empire State Development Press Release (July 30, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Mary Cariola School Campus (Marketplace Mall Adaptive Reuse)",
+      "city_address": "Marketplace Mall, Henrietta, NY, Monroe County",
+      "project_type": "Commercial / Institutional Adaptive Reuse",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Mary Cariola Center",
+      "status": "Site Plan Approved",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Town of Henrietta Planning Board Workshop (July 21, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Raising Cane's Restaurant & Drive-Thru",
+      "city_address": "823 Jefferson Road, Henrietta, NY, Monroe County",
+      "project_type": "Commercial / Restaurant",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Raising Cane's Restaurant Group / Boaler Engineering",
+      "status": "Conditional Site Plan Approved",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Town of Henrietta Planning Board Workshop (July 21, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Marchioni & Associates Law Office Renovation",
+      "city_address": "Jefferson Road, Henrietta, NY, Monroe County",
+      "project_type": "Commercial / Office Renovation",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Marchioni & Associates",
+      "status": "Site Plan Approved",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Town of Henrietta Planning Board Workshop (July 21, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Livingston Development Ventures Construction Equipment Storage Parcel",
+      "city_address": "83 Potomac Street, Rochester, NY, Monroe County",
+      "project_type": "Industrial",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Matthew Parrinello, Livingston Development Ventures",
+      "status": "Special Permit Approved",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Rochester City Planning Commission Meeting (July 13, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "GRH Place of Worship & Ancillary Parking Facility",
+      "city_address": "671 and 685 Hudson Avenue, Rochester, NY, Monroe County",
+      "project_type": "Commercial / Institutional",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Reza Hourmanesh, GRH",
+      "status": "Special Permit Approved",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Rochester City Planning Commission Meeting (July 13, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

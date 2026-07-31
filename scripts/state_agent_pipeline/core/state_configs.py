@@ -1230,6 +1230,35 @@ NY_RICHMOND_CONFIG: dict[str, Any] = {
     "feed_id": "ny-nycdob-richmond",
 }
 
+# Erie County, NY (Buffalo) -- county government issues no permits (NY
+# building permitting is municipal-only, confirmed by Gemini + matches
+# every other NY county investigated so far). City of Buffalo's own
+# Open Data Buffalo Socrata portal does have a real permits dataset
+# though, verified live 2026-07-31: MAX(issued)=2026-07-30 (fresh).
+# No commercial/residential boolean field -- aptype has a narrow
+# 'NEW COM' bucket (338 rows total) but property_class_code (NY state
+# assessment roll numeric code, 4xx=commercial) is the broader, more
+# reliable classifier, confirmed via live query: 415 real rows with
+# property_class_code 400-499 in the last ~90 days (issued>=2026-05-01).
+NY_ERIE_BUFFALO_CONFIG: dict[str, Any] = {
+    "state_code": "NY",
+    "provider_type": "socrata",
+    "county": "Erie",
+    "endpoint": "https://data.buffalony.gov/resource/9p2d-f3yt.json",
+    "watermark_field": "apno",
+    "hash_fields": ["apno"],
+    "commercial_where": "property_class_code between 400 and 499",
+    "date_field": "issued",
+    "lookback_days": 90,
+    "feed_id": "ny-erie-buffalo",
+    "id_field": "apno",
+    "name_fields": ["aptype", "stname"],
+    "address_fields": ["stname", "city", "zip"],
+    "value_fields": ["value"],
+    "desc_fields": ["aptype", "lictype"],
+    "source_url": "https://data.buffalony.gov/Economic-Neighborhood-Development/Permits/9p2d-f3yt",
+}
+
 # Cambridge, MA (Middlesex County's top jurisdiction by construction volume --
 # MA county government has no building-permit function at all, permits are
 # purely municipal, no single Middlesex-wide source exists). Gemini's first
@@ -2080,6 +2109,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NY-KINGS": NY_KINGS_CONFIG,
     "NY-BRONX": NY_BRONX_CONFIG,
     "NY-RICHMOND": NY_RICHMOND_CONFIG,
+    "NY-ERIE-BUFFALO": NY_ERIE_BUFFALO_CONFIG,
     "MA-CAMBRIDGE": MA_CAMBRIDGE_CONFIG,
     "MN-HENNEPIN": MN_HENNEPIN_CONFIG,
     "UT-SALTLAKE": UT_SALTLAKE_ACCELA_CONFIG,
