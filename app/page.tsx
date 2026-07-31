@@ -23,7 +23,7 @@ const homeJsonLd = {
       name: "SpecIndex",
       url: "https://specindex.ai",
       logo: "https://specindex.ai/icon.svg",
-      description: "Commercial construction project intelligence for building product manufacturers.",
+      description: "AI construction project intelligence for building product manufacturers.",
     },
     {
       "@type": "SoftwareApplication",
@@ -31,94 +31,80 @@ const homeJsonLd = {
       applicationCategory: "BusinessApplication",
       operatingSystem: "Web",
       description:
-        "SpecIndex ranks open commercial construction projects by a transparent priority score, filtered by territory and product category.",
+        "SpecIndex tracks permits, bids, and awards across all 50 states, then uses AI to score every project for a manufacturer's product category and territory.",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
     },
   ],
 };
 
+// Rebuilt 2026-07-31 from a Claude-Projects mockup + build brief (see
+// docs/ROADMAP.md item 92). Trust model at this stage, per the brief: no
+// customers yet, so credibility comes only from the real live product and
+// real data -- no fake logos, testimonials, or compliance badges, and no
+// founder name/photo (company is in stealth). Copy rule: no em-dashes
+// anywhere in visible text.
 const faqs = [
   {
-    q: "Where does the project data come from?",
-    a: "We maintain our own extensive, continuously updated database of commercial construction activity. We don't resell anyone's licensed plan room content.",
+    q: "How early is this, really?",
+    a: "Early, and we are not hiding it. The data pipeline is live and already tracking real projects across all 50 states, but we are building the product around a small group of early access partners. If you want influence over a tool before it is set in stone, this is the moment.",
   },
   {
-    q: "How current is the index?",
-    a: "Projects go in as we find them. Every project page shows the date it was captured and links to the sources behind it, so you can check the original before you act on it.",
+    q: "What's expected of an early access partner?",
+    a: "Roughly a 30 minute onboarding and a short working session every week or two. You tell us what is useful, what is noise, and what would make you actually change how you chase specs. In return you help set the roadmap.",
   },
   {
-    q: "Can you tell me if my brand is in an actual specification?",
-    a: "Not yet. Right now we report brand names found in project coverage. Reading full specification books is what we're building next.",
+    q: "Do I have to pay?",
+    a: "No. Early access partners use SpecIndex free through the beta, and lock in founding pricing for life when we launch.",
   },
   {
-    q: "What do you need from us to start?",
-    a: "Your brand names and the categories you sell. That's enough to run a check against the index.",
+    q: "Where does the data come from?",
+    a: "Directly from county, municipal, and state permit systems, public bid boards, and award notices. Every record links back to its original public source. We do not resell third-party plan room feeds.",
   },
   {
-    q: "How is this different from a plan room?",
-    a: "A plan room is set up for estimators who need to know what to price and when it's due. You need to know something else: whether the product decision has already been made, and whether your category is still open. That's what the index is organized around.",
-  },
-  {
-    q: "How much of the country do you cover?",
-    a: "Commercial projects in all 50 states, filterable by state and county. Depth varies by market.",
-  },
-];
-
-const stages = [
-  {
-    stage: "Announced",
-    window: "Window opening",
-    body: "Owner, site, and scale are announced. Nothing is drawn yet.",
-    detail: "Too early for product detail, but early enough to get known by the design team.",
-  },
-  {
-    stage: "Design and permitting",
-    window: "Window open",
-    body: "Drawings and specifications take shape. A basis of design gets named.",
-    detail: "This is the stage that decides whether your product is even eligible.",
-  },
-  {
-    stage: "Bidding",
-    window: "Window closing",
-    body: "Documents are issued. Substitution requests carry deadlines.",
-    detail: "You can still get added here, but it takes an approval rather than a conversation.",
-  },
-  {
-    stage: "Under construction",
-    window: "Mostly closed",
-    body: "Structure and envelope are committed. Long lead equipment is bought.",
-    detail: "Interiors, finishes, and FF&E packages are still in play on plenty of jobs.",
+    q: "Who is it a fit for?",
+    a: "Building product manufacturers with a field sales or specification team who want to influence projects at design and permitting, before the spec is written.",
   },
 ];
 
 const pipeline = [
   {
     n: "01",
-    title: "Discovery",
-    body: "We scan state and municipal permit, bid, and award sources continuously — not a weekly batch pull.",
+    title: "Discover",
+    body: "AI continuously scans permit, bid, and award sources across every state, county, and municipality, the moment records are filed.",
   },
   {
     n: "02",
-    title: "Enrichment & scoring",
-    body: "Each project is scored by stage, value, and product-category fit, so early-stage work with an open decision surfaces first.",
+    title: "Enrich & score",
+    body: "Each project is ranked by stage, value, and fit to your product category, then enriched with the decision makers who write the spec.",
   },
   {
     n: "03",
-    title: "Delivery",
-    body: "Filtered to your territory and category, with a source link on every record so a rep can verify it before making the call.",
+    title: "Deliver",
+    body: "Filtered results with source links for verification, pushed to your feed or pulled by your own agents. No plan room resale, ever.",
   },
 ];
 
+// Only REST API is real today (see docs/ROADMAP.md item 92) -- MCP server,
+// Snowflake, and Databricks are logged as roadmap items, not shipped, so
+// they're marked "coming" rather than presented as live integrations.
+const integrations = [
+  { name: "REST API", live: true },
+  { name: "CSV / Excel export", live: false },
+  { name: "MCP server", live: false },
+  { name: "Snowflake", live: false },
+  { name: "Databricks", live: false },
+];
+
 export const metadata: Metadata = {
-  title: "SpecIndex — Commercial construction projects, ranked for manufacturers",
+  title: "SpecIndex | AI construction project intelligence for building product manufacturers",
   description:
-    "SpecIndex ranks open commercial construction projects by a transparent priority score, filtered to your territory and product category — top-of-funnel leads for building product manufacturers.",
+    "SpecIndex tracks permits, bids, and awards across all 50 states, then uses AI to score every project for your product category and surface it months before it reaches the trade press.",
   alternates: { canonical: "/" },
 };
 
 export default async function HomePage() {
   const stats = await getStats();
-  const recent = await getRecentCount(90);
+  const recent = await getRecentCount(30);
   const counties = await getDistinctCounties();
   const sample = await getSampleProjects(2000);
   const count = stats.total;
@@ -134,359 +120,364 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
       />
-    <HomePageGate>
-      {/* Hero */}
-      <section className="bg-[var(--color-bg)]">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:grid-cols-2 md:px-8 md:py-24">
-          <div>
-            <p className="text-eyebrow">
-              Top of funnel leads for building product manufacturers
-            </p>
-            <h1 className="mt-4 text-hero">
-              Every project in the ground, before your competitors find it.
-            </h1>
-            <p className="mt-5 max-w-lg text-base leading-relaxed text-[var(--color-gray-600)]">
-              SpecIndex tracks permits, bids, and awards across{" "}
-              {stateCount === 1 ? "1 state" : `${stateCount} states`} — scored,
-              enriched, and delivered before they hit the trade press.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <RequestDemoButton className="btn btn-demo" />
-              <Link href="/projects/" className="btn btn-outline">
-                See live coverage →
-              </Link>
-              <Link href="/visibility/" className="btn btn-outline">
-                Run a brand check
-              </Link>
-            </div>
-          </div>
-          <ProductMock />
-        </div>
-      </section>
-
-      {/* Live stats band -- real numbers, moved up per Gemini review feedback */}
-      <section className="bg-[#0f4a25] py-16 text-white">
-        <div className="mx-auto grid max-w-6xl gap-10 px-5 md:grid-cols-2 md:px-8">
-          <div>
-            <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-[#a7f3c8]">
-              <span className="inline-block h-2 w-2 rounded-full bg-[#a7f3c8]" />
-              Coverage active
-            </p>
-            <h2 className="mt-3 text-2xl font-bold">Numbers that update themselves.</h2>
-            <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/90">
-              Every figure here is pulled live from the index, not a stale
-              &quot;as of&quot; screenshot.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="rounded-lg border border-white/15 p-4">
-              <div className="font-mono text-2xl font-bold tabular-nums">{count}+</div>
-              <div className="mt-1 text-xs text-white/80">tracked projects</div>
-            </div>
-            <div className="rounded-lg border border-white/15 p-4">
-              <div className="font-mono text-2xl font-bold tabular-nums">{stateCount}</div>
-              <div className="mt-1 text-xs text-white/80">states covered</div>
-            </div>
-            <div className="rounded-lg border border-white/15 p-4">
-              <div className="font-mono text-2xl font-bold tabular-nums">{recent}+</div>
-              <div className="mt-1 text-xs text-white/80">projects active last 90 days</div>
-            </div>
-            <div className="rounded-lg border border-white/15 p-4">
-              <div className="font-mono text-2xl font-bold tabular-nums">{countyCount}</div>
-              <div className="mt-1 text-xs text-white/80">counties indexed</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Problem */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-3xl px-5 py-20 text-center md:px-8">
-          <h2 className="text-section">
-            Specs get written in rooms you&apos;re not in.
-          </h2>
-          <p className="mt-5 text-base leading-relaxed text-[var(--color-gray-600)]">
-            An architect names a basis of design. An engineer publishes an approved
-            manufacturers list. A substitution deadline comes and goes. Every one of
-            those moments affects whether your product is eligible, and all of them
-            happen before a purchase order exists.
-          </p>
-          <p className="mt-4 text-base leading-relaxed text-[var(--color-gray-600)]">
-            Most of that information exists somewhere. The trouble is that it&apos;s
-            scattered across thousands of markets, and every one of them presents it
-            differently.
-          </p>
-        </div>
-      </section>
-
-      {/* Pipeline accordion */}
-      <section className="border-t border-[var(--color-border)] bg-[var(--color-gray-100)]">
-        <div className="mx-auto max-w-3xl px-5 py-20 md:px-8">
-          <p className="section-label">The pipeline</p>
-          <h2 className="text-section">From permit filing to your desk.</h2>
-          <div className="mt-10">
-            {pipeline.map((step, i) => (
-              <details
-                key={step.n}
-                className="group border-t border-[var(--color-border)] py-5 last:border-b"
-                open={i === 0}
-              >
-                <summary className="flex cursor-pointer list-none items-center gap-4">
-                  <span className="font-mono text-sm font-bold text-[var(--color-green)]">
-                    {step.n}
-                  </span>
-                  <span className="flex-1 text-base font-semibold">{step.title}</span>
-                  <span className="text-[var(--color-gray-400)] group-open:hidden">+</span>
-                  <span className="hidden text-[var(--color-gray-400)] group-open:inline">
-                    &minus;
-                  </span>
-                </summary>
-                <p className="mt-3 ml-9 max-w-xl text-sm leading-relaxed text-[var(--color-gray-600)]">
-                  {step.body}
-                </p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Spec window timeline */}
-      <section className="border-t border-[var(--color-border)] bg-white">
-        <div className="mx-auto max-w-6xl px-5 py-20 md:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-section">Every project has a window. Then it closes.</h2>
-            <p className="mt-4 text-base leading-relaxed text-[var(--color-gray-600)]">
-              The same job is worth a very different call depending on how far along
-              it is. We record the stage so you can sort that out before you pick up
-              the phone.
-            </p>
-          </div>
-          <ol className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {stages.map((s, i) => (
-              <li
-                key={s.stage}
-                className="card flex flex-col p-5"
-              >
-                <div className="flex items-baseline justify-between gap-2">
-                  <span className="font-mono text-xs font-semibold text-[var(--color-gray-400)]">
-                    0{i + 1}
-                  </span>
-                  <span className="pill">{s.window}</span>
-                </div>
-                <h3 className="mt-3 text-base font-semibold">{s.stage}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--color-gray-600)]">
-                  {s.body}
-                </p>
-                <p className="mt-3 text-xs leading-relaxed text-[var(--color-gray-400)]">
-                  {s.detail}
-                </p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      {/* Feature 1 */}
-      <section className="border-t border-[var(--color-border)] bg-[var(--color-gray-100)]">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 md:grid-cols-2 md:px-8">
-          <div>
-            <p className="section-label">The index</p>
-            <h2 className="text-section">See the projects your pipeline hasn&apos;t heard about yet.</h2>
-            <p className="mt-4 text-base leading-relaxed text-[var(--color-gray-600)]">
-              Commercial work in every state, from mixed use and healthcare to
-              industrial, hospitality, and data centers. Each record carries the
-              stage, value, project team, and what the job will need.
-            </p>
-            <Link href="/projects/" className="mt-6 inline-block text-sm font-semibold text-[var(--color-green)] hover:underline">
-              Search the index →
-            </Link>
-          </div>
-          <div className="card p-5">
-            <p className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-gray-400)]">
-              Sample project record
-            </p>
-            <h4 className="mt-2 text-lg font-semibold">Horizon 16 Industrial Park Phase II</h4>
-            <p className="text-sm text-[var(--color-gray-600)]">Savannah, Chatham County</p>
-            <dl className="mt-4 grid grid-cols-2 gap-3 text-sm">
-              <div>
-                <dt className="text-[var(--color-gray-400)]">Status</dt>
-                <dd className="font-medium">Under construction</dd>
-              </div>
-              <div>
-                <dt className="text-[var(--color-gray-400)]">Square footage</dt>
-                <dd className="font-medium">1.5M SF</dd>
-              </div>
-              <div>
-                <dt className="text-[var(--color-gray-400)]">General contractor</dt>
-                <dd className="font-medium">Evans</dd>
-              </div>
-              <div>
-                <dt className="text-[var(--color-gray-400)]">Watch</dt>
-                <dd className="font-medium">High-bay lighting, dock doors</dd>
-              </div>
-            </dl>
-          </div>
-        </div>
-      </section>
-
-      {/* Feature 2 */}
-      <section className="border-t border-[var(--color-border)] bg-white">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 md:grid-cols-2 md:px-8">
-          <div className="order-2 md:order-1">
-            <div className="card max-w-sm p-4 font-mono text-xs">
-              <p className="text-[var(--color-gray-400)]">9:41</p>
-              <div className="mt-3 flex items-center gap-2">
-                <span className="flex h-5 w-5 items-center justify-center rounded bg-[var(--color-green)] text-[8px] font-bold text-white">
-                  S
+      <HomePageGate>
+        {/* Hero */}
+        <section className="bg-[var(--color-bg)]">
+          <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:grid-cols-2 md:px-8 md:py-24">
+            <div>
+              <div className="flex flex-wrap items-center gap-2.5">
+                <span className="inline-flex items-center gap-2 rounded-full border border-[#bfe6cf] bg-[#e8f6ee] px-3 py-1.5 text-xs font-semibold text-[#166534]">
+                  <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-green)]" />
+                  Early access now open
                 </span>
-                <span className="font-semibold">SpecIndex</span>
+                <span className="inline-flex items-center rounded-full border border-[var(--color-border)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--color-gray-600)]">
+                  AI-native &middot; MCP-ready
+                </span>
               </div>
-              <p className="mt-3 leading-relaxed text-[var(--color-gray-700)]">
-                {brandScan.categoryHits.length} of our {sample.length} highest-priority
-                scored projects will need lighting. {brandScan.stillOpen.length} are
-                still in planning or permitting with no manufacturer named, so those
-                are the ones worth a call this week.
+              <h1 className="mt-5 text-hero">
+                Win the spec <span className="text-[var(--color-green)]">before your competitors know the project exists.</span>
+              </h1>
+              <p className="mt-5 max-w-lg text-base leading-relaxed text-[var(--color-gray-600)]">
+                SpecIndex is AI construction project intelligence for building product
+                manufacturers. We track permits, bids, and awards across all{" "}
+                {stateCount} states, then use AI to score every project for your
+                product category and surface it months before it reaches the trade
+                press.
               </p>
-              <p className="mt-2 text-[var(--color-gray-400)]">9:42 AM</p>
+              <ul className="mt-5 grid gap-2.5">
+                <li className="flex items-start gap-2.5 text-[15px] text-[var(--color-ink)]">
+                  <span className="mt-0.5 font-bold text-[var(--color-green)]">&#10003;</span>
+                  <span>Every project ranked by an AI priority score for your category and territory</span>
+                </li>
+                <li className="flex items-start gap-2.5 text-[15px] text-[var(--color-ink)]">
+                  <span className="mt-0.5 font-bold text-[var(--color-green)]">&#10003;</span>
+                  <span>Spec opportunities surfaced at design and permitting, not at bid when it is already too late</span>
+                </li>
+                <li className="flex items-start gap-2.5 text-[15px] text-[var(--color-ink)]">
+                  <span className="mt-0.5 font-bold text-[var(--color-green)]">&#10003;</span>
+                  <span>Straight from public source records. No plan room resale.</span>
+                </li>
+              </ul>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <RequestDemoButton className="btn btn-demo">Get early access &rarr;</RequestDemoButton>
+                <Link href="/projects/" className="btn btn-outline">
+                  See live coverage
+                </Link>
+              </div>
+              <p className="mt-4 flex items-center gap-2 text-[13px] text-[var(--color-gray-400)]">
+                <span className="text-[var(--color-green)]">&#9679;</span>
+                Founder-led &middot; Free during the beta &middot; You help shape the product
+              </p>
+            </div>
+            <ProductMock />
+          </div>
+        </section>
+
+        {/* Proof strip -- honest: the product is real, not a mockup */}
+        <section className="border-y border-[var(--color-border)] bg-[var(--color-gray-100)] py-6">
+          <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-3 px-5 text-center md:px-8">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#bfe6cf] bg-[#e8f6ee] px-3 py-1.5 text-xs font-semibold text-[#166534]">
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-green)]" />
+              Pipeline live
+            </span>
+            <span className="text-sm font-semibold text-[var(--color-ink)]">
+              This is not a mockup. The index is already running.
+            </span>
+            <span className="text-sm text-[var(--color-gray-600)]">
+              Real projects, real permit data, updated continuously across all 50 states.
+            </span>
+          </div>
+        </section>
+
+        {/* Live stats -- pulled from the index on every render, not a screenshot */}
+        <section className="bg-white">
+          <div className="mx-auto max-w-6xl px-5 py-16 md:px-8">
+            <p className="section-label text-center">Live today</p>
+            <h2 className="text-section mt-2 text-center">What&apos;s in the index right now</h2>
+            <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
+              <div className="card p-6 text-center">
+                <div className="font-mono text-3xl font-bold tabular-nums text-[var(--color-ink)]">
+                  {count.toLocaleString()}
+                  <span className="text-[var(--color-green)]">+</span>
+                </div>
+                <div className="mt-1.5 text-[13px] text-[var(--color-gray-600)]">Projects tracked</div>
+              </div>
+              <div className="card p-6 text-center">
+                <div className="font-mono text-3xl font-bold tabular-nums text-[var(--color-ink)]">
+                  {recent.toLocaleString()}
+                  <span className="text-[var(--color-green)]">+</span>
+                </div>
+                <div className="mt-1.5 text-[13px] text-[var(--color-gray-600)]">Active in last 30 days</div>
+              </div>
+              <div className="card p-6 text-center">
+                <div className="font-mono text-3xl font-bold tabular-nums text-[var(--color-ink)]">{stateCount}</div>
+                <div className="mt-1.5 text-[13px] text-[var(--color-gray-600)]">States covered</div>
+              </div>
+              <div className="card p-6 text-center">
+                <div className="font-mono text-3xl font-bold tabular-nums text-[var(--color-ink)]">{countyCount}</div>
+                <div className="mt-1.5 text-[13px] text-[var(--color-gray-600)]">Counties indexed</div>
+              </div>
             </div>
           </div>
-          <div className="order-1 md:order-2">
-            <p className="section-label">Brand visibility</p>
-            <h2 className="text-section">Check where your name already shows up.</h2>
-            <p className="mt-4 text-base leading-relaxed text-[var(--color-gray-600)]">
-              Run your brand against the index and you&apos;ll see how many projects
-              need your category, how many are still early, and how many name a
-              manufacturer at all.
-            </p>
-            <Link href="/visibility/" className="mt-6 inline-block text-sm font-semibold text-[var(--color-green)] hover:underline">
-              Run a brand check →
-            </Link>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Division segmentation */}
-      <section className="border-t border-[var(--color-border)] bg-white">
-        <div className="mx-auto max-w-6xl px-5 py-20 md:px-8">
-          <div className="max-w-3xl">
-            <p className="section-label">Find your division</p>
-            <h2 className="text-section">
-              Sorted the way specs are written, not the way crews are hired.
+        {/* How it works */}
+        <section className="border-t border-[var(--color-border)] bg-[var(--color-gray-100)]">
+          <div className="mx-auto max-w-6xl px-5 py-20 md:px-8">
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="section-label">The pipeline</p>
+              <h2 className="text-section mt-2">From public record to prioritized opportunity</h2>
+              <p className="mt-4 text-base leading-relaxed text-[var(--color-gray-600)]">
+                Anyone can aggregate permits. SpecIndex scores, enriches, and verifies
+                them so you work the right projects first.
+              </p>
+            </div>
+            <div className="mt-12 grid gap-5 md:grid-cols-3">
+              {pipeline.map((step) => (
+                <div key={step.n} className="card p-6">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-[#bfe6cf] bg-[#e8f6ee] font-mono text-sm font-bold text-[var(--color-green)]">
+                    {step.n}
+                  </div>
+                  <h3 className="mt-4 text-lg font-semibold">{step.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-[var(--color-gray-600)]">{step.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Win the spec */}
+        <section className="border-t border-[var(--color-border)] bg-white">
+          <div className="mx-auto max-w-6xl px-5 py-20 md:px-8">
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="section-label">Win the spec</p>
+              <h2 className="text-section mt-2">Track your specification share, and your competitors&apos;.</h2>
+              <p className="mt-4 text-base leading-relaxed text-[var(--color-gray-600)]">
+                SpecIndex doesn&apos;t just find projects. It shows you where your name
+                already appears, where a competitor is winning the spec, and which
+                decision maker to reach before the window closes.
+              </p>
+            </div>
+
+            <div className="mt-14 grid items-start gap-12 md:grid-cols-2">
+              <div>
+                <h3 className="text-lg font-semibold">Check where your name already shows up</h3>
+                <p className="mt-3 text-sm leading-relaxed text-[var(--color-gray-600)]">
+                  Run your brand against the index and you&apos;ll see how many projects
+                  need your category, how many are still early, and how many name a
+                  manufacturer at all.
+                </p>
+                <div className="card mt-5 p-4 font-mono text-xs">
+                  <p className="text-[var(--color-gray-400)]">9:41</p>
+                  <div className="mt-3 flex items-center gap-2">
+                    <span className="flex h-5 w-5 items-center justify-center rounded bg-[var(--color-green)] text-[8px] font-bold text-white">
+                      S
+                    </span>
+                    <span className="font-semibold">SpecIndex</span>
+                  </div>
+                  <p className="mt-3 leading-relaxed text-[var(--color-gray-700)]">
+                    {brandScan.categoryHits.length} of our {sample.length} highest-priority
+                    scored projects will need lighting. {brandScan.stillOpen.length} are
+                    still in planning or permitting with no manufacturer named, so those
+                    are the ones worth a call this week.
+                  </p>
+                </div>
+                <Link href="/visibility/" className="mt-5 inline-block text-sm font-semibold text-[var(--color-green)] hover:underline">
+                  Run a brand check &rarr;
+                </Link>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-semibold">Spec share by MasterFormat division</h3>
+                <p className="mt-3 text-sm leading-relaxed text-[var(--color-gray-600)]">
+                  A spec book is organized by CSI MasterFormat division, so that&apos;s how
+                  we organize the index. Each row shows how many indexed projects need
+                  it, how many are still early enough to influence, and who normally
+                  writes it into the spec.
+                </p>
+                <div className="card mt-5 overflow-hidden">
+                  <div className="flex items-center justify-between border-b border-[var(--color-border)] bg-[var(--color-gray-100)] px-4 py-3 text-xs text-[var(--color-gray-600)]">
+                    <span>Product category coverage</span>
+                    <span className="flex items-center gap-1.5">
+                      <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--color-green)]" />
+                      Early stage
+                    </span>
+                  </div>
+                  <div className="max-h-[280px] overflow-y-auto">
+                    {divisions.slice(0, 8).map((d) => (
+                      <div
+                        key={d.code}
+                        className="flex items-center gap-3 border-b border-[var(--color-border)] px-4 py-3 text-sm last:border-0"
+                      >
+                        <span className="inline-block h-1.5 w-1.5 flex-none rounded-full bg-[var(--color-green)]" />
+                        <span className="flex-1 font-medium">{d.name}</span>
+                        <span className="font-mono font-semibold">{d.projects.toLocaleString()}</span>
+                        <span className="hidden w-32 text-right text-xs text-[var(--color-gray-400)] sm:inline">
+                          {d.specifiedBy}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <p className="mt-3 text-xs text-[var(--color-gray-400)]">
+                  Counted across our {sample.length} highest-priority scored projects
+                  (of {count.toLocaleString()} indexed nationwide), {mappedCount} of
+                  which need at least one of these divisions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Why we're building it -- stealth, no founder identity */}
+        <section className="border-t border-[var(--color-border)] bg-[var(--color-gray-100)]">
+          <div className="mx-auto max-w-2xl px-5 py-20 text-center md:px-8">
+            <p className="section-label">Why we&apos;re building SpecIndex</p>
+            <h2 className="text-section mt-3">
+              Manufacturers find out about the right projects too late, usually at bid,
+              once the spec is already written.
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-[var(--color-gray-600)]">
-              A spec book is organized by CSI MasterFormat division, so that&apos;s how
-              we organize the index. It matters because trade labels overlap: lighting
-              and switchgear are both Division 26 and both land on the electrical
-              engineer&apos;s desk, so treating them as separate markets counts the same
-              buyer twice.
+            <p className="mt-5 text-base leading-relaxed text-[var(--color-gray-600)]">
+              For years we watched building product teams lose specs they never knew
+              were in play. By the time a project reached the trade press or a bid
+              board, the engineer had already chosen, and it usually was not the
+              company that found out last.
             </p>
             <p className="mt-4 text-base leading-relaxed text-[var(--color-gray-600)]">
-              Each division below shows how many indexed projects will need it, how
-              many are still early enough to influence, and who normally writes it
-              into the spec. That last column is the one your reps care about, because
-              it tells them whose desk to get to.
+              SpecIndex is the tool we wished those teams had. Every project in the
+              country, scored by AI for your category, surfaced while the spec is
+              still open. The index is live today. We are in stealth and building the
+              rest alongside a small group of early access partners.
             </p>
+            <p className="mt-6 text-sm font-semibold text-[var(--color-ink)]">
+              The team behind SpecIndex
+              <span className="mt-0.5 block text-xs font-normal text-[var(--color-gray-400)]">
+                Operators with deep roots in the building products industry, currently in stealth
+              </span>
+            </p>
+            <RequestDemoButton className="btn btn-demo mt-6">Get early access &rarr;</RequestDemoButton>
           </div>
+        </section>
 
-          <div className="mt-10 overflow-x-auto">
-            <table className="w-full min-w-[640px] text-sm">
-              <thead>
-                <tr className="border-b border-[var(--color-border)]">
-                  <th className="px-3 py-3 text-left font-semibold">Division</th>
-                  <th className="px-3 py-3 text-left font-semibold">What you sell</th>
-                  <th className="px-3 py-3 text-right font-semibold">Projects</th>
-                  <th className="px-3 py-3 text-right font-semibold">Still early</th>
-                  <th className="px-3 py-3 text-left font-semibold">Usually specified by</th>
-                </tr>
-              </thead>
-              <tbody>
-                {divisions.map((d) => (
-                  <tr
-                    key={d.code}
-                    className="border-b border-[var(--color-border)] last:border-0"
-                  >
-                    <td className="px-3 py-2.5 whitespace-nowrap">
-                      <span className="font-mono text-xs font-semibold text-[var(--color-green)]">
-                        {d.code}
-                      </span>{" "}
-                      <span className="font-medium">{d.name}</span>
-                    </td>
-                    <td className="px-3 py-2.5 text-[var(--color-gray-600)]">{d.plain}</td>
-                    <td className="px-3 py-2.5 text-right font-mono">{d.projects}</td>
-                    <td className="px-3 py-2.5 text-right font-mono font-semibold text-[var(--color-green)]">
-                      {d.stillOpen}
-                    </td>
-                    <td className="px-3 py-2.5 text-[var(--color-gray-600)]">
-                      {d.specifiedBy}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+        {/* Early access program */}
+        <section className="border-t border-[var(--color-border)] bg-white">
+          <div className="mx-auto max-w-6xl px-5 py-20 md:px-8">
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="section-label">Early access</p>
+              <h2 className="text-section mt-2">Help shape it, and get an unfair advantage first.</h2>
+              <p className="mt-4 text-base leading-relaxed text-[var(--color-gray-600)]">
+                We&apos;re taking on a small group of building product manufacturers to
+                build alongside. In exchange for your feedback, you get:
+              </p>
+            </div>
+            <div className="mt-12 grid gap-5 md:grid-cols-3">
+              <div className="card p-6">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#bfe6cf] bg-[#e8f6ee] text-lg text-[var(--color-green)]">&#9707;</div>
+                <h4 className="mt-4 text-base font-semibold">Direct line to the team</h4>
+                <p className="mt-1.5 text-sm text-[var(--color-gray-600)]">Weekly working sessions. Your workflows and product categories shape what we build next.</p>
+              </div>
+              <div className="card p-6">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#bfe6cf] bg-[#e8f6ee] text-lg text-[var(--color-green)]">&#10022;</div>
+                <h4 className="mt-4 text-base font-semibold">Free during the beta</h4>
+                <p className="mt-1.5 text-sm text-[var(--color-gray-600)]">No cost while we build together, plus founding partner pricing locked in for life when we launch.</p>
+              </div>
+              <div className="card p-6">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#bfe6cf] bg-[#e8f6ee] text-lg text-[var(--color-green)]">&#9678;</div>
+                <h4 className="mt-4 text-base font-semibold">First-mover coverage</h4>
+                <p className="mt-1.5 text-sm text-[var(--color-gray-600)]">Start seeing scored projects in your territory before anyone else in your category has access.</p>
+              </div>
+            </div>
+            <div className="mt-10 flex flex-wrap justify-center gap-3">
+              <span className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-white px-4 py-2 text-[13px] font-medium text-[var(--color-ink)]">
+                <span className="font-bold text-[var(--color-green)]">&#10003;</span> Limited to a handful of partners
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-white px-4 py-2 text-[13px] font-medium text-[var(--color-ink)]">
+                <span className="font-bold text-[var(--color-green)]">&#10003;</span> Best fit: manufacturers with a field sales or spec team
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-white px-4 py-2 text-[13px] font-medium text-[var(--color-ink)]">
+                <span className="font-bold text-[var(--color-green)]">&#10003;</span> About 30 minutes to get started
+              </span>
+            </div>
+            <div className="mt-8 flex justify-center">
+              <RequestDemoButton className="btn btn-demo">Apply for early access &rarr;</RequestDemoButton>
+            </div>
           </div>
-          <p className="mt-4 text-sm text-[var(--color-gray-400)]">
-            Counted across our {sample.length} highest-priority scored projects (of{" "}
-            {count} indexed nationwide), {mappedCount} of which need at least one of
-            these divisions. A project appears in every division it needs, so the
-            column adds up to more than {sample.length}.
-          </p>
-        </div>
-      </section>
+        </section>
 
-      {/* Funnel position */}
-      <section className="border-t border-[var(--color-border)] bg-[var(--color-gray-100)]">
-        <div className="mx-auto max-w-3xl px-5 py-20 md:px-8">
-          <h2 className="text-section">This is the top of your funnel.</h2>
-          <p className="mt-5 text-base leading-relaxed text-[var(--color-gray-600)]">
-            By the time a job reaches your quote log, the interesting decisions have
-            been made. SpecIndex sits earlier than that. It answers the question a rep
-            has on Monday morning: which projects in my territory exist, which ones
-            need what I sell, and which are early enough that a conversation still
-            changes the outcome.
-          </p>
-          <p className="mt-4 text-base leading-relaxed text-[var(--color-gray-600)]">
-            Everything downstream stays where it is. Your CRM still holds the
-            relationship, your quoting stays in your system, your distributors keep
-            their role. What you get here is the list that feeds all of it, with a
-            source link on every project so a rep can verify it before making the
-            call.
-          </p>
-        </div>
-      </section>
-
-      {/* Positioning */}
-      <section className="border-t border-[var(--color-border)] bg-white">
-        <div className="mx-auto max-w-3xl px-5 py-20 md:px-8">
-          <h2 className="text-section">Bid boards were built for the people doing the buying.</h2>
-          <p className="mt-5 text-base leading-relaxed text-[var(--color-gray-600)]">
-            Plan rooms and project databases are organized around what an estimator
-            needs: what do I price, and when is it due. That&apos;s a perfectly good
-            question, but it isn&apos;t yours.
-          </p>
-          <p className="mt-4 text-base leading-relaxed text-[var(--color-gray-600)]">
-            What you need to know is whether the product decision has been made yet,
-            who&apos;s making it, and whether your category is still open. So we
-            organized the index around stage, product category, and whether anyone
-            has been named.
-          </p>
-        </div>
-      </section>
-
-      {/* Mid-page CTA band */}
-      <section className="bg-[var(--color-green)] py-16 text-center text-white">
-        <div className="mx-auto max-w-2xl px-5">
-          <h2 className="text-2xl font-bold">
-            Ready to see what&apos;s breaking ground in your territory?
-          </h2>
-          <p className="mt-2 text-sm opacity-85">15-minute walkthrough, no commitment.</p>
-          <div className="mt-6 flex justify-center">
-            <RequestDemoButton className="btn bg-white !text-[var(--color-green)] hover:opacity-90" />
+        {/* Delivered to your stack */}
+        <section className="border-t border-[var(--color-border)] bg-[var(--color-gray-100)]">
+          <div className="mx-auto max-w-6xl px-5 py-20 md:px-8">
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="section-label">Delivered to your stack</p>
+              <h2 className="text-section mt-2">Scored projects, straight into your workflow</h2>
+              <p className="mt-4 text-base leading-relaxed text-[var(--color-gray-600)]">
+                SpecIndex lands clean, source-linked project data wherever your team
+                already works. Query it directly today; warehouse and CRM delivery are
+                next on the roadmap.
+              </p>
+            </div>
+            <div className="mt-10 flex flex-wrap justify-center gap-3">
+              {integrations.map((i) => (
+                <span
+                  key={i.name}
+                  className="inline-flex items-center gap-2 rounded-lg border border-[var(--color-border)] bg-white px-4 py-3 text-sm font-medium text-[var(--color-ink)] shadow-sm"
+                >
+                  {i.name}
+                  {!i.live && <span className="font-normal text-[var(--color-gray-400)]">&middot; coming</span>}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <FAQ items={faqs} />
-    </HomePageGate>
+        {/* AI-native */}
+        <section className="border-t border-[var(--color-border)] bg-white">
+          <div className="mx-auto max-w-6xl px-5 py-20 md:px-8">
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="section-label">AI-native</p>
+              <h2 className="text-section mt-2">Built for how teams work now: AI, agents, and MCP</h2>
+              <p className="mt-4 text-base leading-relaxed text-[var(--color-gray-600)]">
+                SpecIndex is not a static database you log into. AI does the scoring,
+                and we&apos;re building toward letting you ask it questions in plain
+                language and connect your own agents directly.
+              </p>
+            </div>
+            <div className="mt-12 grid gap-5 md:grid-cols-3">
+              <div className="card p-6">
+                <div className="text-lg text-[var(--color-green)]">&#9670;</div>
+                <h3 className="mt-3 text-base font-semibold">AI scoring and enrichment</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--color-gray-600)]">Models rank every project by stage, value, and fit to your category, then surface the decision makers who write the spec. Signal, not noise.</p>
+              </div>
+              <div className="card p-6">
+                <div className="text-lg text-[var(--color-green)]">&#10022;</div>
+                <h3 className="mt-3 text-base font-semibold">Ask in plain language</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--color-gray-600)]">&quot;Show me hospital projects in Texas at permitting where a competitor is already specified.&quot; Query the whole index the way you would ask a colleague.<span className="ml-1.5 text-xs font-normal text-[var(--color-gray-400)]">(coming)</span></p>
+              </div>
+              <div className="card p-6">
+                <div className="text-lg text-[var(--color-green)]">&#9889;</div>
+                <h3 className="mt-3 text-base font-semibold">MCP server for your agents</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--color-gray-600)]">Connect SpecIndex over MCP so Claude and your internal copilots can pull live project intelligence straight into their workflows.<span className="ml-1.5 text-xs font-normal text-[var(--color-gray-400)]">(coming)</span></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA band */}
+        <section className="bg-[var(--color-green)] py-16 text-center text-white">
+          <div className="mx-auto max-w-2xl px-5">
+            <h2 className="text-2xl font-bold">Build the category with us.</h2>
+            <p className="mt-2 text-sm opacity-90">A handful of early access spots are open. See the projects you&apos;re missing this week.</p>
+            <div className="mt-6 flex justify-center">
+              <RequestDemoButton className="btn bg-white !text-[var(--color-green)] hover:opacity-90">
+                Get early access &rarr;
+              </RequestDemoButton>
+            </div>
+            <p className="mt-4 text-xs text-white/85">Founder-led &middot; Free during beta &middot; No plan room resale</p>
+          </div>
+        </section>
+
+        <FAQ items={faqs} />
+      </HomePageGate>
     </>
   );
 }
