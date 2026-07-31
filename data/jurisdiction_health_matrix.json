@@ -1538,6 +1538,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Hillsborough County (HillsGovHub) confirmed live on Accela (301, real). City of Tampa confirmed live on Accela via aca.tampagov.net redirect (200 OK). Puller not yet built."
+    },
+    {
+      "jurisdiction": "Pinellas County, FL (St. Petersburg/Clearwater)",
+      "county": "Pinellas",
+      "state": "FL",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/PINELLAS/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Pinellas County confirmed live on Accela (301, real). Clearwater confirmed live on Accela (301, real). St. Petersburg confirmed live on Click2Gov (200 OK). Puller not yet built for any."
     }
   ]
 }
