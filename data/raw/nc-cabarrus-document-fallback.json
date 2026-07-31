@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Cabarrus",
+  "state": "NC",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 5,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Novi Buildings Commercial Development",
+      "city_address": "Downtown Concord, NC 28025",
+      "project_type": "Commercial / Mixed-Use",
+      "estimated_cost": "Undisclosed",
+      "developer_owner": "Concord Master Venture",
+      "status": "Under Review (Concord City Council considered an interlocal economic development agreement with Cabarrus County on July 7, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Concord City Council Work Session (July 7, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Kannapolis Mobility Hub",
+      "city_address": "South Main Street, Kannapolis, NC 28081",
+      "project_type": "Commercial / Transportation Infrastructure",
+      "estimated_cost": "Undisclosed",
+      "developer_owner": "City of Kannapolis / Centralina Regional Council",
+      "status": "Planning / Scoping Phase (Report presented to the Kannapolis Planning Board on July 28, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Kannapolis Planning Board Meeting Update (July 28, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Midland Hwy 24-27 Commercial Rezoning & Development",
+      "city_address": "6719 NC Hwy 24-27 E, Midland, NC 28107",
+      "project_type": "Commercial Development",
+      "estimated_cost": "Undisclosed",
+      "developer_owner": "Scott Vuncannon",
+      "status": "Proposed / Pending Board Approval (Public hearing scheduled for Highway Commercial rezoning on July 8, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Midland / Locust Planning & Zoning Board Review (June/July 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Harrisburg Public Safety Storage Building",
+      "city_address": "Behind Fire Station #1, Harrisburg, NC 28075",
+      "project_type": "Municipal / Industrial Storage Facility",
+      "estimated_cost": "$102,000",
+      "developer_owner": "Town of Harrisburg / Eagle Carports",
+      "status": "Approved (Harrisburg Town Council approved $102,000 construction contract on June 8, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Town of Harrisburg Town Council Meeting (June 8, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Academy Gibson Skate Park, Pump Track, and Sculpture Garden",
+      "city_address": "Clearwater Art Center Area, Concord, NC 28025",
+      "project_type": "Recreational / Public Commercial Facility",
+      "estimated_cost": "Undisclosed",
+      "developer_owner": "City of Concord / Withers Ravenel",
+      "status": "Design Finalized (Reviewed during Concord City Council meeting on July 7, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Concord City Council Work Session (July 7, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

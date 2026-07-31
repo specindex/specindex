@@ -1699,6 +1699,49 @@ NC_GUILFORD_CONFIG: dict[str, Any] = {
     "source_url": "https://gis.greensboro-nc.gov/arcgis/rest/services/OpenGateCity/OpenData_HRES_DS/MapServer/2",
 }
 
+# Buncombe County (Asheville, NC) -- Accela Citizen Access, agency code
+# BUNCOMBECONC (confirmed via live web search + curl 2026-07-31; the
+# aca-prod.accela.com/BUNCOMBE guess from Gemini's first answer 404s).
+# Buncombe's county GIS FeatureServer (gis.buncombecounty.org/.../permits)
+# is a dead end -- confirmed live: that MapServer's 38 layers are all
+# zoning/districts/sewer/flood, no actual permit records layer. No single
+# "Commercial" catch-all option on the ddlGSPermitType dropdown (same
+# gotcha as other counties) -- picked "Commercial New Building"
+# (Building/Commercial/New Construction/Commercial Building), the
+# broadest new-construction commercial label; other Commercial-prefixed
+# labels exist (Combo, Addition, Interior Alteration, etc.) if this one
+# proves too narrow.
+NC_BUNCOMBE_CONFIG: dict[str, Any] = {
+    "state_code": "NC",
+    "provider_type": "accela",
+    "county": "Buncombe",
+    "endpoint": "https://aca-prod.accela.com/BUNCOMBECONC",
+    "permit_type_label": "Commercial Combo Permit",
+    "lookback_days": 90,
+}
+
+# Cabarrus County (Concord/Kannapolis, NC) -- Accela Citizen Access,
+# agency code CABARRUS. County/Concord/Kannapolis/Harrisburg all share
+# this one instance (module=COC/COK/HB/Permits). module=Building 404s
+# for this deployment (unlike most others) -- only module=Permits works;
+# confirmed live 2026-07-31. The county's own ArcGIS server
+# (location.cabarruscounty.us/arcgisservices/rest/services, real live
+# host -- gis.cabarruscounty.us just redirects to a web map viewer, not
+# a REST root) has a "Permits" MapServer and a "Current_Accela_Permits"
+# folder, but both are dead: Permits/MapServer has 0 layers, and
+# Current_Accela_Permits only exposes a Plan_Reviews sub-layer, no
+# permit-issuance layer. permit_type_label='Building Commercial New',
+# broadest label under Permits/Building/Commercial/*.
+NC_CABARRUS_CONFIG: dict[str, Any] = {
+    "state_code": "NC",
+    "provider_type": "accela",
+    "county": "Cabarrus",
+    "endpoint": "https://aca-prod.accela.com/CABARRUS",
+    "module": "Permits",
+    "permit_type_label": "Building Commercial New",
+    "lookback_days": 90,
+}
+
 NC_WAKE_CONFIG: dict[str, Any] = {
     "state_code": "NC",
     "provider_type": "arcgis",
@@ -2071,6 +2114,8 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NC-MECKLENBURG": NC_MECKLENBURG_CONFIG,
     "NC-WAKE": NC_WAKE_CONFIG,
     "NC-GUILFORD": NC_GUILFORD_CONFIG,
+    "NC-BUNCOMBE": NC_BUNCOMBE_CONFIG,
+    "NC-CABARRUS": NC_CABARRUS_CONFIG,
     "VA-FAIRFAX": VA_FAIRFAX_CONFIG,
     "TX-WILLIAMSON-PERMITS": TX_WILLIAMSON_PERMITS_CONFIG,
     "PA-PHILADELPHIA": PA_PHILADELPHIA_CONFIG,

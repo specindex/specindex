@@ -3090,6 +3090,39 @@
       "status": "FAILED_NEED_ALT",
       "records_merged": 0,
       "notes": "Live-verified 2026-07-31: antiochca-energovweb.tylerhost.net returns 200, wired via the existing generic EnerGov provider (tenant_name='Antioch', same pattern as El Monte/Alhambra/Carson). Dry-run with --lookback-days 90 fetched 50 real rows across 5 pages but 0 flagged commercial and 0 within the lookback window -- same unresolved 'navigation/search returns 0 despite no error' issue already logged against CA-GLENDALE's EnerGov config in state_configs.py, not yet debugged. Config left registered in state_configs.py (CA_ANTIOCH_ENERGOV_CONFIG / CA-ANTIOCH) but NOT merged (0 real rows) -- matches the Glendale precedent of registering-but-not-verified rather than deleting the investigation."
+    },
+    {
+      "jurisdiction": "Buncombe County, NC",
+      "county": "Buncombe",
+      "state": "NC",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/BUNCOMBECONC",
+      "state_agent_pipeline_key": "NC-BUNCOMBE",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 72,
+      "notes": "Accela agency code BUNCOMBECONC (aca-prod.accela.com/BUNCOMBE 404s -- not the real code). County GIS FeatureServer (gis.buncombecounty.org/.../permits) is a dead end, 38 layers all zoning/districts/sewer/flood, no permits layer. permit_type_label='Commercial New Building' (no single Commercial catch-all). Found+fixed a real HEADER_ALIASES bug in accela_provider.py: this deployment's date column header is 'App Date' not 'Date', so date_idx never matched and 82 real rows were silently reported as 0 -- added 'app date' alias."
+    },
+    {
+      "jurisdiction": "Union County, NC",
+      "county": "Union",
+      "state": "NC",
+      "provider_type": null,
+      "endpoint": "https://ucinspect.unioncountync.gov/evolvepublic/",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "Real, live public permit search exists (Evolve Permitting by InfoVision Software, no login required to search) but Evolve is not one of the 8 wired provider types (Accela/Socrata/ArcGIS/EnerGov/CKAN/Carto/CSV/TdlrTabs) -- would need a new provider class, out of scope for this pass. County's ArcGIS server (atlas.unioncountync.gov/server/rest/services, confirmed live) has no permits layer -- only zoning/districts/parcels/utilities (BCE_Commercial_Inspections_Zones is a zone boundary layer, not permit records). Gemini's first-answer guesses (epermits.unioncountync.gov, permits.unioncountync.gov, gis.unioncountync.gov) were all dead/wrong hostnames."
+    },
+    {
+      "jurisdiction": "Cabarrus County, NC",
+      "county": "Cabarrus",
+      "state": "NC",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/CABARRUS",
+      "state_agent_pipeline_key": "NC-CABARRUS",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 19,
+      "notes": "Accela agency code CABARRUS, shared by county + Concord/Kannapolis/Harrisburg (module=COC/COK/HB/Permits). module=Building 404s here -- only module=Permits works. permit_type_label='Building Commercial New'. County's own ArcGIS server (location.cabarruscounty.us/arcgisservices/rest/services, the real live host -- gis.cabarruscounty.us just redirects to a web map viewer) has Permits/MapServer with 0 layers and Current_Accela_Permits/Plan_Reviews only -- dead end, Accela portal is the real source. Found+fixed two more HEADER_ALIASES gaps in accela_provider.py: this deployment uses 'Permits Number'/'Permits Type' (plural) not 'Permit Number'/'Permit Type' -- without the fix, permit_number never mapped and all 19 real distinct rows collapsed into 1 synthetic-hash record on merge (same failure class as the earlier Indianapolis case-number bug). Removed the 1 bad collapsed record and re-merged clean after the fix."
     }
   ]
 }
