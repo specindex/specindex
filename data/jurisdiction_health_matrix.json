@@ -1004,10 +1004,10 @@
       "county": "Kane",
       "state": "IL",
       "provider_type": "cityview",
-      "endpoint": "https://www.kanecountyil.gov/Pages/webPortal.aspx",
+      "endpoint": "https://cvportal.kanecountyil.gov/portalserver",
       "state_agent_pipeline_key": null,
-      "status": "FAILED_NEED_ALT",
-      "notes": "Real platform (CityView) confirmed by two separate Gemini queries, but both guessed exact paths 404 (webPortal.aspx and, separately, onlinePortal.aspx) -- the portal exists at kanecountyil.gov somewhere, exact live path not yet found."
+      "status": "VERIFIED_WORKING",
+      "notes": "Real platform (CityView) confirmed by two separate Gemini queries, but both guessed exact paths 404 (webPortal.aspx and, separately, onlinePortal.aspx) -- the portal exists at kanecountyil.gov somewhere, exact live path not yet found. RESOLVED 2026-07-31: real portal at cvportal.kanecountyil.gov (a subdomain, not a path off kanecountyil.gov as originally guessed) -- confirmed live (200 OK), cited directly from the county's own Building Permit Submittal Instructions document. Structured source confirmed, puller still needs to be built/tested."
     },
     {
       "jurisdiction": "Sangamon County, IL (Springfield)",
