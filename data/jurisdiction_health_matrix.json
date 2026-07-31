@@ -1668,6 +1668,16 @@
       "state_agent_pipeline_key": null,
       "status": "VERIFIED_WORKING",
       "notes": "Manatee County confirmed live on Accela (200 OK). Bradenton confirmed live on Accela (200 OK). Puller not built."
+    },
+    {
+      "jurisdiction": "Lake County, FL (Leesburg/Clermont)",
+      "county": "Lake",
+      "state": "FL",
+      "provider_type": "etrakit",
+      "endpoint": "https://etrakit.clermontfl.org/etrakit3/",
+      "state_agent_pipeline_key": null,
+      "status": "VERIFIED_WORKING",
+      "notes": "Clermont confirmed live on eTRAKiT (200 OK). Leesburg confirmed live on OPRS (301, real, new platform type). Lake County confirmed live (200 OK), also uses OPRS. Puller not built."
     }
   ]
 }
