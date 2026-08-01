@@ -2781,3 +2781,39 @@ for _sc in _ALL_US_STATE_CODES:
         "provider_type": "usaspending",
         "lookback_days": 730,
     }
+
+# Clark County, NV -- state's #1 county by population (Las Vegas metro),
+# #11 nationally, previously zero coverage. Clark County's own government
+# (unincorporated area) only exposes an Accela Citizen Access search UI
+# (aca-prod.accela.com/clarkco) with no public bulk/REST export found.
+# City of Las Vegas (largest incorporated city within the county) runs
+# its own ArcGIS-based open data portal instead -- verified live
+# 2026-07-31: layer is a standalone Table (no geometry) named
+# "Building_Permits_MV" on
+# https://services1.arcgis.com/F1v0ufATbBQScMtY/arcgis/rest/services/OpenData_Building_Permits_/FeatureServer/0
+# 435,686 total rows, COMM/RES flag field (COMM='Y' for 99,635 commercial
+# rows), MAX(ISSDTTM)=2026-07-24 (1 week fresh, actively updating --
+# dataset's own "modified" metadata is 2026-07-29). 5,571 commercial rows
+# since 2025-01-01. ObjectId is Esri's standard autoincrement watermark
+# field; APNO is the real permit number/application ID field.
+NV_CLARK_LASVEGAS_CONFIG: dict[str, Any] = {
+    "state_code": "NV",
+    "provider_type": "arcgis",
+    "county": "Clark",
+    "endpoint": "https://services1.arcgis.com/F1v0ufATbBQScMtY/arcgis/rest/services/OpenData_Building_Permits_/FeatureServer",
+    "layer": 0,
+    "watermark_field": "ObjectId",
+    "hash_fields": ["APNO"],
+    "commercial_where": "COMM = 'Y'",
+    "out_fields": "*",
+    "date_field": "ISSDTTM",
+    "lookback_days": 576,  # anchored to 2025-01-01 per Asif (recompute: (today - 2025-01-01).days)
+    "feed_id": "nv-clark-lasvegas",
+    "id_field": "APNO",
+    "name_fields": ["APL_ADDRESS", "WORKTYPE", "APNO"],
+    "address_fields": ["APL_ADDRESS", "CITY", "STATE", "ZIP"],
+    "value_fields": ["DECLVLTN", "CALCVLTN"],
+    "desc_fields": ["WORKTYPE", "APTYPE", "BLDGAPPLSTATUS"],
+    "source_url": "https://opendataportal-lasvegas.opendata.arcgis.com/datasets/lasvegas::building-permits-",
+}
+STATE_CONFIGS["NV-CLARK"] = NV_CLARK_LASVEGAS_CONFIG
