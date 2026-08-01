@@ -866,6 +866,33 @@ MO_STLOUIS_ACCELA_CONFIG: dict[str, Any] = {
     "lookback_days": 180,
 }
 
+# City of Columbia, MO -- Boone County's seat/largest city (county itself
+# has no online permit system per Gemini, only a departmental info page).
+# Self-hosted Tyler EnerGov (own domain energov.como.gov, not
+# tylerhost.net), same energov_prod/selfservice path convention as the
+# Pomona CA tenant. Verified live 2026-07-31: HTTP 200, page title
+# "SelfService Public Site", real EnerGov Angular app markup present, and
+# the provider successfully fetches real rows (50 across 5 pages, real
+# CaseNumber/CaseType/dates). BUT: same known limitation as El Monte CA --
+# the Advanced search panel isn't reachable, so the blank/default search
+# is the only query possible, and on this tenant that fixed sample is
+# 100% Fire/Open-Burning and Deck-Only residential permits, 0 commercial,
+# across every page and both a 90-day and 900-day lookback tried
+# 2026-07-31. NOT wired into STATE_CONFIGS -- would need Advanced-panel
+# access (same open problem as Pomona/El Monte) before this becomes a
+# usable commercial source. Kept here for when that gets solved.
+_MO_COLUMBIA_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "MO",
+    "provider_type": "energov",
+    "county": "Boone",
+    "endpoint": "https://energov.como.gov",
+    "tenant_id": "1",
+    "tenant_name": "Columbia",
+    "lookback_days": 900,
+    "max_pages": 5,
+    "selfservice_path": "energov_prod/selfservice",
+}
+
 # Salt Lake City (Salt Lake County's top jurisdiction by population -- UT
 # county government's Municipal Services District handles unincorporated
 # areas only, no clean statewide/countywide ArcGIS building-permit layer
@@ -1370,6 +1397,47 @@ MA_CAMBRIDGE_CONFIG: dict[str, Any] = {
     "source_url": "https://data.cambridgema.gov/Inspectional-Services/Building-Permits-New-Construction/9qm7-wbdc",
 }
 
+# City of Boston, MA (Suffolk County's only real jurisdiction -- MA county
+# government has no permit function, purely municipal, same pattern as
+# Cambridge/Middlesex above). CKAN platform (Analyze Boston, data.boston.gov)
+# -- Gemini's answer verified live 2026-07-31: real resource_id
+# 6ddcd912-32a0-43df-9908-63574f8c7e77 ("Approved Building Permits"),
+# confirmed via datastore_search and datastore_search_sql. occupancytype
+# is the real commercial filter -- values are inconsistent case/abbreviation
+# ('Comm' 186,939 rows + 'COMM' 101 rows, also 'Mixed' 27,189), so the where
+# clause covers both. MAX(issued_date)=2026-07-25T01:50:01, live and fresh.
+MA_BOSTON_CONFIG: dict[str, Any] = {
+    "state_code": "MA",
+    "provider_type": "ckan",
+    "county": "Suffolk",
+    "endpoint": "https://data.boston.gov",
+    "resource_id": "6ddcd912-32a0-43df-9908-63574f8c7e77",
+    "watermark_field": "_id",
+    "hash_fields": ["permitnumber"],
+    "commercial_where": "occupancytype IN ('Comm', 'COMM', 'Mixed')",
+    "date_field": "issued_date",
+    "lookback_days": 90,
+    "feed_id": "ma-boston",
+    "id_field": "permitnumber",
+    "name_fields": ["description", "worktype", "address"],
+    "address_fields": ["address"],
+    "value_fields": ["declared_valuation"],
+    "desc_fields": ["description", "permittypedescr", "comments"],
+    "source_url": "https://data.boston.gov/dataset/approved-building-permits",
+}
+
+# NOTE: Town of Brookline, MA (Norfolk County) has a live Accela portal
+# (aca-prod.accela.com/BROOKLINE, module=Building loads cleanly, confirmed
+# live 2026-07-31) with a real "Commercial Building" dropdown option
+# (Playwright-probed #ctl00_PlaceHolderMain_generalSearchForm_ddlGSPermitType,
+# 27 total options). But both the automated provider (0 rows at 90-day and
+# 365-day lookback) and a manual Playwright search-button click (dropdown
+# resets to "--Select--" post-search, no results table) failed to return
+# real data -- looks like a search-submission quirk specific to this
+# deployment, not a data problem. Not wired as a config -- would need
+# deeper debugging (network-tab inspection of the actual postback) beyond
+# this batch's scope. Logged as FAILED_NEED_ALT in the health matrix.
+
 # Minneapolis, MN (Hennepin County's top jurisdiction -- MN county government
 # has no building-permit function, purely municipal). Gemini's first answer
 # gave a fabricated ArcGIS org ID (1st35idbL2i24j8I, invalid URL) with the
@@ -1398,6 +1466,31 @@ MN_HENNEPIN_CONFIG: dict[str, Any] = {
     "value_fields": ["value"],
     "desc_fields": ["comments", "workType", "occupancyType"],
     "source_url": "https://opendata.minneapolismn.gov/datasets/CCS-Permits",
+}
+
+# Olmsted County, MN -- Rochester (the county's dominant city) has no live
+# Accela search endpoint (aca.rochestermn.gov times out, unreachable). But
+# Olmsted County itself DOES run its own live Accela portal at
+# aca-prod.accela.com/OLMSTED (HTTP 200, confirmed live 2026-07-31) --
+# covers county-administered building permits (unincorporated areas +
+# townships, not Rochester city proper, per the portal's own permit-type
+# taxonomy which is entirely prefixed "Building/Olmsted County/..."). No
+# single "Commercial" catch-all option -- real dropdown options fetched
+# directly from the live page's <select id=...ddlGSPermitType> are split
+# into "Commercial Building (New Building)" / "(Addition)" / "(Alteration)"
+# plus "Commercial Plumbing/Mechanical" and "Demo Permit - Commercial".
+# Using "Commercial Building (New Building)" as the broadest single-label
+# match the provider's select_option(label=...) API supports.
+MN_OLMSTED_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "MN",
+    "provider_type": "accela",
+    "county": "Olmsted",
+    "endpoint": "https://aca-prod.accela.com/OLMSTED",
+    "module": "Building",
+    "permit_type_label": "Commercial Building (New Building)",
+    "lookback_days": 180,
+    "feed_id": "mn-olmsted-accela",
+    "source_url": "https://aca-prod.accela.com/OLMSTED/Cap/CapHome.aspx?module=Building",
 }
 
 # Montgomery County, MD (state's most populous county -- unlike MA/MN/WI,
@@ -1897,6 +1990,35 @@ VA_FAIRFAX_CONFIG: dict[str, Any] = {
     "source_url": "https://www.fairfaxcounty.gov/lambert/rest/services/LDS/DevelopmentTracker/FeatureServer/5",
 }
 
+# Arlington County (VA) -- verified live 2026-07-31: Arlington County GIS
+# "Development Tracking Points" layer, 19,930 total records, 1,136 with
+# office/retail SF > 0 (non-residential), MAX(site_plan_date) = 2026-06-13.
+# Low volume in any 90-day window (only 2 records with a recent
+# site_plan_date) -- a genuine curated development tracker, not a
+# high-frequency permit feed, same pattern as other low-volume trackers
+# already in the corpus (e.g. CA-Torrance).
+VA_ARLINGTON_CONFIG: dict[str, Any] = {
+    "state_code": "VA",
+    "provider_type": "arcgis",
+    "county": "Arlington",
+    "endpoint": "https://arlgis.arlingtonva.us/arcgis/rest/services/Open_Data/od_Development_Tracking_Points/FeatureServer",
+    "layer": 0,
+    "watermark_field": "OBJECTID",
+    "hash_fields": ["development_project_id"],
+    "commercial_where": "(office_square_feet_qty > 0 OR retail_square_feet_qty > 0)",
+    "out_fields": "*",
+    "date_field": "site_plan_date",
+    "date_literal_style": "timestamp",
+    "lookback_days": 90,
+    "feed_id": "va-arlington",
+    "id_field": "development_project_id",
+    "name_fields": ["development_project_name", "development_project_address_tex"],
+    "address_fields": ["development_project_address_tex", "street_display_name"],
+    "value_fields": ["office_square_feet_qty", "retail_square_feet_qty"],
+    "desc_fields": ["status_dsc", "general_land_use_plan_dsc", "zoning_type_dsc"],
+    "source_url": "https://arlgis.arlingtonva.us/arcgis/rest/services/Open_Data/od_Development_Tracking_Points/FeatureServer/0",
+}
+
 # Williamson County (TX) -- a SECOND, different feed from the existing
 # TX_WILLIAMSON_CONFIG (Site_Development/FeatureServer layer 47, org
 # L0MLvN0Ay0iEjnCT). This one is a different org/dataset entirely
@@ -2191,7 +2313,9 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NY-RICHMOND": NY_RICHMOND_CONFIG,
     "NY-ERIE-BUFFALO": NY_ERIE_BUFFALO_CONFIG,
     "MA-CAMBRIDGE": MA_CAMBRIDGE_CONFIG,
+    "MA-BOSTON": MA_BOSTON_CONFIG,
     "MN-HENNEPIN": MN_HENNEPIN_CONFIG,
+    "MN-OLMSTED": MN_OLMSTED_ACCELA_CONFIG,
     "UT-SALTLAKE": UT_SALTLAKE_ACCELA_CONFIG,
     "MD-MONTGOMERY": MD_MONTGOMERY_CONFIG,
     "WI-MILWAUKEE": WI_MILWAUKEE_CONFIG,
@@ -2232,6 +2356,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NC-CABARRUS": NC_CABARRUS_CONFIG,
     "VA-FAIRFAX": VA_FAIRFAX_CONFIG,
     "TX-WILLIAMSON-PERMITS": TX_WILLIAMSON_PERMITS_CONFIG,
+    "VA-ARLINGTON": VA_ARLINGTON_CONFIG,
     "PA-PHILADELPHIA": PA_PHILADELPHIA_CONFIG,
     "PA-PITTSBURGH": PA_PITTSBURGH_CONFIG,
     "CA-SANDIEGO": CA_SANDIEGO_CONFIG,
@@ -2491,6 +2616,62 @@ OH_CLEVELAND_COO_CONFIG: dict[str, Any] = {
 STATE_CONFIGS["OH-CLEVELAND"] = OH_CLEVELAND_CONFIG
 STATE_CONFIGS["OH-CLEVELAND-COO"] = OH_CLEVELAND_COO_CONFIG
 
+# Montgomery County, OH (Dayton) -- Accela agency code MONTCOOH, verified
+# live 2026-07-31: portal reachable (200), Building module's General
+# Search permit-type dropdown has a single broad commercial catch-all
+# option, "Commercial Building" (the only Commercial-prefixed label of
+# 16 total options; the rest are trade-specific -- Electrical/Gas/
+# Mechanical/Sign/Fire Protection/Hood-Paint-Booth -- or residential).
+OH_MONTGOMERY_CONFIG: dict[str, Any] = {
+    "state_code": "OH",
+    "provider_type": "accela",
+    "county": "Montgomery",
+    "endpoint": "https://aca-prod.accela.com/MONTCOOH",
+    "module": "Building",
+    "permit_type_label": "Commercial Building",
+    "lookback_days": 90,
+    "feed_id": "oh-dayton-montgomery",
+}
+STATE_CONFIGS["OH-MONTGOMERY"] = OH_MONTGOMERY_CONFIG
+
+# Butler County, OH -- Accela agency code BUTLER, verified live
+# 2026-07-31: no single "Commercial" catch-all option exists (46 total
+# labels, county names permit types Building/{Commercial|Residential}/
+# {subtype}/{detail}). Probed 4 plausible Commercial-prefixed labels
+# directly: "Building/Commercial/Alterations/Other" (55 rows/90 days,
+# broadest -- used here), "Commercial Tenant Finish" (37 rows),
+# "Commercial Footer Foundation, Shell, and TF" (7 rows, new-construction
+# shell permits), "Building/Commercial/New/Multi Family" (0 rows, dead).
+OH_BUTLER_CONFIG: dict[str, Any] = {
+    "state_code": "OH",
+    "provider_type": "accela",
+    "county": "Butler",
+    "endpoint": "https://aca-prod.accela.com/BUTLER",
+    "module": "Building",
+    "permit_type_label": "Building/Commercial/Alterations/Other",
+    "lookback_days": 90,
+    "feed_id": "oh-butler",
+}
+STATE_CONFIGS["OH-BUTLER"] = OH_BUTLER_CONFIG
+
+# Clermont County, OH -- Tyler EnerGov Self Service. Gemini's first guess
+# (clermontoh-energov.tylerhost.net) was a dead DNS name -- real live host
+# found via independent web search: clermontcountyoh-energovpub
+# .tylerhost.net/apps/selfservice (200 OK, verified 2026-07-31).
+# tenant_name unconfirmed via UI probe -- trying "Clermont County" first.
+OH_CLERMONT_CONFIG: dict[str, Any] = {
+    "state_code": "OH",
+    "provider_type": "energov",
+    "county": "Clermont",
+    "endpoint": "https://clermontcountyoh-energovpub.tylerhost.net",
+    "tenant_id": "1",
+    "tenant_name": "Clermont County",
+    "lookback_days": 900,
+    "max_pages": 5,
+    "feed_id": "oh-clermont",
+}
+STATE_CONFIGS["OH-CLERMONT"] = OH_CLERMONT_CONFIG
+
 # City of Hartford, CT (Hartford County's largest city; CT has no
 # county government -- towns/cities issue permits directly) -- Accela
 # agency code HARTFORD, confirmed live 2026-07-31 (module=Building loads
@@ -2555,6 +2736,26 @@ TN_HENDERSONVILLE_ENERGOV_CONFIG: dict[str, Any] = {
     "max_pages": 5,
 }
 STATE_CONFIGS["TN-HENDERSONVILLE"] = TN_HENDERSONVILLE_ENERGOV_CONFIG
+
+# City of Naperville, IL (DuPage County) -- Tyler EnerGov Citizen Self
+# Service, same tylerhost.net/apps/SelfService pattern as the other
+# EnerGov tenants above. Live-verified 2026-07-31 via direct curl (200 OK,
+# napervilleil-energovweb.tylerhost.net/apps/SelfService#/home). tenant_id
+# left at provider default "1", unconfirmed against a live UI probe (same
+# caveat as Hendersonville). DuPage County itself has no county-level
+# digital permit system -- Naperville is the largest city and closest
+# real candidate. See jurisdiction_health_matrix.json for status.
+IL_NAPERVILLE_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "IL",
+    "provider_type": "energov",
+    "county": "DuPage",
+    "endpoint": "https://napervilleil-energovweb.tylerhost.net",
+    "tenant_id": "1",
+    "tenant_name": "Naperville",
+    "lookback_days": 90,
+    "max_pages": 5,
+}
+STATE_CONFIGS["IL-NAPERVILLE"] = IL_NAPERVILLE_ENERGOV_CONFIG
 
 # SAM.gov + USAspending for all 50 states (2026-07-28, Asif: "pull all
 # data from USAspending and sam.gov"). Both providers are already

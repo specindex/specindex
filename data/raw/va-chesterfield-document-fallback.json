@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Chesterfield",
+  "state": "VA",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 6,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Proctors Creek WWTP - Equalization Basin & Pump Station",
+      "city_address": "1200 Coxendale Rd, Chester, VA 23836",
+      "project_type": "Industrial / Public Utility Infrastructure",
+      "estimated_cost": "$30,000,000",
+      "developer_owner": "Chesterfield County Department of Utilities / MEB General Contractors",
+      "status": "Permitted / Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://richmondbizsense.com/2026/02/18/breaking-ground-local-building-permits-for-2-18-26/",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Southside Speedway Master Site Plan (Case 26PR2143)",
+      "city_address": "12800 Genito Rd, Midlothian, VA 23112",
+      "project_type": "Commercial / Entertainment / Redevelopment",
+      "estimated_cost": "Not reported",
+      "developer_owner": "Competitive Racing Investments",
+      "status": "In Review / Master Site Plan Pending",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://www.chesterfield.gov/plan",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "West Ridge High School & Western Area Infrastructure Improvements",
+      "city_address": "17500 Duval Rd, Moseley, VA 23120",
+      "project_type": "Institutional / Infrastructure Construction",
+      "estimated_cost": "$60,000,000 (Roadway Improvements)",
+      "developer_owner": "Chesterfield County / Chesterfield County Public Schools (Contractor: Shirley Contracting Co.)",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://richmondbizsense.com/2026/07/27/topping-out-held-for-340k-sq-ft-west-ridge-high-school-roadway-project-progresses/",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "WestDulles Data Center Complex (James River Industrial Center / Project Gale Site)",
+      "city_address": "1500 Battery Brooke Pkwy, Chesterfield, VA 23836",
+      "project_type": "Industrial / Data Center",
+      "estimated_cost": "Not reported",
+      "developer_owner": "WestDulles Properties",
+      "status": "Proposed / Zoning Review & Appeal Active",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://richmondbizsense.com/2026/03/09/developer-appeals-chesterfield-staffs-data-center-determination/",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "XL Sports World Turf Fields (Case 24SN1342)",
+      "city_address": "2300 Oak Lake Blvd, Midlothian, VA 23112",
+      "project_type": "Commercial / Private Athletic Facility",
+      "estimated_cost": "Not reported",
+      "developer_owner": "XL Sports World",
+      "status": "Proposed / Pending Zoning Approval",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://www.chesterfield.gov/plan",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Uphoff Car & Air Museum (Case 24SN1337)",
+      "city_address": "7400 Whitepine Rd, North Chesterfield, VA 23237",
+      "project_type": "Commercial Museum / Cultural Development",
+      "estimated_cost": "Not reported",
+      "developer_owner": "Uphoff Investments LLC",
+      "status": "Proposed / Pending Zoning Approval",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://www.chesterfield.gov/plan",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

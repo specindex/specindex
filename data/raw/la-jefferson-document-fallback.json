@@ -1,0 +1,63 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Jefferson",
+  "state": "LA",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 4,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "West End Waterfront Redevelopment",
+      "city_address": "West End Lakefront (Parish line of Jefferson Parish and Orleans Parish near Bucktown / 17th Street Canal), LA",
+      "project_type": "Commercial / Mixed-Use Waterfront Redevelopment",
+      "estimated_cost": "Multi-million (TBD)",
+      "developer_owner": "West End Economic Development District (Cooperative agreement between Jefferson Parish and City of New Orleans)",
+      "status": "Planning / Development Agreement Finalized (Cooperative Endeavor Agreement signed July 16, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "CityBusiness & NOLA.gov Announcement (July 16, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Perrier Esquerr\u00e9 Contractors Headquarters & Fabrication Facility",
+      "city_address": "4900 Jefferson Highway, Jefferson, LA 70121",
+      "project_type": "Commercial Office / Industrial Fabrication Facility",
+      "estimated_cost": "$2,200,000",
+      "developer_owner": "Perrier Esquerr\u00e9 Contractors (financed via JEDCO SBA 504 loan & Metairie Bank)",
+      "status": "Completed / Operational (Grand Opening July 17, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Biz New Orleans (July 24, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Greater New Orleans Food & Beverage Incubator at Churchill Park",
+      "city_address": "700 Churchill Parkway, Avondale, LA 70094",
+      "project_type": "Commercial / Industrial Food Processing & Incubator Facility (12,000 sq ft)",
+      "estimated_cost": "$8,700,000",
+      "developer_owner": "Jefferson Parish Economic Development Commission (JEDCO)",
+      "status": "Fully Funded / Pre-Construction (Full funding milestone announced July 15, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Canal Street Beat & JEDCO Announcement (July 15, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Laitram LLC Industrial Facility Expansion (Quality Jobs Project #20250151)",
+      "city_address": "200 Laitram Lane, Harahan, LA 70123",
+      "project_type": "Industrial Manufacturing Expansion",
+      "estimated_cost": "Undisclosed",
+      "developer_owner": "Laitram, LLC / JEDCO",
+      "status": "Approved for State Quality Jobs Program Endorsement (Adopted by Jefferson Parish Council July 22, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Jefferson Parish Council Resolution (July 22, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

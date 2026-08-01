@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Clay",
+  "state": "MO",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 6,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Metrobloks Liberty Data Center Campus",
+      "city_address": "2515 Old Hughes Road, Liberty, MO 64068",
+      "project_type": "Industrial / Data Center",
+      "estimated_cost": "$1,400,000,000",
+      "developer_owner": "Metrobloks, LLC",
+      "status": "Approved / In Development",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Liberty City Council Minutes & Missouri DED Announcement (2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Front Line Safety Distribution Center",
+      "city_address": "2150 N. Corrington Ave., Kansas City, MO 64120",
+      "project_type": "Industrial / Distribution & Warehouse",
+      "estimated_cost": "$1,700,000",
+      "developer_owner": "Front Line Safety / CBRE",
+      "status": "Under Construction / Opening July 2026",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Missouri Department of Economic Development Release (June 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Project Rocket Ship Community Scale Manufacturing Facility",
+      "city_address": "13800 N. US 169 Hwy, Smithville, MO 64089",
+      "project_type": "Industrial / Manufacturing & Warehouse",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Private Developer / Applicant",
+      "status": "Under Review / Planning & Zoning Public Hearing",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Smithville Planning & Zoning Commission Agenda (July 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Smithville Plaza Retail Development",
+      "city_address": "101 US 169 Hwy, Smithville, MO 64089",
+      "project_type": "Commercial / Retail & Restaurant",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Smithville Plaza LLC",
+      "status": "Approved Site Plan / Rebuilding Phase",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Smithville Planning & Zoning Commission Agenda Memo (June 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Smithville Battery Energy Storage Facility",
+      "city_address": "NE Corner of 169 Hwy and NE 132nd St, Smithville, MO 64089",
+      "project_type": "Commercial / Energy Storage Infrastructure",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Private Energy Developer",
+      "status": "Under Review / Conditional Use Permit Pending",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Smithville Planning & Zoning Commission Public Notice (July 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "14890 Industrial Drive Commercial Building",
+      "city_address": "14890 Industrial Drive, Smithville, MO 64089",
+      "project_type": "Commercial / Industrial (Diesel Repair Facility)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Private Commercial Applicant",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Smithville Planning & Zoning Commission Report (2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

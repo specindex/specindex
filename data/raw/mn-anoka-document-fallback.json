@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Anoka",
+  "state": "MN",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 6,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "RMS Manufacturing Facility Addition",
+      "city_address": "8600 Evergreen Boulevard NW, Coon Rapids, MN 55433",
+      "project_type": "Industrial / Manufacturing",
+      "estimated_cost": "$15,000,000",
+      "developer_owner": "RMS Company (Cretex Companies)",
+      "status": "Permitted / Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Coon Rapids July 2026 Quarterly Economic Development Report",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "River North Industrial Center",
+      "city_address": "9570 Norway Street, Coon Rapids, MN",
+      "project_type": "Industrial (147,000 sq ft industrial facility)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "River North Industrial Center",
+      "status": "Site Plan Approved",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Coon Rapids July 2026 Quarterly Economic Development Report",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Mercy Hospital Equipment Replacement and Modification",
+      "city_address": "4050 Coon Rapids Blvd NW, Coon Rapids, MN 55433",
+      "project_type": "Healthcare / Commercial",
+      "estimated_cost": "$703,392",
+      "developer_owner": "Mercy Hospital (Allina Health)",
+      "status": "Permitted",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Coon Rapids July 2026 Quarterly Economic Development Report",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Midwest Radiology Interior Remodeling",
+      "city_address": "Coon Rapids, MN",
+      "project_type": "Healthcare / Commercial Interior",
+      "estimated_cost": "$479,071",
+      "developer_owner": "Midwest Radiology",
+      "status": "Permitted",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Coon Rapids July 2026 Quarterly Economic Development Report",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Mississippi Library Rooftop Unit Replacement Project",
+      "city_address": "1285 100th Ave NW, Fridley, MN 55448",
+      "project_type": "Commercial / Institutional Infrastructure",
+      "estimated_cost": "$492,888",
+      "developer_owner": "Anoka County Facilities Management / Construction Results (Contractor)",
+      "status": "Contract Awarded / Approved",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Anoka County Board Action Item Packet, July 14, 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "NR Properties - Blaine Industrial Building",
+      "city_address": "94th Lane NE, Blaine, MN 55449",
+      "project_type": "Industrial / Commercial",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Raich Companies (Nate Raich)",
+      "status": "Permit Application Reviewed / Recommended for Approval",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Coon Creek Watershed District Permit Application Review Report, July 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

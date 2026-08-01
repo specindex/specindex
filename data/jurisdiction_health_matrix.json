@@ -937,8 +937,8 @@
       "provider_type": "cloudpermit",
       "endpoint": "https://us.cloudpermit.com/gov/login",
       "state_agent_pipeline_key": null,
-      "status": "FAILED_NEED_ALT",
-      "notes": "City of Ottawa (largest city) confirmed via cited cityofottawa.org text to use Cloudpermit for all permitting, public records viewable 24/7 -- first new platform type seen (not yet one of the 8 wired providers). NOT YET VERIFIED at browser level (curl redirects are inconclusive for this SPA/SSO login flow, doc convention requires Playwright for this). lasallecounty.org/arcgis/rest/services does not resolve (TLS hang); gis-lasallecoil.opendata.arcgis.com loads but has no configured catalog (empty). Peru and LaSalle city: PDF/email only, no digital platform. Next step: Playwright against us.cloudpermit.com to confirm Ottawa is selectable and permit records are actually public before treating as VERIFIED_WORKING or building a provider."
+      "status": "NO_PUBLIC_DATA",
+      "notes": "City of Ottawa (largest city) confirmed via cited cityofottawa.org text to use Cloudpermit for all permitting, public records viewable 24/7 -- first new platform type seen (not yet one of the 8 wired providers). NOT YET VERIFIED at browser level (curl redirects are inconclusive for this SPA/SSO login flow, doc convention requires Playwright for this). lasallecounty.org/arcgis/rest/services does not resolve (TLS hang); gis-lasallecoil.opendata.arcgis.com loads but has no configured catalog (empty). Peru and LaSalle city: PDF/email only, no digital platform. Next step: Playwright against us.cloudpermit.com to confirm Ottawa is selectable and permit records are actually public before treating as VERIFIED_WORKING or building a provider. UPDATE 2026-07-31 (session 3): Playwright-verified us.cloudpermit.com -- it redirects straight to /gov/login ('Cloudpermit - Log In'), a credentialed gate, not an open public record viewer as the earlier cited text implied. No anonymous/public search path found. Downgrading from FAILED_NEED_ALT to NO_PUBLIC_DATA for Ottawa/Cloudpermit specifically; county-level ArcGIS and Peru/LaSalle city remain dead ends as previously logged."
     },
     {
       "jurisdiction": "Whiteside County, IL",
@@ -968,7 +968,7 @@
       "endpoint": "https://napervilleil-energovweb.tylerhost.net/apps/SelfService#/home",
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
-      "notes": "Deterministic ArcGIS search's only 'relevant' hit (county name matched) was an Off-Leash Dog Parks layer -- a false positive the relevance filter passed on name-match alone, with no topical check. This wrongly marked the county 'resolved' and skipped it past the Flash fallback; never actually search-grounded. IL building permits are municipal, not county-level -- next attempt should target Naperville/Wheaton directly. RESOLVED 2026-07-31 (city-level retry, City of Naperville -- largest city in county): real, live Tyler EnerGov Civic Access portal confirmed (200 OK via direct curl). This is a genuine structured-source candidate, one of the 8 recognized platform types -- NOT yet wired as a real provider (needs an EnerGov-specific puller built and tested, likely Playwright-level since Civic Access is a client-rendered SPA with no obvious REST API), so status stays FAILED_NEED_ALT until that happens rather than VERIFIED_WORKING, but this is real remaining upside, not a dead end like most of this batch."
+      "notes": "Deterministic ArcGIS search's only 'relevant' hit (county name matched) was an Off-Leash Dog Parks layer -- a false positive the relevance filter passed on name-match alone, with no topical check. This wrongly marked the county 'resolved' and skipped it past the Flash fallback; never actually search-grounded. IL building permits are municipal, not county-level -- next attempt should target Naperville/Wheaton directly. RESOLVED 2026-07-31 (city-level retry, City of Naperville -- largest city in county): real, live Tyler EnerGov Civic Access portal confirmed (200 OK via direct curl). This is a genuine structured-source candidate, one of the 8 recognized platform types -- NOT yet wired as a real provider (needs an EnerGov-specific puller built and tested, likely Playwright-level since Civic Access is a client-rendered SPA with no obvious REST API), so status stays FAILED_NEED_ALT until that happens rather than VERIFIED_WORKING, but this is real remaining upside, not a dead end like most of this batch. UPDATE 2026-07-31 (session 3): wired IL-NAPERVILLE energov config into state_configs.py (tenant_id=1, tenant_name=Naperville, lookback=90d) and ran --dry-run. Confirmed same failure mode as TN-HENDERSONVILLE: navigation succeeds but the 'Search' button locator times out (15s) on a blocking modal/theme difference, 0 rows fetched. Provider is registered (STATE_CONFIGS['IL-NAPERVILLE']) for future Playwright debugging but status stays FAILED_NEED_ALT -- not a working source yet."
     },
     {
       "jurisdiction": "Lake County, IL",
@@ -1098,7 +1098,7 @@
       "endpoint": "https://www.rockislandcountyil.gov/163/Zoning-Building-Safety",
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
-      "notes": "Same pattern as McLean -- real site (200), given URL redirects to a generic 'Overview' page, no digital permit system found in page content. Step 6 fallback run 2026-07-31, 30-day window: NO qualifying commercial projects found (honest empty result, not a hallucinated fill-in) -- 4 non-qualifying items surfaced and correctly excluded (municipal public safety building, school renovation, scrap yard special-use permit, and one major project whose dated action fell outside the 30-day window). Nothing to load this round."
+      "notes": "Same pattern as McLean -- real site (200), given URL redirects to a generic 'Overview' page, no digital permit system found in page content. Step 6 fallback run 2026-07-31, 30-day window: NO qualifying commercial projects found (honest empty result, not a hallucinated fill-in) -- 4 non-qualifying items surfaced and correctly excluded (municipal public safety building, school renovation, scrap yard special-use permit, and one major project whose dated action fell outside the 30-day window). Nothing to load this round. UPDATE 2026-07-31 (session 3): re-ran document-research-fallback.py (30-day window) and this pass surfaced 4 real named projects (Bowling Township BESS, Crawford Company Manufacturing Expansion/Rivertracks Holdings, 38th Avenue Sanitary Sewer & Lift Station, Nature's Treatment of Illinois Milan Bottoms Commercial Complex), 0/4 documents confirmed. Findings in data/raw/il-rock-island-document-fallback.json, not yet loaded (needs cross-check pass). Per project-capture policy this should be kept/loaded once cross-checked even without a county-level digital permit system -- document capture is not a gate."
     },
     {
       "jurisdiction": "St. Clair County, IL (Belleville)",
@@ -1108,7 +1108,7 @@
       "endpoint": "https://www.stclaircountyil.gov/departments/building-zoning/building-permits",
       "state_agent_pipeline_key": null,
       "status": "NO_PUBLIC_DATA",
-      "notes": "The only one of this batch where the exact page loaded correctly (200, real Building Permits subpage). No Accela/EnerGov/SmartGov/CityView link or 'apply online'/'permit search' language found anywhere on the page -- informational only. Step 6 fallback run 2026-07-31, 30-day window: NO qualifying projects found (honest empty result). Correctly caught a location-confusion trap (a Belleville Costco headline was about Belleville, Ontario, not Belleville, IL) and correctly excluded a below-threshold municipal facility (16,625 SF < 20,000 SF cutoff). Nothing to load this round."
+      "notes": "The only one of this batch where the exact page loaded correctly (200, real Building Permits subpage). No Accela/EnerGov/SmartGov/CityView link or 'apply online'/'permit search' language found anywhere on the page -- informational only. Step 6 fallback run 2026-07-31, 30-day window: NO qualifying projects found (honest empty result). Correctly caught a location-confusion trap (a Belleville Costco headline was about Belleville, Ontario, not Belleville, IL) and correctly excluded a below-threshold municipal facility (16,625 SF < 20,000 SF cutoff). Nothing to load this round. UPDATE 2026-07-31 (session 3): document-research-fallback.py 30-day run surfaced 5 real named projects (MidAmerica St. Louis Airport FIS/GA Facility, MetroLink Red Line Extension to MidAmerica Airport, Air Mobility Drive/IL-158 Extension, Village of Shiloh New Police Station & Municipal Capital Improvements, I-55/70 Corridor Infrastructure & Bridge Reconstruction) -- 0/5 documents confirmed. Note several of these read as public infrastructure/transit rather than private commercial construction; needs a cross-check pass to confirm qualification before loading. Findings in data/raw/il-st-clair-document-fallback.json."
     },
     {
       "jurisdiction": "Madison County, IL (Alton/Edwardsville)",
@@ -1148,7 +1148,7 @@
       "endpoint": "https://co-kankakee-il.smartgovcommunity.com/",
       "state_agent_pipeline_key": null,
       "status": "FAILED_NEED_ALT",
-      "notes": "Real, live SmartGov portal (200, redirects to /Public/Home) -- but it's a JS-rendered SPA shell, raw HTML is only 15KB with no permit data or links in it. Tried common REST guesses (api/permits, Public/Permits) -- both 404. Same difficulty tier as Accela/BidBuy, needs Playwright, not a simple ingest script."
+      "notes": "Real, live SmartGov portal (200, redirects to /Public/Home) -- but it's a JS-rendered SPA shell, raw HTML is only 15KB with no permit data or links in it. Tried common REST guesses (api/permits, Public/Permits) -- both 404. Same difficulty tier as Accela/BidBuy, needs Playwright, not a simple ingest script. UPDATE 2026-07-31 (session 3): ran scripts/document-research-fallback.py --county Kankakee --state IL --lookback 'the last 30 days'. 4 real named projects captured unconditionally (QuikTrip Convenience Store & Fuel Station, CSL Behring Kankakee Campus Expansion, Used Car Sales Dealership, Bradley Blvd Gas Station Development), 0/4 documents confirmed on retry. Findings in data/raw/il-kankakee-document-fallback.json, not yet loaded into corpus (needs cross-check pass). SmartGov portal remains unwired (still needs Playwright), status stays FAILED_NEED_ALT."
     },
     {
       "jurisdiction": "DeKalb County, IL",
@@ -3334,6 +3334,444 @@
       "state_agent_pipeline_key": "IN-NOBLESVILLE",
       "status": "FAILED_NEED_ALT",
       "notes": "Noblesville's EnerGov tenant is real and live (curl HTTP 200; note it uses the '-energovpub.tylerhost.net' subdomain form and 'Apps/SelfService' path casing, not the more common '-energovweb.tylerhost.net'/'apps/selfservice' pattern used by the CA tenants). Wired and dry-run fetched 50 real rows across 5 pages, but 0 matched the commercial-keyword filter and 0 fell within the lookback window -- a raw unfiltered probe (bypassing the pipeline's SearchModule selector) showed the blank/default search returns Code Enforcement cases (ModuleName=5, e.g. 'Grass and Weeds'), not Building permits; the pipeline's existing SearchModule='Permit' select-and-dispatch logic did not surface commercial permit rows for this tenant within the time spent debugging. Other Hamilton County cities not evaluated as providers this pass: Fishers runs OpenGov Permitting & Licensing (fishersin.portal.opengov.com, confirmed live HTTP 200, not one of the 8 existing provider types), Carmel runs Cityworks PLL/Avolve ProjectDox (not evaluated), Westfield has no structured portal found. Document fallback run: 0 of ~6 named projects had a confirmed live pullable document (2 retried candidate URLs were dead 404s off a stale plan-commission agenda page)."
+    },
+    {
+      "jurisdiction": "Jefferson Parish, LA (Metairie/Kenner/Gretna)",
+      "county": "Jefferson",
+      "state": "LA",
+      "provider_type": null,
+      "endpoint": "https://www.mgoconnect.org/cp/portal",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Jefferson Parish and its incorporated cities (Metairie via parish, Kenner separately paper-based, Gretna/Harahan) run on MGO Connect (MyGovernmentOnline, api.mgoconnect.org), the dominant LA parish permitting platform. Confirmed live 2026-07-31 via Playwright: the portal (mgoconnect.org/cp/portal) lets a Guest pick State=Louisiana/Jurisdiction=<any> and browse jurisdiction landing pages with no login, but clicking 'Search Permits' redirects to /cp/login (Sign In page) -- the actual permit search/records endpoint is login-gated for anonymous users, confirmed by watching network requests (no permit-record API call fires before the redirect). Jefferson Parish's own GIS (geoportal.jeffparish.net/arcgis/rest/services) returned a bare '500 - Internal server error' on the REST services root (curl, 2026-07-31) -- not a working ArcGIS feed. Not one of the 8 existing provider types (Accela/Socrata/ArcGIS/EnerGov/CKAN/Carto/CSV/TdlrTabs); would need new engineering to build an MGO Connect provider even if login were solved, and login is a hard stop per AGENT_STRATEGY.md policy on login-gated sources. REAL DEAD END. Document-research-fallback run 2026-07-31 (--lookback \"the last 30 days\"): 4 named projects captured (West End Waterfront Redevelopment, Perrier Esquerre Contractors HQ/fabrication facility, +2 others), 0 documents_confirmed (no live-fetchable PDF/DOCX found for any, all either had no URL or failed the content-type check). Output: data/raw/la-jefferson-document-fallback.json."
+    },
+    {
+      "jurisdiction": "Caddo Parish, LA (Shreveport, joint Shreveport/Caddo permitting)",
+      "county": "Caddo",
+      "state": "LA",
+      "provider_type": null,
+      "endpoint": "https://www.mgoconnect.org/cp/portal",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "City of Shreveport handles all permitting for both Shreveport and unincorporated Caddo Parish (intergovernmental agreement), also on MGO Connect. Confirmed live 2026-07-31 via Playwright: selected Louisiana -> Shreveport jurisdiction (ID 178) with no login required to reach the jurisdiction landing page (GetJurisdictionByID/178 etc. all 200 as Guest), but clicking 'Search Permits' redirects to /cp/login -- same login gate as every other MGO Connect jurisdiction. Shreveport-Caddo MPC's public GIS (arcgis.com webappviewer, no dedicated FeatureServer for permits per Gemini) and Caddo Parish's subdivision portal (subdivisions.caddo.gov) are plat/subdivision-only, not building-permit data. REAL DEAD END on the same MGO Connect login gate as Jefferson Parish -- this is a statewide LA platform pattern, not a one-off; other LA target counties (Rapides, St. Tammany, Tangipahoa, Terrebonne) also list as MGO Connect jurisdictions in the portal's jurisdiction picker and will very likely hit the same gate. Document-research-fallback run 2026-07-31 (--lookback \"the last 30 days\"): 5 named projects captured, 0 documents_confirmed. Output: data/raw/la-caddo-document-fallback.json."
+    },
+    {
+      "jurisdiction": "Lafayette Parish, LA (Lafayette Consolidated Government)",
+      "county": "Lafayette",
+      "state": "LA",
+      "provider_type": null,
+      "endpoint": "https://www.mgoconnect.org/cp/portal",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Lafayette Consolidated Government (city/parish merged 1996) and surrounding municipalities (Broussard, Youngsville, Carencro, Scott, Duson) also run on MGO Connect -- same login-gated 'Search Permits' dead end confirmed for Jefferson/Caddo above. LCG's own GIS host (lcgmaps.lafayettela.gov/arcgis/rest/services) failed to resolve entirely (curl exit 6, DNS/host failure, 2026-07-31), not a working ArcGIS feed as Gemini's first answer implied. REAL DEAD END."
+    },
+    {
+      "jurisdiction": "Calcasieu Parish, LA (Lake Charles)",
+      "county": "Calcasieu",
+      "state": "LA",
+      "provider_type": null,
+      "endpoint": "https://www.calcasieu.gov/civicaccessportal",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Unincorporated Calcasieu Parish runs Tyler Civic Access / Enterprise Permitting & Licensing at www.calcasieu.gov/civicaccessportal (per Gemini, migrated off legacy EnerGov CSS/tylerhost.net Oct 2023). Confirmed live 2026-07-31: the legacy calcasieuparishla-energov.tylerhost.net hostname Gemini first suggested does NOT resolve (curl: 'Could not resolve host'). The current www.calcasieu.gov/civicaccessportal URL returns HTTP 403 'Access Denied' from Akamai's edge WAF/Bot Manager on every automated access attempt tried (curl with -v, and a full headless-Chromium Playwright load) -- this is a real Akamai bot-block, not a broken link (curl got a clean Akamai error page with a reference ID, not a connection failure). City of Lake Charles (the parish's largest incorporated city) runs MGO Connect, same login-gated dead end already confirmed for Jefferson/Caddo/Lafayette. REAL DEAD END -- Akamai bot protection is a hard stop per AGENT_STRATEGY.md policy (no anti-bot-evasion tooling), same class of blocker as Colorado Springs' PPRBD CAPTCHA."
+    },
+    {
+      "jurisdiction": "Ouachita Parish, LA (Monroe/West Monroe)",
+      "county": "Ouachita",
+      "state": "LA",
+      "provider_type": null,
+      "endpoint": "https://oppj.org/departments/permit_office/building_permits/",
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Unincorporated Ouachita Parish is managed in-house by the Ouachita Parish Police Jury (OPPJ) Permit Office -- confirmed live 2026-07-31 (HTTP 200), but the page is a plain navigation hub linking to Commercial Building / Mobile Home / New Home Construction / Third-Party Providers subpages with no queryable online permit database, search tool, or open-data feed of any kind -- not Accela/EnerGov/Socrata/ArcGIS/CKAN/Carto. City of Monroe runs MGO Connect (same login-gated dead end as other LA jurisdictions above). City of West Monroe uses paper/PDF submission only, per Gemini, not independently verified live (no online system to verify). REAL DEAD END -- genuinely no digitized public permit system for the parish government, distinct from a blocked/login-gated one."
+    },
+    {
+      "jurisdiction": "St. Charles County, MO",
+      "county": "St. Charles",
+      "state": "MO",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "County runs Citizenserve (https://www.citizenserve.com/stcharles, live 200) for permits -- not one of the 8 supported provider types (Accela/Socrata/ArcGIS/EnerGov/CKAN/Carto/CSV/TdlrTabs), no new provider built this batch. County's ArcGIS Open Data Hub (sccmo.org) confirmed via Gemini to only expose static spatial layers (parcels/zoning/building footprints), no permits FeatureServer. No Socrata feed either. Document research fallback run (30-day lookback): 7 real named projects found (Lauderdale Outdoor Wedding Venue, McCreery Private School, Good Day Farm Dispensary, Muegge Road Townhomes, Avalon Park Senior Care/Cottleville Trails Corners, American Iron Fabrication Facility, Sawtooth Building Redevelopment/C3 Campus) -- all captured regardless of doc status per policy; documents_confirmed=0 (no live pullable document found for any). Output: data/raw/mo-st-charles-document-fallback.json."
+    },
+    {
+      "jurisdiction": "Greene County, MO (Springfield)",
+      "county": "Greene",
+      "state": "MO",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "County itself has no online permit system (manual paper/PDF per Gemini). City of Springfield runs 'eCity' portal (permits.springfieldmo.gov) -- not a supported provider type, no ArcGIS FeatureServer/Socrata feed found on a direct search either. Document research fallback run (30-day lookback): 3 real named projects found (Andy's Frozen Custard Headquarters, Maranatha Village Expansion, B&B Rental Drive-Thru Coffee Shop); documents_confirmed=0. Output: data/raw/mo-greene-document-fallback.json."
+    },
+    {
+      "jurisdiction": "Clay County, MO (Kansas City area)",
+      "county": "Clay",
+      "state": "MO",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "County uses Cityworks for permit search (claycountymo.cityworksonline.com) -- not a supported provider type; county's public ArcGIS REST services only host parcel layers (ClayCountyParcelService), no permits FeatureServer, confirmed via direct Gemini search. Kansas City's CompassKC portal covers only the KCMO-incorporated slice, also not a supported provider type. Document research fallback run (30-day lookback): 6 real named projects found (Metrobloks Liberty Data Center Campus, Front Line Safety Distribution Center, Project Rocket Ship manufacturing facility, Smithville Plaza Retail Development, Smithville Battery Energy Storage Facility, 14890 Industrial Drive Commercial Building); documents_confirmed=0. Output: data/raw/mo-clay-document-fallback.json."
+    },
+    {
+      "jurisdiction": "Boone County, MO (Columbia)",
+      "county": "Boone",
+      "state": "MO",
+      "provider_type": "energov",
+      "endpoint": "https://energov.como.gov",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "County itself has no online permit system (departmental info page only). City of Columbia runs a self-hosted Tyler EnerGov instance (energov.como.gov/energov_prod/selfservice, same self-hosted pattern as Pomona CA) -- confirmed live (HTTP 200, real EnerGov app) and the provider DOES fetch real rows (50 across 5 pages, real CaseNumber/CaseType/dates). Same known limitation as El Monte CA/Pomona CA: the Advanced search panel isn't reachable, so only the fixed blank-search sample returns, and on this tenant that sample is 100% Fire/Open-Burning and Deck-Only residential permits across every page and both a 90-day and 900-day lookback -- 0 commercial rows found. Config kept in state_configs.py as `_MO_COLUMBIA_ENERGOV_CONFIG` (underscore-prefixed, not wired into STATE_CONFIGS) for when Advanced-panel access gets solved generally. Not attempted for document fallback this batch -- deprioritized after St. Charles/Greene/Clay/Jefferson yielded better structured-source signal to chase first."
+    },
+    {
+      "jurisdiction": "Jefferson County, MO",
+      "county": "Jefferson",
+      "state": "MO",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Initial Gemini guess (Tyler EnerGov, jeffersoncountymo-energov.tylerhost.net) does not resolve via DNS at all -- fabricated, confirmed dead via curl (multiple -energovweb/-energovpub variants also tried, all DNS failures). Feedback round corrected: county actually uses CivicGov/CivicPlus, real live portal at https://www.civicgov4.com/mo_jeffersoncounty/portal/ (confirmed HTTP 200). CivicGov is not one of the 8 supported provider types (Accela/Socrata/ArcGIS/EnerGov/CKAN/Carto/CSV/TdlrTabs) -- would need a new provider built, not attempted this batch. Document research fallback script was launched but stalled/hung past a 2x background-wait budget (~9 min, 0:00.46 CPU time unchanged) without producing output -- not completed, no document-fallback data collected for this county this batch. Worth a retry with a fresh run."
+    },
+    {
+      "jurisdiction": "Montgomery (Dayton), OH",
+      "county": "Montgomery",
+      "state": "OH",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/MONTCOOH",
+      "state_agent_pipeline_key": "OH-MONTGOMERY",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 109,
+      "notes": "Accela agency MONTCOOH, module=Building, permit_type_label='Commercial Building' (only Commercial-prefixed option of 16). Dry-run 149 rows/90d, merged 109 new."
+    },
+    {
+      "jurisdiction": "Butler, OH",
+      "county": "Butler",
+      "state": "OH",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/BUTLER",
+      "state_agent_pipeline_key": "OH-BUTLER",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 55,
+      "notes": "Accela agency BUTLER, module=Building. No single 'Commercial' catch-all; probed 4 candidate labels live, used broadest real one 'Building/Commercial/Alterations/Other' (55 rows/90d). Other options: 'Commercial Tenant Finish' (37), 'Commercial Footer Foundation, Shell, and TF' (7), 'Building/Commercial/New/Multi Family' (0, dead)."
+    },
+    {
+      "jurisdiction": "Clermont, OH",
+      "county": "Clermont",
+      "state": "OH",
+      "provider_type": "energov",
+      "endpoint": "https://clermontcountyoh-energovpub.tylerhost.net",
+      "state_agent_pipeline_key": "OH-CLERMONT",
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "Real live Tyler EnerGov Self Service site confirmed (200 OK, title 'Clermont County, Ohio Permit Central'); Gemini's first guess (clermontoh-energov.tylerhost.net) was dead DNS, real host found via independent web search (clermontcountyoh-energovpub.tylerhost.net). energov_provider.py's Search-click flow returns null Result on both the initial click and the built-in retry -- 0 rows captured. Source exists and is real; automated pull not yet working, needs further debugging."
+    },
+    {
+      "jurisdiction": "Summit (Akron), OH",
+      "county": "Summit",
+      "state": "OH",
+      "provider_type": "none",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "records_merged": 0,
+      "notes": "Summit County Dept of Building Standards and City of Akron both run proprietary/custom portals, no ArcGIS FeatureServer, Socrata, or Accela instance found."
+    },
+    {
+      "jurisdiction": "Lucas (Toledo), OH",
+      "county": "Lucas",
+      "state": "OH",
+      "provider_type": "none",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "records_merged": 0,
+      "notes": "City of Toledo uses a Cityworks-backed portal (not one of our 8 supported platform types); Lucas County outlying-township permitting is paper/PDF-only. No ArcGIS/Socrata/Accela found."
+    },
+    {
+      "jurisdiction": "Stark (Canton), OH",
+      "county": "Stark",
+      "state": "OH",
+      "provider_type": "none",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "records_merged": 0,
+      "notes": "City of Canton uses iWorQ (not a supported provider type); Stark County Building Inspection has a direct permit-search portal only, no open API. No ArcGIS/Socrata/Accela found."
+    },
+    {
+      "jurisdiction": "Lorain (Elyria), OH",
+      "county": "Lorain",
+      "state": "OH",
+      "provider_type": "none",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "records_merged": 0,
+      "notes": "Permitting decentralized to individual municipal building departments (City of Lorain, Avon, Elyria); County Engineer handles ROW/utility work via PDF/paper. No ArcGIS/Socrata/Accela found."
+    },
+    {
+      "jurisdiction": "Warren (Lebanon), OH",
+      "county": "Warren",
+      "state": "OH",
+      "provider_type": "none",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "records_merged": 0,
+      "notes": "Warren County Building & Zoning uses iWorQ (not a supported provider type). County Health District's Accela instance covers food service/septic, not building permits. No ArcGIS/Socrata found."
+    },
+    {
+      "jurisdiction": "Medina, OH",
+      "county": "Medina",
+      "state": "OH",
+      "provider_type": "none",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "records_merged": 0,
+      "notes": "Medina County Building Dept uses internal software/direct plan submittals; county GIS is an ArcGIS Hub for parcel/zoning only, not a permit FeatureServer. No ArcGIS/Socrata/Accela found for permits."
+    },
+    {
+      "jurisdiction": "Greene (Xenia/Beavercreek), OH",
+      "county": "Greene",
+      "state": "OH",
+      "provider_type": "none",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "records_merged": 0,
+      "notes": "Greene County Dept of Building Regulation uses iWorQ (not a supported provider type). No ArcGIS/Socrata/Accela found."
+    },
+    {
+      "jurisdiction": "Clark (Springfield), OH",
+      "county": "Clark",
+      "state": "OH",
+      "provider_type": "none",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "records_merged": 0,
+      "notes": "Clark County Community Development uses a custom portal; City of Springfield uses Cityworks. Neither is a supported provider type. No ArcGIS/Socrata/Accela found."
+    },
+    {
+      "jurisdiction": "Miami (Troy/Piqua), OH",
+      "county": "Miami",
+      "state": "OH",
+      "provider_type": "none",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "records_merged": 0,
+      "notes": "Miami County Dept of Development (Building Regulations) uses iWorQ (not a supported provider type). No ArcGIS/Socrata/Accela found."
+    },
+    {
+      "jurisdiction": "Delaware, OH",
+      "county": "Delaware",
+      "state": "OH",
+      "provider_type": "none",
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "records_merged": 0,
+      "notes": "Delaware County Building Safety runs a dedicated custom public portal; county GIS (delco-gis.org) has parcel/zoning layers only, not a permit FeatureServer. No ArcGIS/Socrata/Accela found."
+    },
+    {
+      "jurisdiction": "Arlington County, VA",
+      "county": "Arlington",
+      "state": "VA",
+      "provider_type": "arcgis",
+      "endpoint": "https://arlgis.arlingtonva.us/arcgis/rest/services/Open_Data/od_Development_Tracking_Points/FeatureServer/0",
+      "state_agent_pipeline_key": "VA-ARLINGTON",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 2,
+      "notes": "Development Tracking Points layer, 19,930 total pts, 1,136 non-residential (office/retail SF > 0), MAX(site_plan_date)=2026-06-13. Low-volume curated tracker (2 rows in 90-day lookback), not a high-frequency permit feed -- genuine live data, verified via direct FeatureServer query."
+    },
+    {
+      "jurisdiction": "Chesterfield County, VA",
+      "county": "Chesterfield",
+      "state": "VA",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "ArcGIS org services3.arcgis.com/TsynfzBSE6sXfoLq is live (200) but has no permits/building-permit layer among ~80 services (parcels, CIP, stormwater, historic landmarks -- no permit data). Accela ELM portal (elm.chesterfield.gov/CitizenAccess) DNS/connect failure at time of check. No live structured source found. Document-research-fallback (step 6) run 2026-07-31: 6 named projects found (Proctors Creek WWTP $30M, Southside Speedway site plan, West Ridge High School $60M roadway infra, WestDulles Data Center Complex, XL Sports World Turf Fields, Uphoff Car & Air Museum), 0 documents_confirmed -- captured unconditionally per project-not-a-gate policy, not yet cross-checked/loaded to corpus."
+    },
+    {
+      "jurisdiction": "Henrico County, VA",
+      "county": "Henrico",
+      "state": "VA",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "All Gemini-suggested hostnames (gis.henrico.us, gis.co.henrico.va.us, gis.henricocounty.gov, data.henrico.us) failed DNS/connection. Henrico publishes permit data only as monthly CSV/XLSX downloads per Gemini (unverified exact URL); no live REST/Socrata endpoint found this pass."
+    },
+    {
+      "jurisdiction": "Stafford County, VA",
+      "county": "Stafford",
+      "state": "VA",
+      "provider_type": null,
+      "endpoint": "https://gismapping.stafford.va.us/arcgis/rest/services/Permit_View",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "gismapping.stafford.va.us ArcGIS REST is live (200) and has a Permit_View folder, but it returns 'Token Required' (code 499) -- not publicly accessible without auth. WebApp_DataCenDevPro layer exists (data center parcels/outlines) but has no permit dates/costs. EnerGov CSS portal exists but no open API found."
+    },
+    {
+      "jurisdiction": "Frederick County, VA",
+      "county": "Frederick",
+      "state": "VA",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "fredcogis.fcva.us/maps/rest/services is live (200) but FC_Planning folder only has CIP/comp-plan/ag-district map layers, no permit data. No commercial permit feed found."
+    },
+    {
+      "jurisdiction": "Roanoke County, VA",
+      "county": "Roanoke",
+      "state": "VA",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "Both Gemini-suggested hosts (gisweb.roanokecountyva.gov, arcgisweb01.roanokecountyva.gov) failed to connect (timeout/DNS). No live source found this pass."
+    },
+    {
+      "jurisdiction": "Richmond City, VA",
+      "county": "Richmond City",
+      "state": "VA",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "gis.richmondgov.com failed to connect. Richmond publishes GIS via ArcGIS Online Hub, not a self-hosted REST directory; permitting is via Tyler EnerGov CSS portal (energov.richmondgov.com), no open API found. Note: task said 'Richmond' -- resolved to Richmond City (independent city), not Richmond County (a separate, much smaller VA county on the Northern Neck) since Richmond City is the far more relevant construction-activity jurisdiction."
+    },
+    {
+      "jurisdiction": "Rockingham County, VA",
+      "county": "Rockingham",
+      "state": "VA",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "gis.rockinghamcountyva.gov failed to connect. Per Gemini, Rockingham has no standalone GIS REST directory -- uses a joint Harrisonburg/Rockingham viewer; permitting via CivicGov portal with no open API found."
+    },
+    {
+      "jurisdiction": "Augusta County, VA",
+      "county": "Augusta",
+      "state": "VA",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "gis.co.augusta.va.us is live (200) but only serves parcels/zoning/comp-plan/flood-pool layers, no permit data. No commercial permit feed found."
+    },
+    {
+      "jurisdiction": "Loudoun County, VA",
+      "county": "Loudoun",
+      "state": "VA",
+      "provider_type": null,
+      "endpoint": "https://logis.loudoun.gov/gis/rest/services/Projects/PermitDashboard",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "logis.loudoun.gov ArcGIS REST is live (200). LMARC/LandMARC_Permits MapServer only exposes a county boundary polygon (no permit records). Projects/PermitDashboard and Projects/ResBuildingPermits layers exist and are live but are residential-only (UNIT_TYPE values: single/multi-family, group quarter) -- no commercial layer found. LandMARC Accela portal (landmarc.loudoun.gov) failed to connect. Document-research-fallback (step 6) run 2026-07-31: 6 named projects found (Spring Valley Technology Park data center campus, Eastern Loudoun Service Center, Route 7 Eastbound Widening, Montresor Road Sidewalk, Sheetz at Belmont Greene, General Government Office Complex Phase 1 $117M), 0 documents_confirmed -- captured unconditionally per project-not-a-gate policy, not yet cross-checked/loaded to corpus."
+    },
+    {
+      "jurisdiction": "Bedford County, VA",
+      "county": "Bedford",
+      "state": "VA",
+      "provider_type": null,
+      "endpoint": "https://webgis.bedfordcountyva.gov/arcgis/rest/services/EnerGov/EnerGov_DataMap/MapServer/39",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "notes": "webgis.bedfordcountyva.gov is live (200) with a real EnerGov case-history layer (ENERGOVPointHistory, layer 39) including CaseType='Building (Commercial)' -- but all 9 commercial records are BLDC19-* case numbers dated Nov-Dec 2019 (MAX ApplicationDate ~2019-12), i.e. a stale one-time export, not an actively updated feed. No fresh data in any recent lookback window."
+    },
+    {
+      "jurisdiction": "Boston, MA",
+      "county": "Suffolk",
+      "state": "MA",
+      "provider_type": "ckan",
+      "endpoint": "https://data.boston.gov/api/3/action/datastore_search_sql?resource_id=6ddcd912-32a0-43df-9908-63574f8c7e77",
+      "state_agent_pipeline_key": "MA-BOSTON",
+      "status": "VERIFIED_WORKING",
+      "records_merged": 2775,
+      "notes": "MA county govt has no permit function -- purely municipal, Suffolk County = Boston essentially. Gemini's answer (Analyze Boston CKAN, resource_id 6ddcd912-32a0-43df-9908-63574f8c7e77) verified live via datastore_search and datastore_search_sql -- real, high-volume dataset. occupancytype field has inconsistent case/abbreviation ('Comm' 186,939 rows + 'COMM' 101 rows + 'Mixed' 27,189) -- where clause covers all three. MAX(issued_date)=2026-07-25T01:50:01, live and fresh. 90-day lookback dry-run found 2775 real rows, merged for real -- by far the highest-yield MA jurisdiction so far."
+    },
+    {
+      "jurisdiction": "Essex County, MA (Lynn/Lawrence/Salem/Haverhill/Peabody)",
+      "county": "Essex",
+      "state": "MA",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "records_merged": 0,
+      "notes": "MA county govt has no permit function. Checked all 5 largest Essex cities by population (Lynn ~101-104k, Lawrence ~89k, Haverhill ~68k, Peabody ~54k, Salem ~44k) -- none expose a bulk/API open-data building-permit feed. Lynn uses SmartGov (lynnisdportal.com, live-curled 405 on root -- transactional portal only, single-applicant workflow, no SODA/CKAN/ArcGIS endpoint). Lawrence/Salem/Haverhill/Peabody use OpenGov Citizen Services (live-curled salemma.portal.opengov.com -- 200 OK but a search-form portal, no bulk export). Salem's separate ArcGIS Open Data Hub only has parcel/utility layers, not permits. Ran document-research-fallback.py for the county: 6 named projects captured (Lynn/Salem area), 0 with confirmed pullable documents -- output at data/raw/ma-essex-document-fallback.json. No cross-check pass run, so not loaded into corpus per the phase II(c) verification bar."
+    },
+    {
+      "jurisdiction": "Norfolk County, MA (Quincy/Brookline)",
+      "county": "Norfolk",
+      "state": "MA",
+      "provider_type": null,
+      "endpoint": "https://aca-prod.accela.com/BROOKLINE",
+      "state_agent_pipeline_key": null,
+      "status": "FAILED_NEED_ALT",
+      "records_merged": 0,
+      "notes": "MA county govt has no permit function. Quincy (largest, ~101k) only has static ArcGIS spatial layers (parcels/zoning), no permit dataset. Brookline (2nd largest, ~63k) has a live Accela portal (aca-prod.accela.com/BROOKLINE, module=Building, confirmed live 200 OK) with a real Commercial Building dropdown option (Playwright-probed ddlGSPermitType, 27 total options, no fabrication). BUT both the automated accela_provider (0 rows at 90-day and 365-day lookback) and a manual Playwright click-through (search resets dropdown to --Select-- post-submit, no results table rendered) failed to pull real data -- looks like a search-submission/postback quirk specific to this Accela deployment, not a fabricated source. Needs deeper network-tab debugging beyond this batch budget. Not wired into state_configs.py. Real fallback: document-research-fallback.py run for the county instead."
+    },
+    {
+      "jurisdiction": "Plymouth County, MA (Brockton/Plymouth)",
+      "county": "Plymouth",
+      "state": "MA",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "records_merged": 0,
+      "notes": "MA county govt has no permit function. Brockton (largest, ~105k) uses Citizenserve (cobma.us) -- transactional portal, no SODA/CKAN/REST API. Plymouth town (county seat, ~64k) uses OpenGov Citizen Services -- web application workflow only, annual PDF summaries but no bulk feed. Other municipalities (Hingham/Marshfield/Scituate/Bridgewater/Wareham) use OpenGov/PermitEyes/custom forms, same pattern -- no open-data endpoints. No live-curl spot-check needed beyond Gemini research given the consistent no-bulk-API pattern already confirmed across Essex/Norfolk in this same batch. Fallback: document-research-fallback.py run for the county."
+    },
+    {
+      "jurisdiction": "Ramsey County, MN (Saint Paul -- ArcGIS Approved Building Permits)",
+      "county": "Ramsey",
+      "state": "MN",
+      "provider_type": "arcgis",
+      "endpoint": "https://services1.arcgis.com/9meaaHE3uiba0zr8/arcgis/rest/services/Approved_Building_Permits/FeatureServer/0",
+      "state_agent_pipeline_key": "MN-RAMSEY",
+      "status": "FAILED_NEED_ALT",
+      "notes": "Ramsey County government has no permitting function (MN pattern); Saint Paul is the county's top jurisdiction. Gemini's first answer gave a fabricated ArcGIS org ID (264a7c18151249b6b7a5e808e063fb55, HTTP 400 Invalid URL). Real org ID found via a direct arcgis.com/sharing/rest/search query on 'Approved Building Permits Saint Paul' owner=CityofSaintPaul: 9meaaHE3uiba0zr8. Live-verified: FeatureServer/0 real (317,968 total rows), SUB_TYPE='Commercial' is a real clean split (5,898 rows), schema matches Hennepin's pattern (ADDRESS, ISSUEDATE, SUB_TYPE, PERMITNUMBER, EST_VALUE_OF_WORK, CONTRACTORNAME). BUT: verified via MAX(ISSUEDATE) and a direct ISSUEDATE>2025-07-01 count query (returns 0) that the feed is frozen/stale at 2025-06-30 -- no updates in over 13 months as of 2026-07-31, despite the dataset's live query surface otherwise working. A second, identically-schema'd service on the same org (Building_Permits_/FeatureServer/0) shows the exact same frozen max date, suggesting the underlying source feed itself stopped updating, not just this dataset copy. Not wired into state_configs.py -- would fail the 90-day lookback dry-run bar (0 rows) even though the historical commercial data (5,898 rows) is real. Needs an alternate current source (e.g. a Socrata/CKAN successor, or St. Paul's permit-search portal directly) or confirmation from the city that this feed will resume updating."
+    },
+    {
+      "jurisdiction": "Dakota County, MN (Eagan/Burnsville/Apple Valley/Lakeville/Rosemount/Hastings/Inver Grove Heights)",
+      "county": "Dakota",
+      "state": "MN",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Dakota County government has no permitting function (MN pattern). Gemini discovery + live curl verification of the 7 largest cities' permit systems found no queryable REST/FeatureServer/Socrata/CKAN endpoint for any of them: Eagan runs LAMA (eagan.onlama.com, HTTP 403 anonymous), Burnsville runs OpenGov Permitting & Licensing (burnsvillemn.portal.opengov.com, HTTP 200 but UI-only, no public data API), Apple Valley runs ePermits/ProjectDox (form+document portal only), Lakeville runs BS&A Online (bsaonline.com, HTTP 302, property/permit lookup UI only), Inver Grove Heights runs CityView, Hastings runs SmartGov, Rosemount has no digitized system at all. document-research-fallback.py run for Dakota (30-day lookback): documents_confirmed=0."
+    },
+    {
+      "jurisdiction": "Anoka County, MN (Blaine/Coon Rapids/Anoka/Fridley/Andover/Ham Lake)",
+      "county": "Anoka",
+      "state": "MN",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Anoka County government has no permitting function (MN pattern). Gemini discovery + live curl verification of the 6 largest cities found no queryable structured data API: Blaine runs iMS (blaine.ims16.com, HTTP 200 login portal, only unrelated ArcGIS parcel/building-footprint layers public, not permits), Coon Rapids runs BS&A Online (bsaonline.com/?uid=3100, HTTP 302, UI-only), Fridley runs Citizenserve (citizenserve.com/fridley, HTTP 301, UI-only), Andover/Ham Lake/Anoka city all run plain web-form permit portals with no API. Anoka County GIS's 'ROW_Permits' FeatureServer (gis.anokacountymn.gov) is right-of-way permits, not building/commercial construction. document-research-fallback.py run for Anoka (30-day lookback): 6 named projects found, documents_confirmed=0."
+    },
+    {
+      "jurisdiction": "Olmsted County, MN (Accela county portal -- Rochester city itself has no live endpoint)",
+      "county": "Olmsted",
+      "state": "MN",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/OLMSTED",
+      "state_agent_pipeline_key": "MN-OLMSTED",
+      "status": "VERIFIED_WORKING",
+      "notes": "Rochester (the county's dominant city, ~85% of county population) has NO reachable Accela endpoint -- aca.rochestermn.gov/CitizenAccess/... times out (curl exit 28, connection never established), so Rochester-proper commercial permits are NOT captured by this source. However Olmsted County itself runs its own separate, live Accela Citizen Access portal at aca-prod.accela.com/OLMSTED (HTTP 200 confirmed live 2026-07-31), covering county-administered permits (unincorporated areas + townships -- entire permit-type taxonomy is prefixed 'Building/Olmsted County/...'). No single 'Commercial' catch-all dropdown option; live-fetched the real <select id=ddlGSPermitType> option list and found 'Commercial Building (New Building)' / '(Addition)' / '(Alteration)' plus 'Commercial Plumbing/Mechanical' and 'Demo Permit - Commercial' as the real non-residential labels -- wired using the broadest single-label match the provider's select_option(label=...) API supports: 'Commercial Building (New Building)'. Wired into state_configs.py as MN_OLMSTED_ACCELA_CONFIG / key MN-OLMSTED. Dry-run (90-day lookback) returned 4 real rows; --merge-state run merged all 4 into data/pipeline/mn.json (total corpus now 988 MN rows). Known limitation: this is real but geographically narrow coverage (county-administered permits only, not the city of Rochester) -- Rochester itself remains an open FAILED_NEED_ALT gap worth a future pass (try a different Rochester-hosted Accela subdomain, or Rochester's own GIS ArcGIS server at gis.cityofrochester.gov which is separately confirmed live but only has a Planning Projects layer, not issued building permits)."
     }
   ]
 }

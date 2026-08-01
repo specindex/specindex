@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Greene",
+  "state": "MO",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 3,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Andy's Frozen Custard Headquarters",
+      "city_address": "3837 E. Division St. (Northeast corner of E. Division St. and N. LeCompte Rd.), Springfield, MO 65802",
+      "project_type": "Commercial / Corporate Headquarters & Industrial Warehouse",
+      "estimated_cost": "$32,000,000",
+      "developer_owner": "White Shirts, LLC (Andy's Frozen Custard, Inc.) / City of Springfield",
+      "status": "Approved (Springfield City Council approved $32M Chapter 100 Industrial Development Revenue Bonds on July 27, 2026)",
+      "document_url": "",
+      "document_type": "Industrial Development Plan / Chapter 100 Bond Authorization",
+      "source_citation": "Springfield Business Journal (July 27 & 31, 2026); City of Springfield Plan for an Industrial Development Project (June 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Maranatha Village Expansion",
+      "city_address": "233 E. Norton Road, Springfield, MO 65803",
+      "project_type": "Senior Living / Institutional Expansion",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Maranatha Village Inc.",
+      "status": "Approved Rezoning (Springfield City Council approved rezoning of 130 acres to Government and Institutional District on July 27, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Springfield Business Journal (July 31, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "B&B Rental Drive-Thru Coffee Shop",
+      "city_address": "2852 W. Republic Road, Springfield, MO 65807",
+      "project_type": "Commercial Retail / Drive-Thru Coffee Shop",
+      "estimated_cost": "Not specified",
+      "developer_owner": "B&B Rental & Real Estate LP",
+      "status": "Approved Rezoning (Springfield City Council approved rezoning of 1 acre to General Commercial District on July 27, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Springfield Business Journal (July 31, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

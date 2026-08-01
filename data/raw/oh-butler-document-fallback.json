@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Butler",
+  "state": "OH",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 6,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Project Clear (Scannell Properties Food Distribution Facility)",
+      "city_address": "4850 Butler Warren County Line Rd, Monroe, OH 45050, Butler County",
+      "project_type": "Industrial / Food Distribution Facility & Office",
+      "estimated_cost": "$124,000,000",
+      "developer_owner": "Scannell Properties #787, LLC / Corridor 75 Park, LTD",
+      "status": "Development Agreement Approved (Monroe City Council Ordinance No. 2026-14 approved June 9, 2026; $130M revenue bond financing authorized by Butler County Finance Authority May 27, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Monroe City Council Ordinance No. 2026-14 & Butler County Finance Authority Board Action",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Project Mila (Prologis Trenton Data Center Campus)",
+      "city_address": "Kennel Rd & Woodsdale Rd, Trenton Industrial Park, Trenton, OH 45067, Butler County",
+      "project_type": "Industrial / Hyperscale Data Center Campus (4 buildings + substation, ~899,065 sq ft)",
+      "estimated_cost": "Undisclosed ($7.78M land acquisition)",
+      "developer_owner": "Prologis",
+      "status": "Site Plan Approved by Trenton Planning Commission; Substation Site Work Underway; Vertical Construction Set for Fall 2026",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Trenton City Planning Commission Action & Butler County Finance Authority Report",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Mill Creek District",
+      "city_address": "Northeast corner of I-75 and Union Centre Blvd, West Chester Township, OH 45069, Butler County",
+      "project_type": "Commercial / Mixed-Use Development (Office, High-Tech R&D, Retail, Greenway)",
+      "estimated_cost": "$600,000,000+",
+      "developer_owner": "West Chester Township / Public-Private Partnership",
+      "status": "Land Acquired ($18.3M 75-acre purchase completed); Master Planning Phase",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "West Chester Township Board of Trustees & Butler County Finance Authority Development Update",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Signature Outdoor Solutions Landscaping Facility",
+      "city_address": "7383 Dixie Hwy, Fairfield, OH 45014, Butler County",
+      "project_type": "Commercial / Landscaping Service Facility",
+      "estimated_cost": "Undisclosed",
+      "developer_owner": "Signature Outdoor Solutions LLC",
+      "status": "Conditional Use Approved by Fairfield Planning Commission on June 24, 2026",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Fairfield Planning Commission Regular Meeting Agenda (June 24, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Hamilton Innovation Center",
+      "city_address": "1380 University Blvd, Hamilton, OH 45011, Butler County",
+      "project_type": "Industrial / Hyperscale Data Center (310,640 sq ft, 200+ MW capacity)",
+      "estimated_cost": "$1,000,000,000+",
+      "developer_owner": "Logistix Property Group / City of Hamilton",
+      "status": "Recommended for Approval by Hamilton City Planning Commission; Pre-Construction Development Phase",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Hamilton City Planning Commission & Butler County Finance Authority Announcement",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Republic Wire Distribution Facility Expansion",
+      "city_address": "8341 Princeton Glendale Rd / SR 747, West Chester Township, OH 45069, Butler County",
+      "project_type": "Industrial / Distribution & Office Facility (320,000 sq ft)",
+      "estimated_cost": "Undisclosed",
+      "developer_owner": "Republic Wire",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "West Chester Township Community Development Department",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

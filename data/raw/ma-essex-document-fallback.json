@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Essex",
+  "state": "MA",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 6,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "240 Andover Street Educational Horse Farm & Shared Living Facility",
+      "city_address": "240 Andover Street, Georgetown, MA 01833",
+      "project_type": "Commercial / Agricultural / Educational Facility",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Shared Living Collaborative",
+      "status": "Under Review / Public Hearing (July 2026 updated stormwater and site plan submittals)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Town of Georgetown Planning Board Current Projects & Hearing Records (July 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "45 Jefferson Avenue Self-Storage Development",
+      "city_address": "45 Jefferson Avenue, Salem, MA 01970",
+      "project_type": "Commercial (100,000 sq. ft., 4-story self-storage facility with 735 units)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "ZXE, LLC / Scott Grover, Esq.",
+      "status": "Approved (Site Plan Review & Coastal Resiliency Overlay District Approval)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Salem Planning Board 2026 Decisions and Public Hearing Filings",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "103 Foster Street Contractor Storage Redevelopment",
+      "city_address": "103 Foster Street, Peabody, MA 01960",
+      "project_type": "Industrial / Commercial (Contractor storage bays redevelopment on 1.84 acres)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "William & Robert Dandreo (Dandreo Brothers General Contractors)",
+      "status": "Conditionally Approved (Site Plan Review)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Peabody Planning Board Minutes & Public Records",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Salem Offshore Wind Terminal (Salem Wind Port)",
+      "city_address": "Salem Harbor, Salem, MA 01970",
+      "project_type": "Industrial / Heavy Port Marshalling Facility (23-acre laydown area, 700-foot wharf)",
+      "estimated_cost": "$100,000,000+ ($70M state budget allocation + $33.8M federal PIDP grant)",
+      "developer_owner": "Crowley Wind Services / MassCEC / City of Salem",
+      "status": "Pre-construction / Site Staging (State budget funding secured 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Massachusetts Clean Energy Center (MassCEC) & City of Salem Port Authority Filings",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Old Town Yard Commercial & Mixed-Use Redevelopment",
+      "city_address": "Lewis Street, Andover, MA 01810",
+      "project_type": "Commercial / Mixed-Use Redevelopment",
+      "estimated_cost": "Not specified",
+      "developer_owner": "MINCO Development / MBTA",
+      "status": "Pre-construction / Licensing & Land Transfer Phase",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Town of Andover Planning & Development Review Filings",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Merrimack College Satellite Campus Expansion",
+      "city_address": "303-305 North Main Street, Andover, MA 01810",
+      "project_type": "Commercial / Educational Office & Classroom Redevelopment",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Merrimack College",
+      "status": "Under Construction (Core/shell and interior buildout)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Town of Andover Planning Department Filings",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Rock Island",
+  "state": "IL",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 4,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Bowling Township Battery Energy Storage System (BESS)",
+      "city_address": "14th Street West and 127th Avenue West, Bowling Township, Rock Island County, IL",
+      "project_type": "Industrial / Energy Storage Utility",
+      "estimated_cost": "Unknown",
+      "developer_owner": "MidAmerican Energy / Private Applicant",
+      "status": "Under Review / Special Use Permit Hearing",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Rock Island County Zoning Board of Appeals Public Hearing Notice (July 15, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Crawford Company Manufacturing Expansion (Rivertracks Holdings)",
+      "city_address": "34th to 37th Avenue and 9th Street, Rock Island, IL 61201",
+      "project_type": "Industrial / Manufacturing Expansion",
+      "estimated_cost": "$6,000,000 - $7,000,000",
+      "developer_owner": "Rivertracks Holdings LLC (Ian Frink, Jim Maynard, Troy Green / Crawford Company)",
+      "status": "Approved / Under Site Preparation",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Rock Island City Council Development Agreement Action & WVIK Quad Cities NPR",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "38th Avenue Sanitary Sewer & Lift Station (Project #1538)",
+      "city_address": "38th Avenue, Moline, IL 61265",
+      "project_type": "Industrial / Infrastructure Utility",
+      "estimated_cost": "$785,330",
+      "developer_owner": "City of Moline / Valley Construction Co.",
+      "status": "Contract Awarded / Pre-Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Moline City Council Resolutions & Engineering Department",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Nature's Treatment of Illinois (NTI) Milan Bottoms Commercial Complex",
+      "city_address": "NW Corner of Interstate 280 and Highway 92, Rock Island, IL 61201",
+      "project_type": "Commercial / Retail (Dispensary, Gas Station, Car Wash, Restaurant)",
+      "estimated_cost": "$12,000,000",
+      "developer_owner": "Rymak Construction Group & Stern Beverage (Jeff Hughbanks & Matt Stern)",
+      "status": "In Planning / Environmental & Permitting Review",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Rock Island Community Development Department & River Cities Reader",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

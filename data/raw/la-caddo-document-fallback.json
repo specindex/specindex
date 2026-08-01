@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Caddo",
+  "state": "LA",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 5,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Free State Boulevard Industrial Development Rezoning",
+      "city_address": "South side of Free State Boulevard, Shreveport, LA 71107",
+      "project_type": "Industrial Mixed-Use Development",
+      "estimated_cost": "Unspecified",
+      "developer_owner": "Unspecified",
+      "status": "Approved Rezoning",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Shreveport City Council Meeting / GatherGov Shreveport Development News (July 14, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Elby Road Neighborhood Commercial Rezoning",
+      "city_address": "North side of Elby Road, Shreveport, LA 71107",
+      "project_type": "Commercial Development",
+      "estimated_cost": "Unspecified",
+      "developer_owner": "Unspecified",
+      "status": "Approved Rezoning",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Shreveport City Council Meeting / GatherGov Shreveport Development News (July 14, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Contractor Office - Small Planned Unit Development (Case 26-19-P)",
+      "city_address": "Caddo Parish, LA",
+      "project_type": "Commercial / Industrial Office",
+      "estimated_cost": "Unspecified",
+      "developer_owner": "Unspecified",
+      "status": "Pending Approval / Public Hearing Scheduled",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Shreveport-Caddo Metropolitan Planning Commission Public Notice (July 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "US 171 (Hearne Ave) Highway Rehabilitation and Overlay",
+      "city_address": "US 171 (Hearne Ave) from US 80 (Greenwood Rd) to LA 3132, Shreveport, LA 71108",
+      "project_type": "Commercial Infrastructure Construction",
+      "estimated_cost": "$9,600,000",
+      "developer_owner": "Louisiana Department of Transportation and Development (LA DOTD)",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Louisiana Department of Transportation and Development Project Update (July 17, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Port of Caddo-Bossier Condensing Boiler Infrastructure Project",
+      "city_address": "6000 Doug Attaway Blvd, Shreveport, LA 71115",
+      "project_type": "Industrial Facility Infrastructure",
+      "estimated_cost": "Unspecified",
+      "developer_owner": "Caddo-Bossier Parishes Port Commission",
+      "status": "Bidding / Solicitations Open",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Caddo-Bossier Parishes Port Commission Bid Advertisement (June 30, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}
