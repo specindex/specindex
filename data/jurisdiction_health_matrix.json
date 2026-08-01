@@ -3336,26 +3336,6 @@
       "notes": "Noblesville's EnerGov tenant is real and live (curl HTTP 200; note it uses the '-energovpub.tylerhost.net' subdomain form and 'Apps/SelfService' path casing, not the more common '-energovweb.tylerhost.net'/'apps/selfservice' pattern used by the CA tenants). Wired and dry-run fetched 50 real rows across 5 pages, but 0 matched the commercial-keyword filter and 0 fell within the lookback window -- a raw unfiltered probe (bypassing the pipeline's SearchModule selector) showed the blank/default search returns Code Enforcement cases (ModuleName=5, e.g. 'Grass and Weeds'), not Building permits; the pipeline's existing SearchModule='Permit' select-and-dispatch logic did not surface commercial permit rows for this tenant within the time spent debugging. Other Hamilton County cities not evaluated as providers this pass: Fishers runs OpenGov Permitting & Licensing (fishersin.portal.opengov.com, confirmed live HTTP 200, not one of the 8 existing provider types), Carmel runs Cityworks PLL/Avolve ProjectDox (not evaluated), Westfield has no structured portal found. Document fallback run: 0 of ~6 named projects had a confirmed live pullable document (2 retried candidate URLs were dead 404s off a stale plan-commission agenda page)."
     },
     {
-      "jurisdiction": "Ramsey County, MN (St. Paul)",
-      "county": "Ramsey",
-      "state": "MN",
-      "provider_type": "arcgis",
-      "endpoint": "https://services1.arcgis.com/9meaaHE3uiba0zr8/arcgis/rest/services/Approved_Building_Permits/FeatureServer",
-      "state_agent_pipeline_key": null,
-      "status": "FAILED_NEED_ALT",
-      "notes": "MN has no county-level permitting; St. Paul is largest city. City of St. Paul DSI's ArcGIS Approved Building Permits FeatureServer confirmed live (200) with real fields (ISSUEDATE, SUB_TYPE='Commercial', etc). Live MAX(ISSUEDATE) check (both commercial-filtered and unfiltered) returns 2025-06-30 -- the entire dataset appears frozen/stopped updating over a year ago, not just the commercial subset. Genuinely stale, not a config error. 5,898 total commercial rows exist historically but none usable for a 30/90-day lookback."
-    },
-    {
-      "jurisdiction": "Dakota County, MN (Eagan)",
-      "county": "Dakota",
-      "state": "MN",
-      "provider_type": "arcgis",
-      "endpoint": "https://gis.cityofeagan.com/arcgis/rest/services/EA_ConstructionAndDevelopmentFeature/FeatureServer",
-      "state_agent_pipeline_key": null,
-      "status": "FAILED_NEED_ALT",
-      "notes": "MN has no county-level permitting; Eagan is Dakota County's major commercial hub. City of Eagan's ArcGIS Construction & Development FeatureServer confirmed live (200) -- notably has direct document link fields (SitePlanLink, StaffRpt_Link, APCAgendaLink, CCLink) that would have been a genuine dual coverage+document win if fresh. Live MAX(LASTUPDATE) check returns 2018-08-29 -- confirmed stale, not updated in 8 years. Other Dakota cities not yet checked: Lakeville (BS&A Online, not a supported provider type), Burnsville (OpenGov/CivicPlus, not supported)."
-    },
-    {
       "jurisdiction": "Jefferson Parish, LA (Metairie/Kenner/Gretna)",
       "county": "Jefferson",
       "state": "LA",
