@@ -2278,10 +2278,58 @@ PA_PITTSBURGH_CONFIG: dict[str, Any] = {
     "source_url": "https://data.wprdc.org/dataset/pli-permits",
 }
 
+# Riverside County (10th most populous US county), TLMA's countywide PLUS
+# (Public Land Use System) layer -- discovered 2026-07-31 via
+# gisopendata-countyofriverside.opendata.arcgis.com's dcat feed, real
+# ArcGIS REST endpoint on gis.countyofriverside.us (copyrightText "RCIT" =
+# Riverside County IT, the county's own GIS server, not a third party).
+# 2.14M total rows across CODE/PERMIT/PLAN modules; CASE_MODULE='PERMIT'
+# plus a CASE_TYPE/CASE_WORK_CLASS filter (COMMERCIAL BUILDINGS (BNR),
+# TENANT IMPROVEMENT (BTI), FIRE COMMERCIAL (FPCBP), and any
+# CASE_WORK_CLASS containing COMMERCIAL/INDUSTRIAL, e.g. "ACOM - ADDITION
+# TO COMMERCIAL BUILDING") is the real commercial split -- verified live,
+# 48,850 matching rows with APPLIED_DATE >= 2025-01-01. No street-address
+# field exists on this layer -- APN (assessor parcel number) is the only
+# per-row location identifier, used as address_fields despite being a
+# weaker proxy than other configs' real street addresses.
+CA_RIVERSIDE_CONFIG: dict[str, Any] = {
+    "state_code": "CA",
+    "provider_type": "arcgis",
+    "county": "Riverside",
+    "endpoint": "https://gis.countyofriverside.us/arcgis_mapping/rest/services/OpenData/General/MapServer",
+    "layer": 280,
+    "watermark_field": "OBJECTID",
+    "hash_fields": ["CASE_ID"],
+    "commercial_where": (
+        "CASE_MODULE='PERMIT' AND ("
+        "CASE_TYPE LIKE '%COMMERCIAL%' OR "
+        "CASE_TYPE='TENANT IMPROVEMENT (BTI)' OR "
+        "CASE_WORK_CLASS LIKE '%COMMERCIAL%' OR "
+        "CASE_WORK_CLASS LIKE '%INDUSTRIAL%'"
+        ")"
+    ),
+    "out_fields": (
+        "OBJECTID,APN,CASE_ID,CASE_DESCR,CASE_MODULE,CASE_TYPE,"
+        "CASE_WORK_CLASS,DEPARTMENT,CASE_STATUS,APPLIED_DATE,"
+        "APPROVED_DATE,COMPLETED_DATE,SUBDIVISION_NAME,BUILDING_COUNT,"
+        "UNIT_COUNT,FLOOR_COUNT"
+    ),
+    "date_field": "APPLIED_DATE",
+    "lookback_days": 576,  # anchored to 2025-01-01 per Asif (recompute: (today - 2025-01-01).days)
+    "feed_id": "ca-riverside-tlma",
+    "id_field": "CASE_ID",
+    "name_fields": ["CASE_DESCR", "CASE_TYPE"],
+    "address_fields": ["APN"],
+    "value_fields": [],
+    "desc_fields": ["CASE_DESCR", "CASE_WORK_CLASS"],
+    "source_url": "https://gisopendata-countyofriverside.opendata.arcgis.com/datasets/CountyofRiverside::permits",
+}
+
 STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NJ": NJ_CONFIG,
     "CA-LOSANGELES": CA_LOSANGELES_CONFIG,
     "CA-LACOUNTY": CA_LACOUNTY_CONFIG,
+    "CA-RIVERSIDE": CA_RIVERSIDE_CONFIG,
     "CA-TORRANCE": CA_TORRANCE_CONFIG,
     "CA-PASADENA": CA_PASADENA_CONFIG,
     "CA-SANTAMONICA": CA_SANTAMONICA_CONFIG,
