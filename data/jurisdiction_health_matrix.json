@@ -3752,6 +3752,46 @@
       "status": "NO_PUBLIC_DATA",
       "records_merged": 0,
       "notes": "MA county govt has no permit function. Brockton (largest, ~105k) uses Citizenserve (cobma.us) -- transactional portal, no SODA/CKAN/REST API. Plymouth town (county seat, ~64k) uses OpenGov Citizen Services -- web application workflow only, annual PDF summaries but no bulk feed. Other municipalities (Hingham/Marshfield/Scituate/Bridgewater/Wareham) use OpenGov/PermitEyes/custom forms, same pattern -- no open-data endpoints. No live-curl spot-check needed beyond Gemini research given the consistent no-bulk-API pattern already confirmed across Essex/Norfolk in this same batch. Fallback: document-research-fallback.py run for the county."
+    },
+    {
+      "jurisdiction": "Ramsey County, MN (Saint Paul -- ArcGIS Approved Building Permits)",
+      "county": "Ramsey",
+      "state": "MN",
+      "provider_type": "arcgis",
+      "endpoint": "https://services1.arcgis.com/9meaaHE3uiba0zr8/arcgis/rest/services/Approved_Building_Permits/FeatureServer/0",
+      "state_agent_pipeline_key": "MN-RAMSEY",
+      "status": "FAILED_NEED_ALT",
+      "notes": "Ramsey County government has no permitting function (MN pattern); Saint Paul is the county's top jurisdiction. Gemini's first answer gave a fabricated ArcGIS org ID (264a7c18151249b6b7a5e808e063fb55, HTTP 400 Invalid URL). Real org ID found via a direct arcgis.com/sharing/rest/search query on 'Approved Building Permits Saint Paul' owner=CityofSaintPaul: 9meaaHE3uiba0zr8. Live-verified: FeatureServer/0 real (317,968 total rows), SUB_TYPE='Commercial' is a real clean split (5,898 rows), schema matches Hennepin's pattern (ADDRESS, ISSUEDATE, SUB_TYPE, PERMITNUMBER, EST_VALUE_OF_WORK, CONTRACTORNAME). BUT: verified via MAX(ISSUEDATE) and a direct ISSUEDATE>2025-07-01 count query (returns 0) that the feed is frozen/stale at 2025-06-30 -- no updates in over 13 months as of 2026-07-31, despite the dataset's live query surface otherwise working. A second, identically-schema'd service on the same org (Building_Permits_/FeatureServer/0) shows the exact same frozen max date, suggesting the underlying source feed itself stopped updating, not just this dataset copy. Not wired into state_configs.py -- would fail the 90-day lookback dry-run bar (0 rows) even though the historical commercial data (5,898 rows) is real. Needs an alternate current source (e.g. a Socrata/CKAN successor, or St. Paul's permit-search portal directly) or confirmation from the city that this feed will resume updating."
+    },
+    {
+      "jurisdiction": "Dakota County, MN (Eagan/Burnsville/Apple Valley/Lakeville/Rosemount/Hastings/Inver Grove Heights)",
+      "county": "Dakota",
+      "state": "MN",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Dakota County government has no permitting function (MN pattern). Gemini discovery + live curl verification of the 7 largest cities' permit systems found no queryable REST/FeatureServer/Socrata/CKAN endpoint for any of them: Eagan runs LAMA (eagan.onlama.com, HTTP 403 anonymous), Burnsville runs OpenGov Permitting & Licensing (burnsvillemn.portal.opengov.com, HTTP 200 but UI-only, no public data API), Apple Valley runs ePermits/ProjectDox (form+document portal only), Lakeville runs BS&A Online (bsaonline.com, HTTP 302, property/permit lookup UI only), Inver Grove Heights runs CityView, Hastings runs SmartGov, Rosemount has no digitized system at all. document-research-fallback.py run for Dakota (30-day lookback): documents_confirmed=0."
+    },
+    {
+      "jurisdiction": "Anoka County, MN (Blaine/Coon Rapids/Anoka/Fridley/Andover/Ham Lake)",
+      "county": "Anoka",
+      "state": "MN",
+      "provider_type": null,
+      "endpoint": null,
+      "state_agent_pipeline_key": null,
+      "status": "NO_PUBLIC_DATA",
+      "notes": "Anoka County government has no permitting function (MN pattern). Gemini discovery + live curl verification of the 6 largest cities found no queryable structured data API: Blaine runs iMS (blaine.ims16.com, HTTP 200 login portal, only unrelated ArcGIS parcel/building-footprint layers public, not permits), Coon Rapids runs BS&A Online (bsaonline.com/?uid=3100, HTTP 302, UI-only), Fridley runs Citizenserve (citizenserve.com/fridley, HTTP 301, UI-only), Andover/Ham Lake/Anoka city all run plain web-form permit portals with no API. Anoka County GIS's 'ROW_Permits' FeatureServer (gis.anokacountymn.gov) is right-of-way permits, not building/commercial construction. document-research-fallback.py run for Anoka (30-day lookback): 6 named projects found, documents_confirmed=0."
+    },
+    {
+      "jurisdiction": "Olmsted County, MN (Accela county portal -- Rochester city itself has no live endpoint)",
+      "county": "Olmsted",
+      "state": "MN",
+      "provider_type": "accela",
+      "endpoint": "https://aca-prod.accela.com/OLMSTED",
+      "state_agent_pipeline_key": "MN-OLMSTED",
+      "status": "VERIFIED_WORKING",
+      "notes": "Rochester (the county's dominant city, ~85% of county population) has NO reachable Accela endpoint -- aca.rochestermn.gov/CitizenAccess/... times out (curl exit 28, connection never established), so Rochester-proper commercial permits are NOT captured by this source. However Olmsted County itself runs its own separate, live Accela Citizen Access portal at aca-prod.accela.com/OLMSTED (HTTP 200 confirmed live 2026-07-31), covering county-administered permits (unincorporated areas + townships -- entire permit-type taxonomy is prefixed 'Building/Olmsted County/...'). No single 'Commercial' catch-all dropdown option; live-fetched the real <select id=ddlGSPermitType> option list and found 'Commercial Building (New Building)' / '(Addition)' / '(Alteration)' plus 'Commercial Plumbing/Mechanical' and 'Demo Permit - Commercial' as the real non-residential labels -- wired using the broadest single-label match the provider's select_option(label=...) API supports: 'Commercial Building (New Building)'. Wired into state_configs.py as MN_OLMSTED_ACCELA_CONFIG / key MN-OLMSTED. Dry-run (90-day lookback) returned 4 real rows; --merge-state run merged all 4 into data/pipeline/mn.json (total corpus now 988 MN rows). Known limitation: this is real but geographically narrow coverage (county-administered permits only, not the city of Rochester) -- Rochester itself remains an open FAILED_NEED_ALT gap worth a future pass (try a different Rochester-hosted Accela subdomain, or Rochester's own GIS ArcGIS server at gis.cityofrochester.gov which is separately confirmed live but only has a Planning Projects layer, not issued building permits)."
     }
   ]
 }

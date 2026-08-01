@@ -1468,6 +1468,31 @@ MN_HENNEPIN_CONFIG: dict[str, Any] = {
     "source_url": "https://opendata.minneapolismn.gov/datasets/CCS-Permits",
 }
 
+# Olmsted County, MN -- Rochester (the county's dominant city) has no live
+# Accela search endpoint (aca.rochestermn.gov times out, unreachable). But
+# Olmsted County itself DOES run its own live Accela portal at
+# aca-prod.accela.com/OLMSTED (HTTP 200, confirmed live 2026-07-31) --
+# covers county-administered building permits (unincorporated areas +
+# townships, not Rochester city proper, per the portal's own permit-type
+# taxonomy which is entirely prefixed "Building/Olmsted County/..."). No
+# single "Commercial" catch-all option -- real dropdown options fetched
+# directly from the live page's <select id=...ddlGSPermitType> are split
+# into "Commercial Building (New Building)" / "(Addition)" / "(Alteration)"
+# plus "Commercial Plumbing/Mechanical" and "Demo Permit - Commercial".
+# Using "Commercial Building (New Building)" as the broadest single-label
+# match the provider's select_option(label=...) API supports.
+MN_OLMSTED_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "MN",
+    "provider_type": "accela",
+    "county": "Olmsted",
+    "endpoint": "https://aca-prod.accela.com/OLMSTED",
+    "module": "Building",
+    "permit_type_label": "Commercial Building (New Building)",
+    "lookback_days": 180,
+    "feed_id": "mn-olmsted-accela",
+    "source_url": "https://aca-prod.accela.com/OLMSTED/Cap/CapHome.aspx?module=Building",
+}
+
 # Montgomery County, MD (state's most populous county -- unlike MA/MN/WI,
 # MD county government DOES run permitting directly, so this is a genuine
 # countywide source, not a top-city proxy). Verified live 2026-07-29:
@@ -2290,6 +2315,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "MA-CAMBRIDGE": MA_CAMBRIDGE_CONFIG,
     "MA-BOSTON": MA_BOSTON_CONFIG,
     "MN-HENNEPIN": MN_HENNEPIN_CONFIG,
+    "MN-OLMSTED": MN_OLMSTED_ACCELA_CONFIG,
     "UT-SALTLAKE": UT_SALTLAKE_ACCELA_CONFIG,
     "MD-MONTGOMERY": MD_MONTGOMERY_CONFIG,
     "WI-MILWAUKEE": WI_MILWAUKEE_CONFIG,

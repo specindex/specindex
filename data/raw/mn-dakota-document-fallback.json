@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-07-31",
+  "county": "Dakota",
+  "state": "MN",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 6,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Meta Rosemount AI Data Center",
+      "city_address": "Rosemount, MN (County Road 42 & Blaine Ave E / UMore Park)",
+      "project_type": "Industrial / Data Center",
+      "estimated_cost": "$800,000,000",
+      "developer_owner": "Meta Platforms Inc. / Jimnist LLC",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Courier MN / City of Rosemount Economic Development Updates (Mid-2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Dakota Electric Association Energy Center",
+      "city_address": "Lakeville, MN",
+      "project_type": "Commercial / Industrial (Office, Warehouse, Vehicle Maintenance)",
+      "estimated_cost": "$47,800,000",
+      "developer_owner": "Dakota Electric Association",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Lakeville Economic Development / 2026 State of the City Report",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Prime 35 Industrial Park",
+      "city_address": "Lakeville, MN (South of 215th St / CSAH 70 & West of Jacquard Ave)",
+      "project_type": "Industrial / Warehouse & Manufacturing",
+      "estimated_cost": "Unspecified",
+      "developer_owner": "Prime 35 Development / Private Developer",
+      "status": "Approved / Pre-Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Lakeville Interactive Development Map & Planning Updates (2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "EGA Spectro Alloys Recycling Facility Expansion (Phase 2)",
+      "city_address": "Rosemount, MN (Highway 55 & Doyle Path)",
+      "project_type": "Industrial / Recycling & Manufacturing",
+      "estimated_cost": "$71,000,000",
+      "developer_owner": "EGA Spectro Alloys / The Opus Group",
+      "status": "Under Construction",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "EGA Spectro Alloys / The Opus Group Project Announcements (2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Mendota Heights Municipal Campus Building Project",
+      "city_address": "1101 Victoria Curve, Mendota Heights, MN 55021",
+      "project_type": "Commercial / Institutional (City Hall & Police Station)",
+      "estimated_cost": "Unspecified",
+      "developer_owner": "City of Mendota Heights / Criminal Justice Network",
+      "status": "Under Development / In Review",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Mendota Heights City Council Meeting Packet (July 21, 2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Caliber Collision Buildout at Interstate South Logistics",
+      "city_address": "Lakeville, MN",
+      "project_type": "Commercial / Industrial Buildout",
+      "estimated_cost": "$1,250,000",
+      "developer_owner": "Caliber Collision",
+      "status": "Under Construction / Permitted",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Lakeville Building Permits & Development Report (2026)",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}
