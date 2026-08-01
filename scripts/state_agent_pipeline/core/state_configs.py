@@ -27,7 +27,7 @@ NJ_CONFIG: dict[str, Any] = {
         "'Factory and industrial (moderate hazard)','Storage (low hazard)',"
         "'Storage (moderate hazard)','Institutional')"
     ),
-    "lookback_days": 30,
+    "lookback_days": 576,  # anchored to 2025-01-01 per Asif (recompute: (today - 2025-01-01).days)
 }
 
 # Mecklenburg County (Charlotte) -- verified live earlier this session,
@@ -56,7 +56,7 @@ CA_LOSANGELES_CONFIG: dict[str, Any] = {
     "hash_fields": ["permit_nbr"],
     "commercial_where": "permit_sub_type='Commercial'",
     "date_field": "issue_date",
-    "lookback_days": 30,
+    "lookback_days": 576,  # anchored to 2025-01-01 per Asif (recompute: (today - 2025-01-01).days)
     # Opt into deterministic (no Flash/Sonnet) mapping -- clean structured
     # permit data, no free text worth an LLM's judgment. See
     # generic_mapping.py / roadmap item 66.
@@ -399,7 +399,7 @@ AZ_MESA_CONFIG: dict[str, Any] = {
     "hash_fields": ["permit_number"],
     "commercial_where": "permit_type='COM'",
     "date_field": "issued_date",
-    "lookback_days": 30,
+    "lookback_days": 576,  # anchored to 2025-01-01 per Asif (recompute: (today - 2025-01-01).days)
 }
 
 # City of Scottsdale -- self-hosted ArcGIS Server (maps.scottsdaleaz.gov),
@@ -636,7 +636,7 @@ LA_EBR_CONFIG: dict[str, Any] = {
     "hash_fields": ["permitid"],
     "commercial_where": "designation='Commercial'",
     "date_field": "issueddate",
-    "lookback_days": 180,
+    "lookback_days": 576,  # anchored to 2025-01-01 per Asif (recompute: (today - 2025-01-01).days)
     "feed_id": "la-ebr-batonrouge",
     "id_field": "permitid",
     "name_fields": ["projectdescription", "permittype", "streetaddress"],
@@ -1259,7 +1259,7 @@ IL_COOK_CONFIG: dict[str, Any] = {
     "hash_fields": ["local_permit_number", "permit_number", "pin"],
     "commercial_where": "job_code_primary='COMMERCIAL PERMIT' AND date_issued <= '2030-01-01T00:00:00'",
     "date_field": "date_issued",
-    "lookback_days": 30,
+    "lookback_days": 576,  # anchored to 2025-01-01 per Asif (recompute: (today - 2025-01-01).days)
     "feed_id": "il-cook-assessor",
     "id_field": "local_permit_number",
     "name_fields": ["work_description", "local_permit_number"],
@@ -1767,7 +1767,7 @@ WA_KING_CONFIG: dict[str, Any] = {
     "hash_fields": ["permitnum"],
     "commercial_where": "permitclassmapped='Non-Residential'",
     "date_field": "issueddate",
-    "lookback_days": 30,
+    "lookback_days": 576,  # anchored to 2025-01-01 per Asif (recompute: (today - 2025-01-01).days)
     "feed_id": "wa-seattle-king",
     "id_field": "permitnum",
     "name_fields": ["originaladdress1", "description", "permitnum"],
@@ -2236,7 +2236,7 @@ CA_MARIN_CONFIG: dict[str, Any] = {
     "hash_fields": ["permit_tracking_id"],
     "commercial_where": "type_permit='COMMERCIAL'",
     "date_field": "issued_date",
-    "lookback_days": 90,
+    "lookback_days": 576,  # anchored to 2025-01-01 per Asif (recompute: (today - 2025-01-01).days)
     "feed_id": "ca-marin-building",
     "id_field": "permit_tracking_id",
     "name_fields": ["address", "description", "construction"],

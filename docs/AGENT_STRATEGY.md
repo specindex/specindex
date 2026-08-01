@@ -1,5 +1,14 @@
 # SpecIndex Agent Strategy (2026-07-26, updated 2026-07-31)
 
+**Standing data pull window (2026-07-31): since 2025-01-01, a fixed anchor
+date, not a rolling lookback.** When widening any structured source past
+its narrow incremental window (30-90 days) for bulk historical depth,
+pull back to January 1, 2025 and no further. `main.py`'s `--lookback-days`
+is relative to "today," not absolute, so recompute it fresh each session
+as `(today - date(2025,1,1)).days` -- never reuse a hardcoded day-count
+from an earlier session, it drifts. Real remaining scope: add proper
+absolute `--since-date` support to the pipeline.
+
 **Looking for the current discovery/acquisition pipeline?** Skip to
 [Gemini-Assisted County/State Source Discovery](#gemini-assisted-countystate-source-discovery-implemented-2026-07-28)
 below — the 3-phase, 10-step loop is the live, actively-used process.
