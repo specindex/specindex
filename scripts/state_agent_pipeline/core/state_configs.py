@@ -1802,6 +1802,43 @@ TX_TARRANT_CONFIG: dict[str, Any] = {
     "source_url": "https://mapit.fortworthtexas.gov/ags/rest/services/CIVIC/Permits/MapServer/0",
 }
 
+# Harris County, TX (Houston metro, unincorporated area -- 3rd most populous
+# US county, previously zero coverage). Houston itself has its own permitting
+# API (iBUILD/Houston Permitting Center) which is separate; this is the
+# county's Office of the County Engineer (OCE) permits layer, not the city.
+# Discovered via the county's public "OCE Permit Lookup map" ArcGIS Online
+# item (org hcpid.maps.arcgis.com, owner vsalvato, item
+# 2156d72fc7984f7aa4e8e23f83f5fe0b) which embeds this FeatureServer as its
+# address/permit-number search source. Verified live 2026-07-31: native
+# ArcGIS Server (not hosted feature service), 1.2M+ total rows, most recent
+# DATECREATED = 2026-07-24 (days-old, actively updating). APPTYPE LIKE
+# 'Commercial%' is the real commercial classification (distinct values seen
+# include "Commercial Building (Fire Code)" vs residential-flavored types
+# like "Tract Home Builders"/"Residential Construction & On-site Sewerage
+# System (Septic)"); 27,742 commercial rows all-time, 5,384 since
+# 2025-01-01. PERMITNUMBER (e.g. "2607220037-RESB-001") is the real
+# per-record unique id, not PROJECTNUMBER (which is shared across a
+# project's many permits/inspections).
+TX_HARRIS_CONFIG: dict[str, Any] = {
+    "state_code": "TX",
+    "provider_type": "arcgis",
+    "county": "Harris",
+    "endpoint": "https://www.gis.hctx.net/arcgishcpid/rest/services/Permits/IssuedPermits/FeatureServer",
+    "layer": 0,
+    "watermark_field": "OBJECTID",
+    "hash_fields": ["PERMITNUMBER"],
+    "commercial_where": "APPTYPE LIKE 'Commercial%'",
+    "out_fields": "OBJECTID,PROJECTNUMBER,PROJECTNAME,FULLADDRESS,APPTYPE,PROJECTSUBMITDATE,PROJECTSTATUS,PERMITNUMBER,PERMITNAME,STATUS,ISSUEDDATE,DATECREATED,PERMITCLASSCODE",
+    "date_field": "DATECREATED",
+    "lookback_days": 30,
+    "feed_id": "tx-harris-oce",
+    "id_field": "PERMITNUMBER",
+    "name_fields": ["PERMITNAME", "PROJECTNAME", "PERMITNUMBER"],
+    "address_fields": ["FULLADDRESS"],
+    "desc_fields": ["APPTYPE", "STATUS"],
+    "source_url": "https://hcpid.maps.arcgis.com/apps/instant/nearby/index.html?appid=2156d72fc7984f7aa4e8e23f83f5fe0b",
+}
+
 # Franklin County (Columbus, OH) -- verified live 2026-07-28: 139,182
 # total commercial-filtered records, MAX(ISSUED_DT) = 2026-07-26.
 OH_FRANKLIN_CONFIG: dict[str, Any] = {
@@ -2395,6 +2432,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "FL-STLUCIE": FL_STLUCIE_ENERGOV_CONFIG,
     "WA-KING": WA_KING_CONFIG,
     "TX-TARRANT": TX_TARRANT_CONFIG,
+    "TX-HARRIS": TX_HARRIS_CONFIG,
     "OH-FRANKLIN": OH_FRANKLIN_CONFIG,
     "OH-CUYAHOGA": OH_CUYAHOGA_CONFIG,
     "NC-MECKLENBURG": NC_MECKLENBURG_CONFIG,
