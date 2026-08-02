@@ -9,6 +9,19 @@ as `(today - date(2025,1,1)).days` -- never reuse a hardcoded day-count
 from an earlier session, it drifts. Real remaining scope: add proper
 absolute `--since-date` support to the pipeline.
 
+**Known bottleneck (2026-08-01): `scripts/merge-national-corpus.py` can hang
+for hours.** Its dedupe buckets records by `(state, county)` and does
+O(k^2) pairwise comparison within each bucket; once a bucket (e.g. NJ after
+the 2025-01-01 backfill) grows into the tens of thousands of rows, it runs
+at ~100% CPU with zero progress output. If a data-processing script's CPU
+time balloons far past a sane estimate with no progress logging, kill it
+and reroute rather than waiting it out. Stopgap:
+`scripts/fast-merge-national-corpus.py` skips the pairwise merge (relies on
+Postgres `ON CONFLICT (project_id)` for exact-id dedup) and rebuilds the
+full corpus in ~10 seconds. Real fix still open: sub-bucket
+`project_identity._dedupe_bucket` by a cheap prefilter before pairwise
+`same_project()` comparison.
+
 **Looking for the current discovery/acquisition pipeline?** Skip to
 [Gemini-Assisted County/State Source Discovery](#gemini-assisted-countystate-source-discovery-implemented-2026-07-28)
 below — the 3-phase, 10-step loop is the live, actively-used process.

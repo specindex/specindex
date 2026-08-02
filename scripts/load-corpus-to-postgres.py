@@ -7,6 +7,7 @@ import argparse
 import json
 import os
 import sys
+import time
 from datetime import date, datetime
 from pathlib import Path
 
@@ -201,7 +202,18 @@ def main() -> int:
     generated_at = parse_ts(corpus.get("generated_at"))
     projects_by_id = {p["id"]: p for p in projects}
 
+    # CHUNK_SIZE: db-f1-micro's small RAM/connection resources reset the
+    # connection outright when 396K+ rows' worth of upserts (plus their
+    # source/event fan-out) ran as one uncommitted transaction (~24 minutes
+    # in, before it ever reached COMMIT). Committing every CHUNK_SIZE
+    # projects keeps each transaction small and makes a mid-run failure
+    # resumable (re-running just re-upserts already-loaded rows via
+    # ON CONFLICT, it's not additive).
+    CHUNK_SIZE = 1000
+
     conn = psycopg2.connect(args.database_url)
+    total_source_rows = 0
+    total_event_rows = 0
     try:
         with conn.cursor() as cur:
             if args.apply_schema:
@@ -209,69 +221,115 @@ def main() -> int:
             if args.apply_migrations:
                 for name in ("008_project_sources.sql", "009_project_events.sql"):
                     cur.execute((MIGRATIONS_DIR / name).read_text(encoding="utf-8"))
+            conn.commit()
+        conn.close()
 
-            rows = [project_row(p, generated_at) for p in projects]
-            returned = execute_values(
-                cur, UPSERT, rows, template=UPSERT_ROW_TEMPLATE, page_size=500, fetch=True
+        # Re-opening the connection per chunk (rather than reusing one
+        # long-lived connection for the whole 396K-row run) plus a
+        # statement_timeout and retry-with-backoff work around flaky local
+        # network conditions -- observed repeatedly: several chunks commit
+        # in a few seconds each, then one connection silently hangs for
+        # 6-16 minutes before "connection reset by peer", regardless of
+        # chunk size (ruled out data-content and Cloud SQL instance health
+        # as causes -- instance is db-custom-2-7680, RUNNABLE, no restart
+        # events). statement_timeout=60s makes a stalled chunk fail fast
+        # instead of hanging minutes; retrying picks it back up.
+        MAX_RETRIES = 5
+
+        def run_chunk(chunk: list[dict]) -> tuple[int, int]:
+            conn = psycopg2.connect(args.database_url, connect_timeout=15, options="-c statement_timeout=60000")
+            try:
+                with conn.cursor() as cur:
+                    rows = [project_row(p, generated_at) for p in chunk]
+                    returned = execute_values(
+                        cur, UPSERT, rows, template=UPSERT_ROW_TEMPLATE, page_size=500, fetch=True
+                    )
+
+                    source_rows: list[dict] = []
+                    event_rows: list[dict] = []
+                    for project_id, project_sk, record_type in returned:
+                        p = projects_by_id.get(project_id)
+                        if not p:
+                            continue
+                        label, _ = classify_source(project_id)
+                        source_rows.extend(
+                            project_sources_rows(project_id, project_sk, p.get("sources") or [])
+                        )
+                        event = project_event_row(
+                            project_id,
+                            project_sk,
+                            record_type,
+                            parse_date(p.get("opened_or_announced_date")),
+                            label,
+                        )
+                        if event:
+                            event_rows.append(event)
+
+                    if source_rows:
+                        execute_values(
+                            cur,
+                            """
+                            INSERT INTO project_sources
+                                (project_sk, source_name, source_record_id, source_url, raw_data, is_primary)
+                            VALUES %s
+                            ON CONFLICT (project_sk, source_name, COALESCE(source_url, ''))
+                            DO UPDATE SET raw_data = EXCLUDED.raw_data, ingested_at = now()
+                            """,
+                            source_rows,
+                            template="(%(project_sk)s, %(source_name)s, %(source_record_id)s, %(source_url)s, %(raw_data)s, %(is_primary)s)",
+                            page_size=500,
+                        )
+                    if event_rows:
+                        execute_values(
+                            cur,
+                            """
+                            INSERT INTO project_events (project_sk, event_type, event_date, source_name, source_url)
+                            VALUES %s
+                            ON CONFLICT (project_sk, event_type, event_date, source_name) DO NOTHING
+                            """,
+                            event_rows,
+                            template="(%(project_sk)s, %(event_type)s, %(event_date)s, %(source_name)s, %(source_url)s)",
+                            page_size=500,
+                        )
+                conn.commit()
+                return len(source_rows), len(event_rows)
+            finally:
+                conn.close()
+
+        for chunk_start in range(0, len(projects), CHUNK_SIZE):
+            chunk = projects[chunk_start : chunk_start + CHUNK_SIZE]
+            for attempt in range(1, MAX_RETRIES + 1):
+                try:
+                    n_sources, n_events = run_chunk(chunk)
+                    break
+                except psycopg2.OperationalError as exc:
+                    if attempt == MAX_RETRIES:
+                        raise
+                    wait = min(2 ** attempt, 30)
+                    print(
+                        f"  ...chunk at {chunk_start} failed ({exc.__class__.__name__}), "
+                        f"retry {attempt}/{MAX_RETRIES} in {wait}s",
+                        file=sys.stderr,
+                    )
+                    time.sleep(wait)
+
+            total_source_rows += n_sources
+            total_event_rows += n_events
+            print(
+                f"  ...committed {min(chunk_start + CHUNK_SIZE, len(projects))}/{len(projects)} projects",
+                file=sys.stderr,
             )
 
-            source_rows: list[dict] = []
-            event_rows: list[dict] = []
-            for project_id, project_sk, record_type in returned:
-                p = projects_by_id.get(project_id)
-                if not p:
-                    continue
-                label, _ = classify_source(project_id)
-                source_rows.extend(
-                    project_sources_rows(project_id, project_sk, p.get("sources") or [])
-                )
-                event = project_event_row(
-                    project_id,
-                    project_sk,
-                    record_type,
-                    parse_date(p.get("opened_or_announced_date")),
-                    label,
-                )
-                if event:
-                    event_rows.append(event)
-
-            if source_rows:
-                execute_values(
-                    cur,
-                    """
-                    INSERT INTO project_sources
-                        (project_sk, source_name, source_record_id, source_url, raw_data, is_primary)
-                    VALUES %s
-                    ON CONFLICT (project_sk, source_name, COALESCE(source_url, ''))
-                    DO UPDATE SET raw_data = EXCLUDED.raw_data, ingested_at = now()
-                    """,
-                    source_rows,
-                    template="(%(project_sk)s, %(source_name)s, %(source_record_id)s, %(source_url)s, %(raw_data)s, %(is_primary)s)",
-                    page_size=500,
-                )
-            if event_rows:
-                execute_values(
-                    cur,
-                    """
-                    INSERT INTO project_events (project_sk, event_type, event_date, source_name, source_url)
-                    VALUES %s
-                    ON CONFLICT (project_sk, event_type, event_date, source_name) DO NOTHING
-                    """,
-                    event_rows,
-                    template="(%(project_sk)s, %(event_type)s, %(event_date)s, %(source_name)s, %(source_url)s)",
-                    page_size=500,
-                )
-
+        conn = psycopg2.connect(args.database_url)
+        with conn.cursor() as cur:
             cur.execute("SELECT count(*) FROM projects")
             total = cur.fetchone()[0]
-
-        conn.commit()
     finally:
         conn.close()
 
     print(
         f"Loaded {len(projects)} projects ({total} rows in database), "
-        f"{len(source_rows)} project_sources rows, {len(event_rows)} project_events rows"
+        f"{total_source_rows} project_sources rows, {total_event_rows} project_events rows"
     )
     return 0
 
