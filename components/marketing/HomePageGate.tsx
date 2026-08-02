@@ -18,7 +18,12 @@ export function HomePageGate({ children }: { children: React.ReactNode }) {
 }
 
 function Gate({ children }: { children: React.ReactNode }) {
-  const { isLoaded, isSignedIn } = useFirebaseAuth();
-  if (isLoaded && isSignedIn) return <SignedInHome />;
+  const { isLoaded, isSignedIn, isPendingApproval } = useFirebaseAuth();
+  // A pending-approval account would otherwise render SignedInHome, which
+  // fetches personalized project data that also 403s -- fall back to the
+  // normal marketing homepage rather than showing a broken/empty
+  // personalized view. (ProjectsGate shows the actual "pending approval"
+  // message when they try to browse projects directly.)
+  if (isLoaded && isSignedIn && !isPendingApproval) return <SignedInHome />;
   return <>{children}</>;
 }

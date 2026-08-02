@@ -7,6 +7,7 @@ import { ProfileCaptureModal } from "./ProfileCaptureModal";
 import {
   fetchMyProfile,
   saveMyProfile,
+  ProfilePendingApprovalError,
   PROFILE_SYNC_EVENT,
   type ProfileSyncDetail,
   type UserProfileUpdate,
@@ -37,7 +38,7 @@ function syncProfileToStorage(territory: string[], category: string) {
   );
 }
 
-export function AuthSync() {
+export function AuthSync({ onPendingApproval }: { onPendingApproval: () => void }) {
   const { isLoaded, isSignedIn, getToken, user } = useFirebaseAuth();
   // Snapshot of the page the visitor was on the moment sign-in resolved --
   // a coarse but zero-friction lead_source, distinct from the demo form's
@@ -86,8 +87,17 @@ export function AuthSync() {
         });
         setShowModal(true);
       })
-      .catch(() => {});
-  }, [isLoaded, isSignedIn, getToken]);
+      .catch((err) => {
+        // A brand-new account is is_active=false until an admin approves
+        // it (api/main.py's upsert_my_profile) -- the profile submit above
+        // already succeeded (it doesn't check is_active), so this 403 on
+        // the very next fetch is the expected "submitted, now pending"
+        // state, not a real error.
+        if (err instanceof ProfilePendingApprovalError) {
+          onPendingApproval();
+        }
+      });
+  }, [isLoaded, isSignedIn, getToken, onPendingApproval]);
 
   if (!showModal) return null;
 
@@ -101,6 +111,11 @@ export function AuthSync() {
         await saveMyProfile(getToken, body);
         syncProfileToStorage(body.territory_states, body.categories[0] ?? "all");
         setShowModal(false);
+        // This modal only renders for a not-yet-onboarded account, so the
+        // row saveMyProfile just created is guaranteed fresh -- and
+        // upsert_my_profile (api/main.py) sets is_active=false on every
+        // fresh INSERT. No need to re-fetch to find out; it's pending now.
+        onPendingApproval();
       }}
     />
   );
