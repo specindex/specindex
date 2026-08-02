@@ -37,6 +37,18 @@ LFS-pointer conflicts by keeping real current data, re-run the pipeline
 fresh per source for real merged counts, report before the next 5) -- an
 open-ended, multi-session effort, not a single continuous run.
 
+**Documents are the moat, not permit-metadata breadth (2026-08-02).** A
+county-discovery win now requires BOTH structured data AND a real document
+path (per-record detail page or attachments/documents API), even if
+currently gated -- pure ArcGIS/Socrata/CKAN bulk-feed wins (metadata only)
+are no longer sufficient on their own. Weight future batches by likelihood
+of a real document path, not just population rank -- Accela-based systems
+have a consistent (if often login-gated) "Attachments" tab pattern
+confirmed across UT-SALTLAKE/IN-INDIANAPOLIS/Cleveland OH/Duval FL, more
+promising than bulk feeds even for a smaller county. See
+`docs/ROADMAP.md` item 98 for specific login-gated opportunities already
+identified (Duval FL/JaxEPICS is the strongest lead).
+
 **Use Playwright to verify gated/SPA portals (2026-08-02).** When a county/city
 permit portal is suspected login-gated or is an Angular/React SPA shell that
 WebFetch/curl can't see through, use Playwright (headless Chromium,
