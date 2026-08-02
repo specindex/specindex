@@ -37,6 +37,17 @@ LFS-pointer conflicts by keeping real current data, re-run the pipeline
 fresh per source for real merged counts, report before the next 5) -- an
 open-ended, multi-session effort, not a single continuous run.
 
+**Use Playwright to verify gated/SPA portals (2026-08-02).** When a county/city
+permit portal is suspected login-gated or is an Angular/React SPA shell that
+WebFetch/curl can't see through, use Playwright (headless Chromium,
+`python3 -m playwright install chromium`) to check it live instead of
+concluding "no viable source" from static research alone -- capture network
+requests to see real backend API calls, and try clicking visible nav/search/
+"Guest" elements to see where they actually lead. Used live to definitively
+confirm Duval County FL's JaxEPICS has no guest/anonymous path. Apply to
+future gated portals (SmartGov TLS blocks, OpenGov/ViewPoint SPA shells, MGO
+Connect, etc.) -- see `docs/ROADMAP.md` item 98.
+
 **Looking for the current discovery/acquisition pipeline?** Skip to
 [Gemini-Assisted County/State Source Discovery](#gemini-assisted-countystate-source-discovery-implemented-2026-07-28)
 below — the 3-phase, 10-step loop is the live, actively-used process.

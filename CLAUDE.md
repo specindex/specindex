@@ -17,6 +17,12 @@
 - **Do not trust ad-hoc web-scraped or pasted "complete" county population lists.** One such pasted file looked authoritative but was fabricated past rank ~18 (recycled county names like "Washington County" reused across every state with invented populations, degenerating into "Washington 2 County" filler). Spot-check any ranked dataset over ~20-30 rows against a known-authoritative source before acting on it; prefer bulk downloads from the primary source (e.g. Census Bureau CSVs) over WebFetch summaries or user-pasted tables.
 - **Pacing: batches of 5 counties at a time, with review between each batch** — explicitly chosen by Asif over larger batches or a continuous unattended run. After each batch: cherry-pick worktree commits, resolve LFS-pointer conflicts by keeping real current data (never trust the cherry-picked data diff), re-run the pipeline fresh per new source for real merged counts, then report before launching the next 5. This is an open-ended, multi-session effort.
 
+# Use Playwright to verify gated/SPA portals
+
+- **When a county/city permit portal is suspected login-gated or is an Angular/React SPA shell that WebFetch/curl can't see through, use Playwright (headless Chromium) to check it live** rather than concluding "no viable source" from static research alone. `python3 -m playwright install chromium` if not already installed. Capture network requests to see real backend API calls, and try clicking visible nav/search/"Guest" elements to see where they actually lead.
+- Used live 2026-08-02 to definitively confirm Duval County FL's JaxEPICS has no guest/anonymous path (no "guest" text in rendered HTML, every nav link bounces to login or 404s) — closes a real open question, not a guess.
+- Apply the same technique to future gated portals hit during county-discovery batches (SmartGov TLS blocks, OpenGov/ViewPoint SPA shells, MGO Connect, etc.) — see `docs/ROADMAP.md` item 98.
+
 # Cost-optimization guardrails
 
 - **Targeted file scoping**: only inspect/edit files explicitly named in the prompt or their direct dependencies. No repo-wide `find`/`grep` sweeps unless asked.
