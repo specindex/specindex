@@ -2908,6 +2908,39 @@ IL_NAPERVILLE_ENERGOV_CONFIG: dict[str, Any] = {
 }
 STATE_CONFIGS["IL-NAPERVILLE"] = IL_NAPERVILLE_ENERGOV_CONFIG
 
+# Prince George's County, MD (DC suburbs -- Bowie, Hyattsville, College
+# Park). Verified live 2026-08-02: "Residential and Commercial Permits
+# (July 2013 to Present)" on data.princegeorgescountymd.gov (Socrata/Tyler
+# Data & Insights), dataset weik-ttee, issued by DPIE. MAX(permit_issuance_
+# date) = 2026-07-24 at verification time -- actively updating, not stale.
+# No boolean commercial/residential flag field; the real split is the
+# permit_type prefix convention (confirmed by spot-checking case_name
+# values): R*/RGU/RGW/RUW/RZW = residential, C*/CI/CIW/CU/CUW/CG/CGU/CGW/CE/
+# CEW = commercial/industrial (fit-outs, assisted-living facility, data
+# enclosure, clubhouse all confirmed in the CG/CGU/CGW slice). 127 rows
+# matched the commercial_where filter since 2025-01-01 at verification.
+MD_PRINCEGEORGES_CONFIG: dict[str, Any] = {
+    "state_code": "MD",
+    "provider_type": "socrata",
+    "county": "Prince George's",
+    "endpoint": "https://data.princegeorgescountymd.gov/resource/weik-ttee.json",
+    "watermark_field": "permit_case_id",
+    "hash_fields": ["permit_case_id"],
+    "commercial_where": (
+        "permit_type in ("
+        "'CI','CIW','CU','CUW','CG','CGU','CGW','CE','CEW',"
+        "'DPIE CG','DPIE CGU','DPIE CGW'"
+        ")"
+    ),
+    "date_field": "permit_issuance_date",
+    "lookback_days": 578,
+    "feed_id": "md-princegeorges-dpie",
+    "id_field": "permit_case_id",
+    "name_fields": ["case_name", "permit_type", "street_address"],
+    "address_fields": ["street_address", "city", "zip_code"],
+}
+STATE_CONFIGS["MD-PRINCEGEORGES"] = MD_PRINCEGEORGES_CONFIG
+
 # SAM.gov + USAspending for all 50 states (2026-07-28, Asif: "pull all
 # data from USAspending and sam.gov"). Both providers are already
 # architecturally per-state -- GA_SAM_CONFIG/GA_USASPENDING_CONFIG above
