@@ -1243,6 +1243,49 @@ MI_KENT_CONFIG: dict[str, Any] = {
     "feed_id": "mi-grandrapids-kent",
 }
 
+# Oakland County, MI (Detroit metro; 1.27M people) -- researched
+# 2026-08-02. There is NO county-level commercial permit feed: Access
+# Oakland (accessoakland.oakgov.com, ArcGIS Hub, 365 datasets) has zero
+# building-permit layers, there is no Socrata/CKAN domain for the county,
+# and no Accela Citizen Access tenant exists for the county or any of its
+# cities (all probed and 404). Most Oakland cities run BS&A Online, whose
+# community-development permit search requires a login.
+#
+# The one real public no-auth feed found is the City of Troy's own
+# "Permits Issued" app (Troy is Oakland County's largest commercial
+# corridor -- Big Beaver/Somerset). Undocumented but stateless AJAX
+# endpoint, discovered from the page's own JS:
+#   https://apps.troymi.gov/PermitsIssued/Results?PageNumber=1
+#     &PermitType=Building%20-%20Commercial
+#     &DateIssuedWhereClause.StartDate=01/01/2025
+#     &DateIssuedWhereClause.EndDate=08/02/2026
+# Verified live 2026-08-02: 132 "Building - Commercial" permits in the
+# 2025-01-01..today window (e.g. PB2026-1808, 575 W BIG BEAVER, Cervi
+# Construction LLC, parcel 88-20-28-203-035), plus Project Construction
+# and Parking Lot types. See troy_permits_provider.py for the parsing
+# contract.
+#
+# DOCUMENT CAPTURE: none available. No per-permit detail page (result
+# cells contain no links at all), no attachments/documents sub-resource;
+# the app's only other routes (AddressSearch, DescriptionSearch) are
+# alternate filters over the same flat table. Plan documents live in
+# BS&A Online (bsaonline.com uid=406) behind an account. Structured
+# metadata only.
+MI_OAKLAND_TROY_CONFIG: dict[str, Any] = {
+    "state_code": "MI",
+    "provider_type": "troy_permits",
+    "county": "Oakland",
+    "city": "Troy",
+    "endpoint": "https://apps.troymi.gov/PermitsIssued/Results",
+    "watermark_field": "date_issued",
+    "hash_fields": ["permit_number"],
+    "permit_types": ["Building - Commercial", "Project Construction", "Parking Lot"],
+    # 2025-01-01 anchor per CLAUDE.md: (2026-08-02 - 2025-01-01).days
+    "lookback_days": 578,
+    "max_pages": 200,
+    "feed_id": "mi-oakland-troy",
+}
+
 # Cook County (IL) Assessor's Permits (Socrata) -- verified live
 # 2026-07-28: real, but date_issued has a data-quality bug (4 rows out
 # of 92,437 total have a garbage future date, MAX() = year 2210). Bounded
@@ -2391,6 +2434,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "TX-WILLIAMSON": TX_WILLIAMSON_CONFIG,
     "MI-WAYNE": MI_WAYNE_CONFIG,
     "MI-KENT": MI_KENT_CONFIG,
+    "MI-OAKLAND": MI_OAKLAND_TROY_CONFIG,
     "IL-COOK": IL_COOK_CONFIG,
     "NY-NYC": NY_NYC_CONFIG,
     "NY-KINGS": NY_KINGS_CONFIG,

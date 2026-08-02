@@ -14,6 +14,7 @@ from .carto_provider import CartoProvider
 from .ckan_provider import CkanProvider
 from .csv_download_provider import CsvDownloadProvider
 from .tdlr_tabs_provider import TdlrTabsProvider
+from .troy_permits_provider import TroyPermitsProvider
 from .energov_provider import EnerGovProvider
 from .sam_gov_provider import SamGovProvider
 from .socrata_provider import SocrataProvider
@@ -179,6 +180,16 @@ def build_provider(state_config: dict[str, Any]) -> BaseIngestionProvider:
             county_code=state_config.get("county_code"),
             lookback_days=state_config.get("lookback_days", 30),
             page_size=state_config.get("page_size", 100),
+            max_pages=state_config.get("max_pages", 200),
+        )
+
+    if provider_type == "troy_permits":
+        return TroyPermitsProvider(
+            state_code=state_config.get("state_code", "MI"),
+            county=state_config.get("county", "Oakland"),
+            city=state_config.get("city", "Troy"),
+            permit_types=state_config.get("permit_types"),
+            lookback_days=state_config.get("lookback_days", 30),
             max_pages=state_config.get("max_pages", 200),
         )
 
