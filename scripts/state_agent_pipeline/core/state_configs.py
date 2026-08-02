@@ -2903,3 +2903,70 @@ NV_CLARK_LASVEGAS_CONFIG: dict[str, Any] = {
     "source_url": "https://opendataportal-lasvegas.opendata.arcgis.com/datasets/lasvegas::building-permits-",
 }
 STATE_CONFIGS["NV-CLARK"] = NV_CLARK_LASVEGAS_CONFIG
+
+# City of Sacramento -- the population/commercial-activity center of
+# Sacramento County; the county government itself does not publish a
+# commercial-permit dataset, but the City's ArcGIS-hosted "Automated
+# Permitting System" export does, split across two layers (Current Year
+# + Archive). Status_Date is esriFieldTypeString in "MM/DD/YYYY" form,
+# not a real Esri date field, so DATE/TIMESTAMP literal comparison (and
+# the provider's date_field_is_string YYYY-MM-DD fallback) both break --
+# lexicographic order on MM/DD/YYYY doesn't match chronological order.
+# Worked around by baking the year restriction directly into
+# commercial_where via LIKE '%/2025' on the Archive layer instead of
+# using date_field at all; the Current Year layer is inherently already
+# scoped to 2026 YTD by the source so needs no extra filter. Verified via
+# direct FeatureServer query: Type='Commercial' AND Status_Date LIKE
+# '%/2025' -> 2,815 rows (Archive); Type='Commercial' -> 1,519 rows
+# (Current Year, 2026 YTD).
+CA_SACRAMENTO_CONFIG: dict[str, Any] = {
+    "state_code": "CA",
+    "provider_type": "arcgis",
+    "county": "Sacramento",
+    "endpoint": "https://services5.arcgis.com/54falWtcpty3V47Z/arcgis/rest/services/BldgPermitIssued_CurrentYear/FeatureServer",
+    "layer": 0,
+    "watermark_field": "OBJECTID",
+    "hash_fields": ["Application"],
+    "commercial_where": "Type='Commercial'",
+    "out_fields": (
+        "OBJECTID,Type,Sub_Type,Category,Application,Status_Date,"
+        "Current_Status,Parcel_No,Address,Site_Location,ZIP,Valuation,"
+        "Work_Desc,Project_Name"
+    ),
+    "feed_id": "ca-sacramento-city-permits",
+    "id_field": "Application",
+    "name_fields": ["Project_Name", "Category"],
+    "address_fields": ["Address", "Site_Location"],
+    "value_fields": ["Valuation"],
+    "desc_fields": ["Work_Desc", "Category", "Sub_Type"],
+    "source_url": "https://data.cityofsacramento.org/datasets/issued-building-permits-current-year/about",
+}
+
+CA_SACRAMENTO_ARCHIVE_CONFIG: dict[str, Any] = {
+    "state_code": "CA",
+    "provider_type": "arcgis",
+    "county": "Sacramento",
+    "endpoint": "https://services5.arcgis.com/54falWtcpty3V47Z/arcgis/rest/services/BldgPermitIssued_Archive/FeatureServer",
+    "layer": 0,
+    "watermark_field": "OBJECTID",
+    "hash_fields": ["Application"],
+    # Year restricted directly in the WHERE clause (see comment above) --
+    # date_field deliberately left unset since Status_Date is a string
+    # column whose MM/DD/YYYY format sorts wrong lexicographically.
+    "commercial_where": "Type='Commercial' AND Status_Date LIKE '%/2025'",
+    "out_fields": (
+        "OBJECTID,Type,Sub_Type,Category,Application,Status_Date,"
+        "Current_Status,Parcel_No,Address,Site_Location,ZIP,Valuation,"
+        "Work_Desc,Project_Name"
+    ),
+    "feed_id": "ca-sacramento-city-permits-archive",
+    "id_field": "Application",
+    "name_fields": ["Project_Name", "Category"],
+    "address_fields": ["Address", "Site_Location"],
+    "value_fields": ["Valuation"],
+    "desc_fields": ["Work_Desc", "Category", "Sub_Type"],
+    "source_url": "https://data.cityofsacramento.org/datasets/issued-building-permits-archive-1/about",
+}
+
+STATE_CONFIGS["CA-SACRAMENTO"] = CA_SACRAMENTO_CONFIG
+STATE_CONFIGS["CA-SACRAMENTO-ARCHIVE"] = CA_SACRAMENTO_ARCHIVE_CONFIG
