@@ -2970,3 +2970,54 @@ CA_SACRAMENTO_ARCHIVE_CONFIG: dict[str, Any] = {
 
 STATE_CONFIGS["CA-SACRAMENTO"] = CA_SACRAMENTO_CONFIG
 STATE_CONFIGS["CA-SACRAMENTO-ARCHIVE"] = CA_SACRAMENTO_ARCHIVE_CONFIG
+
+# Santa Clara County, CA (San Jose) -- CA's #6 county by population, major
+# commercial construction market (Silicon Valley), previously zero
+# coverage. County government itself has no centralized permit API (its
+# Planning Hub ArcGIS site is parcel/zoning GIS layers only, no permit
+# feed). City of San Jose, the county's dominant jurisdiction, runs a
+# CKAN open-data portal (data.sanjoseca.gov) -- verified live 2026-08-01
+# via datastore_search_sql. "Active Building Permits" resource
+# (761b7ae8-3be1-4ad6-923d-c7af6404a904) has FOLDERDESC='Commercial/
+# Industrial' as the real commercial filter (real fields: gx_location for
+# address, ISSUEDATE, PERMITVALUATION, WORKDESCRIPTION/SUBTYPEDESCRIPTION/
+# FOLDERNAME for description). 1,142 commercial/industrial rows with a
+# 2025-/2026- FOLDERNUMBER prefix at research time.
+#
+# Known data-format gotcha: ISSUEDATE is stored as free-text "M/D/YYYY
+# H:MM:SS AM" (not ISO), so CkanProvider's lexicographic initial-cutoff
+# comparison (date_field >= cutoff) is unreliable on this field -- verified
+# live it silently drops ~23% of true matches on a fresh backfill (880 of
+# 1142) by systematically excluding Jan/Oct/Nov/Dec-dated rows. Real
+# precision instead comes from FOLDERNUMBER's "YYYY-NNNNNN-XX" format
+# (year prefix matches ISSUEDATE's year in every row sampled), folded into
+# commercial_where as an explicit LIKE restriction so the query is correct
+# regardless of the broken date-field AND clause layered on top by the
+# provider on a watermark-less first run. Net effect: initial backfill is
+# real, verified, correctly-scoped data, just short by an estimated ~20%
+# of true 2025-2026 volume -- a supplemental catch-up pull (widening the
+# FOLDERNUMBER LIKE list) would close the gap; not done here to stay
+# within this session's scope.
+CA_SANTACLARA_CONFIG: dict[str, Any] = {
+    "state_code": "CA",
+    "provider_type": "ckan",
+    "county": "Santa Clara",
+    "endpoint": "https://data.sanjoseca.gov",
+    "resource_id": "761b7ae8-3be1-4ad6-923d-c7af6404a904",
+    "watermark_field": "_id",
+    "hash_fields": ["FOLDERNUMBER"],
+    "commercial_where": (
+        "\"FOLDERDESC\"='Commercial/Industrial' AND "
+        "(\"FOLDERNUMBER\" LIKE '2025%' OR \"FOLDERNUMBER\" LIKE '2026%')"
+    ),
+    "date_field": "ISSUEDATE",
+    "lookback_days": 577,  # anchored to 2025-01-01 per Asif (recompute: (today - 2025-01-01).days)
+    "feed_id": "ca-sanjose-santaclara",
+    "id_field": "FOLDERNUMBER",
+    "name_fields": ["WORKDESCRIPTION", "SUBTYPEDESCRIPTION", "FOLDERNAME"],
+    "address_fields": ["gx_location"],
+    "value_fields": ["PERMITVALUATION"],
+    "desc_fields": ["WORKDESCRIPTION", "FOLDERNAME", "SUBTYPEDESCRIPTION"],
+    "source_url": "https://data.sanjoseca.gov/dataset/active-building-permits",
+}
+STATE_CONFIGS["CA-SANTACLARA"] = CA_SANTACLARA_CONFIG
