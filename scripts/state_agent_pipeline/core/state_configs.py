@@ -1324,6 +1324,27 @@ IL_COOK_CONFIG: dict[str, Any] = {
 # 2 Family=100,437, 3 Family=24,044. id prefix is ny-nycdob (not ny-nyc --
 # that prefix is already used by the earlier NYC Capital Projects Database
 # manual-research batch, fi59-268w, a different source).
+# NY-NASSAU: investigated 2026-08-02, NO VIABLE PUBLIC SOURCE -- intentionally
+# not configured. Nassau County itself does not issue building permits; all
+# permitting is delegated to its 3 towns / 2 cities / 64 villages, and none
+# publish a bulk permit feed:
+#   - data.ny.gov (Socrata): catalog search for "nassau" returns 0 permit
+#     datasets (only parks/boundaries/census/MTA/fiscal items).
+#   - Town of Hempstead -> OpenGov ViewPoint (hempsteadny.viewpointcloud.com).
+#     SPA only; its backing API host (from the page's store3/config/environment
+#     blob) is https://api-east.viewpointcloud.com/v2 and returns
+#     {"errors":["forbidden"]} / HTTP 403 unauthenticated. All other services
+#     are auth-gated GraphQL (records/search/inspections.viewpointcloud.com).
+#   - Town of Oyster Bay -> eTRAKiT (https://oys-trk.aspgov.com/eTRAKiT/).
+#     /Search/permit.aspx 302-redirects to login.aspx -- public permit search
+#     requires an account; no JSON API.
+#   - Town of North Hempstead -> OpenGov + Citizenserve constituent portal;
+#     HTML form only, no API.
+#   - ArcGIS Online / Hub: no Nassau County NY permit feature service exists
+#     (search hits are Nassau County FL and unrelated Long Island layers).
+# Document capture (step 10): NO. No public per-permit detail-page URL pattern
+# and no attachments/documents endpoint is reachable without credentials on any
+# of the above tenants. Revisit only if a town publishes an open-data portal.
 NY_NYC_CONFIG: dict[str, Any] = {
     "state_code": "NY",
     "provider_type": "socrata",
