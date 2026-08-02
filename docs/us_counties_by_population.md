@@ -7,6 +7,513 @@ Source: U.S. Census Bureau Population Estimates Program, `co-est2024-alldata.csv
 - **Most populous:** Los Angeles County, CA (9,757,179)
 - **Least populous:** Loving County, TX (48)
 
+## Top 500 Counties (Quick Reference)
+
+197 of the top 500 counties by population currently have commercial-permit coverage in the corpus.
+
+| Rank | County | State | Population | Corpus Coverage |
+| :--- | :--- | :--- | ---: | :--- |
+| 1 | Los Angeles County | CA | 9,757,179 | covered |
+| 2 | Cook County | IL | 5,182,617 | covered |
+| 3 | Harris County | TX | 5,009,302 | covered |
+| 4 | Maricopa County | AZ | 4,673,096 | covered |
+| 5 | San Diego County | CA | 3,298,799 | covered |
+| 6 | Orange County | CA | 3,170,435 |  |
+| 7 | Miami-Dade County | FL | 2,838,461 | covered |
+| 8 | Dallas County | TX | 2,656,028 | covered |
+| 9 | Kings County | NY | 2,617,631 | covered |
+| 10 | Riverside County | CA | 2,529,933 | covered |
+| 11 | Clark County | NV | 2,398,871 | covered |
+| 12 | King County | WA | 2,340,211 | covered |
+| 13 | Queens County | NY | 2,316,841 | covered |
+| 14 | Tarrant County | TX | 2,230,708 | covered |
+| 15 | San Bernardino County | CA | 2,214,281 | covered |
+| 16 | Bexar County | TX | 2,127,737 | covered |
+| 17 | Broward County | FL | 2,037,472 | covered |
+| 18 | Santa Clara County | CA | 1,926,325 | covered |
+| 19 | Wayne County | MI | 1,771,063 | covered |
+| 20 | Middlesex County | MA | 1,668,956 | covered |
+| 21 | New York County | NY | 1,660,664 | covered |
+| 22 | Alameda County | CA | 1,649,060 | covered |
+| 23 | Sacramento County | CA | 1,611,231 | covered |
+| 24 | Palm Beach County | FL | 1,582,055 | covered |
+| 25 | Hillsborough County | FL | 1,581,426 | covered |
+| 26 | Philadelphia County | PA | 1,573,916 | covered |
+| 27 | Suffolk County | NY | 1,535,909 |  |
+| 28 | Orange County | FL | 1,533,646 | covered |
+| 29 | Nassau County | NY | 1,392,438 |  |
+| 30 | Bronx County | NY | 1,384,724 | covered |
+| 31 | Travis County | TX | 1,363,767 | covered |
+| 32 | Franklin County | OH | 1,356,303 | covered |
+| 33 | Oakland County | MI | 1,296,888 |  |
+| 34 | Hennepin County | MN | 1,273,334 | covered |
+| 35 | Collin County | TX | 1,254,658 | covered |
+| 36 | Cuyahoga County | OH | 1,240,594 | covered |
+| 37 | Wake County | NC | 1,232,444 | covered |
+| 38 | Allegheny County | PA | 1,231,814 | covered |
+| 39 | Salt Lake County | UT | 1,216,274 | covered |
+| 40 | Mecklenburg County | NC | 1,206,285 | covered |
+| 41 | Contra Costa County | CA | 1,172,607 |  |
+| 42 | Fairfax County | VA | 1,160,925 | covered |
+| 43 | Fulton County | GA | 1,090,354 | covered |
+| 44 | Montgomery County | MD | 1,082,273 | covered |
+| 45 | Pima County | AZ | 1,080,149 | covered |
+| 46 | Duval County | FL | 1,055,159 |  |
+| 47 | Denton County | TX | 1,045,120 | covered |
+| 48 | Fresno County | CA | 1,024,125 |  |
+| 49 | Westchester County | NY | 1,006,447 |  |
+| 50 | Gwinnett County | GA | 1,003,869 | covered |
+| 51 | Honolulu County | HI | 998,747 | covered |
+| 52 | St. Louis County | MO | 992,929 | covered |
+| 53 | Capitol Planning Region | CT | 991,508 |  |
+| 54 | Marion County | IN | 981,628 | covered |
+| 55 | Bergen County | NJ | 978,641 | covered |
+| 56 | Prince George's County | MD | 966,629 |  |
+| 57 | Pinellas County | FL | 965,870 | covered |
+| 58 | Fort Bend County | TX | 958,434 | covered |
+| 59 | Erie County | NY | 950,602 | covered |
+| 60 | Pierce County | WA | 941,170 | covered |
+| 61 | DuPage County | IL | 937,142 |  |
+| 62 | Milwaukee County | WI | 924,740 | covered |
+| 63 | Kern County | CA | 922,529 | covered |
+| 64 | Hidalgo County | TX | 914,820 | covered |
+| 65 | Shelby County | TN | 910,530 | covered |
+| 66 | Middlesex County | NJ | 890,119 | covered |
+| 67 | Macomb County | MI | 886,175 |  |
+| 68 | Essex County | NJ | 881,527 | covered |
+| 69 | Worcester County | MA | 881,248 | covered |
+| 70 | Montgomery County | PA | 879,190 | covered |
+| 71 | El Paso County | TX | 875,784 | covered |
+| 72 | Snohomish County | WA | 864,113 |  |
+| 73 | Lee County | FL | 860,959 |  |
+| 74 | Polk County | FL | 852,878 | covered |
+| 75 | Baltimore County | MD | 852,425 | covered |
+| 76 | Hamilton County | OH | 837,359 | covered |
+| 77 | Ventura County | CA | 835,427 |  |
+| 78 | San Francisco County | CA | 827,526 | covered |
+| 79 | Essex County | MA | 823,938 |  |
+| 80 | Oklahoma County | OK | 816,490 |  |
+| 81 | San Joaquin County | CA | 816,108 |  |
+| 82 | Multnomah County | OR | 795,897 | covered |
+| 83 | Jefferson County | KY | 793,881 | covered |
+| 84 | Suffolk County | MA | 793,144 | covered |
+| 85 | Cobb County | GA | 787,538 | covered |
+| 86 | DeKalb County | GA | 770,307 | covered |
+| 87 | El Paso County | CO | 752,772 | covered |
+| 88 | Monroe County | NY | 752,202 |  |
+| 89 | Montgomery County | TX | 749,613 | covered |
+| 90 | Utah County | UT | 747,234 | covered |
+| 91 | San Mateo County | CA | 742,893 | covered |
+| 92 | Norfolk County | MA | 740,754 |  |
+| 93 | Hudson County | NJ | 736,185 | covered |
+| 94 | Davidson County | TN | 729,505 | covered |
+| 95 | Denver County | CO | 729,019 | covered |
+| 96 | Williamson County | TX | 727,480 | covered |
+| 97 | Jackson County | MO | 727,362 | covered |
+| 98 | Lake County | IL | 718,604 |  |
+| 99 | Will County | IL | 708,583 | covered |
+| 100 | District of Columbia | DC | 702,250 |  |
+| 101 | Tulsa County | OK | 693,514 |  |
+| 102 | Providence County | RI | 675,912 | covered |
+| 103 | Kent County | MI | 673,002 | covered |
+| 104 | Bernalillo County | NM | 671,747 | covered |
+| 105 | Arapahoe County | CO | 666,918 |  |
+| 106 | Ocean County | NJ | 666,434 | covered |
+| 107 | Jefferson County | AL | 664,744 | covered |
+| 108 | Pasco County | FL | 659,114 | covered |
+| 109 | Brevard County | FL | 658,447 |  |
+| 110 | Bucks County | PA | 650,131 |  |
+| 111 | Monmouth County | NJ | 647,520 | covered |
+| 112 | Western Connecticut Planning Region | CT | 637,013 |  |
+| 113 | Johnson County | KS | 632,276 | covered |
+| 114 | Washington County | OR | 611,272 | covered |
+| 115 | Volusia County | FL | 602,772 | covered |
+| 116 | Anne Arundel County | MD | 602,350 |  |
+| 117 | Douglas County | NE | 601,158 | covered |
+| 118 | Union County | NJ | 594,160 | covered |
+| 119 | Bristol County | MA | 588,593 |  |
+| 120 | Dane County | WI | 588,347 | covered |
+| 121 | New Castle County | DE | 588,093 | covered |
+| 122 | Delaware County | PA | 584,882 |  |
+| 123 | Jefferson County | CO | 578,533 | covered |
+| 124 | South Central Connecticut Planning Region | CT | 576,718 |  |
+| 125 | Greenville County | SC | 570,745 | covered |
+| 126 | Baltimore city | MD | 568,271 |  |
+| 127 | Lancaster County | PA | 563,293 |  |
+| 128 | Chester County | PA | 560,745 |  |
+| 129 | Guilford County | NC | 558,816 | covered |
+| 130 | Stanislaus County | CA | 556,972 |  |
+| 131 | Spokane County | WA | 555,947 |  |
+| 132 | Adams County | CO | 542,973 | covered |
+| 133 | Plymouth County | MA | 542,090 |  |
+| 134 | Ramsey County | MN | 542,015 |  |
+| 135 | Summit County | OH | 538,370 |  |
+| 136 | Montgomery County | OH | 537,443 | covered |
+| 137 | Sedgwick County | KS | 536,081 |  |
+| 138 | Ada County | ID | 535,799 | covered |
+| 139 | Camden County | NJ | 533,988 | covered |
+| 140 | Clark County | WA | 527,269 |  |
+| 141 | Passaic County | NJ | 526,597 | covered |
+| 142 | Morris County | NJ | 523,053 | covered |
+| 143 | Kane County | IL | 520,997 |  |
+| 144 | Polk County | IA | 516,185 |  |
+| 145 | Pinal County | AZ | 513,862 |  |
+| 146 | Washoe County | NV | 507,280 |  |
+| 147 | Knox County | TN | 506,748 |  |
+| 148 | Lake County | IN | 502,955 |  |
+| 149 | Richmond County | NY | 498,212 | covered |
+| 150 | Prince William County | VA | 497,003 | covered |
+| 151 | Seminole County | FL | 494,605 |  |
+| 152 | Sonoma County | CA | 485,375 |  |
+| 153 | Tulare County | CA | 483,546 | covered |
+| 154 | Sarasota County | FL | 476,604 |  |
+| 155 | Burlington County | NJ | 475,515 | covered |
+| 156 | York County | PA | 471,240 |  |
+| 157 | Onondaga County | NY | 469,812 | covered |
+| 158 | Osceola County | FL | 468,058 |  |
+| 159 | Hampden County | MA | 464,151 |  |
+| 160 | Naugatuck Valley Planning Region | CT | 462,220 |  |
+| 161 | Manatee County | FL | 458,352 | covered |
+| 162 | Solano County | CA | 455,101 |  |
+| 163 | Virginia Beach city | VA | 454,808 |  |
+| 164 | Dakota County | MN | 453,156 |  |
+| 165 | East Baton Rouge Parish | LA | 453,022 | covered |
+| 166 | Santa Barbara County | CA | 444,500 |  |
+| 167 | Lake County | FL | 444,204 |  |
+| 168 | Loudoun County | VA | 443,380 |  |
+| 169 | Berks County | PA | 439,117 |  |
+| 170 | Monterey County | CA | 436,251 |  |
+| 171 | Placer County | CA | 433,822 |  |
+| 172 | Cameron County | TX | 431,874 | covered |
+| 173 | Charleston County | SC | 431,001 | covered |
+| 174 | Richland County | SC | 430,651 |  |
+| 175 | Hillsborough County | NH | 430,462 | covered |
+| 176 | Marion County | FL | 428,905 |  |
+| 177 | Jefferson Parish | LA | 427,253 |  |
+| 178 | Lucas County | OH | 426,291 |  |
+| 179 | Clackamas County | OR | 425,857 |  |
+| 180 | St. Charles County | MO | 423,726 |  |
+| 181 | Madison County | AL | 423,355 | covered |
+| 182 | Waukesha County | WI | 417,029 | covered |
+| 183 | Collier County | FL | 416,233 |  |
+| 184 | Horry County | SC | 413,391 |  |
+| 185 | Brazoria County | TX | 413,224 | covered |
+| 186 | Mobile County | AL | 412,339 |  |
+| 187 | Orange County | NY | 411,767 |  |
+| 188 | Genesee County | MI | 402,279 |  |
+| 189 | Pulaski County | AR | 401,209 | covered |
+| 190 | Bell County | TX | 399,578 | covered |
+| 191 | Butler County | OH | 399,542 | covered |
+| 192 | Allen County | IN | 399,295 | covered |
+| 193 | Forsyth County | NC | 398,143 |  |
+| 194 | Douglas County | CO | 393,995 |  |
+| 195 | Mercer County | NJ | 392,138 | covered |
+| 196 | St. Lucie County | FL | 390,670 |  |
+| 197 | Chesterfield County | VA | 389,793 |  |
+| 198 | Hamilton County | TN | 386,256 | covered |
+| 199 | Lehigh County | PA | 385,655 |  |
+| 200 | Lane County | OR | 382,396 |  |
+| 201 | Hamilton County | IN | 379,704 |  |
+| 202 | Davis County | UT | 378,470 |  |
+| 203 | Rutherford County | TN | 376,996 | covered |
+| 204 | Anoka County | MN | 376,840 |  |
+| 205 | Larimer County | CO | 374,574 |  |
+| 206 | Stark County | OH | 374,091 |  |
+| 207 | Washtenaw County | MI | 373,875 | covered |
+| 208 | Weld County | CO | 369,745 | covered |
+| 209 | Spartanburg County | SC | 369,256 |  |
+| 210 | Galveston County | TX | 367,407 | covered |
+| 211 | Orleans Parish | LA | 362,701 | covered |
+| 212 | Somerset County | NJ | 357,467 | covered |
+| 213 | Nueces County | TX | 353,125 | covered |
+| 214 | Marion County | OR | 352,867 | covered |
+| 215 | Westmoreland County | PA | 350,935 |  |
+| 216 | Rockland County | NY | 348,144 |  |
+| 217 | Durham County | NC | 343,628 | covered |
+| 218 | Howard County | MD | 339,668 |  |
+| 219 | Henrico County | VA | 338,696 |  |
+| 220 | Cumberland County | NC | 338,430 |  |
+| 221 | Greater Bridgeport Planning Region | CT | 335,666 |  |
+| 222 | St. Johns County | FL | 334,928 |  |
+| 223 | Lancaster County | NE | 332,857 | covered |
+| 224 | Luzerne County | PA | 331,379 | covered |
+| 225 | Escambia County | FL | 331,275 |  |
+| 226 | Boulder County | CO | 330,262 |  |
+| 227 | Fayette County | KY | 329,437 | covered |
+| 228 | Lubbock County | TX | 327,394 | covered |
+| 229 | Northampton County | PA | 322,989 |  |
+| 230 | Rockingham County | NH | 322,433 |  |
+| 231 | Lorain County | OH | 322,030 |  |
+| 232 | Benton County | AR | 321,566 | covered |
+| 233 | Albany County | NY | 319,964 |  |
+| 234 | McHenry County | IL | 315,959 |  |
+| 235 | Cumberland County | ME | 313,809 |  |
+| 236 | Lexington County | SC | 313,774 |  |
+| 237 | Gloucester County | NJ | 311,783 | covered |
+| 238 | Greene County | MO | 307,942 |  |
+| 239 | Chatham County | GA | 307,336 | covered |
+| 240 | Ottawa County | MI | 306,235 |  |
+| 241 | Cleveland County | OK | 303,952 | covered |
+| 242 | York County | SC | 303,001 |  |
+| 243 | Thurston County | WA | 302,912 |  |
+| 244 | Leon County | FL | 300,488 |  |
+| 245 | Dutchess County | NY | 299,963 |  |
+| 246 | Frederick County | MD | 299,317 | covered |
+| 247 | Clayton County | GA | 297,703 | covered |
+| 248 | Merced County | CA | 296,774 |  |
+| 249 | Cherokee County | GA | 293,513 | covered |
+| 250 | Dauphin County | PA | 293,029 |  |
+| 251 | Hays County | TX | 292,029 | covered |
+| 252 | Alachua County | FL | 291,782 | covered |
+| 253 | Ingham County | MI | 290,427 |  |
+| 254 | Anchorage Municipality | AK | 289,600 | covered |
+| 255 | Washington County | MN | 283,960 |  |
+| 256 | Winnebago County | IL | 283,790 |  |
+| 257 | Southeastern Connecticut Planning Region | CT | 282,602 |  |
+| 258 | San Luis Obispo County | CA | 281,843 |  |
+| 259 | Kitsap County | WA | 281,420 |  |
+| 260 | Forsyth County | GA | 280,096 | covered |
+| 261 | St. Louis city | MO | 279,695 |  |
+| 262 | Buncombe County | NC | 279,210 | covered |
+| 263 | Atlantic County | NJ | 279,114 | covered |
+| 264 | St. Tammany Parish | LA | 277,615 |  |
+| 265 | Weber County | UT | 276,118 |  |
+| 266 | Cumberland County | PA | 275,516 | covered |
+| 267 | Brown County | WI | 273,909 |  |
+| 268 | St. Joseph County | IN | 273,744 | covered |
+| 269 | Webb County | TX | 272,823 | covered |
+| 270 | Sussex County | DE | 271,134 |  |
+| 271 | McLennan County | TX | 270,358 | covered |
+| 272 | Williamson County | TN | 269,136 |  |
+| 273 | Erie County | PA | 267,750 |  |
+| 274 | Canyon County | ID | 266,892 |  |
+| 275 | Washington County | AR | 266,184 | covered |
+| 276 | Harford County | MD | 265,514 |  |
+| 277 | Kalamazoo County | MI | 264,780 |  |
+| 278 | Berkeley County | SC | 264,276 |  |
+| 279 | Union County | NC | 263,386 |  |
+| 280 | Clay County | MO | 263,370 |  |
+| 281 | Madison County | IL | 263,017 |  |
+| 282 | Santa Cruz County | CA | 262,406 |  |
+| 283 | Baldwin County | AL | 261,608 |  |
+| 284 | Henry County | GA | 259,315 | covered |
+| 285 | Yakima County | WA | 258,523 |  |
+| 286 | Marin County | CA | 256,400 | covered |
+| 287 | Warren County | OH | 256,059 |  |
+| 288 | Chesapeake city | VA | 254,997 |  |
+| 289 | Lafayette Parish | LA | 254,241 |  |
+| 290 | Jefferson County | TX | 253,948 | covered |
+| 291 | Yavapai County | AZ | 252,013 |  |
+| 292 | St. Clair County | IL | 251,149 |  |
+| 293 | Johnston County | NC | 249,794 |  |
+| 294 | Brazos County | TX | 249,624 | covered |
+| 295 | Smith County | TX | 249,091 | covered |
+| 296 | Montgomery County | TN | 246,025 |  |
+| 297 | Cabarrus County | NC | 244,925 | covered |
+| 298 | New Hanover County | NC | 243,333 |  |
+| 299 | Gaston County | NC | 242,010 |  |
+| 300 | Tuscaloosa County | AL | 241,212 | covered |
+| 301 | Saratoga County | NY | 240,360 |  |
+| 302 | Arlington County | VA | 239,807 | covered |
+| 303 | Delaware County | OH | 237,966 |  |
+| 304 | Clay County | FL | 236,760 |  |
+| 305 | Shelby County | AL | 235,969 |  |
+| 306 | Whatcom County | WA | 234,954 |  |
+| 307 | Richmond city | VA | 233,655 |  |
+| 308 | Barnstable County | MA | 232,570 |  |
+| 309 | Ellis County | TX | 232,387 | covered |
+| 310 | Lake County | OH | 232,360 |  |
+| 311 | Jefferson County | MO | 231,888 |  |
+| 312 | Linn County | IA | 231,762 |  |
+| 313 | Norfolk city | VA | 231,105 |  |
+| 314 | Doña Ana County | NM | 229,366 | covered |
+| 315 | Oneida County | NY | 228,347 |  |
+| 316 | Mohave County | AZ | 226,479 |  |
+| 317 | Montgomery County | AL | 225,894 |  |
+| 318 | Mahoning County | OH | 225,786 |  |
+| 319 | Yolo County | CA | 225,251 |  |
+| 320 | Caddo Parish | LA | 224,893 |  |
+| 321 | Hall County | GA | 221,745 | covered |
+| 322 | Jackson County | OR | 221,331 |  |
+| 323 | Okaloosa County | FL | 220,483 |  |
+| 324 | Yuma County | AZ | 220,310 |  |
+| 325 | York County | ME | 220,143 |  |
+| 326 | Benton County | WA | 218,190 |  |
+| 327 | Hernando County | FL | 218,150 |  |
+| 328 | Anderson County | SC | 217,183 |  |
+| 329 | Lackawanna County | PA | 216,859 |  |
+| 330 | Clermont County | OH | 214,123 |  |
+| 331 | Harrison County | MS | 213,730 |  |
+| 332 | Onslow County | NC | 212,954 |  |
+| 333 | Champaign County | IL | 212,374 |  |
+| 334 | Charlotte County | FL | 212,122 |  |
+| 335 | Hinds County | MS | 211,975 |  |
+| 336 | Sumner County | TN | 211,721 |  |
+| 337 | Deschutes County | OR | 211,535 | covered |
+| 338 | Johnson County | TX | 210,547 | covered |
+| 339 | Washington County | PA | 210,434 |  |
+| 340 | Hawaii County | HI | 209,790 |  |
+| 341 | Niagara County | NY | 209,570 |  |
+| 342 | Minnehaha County | SD | 208,639 | covered |
+| 343 | Butte County | CA | 208,334 |  |
+| 344 | Washington County | UT | 207,943 |  |
+| 345 | Santa Rosa County | FL | 207,653 |  |
+| 346 | Elkhart County | IN | 207,436 |  |
+| 347 | Calcasieu Parish | LA | 206,861 |  |
+| 348 | Iredell County | NC | 206,361 |  |
+| 349 | Richmond County | GA | 206,303 | covered |
+| 350 | Sarpy County | NE | 204,828 |  |
+| 351 | Muscogee County | GA | 201,830 | covered |
+| 352 | Beaufort County | SC | 201,775 |  |
+| 353 | Comal County | TX | 201,628 | covered |
+| 354 | Cass County | ND | 200,945 | covered |
+| 355 | St. Louis County | MN | 200,794 | covered |
+| 356 | Trumbull County | OH | 200,300 |  |
+| 357 | Bay County | FL | 199,718 |  |
+| 358 | Butler County | PA | 199,341 | covered |
+| 359 | Racine County | WI | 198,651 | covered |
+| 360 | Kaufman County | TX | 197,829 | covered |
+| 361 | Livingston County | MI | 196,976 |  |
+| 362 | Broome County | NY | 196,397 |  |
+| 363 | DeSoto County | MS | 195,871 |  |
+| 364 | Outagamie County | WI | 195,390 |  |
+| 365 | Guadalupe County | TX | 195,166 | covered |
+| 366 | Sangamon County | IL | 194,345 |  |
+| 367 | El Dorado County | CA | 192,823 |  |
+| 368 | Kent County | DE | 192,690 | covered |
+| 369 | Boone County | MO | 192,154 |  |
+| 370 | Tippecanoe County | IN | 191,650 |  |
+| 371 | Hendricks County | IN | 190,629 |  |
+| 372 | Paulding County | GA | 188,549 |  |
+| 373 | Kootenai County | ID | 188,323 |  |
+| 374 | Lee County | AL | 187,847 | covered |
+| 375 | Saginaw County | MI | 187,714 |  |
+| 376 | Licking County | OH | 184,898 |  |
+| 377 | Medina County | OH | 184,625 |  |
+| 378 | Midland County | TX | 183,587 | covered |
+| 379 | Newport News city | VA | 183,056 |  |
+| 380 | Alamance County | NC | 183,040 |  |
+| 381 | Ulster County | NY | 182,977 |  |
+| 382 | Canadian County | OK | 181,760 |  |
+| 383 | Imperial County | CA | 181,724 |  |
+| 384 | Shasta County | CA | 181,121 |  |
+| 385 | Pitt County | NC | 180,783 |  |
+| 386 | Vanderburgh County | IN | 180,387 |  |
+| 387 | Parker County | TX | 179,707 | covered |
+| 388 | Peoria County | IL | 179,630 |  |
+| 389 | Aiken County | SC | 179,245 |  |
+| 390 | Shawnee County | KS | 177,942 |  |
+| 391 | Davidson County | NC | 177,809 |  |
+| 392 | Lower Connecticut River Valley Planning Region | CT | 177,540 |  |
+| 393 | Muskegon County | MI | 177,428 |  |
+| 394 | Carroll County | MD | 177,108 |  |
+| 395 | Porter County | IN | 175,860 |  |
+| 396 | Scott County | IA | 175,601 |  |
+| 397 | Houston County | GA | 174,897 |  |
+| 398 | Kenton County | KY | 174,862 |  |
+| 399 | Dorchester County | SC | 174,663 |  |
+| 400 | Charles County | MD | 174,478 |  |
+| 401 | Kanawha County | WV | 173,906 |  |
+| 402 | Winnebago County | WI | 173,307 |  |
+| 403 | Kent County | RI | 172,450 | covered |
+| 404 | Greene County | OH | 172,347 |  |
+| 405 | Indian River County | FL | 172,139 |  |
+| 406 | McLean County | IL | 172,069 |  |
+| 407 | Yellowstone County | MT | 171,583 |  |
+| 408 | Chittenden County | VT | 170,851 | covered |
+| 409 | Johnson County | IN | 170,614 |  |
+| 410 | Citrus County | FL | 170,174 |  |
+| 411 | Ector County | TX | 170,022 | covered |
+| 412 | Wilson County | TN | 169,948 |  |
+| 413 | Pueblo County | CO | 169,866 |  |
+| 414 | Wyandotte County | KS | 169,418 |  |
+| 415 | Stafford County | VA | 168,919 |  |
+| 416 | Kenosha County | WI | 168,754 |  |
+| 417 | Fairfield County | OH | 167,762 | covered |
+| 418 | Columbia County | GA | 167,472 | covered |
+| 419 | Brunswick County | NC | 167,112 |  |
+| 420 | Catawba County | NC | 167,054 |  |
+| 421 | Monroe County | PA | 166,523 |  |
+| 422 | Olmsted County | MN | 166,424 | covered |
+| 423 | Martin County | FL | 165,666 |  |
+| 424 | Beaver County | PA | 165,540 |  |
+| 425 | Rock County | WI | 165,461 |  |
+| 426 | Madera County | CA | 165,432 | covered |
+| 427 | Hampshire County | MA | 165,399 |  |
+| 428 | Stearns County | MN | 163,997 |  |
+| 429 | Portage County | OH | 163,839 |  |
+| 430 | Maui County | HI | 163,688 |  |
+| 431 | Sullivan County | TN | 162,703 |  |
+| 432 | Schenectady County | NY | 162,261 |  |
+| 433 | Mesa County | CO | 161,260 |  |
+| 434 | Rensselaer County | NY | 160,749 |  |
+| 435 | Rankin County | MS | 160,573 |  |
+| 436 | St. Clair County | MI | 160,308 |  |
+| 437 | Jackson County | MI | 160,233 |  |
+| 438 | Johnson County | IA | 160,080 |  |
+| 439 | Centre County | PA | 159,805 |  |
+| 440 | Franklin County | PA | 159,285 |  |
+| 441 | Alexandria city | VA | 159,102 |  |
+| 442 | Coweta County | GA | 158,233 | covered |
+| 443 | Ouachita Parish | LA | 157,874 |  |
+| 444 | Merrimack County | NH | 157,869 |  |
+| 445 | Santa Fe County | NM | 157,765 |  |
+| 446 | Sandoval County | NM | 157,757 |  |
+| 447 | Washington County | MD | 157,228 |  |
+| 448 | Scott County | MN | 157,206 |  |
+| 449 | Bibb County | GA | 157,056 | covered |
+| 450 | Penobscot County | ME | 156,840 |  |
+| 451 | Monroe County | MI | 156,045 |  |
+| 452 | Cumberland County | NJ | 155,678 | covered |
+| 453 | Kings County | CA | 154,913 |  |
+| 454 | Sumter County | FL | 154,693 |  |
+| 455 | Wright County | MN | 154,593 |  |
+| 456 | Rowan County | NC | 153,384 |  |
+| 457 | Livingston Parish | LA | 152,886 |  |
+| 458 | Orange County | NC | 152,877 |  |
+| 459 | Berrien County | MI | 152,703 |  |
+| 460 | Spotsylvania County | VA | 152,021 | covered |
+| 461 | Douglas County | GA | 151,887 | covered |
+| 462 | Randall County | TX | 150,547 | covered |
+| 463 | Grayson County | TX | 150,532 | covered |
+| 464 | Taylor County | TX | 148,813 | covered |
+| 465 | Randolph County | NC | 148,389 |  |
+| 466 | Warren County | KY | 147,936 |  |
+| 467 | Sussex County | NJ | 147,444 | covered |
+| 468 | Jackson County | MS | 147,002 |  |
+| 469 | Harnett County | NC | 146,096 |  |
+| 470 | Cache County | UT | 145,487 |  |
+| 471 | Lebanon County | PA | 145,319 |  |
+| 472 | Coconino County | AZ | 145,161 |  |
+| 473 | Schuylkill County | PA | 144,523 |  |
+| 474 | Boone County | KY | 144,135 |  |
+| 475 | Kendall County | IL | 143,171 |  |
+| 476 | Rock Island County | IL | 142,731 |  |
+| 477 | Blount County | TN | 142,211 |  |
+| 478 | Monroe County | IN | 140,702 |  |
+| 479 | Tangipahoa Parish | LA | 139,823 |  |
+| 480 | Washington County | TN | 139,642 |  |
+| 481 | Marathon County | WI | 139,091 | covered |
+| 482 | Washington County | WI | 138,727 |  |
+| 483 | Pickens County | SC | 138,207 |  |
+| 484 | Florence County | SC | 138,049 | covered |
+| 485 | Hampton city | VA | 137,596 |  |
+| 486 | Rockwall County | TX | 137,044 | covered |
+| 487 | Flagler County | FL | 136,744 |  |
+| 488 | Berkeley County | WV | 136,287 |  |
+| 489 | Clark County | OH | 134,985 |  |
+| 490 | Madison County | IN | 134,222 |  |
+| 491 | Strafford County | NH | 134,202 |  |
+| 492 | Calhoun County | MI | 133,785 |  |
+| 493 | Bonneville County | ID | 133,644 |  |
+| 494 | Ascension Parish | LA | 133,534 |  |
+| 495 | Wood County | OH | 133,077 |  |
+| 496 | Skagit County | WA | 132,736 |  |
+| 497 | Napa County | CA | 132,727 |  |
+| 498 | Linn County | OR | 132,474 |  |
+| 499 | Humboldt County | CA | 132,380 |  |
+| 500 | Black Hawk County | IA | 132,348 |  |
+
 ## Full Ranked List
 
 | Rank | County | State | Population | Corpus Coverage |

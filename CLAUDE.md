@@ -11,6 +11,12 @@
 - **Stopgap in place:** `scripts/fast-merge-national-corpus.py` skips the pairwise cross-source merge entirely (relies on `load-corpus-to-postgres.py`'s `ON CONFLICT (project_id)` upsert for exact-id dedup) — rebuilds the full ~400K-row corpus in ~10 seconds instead of hours. Use it for a fast reload; `merge-national-corpus.py` remains the source of truth for real cross-source duplicate merging once the O(k^2) bug is actually fixed.
 - Real remaining scope: fix `_dedupe_bucket` in `scripts/project_identity.py` to sub-bucket by a cheap prefilter (e.g. normalized address or permit-ID hash) before doing pairwise `same_project()` comparison, so large buckets don't blow up.
 
+# Top-500-counties coverage goal
+
+- **Standing goal (per Asif, 2026-08-02): onboard commercial-permit sources for all top-500 US counties by population**, not just an ad-hoc sample. Reference: `docs/us_counties_by_population.md` — real Census Bureau data (all 3,144 US counties, bulk CSV from `www2.census.gov`, no API key needed), with a Corpus Coverage column. Always check this file before scoping a new discovery batch; regenerate it (re-download the CSV, re-run the corpus-coverage join) periodically as the corpus grows.
+- **Do not trust ad-hoc web-scraped or pasted "complete" county population lists.** One such pasted file looked authoritative but was fabricated past rank ~18 (recycled county names like "Washington County" reused across every state with invented populations, degenerating into "Washington 2 County" filler). Spot-check any ranked dataset over ~20-30 rows against a known-authoritative source before acting on it; prefer bulk downloads from the primary source (e.g. Census Bureau CSVs) over WebFetch summaries or user-pasted tables.
+- **Pacing: batches of 5 counties at a time, with review between each batch** — explicitly chosen by Asif over larger batches or a continuous unattended run. After each batch: cherry-pick worktree commits, resolve LFS-pointer conflicts by keeping real current data (never trust the cherry-picked data diff), re-run the pipeline fresh per new source for real merged counts, then report before launching the next 5. This is an open-ended, multi-session effort.
+
 # Cost-optimization guardrails
 
 - **Targeted file scoping**: only inspect/edit files explicitly named in the prompt or their direct dependencies. No repo-wide `find`/`grep` sweeps unless asked.

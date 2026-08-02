@@ -22,6 +22,21 @@ full corpus in ~10 seconds. Real fix still open: sub-bucket
 `project_identity._dedupe_bucket` by a cheap prefilter before pairwise
 `same_project()` comparison.
 
+**Standing coverage goal (2026-08-02): onboard commercial-permit sources for
+all top-500 US counties by population.** Reference:
+`docs/us_counties_by_population.md` -- real Census Bureau data (bulk CSV from
+`www2.census.gov`, no API key needed) for all 3,144 US counties, with a
+Corpus Coverage column; always check it before scoping a new batch, and
+regenerate it periodically as the corpus grows. Do not trust ad-hoc
+web-scraped or pasted "complete" county lists -- one such file looked
+authoritative but was fabricated past rank ~18 (recycled county names reused
+across every state with invented populations); spot-check any large ranked
+dataset against a known-authoritative source. Pacing: batches of 5 counties
+with review between each batch (cherry-pick worktree commits, resolve
+LFS-pointer conflicts by keeping real current data, re-run the pipeline
+fresh per source for real merged counts, report before the next 5) -- an
+open-ended, multi-session effort, not a single continuous run.
+
 **Looking for the current discovery/acquisition pipeline?** Skip to
 [Gemini-Assisted County/State Source Discovery](#gemini-assisted-countystate-source-discovery-implemented-2026-07-28)
 below — the 3-phase, 10-step loop is the live, actively-used process.
