@@ -3010,7 +3010,15 @@ CA_SANTACLARA_CONFIG: dict[str, Any] = {
         "\"FOLDERDESC\"='Commercial/Industrial' AND "
         "(\"FOLDERNUMBER\" LIKE '2025%' OR \"FOLDERNUMBER\" LIKE '2026%')"
     ),
-    "date_field": "ISSUEDATE",
+    # date_field deliberately set to "" (not omitted -- factory.py defaults a
+    # missing key to "date_entered"): CkanProvider appends the field unquoted
+    # to the SQL, and Postgres lowercases unquoted identifiers, so it fails to
+    # match the actual case-sensitive "ISSUEDATE" column (confirmed live:
+    # causes a psycopg2.errors.UndefinedColumn wrapped in a 409 by the CKAN
+    # API). Year scoping is already handled correctly via the FOLDERNUMBER
+    # LIKE filter above, so no date_field is needed for correctness; the
+    # provider now skips the date clause entirely when date_field is falsy.
+    "date_field": "",
     "lookback_days": 577,  # anchored to 2025-01-01 per Asif (recompute: (today - 2025-01-01).days)
     "feed_id": "ca-sanjose-santaclara",
     "id_field": "FOLDERNUMBER",

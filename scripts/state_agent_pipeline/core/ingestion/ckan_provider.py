@@ -78,7 +78,7 @@ class CkanProvider(BaseIngestionProvider):
         last = (last_watermark or "0").strip()
         if last.isdigit() and int(last) > 0:
             clauses.append(f"{self.watermark_field} > {last}")
-        else:
+        elif self.date_field:
             cutoff = (date.today() - timedelta(days=self.lookback_days)).isoformat()
             clauses.append(f"{self.date_field} >= '{cutoff}'")
         return " AND ".join(f"({c})" for c in clauses)
