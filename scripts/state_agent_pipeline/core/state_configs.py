@@ -1293,6 +1293,41 @@ MI_OAKLAND_TROY_CONFIG: dict[str, Any] = {
 # than trusting an unbounded date filter -- same "bad future timestamp"
 # trap as TX Collin County. Real 30-day count with the bound: 17 (close
 # to the ~21 estimate; small variance expected on a live dataset).
+# DuPage County (IL) -- county government itself does not run a bulk
+# permit feed (no Socrata/CKAN dataset found for dupageco.org, and its
+# GIS open-data hub at gisdata-dupage.opendata.arcgis.com has no permits
+# layer). Naperville (DuPage's largest city -- ~150K of the county's
+# ~930K residents, Wheaton/Downers Grove/Elmhurst have no comparable open
+# feed) publishes its own ArcGIS Hub "Building Permits" FeatureServer,
+# owner org Naperville_GIS -- verified live 2026-08-02: 34,571 total
+# rows, PERMITTYPE='COMMERCIAL' = 1,446 rows overall, 838 since
+# 2025-01-01. Sample row confirmed real commercial data (COMM-0150-2026,
+# "Interior Office- minor renovation... 5 new offices", $30,000,
+# 400 <street>, Naperville). Same "largest city stands in for county"
+# pattern as MI_OAKLAND_TROY_CONFIG (Troy for Oakland County).
+IL_DUPAGE_NAPERVILLE_CONFIG: dict[str, Any] = {
+    "state_code": "IL",
+    "provider_type": "arcgis",
+    "county": "DuPage",
+    "city": "Naperville",
+    "endpoint": "https://services1.arcgis.com/rXJ6QApc2sOtl1Pd/arcgis/rest/services/Building_Permits_View/FeatureServer",
+    "layer": 0,
+    "watermark_field": "OBJECTID",
+    "hash_fields": ["PERMITNUMBER"],
+    "commercial_where": "PERMITTYPE = 'COMMERCIAL'",
+    "out_fields": "PERMITNUMBER,PERMITWORKCLASS,DESCRIPTION,ISSUEDATE,PERMITSTATUS,STREETNUMBER,PREDIRECTION,STREETNAME,STREETTYPE,UNITORSUITE,CITY,STATE,POSTALCODE,PERMITVALUATION,SQUAREFEET,PERMITTYPE,APPLYDATE,TOWNSHIP",
+    "date_field": "ISSUEDATE",
+    # 2025-01-01 anchor per CLAUDE.md: (2026-08-02 - 2025-01-01).days
+    "lookback_days": 578,
+    "feed_id": "il-dupage-naperville",
+    "id_field": "PERMITNUMBER",
+    "name_fields": ["DESCRIPTION", "PERMITNUMBER"],
+    "address_fields": ["STREETNUMBER", "PREDIRECTION", "STREETNAME", "STREETTYPE", "UNITORSUITE", "CITY"],
+    "value_fields": ["PERMITVALUATION"],
+    "desc_fields": ["DESCRIPTION", "PERMITWORKCLASS", "TOWNSHIP"],
+    "source_url": "https://data.naperville.il.us/datasets/naperville::building-permits/about",
+}
+
 IL_COOK_CONFIG: dict[str, Any] = {
     "state_code": "IL",
     "provider_type": "socrata",
@@ -2457,6 +2492,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "MI-KENT": MI_KENT_CONFIG,
     "MI-OAKLAND": MI_OAKLAND_TROY_CONFIG,
     "IL-COOK": IL_COOK_CONFIG,
+    "IL-DUPAGE": IL_DUPAGE_NAPERVILLE_CONFIG,
     "NY-NYC": NY_NYC_CONFIG,
     "NY-KINGS": NY_KINGS_CONFIG,
     "NY-BRONX": NY_BRONX_CONFIG,
