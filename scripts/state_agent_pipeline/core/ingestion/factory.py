@@ -63,6 +63,7 @@ def build_provider(state_config: dict[str, Any]) -> BaseIngestionProvider:
             hash_fields_list=state_config.get("hash_fields"),
             commercial_where=state_config.get("commercial_where"),
             date_field=state_config.get("date_field", "date_entered"),
+            output_date_field=state_config.get("output_date_field"),
             lookback_days=state_config.get("lookback_days", 30),
             hard_limit=state_config.get("hard_limit", 0),
             feed_id=state_config.get("feed_id"),

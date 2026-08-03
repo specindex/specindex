@@ -34,6 +34,13 @@ class CkanProvider(BaseIngestionProvider):
         hash_fields_list: list[str] | None = None,
         commercial_where: str | None = None,
         date_field: str = "date_entered",
+        # Field to READ the project's date from when building output rows.
+        # Defaults to date_field. Exists so a config can suppress the
+        # server-side date FILTER (date_field="") -- e.g. San Jose's and
+        # Sacramento's CKAN endpoints reject the real column name in SQL
+        # because of case-sensitivity -- without also losing
+        # opened_or_announced_date on every row it emits.
+        output_date_field: str | None = None,
         lookback_days: int = 30,
         page_size: int = 2000,
         max_retries: int = 4,
@@ -55,6 +62,7 @@ class CkanProvider(BaseIngestionProvider):
         self.hash_fields_list = hash_fields_list
         self.commercial_where = commercial_where
         self.date_field = date_field
+        self.output_date_field = output_date_field or date_field or None
         self.lookback_days = lookback_days
         self.page_size = page_size
         self.max_retries = max_retries
@@ -145,7 +153,7 @@ class CkanProvider(BaseIngestionProvider):
             address_fields=self.address_fields,
             desc_fields=self.desc_fields,
             value_fields=self.value_fields,
-            date_field=self.date_field,
+            date_field=self.output_date_field,
             source_url=self.source_url or f"{self.base_url}/dataset/{self.resource_id}",
             city_fields=self.city_fields,
         )

@@ -3356,7 +3356,14 @@ CA_SANTACLARA_CONFIG: dict[str, Any] = {
     # LIKE filter above, so no date_field is needed for correctness; the
     # provider now skips the date clause entirely when date_field is falsy.
     "date_field": "",
-    "lookback_days": 577,  # anchored to 2025-01-01 per Asif (recompute: (today - 2025-01-01).days)
+    # ...but suppressing the FILTER must not also blank out every row's
+    # opened_or_announced_date (it did: 1,142 of 1,143 Santa Clara rows had
+    # a null date). output_date_field is read only when building output
+    # rows, never injected into SQL, so the case-sensitive column name is
+    # safe here. Verified live 2026-08-03: all 1,141 matching rows have a
+    # real ISSUEDATE ("3/8/2026 12:00:00 AM" style).
+    "output_date_field": "ISSUEDATE",
+    "lookback_days": 580,  # anchored to 2025-01-01 per Asif (recompute: (today - 2025-01-01).days)
     "feed_id": "ca-sanjose-santaclara",
     "id_field": "FOLDERNUMBER",
     "name_fields": ["WORKDESCRIPTION", "SUBTYPEDESCRIPTION", "FOLDERNAME"],

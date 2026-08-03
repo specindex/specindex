@@ -61,6 +61,11 @@ def _iso_date(raw: Any) -> str | None:
     if raw in (None, ""):
         return None
     s = str(raw).strip()
+    # Drop a trailing clock time ("4/10/2018 12:00:00 AM" -- San Jose's
+    # CKAN ISSUEDATE/FINALDATE). Without this the MM/DD/YYYY branch below
+    # fails to match and the value falls through to the first-10-chars
+    # fallback, emitting "4/10/2018 " as if it were an ISO date.
+    s = re.sub(r"[ T]\d{1,2}:\d{2}(:\d{2})?(\s*[AaPp]\.?[Mm]\.?)?$", "", s).strip()
     if re.match(r"^\d{4}-\d{2}-\d{2}", s):
         return s[:10]
     m = re.match(r"^(\d{1,2})/(\d{1,2})/(\d{4})$", s)
