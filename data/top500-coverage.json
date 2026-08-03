@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T22:59:13+00:00",
+  "generated_at": "2026-08-03T23:06:26+00:00",
   "window_start": "2025-01-01",
   "counties": [
     {
@@ -7,8 +7,8 @@
       "county": "Los Angeles",
       "state": "CA",
       "population": 9757179,
-      "projects": 10419,
-      "projects_in_window": 10411,
+      "projects": 11502,
+      "projects_in_window": 11494,
       "documents": 0,
       "status": "projects-only"
     },
@@ -157,7 +157,7 @@
       "county": "Bexar",
       "state": "TX",
       "population": 2127737,
-      "projects": 482,
+      "projects": 483,
       "projects_in_window": 482,
       "documents": 0,
       "status": "projects-only"
@@ -247,7 +247,7 @@
       "county": "Hillsborough",
       "state": "FL",
       "population": 1581426,
-      "projects": 79,
+      "projects": 456,
       "projects_in_window": 79,
       "documents": 0,
       "status": "projects-only"
@@ -387,7 +387,7 @@
       "county": "Salt Lake",
       "state": "UT",
       "population": 1216274,
-      "projects": 250,
+      "projects": 570,
       "projects_in_window": 250,
       "documents": 0,
       "status": "projects-only"
@@ -427,7 +427,7 @@
       "county": "Fulton",
       "state": "GA",
       "population": 1090354,
-      "projects": 708,
+      "projects": 815,
       "projects_in_window": 649,
       "documents": 2,
       "status": "covered"
@@ -447,7 +447,7 @@
       "county": "Pima",
       "state": "AZ",
       "population": 1080149,
-      "projects": 281,
+      "projects": 572,
       "projects_in_window": 281,
       "documents": 0,
       "status": "projects-only"
@@ -497,7 +497,7 @@
       "county": "Gwinnett",
       "state": "GA",
       "population": 1003869,
-      "projects": 22,
+      "projects": 53,
       "projects_in_window": 21,
       "documents": 0,
       "status": "projects-only"
@@ -517,7 +517,7 @@
       "county": "St. Louis",
       "state": "MO",
       "population": 992929,
-      "projects": 180,
+      "projects": 401,
       "projects_in_window": 180,
       "documents": 0,
       "status": "projects-only"
@@ -537,7 +537,7 @@
       "county": "Marion",
       "state": "IN",
       "population": 981628,
-      "projects": 282,
+      "projects": 865,
       "projects_in_window": 282,
       "documents": 149,
       "status": "covered"
@@ -567,7 +567,7 @@
       "county": "Pinellas",
       "state": "FL",
       "population": 965870,
-      "projects": 100,
+      "projects": 530,
       "projects_in_window": 100,
       "documents": 0,
       "status": "projects-only"
@@ -637,7 +637,7 @@
       "county": "Hidalgo",
       "state": "TX",
       "population": 914820,
-      "projects": 31,
+      "projects": 406,
       "projects_in_window": 31,
       "documents": 0,
       "status": "projects-only"
@@ -647,7 +647,7 @@
       "county": "Shelby",
       "state": "TN",
       "population": 910530,
-      "projects": 51,
+      "projects": 260,
       "projects_in_window": 51,
       "documents": 0,
       "status": "projects-only"
@@ -707,7 +707,7 @@
       "county": "El Paso",
       "state": "TX",
       "population": 875784,
-      "projects": 63,
+      "projects": 65,
       "projects_in_window": 63,
       "documents": 0,
       "status": "projects-only"
@@ -737,7 +737,7 @@
       "county": "Polk",
       "state": "FL",
       "population": 852878,
-      "projects": 82,
+      "projects": 413,
       "projects_in_window": 82,
       "documents": 0,
       "status": "projects-only"
@@ -867,7 +867,7 @@
       "county": "El Paso",
       "state": "CO",
       "population": 752772,
-      "projects": 101,
+      "projects": 104,
       "projects_in_window": 101,
       "documents": 0,
       "status": "projects-only"
@@ -1027,7 +1027,7 @@
       "county": "Kent",
       "state": "MI",
       "population": 673002,
-      "projects": 28,
+      "projects": 132,
       "projects_in_window": 28,
       "documents": 0,
       "status": "projects-only"
@@ -1037,7 +1037,7 @@
       "county": "Bernalillo",
       "state": "NM",
       "population": 671747,
-      "projects": 82,
+      "projects": 286,
       "projects_in_window": 82,
       "documents": 0,
       "status": "projects-only"
@@ -1167,7 +1167,7 @@
       "county": "Douglas",
       "state": "NE",
       "population": 601158,
-      "projects": 111,
+      "projects": 441,
       "projects_in_window": 111,
       "documents": 0,
       "status": "projects-only"
@@ -1357,7 +1357,7 @@
       "county": "Montgomery",
       "state": "OH",
       "population": 537443,
-      "projects": 109,
+      "projects": 530,
       "projects_in_window": 109,
       "documents": 0,
       "status": "projects-only"
@@ -1607,7 +1607,7 @@
       "county": "Manatee",
       "state": "FL",
       "population": 458352,
-      "projects": 239,
+      "projects": 246,
       "projects_in_window": 239,
       "documents": 0,
       "status": "projects-only"
@@ -2007,10 +2007,10 @@
       "county": "Hamilton",
       "state": "IN",
       "population": 379704,
-      "projects": 0,
-      "projects_in_window": 0,
+      "projects": 355,
+      "projects_in_window": 355,
       "documents": 0,
-      "status": "none"
+      "status": "projects-only"
     },
     {
       "rank": 202,
@@ -2087,10 +2087,10 @@
       "county": "Spartanburg",
       "state": "SC",
       "population": 369256,
-      "projects": 0,
-      "projects_in_window": 0,
+      "projects": 498,
+      "projects_in_window": 498,
       "documents": 0,
-      "status": "none"
+      "status": "projects-only"
     },
     {
       "rank": 210,
@@ -5006,9 +5006,9 @@
   "summary": {
     "total": 500,
     "covered": 29,
-    "projects_only": 175,
-    "none": 296,
-    "total_projects_in_window": 446546,
+    "projects_only": 177,
+    "none": 294,
+    "total_projects_in_window": 448482,
     "total_documents": 1494
   }
 }
