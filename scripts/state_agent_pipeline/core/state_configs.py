@@ -339,6 +339,80 @@ CA_CARSON_ENERGOV_CONFIG: dict[str, Any] = {
     "max_pages": 5,
 }
 
+# Ventura County, CA (rank 77 by population, no coverage before this).
+# Researched live 2026-08-03. The county's own portal is a dead end for an
+# anonymous puller: Ventura County RMA runs self-hosted Accela Citizen
+# Access at vcca.venturacounty.gov/citizenaccess, but EVERY module
+# (Building/Planning/Fire/EnvHealth/Enforcement/PublicWorks) and even
+# APO/APOLookup.aspx 302 straight to Login.aspx -- "This feature requires
+# registration and/or login". Same for the county GIS (gis.ventura.org,
+# maps.ventura.org): the only "Permitting" FeatureServer there carries
+# Communication Facilities / Mining Permits / Oil Permits, no building
+# permits. Oxnard's Socrata dataset (data.oxnard.org vmzx-48vx "Building
+# Permits") still appears in Socrata's discovery catalog but the domain now
+# 301s every /resource/ and /api/ path to oxnardca.opengov.com/data
+# (budget-only OpenGov), so its SODA API is gone; last data_updated_at was
+# 2024-12-03 anyway, entirely outside the 2025-01-01 window.
+#
+# What IS live and open is the City of Ventura's own ArcGIS Server, which
+# publishes its production EnerGov land-management database directly:
+# CityShift/EnerGovEnt/MapServer/0 ("Permits"). Verified live 2026-08-03 --
+# 51,066 rows total, 9,277 issued on/after 2025-01-01, MAX(ISSUEDDATE)
+# 3 days before verification, so this tracks the live system rather than
+# being a frozen export. (The sibling CityShift/permits/MapServer/0 layer
+# has the same shape but stopped updating in 2024 -- only ONE row with
+# ISSUEDDATE >= 20240101 -- do not use it.)
+#
+# Two real quirks, both handled by config rather than a one-off script:
+#   * This is an old ArcGIS Server: advancedQueryCapabilities reports
+#     supportsPagination=false AND supportsOrderBy=false, and the server
+#     hard-errors ("Pagination is not supported.") on any request carrying
+#     resultOffset/resultRecordCount. Hence supports_pagination=False --
+#     maxRecordCount is 50000, comfortably above the whole commercial
+#     window, so a single unpaginated query returns everything.
+#   * ISSUEDDATE/APPLYDATE are esriFieldTypeInteger in YYYYMMDD form, with
+#     29990101 used as the "not yet issued" sentinel -- so the commercial
+#     filter carries an explicit `ISSUEDDATE < 29990101` guard, otherwise
+#     every unissued application matches any `>= 2025xxxx` lookback.
+# Commercial split is PTYPENAME ('BLD - Building Commercial Permit: PLCK/
+# OTC', 'BLD - Mixed Com/Res Permit', 'BLD - Building Commercial Parklet
+# Permit', 'BLD - Sign Permit') plus PWORKCNAME='Commercial', which picks
+# up commercial PEM (plumbing/electrical/mechanical) combo and demolition
+# permits on commercial buildings. 649 rows match since 2025-01-01.
+CA_VENTURA_CONFIG: dict[str, Any] = {
+    "state_code": "CA",
+    "provider_type": "arcgis",
+    "county": "Ventura",
+    "endpoint": "https://map.cityofventura.net/arcgis/rest/services/CityShift/EnerGovEnt/MapServer",
+    "layer": 0,
+    # This layer's OID field is FID, not the Esri-default OBJECTID.
+    "watermark_field": "FID",
+    "hash_fields": ["PERMITNUM"],
+    "supports_pagination": False,
+    "include_geometry": False,
+    "commercial_where": (
+        "(PTYPENAME LIKE '%Commercial%' OR PTYPENAME LIKE '%Mixed Com/Res%' "
+        "OR PTYPENAME LIKE '%Sign Permit%' OR PWORKCNAME LIKE '%Commercial%') "
+        "AND ISSUEDDATE < 29990101"
+    ),
+    "out_fields": (
+        "FID,PERMITID,PERMITNUM,PLANCASE,PTYPENAME,PWORKCNAME,PSTATDESC,"
+        "ISSUEDDATE,APPLYDATE,ESTIMVALUE,SQUAREFEET,PADDRFULL,PARCELNUM,DESCWORK"
+    ),
+    "date_field": "ISSUEDDATE",
+    "date_literal_style": "yyyymmdd_int",
+    # Standing pull window: fixed 2025-01-01 anchor (see CLAUDE.md),
+    # recomputed for 2026-08-03.
+    "lookback_days": 579,
+    "feed_id": "ca-ventura-cityofventura-energov",
+    "id_field": "PERMITNUM",
+    "name_fields": ["DESCWORK", "PERMITNUM"],
+    "address_fields": ["PADDRFULL"],
+    "value_fields": ["ESTIMVALUE"],
+    "desc_fields": ["DESCWORK", "PTYPENAME", "PWORKCNAME", "PSTATDESC"],
+    "source_url": "https://map.cityofventura.net/arcgis/rest/services/CityShift/EnerGovEnt/MapServer/0",
+}
+
 # City of Pomona -- the genuinely self-hosted EnerGov tenant (own domain
 # connect.pomonaca.gov, not tylerhost.net; path also differs:
 # energov_prod/selfservice, lowercase/underscore -- confirmed live via
@@ -2527,6 +2601,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "CA-GLENDALE": CA_GLENDALE_ENERGOV_CONFIG,
     "CA-ALHAMBRA": CA_ALHAMBRA_ENERGOV_CONFIG,
     "CA-CARSON": CA_CARSON_ENERGOV_CONFIG,
+    "CA-VENTURA": CA_VENTURA_CONFIG,
     # "CA-POMONA" intentionally not registered yet -- see
     # _CA_POMONA_ENERGOV_CONFIG comment above.
     "AZ-MARICOPACOUNTY": AZ_MARICOPACOUNTY_CONFIG,

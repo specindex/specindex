@@ -93,6 +93,7 @@ def build_provider(state_config: dict[str, Any]) -> BaseIngestionProvider:
             commercial_where=state_config.get("commercial_where"),
             watermark_field=state_config.get("watermark_field", "OBJECTID"),
             hash_fields_list=state_config.get("hash_fields"),
+            supports_pagination=state_config.get("supports_pagination", True),
             include_geometry=state_config.get("include_geometry", True),
             date_field=state_config.get("date_field"),
             date_field_is_string=state_config.get("date_field_is_string", False),

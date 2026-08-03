@@ -114,7 +114,22 @@ def field_mapped_to_projects(
             value = _money(row.get(vf))
             if value is not None:
                 break
-        date_val = _iso_date(row.get(date_field)) if date_field else None
+        date_val = None
+        if date_field:
+            raw_date = row.get(date_field)
+            if raw_date:
+                # Layers using date_literal_style="yyyymmdd_int" (SC
+                # Greenville's APPLICDATE, City of Ventura's ISSUEDDATE)
+                # store dates as a bare 20260727-style number -- emit real
+                # ISO instead of the raw digits. Everything else goes
+                # through _iso_date, which also handles MM/DD/YYYY strings
+                # and Esri epoch-millisecond ints (Snohomish WA).
+                m = re.fullmatch(r"(\d{4})(\d{2})(\d{2})(?:\.0+)?", str(raw_date))
+                date_val = (
+                    f"{m.group(1)}-{m.group(2)}-{m.group(3)}"
+                    if m
+                    else _iso_date(raw_date)
+                )
         city = ""
         for cf in city_fields or []:
             if row.get(cf):

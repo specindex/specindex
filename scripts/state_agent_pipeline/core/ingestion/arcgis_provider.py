@@ -38,6 +38,7 @@ class ArcGISProvider(BaseIngestionProvider):
         watermark_field: str = "OBJECTID",
         hash_fields_list: list[str] | None = None,
         page_size: int = 1000,
+        supports_pagination: bool = True,
         max_retries: int = 4,
         include_geometry: bool = True,
         date_field: str | None = None,
@@ -77,6 +78,16 @@ class ArcGISProvider(BaseIngestionProvider):
         self.watermark_field = watermark_field
         self.hash_fields_list = hash_fields_list
         self.page_size = page_size
+        # Older ArcGIS Server instances (10.x, MapServer-backed) report
+        # advancedQueryCapabilities.supportsPagination=false and hard-error
+        # ("Pagination is not supported.") on ANY request carrying
+        # resultOffset/resultRecordCount -- confirmed live 2026-08-03
+        # against City of Ventura's map.cityofventura.net CityShift/
+        # EnerGovEnt MapServer, which also has supportsOrderBy=false.
+        # Those layers still return the full result set in one response
+        # (maxRecordCount 50000 there), so the correct behavior is a
+        # single unpaginated query rather than a paginated loop.
+        self.supports_pagination = supports_pagination
         self.max_retries = max_retries
         self.include_geometry = include_geometry
         # Unlike Socrata's recordid (small monotonic ids on incremental
@@ -142,10 +153,11 @@ class ArcGISProvider(BaseIngestionProvider):
             "where": where,
             "outFields": self.out_fields,
             "f": "json",
-            "resultOffset": str(offset),
-            "resultRecordCount": str(self.page_size),
-            "orderByFields": f"{self.watermark_field} ASC",
         }
+        if self.supports_pagination:
+            params["resultOffset"] = str(offset)
+            params["resultRecordCount"] = str(self.page_size)
+            params["orderByFields"] = f"{self.watermark_field} ASC"
         if self.include_geometry:
             params["returnGeometry"] = "true"
             params["outSR"] = "4326"
@@ -185,6 +197,8 @@ class ArcGISProvider(BaseIngestionProvider):
                 out.append(attrs)
             if self.hard_limit and len(out) >= self.hard_limit:
                 out = out[: self.hard_limit]
+                break
+            if not self.supports_pagination:
                 break
             if len(feats) < self.page_size or not data.get("exceededTransferLimit"):
                 break
