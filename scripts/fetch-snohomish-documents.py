@@ -273,15 +273,19 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument(
         "--workers",
         type=int,
-        default=8,
+        default=3,
         help=(
-            "projects processed concurrently (default 8). Each worker owns one "
-            "project end-to-end: search, download, upload. Serial throughput was "
-            "150-250s PER DOCUMENT -- almost all of it waiting on a 10-15 MB "
-            "download and the GCS upload, i.e. idle network, not CPU or server "
-            "load. One county would have taken 100+ hours. The per-request "
-            "--sleep still applies inside each worker, so politeness per "
-            "connection is unchanged; concurrency is across projects."
+            "projects processed concurrently (default 3). Each worker owns one "
+            "project end-to-end: search, download, upload. "
+            "MEASURED 2026-08-03 -- do not raise this blindly: the bottleneck "
+            "here is UPLINK BANDWIDTH, not concurrency. At --workers 8 the "
+            "uplink saturated and the run produced 0 uploads plus 'No route to "
+            "host' (OSError 65) connection failures in 4 minutes. At "
+            "--workers 3: 8 uploads in 3.3 minutes, zero connection errors, "
+            "transfers healthy at 7-13 MB in 16-46s. Parallelism genuinely "
+            "helps the SEARCH phase (small SOAP round-trips) but hurts the "
+            "TRANSFER phase once bandwidth is the constraint. Raise only if "
+            "running somewhere with a fatter uplink, and watch for OSError 65."
         ),
     )
     ap.add_argument("--max-consecutive-errors", type=int, default=8, help="stop early if the server starts failing")
