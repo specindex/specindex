@@ -96,19 +96,25 @@ def live_count(cfg: dict) -> tuple[int | None, str]:
         return None, f"{type(e).__name__}: {str(e)[:50]}"
 
 
-def watermark_for(cfg: dict) -> str | None:
-    feed = cfg.get("feed_id")
-    if not feed:
-        return None
-    d = ROOT / "data" / "pipeline" / feed
-    if not d.is_dir():
-        return "0 (no state dir)"
-    for f in d.glob("state-*.json"):
-        try:
-            return str(json.loads(f.read_text()).get("last_processed_id"))
-        except Exception:  # noqa: BLE001
-            return "unreadable"
-    return "0 (no state file)"
+def watermark_for(cfg: dict, key: str | None = None) -> str | None:
+    """Read last_processed_id for a config.
+
+    Watermarks live in data/pipeline/nj-dca/state-{lowercased-config-key}.json
+    -- NOT under data/pipeline/{feed_id}/, which is what this originally
+    guessed. That mistake made every config report "0 (no state dir)" and led
+    to the wrong conclusion that no watermarks were stale. In fact OH-FRANKLIN
+    sat at 676269, NC-WAKE at 284309, TX-ECTOR at 18328915 -- and a non-zero
+    watermark makes --lookback-days a complete no-op, so the historical window
+    is never fetched no matter how large the gap.
+    """
+    if key:
+        f = ROOT / "data" / "pipeline" / "nj-dca" / f"state-{key.lower()}.json"
+        if f.is_file():
+            try:
+                return str(json.loads(f.read_text()).get("last_processed_id"))
+            except Exception:  # noqa: BLE001
+                return "unreadable"
+    return "0 (none found)"
 
 
 def corpus_counts() -> dict[tuple[str, str], tuple[int, int]]:
@@ -127,9 +133,20 @@ def corpus_counts() -> dict[tuple[str, str], tuple[int, int]]:
     return {k: (v[0], v[1]) for k, v in out.items()}
 
 
-def diagnose(live: int | None, total: int, in_window: int, wm: str | None) -> str:
+def diagnose(live: int | None, total: int, in_window: int, wm: str | None,
+             windowed: bool = True, county: str | None = None) -> str:
     if live is None:
         return "manual-check"
+    # A config with no date_field yields an ALL-TIME live count, which then gets
+    # compared against an in-window corpus count -- a guaranteed phantom gap.
+    # NJ reported 194,801 vs 0 this way; its real in-window count is 39,322
+    # against 42,537 held, i.e. complete. Don't verdict those.
+    if not windowed:
+        return "no-date-field"
+    # A config with no `county` can't be matched against the corpus county
+    # index at all, so corpus counts read 0 regardless of reality.
+    if not county:
+        return "no-county-on-config"
     if in_window == 0 and total > 50:
         return "STALE-WATERMARK/DATE-BUG"
     if live > 0 and in_window < live * 0.5:
@@ -167,11 +184,15 @@ def main(argv: list[str] | None = None) -> int:
             county = (cfg.get("county") or "").strip().lower()
             st = (cfg.get("state_code") or "").strip().upper()
             total, in_win = cc.get((county, st), (0, 0))
-            wm = watermark_for(cfg)
+            wm = watermark_for(cfg, k)
             results.append({
                 "key": k, "county": cfg.get("county"), "state": st,
                 "live_since_2025": live, "corpus_total": total, "corpus_in_window": in_win,
-                "watermark": wm, "verdict": diagnose(live, total, in_win, wm), "note": note,
+                "watermark": wm,
+                "verdict": diagnose(live, total, in_win, wm,
+                                    windowed=bool(cfg.get("date_field")),
+                                    county=cfg.get("county")),
+                "note": note,
             })
 
     # Several configs can legitimately share one county (four LA-area city
@@ -187,10 +208,14 @@ def main(argv: list[str] | None = None) -> int:
         k2 = ((r["county"] or "").lower(), r["state"])
         if k2 in agg:
             r["live_county_total"] = agg[k2]
-            r["verdict"] = diagnose(agg[k2], r["corpus_total"], r["corpus_in_window"], r["watermark"])
+            cfg2 = STATE_CONFIGS[r["key"]]
+            r["verdict"] = diagnose(agg[k2], r["corpus_total"], r["corpus_in_window"],
+                                    r["watermark"], windowed=bool(cfg2.get("date_field")),
+                                    county=cfg2.get("county"))
 
     order = {"STALE-WATERMARK/DATE-BUG": 0, "TRUNCATED": 1, "OVER-COUNT/MISLABEL": 2,
-             "review": 3, "manual-check": 4, "complete": 5}
+             "review": 3, "no-date-field": 4, "no-county-on-config": 5,
+             "manual-check": 6, "complete": 7}
     results.sort(key=lambda r: (order.get(r["verdict"], 9), -(r["live_since_2025"] or 0)))
 
     print(f"{'config':<26}{'county':<18}{'live':>9}{'corpus':>9}{'gap':>9}  verdict")
@@ -207,7 +232,12 @@ def main(argv: list[str] | None = None) -> int:
     total_gap = 0
     for r in results:
         tally[r["verdict"]] = tally.get(r["verdict"], 0) + 1
-        if r["live_since_2025"] is not None:
+        # Only count gaps we actually believe: no-date-field / no-county-on-config
+        # rows compare an all-time or unmatchable live count against an in-window
+        # corpus count, so their "gap" is meaningless (NJ inflated this by 194,801).
+        if r["live_since_2025"] is not None and r["verdict"] not in (
+            "no-date-field", "no-county-on-config", "manual-check"
+        ):
             total_gap += max(0, r["live_since_2025"] - r["corpus_in_window"])
     print("\nverdicts:", ", ".join(f"{k}={v}" for k, v in sorted(tally.items())))
     print(f"total recoverable gap (live - corpus, in-window): {total_gap:,} projects")
