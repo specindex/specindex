@@ -149,7 +149,17 @@ def _paddle():
     if _PADDLE_OCR is None:
         from paddleocr import PaddleOCR  # noqa: PLC0415
 
-        _PADDLE_OCR = PaddleOCR(use_angle_cls=True, lang="en", show_log=False)
+        # PaddleOCR 3.x dropped both `show_log` and `use_angle_cls`, and it
+        # raises "Unknown argument" rather than ignoring them -- which made
+        # EVERY page fail tier 2 and escalate, silently disabling the whole
+        # PaddleOCR tier while looking like it was installed and working
+        # (confirmed live 2026-08-03: "[paddle] page N failed, escalating:
+        # Unknown argument: show_log" on all 309 pages of one document).
+        # Try the modern signature first, then fall back to the 2.x one.
+        try:
+            _PADDLE_OCR = PaddleOCR(lang="en")
+        except (TypeError, ValueError):
+            _PADDLE_OCR = PaddleOCR(use_angle_cls=True, lang="en", show_log=False)
     return _PADDLE_OCR
 
 
@@ -212,9 +222,20 @@ def extract_document(fitz_module, client, processor_name: str, pdf_bytes: bytes)
             except Exception as e:  # noqa: BLE001 - never let OCR kill a run
                 print(f"    [paddle] page {page_number} failed, escalating: {e}", file=sys.stderr)
 
-        # Tier 3: Document AI. Render this single page to its own one-page PDF
-        # -- keeps every call well under any per-request page cap regardless of
-        # how large the source document is.
+        # Tier 3: Document AI. Skipped entirely when it isn't configured, so a
+        # run can still measure tiers 1+2 (see the lazy resolution in main()).
+        # Recorded explicitly rather than dropped, so these pages can be found
+        # and re-run once a processor id is set -- silently omitting them would
+        # make the document look fully extracted when it is not.
+        if client is None or not processor_name:
+            pages_out.append(
+                {"page_number": page_number, "raw_text": "",
+                 "ocr_engine": "skipped_no_docai", "avg_confidence": None}
+            )
+            continue
+
+        # Render this single page to its own one-page PDF -- keeps every call
+        # well under any per-request page cap regardless of source size.
         single_page_doc = fitz_module.open()
         single_page_doc.insert_pdf(doc, from_page=i, to_page=i)
         page_pdf_bytes = single_page_doc.tobytes()
@@ -261,12 +282,31 @@ def main() -> int:
     client = None
     processor_name = None
     if not args.dry_run:
-        from google.cloud import documentai_v1 as documentai
+        # Document AI is TIER 3 of a three-tier cascade (native PyMuPDF text ->
+        # PaddleOCR -> Document AI), so requiring its processor id up front is
+        # wrong: a run whose pages all carry a native text layer never calls it
+        # at all. Insisting on it eagerly blocked the very measurement the
+        # cascade was built to inform -- the native-text hit rate, which decides
+        # whether the PaddleOCR tier earns its keep.
+        #
+        # Resolve it lazily instead: missing config becomes a per-page failure
+        # at the point of escalation, not a refusal to start.
+        try:
+            from google.cloud import documentai_v1 as documentai
 
-        client = documentai.DocumentProcessorServiceClient(
-            client_options={"api_endpoint": f"{DOCUMENT_AI_LOCATION}-documentai.googleapis.com"}
-        )
-        processor_name = _doc_ai_processor_name()
+            client = documentai.DocumentProcessorServiceClient(
+                client_options={"api_endpoint": f"{DOCUMENT_AI_LOCATION}-documentai.googleapis.com"}
+            )
+            processor_name = _doc_ai_processor_name()
+        except SystemExit:
+            print(
+                "DOCUMENT_AI_PROCESSOR_ID not set -- running tiers 1+2 only "
+                "(native text, then PaddleOCR). Pages that would escalate to "
+                "Document AI will be recorded as unextracted.",
+                file=sys.stderr,
+            )
+            client = None
+            processor_name = None
 
     conn = psycopg2.connect(args.database_url)
     try:
