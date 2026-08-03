@@ -2688,7 +2688,15 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NC-BUNCOMBE": NC_BUNCOMBE_CONFIG,
     "NC-CABARRUS": NC_CABARRUS_CONFIG,
     "VA-FAIRFAX": VA_FAIRFAX_CONFIG,
-    "TX-WILLIAMSON-PERMITS": TX_WILLIAMSON_PERMITS_CONFIG,
+    # TX-WILLIAMSON-PERMITS removed 2026-08-03: it pointed at the SAME
+    # endpoint/layer/filter as TX-MIDLAND (services.arcgis.com/0H6bQdxd.../
+    # Permits/FeatureServer/0) with no geographic discriminator, so it
+    # pulled Midland's feed and stamped every row "Williamson". The service
+    # description says so outright: "permit requests/applications across all
+    # of Midland, Texas". Confirmed by tracing corpus row
+    # tx-williamson-com26-000002815 back to PermitNumber COM26-000002815 in
+    # the Midland service. 110 corpus rows were relabelled to Midland.
+    # Williamson County's real source is TX-WILLIAMSON (a different host).
     "VA-ARLINGTON": VA_ARLINGTON_CONFIG,
     "PA-PHILADELPHIA": PA_PHILADELPHIA_CONFIG,
     "PA-PITTSBURGH": PA_PITTSBURGH_CONFIG,
