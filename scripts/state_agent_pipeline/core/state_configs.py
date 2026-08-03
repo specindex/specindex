@@ -1511,7 +1511,15 @@ NY_NYC_CONFIG: dict[str, Any] = {
     "endpoint": "https://data.cityofnewyork.us/resource/w9ak-ipjd.json",
     "watermark_field": "job_filing_number",
     "hash_fields": ["job_filing_number"],
-    "commercial_where": "building_type='Other'",
+    # 2026-08-03: was bare "building_type='Other'" -- i.e. CITYWIDE, with
+    # no borough filter, while county is hardcoded "New York". Since
+    # generic_mapping takes county as a fixed per-config parameter (not
+    # per-row from `borough`), every Brooklyn/Queens/Bronx/Staten Island
+    # filing this config pulled was written into the corpus labelled
+    # New York County (Manhattan). The NY-KINGS/NY-BRONX/NY-RICHMOND
+    # sibling configs added 2026-07-31 all correctly scope by borough;
+    # this one was simply never narrowed when they were split out.
+    "commercial_where": "building_type='Other' AND borough='Manhattan'",
     "date_field": "filing_date",
     "lookback_days": 180,
     "feed_id": "ny-nycdob",
@@ -3179,6 +3187,46 @@ WA_SNOHOMISH_REVIEW_CONFIG: dict[str, Any] = {
 }
 STATE_CONFIGS["WA-SNOHOMISH"] = WA_SNOHOMISH_CONFIG
 STATE_CONFIGS["WA-SNOHOMISH-REVIEW"] = WA_SNOHOMISH_REVIEW_CONFIG
+
+# City of Orlando (Orange County, FL) -- wired 2026-08-03 during the
+# rank-21-30 completeness audit. Orange County had exactly ONE project in
+# the whole corpus despite being a top-30 county: no structured source had
+# ever been wired, only a stray web-research row.
+#
+# Orange County's own portal (Fast Track, fasttrack.ocfl.net) is a session
+# -based ASP app with no open API; the county GIS hub (ocgis-datahub-ocfl)
+# publishes parcels, not permits. The City of Orlando's Socrata portal is
+# the real structured channel for the metro and is excellent -- it carries
+# project_name, estimated_cost, contractor, and square_footage as first-
+# class columns, which most permit feeds do not.
+#
+# Commercial split: `worktype` is NOT the right filter here -- live-checked
+# 2026-08-03, worktype='Comm' AND application_type='Building Permit'
+# returns 0 rows (worktype carries trade/scope codes like New/Alteration/
+# Roof, and 'Comm' only ever co-occurs with the trade application types).
+# The real commercial flag is `plan_review_type`, whose live distribution
+# since 2025-01-01 is Residential 1/2=33,608, Commercial=17,844,
+# Residential 3 or more=5,400, No Plan Review Type=490.
+FL_ORLANDO_CONFIG: dict[str, Any] = {
+    "state_code": "FL",
+    "provider_type": "socrata",
+    "county": "Orange",
+    "endpoint": "https://data.cityoforlando.net/resource/ryhf-m453.json",
+    "watermark_field": "permit_number",
+    "hash_fields": ["permit_number"],
+    "commercial_where": "plan_review_type='Commercial'",
+    "date_field": "processed_date",
+    "lookback_days": 30,
+    "feed_id": "fl-orlando",
+    "id_field": "permit_number",
+    "name_fields": ["project_name", "permit_address", "permit_number"],
+    "address_fields": ["permit_address"],
+    "value_fields": ["estimated_cost"],
+    "desc_fields": ["worktype", "application_type", "application_status"],
+    "default_city": "Orlando",
+    "source_url": "https://data.cityoforlando.net/d/ryhf-m453",
+}
+STATE_CONFIGS["FL-ORLANDO"] = FL_ORLANDO_CONFIG
 
 # SAM.gov + USAspending for all 50 states (2026-07-28, Asif: "pull all
 # data from USAspending and sam.gov"). Both providers are already

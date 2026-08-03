@@ -107,7 +107,15 @@ class SocrataProvider(BaseIngestionProvider):
                 req = urllib.request.Request(url, headers=headers)
                 with urllib.request.urlopen(req, timeout=60) as resp:
                     return json.loads(resp.read().decode("utf-8"))
-            except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError, json.JSONDecodeError) as e:
+            # OSError covers ConnectionResetError/BrokenPipeError, which
+            # Socrata throws mid-body on long backfills (a 579-day
+            # Manhattan pull, ~86k rows / 44 pages, died on page ~30 with
+            # "[Errno 54] Connection reset by peer" on 2026-08-03). Those
+            # are NOT URLErrors -- they surface from resp.read() after the
+            # response headers are already in -- so the old tuple let a
+            # purely transient reset abort an entire multi-page backfill
+            # with zero rows merged, despite retry logic being right here.
+            except (urllib.error.HTTPError, urllib.error.URLError, OSError, json.JSONDecodeError) as e:
                 last_err = e
                 wait = min(60, (2**attempt) * 2)
                 print(f"[socrata:{self.dataset}] retry {attempt + 1}/{self.max_retries}: {e}; sleep {wait}s", file=sys.stderr)
