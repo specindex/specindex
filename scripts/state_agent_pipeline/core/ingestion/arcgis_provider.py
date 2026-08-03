@@ -96,6 +96,15 @@ class ArcGISProvider(BaseIngestionProvider):
         # FeatureServer) reject the standard `DATE '...'` literal with a
         # "Missing operand" error and require `TIMESTAMP '... 00:00:00'`
         # instead -- verified by direct query against both variants.
+        #
+        # date_literal_style="none" means "this layer has a usable date
+        # column for *mapping* but it can't be filtered on server-side"
+        # -- e.g. Snohomish County's PDS layers store IssueDate as an
+        # esriFieldTypeString in MM/DD/YYYY, where every literal style
+        # (and plain string comparison) silently returns zero rows. Those
+        # layers are small live snapshots (hundreds of rows), so the
+        # correct behavior is to pull the whole commercial-filtered layer
+        # and let the date field flow through to to_projects() only.
         self.date_literal_style = date_literal_style
         self.lookback_days = lookback_days
         self.hard_limit = hard_limit
@@ -105,7 +114,7 @@ class ArcGISProvider(BaseIngestionProvider):
         last = (last_watermark or "0").strip()
         if last.isdigit() and int(last) > 0:
             clauses.append(f"{self.watermark_field} > {last}")
-        elif self.date_field:
+        elif self.date_field and self.date_literal_style != "none":
             import datetime as _dt
 
             cutoff = (_dt.date.today() - _dt.timedelta(days=self.lookback_days)).isoformat()

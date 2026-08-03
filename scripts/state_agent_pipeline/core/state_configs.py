@@ -2977,6 +2977,83 @@ MD_PRINCEGEORGES_CONFIG: dict[str, Any] = {
 }
 STATE_CONFIGS["MD-PRINCEGEORGES"] = MD_PRINCEGEORGES_CONFIG
 
+# Snohomish County, WA (Everett/Lynnwood/Marysville, Seattle metro; rank
+# 72 by population) -- Snohomish County Planning & Development Services
+# publishes its live AMANDA permit tables as ArcGIS FeatureServers under
+# the county's SCDLCS AGOL org. Verified live 2026-08-02:
+#   Building_Permits_Under_Construction/0 -> 2,576 rows, 348 foldertype='CBP'
+#   Building_Applications_Under_Review/0  ->   893 rows, 215 foldertype='CBP'
+# foldertype is the commercial/residential discriminator: CBP = Commercial
+# Building Permit, RBP = Residential (other values: SIGN, DEMO, ROOF,
+# KM/KP mechanical-plumbing, EVNT). PFN ("25 103203 CBP") is the county's
+# real permit file number and is the join key into the PDS document
+# repository (see source_url note below).
+#
+# Two caveats, both verified rather than assumed:
+#  1. There is NO valuation field on either layer -- Snohomish PDS does not
+#     publish job cost via GIS. value_fields is intentionally empty.
+#  2. InDate/IssueDate are esriFieldTypeString in MM/DD/YYYY, so no
+#     server-side date filter works (DATE/TIMESTAMP literals 400, and a
+#     plain string compare against an ISO cutoff returns zero rows because
+#     '04/07/2025' < '2025-01-01' lexically). Hence date_literal_style
+#     "none": pull the whole commercial-filtered layer (a few hundred rows,
+#     these are live snapshots of in-flight work, not a historical archive)
+#     and use the date for mapping only. lookback_days is still recorded
+#     for the standing 2025-01-01 anchor policy.
+#
+# DOCUMENT PATH (verified end-to-end 2026-08-02): PDS Online Records at
+# https://snoco.org/pdspublicrecords/ is an OpenText Content Server
+# repository fronted by an unauthenticated SOAP proxy at
+# https://snoco.org/pdspublicrecords/otws/otlinkerws.asmx.
+#   search:   GetData(hostUrl="recordsportal/search/100/2847417/<OT query>")
+#             where the permit-number attribute is Attr_296923_2, so
+#             'Attr_296923_2 : "25 103203 CBP"' returns that permit's
+#             document set (18 docs for that PFN: Approved Building Plan
+#             Set, Architectural Plan, Civil Plan, Geotechnical Report,
+#             Structural Calcs, Project Narrative, Fire Approval Letter...).
+#   download: SaveFile(hostUrl="recordsportal/getnode/<objectId>",
+#             docType="application%20pdf", fileName=<lowercased name>)
+#             then GET https://snoco.org/pdspublicrecords/tDocs/<lowercased
+#             name> -- confirmed by pulling a 17.8 MB approved plan-set PDF.
+SNOHOMISH_PDS_FIELDS = (
+    "PFN,folderrsn,foldertype,Sub,Work_,foldername,Status,InDate,IssueDate,"
+    "Expiry,Kind_of_Building,Site_Address1,Site_Address2,PARCEL_ID,OBJECTID"
+)
+WA_SNOHOMISH_CONFIG: dict[str, Any] = {
+    "state_code": "WA",
+    "provider_type": "arcgis",
+    "county": "Snohomish",
+    "endpoint": "https://services6.arcgis.com/z6WYi9VRHfgwgtyW/arcgis/rest/services/Building_Permits_Under_Construction/FeatureServer",
+    "layer": 0,
+    "watermark_field": "OBJECTID",
+    "hash_fields": ["PFN"],
+    "commercial_where": "foldertype='CBP'",
+    "out_fields": SNOHOMISH_PDS_FIELDS,
+    "date_field": "IssueDate",
+    "date_literal_style": "none",
+    "lookback_days": 578,  # (date.today() - date(2025,1,1)).days as of 2026-08-02
+    "feed_id": "wa-snohomish-pds",
+    "id_field": "PFN",
+    "name_fields": ["foldername", "Site_Address1", "PFN"],
+    "address_fields": ["Site_Address1"],
+    "value_fields": [],
+    "desc_fields": ["Sub", "Work_", "Kind_of_Building", "Status"],
+    "city_fields": ["Site_Address2"],
+    "source_url": "https://snoco.org/pdspublicrecords/",
+}
+# Same layer family, earlier stage: applications still in review. Highest
+# value for SpecIndex's "early spec window" framing -- these are projects
+# whose plan sets are already in the PDS document repository but which
+# have not broken ground.
+WA_SNOHOMISH_REVIEW_CONFIG: dict[str, Any] = {
+    **WA_SNOHOMISH_CONFIG,
+    "endpoint": "https://services6.arcgis.com/z6WYi9VRHfgwgtyW/arcgis/rest/services/Building_Applications_Under_Review/FeatureServer",
+    "date_field": "InDate",
+    "feed_id": "wa-snohomish-pds-review",
+}
+STATE_CONFIGS["WA-SNOHOMISH"] = WA_SNOHOMISH_CONFIG
+STATE_CONFIGS["WA-SNOHOMISH-REVIEW"] = WA_SNOHOMISH_REVIEW_CONFIG
+
 # SAM.gov + USAspending for all 50 states (2026-07-28, Asif: "pull all
 # data from USAspending and sam.gov"). Both providers are already
 # architecturally per-state -- GA_SAM_CONFIG/GA_USASPENDING_CONFIG above

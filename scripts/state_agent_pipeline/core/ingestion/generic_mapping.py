@@ -48,6 +48,34 @@ def _money(v: Any) -> float | None:
         return None
 
 
+def _iso_date(raw: Any) -> str | None:
+    """Normalize a source date to YYYY-MM-DD.
+
+    Handles the three shapes real permit feeds actually return:
+    already-ISO strings (pass through), Esri epoch-milliseconds ints,
+    and US MM/DD/YYYY strings (Snohomish County PDS stores IssueDate as
+    an esriFieldTypeString in that format). Anything unrecognized falls
+    back to the previous behavior (first 10 chars) so this can't
+    regress an existing feed.
+    """
+    if raw in (None, ""):
+        return None
+    s = str(raw).strip()
+    if re.match(r"^\d{4}-\d{2}-\d{2}", s):
+        return s[:10]
+    m = re.match(r"^(\d{1,2})/(\d{1,2})/(\d{4})$", s)
+    if m:
+        return f"{m.group(3)}-{int(m.group(1)):02d}-{int(m.group(2)):02d}"
+    if re.match(r"^-?\d{10,}$", s):
+        import datetime as _dt
+
+        try:
+            return _dt.datetime.utcfromtimestamp(int(s) / 1000).date().isoformat()
+        except (OverflowError, OSError, ValueError):
+            return None
+    return s[:10]
+
+
 def field_mapped_to_projects(
     rows: list[dict[str, Any]],
     *,
@@ -86,14 +114,14 @@ def field_mapped_to_projects(
             value = _money(row.get(vf))
             if value is not None:
                 break
-        date_val = None
-        if date_field:
-            raw_date = row.get(date_field)
-            date_val = str(raw_date)[:10] if raw_date else None
+        date_val = _iso_date(row.get(date_field)) if date_field else None
         city = ""
         for cf in city_fields or []:
             if row.get(cf):
-                city = str(row[cf]).title()
+                # Some feeds' "city" column is really an address line-2
+                # ("EVERETT, WA 98204-4880" on Snohomish County's PDS
+                # layers) -- keep only the part before the state/zip.
+                city = str(row[cf]).split(",")[0].strip().title()
                 break
         if not city and address and "," in address:
             # Real bug found 2026-07-28 (San Diego): "7676 Hazard Center
