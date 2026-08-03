@@ -66,11 +66,29 @@ def _iso_date(raw: Any) -> str | None:
     m = re.match(r"^(\d{1,2})/(\d{1,2})/(\d{4})$", s)
     if m:
         return f"{m.group(3)}-{int(m.group(1)):02d}-{int(m.group(2)):02d}"
+    # MM-DD-YYYY -- what every Accela results grid emits (TX/IN/OK/UT/NE
+    # sources all store dates this way). Distinguished from ISO by the
+    # 4-digit year being LAST; ISO is already handled above.
+    m = re.match(r"^(\d{1,2})-(\d{1,2})-(\d{4})$", s)
+    if m:
+        return f"{m.group(3)}-{int(m.group(1)):02d}-{int(m.group(2)):02d}"
+    # YYYY/MM/DD -- slash-separated ISO order (Virginia Beach VA).
+    m = re.match(r"^(\d{4})/(\d{1,2})/(\d{1,2})$", s)
+    if m:
+        return f"{m.group(1)}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"
     if re.match(r"^-?\d{10,}$", s):
         import datetime as _dt
 
+        # Distinguish epoch SECONDS from epoch MILLISECONDS by magnitude --
+        # the previous version assumed milliseconds unconditionally, which
+        # silently turned Clark County NV's 10-digit second values
+        # (e.g. 1784851200) into 1970 dates. A contemporary second-epoch is
+        # ~1.7e9 (10 digits); a millisecond-epoch is ~1.7e12 (13 digits).
+        # Cut at 1e11: anything below is seconds, at/above is milliseconds.
         try:
-            return _dt.datetime.utcfromtimestamp(int(s) / 1000).date().isoformat()
+            n = int(s)
+            secs = n / 1000 if abs(n) >= 100_000_000_000 else n
+            return _dt.datetime.utcfromtimestamp(secs).date().isoformat()
         except (OverflowError, OSError, ValueError):
             return None
     return s[:10]
