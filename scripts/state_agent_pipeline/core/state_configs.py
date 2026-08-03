@@ -190,6 +190,13 @@ CA_SANTAMONICA_CONFIG: dict[str, Any] = {
 CA_PALMDALE_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "CA",
     "provider_type": "accela",
+    # Standard ACA general-search date-range inputs, confirmed present in this
+    # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
+    # returns the tenant's whole history in no date order, so a 2025+ backfill
+    # only catches whatever recent rows happen to surface early -- Broward kept
+    # 2 of 20 rows on page 1. 21 configs already set these; these did not.
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Los Angeles",
     "endpoint": "https://aca-prod.accela.com/PALMDALE",
     "permit_type_label": "Commercial Permit",
@@ -245,6 +252,13 @@ CA_LONGBEACH_CONFIG: dict[str, Any] = {
 CA_DOWNEY_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "CA",
     "provider_type": "accela",
+    # Standard ACA general-search date-range inputs, confirmed present in this
+    # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
+    # returns the tenant's whole history in no date order, so a 2025+ backfill
+    # only catches whatever recent rows happen to surface early -- Broward kept
+    # 2 of 20 rows on page 1. 21 configs already set these; these did not.
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Los Angeles",
     "endpoint": "https://aca-prod.accela.com/DOWNEY",
     "permit_type_label": "Commercial Addition-Alteration",
@@ -529,6 +543,13 @@ AZ_SCOTTSDALE_CONFIG: dict[str, Any] = {
 AZ_PIMACOUNTY_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "AZ",
     "provider_type": "accela",
+    # Standard ACA general-search date-range inputs, confirmed present in this
+    # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
+    # returns the tenant's whole history in no date order, so a 2025+ backfill
+    # only catches whatever recent rows happen to surface early -- Broward kept
+    # 2 of 20 rows on page 1. 21 configs already set these; these did not.
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Pima",
     "endpoint": "https://aca-prod.accela.com/PIMA",
     "permit_type_label": "Building Permit",
@@ -594,6 +615,13 @@ GA_GWINNETT_ACCELA_CONFIG: dict[str, Any] = {
 IN_INDIANAPOLIS_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "IN",
     "provider_type": "accela",
+    # Standard ACA general-search date-range inputs, confirmed present in this
+    # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
+    # returns the tenant's whole history in no date order, so a 2025+ backfill
+    # only catches whatever recent rows happen to surface early -- Broward kept
+    # 2 of 20 rows on page 1. 21 configs already set these; these did not.
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Marion",
     "endpoint": "https://aca-prod.accela.com/INDY",
     "module": "Permits",
@@ -639,6 +667,13 @@ IN_CROWNPOINT_ENERGOV_CONFIG: dict[str, Any] = {
 IN_ALLEN_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "IN",
     "provider_type": "accela",
+    # Standard ACA general-search date-range inputs, confirmed present in this
+    # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
+    # returns the tenant's whole history in no date order, so a 2025+ backfill
+    # only catches whatever recent rows happen to surface early -- Broward kept
+    # 2 of 20 rows on page 1. 21 configs already set these; these did not.
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Allen",
     "endpoint": "https://aca-prod.accela.com/ACFW",
     "module": "Planning",
@@ -708,6 +743,13 @@ SD_SIOUXFALLS_CONFIG: dict[str, Any] = {
 ID_ADA_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "ID",
     "provider_type": "accela",
+    # Standard ACA general-search date-range inputs, confirmed present in this
+    # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
+    # returns the tenant's whole history in no date order, so a 2025+ backfill
+    # only catches whatever recent rows happen to surface early -- Broward kept
+    # 2 of 20 rows on page 1. 21 configs already set these; these did not.
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Ada",
     "endpoint": "https://permits.cityofboise.org/CitizenAccess",
     "permit_type_label": "502-New or Added Commercial",
@@ -842,6 +884,13 @@ SC_GREENVILLE_CONFIG: dict[str, Any] = {
 NE_DOUGLAS_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "NE",
     "provider_type": "accela",
+    # Standard ACA general-search date-range inputs, confirmed present in this
+    # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
+    # returns the tenant's whole history in no date order, so a 2025+ backfill
+    # only catches whatever recent rows happen to surface early -- Broward kept
+    # 2 of 20 rows on page 1. 21 configs already set these; these did not.
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Douglas",
     "endpoint": "https://aca-prod.accela.com/OMAHA",
     "module": "Permits",
@@ -862,6 +911,13 @@ NE_DOUGLAS_ACCELA_CONFIG: dict[str, Any] = {
 NM_BERNALILLO_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "NM",
     "provider_type": "accela",
+    # Standard ACA general-search date-range inputs, confirmed present in this
+    # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
+    # returns the tenant's whole history in no date order, so a 2025+ backfill
+    # only catches whatever recent rows happen to surface early -- Broward kept
+    # 2 of 20 rows on page 1. 21 configs already set these; these did not.
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Bernalillo",
     "endpoint": "https://aca-prod.accela.com/bernco",
     "permit_type_label": "Commercial Building",
@@ -879,6 +935,13 @@ NM_BERNALILLO_ACCELA_CONFIG: dict[str, Any] = {
 GA_ATLANTA_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "GA",
     "provider_type": "accela",
+    # Standard ACA general-search date-range inputs, confirmed present in this
+    # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
+    # returns the tenant's whole history in no date order, so a 2025+ backfill
+    # only catches whatever recent rows happen to surface early -- Broward kept
+    # 2 of 20 rows on page 1. 21 configs already set these; these did not.
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Fulton",
     "endpoint": "https://aca-prod.accela.com/ATLANTA_GA",
     "permit_type_label": "Commercial New",
@@ -957,6 +1020,13 @@ OR_MULTNOMAH_CONFIG: dict[str, Any] = {
 MO_STLOUIS_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "MO",
     "provider_type": "accela",
+    # Standard ACA general-search date-range inputs, confirmed present in this
+    # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
+    # returns the tenant's whole history in no date order, so a 2025+ backfill
+    # only catches whatever recent rows happen to surface early -- Broward kept
+    # 2 of 20 rows on page 1. 21 configs already set these; these did not.
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "St. Louis",
     "endpoint": "https://aca-prod.accela.com/SLC",
     "module": "PublicWorks",
@@ -1007,6 +1077,13 @@ _MO_COLUMBIA_ENERGOV_CONFIG: dict[str, Any] = {
 UT_SALTLAKE_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "UT",
     "provider_type": "accela",
+    # Standard ACA general-search date-range inputs, confirmed present in this
+    # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
+    # returns the tenant's whole history in no date order, so a 2025+ backfill
+    # only catches whatever recent rows happen to surface early -- Broward kept
+    # 2 of 20 rows on page 1. 21 configs already set these; these did not.
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Salt Lake",
     "endpoint": "https://aca-prod.accela.com/SLCREF",
     "permit_type_label": "Commercial Building Permit",
@@ -1201,6 +1278,13 @@ TX_BELL_CONFIG: dict[str, Any] = {
 TX_MCALLEN_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "TX",
     "provider_type": "accela",
+    # Standard ACA general-search date-range inputs, confirmed present in this
+    # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
+    # returns the tenant's whole history in no date order, so a 2025+ backfill
+    # only catches whatever recent rows happen to surface early -- Broward kept
+    # 2 of 20 rows on page 1. 21 configs already set these; these did not.
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Hidalgo",
     "endpoint": "https://onlinepermits.mcallen.net/Portal",
     "permit_type_label": "Commercial New or Addition",
@@ -1383,6 +1467,13 @@ MI_WAYNE_CONFIG: dict[str, Any] = {
 MI_KENT_CONFIG: dict[str, Any] = {
     "state_code": "MI",
     "provider_type": "accela",
+    # Standard ACA general-search date-range inputs, confirmed present in this
+    # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
+    # returns the tenant's whole history in no date order, so a 2025+ backfill
+    # only catches whatever recent rows happen to surface early -- Broward kept
+    # 2 of 20 rows on page 1. 21 configs already set these; these did not.
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Kent",
     "endpoint": "https://aca-prod.accela.com/grandrapids",
     "module": "Permits",
@@ -1751,6 +1842,13 @@ MN_HENNEPIN_CONFIG: dict[str, Any] = {
 MN_OLMSTED_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "MN",
     "provider_type": "accela",
+    # Standard ACA general-search date-range inputs, confirmed present in this
+    # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
+    # returns the tenant's whole history in no date order, so a 2025+ backfill
+    # only catches whatever recent rows happen to surface early -- Broward kept
+    # 2 of 20 rows on page 1. 21 configs already set these; these did not.
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Olmsted",
     "endpoint": "https://aca-prod.accela.com/OLMSTED",
     "module": "Building",
@@ -1881,6 +1979,13 @@ FL_BROWARD_ACCELA_CONFIG: dict[str, Any] = {
 FL_HILLSBOROUGH_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "FL",
     "provider_type": "accela",
+    # Standard ACA general-search date-range inputs, confirmed present in this
+    # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
+    # returns the tenant's whole history in no date order, so a 2025+ backfill
+    # only catches whatever recent rows happen to surface early -- Broward kept
+    # 2 of 20 rows on page 1. 21 configs already set these; these did not.
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Hillsborough",
     "endpoint": "https://aca-prod.accela.com/HCFL",
     "module": "Building",
@@ -1895,6 +2000,13 @@ FL_HILLSBOROUGH_ACCELA_CONFIG: dict[str, Any] = {
 FL_PINELLAS_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "FL",
     "provider_type": "accela",
+    # Standard ACA general-search date-range inputs, confirmed present in this
+    # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
+    # returns the tenant's whole history in no date order, so a 2025+ backfill
+    # only catches whatever recent rows happen to surface early -- Broward kept
+    # 2 of 20 rows on page 1. 21 configs already set these; these did not.
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Pinellas",
     "endpoint": "https://aca-prod.accela.com/PINELLAS",
     "module": "Building",
@@ -1910,6 +2022,13 @@ FL_PINELLAS_ACCELA_CONFIG: dict[str, Any] = {
 FL_POLK_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "FL",
     "provider_type": "accela",
+    # Standard ACA general-search date-range inputs, confirmed present in this
+    # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
+    # returns the tenant's whole history in no date order, so a 2025+ backfill
+    # only catches whatever recent rows happen to surface early -- Broward kept
+    # 2 of 20 rows on page 1. 21 configs already set these; these did not.
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Polk",
     "endpoint": "https://aca-prod.accela.com/POLKCO",
     "module": "Building",
@@ -1957,6 +2076,13 @@ FL_MANATEE_ACCELA_CONFIG: dict[str, Any] = {
 FL_PASCO_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "FL",
     "provider_type": "accela",
+    # Standard ACA general-search date-range inputs, confirmed present in this
+    # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
+    # returns the tenant's whole history in no date order, so a 2025+ backfill
+    # only catches whatever recent rows happen to surface early -- Broward kept
+    # 2 of 20 rows on page 1. 21 configs already set these; these did not.
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Pasco",
     "endpoint": "https://aca-prod.accela.com/pasco",
     "module": "Permits",
@@ -2244,6 +2370,13 @@ NC_BUNCOMBE_CONFIG: dict[str, Any] = {
 NC_CABARRUS_CONFIG: dict[str, Any] = {
     "state_code": "NC",
     "provider_type": "accela",
+    # Standard ACA general-search date-range inputs, confirmed present in this
+    # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
+    # returns the tenant's whole history in no date order, so a 2025+ backfill
+    # only catches whatever recent rows happen to surface early -- Broward kept
+    # 2 of 20 rows on page 1. 21 configs already set these; these did not.
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Cabarrus",
     "endpoint": "https://aca-prod.accela.com/CABARRUS",
     "module": "Permits",
@@ -2997,6 +3130,13 @@ STATE_CONFIGS["OH-CLEVELAND-COO"] = OH_CLEVELAND_COO_CONFIG
 OH_MONTGOMERY_CONFIG: dict[str, Any] = {
     "state_code": "OH",
     "provider_type": "accela",
+    # Standard ACA general-search date-range inputs, confirmed present in this
+    # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
+    # returns the tenant's whole history in no date order, so a 2025+ backfill
+    # only catches whatever recent rows happen to surface early -- Broward kept
+    # 2 of 20 rows on page 1. 21 configs already set these; these did not.
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Montgomery",
     "endpoint": "https://aca-prod.accela.com/MONTCOOH",
     "module": "Building",
@@ -3017,6 +3157,13 @@ STATE_CONFIGS["OH-MONTGOMERY"] = OH_MONTGOMERY_CONFIG
 OH_BUTLER_CONFIG: dict[str, Any] = {
     "state_code": "OH",
     "provider_type": "accela",
+    # Standard ACA general-search date-range inputs, confirmed present in this
+    # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
+    # returns the tenant's whole history in no date order, so a 2025+ backfill
+    # only catches whatever recent rows happen to surface early -- Broward kept
+    # 2 of 20 rows on page 1. 21 configs already set these; these did not.
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Butler",
     "endpoint": "https://aca-prod.accela.com/BUTLER",
     "module": "Building",
@@ -3084,6 +3231,13 @@ STATE_CONFIGS["CT-HARTFORD"] = CT_HARTFORD_ACCELA_CONFIG
 TN_SHELBY_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "TN",
     "provider_type": "accela",
+    # Standard ACA general-search date-range inputs, confirmed present in this
+    # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
+    # returns the tenant's whole history in no date order, so a 2025+ backfill
+    # only catches whatever recent rows happen to surface early -- Broward kept
+    # 2 of 20 rows on page 1. 21 configs already set these; these did not.
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Shelby",
     "endpoint": "https://aca-prod.accela.com/SHELBYCO",
     "permit_type_label": "Commercial New Construction Permit",
@@ -3549,6 +3703,13 @@ STATE_CONFIGS["FL-BREVARD"] = FL_BREVARD_CONFIG
 FL_OSCEOLA_CONFIG: dict[str, Any] = {
     "state_code": "FL",
     "provider_type": "accela",
+    # Standard ACA general-search date-range inputs, confirmed present in this
+    # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
+    # returns the tenant's whole history in no date order, so a 2025+ backfill
+    # only catches whatever recent rows happen to surface early -- Broward kept
+    # 2 of 20 rows on page 1. 21 configs already set these; these did not.
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Osceola",
     # permits.osceola.org bare root 200s but the ACA app lives under
     # /CitizenAccess -- /portal/ 404s. The aca-prod.accela.com/OSCEOLA tenant

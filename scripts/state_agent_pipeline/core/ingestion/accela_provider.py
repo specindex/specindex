@@ -246,11 +246,38 @@ class AccelaProvider(BaseIngestionProvider):
                             stop = True
                             break
 
+                    # Filter per row; do NOT stop the whole pull at the first
+                    # out-of-window row.
+                    #
+                    # This used to `break` on the first row older than the
+                    # cutoff, which assumes results are strictly newest-first.
+                    # The oldest-first ABORT guard above catches only the fully
+                    # reversed case -- it does nothing for UNSORTED results,
+                    # where a single old row early in page 1 truncates the
+                    # entire pull. Measured live 2026-08-03: Broward kept 2 of
+                    # 20 rows on page 1 and stopped, and Hillsborough, Pinellas,
+                    # Polk, El Paso and Bexar all showed the same 0-2 row
+                    # signature. (EnerGov had the identical defect: its result
+                    # sets are not date-ordered at all.)
+                    #
+                    # Instead, keep every in-window row on the page and let the
+                    # page-level staleness check below decide when to stop.
+                    kept_this_page = 0
+                    newest_this_page: date | None = None
                     for r in data_rows:
-                        row_date = datetime.strptime(r[date_idx], "%m/%d/%Y").date()
-                        if row_date <= cutoff:
-                            stop = True
-                            break
+                        try:
+                            row_date = datetime.strptime(r[date_idx], "%m/%d/%Y").date()
+                        except (ValueError, IndexError, TypeError):
+                            # An unparseable date is not evidence the row is old.
+                            # Keep it -- a null date is recoverable downstream,
+                            # a dropped row is not.
+                            row_date = None
+                        if row_date is not None:
+                            if newest_this_page is None or row_date > newest_this_page:
+                                newest_this_page = row_date
+                            if row_date <= cutoff:
+                                continue
+                        kept_this_page += 1
                         parsed = {field: r[i] for i, field in col_map.items() if i < len(r)}
                         # Some deployments (COSA/San Antonio) have an
                         # explicit "Address" header, already captured
@@ -262,7 +289,28 @@ class AccelaProvider(BaseIngestionProvider):
                             parsed["address_raw"] = r[-1] if r else ""
                         parsed["county"] = self.county
                         rows_out.append(parsed)
-                    print(f"[accela:{self.county}] page {page_num}: {len(data_rows)} rows, {len(rows_out)} kept so far", file=sys.stderr)
+                    print(
+                        f"[accela:{self.county}] page {page_num}: {len(data_rows)} rows, "
+                        f"{kept_this_page} in-window, {len(rows_out)} kept so far",
+                        file=sys.stderr,
+                    )
+                    # Stop only when a page is ENTIRELY out of window -- i.e. it
+                    # kept nothing AND its newest row predates the cutoff. That
+                    # is real evidence we have paged past the window, unlike a
+                    # single old row, which proves only that the results are not
+                    # sorted the way this provider once assumed.
+                    if (
+                        kept_this_page == 0
+                        and newest_this_page is not None
+                        and newest_this_page <= cutoff
+                    ):
+                        print(
+                            f"[accela:{self.county}] page {page_num} fully out of window "
+                            f"(newest {newest_this_page.isoformat()} <= cutoff "
+                            f"{cutoff.isoformat()}) -- stopping",
+                            file=sys.stderr,
+                        )
+                        break
                     if stop:
                         break
 

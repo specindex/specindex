@@ -254,6 +254,7 @@ database. Project: "{name}" in {city}, {county} County, {state}.
 
 Search for current, verifiable facts. For anything you cannot verify via search, write \
 "not publicly confirmed" rather than guessing -- an invented fact here is worse than a missing one.
+{document_context}
 
 Give me:
 1. A 3-5 sentence executive brief (owner, scope, scale, why it matters)
@@ -281,12 +282,76 @@ array entirely if you found nothing for it -- do not fabricate placeholder rows)
 """
 
 
+# Cap on captured document text injected into a discovery prompt. Plan sets
+# run to hundreds of pages and 98.4% of them carry a native text layer
+# (measured 2026-08-03 over 24,167 pages), so the raw material is far larger
+# than any context window. The first pages of a permit/plan set are where the
+# title block, project directory and scope narrative live -- which is exactly
+# the owner/architect/GC/scope material this prompt asks for.
+DOC_CONTEXT_CHAR_BUDGET = 24_000
+DOC_CONTEXT_PAGES = 12
+
+
+def document_context(conn, project_sk) -> str:
+    """Real captured document text for this project, for grounding.
+
+    Without this, enrichment is pure web search and the entire document
+    pipeline (steps 8-9) contributes nothing but filenames -- which was the
+    state until 2026-08-03: 24,167 extracted pages sat in document_pages
+    unused while enrichment googled the project name. Documents are the
+    differentiator; they have to actually reach the model.
+    """
+    if conn is None or not project_sk:
+        return ""
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                SELECT f.title, p.page_number, p.raw_text
+                  FROM document_pages p
+                  JOIN project_document_files f ON f.id = p.document_file_id
+                 WHERE f.project_sk = %s
+                   AND p.raw_text IS NOT NULL AND length(trim(p.raw_text)) > 40
+                 ORDER BY f.id, p.page_number
+                 LIMIT %s
+                """,
+                (project_sk, DOC_CONTEXT_PAGES),
+            )
+            rows = cur.fetchall()
+    except Exception:  # noqa: BLE001 - grounding is a bonus, never fail the run
+        return ""
+    if not rows:
+        return ""
+
+    chunks, used = [], 0
+    for title, page_no, text in rows:
+        snippet = " ".join((text or "").split())
+        if not snippet:
+            continue
+        room = DOC_CONTEXT_CHAR_BUDGET - used
+        if room <= 200:
+            break
+        snippet = snippet[:room]
+        used += len(snippet)
+        chunks.append(f"--- {title or 'document'} (p.{page_no}) ---\n{snippet}")
+    if not chunks:
+        return ""
+    return (
+        "\n\nBelow is text extracted from OFFICIAL PERMIT/PLAN DOCUMENTS actually filed "
+        "for this project. Treat it as primary evidence: it outranks anything you find "
+        "via search, and where it conflicts with a search result, prefer the document and "
+        "say so. Cite it as \"project documents\" in the sources field.\n\n"
+        + "\n\n".join(chunks)
+    )
+
+
 def run_discovery(client, model: str, project: dict, conn=None) -> dict:
     prompt = DISCOVERY_PROMPT.format(
         name=project["name"],
         city=project.get("city") or "unknown city",
         county=project.get("county") or "unknown county",
         state=project.get("state") or "unknown state",
+        document_context=document_context(conn, project.get("project_sk")),
     )
     text = _grounded_call(client, model, prompt, conn=conn, project_sk=project.get("project_sk"), call_site="enrich_pass1")
     return _extract_json(text)

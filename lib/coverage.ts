@@ -78,6 +78,43 @@ export async function getCoverageInsights(): Promise<CoverageInsights> {
   return (await res.json()) as CoverageInsights;
 }
 
+export type Top500County = {
+  rank: number;
+  county: string;
+  state: string;
+  population: number;
+  projects: number;
+  projects_in_window: number;
+  documents: number;
+  status: "covered" | "projects-only" | "none";
+};
+
+export type Top500Coverage = {
+  generated_at: string;
+  window_start: string;
+  counties: Top500County[];
+  summary: {
+    total: number;
+    covered: number;
+    projects_only: number;
+    none: number;
+    total_projects_in_window: number;
+    total_documents: number;
+  };
+};
+
+// Read from the repo rather than the API. Unlike county_coverage, this joins
+// the Census population ranking to the corpus, and its whole point is to show
+// the counties we hold NOTHING for -- which by definition cannot come from an
+// endpoint that serves what we already have. Regenerate with
+// scripts/compute-top500-coverage.py after a corpus reload.
+export async function getTop500(): Promise<Top500Coverage> {
+  const { readFile } = await import("node:fs/promises");
+  const { join } = await import("node:path");
+  const raw = await readFile(join(process.cwd(), "data", "top500-coverage.json"), "utf8");
+  return JSON.parse(raw) as Top500Coverage;
+}
+
 export async function getQuality(): Promise<StateQuality[]> {
   const res = await fetch(`${API_BASE}/v1/quality`);
   if (!res.ok) {

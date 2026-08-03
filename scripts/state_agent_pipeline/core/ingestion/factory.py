@@ -136,7 +136,12 @@ def build_provider(state_config: dict[str, Any]) -> BaseIngestionProvider:
             permit_type_label=state_config.get("permit_type_label", "Building"),
             module=state_config.get("module", "Building"),
             lookback_days=state_config.get("lookback_days", 30),
-            max_pages=state_config.get("max_pages", 30),
+            # 30 pages x 10 rows caps a county at 300 records, which is what
+            # Hillsborough hit the moment its date filter started working
+            # (79 -> 300, every row in-window, still climbing at the cap).
+            # 60 is the practical ceiling: anonymous Accela paging throttles
+            # somewhere around 40-60 pages.
+            max_pages=state_config.get("max_pages", 60),
             start_date_field_id=state_config.get("start_date_field_id"),
             end_date_field_id=state_config.get("end_date_field_id"),
         )
