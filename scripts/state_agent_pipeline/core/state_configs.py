@@ -193,7 +193,7 @@ CA_PALMDALE_ACCELA_CONFIG: dict[str, Any] = {
     "county": "Los Angeles",
     "endpoint": "https://aca-prod.accela.com/PALMDALE",
     "permit_type_label": "Commercial Permit",
-    "lookback_days": 30,
+    "lookback_days": 579,
 }
 
 # City of Long Beach -- owner arcgis_clb confirmed as the city's own
@@ -248,7 +248,7 @@ CA_DOWNEY_ACCELA_CONFIG: dict[str, Any] = {
     "county": "Los Angeles",
     "endpoint": "https://aca-prod.accela.com/DOWNEY",
     "permit_type_label": "Commercial Addition-Alteration",
-    "lookback_days": 30,
+    "lookback_days": 579,
 }
 
 # City of Lancaster -- Accela agency code LANCASTER (only valid code;
@@ -263,7 +263,7 @@ CA_LANCASTER_ACCELA_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/LANCASTER",
     "permit_type_label": "Commercial New",
     "module": "Permits",  # module=Building errors out for this jurisdiction; only Permits exists
-    "lookback_days": 30,
+    "lookback_days": 579,
 }
 
 # City of El Monte -- Tyler EnerGov Citizen Self Service, tenant "El
@@ -290,7 +290,10 @@ CA_ELMONTE_ENERGOV_CONFIG: dict[str, Any] = {
     "tenant_id": "1",
     "tenant_name": "El Monte",
     "lookback_days": 900,
-    "max_pages": 5,
+        # Raised from 5 on 2026-08-03. max_pages 5 was a 30-day-lookback
+    # setting; with the server-side ApplyDateFrom filter now applied
+    # (see energov_provider.py) a 2025-01-01 backfill needs real depth.
+    "max_pages": 250,
 }
 
 # City of Glendale -- Tyler EnerGov, same tylerhost.net/apps/selfservice
@@ -309,7 +312,10 @@ CA_GLENDALE_ENERGOV_CONFIG: dict[str, Any] = {
     "tenant_id": "1",
     "tenant_name": "Glendale",
     "lookback_days": 900,
-    "max_pages": 5,
+        # Raised from 5 on 2026-08-03. max_pages 5 was a 30-day-lookback
+    # setting; with the server-side ApplyDateFrom filter now applied
+    # (see energov_provider.py) a 2025-01-01 backfill needs real depth.
+    "max_pages": 250,
 }
 
 # City of Alhambra -- same tylerhost.net/apps/selfservice pattern as El
@@ -323,7 +329,10 @@ CA_ALHAMBRA_ENERGOV_CONFIG: dict[str, Any] = {
     "tenant_id": "1",
     "tenant_name": "Alhambra",
     "lookback_days": 900,
-    "max_pages": 5,
+        # Raised from 5 on 2026-08-03. max_pages 5 was a 30-day-lookback
+    # setting; with the server-side ApplyDateFrom filter now applied
+    # (see energov_provider.py) a 2025-01-01 backfill needs real depth.
+    "max_pages": 250,
 }
 
 # City of Carson -- "Carson Civic Access", live since 2024-06-04, also
@@ -336,7 +345,10 @@ CA_CARSON_ENERGOV_CONFIG: dict[str, Any] = {
     "tenant_id": "1",
     "tenant_name": "Carson",
     "lookback_days": 900,
-    "max_pages": 5,
+        # Raised from 5 on 2026-08-03. max_pages 5 was a 30-day-lookback
+    # setting; with the server-side ApplyDateFrom filter now applied
+    # (see energov_provider.py) a 2025-01-01 backfill needs real depth.
+    "max_pages": 250,
 }
 
 # Ventura County, CA (rank 77 by population, no coverage before this).
@@ -520,7 +532,7 @@ AZ_PIMACOUNTY_ACCELA_CONFIG: dict[str, Any] = {
     "county": "Pima",
     "endpoint": "https://aca-prod.accela.com/PIMA",
     "permit_type_label": "Building Permit",
-    "lookback_days": 90,
+    "lookback_days": 579,
 }
 
 # NC_CONFIG (the "NC" key, Flash+Sonnet LLM path) was removed 2026-07-29 --
@@ -561,7 +573,7 @@ GA_GWINNETT_ACCELA_CONFIG: dict[str, Any] = {
     "county": "Gwinnett",
     "endpoint": "https://aca-prod.accela.com/GWINNETT",
     "permit_type_label": "Building",
-    "lookback_days": 30,
+    "lookback_days": 579,
 }
 
 # Indianapolis, IN (Marion County -- consolidated city-county
@@ -586,7 +598,7 @@ IN_INDIANAPOLIS_ACCELA_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/INDY",
     "module": "Permits",
     "permit_type_label": "Improvement Location Permit-Non-Residential",
-    "lookback_days": 180,
+    "lookback_days": 579,
 }
 
 # Crown Point, IN -- Lake County seat, Tyler EnerGov Citizen Self Service,
@@ -607,7 +619,10 @@ IN_CROWNPOINT_ENERGOV_CONFIG: dict[str, Any] = {
     "tenant_id": "1",
     "tenant_name": "Crown Point",
     "lookback_days": 900,
-    "max_pages": 5,
+        # Raised from 5 on 2026-08-03. max_pages 5 was a 30-day-lookback
+    # setting; with the server-side ApplyDateFrom filter now applied
+    # (see energov_provider.py) a 2025-01-01 backfill needs real depth.
+    "max_pages": 250,
 }
 
 # Allen County / Fort Wayne, IN -- joint city-county Accela instance,
@@ -628,7 +643,7 @@ IN_ALLEN_ACCELA_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/ACFW",
     "module": "Planning",
     "permit_type_label": "08. Site Plan Review (Commercial, Industrial, Multifamily, School, Religious Institution)",
-    "lookback_days": 180,
+    "lookback_days": 579,
 }
 
 # City of Noblesville, IN -- Hamilton County seat, Tyler EnerGov Citizen
@@ -647,7 +662,10 @@ IN_NOBLESVILLE_ENERGOV_CONFIG: dict[str, Any] = {
     "tenant_id": "1",
     "tenant_name": "Noblesville",
     "lookback_days": 900,
-    "max_pages": 5,
+        # Raised from 5 on 2026-08-03. max_pages 5 was a 30-day-lookback
+    # setting; with the server-side ApplyDateFrom filter now applied
+    # (see energov_provider.py) a 2025-01-01 backfill needs real depth.
+    "max_pages": 250,
 }
 
 # Sioux Falls, SD (Minnehaha County's top jurisdiction, ~85% of the
@@ -693,7 +711,7 @@ ID_ADA_ACCELA_CONFIG: dict[str, Any] = {
     "county": "Ada",
     "endpoint": "https://permits.cityofboise.org/CitizenAccess",
     "permit_type_label": "502-New or Added Commercial",
-    "lookback_days": 180,
+    "lookback_days": 579,
 }
 
 # East Baton Rouge Parish, LA (state's most populous parish/county).
@@ -763,7 +781,10 @@ SC_COLUMBIA_ENERGOV_CONFIG: dict[str, Any] = {
     "tenant_id": "1",
     "tenant_name": "City of Columbia",
     "lookback_days": 900,
-    "max_pages": 5,
+        # Raised from 5 on 2026-08-03. max_pages 5 was a 30-day-lookback
+    # setting; with the server-side ApplyDateFrom filter now applied
+    # (see energov_provider.py) a 2025-01-01 backfill needs real depth.
+    "max_pages": 250,
 }
 
 # Spartanburg County, SC. Tyler EnerGov CSS at
@@ -782,7 +803,10 @@ SC_SPARTANBURG_ENERGOV_CONFIG: dict[str, Any] = {
     "tenant_id": "1",
     "tenant_name": "Spartanburg County",
     "lookback_days": 900,
-    "max_pages": 5,
+        # Raised from 5 on 2026-08-03. max_pages 5 was a 30-day-lookback
+    # setting; with the server-side ApplyDateFrom filter now applied
+    # (see energov_provider.py) a 2025-01-01 backfill needs real depth.
+    "max_pages": 250,
 }
 
 SC_GREENVILLE_CONFIG: dict[str, Any] = {
@@ -822,7 +846,7 @@ NE_DOUGLAS_ACCELA_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/OMAHA",
     "module": "Permits",
     "permit_type_label": "New Building",
-    "lookback_days": 180,
+    "lookback_days": 579,
 }
 
 # Bernalillo County, NM (Albuquerque, state's most populous county).
@@ -841,7 +865,7 @@ NM_BERNALILLO_ACCELA_CONFIG: dict[str, Any] = {
     "county": "Bernalillo",
     "endpoint": "https://aca-prod.accela.com/bernco",
     "permit_type_label": "Commercial Building",
-    "lookback_days": 180,
+    "lookback_days": 579,
 }
 
 # Fulton County, GA (state's top county by population -- but the county
@@ -858,7 +882,7 @@ GA_ATLANTA_ACCELA_CONFIG: dict[str, Any] = {
     "county": "Fulton",
     "endpoint": "https://aca-prod.accela.com/ATLANTA_GA",
     "permit_type_label": "Commercial New",
-    "lookback_days": 180,
+    "lookback_days": 579,
 }
 
 # Jefferson County, KY (Louisville Metro -- consolidated city-county
@@ -937,7 +961,7 @@ MO_STLOUIS_ACCELA_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/SLC",
     "module": "PublicWorks",
     "permit_type_label": "BUILDING COMMERCIAL NEW BUILDING",
-    "lookback_days": 180,
+    "lookback_days": 579,
 }
 
 # City of Columbia, MO -- Boone County's seat/largest city (county itself
@@ -986,7 +1010,7 @@ UT_SALTLAKE_ACCELA_CONFIG: dict[str, Any] = {
     "county": "Salt Lake",
     "endpoint": "https://aca-prod.accela.com/SLCREF",
     "permit_type_label": "Commercial Building Permit",
-    "lookback_days": 180,
+    "lookback_days": 579,
 }
 
 # Verified live 2026-07-28: City of El Paso's Accela portal (agency code
@@ -1006,7 +1030,7 @@ TX_ELPASO_ACCELA_CONFIG: dict[str, Any] = {
     "county": "El Paso",
     "endpoint": "https://aca-prod.accela.com/ELPASO",
     "permit_type_label": "Commercial New",
-    "lookback_days": 30,
+    "lookback_days": 579,
     "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
     "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
@@ -1031,7 +1055,7 @@ TX_DALLAS_NEW_ACCELA_CONFIG: dict[str, Any] = {
     "county": "Dallas",
     "endpoint": "https://aca-prod.accela.com/DALLASTX",
     "permit_type_label": "Commercial New Construction Permit",
-    "lookback_days": 30,
+    "lookback_days": 579,
     "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
     "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
@@ -1042,7 +1066,7 @@ TX_DALLAS_ALT_ACCELA_CONFIG: dict[str, Any] = {
     "county": "Dallas",
     "endpoint": "https://aca-prod.accela.com/DALLASTX",
     "permit_type_label": "Commercial Alteration Addition Permit",
-    "lookback_days": 30,
+    "lookback_days": 579,
     "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
     "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
@@ -1062,7 +1086,7 @@ TX_SANANTONIO_ACCELA_CONFIG: dict[str, Any] = {
     "county": "Bexar",
     "endpoint": "https://aca-prod.accela.com/COSA",
     "permit_type_label": "Commercial New Building Permit",
-    "lookback_days": 30,
+    "lookback_days": 579,
     "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
     "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
@@ -1180,7 +1204,7 @@ TX_MCALLEN_ACCELA_CONFIG: dict[str, Any] = {
     "county": "Hidalgo",
     "endpoint": "https://onlinepermits.mcallen.net/Portal",
     "permit_type_label": "Commercial New or Addition",
-    "lookback_days": 30,
+    "lookback_days": 579,
 }
 
 # City of Brownsville (Cameron County). Accela, lowercase agency code.
@@ -1190,7 +1214,7 @@ TX_BROWNSVILLE_ACCELA_CONFIG: dict[str, Any] = {
     "county": "Cameron",
     "endpoint": "https://aca-prod.accela.com/BROWNSVILLE",
     "permit_type_label": "Commercial Alteration Permit",
-    "lookback_days": 30,
+    "lookback_days": 579,
     "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
     "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
@@ -1363,7 +1387,7 @@ MI_KENT_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/grandrapids",
     "module": "Permits",
     "permit_type_label": "Building Permit - Commercial or 3+ Family New or Addition",
-    "lookback_days": 90,
+    "lookback_days": 579,
     "feed_id": "mi-grandrapids-kent",
 }
 
@@ -1731,7 +1755,7 @@ MN_OLMSTED_ACCELA_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/OLMSTED",
     "module": "Building",
     "permit_type_label": "Commercial Building (New Building)",
-    "lookback_days": 180,
+    "lookback_days": 579,
     "feed_id": "mn-olmsted-accela",
     "source_url": "https://aca-prod.accela.com/OLMSTED/Cap/CapHome.aspx?module=Building",
 }
@@ -1847,7 +1871,7 @@ FL_BROWARD_ACCELA_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/FTL",
     "module": "Permits",
     "permit_type_label": "Commercial Alteration Permit",
-    "lookback_days": 30,
+    "lookback_days": 579,
 }
 
 # Hillsborough (HillsGovHub) uses module=Building, not module=Permits --
@@ -1861,7 +1885,7 @@ FL_HILLSBOROUGH_ACCELA_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/HCFL",
     "module": "Building",
     "permit_type_label": "Commercial New Construction and Additions",
-    "lookback_days": 30,
+    "lookback_days": 579,
 }
 
 # Pinellas uses module=Building, not Permits (module=Permits 404s to
@@ -1875,7 +1899,7 @@ FL_PINELLAS_ACCELA_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/PINELLAS",
     "module": "Building",
     "permit_type_label": "Commercial Remodel/Repair/Renovation",
-    "lookback_days": 30,
+    "lookback_days": 579,
 }
 
 # Polk uses module=Building, not Permits -- confirmed live 2026-07-31.
@@ -1890,7 +1914,7 @@ FL_POLK_ACCELA_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/POLKCO",
     "module": "Building",
     "permit_type_label": "Commercial Renovation Permit - Ex: Tenant Buildout, Window Changeout, Remodel, Addition, etc.",
-    "lookback_days": 30,
+    "lookback_days": 579,
 }
 
 FL_SARASOTA_ACCELA_CONFIG: dict[str, Any] = {
@@ -1900,7 +1924,7 @@ FL_SARASOTA_ACCELA_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/SARASOTACO",
     "module": "Permits",
     "permit_type_label": "Commercial",
-    "lookback_days": 30,
+    "lookback_days": 579,
 }
 
 # Manatee uses module=Building, not Permits -- confirmed live 2026-07-31.
@@ -1913,7 +1937,7 @@ FL_MANATEE_ACCELA_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/MANATEE",
     "module": "Building",
     "permit_type_label": "Commercial",
-    "lookback_days": 30,
+    "lookback_days": 579,
 }
 
 # Pasco's module=Permits works (unlike Hillsborough/Pinellas/Polk/
@@ -1937,7 +1961,7 @@ FL_PASCO_ACCELA_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/pasco",
     "module": "Permits",
     "permit_type_label": "COM - Interior Build Out With no Change to Existing Slab-Remodel",
-    "lookback_days": 90,
+    "lookback_days": 579,
 }
 
 # Lee County (FL) -- Fort Myers/Cape Coral area. Verified live 2026-07-31:
@@ -1979,7 +2003,7 @@ FL_LEE_ACCELA_CONFIG: dict[str, Any] = {
     "permit_type_label": "Commercial New Building",
     "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
     "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
-    "lookback_days": 90,
+    "lookback_days": 579,
     "feed_id": "fl-lee",
 }
 
@@ -1995,7 +2019,10 @@ FL_STLUCIE_ENERGOV_CONFIG: dict[str, Any] = {
     "tenant_id": "1",
     "tenant_name": "St. Lucie County",
     "lookback_days": 90,
-    "max_pages": 5,
+        # Raised from 5 on 2026-08-03. max_pages 5 was a 30-day-lookback
+    # setting; with the server-side ApplyDateFrom filter now applied
+    # (see energov_provider.py) a 2025-01-01 backfill needs real depth.
+    "max_pages": 250,
 }
 
 # King County (WA) via City of Seattle's Building Permits (Socrata) --
@@ -2199,7 +2226,7 @@ NC_BUNCOMBE_CONFIG: dict[str, Any] = {
     "county": "Buncombe",
     "endpoint": "https://aca-prod.accela.com/BUNCOMBECONC",
     "permit_type_label": "Commercial Combo Permit",
-    "lookback_days": 90,
+    "lookback_days": 579,
 }
 
 # Cabarrus County (Concord/Kannapolis, NC) -- Accela Citizen Access,
@@ -2221,7 +2248,7 @@ NC_CABARRUS_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/CABARRUS",
     "module": "Permits",
     "permit_type_label": "Building Commercial New",
-    "lookback_days": 90,
+    "lookback_days": 579,
 }
 
 NC_WAKE_CONFIG: dict[str, Any] = {
@@ -2504,7 +2531,10 @@ CA_ANTIOCH_ENERGOV_CONFIG: dict[str, Any] = {
     "tenant_id": "1",
     "tenant_name": "Antioch",
     "lookback_days": 900,
-    "max_pages": 5,
+        # Raised from 5 on 2026-08-03. max_pages 5 was a 30-day-lookback
+    # setting; with the server-side ApplyDateFrom filter now applied
+    # (see energov_provider.py) a 2025-01-01 backfill needs real depth.
+    "max_pages": 250,
 }
 
 CA_MARIN_CONFIG: dict[str, Any] = {
@@ -2807,7 +2837,7 @@ CO_SPRINGS_ACCELA_CONFIG: dict[str, Any] = {
     "county": "El Paso",
     "endpoint": "https://aca-prod.accela.com/COSPRINGS",
     "permit_type_label": "Building Permit Review",
-    "lookback_days": 30,
+    "lookback_days": 579,
     "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
     "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
@@ -2830,7 +2860,7 @@ CO_DENVER_ACCELA_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/DENVER",
     "module": "Development",
     "permit_type_label": "Commercial Construction Permit",
-    "lookback_days": 30,
+    "lookback_days": 579,
     "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
     "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
@@ -2855,7 +2885,7 @@ CO_ADAMS_ACCELA_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/ADAMSCO",
     "module": "Building",
     "permit_type_label": "Building Permit - Plan Review Required",
-    "lookback_days": 30,
+    "lookback_days": 579,
     "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
     "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
@@ -2879,7 +2909,7 @@ CO_FORTCOLLINS_ACCELA_CONFIG: dict[str, Any] = {
     "endpoint": "https://accela-aca.fcgov.com/CitizenAccess",
     "module": "Building",
     "permit_type_label": "Commercial New Com-Ind-Mixed-Use Building",
-    "lookback_days": 30,
+    "lookback_days": 579,
     "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
     "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
@@ -2904,7 +2934,7 @@ CO_LONGMONT_ACCELA_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/LONGMONT",
     "module": "Building",
     "permit_type_label": "New Construction - Commercial",
-    "lookback_days": 30,
+    "lookback_days": 579,
     "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
     "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
@@ -2923,7 +2953,7 @@ CO_WELD_ACCELA_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/WELD",
     "module": "Building",
     "permit_type_label": "Commercial New Construction",
-    "lookback_days": 30,
+    "lookback_days": 579,
     "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
     "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
@@ -2947,7 +2977,7 @@ OH_CLEVELAND_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/COC",
     "module": "BuildingHousing",
     "permit_type_label": "Commercial Building Construction Permit",
-    "lookback_days": 30,
+    "lookback_days": 579,
     "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
     "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
@@ -2971,7 +3001,7 @@ OH_MONTGOMERY_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/MONTCOOH",
     "module": "Building",
     "permit_type_label": "Commercial Building",
-    "lookback_days": 90,
+    "lookback_days": 579,
     "feed_id": "oh-dayton-montgomery",
 }
 STATE_CONFIGS["OH-MONTGOMERY"] = OH_MONTGOMERY_CONFIG
@@ -2991,7 +3021,7 @@ OH_BUTLER_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/BUTLER",
     "module": "Building",
     "permit_type_label": "Building/Commercial/Alterations/Other",
-    "lookback_days": 90,
+    "lookback_days": 579,
     "feed_id": "oh-butler",
 }
 STATE_CONFIGS["OH-BUTLER"] = OH_BUTLER_CONFIG
@@ -3009,7 +3039,10 @@ OH_CLERMONT_CONFIG: dict[str, Any] = {
     "tenant_id": "1",
     "tenant_name": "Clermont County",
     "lookback_days": 900,
-    "max_pages": 5,
+        # Raised from 5 on 2026-08-03. max_pages 5 was a 30-day-lookback
+    # setting; with the server-side ApplyDateFrom filter now applied
+    # (see energov_provider.py) a 2025-01-01 backfill needs real depth.
+    "max_pages": 250,
     "feed_id": "oh-clermont",
 }
 STATE_CONFIGS["OH-CLERMONT"] = OH_CLERMONT_CONFIG
@@ -3030,7 +3063,7 @@ CT_HARTFORD_ACCELA_CONFIG: dict[str, Any] = {
     "county": "Hartford",
     "endpoint": "https://aca-prod.accela.com/HARTFORD",
     "permit_type_label": "Commercial Alteration Permit",
-    "lookback_days": 90,
+    "lookback_days": 579,
     "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
     "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
@@ -3054,7 +3087,7 @@ TN_SHELBY_ACCELA_CONFIG: dict[str, Any] = {
     "county": "Shelby",
     "endpoint": "https://aca-prod.accela.com/SHELBYCO",
     "permit_type_label": "Commercial New Construction Permit",
-    "lookback_days": 90,
+    "lookback_days": 579,
 }
 STATE_CONFIGS["TN-SHELBY"] = TN_SHELBY_ACCELA_CONFIG
 
@@ -3075,7 +3108,10 @@ TN_HENDERSONVILLE_ENERGOV_CONFIG: dict[str, Any] = {
     "tenant_id": "1",
     "tenant_name": "Hendersonville",
     "lookback_days": 90,
-    "max_pages": 5,
+        # Raised from 5 on 2026-08-03. max_pages 5 was a 30-day-lookback
+    # setting; with the server-side ApplyDateFrom filter now applied
+    # (see energov_provider.py) a 2025-01-01 backfill needs real depth.
+    "max_pages": 250,
 }
 STATE_CONFIGS["TN-HENDERSONVILLE"] = TN_HENDERSONVILLE_ENERGOV_CONFIG
 
@@ -3095,7 +3131,10 @@ IL_NAPERVILLE_ENERGOV_CONFIG: dict[str, Any] = {
     "tenant_id": "1",
     "tenant_name": "Naperville",
     "lookback_days": 90,
-    "max_pages": 5,
+        # Raised from 5 on 2026-08-03. max_pages 5 was a 30-day-lookback
+    # setting; with the server-side ApplyDateFrom filter now applied
+    # (see energov_provider.py) a 2025-01-01 backfill needs real depth.
+    "max_pages": 250,
 }
 STATE_CONFIGS["IL-NAPERVILLE"] = IL_NAPERVILLE_ENERGOV_CONFIG
 
@@ -3334,6 +3373,17 @@ CA_SACRAMENTO_CONFIG: dict[str, Any] = {
     "watermark_field": "OBJECTID",
     "hash_fields": ["Application"],
     "commercial_where": "Type='Commercial'",
+    # Status_Date is a STRING column (MM/DD/YYYY), so it cannot be used as an
+    # ArcGIS `date_field` -- a DATE comparison against it errors, and it sorts
+    # wrong lexicographically. But it is still the only real date this layer
+    # carries, and output_date_field is read ONLY when building output rows,
+    # never injected into the WHERE clause, so it is safe here.
+    #
+    # Leaving it unset is what made 4,332 of Sacramento's 4,333 rows carry a
+    # null date and drop out of every windowed query -- a top-25 county reading
+    # as 1 in-window project. generic_mapping._iso_date already parses
+    # MM/DD/YYYY correctly (verified live 2026-08-03).
+    "output_date_field": "Status_Date",
     "out_fields": (
         "OBJECTID,Type,Sub_Type,Category,Application,Status_Date,"
         "Current_Status,Parcel_No,Address,Site_Location,ZIP,Valuation,"
@@ -3359,7 +3409,16 @@ CA_SACRAMENTO_ARCHIVE_CONFIG: dict[str, Any] = {
     # Year restricted directly in the WHERE clause (see comment above) --
     # date_field deliberately left unset since Status_Date is a string
     # column whose MM/DD/YYYY format sorts wrong lexicographically.
-    "commercial_where": "Type='Commercial' AND Status_Date LIKE '%/2025'",
+    # The archive spans 2016+ and Status_Date is a string, so the year is
+    # filtered with LIKE rather than a date comparison. This previously matched
+    # ONLY '%/2025' -- which silently excluded every 2026 archive record even
+    # though the pull window is 2025-01-01 onward. Both years now included.
+    "commercial_where": (
+        "Type='Commercial' AND "
+        "(Status_Date LIKE '%/2025' OR Status_Date LIKE '%/2026')"
+    ),
+    # See the note on CA_SACRAMENTO_CONFIG: output-only, never used in a WHERE.
+    "output_date_field": "Status_Date",
     "out_fields": (
         "OBJECTID,Type,Sub_Type,Category,Application,Status_Date,"
         "Current_Status,Parcel_No,Address,Site_Location,ZIP,Valuation,"
@@ -3442,3 +3501,228 @@ CA_SANTACLARA_CONFIG: dict[str, Any] = {
     "source_url": "https://data.sanjoseca.gov/dataset/active-building-permits",
 }
 STATE_CONFIGS["CA-SANTACLARA"] = CA_SANTACLARA_CONFIG
+
+
+# ---------------------------------------------------------------------------
+# Batch wired 2026-08-03: sources that were sitting in
+# data/jurisdiction_health_matrix.json as VERIFIED_WORKING with a null
+# state_agent_pipeline_key -- i.e. discovery had already confirmed them live
+# and nobody ever wired them. All 26 such Accela/EnerGov entries were
+# re-verified live before writing anything here; 12 turned out to be already
+# covered (the matrix's null key is stale metadata, not a real gap), and
+# Midland TX could not be resolved (its portal 403s a bot-check and every
+# candidate tylerhost hostname DNS-fails -- left unwired rather than guessed).
+#
+# Accela and EnerGov are deliberately preferred over bulk metadata feeds:
+# both expose per-record document paths, which is the differentiator. See
+# the "Documents are the moat" section in CLAUDE.md.
+#
+# lookback_days is 579 = (2026-08-03 - 2025-01-01).days, the fixed pull
+# anchor. RECOMPUTE this each session -- it drifts by a day every day, and
+# the pipeline still has no absolute --since-date flag.
+# ---------------------------------------------------------------------------
+
+# --- Accela (3 counties with no prior config) ------------------------------
+
+TX_GALVESTON_CONFIG: dict[str, Any] = {
+    "state_code": "TX",
+    "provider_type": "accela",
+    "county": "Galveston",
+    # Self-hosted Accela, not the aca-prod multitenant host. Verified live
+    # 2026-08-03: /Cap/CapHome.aspx?module=Building returns 200 with real ACA markup.
+    "endpoint": "https://eportal.galvestontx.gov/CitizenAccess",
+    "permit_type_label": "Commercial Permit",
+    "lookback_days": 579,
+}
+STATE_CONFIGS["TX-GALVESTON"] = TX_GALVESTON_CONFIG
+
+FL_BREVARD_CONFIG: dict[str, Any] = {
+    "state_code": "FL",
+    "provider_type": "accela",
+    "county": "Brevard",
+    "endpoint": "https://acaweb.brevardcounty.us/CitizenAccess",
+    "permit_type_label": "Commercial Permit",
+    "lookback_days": 579,
+}
+STATE_CONFIGS["FL-BREVARD"] = FL_BREVARD_CONFIG
+
+FL_OSCEOLA_CONFIG: dict[str, Any] = {
+    "state_code": "FL",
+    "provider_type": "accela",
+    "county": "Osceola",
+    # permits.osceola.org bare root 200s but the ACA app lives under
+    # /CitizenAccess -- /portal/ 404s. The aca-prod.accela.com/OSCEOLA tenant
+    # also resolves but bounces to Error.aspx, so the county's own host is
+    # the real path. Both checked live 2026-08-03.
+    "endpoint": "https://permits.osceola.org/CitizenAccess",
+    "permit_type_label": "Commercial Permit",
+    "lookback_days": 579,
+}
+STATE_CONFIGS["FL-OSCEOLA"] = FL_OSCEOLA_CONFIG
+
+# --- EnerGov (Tyler Citizen Self Service) ----------------------------------
+# selfservice_path defaults to "apps/selfservice", which is right for every
+# *.tylerhost.net tenant. Self-hosted tenants vary and each value below was
+# read off the live redirect, not assumed.
+
+TX_SUGARLAND_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "TX",
+    "provider_type": "energov",
+    "county": "Fort Bend",
+    "endpoint": "https://energovweb.sugarlandtx.gov",
+    "selfservice_path": "EnerGov_prod/SelfService",
+    "tenant_id": "1",
+    "tenant_name": "Sugar Land",
+    "lookback_days": 579,
+    "max_pages": 250,
+}
+STATE_CONFIGS["TX-SUGARLAND"] = TX_SUGARLAND_ENERGOV_CONFIG
+
+TX_WACO_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "TX",
+    "provider_type": "energov",
+    "county": "McLennan",
+    "endpoint": "https://selfservice.wacotx.gov",
+    "selfservice_path": "EnerGov/SelfService",
+    "tenant_id": "1",
+    "tenant_name": "Waco",
+    "lookback_days": 579,
+    "max_pages": 250,
+}
+STATE_CONFIGS["TX-WACO"] = TX_WACO_ENERGOV_CONFIG
+
+TX_LUBBOCK_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "TX",
+    "provider_type": "energov",
+    "county": "Lubbock",
+    "endpoint": "https://egovaccess.ci.lubbock.tx.us",
+    "selfservice_path": "EnerGov_Prod/SelfService",
+    "tenant_id": "1",
+    "tenant_name": "Lubbock",
+    "lookback_days": 579,
+    "max_pages": 250,
+}
+STATE_CONFIGS["TX-LUBBOCK"] = TX_LUBBOCK_ENERGOV_CONFIG
+
+TX_WAXAHACHIE_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "TX",
+    "provider_type": "energov",
+    "county": "Ellis",
+    "endpoint": "https://waxahachietx-energovpub.tylerhost.net",
+    "tenant_id": "1",
+    "tenant_name": "Waxahachie",
+    "lookback_days": 579,
+    "max_pages": 250,
+}
+STATE_CONFIGS["TX-WAXAHACHIE"] = TX_WAXAHACHIE_ENERGOV_CONFIG
+
+FL_WESTPALMBEACH_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "FL",
+    "provider_type": "energov",
+    "county": "Palm Beach",
+    # The matrix recorded only the wpb.org/epl landing page, which 403s a
+    # bot-check. The real CSS tenant is this tylerhost host (verified 200
+    # live 2026-08-03). Palm Beach is rank 24 by population and had no config.
+    "endpoint": "https://westpalmbeachfl-energovpub.tylerhost.net",
+    "tenant_id": "1",
+    "tenant_name": "West Palm Beach",
+    "lookback_days": 579,
+    "max_pages": 250,
+}
+STATE_CONFIGS["FL-WESTPALMBEACH"] = FL_WESTPALMBEACH_ENERGOV_CONFIG
+
+FL_MARION_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "FL",
+    "provider_type": "energov",
+    "county": "Marion",
+    # permits.marionfl.org redirects to selfservice.marionfl.org with an
+    # energov_prod path; both captured live rather than assumed.
+    "endpoint": "https://selfservice.marionfl.org",
+    "selfservice_path": "energov_prod/selfservice",
+    "tenant_id": "1",
+    "tenant_name": "Marion County",
+    "lookback_days": 579,
+    "max_pages": 250,
+}
+STATE_CONFIGS["FL-MARION"] = FL_MARION_ENERGOV_CONFIG
+
+AZ_YUMA_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "AZ",
+    "provider_type": "energov",
+    "county": "Yuma",
+    "endpoint": "https://yumaaz-energovweb.tylerhost.net",
+    "tenant_id": "1",
+    "tenant_name": "Yuma",
+    "lookback_days": 579,
+    "max_pages": 250,
+}
+STATE_CONFIGS["AZ-YUMA"] = AZ_YUMA_ENERGOV_CONFIG
+
+AR_FAYETTEVILLE_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "AR",
+    "provider_type": "energov",
+    "county": "Washington",
+    "endpoint": "https://egov.fayetteville-ar.gov",
+    "selfservice_path": "energov_prod/selfservice",
+    "tenant_id": "1",
+    "tenant_name": "Fayetteville",
+    "lookback_days": 579,
+    "max_pages": 250,
+}
+STATE_CONFIGS["AR-FAYETTEVILLE"] = AR_FAYETTEVILLE_ENERGOV_CONFIG
+
+AR_CONWAY_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "AR",
+    "provider_type": "energov",
+    "county": "Faulkner",
+    "endpoint": "https://conwayar-energovweb.tylerhost.net",
+    "tenant_id": "1",
+    "tenant_name": "Conway",
+    "lookback_days": 579,
+    "max_pages": 250,
+}
+STATE_CONFIGS["AR-CONWAY"] = AR_CONWAY_ENERGOV_CONFIG
+
+CO_LARIMER_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "CO",
+    "provider_type": "energov",
+    "county": "Larimer",
+    # Additive, not a duplicate: CO-FORTCOLLINS already covers the city on
+    # Accela; this is the COUNTY's own portal (unincorporated + other towns).
+    # Same relationship as the several LA-area city configs sharing a county.
+    "endpoint": "https://onlineportal.larimer.org",
+    "selfservice_path": "EnerGov_Prod/selfservice",
+    "tenant_id": "1",
+    "tenant_name": "Larimer County",
+    "lookback_days": 579,
+    "max_pages": 250,
+}
+STATE_CONFIGS["CO-LARIMER"] = CO_LARIMER_ENERGOV_CONFIG
+
+CO_GRANDJUNCTION_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "CO",
+    "provider_type": "energov",
+    "county": "Mesa",
+    # Caveat from the discovery note: this tenant is scoped to planning/zoning
+    # clearances; Grand Junction's actual building permits go through a
+    # MaintStar portal we have no provider for. Expect low commercial yield.
+    "endpoint": "https://grandjunctionco-energovweb.tylerhost.net",
+    "tenant_id": "1",
+    "tenant_name": "Grand Junction",
+    "lookback_days": 579,
+    "max_pages": 250,
+}
+STATE_CONFIGS["CO-GRANDJUNCTION"] = CO_GRANDJUNCTION_ENERGOV_CONFIG
+
+AL_MOBILE_ENERGOV_CONFIG: dict[str, Any] = {
+    "state_code": "AL",
+    "provider_type": "energov",
+    "county": "Mobile",
+    "endpoint": "https://urban.cityofmobile.org",
+    "selfservice_path": "portal",
+    "tenant_id": "1",
+    "tenant_name": "Mobile",
+    "lookback_days": 579,
+    "max_pages": 250,
+}
+STATE_CONFIGS["AL-MOBILE"] = AL_MOBILE_ENERGOV_CONFIG

@@ -55,6 +55,10 @@ class EnerGovProvider(BaseIngestionProvider):
         date_field: str = "IssueDate",
         lookback_days: int = 30,
         max_pages: int = 5,
+        # 100 is the largest value the tenant page-size select offers. Default
+        # to it: results are oldest-first with no server-side date filter, so
+        # rows-per-page is the only lever that makes a deep backfill affordable.
+        page_size: int = 100,
         headless: bool = True,
         selfservice_path: str = "apps/selfservice",
     ) -> None:
@@ -77,6 +81,7 @@ class EnerGovProvider(BaseIngestionProvider):
         self.date_field = date_field
         self.lookback_days = lookback_days
         self.max_pages = max_pages
+        self.page_size = page_size
         self.headless = headless
 
     def _cutoff_date(self, last_watermark: str) -> date:
@@ -169,7 +174,14 @@ class EnerGovProvider(BaseIngestionProvider):
                 module_select = page.locator("#SearchModule")
                 if module_select.count() > 0:
                     try:
-                        module_select.select_option(value="Permit", timeout=5000)
+                        # Option VALUES are not portable across tenants: El Monte
+                        # uses "Permit", Lubbock uses Angular's "number:2". Match
+                        # on the visible label instead and fall back to the
+                        # literal value for tenants where that still works.
+                        try:
+                            module_select.select_option(label="Permit", timeout=5000)
+                        except Exception:  # noqa: BLE001
+                            module_select.select_option(value="Permit", timeout=5000)
                         page.eval_on_selector(
                             "#SearchModule", "el => el.dispatchEvent(new Event('change', {bubbles: true}))"
                         )
@@ -184,6 +196,62 @@ class EnerGovProvider(BaseIngestionProvider):
                         page.wait_for_timeout(1000)
                     except Exception as e:  # noqa: BLE001
                         print(f"[energov:{self.county}] SearchModule select failed: {e}", file=sys.stderr)
+                # Apply a SERVER-SIDE date filter via the Advanced panel.
+                #
+                # This reverses this module's original finding that the Advanced
+                # panel "stays ng-hidden in every state tried". It does -- while
+                # SearchModule is "All". Selecting a concrete module (Permit)
+                # first makes #button-Advanced visible, and clicking it exposes
+                # real ApplyDateFrom/To, IssueDateFrom/To, ExpireDate*, FinalDate*
+                # inputs that filter server-side. Confirmed live on Lubbock
+                # 2026-08-03.
+                #
+                # This matters enormously. The unfiltered blank search returns
+                # the tenant's entire history in NO date order (page 1 spanned
+                # 2011-2023, some later pages were 2014, the last page was
+                # 2024-2026) across ~248k pages -- so no amount of client-side
+                # paging reliably reaches the recent window. With ApplyDateFrom
+                # set to the cutoff, Lubbock returned 4,018 pages of which the
+                # first row was 2025-01-21: every row in-window by construction.
+                date_filter_applied = False
+                try:
+                    adv = page.locator("#button-Advanced")
+                    # Angular strips the ng-hide class asynchronously after the
+                    # module change; a single is_visible() check right after the
+                    # 1s module wait loses the race (observed live on Lubbock:
+                    # reported not-visible, then visible on a manual repro with a
+                    # 2s wait). Poll instead of guessing a fixed delay.
+                    for _ in range(12):
+                        if adv.count() > 0 and adv.first.is_visible():
+                            break
+                        page.wait_for_timeout(500)
+                    if adv.count() > 0 and adv.first.is_visible():
+                        adv.first.click(timeout=8000)
+                        page.wait_for_timeout(1200)
+                        # ApplyDate is the most reliably populated of the four:
+                        # IssueDate is null for anything not yet issued, which
+                        # would silently drop in-review projects -- exactly the
+                        # early-stage work that is most valuable to us.
+                        field = page.locator("#ApplyDateFrom")
+                        if field.count() > 0:
+                            field.first.fill(cutoff.strftime("%m/%d/%Y"), timeout=5000)
+                            page.dispatch_event("#ApplyDateFrom", "change")
+                            page.wait_for_timeout(400)
+                            date_filter_applied = True
+                            print(
+                                f"[energov:{self.county}] server-side ApplyDateFrom="
+                                f"{cutoff.strftime('%m/%d/%Y')}",
+                                file=sys.stderr,
+                            )
+                except Exception as e:  # noqa: BLE001 - fall back to client-side windowing
+                    print(f"[energov:{self.county}] advanced date filter failed: {e}", file=sys.stderr)
+                if not date_filter_applied:
+                    print(
+                        f"[energov:{self.county}] no server-side date filter; "
+                        "falling back to client-side window (expect low yield)",
+                        file=sys.stderr,
+                    )
+
                 page.locator("button:has-text('Search')").first.click(timeout=15000)
                 # Fires anywhere from ~3s to ~6s+ depending on tenant --
                 # confirmed live (2026-07-28) Glendale's SPA is meaningfully
@@ -215,6 +283,64 @@ class EnerGovProvider(BaseIngestionProvider):
                             break
                         page.wait_for_timeout(500)
 
+                # Bump rows-per-page from the default 10 to the maximum the
+                # tenant offers (the #pageSizeList select exposes 10/25/50/100).
+                #
+                # This matters far more than it looks. There is no server-side
+                # date filter available here (the Advanced panel stays ng-hidden
+                # on every tenant tried) and results come back oldest-first, so
+                # reaching 2025+ records means paging *deep*. Measured live on
+                # Lubbock 2026-08-03: 65 pages x 10 rows = 650 rows, of which
+                # ZERO fell inside the 579-day window -- every row was 2021-era.
+                # At 100 rows/page the same page budget covers 10x the history.
+                #
+                # The select is not "visible" until results render, and it is
+                # Angular-bound, so a plain value assignment is ignored -- the
+                # change event has to be dispatched for the model to update.
+                if self.page_size and self.page_size != 10:
+                    try:
+                        changed = page.evaluate(
+                            """(size) => {
+                                const el = document.querySelector('#pageSizeList');
+                                if (!el) return false;
+                                const opt = Array.from(el.options)
+                                    .find(o => o.value === String(size));
+                                if (!opt) return false;
+                                el.value = opt.value;
+                                el.dispatchEvent(new Event('change', {bubbles: true}));
+                                return true;
+                            }""",
+                            self.page_size,
+                        )
+                        if changed:
+                            before = len(captured)
+                            for _ in range(20):
+                                if len(captured) > before:
+                                    break
+                                page.wait_for_timeout(500)
+                            print(
+                                f"[energov:{self.county}] page size -> {self.page_size}",
+                                file=sys.stderr,
+                            )
+                        else:
+                            print(
+                                f"[energov:{self.county}] page size {self.page_size} "
+                                "not offered, staying at default",
+                                file=sys.stderr,
+                            )
+                    except Exception as e:  # noqa: BLE001 - never fail the run over this
+                        print(f"[energov:{self.county}] page size bump failed: {e}", file=sys.stderr)
+
+                # Plain forward paging. With the server-side ApplyDateFrom filter
+                # applied above, every returned row is already inside the window,
+                # so page 1 is exactly where we want to start.
+                #
+                # An earlier attempt here jumped to the last page and walked
+                # BACKWARD, on the theory that results were oldest-first. They
+                # are not sorted by date at all -- paging backward from the last
+                # page hit 2014 rows on page 2. That approach is removed rather
+                # than kept as a fallback, because it stops on a date heuristic
+                # that the unsorted ordering makes meaningless.
                 for page_num in range(1, self.max_pages + 1):
                     if page_num > 1:
                         next_link = page.locator("#link-NextPage")
@@ -234,10 +360,10 @@ class EnerGovProvider(BaseIngestionProvider):
                     if not captured:
                         continue
                     batch = captured[-1]
-                    print(f"[energov:{self.county}] page {page_num}: {len(batch)} rows", file=sys.stderr)
                     if not batch:
                         break
                     rows_out.extend(batch)
+                    print(f"[energov:{self.county}] page {page_num}: {len(batch)} rows", file=sys.stderr)
             except Exception as e:  # noqa: BLE001
                 print(f"[energov:{self.county}] navigation/search error: {e}", file=sys.stderr)
             finally:

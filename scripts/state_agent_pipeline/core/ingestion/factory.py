@@ -97,6 +97,7 @@ def build_provider(state_config: dict[str, Any]) -> BaseIngestionProvider:
             supports_pagination=state_config.get("supports_pagination", True),
             include_geometry=state_config.get("include_geometry", True),
             date_field=state_config.get("date_field"),
+            output_date_field=state_config.get("output_date_field"),
             date_field_is_string=state_config.get("date_field_is_string", False),
             date_literal_style=state_config.get("date_literal_style", "date"),
             lookback_days=state_config.get("lookback_days", 30),
@@ -151,6 +152,7 @@ def build_provider(state_config: dict[str, Any]) -> BaseIngestionProvider:
             date_field=state_config.get("date_field", "IssueDate"),
             lookback_days=state_config.get("lookback_days", 30),
             max_pages=state_config.get("max_pages", 5),
+            page_size=state_config.get("page_size", 100),
             selfservice_path=state_config.get("selfservice_path", "apps/selfservice"),
         )
 

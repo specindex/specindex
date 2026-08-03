@@ -42,6 +42,8 @@ class ArcGISProvider(BaseIngestionProvider):
         max_retries: int = 4,
         include_geometry: bool = True,
         date_field: str | None = None,
+        # Output-only date column. See the note at the to_projects() call site.
+        output_date_field: str | None = None,
         date_field_is_string: bool = False,
         date_literal_style: str = "date",
         lookback_days: int = 30,
@@ -97,6 +99,7 @@ class ArcGISProvider(BaseIngestionProvider):
         # "since yesterday." Bound the first run by a real date field,
         # same principle as SocrataProvider's lookback_days.
         self.date_field = date_field
+        self.output_date_field = output_date_field
         # A handful of ArcGIS layers (e.g. Pearland's Commercial_Permits)
         # store their date column as esriFieldTypeString ("2021-02-23 0:00")
         # rather than a real Esri Date field -- `DATE '...'` literal syntax
@@ -245,7 +248,18 @@ class ArcGISProvider(BaseIngestionProvider):
             address_fields=self.address_fields,
             desc_fields=self.desc_fields,
             value_fields=self.value_fields,
-            date_field=self.date_field,
+            # output_date_field wins when set. Some layers store their only
+            # real date as a STRING (Sacramento's Status_Date is MM/DD/YYYY),
+            # which cannot be used as `date_field` -- an ArcGIS DATE comparison
+            # against it errors and it sorts wrong lexicographically, so those
+            # configs filter by year with LIKE and leave date_field unset.
+            # That left the mapper with no date at all: 4,332 of Sacramento's
+            # 4,333 rows carried a null date and vanished from every windowed
+            # query, making a top-25 county read as 1 in-window project.
+            # output_date_field is only ever read when building output rows,
+            # never injected into a WHERE clause, so it is safe for exactly
+            # this case. Mirrors the same option on ckan_provider.
+            date_field=self.output_date_field or self.date_field,
             source_url=self.source_url or self.base_url,
             city_fields=self.city_fields,
         )
