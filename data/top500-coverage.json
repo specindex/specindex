@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T23:06:26+00:00",
+  "generated_at": "2026-08-03T23:31:56+00:00",
   "window_start": "2025-01-01",
   "counties": [
     {
@@ -7,8 +7,8 @@
       "county": "Los Angeles",
       "state": "CA",
       "population": 9757179,
-      "projects": 11502,
-      "projects_in_window": 11494,
+      "projects": 11953,
+      "projects_in_window": 11934,
       "documents": 0,
       "status": "projects-only"
     },
@@ -17,8 +17,8 @@
       "county": "Cook",
       "state": "IL",
       "population": 5182617,
-      "projects": 41006,
-      "projects_in_window": 32307,
+      "projects": 41820,
+      "projects_in_window": 33121,
       "documents": 0,
       "status": "projects-only"
     },
@@ -37,8 +37,8 @@
       "county": "Maricopa",
       "state": "AZ",
       "population": 4673096,
-      "projects": 281,
-      "projects_in_window": 176,
+      "projects": 392,
+      "projects_in_window": 287,
       "documents": 0,
       "status": "projects-only"
     },
@@ -67,8 +67,8 @@
       "county": "Miami-Dade",
       "state": "FL",
       "population": 2838461,
-      "projects": 25117,
-      "projects_in_window": 20975,
+      "projects": 34140,
+      "projects_in_window": 29998,
       "documents": 28,
       "status": "covered"
     },
@@ -77,7 +77,7 @@
       "county": "Dallas",
       "state": "TX",
       "population": 2656028,
-      "projects": 524,
+      "projects": 1347,
       "projects_in_window": 524,
       "documents": 0,
       "status": "projects-only"
@@ -107,8 +107,8 @@
       "county": "Clark",
       "state": "NV",
       "population": 2398871,
-      "projects": 8151,
-      "projects_in_window": 5570,
+      "projects": 8222,
+      "projects_in_window": 5641,
       "documents": 0,
       "status": "projects-only"
     },
@@ -137,8 +137,8 @@
       "county": "Tarrant",
       "state": "TX",
       "population": 2230708,
-      "projects": 9228,
-      "projects_in_window": 7732,
+      "projects": 13652,
+      "projects_in_window": 12156,
       "documents": 17,
       "status": "covered"
     },
@@ -157,7 +157,7 @@
       "county": "Bexar",
       "state": "TX",
       "population": 2127737,
-      "projects": 483,
+      "projects": 970,
       "projects_in_window": 482,
       "documents": 0,
       "status": "projects-only"
@@ -197,8 +197,8 @@
       "county": "Middlesex",
       "state": "MA",
       "population": 1668956,
-      "projects": 4,
-      "projects_in_window": 4,
+      "projects": 10,
+      "projects_in_window": 10,
       "documents": 0,
       "status": "projects-only"
     },
@@ -1377,7 +1377,7 @@
       "county": "Ada",
       "state": "ID",
       "population": 535799,
-      "projects": 101,
+      "projects": 279,
       "projects_in_window": 101,
       "documents": 1,
       "status": "covered"
@@ -3777,8 +3777,8 @@
       "county": "Midland",
       "state": "TX",
       "population": 183587,
-      "projects": 127,
-      "projects_in_window": 85,
+      "projects": 184,
+      "projects_in_window": 136,
       "documents": 0,
       "status": "projects-only"
     },
@@ -5008,7 +5008,7 @@
     "covered": 29,
     "projects_only": 177,
     "none": 294,
-    "total_projects_in_window": 448482,
+    "total_projects_in_window": 463422,
     "total_documents": 1494
   }
 }
