@@ -72,8 +72,17 @@ HEADER_ALIASES = {
     # identical id and 192 real rows collapse into 1 on merge, the same
     # failure mode documented above for Indianapolis's "Case Number".
     "application number": "permit_number",
+    # Oklahoma City's deployment (OK-OKLAHOMA) uses the bare headers
+    # "Number"/"Type"/"Application Name" instead of the longer
+    # "Permit Number"/"Permit Type"/"Project Name" -- confirmed live
+    # 2026-08-02 against aca-prod.accela.com/OKC (header row reads
+    # Date | Number | Type | Application Name | Status | Address |
+    # Action | Short Notes).
+    "number": "permit_number",
     "permit type": "permit_type",
     "permits type": "permit_type",  # Cabarrus County NC plural header
+    "type": "permit_type",
+    "application name": "project_name",
     "building type": "permit_type",
     "record type": "permit_type",
     "application type": "permit_type",
@@ -265,8 +274,35 @@ class AccelaProvider(BaseIngestionProvider):
                     # 2026-07-28 that the latter throws "element is not
                     # attached to the DOM" on this exact ASP.NET postback
                     # pattern (the grid re-renders between select and click).
-                    next_link.click()
-                    page.wait_for_load_state("networkidle", timeout=25000)
+                    # ACA's #divGlobalLoadingMask overlay intermittently
+                    # stays in the DOM intercepting pointer events even
+                    # after the grid has rendered -- hit live 2026-08-03
+                    # on OKC at page 62 of a 60+-page run (610 rows in,
+                    # then a hard 30s click timeout that killed the whole
+                    # fetch). Real click first (keeps the existing
+                    # auto-wait/re-query behaviour), then fall back to a
+                    # DOM-level click that bypasses hit-testing rather
+                    # than losing every row collected so far.
+                    try:
+                        next_link.click(timeout=15000)
+                    except Exception:
+                        print(
+                            f"[accela:{self.county}] page {page_num}: Next click intercepted, "
+                            "retrying via DOM click",
+                            file=sys.stderr,
+                        )
+                        try:
+                            next_link.evaluate("el => el.click()")
+                        except Exception as exc:
+                            print(
+                                f"[accela:{self.county}] pagination stopped at page {page_num}: {exc}",
+                                file=sys.stderr,
+                            )
+                            break
+                    try:
+                        page.wait_for_load_state("networkidle", timeout=25000)
+                    except Exception:
+                        page.wait_for_timeout(2000)
                     time.sleep(0.5)
             finally:
                 browser.close()

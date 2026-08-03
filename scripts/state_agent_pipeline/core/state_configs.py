@@ -1121,6 +1121,56 @@ TX_BROWNSVILLE_ACCELA_CONFIG: dict[str, Any] = {
     "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
 
+# Oklahoma County, OK (Oklahoma City -- ~65% of the county's population
+# and effectively all of its commercial construction). Verified live
+# 2026-08-02/03 against aca-prod.accela.com/OKC:
+#   * module="Building" errors out (Error.aspx) -- real module is
+#     "Permits" (same pattern as Omaha/Indianapolis).
+#   * The Permits module's record-type dropdown has 68 options; the
+#     commercial building one is exactly "Building - Commercial"
+#     (siblings: "Building - Residential", "Electrical - Commercial",
+#     "Mechanical - Commercial", "Plumbing - Commercial", ...).
+#   * This deployment DOES expose an anonymous Start/End Date filter
+#     (txtGSStartDate/txtGSEndDate), so the full 2025-01-01 anchor
+#     window can be requested directly instead of paging blind.
+#   * Results grid headers are the bare "Number"/"Type"/"Application
+#     Name" variants -- HEADER_ALIASES in accela_provider.py extended
+#     accordingly.
+#   * DOCUMENTS: this instance serves real plan-review PDFs anonymously.
+#     Record detail pages are stable at
+#     /Cap/CapDetail.aspx?Module=Permits&TabName=Permits&capID1=..&capID2=..&capID3=..&agencyCode=OKC
+#     and the Attachments tab loads /FileUpload/AttachmentsList.aspx
+#     (session-scoped to the last-viewed record). Confirmed by actually
+#     downloading a 98KB / 2-page PDF ("Latest Mark-up with Questions
+#     (1).pdf") off BLDC-2026-05486 with no login.
+OK_OKLAHOMA_ACCELA_CONFIG: dict[str, Any] = {
+    "state_code": "OK",
+    "provider_type": "accela",
+    "county": "Oklahoma",
+    "endpoint": "https://aca-prod.accela.com/OKC",
+    "module": "Permits",
+    "permit_type_label": "Building - Commercial",
+    # (date.today() - date(2025, 1, 1)).days as of 2026-08-03.
+    "lookback_days": 579,
+    # 10 rows/page in this deployment; the standing 2025-01-01 window is
+    # thousands of records, so the default max_pages=30 (300 rows) would
+    # truncate badly.
+    #
+    # KNOWN CEILING (measured, not assumed): ACA throttles long anonymous
+    # paging sessions -- #divGlobalLoadingMask stops clearing and every
+    # Next click gets intercepted. Run 1 died at page 62 (610 rows), run 2
+    # at page 43 (430 rows), and a follow-up probe couldn't even load
+    # CapHome for a while afterwards. So a single run realistically yields
+    # ~40-60 pages, NOT the full 579-day window (~5,500 records at OKC's
+    # ~70 commercial permits/week). First ingest landed 06/15/2026 ->
+    # 07/31/2026. Real remaining scope: chunk the backfill into
+    # month-sized start/end windows with a fresh browser session per
+    # chunk, instead of one long paging session.
+    "max_pages": 300,
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
+}
+
 # City of Pearland (Brazoria County's largest city). Real Cityworks-backed
 # commercial-specific layer -- BUS_CASE_DESC has values like "Commercial
 # Alteration"/"Commercial Demolition Permit"/"Commercial Site Work Permit".
@@ -2550,6 +2600,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "CA-SANFRANCISCO": CA_SANFRANCISCO_CONFIG,
     "CA-MARIN": CA_MARIN_CONFIG,
     "CA-ANTIOCH": CA_ANTIOCH_ENERGOV_CONFIG,
+    "OK-OKLAHOMA": OK_OKLAHOMA_ACCELA_CONFIG,
     "TX-BRAZORIA": TX_BRAZORIA_CONFIG,
     "TX-MIDLAND": TX_MIDLAND_CONFIG,
     "TX-HAYS": TX_HAYS_CONFIG,
