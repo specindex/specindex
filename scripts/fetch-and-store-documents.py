@@ -141,7 +141,29 @@ def main() -> int:
 
             bucket = storage.Client().bucket(GCS_BUCKET)
 
-        summary = {"checked": 0, "dead_links": 0, "fetched": 0, "deduped": 0, "no_project_match": 0}
+        summary = {"checked": 0, "dead_links": 0, "fetched": 0, "deduped": 0, "no_project_match": 0,
+                   "db_reconnects": 0}
+
+        # Commit incrementally. Originally this held ONE connection open across
+        # every document and called commit() once at the very end -- so a single
+        # dropped connection anywhere in a multi-hour run discarded all of it.
+        # That happened live 2026-08-03 on a 2,127-document run: psycopg2
+        # OperationalError "server closed the connection unexpectedly" after
+        # hundreds of successful fetches, and project_document_files stayed at
+        # 885. Same failure mode (and same fix) as load-corpus-to-postgres.py.
+        COMMIT_EVERY = 25
+        pending = 0
+
+        def _reconnect():
+            nonlocal conn
+            try:
+                conn.close()
+            except Exception:  # noqa: BLE001
+                pass
+            conn = psycopg2.connect(args.database_url, connect_timeout=15)
+            summary["db_reconnects"] += 1
+            return conn
+
         with conn.cursor() as cur:
             for pid, doc in all_docs:
                 summary["checked"] += 1
@@ -182,8 +204,26 @@ def main() -> int:
                     """,
                     (sk, title, url, content_type, gcs_path, digest),
                 )
+                pending += 1
+                if pending >= COMMIT_EVERY:
+                    try:
+                        conn.commit()
+                    except psycopg2.OperationalError as e:
+                        # Connection died mid-run. Reconnect and keep going --
+                        # the rows already committed are safe, and the GCS
+                        # objects for this batch are content-addressed so a
+                        # re-run dedupes rather than duplicating.
+                        print(f"  [db] commit failed ({e}); reconnecting", file=sys.stderr)
+                        conn = _reconnect()
+                        cur = conn.cursor()
+                    pending = 0
         if not args.dry_run:
-            conn.commit()
+            try:
+                conn.commit()
+            except psycopg2.OperationalError as e:
+                print(f"  [db] final commit failed ({e}); reconnecting to flush", file=sys.stderr)
+                conn = _reconnect()
+                conn.commit()
         print(f"\nSummary: {summary}", file=sys.stderr)
     finally:
         conn.close()
