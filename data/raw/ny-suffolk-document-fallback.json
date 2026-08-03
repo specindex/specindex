@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-08-03",
+  "county": "Suffolk",
+  "state": "NY",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 5,
+  "documents_confirmed": 1,
+  "projects": [
+    {
+      "name": "12 Frowein Road Investors LLC Self-Storage Facility",
+      "city_address": "South side of Frowein Road, 356.49' east of Gideon Boulevard, Center Moriches, NY 11934",
+      "project_type": "Commercial / Self-Storage Facility",
+      "estimated_cost": "Not specified",
+      "developer_owner": "12 Frowein Road Investors LLC",
+      "status": "Under Review / Planning Board Public Hearing Noticed (Hearing Date: August 27, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Town of Brookhaven Public Hearing Notice, Posted July 30, 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Brookhaven Logistics Center at Yaphank",
+      "city_address": "North side of Horseblock Road (CR 16), approx. 2,000' west of Yaphank Avenue, Yaphank, NY 11980",
+      "project_type": "Industrial / Warehouse & Distribution",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Brookhaven Logistics Center, LLC (formerly NP/Winters Long Island Industrial Center, LLC)",
+      "status": "Under Review / Draft Environmental Impact Statement Accepted & IDA Amendments Active",
+      "document_url": "https://www.brookhavenny.gov/DocumentCenter/View/39172/Brookhaven-Logistics-Center-at-Yaphank-Draft-Environmental-Impact-Statement-DEIS-February-2026",
+      "document_type": "Draft Environmental Impact Statement (DEIS) PDF",
+      "source_citation": "Town of Brookhaven Town Board / NYS Environmental Notice Bulletin & Brookhaven IDA Filings",
+      "document_status": "real file (application/pdf, 220,271,299 bytes)",
+      "document_verified": true
+    },
+    {
+      "name": "Lake Ronkonkoma Affordable Housing Renovation",
+      "city_address": "1507 Round Pond, Lake Ronkonkoma, NY 11779",
+      "project_type": "Multifamily Commercial Residential (336 Section 8 affordable units across multiple buildings totaling ~222,040 sq. ft.)",
+      "estimated_cost": "Not specified",
+      "developer_owner": "L+M Fund Management II LLC and Lake Ronkonkoma HF LLC",
+      "status": "Under Review / Public Hearing Held for Financial Assistance",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Town of Brookhaven Industrial Development Agency (IDA) Public Notice",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Amneal Pharmaceuticals Sterile Manufacturing Facility Expansion",
+      "city_address": "50 Horseblock Road, Yaphank, NY 11980",
+      "project_type": "Industrial / Pharmaceutical Manufacturing Facility",
+      "estimated_cost": "Not specified",
+      "developer_owner": "Amneal Pharmaceuticals of New York, LLC",
+      "status": "Under Review / Public Hearing Held for Financial Assistance",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Town of Brookhaven Industrial Development Agency (IDA) Public Notice",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "ISP Millworks Facility",
+      "city_address": "355 Crooked Hill Rd., Brentwood, NY 11717",
+      "project_type": "Commercial / Industrial Millwork Facility",
+      "estimated_cost": "Not specified",
+      "developer_owner": "ISP Millworks",
+      "status": "Under Review / Public Hearing Held",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Town of Islip Industrial Development Agency (IDA) Calendar Notice",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

@@ -1,0 +1,522 @@
+{
+  "generated_at": "2026-08-03T10:29:11.239070+00:00",
+  "projects": [
+    {
+      "id": "ny-nassau-research-bdc-bosfa-valley-stream-senior-housing",
+      "name": "BDC BOSFA Valley Stream Senior Housing",
+      "state": "NY",
+      "city": "Valley Stream Blvd & Hicks St",
+      "county": "Nassau",
+      "status": "planning",
+      "project_type": "Multi-Family / Senior Residential Construction",
+      "estimated_value_usd": 60000000,
+      "square_footage": null,
+      "owner": "BDC BOSFA Valley Stream LLC (The Benjamin Companies & BOSFA Properties)",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Multi-Family / Senior Residential Construction project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: not identified. Expected completion: not identified.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Innovate LI (July 31, 2026) / Town of Hempstead Industrial Development Agency"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "ny-nassau-research-aman-155-llc-mixed-use-redevelopment",
+      "name": "Aman 155 LLC Mixed-Use Redevelopment",
+      "state": "NY",
+      "city": "155 Jericho Turnpike",
+      "county": "Nassau",
+      "status": "planning",
+      "project_type": "Commercial / Multi-Family Mixed-Use",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Aman 155 LLC",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Commercial / Multi-Family Mixed-Use project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: not identified. Expected completion: not identified.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Nassau County Industrial Development Agency (NCIDA)"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "ny-nassau-research-the-gardens-at-buffalo",
+      "name": "The Gardens at Buffalo",
+      "state": "NY",
+      "city": "80-84 Albany Ave & 17-33 Buffalo Ave",
+      "county": "Nassau",
+      "status": "planning",
+      "project_type": "Multi-Family Residential (200 Units: Senior, Veteran & Workforce Housing)",
+      "estimated_value_usd": 49310825,
+      "square_footage": null,
+      "owner": "The Gardens at Buffalo LLC / BOSFA Properties",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Multi-Family Residential (200 Units: Senior, Veteran & Workforce Housing) project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: not identified. Expected completion: not identified.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Town of Hempstead Industrial Development Agency (TOH IDA) / Long Island Herald"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "ny-nassau-research-2150-grand-llc-transit-oriented-development",
+      "name": "2150 Grand LLC Transit-Oriented Development",
+      "state": "NY",
+      "city": "2150 Grand Avenue",
+      "county": "Nassau",
+      "status": "planning",
+      "project_type": "Commercial / Mixed-Use Residential (5-story building with 58 units & ground floor retail)",
+      "estimated_value_usd": 12500000,
+      "square_footage": null,
+      "owner": "2150 Grand LLC",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Commercial / Mixed-Use Residential (5-story building with 58 units & ground floor retail) project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: not identified. Expected completion: not identified.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Town of Hempstead Industrial Development Agency (TOH IDA)"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "ny-nassau-research-cherry-links-townhomes",
+      "name": "Cherry Links Townhomes",
+      "state": "NY",
+      "city": "Hicksville",
+      "county": "Nassau",
+      "status": "planning",
+      "project_type": "Residential Multi-Family Construction (10 Townhomes across two 3-story buildings)",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Cherry Links, LLC",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Residential Multi-Family Construction (10 Townhomes across two 3-story buildings) project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: not identified. Expected completion: not identified.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Nassau County Planning Commission Agenda"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "ny-suffolk-research-12-frowein-road-investors-llc-self-storage-facility",
+      "name": "12 Frowein Road Investors LLC Self-Storage Facility",
+      "state": "NY",
+      "city": "South side of Frowein Road",
+      "county": "Suffolk",
+      "status": "planning",
+      "project_type": "Commercial / Self-Storage Facility",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "12 Frowein Road Investors LLC",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Commercial / Self-Storage Facility project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: not identified. Expected completion: not identified.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Town of Brookhaven Public Hearing Notice, Posted July 30, 2026"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "ny-suffolk-research-brookhaven-logistics-center-at-yaphank",
+      "name": "Brookhaven Logistics Center at Yaphank",
+      "state": "NY",
+      "city": "North side of Horseblock Road (CR 16)",
+      "county": "Suffolk",
+      "status": "planning",
+      "project_type": "Industrial / Warehouse & Distribution",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Brookhaven Logistics Center, LLC (formerly NP/Winters Long Island Industrial Center, LLC)",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Industrial / Warehouse & Distribution project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: not identified. Expected completion: not identified.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Town of Brookhaven Town Board / NYS Environmental Notice Bulletin & Brookhaven IDA Filings"
+        },
+        {
+          "name": "Draft Environmental Impact Statement (DEIS) PDF",
+          "url": "https://www.brookhavenny.gov/DocumentCenter/View/39172/Brookhaven-Logistics-Center-at-Yaphank-Draft-Environmental-Impact-Statement-DEIS-February-2026",
+          "note": "Live-fetched and content-type-checked at capture time: real file (application/pdf, 220,271,299 bytes)"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "ny-suffolk-research-lake-ronkonkoma-affordable-housing-renovation",
+      "name": "Lake Ronkonkoma Affordable Housing Renovation",
+      "state": "NY",
+      "city": "1507 Round Pond",
+      "county": "Suffolk",
+      "status": "planning",
+      "project_type": "Multifamily Commercial Residential (336 Section 8 affordable units across multiple buildings totaling ~222,040 sq. ft.)",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "L+M Fund Management II LLC and Lake Ronkonkoma HF LLC",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Multifamily Commercial Residential (336 Section 8 affordable units across multiple buildings totaling ~222,040 sq. ft.) project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: not identified. Expected completion: not identified.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Town of Brookhaven Industrial Development Agency (IDA) Public Notice"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "ny-suffolk-research-amneal-pharmaceuticals-sterile-manufacturing-facility-expansion",
+      "name": "Amneal Pharmaceuticals Sterile Manufacturing Facility Expansion",
+      "state": "NY",
+      "city": "50 Horseblock Road",
+      "county": "Suffolk",
+      "status": "planning",
+      "project_type": "Industrial / Pharmaceutical Manufacturing Facility",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Amneal Pharmaceuticals of New York, LLC",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Industrial / Pharmaceutical Manufacturing Facility project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: not identified. Expected completion: not identified.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Town of Brookhaven Industrial Development Agency (IDA) Public Notice"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "ny-suffolk-research-isp-millworks-facility",
+      "name": "ISP Millworks Facility",
+      "state": "NY",
+      "city": "355 Crooked Hill Rd.",
+      "county": "Suffolk",
+      "status": "planning",
+      "project_type": "Commercial / Industrial Millwork Facility",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "ISP Millworks",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Commercial / Industrial Millwork Facility project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: not identified. Expected completion: not identified.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Town of Islip Industrial Development Agency (IDA) Calendar Notice"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "ny-westchester-research-westchester-crossing",
+      "name": "Westchester Crossing",
+      "state": "NY",
+      "city": "Former United Hospital Site",
+      "county": "Westchester",
+      "status": "under_construction",
+      "project_type": "Mixed-Use Commercial & Residential",
+      "estimated_value_usd": 450000000,
+      "square_footage": null,
+      "owner": "Rose Associates & BedRock Real Estate Partners",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Mixed-Use Commercial & Residential project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: not identified. Expected completion: not identified.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "https://www.governor.ny.gov/news/governor-hochul-announces-groundbreaking-westchester-crossing-port-chester"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "ny-westchester-research-79-85-william-street-mixed-use-development",
+      "name": "79-85 William Street Mixed-Use Development",
+      "state": "NY",
+      "city": "79-85 William Street",
+      "county": "Westchester",
+      "status": "planning",
+      "project_type": "Commercial Mixed-Use / Multi-Family",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "William Street LLC",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Commercial Mixed-Use / Multi-Family project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: not identified. Expected completion: not identified.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "https://www.yonkersny.gov/government/boards-commissions/planning-board"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "ny-westchester-research-nyc-dep-mechanical-utility-building-conversion",
+      "name": "NYC DEP Mechanical Utility Building Conversion",
+      "state": "NY",
+      "city": "601 Midland Avenue",
+      "county": "Westchester",
+      "status": "planning",
+      "project_type": "Industrial / Utility Infrastructure",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "New York City Department of Environmental Protection (NYC DEP)",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Industrial / Utility Infrastructure project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: not identified. Expected completion: not identified.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "https://www.yonkersny.gov/government/boards-commissions/planning-board"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "ny-westchester-research-brookfield-commons-phase-3",
+      "name": "Brookfield Commons Phase 3",
+      "state": "NY",
+      "city": "161 South Lexington Avenue",
+      "county": "Westchester",
+      "status": "planning",
+      "project_type": "Mixed-Use Commercial / Housing Redevelopment",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "White Plains Housing Authority / Trinity Financial",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Mixed-Use Commercial / Housing Redevelopment project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: not identified. Expected completion: not identified.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "https://www.cityofwhiteplains.com/129/Planning-Board"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "ny-westchester-research-98-broad-parkway-apartment-building",
+      "name": "98 Broad Parkway Apartment Building",
+      "state": "NY",
+      "city": "98 Broad Parkway",
+      "county": "Westchester",
+      "status": "planning",
+      "project_type": "Commercial Multi-Family Residential",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "98 Broad Parkway LLC",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Commercial Multi-Family Residential project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: not identified. Expected completion: not identified.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "https://www.cityofwhiteplains.com/129/Planning-Board"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "ny-westchester-research-545-franklin-avenue-industrial-hub",
+      "name": "545 Franklin Avenue Industrial Hub",
+      "state": "NY",
+      "city": "545 Franklin Avenue",
+      "county": "Westchester",
+      "status": "under_construction",
+      "project_type": "Industrial / Distribution Flex Space",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Simone Development Companies",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Industrial / Distribution Flex Space project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: not identified. Expected completion: not identified.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "https://www.simonedevelopment.com/news/"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-08-03",
+  "county": "Duval",
+  "state": "FL",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 6,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Hotel Merrydelle (Ambassador Hotel Renovation)",
+      "city_address": "420 N. Julia St., Jacksonville, FL 32202",
+      "project_type": "Commercial / Hospitality (Boutique Hotel & Restaurant Adaptive Reuse)",
+      "estimated_cost": "$15,800,000",
+      "developer_owner": "Gateway Jax Inc. & The Indigo Road Hospitality Group (Contractor: Avant Construction Group Inc.)",
+      "status": "Under Review / Selective Demolition Permitted",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://www.jaxdailyrecord.com/news/2026/aug/03/city-reviewing-gateway-jax-hotel-merrydelle/",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Shady Rays Storefront (St. Johns Town Center)",
+      "city_address": "10281 Midtown Parkway, Unit 197, Jacksonville, FL 32246",
+      "project_type": "Commercial / Retail Tenant Build-Out",
+      "estimated_cost": "$409,699",
+      "developer_owner": "Shady Rays / Simon Property Group (Contractor: Dean Builds Inc.)",
+      "status": "Permit Issued",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://www.jaxdailyrecord.com/news/2026/jul/30/shady-rays-joining-st-johns-town-center/",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Covenant Real Estate Group Dental Office",
+      "city_address": "7935 Parramore Road, Jacksonville, FL 32244",
+      "project_type": "Commercial / Medical Office Build-Out",
+      "estimated_cost": "$350,590",
+      "developer_owner": "Covenant Real Estate Group (Contractor: Slate Medical & Dental Construction Services of South Florida LLC)",
+      "status": "Permit Issued",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://www.jaxdailyrecord.com/news/2026/aug/03/development-today-july-30-2026/",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Jacksonville Icemen Headquarters & Office Space",
+      "city_address": "3605 Philips Highway, Jacksonville, FL 32207",
+      "project_type": "Commercial / Office Renovation",
+      "estimated_cost": "$700,000",
+      "developer_owner": "Jacksonville Icemen (Contractor: Meyer Najem Construction LLC)",
+      "status": "Permit Issued",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://www.jaxdailyrecord.com/news/2026/jul/30/development-today-july-29-2026/",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Bowlero Mandarin Renovation",
+      "city_address": "10333 San Jose Blvd., Jacksonville, FL 32257",
+      "project_type": "Commercial / Entertainment Renovation",
+      "estimated_cost": "$275,000",
+      "developer_owner": "Bowlero (Contractor: Barr Commercial Construction Inc.)",
+      "status": "Permit Issued",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://www.jaxdailyrecord.com/news/2026/jul/30/development-today-july-29-2026/",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "BAKU European Market",
+      "city_address": "10750 Atlantic Blvd., No. 5, Jacksonville, FL 32225",
+      "project_type": "Commercial / Retail Alteration",
+      "estimated_cost": "$35,000",
+      "developer_owner": "BAKU European Market (Contractor: Tall Tower Construction Inc.)",
+      "status": "Permit Issued",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "https://www.jaxdailyrecord.com/news/2026/aug/03/development-today-july-30-2026/",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

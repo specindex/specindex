@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-08-03",
+  "county": "Fresno",
+  "state": "CA",
+  "window": "the last 30 days",
+  "method": "Systematic document-focused Step 6 (scripts/document-research-fallback.py) -- captures every named project found; document discovery is best-effort on top, not a gate. Every document_url is live-fetched and content-type-checked before document_verified is set true.",
+  "projects_found": 7,
+  "documents_confirmed": 0,
+  "projects": [
+    {
+      "name": "Dick's House of Sport at Fashion Fair Mall",
+      "city_address": "755 E. Shaw Ave, Fresno, CA 93710",
+      "project_type": "Commercial / Retail Construction",
+      "estimated_cost": "$21,946,268",
+      "developer_owner": "Macerich (Owner) / Dick's Sporting Goods (Tenant) / WDS Construction & Gensler",
+      "status": "Building Permit Issued (Permit # B26-05536)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "The Business Journal, 'Major Fresno commercial projects lead latest permit activity', July 29, 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Shields and Fowler Business Park",
+      "city_address": "2901 N. Fowler Ave (Southwest corner of E. Shields Ave & N. Fowler Ave), Fresno, CA 93727",
+      "project_type": "Industrial / Light Industrial Business Park",
+      "estimated_cost": "N/A",
+      "developer_owner": "Cook Land Company (Yohanes Makmur, P.E.)",
+      "status": "Approved (Development Permit Application No. P24-03149 approved June 25, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Fresno Planning and Development Department, Notice of Action, June 25, 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "364 W. Riverview Drive Generator Installation",
+      "city_address": "364 W. Riverview Drive, Fresno, CA 93711",
+      "project_type": "Commercial / Infrastructure",
+      "estimated_cost": "$10,622,692",
+      "developer_owner": "State of California (Owner) / Provost & Pritchard Consulting Group (Contractor)",
+      "status": "Building Permit Issued",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "The Business Journal, 'Major Fresno commercial projects lead latest permit activity', July 29, 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Kings Canyon Commercial Healthcare Remodel",
+      "city_address": "5638 E. Kings Canyon Road, Fresno, CA 93727",
+      "project_type": "Commercial / Healthcare",
+      "estimated_cost": "$2,300,000",
+      "developer_owner": "Cushing Terrell (Contractor)",
+      "status": "Building Permit Issued",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "The Business Journal, 'Major Fresno commercial projects lead latest permit activity', July 29, 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Social Vocational Services Adult Daycare & Facility",
+      "city_address": "1750 Shaw Ave, Clovis, CA 93611",
+      "project_type": "Commercial / Institutional",
+      "estimated_cost": "N/A",
+      "developer_owner": "Moss Lane Ventures LLC (Owner) / Social Vocational Services & Central Line Design LLC (Applicant)",
+      "status": "Approved (Conditional Use Permit CUP 2026-004 approved July 23, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "City of Clovis Planning Commission Meeting, July 23, 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Derrel's Mini Storage Parcel Division / Expansion",
+      "city_address": "North side of E. Bullard Ave, ~670 ft east of N. Leonard Ave, Fresno County, CA (APN: 553-060-34S)",
+      "project_type": "Commercial / Self-Storage",
+      "estimated_cost": "N/A",
+      "developer_owner": "Derrel's Mini Storage (Bill Robinson, Representative)",
+      "status": "Under Review / Hearing Held (Variance Application No. 4207 heard July 30, 2026)",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "Fresno County Planning Commission Agenda, Item 2, July 30, 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    },
+    {
+      "name": "Calwa Park Restroom & Equipment Facility",
+      "city_address": "4545 E. Church Ave, Fresno, CA 93725",
+      "project_type": "Commercial / Public Facility",
+      "estimated_cost": "$2,000,000",
+      "developer_owner": "Calwa Recreation & Park District (Owner) / DSJ Architects (Dyson Siegrist & Janzen Architects)",
+      "status": "Building Permit Issued",
+      "document_url": "",
+      "document_type": "",
+      "source_citation": "The Business Journal, 'Major Fresno commercial projects lead latest permit activity', July 29, 2026",
+      "document_status": "no url given",
+      "document_verified": false
+    }
+  ]
+}

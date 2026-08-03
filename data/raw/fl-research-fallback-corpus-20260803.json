@@ -1,0 +1,197 @@
+{
+  "generated_at": "2026-08-03T10:28:36.052825+00:00",
+  "projects": [
+    {
+      "id": "fl-duval-research-hotel-merrydelle-ambassador-hotel-renovation",
+      "name": "Hotel Merrydelle (Ambassador Hotel Renovation)",
+      "state": "FL",
+      "city": "420 N. Julia St.",
+      "county": "Duval",
+      "status": "permitting",
+      "project_type": "Commercial / Hospitality (Boutique Hotel & Restaurant Adaptive Reuse)",
+      "estimated_value_usd": 15800000,
+      "square_footage": null,
+      "owner": "Gateway Jax Inc. & The Indigo Road Hospitality Group (Contractor: Avant Construction Group Inc.)",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Commercial / Hospitality (Boutique Hotel & Restaurant Adaptive Reuse) project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: not identified. Expected completion: not identified.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "https://www.jaxdailyrecord.com/news/2026/aug/03/city-reviewing-gateway-jax-hotel-merrydelle/"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "fl-duval-research-shady-rays-storefront-st-johns-town-center",
+      "name": "Shady Rays Storefront (St. Johns Town Center)",
+      "state": "FL",
+      "city": "10281 Midtown Parkway",
+      "county": "Duval",
+      "status": "planning",
+      "project_type": "Commercial / Retail Tenant Build-Out",
+      "estimated_value_usd": 409699,
+      "square_footage": null,
+      "owner": "Shady Rays / Simon Property Group (Contractor: Dean Builds Inc.)",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Commercial / Retail Tenant Build-Out project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: not identified. Expected completion: not identified.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "https://www.jaxdailyrecord.com/news/2026/jul/30/shady-rays-joining-st-johns-town-center/"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "fl-duval-research-covenant-real-estate-group-dental-office",
+      "name": "Covenant Real Estate Group Dental Office",
+      "state": "FL",
+      "city": "7935 Parramore Road",
+      "county": "Duval",
+      "status": "planning",
+      "project_type": "Commercial / Medical Office Build-Out",
+      "estimated_value_usd": 350590,
+      "square_footage": null,
+      "owner": "Covenant Real Estate Group (Contractor: Slate Medical & Dental Construction Services of South Florida LLC)",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Commercial / Medical Office Build-Out project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: not identified. Expected completion: not identified.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "https://www.jaxdailyrecord.com/news/2026/aug/03/development-today-july-30-2026/"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "fl-duval-research-jacksonville-icemen-headquarters-office-space",
+      "name": "Jacksonville Icemen Headquarters & Office Space",
+      "state": "FL",
+      "city": "3605 Philips Highway",
+      "county": "Duval",
+      "status": "planning",
+      "project_type": "Commercial / Office Renovation",
+      "estimated_value_usd": 700000,
+      "square_footage": null,
+      "owner": "Jacksonville Icemen (Contractor: Meyer Najem Construction LLC)",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Commercial / Office Renovation project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: not identified. Expected completion: not identified.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "https://www.jaxdailyrecord.com/news/2026/jul/30/development-today-july-29-2026/"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "fl-duval-research-bowlero-mandarin-renovation",
+      "name": "Bowlero Mandarin Renovation",
+      "state": "FL",
+      "city": "10333 San Jose Blvd.",
+      "county": "Duval",
+      "status": "planning",
+      "project_type": "Commercial / Entertainment Renovation",
+      "estimated_value_usd": 275000,
+      "square_footage": null,
+      "owner": "Bowlero (Contractor: Barr Commercial Construction Inc.)",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Commercial / Entertainment Renovation project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: not identified. Expected completion: not identified.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "https://www.jaxdailyrecord.com/news/2026/jul/30/development-today-july-29-2026/"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "fl-duval-research-baku-european-market",
+      "name": "BAKU European Market",
+      "state": "FL",
+      "city": "10750 Atlantic Blvd.",
+      "county": "Duval",
+      "status": "planning",
+      "project_type": "Commercial / Retail Alteration",
+      "estimated_value_usd": 35000,
+      "square_footage": null,
+      "owner": "BAKU European Market (Contractor: Tall Tower Construction Inc.)",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Commercial / Retail Alteration project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: not identified. Expected completion: not identified.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "https://www.jaxdailyrecord.com/news/2026/aug/03/development-today-july-30-2026/"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    }
+  ]
+}
