@@ -1568,6 +1568,18 @@ NY_RICHMOND_CONFIG: dict[str, Any] = {
     "feed_id": "ny-nycdob-richmond",
 }
 
+# Queens was the one borough never split out when Kings/Bronx/Richmond
+# were (2026-07-31) -- found 2026-08-03 during the top-50 completeness
+# audit, which showed Queens (rank 13, 2.3M people) holding ONE project
+# against 24,469 live commercial filings since 2025-01-01. Same shape as
+# its siblings; unique feed_id so it gets its own watermark.
+NY_QUEENS_CONFIG: dict[str, Any] = {
+    **NY_NYC_CONFIG,
+    "county": "Queens",
+    "commercial_where": "building_type='Other' AND borough='Queens'",
+    "feed_id": "ny-nycdob-queens",
+}
+
 # Erie County, NY (Buffalo) -- county government issues no permits (NY
 # building permitting is municipal-only, confirmed by Gemini + matches
 # every other NY county investigated so far). City of Buffalo's own
@@ -2630,6 +2642,7 @@ STATE_CONFIGS: dict[str, dict[str, Any]] = {
     "NY-KINGS": NY_KINGS_CONFIG,
     "NY-BRONX": NY_BRONX_CONFIG,
     "NY-RICHMOND": NY_RICHMOND_CONFIG,
+    "NY-QUEENS": NY_QUEENS_CONFIG,
     "NY-ERIE-BUFFALO": NY_ERIE_BUFFALO_CONFIG,
     "MA-CAMBRIDGE": MA_CAMBRIDGE_CONFIG,
     "MA-BOSTON": MA_BOSTON_CONFIG,
