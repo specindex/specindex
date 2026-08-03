@@ -103,3 +103,140 @@ discovery to the jurisdiction's planning board and EDMS endpoints.
 - **The <1% document-density circuit breaker is the cheapest high-value change** —
   it converts "documents are the moat" from a stated policy into an enforced gate,
   which is what actually failed this session.
+
+---
+
+# Round 2 — pressing Gemini on specifics (2026-08-03)
+
+Gemini was challenged on the claims it asserted without justification. It conceded
+several. Same session, resumable.
+
+## 1. The <1% threshold — conceded as statistically flawed
+
+Gemini: "The 1% rule on N=50 was statistically flawed. At N=50, zero document hits
+has a wide 95% binomial confidence interval (0% to 7.1%)." Replacement rule:
+
+- **Stratify first** — filter out low-value trade permits (roofing, MEP, sign,
+  residential alterations). Sample only Commercial New Construction, Major
+  Additions, or valuation > $1M (or top 10% valuation for that jurisdiction).
+- **N = 200 high-value records**, then take the upper bound of the 95% Wilson score
+  interval. 0/200 gives an upper bound of 1.8% → classify the portal's document
+  tier as Gated/Barren and trip the breaker.
+- **Value-weighted metric**: measure documents per valuation dollar, not raw count.
+  One $400M hospital yielding a 200-page plan set passes the gate even if 499 minor
+  permits yield nothing.
+
+## 2. "Unauthenticated by law" — conceded as overstated
+
+State open-meetings statutes (Brown Act CA, Texas OMA, Florida Sunshine, Illinois
+OMA) mandate that **agendas** be posted and that materials distributed to board
+members be available for inspection. They do **not** mandate digital unauthenticated
+PDF hosting of every exhibit.
+
+- **Reliably public:** California and Florida municipalities consistently attach
+  full multi-MB site plans, elevations, and EIRs to digital packets on
+  Legistar/Granicus. Major metro county commissions likewise.
+- **Not public:** Texas and rural jurisdictions often post 2-page text agendas with
+  backup exhibits held at the City Secretary's office (PIA/FOIA required). Many
+  planning departments also strip drawings citing **AIA copyright** or post-9/11
+  **building-security exemptions** (schools, utilities, government facilities).
+
+## 3. Council-management vendor landscape (verify before building)
+
+| Vendor | Est. US jurisdictions | Access | Endpoint shape |
+|---|---|---|---|
+| Legistar (Granicus) | ~500–800 major cities/counties | **Stable public REST API** | `GET https://webapi.legistar.com/v1/{client}/matters` and `/matters/{id}/attachments` |
+| BoardDocs (Diligent) | ~3,000–4,000 (school boards, small/mid cities) | No public REST API; scraping | `POST https://go.boarddocs.com/{state}/{client}/Board.nsf/BD-GetAgendaItem` (IBM Domino AJAX) |
+| PrimeGov (CivicPlus) | ~300–500 mid-sized cities | Internal JSON API | `GET https://{client}.primegov.com/api/v2/PublicPortal/GetListItems?meetingId={id}` |
+| CivicClerk / eScribe | ~1,500+ small/mid municipalities | Internal portal API / HTML | `GET https://{client}.civicclerk.com/Web/Meetings/GetMeetingItems` |
+
+Legistar is the only one with a published unauthenticated REST API for attachments
+across nearly all client instances. **Counts are Gemini estimates — verify live.**
+
+## 4. EDMS fingerprinting signatures
+
+- **Laserfiche WebLink** — paths `/WebLink/`, `/weblink/`, `/laserfiche/`; markers
+  `<title>Laserfiche WebLink</title>`, `weblink.js`. Download:
+  `GET /WebLink/ElectronicFile.aspx?docid={DocID}&dbid={DBID}`. Search:
+  `POST /WebLink/Search.aspx` or `GET /WebLink/api/search` (WebLink 10+).
+- **Hyland OnBase** — paths `/OnBase/`, `/AppNet/`, `/PublicAccess/`, `/docpop/`;
+  markers `docpop.aspx`, `passthru.aspx`, `<input name="clienttype" value="html">`.
+  Download: `GET /AppNet/docpop/docpop.aspx?docid={DocID}`; modern REST
+  `GET /OnBase/api/documents/{docId}/content`.
+- **OpenText Content Server** — paths `/otcs/livelink.exe`, `/otcs/cs.exe`,
+  `/Livelink/`; marker `<input type="hidden" name="func" value="ll">`. **Important:
+  Gemini says the SOAP proxy we reverse-engineered at Snohomish
+  (`otlinkerws.asmx`, GetData/SaveFile) is NOT generalizable** — it's a bespoke
+  third-party integrator deployment. Standard OpenText uses native REST
+  (`/otcs/cs.exe/api/v1`) or legacy CGI
+  (`/otcs/cs.exe?func=ll&objId={id}&objAction=download`).
+- **NextRequest** — `{client}.nextrequest.com`; `GET /api/v1/documents?q=plan+set`.
+- **JustFOIA** — `{client}.justfoia.com`; `GET /api/public/documents`.
+
+## 5. Bid portals — the registration trap (kills automated capture)
+
+- **Bonfire** — gated. Titles public; attachment download needs vendor registration.
+- **PlanetBids** — gated. Registration required for bid/contract documents.
+- **DemandStar** — gated *and paywalled*, ~$5 per document package without a subscription.
+- **BidNet Direct** — gated, full plan downloads often behind paid tiers.
+
+**Actually open:** state DOT portals (Caltrans, TxDOT, FDOT) host plan sets and
+bridge specs on unauthenticated servers; and self-hosted municipal purchasing pages
+that post RFPs as static `.gov` PDF links without commercial procurement software.
+
+## 6. Connector build order (Gemini's ranking + confidence)
+
+| Rank | Connector | Confidence | Key risk | What would change the rank |
+|---|---|---|---|---|
+| 1 | Legistar Web API | 95% | Some clients require an API token | Drop if >30% of top-100 metros token-lock |
+| 2 | State DOT + environmental (CEQAnet, GeoTracker) | 90% | Non-standard schemas per state | Drop if geography needs local permits over state infra |
+| 3 | EDMS auto-probes (Laserfiche, OnBase) | 75% | Public search disabled at IIS level | Raise if fingerprinting finds >200 live unauthenticated targets |
+| 4 | Council scrapers (BoardDocs, CivicClerk, PrimeGov) | 60% | UI changes break DOM parsers | Raise if a unified abstraction yields high plan-set density |
+| 5 | Filtered permit attachment extractor ($1M+ only) | 30% | Session timeouts, auth redirects | Raise if valuation filtering yields >15% doc availability at N=200 |
+| 6 | Commercial bid portals | 10% | Anti-bot, CAPTCHA, paywalls, bans | Only if willing to maintain paid vendor credentials |
+
+---
+
+# Empirical result: Accela document probe (2026-08-03)
+
+20 of 21 wired Accela tenants probed live with the OKC 3-step pattern. Full table in
+`docs/accela-doc-probe-batch2.md`.
+
+**5 confirmed document-viable, each proven by downloading real PDF bytes anonymously:**
+
+| Tenant | Hit rate | Proof |
+|---|---|---|
+| IN-INDIANAPOLIS (`INDY`) | 3/3 | 8.9 MB architectural sheet set |
+| ID-ADA (Boise) | 5/5 | 202 KB permit application |
+| IN-ALLEN (`ACFW`) | 5/5 | 66 KB ILP permit |
+| OH-BUTLER | 4/5 | 1.0 MB application |
+| MN-OLMSTED | 2/5 | 386 KB application submittal |
+
+**Item-91 verdict: two right, one wrong, generalization disproven.** SLCREF (Salt
+Lake) and COC (Cleveland) genuinely gated — empty grid across 14 sampled records
+each. **INDY was misjudged: it serves full plan sets with no login.** Item 91's
+load-bearing claim ("standard Accela General Public behavior, not a per-agency
+fluke") was used to justify *not* testing the remaining 5 Accela sources — that skip
+cost four viable sources, Boise among them. Anonymous document access is a
+**per-agency config choice**, never a platform property.
+
+**Two provider bugs that make a viable tenant look gated** (fix these — some of the
+13 "gated" verdicts may be false negatives for the same reasons):
+1. **Wrong `agencyCode`.** On custom-domain tenants the URL path segment is not the
+   agency code — Boise is `BOISE` not `CitizenAccess`; McAllen is `MCALLEN` not
+   `Portal`. A wrong code yields an error-banner detail page and an attachments
+   frame that never binds — visually identical to gating. Harvest `agencyCode` from
+   the results grid's own hrefs instead of inferring it from the URL.
+2. **Date fields suppress the search.** ACFW, BUTLER, OLMSTED, SHELBYCO, and
+   grandrapids return no results grid when the general-search date range is
+   populated, but work fine when it's blank.
+
+**Unresolved:** 2 tenants broke at the search layer with no document verdict —
+TX-BROWNSVILLE (its configured `permit_type_label` no longer exists; dropdown shows
+only `--Select--`) and NC-BUNCOMBE (non-standard search UI).
+
+**One claim in the probe report is wrong and should not be propagated:** it states 8
+probed agencies "have no entry in `state_configs.py` at all" (ACFW, grandrapids,
+OLMSTED, BUNCOMBECONC, CABARRUS, BUTLER, MONTCOOH, SHELBYCO). They are all wired —
+as IN-ALLEN, MI-KENT, MN-OLMSTED, NC-BUNCOMBE, NC-CABARRUS, OH-BUTLER,
+OH-MONTGOMERY, TN-SHELBY respectively (verified by enumerating `STATE_CONFIGS`).
