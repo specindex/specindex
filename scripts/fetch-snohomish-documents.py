@@ -66,6 +66,8 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import hashlib
 import json
 import os
@@ -268,6 +270,20 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--max-bytes-per-doc", type=int, default=15 * 1024 * 1024)
     ap.add_argument("--tiers", default="1,2", help="comma-separated document tiers to pull (see DOC_TIERS)")
     ap.add_argument("--sleep", type=float, default=1.0, help="seconds between requests to snoco.org")
+    ap.add_argument(
+        "--workers",
+        type=int,
+        default=8,
+        help=(
+            "projects processed concurrently (default 8). Each worker owns one "
+            "project end-to-end: search, download, upload. Serial throughput was "
+            "150-250s PER DOCUMENT -- almost all of it waiting on a 10-15 MB "
+            "download and the GCS upload, i.e. idle network, not CPU or server "
+            "load. One county would have taken 100+ hours. The per-request "
+            "--sleep still applies inside each worker, so politeness per "
+            "connection is unchanged; concurrency is across projects."
+        ),
+    )
     ap.add_argument("--max-consecutive-errors", type=int, default=8, help="stop early if the server starts failing")
     ap.add_argument("--credentials", choices=["adc", "env"], default="adc")
     # Parallel shards (disjoint --offset windows) must not write the same
@@ -307,57 +323,81 @@ def main(argv: list[str] | None = None) -> int:
         "bytes_uploaded": 0,
     }
     consecutive_errors = 0
+    _lock = threading.Lock()
+    _abort = threading.Event()
 
-    for project in projects:
+    def process_project(project: dict) -> None:
+        """Handle one project end-to-end. Runs on a worker thread.
+
+        Shared state (summary counters, the manifest dict, the consecutive-error
+        circuit breaker) is touched only under `_lock`; everything else is
+        thread-local. `_abort` replaces the old `break` so one worker tripping
+        the breaker stops the whole run rather than just its own loop.
+        """
+        nonlocal consecutive_errors
+        if _abort.is_set():
+            return
         pid = project["id"]
         pfn = pfn_for(pid)
-        summary["projects_attempted"] += 1
+        with _lock:
+            summary["projects_attempted"] += 1
         if not pfn:
             print(f"  [skip] {pid}: no PFN parseable from id", file=sys.stderr)
-            continue
+            return
         try:
             docs = search_documents(pfn)
             consecutive_errors = 0
         except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, OSError) as e:
-            summary["errors"] += 1
+            with _lock:
+                summary["errors"] += 1
             consecutive_errors += 1
             print(f"  [error] search failed for {pfn}: {e}", file=sys.stderr)
             if consecutive_errors >= args.max_consecutive_errors:
                 print("  [abort] too many consecutive errors -- stopping early", file=sys.stderr)
-                break
+                _abort.set()
+                return
             time.sleep(args.sleep)
-            continue
+            return
         time.sleep(args.sleep)
 
-        summary["docs_found"] += len(docs)
+        with _lock:
+            summary["docs_found"] += len(docs)
         if not docs:
-            continue
-        summary["projects_with_docs_found"] += 1
+            return
+        with _lock:
+            summary["projects_with_docs_found"] += 1
 
         for d in docs:
             d["tier"] = tier_for(d)
         selected = [d for d in docs if d["tier"] in wanted_tiers]
-        summary["docs_skipped_tier"] += len(docs) - len(selected)
+        with _lock:
+            summary["docs_skipped_tier"] += len(docs) - len(selected)
         # Size-filter *before* the per-project cap, so oversized plan sets
         # don't eat the budget and then get skipped, leaving the project
         # with nothing.
         oversized = [d for d in selected if (d.get("reported_size") or 0) > args.max_bytes_per_doc]
         if oversized:
-            summary["docs_skipped_too_large"] += len(oversized)
+            with _lock:
+                summary["docs_skipped_too_large"] += len(oversized)
             selected = [d for d in selected if d not in oversized]
         selected.sort(key=lambda d: (d["tier"], -(d.get("reported_size") or 0)))
         if args.max_docs_per_project and len(selected) > args.max_docs_per_project:
-            summary["docs_skipped_cap"] += len(selected) - args.max_docs_per_project
+            with _lock:
+                summary["docs_skipped_cap"] += len(selected) - args.max_docs_per_project
             selected = selected[: args.max_docs_per_project]
-        summary["docs_selected"] += len(selected)
+        with _lock:
+            summary["docs_selected"] += len(selected)
 
         print(f"{pid} (PFN {pfn}): {len(docs)} doc(s) in folder, {len(selected)} selected", file=sys.stderr)
         if args.dry_run:
             for d in selected:
                 print(f"    - [t{d['tier']}] {d['description']!r} {d['filename']} ({d.get('reported_size') or 0:,} B)", file=sys.stderr)
-            continue
+            return
 
-        entry = by_project.setdefault(pid, {"pfn": pfn, "documents": []})
+        # by_project is shared across workers; setdefault + the field writes
+        # below must not interleave with another worker's manifest snapshot.
+        with _lock:
+            entry = by_project.setdefault(pid, {"pfn": pfn, "documents": []})
         entry["folder_name"] = docs[0].get("folder_name") or entry.get("folder_name")
         entry["permit_status"] = docs[0].get("permit_status") or entry.get("permit_status")
         entry["documents_in_folder"] = len(docs)
@@ -366,25 +406,29 @@ def main(argv: list[str] | None = None) -> int:
 
         for d in selected:
             if d["filename"] in have:
-                summary["docs_skipped_existing"] += 1
+                with _lock:
+                    summary["docs_skipped_existing"] += 1
                 captured_any = True
                 continue
             if d.get("reported_size") and d["reported_size"] > args.max_bytes_per_doc:
-                summary["docs_skipped_too_large"] += 1
+                with _lock:
+                    summary["docs_skipped_too_large"] += 1
                 print(f"    [skip] too large ({d['reported_size']:,} B): {d['filename']}", file=sys.stderr)
                 continue
 
             blob_path = f"{GCS_STATE_DIR}/{pid}/{d['filename']}"
             blob = bucket.blob(blob_path)
             if blob.exists():
-                summary["docs_skipped_existing"] += 1
+                with _lock:
+                    summary["docs_skipped_existing"] += 1
                 captured_any = True
                 continue
             started = time.monotonic()
             try:
                 payload = download(d)
             except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, OSError) as e:
-                summary["errors"] += 1
+                with _lock:
+                    summary["errors"] += 1
                 # A 404 is a per-file quirk (odd staged filename), not the
                 # server pushing back -- don't let a run of them trip the
                 # throttling circuit-breaker.
@@ -400,7 +444,8 @@ def main(argv: list[str] | None = None) -> int:
             time.sleep(args.sleep)
 
             if not payload:
-                summary["errors"] += 1
+                with _lock:
+                    summary["errors"] += 1
                 continue
             try:
                 # Plan sets run 20-50 MB; the client's 120s default timeout
@@ -411,18 +456,22 @@ def main(argv: list[str] | None = None) -> int:
                 blob.chunk_size = 8 * 1024 * 1024
                 blob.upload_from_string(payload, content_type=d["mime_type"], timeout=600)
             except Exception as e:  # noqa: BLE001 -- upload failures shouldn't kill the run
-                summary["errors"] += 1
+                with _lock:
+                    summary["errors"] += 1
                 print(f"    [error] upload failed for {d['filename']}: {e}", file=sys.stderr)
                 continue
             digest = hashlib.sha256(payload).hexdigest()
-            summary["docs_uploaded"] += 1
-            summary["bytes_uploaded"] += len(payload)
+            with _lock:
+                summary["docs_uploaded"] += 1
+            with _lock:
+                summary["bytes_uploaded"] += len(payload)
             captured_any = True
             print(
                 f"    [uploaded] {blob_path} ({len(payload):,} B, {time.monotonic() - started:.1f}s)",
                 file=sys.stderr,
             )
-            entry["documents"].append(
+            with _lock:
+                entry["documents"].append(
                 {
                     "filename": d["filename"],
                     "title": d["description"] or d["filename"],
@@ -438,11 +487,15 @@ def main(argv: list[str] | None = None) -> int:
                 }
             )
         if captured_any:
-            summary["projects_with_docs_captured"] += 1
+            with _lock:
+                summary["projects_with_docs_captured"] += 1
 
         if not args.dry_run:
-            manifest_path.parent.mkdir(parents=True, exist_ok=True)
-            manifest_path.write_text(
+            # Serialised: concurrent write_text() on one path can interleave and
+            # leave truncated JSON. Cheap relative to a 10-15 MB upload.
+            with _lock:
+              manifest_path.parent.mkdir(parents=True, exist_ok=True)
+              manifest_path.write_text(
                 json.dumps(
                     {
                         "source": "Snohomish County WA PDS Online Records (OpenText Content Server SOAP proxy)",
@@ -456,7 +509,29 @@ def main(argv: list[str] | None = None) -> int:
                 + "\n"
             )
         if consecutive_errors >= args.max_consecutive_errors:
-            break
+            _abort.set()
+
+    # Projects are independent: one search + a handful of large downloads and
+    # uploads each, all of it network-bound. Serial throughput was 150-250s per
+    # document, i.e. 100+ hours for a single county, with the machine idle the
+    # whole time. Fan out across projects; --sleep still paces each worker's own
+    # requests so per-connection politeness to snoco.org is unchanged.
+    workers = max(1, args.workers)
+    print(f"[parallel] {len(projects)} projects across {workers} workers", file=sys.stderr)
+    if workers == 1:
+        for project in projects:
+            process_project(project)
+    else:
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            futures = [pool.submit(process_project, p) for p in projects]
+            for fut in as_completed(futures):
+                try:
+                    fut.result()
+                except Exception as e:  # noqa: BLE001 - one bad project must not kill the run
+                    with _lock:
+                        with _lock:
+                            summary["errors"] += 1
+                    print(f"  [error] worker raised: {type(e).__name__}: {e}", file=sys.stderr)
 
     print(json.dumps(summary, indent=2))
     return 0
