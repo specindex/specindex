@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T23:31:56+00:00",
+  "generated_at": "2026-08-04T14:32:14+00:00",
   "window_start": "2025-01-01",
   "counties": [
     {
@@ -27,8 +27,8 @@
       "county": "Harris",
       "state": "TX",
       "population": 5009302,
-      "projects": 5736,
-      "projects_in_window": 5736,
+      "projects": 6166,
+      "projects_in_window": 6166,
       "documents": 0,
       "status": "projects-only"
     },
@@ -77,7 +77,7 @@
       "county": "Dallas",
       "state": "TX",
       "population": 2656028,
-      "projects": 1347,
+      "projects": 2042,
       "projects_in_window": 524,
       "documents": 0,
       "status": "projects-only"
@@ -157,7 +157,7 @@
       "county": "Bexar",
       "state": "TX",
       "population": 2127737,
-      "projects": 970,
+      "projects": 1381,
       "projects_in_window": 482,
       "documents": 0,
       "status": "projects-only"
@@ -447,7 +447,7 @@
       "county": "Pima",
       "state": "AZ",
       "population": 1080149,
-      "projects": 572,
+      "projects": 578,
       "projects_in_window": 281,
       "documents": 0,
       "status": "projects-only"
@@ -567,7 +567,7 @@
       "county": "Pinellas",
       "state": "FL",
       "population": 965870,
-      "projects": 530,
+      "projects": 1144,
       "projects_in_window": 100,
       "documents": 0,
       "status": "projects-only"
@@ -1357,7 +1357,7 @@
       "county": "Montgomery",
       "state": "OH",
       "population": 537443,
-      "projects": 530,
+      "projects": 681,
       "projects_in_window": 109,
       "documents": 0,
       "status": "projects-only"
@@ -5008,7 +5008,7 @@
     "covered": 29,
     "projects_only": 177,
     "none": 294,
-    "total_projects_in_window": 463422,
+    "total_projects_in_window": 463852,
     "total_documents": 1494
   }
 }

@@ -543,6 +543,15 @@ AZ_SCOTTSDALE_CONFIG: dict[str, Any] = {
 AZ_PIMACOUNTY_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "AZ",
     "provider_type": "accela",
+    # Returned EXACTLY 600 rows on the 2026-08-03 backfill -- i.e. the
+    # max_pages 60 x 10-rows cap, not the end of the data. Raised to 120.
+    # Accela throttles long anonymous paging (~40-60 pages) by silently
+    # truncating rather than blocking, so this is safe to probe: if the
+    # next run again lands on a round multiple of 10 well under 1,200,
+    # the throttle -- not the cap -- is the binding constraint, and the
+    # real fix is chunking the 579-day window into shorter date ranges
+    # so each search returns fewer pages.
+    "max_pages": 120,
     # Standard ACA general-search date-range inputs, confirmed present in this
     # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
     # returns the tenant's whole history in no date order, so a 2025+ backfill
@@ -1077,6 +1086,15 @@ _MO_COLUMBIA_ENERGOV_CONFIG: dict[str, Any] = {
 UT_SALTLAKE_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "UT",
     "provider_type": "accela",
+    # Returned EXACTLY 600 rows on the 2026-08-03 backfill -- i.e. the
+    # max_pages 60 x 10-rows cap, not the end of the data. Raised to 120.
+    # Accela throttles long anonymous paging (~40-60 pages) by silently
+    # truncating rather than blocking, so this is safe to probe: if the
+    # next run again lands on a round multiple of 10 well under 1,200,
+    # the throttle -- not the cap -- is the binding constraint, and the
+    # real fix is chunking the 579-day window into shorter date ranges
+    # so each search returns fewer pages.
+    "max_pages": 120,
     # Standard ACA general-search date-range inputs, confirmed present in this
     # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
     # returns the tenant's whole history in no date order, so a 2025+ backfill
@@ -1129,6 +1147,15 @@ TX_ELPASO_ACCELA_CONFIG: dict[str, Any] = {
 TX_DALLAS_NEW_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "TX",
     "provider_type": "accela",
+    # Returned EXACTLY 600 rows on the 2026-08-03 backfill -- i.e. the
+    # max_pages 60 x 10-rows cap, not the end of the data. Raised to 120.
+    # Accela throttles long anonymous paging (~40-60 pages) by silently
+    # truncating rather than blocking, so this is safe to probe: if the
+    # next run again lands on a round multiple of 10 well under 1,200,
+    # the throttle -- not the cap -- is the binding constraint, and the
+    # real fix is chunking the 579-day window into shorter date ranges
+    # so each search returns fewer pages.
+    "max_pages": 120,
     "county": "Dallas",
     "endpoint": "https://aca-prod.accela.com/DALLASTX",
     "permit_type_label": "Commercial New Construction Permit",
@@ -1140,6 +1167,15 @@ TX_DALLAS_NEW_ACCELA_CONFIG: dict[str, Any] = {
 TX_DALLAS_ALT_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "TX",
     "provider_type": "accela",
+    # Returned EXACTLY 600 rows on the 2026-08-03 backfill -- i.e. the
+    # max_pages 60 x 10-rows cap, not the end of the data. Raised to 120.
+    # Accela throttles long anonymous paging (~40-60 pages) by silently
+    # truncating rather than blocking, so this is safe to probe: if the
+    # next run again lands on a round multiple of 10 well under 1,200,
+    # the throttle -- not the cap -- is the binding constraint, and the
+    # real fix is chunking the 579-day window into shorter date ranges
+    # so each search returns fewer pages.
+    "max_pages": 120,
     "county": "Dallas",
     "endpoint": "https://aca-prod.accela.com/DALLASTX",
     "permit_type_label": "Commercial Alteration Addition Permit",
@@ -1160,6 +1196,15 @@ TX_DALLAS_ALT_ACCELA_CONFIG: dict[str, Any] = {
 TX_SANANTONIO_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "TX",
     "provider_type": "accela",
+    # Returned EXACTLY 600 rows on the 2026-08-03 backfill -- i.e. the
+    # max_pages 60 x 10-rows cap, not the end of the data. Raised to 120.
+    # Accela throttles long anonymous paging (~40-60 pages) by silently
+    # truncating rather than blocking, so this is safe to probe: if the
+    # next run again lands on a round multiple of 10 well under 1,200,
+    # the throttle -- not the cap -- is the binding constraint, and the
+    # real fix is chunking the 579-day window into shorter date ranges
+    # so each search returns fewer pages.
+    "max_pages": 120,
     "county": "Bexar",
     "endpoint": "https://aca-prod.accela.com/COSA",
     "permit_type_label": "Commercial New Building Permit",
@@ -2000,6 +2045,15 @@ FL_HILLSBOROUGH_ACCELA_CONFIG: dict[str, Any] = {
 FL_PINELLAS_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "FL",
     "provider_type": "accela",
+    # Returned EXACTLY 600 rows on the 2026-08-03 backfill -- i.e. the
+    # max_pages 60 x 10-rows cap, not the end of the data. Raised to 120.
+    # Accela throttles long anonymous paging (~40-60 pages) by silently
+    # truncating rather than blocking, so this is safe to probe: if the
+    # next run again lands on a round multiple of 10 well under 1,200,
+    # the throttle -- not the cap -- is the binding constraint, and the
+    # real fix is chunking the 579-day window into shorter date ranges
+    # so each search returns fewer pages.
+    "max_pages": 120,
     # Standard ACA general-search date-range inputs, confirmed present in this
     # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
     # returns the tenant's whole history in no date order, so a 2025+ backfill
@@ -2219,14 +2273,28 @@ TX_HARRIS_CONFIG: dict[str, Any] = {
     "state_code": "TX",
     "provider_type": "arcgis",
     "county": "Harris",
-    "endpoint": "https://www.gis.hctx.net/arcgishcpid/rest/services/Permits/IssuedPermits/FeatureServer",
+    # Repointed 2026-08-04. The old Permits/IssuedPermits layer still resolves
+    # and still answers queries -- it just returns 0 rows for EVERYTHING now,
+    # including `1=1`, so it reads as "no commercial permits" rather than as an
+    # error. Harris is rank 3 by population and would have silently returned
+    # nothing forever.
+    #
+    # The live data moved to Permits/ePermits_Report ("Permits view",
+    # 1,341,433 rows) and Permits/ePermits ("Projects", 1,308,855). The report
+    # view is the right grain here: one row per PERMIT, matching id_field
+    # PERMITNUMBER. Same field names, so nothing else in this config changes.
+    #
+    # Verified live: 29,614 commercial all-time, 5,784 commercial with
+    # DATECREATED >= 2025-01-01 (against 5,736 already held, i.e. the old
+    # layer's contents were captured before it emptied).
+    "endpoint": "https://www.gis.hctx.net/arcgishcpid/rest/services/Permits/ePermits_Report/FeatureServer",
     "layer": 0,
     "watermark_field": "OBJECTID",
     "hash_fields": ["PERMITNUMBER"],
     "commercial_where": "APPTYPE LIKE 'Commercial%'",
     "out_fields": "OBJECTID,PROJECTNUMBER,PROJECTNAME,FULLADDRESS,APPTYPE,PROJECTSUBMITDATE,PROJECTSTATUS,PERMITNUMBER,PERMITNAME,STATUS,ISSUEDDATE,DATECREATED,PERMITCLASSCODE",
     "date_field": "DATECREATED",
-    "lookback_days": 30,
+    "lookback_days": 579,  # 2025-01-01 anchor; recompute as (today - 2025-01-01).days
     "feed_id": "tx-harris-oce",
     "id_field": "PERMITNUMBER",
     "name_fields": ["PERMITNAME", "PROJECTNAME", "PERMITNUMBER"],
@@ -3130,6 +3198,15 @@ STATE_CONFIGS["OH-CLEVELAND-COO"] = OH_CLEVELAND_COO_CONFIG
 OH_MONTGOMERY_CONFIG: dict[str, Any] = {
     "state_code": "OH",
     "provider_type": "accela",
+    # Returned EXACTLY 600 rows on the 2026-08-03 backfill -- i.e. the
+    # max_pages 60 x 10-rows cap, not the end of the data. Raised to 120.
+    # Accela throttles long anonymous paging (~40-60 pages) by silently
+    # truncating rather than blocking, so this is safe to probe: if the
+    # next run again lands on a round multiple of 10 well under 1,200,
+    # the throttle -- not the cap -- is the binding constraint, and the
+    # real fix is chunking the 579-day window into shorter date ranges
+    # so each search returns fewer pages.
+    "max_pages": 120,
     # Standard ACA general-search date-range inputs, confirmed present in this
     # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
     # returns the tenant's whole history in no date order, so a 2025+ backfill
