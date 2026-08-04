@@ -142,6 +142,7 @@ def build_provider(state_config: dict[str, Any]) -> BaseIngestionProvider:
             # 60 is the practical ceiling: anonymous Accela paging throttles
             # somewhere around 40-60 pages.
             max_pages=state_config.get("max_pages", 60),
+            chunk_days=state_config.get("chunk_days", 90),
             start_date_field_id=state_config.get("start_date_field_id"),
             end_date_field_id=state_config.get("end_date_field_id"),
         )

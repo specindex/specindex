@@ -171,6 +171,39 @@ TENANTS: dict[str, dict[str, Any]] = {
         "use_date_range": True,
         "hit_rate": "7/7",
     },
+    # --- Los Angeles County, added 2026-08-04 ---------------------------------
+    # LA is rank 1 by population and held ZERO documents. It is also the only
+    # top-5 county where documents are reachable at all: 14 of the top 20 sit
+    # on metadata-only bulk feeds (Socrata/ArcGIS/CSV) with no per-record
+    # attachment endpoint, so no amount of pulling yields a file. LA has 7
+    # doc-capable configs; these are the two Accela tenants whose search form
+    # was verified standard live (27 permit types, real commercial types, and
+    # the ACA date-range inputs present).
+    #
+    # hit_rate is left unmeasured deliberately -- it gets filled in from a real
+    # run, never guessed. CA-LANCASTER is intentionally ABSENT: its tenant has
+    # no ddlGSPermitType dropdown at all, so it needs per-tenant form work
+    # rather than this shape.
+    "CA-PALMDALE": {
+        "state_code": "CA",
+        "state_dir": "california",
+        "county": "Los Angeles",
+        "base_url": "https://aca-prod.accela.com/PALMDALE",
+        "module": "Building",
+        "permit_type_label": "Commercial Permit",
+        "use_date_range": True,
+        "hit_rate": "unmeasured",
+    },
+    "CA-DOWNEY": {
+        "state_code": "CA",
+        "state_dir": "california",
+        "county": "Los Angeles",
+        "base_url": "https://aca-prod.accela.com/DOWNEY",
+        "module": "Building",
+        "permit_type_label": "Commercial Addition-Alteration",
+        "use_date_range": True,
+        "hit_rate": "unmeasured",
+    },
 }
 
 # Attachment names worth skipping outright -- pure transactional trivia, same

@@ -543,6 +543,15 @@ AZ_SCOTTSDALE_CONFIG: dict[str, Any] = {
 AZ_PIMACOUNTY_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "AZ",
     "provider_type": "accela",
+    # Returned EXACTLY 600 rows on the 2026-08-03 backfill -- i.e. the
+    # max_pages 60 x 10-rows cap, not the end of the data. Raised to 120.
+    # Accela throttles long anonymous paging (~40-60 pages) by silently
+    # truncating rather than blocking, so this is safe to probe: if the
+    # next run again lands on a round multiple of 10 well under 1,200,
+    # the throttle -- not the cap -- is the binding constraint, and the
+    # real fix is chunking the 579-day window into shorter date ranges
+    # so each search returns fewer pages.
+    "max_pages": 120,
     # Standard ACA general-search date-range inputs, confirmed present in this
     # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
     # returns the tenant's whole history in no date order, so a 2025+ backfill
@@ -1077,6 +1086,15 @@ _MO_COLUMBIA_ENERGOV_CONFIG: dict[str, Any] = {
 UT_SALTLAKE_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "UT",
     "provider_type": "accela",
+    # Returned EXACTLY 600 rows on the 2026-08-03 backfill -- i.e. the
+    # max_pages 60 x 10-rows cap, not the end of the data. Raised to 120.
+    # Accela throttles long anonymous paging (~40-60 pages) by silently
+    # truncating rather than blocking, so this is safe to probe: if the
+    # next run again lands on a round multiple of 10 well under 1,200,
+    # the throttle -- not the cap -- is the binding constraint, and the
+    # real fix is chunking the 579-day window into shorter date ranges
+    # so each search returns fewer pages.
+    "max_pages": 120,
     # Standard ACA general-search date-range inputs, confirmed present in this
     # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
     # returns the tenant's whole history in no date order, so a 2025+ backfill
@@ -1129,6 +1147,15 @@ TX_ELPASO_ACCELA_CONFIG: dict[str, Any] = {
 TX_DALLAS_NEW_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "TX",
     "provider_type": "accela",
+    # Returned EXACTLY 600 rows on the 2026-08-03 backfill -- i.e. the
+    # max_pages 60 x 10-rows cap, not the end of the data. Raised to 120.
+    # Accela throttles long anonymous paging (~40-60 pages) by silently
+    # truncating rather than blocking, so this is safe to probe: if the
+    # next run again lands on a round multiple of 10 well under 1,200,
+    # the throttle -- not the cap -- is the binding constraint, and the
+    # real fix is chunking the 579-day window into shorter date ranges
+    # so each search returns fewer pages.
+    "max_pages": 120,
     "county": "Dallas",
     "endpoint": "https://aca-prod.accela.com/DALLASTX",
     "permit_type_label": "Commercial New Construction Permit",
@@ -1140,6 +1167,15 @@ TX_DALLAS_NEW_ACCELA_CONFIG: dict[str, Any] = {
 TX_DALLAS_ALT_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "TX",
     "provider_type": "accela",
+    # Returned EXACTLY 600 rows on the 2026-08-03 backfill -- i.e. the
+    # max_pages 60 x 10-rows cap, not the end of the data. Raised to 120.
+    # Accela throttles long anonymous paging (~40-60 pages) by silently
+    # truncating rather than blocking, so this is safe to probe: if the
+    # next run again lands on a round multiple of 10 well under 1,200,
+    # the throttle -- not the cap -- is the binding constraint, and the
+    # real fix is chunking the 579-day window into shorter date ranges
+    # so each search returns fewer pages.
+    "max_pages": 120,
     "county": "Dallas",
     "endpoint": "https://aca-prod.accela.com/DALLASTX",
     "permit_type_label": "Commercial Alteration Addition Permit",
@@ -1160,6 +1196,15 @@ TX_DALLAS_ALT_ACCELA_CONFIG: dict[str, Any] = {
 TX_SANANTONIO_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "TX",
     "provider_type": "accela",
+    # Returned EXACTLY 600 rows on the 2026-08-03 backfill -- i.e. the
+    # max_pages 60 x 10-rows cap, not the end of the data. Raised to 120.
+    # Accela throttles long anonymous paging (~40-60 pages) by silently
+    # truncating rather than blocking, so this is safe to probe: if the
+    # next run again lands on a round multiple of 10 well under 1,200,
+    # the throttle -- not the cap -- is the binding constraint, and the
+    # real fix is chunking the 579-day window into shorter date ranges
+    # so each search returns fewer pages.
+    "max_pages": 120,
     "county": "Bexar",
     "endpoint": "https://aca-prod.accela.com/COSA",
     "permit_type_label": "Commercial New Building Permit",
@@ -2000,6 +2045,15 @@ FL_HILLSBOROUGH_ACCELA_CONFIG: dict[str, Any] = {
 FL_PINELLAS_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "FL",
     "provider_type": "accela",
+    # Returned EXACTLY 600 rows on the 2026-08-03 backfill -- i.e. the
+    # max_pages 60 x 10-rows cap, not the end of the data. Raised to 120.
+    # Accela throttles long anonymous paging (~40-60 pages) by silently
+    # truncating rather than blocking, so this is safe to probe: if the
+    # next run again lands on a round multiple of 10 well under 1,200,
+    # the throttle -- not the cap -- is the binding constraint, and the
+    # real fix is chunking the 579-day window into shorter date ranges
+    # so each search returns fewer pages.
+    "max_pages": 120,
     # Standard ACA general-search date-range inputs, confirmed present in this
     # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
     # returns the tenant's whole history in no date order, so a 2025+ backfill
@@ -2219,14 +2273,28 @@ TX_HARRIS_CONFIG: dict[str, Any] = {
     "state_code": "TX",
     "provider_type": "arcgis",
     "county": "Harris",
-    "endpoint": "https://www.gis.hctx.net/arcgishcpid/rest/services/Permits/IssuedPermits/FeatureServer",
+    # Repointed 2026-08-04. The old Permits/IssuedPermits layer still resolves
+    # and still answers queries -- it just returns 0 rows for EVERYTHING now,
+    # including `1=1`, so it reads as "no commercial permits" rather than as an
+    # error. Harris is rank 3 by population and would have silently returned
+    # nothing forever.
+    #
+    # The live data moved to Permits/ePermits_Report ("Permits view",
+    # 1,341,433 rows) and Permits/ePermits ("Projects", 1,308,855). The report
+    # view is the right grain here: one row per PERMIT, matching id_field
+    # PERMITNUMBER. Same field names, so nothing else in this config changes.
+    #
+    # Verified live: 29,614 commercial all-time, 5,784 commercial with
+    # DATECREATED >= 2025-01-01 (against 5,736 already held, i.e. the old
+    # layer's contents were captured before it emptied).
+    "endpoint": "https://www.gis.hctx.net/arcgishcpid/rest/services/Permits/ePermits_Report/FeatureServer",
     "layer": 0,
     "watermark_field": "OBJECTID",
     "hash_fields": ["PERMITNUMBER"],
     "commercial_where": "APPTYPE LIKE 'Commercial%'",
     "out_fields": "OBJECTID,PROJECTNUMBER,PROJECTNAME,FULLADDRESS,APPTYPE,PROJECTSUBMITDATE,PROJECTSTATUS,PERMITNUMBER,PERMITNAME,STATUS,ISSUEDDATE,DATECREATED,PERMITCLASSCODE",
     "date_field": "DATECREATED",
-    "lookback_days": 30,
+    "lookback_days": 579,  # 2025-01-01 anchor; recompute as (today - 2025-01-01).days
     "feed_id": "tx-harris-oce",
     "id_field": "PERMITNUMBER",
     "name_fields": ["PERMITNAME", "PROJECTNAME", "PERMITNUMBER"],
@@ -3130,6 +3198,15 @@ STATE_CONFIGS["OH-CLEVELAND-COO"] = OH_CLEVELAND_COO_CONFIG
 OH_MONTGOMERY_CONFIG: dict[str, Any] = {
     "state_code": "OH",
     "provider_type": "accela",
+    # Returned EXACTLY 600 rows on the 2026-08-03 backfill -- i.e. the
+    # max_pages 60 x 10-rows cap, not the end of the data. Raised to 120.
+    # Accela throttles long anonymous paging (~40-60 pages) by silently
+    # truncating rather than blocking, so this is safe to probe: if the
+    # next run again lands on a round multiple of 10 well under 1,200,
+    # the throttle -- not the cap -- is the binding constraint, and the
+    # real fix is chunking the 579-day window into shorter date ranges
+    # so each search returns fewer pages.
+    "max_pages": 120,
     # Standard ACA general-search date-range inputs, confirmed present in this
     # tenant's live HTML 2026-08-03. Without them the search is UNFILTERED and
     # returns the tenant's whole history in no date order, so a 2025+ backfill
@@ -3887,3 +3964,78 @@ AL_MOBILE_ENERGOV_CONFIG: dict[str, Any] = {
     "max_pages": 250,
 }
 STATE_CONFIGS["AL-MOBILE"] = AL_MOBILE_ENERGOV_CONFIG
+
+
+# ---------------------------------------------------------------------------
+# San Bernardino County, CA -- rank 15 by population (2,214,281) and held
+# exactly ONE project, from a research fallback rather than any permit source.
+# It had no entry in the health matrix at all: never investigated.
+#
+# Found 2026-08-04 by probing candidate Accela agency codes against
+# aca-prod.accela.com rather than guessing hostnames. SBCO is the COUNTY's own
+# tenant: 106 permit types, five of them explicitly commercial/industrial, and
+# the standard ACA date-range inputs present (verified live).
+#
+# Accela takes one permit_type_label per config, so the commercial types are
+# split across configs the same way TX-SANANTONIO is.
+#
+# Also probed and rejected: FONTANA (Accela, but exposes a single permit type
+# and no commercial option) and CHINO (Accela, no permit-type dropdown at all
+# -- non-standard form, would need per-tenant work). maps.sbcounty.gov serves
+# 22 ArcGIS services but none permit-related.
+# ---------------------------------------------------------------------------
+
+CA_SANBERNARDINO_NEW_CONFIG: dict[str, Any] = {
+    "state_code": "CA",
+    "provider_type": "accela",
+    "county": "San Bernardino",
+    "endpoint": "https://aca-prod.accela.com/SBCO",
+    "module": "Building",
+    "permit_type_label": "Building Permit for Commercial or Industrial New Structure",
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
+    "lookback_days": 579,  # 2025-01-01 anchor; recompute as (today - 2025-01-01).days
+}
+STATE_CONFIGS["CA-SANBERNARDINO-NEW"] = CA_SANBERNARDINO_NEW_CONFIG
+
+CA_SANBERNARDINO_ADDITION_CONFIG: dict[str, Any] = {
+    **CA_SANBERNARDINO_NEW_CONFIG,
+    "permit_type_label": "Building Permit for Commercial or Industrial Addition",
+}
+STATE_CONFIGS["CA-SANBERNARDINO-ADDITION"] = CA_SANBERNARDINO_ADDITION_CONFIG
+
+CA_SANBERNARDINO_ALTERATION_CONFIG: dict[str, Any] = {
+    **CA_SANBERNARDINO_NEW_CONFIG,
+    "permit_type_label": "Building Permit for Commercial or Industrial Alteration",
+}
+STATE_CONFIGS["CA-SANBERNARDINO-ALTERATION"] = CA_SANBERNARDINO_ALTERATION_CONFIG
+
+
+# ---------------------------------------------------------------------------
+# Pharr, TX (Hidalgo County, rank 64) -- found 2026-08-04. Hidalgo already had
+# TX-MCALLEN; Pharr is the second-largest city and additive, not a duplicate.
+# 56 permit types, real commercial ones, standard ACA date inputs (live).
+#
+# Found by probing candidate agency codes: of 18 codes tried across Suffolk NY,
+# Oakland MI and Hidalgo TX, this was the ONLY hit. Guessing identifiers has a
+# very low success rate -- the productive path remains following live redirects
+# and catalog entries.
+# ---------------------------------------------------------------------------
+TX_PHARR_CONFIG: dict[str, Any] = {
+    "state_code": "TX",
+    "provider_type": "accela",
+    "county": "Hidalgo",
+    "endpoint": "https://aca-prod.accela.com/PHARR",
+    "module": "Building",
+    "permit_type_label": "Commercial Alteration",
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
+    "lookback_days": 579,  # 2025-01-01 anchor
+}
+STATE_CONFIGS["TX-PHARR"] = TX_PHARR_CONFIG
+
+TX_PHARR_ADDITION_CONFIG: dict[str, Any] = {
+    **TX_PHARR_CONFIG,
+    "permit_type_label": "Commercial Addition",
+}
+STATE_CONFIGS["TX-PHARR-ADDITION"] = TX_PHARR_ADDITION_CONFIG

@@ -109,20 +109,43 @@ def fetch(url: str, timeout: int = 20) -> tuple[int, str]:
         return 0, f"{type(e).__name__}: {str(e)[:60]}"
 
 
+def soft_404_baseline(host: str) -> tuple[int, str]:
+    """Fetch a path that cannot exist, to learn what this host's 404 looks like.
+
+    Municipal sites overwhelmingly answer unknown paths with HTTP 200 and their
+    normal landing page. Without this baseline, EVERY probe "succeeds": a sweep
+    of 14 counties on 2026-08-04 returned 17 EDMS "hits" across San Diego,
+    Tarrant and Wayne, and all 17 were the same landing page -- byte-identical
+    to a nonsense URL. The real result was zero.
+    """
+    return fetch(f"https://{host}/zzzz-specindex-nonexistent-path-9f3a1/", timeout=12)
+
+
 def probe_edms(host: str) -> list[dict]:
     """Probe a host's well-known EDMS mount points.
 
-    A 200 is not enough: the body must match the product's signature, because
-    many municipal sites answer every unknown path with a styled landing page.
+    Three conditions must ALL hold for a hit, because any one alone lies:
+      1. HTTP 200 -- necessary, nowhere near sufficient.
+      2. The body carries the product's own signature (laserfiche, onbase...).
+      3. The body DIFFERS from this host's soft-404 baseline. A generic
+         signature like /document/ matches nearly every government page, so
+         without the baseline the weaker probes fire on everything.
     """
     out = []
-    for scheme in ("https",):
-        for path, product, sig in EDMS_PROBES:
-            url = f"{scheme}://{host}{path}"
-            status, body = fetch(url, timeout=12)
-            if status == 200 and re.search(sig, body, re.IGNORECASE):
-                out.append({"kind": "edms", "host": host, "url": url,
-                            "product": product, "status": status})
+    base_status, base_body = soft_404_baseline(host)
+    base_len = len(base_body)
+    for path, product, sig in EDMS_PROBES:
+        url = f"https://{host}{path}"
+        status, body = fetch(url, timeout=12)
+        if status != 200 or not re.search(sig, body, re.IGNORECASE):
+            continue
+        # Same length as the soft-404 is the giveaway -- these sites serve the
+        # identical landing page. Allow a small delta for per-request nonces
+        # and timestamps rather than requiring an exact match.
+        if base_status == 200 and abs(len(body) - base_len) < 64:
+            continue
+        out.append({"kind": "edms", "host": host, "url": url,
+                    "product": product, "status": status})
     return out
 
 
