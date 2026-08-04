@@ -70,3 +70,45 @@
 - **Targeted file scoping**: only inspect/edit files explicitly named in the prompt or their direct dependencies. No repo-wide `find`/`grep` sweeps unless asked.
 - **Concise output**: no full-file reprints — output diffs or the modified function only. Keep reasoning brief on standard edits/bug fixes.
 - **Proactive compacting**: when context reaches ~70% or a sub-task completes, summarize progress, drop intermediate debug logs, and compact rather than carrying it forward. At 15 user messages in a session, flag that `/compact` or `/clear` is worth running.
+
+# Dates are the #1 silent killer — validate FORMAT, not presence
+
+- **Every windowed query compares `opened_or_announced_date` as a STRING against `"2025-01-01"`, so a non-ISO value never errors — it sorts wrong and the row vanishes from coverage while sitting in the corpus.** Four separate instances have each hidden tens of thousands of rows.
+- **The biggest (2026-08-04): Accela dates were never ISO.** `to_projects()` did `r.get("date").replace("/","-")`, turning `01/05/2026` into `01-05-2026`, which sorts BELOW `2025-01-01`. **Every Accela row ever ingested was invisible** — 29,589 rows across 19 state files. Pima reported 281 in-window against 4,914 held. Fixed via `_iso_date()`; top-500 in-window went 463,852 → 492,627 (+28,775).
+- **THE DIAGNOSTIC: total rows grow but in-window doesn't.** That exact divergence — a fleet re-run added 21,877 rows while the top-500 in-window total stayed pinned at 463,852 — is what exposed it. **Always compare total growth against in-window growth.**
+- **A county with thousands held and a few hundred in-window is a date bug until proven otherwise.** Never conclude "the source is thin" first.
+- **Never hand-roll date conversion.** `generic_mapping._iso_date()` handles MM/DD/YYYY, MM-DD-YYYY, YYYY/MM/DD, epoch seconds and epoch ms. Every hand-rolled variant so far has been wrong.
+- **`--merge-state` does NOT repair existing rows** — it dedupes by id and keeps what's on disk, so a provider fix never heals stored data. Repair in place, with backups and a row-count assertion before/after each write.
+
+# A broken filter returns MORE rows — row count can never validate a fix
+
+- **The most dangerous bug class here produces a bigger number, not an error.** Three instances on 2026-08-03/04, each initially mistaken for a win: an inert Accela date filter reporting 1,075 fetched (real filtered figure: 320); `max_pages` 60→120 doubling fetch count while in-window coverage stayed flat; and 17 EDMS "discoveries" that were all soft-404s.
+- **Read the control back.** After setting a filter, read the field's value and compare. `AccelaProvider._set_date()` does this and prints `WARNING ... this search is UNFILTERED` on mismatch.
+- **Check the distribution, not the total.** Genuinely windowed data spreads across windows (320/126/89/141/134/123/56). A broken filter shows everything in window 1 then near-zero — later windows are the same records being deduped.
+- **Compare two different filter values.** If two distinct date windows return identical results, the filter is inert. Cheapest possible test.
+- **Soft-404 baseline before believing any endpoint probe.** Government sites answer unknown paths with HTTP 200 and their landing page. Require a product-specific signature AND a body that differs from `https://{host}/zzzz-nonexistent-path/`. Never a generic word like "document".
+
+# Sources can die silently
+
+- **A dead ArcGIS layer still resolves and still answers queries — returning 0 rows for everything, including `where=1=1`.** Harris TX (rank 3) read as "no commercial permits" for exactly this reason. Query `1=1&returnCountOnly=true` periodically; a live count of 0 against a non-zero corpus count is the signature. When a layer dies, enumerate the parent folder — the replacement is usually a sibling.
+- **The pipeline stamps its own default state (NJ) when a config's `state_code` doesn't take.** 750 rows were affected, including 451 Los Angeles rows, invisible to every `(county, state)` join. The stored rows were relabelled but **the root cause was never fixed** — re-check periodically that each `data/states/{code}.json` row's `state` matches its file.
+
+# Sequencing background work: never pgrep for your own command line
+
+- **`while pgrep -f "<pattern>"` deadlocks when the pattern appears in the waiting script's own argv** — background scripts are launched via a shell whose command line contains the whole script. Hit three times on 2026-08-04, stalling two chains invisibly (job shows "running", produces nothing).
+- **Wait on a sentinel the producer writes** (`grep -q "FLEET RERUN DONE" $LOG`), not on a process pattern. Bound it with `for i in {1..N}` so a missed sentinel times out loudly.
+- **Two scripts must never wait on the same "is anything running" condition** — they both fire at once and recreate the contention the queuing was meant to prevent. One script, one serial loop.
+
+# Accela specifics (five stacked defects, all fixed 2026-08-04)
+
+- Date never ISO (above) · date filter never applied (permit-type postback wipes the inputs; `page.fill()` APPENDS on masked pre-filled fields) · watermark is a DATE STRING and a non-empty one makes `lookback_days` a no-op (Dallas/Bexar had FUTURE dates) · the row loop aborted the whole pull at the first out-of-window row · no date chunking.
+- **Order matters: select the permit type FIRST, then set dates.** Set them via `.value` + `input`/`change`/`blur` dispatch, never `fill()`.
+- **Searches run in 90-day windows.** Paging deeper is not a substitute — higher `max_pages` reaches further BACK, not further into the window.
+- Standard field ids (44 of 52 configs have them): `ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate` / `...txtGSEndDate` / `...ddlGSPermitType`. The 8 without: CA-LANCASTER, FL-BREVARD, FL-BROWARD, FL-MANATEE, FL-SARASOTA, GA-GWINNETT, NC-BUNCOMBE, TX-GALVESTON.
+
+# Document reality check (2026-08-04) — the constraint is structural
+
+- **14 of the top 20 counties are METADATA-ONLY**: bulk feeds with no per-record attachment endpoint, so the 10-step process yields zero documents there no matter how often it runs. They need a new source, not another pull.
+- **No EDMS exists on any of them** (verified with soft-404 baselining), and **the six proven document tenants are saturated** — a full re-run produced 0 new documents.
+- **eTRAKiT is NOT viable**: a hard 50-record cap on every public search (50 of 9,429; 50 of 1,185 even at month granularity) and no date column. Do not build the provider despite 11 verified jurisdictions incl. Collin #35 and Denton #47.
+- **Every source that has ever produced documents is a MID-SIZE county** on Accela/EnerGov with ungated attachments, or a separate EDMS (Snohomish, rank 72, 1,087 docs). "Doc-capable provider" ≠ "doc-bearing tenant" — LA has 7 doc-capable configs and returned zero attachments from 148 records.
