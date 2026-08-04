@@ -226,6 +226,7 @@ def build_provider(state_config: dict[str, Any]) -> BaseIngestionProvider:
     if provider_type == "csv":
         return CsvDownloadProvider(
             csv_url=state_config["endpoint"],
+            referer_url=state_config.get("referer_url"),
             date_field=state_config["date_field"],
             filter_field=state_config["filter_field"],
             include_keywords=state_config["include_keywords"],

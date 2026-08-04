@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T19:39:15+00:00",
+  "generated_at": "2026-08-04T20:47:01+00:00",
   "window_start": "2025-01-01",
   "counties": [
     {
@@ -467,8 +467,8 @@
       "county": "Denton",
       "state": "TX",
       "population": 1045120,
-      "projects": 79,
-      "projects_in_window": 79,
+      "projects": 1011,
+      "projects_in_window": 1011,
       "documents": 0,
       "status": "projects-only"
     },
@@ -5008,7 +5008,7 @@
     "covered": 29,
     "projects_only": 178,
     "none": 293,
-    "total_projects_in_window": 500915,
+    "total_projects_in_window": 501847,
     "total_documents": 1494
   }
 }

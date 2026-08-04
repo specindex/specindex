@@ -4086,3 +4086,69 @@ IL_LAKE_ADDITION_CONFIG: dict[str, Any] = {
     "permit_type_label": "Commercial Addition",
 }
 STATE_CONFIGS["IL-LAKE-ADDITION"] = IL_LAKE_ADDITION_CONFIG
+
+
+# ---------------------------------------------------------------------------
+# Denton County, TX -- rank 47, held 79 projects. Written off this morning as
+# eTRAKiT-only and therefore unreachable (eTRAKiT caps every search at 50
+# records; see the eTRAKiT note in memory). Found 2026-08-04 via GEMINI
+# grounded search, which surfaced a source class that agency-code probing
+# could never find: the city's CKAN open-data portal.
+#
+# Worth recording how it was found. Gemini named
+# data.cityofdenton.com/dataset/building-safety-permit-report -- which 404s.
+# But the CKAN *API* on that host is live, and package_list revealed
+# building-safety-yearly-permits with clean annual CSVs. So the lead was
+# wrong in its specifics and right in its direction; live verification turned
+# it into a real source. Of five URLs Gemini gave, one was clean, one was this
+# partial, and three were dead (its Fresno County ArcGIS endpoint DNS-fails
+# outright). Always verify -- but do run it, because probing alone missed
+# this entirely.
+#
+# The file endpoint 403s plain HTTP even with browser headers; the catalog API
+# is wide open. CsvDownloadProvider falls back to a real browser session when
+# urllib is refused (see _fetch_via_browser), which is what makes this work --
+# referer_url is the dataset page that sets the cookie.
+#
+# ISSUED_DATE is already ISO (2025-01-01), so no date mapping needed.
+# 2025: 10,302 total rows, 370 COMMERCIALALTERATION + 325 certificates of
+# occupancy. One config per year -- the CSVs are published annually.
+# ---------------------------------------------------------------------------
+
+_DENTON_CSV_BASE: dict[str, Any] = {
+    "state_code": "TX",
+    "provider_type": "csv",
+    "county": "Denton",
+    "referer_url": "https://data.cityofdenton.com/dataset/building-safety-yearly-permits",
+    "date_field": "ISSUED_DATE",
+    "filter_field": "PERMIT_CATEGORY",
+    "include_keywords": ["commercial", "certificate of occupancy"],
+    "exclude_keywords": ["residential"],
+    "lookback_days": ANCHOR_LOOKBACK,
+    "id_field": "PERMIT_NO",
+    "name_fields": ["PERMIT_NAME", "PERMIT_SUBTYPE", "PERMIT_NO"],
+    "address_fields": ["SITE_ADDR"],
+    "value_fields": ["JOB_VALUE"],
+    "desc_fields": ["PERMIT_NAME", "PERMIT_SUBTYPE", "PERMIT_CATEGORY"],
+    "source_url": "https://data.cityofdenton.com/dataset/building-safety-yearly-permits",
+}
+
+TX_DENTON_2025_CONFIG: dict[str, Any] = {
+    **_DENTON_CSV_BASE,
+    "endpoint": (
+        "https://data.cityofdenton.com/dataset/ee4933a5-3348-4894-a3b1-584d44b9bafa/"
+        "resource/2103cd5f-db3d-437e-9b20-5765465dc983/download/2025_all_permits_issued.csv"
+    ),
+    "feed_id": "tx-denton-ckan-2025",
+}
+STATE_CONFIGS["TX-DENTON-2025"] = TX_DENTON_2025_CONFIG
+
+TX_DENTON_2026_CONFIG: dict[str, Any] = {
+    **_DENTON_CSV_BASE,
+    "endpoint": (
+        "https://data.cityofdenton.com/dataset/ee4933a5-3348-4894-a3b1-584d44b9bafa/"
+        "resource/71a5f6cc-7cb9-4ecb-9482-70b2c1f3ab48/download/2026_all_permits_issued.csv"
+    ),
+    "feed_id": "tx-denton-ckan-2026",
+}
+STATE_CONFIGS["TX-DENTON-2026"] = TX_DENTON_2026_CONFIG
