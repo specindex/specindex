@@ -42,10 +42,25 @@ function SignInWall({ onSignIn }: { onSignIn: (() => void) | null }) {
   );
 }
 
+function PendingApprovalWall() {
+  return (
+    <div className="mx-auto max-w-3xl px-5 py-16 md:px-8 md:py-24">
+      <div className="card mx-auto max-w-lg p-10 text-center">
+        <h2 className="text-section">Your account is pending approval</h2>
+        <p className="mt-3 text-[var(--color-gray-600)]">
+          Thanks for signing up. We&apos;re reviewing new accounts by hand right now --
+          you&apos;ll get access as soon as we approve yours.
+        </p>
+      </div>
+    </div>
+  );
+}
+
 function AuthGate({ children }: { children: React.ReactNode }) {
-  const { isLoaded, isSignedIn, signIn } = useFirebaseAuth();
+  const { isLoaded, isSignedIn, isPendingApproval, signIn } = useFirebaseAuth();
   if (!isLoaded) return null;
   if (!isSignedIn) return <SignInWall onSignIn={signIn} />;
+  if (isPendingApproval) return <PendingApprovalWall />;
   return <>{children}</>;
 }
 

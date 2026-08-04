@@ -2106,8 +2106,8 @@ def upsert_my_profile(
                 """
                 INSERT INTO user_profiles
                     (firebase_uid, email, company, territory_states, categories,
-                     full_name, phone, role_title, lead_source, onboarded_at)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, now())
+                     full_name, phone, role_title, lead_source, onboarded_at, is_active)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, now(), false)
                 ON CONFLICT (firebase_uid) DO UPDATE SET
                     email = EXCLUDED.email,
                     company = EXCLUDED.company,
@@ -2115,6 +2115,14 @@ def upsert_my_profile(
                     categories = EXCLUDED.categories,
                     phone = EXCLUDED.phone,
                     role_title = EXCLUDED.role_title,
+                    -- is_active deliberately absent from this SET clause: a
+                    -- later "edit territory" call through this same upsert
+                    -- must never flip an already-approved user back to
+                    -- pending, nor reactivate someone an admin deactivated.
+                    -- New accounts start is_active=false (per Asif,
+                    -- 2026-08-01: gating open Google sign-in behind manual
+                    -- approval) -- only /v1/ops/customer/{uid}/reactivate
+                    -- (require_role admin) flips it to true.
                     -- full_name/lead_source are captured once, client-side,
                     -- from the signed-in user's own auth state/current page
                     -- (not asked as a form field a person can leave blank on

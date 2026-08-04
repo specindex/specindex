@@ -57,8 +57,23 @@ async function authenticatedFetch(getToken: GetToken, path: string, init?: Reque
   });
 }
 
+// Thrown by fetchMyProfile specifically on 403 -- require_firebase_user
+// (api/main.py) returns 403 for a valid, signed-in session whose
+// user_profiles.is_active is false, which since 2026-08-01 is the default
+// for every newly-created account (pending manual admin approval via
+// /v1/ops/customer/{uid}/reactivate). Callers distinguish this from other
+// failures (network error, 401 expired token) to show a "pending approval"
+// state instead of a generic error or silently doing nothing.
+export class ProfilePendingApprovalError extends Error {
+  constructor() {
+    super("Account is pending admin approval");
+    this.name = "ProfilePendingApprovalError";
+  }
+}
+
 export async function fetchMyProfile(getToken: GetToken): Promise<UserProfile> {
   const res = await authenticatedFetch(getToken, "/v1/me/profile");
+  if (res.status === 403) throw new ProfilePendingApprovalError();
   if (!res.ok) throw new Error(`GET /v1/me/profile failed: ${res.status}`);
   return res.json();
 }

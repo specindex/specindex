@@ -1,0 +1,133 @@
+{
+  "generated_at": "2026-08-03T10:28:40.299346+00:00",
+  "projects": [
+    {
+      "id": "mi-macomb-research-sapa-transmission-advanced-manufacturing-facility-expansion",
+      "name": "SAPA Transmission Advanced Manufacturing Facility Expansion",
+      "state": "MI",
+      "city": "23 Mile Rd and Hayes Rd",
+      "county": "Macomb",
+      "status": "planning",
+      "project_type": "Industrial / Defense Advanced Manufacturing",
+      "estimated_value_usd": 163000000,
+      "square_footage": null,
+      "owner": "SAPA Transmission Inc.",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Industrial / Defense Advanced Manufacturing project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: not identified. Expected completion: not identified.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Michigan Strategic Fund Board Approval & Governor Gretchen Whitmer Press Release (July 28, 2026)"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "mi-macomb-research-lakeside-town-center-redevelopment-former-lakeside-mall",
+      "name": "Lakeside Town Center Redevelopment (Former Lakeside Mall)",
+      "state": "MI",
+      "city": "14000 Lakeside Circle",
+      "county": "Macomb",
+      "status": "planning",
+      "project_type": "Commercial / Mixed-Use Redevelopment",
+      "estimated_value_usd": 270678999,
+      "square_footage": null,
+      "owner": "Lakeside OOTB Ventures, LLC / Lionheart Capital",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Commercial / Mixed-Use Redevelopment project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: not identified. Expected completion: not identified.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Michigan Strategic Fund Board Announcement & City of Sterling Heights Updates (July 2026)"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "mi-macomb-research-bgm-engineering-manufacturing-facility",
+      "name": "BGM Engineering Manufacturing Facility",
+      "state": "MI",
+      "city": "51580 Schoenherr Rd",
+      "county": "Macomb",
+      "status": "under_construction",
+      "project_type": "Industrial / Electronics Manufacturing",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "BGM Engineering, Inc.",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Industrial / Electronics Manufacturing project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: not identified. Expected completion: not identified.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "Newmark Q2 2026 Metro Detroit Industrial Market Report (July 2026)"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    },
+    {
+      "id": "mi-macomb-research-metronet-communication-shelter-ppcm-1370",
+      "name": "Metronet Communication Shelter (PPCM-1370)",
+      "state": "MI",
+      "city": "42725 & 42755 Mound Road",
+      "county": "Macomb",
+      "status": "planning",
+      "project_type": "Commercial / Telecommunications Facility",
+      "estimated_value_usd": null,
+      "square_footage": null,
+      "owner": "Metronet",
+      "architect": "",
+      "general_contractor": "",
+      "opened_or_announced_date": null,
+      "description": "Commercial / Telecommunications Facility project found via Step 6 direct research (grounded search, NOT independently cross-checked, not a structured permit feed). [PENDING DEEP AUDIT -- not independently cross-checked] Key tenants: not identified. Expected completion: not identified.",
+      "key_specs": [],
+      "mentioned_brands": [],
+      "competitor_watch": [],
+      "sources": [
+        {
+          "name": "Step 6 research fallback citation",
+          "url": "",
+          "note": "City of Sterling Heights Planning Commission Meeting Notice & Agenda (July 2026)"
+        },
+        {
+          "name": "PENDING_DEEP_AUDIT",
+          "url": "",
+          "note": "Loaded without independent cross-check, per 2026-07-31 decision to move faster and audit later."
+        }
+      ],
+      "open_for": ""
+    }
+  ]
+}

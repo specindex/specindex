@@ -30,6 +30,13 @@ type GetToken = (options?: { template?: string }) => Promise<string | null>;
 type FirebaseAuthContextValue = {
   isLoaded: boolean;
   isSignedIn: boolean;
+  // True once AuthSync's post-sign-in profile fetch comes back 403 --
+  // signed in with a valid Firebase session, but user_profiles.is_active
+  // is false (new accounts default to this since 2026-08-01, pending
+  // manual admin approval). Gated views (ProjectsGate) use this to show a
+  // "pending approval" message instead of trying to fetch data that will
+  // also 403, or silently showing nothing.
+  isPendingApproval: boolean;
   user: User | null;
   getToken: GetToken;
   signIn: () => Promise<void>;
@@ -65,12 +72,17 @@ function FirebaseAuthInner({ children }: { children: React.ReactNode }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [user, setUser] = useState<User | null>(null);
   const [showSignInModal, setShowSignInModal] = useState(false);
+  const [isPendingApproval, setIsPendingApproval] = useState(false);
 
   useEffect(() => {
     if (!auth) return;
     return onAuthStateChanged(auth, (u) => {
       setUser(u);
       setIsLoaded(true);
+      // A sign-out (or switching accounts) must clear a stale pending-
+      // approval flag from the previous session -- AuthSync only sets this
+      // true, it never clears it itself.
+      if (!u) setIsPendingApproval(false);
     });
   }, []);
 
@@ -104,12 +116,20 @@ function FirebaseAuthInner({ children }: { children: React.ReactNode }) {
     await firebaseSignOut(auth);
   }
 
-  const value: FirebaseAuthContextValue = { isLoaded, isSignedIn: !!user, user, getToken, signIn, signOut };
+  const value: FirebaseAuthContextValue = {
+    isLoaded,
+    isSignedIn: !!user,
+    isPendingApproval,
+    user,
+    getToken,
+    signIn,
+    signOut,
+  };
 
   return (
     <FirebaseAuthContext.Provider value={value}>
       {children}
-      <AuthSync />
+      <AuthSync onPendingApproval={() => setIsPendingApproval(true)} />
       {showSignInModal && (
         <SignInModal onGoogle={signInWithGoogle} onClose={() => setShowSignInModal(false)} />
       )}

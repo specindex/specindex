@@ -48,6 +48,57 @@ def _money(v: Any) -> float | None:
         return None
 
 
+def _iso_date(raw: Any) -> str | None:
+    """Normalize a source date to YYYY-MM-DD.
+
+    Handles the three shapes real permit feeds actually return:
+    already-ISO strings (pass through), Esri epoch-milliseconds ints,
+    and US MM/DD/YYYY strings (Snohomish County PDS stores IssueDate as
+    an esriFieldTypeString in that format). Anything unrecognized falls
+    back to the previous behavior (first 10 chars) so this can't
+    regress an existing feed.
+    """
+    if raw in (None, ""):
+        return None
+    s = str(raw).strip()
+    # Drop a trailing clock time ("4/10/2018 12:00:00 AM" -- San Jose's
+    # CKAN ISSUEDATE/FINALDATE). Without this the MM/DD/YYYY branch below
+    # fails to match and the value falls through to the first-10-chars
+    # fallback, emitting "4/10/2018 " as if it were an ISO date.
+    s = re.sub(r"[ T]\d{1,2}:\d{2}(:\d{2})?(\s*[AaPp]\.?[Mm]\.?)?$", "", s).strip()
+    if re.match(r"^\d{4}-\d{2}-\d{2}", s):
+        return s[:10]
+    m = re.match(r"^(\d{1,2})/(\d{1,2})/(\d{4})$", s)
+    if m:
+        return f"{m.group(3)}-{int(m.group(1)):02d}-{int(m.group(2)):02d}"
+    # MM-DD-YYYY -- what every Accela results grid emits (TX/IN/OK/UT/NE
+    # sources all store dates this way). Distinguished from ISO by the
+    # 4-digit year being LAST; ISO is already handled above.
+    m = re.match(r"^(\d{1,2})-(\d{1,2})-(\d{4})$", s)
+    if m:
+        return f"{m.group(3)}-{int(m.group(1)):02d}-{int(m.group(2)):02d}"
+    # YYYY/MM/DD -- slash-separated ISO order (Virginia Beach VA).
+    m = re.match(r"^(\d{4})/(\d{1,2})/(\d{1,2})$", s)
+    if m:
+        return f"{m.group(1)}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"
+    if re.match(r"^-?\d{10,}$", s):
+        import datetime as _dt
+
+        # Distinguish epoch SECONDS from epoch MILLISECONDS by magnitude --
+        # the previous version assumed milliseconds unconditionally, which
+        # silently turned Clark County NV's 10-digit second values
+        # (e.g. 1784851200) into 1970 dates. A contemporary second-epoch is
+        # ~1.7e9 (10 digits); a millisecond-epoch is ~1.7e12 (13 digits).
+        # Cut at 1e11: anything below is seconds, at/above is milliseconds.
+        try:
+            n = int(s)
+            secs = n / 1000 if abs(n) >= 100_000_000_000 else n
+            return _dt.datetime.utcfromtimestamp(secs).date().isoformat()
+        except (OverflowError, OSError, ValueError):
+            return None
+    return s[:10]
+
+
 def field_mapped_to_projects(
     rows: list[dict[str, Any]],
     *,
@@ -89,11 +140,26 @@ def field_mapped_to_projects(
         date_val = None
         if date_field:
             raw_date = row.get(date_field)
-            date_val = str(raw_date)[:10] if raw_date else None
+            if raw_date:
+                # Layers using date_literal_style="yyyymmdd_int" (SC
+                # Greenville's APPLICDATE, City of Ventura's ISSUEDDATE)
+                # store dates as a bare 20260727-style number -- emit real
+                # ISO instead of the raw digits. Everything else goes
+                # through _iso_date, which also handles MM/DD/YYYY strings
+                # and Esri epoch-millisecond ints (Snohomish WA).
+                m = re.fullmatch(r"(\d{4})(\d{2})(\d{2})(?:\.0+)?", str(raw_date))
+                date_val = (
+                    f"{m.group(1)}-{m.group(2)}-{m.group(3)}"
+                    if m
+                    else _iso_date(raw_date)
+                )
         city = ""
         for cf in city_fields or []:
             if row.get(cf):
-                city = str(row[cf]).title()
+                # Some feeds' "city" column is really an address line-2
+                # ("EVERETT, WA 98204-4880" on Snohomish County's PDS
+                # layers) -- keep only the part before the state/zip.
+                city = str(row[cf]).split(",")[0].strip().title()
                 break
         if not city and address and "," in address:
             # Real bug found 2026-07-28 (San Diego): "7676 Hazard Center

@@ -1,5 +1,65 @@
 # SpecIndex Agent Strategy (2026-07-26, updated 2026-07-31)
 
+**Standing data pull window (2026-07-31): since 2025-01-01, a fixed anchor
+date, not a rolling lookback.** When widening any structured source past
+its narrow incremental window (30-90 days) for bulk historical depth,
+pull back to January 1, 2025 and no further. `main.py`'s `--lookback-days`
+is relative to "today," not absolute, so recompute it fresh each session
+as `(today - date(2025,1,1)).days` -- never reuse a hardcoded day-count
+from an earlier session, it drifts. Real remaining scope: add proper
+absolute `--since-date` support to the pipeline.
+
+**Known bottleneck (2026-08-01): `scripts/merge-national-corpus.py` can hang
+for hours.** Its dedupe buckets records by `(state, county)` and does
+O(k^2) pairwise comparison within each bucket; once a bucket (e.g. NJ after
+the 2025-01-01 backfill) grows into the tens of thousands of rows, it runs
+at ~100% CPU with zero progress output. If a data-processing script's CPU
+time balloons far past a sane estimate with no progress logging, kill it
+and reroute rather than waiting it out. Stopgap:
+`scripts/fast-merge-national-corpus.py` skips the pairwise merge (relies on
+Postgres `ON CONFLICT (project_id)` for exact-id dedup) and rebuilds the
+full corpus in ~10 seconds. Real fix still open: sub-bucket
+`project_identity._dedupe_bucket` by a cheap prefilter before pairwise
+`same_project()` comparison.
+
+**Standing coverage goal (2026-08-02): onboard commercial-permit sources for
+all top-500 US counties by population.** Reference:
+`docs/us_counties_by_population.md` -- real Census Bureau data (bulk CSV from
+`www2.census.gov`, no API key needed) for all 3,144 US counties, with a
+Corpus Coverage column; always check it before scoping a new batch, and
+regenerate it periodically as the corpus grows. Do not trust ad-hoc
+web-scraped or pasted "complete" county lists -- one such file looked
+authoritative but was fabricated past rank ~18 (recycled county names reused
+across every state with invented populations); spot-check any large ranked
+dataset against a known-authoritative source. Pacing: batches of 5 counties
+with review between each batch (cherry-pick worktree commits, resolve
+LFS-pointer conflicts by keeping real current data, re-run the pipeline
+fresh per source for real merged counts, report before the next 5) -- an
+open-ended, multi-session effort, not a single continuous run.
+
+**Documents are the moat, not permit-metadata breadth (2026-08-02).** A
+county-discovery win now requires BOTH structured data AND a real document
+path (per-record detail page or attachments/documents API), even if
+currently gated -- pure ArcGIS/Socrata/CKAN bulk-feed wins (metadata only)
+are no longer sufficient on their own. Weight future batches by likelihood
+of a real document path, not just population rank -- Accela-based systems
+have a consistent (if often login-gated) "Attachments" tab pattern
+confirmed across UT-SALTLAKE/IN-INDIANAPOLIS/Cleveland OH/Duval FL, more
+promising than bulk feeds even for a smaller county. See
+`docs/ROADMAP.md` item 98 for specific login-gated opportunities already
+identified (Duval FL/JaxEPICS is the strongest lead).
+
+**Use Playwright to verify gated/SPA portals (2026-08-02).** When a county/city
+permit portal is suspected login-gated or is an Angular/React SPA shell that
+WebFetch/curl can't see through, use Playwright (headless Chromium,
+`python3 -m playwright install chromium`) to check it live instead of
+concluding "no viable source" from static research alone -- capture network
+requests to see real backend API calls, and try clicking visible nav/search/
+"Guest" elements to see where they actually lead. Used live to definitively
+confirm Duval County FL's JaxEPICS has no guest/anonymous path. Apply to
+future gated portals (SmartGov TLS blocks, OpenGov/ViewPoint SPA shells, MGO
+Connect, etc.) -- see `docs/ROADMAP.md` item 98.
+
 **Looking for the current discovery/acquisition pipeline?** Skip to
 [Gemini-Assisted County/State Source Discovery](#gemini-assisted-countystate-source-discovery-implemented-2026-07-28)
 below — the 3-phase, 10-step loop is the live, actively-used process.

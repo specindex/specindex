@@ -38,9 +38,12 @@ class ArcGISProvider(BaseIngestionProvider):
         watermark_field: str = "OBJECTID",
         hash_fields_list: list[str] | None = None,
         page_size: int = 1000,
+        supports_pagination: bool = True,
         max_retries: int = 4,
         include_geometry: bool = True,
         date_field: str | None = None,
+        # Output-only date column. See the note at the to_projects() call site.
+        output_date_field: str | None = None,
         date_field_is_string: bool = False,
         date_literal_style: str = "date",
         lookback_days: int = 30,
@@ -77,6 +80,16 @@ class ArcGISProvider(BaseIngestionProvider):
         self.watermark_field = watermark_field
         self.hash_fields_list = hash_fields_list
         self.page_size = page_size
+        # Older ArcGIS Server instances (10.x, MapServer-backed) report
+        # advancedQueryCapabilities.supportsPagination=false and hard-error
+        # ("Pagination is not supported.") on ANY request carrying
+        # resultOffset/resultRecordCount -- confirmed live 2026-08-03
+        # against City of Ventura's map.cityofventura.net CityShift/
+        # EnerGovEnt MapServer, which also has supportsOrderBy=false.
+        # Those layers still return the full result set in one response
+        # (maxRecordCount 50000 there), so the correct behavior is a
+        # single unpaginated query rather than a paginated loop.
+        self.supports_pagination = supports_pagination
         self.max_retries = max_retries
         self.include_geometry = include_geometry
         # Unlike Socrata's recordid (small monotonic ids on incremental
@@ -86,6 +99,7 @@ class ArcGISProvider(BaseIngestionProvider):
         # "since yesterday." Bound the first run by a real date field,
         # same principle as SocrataProvider's lookback_days.
         self.date_field = date_field
+        self.output_date_field = output_date_field
         # A handful of ArcGIS layers (e.g. Pearland's Commercial_Permits)
         # store their date column as esriFieldTypeString ("2021-02-23 0:00")
         # rather than a real Esri Date field -- `DATE '...'` literal syntax
@@ -96,6 +110,15 @@ class ArcGISProvider(BaseIngestionProvider):
         # FeatureServer) reject the standard `DATE '...'` literal with a
         # "Missing operand" error and require `TIMESTAMP '... 00:00:00'`
         # instead -- verified by direct query against both variants.
+        #
+        # date_literal_style="none" means "this layer has a usable date
+        # column for *mapping* but it can't be filtered on server-side"
+        # -- e.g. Snohomish County's PDS layers store IssueDate as an
+        # esriFieldTypeString in MM/DD/YYYY, where every literal style
+        # (and plain string comparison) silently returns zero rows. Those
+        # layers are small live snapshots (hundreds of rows), so the
+        # correct behavior is to pull the whole commercial-filtered layer
+        # and let the date field flow through to to_projects() only.
         self.date_literal_style = date_literal_style
         self.lookback_days = lookback_days
         self.hard_limit = hard_limit
@@ -105,7 +128,7 @@ class ArcGISProvider(BaseIngestionProvider):
         last = (last_watermark or "0").strip()
         if last.isdigit() and int(last) > 0:
             clauses.append(f"{self.watermark_field} > {last}")
-        elif self.date_field:
+        elif self.date_field and self.date_literal_style != "none":
             import datetime as _dt
 
             cutoff = (_dt.date.today() - _dt.timedelta(days=self.lookback_days)).isoformat()
@@ -133,10 +156,11 @@ class ArcGISProvider(BaseIngestionProvider):
             "where": where,
             "outFields": self.out_fields,
             "f": "json",
-            "resultOffset": str(offset),
-            "resultRecordCount": str(self.page_size),
-            "orderByFields": f"{self.watermark_field} ASC",
         }
+        if self.supports_pagination:
+            params["resultOffset"] = str(offset)
+            params["resultRecordCount"] = str(self.page_size)
+            params["orderByFields"] = f"{self.watermark_field} ASC"
         if self.include_geometry:
             params["returnGeometry"] = "true"
             params["outSR"] = "4326"
@@ -176,6 +200,8 @@ class ArcGISProvider(BaseIngestionProvider):
                 out.append(attrs)
             if self.hard_limit and len(out) >= self.hard_limit:
                 out = out[: self.hard_limit]
+                break
+            if not self.supports_pagination:
                 break
             if len(feats) < self.page_size or not data.get("exceededTransferLimit"):
                 break
@@ -222,7 +248,18 @@ class ArcGISProvider(BaseIngestionProvider):
             address_fields=self.address_fields,
             desc_fields=self.desc_fields,
             value_fields=self.value_fields,
-            date_field=self.date_field,
+            # output_date_field wins when set. Some layers store their only
+            # real date as a STRING (Sacramento's Status_Date is MM/DD/YYYY),
+            # which cannot be used as `date_field` -- an ArcGIS DATE comparison
+            # against it errors and it sorts wrong lexicographically, so those
+            # configs filter by year with LIKE and leave date_field unset.
+            # That left the mapper with no date at all: 4,332 of Sacramento's
+            # 4,333 rows carried a null date and vanished from every windowed
+            # query, making a top-25 county read as 1 in-window project.
+            # output_date_field is only ever read when building output rows,
+            # never injected into a WHERE clause, so it is safe for exactly
+            # this case. Mirrors the same option on ckan_provider.
+            date_field=self.output_date_field or self.date_field,
             source_url=self.source_url or self.base_url,
             city_fields=self.city_fields,
         )

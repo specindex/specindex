@@ -142,6 +142,19 @@ def convert_project(project: dict[str, Any], county: str, state_code: str, count
         if doc.get("url"):
             sources.append({"name": doc.get("description", "Pullable document"), "url": doc["url"]})
 
+    # document-research-fallback.py's shape (2026-08-03): it emits a single
+    # document_url + document_verified pair rather than a pullable_documents
+    # list, and only sets document_verified after live-fetching and
+    # content-type-checking the URL in the same run. Without this branch the
+    # one thing that whole script exists to find -- a confirmed live document
+    # -- was silently dropped on load.
+    if project.get("document_verified") and project.get("document_url"):
+        sources.append({
+            "name": project.get("document_type") or "Verified document",
+            "url": project["document_url"],
+            "note": f"Live-fetched and content-type-checked at capture time: {project.get('document_status', '')}".strip(),
+        })
+
     # PENDING_DEEP_AUDIT tag (2026-07-31, Asif: "we will do a deep audit
     # later") -- these rows skipped the per-project independent
     # cross-check pass to move faster. Not dropped, not treated as equal

@@ -42,6 +42,11 @@ if str(_SCRIPTS) not in sys.path:
 
 GCS_BUCKET = "specindex-ai-raw-documents"
 NATIVE_MIN_CHARS = 20  # below this, treat the page as image-only and OCR it
+# Tier-2 gate: below this mean confidence a PaddleOCR page is not trusted and
+# escalates to Document AI. 0.80 is a starting point -- tune against the first
+# real batch, since the whole value of tier 2 is how much it keeps off tier 3.
+PADDLE_MIN_CONFIDENCE = float(os.environ.get("PADDLE_MIN_CONFIDENCE", "0.80"))
+USE_PADDLE = os.environ.get("USE_PADDLE", "1") not in ("0", "false", "False")
 DOCUMENT_AI_LOCATION = "us"
 
 USER_AGENT = "SpecIndexDocumentBot/1.0 (+https://specindex.ai; research/archival)"
@@ -120,10 +125,69 @@ def document_ai_ocr_page(client, processor_name: str, page_pdf_bytes: bytes) -> 
     return text, avg_conf
 
 
+
+# --- Tier 2: PaddleOCR ------------------------------------------------------
+# Added 2026-08-03 per Asif: at the corpus's target scale (capture is now
+# running for real -- 656 documents from one county in a few hours) a
+# Document-AI-only path is the dominant cost. PaddleOCR runs locally and free,
+# so it takes the bulk of the OCR work and Document AI becomes the escalation
+# path rather than the default.
+#
+# This deliberately revises the 2026-07-29 head-to-head that chose Document AI
+# outright. That test was correct at ~240K pages (~$360); it does not hold at
+# ~2M. The quality finding from that test still stands, though -- Document AI
+# read a dense small-print citation that PaddleOCR garbled -- which is why
+# low-confidence pages escalate instead of being trusted.
+_PADDLE_OCR = None
+
+
+def _paddle():
+    """Lazily construct a process-wide PaddleOCR. Import is deferred so the
+    native-text-only path never pays for it, and a missing install degrades to
+    'no tier 2' rather than killing the run."""
+    global _PADDLE_OCR
+    if _PADDLE_OCR is None:
+        from paddleocr import PaddleOCR  # noqa: PLC0415
+
+        # PaddleOCR 3.x dropped both `show_log` and `use_angle_cls`, and it
+        # raises "Unknown argument" rather than ignoring them -- which made
+        # EVERY page fail tier 2 and escalate, silently disabling the whole
+        # PaddleOCR tier while looking like it was installed and working
+        # (confirmed live 2026-08-03: "[paddle] page N failed, escalating:
+        # Unknown argument: show_log" on all 309 pages of one document).
+        # Try the modern signature first, then fall back to the 2.x one.
+        try:
+            _PADDLE_OCR = PaddleOCR(lang="en")
+        except (TypeError, ValueError):
+            _PADDLE_OCR = PaddleOCR(use_angle_cls=True, lang="en", show_log=False)
+    return _PADDLE_OCR
+
+
+def paddle_ocr_page(page, dpi: int = 200) -> tuple[str, float]:
+    """OCR one rendered page. Returns (text, mean_confidence 0-1)."""
+    import numpy as np  # noqa: PLC0415
+
+    pix = page.get_pixmap(dpi=dpi)
+    img = np.frombuffer(pix.samples, dtype=np.uint8).reshape(pix.height, pix.width, pix.n)
+    if pix.n == 4:  # RGBA -> RGB
+        img = img[:, :, :3]
+    result = _paddle().ocr(img, cls=True)
+    lines, confs = [], []
+    for block in result or []:
+        for entry in block or []:
+            if not entry or len(entry) < 2:
+                continue
+            text, conf = entry[1][0], float(entry[1][1])
+            lines.append(text)
+            confs.append(conf)
+    return "\n".join(lines), (sum(confs) / len(confs) if confs else 0.0)
+
+
 def extract_document(fitz_module, client, processor_name: str, pdf_bytes: bytes) -> list[dict[str, Any]]:
     """Returns a list of {page_number, raw_text, ocr_engine, avg_confidence}."""
     doc = fitz_module.open(stream=pdf_bytes, filetype="pdf")
     pages_out: list[dict[str, Any]] = []
+    skip_paddle = not USE_PADDLE
     for i, page in enumerate(doc):
         page_number = i + 1
         native_text = native_page_text(page)
@@ -133,9 +197,45 @@ def extract_document(fitz_module, client, processor_name: str, pdf_bytes: bytes)
             )
             continue
 
-        # Render this single page to its own one-page PDF and send that to
-        # Document AI -- keeps every call well under any per-request page
-        # cap regardless of how large the source document is.
+        # Tier 2: PaddleOCR locally (free). Only pages it handles poorly --
+        # low mean confidence, or suspiciously little text for a page that had
+        # no native layer -- escalate to Document AI. That escalation is the
+        # point: the 2026-07-29 head-to-head found Paddle garbling dense
+        # small print, so a low-confidence Paddle result must not be trusted.
+        if not skip_paddle:
+            try:
+                p_text, p_conf = paddle_ocr_page(page)
+                if p_conf >= PADDLE_MIN_CONFIDENCE and len(p_text) >= NATIVE_MIN_CHARS:
+                    pages_out.append(
+                        {
+                            "page_number": page_number,
+                            "raw_text": p_text,
+                            "ocr_engine": "paddleocr",
+                            "avg_confidence": p_conf,
+                        }
+                    )
+                    continue
+            except ImportError:
+                # paddleocr not installed here -- fall through to Document AI
+                # rather than failing the run.
+                skip_paddle = True
+            except Exception as e:  # noqa: BLE001 - never let OCR kill a run
+                print(f"    [paddle] page {page_number} failed, escalating: {e}", file=sys.stderr)
+
+        # Tier 3: Document AI. Skipped entirely when it isn't configured, so a
+        # run can still measure tiers 1+2 (see the lazy resolution in main()).
+        # Recorded explicitly rather than dropped, so these pages can be found
+        # and re-run once a processor id is set -- silently omitting them would
+        # make the document look fully extracted when it is not.
+        if client is None or not processor_name:
+            pages_out.append(
+                {"page_number": page_number, "raw_text": "",
+                 "ocr_engine": "skipped_no_docai", "avg_confidence": None}
+            )
+            continue
+
+        # Render this single page to its own one-page PDF -- keeps every call
+        # well under any per-request page cap regardless of source size.
         single_page_doc = fitz_module.open()
         single_page_doc.insert_pdf(doc, from_page=i, to_page=i)
         page_pdf_bytes = single_page_doc.tobytes()
@@ -182,12 +282,31 @@ def main() -> int:
     client = None
     processor_name = None
     if not args.dry_run:
-        from google.cloud import documentai_v1 as documentai
+        # Document AI is TIER 3 of a three-tier cascade (native PyMuPDF text ->
+        # PaddleOCR -> Document AI), so requiring its processor id up front is
+        # wrong: a run whose pages all carry a native text layer never calls it
+        # at all. Insisting on it eagerly blocked the very measurement the
+        # cascade was built to inform -- the native-text hit rate, which decides
+        # whether the PaddleOCR tier earns its keep.
+        #
+        # Resolve it lazily instead: missing config becomes a per-page failure
+        # at the point of escalation, not a refusal to start.
+        try:
+            from google.cloud import documentai_v1 as documentai
 
-        client = documentai.DocumentProcessorServiceClient(
-            client_options={"api_endpoint": f"{DOCUMENT_AI_LOCATION}-documentai.googleapis.com"}
-        )
-        processor_name = _doc_ai_processor_name()
+            client = documentai.DocumentProcessorServiceClient(
+                client_options={"api_endpoint": f"{DOCUMENT_AI_LOCATION}-documentai.googleapis.com"}
+            )
+            processor_name = _doc_ai_processor_name()
+        except SystemExit:
+            print(
+                "DOCUMENT_AI_PROCESSOR_ID not set -- running tiers 1+2 only "
+                "(native text, then PaddleOCR). Pages that would escalate to "
+                "Document AI will be recorded as unextracted.",
+                file=sys.stderr,
+            )
+            client = None
+            processor_name = None
 
     conn = psycopg2.connect(args.database_url)
     try:

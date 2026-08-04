@@ -1,0 +1,5014 @@
+{
+  "generated_at": "2026-08-03T23:31:56+00:00",
+  "window_start": "2025-01-01",
+  "counties": [
+    {
+      "rank": 1,
+      "county": "Los Angeles",
+      "state": "CA",
+      "population": 9757179,
+      "projects": 11953,
+      "projects_in_window": 11934,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 2,
+      "county": "Cook",
+      "state": "IL",
+      "population": 5182617,
+      "projects": 41820,
+      "projects_in_window": 33121,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 3,
+      "county": "Harris",
+      "state": "TX",
+      "population": 5009302,
+      "projects": 5736,
+      "projects_in_window": 5736,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 4,
+      "county": "Maricopa",
+      "state": "AZ",
+      "population": 4673096,
+      "projects": 392,
+      "projects_in_window": 287,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 5,
+      "county": "San Diego",
+      "state": "CA",
+      "population": 3298799,
+      "projects": 441,
+      "projects_in_window": 441,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 6,
+      "county": "Orange",
+      "state": "CA",
+      "population": 3170435,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 7,
+      "county": "Miami-Dade",
+      "state": "FL",
+      "population": 2838461,
+      "projects": 34140,
+      "projects_in_window": 29998,
+      "documents": 28,
+      "status": "covered"
+    },
+    {
+      "rank": 8,
+      "county": "Dallas",
+      "state": "TX",
+      "population": 2656028,
+      "projects": 1347,
+      "projects_in_window": 524,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 9,
+      "county": "Kings",
+      "state": "NY",
+      "population": 2617631,
+      "projects": 44078,
+      "projects_in_window": 44078,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 10,
+      "county": "Riverside",
+      "state": "CA",
+      "population": 2529933,
+      "projects": 2804,
+      "projects_in_window": 2804,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 11,
+      "county": "Clark",
+      "state": "NV",
+      "population": 2398871,
+      "projects": 8222,
+      "projects_in_window": 5641,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 12,
+      "county": "King",
+      "state": "WA",
+      "population": 2340211,
+      "projects": 4862,
+      "projects_in_window": 4345,
+      "documents": 22,
+      "status": "covered"
+    },
+    {
+      "rank": 13,
+      "county": "Queens",
+      "state": "NY",
+      "population": 2316841,
+      "projects": 24440,
+      "projects_in_window": 24440,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 14,
+      "county": "Tarrant",
+      "state": "TX",
+      "population": 2230708,
+      "projects": 13652,
+      "projects_in_window": 12156,
+      "documents": 17,
+      "status": "covered"
+    },
+    {
+      "rank": 15,
+      "county": "San Bernardino",
+      "state": "CA",
+      "population": 2214281,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 16,
+      "county": "Bexar",
+      "state": "TX",
+      "population": 2127737,
+      "projects": 970,
+      "projects_in_window": 482,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 17,
+      "county": "Broward",
+      "state": "FL",
+      "population": 2037472,
+      "projects": 2,
+      "projects_in_window": 2,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 18,
+      "county": "Santa Clara",
+      "state": "CA",
+      "population": 1926325,
+      "projects": 1150,
+      "projects_in_window": 1142,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 19,
+      "county": "Wayne",
+      "state": "MI",
+      "population": 1771063,
+      "projects": 2287,
+      "projects_in_window": 1030,
+      "documents": 3,
+      "status": "covered"
+    },
+    {
+      "rank": 20,
+      "county": "Middlesex",
+      "state": "MA",
+      "population": 1668956,
+      "projects": 10,
+      "projects_in_window": 10,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 21,
+      "county": "New York",
+      "state": "NY",
+      "population": 1660664,
+      "projects": 89412,
+      "projects_in_window": 88343,
+      "documents": 89,
+      "status": "covered"
+    },
+    {
+      "rank": 22,
+      "county": "Alameda",
+      "state": "CA",
+      "population": 1649060,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 23,
+      "county": "Sacramento",
+      "state": "CA",
+      "population": 1611231,
+      "projects": 4333,
+      "projects_in_window": 4333,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 24,
+      "county": "Palm Beach",
+      "state": "FL",
+      "population": 1582055,
+      "projects": 3029,
+      "projects_in_window": 3029,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 25,
+      "county": "Hillsborough",
+      "state": "FL",
+      "population": 1581426,
+      "projects": 456,
+      "projects_in_window": 79,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 26,
+      "county": "Philadelphia",
+      "state": "PA",
+      "population": 1573916,
+      "projects": 1449,
+      "projects_in_window": 1289,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 27,
+      "county": "Suffolk",
+      "state": "NY",
+      "population": 1535909,
+      "projects": 5,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 28,
+      "county": "Orange",
+      "state": "FL",
+      "population": 1533646,
+      "projects": 17845,
+      "projects_in_window": 17845,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 29,
+      "county": "Nassau",
+      "state": "NY",
+      "population": 1392438,
+      "projects": 5,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 30,
+      "county": "Bronx",
+      "state": "NY",
+      "population": 1384724,
+      "projects": 20732,
+      "projects_in_window": 20732,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 31,
+      "county": "Travis",
+      "state": "TX",
+      "population": 1363767,
+      "projects": 29518,
+      "projects_in_window": 23315,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 32,
+      "county": "Franklin",
+      "state": "OH",
+      "population": 1356303,
+      "projects": 14360,
+      "projects_in_window": 12899,
+      "documents": 11,
+      "status": "covered"
+    },
+    {
+      "rank": 33,
+      "county": "Oakland",
+      "state": "MI",
+      "population": 1296888,
+      "projects": 216,
+      "projects_in_window": 216,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 34,
+      "county": "Hennepin",
+      "state": "MN",
+      "population": 1273334,
+      "projects": 2735,
+      "projects_in_window": 2735,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 35,
+      "county": "Collin",
+      "state": "TX",
+      "population": 1254658,
+      "projects": 5998,
+      "projects_in_window": 4473,
+      "documents": 1,
+      "status": "covered"
+    },
+    {
+      "rank": 36,
+      "county": "Cuyahoga",
+      "state": "OH",
+      "population": 1240594,
+      "projects": 4187,
+      "projects_in_window": 3802,
+      "documents": 2,
+      "status": "covered"
+    },
+    {
+      "rank": 37,
+      "county": "Wake",
+      "state": "NC",
+      "population": 1232444,
+      "projects": 2867,
+      "projects_in_window": 2454,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 38,
+      "county": "Allegheny",
+      "state": "PA",
+      "population": 1231814,
+      "projects": 24530,
+      "projects_in_window": 6383,
+      "documents": 3,
+      "status": "covered"
+    },
+    {
+      "rank": 39,
+      "county": "Salt Lake",
+      "state": "UT",
+      "population": 1216274,
+      "projects": 570,
+      "projects_in_window": 250,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 40,
+      "county": "Mecklenburg",
+      "state": "NC",
+      "population": 1206285,
+      "projects": 3779,
+      "projects_in_window": 2311,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 41,
+      "county": "Contra Costa",
+      "state": "CA",
+      "population": 1172607,
+      "projects": 5,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 42,
+      "county": "Fairfax",
+      "state": "VA",
+      "population": 1160925,
+      "projects": 1838,
+      "projects_in_window": 1632,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 43,
+      "county": "Fulton",
+      "state": "GA",
+      "population": 1090354,
+      "projects": 815,
+      "projects_in_window": 649,
+      "documents": 2,
+      "status": "covered"
+    },
+    {
+      "rank": 44,
+      "county": "Montgomery",
+      "state": "MD",
+      "population": 1082273,
+      "projects": 3198,
+      "projects_in_window": 2614,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 45,
+      "county": "Pima",
+      "state": "AZ",
+      "population": 1080149,
+      "projects": 572,
+      "projects_in_window": 281,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 46,
+      "county": "Duval",
+      "state": "FL",
+      "population": 1055159,
+      "projects": 6,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 47,
+      "county": "Denton",
+      "state": "TX",
+      "population": 1045120,
+      "projects": 79,
+      "projects_in_window": 79,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 48,
+      "county": "Fresno",
+      "state": "CA",
+      "population": 1024125,
+      "projects": 7,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 49,
+      "county": "Westchester",
+      "state": "NY",
+      "population": 1006447,
+      "projects": 6,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 50,
+      "county": "Gwinnett",
+      "state": "GA",
+      "population": 1003869,
+      "projects": 53,
+      "projects_in_window": 21,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 51,
+      "county": "Honolulu",
+      "state": "HI",
+      "population": 998747,
+      "projects": 2,
+      "projects_in_window": 2,
+      "documents": 3,
+      "status": "covered"
+    },
+    {
+      "rank": 52,
+      "county": "St. Louis",
+      "state": "MO",
+      "population": 992929,
+      "projects": 401,
+      "projects_in_window": 180,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 53,
+      "county": "Capitol Planning Region",
+      "state": "CT",
+      "population": 991508,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 54,
+      "county": "Marion",
+      "state": "IN",
+      "population": 981628,
+      "projects": 865,
+      "projects_in_window": 282,
+      "documents": 149,
+      "status": "covered"
+    },
+    {
+      "rank": 55,
+      "county": "Bergen",
+      "state": "NJ",
+      "population": 978641,
+      "projects": 8056,
+      "projects_in_window": 5754,
+      "documents": 5,
+      "status": "covered"
+    },
+    {
+      "rank": 56,
+      "county": "Prince George's",
+      "state": "MD",
+      "population": 966629,
+      "projects": 127,
+      "projects_in_window": 127,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 57,
+      "county": "Pinellas",
+      "state": "FL",
+      "population": 965870,
+      "projects": 530,
+      "projects_in_window": 100,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 58,
+      "county": "Fort Bend",
+      "state": "TX",
+      "population": 958434,
+      "projects": 58,
+      "projects_in_window": 58,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 59,
+      "county": "Erie",
+      "state": "NY",
+      "population": 950602,
+      "projects": 2791,
+      "projects_in_window": 2791,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 60,
+      "county": "Pierce",
+      "state": "WA",
+      "population": 941170,
+      "projects": 105,
+      "projects_in_window": 105,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 61,
+      "county": "DuPage",
+      "state": "IL",
+      "population": 937142,
+      "projects": 838,
+      "projects_in_window": 838,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 62,
+      "county": "Milwaukee",
+      "state": "WI",
+      "population": 924740,
+      "projects": 1297,
+      "projects_in_window": 1005,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 63,
+      "county": "Kern",
+      "state": "CA",
+      "population": 922529,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 64,
+      "county": "Hidalgo",
+      "state": "TX",
+      "population": 914820,
+      "projects": 406,
+      "projects_in_window": 31,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 65,
+      "county": "Shelby",
+      "state": "TN",
+      "population": 910530,
+      "projects": 260,
+      "projects_in_window": 51,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 66,
+      "county": "Middlesex",
+      "state": "NJ",
+      "population": 890119,
+      "projects": 7474,
+      "projects_in_window": 4097,
+      "documents": 7,
+      "status": "covered"
+    },
+    {
+      "rank": 67,
+      "county": "Macomb",
+      "state": "MI",
+      "population": 886175,
+      "projects": 4,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 68,
+      "county": "Essex",
+      "state": "NJ",
+      "population": 881527,
+      "projects": 4290,
+      "projects_in_window": 2823,
+      "documents": 12,
+      "status": "covered"
+    },
+    {
+      "rank": 69,
+      "county": "Worcester",
+      "state": "MA",
+      "population": 881248,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 70,
+      "county": "Montgomery",
+      "state": "PA",
+      "population": 879190,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 71,
+      "county": "El Paso",
+      "state": "TX",
+      "population": 875784,
+      "projects": 65,
+      "projects_in_window": 63,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 72,
+      "county": "Snohomish",
+      "state": "WA",
+      "population": 864113,
+      "projects": 563,
+      "projects_in_window": 176,
+      "documents": 1087,
+      "status": "covered"
+    },
+    {
+      "rank": 73,
+      "county": "Lee",
+      "state": "FL",
+      "population": 860959,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 74,
+      "county": "Polk",
+      "state": "FL",
+      "population": 852878,
+      "projects": 413,
+      "projects_in_window": 82,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 75,
+      "county": "Baltimore",
+      "state": "MD",
+      "population": 852425,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 76,
+      "county": "Hamilton",
+      "state": "OH",
+      "population": 837359,
+      "projects": 7769,
+      "projects_in_window": 6220,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 77,
+      "county": "Ventura",
+      "state": "CA",
+      "population": 835427,
+      "projects": 649,
+      "projects_in_window": 649,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 78,
+      "county": "San Francisco",
+      "state": "CA",
+      "population": 827526,
+      "projects": 2470,
+      "projects_in_window": 251,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 79,
+      "county": "Essex",
+      "state": "MA",
+      "population": 823938,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 80,
+      "county": "Oklahoma",
+      "state": "OK",
+      "population": 816490,
+      "projects": 400,
+      "projects_in_window": 400,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 81,
+      "county": "San Joaquin",
+      "state": "CA",
+      "population": 816108,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 82,
+      "county": "Multnomah",
+      "state": "OR",
+      "population": 795897,
+      "projects": 2,
+      "projects_in_window": 2,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 83,
+      "county": "Jefferson",
+      "state": "KY",
+      "population": 793881,
+      "projects": 280,
+      "projects_in_window": 280,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 84,
+      "county": "Suffolk",
+      "state": "MA",
+      "population": 793144,
+      "projects": 2775,
+      "projects_in_window": 2775,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 85,
+      "county": "Cobb",
+      "state": "GA",
+      "population": 787538,
+      "projects": 28,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 86,
+      "county": "DeKalb",
+      "state": "GA",
+      "population": 770307,
+      "projects": 8,
+      "projects_in_window": 6,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 87,
+      "county": "El Paso",
+      "state": "CO",
+      "population": 752772,
+      "projects": 104,
+      "projects_in_window": 101,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 88,
+      "county": "Monroe",
+      "state": "NY",
+      "population": 752202,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 89,
+      "county": "Montgomery",
+      "state": "TX",
+      "population": 749613,
+      "projects": 49,
+      "projects_in_window": 49,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 90,
+      "county": "Utah",
+      "state": "UT",
+      "population": 747234,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 91,
+      "county": "San Mateo",
+      "state": "CA",
+      "population": 742893,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 92,
+      "county": "Norfolk",
+      "state": "MA",
+      "population": 740754,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 93,
+      "county": "Hudson",
+      "state": "NJ",
+      "population": 736185,
+      "projects": 1752,
+      "projects_in_window": 1225,
+      "documents": 1,
+      "status": "covered"
+    },
+    {
+      "rank": 94,
+      "county": "Davidson",
+      "state": "TN",
+      "population": 729505,
+      "projects": 1486,
+      "projects_in_window": 1474,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 95,
+      "county": "Denver",
+      "state": "CO",
+      "population": 729019,
+      "projects": 5208,
+      "projects_in_window": 4092,
+      "documents": 1,
+      "status": "covered"
+    },
+    {
+      "rank": 96,
+      "county": "Williamson",
+      "state": "TX",
+      "population": 727480,
+      "projects": 47,
+      "projects_in_window": 47,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 97,
+      "county": "Jackson",
+      "state": "MO",
+      "population": 727362,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 98,
+      "county": "Lake",
+      "state": "IL",
+      "population": 718604,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 99,
+      "county": "Will",
+      "state": "IL",
+      "population": 708583,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 100,
+      "county": "District of Columbia",
+      "state": "DC",
+      "population": 702250,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 101,
+      "county": "Tulsa",
+      "state": "OK",
+      "population": 693514,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 102,
+      "county": "Providence",
+      "state": "RI",
+      "population": 675912,
+      "projects": 129,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 103,
+      "county": "Kent",
+      "state": "MI",
+      "population": 673002,
+      "projects": 132,
+      "projects_in_window": 28,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 104,
+      "county": "Bernalillo",
+      "state": "NM",
+      "population": 671747,
+      "projects": 286,
+      "projects_in_window": 82,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 105,
+      "county": "Arapahoe",
+      "state": "CO",
+      "population": 666918,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 106,
+      "county": "Ocean",
+      "state": "NJ",
+      "population": 666434,
+      "projects": 3647,
+      "projects_in_window": 2622,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 107,
+      "county": "Jefferson",
+      "state": "AL",
+      "population": 664744,
+      "projects": 2,
+      "projects_in_window": 2,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 108,
+      "county": "Pasco",
+      "state": "FL",
+      "population": 659114,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 109,
+      "county": "Brevard",
+      "state": "FL",
+      "population": 658447,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 110,
+      "county": "Bucks",
+      "state": "PA",
+      "population": 650131,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 111,
+      "county": "Monmouth",
+      "state": "NJ",
+      "population": 647520,
+      "projects": 6495,
+      "projects_in_window": 4112,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 112,
+      "county": "Western Connecticut Planning Region",
+      "state": "CT",
+      "population": 637013,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 113,
+      "county": "Johnson",
+      "state": "KS",
+      "population": 632276,
+      "projects": 1048,
+      "projects_in_window": 835,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 114,
+      "county": "Washington",
+      "state": "OR",
+      "population": 611272,
+      "projects": 48,
+      "projects_in_window": 48,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 115,
+      "county": "Volusia",
+      "state": "FL",
+      "population": 602772,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 116,
+      "county": "Anne Arundel",
+      "state": "MD",
+      "population": 602350,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 117,
+      "county": "Douglas",
+      "state": "NE",
+      "population": 601158,
+      "projects": 441,
+      "projects_in_window": 111,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 118,
+      "county": "Union",
+      "state": "NJ",
+      "population": 594160,
+      "projects": 4740,
+      "projects_in_window": 2214,
+      "documents": 3,
+      "status": "covered"
+    },
+    {
+      "rank": 119,
+      "county": "Bristol",
+      "state": "MA",
+      "population": 588593,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 120,
+      "county": "Dane",
+      "state": "WI",
+      "population": 588347,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 121,
+      "county": "New Castle",
+      "state": "DE",
+      "population": 588093,
+      "projects": 3,
+      "projects_in_window": 3,
+      "documents": 4,
+      "status": "covered"
+    },
+    {
+      "rank": 122,
+      "county": "Delaware",
+      "state": "PA",
+      "population": 584882,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 123,
+      "county": "Jefferson",
+      "state": "CO",
+      "population": 578533,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 124,
+      "county": "South Central Connecticut Planning Region",
+      "state": "CT",
+      "population": 576718,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 125,
+      "county": "Greenville",
+      "state": "SC",
+      "population": 570745,
+      "projects": 78,
+      "projects_in_window": 78,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 126,
+      "county": "Baltimore city",
+      "state": "MD",
+      "population": 568271,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 127,
+      "county": "Lancaster",
+      "state": "PA",
+      "population": 563293,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 128,
+      "county": "Chester",
+      "state": "PA",
+      "population": 560745,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 129,
+      "county": "Guilford",
+      "state": "NC",
+      "population": 558816,
+      "projects": 2163,
+      "projects_in_window": 2163,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 130,
+      "county": "Stanislaus",
+      "state": "CA",
+      "population": 556972,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 131,
+      "county": "Spokane",
+      "state": "WA",
+      "population": 555947,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 132,
+      "county": "Adams",
+      "state": "CO",
+      "population": 542973,
+      "projects": 242,
+      "projects_in_window": 242,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 133,
+      "county": "Plymouth",
+      "state": "MA",
+      "population": 542090,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 134,
+      "county": "Ramsey",
+      "state": "MN",
+      "population": 542015,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 135,
+      "county": "Summit",
+      "state": "OH",
+      "population": 538370,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 136,
+      "county": "Montgomery",
+      "state": "OH",
+      "population": 537443,
+      "projects": 530,
+      "projects_in_window": 109,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 137,
+      "county": "Sedgwick",
+      "state": "KS",
+      "population": 536081,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 138,
+      "county": "Ada",
+      "state": "ID",
+      "population": 535799,
+      "projects": 279,
+      "projects_in_window": 101,
+      "documents": 1,
+      "status": "covered"
+    },
+    {
+      "rank": 139,
+      "county": "Camden",
+      "state": "NJ",
+      "population": 533988,
+      "projects": 3251,
+      "projects_in_window": 2310,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 140,
+      "county": "Clark",
+      "state": "WA",
+      "population": 527269,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 141,
+      "county": "Passaic",
+      "state": "NJ",
+      "population": 526597,
+      "projects": 2117,
+      "projects_in_window": 1479,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 142,
+      "county": "Morris",
+      "state": "NJ",
+      "population": 523053,
+      "projects": 5713,
+      "projects_in_window": 3572,
+      "documents": 3,
+      "status": "covered"
+    },
+    {
+      "rank": 143,
+      "county": "Kane",
+      "state": "IL",
+      "population": 520997,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 144,
+      "county": "Polk",
+      "state": "IA",
+      "population": 516185,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 145,
+      "county": "Pinal",
+      "state": "AZ",
+      "population": 513862,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 146,
+      "county": "Washoe",
+      "state": "NV",
+      "population": 507280,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 147,
+      "county": "Knox",
+      "state": "TN",
+      "population": 506748,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 148,
+      "county": "Lake",
+      "state": "IN",
+      "population": 502955,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 149,
+      "county": "Richmond",
+      "state": "NY",
+      "population": 498212,
+      "projects": 4370,
+      "projects_in_window": 4370,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 150,
+      "county": "Prince William",
+      "state": "VA",
+      "population": 497003,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 151,
+      "county": "Seminole",
+      "state": "FL",
+      "population": 494605,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 152,
+      "county": "Sonoma",
+      "state": "CA",
+      "population": 485375,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 153,
+      "county": "Tulare",
+      "state": "CA",
+      "population": 483546,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 154,
+      "county": "Sarasota",
+      "state": "FL",
+      "population": 476604,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 155,
+      "county": "Burlington",
+      "state": "NJ",
+      "population": 475515,
+      "projects": 3511,
+      "projects_in_window": 2432,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 156,
+      "county": "York",
+      "state": "PA",
+      "population": 471240,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 157,
+      "county": "Onondaga",
+      "state": "NY",
+      "population": 469812,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 158,
+      "county": "Osceola",
+      "state": "FL",
+      "population": 468058,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 159,
+      "county": "Hampden",
+      "state": "MA",
+      "population": 464151,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 160,
+      "county": "Naugatuck Valley Planning Region",
+      "state": "CT",
+      "population": 462220,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 161,
+      "county": "Manatee",
+      "state": "FL",
+      "population": 458352,
+      "projects": 246,
+      "projects_in_window": 239,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 162,
+      "county": "Solano",
+      "state": "CA",
+      "population": 455101,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 163,
+      "county": "Virginia Beach city",
+      "state": "VA",
+      "population": 454808,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 164,
+      "county": "Dakota",
+      "state": "MN",
+      "population": 453156,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 165,
+      "county": "East Baton Rouge",
+      "state": "LA",
+      "population": 453022,
+      "projects": 3549,
+      "projects_in_window": 3549,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 166,
+      "county": "Santa Barbara",
+      "state": "CA",
+      "population": 444500,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 167,
+      "county": "Lake",
+      "state": "FL",
+      "population": 444204,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 168,
+      "county": "Loudoun",
+      "state": "VA",
+      "population": 443380,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 169,
+      "county": "Berks",
+      "state": "PA",
+      "population": 439117,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 170,
+      "county": "Monterey",
+      "state": "CA",
+      "population": 436251,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 171,
+      "county": "Placer",
+      "state": "CA",
+      "population": 433822,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 172,
+      "county": "Cameron",
+      "state": "TX",
+      "population": 431874,
+      "projects": 12,
+      "projects_in_window": 12,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 173,
+      "county": "Charleston",
+      "state": "SC",
+      "population": 431001,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 174,
+      "county": "Richland",
+      "state": "SC",
+      "population": 430651,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 175,
+      "county": "Hillsborough",
+      "state": "NH",
+      "population": 430462,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 176,
+      "county": "Marion",
+      "state": "FL",
+      "population": 428905,
+      "projects": 500,
+      "projects_in_window": 500,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 177,
+      "county": "Jefferson",
+      "state": "LA",
+      "population": 427253,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 178,
+      "county": "Lucas",
+      "state": "OH",
+      "population": 426291,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 179,
+      "county": "Clackamas",
+      "state": "OR",
+      "population": 425857,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 180,
+      "county": "St. Charles",
+      "state": "MO",
+      "population": 423726,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 181,
+      "county": "Madison",
+      "state": "AL",
+      "population": 423355,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 182,
+      "county": "Waukesha",
+      "state": "WI",
+      "population": 417029,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 183,
+      "county": "Collier",
+      "state": "FL",
+      "population": 416233,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 184,
+      "county": "Horry",
+      "state": "SC",
+      "population": 413391,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 185,
+      "county": "Brazoria",
+      "state": "TX",
+      "population": 413224,
+      "projects": 19,
+      "projects_in_window": 19,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 186,
+      "county": "Mobile",
+      "state": "AL",
+      "population": 412339,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 187,
+      "county": "Orange",
+      "state": "NY",
+      "population": 411767,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 188,
+      "county": "Genesee",
+      "state": "MI",
+      "population": 402279,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 189,
+      "county": "Pulaski",
+      "state": "AR",
+      "population": 401209,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 190,
+      "county": "Bell",
+      "state": "TX",
+      "population": 399578,
+      "projects": 19,
+      "projects_in_window": 19,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 191,
+      "county": "Butler",
+      "state": "OH",
+      "population": 399542,
+      "projects": 55,
+      "projects_in_window": 55,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 192,
+      "county": "Allen",
+      "state": "IN",
+      "population": 399295,
+      "projects": 142,
+      "projects_in_window": 142,
+      "documents": 1,
+      "status": "covered"
+    },
+    {
+      "rank": 193,
+      "county": "Forsyth",
+      "state": "NC",
+      "population": 398143,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 194,
+      "county": "Douglas",
+      "state": "CO",
+      "population": 393995,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 195,
+      "county": "Mercer",
+      "state": "NJ",
+      "population": 392138,
+      "projects": 3771,
+      "projects_in_window": 2698,
+      "documents": 16,
+      "status": "covered"
+    },
+    {
+      "rank": 196,
+      "county": "St. Lucie",
+      "state": "FL",
+      "population": 390670,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 197,
+      "county": "Chesterfield",
+      "state": "VA",
+      "population": 389793,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 198,
+      "county": "Hamilton",
+      "state": "TN",
+      "population": 386256,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 199,
+      "county": "Lehigh",
+      "state": "PA",
+      "population": 385655,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 200,
+      "county": "Lane",
+      "state": "OR",
+      "population": 382396,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 201,
+      "county": "Hamilton",
+      "state": "IN",
+      "population": 379704,
+      "projects": 355,
+      "projects_in_window": 355,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 202,
+      "county": "Davis",
+      "state": "UT",
+      "population": 378470,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 203,
+      "county": "Rutherford",
+      "state": "TN",
+      "population": 376996,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 204,
+      "county": "Anoka",
+      "state": "MN",
+      "population": 376840,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 205,
+      "county": "Larimer",
+      "state": "CO",
+      "population": 374574,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 206,
+      "county": "Stark",
+      "state": "OH",
+      "population": 374091,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 207,
+      "county": "Washtenaw",
+      "state": "MI",
+      "population": 373875,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 208,
+      "county": "Weld",
+      "state": "CO",
+      "population": 369745,
+      "projects": 24,
+      "projects_in_window": 24,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 209,
+      "county": "Spartanburg",
+      "state": "SC",
+      "population": 369256,
+      "projects": 498,
+      "projects_in_window": 498,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 210,
+      "county": "Galveston",
+      "state": "TX",
+      "population": 367407,
+      "projects": 11,
+      "projects_in_window": 11,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 211,
+      "county": "Orleans",
+      "state": "LA",
+      "population": 362701,
+      "projects": 1092,
+      "projects_in_window": 1092,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 212,
+      "county": "Somerset",
+      "state": "NJ",
+      "population": 357467,
+      "projects": 3766,
+      "projects_in_window": 2422,
+      "documents": 1,
+      "status": "covered"
+    },
+    {
+      "rank": 213,
+      "county": "Nueces",
+      "state": "TX",
+      "population": 353125,
+      "projects": 23,
+      "projects_in_window": 23,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 214,
+      "county": "Marion",
+      "state": "OR",
+      "population": 352867,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 215,
+      "county": "Westmoreland",
+      "state": "PA",
+      "population": 350935,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 216,
+      "county": "Rockland",
+      "state": "NY",
+      "population": 348144,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 217,
+      "county": "Durham",
+      "state": "NC",
+      "population": 343628,
+      "projects": 1045,
+      "projects_in_window": 832,
+      "documents": 2,
+      "status": "covered"
+    },
+    {
+      "rank": 218,
+      "county": "Howard",
+      "state": "MD",
+      "population": 339668,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 219,
+      "county": "Henrico",
+      "state": "VA",
+      "population": 338696,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 220,
+      "county": "Cumberland",
+      "state": "NC",
+      "population": 338430,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 221,
+      "county": "Greater Bridgeport Planning Region",
+      "state": "CT",
+      "population": 335666,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 222,
+      "county": "St. Johns",
+      "state": "FL",
+      "population": 334928,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 223,
+      "county": "Lancaster",
+      "state": "NE",
+      "population": 332857,
+      "projects": 230,
+      "projects_in_window": 230,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 224,
+      "county": "Luzerne",
+      "state": "PA",
+      "population": 331379,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 225,
+      "county": "Escambia",
+      "state": "FL",
+      "population": 331275,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 226,
+      "county": "Boulder",
+      "state": "CO",
+      "population": 330262,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 227,
+      "county": "Fayette",
+      "state": "KY",
+      "population": 329437,
+      "projects": 33,
+      "projects_in_window": 33,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 228,
+      "county": "Lubbock",
+      "state": "TX",
+      "population": 327394,
+      "projects": 15,
+      "projects_in_window": 15,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 229,
+      "county": "Northampton",
+      "state": "PA",
+      "population": 322989,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 230,
+      "county": "Rockingham",
+      "state": "NH",
+      "population": 322433,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 231,
+      "county": "Lorain",
+      "state": "OH",
+      "population": 322030,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 232,
+      "county": "Benton",
+      "state": "AR",
+      "population": 321566,
+      "projects": 1239,
+      "projects_in_window": 1005,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 233,
+      "county": "Albany",
+      "state": "NY",
+      "population": 319964,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 234,
+      "county": "McHenry",
+      "state": "IL",
+      "population": 315959,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 235,
+      "county": "Cumberland",
+      "state": "ME",
+      "population": 313809,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 236,
+      "county": "Lexington",
+      "state": "SC",
+      "population": 313774,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 237,
+      "county": "Gloucester",
+      "state": "NJ",
+      "population": 311783,
+      "projects": 2015,
+      "projects_in_window": 1344,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 238,
+      "county": "Greene",
+      "state": "MO",
+      "population": 307942,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 239,
+      "county": "Chatham",
+      "state": "GA",
+      "population": 307336,
+      "projects": 112,
+      "projects_in_window": 91,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 240,
+      "county": "Ottawa",
+      "state": "MI",
+      "population": 306235,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 241,
+      "county": "Cleveland",
+      "state": "OK",
+      "population": 303952,
+      "projects": 2,
+      "projects_in_window": 2,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 242,
+      "county": "York",
+      "state": "SC",
+      "population": 303001,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 243,
+      "county": "Thurston",
+      "state": "WA",
+      "population": 302912,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 244,
+      "county": "Leon",
+      "state": "FL",
+      "population": 300488,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 245,
+      "county": "Dutchess",
+      "state": "NY",
+      "population": 299963,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 246,
+      "county": "Frederick",
+      "state": "MD",
+      "population": 299317,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 247,
+      "county": "Clayton",
+      "state": "GA",
+      "population": 297703,
+      "projects": 3,
+      "projects_in_window": 3,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 248,
+      "county": "Merced",
+      "state": "CA",
+      "population": 296774,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 249,
+      "county": "Cherokee",
+      "state": "GA",
+      "population": 293513,
+      "projects": 2,
+      "projects_in_window": 2,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 250,
+      "county": "Dauphin",
+      "state": "PA",
+      "population": 293029,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 251,
+      "county": "Hays",
+      "state": "TX",
+      "population": 292029,
+      "projects": 18,
+      "projects_in_window": 18,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 252,
+      "county": "Alachua",
+      "state": "FL",
+      "population": 291782,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 253,
+      "county": "Ingham",
+      "state": "MI",
+      "population": 290427,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 254,
+      "county": "Anchorage",
+      "state": "AK",
+      "population": 289600,
+      "projects": 3,
+      "projects_in_window": 3,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 255,
+      "county": "Washington",
+      "state": "MN",
+      "population": 283960,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 256,
+      "county": "Winnebago",
+      "state": "IL",
+      "population": 283790,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 257,
+      "county": "Southeastern Connecticut Planning Region",
+      "state": "CT",
+      "population": 282602,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 258,
+      "county": "San Luis Obispo",
+      "state": "CA",
+      "population": 281843,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 259,
+      "county": "Kitsap",
+      "state": "WA",
+      "population": 281420,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 260,
+      "county": "Forsyth",
+      "state": "GA",
+      "population": 280096,
+      "projects": 1,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 261,
+      "county": "St. Louis city",
+      "state": "MO",
+      "population": 279695,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 262,
+      "county": "Buncombe",
+      "state": "NC",
+      "population": 279210,
+      "projects": 72,
+      "projects_in_window": 72,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 263,
+      "county": "Atlantic",
+      "state": "NJ",
+      "population": 279114,
+      "projects": 1130,
+      "projects_in_window": 763,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 264,
+      "county": "St. Tammany",
+      "state": "LA",
+      "population": 277615,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 265,
+      "county": "Weber",
+      "state": "UT",
+      "population": 276118,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 266,
+      "county": "Cumberland",
+      "state": "PA",
+      "population": 275516,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 267,
+      "county": "Brown",
+      "state": "WI",
+      "population": 273909,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 268,
+      "county": "St. Joseph",
+      "state": "IN",
+      "population": 273744,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 269,
+      "county": "Webb",
+      "state": "TX",
+      "population": 272823,
+      "projects": 14,
+      "projects_in_window": 14,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 270,
+      "county": "Sussex",
+      "state": "DE",
+      "population": 271134,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 271,
+      "county": "McLennan",
+      "state": "TX",
+      "population": 270358,
+      "projects": 870,
+      "projects_in_window": 870,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 272,
+      "county": "Williamson",
+      "state": "TN",
+      "population": 269136,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 273,
+      "county": "Erie",
+      "state": "PA",
+      "population": 267750,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 274,
+      "county": "Canyon",
+      "state": "ID",
+      "population": 266892,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 275,
+      "county": "Washington",
+      "state": "AR",
+      "population": 266184,
+      "projects": 790,
+      "projects_in_window": 790,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 276,
+      "county": "Harford",
+      "state": "MD",
+      "population": 265514,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 277,
+      "county": "Kalamazoo",
+      "state": "MI",
+      "population": 264780,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 278,
+      "county": "Berkeley",
+      "state": "SC",
+      "population": 264276,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 279,
+      "county": "Union",
+      "state": "NC",
+      "population": 263386,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 280,
+      "county": "Clay",
+      "state": "MO",
+      "population": 263370,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 281,
+      "county": "Madison",
+      "state": "IL",
+      "population": 263017,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 282,
+      "county": "Santa Cruz",
+      "state": "CA",
+      "population": 262406,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 283,
+      "county": "Baldwin",
+      "state": "AL",
+      "population": 261608,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 284,
+      "county": "Henry",
+      "state": "GA",
+      "population": 259315,
+      "projects": 7,
+      "projects_in_window": 5,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 285,
+      "county": "Yakima",
+      "state": "WA",
+      "population": 258523,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 286,
+      "county": "Marin",
+      "state": "CA",
+      "population": 256400,
+      "projects": 363,
+      "projects_in_window": 363,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 287,
+      "county": "Warren",
+      "state": "OH",
+      "population": 256059,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 288,
+      "county": "Chesapeake city",
+      "state": "VA",
+      "population": 254997,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 289,
+      "county": "Lafayette",
+      "state": "LA",
+      "population": 254241,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 290,
+      "county": "Jefferson",
+      "state": "TX",
+      "population": 253948,
+      "projects": 14,
+      "projects_in_window": 14,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 291,
+      "county": "Yavapai",
+      "state": "AZ",
+      "population": 252013,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 292,
+      "county": "St. Clair",
+      "state": "IL",
+      "population": 251149,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 293,
+      "county": "Johnston",
+      "state": "NC",
+      "population": 249794,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 294,
+      "county": "Brazos",
+      "state": "TX",
+      "population": 249624,
+      "projects": 22,
+      "projects_in_window": 22,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 295,
+      "county": "Smith",
+      "state": "TX",
+      "population": 249091,
+      "projects": 9,
+      "projects_in_window": 9,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 296,
+      "county": "Montgomery",
+      "state": "TN",
+      "population": 246025,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 297,
+      "county": "Cabarrus",
+      "state": "NC",
+      "population": 244925,
+      "projects": 19,
+      "projects_in_window": 19,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 298,
+      "county": "New Hanover",
+      "state": "NC",
+      "population": 243333,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 299,
+      "county": "Gaston",
+      "state": "NC",
+      "population": 242010,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 300,
+      "county": "Tuscaloosa",
+      "state": "AL",
+      "population": 241212,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 301,
+      "county": "Saratoga",
+      "state": "NY",
+      "population": 240360,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 302,
+      "county": "Arlington",
+      "state": "VA",
+      "population": 239807,
+      "projects": 2,
+      "projects_in_window": 2,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 303,
+      "county": "Delaware",
+      "state": "OH",
+      "population": 237966,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 304,
+      "county": "Clay",
+      "state": "FL",
+      "population": 236760,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 305,
+      "county": "Shelby",
+      "state": "AL",
+      "population": 235969,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 306,
+      "county": "Whatcom",
+      "state": "WA",
+      "population": 234954,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 307,
+      "county": "Richmond city",
+      "state": "VA",
+      "population": 233655,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 308,
+      "county": "Barnstable",
+      "state": "MA",
+      "population": 232570,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 309,
+      "county": "Ellis",
+      "state": "TX",
+      "population": 232387,
+      "projects": 160,
+      "projects_in_window": 160,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 310,
+      "county": "Lake",
+      "state": "OH",
+      "population": 232360,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 311,
+      "county": "Jefferson",
+      "state": "MO",
+      "population": 231888,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 312,
+      "county": "Linn",
+      "state": "IA",
+      "population": 231762,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 313,
+      "county": "Norfolk city",
+      "state": "VA",
+      "population": 231105,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 314,
+      "county": "Do\u00f1a Ana",
+      "state": "NM",
+      "population": 229366,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 315,
+      "county": "Oneida",
+      "state": "NY",
+      "population": 228347,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 316,
+      "county": "Mohave",
+      "state": "AZ",
+      "population": 226479,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 317,
+      "county": "Montgomery",
+      "state": "AL",
+      "population": 225894,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 318,
+      "county": "Mahoning",
+      "state": "OH",
+      "population": 225786,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 319,
+      "county": "Yolo",
+      "state": "CA",
+      "population": 225251,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 320,
+      "county": "Caddo",
+      "state": "LA",
+      "population": 224893,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 321,
+      "county": "Hall",
+      "state": "GA",
+      "population": 221745,
+      "projects": 11,
+      "projects_in_window": 7,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 322,
+      "county": "Jackson",
+      "state": "OR",
+      "population": 221331,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 323,
+      "county": "Okaloosa",
+      "state": "FL",
+      "population": 220483,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 324,
+      "county": "Yuma",
+      "state": "AZ",
+      "population": 220310,
+      "projects": 1345,
+      "projects_in_window": 1345,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 325,
+      "county": "York",
+      "state": "ME",
+      "population": 220143,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 326,
+      "county": "Benton",
+      "state": "WA",
+      "population": 218190,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 327,
+      "county": "Hernando",
+      "state": "FL",
+      "population": 218150,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 328,
+      "county": "Anderson",
+      "state": "SC",
+      "population": 217183,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 329,
+      "county": "Lackawanna",
+      "state": "PA",
+      "population": 216859,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 330,
+      "county": "Clermont",
+      "state": "OH",
+      "population": 214123,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 331,
+      "county": "Harrison",
+      "state": "MS",
+      "population": 213730,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 332,
+      "county": "Onslow",
+      "state": "NC",
+      "population": 212954,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 333,
+      "county": "Champaign",
+      "state": "IL",
+      "population": 212374,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 334,
+      "county": "Charlotte",
+      "state": "FL",
+      "population": 212122,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 335,
+      "county": "Hinds",
+      "state": "MS",
+      "population": 211975,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 336,
+      "county": "Sumner",
+      "state": "TN",
+      "population": 211721,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 337,
+      "county": "Deschutes",
+      "state": "OR",
+      "population": 211535,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 338,
+      "county": "Johnson",
+      "state": "TX",
+      "population": 210547,
+      "projects": 5,
+      "projects_in_window": 5,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 339,
+      "county": "Washington",
+      "state": "PA",
+      "population": 210434,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 340,
+      "county": "Hawaii",
+      "state": "HI",
+      "population": 209790,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 341,
+      "county": "Niagara",
+      "state": "NY",
+      "population": 209570,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 342,
+      "county": "Minnehaha",
+      "state": "SD",
+      "population": 208639,
+      "projects": 1369,
+      "projects_in_window": 1369,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 343,
+      "county": "Butte",
+      "state": "CA",
+      "population": 208334,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 344,
+      "county": "Washington",
+      "state": "UT",
+      "population": 207943,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 345,
+      "county": "Santa Rosa",
+      "state": "FL",
+      "population": 207653,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 346,
+      "county": "Elkhart",
+      "state": "IN",
+      "population": 207436,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 347,
+      "county": "Calcasieu",
+      "state": "LA",
+      "population": 206861,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 348,
+      "county": "Iredell",
+      "state": "NC",
+      "population": 206361,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 349,
+      "county": "Richmond",
+      "state": "GA",
+      "population": 206303,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 350,
+      "county": "Sarpy",
+      "state": "NE",
+      "population": 204828,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 351,
+      "county": "Muscogee",
+      "state": "GA",
+      "population": 201830,
+      "projects": 3,
+      "projects_in_window": 1,
+      "documents": 4,
+      "status": "covered"
+    },
+    {
+      "rank": 352,
+      "county": "Beaufort",
+      "state": "SC",
+      "population": 201775,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 353,
+      "county": "Comal",
+      "state": "TX",
+      "population": 201628,
+      "projects": 28,
+      "projects_in_window": 28,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 354,
+      "county": "Cass",
+      "state": "ND",
+      "population": 200945,
+      "projects": 1149,
+      "projects_in_window": 37,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 355,
+      "county": "St. Louis",
+      "state": "MN",
+      "population": 200794,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 356,
+      "county": "Trumbull",
+      "state": "OH",
+      "population": 200300,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 357,
+      "county": "Bay",
+      "state": "FL",
+      "population": 199718,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 358,
+      "county": "Butler",
+      "state": "PA",
+      "population": 199341,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 359,
+      "county": "Racine",
+      "state": "WI",
+      "population": 198651,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 360,
+      "county": "Kaufman",
+      "state": "TX",
+      "population": 197829,
+      "projects": 10,
+      "projects_in_window": 10,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 361,
+      "county": "Livingston",
+      "state": "MI",
+      "population": 196976,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 362,
+      "county": "Broome",
+      "state": "NY",
+      "population": 196397,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 363,
+      "county": "DeSoto",
+      "state": "MS",
+      "population": 195871,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 364,
+      "county": "Outagamie",
+      "state": "WI",
+      "population": 195390,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 365,
+      "county": "Guadalupe",
+      "state": "TX",
+      "population": 195166,
+      "projects": 12,
+      "projects_in_window": 12,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 366,
+      "county": "Sangamon",
+      "state": "IL",
+      "population": 194345,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 367,
+      "county": "El Dorado",
+      "state": "CA",
+      "population": 192823,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 368,
+      "county": "Kent",
+      "state": "DE",
+      "population": 192690,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 369,
+      "county": "Boone",
+      "state": "MO",
+      "population": 192154,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 370,
+      "county": "Tippecanoe",
+      "state": "IN",
+      "population": 191650,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 371,
+      "county": "Hendricks",
+      "state": "IN",
+      "population": 190629,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 372,
+      "county": "Paulding",
+      "state": "GA",
+      "population": 188549,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 373,
+      "county": "Kootenai",
+      "state": "ID",
+      "population": 188323,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 374,
+      "county": "Lee",
+      "state": "AL",
+      "population": 187847,
+      "projects": 2,
+      "projects_in_window": 2,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 375,
+      "county": "Saginaw",
+      "state": "MI",
+      "population": 187714,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 376,
+      "county": "Licking",
+      "state": "OH",
+      "population": 184898,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 377,
+      "county": "Medina",
+      "state": "OH",
+      "population": 184625,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 378,
+      "county": "Midland",
+      "state": "TX",
+      "population": 183587,
+      "projects": 184,
+      "projects_in_window": 136,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 379,
+      "county": "Newport News city",
+      "state": "VA",
+      "population": 183056,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 380,
+      "county": "Alamance",
+      "state": "NC",
+      "population": 183040,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 381,
+      "county": "Ulster",
+      "state": "NY",
+      "population": 182977,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 382,
+      "county": "Canadian",
+      "state": "OK",
+      "population": 181760,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 383,
+      "county": "Imperial",
+      "state": "CA",
+      "population": 181724,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 384,
+      "county": "Shasta",
+      "state": "CA",
+      "population": 181121,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 385,
+      "county": "Pitt",
+      "state": "NC",
+      "population": 180783,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 386,
+      "county": "Vanderburgh",
+      "state": "IN",
+      "population": 180387,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 387,
+      "county": "Parker",
+      "state": "TX",
+      "population": 179707,
+      "projects": 7,
+      "projects_in_window": 7,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 388,
+      "county": "Peoria",
+      "state": "IL",
+      "population": 179630,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 389,
+      "county": "Aiken",
+      "state": "SC",
+      "population": 179245,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 390,
+      "county": "Shawnee",
+      "state": "KS",
+      "population": 177942,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 391,
+      "county": "Davidson",
+      "state": "NC",
+      "population": 177809,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 392,
+      "county": "Lower Connecticut River Valley Planning Region",
+      "state": "CT",
+      "population": 177540,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 393,
+      "county": "Muskegon",
+      "state": "MI",
+      "population": 177428,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 394,
+      "county": "Carroll",
+      "state": "MD",
+      "population": 177108,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 395,
+      "county": "Porter",
+      "state": "IN",
+      "population": 175860,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 396,
+      "county": "Scott",
+      "state": "IA",
+      "population": 175601,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 397,
+      "county": "Houston",
+      "state": "GA",
+      "population": 174897,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 398,
+      "county": "Kenton",
+      "state": "KY",
+      "population": 174862,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 399,
+      "county": "Dorchester",
+      "state": "SC",
+      "population": 174663,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 400,
+      "county": "Charles",
+      "state": "MD",
+      "population": 174478,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 401,
+      "county": "Kanawha",
+      "state": "WV",
+      "population": 173906,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 402,
+      "county": "Winnebago",
+      "state": "WI",
+      "population": 173307,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 403,
+      "county": "Kent",
+      "state": "RI",
+      "population": 172450,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 404,
+      "county": "Greene",
+      "state": "OH",
+      "population": 172347,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 405,
+      "county": "Indian River",
+      "state": "FL",
+      "population": 172139,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 406,
+      "county": "McLean",
+      "state": "IL",
+      "population": 172069,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 407,
+      "county": "Yellowstone",
+      "state": "MT",
+      "population": 171583,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 408,
+      "county": "Chittenden",
+      "state": "VT",
+      "population": 170851,
+      "projects": 274,
+      "projects_in_window": 90,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 409,
+      "county": "Johnson",
+      "state": "IN",
+      "population": 170614,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 410,
+      "county": "Citrus",
+      "state": "FL",
+      "population": 170174,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 411,
+      "county": "Ector",
+      "state": "TX",
+      "population": 170022,
+      "projects": 6,
+      "projects_in_window": 6,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 412,
+      "county": "Wilson",
+      "state": "TN",
+      "population": 169948,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 413,
+      "county": "Pueblo",
+      "state": "CO",
+      "population": 169866,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 414,
+      "county": "Wyandotte",
+      "state": "KS",
+      "population": 169418,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 415,
+      "county": "Stafford",
+      "state": "VA",
+      "population": 168919,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 416,
+      "county": "Kenosha",
+      "state": "WI",
+      "population": 168754,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 417,
+      "county": "Fairfield",
+      "state": "OH",
+      "population": 167762,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 418,
+      "county": "Columbia",
+      "state": "GA",
+      "population": 167472,
+      "projects": 7,
+      "projects_in_window": 7,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 419,
+      "county": "Brunswick",
+      "state": "NC",
+      "population": 167112,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 420,
+      "county": "Catawba",
+      "state": "NC",
+      "population": 167054,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 421,
+      "county": "Monroe",
+      "state": "PA",
+      "population": 166523,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 422,
+      "county": "Olmsted",
+      "state": "MN",
+      "population": 166424,
+      "projects": 4,
+      "projects_in_window": 4,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 423,
+      "county": "Martin",
+      "state": "FL",
+      "population": 165666,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 424,
+      "county": "Beaver",
+      "state": "PA",
+      "population": 165540,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 425,
+      "county": "Rock",
+      "state": "WI",
+      "population": 165461,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 426,
+      "county": "Madera",
+      "state": "CA",
+      "population": 165432,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 427,
+      "county": "Hampshire",
+      "state": "MA",
+      "population": 165399,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 428,
+      "county": "Stearns",
+      "state": "MN",
+      "population": 163997,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 429,
+      "county": "Portage",
+      "state": "OH",
+      "population": 163839,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 430,
+      "county": "Maui",
+      "state": "HI",
+      "population": 163688,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 431,
+      "county": "Sullivan",
+      "state": "TN",
+      "population": 162703,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 432,
+      "county": "Schenectady",
+      "state": "NY",
+      "population": 162261,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 433,
+      "county": "Mesa",
+      "state": "CO",
+      "population": 161260,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 434,
+      "county": "Rensselaer",
+      "state": "NY",
+      "population": 160749,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 435,
+      "county": "Rankin",
+      "state": "MS",
+      "population": 160573,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 436,
+      "county": "St. Clair",
+      "state": "MI",
+      "population": 160308,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 437,
+      "county": "Jackson",
+      "state": "MI",
+      "population": 160233,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 438,
+      "county": "Johnson",
+      "state": "IA",
+      "population": 160080,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 439,
+      "county": "Centre",
+      "state": "PA",
+      "population": 159805,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 440,
+      "county": "Franklin",
+      "state": "PA",
+      "population": 159285,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 441,
+      "county": "Alexandria city",
+      "state": "VA",
+      "population": 159102,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 442,
+      "county": "Coweta",
+      "state": "GA",
+      "population": 158233,
+      "projects": 15,
+      "projects_in_window": 12,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 443,
+      "county": "Ouachita",
+      "state": "LA",
+      "population": 157874,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 444,
+      "county": "Merrimack",
+      "state": "NH",
+      "population": 157869,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 445,
+      "county": "Santa Fe",
+      "state": "NM",
+      "population": 157765,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 446,
+      "county": "Sandoval",
+      "state": "NM",
+      "population": 157757,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 447,
+      "county": "Washington",
+      "state": "MD",
+      "population": 157228,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 448,
+      "county": "Scott",
+      "state": "MN",
+      "population": 157206,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 449,
+      "county": "Bibb",
+      "state": "GA",
+      "population": 157056,
+      "projects": 14,
+      "projects_in_window": 11,
+      "documents": 1,
+      "status": "covered"
+    },
+    {
+      "rank": 450,
+      "county": "Penobscot",
+      "state": "ME",
+      "population": 156840,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 451,
+      "county": "Monroe",
+      "state": "MI",
+      "population": 156045,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 452,
+      "county": "Cumberland",
+      "state": "NJ",
+      "population": 155678,
+      "projects": 863,
+      "projects_in_window": 445,
+      "documents": 15,
+      "status": "covered"
+    },
+    {
+      "rank": 453,
+      "county": "Kings",
+      "state": "CA",
+      "population": 154913,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 454,
+      "county": "Sumter",
+      "state": "FL",
+      "population": 154693,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 455,
+      "county": "Wright",
+      "state": "MN",
+      "population": 154593,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 456,
+      "county": "Rowan",
+      "state": "NC",
+      "population": 153384,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 457,
+      "county": "Livingston",
+      "state": "LA",
+      "population": 152886,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 458,
+      "county": "Orange",
+      "state": "NC",
+      "population": 152877,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 459,
+      "county": "Berrien",
+      "state": "MI",
+      "population": 152703,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 460,
+      "county": "Spotsylvania",
+      "state": "VA",
+      "population": 152021,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 461,
+      "county": "Douglas",
+      "state": "GA",
+      "population": 151887,
+      "projects": 3,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 462,
+      "county": "Randall",
+      "state": "TX",
+      "population": 150547,
+      "projects": 2,
+      "projects_in_window": 2,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 463,
+      "county": "Grayson",
+      "state": "TX",
+      "population": 150532,
+      "projects": 13,
+      "projects_in_window": 13,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 464,
+      "county": "Taylor",
+      "state": "TX",
+      "population": 148813,
+      "projects": 11,
+      "projects_in_window": 11,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 465,
+      "county": "Randolph",
+      "state": "NC",
+      "population": 148389,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 466,
+      "county": "Warren",
+      "state": "KY",
+      "population": 147936,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 467,
+      "county": "Sussex",
+      "state": "NJ",
+      "population": 147444,
+      "projects": 706,
+      "projects_in_window": 480,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 468,
+      "county": "Jackson",
+      "state": "MS",
+      "population": 147002,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 469,
+      "county": "Harnett",
+      "state": "NC",
+      "population": 146096,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 470,
+      "county": "Cache",
+      "state": "UT",
+      "population": 145487,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 471,
+      "county": "Lebanon",
+      "state": "PA",
+      "population": 145319,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 472,
+      "county": "Coconino",
+      "state": "AZ",
+      "population": 145161,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 473,
+      "county": "Schuylkill",
+      "state": "PA",
+      "population": 144523,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 474,
+      "county": "Boone",
+      "state": "KY",
+      "population": 144135,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 475,
+      "county": "Kendall",
+      "state": "IL",
+      "population": 143171,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 476,
+      "county": "Rock Island",
+      "state": "IL",
+      "population": 142731,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 477,
+      "county": "Blount",
+      "state": "TN",
+      "population": 142211,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 478,
+      "county": "Monroe",
+      "state": "IN",
+      "population": 140702,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 479,
+      "county": "Tangipahoa",
+      "state": "LA",
+      "population": 139823,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 480,
+      "county": "Washington",
+      "state": "TN",
+      "population": 139642,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 481,
+      "county": "Marathon",
+      "state": "WI",
+      "population": 139091,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 482,
+      "county": "Washington",
+      "state": "WI",
+      "population": 138727,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 483,
+      "county": "Pickens",
+      "state": "SC",
+      "population": 138207,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 484,
+      "county": "Florence",
+      "state": "SC",
+      "population": 138049,
+      "projects": 1,
+      "projects_in_window": 1,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 485,
+      "county": "Hampton city",
+      "state": "VA",
+      "population": 137596,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 486,
+      "county": "Rockwall",
+      "state": "TX",
+      "population": 137044,
+      "projects": 11,
+      "projects_in_window": 11,
+      "documents": 0,
+      "status": "projects-only"
+    },
+    {
+      "rank": 487,
+      "county": "Flagler",
+      "state": "FL",
+      "population": 136744,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 488,
+      "county": "Berkeley",
+      "state": "WV",
+      "population": 136287,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 489,
+      "county": "Clark",
+      "state": "OH",
+      "population": 134985,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 490,
+      "county": "Madison",
+      "state": "IN",
+      "population": 134222,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 491,
+      "county": "Strafford",
+      "state": "NH",
+      "population": 134202,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 492,
+      "county": "Calhoun",
+      "state": "MI",
+      "population": 133785,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 493,
+      "county": "Bonneville",
+      "state": "ID",
+      "population": 133644,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 494,
+      "county": "Ascension",
+      "state": "LA",
+      "population": 133534,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 495,
+      "county": "Wood",
+      "state": "OH",
+      "population": 133077,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 496,
+      "county": "Skagit",
+      "state": "WA",
+      "population": 132736,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 497,
+      "county": "Napa",
+      "state": "CA",
+      "population": 132727,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 498,
+      "county": "Linn",
+      "state": "OR",
+      "population": 132474,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 499,
+      "county": "Humboldt",
+      "state": "CA",
+      "population": 132380,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    },
+    {
+      "rank": 500,
+      "county": "Black Hawk",
+      "state": "IA",
+      "population": 132348,
+      "projects": 0,
+      "projects_in_window": 0,
+      "documents": 0,
+      "status": "none"
+    }
+  ],
+  "summary": {
+    "total": 500,
+    "covered": 29,
+    "projects_only": 177,
+    "none": 294,
+    "total_projects_in_window": 463422,
+    "total_documents": 1494
+  }
+}

@@ -1,4 +1,4 @@
-name: Check corpus integrity (duplicate ids)
+name: Check corpus integrity (duplicate ids + config geography)
 
 # Catches the class of bug fixed 2026-07-28: a retroactive id-cleanup
 # script bypassed persist.py's merge_into_state() dedup and silently
@@ -12,11 +12,13 @@ on:
     paths:
       - "data/states/**"
       - "public/data/national-commercial-projects.json"
+      - "scripts/state_agent_pipeline/core/state_configs.py"
   push:
     branches: [main]
     paths:
       - "data/states/**"
       - "public/data/national-commercial-projects.json"
+      - "scripts/state_agent_pipeline/core/state_configs.py"
   workflow_dispatch:
 
 jobs:
@@ -32,3 +34,12 @@ jobs:
           python-version: "3.12"
 
       - run: python3 scripts/check-corpus-integrity.py
+
+      # Catches the class of bug found 2026-08-03: a config whose
+      # commercial_where does not scope to its hardcoded `county`, so it
+      # pulls a whole multi-jurisdiction feed and mislabels every row.
+      # NY-NYC stamped 29,910 outer-borough filings as Manhattan (and hid
+      # that NY-QUEENS was never registered); TX-WILLIAMSON-PERMITS pulled
+      # Midland's feed as Williamson. Both were invisible until corpus
+      # counts were compared against live source counts.
+      - run: python3 scripts/check-config-geography.py

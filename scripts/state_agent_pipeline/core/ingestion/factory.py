@@ -14,6 +14,7 @@ from .carto_provider import CartoProvider
 from .ckan_provider import CkanProvider
 from .csv_download_provider import CsvDownloadProvider
 from .tdlr_tabs_provider import TdlrTabsProvider
+from .troy_permits_provider import TroyPermitsProvider
 from .energov_provider import EnerGovProvider
 from .sam_gov_provider import SamGovProvider
 from .socrata_provider import SocrataProvider
@@ -62,6 +63,7 @@ def build_provider(state_config: dict[str, Any]) -> BaseIngestionProvider:
             hash_fields_list=state_config.get("hash_fields"),
             commercial_where=state_config.get("commercial_where"),
             date_field=state_config.get("date_field", "date_entered"),
+            output_date_field=state_config.get("output_date_field"),
             lookback_days=state_config.get("lookback_days", 30),
             hard_limit=state_config.get("hard_limit", 0),
             feed_id=state_config.get("feed_id"),
@@ -92,8 +94,10 @@ def build_provider(state_config: dict[str, Any]) -> BaseIngestionProvider:
             commercial_where=state_config.get("commercial_where"),
             watermark_field=state_config.get("watermark_field", "OBJECTID"),
             hash_fields_list=state_config.get("hash_fields"),
+            supports_pagination=state_config.get("supports_pagination", True),
             include_geometry=state_config.get("include_geometry", True),
             date_field=state_config.get("date_field"),
+            output_date_field=state_config.get("output_date_field"),
             date_field_is_string=state_config.get("date_field_is_string", False),
             date_literal_style=state_config.get("date_literal_style", "date"),
             lookback_days=state_config.get("lookback_days", 30),
@@ -132,7 +136,12 @@ def build_provider(state_config: dict[str, Any]) -> BaseIngestionProvider:
             permit_type_label=state_config.get("permit_type_label", "Building"),
             module=state_config.get("module", "Building"),
             lookback_days=state_config.get("lookback_days", 30),
-            max_pages=state_config.get("max_pages", 30),
+            # 30 pages x 10 rows caps a county at 300 records, which is what
+            # Hillsborough hit the moment its date filter started working
+            # (79 -> 300, every row in-window, still climbing at the cap).
+            # 60 is the practical ceiling: anonymous Accela paging throttles
+            # somewhere around 40-60 pages.
+            max_pages=state_config.get("max_pages", 60),
             start_date_field_id=state_config.get("start_date_field_id"),
             end_date_field_id=state_config.get("end_date_field_id"),
         )
@@ -148,6 +157,7 @@ def build_provider(state_config: dict[str, Any]) -> BaseIngestionProvider:
             date_field=state_config.get("date_field", "IssueDate"),
             lookback_days=state_config.get("lookback_days", 30),
             max_pages=state_config.get("max_pages", 5),
+            page_size=state_config.get("page_size", 100),
             selfservice_path=state_config.get("selfservice_path", "apps/selfservice"),
         )
 
@@ -179,6 +189,16 @@ def build_provider(state_config: dict[str, Any]) -> BaseIngestionProvider:
             county_code=state_config.get("county_code"),
             lookback_days=state_config.get("lookback_days", 30),
             page_size=state_config.get("page_size", 100),
+            max_pages=state_config.get("max_pages", 200),
+        )
+
+    if provider_type == "troy_permits":
+        return TroyPermitsProvider(
+            state_code=state_config.get("state_code", "MI"),
+            county=state_config.get("county", "Oakland"),
+            city=state_config.get("city", "Troy"),
+            permit_types=state_config.get("permit_types"),
+            lookback_days=state_config.get("lookback_days", 30),
             max_pages=state_config.get("max_pages", 200),
         )
 
