@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T19:26:10+00:00",
+  "generated_at": "2026-08-04T19:39:15+00:00",
   "window_start": "2025-01-01",
   "counties": [
     {
@@ -747,8 +747,8 @@
       "county": "Baltimore",
       "state": "MD",
       "population": 852425,
-      "projects": 7094,
-      "projects_in_window": 7094,
+      "projects": 8261,
+      "projects_in_window": 8261,
       "documents": 0,
       "status": "projects-only"
     },
@@ -5008,7 +5008,7 @@
     "covered": 29,
     "projects_only": 178,
     "none": 293,
-    "total_projects_in_window": 499748,
+    "total_projects_in_window": 500915,
     "total_documents": 1494
   }
 }
