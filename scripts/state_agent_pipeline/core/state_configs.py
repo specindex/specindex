@@ -3964,3 +3964,78 @@ AL_MOBILE_ENERGOV_CONFIG: dict[str, Any] = {
     "max_pages": 250,
 }
 STATE_CONFIGS["AL-MOBILE"] = AL_MOBILE_ENERGOV_CONFIG
+
+
+# ---------------------------------------------------------------------------
+# San Bernardino County, CA -- rank 15 by population (2,214,281) and held
+# exactly ONE project, from a research fallback rather than any permit source.
+# It had no entry in the health matrix at all: never investigated.
+#
+# Found 2026-08-04 by probing candidate Accela agency codes against
+# aca-prod.accela.com rather than guessing hostnames. SBCO is the COUNTY's own
+# tenant: 106 permit types, five of them explicitly commercial/industrial, and
+# the standard ACA date-range inputs present (verified live).
+#
+# Accela takes one permit_type_label per config, so the commercial types are
+# split across configs the same way TX-SANANTONIO is.
+#
+# Also probed and rejected: FONTANA (Accela, but exposes a single permit type
+# and no commercial option) and CHINO (Accela, no permit-type dropdown at all
+# -- non-standard form, would need per-tenant work). maps.sbcounty.gov serves
+# 22 ArcGIS services but none permit-related.
+# ---------------------------------------------------------------------------
+
+CA_SANBERNARDINO_NEW_CONFIG: dict[str, Any] = {
+    "state_code": "CA",
+    "provider_type": "accela",
+    "county": "San Bernardino",
+    "endpoint": "https://aca-prod.accela.com/SBCO",
+    "module": "Building",
+    "permit_type_label": "Building Permit for Commercial or Industrial New Structure",
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
+    "lookback_days": 579,  # 2025-01-01 anchor; recompute as (today - 2025-01-01).days
+}
+STATE_CONFIGS["CA-SANBERNARDINO-NEW"] = CA_SANBERNARDINO_NEW_CONFIG
+
+CA_SANBERNARDINO_ADDITION_CONFIG: dict[str, Any] = {
+    **CA_SANBERNARDINO_NEW_CONFIG,
+    "permit_type_label": "Building Permit for Commercial or Industrial Addition",
+}
+STATE_CONFIGS["CA-SANBERNARDINO-ADDITION"] = CA_SANBERNARDINO_ADDITION_CONFIG
+
+CA_SANBERNARDINO_ALTERATION_CONFIG: dict[str, Any] = {
+    **CA_SANBERNARDINO_NEW_CONFIG,
+    "permit_type_label": "Building Permit for Commercial or Industrial Alteration",
+}
+STATE_CONFIGS["CA-SANBERNARDINO-ALTERATION"] = CA_SANBERNARDINO_ALTERATION_CONFIG
+
+
+# ---------------------------------------------------------------------------
+# Pharr, TX (Hidalgo County, rank 64) -- found 2026-08-04. Hidalgo already had
+# TX-MCALLEN; Pharr is the second-largest city and additive, not a duplicate.
+# 56 permit types, real commercial ones, standard ACA date inputs (live).
+#
+# Found by probing candidate agency codes: of 18 codes tried across Suffolk NY,
+# Oakland MI and Hidalgo TX, this was the ONLY hit. Guessing identifiers has a
+# very low success rate -- the productive path remains following live redirects
+# and catalog entries.
+# ---------------------------------------------------------------------------
+TX_PHARR_CONFIG: dict[str, Any] = {
+    "state_code": "TX",
+    "provider_type": "accela",
+    "county": "Hidalgo",
+    "endpoint": "https://aca-prod.accela.com/PHARR",
+    "module": "Building",
+    "permit_type_label": "Commercial Alteration",
+    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
+    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
+    "lookback_days": 579,  # 2025-01-01 anchor
+}
+STATE_CONFIGS["TX-PHARR"] = TX_PHARR_CONFIG
+
+TX_PHARR_ADDITION_CONFIG: dict[str, Any] = {
+    **TX_PHARR_CONFIG,
+    "permit_type_label": "Commercial Addition",
+}
+STATE_CONFIGS["TX-PHARR-ADDITION"] = TX_PHARR_ADDITION_CONFIG

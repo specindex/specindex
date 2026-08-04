@@ -33,6 +33,7 @@ from datetime import date, datetime, timedelta
 from typing import Any
 
 from .base_provider import BaseIngestionProvider
+from .generic_mapping import _iso_date
 from .hashing import hash_fields
 
 
@@ -572,7 +573,17 @@ class AccelaProvider(BaseIngestionProvider):
                     "owner": "",
                     "architect": "",
                     "general_contractor": "",
-                    "opened_or_announced_date": r.get("date", "").replace("/", "-") if r.get("date") else None,
+                    # Accela's grid renders MM/DD/YYYY. A bare slash->dash
+                    # swap produced "01-05-2026", which is NOT ISO and sorts
+                    # wrong: every windowed query compares strings against
+                    # "2025-01-01", so "01-05-2026" < "2025-..." and EVERY
+                    # Accela row fell outside the window. That is why counties
+                    # showed a few hundred in-window rows against thousands
+                    # held -- Pima had 4,914 rows and 281 in-window, and the
+                    # 281 came from other sources entirely.
+                    # _iso_date already handles MM/DD/YYYY (and MM-DD-YYYY,
+                    # epoch ms, YYYY/MM/DD) -- use it rather than reimplementing.
+                    "opened_or_announced_date": _iso_date(r.get("date")) if r.get("date") else None,
                     "description": (r.get("description") or r.get("project_name") or "Commercial building permit.")[:900],
                     "key_specs": [f"Permit type: {r.get('permit_type')}", f"Status: {r.get('status')}"],
                     "mentioned_brands": [],
