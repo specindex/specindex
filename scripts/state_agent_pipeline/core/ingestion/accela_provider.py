@@ -105,6 +105,10 @@ class AccelaProvider(BaseIngestionProvider):
         module: str = "Building",
         lookback_days: int = 30,
         max_pages: int = 30,
+        # Days per search window. 90 keeps each search to a page count that
+        # completes before ACA's loading mask starts intercepting clicks --
+        # the failure that killed deep runs at page 37 and beyond.
+        chunk_days: int = 90,
         headless: bool = True,
         start_date_field_id: str | None = None,
         end_date_field_id: str | None = None,
@@ -119,6 +123,7 @@ class AccelaProvider(BaseIngestionProvider):
         self.module = module
         self.lookback_days = lookback_days
         self.max_pages = max_pages
+        self.chunk_days = max(1, chunk_days)
         self.headless = headless
         # Some Accela deployments (El Paso) require Start/End Date to
         # return any results at all; others (Gwinnett) have no usable
@@ -135,31 +140,163 @@ class AccelaProvider(BaseIngestionProvider):
                 pass
         return date.today() - timedelta(days=self.lookback_days)
 
+    def _date_chunks(self, cutoff: date) -> list[tuple[date, date]]:
+        """Split [cutoff, today] into windows of `chunk_days`.
+
+        Why chunk at all: paging deeper is NOT a substitute for a narrower
+        search. Raising max_pages 60 -> 120 on 2026-08-04 looked like a win by
+        fetched-row count (Pinellas 600 -> 1,164) but moved its in-window total
+        not at all -- 1,044 of its 1,144 held rows are pre-2025, i.e. the extra
+        pages reached further BACK in time, not further into the window. Two
+        configs also broke at depth: Pima's pagination died at page 37 on an
+        intercepted Next click, Salt Lake's loading mask detached the element.
+
+        A short window returns few enough pages that the search completes
+        before the UI gets flaky, and every page of it is in-window by
+        construction. Chunking is only possible when the tenant exposes the
+        date inputs; without them there is one unbounded search and nothing to
+        split, so this returns a single window.
+        """
+        if not (self.start_date_field_id and self.end_date_field_id):
+            return [(cutoff, date.today())]
+        chunks: list[tuple[date, date]] = []
+        start = cutoff
+        today = date.today()
+        while start <= today:
+            end = min(start + timedelta(days=self.chunk_days - 1), today)
+            chunks.append((start, end))
+            start = end + timedelta(days=1)
+        return chunks
+
+    @staticmethod
+    def _set_date(page: Any, field_id: str, value: date) -> str:
+        """Set a masked ACA date input and return what actually landed in it.
+
+        `page.fill()` is wrong here. These inputs carry a date mask and are
+        often pre-populated, and fill() APPENDS rather than replaces --
+        verified live 2026-08-04 on Pinellas, where filling "01/02/2025" into a
+        field already holding "08/04/2024" produced "08/04/202401/02/2025".
+        The portal treats an unparseable value as no filter at all and quietly
+        returns the whole result set, so the search looks like it worked while
+        being completely unfiltered.
+
+        Setting .value directly and dispatching input+change bypasses the mask's
+        keystroke handling while still notifying the ASP.NET validators. The
+        resulting value is returned so the caller can verify rather than assume.
+        """
+        s = value.strftime("%m/%d/%Y")
+        try:
+            page.eval_on_selector(
+                f"#{field_id}",
+                """(el, v) => {
+                    el.value = '';
+                    el.value = v;
+                    el.dispatchEvent(new Event('input',  {bubbles: true}));
+                    el.dispatchEvent(new Event('change', {bubbles: true}));
+                    el.dispatchEvent(new Event('blur',   {bubbles: true}));
+                }""",
+                s,
+            )
+            return page.input_value(f"#{field_id}")
+        except Exception as e:  # noqa: BLE001
+            print(f"[accela] date set failed on #{field_id}: {str(e)[:60]}", file=sys.stderr)
+            return ""
+
     def fetch_delta(self, last_watermark: str) -> list[dict[str, Any]]:
         from playwright.sync_api import sync_playwright
 
         cutoff = self._cutoff_date(last_watermark)
         print(f"[accela:{self.county}] cutoff={cutoff.isoformat()} (watermark={last_watermark!r})", file=sys.stderr)
 
+        chunks = self._date_chunks(cutoff)
+        if len(chunks) > 1:
+            print(
+                f"[accela:{self.county}] searching in {len(chunks)} x {self.chunk_days}-day "
+                f"windows (deep paging alone reaches older data, not more in-window data)",
+                file=sys.stderr,
+            )
+
         rows_out: list[dict[str, Any]] = []
+        seen_ids: set[str] = set()
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=self.headless)
             page = browser.new_page(user_agent="Mozilla/5.0 SpecIndex-StateAgent/0.2")
+            try:
+                for chunk_i, (c_start, c_end) in enumerate(chunks, 1):
+                    before_chunk = len(rows_out)
+                    try:
+                        self._search_window(page, c_start, c_end, cutoff, rows_out, seen_ids)
+                    except Exception as e:  # noqa: BLE001
+                        # One bad window must not discard the others. Losing a
+                        # quarter is far better than losing the whole backfill,
+                        # which is exactly what happened when a single click
+                        # timeout killed a 60-page OKC run.
+                        print(
+                            f"[accela:{self.county}] window {c_start}..{c_end} failed "
+                            f"({type(e).__name__}: {str(e)[:70]}) -- continuing",
+                            file=sys.stderr,
+                        )
+                    if len(chunks) > 1:
+                        print(
+                            f"[accela:{self.county}] window {chunk_i}/{len(chunks)} "
+                            f"{c_start}..{c_end}: +{len(rows_out) - before_chunk} "
+                            f"({len(rows_out)} total)",
+                            file=sys.stderr,
+                        )
+            finally:
+                browser.close()
+        print(f"[accela:{self.county}] fetched {len(rows_out)} rows", file=sys.stderr)
+        return rows_out
+
+    def _search_window(
+        self,
+        page: Any,
+        window_start: date,
+        window_end: date,
+        cutoff: date,
+        rows_out: list[dict[str, Any]],
+        seen_ids: set[str],
+    ) -> None:
+        """Run one search over [window_start, window_end] and page through it."""
+        if True:
             try:
                 page.goto(
                     f"{self.base_url}/Cap/CapHome.aspx?module={self.module}",
                     timeout=30000,
                     wait_until="networkidle",
                 )
-                if self.start_date_field_id and self.end_date_field_id:
-                    start = cutoff.strftime("%m/%d/%Y")
-                    end = date.today().strftime("%m/%d/%Y")
-                    page.fill(f"#{self.start_date_field_id}", start)
-                    page.fill(f"#{self.end_date_field_id}", end)
+                # ORDER MATTERS: select the permit type FIRST, then set dates.
+                #
+                # The permit-type <select> fires an ASP.NET postback that wipes
+                # both date inputs. Filling dates first -- which this did until
+                # 2026-08-04 -- means the search runs with EMPTY dates, i.e.
+                # completely unfiltered, silently. Verified live on Pinellas:
+                # three different 90-day windows returned byte-identical
+                # results ("Showing 1-10 of 100", same Aug-2026 rows).
                 page.select_option(
                     "#ctl00_PlaceHolderMain_generalSearchForm_ddlGSPermitType",
                     label=self.permit_type_label,
                 )
+                page.wait_for_load_state("networkidle", timeout=25000)
+                page.wait_for_timeout(800)
+
+                if self.start_date_field_id and self.end_date_field_id:
+                    got_s = self._set_date(page, self.start_date_field_id, window_start)
+                    got_e = self._set_date(page, self.end_date_field_id, window_end)
+                    want_s = window_start.strftime("%m/%d/%Y")
+                    want_e = window_end.strftime("%m/%d/%Y")
+                    # Read the fields back. A mismatch means the search is about
+                    # to run UNFILTERED, which is indistinguishable from success
+                    # by row count alone -- it just returns everything. Say so
+                    # loudly rather than reporting a large number as a win.
+                    if got_s != want_s or got_e != want_e:
+                        print(
+                            f"[accela:{self.county}] WARNING date filter did not take "
+                            f"(wanted {want_s}..{want_e}, field holds {got_s!r}..{got_e!r}) "
+                            "-- this search is UNFILTERED",
+                            file=sys.stderr,
+                        )
+
                 page.click("#ctl00_PlaceHolderMain_btnNewSearch")
                 page.wait_for_load_state("networkidle", timeout=25000)
 
@@ -288,6 +425,16 @@ class AccelaProvider(BaseIngestionProvider):
                         if "address_raw" not in parsed:
                             parsed["address_raw"] = r[-1] if r else ""
                         parsed["county"] = self.county
+                        # Dedupe across date windows: adjacent windows share a
+                        # boundary day, and some tenants return a record under
+                        # more than one of its dates, so the same permit can
+                        # legitimately appear in two searches.
+                        rid = parsed.get("permit_number") or parsed.get("record_number")
+                        if rid:
+                            if rid in seen_ids:
+                                kept_this_page -= 1
+                                continue
+                            seen_ids.add(rid)
                         rows_out.append(parsed)
                     print(
                         f"[accela:{self.county}] page {page_num}: {len(data_rows)} rows, "
@@ -353,10 +500,10 @@ class AccelaProvider(BaseIngestionProvider):
                         page.wait_for_timeout(2000)
                     time.sleep(0.5)
             finally:
-                browser.close()
-
-        print(f"[accela:{self.county}] fetched {len(rows_out)} rows", file=sys.stderr)
-        return rows_out
+                # The browser is owned by fetch_delta and reused across every
+                # date window -- closing it here would kill the remaining
+                # windows. Nothing to release per-window.
+                pass
 
     @staticmethod
     def _build_column_map(trs: list[list[str]]) -> dict[int, str] | None:
