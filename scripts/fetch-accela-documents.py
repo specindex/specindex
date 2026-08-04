@@ -204,6 +204,112 @@ TENANTS: dict[str, dict[str, Any]] = {
         "use_date_range": True,
         "hit_rate": "unmeasured",
     },
+    # --- Added 2026-08-04 from scripts/probe-accela-attachments.py ---------
+    # These five were ALREADY wired for permits and had never been tested for
+    # documents. 62 Accela configs existed; only 8 were in this registry. The
+    # probe opened one real record per tenant and found attachments on each --
+    # which is the only test that means anything, since "doc-capable provider"
+    # is not "doc-bearing tenant" (LA has 7 doc-capable configs and returned
+    # zero attachments across 148 records).
+    #
+    # use_date_range is left True by default; if a tenant's grid comes back
+    # empty with dates set, flip it to False -- that failure is already known
+    # on ACFW and OLMSTED above. hit_rate stays "unmeasured" until a real run
+    # fills it in, never guessed.
+    "GA-ATLANTA": {
+        "state_code": "GA",
+        "state_dir": "georgia",
+        "county": "Fulton",
+        "base_url": "https://aca-prod.accela.com/ATLANTA_GA",
+        "module": "Building",
+        "permit_type_label": "Commercial New",
+        "use_date_range": True,
+        "hit_rate": "unmeasured",
+    },
+    "NE-DOUGLAS": {
+        "state_code": "NE",
+        "state_dir": "nebraska",
+        "county": "Douglas",
+        # Omaha's agency code, not the county name -- harvested from the live
+        # config rather than guessed.
+        "base_url": "https://aca-prod.accela.com/OMAHA",
+        "module": "Permits",
+        "permit_type_label": "New Building",
+        "use_date_range": True,
+        "hit_rate": "unmeasured",
+    },
+    "FL-HILLSBOROUGH": {
+        "state_code": "FL",
+        "state_dir": "florida",
+        "county": "Hillsborough",
+        "base_url": "https://aca-prod.accela.com/HCFL",
+        "module": "Building",
+        "permit_type_label": "Commercial New Construction and Additions",
+        "use_date_range": True,
+        "hit_rate": "unmeasured",
+    },
+    "FL-PINELLAS": {
+        "state_code": "FL",
+        "state_dir": "florida",
+        "county": "Pinellas",
+        "base_url": "https://aca-prod.accela.com/PINELLAS",
+        "module": "Building",
+        "permit_type_label": "Commercial Remodel/Repair/Renovation",
+        "use_date_range": True,
+        "hit_rate": "unmeasured",
+    },
+    "FL-PASCO": {
+        "state_code": "FL",
+        "state_dir": "florida",
+        "county": "Pasco",
+        # Lowercase agency code on this tenant; ACA is case-sensitive here.
+        "base_url": "https://aca-prod.accela.com/pasco",
+        "module": "Permits",
+        "permit_type_label": "COM - Interior Build Out With no Change to Existing Slab-Remodel",
+        "use_date_range": True,
+        "hit_rate": "unmeasured",
+    },
+    # --- Second wave from the 2026-08-04 attachment probe -------------------
+    # 8 of 42 previously-untested tenants serve attachments; these are the
+    # three beyond the first five.
+    #
+    # CO-FORTCOLLINS is the instructive one: it fetched ZERO permit rows in the
+    # fleet re-run and was on the "diagnose these empty configs" list -- yet it
+    # DOES serve documents. Permit yield and document availability are
+    # independent; a zero-permit config is not evidence of a dead tenant.
+    "CO-FORTCOLLINS": {
+        "state_code": "CO",
+        "state_dir": "colorado",
+        "county": "Larimer",
+        # Self-hosted; "CitizenAccess" is a path segment, NOT the agency code.
+        # agencyCode is harvested live from the grid hrefs.
+        "base_url": "https://accela-aca.fcgov.com/CitizenAccess",
+        "module": "Building",
+        "permit_type_label": "Commercial New Com-Ind-Mixed-Use Building",
+        "use_date_range": True,
+        "hit_rate": "unmeasured",
+    },
+    "OH-CLEVELAND": {
+        "state_code": "OH",
+        "state_dir": "ohio",
+        "county": "Cuyahoga",
+        "base_url": "https://aca-prod.accela.com/COC",
+        # Non-standard module name on this tenant.
+        "module": "BuildingHousing",
+        "permit_type_label": "Commercial Building Construction Permit",
+        "use_date_range": True,
+        "hit_rate": "unmeasured",
+    },
+    "MD-BALTIMORE": {
+        "state_code": "MD",
+        "state_dir": "maryland",
+        "county": "Baltimore",
+        "base_url": "https://aca-prod.accela.com/BALTIMORE",
+        "module": "Building",
+        "permit_type_label": "Commercial and Multifamily Combo Permit",
+        "use_date_range": True,
+        "hit_rate": "unmeasured",
+    },
 }
 
 # Attachment names worth skipping outright -- pure transactional trivia, same
