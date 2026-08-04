@@ -205,8 +205,6 @@ CA_PALMDALE_ACCELA_CONFIG: dict[str, Any] = {
     # returns the tenant's whole history in no date order, so a 2025+ backfill
     # only catches whatever recent rows happen to surface early -- Broward kept
     # 2 of 20 rows on page 1. 21 configs already set these; these did not.
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Los Angeles",
     "endpoint": "https://aca-prod.accela.com/PALMDALE",
     "permit_type_label": "Commercial Permit",
@@ -267,8 +265,6 @@ CA_DOWNEY_ACCELA_CONFIG: dict[str, Any] = {
     # returns the tenant's whole history in no date order, so a 2025+ backfill
     # only catches whatever recent rows happen to surface early -- Broward kept
     # 2 of 20 rows on page 1. 21 configs already set these; these did not.
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Los Angeles",
     "endpoint": "https://aca-prod.accela.com/DOWNEY",
     "permit_type_label": "Commercial Addition-Alteration",
@@ -283,6 +279,13 @@ CA_DOWNEY_ACCELA_CONFIG: dict[str, Any] = {
 CA_LANCASTER_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "CA",
     "provider_type": "accela",
+    # This tenant's search form has NO date-range inputs (verified live
+    # 2026-08-04). Opt out explicitly: the factory now DEFAULTS the standard
+    # ACA ids on, so silence would mean "use them" and the fill would fail.
+    # Being explicit also marks this config as unfiltered by necessity
+    # rather than by oversight -- its pull is bounded by max_pages alone.
+    "start_date_field_id": None,
+    "end_date_field_id": None,
     "county": "Los Angeles",
     "endpoint": "https://aca-prod.accela.com/LANCASTER",
     "permit_type_label": "Commercial New",
@@ -567,8 +570,6 @@ AZ_PIMACOUNTY_ACCELA_CONFIG: dict[str, Any] = {
     # returns the tenant's whole history in no date order, so a 2025+ backfill
     # only catches whatever recent rows happen to surface early -- Broward kept
     # 2 of 20 rows on page 1. 21 configs already set these; these did not.
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Pima",
     "endpoint": "https://aca-prod.accela.com/PIMA",
     "permit_type_label": "Building Permit",
@@ -610,6 +611,13 @@ GA_USASPENDING_CONFIG: dict[str, Any] = {
 GA_GWINNETT_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "GA",
     "provider_type": "accela",
+    # This tenant's search form has NO date-range inputs (verified live
+    # 2026-08-04). Opt out explicitly: the factory now DEFAULTS the standard
+    # ACA ids on, so silence would mean "use them" and the fill would fail.
+    # Being explicit also marks this config as unfiltered by necessity
+    # rather than by oversight -- its pull is bounded by max_pages alone.
+    "start_date_field_id": None,
+    "end_date_field_id": None,
     "county": "Gwinnett",
     "endpoint": "https://aca-prod.accela.com/GWINNETT",
     "permit_type_label": "Building",
@@ -639,8 +647,6 @@ IN_INDIANAPOLIS_ACCELA_CONFIG: dict[str, Any] = {
     # returns the tenant's whole history in no date order, so a 2025+ backfill
     # only catches whatever recent rows happen to surface early -- Broward kept
     # 2 of 20 rows on page 1. 21 configs already set these; these did not.
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Marion",
     "endpoint": "https://aca-prod.accela.com/INDY",
     "module": "Permits",
@@ -691,8 +697,6 @@ IN_ALLEN_ACCELA_CONFIG: dict[str, Any] = {
     # returns the tenant's whole history in no date order, so a 2025+ backfill
     # only catches whatever recent rows happen to surface early -- Broward kept
     # 2 of 20 rows on page 1. 21 configs already set these; these did not.
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Allen",
     "endpoint": "https://aca-prod.accela.com/ACFW",
     "module": "Planning",
@@ -767,8 +771,6 @@ ID_ADA_ACCELA_CONFIG: dict[str, Any] = {
     # returns the tenant's whole history in no date order, so a 2025+ backfill
     # only catches whatever recent rows happen to surface early -- Broward kept
     # 2 of 20 rows on page 1. 21 configs already set these; these did not.
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Ada",
     "endpoint": "https://permits.cityofboise.org/CitizenAccess",
     "permit_type_label": "502-New or Added Commercial",
@@ -908,8 +910,6 @@ NE_DOUGLAS_ACCELA_CONFIG: dict[str, Any] = {
     # returns the tenant's whole history in no date order, so a 2025+ backfill
     # only catches whatever recent rows happen to surface early -- Broward kept
     # 2 of 20 rows on page 1. 21 configs already set these; these did not.
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Douglas",
     "endpoint": "https://aca-prod.accela.com/OMAHA",
     "module": "Permits",
@@ -935,8 +935,6 @@ NM_BERNALILLO_ACCELA_CONFIG: dict[str, Any] = {
     # returns the tenant's whole history in no date order, so a 2025+ backfill
     # only catches whatever recent rows happen to surface early -- Broward kept
     # 2 of 20 rows on page 1. 21 configs already set these; these did not.
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Bernalillo",
     "endpoint": "https://aca-prod.accela.com/bernco",
     "permit_type_label": "Commercial Building",
@@ -959,8 +957,6 @@ GA_ATLANTA_ACCELA_CONFIG: dict[str, Any] = {
     # returns the tenant's whole history in no date order, so a 2025+ backfill
     # only catches whatever recent rows happen to surface early -- Broward kept
     # 2 of 20 rows on page 1. 21 configs already set these; these did not.
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Fulton",
     "endpoint": "https://aca-prod.accela.com/ATLANTA_GA",
     "permit_type_label": "Commercial New",
@@ -1044,8 +1040,6 @@ MO_STLOUIS_ACCELA_CONFIG: dict[str, Any] = {
     # returns the tenant's whole history in no date order, so a 2025+ backfill
     # only catches whatever recent rows happen to surface early -- Broward kept
     # 2 of 20 rows on page 1. 21 configs already set these; these did not.
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "St. Louis",
     "endpoint": "https://aca-prod.accela.com/SLC",
     "module": "PublicWorks",
@@ -1110,8 +1104,6 @@ UT_SALTLAKE_ACCELA_CONFIG: dict[str, Any] = {
     # returns the tenant's whole history in no date order, so a 2025+ backfill
     # only catches whatever recent rows happen to surface early -- Broward kept
     # 2 of 20 rows on page 1. 21 configs already set these; these did not.
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Salt Lake",
     "endpoint": "https://aca-prod.accela.com/SLCREF",
     "permit_type_label": "Commercial Building Permit",
@@ -1136,8 +1128,6 @@ TX_ELPASO_ACCELA_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/ELPASO",
     "permit_type_label": "Commercial New",
     "lookback_days": ANCHOR_LOOKBACK,
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
 
 # City of Dallas -- Accela agency code DALLASTX (a Gemini-suggested code
@@ -1170,8 +1160,6 @@ TX_DALLAS_NEW_ACCELA_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/DALLASTX",
     "permit_type_label": "Commercial New Construction Permit",
     "lookback_days": ANCHOR_LOOKBACK,
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
 
 TX_DALLAS_ALT_ACCELA_CONFIG: dict[str, Any] = {
@@ -1190,8 +1178,6 @@ TX_DALLAS_ALT_ACCELA_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/DALLASTX",
     "permit_type_label": "Commercial Alteration Addition Permit",
     "lookback_days": ANCHOR_LOOKBACK,
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
 
 # Verified live 2026-07-28: City of San Antonio's Accela portal (agency
@@ -1219,8 +1205,6 @@ TX_SANANTONIO_ACCELA_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/COSA",
     "permit_type_label": "Commercial New Building Permit",
     "lookback_days": ANCHOR_LOOKBACK,
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
 
 # --- TX county-agent research wave, 2026-07-28: agent-verified live sources ---
@@ -1338,8 +1322,6 @@ TX_MCALLEN_ACCELA_CONFIG: dict[str, Any] = {
     # returns the tenant's whole history in no date order, so a 2025+ backfill
     # only catches whatever recent rows happen to surface early -- Broward kept
     # 2 of 20 rows on page 1. 21 configs already set these; these did not.
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Hidalgo",
     "endpoint": "https://onlinepermits.mcallen.net/Portal",
     "permit_type_label": "Commercial New or Addition",
@@ -1354,8 +1336,6 @@ TX_BROWNSVILLE_ACCELA_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/BROWNSVILLE",
     "permit_type_label": "Commercial Alteration Permit",
     "lookback_days": ANCHOR_LOOKBACK,
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
 
 # Oklahoma County, OK (Oklahoma City -- ~65% of the county's population
@@ -1404,8 +1384,6 @@ OK_OKLAHOMA_ACCELA_CONFIG: dict[str, Any] = {
     # month-sized start/end windows with a fresh browser session per
     # chunk, instead of one long paging session.
     "max_pages": 300,
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
 
 # City of Pearland (Brazoria County's largest city). Real Cityworks-backed
@@ -1527,8 +1505,6 @@ MI_KENT_CONFIG: dict[str, Any] = {
     # returns the tenant's whole history in no date order, so a 2025+ backfill
     # only catches whatever recent rows happen to surface early -- Broward kept
     # 2 of 20 rows on page 1. 21 configs already set these; these did not.
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Kent",
     "endpoint": "https://aca-prod.accela.com/grandrapids",
     "module": "Permits",
@@ -1900,8 +1876,6 @@ MN_OLMSTED_ACCELA_CONFIG: dict[str, Any] = {
     # returns the tenant's whole history in no date order, so a 2025+ backfill
     # only catches whatever recent rows happen to surface early -- Broward kept
     # 2 of 20 rows on page 1. 21 configs already set these; these did not.
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Olmsted",
     "endpoint": "https://aca-prod.accela.com/OLMSTED",
     "module": "Building",
@@ -2018,6 +1992,13 @@ FL_MIAMIDADE_CONFIG: dict[str, Any] = {
 FL_BROWARD_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "FL",
     "provider_type": "accela",
+    # This tenant's search form has NO date-range inputs (verified live
+    # 2026-08-04). Opt out explicitly: the factory now DEFAULTS the standard
+    # ACA ids on, so silence would mean "use them" and the fill would fail.
+    # Being explicit also marks this config as unfiltered by necessity
+    # rather than by oversight -- its pull is bounded by max_pages alone.
+    "start_date_field_id": None,
+    "end_date_field_id": None,
     "county": "Broward",
     "endpoint": "https://aca-prod.accela.com/FTL",
     "module": "Permits",
@@ -2037,8 +2018,6 @@ FL_HILLSBOROUGH_ACCELA_CONFIG: dict[str, Any] = {
     # returns the tenant's whole history in no date order, so a 2025+ backfill
     # only catches whatever recent rows happen to surface early -- Broward kept
     # 2 of 20 rows on page 1. 21 configs already set these; these did not.
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Hillsborough",
     "endpoint": "https://aca-prod.accela.com/HCFL",
     "module": "Building",
@@ -2067,8 +2046,6 @@ FL_PINELLAS_ACCELA_CONFIG: dict[str, Any] = {
     # returns the tenant's whole history in no date order, so a 2025+ backfill
     # only catches whatever recent rows happen to surface early -- Broward kept
     # 2 of 20 rows on page 1. 21 configs already set these; these did not.
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Pinellas",
     "endpoint": "https://aca-prod.accela.com/PINELLAS",
     "module": "Building",
@@ -2089,8 +2066,6 @@ FL_POLK_ACCELA_CONFIG: dict[str, Any] = {
     # returns the tenant's whole history in no date order, so a 2025+ backfill
     # only catches whatever recent rows happen to surface early -- Broward kept
     # 2 of 20 rows on page 1. 21 configs already set these; these did not.
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Polk",
     "endpoint": "https://aca-prod.accela.com/POLKCO",
     "module": "Building",
@@ -2101,6 +2076,13 @@ FL_POLK_ACCELA_CONFIG: dict[str, Any] = {
 FL_SARASOTA_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "FL",
     "provider_type": "accela",
+    # This tenant's search form has NO date-range inputs (verified live
+    # 2026-08-04). Opt out explicitly: the factory now DEFAULTS the standard
+    # ACA ids on, so silence would mean "use them" and the fill would fail.
+    # Being explicit also marks this config as unfiltered by necessity
+    # rather than by oversight -- its pull is bounded by max_pages alone.
+    "start_date_field_id": None,
+    "end_date_field_id": None,
     "county": "Sarasota",
     "endpoint": "https://aca-prod.accela.com/SARASOTACO",
     "module": "Permits",
@@ -2114,6 +2096,13 @@ FL_SARASOTA_ACCELA_CONFIG: dict[str, Any] = {
 FL_MANATEE_ACCELA_CONFIG: dict[str, Any] = {
     "state_code": "FL",
     "provider_type": "accela",
+    # This tenant's search form has NO date-range inputs (verified live
+    # 2026-08-04). Opt out explicitly: the factory now DEFAULTS the standard
+    # ACA ids on, so silence would mean "use them" and the fill would fail.
+    # Being explicit also marks this config as unfiltered by necessity
+    # rather than by oversight -- its pull is bounded by max_pages alone.
+    "start_date_field_id": None,
+    "end_date_field_id": None,
     "county": "Manatee",
     "endpoint": "https://aca-prod.accela.com/MANATEE",
     "module": "Building",
@@ -2143,8 +2132,6 @@ FL_PASCO_ACCELA_CONFIG: dict[str, Any] = {
     # returns the tenant's whole history in no date order, so a 2025+ backfill
     # only catches whatever recent rows happen to surface early -- Broward kept
     # 2 of 20 rows on page 1. 21 configs already set these; these did not.
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Pasco",
     "endpoint": "https://aca-prod.accela.com/pasco",
     "module": "Permits",
@@ -2189,8 +2176,6 @@ FL_LEE_ACCELA_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/LEECO",
     "module": "Permitting",
     "permit_type_label": "Commercial New Building",
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "lookback_days": ANCHOR_LOOKBACK,
     "feed_id": "fl-lee",
 }
@@ -2425,6 +2410,13 @@ NC_GUILFORD_CONFIG: dict[str, Any] = {
 NC_BUNCOMBE_CONFIG: dict[str, Any] = {
     "state_code": "NC",
     "provider_type": "accela",
+    # This tenant's search form has NO date-range inputs (verified live
+    # 2026-08-04). Opt out explicitly: the factory now DEFAULTS the standard
+    # ACA ids on, so silence would mean "use them" and the fill would fail.
+    # Being explicit also marks this config as unfiltered by necessity
+    # rather than by oversight -- its pull is bounded by max_pages alone.
+    "start_date_field_id": None,
+    "end_date_field_id": None,
     "county": "Buncombe",
     "endpoint": "https://aca-prod.accela.com/BUNCOMBECONC",
     "permit_type_label": "Commercial Combo Permit",
@@ -2451,8 +2443,6 @@ NC_CABARRUS_CONFIG: dict[str, Any] = {
     # returns the tenant's whole history in no date order, so a 2025+ backfill
     # only catches whatever recent rows happen to surface early -- Broward kept
     # 2 of 20 rows on page 1. 21 configs already set these; these did not.
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Cabarrus",
     "endpoint": "https://aca-prod.accela.com/CABARRUS",
     "module": "Permits",
@@ -3047,8 +3037,6 @@ CO_SPRINGS_ACCELA_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/COSPRINGS",
     "permit_type_label": "Building Permit Review",
     "lookback_days": ANCHOR_LOOKBACK,
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
 STATE_CONFIGS["CO-SPRINGS"] = CO_SPRINGS_ACCELA_CONFIG
 
@@ -3070,8 +3058,6 @@ CO_DENVER_ACCELA_CONFIG: dict[str, Any] = {
     "module": "Development",
     "permit_type_label": "Commercial Construction Permit",
     "lookback_days": ANCHOR_LOOKBACK,
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
 STATE_CONFIGS["CO-DENVER"] = CO_DENVER_ACCELA_CONFIG
 
@@ -3095,8 +3081,6 @@ CO_ADAMS_ACCELA_CONFIG: dict[str, Any] = {
     "module": "Building",
     "permit_type_label": "Building Permit - Plan Review Required",
     "lookback_days": ANCHOR_LOOKBACK,
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
 STATE_CONFIGS["CO-ADAMS"] = CO_ADAMS_ACCELA_CONFIG
 
@@ -3119,8 +3103,6 @@ CO_FORTCOLLINS_ACCELA_CONFIG: dict[str, Any] = {
     "module": "Building",
     "permit_type_label": "Commercial New Com-Ind-Mixed-Use Building",
     "lookback_days": ANCHOR_LOOKBACK,
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
 STATE_CONFIGS["CO-FORTCOLLINS"] = CO_FORTCOLLINS_ACCELA_CONFIG
 
@@ -3144,8 +3126,6 @@ CO_LONGMONT_ACCELA_CONFIG: dict[str, Any] = {
     "module": "Building",
     "permit_type_label": "New Construction - Commercial",
     "lookback_days": ANCHOR_LOOKBACK,
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
 STATE_CONFIGS["CO-LONGMONT"] = CO_LONGMONT_ACCELA_CONFIG
 
@@ -3163,8 +3143,6 @@ CO_WELD_ACCELA_CONFIG: dict[str, Any] = {
     "module": "Building",
     "permit_type_label": "Commercial New Construction",
     "lookback_days": ANCHOR_LOOKBACK,
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
 STATE_CONFIGS["CO-WELD"] = CO_WELD_ACCELA_CONFIG
 
@@ -3187,8 +3165,6 @@ OH_CLEVELAND_CONFIG: dict[str, Any] = {
     "module": "BuildingHousing",
     "permit_type_label": "Commercial Building Construction Permit",
     "lookback_days": ANCHOR_LOOKBACK,
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
 OH_CLEVELAND_COO_CONFIG: dict[str, Any] = {
     **OH_CLEVELAND_CONFIG,
@@ -3220,8 +3196,6 @@ OH_MONTGOMERY_CONFIG: dict[str, Any] = {
     # returns the tenant's whole history in no date order, so a 2025+ backfill
     # only catches whatever recent rows happen to surface early -- Broward kept
     # 2 of 20 rows on page 1. 21 configs already set these; these did not.
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Montgomery",
     "endpoint": "https://aca-prod.accela.com/MONTCOOH",
     "module": "Building",
@@ -3247,8 +3221,6 @@ OH_BUTLER_CONFIG: dict[str, Any] = {
     # returns the tenant's whole history in no date order, so a 2025+ backfill
     # only catches whatever recent rows happen to surface early -- Broward kept
     # 2 of 20 rows on page 1. 21 configs already set these; these did not.
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Butler",
     "endpoint": "https://aca-prod.accela.com/BUTLER",
     "module": "Building",
@@ -3296,8 +3268,6 @@ CT_HARTFORD_ACCELA_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/HARTFORD",
     "permit_type_label": "Commercial Alteration Permit",
     "lookback_days": ANCHOR_LOOKBACK,
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
 }
 STATE_CONFIGS["CT-HARTFORD"] = CT_HARTFORD_ACCELA_CONFIG
 
@@ -3321,8 +3291,6 @@ TN_SHELBY_ACCELA_CONFIG: dict[str, Any] = {
     # returns the tenant's whole history in no date order, so a 2025+ backfill
     # only catches whatever recent rows happen to surface early -- Broward kept
     # 2 of 20 rows on page 1. 21 configs already set these; these did not.
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Shelby",
     "endpoint": "https://aca-prod.accela.com/SHELBYCO",
     "permit_type_label": "Commercial New Construction Permit",
@@ -3766,6 +3734,13 @@ STATE_CONFIGS["CA-SANTACLARA"] = CA_SANTACLARA_CONFIG
 TX_GALVESTON_CONFIG: dict[str, Any] = {
     "state_code": "TX",
     "provider_type": "accela",
+    # This tenant's search form has NO date-range inputs (verified live
+    # 2026-08-04). Opt out explicitly: the factory now DEFAULTS the standard
+    # ACA ids on, so silence would mean "use them" and the fill would fail.
+    # Being explicit also marks this config as unfiltered by necessity
+    # rather than by oversight -- its pull is bounded by max_pages alone.
+    "start_date_field_id": None,
+    "end_date_field_id": None,
     "county": "Galveston",
     # Self-hosted Accela, not the aca-prod multitenant host. Verified live
     # 2026-08-03: /Cap/CapHome.aspx?module=Building returns 200 with real ACA markup.
@@ -3778,6 +3753,13 @@ STATE_CONFIGS["TX-GALVESTON"] = TX_GALVESTON_CONFIG
 FL_BREVARD_CONFIG: dict[str, Any] = {
     "state_code": "FL",
     "provider_type": "accela",
+    # This tenant's search form has NO date-range inputs (verified live
+    # 2026-08-04). Opt out explicitly: the factory now DEFAULTS the standard
+    # ACA ids on, so silence would mean "use them" and the fill would fail.
+    # Being explicit also marks this config as unfiltered by necessity
+    # rather than by oversight -- its pull is bounded by max_pages alone.
+    "start_date_field_id": None,
+    "end_date_field_id": None,
     "county": "Brevard",
     "endpoint": "https://acaweb.brevardcounty.us/CitizenAccess",
     "permit_type_label": "Commercial Permit",
@@ -3793,8 +3775,6 @@ FL_OSCEOLA_CONFIG: dict[str, Any] = {
     # returns the tenant's whole history in no date order, so a 2025+ backfill
     # only catches whatever recent rows happen to surface early -- Broward kept
     # 2 of 20 rows on page 1. 21 configs already set these; these did not.
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "county": "Osceola",
     # permits.osceola.org bare root 200s but the ACA app lives under
     # /CitizenAccess -- /portal/ 404s. The aca-prod.accela.com/OSCEOLA tenant
@@ -4000,8 +3980,6 @@ CA_SANBERNARDINO_NEW_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/SBCO",
     "module": "Building",
     "permit_type_label": "Building Permit for Commercial or Industrial New Structure",
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "lookback_days": ANCHOR_LOOKBACK,
 }
 STATE_CONFIGS["CA-SANBERNARDINO-NEW"] = CA_SANBERNARDINO_NEW_CONFIG
@@ -4036,8 +4014,6 @@ TX_PHARR_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/PHARR",
     "module": "Building",
     "permit_type_label": "Commercial Alteration",
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "lookback_days": ANCHOR_LOOKBACK,
 }
 STATE_CONFIGS["TX-PHARR"] = TX_PHARR_CONFIG
@@ -4073,8 +4049,6 @@ CA_KERN_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/KERNCO",
     "module": "Building",
     "permit_type_label": "City Commercial Alteration",
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "lookback_days": ANCHOR_LOOKBACK,
 }
 STATE_CONFIGS["CA-KERN"] = CA_KERN_CONFIG
@@ -4092,8 +4066,6 @@ MD_BALTIMORE_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/BALTIMORE",
     "module": "Building",
     "permit_type_label": "Commercial and Multifamily Combo Permit",
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "lookback_days": ANCHOR_LOOKBACK,
 }
 STATE_CONFIGS["MD-BALTIMORE"] = MD_BALTIMORE_CONFIG
@@ -4105,8 +4077,6 @@ IL_LAKE_CONFIG: dict[str, Any] = {
     "endpoint": "https://aca-prod.accela.com/LAKECO",
     "module": "Building",
     "permit_type_label": "Commercial Alteration",
-    "start_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate",
-    "end_date_field_id": "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate",
     "lookback_days": ANCHOR_LOOKBACK,
 }
 STATE_CONFIGS["IL-LAKE"] = IL_LAKE_CONFIG

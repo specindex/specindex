@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T18:33:03+00:00",
+  "generated_at": "2026-08-04T19:19:58+00:00",
   "window_start": "2025-01-01",
   "counties": [
     {
@@ -627,8 +627,8 @@
       "county": "Kern",
       "state": "CA",
       "population": 922529,
-      "projects": 1,
-      "projects_in_window": 1,
+      "projects": 24,
+      "projects_in_window": 24,
       "documents": 0,
       "status": "projects-only"
     },
@@ -747,8 +747,8 @@
       "county": "Baltimore",
       "state": "MD",
       "population": 852425,
-      "projects": 1,
-      "projects_in_window": 1,
+      "projects": 7094,
+      "projects_in_window": 7094,
       "documents": 0,
       "status": "projects-only"
     },
@@ -977,10 +977,10 @@
       "county": "Lake",
       "state": "IL",
       "population": 718604,
-      "projects": 0,
-      "projects_in_window": 0,
+      "projects": 5,
+      "projects_in_window": 5,
       "documents": 0,
-      "status": "none"
+      "status": "projects-only"
     },
     {
       "rank": 99,
@@ -5006,9 +5006,9 @@
   "summary": {
     "total": 500,
     "covered": 29,
-    "projects_only": 177,
-    "none": 294,
-    "total_projects_in_window": 492627,
+    "projects_only": 178,
+    "none": 293,
+    "total_projects_in_window": 499748,
     "total_documents": 1494
   }
 }

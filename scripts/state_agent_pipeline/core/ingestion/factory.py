@@ -21,6 +21,13 @@ from .socrata_provider import SocrataProvider
 from .usaspending_provider import USASpendingProvider
 
 
+# Accela Citizen Access renders the same ASP.NET control ids on every
+# deployment that exposes a general-search date range. Defined once so no
+# config has to repeat them -- see the note at the accela branch below.
+ACA_START_DATE_FIELD_ID = "ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate"
+ACA_END_DATE_FIELD_ID = "ctl00_PlaceHolderMain_generalSearchForm_txtGSEndDate"
+
+
 class UnknownProviderType(ValueError):
     pass
 
@@ -136,15 +143,28 @@ def build_provider(state_config: dict[str, Any]) -> BaseIngestionProvider:
             permit_type_label=state_config.get("permit_type_label", "Building"),
             module=state_config.get("module", "Building"),
             lookback_days=state_config.get("lookback_days", 30),
-            # 30 pages x 10 rows caps a county at 300 records, which is what
-            # Hillsborough hit the moment its date filter started working
-            # (79 -> 300, every row in-window, still climbing at the cap).
-            # 60 is the practical ceiling: anonymous Accela paging throttles
-            # somewhere around 40-60 pages.
-            max_pages=state_config.get("max_pages", 60),
+            # 60 x 10 rows caps a county at 600, which several configs hit
+            # exactly. With 90-day chunking each search is short anyway, so
+            # this rarely binds -- it exists to stop a runaway, not to tune
+            # yield. Do NOT set it per-config to chase rows: raising it
+            # reaches further BACK in time, not further into the window.
+            max_pages=state_config.get("max_pages", 120),
             chunk_days=state_config.get("chunk_days", 90),
-            start_date_field_id=state_config.get("start_date_field_id"),
-            end_date_field_id=state_config.get("end_date_field_id"),
+            # Default ON. These two element ids are IDENTICAL on every ACA
+            # deployment that has them -- 54 of 62 configs were repeating the
+            # same two strings verbatim, and a typo in any one of them
+            # produces an UNFILTERED search rather than an error (the search
+            # silently returns the tenant's whole history). Defaulting here
+            # inverts that: the unusual case is the one you have to write down.
+            #
+            # The 8 tenants whose forms genuinely lack these inputs opt out
+            # with an explicit "start_date_field_id": None, which also serves
+            # as a visible marker that those configs run unfiltered by
+            # necessity rather than by oversight.
+            start_date_field_id=state_config.get(
+                "start_date_field_id", ACA_START_DATE_FIELD_ID),
+            end_date_field_id=state_config.get(
+                "end_date_field_id", ACA_END_DATE_FIELD_ID),
         )
 
     if provider_type == "energov":
