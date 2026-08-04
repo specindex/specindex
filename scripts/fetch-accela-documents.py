@@ -588,13 +588,39 @@ def should_skip(doc: dict[str, Any]) -> bool:
 
 
 def gcs_bucket(mode: str):
-    if mode == "adc":
-        # Same credential note as fetch-snohomish-documents.py: the step-8
-        # service account has Cloud SQL + Vertex but 403s on
-        # storage.objects.create for this bucket; dropping the env var falls
-        # back to the gcloud user ADC, which does have access.
+    """Prefer the service-account key; fall back to user ADC.
+
+    This used to unconditionally POP GOOGLE_APPLICATION_CREDENTIALS, because
+    the step-8 service account once 403'd on storage.objects.create for this
+    bucket. It was granted roles/storage.objectAdmin on 2026-08-03, so that
+    note is stale -- and keeping it meant the script threw away WORKING
+    credentials and fell back to a user ADC that had since expired. Every
+    tenant then reported 0 uploads while happily finding attachments, which
+    reads as "this source has no documents" rather than as an auth failure.
+    Verified 2026-08-04: the SA key can exists/upload/delete on this bucket.
+
+    User ADC expires; a service-account key does not. Prefer the key when one
+    is configured and usable, and only fall back when it is not -- so an
+    expired login degrades to a clear failure rather than a silent zero.
+    """
+    from google.cloud import storage  # noqa: PLC0415
+
+    key = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
+    if mode == "adc" and key and Path(key).is_file():
+        try:
+            bucket = storage.Client(project="specindex-ai").bucket(GCS_BUCKET)
+            # Cheap object-level check. Do NOT use bucket.exists(): that needs
+            # storage.buckets.get, which this SA deliberately lacks, and would
+            # make a perfectly usable key look broken.
+            bucket.blob("_healthcheck/probe.txt").exists()
+            print(f"[gcs] using service-account key {Path(key).name}", file=sys.stderr)
+            return bucket
+        except Exception as e:  # noqa: BLE001
+            print(f"[gcs] service-account key unusable ({type(e).__name__}), "
+                  "falling back to user ADC", file=sys.stderr)
+            os.environ.pop("GOOGLE_APPLICATION_CREDENTIALS", None)
+    elif mode == "adc":
         os.environ.pop("GOOGLE_APPLICATION_CREDENTIALS", None)
-    from google.cloud import storage
 
     return storage.Client(project="specindex-ai").bucket(GCS_BUCKET)
 
