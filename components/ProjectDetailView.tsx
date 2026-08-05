@@ -250,6 +250,18 @@ function ConfidenceBadge({ confidence }: { confidence: string }) {
     reported: "Sources vary",
     unconfirmed: "Not confirmed",
   };
+  // Phase 1.4. "Sources vary" fired on 48.4% of enrichment rows -- 22 of them
+  // on a single record -- and it was never a statement about sources at all.
+  // `reported` is the DEFAULT assigned when a fact was not cross-checked
+  // (enrich-project-details.py: `_confidence_for(v) if v else "reported"`),
+  // and `agreement` is NULL on all 8,700 rows, so no row carries an actual
+  // verdict. A badge on half the page carries no signal, and sitting under a
+  // heading that said "Verified" it actively undercut the record.
+  //
+  // Inline markers are now reserved for a GENUINE conflict. Everything else
+  // moves to the Sources panel, which is where the handoff puts all confidence
+  // language. Silence means "nothing disputed", not "unknown".
+  if (confidence !== "unconfirmed") return null;
   return (
     <span className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${styles[confidence] ?? styles.unconfirmed}`}>
       {labels[confidence] ?? confidence}
@@ -278,6 +290,8 @@ function ConfidenceDot({ confidence }: { confidence: string }) {
     reported: "Sources vary",
     unconfirmed: "Not confirmed",
   };
+  // Same rule as ConfidenceBadge -- see the note there.
+  if (confidence !== "unconfirmed") return null;
   return (
     <span className={`flex shrink-0 items-center gap-1 text-[10px] font-semibold uppercase tracking-wide ${textCls[confidence] ?? textCls.unconfirmed}`}>
       <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${dotCls[confidence] ?? dotCls.unconfirmed}`} />
@@ -509,6 +523,19 @@ function ActivityFeed({ project }: { project: Project }) {
   );
 }
 
+// Compose a location from the parts that EXIST, so a missing part cannot
+// leave its separator behind. The old inline version hardcoded the commas and
+// rendered ", Georgia" for a project with no city.
+function locationLine(project: { city?: string | null; county?: string | null; state?: string | null }): string {
+  return [
+    project.city?.trim() || null,
+    project.county?.trim() ? `${project.county.trim()} County` : null,
+    project.state?.trim() ? stateName(project.state) : null,
+  ]
+    .filter(Boolean)
+    .join(", ");
+}
+
 export function ProjectDetailView({ project: initialProject }: { project: Project }) {
   const [project, setProject] = useState(initialProject);
   const [showBreakdown, setShowBreakdown] = useState(false);
@@ -634,11 +661,17 @@ export function ProjectDetailView({ project: initialProject }: { project: Projec
                     </span>
                   )}
                 </p>
-                <p className="mt-2 text-sm text-[var(--color-gray-600)]">
-                  {project.city}
-                  {project.county ? `, ${project.county} County` : ""},{" "}
-                  {stateName(project.state)}
-                </p>
+                {/* Phase 0 item 8. This previously emitted a LEADING COMMA
+                    whenever city was empty -- the live record for B28 rendered
+                    ", Georgia". The separator was hardcoded between the parts
+                    rather than derived from which parts exist, so a missing
+                    part left its punctuation behind. Compose from the parts
+                    that are actually present and join once. */}
+                {locationLine(project) ? (
+                  <p className="mt-2 text-sm text-[var(--color-gray-600)]">
+                    {locationLine(project)}
+                  </p>
+                ) : null}
               </div>
 
               <div className="flex shrink-0 items-start gap-3">
@@ -691,25 +724,46 @@ export function ProjectDetailView({ project: initialProject }: { project: Projec
                             ✕
                           </button>
                         </div>
+                        {/* Scoring v2. The maxima here were STALE -- this
+                            block still read Value/40, Recency/35, News/25
+                            after the composite changed to 30/25/45, so every
+                            number a rep audited was measured against the wrong
+                            denominator. News is gone entirely: it fired on 5
+                            projects out of 591,618.
+
+                            Spec position is shown even when it is 0, and
+                            labelled, because it is the largest component and
+                            is currently absent on ~99.7% of the corpus. A
+                            silent 0 would read as "this project scores badly
+                            on spec position" when the truth is "we have not
+                            read any documents for it." */}
                         <div className="space-y-2 text-[var(--color-gray-600)]">
                           <div className="flex items-center justify-between">
                             <span>Value</span>
                             <span className="font-mono font-bold text-[var(--color-green)]">
-                              {project.score.value}/40
+                              {project.score.value}/30
                             </span>
                           </div>
                           <div className="flex items-center justify-between">
                             <span>Recency</span>
                             <span className="font-mono font-bold text-[var(--color-green)]">
-                              {project.score.recency}/35
+                              {project.score.recency}/25
                             </span>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span>News coverage</span>
+                            <span>Spec position</span>
                             <span className="font-mono font-bold text-[var(--color-green)]">
-                              {project.score.news}/25
+                              {project.score.position ?? 0}/45
                             </span>
                           </div>
+                          {!project.score.position && (
+                            <p className="pt-1 text-xs leading-relaxed text-[var(--color-gray-400)]">
+                              No spec position yet — no manufacturer has been found in
+                              documents we hold for this project. This is the largest part
+                              of the score, so it is scored low for lack of evidence, not
+                              because the project is a poor fit.
+                            </p>
+                          )}
                         </div>
                         <div className="flex justify-between border-t border-[var(--color-border)] pt-2 font-bold text-[var(--color-ink)]">
                           <span>Total</span>
@@ -825,7 +879,9 @@ export function ProjectDetailView({ project: initialProject }: { project: Projec
 
           {project.enrichment?.team.length ? (
             <section>
-              <h2 className="text-base font-bold">Verified construction team</h2>
+              {/* Phase 0 item 6: "Verified" sat directly above a SOURCES VARY
+                  badge on nearly every row, which undercut the page. */}
+              <h2 className="text-base font-bold">Construction team</h2>
               {/* The section title already says "Verified" -- a green
                   Confirmed pill on every single row was flagged in design
                   review as badge fatigue (every row shouting the same
@@ -848,11 +904,10 @@ export function ProjectDetailView({ project: initialProject }: { project: Projec
             </section>
           ) : null}
 
-          <div className="flex flex-wrap gap-3 pt-4">
-            <Link href="/projects/" className="btn btn-outline">
-              Back to all projects
-            </Link>
-          </div>
+          {/* Phase 0 item 7: the bottom "Back to all projects" duplicated the
+              "← All projects" link at the top of this same component. The one
+              in app/projects/view/page.tsx is NOT a duplicate -- that is the
+              "Project not found" route, where it is the only way out. */}
         </div>
 
         {/* RIGHT: workspace / lookup rail */}
