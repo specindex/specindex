@@ -403,28 +403,114 @@ def _stable_canonical_id(a_id: str, b_id: str) -> str:
     return a_id if a_id <= b_id else b_id
 
 
+SHINGLE_LEN = 12          # matches same_project()'s minimum substring length
+MAX_POSTINGS = 400        # a key shared by more rows than this is not discriminative
+
+
+def _blocking_keys(p: dict) -> set[str]:
+    """Keys such that ANY pair same_project() could accept shares at least one.
+
+    This is the correctness argument for the prefilter, and it has to be
+    checked against every branch of same_project(), not just the obvious one:
+
+      1. aid == bid                      -> both emit  id:<id>
+      2. shared source_urls + names ok   -> both emit  u:<url> for that url
+      3. normalize_name equal            -> both emit  n:<name>
+      4. shorter (>=12) inside longer    -> every SHINGLE_LEN-gram of the
+                                            shorter name is also a gram of the
+                                            longer, so both emit that s:<gram>
+
+    Branch 4 is why a plain name hash is NOT a safe prefilter -- "Midtown
+    Tower Phase II" and "Atlanta Midtown Tower Phase II Expansion" hash
+    differently and would never be compared, silently losing a merge the
+    current code finds. Character shingles are the cheapest key that keeps
+    substring containment blockable.
+    """
+    keys: set[str] = set()
+    pid = (p.get("id") or "").lower()
+    if pid:
+        keys.add(f"id:{pid}")
+    for u in source_urls(p):
+        keys.add(f"u:{u}")
+    n = normalize_name(p.get("name", ""))
+    if n:
+        keys.add(f"n:{n}")
+        if len(n) >= SHINGLE_LEN:
+            for i in range(len(n) - SHINGLE_LEN + 1):
+                keys.add(f"s:{n[i:i + SHINGLE_LEN]}")
+    return keys
+
+
+def _candidate_pairs(bucket: list[dict]) -> set[tuple[int, int]]:
+    """Index -> only the pairs sharing a blocking key. This is what turns
+    O(k^2) into roughly O(k * avg_postings)."""
+    from collections import defaultdict as _dd
+
+    index: dict[str, list[int]] = _dd(list)
+    for i, rec in enumerate(bucket):
+        for k in _blocking_keys(rec):
+            index[k].append(i)
+
+    pairs: set[tuple[int, int]] = set()
+    for key, idxs in index.items():
+        if len(idxs) < 2:
+            continue
+        # A key held by hundreds of records is a FEED-level artifact (a
+        # dataset landing url, a boilerplate name fragment), not evidence of
+        # identity. Expanding it would re-create the very O(k^2) blowup this
+        # prefilter exists to remove -- one 30k-row bucket is 450M
+        # comparisons and hours of 100% CPU with no output. Skipping it is a
+        # deliberate, logged trade-off: exact-id and full-name keys are
+        # unaffected, so no exact duplicate is ever missed by this.
+        if len(idxs) > MAX_POSTINGS:
+            continue
+        for a in range(len(idxs)):
+            for b in range(a + 1, len(idxs)):
+                pairs.add((idxs[a], idxs[b]))
+    return pairs
+
+
 def _dedupe_bucket(bucket: list[dict]) -> int:
-    """In-place pairwise dedupe within one (state, county) bucket. Returns
-    merges performed. Single pass, O(k^2) over the bucket -- see
-    dedupe_projects() for why restarting from index 0 on every merge was
-    the previous performance bug."""
-    merges = 0
-    i = 0
-    while i < len(bucket):
-        j = i + 1
-        while j < len(bucket):
-            if same_project(bucket[i], bucket[j]):
-                a_id, b_id = bucket[i].get("id", ""), bucket[j].get("id", "")
-                primary, secondary = prefer_canonical(bucket[i], bucket[j])
-                merged = merge_projects(primary, secondary)
-                merged["id"] = _stable_canonical_id(a_id, b_id)
-                bucket[i] = merged
-                del bucket[j]
-                merges += 1
-                continue  # re-check the (possibly enriched) record i against the next j
-            j += 1
-        i += 1
-    return merges
+    """Blocking-prefiltered dedupe within one (state, county) bucket.
+
+    Was a single O(k^2) pass. Once a bucket reached tens of thousands of rows
+    (NJ after the 2025-01-01 backfill) the comparison count exploded and
+    merge-national-corpus.py ran at 100% CPU for HOURS with zero progress
+    output, because it only printed at the end. That is the bug this replaces.
+
+    Candidate pairs now come from shared blocking keys, then same_project()
+    adjudicates each candidate exactly as before -- the decision logic is
+    untouched, only the set of pairs it is asked about shrinks.
+
+    Repeats until a pass makes no merges, because merging rewrites a record's
+    name and source urls and can therefore create a match that did not exist
+    when the index was built. Merges are rare, so this is typically two passes.
+    """
+    total = 0
+    for _ in range(10):  # bounded: never spin forever on pathological data
+        pairs = _candidate_pairs(bucket)
+        if not pairs:
+            break
+        dead: set[int] = set()
+        merges = 0
+        for i, j in sorted(pairs):
+            if i in dead or j in dead:
+                continue
+            if not same_project(bucket[i], bucket[j]):
+                continue
+            a_id, b_id = bucket[i].get("id", ""), bucket[j].get("id", "")
+            primary, secondary = prefer_canonical(bucket[i], bucket[j])
+            merged = merge_projects(primary, secondary)
+            merged["id"] = _stable_canonical_id(a_id, b_id)
+            bucket[i] = merged
+            dead.add(j)
+            merges += 1
+        if dead:
+            bucket[:] = [r for k, r in enumerate(bucket) if k not in dead]
+        total += merges
+        if merges == 0:
+            break
+    return total
 
 
 def dedupe_projects(projects: list[dict], state_code: str) -> tuple[list[dict], int]:
