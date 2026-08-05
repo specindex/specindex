@@ -153,3 +153,21 @@ From the ConstructConnect teardown (2026-08-04), reconciled against the live sys
 
 - **Per Asif (2026-08-04): "when you hit a wall use Gemini to see other options, and that includes manually searching."** Extends the 2026-07-28 "default use gemini for search" from search to unblocking. When a source dies or a portal gates, query Gemini with search grounding BEFORE concluding the lead is dead — that is where a second search-grounded model adds the most.
 - **Verify every URL it returns.** In a single answer about the VA specs it gave an index URL that was a soft-404 (1,359 bytes, byte-identical to baseline) alongside a file path that was completely real (57 KB Word doc) — real and fabricated in one response, with equal confidence. Previously fabricated 3 of 5 URLs including a DNS-failing ArcGIS endpoint. Require a product-specific signature and a soft-404 baseline before recording any candidate.
+
+# Consult Gemini on EVERY failure, roadblock or bottleneck — with a dialogue
+
+- **Asif, 2026-08-05: "anytime you run into a failure, a roadblock or a bottleneck, send a message to Gemini, get the learnings, have a back and forth conversation."** Broadest form of the standing instruction: search (2026-07-28) → unblocking → **every** blocker, as a dialogue, closed with feedback via `scripts/gemini_feedback_loop.py`. Record outcomes in memory AND the relevant markdown.
+- **It earns the cost — it caught a real error in my own analysis.** I flagged `work_mem` (4 MB) as the index-build constraint. Wrong parameter: **`maintenance_work_mem`** governs GIN/HNSW builds and is **64 MB** here. It also produced a cheaper fix than mine (parse during capture rather than move extraction to the cloud).
+- **Give it MEASURED numbers, state your own analysis, and ask "where am I wrong / what have I not identified."** Vague questions get vague answers.
+- **Its reliability is domain-dependent: strong on systems reasoning, unreliable on facts about the world** (1-for-7 on URL/portal claims). Verify every factual claim; take the architectural reasoning seriously.
+
+# Ingestion/processing bottlenecks (measured 2026-08-05)
+
+- **THE CORPUS CROSSES THE WIRE TWICE.** Capture uploads to GCS; step 9 downloads it back to parse. Measured read-back **66 KB/s public HTTPS vs 125 KB/s authenticated GCS client (1.9x)**. Parsing ~28,000 documents (~100 GB) that way is **9-12 days**.
+  - **Cheapest fix: parse during capture** — text to Postgres, bytes to GCS, while the bytes are already in hand. Removes the second crossing with no new infrastructure.
+  - **Structural fix: run extraction in-region** (Cloud Run in `us-central1`, Eventarc on object create). In-region egress is free. Capture should follow — ~80 GB remaining at 360 KB/s is 60+ hours of pure upload.
+- **Index growth will exceed cache at 1M pages.** Measured 2,612 bytes/page heap, 723 bytes/page GIN. At 1M: heap ~2.6 GB, GIN ~0.7 GB, HNSW `vector(768)` ~1.5-2.0 GB against **`shared_buffers` 2,481 MB**. Past cache, vector search degrades to disk thrashing — a cliff, not a slope.
+- **`maintenance_work_mem` (64 MB), NOT `work_mem`, governs GIN/HNSW index builds.** Raise it for the build session only. Do not create the HNSW index until after the first bulk embedding pass.
+- **Embeddings live in `document_page_embeddings` (migration 045), never in `document_pages`.** A 3.1 KB vector per row bloats the heap and slows every non-vector query. The sidecar carries a `model` column — without it a model upgrade silently mixes incompatible vector spaces and returns plausible neighbours instead of an error.
+- **GIN write amplification**: bulk-inserting ~1M rows with the `raw_text` GIN index live means heavy WAL and lock contention. Stage unindexed, or rebuild the index after load.
+- **PDF parsing is CPU-bound** even at 98.4% native text — the next ceiling once the network stops being one.
