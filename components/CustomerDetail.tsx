@@ -3,7 +3,13 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { FIREBASE_AUTH_ENABLED, useFirebaseAuth } from "@/components/FirebaseAuthProvider";
-import { fetchCustomerDetail, setCustomerActive, type CustomerProfile, type CustomerTrackedProject } from "@/lib/crm";
+import {
+  fetchCustomerDetail,
+  setCustomerActive,
+  extendTrial,
+  type CustomerProfile,
+  type CustomerTrackedProject,
+} from "@/lib/crm";
 
 // Same admin sign-in wall pattern as CrmDashboard -- real enforcement is
 // server-side (require_role in api/main.py), this is UX only.
@@ -37,6 +43,21 @@ export function CustomerDetail() {
   const [error, setError] = useState<"not_authorized" | "not_found" | "other" | null>(null);
   const [loading, setLoading] = useState(false);
   const [togglingActive, setTogglingActive] = useState(false);
+  const [extending, setExtending] = useState(false);
+
+  async function handleExtendTrial() {
+    if (!profile) return;
+    setExtending(true);
+    try {
+      await extendTrial(getToken, profile.firebase_uid);
+      const fresh = await fetchCustomerDetail(getToken, profile.firebase_uid);
+      setProfile(fresh.profile);
+    } catch {
+      setError("other");
+    } finally {
+      setExtending(false);
+    }
+  }
 
   async function handleToggleActive() {
     if (!profile) return;
@@ -122,6 +143,17 @@ export function CustomerDetail() {
               <div><dt className="text-[var(--color-gray-400)]">Phone</dt><dd className="font-medium">{profile.phone || "—"}</dd></div>
               <div><dt className="text-[var(--color-gray-400)]">Role</dt><dd className="font-medium">{profile.role_title || "—"}</dd></div>
               <div><dt className="text-[var(--color-gray-400)]">Tier</dt><dd className="font-medium capitalize">{profile.subscription_tier}</dd></div>
+              {profile.subscription_tier === "trial" && (
+                <div>
+                  <dt className="text-[var(--color-gray-400)]">Trial ends</dt>
+                  <dd className={`font-medium ${profile.trial_ends_at && new Date(profile.trial_ends_at) < new Date() ? "text-red-600" : ""}`}>
+                    {profile.trial_ends_at
+                      ? new Date(profile.trial_ends_at).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })
+                      : "—"}
+                    {profile.trial_ends_at && new Date(profile.trial_ends_at) < new Date() && " (expired)"}
+                  </dd>
+                </div>
+              )}
               <div><dt className="text-[var(--color-gray-400)]">Lifecycle stage</dt><dd className="font-medium">{profile.lifecycle_stage || "—"}</dd></div>
               <div><dt className="text-[var(--color-gray-400)]">Active</dt><dd className="font-medium">{profile.is_active ? "Yes" : "No — deactivated"}</dd></div>
               <div><dt className="text-[var(--color-gray-400)]">Territory</dt><dd className="font-medium">{profile.territory_states.join(", ") || "—"}</dd></div>
@@ -144,6 +176,16 @@ export function CustomerDetail() {
             >
               {togglingActive ? "Working…" : profile.is_active ? "Deactivate account" : "Reactivate account"}
             </button>
+            {profile.subscription_tier === "trial" && (
+              <button
+                type="button"
+                onClick={handleExtendTrial}
+                disabled={extending}
+                className="ml-2 mt-4 rounded-md border border-[var(--color-green)] px-3 py-1.5 text-sm font-medium text-[var(--color-green)] hover:bg-[var(--color-green)]/10"
+              >
+                {extending ? "Working…" : "Extend trial 14 days"}
+              </button>
+            )}
           </div>
 
           <div className="card p-5">
