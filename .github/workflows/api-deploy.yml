@@ -63,14 +63,22 @@ jobs:
       - name: Syntax check
         run: python3 -m compileall -q api/
 
-      - name: Deploy to Cloud Run
+      # NO --set-env-vars. It REPLACES the entire environment, and this
+      # service carries nine variables -- DATABASE_URL, CLERK_ISSUER,
+      # MAPBOX_TOKEN, EMAIL_SMTP_*, CONTACT_NOTIFY_TO, SPECINDEX_BUILD_TOKEN,
+      # FIREBASE_PROJECT_ID, ADMIN_EMAILS. Passing only DATABASE_URL would
+      # silently delete the other eight and break sign-in, email and admin
+      # access on the very deploy meant to fix a bug. Omitting env vars
+      # entirely makes the deploy INHERIT the existing configuration, which is
+      # what a code-only deploy should do. Use --update-env-vars (merges, never
+      # replaces) if a variable genuinely needs changing.
+      - name: Deploy to Cloud Run (code only; env inherited)
         run: |
           gcloud run deploy specindex-api \
             --source ./api \
             --region us-central1 \
             --allow-unauthenticated \
             --add-cloudsql-instances specindex-ai:us-central1:specindex-db \
-            --set-env-vars "DATABASE_URL=${{ secrets.API_DATABASE_URL }}" \
             --quiet
 
       # THE SMOKE TEST IS THE POINT. A deploy that returns 200 on an empty
@@ -84,9 +92,24 @@ jobs:
                   --format='value(status.url)')
           echo "deployed: $URL"
 
+          # /v1/projects requires a Firebase session OR the build token. Without
+          # it every check returns 401 and the smoke test fails every deploy --
+          # which would train people to ignore it. Read the token off the
+          # running service rather than duplicating it as a CI secret, so it
+          # cannot drift from what the service actually accepts.
+          TOK=$(gcloud run services describe specindex-api --region us-central1 \
+                  --format="value(spec.template.spec.containers[0].env)" \
+                | tr ';' '\n' | grep SPECINDEX_BUILD_TOKEN \
+                | grep -o "'value': '[^']*'" | sed "s/'value': //;s/'//g")
+          if [ -z "$TOK" ]; then
+            echo "::error::SPECINDEX_BUILD_TOKEN not found on the service; cannot smoke test"
+            exit 1
+          fi
+
           fail=0
           check () {  # name, query, min_expected
-            body=$(curl -s --max-time 60 "$URL/v1/projects?limit=1&$2" || echo '{}')
+            body=$(curl -s --max-time 60 -H "X-Build-Token: $TOK" \
+                     "$URL/v1/projects?limit=1&$2" || echo '{}')
             total=$(python3 -c "import sys,json;print(json.loads(sys.stdin.read() or '{}').get('total',-1))" <<<"$body")
             if [ "$total" -lt "$3" ]; then
               echo "::error::$1 returned total=$total, expected >= $3  (query: $2)"
