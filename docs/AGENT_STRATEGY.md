@@ -625,3 +625,81 @@ path to the wedge, not a new build:
 1. **50 `sam_gov` configs** — wired, but pull award METADATA only
 2. **`scripts/fetch-sam-gov-documents.py`** — live-verified, returns spec books and amendments
 3. **`scripts/extract-spec-book.py`** — already extracts basis-of-design product and approved manufacturers by MasterFormat section, and has never had a spec book to run on
+
+---
+
+## AMENDMENT II — 2026-08-05: three defects in the volume→value shift
+
+Recorded after passing the strategy doc and this file to Gemini for critique.
+All three are corrections to the four-part plan as originally specified, and
+all three are the same shape: **a step that looks complete but silently drops
+the highest-value data.**
+
+### D1. Never classify by filename alone before applying a download cap
+
+SAM.gov and municipal portals routinely name files `Attachment_A.pdf`,
+`Doc_001.pdf`, `Amd_1.pdf`. A cap applied on filename regex drops real
+Addenda (rank 1) while keeping a cover sheet named `Specification_Notice.pdf`
+(rank 4). The loss is **silent and permanent** — the file is never fetched, so
+nothing downstream can recover it.
+
+**Required: two-phase fetch.** Use the SAM.gov API `description`/`name` fields
+alongside the filename; for anything still unclassified, pull the first page
+(HTTP byte-range where the server honours it) and test for `ADDENDUM NO.`,
+`SECTION \d{2} \d{2} \d{2}`, `BASIS OF DESIGN`, `SUBSTITUTION`. **Apply the cap
+only after header inspection.** This is the same discipline as the soft-404
+baseline: never let a cheap signal stand in for the real one.
+
+### D2. Spec-book extraction is ADDITIVE, not an exclusive fork
+
+Routing spec books *exclusively* to `extract-spec-book.py` breaks two things:
+
+1. **Retrieval.** Step 9 populates `document_pages` for pgvector + FTS. An
+   exclusive fork means the highest-value documents in the corpus are absent
+   from search and from the chat agent.
+2. **Addenda carry spec text.** Addenda routinely rewrite whole MasterFormat
+   sections — *"Delete Section 23 05 00 and replace with the attached."*
+   Restricting spec extraction to files tagged "Spec Book" therefore misses
+   basis-of-design changes that live inside rank-1 documents.
+
+**Required:** page-text extraction on **everything**; spec-book extraction
+additionally on **any** document whose pages match MasterFormat structure,
+regardless of its file-level classification.
+
+### D3. Spec Position is COMPUTED, not read
+
+Sourcing position strictly from `extract-spec-book.py` produces false
+negatives: a manufacturer absent from the baseline manual but approved by
+Addendum 02 is reported **Absent**. That is exactly the "too many false
+positives / outdated leads" failure that sinks the incumbents, and it is worse
+here because we sell the citation.
+
+    position = baseline (spec book) + substitution overrides (substitution_rulings)
+
+    basis of design  : named as BOD in the manual AND not removed by addendum
+    listed alternate : listed in the manual OR approved via a substitution ruling
+    absent           : neither listed nor approved (or explicitly rejected)
+
+Every state change carries its own page-level citation.
+
+**Consequence for sequencing: step 10 must JOIN step 11.** They are coupled;
+the ledger cannot be bolted on after position ships. Migration 043
+(`substitution_rulings`, with a CHECK refusing any ruling lacking
+`document_file_id` AND `page_number > 0`) is the table that join targets.
+
+### D4. Capture and processing were never connected
+
+Found 2026-08-05 while acting on the above. `fetch-sam-gov-documents.py` and
+`fetch-accela-documents.py` contain **zero** database references — verified by
+grep: no `psycopg2`, no `DATABASE_URL`, no `INSERT`. They upload to GCS. Step 9
+selects its work **from `project_document_files`**. So ~78% of the captured
+corpus (10,033 objects in GCS vs 2,240 rows) was invisible to text extraction,
+spec extraction and enrichment.
+
+Capture was never the bottleneck; the **seam** was, and it presented as
+"extraction is slow" rather than as an error. `scripts/register-gcs-documents.py`
+closes it and must run after every capture batch.
+
+**Generalised rule: after any pipeline step, assert that the NEXT step can see
+its output.** A step that succeeds into a place nothing reads from is
+indistinguishable from a step that ran.
