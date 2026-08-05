@@ -111,15 +111,33 @@ def upload_attachment_to_gcs(bucket, project_id: str, attachment: dict[str, Any]
         print(f"  [skip] already in GCS: {blob_path}", file=sys.stderr)
         return "skipped"
 
-    req = urllib.request.Request(
-        DOWNLOAD_URL.format(resource_id=resource_id) + f"?fn={urllib.parse.quote(name)}",
-        headers={"User-Agent": USER_AGENT},
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=60) as resp:
-            data = resp.read()
-    except (urllib.error.URLError, urllib.error.HTTPError) as e:
-        print(f"  [error] download failed for {name}: {e}", file=sys.stderr)
+    # The ?fn= hint is cosmetic (it only sets the download filename) but SAM
+    # rejects the request outright when it contains characters quote() leaves
+    # alone -- confirmed live 2026-08-04: names like
+    # "... AHU cleaning SOW --5 Jun 2026.pdf" and "260427 SOW.pdf" returned
+    # HTTP 400 Bad Request and were silently lost. quote() does not escape
+    # "/" by default, so any name containing one breaks the query string.
+    #
+    # Retry without the hint rather than dropping the document: the resource_id
+    # alone is what actually identifies the file.
+    base = DOWNLOAD_URL.format(resource_id=resource_id)
+    attempts = [
+        f"{base}?fn={urllib.parse.quote(name, safe='')}",
+        base,  # no filename hint at all
+    ]
+    data = None
+    last_err: Exception | None = None
+    for url in attempts:
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+            with urllib.request.urlopen(req, timeout=120) as resp:
+                data = resp.read()
+            break
+        except (urllib.error.URLError, urllib.error.HTTPError) as e:
+            last_err = e
+            continue
+    if data is None:
+        print(f"  [error] download failed for {name}: {last_err}", file=sys.stderr)
         return "error"
 
     content_type = "application/pdf" if name.lower().endswith(".pdf") else "application/octet-stream"
