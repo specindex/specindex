@@ -1,238 +1,63 @@
-# SpecIndex Agent Strategy (2026-07-26, updated 2026-08-04)
+# SpecIndex Agent Strategy
 
-> **Read the AMENDMENT at the end of this file before running the 11-step
-> process.** Steps 1-7 are tuned for breadth, which is now solved (599,860
-> permits). The moat lives in steps 8-10, which are document-type-blind and
-> need six specific changes — including a new step 11 (substitution ledger)
-> and a non-jurisdictional source track for SAM.gov / UFGS / VA TIL.
+**The live process is the 11-step loop in Part 1.** Read that first; everything
+after it is reference.
 
-**Standing data pull window (2026-07-31): since 2025-01-01, a fixed anchor
-date, not a rolling lookback.** When widening any structured source past
-its narrow incremental window (30-90 days) for bulk historical depth,
-pull back to January 1, 2025 and no further. `main.py`'s `--lookback-days`
-is relative to "today," not absolute, so recompute it fresh each session
-as `(today - date(2025,1,1)).days` -- never reuse a hardcoded day-count
-from an earlier session, it drifts. Real remaining scope: add proper
-absolute `--since-date` support to the pipeline.
+> ## DO NOT APPEND CORRECTIONS TO THIS FILE
+>
+> When the process changes, **edit the step it changes** and add a one-line
+> `> **Changed <date>:**` note beside it. Do not add a new section at the end.
+>
+> This file previously grew by appending four AMENDMENT blocks that corrected
+> the body from 300 lines away, so the current truth had to be assembled by
+> reading the original plus four overrides in order. Appending is always the
+> easier edit and always the wrong one — it moves the cost from the writer to
+> every future reader.
 
-**Known bottleneck (2026-08-01): `scripts/merge-national-corpus.py` can hang
-for hours.** Its dedupe buckets records by `(state, county)` and does
-O(k^2) pairwise comparison within each bucket; once a bucket (e.g. NJ after
-the 2025-01-01 backfill) grows into the tens of thousands of rows, it runs
-at ~100% CPU with zero progress output. If a data-processing script's CPU
-time balloons far past a sane estimate with no progress logging, kill it
-and reroute rather than waiting it out. Stopgap:
-`scripts/fast-merge-national-corpus.py` skips the pairwise merge (relies on
-Postgres `ON CONFLICT (project_id)` for exact-id dedup) and rebuilds the
-full corpus in ~10 seconds. Real fix still open: sub-bucket
-`project_identity._dedupe_bucket` by a cheap prefilter before pairwise
-`same_project()` comparison.
+Restructured 2026-08-05. The file had grown by appending four AMENDMENT
+sections that CORRECTED the body from 300 lines away, and it opened with ~200
+lines of pre-build plan that its own line 70 described as "historical record".
+A reader had to absorb the original, then four corrections, and apply them
+mentally in the right order. Amendments that have been applied are not
+amendments — they are the current state, so they now sit with what they amend.
+Nothing was deleted; the superseded plan moved to Part 5.
 
-**Standing coverage goal (2026-08-02): onboard commercial-permit sources for
-all top-500 US counties by population.** Reference:
-`docs/us_counties_by_population.md` -- real Census Bureau data (bulk CSV from
-`www2.census.gov`, no API key needed) for all 3,144 US counties, with a
-Corpus Coverage column; always check it before scoping a new batch, and
-regenerate it periodically as the corpus grows. Do not trust ad-hoc
-web-scraped or pasted "complete" county lists -- one such file looked
-authoritative but was fabricated past rank ~18 (recycled county names reused
-across every state with invented populations); spot-check any large ranked
-dataset against a known-authoritative source. Pacing: batches of 5 counties
-with review between each batch (cherry-pick worktree commits, resolve
-LFS-pointer conflicts by keeping real current data, re-run the pipeline
-fresh per source for real merged counts, report before the next 5) -- an
-open-ended, multi-session effort, not a single continuous run.
+| Part | Contents |
+| :- | :- |
+| 1 | The 11-step loop — the live process |
+| 2 | Corrections in force — what changed, and why |
+| 3 | Reference — goals, source behaviour, routine checks |
+| 4 | Measured facts with a shelf life (dated; re-measure before relying) |
+| 5 | Superseded: the original three-agent plan |
 
-**Documents are the moat, not permit-metadata breadth (2026-08-02).** A
-county-discovery win now requires BOTH structured data AND a real document
-path (per-record detail page or attachments/documents API), even if
-currently gated -- pure ArcGIS/Socrata/CKAN bulk-feed wins (metadata only)
-are no longer sufficient on their own. Weight future batches by likelihood
-of a real document path, not just population rank -- Accela-based systems
-have a consistent (if often login-gated) "Attachments" tab pattern
-confirmed across UT-SALTLAKE/IN-INDIANAPOLIS/Cleveland OH/Duval FL, more
-promising than bulk feeds even for a smaller county. See
-`docs/ROADMAP.md` item 98 for specific login-gated opportunities already
-identified (Duval FL/JaxEPICS is the strongest lead).
+## Companion document
 
-**Use Playwright to verify gated/SPA portals (2026-08-02).** When a county/city
-permit portal is suspected login-gated or is an Angular/React SPA shell that
-WebFetch/curl can't see through, use Playwright (headless Chromium,
-`python3 -m playwright install chromium`) to check it live instead of
-concluding "no viable source" from static research alone -- capture network
-requests to see real backend API calls, and try clicking visible nav/search/
-"Guest" elements to see where they actually lead. Used live to definitively
-confirm Duval County FL's JaxEPICS has no guest/anonymous path. Apply to
-future gated portals (SmartGov TLS blocks, OpenGov/ViewPoint SPA shells, MGO
-Connect, etc.) -- see `docs/ROADMAP.md` item 98.
+**[`SPECINDEX_STRATEGY.md`](./SPECINDEX_STRATEGY.md)** — the business strategy,
+mirrored from Google Docs and versioned here alongside the code.
 
-**Looking for the current discovery/acquisition pipeline?** Skip to
-[Gemini-Assisted County/State Source Discovery](#gemini-assisted-countystate-source-discovery-implemented-2026-07-28)
-below — the 4-phase, 11-step loop is the live, actively-used process.
-Everything above it (Agents 1/2/3) is the original pre-build plan, kept
-as historical record now that all three agents exist as described in the
-2026-07-29 status update directly below.
+The division of labour: **the strategy doc decides WHETHER a thing is worth
+doing; this file decides HOW.** When they conflict, strategy wins on scope and
+this file wins on method.
 
-**Status update, 2026-07-29:** this doc was written as a pre-build plan on
-2026-07-26 and never updated after the plan was actually executed. As of
-that date, **all three agents are built**, not drafts:
+That distinction has already changed work more than once. This file's Phase I
+says "capture documents from jurisdictions"; the strategy doc says a county with
+metadata and no document path is not a win — which is why top-10 county chasing
+stopped. It cut the other way too: Phase I assumes a JURISDICTION and could not
+express "harvest UFGS" or "crawl SAM.gov", so Part 2 exists because the strategy
+doc named sources this file had no slot for.
 
-- **Agent 1 (Quality)** — `scripts/compute-state-quality.py`, writes to
-  the `state_quality` table (migration 005). A raw metrics table, not a
-  rolled-up score, matching the recommendation below.
-- **Agent 2 (Depth)** — `scripts/compute-county-coverage.py`, writes to
-  `county_coverage` (migration 004) with week-over-week diffing via
-  `previous_project_count`/`delta` (migration 006). Surfaced on the
-  Insights tab at `app/coverage`.
-- **Agent 3 (Puller)** — national scope has run for a while via
-  `pull-nj-dca-pipeline.yml`/`pull-ga-federal-pipeline.yml`/
-  `pull-nc-pipeline.yml`. State scope had a real gap until 2026-07-29:
-  `pull-state.yml` was a legacy, hardcoded GA/NC-only workflow predating
-  the `state_agent_pipeline` framework, never extended to the ~30 sources
-  wired since. Closed by `.github/workflows/pull-all-deterministic-
-  sources.yml`, which pulls every no-LLM `state_agent_pipeline` key
-  generically (reads the list from `state_configs.py` at run time, so new
-  sources are picked up with no workflow edit needed).
+**Re-mirror the doc after any edit.** The two had already drifted once: the
+strategy doc still lists the VA PG-18-1 masters as "free .docx, predictable
+URLs" when the TIL moved behind Okta (Part 3 has the working path).
 
-The sections below are kept as historical record of the original plan and
-its reasoning — most of the "Open questions" were implicitly resolved by
-what actually got built (raw metrics table over a score; countywide
-source-count via the diffing column over a separate binary deep/thin
-metric; GitHub Actions cron over Cloud Scheduler; skip-and-log via
-`continue-on-error: true` per step). All 4 crons remain disabled per
-Asif's 2026-07-28 "disable all cron jobs, will come back to it later" —
-`workflow_dispatch` works for manual runs on every workflow today.
+---
 
-## Why three agents
+# Part 1 — The 11-step loop (live process)
 
-Coverage work today is manual and reactive: Asif or Claude reads secondhand
-research, verifies a source by hand, writes a one-off pull script, and re-runs
-`compute-county-coverage.py` to see the effect. That doesn't scale past ~3
-states. The goal is to split this into three standing, periodic jobs:
+## The loop: 4 phases, 11 steps
 
-| # | Agent | Question it answers | Cadence |
-|---|---|---|---|
-| 1 | **Quality monitor** | "Is the data we already have any good?" | per state |
-| 2 | **Depth monitor** | "How much of each state/county do we actually cover?" | per state |
-| 3 | **Puller** | "Go get more data — national first, then state, then county" | national + per-state |
-
-This follows the sourcing-priority rule already in `docs/ROADMAP.md`: capture
-broad national sources first, then state, then county — the Puller agent should
-enforce that ordering, not just fire every script every run.
-
-## Agent 1 — Data Quality Monitor (by state)
-
-**New work.** Nothing like this exists yet. "Quality" needs a concrete
-definition before this can be built. Proposed metrics per state (computed from
-`projects` table, grouped by `state`):
-
-- **Field completeness** — % of projects with a non-null address, estimated
-  value, contractor, opened/announced date. Low completeness = source has a
-  sparse schema (e.g. Forsyth GA: no address/value/contractor fields at all).
-- **Freshness** — days since the newest project's `opened_or_announced_date`
-  vs. today. Stale = source pull hasn't run recently or the source itself
-  stopped updating.
-- **Duplicate/merge rate** — how often `dedupe_projects()` is merging records
-  within that state, as a proxy for source overlap/noise.
-- **Schema conformance** — malformed IDs, missing `county`, invalid dates.
-
-**Open question:** should this be a single "quality score" per state (easy to
-scan on a dashboard) or a raw metrics table (more useful for debugging, less
-useful at a glance)? Recommend: raw metrics table now, roll up into a score
-later once we know which metrics actually predict "this source needs
-attention."
-
-**Output:** new table, e.g. `state_quality` (state, completeness_pct,
-freshness_days, duplicate_rate, computed_at) — same pattern as
-`county_coverage`. Surfaced as a new tab on `/coverage/` next to Insights.
-
-## Agent 2 — Data Depth Monitor (by state)
-
-**Mostly exists already** — this is close to a re-scope of
-`scripts/compute-county-coverage.py` + the `county_coverage` table + the
-Insights tab shipped this session, rather than a new agent. What's missing is
-making it *periodic* instead of "run by hand after a corpus reload."
-
-**Open question:** is "depth" for this agent the same as the existing
-deep/thin county classification, or something more granular (e.g. depth =
-number of independent sources contributing to a county, not just
-binary deep/thin)? If it's the latter, `county_coverage.sources` (already an
-array) already has the raw data to compute it — would just need a new derived
-metric, not new plumbing.
-
-**Recommendation:** don't build a second thing here — extend Agent 2 to mean
-"run `compute-county-coverage.py` on a schedule and diff against the last run
-so we can see week-over-week movement," and add a `previous_project_count`
-column to spot counties that stalled.
-
-## Agent 3 — Puller (national + state, periodic)
-
-**New work — orchestration, not new pull logic.** The individual pull scripts
-(`pull-sam-gov-bulk-national.py`, `pull-nc-arcgis.py`,
-`pull-ga-municipal-commercial.py`, etc.) already exist and work; nothing about
-them needs to change. What's missing is a scheduler that:
-
-1. Runs national-scope pullers on one cadence (e.g. weekly — SAM.gov,
-   USAspending, DRI).
-2. Runs state-scope pullers on another cadence, one state at a time, in the
-   order the sourcing-priority rule implies (bring a state to a solid
-   baseline before spending effort on its counties).
-3. Re-runs `rebuild-{state}-corpus.py` → `merge-national-corpus.py` →
-   `load-corpus-to-postgres.py` → `compute-county-coverage.py` in sequence
-   after any pull, respecting the deploy-timing gotcha already documented
-   (reload Cloud SQL *before* the triggering Firebase build, not after).
-
-**Open question — where does this run?** Three real options:
-
-- **GitHub Actions cron** (`schedule:` trigger) — simplest, no new GCP infra,
-  logs land where CI logs already live. Downside: 6-hour max job runtime on
-  free tier is a non-issue here (pulls are minutes), but secrets management
-  needs the DB URL added as a repo secret (currently only used via env var on
-  Cloud Run).
-- **Cloud Scheduler → Cloud Run Job** — more "proper" GCP-native, keeps
-  secrets in the same place as the API's `DATABASE_URL`, but is new
-  infrastructure to stand up (a second Cloud Run resource type, a scheduler
-  job, IAM wiring) for something that doesn't need to scale.
-- **Manual trigger, agent-assisted** — Claude Code runs the sequence when
-  asked, no new infra at all, but doesn't get us "periodic" — still reactive.
-
-**Recommendation:** GitHub Actions cron. Lowest new-infra cost, reuses
-existing CI patterns, easy to read logs for. Revisit Cloud Scheduler only if
-job frequency or duration outgrows Actions' limits.
-
-**Open question — failure handling.** If a source starts 404ing or a schema
-changes mid-run, does the agent skip that source and continue (log + alert),
-or halt the whole run? Given the "verify before build" discipline already in
-place, recommend: skip + log loudly (e.g. write to a `pull_failures` table or
-post a GitHub issue comment), never silently drop data, never halt other
-sources over one bad one.
-
-## Suggested build order
-
-Given the sourcing-priority rule, build these in the order they pay off:
-
-1. **Agent 3 (Puller), national scope only** — wire up GitHub Actions cron to
-   re-run the existing national pullers (SAM.gov, USAspending, DRI) weekly.
-   Lowest risk, reuses 100% existing scripts.
-2. **Agent 2 (Depth)** — schedule the existing `compute-county-coverage.py`
-   to run after every corpus reload automatically (part of the same
-   pipeline as #1), add week-over-week diffing.
-3. **Agent 1 (Quality)** — new metrics + table + dashboard tab. Do this after
-   #1/#2 are running so there's periodic data to actually measure trends on.
-4. **Agent 3 (Puller), state scope** — extend the cron to state-level pullers,
-   one state at a time, once national is stable and boring.
-
-## Open questions to resolve before building
-
-1. Quality score vs. raw metrics table (Agent 1)?
-2. Is "depth" binary deep/thin or a graduated source-count metric (Agent 2)?
-3. GitHub Actions cron vs. Cloud Scheduler/Cloud Run Job (Agent 3)?
-4. Skip-and-log vs. halt-on-failure for a broken source mid-run (Agent 3)?
-5. Cadence: is weekly right for national, and what's right for state-level
-   (weekly per state would mean ~3 states/week today — fine at 3 states,
-   needs rethinking past ~10)?
-
-## Gemini-Assisted County/State Source Discovery (IMPLEMENTED, 2026-07-28)
+*Originally "Gemini-Assisted County/State Source Discovery", implemented 2026-07-28.
+Renamed because Gemini is one input to step 1, not the process itself.*
 
 Unlike the rest of this doc, this section describes a real, running process —
 not a draft plan. This is the actual workflow used to find and wire every new
@@ -272,6 +97,16 @@ At a glance, the three phases answer three different questions:
 
 ### Phase I — Source Discovery
 
+> **Changed 2026-08-04:** Phase I assumes a JURISDICTION, which cannot express
+> the highest-yield moat sources — SAM.gov, UFGS, VA masters, owner design
+> standards — which are national and document-class-keyed. A **non-jurisdictional
+> track** skips county discovery and enters at Phase III.
+>
+> **Changed 2026-08-05:** step 2 must also assess DOCUMENT FEASIBILITY (is there
+> a reachable document path, and if gated, what exactly is the gate) and record
+> the endpoint patterns either way. A gated-but-mapped path is valuable intel.
+
+
 1. **Discovery — Gemini, with context.** Send a query through
    `scripts/gemini_discovery_chat.py --session <name> "..."`. Not stateless:
    the script replays the full prior conversation from
@@ -298,6 +133,12 @@ At a glance, the three phases answer three different questions:
    happens.
 
 ### Phase II — Project Acquisition (the fork)
+
+> **Changed 2026-08-05:** capture scripts write to GCS and touch the database
+> ZERO times, while step 9 reads from `project_document_files` — so ~78% of the
+> corpus was invisible downstream. Run `register-gcs-documents.py` after EVERY
+> capture batch, and assert the next step can see this one's output.
+
 
 Two mutually exclusive paths out of Phase I, both producing the same thing:
 a standardized list of raw project candidates to hand to Phase III.
@@ -396,6 +237,28 @@ a standardized list of raw project candidates to hand to Phase III.
 
 ### Phase III — Project Processing & Enrichment
 
+> **Changed 2026-08-04:** steps 8-10 are DOCUMENT-TYPE-BLIND. Step 2 must
+> classify document TYPE; step 8 must rank **addenda > spec book > MEP drawings
+> > rest**; step 9 must run spec-book extraction; step 10 must output spec
+> POSITION (basis of design / listed alternate / absent).
+>
+> **Changed 2026-08-05, three defects in that plan:**
+> 1. **Never apply a download cap on filename alone.** SAM.gov serves
+>    `Attachment_A.pdf`, `Amd_1.pdf`. Inspect page 1 for `ADDENDUM NO.`,
+>    `SECTION nn nn nn`, `BASIS OF DESIGN` first; cap after.
+> 2. **Spec-book extraction is ADDITIVE, not an exclusive fork.** Page text for
+>    everything (it feeds pgvector/FTS), PLUS MasterFormat extraction on any
+>    document whose pages show spec structure — including addenda, which rewrite
+>    whole sections.
+> 3. **Spec position is COMPUTED, not read:**
+>    `position = baseline(spec book) + overrides(substitution_rulings)`.
+>    A manufacturer absent from the manual but approved by Addendum 02 must not
+>    report as Absent. **Step 10 therefore JOINS step 11.**
+>
+> **Model routing:** step 9 and step 10 use **Pro**; triage inside step 10 stays
+> on Flash. See Part 3.
+
+
 Runs only on the new, deduplicated projects Phase II produced.
 
 8. **Project-document pull (REQUIRED, not optional) — moved up from the
@@ -478,6 +341,17 @@ Runs only on the new, deduplicated projects Phase II produced.
 
 ### Phase IV — The Moat (step 11)
 
+> **Changed 2026-08-05:** federal documents CANNOT deliver rulings. 400 pages of
+> SAM.gov text containing "reject" produced ZERO named rulings — all boilerplate
+> ("CONSULTANT RESERVES THE RIGHT TO REJECT ANY SYSTEM WHICH..."). Federal
+> amendments carry basis-of-design and substitution PROCEDURES only.
+>
+> Rulings live on state/local portals, and only APPROVALS are public: AIA A701
+> §3.3.4 requires a pre-bid approval to be set forth in an addendum, while
+> rejections go privately to the requester. Local addenda are frequently
+> SCANNED IMAGES, so OCR must be on or this step reads nothing.
+
+
 Runs on rank-1 documents (addenda / amendments) produced by step 8, after
 step 9 has extracted their text.
 
@@ -527,70 +401,13 @@ scalable target.
 
 ---
 
-## AMENDMENT 2026-08-04 — the process is document-type-blind, and the moat is a document type
+---
 
-Everything above optimises for **breadth**: does a jurisdiction have a pullable
-source, and can we turn it into projects. That was the right objective and it
-worked — the corpus is at **599,860 county permit projects across all 50
-states**. Breadth is no longer the constraint.
+# Part 2 — Non-jurisdictional sources
 
-The constraint is now **which documents**, and the ten steps above cannot
-express that. Six changes, derived from the ConstructConnect teardown
-(2026-08-04) reconciled against what the corpus actually holds.
-
-**The value hierarchy the process must encode.** Ranked by how hard a
-competitor could replicate it:
-
-| rank | document | why | held 2026-08-04 |
-| :- | :- | :- | :- |
-| 1 | **Addenda / amendments** | The only public artifact naming *competitive displacement* — who was approved, who was rejected, on what date. Nobody indexes them, and on state/local portals they **come down after award**, so they cannot be backfilled. | ~14 |
-| 2 | **Project manuals (spec books)** | Where basis-of-design lives: Div 23/26 schedules name a manufacturer + model, then an "or equal" clause. Basis of design vs listed alternate vs absent is the highest-value fact for a manufacturer, and no incumbent is documented as distinguishing them. | ~13 |
-| 3 | **MEP drawing sets** | Equipment schedules carry basis-of-design too — same fact, different artifact, usually without the substitution language. A *separate* extraction problem. | ~2,121 |
-| 4 | Permit cards, receipts, inspection reports, site plans | No manufacturer names. Not the moat. | bulk |
-
-Note the inversion: **almost the entire captured corpus is rank 3**, because
-steps 8-10 were written when any document counted as a win.
-
-### The six changes
-
-**1. Step 2 (live verification) must classify document TYPE, not just
-existence.** Today it asks "are attachments public without login?". A
-jurisdiction can pass that with nothing but inspection cards and still be
-worthless to the moat. Record **which class** is reachable — addenda / spec
-book / MEP drawings / permit card. Hillsborough passes on drawings: a partial
-win, not a win.
-
-**2. Step 8 (document pull) needs priority ordering.** The step text above
-says pull "RFPs, board minutes, EIS reports, site plans" — **none of which are
-the moat**. With a per-source cap, that budget currently goes to whatever
-appears first in the attachment list. Rank **addenda > spec book > MEP
-drawings > everything else** and let the cap fall on the tail.
-`SKIP_NAME_HINTS` in `fetch-accela-documents.py` already does this crudely for
-receipts; this is the same mechanism pointed at value rather than triviality.
-
-**3. Step 9 (text extraction) must branch by document class.** Everything
-currently gets generic per-page text. A spec book needs
-`scripts/extract-spec-book.py` — division segmentation, then basis-of-design
-and approved-manufacturer extraction per MasterFormat section. Running plain
-page extraction on a project manual yields searchable text and **discards the
-structure that makes it valuable**. Fork: spec books to the spec-book
-extractor, everything else to the page extractor.
-
-**4. Step 11 — the substitution ledger (NOW ADDED, see Phase IV above).** The largest gap: nothing in
-steps 1-10 captured *"manufacturer X approved, manufacturer Y rejected, date
-Z"*. That is the single uncopyable asset and the process has no home for it.
-Runs on rank-1 documents; writes approved/rejected manufacturers with dates
-and page-level citations to a dedicated table.
-
-**5. Step 10 (enrichment) must output spec POSITION.** It currently produces
-executive brief, CSI scope and team. The fact a manufacturer buys is **"am I
-basis of design, a listed alternate, or absent — and who displaced me."** Add
-basis-of-design position as a first-class output, sourced from step 9's
-spec-book extraction rather than web search.
-
-**6. Phase I assumes a JURISDICTION.** "Does a live, pullable source exist for
-this jurisdiction?" cannot express the highest-yield moat sources, which are
-national and document-class-keyed rather than county-keyed:
+Phase I assumes a jurisdiction. These sources are national and keyed by
+document class, so they enter the loop at Phase III instead. Ranked by yield
+per unit of effort.
 
 | source | access | what it yields |
 | :- | :- | :- |
@@ -600,225 +417,7 @@ national and document-class-keyed rather than county-keyed:
 | **Public university / state agency design standards** | free, permanent URLs | MasterFormat-numbered Div 23/26. Highest breadth-to-effort ratio in the entire set; nobody harvests it systematically |
 | **State/local e-procurement portals** | mostly free registration | Project manuals **plus addenda** — the only time-sensitive source, since these vanish after award |
 
-Add a **non-jurisdictional source track** that skips Phase I's
-county-discovery entirely and enters at Phase III. Without it the process
-cannot express "harvest UFGS", which is among the highest-value things to do
-next.
-
-### Sequencing note that changed
-
-The teardown treats addenda as urgent because they disappear after award.
-**True for state/local portals; NOT true for SAM.gov, which retains
-amendments.** So prove basis-of-design extraction on the federal corpus first
-— free, permanent, already wired — and treat the state/local addenda crawler
-as the genuinely time-sensitive build.
-
-Cost is not a constraint here: **98.4% of document pages carry a native text
-layer** (measured over 24,167 pages, 2026-08-04), so OCR spend does not scale
-with corpus size the way earlier planning assumed.
-
-### What is already built and merely disconnected
-
-Three components exist and were never wired together — this is the shortest
-path to the wedge, not a new build:
-
-1. **50 `sam_gov` configs** — wired, but pull award METADATA only
-2. **`scripts/fetch-sam-gov-documents.py`** — live-verified, returns spec books and amendments
-3. **`scripts/extract-spec-book.py`** — already extracts basis-of-design product and approved manufacturers by MasterFormat section, and has never had a spec book to run on
-
----
-
-## AMENDMENT II — 2026-08-05: three defects in the volume→value shift
-
-Recorded after passing the strategy doc and this file to Gemini for critique.
-All three are corrections to the four-part plan as originally specified, and
-all three are the same shape: **a step that looks complete but silently drops
-the highest-value data.**
-
-### D1. Never classify by filename alone before applying a download cap
-
-SAM.gov and municipal portals routinely name files `Attachment_A.pdf`,
-`Doc_001.pdf`, `Amd_1.pdf`. A cap applied on filename regex drops real
-Addenda (rank 1) while keeping a cover sheet named `Specification_Notice.pdf`
-(rank 4). The loss is **silent and permanent** — the file is never fetched, so
-nothing downstream can recover it.
-
-**Required: two-phase fetch.** Use the SAM.gov API `description`/`name` fields
-alongside the filename; for anything still unclassified, pull the first page
-(HTTP byte-range where the server honours it) and test for `ADDENDUM NO.`,
-`SECTION \d{2} \d{2} \d{2}`, `BASIS OF DESIGN`, `SUBSTITUTION`. **Apply the cap
-only after header inspection.** This is the same discipline as the soft-404
-baseline: never let a cheap signal stand in for the real one.
-
-### D2. Spec-book extraction is ADDITIVE, not an exclusive fork
-
-Routing spec books *exclusively* to `extract-spec-book.py` breaks two things:
-
-1. **Retrieval.** Step 9 populates `document_pages` for pgvector + FTS. An
-   exclusive fork means the highest-value documents in the corpus are absent
-   from search and from the chat agent.
-2. **Addenda carry spec text.** Addenda routinely rewrite whole MasterFormat
-   sections — *"Delete Section 23 05 00 and replace with the attached."*
-   Restricting spec extraction to files tagged "Spec Book" therefore misses
-   basis-of-design changes that live inside rank-1 documents.
-
-**Required:** page-text extraction on **everything**; spec-book extraction
-additionally on **any** document whose pages match MasterFormat structure,
-regardless of its file-level classification.
-
-### D3. Spec Position is COMPUTED, not read
-
-Sourcing position strictly from `extract-spec-book.py` produces false
-negatives: a manufacturer absent from the baseline manual but approved by
-Addendum 02 is reported **Absent**. That is exactly the "too many false
-positives / outdated leads" failure that sinks the incumbents, and it is worse
-here because we sell the citation.
-
-    position = baseline (spec book) + substitution overrides (substitution_rulings)
-
-    basis of design  : named as BOD in the manual AND not removed by addendum
-    listed alternate : listed in the manual OR approved via a substitution ruling
-    absent           : neither listed nor approved (or explicitly rejected)
-
-Every state change carries its own page-level citation.
-
-**Consequence for sequencing: step 10 must JOIN step 11.** They are coupled;
-the ledger cannot be bolted on after position ships. Migration 043
-(`substitution_rulings`, with a CHECK refusing any ruling lacking
-`document_file_id` AND `page_number > 0`) is the table that join targets.
-
-### D4. Capture and processing were never connected
-
-Found 2026-08-05 while acting on the above. `fetch-sam-gov-documents.py` and
-`fetch-accela-documents.py` contain **zero** database references — verified by
-grep: no `psycopg2`, no `DATABASE_URL`, no `INSERT`. They upload to GCS. Step 9
-selects its work **from `project_document_files`**. So ~78% of the captured
-corpus (10,033 objects in GCS vs 2,240 rows) was invisible to text extraction,
-spec extraction and enrichment.
-
-Capture was never the bottleneck; the **seam** was, and it presented as
-"extraction is slow" rather than as an error. `scripts/register-gcs-documents.py`
-closes it and must run after every capture batch.
-
-**Generalised rule: after any pipeline step, assert that the NEXT step can see
-its output.** A step that succeeds into a place nothing reads from is
-indistinguishable from a step that ran.
-
----
-
-## AMENDMENT III — 2026-08-05: model routing across the 11 steps
-
-Flash for discovery and triage, Pro for extraction and reasoning. Implemented
-in `scripts/specindex/models.py`; steps declare a step NUMBER and are handed a
-model, so no script hard-codes one.
-
-**Models (probed live 2026-08-05, not assumed):**
-
-| slot | model | note |
-| :- | :- | :- |
-| `flash_model` | `gemini-3.6-flash` | |
-| `pro_model` | `gemini-3.1-pro-preview` | The bare `gemini-3.1-pro` returns **404 NOT_FOUND** on this Vertex project, as do `gemini-3.0/3.5/3.6-pro`. Stable fallback: `gemini-2.5-pro`. |
-
-`pro_model` is deliberately separate from `sonnet_model`, which is a
-backend-dependent slot that may resolve to Claude or to Gemini Pro depending on
-`NJ_DCA_SONNET_BACKEND`. Steps that genuinely need Pro must not have their
-model silently swapped by an unrelated backend setting.
-
-| step | tier | why |
-| :- | :- | :- |
-| 1 discovery | **Flash** | candidate portals/agency ids; step 2's live probe catches fabrications |
-| 2 verification | **Flash** | the verification is curl/Playwright, not a model |
-| 3-5, 7 | **Flash** | bookkeeping, deterministic config, dedup gate |
-| 6 research fallback | **Pro** | strict schema compliance when cross-checking facts |
-| 8 classification | **Flash — FALLBACK ONLY** | see below |
-| 9 spec-book extraction | **Pro** | MasterFormat division parsing, basis-of-design |
-| 10 spec position | **Pro** | basis of design / listed alternate / absent — the product itself |
-| 11 substitution ledger | **Pro** | dense procedural addenda language, named third parties |
-
-**The rule in one line: Flash where a verifier follows, Pro where the output
-is the product.**
-
-Flash's measured accuracy on live network facts was **1 of 7**. That sounds
-disqualifying and is not — *provided the verification gate exists*. Flash is a
-candidate generator whose errors are free because step 2 kills them. Pro is
-used exactly where nothing downstream re-checks the answer: a substitution
-ruling names a real company, and getting it wrong is commercially damaging
-with no later step to catch it.
-
-**Where this diverges from the routing as specified.** Step 8 document
-classification is Flash **only as a fallback**. The primary classifier is
-`scripts/document_classifier.py` — regex over filename plus first-page text —
-because it is free, deterministic and instant across tens of thousands of
-documents. An LLM call per document would cost real money and add latency for
-no accuracy gain on the easy majority; spending one to decide that
-`AMEND0005_...pdf` is an amendment is waste. Flash is invoked only when the
-deterministic classifier returns UNKNOWN on both filename and page text.
-
----
-
-## AMENDMENT IV — 2026-08-05: continuous crawling
-
-Pulls were previously one-shot: a human runs a script against a hand-picked
-list. That cannot hold the moat, because the moat is the only time-sensitive
-asset in the corpus — **substitution rulings appear in addenda on open
-solicitations and are removed after award.** A source polled monthly loses
-most of them.
-
-**Cadence is a property of the source, driven by volatility:**
-
-| volatility | cadence | what it covers | why |
-| :- | :- | :- | :- |
-| **hot** | 24h | open solicitations, SAM.gov | content **disappears** — a missed crawl is permanent loss |
-| **warm** | 168h | permit/award feeds | content accumulates; nothing is lost by waiting |
-| **cold** | 720h | owner standards, UFGS, VA masters | stable and permanent; frequent re-crawling is pure waste and raises ban risk |
-| **frozen** | never | dead/closed sources | |
-
-`retune_source_cadence()` adjusts these from OBSERVED change rather than the
-guess made at registration: a source changing on most crawls speeds up, one
-unchanged for 90 days slows down (capped monthly).
-
-**Architecture — three separate processes, deliberately:**
-
-1. `schedule-crawls.py` — decides what is due, enqueues, exits. Idempotent and
-   instant, so running it every 15 minutes costs nothing and a missed tick
-   self-heals.
-2. `work_queue` — the buffer. Priority carries the moat ordering (hot=1).
-3. `crawl-worker.py` — drains the queue. Start/stop/scale freely.
-
-**Why separated:** concurrency becomes a worker-count decision instead of
-being baked into an orchestration script. The previous approach produced a
-`while pgrep -f` loop that matched its own argv and stalled for fifteen hours.
-There are no wait loops here at all.
-
-**Isolation is the other half.** A SAM.gov state run died on ONE GCS upload
-timeout (`RetryError`, 120s write timeout — uplink saturated) and abandoned
-the remaining 163 opportunities. Queue items fail alone, retry to
-`max_attempts`, and the run continues.
-
-**`vanished_at` on `project_document_files` is the moat made queryable.** When
-a document we hold is no longer served by its source, mark it — never delete.
-An addendum taken down after award is exactly the back-file nobody starting
-later can reconstruct.
-
-**Change detection** (`etag`, `last_modified`, existing `content_sha256`) makes
-re-crawling an unchanged source nearly free, which is what makes daily cadence
-affordable at all.
-
-Seeded 2026-08-05: 50 SAM states (hot, 24h) + 17 owner-standards institutions
-(cold, 720h).
-
----
-
-# Reference: goals, source behaviour, and the incidents behind the rules
-
-Moved here from `CLAUDE.md` on 2026-08-05. That file is auto-loaded on every
-session, so it must carry only what an agent needs BEFORE acting. Everything
-below is real and still true — it is simply *reference*, needed when working in
-a specific area rather than on every turn.
-
-The organising rule: **CLAUDE.md holds the directive; this file holds the
-incident.** A rule is easier to follow when it is short; it is easier to trust
-when the evidence exists somewhere.
+# Part 3 — Reference
 
 ## Goals and scope
 
@@ -888,7 +487,31 @@ requiring any number at all (files are named "Mechanical.pdf" — infer the
 division from the discipline), and BFS spending its page budget before reaching
 the library.
 
-## Measured facts with a shelf life
+## Routine checks after any corpus or config change
+
+- `scripts/check-corpus-integrity.py` — duplicate ids
+- `scripts/check-config-geography.py` — configs pulling a WIDER geography than
+  their hardcoded county label (`generic_mapping` takes county as a fixed
+  per-config value)
+- `scripts/audit-county-coverage.py` — live vs corpus counts in parallel. Run
+  this instead of spawning audit agents; five were killed by the watchdog doing
+  what this does in 90 seconds.
+- `scripts/register-gcs-documents.py` — after EVERY capture batch
+- Watermarks live in `data/pipeline/nj-dca/state-{config-key}.json`. A non-zero
+  `last_processed_id` makes `--lookback-days` a complete no-op.
+
+## Commercial actions that are NOT the agent's to take
+
+- **Pay the MasterFormat licence** ($699/yr, revenue-scaled since Feb 2026)
+  before describing CSI-division indexing publicly. The EULA prohibits
+  incorporating it into commercial software without written permission, and
+  `extract-spec-book.py` classifies by MasterFormat section — live exposure for
+  a rounding error. This is Asif's action, not an agent's, which is why it lives
+  here rather than in CLAUDE.md.
+
+---
+
+# Part 4 — Measured facts with a shelf life
 
 Recorded with dates because they will age. Re-measure before relying on them.
 
@@ -908,24 +531,24 @@ Recorded with dates because they will age. Re-measure before relying on them.
   no per-record attachment endpoint and no EDMS. They need a new source, not
   another pull.
 
-## Commercial actions that are NOT the agent's to take
+---
 
-- **Pay the MasterFormat licence** ($699/yr, revenue-scaled since Feb 2026)
-  before describing CSI-division indexing publicly. The EULA prohibits
-  incorporating it into commercial software without written permission, and
-  `extract-spec-book.py` classifies by MasterFormat section — live exposure for
-  a rounding error. This is Asif's action, not an agent's, which is why it lives
-  here rather than in CLAUDE.md.
+# Part 5 — Superseded: the original three-agent plan
 
-## Routine checks after any corpus or config change
+Written 2026-07-26 as a pre-build plan, before the 11-step loop existed. All
+three agents were built and still run:
 
-- `scripts/check-corpus-integrity.py` — duplicate ids
-- `scripts/check-config-geography.py` — configs pulling a WIDER geography than
-  their hardcoded county label (`generic_mapping` takes county as a fixed
-  per-config value)
-- `scripts/audit-county-coverage.py` — live vs corpus counts in parallel. Run
-  this instead of spawning audit agents; five were killed by the watchdog doing
-  what this does in 90 seconds.
-- `scripts/register-gcs-documents.py` — after EVERY capture batch
-- Watermarks live in `data/pipeline/nj-dca/state-{config-key}.json`. A non-zero
-  `last_processed_id` makes `--lookback-days` a complete no-op.
+- **Agent 1 (Quality)** — `scripts/compute-state-quality.py`
+- **Agent 2 (Depth)** — `scripts/compute-county-coverage.py`
+- **Agent 3 (Puller)** — the per-state pull workflows in `.github/workflows/`
+
+The full 130-line plan was removed 2026-08-05. It described how the work was
+organised before the loop, which is now only useful for understanding why
+those three scripts are shaped as they are — and git holds it:
+
+```
+git show 6df74ed:docs/AGENT_STRATEGY.md
+```
+
+Kept as a pointer rather than 130 lines of dead text, because a strategy
+document that carries its own obsolete history trains readers to skim.
