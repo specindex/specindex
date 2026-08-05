@@ -184,3 +184,14 @@ From the ConstructConnect teardown (2026-08-04), reconciled against the live sys
 - **Retries need exponential backoff**, or a permanently-500ing URL burns its whole attempt budget in seconds and occupies workers achieving nothing. `fail_work()`: 2^attempts minutes, capped 6h.
 - **`FOR UPDATE` cannot be applied to the nullable side of an outer join.** The natural LEFT JOIN form of a lease check is illegal alongside row locking — use scalar subqueries.
 - **SAM.gov is warm (168h), not hot.** It RETAINS opportunity attachments; municipal/state/university portals are where bid documents dead-link after award. Spend `hot` cadence there, not on federal.
+
+# ALWAYS close the loop with Gemini — automatically, every time
+
+- **Asif, 2026-08-05 (said twice): "always give feedback back to Gemini so you land on a consistent spot."** Every consultation ends with the verified outcome sent back via `scripts/gemini_feedback_loop.py`. Not when convenient, not when asked — always. Without the return leg, Gemini keeps asserting what has already been disproven and the same ground gets re-litigated each session.
+- **Measured ledger accuracy: 2 of 10 = 20%.** Three distinct failure modes, in increasing order of danger:
+  1. **Fabricated URL** — soft-404. Fails a link check instantly.
+  2. **Fabricated verdict** — 0 of 5 county-portal access claims survived live probing.
+  3. **REAL URL, FABRICATED CONTENTS** — cited `fifewa.gov/.../Addendum-1-PDF` as a 2024 roofing addendum naming "Sarnafil G410" and "Versico VersiFleece TPO" as approved substitutions. The URL is genuinely real (200, 370 KB, host 404s on nonsense paths). OCR shows it is **Fife City Council meeting minutes from 2016** containing none of those terms.
+- **Consequence: URL-resolves is NO LONGER sufficient verification.** A fabricated URL fails instantly; a real URL with invented contents passes every link check and fails only when someone opens the document. **Verify the CONTENT, not the link.**
+- **Never accept your own numbers back in stronger form.** Given "400 pages from 557 documents", Gemini replied "you've scanned 14,000+ documents" and used it to declare a strategy dead. A 1.6% sample restated as exhaustive.
+- **It is strong on systems reasoning and domain mechanics** — AIA A701 §3.3.4 (pre-bid substitution approvals must appear in an addendum) is correct, materially changed the plan, and refuted Gemini's own earlier verdict. Take the reasoning seriously; verify every fact.
