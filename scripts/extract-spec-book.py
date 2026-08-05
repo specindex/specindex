@@ -112,6 +112,20 @@ DIVISION_HEADER_RE = re.compile(
     re.IGNORECASE | re.MULTILINE,
 )
 
+# A section HEADING -- "SECTION 23 21 13" at the start of a line. This is the
+# only reliable start marker. Bare code mentions are not: they appear in the
+# table of contents, in cross-references, and repeated in every page's running
+# header, which is what defeated two earlier attempts (189 page-fragments, then
+# 12 collapsed header-runs, on a book that actually holds 10 sections).
+SECTION_HEADING_RE = re.compile(
+    r"^\s*SECTION\s+(\d{2})\s?(\d{2})\s?(\d{2})\b", re.IGNORECASE | re.MULTILINE
+)
+
+# CSI three-part format: a real section opens with PART 1 GENERAL. Requiring it
+# alongside the heading discriminates a section START from a page that merely
+# cites the section number.
+PART_ONE_RE = re.compile(r"PART\s*1\b|^\s*1\.\s*GENERAL", re.IGNORECASE | re.MULTILINE)
+
 EXTRACTION_TOOL = {
     "name": "record_division_extraction",
     "description": (
@@ -171,12 +185,65 @@ def extract_pages(pdf_path: Path) -> list[str]:
 
 
 def find_division_sections(pages: list[str]) -> list[DivisionSection]:
-    """Group pages into division sections by locating division headers.
-    Pages before the first detected header are dropped (front matter / TOC).
+    """Group pages into real MasterFormat SECTIONS, one per "SECTION nn nn nn".
 
-    A page that mentions 2+ distinct divisions is treated as a table-of-contents
-    or summary listing, not a section start, and skipped — a real section page
-    is about one division; a TOC page lists several in quick succession."""
+    Three attempts, measured on a real 204-page VA project manual
+    (Renovate Building 9A, Carl Vinson VAMC, SAM.gov notice 198ed58de2ca4273):
+
+      * Split on any page mentioning one division -> **189** "sections", 44 of
+        them Division 01. Each was a page fragment, so the model was asked
+        "what is the basis of design here?" about submittal boilerplate. Found
+        2 manufacturers and ZERO substitution clauses.
+      * Split on any bare section code -> **12**. Bare codes repeat in every
+        page's running header, so consecutive-run collapsing swallowed whole
+        sections.
+      * Split on the "SECTION nn nn nn" HEADING, confirmed by PART 1 on the
+        same page -> **10**, matching the book's actual contents.
+
+    The lesson worth keeping: a bare code mention is not a section start. It
+    appears in the table of contents, in cross-references, and in the running
+    header of every page of a DIFFERENT section.
+
+    Pages before the first heading (cover, TOC, front matter) are dropped.
+    """
+    hits: list[tuple[int, str]] = []
+    for i, text in enumerate(pages):
+        m = SECTION_HEADING_RE.search(text)
+        if not m:
+            continue
+        if not PART_ONE_RE.search(text):
+            # Heading without PART 1 -- a cross-reference or continuation page,
+            # not a section start.
+            continue
+        division = m.group(1)
+        if division not in CSI_DIVISIONS:
+            continue
+        code = f"{m.group(1)} {m.group(2)} {m.group(3)}"
+        if hits and hits[-1][1] == code:
+            continue
+        hits.append((i, code))
+
+    if not hits:
+        return _find_division_sections_by_division(pages)
+
+    sections: list[DivisionSection] = []
+    for idx, (page_no, code) in enumerate(hits):
+        end_page = hits[idx + 1][0] - 1 if idx + 1 < len(hits) else len(pages) - 1
+        end_page = max(end_page, page_no)
+        sections.append(
+            DivisionSection(
+                division=code.split()[0],
+                start_page=page_no,
+                end_page=end_page,
+                text="\n".join(pages[page_no : end_page + 1]),
+            )
+        )
+    return sections
+
+
+def _find_division_sections_by_division(pages: list[str]) -> list[DivisionSection]:
+    """Original division-level segmentation, kept as a fallback for books that
+    carry no MasterFormat section numbers at all."""
     hits: list[tuple[int, str]] = []
     for i, text in enumerate(pages):
         divisions_on_page = {
@@ -186,16 +253,20 @@ def find_division_sections(pages: list[str]) -> list[DivisionSection]:
         }
         if len(divisions_on_page) == 1:
             hits.append((i, next(iter(divisions_on_page))))
-
     if not hits:
         return []
-
     sections: list[DivisionSection] = []
     for idx, (page_no, division) in enumerate(hits):
         end_page = hits[idx + 1][0] - 1 if idx + 1 < len(hits) else len(pages) - 1
         end_page = max(end_page, page_no)
-        text = "\n".join(pages[page_no : end_page + 1])
-        sections.append(DivisionSection(division=division, start_page=page_no, end_page=end_page, text=text))
+        sections.append(
+            DivisionSection(
+                division=division,
+                start_page=page_no,
+                end_page=end_page,
+                text="\n".join(pages[page_no : end_page + 1]),
+            )
+        )
     return sections
 
 
@@ -230,6 +301,38 @@ def _gemini_schema(node):
         # Anything else (additionalProperties, $schema, ...) is dropped: Gemini
         # errors on unknown keys rather than ignoring them.
     return out
+
+
+PART_TWO_RE = re.compile(r"PART\s*2\b|^\s*2\.\s*PRODUCTS", re.IGNORECASE | re.MULTILINE)
+MODEL_CHAR_BUDGET = 12000
+SCOPE_CHARS = 2000
+
+
+def section_text_for_model(text: str) -> str:
+    """Send the model the part of the section that actually holds the answer.
+
+    Naively truncating to the first 12,000 chars loses the manufacturer list on
+    long sections, because PART 2 PRODUCTS -- where basis-of-design products and
+    "acceptable manufacturers" are named -- sits after PART 1 GENERAL, which is
+    pages of submittal and quality-assurance boilerplate.
+
+    Measured on a real VA project manual (2026-08-04): of 10 sections, 6 exceed
+    the window, and for section 23 09 23 PART 2 begins at char 45,141 and for
+    28 31 00 at char 19,327. Both manufacturer lists were entirely invisible to
+    the model -- a silent recall loss that looks exactly like "this section
+    names no manufacturers".
+
+    So: keep the opening for section identity and scope, then jump to PART 2 and
+    spend the rest of the budget there.
+    """
+    if len(text) <= MODEL_CHAR_BUDGET:
+        return text
+    m = PART_TWO_RE.search(text)
+    if not m:
+        return text[:MODEL_CHAR_BUDGET]
+    head = text[:SCOPE_CHARS]
+    products = text[m.start() : m.start() + (MODEL_CHAR_BUDGET - SCOPE_CHARS)]
+    return f"{head}\n\n[... PART 1 GENERAL abridged ...]\n\n{products}"
 
 
 SECTION_PROMPT = (
@@ -270,7 +373,7 @@ def classify_section(client, section: DivisionSection, model: str) -> dict:
     prompt = SECTION_PROMPT.format(
         division=section.division,
         division_name=CSI_DIVISIONS[section.division],
-        text=section.text[:12000],
+        text=section_text_for_model(section.text),
     )
     schema = _gemini_schema(EXTRACTION_TOOL["input_schema"])
     resp = client.models.generate_content(
