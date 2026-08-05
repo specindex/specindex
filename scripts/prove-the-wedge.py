@@ -46,12 +46,19 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from specindex import db, storage                     # noqa: E402
 import document_classifier as dc                       # noqa: E402
 
-# MasterFormat divisions where a basis-of-design manufacturer is actually
-# named: mechanical and electrical schedules. Chasing all 48 divisions on a
-# proof run wastes tokens on divisions that name materials, not brands.
-TARGET_DIV = ("21", "22", "23", "26", "27", "28")
-
-SECTION_RE = re.compile(r"\bSECTION\s+((?:21|22|23|26|27|28)\s?\d{2}\s?\d{2})\b", re.I)
+# Section headers across ALL MasterFormat divisions.
+#
+# This deliberately no longer filters to 21-28. Restricting the HEADER pattern
+# to MEP divisions did not restrict the FINDINGS to MEP -- it only meant a
+# section could be examined solely when it happened to sit beneath an MEP
+# header. That is how an Armstrong acoustic ceiling tile (Division 09) and a
+# Redi-Rock retaining wall (Division 32) were discovered under fire-alarm and
+# communications headers, and then tagged with them. The narrow pattern was
+# the root cause of the mis-attribution, not just a symptom.
+#
+# Divisions 01-49 now match, the model classifies each finding from what the
+# PRODUCT is, and the header is kept only as provenance.
+SECTION_RE = re.compile(r"\bSECTION\s+((?:0[1-9]|[1-4]\d)\s?\d{2}\s?\d{2})\b", re.I)
 BOD_HINT_RE = re.compile(
     r"basis\s+of\s+design|acceptable\s+manufacturers?|approved\s+manufacturers?"
     r"|manufacturers?\s*:|or\s+approved\s+equal|or\s+equal", re.I)
@@ -64,7 +71,8 @@ Return STRICT JSON only:
   "basis_of_design_product": string|null,
   "listed_alternates": [string],
   "or_equal_clause": true|false,
-  "evidence_quote": string|null
+  "evidence_quote": string|null,
+  "csi_division": string|null
 }
 
 Rules that matter:
@@ -79,6 +87,13 @@ Rules that matter:
 - evidence_quote must be text copied VERBATIM from the section, short, and
   containing the manufacturer name. If you cannot quote it, return null for
   the manufacturer too.
+- csi_division is the two-digit MasterFormat division the PRODUCT belongs to,
+  judged from what the product IS -- not from any section header nearby. In an
+  amendment the nearest header is frequently unrelated to the text under it.
+  Examples: a Trane air handler is 23 (HVAC); an Armstrong acoustic ceiling
+  tile is 09 (Finishes); a Redi-Rock MSE retaining wall is 32 (Exterior
+  Improvements); a switchboard is 26 (Electrical). Return null if unsure --
+  a wrong division puts a manufacturer in a trade they do not sell into.
 
 SECTION TEXT:
 """
@@ -235,22 +250,32 @@ def main() -> int:
             if bod and not quote:
                 no_citation += 1
                 continue
+            div = (data.get("csi_division") or "").strip()[:2]
             if bod:
                 findings.append({
                     "project_id": pid, "project_name": pname,
                     "manufacturer": bod, "product": data.get("basis_of_design_product"),
-                    "position": "basis_of_design", "csi_section": s["section"],
+                    "position": "basis_of_design",
+                    # Derived from what the product IS. The nearby header is
+                    # kept separately because in an amendment it is often
+                    # unrelated -- Trane HVAC sat under a fire-detection
+                    # header in the first run and was tagged 28 31 76.
+                    "csi_division": div or None,
+                    "nearby_section_header": s["section"],
                     "document": title, "document_url": url, "page": s["page"],
                     "or_equal": bool(data.get("or_equal_clause")),
                     "evidence": quote[:300], "doc_class": cls,
                 })
                 seen_projects.add(pid)
-                print(f"      BOD {bod!r} -- {s['section']} p.{s['page']}", flush=True)
+                print(f"      BOD {bod!r} -- Div {div or '??'} "
+                      f"(header said {s['section']}) p.{s['page']}", flush=True)
             for a in alts[:6]:
                 findings.append({
                     "project_id": pid, "project_name": pname,
                     "manufacturer": a.strip(), "product": None,
-                    "position": "listed_alternate", "csi_section": s["section"],
+                    "position": "listed_alternate",
+                    "csi_division": div or None,
+                    "nearby_section_header": s["section"],
                     "document": title, "document_url": url, "page": s["page"],
                     "or_equal": bool(data.get("or_equal_clause")),
                     "evidence": quote[:300], "doc_class": cls,
@@ -263,9 +288,20 @@ def main() -> int:
         {"generated_at": time.strftime("%Y-%m-%dT%H:%M:%S"), "model": model,
          "docs_tried": docs_tried, "projects": len(seen_projects),
          "fetch_failures": fetch_failures, "no_sections": no_sections,
-         "dropped_uncitable": no_citation, "findings": findings}, indent=2))
+         "dropped_uncitable": no_citation,
+         "unique_findings": len(unique_keys),
+         "findings": findings}, indent=2))
 
+    # A finding is (manufacturer, document, page). SAM.gov serves the same
+    # attachment under multiple notice ids -- one amendment appeared under five
+    # project_ids -- so counting rows overstated the result 2x in the first
+    # run. Report BOTH numbers: rows is what the ledger stores, unique is what
+    # is true.
+    unique_keys = {(f["manufacturer"].lower(), f["document"], f["page"])
+                   for f in findings}
     bod_n = sum(1 for f in findings if f["position"] == "basis_of_design")
+    unique_bod = len({(f["manufacturer"].lower(), f["document"], f["page"])
+                      for f in findings if f["position"] == "basis_of_design"})
     reached = docs_tried - fetch_failures
     print(f"\n=== WEDGE PROOF ===")
     print(f"  documents tried      : {docs_tried}")
@@ -274,6 +310,7 @@ def main() -> int:
     print(f"  no MEP sections found: {no_sections}")
     print(f"  projects with a fact : {len(seen_projects)}")
     print(f"  basis-of-design rows : {bod_n}")
+    print(f"  UNIQUE bod findings  : {unique_bod}   <- rows minus duplicate notice ids")
     print(f"  listed-alternate rows: {len(findings) - bod_n}")
     print(f"  dropped, uncitable   : {no_citation}")
     # A zero that comes from failed fetches says nothing about extraction, and
@@ -284,9 +321,15 @@ def main() -> int:
     elif not findings:
         print(f"\n  VERDICT: extraction ran on {reached} documents and found nothing.\n"
               "  That IS a real negative and worth investigating.")
-    for f in findings[:25]:
-        print(f"   {f['position']:<18} {f['manufacturer'][:26]:<26} "
-              f"{f['csi_section']:<10} p.{f['page']:<4} {f['project_id'][:34]}")
+    shown = set()
+    for f in findings:
+        k = (f["manufacturer"].lower(), f["document"], f["page"])
+        if k in shown:
+            continue
+        shown.add(k)
+        print(f"   {f['position']:<18} {f['manufacturer'][:24]:<24} "
+              f"Div {str(f.get('csi_division') or '??'):<4} p.{f['page']:<4} "
+              f"{f['document'][:44]}")
     print(f"\n  -> {args.out}")
     print("WEDGE PROOF COMPLETE")
     return 0

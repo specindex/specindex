@@ -63,6 +63,44 @@ const EMPTY_FACETS: Facets = {
   years: [],
 };
 
+// The reason line and the coverage label.
+//
+// WORDING IS THE PRODUCT HERE. 166 of 591,618 projects have any mentioned
+// brand, and those are tenants (Google, Amazon), not building-product
+// manufacturers. So the row must never say "no manufacturer named" -- it says
+// "no manufacturer named in the documents we hold", which is a different and
+// defensible claim. Overclaiming costs the one thing a licensed feed cannot
+// copy: a rep who believes the line.
+//
+// Three states, matching the assertion model in migration 042:
+//   named            -- a manufacturer is cited in a document we parsed
+//   determined absent -- we parsed documents and nobody is named (SELLABLE)
+//   indeterminate    -- we have not read anything yet (a gap, said plainly)
+function reasonLine(project: Project): string {
+  const stage = (project.status || "").replace(/_/g, " ");
+  const cats = (project.competitor_watch || []).slice(0, 2).join(" and ");
+  const scope = cats ? `${cats} scoped` : "scope open";
+  const docs = project.document_count || 0;
+
+  if (docs === 0) {
+    // Be explicit that nothing has been read. "No manufacturer named" here
+    // would be a claim about the world; this is a claim about our coverage.
+    return `${scope} from the permit, no documents parsed yet`;
+  }
+  return `${scope}, no manufacturer named in the ${docs} document${docs === 1 ? "" : "s"} we hold`;
+}
+
+// Lets a rep tell "nothing found" apart from "nothing read" at a glance.
+function coverageLabel(project: Project): string {
+  const docs = project.document_count || 0;
+  // `sources` is on the list payload; there is no source_count field, and
+  // inventing one would have compiled only to fail at runtime as undefined.
+  const srcs = (project.sources || []).length;
+  if (docs > 0) return `${docs} document${docs === 1 ? "" : "s"} parsed`;
+  if (srcs > 0) return `${srcs} source${srcs === 1 ? "" : "s"} · inferred from permit`;
+  return "inferred from permit";
+}
+
 export function buildQuery(params: Record<string, string | number | undefined>): string {
   const usp = new URLSearchParams();
   for (const [k, v] of Object.entries(params)) {
@@ -370,7 +408,10 @@ export function ProjectsDashboard() {
     const catLabel = category !== "all" ? ` · ${category}` : "";
     if (sort === "score" && offset === 0 && !newOnly) {
       const shown = Math.min(PAGE_SIZE, total);
-      return `Top ${shown} ${scope}${catLabel} · ${total.toLocaleString()} total match — refine below to search all`;
+      // "refine below" was wrong -- every filter sits ABOVE the list. And the
+      // two exact six-digit counts go stale weekly and contradict the 500K+
+      // figure used everywhere else, so they are gone.
+      return `Top ${shown} ${scope}${catLabel} · scored and early enough to influence`;
     }
     return `${total.toLocaleString()} projects match ${scope}${catLabel} · page ${page} of ${totalPages}`;
   }, [loading, territory, territoryLabel, category, sort, offset, newOnly, total, page, totalPages]);
@@ -394,22 +435,16 @@ export function ProjectsDashboard() {
             Your territory
           </label>
           <div className="flex items-center gap-3">
-            {newThisWeek !== null && newThisWeek > 0 && (
-              <button
-                type="button"
-                onClick={() => {
-                  setNewOnly((v) => !v);
-                  dismissOnboarding();
-                }}
-                className={`rounded-full border px-2.5 py-1 text-xs font-medium transition ${
-                  newOnly
-                    ? "border-[var(--color-amber)] bg-[var(--color-amber)]/10 text-[var(--color-amber)]"
-                    : "border-[var(--color-border)] text-[var(--color-gray-600)] hover:border-[var(--color-gray-400)]"
-                }`}
-              >
-                🔔 {newThisWeek.toLocaleString()} new this week
-              </button>
-            )}
+            {/* THE "N NEW THIS WEEK" BADGE IS REMOVED.
+                It read 416,759 -- about 70% of the index -- because it counts
+                rows whose first_seen_at falls in the last 7 days, while
+                591,329 rows have loaded_at in the same window. first_seen_at
+                is being RESET by corpus loads, so the badge was reporting
+                pipeline activity as market novelty. A number a rep cannot
+                believe damages every other number on the page.
+                Restore it when novelty derives from something stable, and
+                scope it to the rep's territory so it is useful as well as
+                true. */}
             <span className="text-xs text-[var(--color-gray-600)]">{territoryLabel}</span>
           </div>
         </div>
@@ -534,7 +569,16 @@ export function ProjectsDashboard() {
           </select>
         </div>
         <div className="mt-4 flex flex-wrap items-center justify-between gap-2">
-          <p className="text-sm text-[var(--color-gray-600)]">{resultsLabel}</p>
+          <div>
+            <p className="text-sm text-[var(--color-gray-600)]">{resultsLabel}</p>
+            {/* One standing line instead of two exact counts that go stale
+                weekly and contradict the 500K+ figure used elsewhere. Every
+                claim here is defensible: 591,618 rounds to 500K+, all 50
+                states carry sources, and every source is a public record. */}
+            <p className="mt-0.5 text-xs text-[var(--color-gray-400)]">
+              500K+ commercial projects · 50 states · 97% still early stage · 100% public-source
+            </p>
+          </div>
           <div className="flex overflow-hidden rounded-md border border-[var(--color-border)] text-xs font-medium">
             <button
               type="button"
@@ -584,47 +628,45 @@ export function ProjectsDashboard() {
               className="group block px-4 py-5 transition hover:bg-[var(--color-gray-100)] md:px-5"
             >
               <div className="flex flex-wrap items-start justify-between gap-3">
-                <div>
-                  <div className="flex flex-wrap items-center gap-2">
-                    {project.score && (
-                      <span className="rounded-full bg-[var(--color-amber)]/10 px-2 py-0.5 text-xs font-semibold text-[var(--color-amber)]">
-                        🔥 {project.score.total}
-                      </span>
-                    )}
-                    <h2 className="text-lg font-semibold tracking-tight group-hover:text-[var(--color-green)]">
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-wrap items-baseline gap-2">
+                    <h2 className="text-base font-semibold tracking-tight group-hover:text-[var(--color-green)]">
                       {project.name}
                     </h2>
-                    <StatusPill status={project.status} />
-                    {project.has_documents && (
-                      <span className="rounded-full border border-[var(--color-border)] bg-[var(--color-gray-100)] px-2 py-0.5 text-xs font-medium text-[var(--color-gray-600)]">
-                        📎 {project.document_count} doc{project.document_count === 1 ? "" : "s"}
-                      </span>
-                    )}
-                  </div>
-                  <p className="mt-1 text-sm text-[var(--color-gray-600)]">
                     <span className="font-mono text-xs text-[var(--color-gray-400)]">{project.spx_id}</span>
+                  </div>
+                  {/* THE REASON LINE. Replaces the score, which compressed at
+                      82/76/75/75/75/75 at the top of the list and so carried no
+                      information where the rep actually looks. The score still
+                      ORDERS the list and is auditable on the record page; this
+                      says why the row is here. It is the only thing on the page
+                      a licensed feed cannot copy. */}
+                  <p className="mt-1.5 flex items-start gap-1.5 text-sm text-[var(--color-ink)]">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-green)]" />
+                    <span>{reasonLine(project)}</span>
+                  </p>
+                  <p className="mt-1 text-xs text-[var(--color-gray-600)]">
+                    {[project.city, project.county ? `${project.county} County` : null, stateName(project.state)]
+                      .filter(Boolean)
+                      .join(", ")}
                     {" · "}
-                    {project.city}
-                    {project.county ? `, ${project.county} County` : ""}, {stateName(project.state)}
+                    {coverageLabel(project)}
                   </p>
                 </div>
-                <div className="text-right">
-                  <p className="text-sm font-semibold">{formatUsd(project.estimated_value_usd)}</p>
-                  <p className="text-xs text-[var(--color-gray-600)]">{formatSf(project.square_footage)}</p>
+                <div className="shrink-0 text-right">
+                  <StatusPill status={project.status} />
+                  {/* Empty fields are OMITTED, never printed as "Not reported".
+                      A column of "Not reported" makes a deep record look thin,
+                      and square footage is absent on most rows. */}
+                  {project.estimated_value_usd ? (
+                    <p className="mt-2 text-sm font-semibold">{formatUsd(project.estimated_value_usd)}</p>
+                  ) : null}
+                  {project.square_footage ? (
+                    <p className="text-xs text-[var(--color-gray-600)]">{formatSf(project.square_footage)}</p>
+                  ) : null}
                 </div>
               </div>
               <div className="mt-2 flex flex-wrap items-center gap-2">
-                <p className="text-xs text-[var(--color-gray-400)]">
-                  {formatDate(project.opened_or_announced_date)}
-                </p>
-                {project.competitor_watch.slice(0, 3).map((cat) => (
-                  <span
-                    key={cat}
-                    className="rounded-full bg-[var(--color-gray-100)] px-2 py-0.5 text-[10px] font-medium text-[var(--color-gray-600)]"
-                  >
-                    {cat}
-                  </span>
-                ))}
               </div>
             </Link>
           </li>
