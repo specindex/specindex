@@ -18,11 +18,23 @@ export default async function ProjectsPage() {
         <div className="mx-auto max-w-6xl px-5 py-12 md:px-8 md:py-16">
           <p className="text-eyebrow">United States</p>
           <h1 className="mt-3 text-hero">Projects worth chasing this week</h1>
+          {/* No raw six-digit counts. This headline read "591,618+ projects
+              indexed across 50 states, 577,827+ still in early stage" -- two
+              exact live counts that go stale weekly, contradict the 500K+
+              figure used in every other SpecIndex material, and invite the one
+              comparison this product loses (ConstructConnect claims 825,000).
+              The counter under the filters was fixed earlier; this headline
+              above them was missed.
+
+              "Ranked by priority score" is also dropped: it was true of the
+              sort and misleading about the corpus, since spec position -- 45
+              of the 100 points -- currently fires on 0.3% of projects. The
+              honest claim is the window, not the ranking. */}
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-[var(--color-gray-600)]">
-            Ranked by priority score, filtered to your territory and product category —
-            not a browse-everything list. {stats.total.toLocaleString()}+ projects indexed across{" "}
-            {stats.states} states, {stats.early_stage.toLocaleString()}+ still in early stage
-            (planning through bidding), if you want to search the full corpus.
+            Filtered to your territory and product category — not a
+            browse-everything list. 500K+ commercial projects across{" "}
+            {stats.states} states, 97% still early stage (planning through
+            bidding), every one traceable to a public source.
           </p>
         </div>
       </div>
