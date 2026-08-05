@@ -753,3 +753,56 @@ documents. An LLM call per document would cost real money and add latency for
 no accuracy gain on the easy majority; spending one to decide that
 `AMEND0005_...pdf` is an amendment is waste. Flash is invoked only when the
 deterministic classifier returns UNKNOWN on both filename and page text.
+
+---
+
+## AMENDMENT IV — 2026-08-05: continuous crawling
+
+Pulls were previously one-shot: a human runs a script against a hand-picked
+list. That cannot hold the moat, because the moat is the only time-sensitive
+asset in the corpus — **substitution rulings appear in addenda on open
+solicitations and are removed after award.** A source polled monthly loses
+most of them.
+
+**Cadence is a property of the source, driven by volatility:**
+
+| volatility | cadence | what it covers | why |
+| :- | :- | :- | :- |
+| **hot** | 24h | open solicitations, SAM.gov | content **disappears** — a missed crawl is permanent loss |
+| **warm** | 168h | permit/award feeds | content accumulates; nothing is lost by waiting |
+| **cold** | 720h | owner standards, UFGS, VA masters | stable and permanent; frequent re-crawling is pure waste and raises ban risk |
+| **frozen** | never | dead/closed sources | |
+
+`retune_source_cadence()` adjusts these from OBSERVED change rather than the
+guess made at registration: a source changing on most crawls speeds up, one
+unchanged for 90 days slows down (capped monthly).
+
+**Architecture — three separate processes, deliberately:**
+
+1. `schedule-crawls.py` — decides what is due, enqueues, exits. Idempotent and
+   instant, so running it every 15 minutes costs nothing and a missed tick
+   self-heals.
+2. `work_queue` — the buffer. Priority carries the moat ordering (hot=1).
+3. `crawl-worker.py` — drains the queue. Start/stop/scale freely.
+
+**Why separated:** concurrency becomes a worker-count decision instead of
+being baked into an orchestration script. The previous approach produced a
+`while pgrep -f` loop that matched its own argv and stalled for fifteen hours.
+There are no wait loops here at all.
+
+**Isolation is the other half.** A SAM.gov state run died on ONE GCS upload
+timeout (`RetryError`, 120s write timeout — uplink saturated) and abandoned
+the remaining 163 opportunities. Queue items fail alone, retry to
+`max_attempts`, and the run continues.
+
+**`vanished_at` on `project_document_files` is the moat made queryable.** When
+a document we hold is no longer served by its source, mark it — never delete.
+An addendum taken down after award is exactly the back-file nobody starting
+later can reconstruct.
+
+**Change detection** (`etag`, `last_modified`, existing `content_sha256`) makes
+re-crawling an unchanged source nearly free, which is what makes daily cadence
+affordable at all.
+
+Seeded 2026-08-05: 50 SAM states (hot, 24h) + 17 owner-standards institutions
+(cold, 720h).
