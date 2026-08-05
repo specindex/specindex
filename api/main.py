@@ -102,13 +102,33 @@ def require_firebase_user(request: Request) -> str:
     this function. Checking is_active at this layer makes deactivation
     take effect on the very next request instead of up to an hour later.
     No row in user_profiles yet (e.g. first request before onboarding)
-    is treated as active -- there's nothing to deactivate yet."""
+    is treated as active -- there's nothing to deactivate yet.
+
+    Also enforces trial expiry (migration 042) the same way, live on every
+    request rather than a scheduled job -- a cron that flips tiers could
+    lag or silently fail to run; checking trial_ends_at directly here means
+    access is removed on the user's very next call after the 14 days pass,
+    with no batch job in the loop at all. Applies uniformly regardless of
+    how the trial started (Google "Start for free" or the email/password
+    signup form) since both just set the same subscription_tier/
+    trial_ends_at columns."""
     uid = _verify_firebase_token(request)["sub"]
     with get_conn() as conn, conn.cursor() as cur:
-        cur.execute("SELECT is_active FROM user_profiles WHERE firebase_uid = %s", (uid,))
+        cur.execute(
+            "SELECT is_active, subscription_tier = 'trial' AND trial_ends_at < now() AS trial_expired "
+            "FROM user_profiles WHERE firebase_uid = %s",
+            (uid,),
+        )
         row = cur.fetchone()
-    if row is not None and row[0] is False:
-        raise HTTPException(status_code=403, detail="Account deactivated")
+    if row is not None:
+        is_active, trial_expired = row
+        if is_active is False:
+            raise HTTPException(status_code=403, detail="Account deactivated")
+        if trial_expired:
+            raise HTTPException(
+                status_code=403,
+                detail="Your 14-day trial has ended. Email hello@specindex.ai to reactivate your account.",
+            )
     return uid
 
 
@@ -1425,7 +1445,7 @@ def view_as_customer(
                 """
                 SELECT firebase_uid, email, company, territory_states, categories,
                        full_name, phone, role_title, lead_source, lifecycle_stage,
-                       notes, onboarded_at, created_at, subscription_tier, is_active
+                       notes, onboarded_at, created_at, subscription_tier, is_active, trial_ends_at
                 FROM user_profiles
                 WHERE firebase_uid = %s
                 """,
@@ -1550,6 +1570,32 @@ def reactivate_customer(
                 raise HTTPException(status_code=404, detail="No profile found for this user")
         conn.commit()
     return {"reactivated": True}
+
+
+@app.post("/v1/ops/customer/{firebase_uid}/extend-trial")
+def extend_trial(
+    firebase_uid: str, _admin: str = Depends(require_role("support_admin", "super_admin"))
+):
+    """Manual admin counterpart to require_firebase_user's automatic trial-
+    expiry block -- the founder's "email hello@specindex.ai to reactivate"
+    reply lands here: grants another 14 days from now, and if the account
+    had drifted onto something other than `trial` (shouldn't happen, but
+    cheap to correct), resets it back to trial explicitly."""
+    with get_conn() as conn:
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                UPDATE user_profiles
+                SET subscription_tier = 'trial', trial_ends_at = now() + interval '14 days'
+                WHERE firebase_uid = %s
+                RETURNING firebase_uid
+                """,
+                (firebase_uid,),
+            )
+            if cur.fetchone() is None:
+                raise HTTPException(status_code=404, detail="No profile found for this user")
+        conn.commit()
+    return {"extended": True}
 
 
 def fetch_enrichment_detail(conn, sk: int) -> dict[str, Any]:
@@ -1990,6 +2036,14 @@ class UserProfileUpdate(BaseModel):
     phone: str | None = Field(default=None, max_length=50)
     role_title: str | None = Field(default=None, max_length=200)
     lead_source: str | None = Field(default=None, max_length=200)
+    # Wizard step 2 additions (migration 043, Gemini-reviewed design):
+    # territory_refinement is optional free text below the state
+    # multi-select (a rep's real territory is often sub-state -- counties,
+    # metros). inferred_lead_source is the pathname-based guess AuthSync
+    # already computes automatically, kept as a secondary signal now that
+    # lead_source itself is an explicit wizard answer, not replaced by it.
+    territory_refinement: str | None = Field(default=None, max_length=500)
+    inferred_lead_source: str | None = Field(default=None, max_length=200)
 
     @field_validator("territory_states")
     @classmethod
@@ -2043,6 +2097,99 @@ def get_my_profile(firebase_uid: str = Depends(require_firebase_user)):
         "role_title": row["role_title"],
         "subscription_tier": row["subscription_tier"],
     }
+
+
+@app.post("/v1/me/start-trial")
+def start_trial(
+    firebase_uid_email: tuple[str, str] = Depends(require_firebase_user_with_email),
+):
+    """Backs the "Start for free" header CTA (migration 042). Grants a real
+    14-day trial -- subscription_tier had a `trial` value in its CHECK
+    constraint since migration 027 but nothing ever set it. Only upgrades a
+    user who is still on `free` and has never trialed before
+    (trial_ends_at IS NULL) -- an existing trial/pro/team account, or one
+    whose trial already ran out, is left untouched rather than reset by
+    clicking this again. Idempotent for the common case (first click),
+    a no-op for every other case."""
+    firebase_uid, email = firebase_uid_email
+    with get_conn() as conn:
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+            cur.execute(
+                """
+                INSERT INTO user_profiles (firebase_uid, email, subscription_tier, trial_ends_at)
+                VALUES (%s, %s, 'trial', now() + interval '14 days')
+                ON CONFLICT (firebase_uid) DO UPDATE SET
+                    subscription_tier = 'trial',
+                    trial_ends_at = now() + interval '14 days'
+                WHERE user_profiles.subscription_tier = 'free'
+                  AND user_profiles.trial_ends_at IS NULL
+                RETURNING subscription_tier, trial_ends_at
+                """,
+                (firebase_uid, email),
+            )
+            row = cur.fetchone()
+            if row is None:
+                cur.execute(
+                    "SELECT subscription_tier, trial_ends_at FROM user_profiles WHERE firebase_uid = %s",
+                    (firebase_uid,),
+                )
+                row = cur.fetchone()
+        conn.commit()
+    return {"subscription_tier": row["subscription_tier"], "trial_ends_at": row["trial_ends_at"]}
+
+
+class SignupRequest(BaseModel):
+    first_name: str = Field(min_length=1, max_length=200)
+    last_name: str = Field(min_length=1, max_length=200)
+    email: str = Field(min_length=3, max_length=320)
+    company: str = Field(min_length=1, max_length=200)
+
+    @field_validator("email")
+    @classmethod
+    def email_looks_like_email(cls, v: str) -> str:
+        if "@" not in v or " " in v:
+            raise ValueError("not a valid email address")
+        return v
+
+
+@app.post("/v1/signup")
+def signup(body: SignupRequest):
+    """Backs the "Start for free" form (components/onboarding/
+    StartFreeModal.tsx) -- creates a real Firebase Auth account with no
+    password set, plus a user_profiles row on a 14-day trial. The client
+    sends the actual "set your password" email itself via Firebase's own
+    sendPasswordResetEmail (Firebase-hosted delivery, no SMTP needed here)
+    immediately after this call succeeds -- this endpoint only provisions
+    the account. Deliberately public/unauthenticated, same as /v1/contact:
+    account creation has to be reachable before anyone has a session.
+
+    A pre-existing Firebase account for this email (caught via
+    EmailAlreadyExistsError) is treated as a normal "log in instead" case,
+    not an error -- returns the same shape either way so the client can't
+    use this endpoint to enumerate which emails already have accounts."""
+    full_name = f"{body.first_name} {body.last_name}"
+    firebase_auth = _get_firebase_admin_auth()
+    try:
+        user = firebase_auth.create_user(email=body.email, display_name=full_name, email_verified=False)
+        firebase_uid = user.uid
+    except Exception as e:  # noqa: BLE001 -- covers firebase_admin's EmailAlreadyExistsError generically
+        if "EMAIL_ALREADY_EXISTS" not in str(e) and "already exists" not in str(e).lower():
+            raise HTTPException(status_code=500, detail="Couldn't create account") from e
+        existing = firebase_auth.get_user_by_email(body.email)
+        firebase_uid = existing.uid
+
+    with get_conn() as conn:
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                INSERT INTO user_profiles (firebase_uid, email, full_name, company, subscription_tier, trial_ends_at)
+                VALUES (%s, %s, %s, %s, 'trial', now() + interval '14 days')
+                ON CONFLICT (firebase_uid) DO NOTHING
+                """,
+                (firebase_uid, body.email, full_name, body.company),
+            )
+        conn.commit()
+    return {"email": body.email}
 
 
 # docs/architecture-2026/04-productization.md P1: enforces the Free-tier
@@ -2118,8 +2265,9 @@ def upsert_my_profile(
                 """
                 INSERT INTO user_profiles
                     (firebase_uid, email, company, territory_states, categories,
-                     full_name, phone, role_title, lead_source, onboarded_at, is_active)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, now(), false)
+                     full_name, phone, role_title, lead_source, territory_refinement,
+                     inferred_lead_source, onboarded_at, is_active)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, now(), true)
                 ON CONFLICT (firebase_uid) DO UPDATE SET
                     email = EXCLUDED.email,
                     company = EXCLUDED.company,
@@ -2127,23 +2275,32 @@ def upsert_my_profile(
                     categories = EXCLUDED.categories,
                     phone = EXCLUDED.phone,
                     role_title = EXCLUDED.role_title,
-                    -- is_active deliberately absent from this SET clause: a
-                    -- later "edit territory" call through this same upsert
-                    -- must never flip an already-approved user back to
-                    -- pending, nor reactivate someone an admin deactivated.
-                    -- New accounts start is_active=false (per Asif,
-                    -- 2026-08-01: gating open Google sign-in behind manual
-                    -- approval) -- only /v1/ops/customer/{uid}/reactivate
-                    -- (require_role admin) flips it to true.
-                    -- full_name/lead_source are captured once, client-side,
-                    -- from the signed-in user's own auth state/current page
-                    -- (not asked as a form field a person can leave blank on
-                    -- a later edit) -- COALESCE so a future call that omits
-                    -- them (e.g. an "edit territory" flow reusing this same
-                    -- endpoint) doesn't null out what first-sign-in already
-                    -- captured.
+                    -- POLICY CHANGE, per Asif 2026-08-05: new signups are
+                    -- AUTO-APPROVED onto a 14-day trial. This supersedes the
+                    -- 2026-08-01 decision to gate open Google sign-in behind
+                    -- manual approval, which set is_active=false on insert and
+                    -- required /v1/ops/customer/{uid}/reactivate to release an
+                    -- account. Insert now sets is_active=true; access is bounded
+                    -- by trial_ends_at (048_trial_tier) instead of by an admin
+                    -- queue, and require_firebase_user enforces trial expiry on
+                    -- every request.
+                    --
+                    -- is_active stays ABSENT from this SET clause for the
+                    -- original reason, which still holds: a later "edit
+                    -- territory" call through this same upsert must never
+                    -- reactivate someone an admin deliberately deactivated.
+                    -- Deactivation remains an admin action; only signup
+                    -- approval changed.
+                    territory_refinement = COALESCE(EXCLUDED.territory_refinement, user_profiles.territory_refinement),
+                    -- full_name/lead_source/inferred_lead_source are captured
+                    -- once, client-side, from the signed-in user's own auth
+                    -- state/wizard answers (not asked as a form field a person
+                    -- can leave blank on a later edit) -- COALESCE so a future
+                    -- call that omits them doesn't null out what first-sign-in
+                    -- already captured.
                     full_name = COALESCE(EXCLUDED.full_name, user_profiles.full_name),
                     lead_source = COALESCE(EXCLUDED.lead_source, user_profiles.lead_source),
+                    inferred_lead_source = COALESCE(EXCLUDED.inferred_lead_source, user_profiles.inferred_lead_source),
                     onboarded_at = COALESCE(user_profiles.onboarded_at, now()),
                     updated_at = now()
                 """,
@@ -2157,6 +2314,8 @@ def upsert_my_profile(
                     body.phone,
                     body.role_title,
                     body.lead_source,
+                    body.territory_refinement,
+                    body.inferred_lead_source,
                 ),
             )
         conn.commit()

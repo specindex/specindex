@@ -45,6 +45,10 @@ export type UserProfileUpdate = {
   phone: string | null;
   role_title: string | null;
   lead_source: string | null;
+  // Onboarding wizard step 2 additions (migration 043). See
+  // ProfileCaptureModal's own comments for the full reasoning.
+  territory_refinement: string | null;
+  inferred_lead_source: string | null;
 };
 
 type GetToken = (options?: { template?: string }) => Promise<string | null>;
@@ -101,4 +105,13 @@ export async function deleteMyAccount(getToken: GetToken): Promise<void> {
       .catch(() => null);
     throw new Error(detail || `POST /v1/me/delete-account failed: ${res.status}`);
   }
+}
+
+// Backs the "Start for free" Google path -- POST /v1/signup already does
+// this for the email/password path, so the two signup routes both land on
+// the same trial state. Best-effort: called right after a successful
+// Google popup, and a failure here shouldn't block the person from using
+// the app they just signed into.
+export async function startTrial(getToken: GetToken): Promise<void> {
+  await authenticatedFetch(getToken, "/v1/me/start-trial", { method: "POST" }).catch(() => {});
 }
