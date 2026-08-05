@@ -199,26 +199,96 @@ def find_division_sections(pages: list[str]) -> list[DivisionSection]:
     return sections
 
 
+def _gemini_schema(node):
+    """Adapt the Anthropic-style JSON Schema in EXTRACTION_TOOL for Vertex/Gemini.
+
+    Anthropic accepts a UNION type -- {"type": ["string", "null"]} -- which is how
+    the optional fields here are declared. Gemini's Schema rejects that outright
+    (pydantic: "Input should be 'STRING'... input_value=['string','null']") and
+    wants a single type plus nullable=True.
+
+    Converting here rather than rewriting EXTRACTION_TOOL keeps that constant as
+    the single readable description of the output shape, and keeps the door open
+    if the classification pass ever moves again.
+    """
+    if not isinstance(node, dict):
+        return node
+    out = {}
+    for key, value in node.items():
+        if key == "type" and isinstance(value, list):
+            non_null = [v for v in value if v != "null"]
+            out["type"] = (non_null[0] if non_null else "string").upper()
+            if "null" in value:
+                out["nullable"] = True
+        elif key == "type" and isinstance(value, str):
+            out["type"] = value.upper()
+        elif key in ("properties", "items"):
+            out[key] = ({k: _gemini_schema(v) for k, v in value.items()}
+                        if key == "properties" else _gemini_schema(value))
+        elif key in ("description", "required", "enum", "nullable"):
+            out[key] = value
+        # Anything else (additionalProperties, $schema, ...) is dropped: Gemini
+        # errors on unknown keys rather than ignoring them.
+    return out
+
+
+SECTION_PROMPT = (
+    "You are extracting basis-of-design and approved-manufacturer data from "
+    "CSI MasterFormat Division {division} ({division_name}) of a construction "
+    "specification book. Only extract facts EXPLICITLY stated in the text below "
+    "-- do not infer manufacturers or products that aren't named. An invented "
+    "manufacturer here is worse than a missing one: every fact this produces is "
+    "shown to a customer with a page citation, so a fabricated name is directly "
+    "visible as a lie.\n\n"
+    "Basis of design means the specific manufacturer and model the design was "
+    "built around -- usually introduced as 'basis of design', 'BOD', or a named "
+    "product in a schedule. Approved manufacturers are the 'or equal' / "
+    "'acceptable manufacturers' list. These are DIFFERENT: being basis of design "
+    "is far stronger than being an acceptable alternate, and the distinction is "
+    "the whole point of this extraction. If a name appears only in an acceptable "
+    "list, it is NOT the basis of design.\n\n"
+    "If nothing relevant is stated, return empty arrays and confidence 'low'.\n\n"
+    "--- SECTION TEXT ---\n{text}"
+)
+
+
 def classify_section(client, section: DivisionSection, model: str) -> dict:
-    prompt = (
-        f"You are extracting basis-of-design and approved-manufacturer data from "
-        f"CSI MasterFormat Division {section.division} ({CSI_DIVISIONS[section.division]}) "
-        "of a construction specification book. Only extract facts explicitly stated in "
-        "the text below — do not infer manufacturers or products that aren't named. "
-        "If nothing relevant is stated, return empty arrays and confidence 'low'.\n\n"
-        f"--- SECTION TEXT ---\n{section.text[:12000]}"
+    """Extract one division section via Vertex/Gemini structured output.
+
+    Ported from Anthropic tool-use 2026-08-04. The rest of this pipeline
+    (enrich-project-details.py, gemini_discovery_chat.py) already runs on
+    Vertex, and ANTHROPIC_API_KEY was never configured here -- so this script
+    was the only thing in the repo that could not run at all. One stray
+    credential dependency is how a pipeline rots; there is now none.
+
+    Gemini's response_schema gives the same guarantee Anthropic's forced
+    tool_choice did: a JSON object matching EXTRACTION_TOOL's shape, so the
+    caller's field access is unchanged.
+    """
+    from google.genai import types  # noqa: PLC0415
+
+    prompt = SECTION_PROMPT.format(
+        division=section.division,
+        division_name=CSI_DIVISIONS[section.division],
+        text=section.text[:12000],
     )
-    response = client.messages.create(
+    schema = _gemini_schema(EXTRACTION_TOOL["input_schema"])
+    resp = client.models.generate_content(
         model=model,
-        max_tokens=1024,
-        tools=[EXTRACTION_TOOL],
-        tool_choice={"type": "tool", "name": "record_division_extraction"},
-        messages=[{"role": "user", "content": prompt}],
+        contents=prompt,
+        config=types.GenerateContentConfig(
+            response_mime_type="application/json",
+            response_schema=schema,
+            temperature=0,  # extraction, not generation -- never sample here
+        ),
     )
-    for block in response.content:
-        if block.type == "tool_use":
-            return block.input
-    raise RuntimeError("Model did not return a tool_use block")
+    text = (resp.text or "").strip()
+    if not text:
+        raise RuntimeError("Model returned an empty response")
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError as e:
+        raise RuntimeError(f"Model did not return valid JSON: {e}: {text[:200]}") from e
 
 
 def download_from_gcs(gcs_uri: str) -> Path:
@@ -264,12 +334,22 @@ def run(pdf_path: Path, project_id: str, dry_run: bool, model: str, source_docum
             for s in sections
         ]
 
-    import anthropic
+    from google import genai  # noqa: PLC0415
 
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
-    if not api_key:
-        raise SystemExit("ANTHROPIC_API_KEY not set. Use --dry-run to test parsing without the LLM pass.")
-    client = anthropic.Anthropic(api_key=api_key)
+    sys.path.insert(0, str(Path(__file__).resolve().parent / "state_agent_pipeline"))
+    from config import Settings  # noqa: PLC0415
+
+    settings = Settings.from_env()
+    client = genai.Client(
+        vertexai=True,
+        project=settings.google_cloud_project,
+        location=settings.google_cloud_location,
+    )
+    # Never hardcode a model version here. config.py already carries the repo's
+    # current Flash model and is the one place to change it; pasting a literal
+    # is how this file ended up on a superseded version in the first place.
+    model = model or settings.flash_model
+    print(f"[spec-book] classifying with {model}", file=sys.stderr)
 
     results = []
     for section in sections:
@@ -442,7 +522,13 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--pdf", required=True, help="Path to spec book PDF, or a gs://bucket/path.pdf URI")
     parser.add_argument("--project-id", required=True, help="SpecIndex project_id this spec book belongs to")
-    parser.add_argument("--model", default="claude-sonnet-5", help="Anthropic model for the classification pass")
+    parser.add_argument("--model", default=None,
+                        help="Vertex/Gemini model for the classification pass. "
+                             "Defaults to Settings.flash_model (currently gemini-3.6-flash) "
+                             "rather than a literal, so it tracks the repo's configured model "
+                             "instead of going stale here. Flash is the right class: this is "
+                             "structured extraction from text that already contains the answer, "
+                             "not reasoning.")
     parser.add_argument("--dry-run", action="store_true", help="Parse/chunk only, skip the LLM call")
     parser.add_argument("--write-db", action="store_true", help="Write results into the live projects table")
     parser.add_argument(
