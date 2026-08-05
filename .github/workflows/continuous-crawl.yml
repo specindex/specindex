@@ -1,0 +1,126 @@
+# The trigger the crawler was missing.
+#
+# EVERY OTHER SCHEDULE IN THIS REPO IS COMMENTED OUT. Verified 2026-08-05:
+# nine workflows carry a `# schedule:` block and not one is active, so nothing
+# has ever run on a timer -- every pull has been a human running a script.
+# A "continuous crawler" with no trigger is just a script, so this is the
+# piece that makes the scheduler/queue/worker design actually continuous.
+#
+# Why GitHub Actions rather than a local daemon: the home uplink is the
+# binding constraint on this project (~360 KB/s, measured), and a runner has
+# none of that problem. It also survives the laptop being closed, which a
+# nohup'd background job does not.
+#
+# The scheduler is separated from the workers on purpose. It is idempotent and
+# finishes in seconds, so running it often is free and a missed tick self-heals
+# on the next one. Workers are a separate, longer job.
+
+name: continuous-crawl
+
+on:
+  schedule:
+    # Scheduler every 30 min. Cheap: it only enqueues what cadence says is due.
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+    inputs:
+      workers:
+        description: "concurrent workers (keep <= 3; measured uplink saturates above that)"
+        default: "2"
+      retune:
+        description: "retune cadence from observed change"
+        type: boolean
+        default: false
+
+concurrency:
+  # Never let two crawl runs overlap. Overlapping runs would double the
+  # per-domain concurrency the queue's domain_limits are there to cap, which
+  # is exactly the thundering-herd path to a WAF ban.
+  group: continuous-crawl
+  cancel-in-progress: false
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: pip install -q psycopg2-binary google-cloud-storage google-genai playwright
+
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Start Cloud SQL proxy
+        run: |
+          curl -sSo cloud-sql-proxy \
+            https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.14.3/cloud-sql-proxy.linux.amd64
+          chmod +x cloud-sql-proxy
+          ./cloud-sql-proxy --port 5433 specindex-ai:us-central1:specindex-db &
+          # Poll for readiness rather than sleeping a fixed amount -- a fixed
+          # sleep either wastes time or races.
+          for i in $(seq 1 30); do
+            (echo > /dev/tcp/127.0.0.1/5433) >/dev/null 2>&1 && break
+            sleep 1
+          done
+
+      - name: Schedule due crawls
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          python3 scripts/schedule-crawls.py ${{ inputs.retune && '--retune' || '' }}
+
+      - name: Drain queue
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ steps.auth.outputs.credentials_file_path }}
+        run: |
+          # --once so the job ends when the queue drains instead of holding a
+          # runner idle. The next scheduled tick picks up whatever arrived
+          # since. Backgrounded workers share one queue, and per-domain caps
+          # inside claim_work() keep them off each other's hosts.
+          N=${{ inputs.workers || 2 }}
+          for i in $(seq 1 "$N"); do
+            python3 scripts/crawl-worker.py --once >"worker-$i.log" 2>&1 &
+          done
+          wait
+          tail -n 40 worker-*.log
+
+      - name: Seam + source health
+        if: always()
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          python3 - <<'PY'
+          import os, psycopg2
+          c = psycopg2.connect(os.environ["DATABASE_URL"], connect_timeout=30)
+          cur = c.cursor()
+          for title, q in [
+              ("queue",  "SELECT kind,status,items FROM work_queue_health"),
+              ("health", "SELECT verdict,count(*) FROM source_health GROUP BY 1"),
+              ("seams",  "SELECT stage,verdict,leaked FROM pipeline_seam_health LIMIT 10"),
+          ]:
+              cur.execute(q)
+              print(f"== {title}")
+              for r in cur.fetchall():
+                  print("  ", r)
+          # A leaking seam is the failure that hid 78% of the corpus. Surface
+          # it in the job summary rather than leaving it to be noticed.
+          cur.execute("SELECT count(*) FROM pipeline_seam_health WHERE verdict LIKE 'SEAM%'")
+          n = cur.fetchone()[0]
+          if n:
+              print(f"::warning::{n} pipeline stage run(s) show a leaking seam")
+          PY
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: crawl-logs
+          path: worker-*.log
+          retention-days: 7
