@@ -68,6 +68,7 @@ export type CustomerProfile = {
   created_at: string;
   subscription_tier: string;
   is_active: boolean;
+  trial_ends_at: string | null;
 };
 
 export async function fetchCustomerDetail(
@@ -98,4 +99,16 @@ export async function setCustomerActive(
     headers: { Authorization: `Bearer ${token}` },
   });
   if (!res.ok) throw new Error(`${action} failed: ${res.status}`);
+}
+
+// POST /v1/ops/customer/{uid}/extend-trial -- grants another 14 days from
+// now, the manual counterpart to require_firebase_user's automatic
+// expiry block. Backs the "email hello@specindex.ai to reactivate" flow.
+export async function extendTrial(getToken: GetToken, firebaseUid: string): Promise<void> {
+  const token = await getToken();
+  const res = await fetch(`${API_BASE}/v1/ops/customer/${encodeURIComponent(firebaseUid)}/extend-trial`, {
+    method: "POST",
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  if (!res.ok) throw new Error(`extend-trial failed: ${res.status}`);
 }

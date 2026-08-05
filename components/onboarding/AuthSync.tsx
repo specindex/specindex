@@ -19,6 +19,7 @@ import {
 
 const TERRITORY_KEY = "specindex:territory";
 const CATEGORY_KEY = "specindex:category";
+const ONBOARDING_DRAFT_KEY = "specindex:onboarding-draft";
 
 function readStoredList(key: string): string[] {
   if (typeof window === "undefined") return [];
@@ -59,6 +60,7 @@ export function AuthSync({ onPendingApproval }: { onPendingApproval: () => void 
     if (wasSignedIn.current === true && isSignedIn === false) {
       window.localStorage.removeItem(TERRITORY_KEY);
       window.localStorage.removeItem(CATEGORY_KEY);
+      window.sessionStorage.removeItem(ONBOARDING_DRAFT_KEY);
       checkedThisSignIn.current = false;
       setShowModal(false);
     }
