@@ -33,6 +33,9 @@ class CsvDownloadProvider(BaseIngestionProvider):
         self,
         *,
         csv_url: str,
+        # Dataset page to visit before the file request, for portals that
+        # gate the file endpoint behind a session cookie.
+        referer_url: str | None = None,
         date_field: str,
         filter_field: str,
         include_keywords: list[str],
@@ -51,6 +54,7 @@ class CsvDownloadProvider(BaseIngestionProvider):
         source_url: str | None = None,
     ) -> None:
         self.csv_url = csv_url
+        self.referer_url = referer_url
         self.date_field = date_field
         self.filter_field = filter_field
         self.include_keywords = [k.lower() for k in include_keywords]
@@ -74,6 +78,43 @@ class CsvDownloadProvider(BaseIngestionProvider):
             return False
         return any(k in val for k in self.include_keywords)
 
+    def _fetch_via_browser(self) -> str | None:
+        """Re-fetch through a real browser session when plain HTTP is refused.
+
+        Only used after urllib fails, so tenants that work over plain HTTP pay
+        nothing for this. `referer_url` should be the dataset page the file
+        belongs to -- visiting it first is what establishes the session cookie
+        the file endpoint checks for.
+        """
+        try:
+            from playwright.sync_api import sync_playwright  # noqa: PLC0415
+        except ImportError:
+            return None
+        try:
+            with sync_playwright() as p:
+                browser = p.chromium.launch(headless=True)
+                ctx = browser.new_context(user_agent=(
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"))
+                try:
+                    if self.referer_url:
+                        page = ctx.new_page()
+                        page.goto(self.referer_url, timeout=60000,
+                                  wait_until="domcontentloaded")
+                        page.wait_for_timeout(2000)
+                    resp = ctx.request.get(self.csv_url, timeout=90000)
+                    if not resp.ok:
+                        print(f"[csv:{self.csv_url}] browser fetch {resp.status}", file=sys.stderr)
+                        return None
+                    print(f"[csv:{self.csv_url}] plain HTTP refused; fetched via browser",
+                          file=sys.stderr)
+                    return resp.body().decode("utf-8-sig", errors="replace")
+                finally:
+                    browser.close()
+        except Exception as e:  # noqa: BLE001
+            print(f"[csv:{self.csv_url}] browser fetch failed: {e}", file=sys.stderr)
+            return None
+
     def fetch_delta(self, last_watermark: str) -> list[dict[str, Any]]:
         cutoff = (date.today() - timedelta(days=self.lookback_days)).isoformat()
         try:
@@ -81,8 +122,15 @@ class CsvDownloadProvider(BaseIngestionProvider):
             with urllib.request.urlopen(req, timeout=60) as resp:
                 text = resp.read().decode("utf-8", errors="replace")
         except (urllib.error.URLError, urllib.error.HTTPError) as e:
-            print(f"[csv:{self.csv_url}] fetch error: {e}", file=sys.stderr)
-            return []
+            # Some portals gate the FILE endpoint behind a JS/cookie challenge
+            # even though the catalog API is wide open -- Denton's CKAN returns
+            # 403 to urllib with full browser headers, but serves the identical
+            # file to a request made through a real browser session. Falling
+            # back rather than giving up turns a "dead source" into a live one.
+            text = self._fetch_via_browser()
+            if text is None:
+                print(f"[csv:{self.csv_url}] fetch error: {e}", file=sys.stderr)
+                return []
 
         reader = csv.DictReader(io.StringIO(text))
         out = []

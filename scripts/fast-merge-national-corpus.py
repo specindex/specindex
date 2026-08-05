@@ -55,6 +55,26 @@ def main() -> None:
         reverse=True,
     )
 
+    # Split the headline number by record class.
+    #
+    # The corpus blends two different things: county PERMIT records, which are
+    # what county-coverage reporting measures, and FEDERAL AWARD records from
+    # sam_gov / usaspending, which are statewide and carry no county at all.
+    # 100 of 254 configs are federal, and their ~16,000 rows are invisible to
+    # every (county, state) join -- so quoting one combined total silently
+    # overstates permit coverage. Report both.
+    #
+    # Classified by id segment rather than by adding a field to 600K+ rows:
+    # the pipeline already prefixes ids as {state}-{feed}-{record}.
+    FEDERAL_FEEDS = {"usaspending", "sam"}
+
+    def is_federal(p: dict) -> bool:
+        parts = (p.get("id") or "").split("-")
+        return len(parts) > 1 and parts[1] in FEDERAL_FEEDS
+
+    federal = sum(1 for p in deduped if is_federal(p))
+    permits = len(deduped) - federal
+
     payload = {
         "generated_at": date.today().isoformat(),
         "geography": "United States",
@@ -66,10 +86,15 @@ def main() -> None:
         "projects": deduped,
         "stats": {
             "total": len(deduped),
+            # permit_projects is the number county-coverage reporting is about;
+            # federal_awards are statewide and have no county.
+            "permit_projects": permits,
+            "federal_awards": federal,
             "states": len(states_covered),
         },
         "notes": (
-            f"{len(deduped)} commercial projects across {len(states_covered)} states. "
+            f"{len(deduped)} records across {len(states_covered)} states "
+            f"({permits} county permit projects + {federal} federal awards). "
             "Fast rebuild (no cross-source pairwise merge) -- see "
             "fast-merge-national-corpus.py docstring."
         ),
@@ -79,7 +104,9 @@ def main() -> None:
     OUT.write_text(text)
     PUBLIC.parent.mkdir(parents=True, exist_ok=True)
     PUBLIC.write_text(text)
-    print(f"Fast-merged {len(deduped)} projects from {len(states_covered)} states -> {OUT}")
+    print(f"Fast-merged {len(deduped)} records from {len(states_covered)} states -> {OUT}")
+    print(f"   county permit projects: {permits:,}")
+    print(f"   federal awards (no county, statewide): {federal:,}")
 
 
 if __name__ == "__main__":

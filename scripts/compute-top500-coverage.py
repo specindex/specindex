@@ -74,9 +74,18 @@ def load_ranking(limit: int) -> list[dict]:
 
 def load_projects() -> tuple[Counter, Counter]:
     corpus = json.loads((ROOT / "data" / "national-commercial-projects.json").read_text())
+    # Federal award records (sam_gov / usaspending) are statewide and carry no
+    # county, so they can never match a county here anyway -- but skipping them
+    # explicitly keeps this aligned with the permit_projects figure that
+    # fast-merge-national-corpus.py now reports, rather than silently differing
+    # from the headline by ~16,000 rows.
+    federal_feeds = {"usaspending", "sam"}
     total: Counter = Counter()
     in_window: Counter = Counter()
     for p in corpus["projects"]:
+        parts = (p.get("id") or "").split("-")
+        if len(parts) > 1 and parts[1] in federal_feeds:
+            continue
         c = (p.get("county") or "").strip().lower()
         s = (p.get("state") or "").strip().upper()
         if not c:

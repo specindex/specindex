@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T18:33:03+00:00",
+  "generated_at": "2026-08-04T20:47:01+00:00",
   "window_start": "2025-01-01",
   "counties": [
     {
@@ -467,8 +467,8 @@
       "county": "Denton",
       "state": "TX",
       "population": 1045120,
-      "projects": 79,
-      "projects_in_window": 79,
+      "projects": 1011,
+      "projects_in_window": 1011,
       "documents": 0,
       "status": "projects-only"
     },
@@ -627,8 +627,8 @@
       "county": "Kern",
       "state": "CA",
       "population": 922529,
-      "projects": 1,
-      "projects_in_window": 1,
+      "projects": 24,
+      "projects_in_window": 24,
       "documents": 0,
       "status": "projects-only"
     },
@@ -747,8 +747,8 @@
       "county": "Baltimore",
       "state": "MD",
       "population": 852425,
-      "projects": 1,
-      "projects_in_window": 1,
+      "projects": 8261,
+      "projects_in_window": 8261,
       "documents": 0,
       "status": "projects-only"
     },
@@ -977,10 +977,10 @@
       "county": "Lake",
       "state": "IL",
       "population": 718604,
-      "projects": 0,
-      "projects_in_window": 0,
+      "projects": 5,
+      "projects_in_window": 5,
       "documents": 0,
-      "status": "none"
+      "status": "projects-only"
     },
     {
       "rank": 99,
@@ -5006,9 +5006,9 @@
   "summary": {
     "total": 500,
     "covered": 29,
-    "projects_only": 177,
-    "none": 294,
-    "total_projects_in_window": 492627,
+    "projects_only": 178,
+    "none": 293,
+    "total_projects_in_window": 501847,
     "total_documents": 1494
   }
 }

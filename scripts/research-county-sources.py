@@ -450,13 +450,36 @@ def http_verify(url: str, timeout: int = 15) -> dict:
         return {"http_status": None, "reachable": False, "error": str(e)}
 
 
+
+def _settings():
+    """Repo-wide model config. Imported lazily so --help works without env."""
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).resolve().parent / "state_agent_pipeline"))
+    from config import Settings  # noqa: PLC0415
+    return Settings.from_env()
+
+
+def _resolved_flash(args):
+    return args.flash_model or _settings().flash_model
+
+
+def _resolved_sonnet(args):
+    return args.sonnet_model or _settings().sonnet_model
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--state", required=True, help="Full state name, e.g. Texas")
     ap.add_argument("--state-code", required=True, help="Two-letter code, e.g. TX")
     ap.add_argument("--counties", required=True, help="Comma-separated county names")
-    ap.add_argument("--flash-model", default="gemini-3.5-flash")
-    ap.add_argument("--sonnet-model", default="claude-sonnet-5")
+    # Model defaults resolve from Settings, not literals. A pasted version is
+    # correct when written and silently wrong later -- this file was still on
+    # gemini-3.5-flash after config.py moved to 3.6.
+    ap.add_argument("--flash-model", default=None,
+                    help="Defaults to Settings.flash_model.")
+    ap.add_argument("--sonnet-model", default=None,
+                    help="Defaults to Settings.sonnet_model.")
     ap.add_argument("--gcp-project", default="specindex-ai")
     ap.add_argument("--gcp-location", default="global")
     ap.add_argument("--skip-verify", action="store_true", help="Skip the HTTP verification pass")
@@ -486,7 +509,8 @@ def main() -> int:
     )
 
     if unresolved:
-        flash_result = flash_gather(args.state, unresolved, args.flash_model, args.gcp_project, args.gcp_location)
+        flash_result = flash_gather(args.state, unresolved, _resolved_flash(args),
+                                    args.gcp_project, args.gcp_location)
         flash_raw.write_text(json.dumps(flash_result, indent=2) + "\n")
         print(f"[flash] {flash_result['candidate_count']} candidates -> {flash_raw}", file=sys.stderr)
         flash_candidates = flash_result["candidates"]
@@ -508,7 +532,7 @@ def main() -> int:
         print("ANTHROPIC_API_KEY not set -- skipping Sonnet audit, using pre-audit candidates as-is", file=sys.stderr)
         audited = deterministic_candidates + flash_candidates
     else:
-        sonnet_result = sonnet_audit(flash_candidates, args.sonnet_model, api_key)
+        sonnet_result = sonnet_audit(flash_candidates, _resolved_sonnet(args), api_key)
         sonnet_raw.write_text(json.dumps(sonnet_result, indent=2) + "\n")
         audited_flash = [c for c in sonnet_result.get("candidates", []) if c.get("keep", True)]
         print(f"[sonnet] {len(audited_flash)} kept, {sonnet_result.get('dropped_count', 0)} dropped -> {sonnet_raw}", file=sys.stderr)

@@ -112,6 +112,20 @@ DIVISION_HEADER_RE = re.compile(
     re.IGNORECASE | re.MULTILINE,
 )
 
+# A section HEADING -- "SECTION 23 21 13" at the start of a line. This is the
+# only reliable start marker. Bare code mentions are not: they appear in the
+# table of contents, in cross-references, and repeated in every page's running
+# header, which is what defeated two earlier attempts (189 page-fragments, then
+# 12 collapsed header-runs, on a book that actually holds 10 sections).
+SECTION_HEADING_RE = re.compile(
+    r"^\s*SECTION\s+(\d{2})\s?(\d{2})\s?(\d{2})\b", re.IGNORECASE | re.MULTILINE
+)
+
+# CSI three-part format: a real section opens with PART 1 GENERAL. Requiring it
+# alongside the heading discriminates a section START from a page that merely
+# cites the section number.
+PART_ONE_RE = re.compile(r"PART\s*1\b|^\s*1\.\s*GENERAL", re.IGNORECASE | re.MULTILINE)
+
 EXTRACTION_TOOL = {
     "name": "record_division_extraction",
     "description": (
@@ -171,12 +185,65 @@ def extract_pages(pdf_path: Path) -> list[str]:
 
 
 def find_division_sections(pages: list[str]) -> list[DivisionSection]:
-    """Group pages into division sections by locating division headers.
-    Pages before the first detected header are dropped (front matter / TOC).
+    """Group pages into real MasterFormat SECTIONS, one per "SECTION nn nn nn".
 
-    A page that mentions 2+ distinct divisions is treated as a table-of-contents
-    or summary listing, not a section start, and skipped — a real section page
-    is about one division; a TOC page lists several in quick succession."""
+    Three attempts, measured on a real 204-page VA project manual
+    (Renovate Building 9A, Carl Vinson VAMC, SAM.gov notice 198ed58de2ca4273):
+
+      * Split on any page mentioning one division -> **189** "sections", 44 of
+        them Division 01. Each was a page fragment, so the model was asked
+        "what is the basis of design here?" about submittal boilerplate. Found
+        2 manufacturers and ZERO substitution clauses.
+      * Split on any bare section code -> **12**. Bare codes repeat in every
+        page's running header, so consecutive-run collapsing swallowed whole
+        sections.
+      * Split on the "SECTION nn nn nn" HEADING, confirmed by PART 1 on the
+        same page -> **10**, matching the book's actual contents.
+
+    The lesson worth keeping: a bare code mention is not a section start. It
+    appears in the table of contents, in cross-references, and in the running
+    header of every page of a DIFFERENT section.
+
+    Pages before the first heading (cover, TOC, front matter) are dropped.
+    """
+    hits: list[tuple[int, str]] = []
+    for i, text in enumerate(pages):
+        m = SECTION_HEADING_RE.search(text)
+        if not m:
+            continue
+        if not PART_ONE_RE.search(text):
+            # Heading without PART 1 -- a cross-reference or continuation page,
+            # not a section start.
+            continue
+        division = m.group(1)
+        if division not in CSI_DIVISIONS:
+            continue
+        code = f"{m.group(1)} {m.group(2)} {m.group(3)}"
+        if hits and hits[-1][1] == code:
+            continue
+        hits.append((i, code))
+
+    if not hits:
+        return _find_division_sections_by_division(pages)
+
+    sections: list[DivisionSection] = []
+    for idx, (page_no, code) in enumerate(hits):
+        end_page = hits[idx + 1][0] - 1 if idx + 1 < len(hits) else len(pages) - 1
+        end_page = max(end_page, page_no)
+        sections.append(
+            DivisionSection(
+                division=code.split()[0],
+                start_page=page_no,
+                end_page=end_page,
+                text="\n".join(pages[page_no : end_page + 1]),
+            )
+        )
+    return sections
+
+
+def _find_division_sections_by_division(pages: list[str]) -> list[DivisionSection]:
+    """Original division-level segmentation, kept as a fallback for books that
+    carry no MasterFormat section numbers at all."""
     hits: list[tuple[int, str]] = []
     for i, text in enumerate(pages):
         divisions_on_page = {
@@ -186,39 +253,145 @@ def find_division_sections(pages: list[str]) -> list[DivisionSection]:
         }
         if len(divisions_on_page) == 1:
             hits.append((i, next(iter(divisions_on_page))))
-
     if not hits:
         return []
-
     sections: list[DivisionSection] = []
     for idx, (page_no, division) in enumerate(hits):
         end_page = hits[idx + 1][0] - 1 if idx + 1 < len(hits) else len(pages) - 1
         end_page = max(end_page, page_no)
-        text = "\n".join(pages[page_no : end_page + 1])
-        sections.append(DivisionSection(division=division, start_page=page_no, end_page=end_page, text=text))
+        sections.append(
+            DivisionSection(
+                division=division,
+                start_page=page_no,
+                end_page=end_page,
+                text="\n".join(pages[page_no : end_page + 1]),
+            )
+        )
     return sections
 
 
+def _gemini_schema(node):
+    """Adapt the Anthropic-style JSON Schema in EXTRACTION_TOOL for Vertex/Gemini.
+
+    Anthropic accepts a UNION type -- {"type": ["string", "null"]} -- which is how
+    the optional fields here are declared. Gemini's Schema rejects that outright
+    (pydantic: "Input should be 'STRING'... input_value=['string','null']") and
+    wants a single type plus nullable=True.
+
+    Converting here rather than rewriting EXTRACTION_TOOL keeps that constant as
+    the single readable description of the output shape, and keeps the door open
+    if the classification pass ever moves again.
+    """
+    if not isinstance(node, dict):
+        return node
+    out = {}
+    for key, value in node.items():
+        if key == "type" and isinstance(value, list):
+            non_null = [v for v in value if v != "null"]
+            out["type"] = (non_null[0] if non_null else "string").upper()
+            if "null" in value:
+                out["nullable"] = True
+        elif key == "type" and isinstance(value, str):
+            out["type"] = value.upper()
+        elif key in ("properties", "items"):
+            out[key] = ({k: _gemini_schema(v) for k, v in value.items()}
+                        if key == "properties" else _gemini_schema(value))
+        elif key in ("description", "required", "enum", "nullable"):
+            out[key] = value
+        # Anything else (additionalProperties, $schema, ...) is dropped: Gemini
+        # errors on unknown keys rather than ignoring them.
+    return out
+
+
+PART_TWO_RE = re.compile(r"PART\s*2\b|^\s*2\.\s*PRODUCTS", re.IGNORECASE | re.MULTILINE)
+MODEL_CHAR_BUDGET = 12000
+SCOPE_CHARS = 2000
+
+
+def section_text_for_model(text: str) -> str:
+    """Send the model the part of the section that actually holds the answer.
+
+    Naively truncating to the first 12,000 chars loses the manufacturer list on
+    long sections, because PART 2 PRODUCTS -- where basis-of-design products and
+    "acceptable manufacturers" are named -- sits after PART 1 GENERAL, which is
+    pages of submittal and quality-assurance boilerplate.
+
+    Measured on a real VA project manual (2026-08-04): of 10 sections, 6 exceed
+    the window, and for section 23 09 23 PART 2 begins at char 45,141 and for
+    28 31 00 at char 19,327. Both manufacturer lists were entirely invisible to
+    the model -- a silent recall loss that looks exactly like "this section
+    names no manufacturers".
+
+    So: keep the opening for section identity and scope, then jump to PART 2 and
+    spend the rest of the budget there.
+    """
+    if len(text) <= MODEL_CHAR_BUDGET:
+        return text
+    m = PART_TWO_RE.search(text)
+    if not m:
+        return text[:MODEL_CHAR_BUDGET]
+    head = text[:SCOPE_CHARS]
+    products = text[m.start() : m.start() + (MODEL_CHAR_BUDGET - SCOPE_CHARS)]
+    return f"{head}\n\n[... PART 1 GENERAL abridged ...]\n\n{products}"
+
+
+SECTION_PROMPT = (
+    "You are extracting basis-of-design and approved-manufacturer data from "
+    "CSI MasterFormat Division {division} ({division_name}) of a construction "
+    "specification book. Only extract facts EXPLICITLY stated in the text below "
+    "-- do not infer manufacturers or products that aren't named. An invented "
+    "manufacturer here is worse than a missing one: every fact this produces is "
+    "shown to a customer with a page citation, so a fabricated name is directly "
+    "visible as a lie.\n\n"
+    "Basis of design means the specific manufacturer and model the design was "
+    "built around -- usually introduced as 'basis of design', 'BOD', or a named "
+    "product in a schedule. Approved manufacturers are the 'or equal' / "
+    "'acceptable manufacturers' list. These are DIFFERENT: being basis of design "
+    "is far stronger than being an acceptable alternate, and the distinction is "
+    "the whole point of this extraction. If a name appears only in an acceptable "
+    "list, it is NOT the basis of design.\n\n"
+    "If nothing relevant is stated, return empty arrays and confidence 'low'.\n\n"
+    "--- SECTION TEXT ---\n{text}"
+)
+
+
 def classify_section(client, section: DivisionSection, model: str) -> dict:
-    prompt = (
-        f"You are extracting basis-of-design and approved-manufacturer data from "
-        f"CSI MasterFormat Division {section.division} ({CSI_DIVISIONS[section.division]}) "
-        "of a construction specification book. Only extract facts explicitly stated in "
-        "the text below — do not infer manufacturers or products that aren't named. "
-        "If nothing relevant is stated, return empty arrays and confidence 'low'.\n\n"
-        f"--- SECTION TEXT ---\n{section.text[:12000]}"
+    """Extract one division section via Vertex/Gemini structured output.
+
+    Ported from Anthropic tool-use 2026-08-04. The rest of this pipeline
+    (enrich-project-details.py, gemini_discovery_chat.py) already runs on
+    Vertex, and ANTHROPIC_API_KEY was never configured here -- so this script
+    was the only thing in the repo that could not run at all. One stray
+    credential dependency is how a pipeline rots; there is now none.
+
+    Gemini's response_schema gives the same guarantee Anthropic's forced
+    tool_choice did: a JSON object matching EXTRACTION_TOOL's shape, so the
+    caller's field access is unchanged.
+    """
+    from google.genai import types  # noqa: PLC0415
+
+    prompt = SECTION_PROMPT.format(
+        division=section.division,
+        division_name=CSI_DIVISIONS[section.division],
+        text=section_text_for_model(section.text),
     )
-    response = client.messages.create(
+    schema = _gemini_schema(EXTRACTION_TOOL["input_schema"])
+    resp = client.models.generate_content(
         model=model,
-        max_tokens=1024,
-        tools=[EXTRACTION_TOOL],
-        tool_choice={"type": "tool", "name": "record_division_extraction"},
-        messages=[{"role": "user", "content": prompt}],
+        contents=prompt,
+        config=types.GenerateContentConfig(
+            response_mime_type="application/json",
+            response_schema=schema,
+            temperature=0,  # extraction, not generation -- never sample here
+        ),
     )
-    for block in response.content:
-        if block.type == "tool_use":
-            return block.input
-    raise RuntimeError("Model did not return a tool_use block")
+    text = (resp.text or "").strip()
+    if not text:
+        raise RuntimeError("Model returned an empty response")
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError as e:
+        raise RuntimeError(f"Model did not return valid JSON: {e}: {text[:200]}") from e
 
 
 def download_from_gcs(gcs_uri: str) -> Path:
@@ -264,12 +437,30 @@ def run(pdf_path: Path, project_id: str, dry_run: bool, model: str, source_docum
             for s in sections
         ]
 
-    import anthropic
+    from google import genai  # noqa: PLC0415
 
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
-    if not api_key:
-        raise SystemExit("ANTHROPIC_API_KEY not set. Use --dry-run to test parsing without the LLM pass.")
-    client = anthropic.Anthropic(api_key=api_key)
+    sys.path.insert(0, str(Path(__file__).resolve().parent / "state_agent_pipeline"))
+    from config import Settings  # noqa: PLC0415
+
+    settings = Settings.from_env()
+    client = genai.Client(
+        vertexai=True,
+        project=settings.google_cloud_project,
+        location=settings.google_cloud_location,
+    )
+    # Never hardcode a model version here. config.py already carries the repo's
+    # current Flash model and is the one place to change it; pasting a literal
+    # is how this file ended up on a superseded version in the first place.
+    # Step 9. PRO, not Flash: this parses MasterFormat divisions and decides
+    # basis-of-design vs listed alternate, and NOTHING downstream re-checks it
+    # -- the output is the product. See specindex/models.py.
+    if model is None:
+        try:
+            from specindex import models as _m  # noqa: PLC0415
+            model = _m.model_for_step(9, settings)
+        except Exception:  # noqa: BLE001 -- routing must never break extraction
+            model = getattr(settings, "pro_model", settings.flash_model)
+    print(f"[spec-book] classifying with {model}", file=sys.stderr)
 
     results = []
     for section in sections:
@@ -442,7 +633,13 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--pdf", required=True, help="Path to spec book PDF, or a gs://bucket/path.pdf URI")
     parser.add_argument("--project-id", required=True, help="SpecIndex project_id this spec book belongs to")
-    parser.add_argument("--model", default="claude-sonnet-5", help="Anthropic model for the classification pass")
+    parser.add_argument("--model", default=None,
+                        help="Vertex/Gemini model for the classification pass. "
+                             "Defaults to the step-9 model (Gemini Pro) via specindex/models.py "
+                             "rather than a literal, so it tracks the repo's configured model "
+                             "instead of going stale here. Flash is the right class: this is "
+                             "structured extraction from text that already contains the answer, "
+                             "not reasoning.")
     parser.add_argument("--dry-run", action="store_true", help="Parse/chunk only, skip the LLM call")
     parser.add_argument("--write-db", action="store_true", help="Write results into the live projects table")
     parser.add_argument(

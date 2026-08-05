@@ -871,7 +871,10 @@ def main() -> int:
     projects = load_enrichment_projects(limit=args.limit, include_socrata_top=args.include_socrata_top)
     print(f"[enrich] projects for Flash/Sonnet: {len(projects)}", file=sys.stderr)
 
-    flash_model = args.flash_model or os.environ.get("VERTEX_GEMINI_MODEL", "gemini-3.5-flash")
+    # Settings already resolves NJ_DCA_FLASH_MODEL / VERTEX_GEMINI_MODEL and
+    # carries the repo default; do not re-hardcode a version here.
+    from state_agent_pipeline.config import Settings as _S  # noqa: PLC0415
+    flash_model = args.flash_model or _S.from_env().flash_model
     gcp_project = os.environ.get("GOOGLE_CLOUD_PROJECT", "specindex-ai")
     location = os.environ.get("GOOGLE_CLOUD_LOCATION", "global")
     sonnet_backend = (

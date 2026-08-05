@@ -119,10 +119,57 @@ def _log_llm_call(
     conn.commit()
 
 
+def _grounding_urls(resp) -> list[str]:
+    """Canonicalized URLs of the documents the model actually grounded on.
+
+    This is D1 in the verification gate: the evidence set that produced pass
+    1's assertions. Pass 2 is only a real test of those assertions if it is
+    NOT allowed to re-read them.
+
+    Canonicalization strips scheme, "www.", query string and fragment, so that
+    the same article reached via a tracking link or an AMP variant is
+    recognised as the same document. Best-effort throughout: a response shape
+    we do not recognise yields an empty set, which degrades to the old
+    behaviour rather than failing the run.
+    """
+    urls: list[str] = []
+    try:
+        for cand in getattr(resp, "candidates", None) or []:
+            gm = getattr(cand, "grounding_metadata", None)
+            for chunk in (getattr(gm, "grounding_chunks", None) or []):
+                web = getattr(chunk, "web", None)
+                uri = getattr(web, "uri", None) or getattr(web, "url", None)
+                if uri:
+                    urls.append(uri)
+    except Exception:  # noqa: BLE001 - never fail enrichment over provenance capture
+        return []
+    out, seen = [], set()
+    for u in urls:
+        c = _canonical_url(u)
+        if c and c not in seen:
+            seen.add(c)
+            out.append(c)
+    return out
+
+
+def _canonical_url(u: str) -> str:
+    """Scheme/host/path only, lowercased, no www, no query, no fragment."""
+    try:
+        from urllib.parse import urlsplit  # noqa: PLC0415
+
+        s = urlsplit(u)
+        host = (s.netloc or "").lower().removeprefix("www.")
+        path = (s.path or "").rstrip("/")
+        return f"{host}{path}" if host else ""
+    except Exception:  # noqa: BLE001
+        return ""
+
+
 def _grounded_call(
     client, model: str, prompt: str, max_retries: int = 3,
     conn=None, project_sk: int | None = None, call_site: str = "enrich_unspecified",
-) -> str:
+    return_urls: bool = False,
+):
     """One-shot search-grounded generation, no chat history -- each call is
     independent, which is what makes pass 2 a real cross-check rather than
     the model just re-reading its own pass-1 answer.
@@ -149,6 +196,8 @@ def _grounded_call(
                 )
             except Exception as log_err:  # noqa: BLE001 -- logging must never break enrichment
                 print(f"  [warn] llm_call_log insert failed: {log_err}", file=sys.stderr)
+            if return_urls:
+                return resp.text, _grounding_urls(resp)
             return resp.text
         except RefreshError:
             raise
@@ -345,7 +394,10 @@ def document_context(conn, project_sk) -> str:
     )
 
 
-def run_discovery(client, model: str, project: dict, conn=None) -> dict:
+def run_discovery(client, model: str, project: dict, conn=None) -> tuple[dict, list[str]]:
+    """Pass 1. Returns (record, grounding_urls). The URL set is D1 -- the
+    evidence that produced these assertions -- and is what pass 2 must be
+    pushed off in order to be an independent check rather than a re-read."""
     prompt = DISCOVERY_PROMPT.format(
         name=project["name"],
         city=project.get("city") or "unknown city",
@@ -353,8 +405,11 @@ def run_discovery(client, model: str, project: dict, conn=None) -> dict:
         state=project.get("state") or "unknown state",
         document_context=document_context(conn, project.get("project_sk")),
     )
-    text = _grounded_call(client, model, prompt, conn=conn, project_sk=project.get("project_sk"), call_site="enrich_pass1")
-    return _extract_json(text)
+    text, urls = _grounded_call(
+        client, model, prompt, conn=conn, project_sk=project.get("project_sk"),
+        call_site="enrich_pass1", return_urls=True,
+    )
+    return _extract_json(text), urls
 
 
 # docs/architecture-2026/01-data-platform.md P3: "Batch multiple projects
@@ -428,30 +483,151 @@ def run_discovery_batch(client, model: str, projects: list[dict], conn=None) -> 
 # Pass 2: independent cross-check of the highest-stakes claims
 # ---------------------------------------------------------------------------
 
-CROSSCHECK_PROMPT = """Independently verify these specific claims about "{name}" ({city}, {state}). \
-Don't assume any of them are true -- search fresh. For each, give a verdict of "solid", "shaky", \
-or "cant_confirm", and if shaky, what the correct value actually is.
+# BLIND derivation, not confirmation. The old prompt handed pass 2 the pass-1
+# value and asked "is this right?", which biases the verifier toward agreement
+# even when its evidence is genuinely independent -- the verifier is answering a
+# yes/no question about a proposed answer rather than answering the question.
+#
+# This asks for the value itself. The pass-1 value is never shown to pass 2; the
+# comparison happens afterward, in code.
+CROSSCHECK_PROMPT = """Answer these questions about the construction project \
+"{name}" ({city}, {state}) using web search.
 
-Claims to check:
-{claims}
+Answer ONLY from what you find. If you cannot find an answer, say "unknown" -- \
+a guess here is worse than a gap, because these answers are compared against an \
+independent extraction and a wrong answer corrupts that comparison.
+{exclusion}
+Questions:
+{questions}
 
-Output ONLY a fenced ```json block, a list in the same order as the claims, no commentary:
+Output ONLY a fenced ```json block, a list in the same order as the questions, \
+no commentary. Use "unknown" where you could not find an answer:
 
 ```json
-[{{"claim_index": 0, "verdict": "solid", "correction": null}}]
+[{{"index": 0, "answer": "..."}}]
 ```
 """
 
+EXCLUSION_NOTE = """
+Do NOT rely on these sources -- they were already used and re-reading them \
+would not be an independent check. Find different ones:
+{urls}
+"""
 
-def run_crosscheck(client, model: str, project: dict, claims: list[str], conn=None) -> list[dict]:
+
+def _question_for(claim: str, project: dict) -> str:
+    """Turn a pass-1 assertion into a question that does not contain its answer.
+
+    "General Contractor: Clayco" becomes "Who is the general contractor?" --
+    the field is preserved, the value is withheld.
+    """
+    role, _, _value = claim.partition(":")
+    role = role.strip() or "detail"
+    return f"What is the {role} for this project?"
+
+
+def run_crosscheck(
+    client, model: str, project: dict, claims: list[str], conn=None,
+    exclude_urls: list[str] | None = None,
+) -> list[dict]:
+    """Pass 2: derive values independently, then compare in code.
+
+    Two mechanisms, both required for this to be a real test of pass 1:
+
+      1. DISJOINT EVIDENCE. pass-1's grounding URLs are carried in as an
+         exclusion set, so pass 2 is pushed off the documents that produced the
+         assertion. Without this, "verification" can re-read the same article
+         and agree with itself.
+      2. BLIND DERIVATION. pass 2 is asked what the value IS, never whether a
+         proposed value is correct, and never sees pass 1's answer.
+
+    Returns the same claim_index/verdict/correction shape the caller already
+    expects, so the comparison logic downstream is unchanged -- but the verdict
+    is now computed here, from two independently-derived values, rather than
+    asserted by the model about its own input.
+    """
     if not claims:
         return []
-    numbered = "\n".join(f"{i}. {c}" for i, c in enumerate(claims))
+    questions = "\n".join(f"{i}. {_question_for(c, project)}" for i, c in enumerate(claims))
+    exclusion = ""
+    if exclude_urls:
+        # Cap the list: a long exclusion set eats prompt budget and the top
+        # sources are the ones pass 1 actually leaned on.
+        shown = "\n".join(f"  - {u}" for u in exclude_urls[:20])
+        exclusion = EXCLUSION_NOTE.format(urls=shown)
+
     prompt = CROSSCHECK_PROMPT.format(
-        name=project["name"], city=project.get("city") or "unknown city", state=project.get("state") or "unknown state", claims=numbered
+        name=project["name"],
+        city=project.get("city") or "unknown city",
+        state=project.get("state") or "unknown state",
+        questions=questions,
+        exclusion=exclusion,
     )
-    text = _grounded_call(client, model, prompt, conn=conn, project_sk=project.get("project_sk"), call_site="enrich_pass2")
-    return _extract_json(text)
+    text, urls2 = _grounded_call(
+        client, model, prompt, conn=conn, project_sk=project.get("project_sk"),
+        call_site="enrich_pass2", return_urls=True,
+    )
+    answers = _extract_json(text) or []
+
+    # Report how well the exclusion actually held. The constraint is a prompt
+    # instruction, not a hard filter, so it can leak -- and a silent leak would
+    # make the gate look stronger than it is.
+    if exclude_urls and urls2:
+        overlap = set(urls2) & set(exclude_urls)
+        print(
+            f"  [gate] pass2 grounded on {len(urls2)} source(s), "
+            f"{len(overlap)} overlapping pass1 ({len(exclude_urls)} excluded)",
+            file=sys.stderr,
+        )
+
+    by_index = {}
+    for a in answers:
+        try:
+            by_index[int(a.get("index"))] = (a.get("answer") or "").strip()
+        except (TypeError, ValueError):
+            continue
+
+    out = []
+    for i, claim in enumerate(claims):
+        v1 = claim.partition(":")[2].strip()
+        v2 = by_index.get(i, "")
+        out.append({"claim_index": i, **_compare_values(v1, v2)})
+    return out
+
+
+_CORP_SUFFIXES = re.compile(
+    r"\b(inc|llc|l\.l\.c|ltd|corp|corporation|co|company|group|holdings|"
+    r"partners|associates|architects|engineering|construction|builders|pllc|pc|lp|llp)\b\.?",
+    re.IGNORECASE,
+)
+
+
+def _normalize_entity(v: str) -> str:
+    """Case-fold, drop corporate suffixes and punctuation, collapse whitespace.
+
+    "Clayco, Inc." and "CLAYCO" must compare equal, or the gate rejects correct
+    values as disagreements and the review queue fills with noise.
+    """
+    v = _CORP_SUFFIXES.sub(" ", (v or "").lower())
+    v = re.sub(r"[^a-z0-9 ]+", " ", v)
+    return re.sub(r"\s+", " ", v).strip()
+
+
+def _compare_values(v1: str, v2: str) -> dict:
+    """Compare two independently-derived values into an agreement state.
+
+    States match the patent's Aspect A: agreement / disagreement / unsupported.
+    "unsupported" is NOT failure -- it means pass 2 found nothing, which is a
+    weaker signal than an active contradiction and is scored differently.
+    """
+    if not v2 or v2.lower() in ("unknown", "n/a", "none", "not found"):
+        return {"verdict": "cant_confirm", "correction": None, "agreement": "unsupported"}
+    n1, n2 = _normalize_entity(v1), _normalize_entity(v2)
+    if not n1:
+        return {"verdict": "cant_confirm", "correction": None, "agreement": "unsupported"}
+    if n1 == n2 or n1 in n2 or n2 in n1:
+        return {"verdict": "solid", "correction": None, "agreement": "agreement"}
+    return {"verdict": "shaky", "correction": v2, "agreement": "disagreement"}
 
 
 def _team_claims(discovery: dict) -> list[str]:
@@ -699,13 +875,14 @@ def enrich_one(client, settings: Settings, conn, project: dict, dry_run: bool, f
         return 0
 
     print(f"Pass 1 (discovery): {project['name']!r}")
-    discovery = run_discovery(client, settings.flash_model, project, conn=conn)
+    discovery, d1_urls = run_discovery(client, _step10_model(settings), project, conn=conn)
 
     claims = _team_claims(discovery)
     score = _project_score(conn, project["project_sk"])
     if claims and (score is None or score >= PASS2_SCORE_THRESHOLD):
         print(f"Pass 2 (cross-check): {len(claims)} claims (score={score})")
-        crosscheck = run_crosscheck(client, settings.flash_model, project, claims, conn=conn)
+        crosscheck = run_crosscheck(client, _step10_model(settings), project, claims,
+                                    conn=conn, exclude_urls=d1_urls)
     else:
         print(f"  skipping Pass 2 -- score {score} below threshold {PASS2_SCORE_THRESHOLD}")
         crosscheck = []
@@ -744,7 +921,8 @@ def _finish_from_discovery(
     score = _project_score(conn, project["project_sk"])
     if claims and (score is None or score >= PASS2_SCORE_THRESHOLD):
         print(f"Pass 2 (cross-check): {len(claims)} claims (score={score})")
-        crosscheck = run_crosscheck(client, settings.flash_model, project, claims, conn=conn)
+        crosscheck = run_crosscheck(client, _step10_model(settings), project, claims,
+                                    conn=conn, exclude_urls=d1_urls)
     else:
         print(f"  skipping Pass 2 -- score {score} below threshold {PASS2_SCORE_THRESHOLD}")
         crosscheck = []
@@ -807,7 +985,7 @@ def enrich_group(client, settings: Settings, conn, projects: list[dict], dry_run
         chunk_projects = [p for p, _ in chunk]
         print(f"Pass 1 (batch discovery): {len(chunk_projects)} project(s)")
         try:
-            batch_results = run_discovery_batch(client, settings.flash_model, chunk_projects, conn=conn)
+            batch_results = run_discovery_batch(client, _step10_model(settings), chunk_projects, conn=conn)
         except Exception as e:  # noqa: BLE001 -- one bad batch shouldn't kill the whole run
             print(f"  BATCH FAILED for {len(chunk_projects)} projects: {e}", file=sys.stderr)
             continue
@@ -828,6 +1006,18 @@ def enrich_group(client, settings: Settings, conn, projects: list[dict], dry_run
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
+
+def _step10_model(settings):
+    """Step 10 is PRO. Spec position (basis of design / listed alternate /
+    absent) is the fact the customer buys and nothing downstream re-checks it.
+    Triage stays on FLASH: it only decides whether a project is worth a full
+    pass, and a wrong triage costs one skipped project, not a wrong claim."""
+    try:
+        from specindex import models as _m  # noqa: PLC0415
+        return _m.model_for_step(10, settings)
+    except Exception:  # noqa: BLE001
+        return getattr(settings, "pro_model", settings.flash_model)
+
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)

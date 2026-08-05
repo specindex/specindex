@@ -1,4 +1,10 @@
-# SpecIndex Agent Strategy (2026-07-26, updated 2026-07-31)
+# SpecIndex Agent Strategy (2026-07-26, updated 2026-08-04)
+
+> **Read the AMENDMENT at the end of this file before running the 11-step
+> process.** Steps 1-7 are tuned for breadth, which is now solved (599,860
+> permits). The moat lives in steps 8-10, which are document-type-blind and
+> need six specific changes — including a new step 11 (substitution ledger)
+> and a non-jurisdictional source track for SAM.gov / UFGS / VA TIL.
 
 **Standing data pull window (2026-07-31): since 2025-01-01, a fixed anchor
 date, not a rolling lookback.** When widening any structured source past
@@ -62,7 +68,7 @@ Connect, etc.) -- see `docs/ROADMAP.md` item 98.
 
 **Looking for the current discovery/acquisition pipeline?** Skip to
 [Gemini-Assisted County/State Source Discovery](#gemini-assisted-countystate-source-discovery-implemented-2026-07-28)
-below — the 3-phase, 10-step loop is the live, actively-used process.
+below — the 4-phase, 11-step loop is the live, actively-used process.
 Everything above it (Agents 1/2/3) is the original pre-build plan, kept
 as historical record now that all three agents exist as described in the
 2026-07-29 status update directly below.
@@ -233,7 +239,7 @@ not a draft plan. This is the actual workflow used to find and wire every new
 county/state source added on 2026-07-28 (Wayne MI, Cook IL, Miami-Dade FL,
 King WA, Tarrant TX, Franklin/Cuyahoga OH, Mecklenburg/Wake NC, Fairfax VA,
 Philadelphia PA, San Diego CA, Dallas/Bexar TX, TDLR TABS statewide TX,
-Colorado Springs CO, Cleveland OH). It's now a 10-step loop, **reordered
+Colorado Springs CO, Cleveland OH). It's now an 11-step loop, **reordered
 2026-07-31 into 3 phases per an external review** (recorded in full at
 `docs/PIPELINE_REVIEW_2026-07-31.md`) — the step numbers below are not the
 order these steps were originally added in; see that doc for the history
@@ -255,6 +261,10 @@ At a glance, the three phases answer three different questions:
   candidate projects?* Forks into provider wiring (a source exists) or
   research fallback (it doesn't) — both paths converge on the same
   deduped output before Phase III starts.
+- **Phase IV — The Moat** (step 11): *What was CONTESTED?* Runs on
+  addenda/amendments and records approved and rejected substitutions with
+  dates and citations. Steps 1-10 capture what was specified; only this
+  captures who was displaced.
 - **Phase III — Project Processing & Enrichment** (steps 8-10): *For
   each new project, what do we now go pull, extract, and enrich to make
   its page useful?* Runs only on what Phase II already deduplicated, so
@@ -466,6 +476,40 @@ Runs only on the new, deduplicated projects Phase II produced.
     across the rest of the corpus is real remaining scope, same as
     step 8's GA-SAM/NJ-only coverage today.
 
+### Phase IV — The Moat (step 11)
+
+Runs on rank-1 documents (addenda / amendments) produced by step 8, after
+step 9 has extracted their text.
+
+11. **Substitution ledger (REQUIRED wherever addenda exist) — added
+    2026-08-04.** Steps 1-10 capture what was *specified*; nothing captures
+    what was *contested*. This step does. Pre-bid substitution requests are
+    ruled on publicly and the approved or rejected manufacturers are **named,
+    with dates**, in addenda posted to public bid portals and in SAM.gov
+    amendments. Extract, per addendum: the requesting party, the manufacturer
+    and model proposed, the manufacturer it would displace, the ruling
+    (approved / approved-as-noted / rejected), the date, and a page-level
+    citation. Write to a dedicated substitution table keyed to the project.
+
+    **Why this is the moat and not just another extraction.** It is the only
+    public artifact that records *competitive displacement* — who was basis of
+    design, who attacked the spec, and who won. No incumbent indexes it: Dodge
+    SpecShare and ConstructConnect Analyze report that you were specified, at
+    MasterFormat granularity, but neither is documented as reporting your
+    POSITION or who displaced you. And on state/local portals **addenda come
+    down after award**, so a competitor starting later cannot backfill it.
+    Two years of this data is an asset that cannot be bought.
+
+    **Sequencing.** SAM.gov RETAINS its amendments, so prove the extraction
+    on the federal corpus first — free, permanent, already wired. The
+    genuinely time-sensitive build is the **state/local addenda crawler**,
+    because every week it is not running is data permanently lost. A crawler
+    that only ARCHIVES the PDFs is enough to start the clock; extraction can
+    follow against a growing archive.
+
+    **Status 2026-08-04:** not built. ~14 amendments held, all from SAM.gov,
+    captured incidentally rather than deliberately.
+
 **Known real limits (be honest about these, don't oversell):** discovery
 still needs a human+Claude verification loop per lead every time — not
 unattended. New platform types cost real debugging time regardless of county
@@ -480,3 +524,285 @@ only ~0.3% of all US counties have a clean deterministic feed at all — full
 "all counties" coverage isn't realistic through this method; national +
 statewide + largest ~100-300 counties by population is the realistic
 scalable target.
+
+---
+
+## AMENDMENT 2026-08-04 — the process is document-type-blind, and the moat is a document type
+
+Everything above optimises for **breadth**: does a jurisdiction have a pullable
+source, and can we turn it into projects. That was the right objective and it
+worked — the corpus is at **599,860 county permit projects across all 50
+states**. Breadth is no longer the constraint.
+
+The constraint is now **which documents**, and the ten steps above cannot
+express that. Six changes, derived from the ConstructConnect teardown
+(2026-08-04) reconciled against what the corpus actually holds.
+
+**The value hierarchy the process must encode.** Ranked by how hard a
+competitor could replicate it:
+
+| rank | document | why | held 2026-08-04 |
+| :- | :- | :- | :- |
+| 1 | **Addenda / amendments** | The only public artifact naming *competitive displacement* — who was approved, who was rejected, on what date. Nobody indexes them, and on state/local portals they **come down after award**, so they cannot be backfilled. | ~14 |
+| 2 | **Project manuals (spec books)** | Where basis-of-design lives: Div 23/26 schedules name a manufacturer + model, then an "or equal" clause. Basis of design vs listed alternate vs absent is the highest-value fact for a manufacturer, and no incumbent is documented as distinguishing them. | ~13 |
+| 3 | **MEP drawing sets** | Equipment schedules carry basis-of-design too — same fact, different artifact, usually without the substitution language. A *separate* extraction problem. | ~2,121 |
+| 4 | Permit cards, receipts, inspection reports, site plans | No manufacturer names. Not the moat. | bulk |
+
+Note the inversion: **almost the entire captured corpus is rank 3**, because
+steps 8-10 were written when any document counted as a win.
+
+### The six changes
+
+**1. Step 2 (live verification) must classify document TYPE, not just
+existence.** Today it asks "are attachments public without login?". A
+jurisdiction can pass that with nothing but inspection cards and still be
+worthless to the moat. Record **which class** is reachable — addenda / spec
+book / MEP drawings / permit card. Hillsborough passes on drawings: a partial
+win, not a win.
+
+**2. Step 8 (document pull) needs priority ordering.** The step text above
+says pull "RFPs, board minutes, EIS reports, site plans" — **none of which are
+the moat**. With a per-source cap, that budget currently goes to whatever
+appears first in the attachment list. Rank **addenda > spec book > MEP
+drawings > everything else** and let the cap fall on the tail.
+`SKIP_NAME_HINTS` in `fetch-accela-documents.py` already does this crudely for
+receipts; this is the same mechanism pointed at value rather than triviality.
+
+**3. Step 9 (text extraction) must branch by document class.** Everything
+currently gets generic per-page text. A spec book needs
+`scripts/extract-spec-book.py` — division segmentation, then basis-of-design
+and approved-manufacturer extraction per MasterFormat section. Running plain
+page extraction on a project manual yields searchable text and **discards the
+structure that makes it valuable**. Fork: spec books to the spec-book
+extractor, everything else to the page extractor.
+
+**4. Step 11 — the substitution ledger (NOW ADDED, see Phase IV above).** The largest gap: nothing in
+steps 1-10 captured *"manufacturer X approved, manufacturer Y rejected, date
+Z"*. That is the single uncopyable asset and the process has no home for it.
+Runs on rank-1 documents; writes approved/rejected manufacturers with dates
+and page-level citations to a dedicated table.
+
+**5. Step 10 (enrichment) must output spec POSITION.** It currently produces
+executive brief, CSI scope and team. The fact a manufacturer buys is **"am I
+basis of design, a listed alternate, or absent — and who displaced me."** Add
+basis-of-design position as a first-class output, sourced from step 9's
+spec-book extraction rather than web search.
+
+**6. Phase I assumes a JURISDICTION.** "Does a live, pullable source exist for
+this jurisdiction?" cannot express the highest-yield moat sources, which are
+national and document-class-keyed rather than county-keyed:
+
+| source | access | what it yields |
+| :- | :- | :- |
+| **SAM.gov** `opportunities/{id}/resources` | free, anonymous, no API key | **Full federal project manuals AND amendments.** Verified 2026-08-04: 187 files included `SpecsAsOne.pdf` (18.9 MB) and Amendments 0001-0005. Federal amendments ARE addenda, and SAM.gov RETAINS them. |
+| **UFGS** (WBDG) | free, no login | Complete Divisions 21-28, quarterly, public domain |
+| **VA TIL** | free `.docx`, predictable URLs, on data.gov | Entire master spec library |
+| **Public university / state agency design standards** | free, permanent URLs | MasterFormat-numbered Div 23/26. Highest breadth-to-effort ratio in the entire set; nobody harvests it systematically |
+| **State/local e-procurement portals** | mostly free registration | Project manuals **plus addenda** — the only time-sensitive source, since these vanish after award |
+
+Add a **non-jurisdictional source track** that skips Phase I's
+county-discovery entirely and enters at Phase III. Without it the process
+cannot express "harvest UFGS", which is among the highest-value things to do
+next.
+
+### Sequencing note that changed
+
+The teardown treats addenda as urgent because they disappear after award.
+**True for state/local portals; NOT true for SAM.gov, which retains
+amendments.** So prove basis-of-design extraction on the federal corpus first
+— free, permanent, already wired — and treat the state/local addenda crawler
+as the genuinely time-sensitive build.
+
+Cost is not a constraint here: **98.4% of document pages carry a native text
+layer** (measured over 24,167 pages, 2026-08-04), so OCR spend does not scale
+with corpus size the way earlier planning assumed.
+
+### What is already built and merely disconnected
+
+Three components exist and were never wired together — this is the shortest
+path to the wedge, not a new build:
+
+1. **50 `sam_gov` configs** — wired, but pull award METADATA only
+2. **`scripts/fetch-sam-gov-documents.py`** — live-verified, returns spec books and amendments
+3. **`scripts/extract-spec-book.py`** — already extracts basis-of-design product and approved manufacturers by MasterFormat section, and has never had a spec book to run on
+
+---
+
+## AMENDMENT II — 2026-08-05: three defects in the volume→value shift
+
+Recorded after passing the strategy doc and this file to Gemini for critique.
+All three are corrections to the four-part plan as originally specified, and
+all three are the same shape: **a step that looks complete but silently drops
+the highest-value data.**
+
+### D1. Never classify by filename alone before applying a download cap
+
+SAM.gov and municipal portals routinely name files `Attachment_A.pdf`,
+`Doc_001.pdf`, `Amd_1.pdf`. A cap applied on filename regex drops real
+Addenda (rank 1) while keeping a cover sheet named `Specification_Notice.pdf`
+(rank 4). The loss is **silent and permanent** — the file is never fetched, so
+nothing downstream can recover it.
+
+**Required: two-phase fetch.** Use the SAM.gov API `description`/`name` fields
+alongside the filename; for anything still unclassified, pull the first page
+(HTTP byte-range where the server honours it) and test for `ADDENDUM NO.`,
+`SECTION \d{2} \d{2} \d{2}`, `BASIS OF DESIGN`, `SUBSTITUTION`. **Apply the cap
+only after header inspection.** This is the same discipline as the soft-404
+baseline: never let a cheap signal stand in for the real one.
+
+### D2. Spec-book extraction is ADDITIVE, not an exclusive fork
+
+Routing spec books *exclusively* to `extract-spec-book.py` breaks two things:
+
+1. **Retrieval.** Step 9 populates `document_pages` for pgvector + FTS. An
+   exclusive fork means the highest-value documents in the corpus are absent
+   from search and from the chat agent.
+2. **Addenda carry spec text.** Addenda routinely rewrite whole MasterFormat
+   sections — *"Delete Section 23 05 00 and replace with the attached."*
+   Restricting spec extraction to files tagged "Spec Book" therefore misses
+   basis-of-design changes that live inside rank-1 documents.
+
+**Required:** page-text extraction on **everything**; spec-book extraction
+additionally on **any** document whose pages match MasterFormat structure,
+regardless of its file-level classification.
+
+### D3. Spec Position is COMPUTED, not read
+
+Sourcing position strictly from `extract-spec-book.py` produces false
+negatives: a manufacturer absent from the baseline manual but approved by
+Addendum 02 is reported **Absent**. That is exactly the "too many false
+positives / outdated leads" failure that sinks the incumbents, and it is worse
+here because we sell the citation.
+
+    position = baseline (spec book) + substitution overrides (substitution_rulings)
+
+    basis of design  : named as BOD in the manual AND not removed by addendum
+    listed alternate : listed in the manual OR approved via a substitution ruling
+    absent           : neither listed nor approved (or explicitly rejected)
+
+Every state change carries its own page-level citation.
+
+**Consequence for sequencing: step 10 must JOIN step 11.** They are coupled;
+the ledger cannot be bolted on after position ships. Migration 043
+(`substitution_rulings`, with a CHECK refusing any ruling lacking
+`document_file_id` AND `page_number > 0`) is the table that join targets.
+
+### D4. Capture and processing were never connected
+
+Found 2026-08-05 while acting on the above. `fetch-sam-gov-documents.py` and
+`fetch-accela-documents.py` contain **zero** database references — verified by
+grep: no `psycopg2`, no `DATABASE_URL`, no `INSERT`. They upload to GCS. Step 9
+selects its work **from `project_document_files`**. So ~78% of the captured
+corpus (10,033 objects in GCS vs 2,240 rows) was invisible to text extraction,
+spec extraction and enrichment.
+
+Capture was never the bottleneck; the **seam** was, and it presented as
+"extraction is slow" rather than as an error. `scripts/register-gcs-documents.py`
+closes it and must run after every capture batch.
+
+**Generalised rule: after any pipeline step, assert that the NEXT step can see
+its output.** A step that succeeds into a place nothing reads from is
+indistinguishable from a step that ran.
+
+---
+
+## AMENDMENT III — 2026-08-05: model routing across the 11 steps
+
+Flash for discovery and triage, Pro for extraction and reasoning. Implemented
+in `scripts/specindex/models.py`; steps declare a step NUMBER and are handed a
+model, so no script hard-codes one.
+
+**Models (probed live 2026-08-05, not assumed):**
+
+| slot | model | note |
+| :- | :- | :- |
+| `flash_model` | `gemini-3.6-flash` | |
+| `pro_model` | `gemini-3.1-pro-preview` | The bare `gemini-3.1-pro` returns **404 NOT_FOUND** on this Vertex project, as do `gemini-3.0/3.5/3.6-pro`. Stable fallback: `gemini-2.5-pro`. |
+
+`pro_model` is deliberately separate from `sonnet_model`, which is a
+backend-dependent slot that may resolve to Claude or to Gemini Pro depending on
+`NJ_DCA_SONNET_BACKEND`. Steps that genuinely need Pro must not have their
+model silently swapped by an unrelated backend setting.
+
+| step | tier | why |
+| :- | :- | :- |
+| 1 discovery | **Flash** | candidate portals/agency ids; step 2's live probe catches fabrications |
+| 2 verification | **Flash** | the verification is curl/Playwright, not a model |
+| 3-5, 7 | **Flash** | bookkeeping, deterministic config, dedup gate |
+| 6 research fallback | **Pro** | strict schema compliance when cross-checking facts |
+| 8 classification | **Flash — FALLBACK ONLY** | see below |
+| 9 spec-book extraction | **Pro** | MasterFormat division parsing, basis-of-design |
+| 10 spec position | **Pro** | basis of design / listed alternate / absent — the product itself |
+| 11 substitution ledger | **Pro** | dense procedural addenda language, named third parties |
+
+**The rule in one line: Flash where a verifier follows, Pro where the output
+is the product.**
+
+Flash's measured accuracy on live network facts was **1 of 7**. That sounds
+disqualifying and is not — *provided the verification gate exists*. Flash is a
+candidate generator whose errors are free because step 2 kills them. Pro is
+used exactly where nothing downstream re-checks the answer: a substitution
+ruling names a real company, and getting it wrong is commercially damaging
+with no later step to catch it.
+
+**Where this diverges from the routing as specified.** Step 8 document
+classification is Flash **only as a fallback**. The primary classifier is
+`scripts/document_classifier.py` — regex over filename plus first-page text —
+because it is free, deterministic and instant across tens of thousands of
+documents. An LLM call per document would cost real money and add latency for
+no accuracy gain on the easy majority; spending one to decide that
+`AMEND0005_...pdf` is an amendment is waste. Flash is invoked only when the
+deterministic classifier returns UNKNOWN on both filename and page text.
+
+---
+
+## AMENDMENT IV — 2026-08-05: continuous crawling
+
+Pulls were previously one-shot: a human runs a script against a hand-picked
+list. That cannot hold the moat, because the moat is the only time-sensitive
+asset in the corpus — **substitution rulings appear in addenda on open
+solicitations and are removed after award.** A source polled monthly loses
+most of them.
+
+**Cadence is a property of the source, driven by volatility:**
+
+| volatility | cadence | what it covers | why |
+| :- | :- | :- | :- |
+| **hot** | 24h | open solicitations, SAM.gov | content **disappears** — a missed crawl is permanent loss |
+| **warm** | 168h | permit/award feeds | content accumulates; nothing is lost by waiting |
+| **cold** | 720h | owner standards, UFGS, VA masters | stable and permanent; frequent re-crawling is pure waste and raises ban risk |
+| **frozen** | never | dead/closed sources | |
+
+`retune_source_cadence()` adjusts these from OBSERVED change rather than the
+guess made at registration: a source changing on most crawls speeds up, one
+unchanged for 90 days slows down (capped monthly).
+
+**Architecture — three separate processes, deliberately:**
+
+1. `schedule-crawls.py` — decides what is due, enqueues, exits. Idempotent and
+   instant, so running it every 15 minutes costs nothing and a missed tick
+   self-heals.
+2. `work_queue` — the buffer. Priority carries the moat ordering (hot=1).
+3. `crawl-worker.py` — drains the queue. Start/stop/scale freely.
+
+**Why separated:** concurrency becomes a worker-count decision instead of
+being baked into an orchestration script. The previous approach produced a
+`while pgrep -f` loop that matched its own argv and stalled for fifteen hours.
+There are no wait loops here at all.
+
+**Isolation is the other half.** A SAM.gov state run died on ONE GCS upload
+timeout (`RetryError`, 120s write timeout — uplink saturated) and abandoned
+the remaining 163 opportunities. Queue items fail alone, retry to
+`max_attempts`, and the run continues.
+
+**`vanished_at` on `project_document_files` is the moat made queryable.** When
+a document we hold is no longer served by its source, mark it — never delete.
+An addendum taken down after award is exactly the back-file nobody starting
+later can reconstruct.
+
+**Change detection** (`etag`, `last_modified`, existing `content_sha256`) makes
+re-crawling an unchanged source nearly free, which is what makes daily cadence
+affordable at all.
+
+Seeded 2026-08-05: 50 SAM states (hot, 24h) + 17 owner-standards institutions
+(cold, 720h).

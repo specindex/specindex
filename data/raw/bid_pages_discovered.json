@@ -1,0 +1,255 @@
+{
+  "generated_at": "2026-08-05T10:30:32",
+  "results": [
+    {
+      "agency": "Cook County OCPO",
+      "county": "Cook",
+      "state": "IL",
+      "home": "https://www.cookcountyil.gov/",
+      "candidates": [
+        {
+          "url": "https://www.cookcountyil.gov/service-groups/county-vendor-resources",
+          "verdict": "SOLICITATIONS-ONLY",
+          "login_wall": false,
+          "solicitations": true,
+          "addenda_mentioned": false,
+          "n_addenda_docs": 0,
+          "addenda_docs": [],
+          "chars": 4441,
+          "link_text": ""
+        },
+        {
+          "url": "https://www.cookcountyil.gov/service/doing-business-cook-county",
+          "verdict": "SOLICITATIONS-ONLY",
+          "login_wall": false,
+          "solicitations": true,
+          "addenda_mentioned": false,
+          "n_addenda_docs": 0,
+          "addenda_docs": [],
+          "chars": 6335,
+          "link_text": "Doing Business with Cook County"
+        }
+      ]
+    },
+    {
+      "agency": "Chicago Public Schools",
+      "county": "Cook",
+      "state": "IL",
+      "home": "https://www.cps.edu/",
+      "candidates": [
+        {
+          "url": "https://www.cps.edu/procurement/",
+          "verdict": "NO-SIGNAL",
+          "login_wall": false,
+          "solicitations": false,
+          "addenda_mentioned": false,
+          "n_addenda_docs": 0,
+          "addenda_docs": [],
+          "chars": 3459,
+          "link_text": "Procurement"
+        }
+      ]
+    },
+    {
+      "agency": "Harris County Purchasing",
+      "county": "Harris",
+      "state": "TX",
+      "home": "https://purchasing.harriscountytx.gov/",
+      "candidates": [
+        {
+          "url": "https://purchasing.harriscountytx.gov/",
+          "verdict": "SOLICITATIONS-ONLY",
+          "login_wall": false,
+          "solicitations": true,
+          "addenda_mentioned": false,
+          "n_addenda_docs": 0,
+          "addenda_docs": [],
+          "chars": 4200,
+          "link_text": "Skip to main content"
+        },
+        {
+          "url": "https://purchasing.harriscountytx.gov/Services/Annual-Buying-Opportunities",
+          "verdict": "SOLICITATIONS-ONLY",
+          "login_wall": false,
+          "solicitations": true,
+          "addenda_mentioned": false,
+          "n_addenda_docs": 0,
+          "addenda_docs": [],
+          "chars": 1012,
+          "link_text": ""
+        },
+        {
+          "url": "https://purchasing.harriscountytx.gov/Services/Bids-Proposals",
+          "verdict": "SOLICITATIONS-ONLY",
+          "login_wall": false,
+          "solicitations": true,
+          "addenda_mentioned": false,
+          "n_addenda_docs": 0,
+          "addenda_docs": [],
+          "chars": 1081,
+          "link_text": ""
+        },
+        {
+          "url": "https://purchasing.harriscountytx.gov/Services/Doing-Business-with-Harris-County",
+          "verdict": "SOLICITATIONS-ONLY",
+          "login_wall": false,
+          "solicitations": true,
+          "addenda_mentioned": false,
+          "n_addenda_docs": 0,
+          "addenda_docs": [],
+          "chars": 6676,
+          "link_text": ""
+        }
+      ]
+    },
+    {
+      "agency": "Houston ISD",
+      "county": "Harris",
+      "state": "TX",
+      "home": "https://www.houstonisd.org/",
+      "candidates": [
+        {
+          "url": "https://www.houstonisd.org/community-partnerships/purchasing-services",
+          "verdict": "LIKELY-OPEN",
+          "login_wall": false,
+          "solicitations": true,
+          "addenda_mentioned": true,
+          "n_addenda_docs": 0,
+          "addenda_docs": [],
+          "chars": 6330,
+          "link_text": "Purchasing Services"
+        }
+      ]
+    },
+    {
+      "agency": "San Diego Unified SD",
+      "county": "San Diego",
+      "state": "CA",
+      "home": "https://www.sandiegounified.org/",
+      "candidates": [
+        {
+          "url": "https://www.sandiegounified.org/about/doing_business",
+          "verdict": "SOLICITATIONS-ONLY",
+          "login_wall": false,
+          "solicitations": true,
+          "addenda_mentioned": false,
+          "n_addenda_docs": 0,
+          "addenda_docs": [],
+          "chars": 2232,
+          "link_text": "Doing Business"
+        }
+      ]
+    },
+    {
+      "agency": "OC Public Works",
+      "county": "Orange",
+      "state": "CA",
+      "home": "https://www.ocgov.com/",
+      "candidates": [
+        {
+          "url": "https://cpo.oc.gov/",
+          "verdict": "SOLICITATIONS-ONLY",
+          "login_wall": false,
+          "solicitations": true,
+          "addenda_mentioned": false,
+          "n_addenda_docs": 0,
+          "addenda_docs": [],
+          "chars": 4985,
+          "link_text": "Procurement Office\n      (link is external)"
+        },
+        {
+          "url": "https://www.ocgov.com/business/bids-auctions-purchasing",
+          "verdict": "SOLICITATIONS-ONLY",
+          "login_wall": false,
+          "solicitations": true,
+          "addenda_mentioned": false,
+          "n_addenda_docs": 0,
+          "addenda_docs": [],
+          "chars": 3632,
+          "link_text": "Bids, Auctions & Purchasing"
+        },
+        {
+          "url": "https://cob.ocgov.com/construction-bids",
+          "verdict": "SOLICITATIONS-ONLY",
+          "login_wall": false,
+          "solicitations": true,
+          "addenda_mentioned": false,
+          "n_addenda_docs": 0,
+          "addenda_docs": [],
+          "chars": 2374,
+          "link_text": "Construction Bid Information"
+        },
+        {
+          "url": "https://www.ocgov.com/gov/procurement/bids/default.asp",
+          "verdict": "LIKELY-OPEN",
+          "login_wall": false,
+          "solicitations": true,
+          "addenda_mentioned": true,
+          "n_addenda_docs": 0,
+          "addenda_docs": [],
+          "chars": 2657,
+          "link_text": "Online Bidding"
+        }
+      ]
+    },
+    {
+      "agency": "NYC School Construction Auth",
+      "county": "Kings",
+      "state": "NY",
+      "home": "https://www.nycsca.org/",
+      "candidates": [
+        {
+          "url": "https://www.nycsca.org/Doing-Business/Getting-Started",
+          "verdict": "SOLICITATIONS-ONLY",
+          "login_wall": false,
+          "solicitations": true,
+          "addenda_mentioned": false,
+          "n_addenda_docs": 0,
+          "addenda_docs": [],
+          "chars": 2583,
+          "link_text": "Doing Business"
+        },
+        {
+          "url": "https://www.nycsca.org/Doing-Business/Adding-Updating-Vendor-Information",
+          "verdict": "SOLICITATIONS-ONLY",
+          "login_wall": false,
+          "solicitations": true,
+          "addenda_mentioned": false,
+          "n_addenda_docs": 0,
+          "addenda_docs": [],
+          "chars": 1835,
+          "link_text": "Adding/Updating Vendor Information"
+        },
+        {
+          "url": "https://www.nycsca.org/Vendor/Construction-Process",
+          "verdict": "SOLICITATIONS-ONLY",
+          "login_wall": false,
+          "solicitations": true,
+          "addenda_mentioned": false,
+          "n_addenda_docs": 0,
+          "addenda_docs": [],
+          "chars": 2975,
+          "link_text": "Construction Process"
+        },
+        {
+          "url": "http://bidset.nycsca.org/_layouts/OnlineBidsetsLogin/CustomLogin.aspx?ReturnUrl=%2f_layouts%2fAuthenticate.aspx%3fSource%3d%252F&Source=%2F",
+          "verdict": "SOLICITATIONS-ONLY",
+          "login_wall": false,
+          "solicitations": true,
+          "addenda_mentioned": false,
+          "n_addenda_docs": 0,
+          "addenda_docs": [],
+          "chars": 1074,
+          "link_text": "Bidset"
+        }
+      ]
+    },
+    {
+      "agency": "Riverside County Purchasing",
+      "county": "Riverside",
+      "state": "CA",
+      "home": "https://www.rivco.org/",
+      "error": "Error"
+    }
+  ]
+}

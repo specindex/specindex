@@ -73,12 +73,24 @@ def fetch_document_bytes(row: dict[str, Any]) -> bytes:
     # built straight from real filenames, e.g. "S02 - RFP Attachment
     # 3.pdf", by compute-project-documents.py's files_from_gcs() -- see
     # its fix in the same commit). urllib.request rejects those outright
-    # ("URL can't contain control characters"). Quote just the path
-    # component so this is safe on both already-good and already-bad
-    # stored URLs -- quote() is idempotent on characters that don't need
-    # escaping, so a clean URL passes through unchanged.
+    # ("URL can't contain control characters"). Quote just the path component
+    # so this is safe on both already-good and already-bad stored URLs.
+    #
+    # CORRECTION 2026-08-05: the old note here claimed "quote() is idempotent
+    # on characters that don't need escaping". That is FALSE for '%' itself --
+    # quote('%20') returns '%2520', a DIFFERENT object name, and GCS answers
+    # NoSuchKey 404. Harmless while every stored url had literal spaces;
+    # register-gcs-documents.py then added 4,825 rows storing them correctly
+    # pre-encoded, and this line would have silently 404'd every one of them.
+    # Found when prove-the-wedge.py returned 0 findings from 120 documents
+    # because every fetch failed -- a zero that reads as "extraction found
+    # nothing" rather than as a bug.
+    #
+    # unquote-then-quote is genuinely idempotent: it normalises both shapes to
+    # the same encoded form.
     parts = urllib.parse.urlsplit(url)
-    url = urllib.parse.urlunsplit(parts._replace(path=urllib.parse.quote(parts.path)))
+    url = urllib.parse.urlunsplit(
+        parts._replace(path=urllib.parse.quote(urllib.parse.unquote(parts.path))))
     # Real bug found 2026-07-30: batch of 100/100 uniform 404s, but the
     # exact same URL curled directly returned 200 immediately after.
     # step7-gemini-document-backfill.py (still running unattended in the

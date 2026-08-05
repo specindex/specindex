@@ -1,0 +1,137 @@
+# Deploy the API to Cloud Run when api/ changes.
+#
+# WHY THIS EXISTS. The frontend auto-deploys on merge to main
+# (firebase-hosting-merge.yml) and the API did not deploy at all -- it shipped
+# by a manual `gcloud run deploy` documented in docs/CLOUD-RUN-DATABASE.md.
+# A repo where the frontend deploys itself and its backend does not will keep
+# producing the same class of failure: someone changes an API contract, the UI
+# ships, the API does not, and the site breaks in a way that looks like a
+# frontend bug.
+#
+# It nearly happened on 2026-08-05. The UI's new default filter sends
+# `status=planning,permitting,bidding` while the deployed API compared status
+# with an exact match, so the query matched zero rows. Merging the frontend
+# alone would have deployed a landing page showing NO projects under a headline
+# about projects worth chasing.
+#
+# ORDER MATTERS AND IS ENFORCED BY THE TRIGGER. This runs on pushes to main
+# that touch api/**, and the API change is backwards-compatible by convention:
+# a new API must keep serving the OLD frontend, because the two deploy
+# independently and either can land first. Never ship an API change that
+# requires a simultaneous frontend change.
+
+name: Deploy API to Cloud Run
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "api/**"
+      - ".github/workflows/api-deploy.yml"
+  workflow_dispatch:
+    inputs:
+      skip_smoke:
+        description: "Deploy without the post-deploy smoke test (not recommended)"
+        type: boolean
+        default: false
+
+concurrency:
+  # Never let two API deploys overlap -- Cloud Run would serve a mix of
+  # revisions while both are rolling.
+  group: api-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - uses: google-github-actions/setup-gcloud@v2
+        with:
+          project_id: specindex-ai
+
+      # Catch syntax errors before a broken revision reaches Cloud Run. A
+      # failed deploy leaves the previous revision serving, but a deploy that
+      # SUCCEEDS with broken code does not.
+      - name: Syntax check
+        run: python3 -m compileall -q api/
+
+      # NO --set-env-vars. It REPLACES the entire environment, and this
+      # service carries nine variables -- DATABASE_URL, CLERK_ISSUER,
+      # MAPBOX_TOKEN, EMAIL_SMTP_*, CONTACT_NOTIFY_TO, SPECINDEX_BUILD_TOKEN,
+      # FIREBASE_PROJECT_ID, ADMIN_EMAILS. Passing only DATABASE_URL would
+      # silently delete the other eight and break sign-in, email and admin
+      # access on the very deploy meant to fix a bug. Omitting env vars
+      # entirely makes the deploy INHERIT the existing configuration, which is
+      # what a code-only deploy should do. Use --update-env-vars (merges, never
+      # replaces) if a variable genuinely needs changing.
+      - name: Deploy to Cloud Run (code only; env inherited)
+        run: |
+          gcloud run deploy specindex-api \
+            --source ./api \
+            --region us-central1 \
+            --allow-unauthenticated \
+            --add-cloudsql-instances specindex-ai:us-central1:specindex-db \
+            --quiet
+
+      # THE SMOKE TEST IS THE POINT. A deploy that returns 200 on an empty
+      # result set is indistinguishable from a healthy one, and that is exactly
+      # the failure this workflow exists to prevent. So assert on CONTENT: the
+      # UI's default filter must return rows, not merely a 200.
+      - name: Smoke test the default filter
+        if: ${{ !inputs.skip_smoke }}
+        run: |
+          URL=$(gcloud run services describe specindex-api --region us-central1 \
+                  --format='value(status.url)')
+          echo "deployed: $URL"
+
+          # /v1/projects requires a Firebase session OR the build token. Without
+          # it every check returns 401 and the smoke test fails every deploy --
+          # which would train people to ignore it. Read the token off the
+          # running service rather than duplicating it as a CI secret, so it
+          # cannot drift from what the service actually accepts.
+          TOK=$(gcloud run services describe specindex-api --region us-central1 \
+                  --format="value(spec.template.spec.containers[0].env)" \
+                | tr ';' '\n' | grep SPECINDEX_BUILD_TOKEN \
+                | grep -o "'value': '[^']*'" | sed "s/'value': //;s/'//g")
+          if [ -z "$TOK" ]; then
+            echo "::error::SPECINDEX_BUILD_TOKEN not found on the service; cannot smoke test"
+            exit 1
+          fi
+
+          fail=0
+          check () {  # name, query, min_expected
+            body=$(curl -s --max-time 60 -H "X-Build-Token: $TOK" \
+                     "$URL/v1/projects?limit=1&$2" || echo '{}')
+            total=$(python3 -c "import sys,json;print(json.loads(sys.stdin.read() or '{}').get('total',-1))" <<<"$body")
+            if [ "$total" -lt "$3" ]; then
+              echo "::error::$1 returned total=$total, expected >= $3  (query: $2)"
+              fail=1
+            else
+              echo "ok: $1 total=$total"
+            fi
+          }
+
+          # The UI's DEFAULT view. If this is empty the landing page is empty.
+          check "spec-still-open default" "status=planning,permitting,bidding" 1000
+          # Single status must keep working -- the old frontend may still be live.
+          check "single status (back-compat)" "status=permitting" 1000
+          # Multi-state, the other comma-separated filter.
+          check "multi-state" "state=NY,NJ" 100
+
+          exit $fail
+
+      - name: Report
+        if: always()
+        run: |
+          echo "### API deploy: ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "Revision: $(gcloud run services describe specindex-api \
+            --region us-central1 --format='value(status.latestReadyRevisionName)' 2>/dev/null || echo unknown)" \
+            >> $GITHUB_STEP_SUMMARY
