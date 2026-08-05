@@ -271,6 +271,47 @@ export function ProjectsDashboard() {
     };
   }, [facets.years]);
 
+  // The product-category list was 292 flat entries, and length was the
+  // SMALLER problem. Measured over 591,618 projects:
+  //
+  //   lighting 97.7% · hvac 97.7% · fire suppression 95.1% · roofing 88.2%
+  //   · flooring 79.4%   -- these are template defaults stamped on every
+  //   commercial permit, not detected facts. Selecting one returns
+  //   essentially the whole corpus, so they do not behave like filters.
+  //
+  //   279 of the 292 appear on fewer than 1,000 projects each and account for
+  //   ~1,377 tag instances between them -- roughly 0.2% of the data occupying
+  //   96% of the list.
+  //
+  // Only about eight tags (concrete, glazing, elevators, doors and hardware,
+  // dock equipment, plumbing fixtures, ff&e, medical gas) actually
+  // discriminate. So the fix is not just "shorter": it is to put the useful
+  // ones FIRST, label the broad ones honestly instead of implying they
+  // narrow anything, and collapse the tail.
+  //
+  // Also merges case and whitespace duplicates -- 'hvac' (578,114) and 'HVAC'
+  // (110) were split entries for one trade, as were 'flooring' and
+  // ' flooring'. Mirrors scripts/specindex/categories.py; keep the two in
+  // step. Genuinely distinct trades are never merged to shorten the list.
+  const categoryGroups = useMemo(() => {
+    const BROAD = new Set(["lighting", "hvac", "fire suppression", "roofing", "flooring"]);
+    const SPECIFIC = new Set(["concrete", "glazing", "elevators", "doors and hardware",
+      "dock equipment", "plumbing fixtures", "ff&e", "medical gas"]);
+    const seen = new Set<string>();
+    const norm = (c: string) => c.trim().toLowerCase().replace(/\s+/g, " ");
+    const broad: string[] = [], specific: string[] = [], rare: string[] = [];
+    for (const raw of facets.categories ?? []) {
+      const c = norm(raw);
+      if (!c || seen.has(c)) continue;
+      seen.add(c);
+      if (BROAD.has(c)) broad.push(c);
+      else if (SPECIFIC.has(c)) specific.push(c);
+      else rare.push(c);
+    }
+    rare.sort((a, b) => a.localeCompare(b));
+    return { broad, specific, rare };
+  }, [facets.categories]);
+
   const territoryLabel = useMemo(() => {
     if (territory.length === 0) return "All states";
     if (territory.length <= 3) return territory.join(", ");
@@ -390,9 +431,27 @@ export function ProjectsDashboard() {
             className="rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm"
           >
             <option value="all">All product categories</option>
-            {facets.categories.map((c) => (
-              <option key={c} value={c}>{c}</option>
-            ))}
+            {categoryGroups.specific.length > 0 && (
+              <optgroup label="Specific systems">
+                {categoryGroups.specific.map((c) => (
+                  <option key={c} value={c}>{c}</option>
+                ))}
+              </optgroup>
+            )}
+            {categoryGroups.broad.length > 0 && (
+              <optgroup label="Broad trades (on most projects)">
+                {categoryGroups.broad.map((c) => (
+                  <option key={c} value={c}>{c}</option>
+                ))}
+              </optgroup>
+            )}
+            {categoryGroups.rare.length > 0 && (
+              <optgroup label="Specialty">
+                {categoryGroups.rare.map((c) => (
+                  <option key={c} value={c}>{c}</option>
+                ))}
+              </optgroup>
+            )}
           </select>
           <select value={year} onChange={(e) => setYear(e.target.value)} className="rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm">
             <option value="all">All years</option>
