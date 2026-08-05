@@ -313,21 +313,25 @@ function Fact({
   mono?: boolean;
   confidence?: string;
 }) {
-  // A missing value in the same bordered cell as a real one ($5B next to
-  // "Not reported") gave both equal visual weight -- flagged in design
-  // review as dead-ending the reader's scan path. Muting it keeps the
-  // layout stable (still a cell, still there) without competing for
-  // attention with actual data.
-  const isEmpty = EMPTY_FACT_VALUES.has(value);
+  // OMIT the card, do not mute it. An earlier pass greyed empty values on the
+  // theory that keeping the cell preserved the layout. It does not preserve
+  // anything worth having: a record with "Not reported" under Square footage,
+  // Architect and Brands mentioned reads as a THIN record, when the truth is
+  // that a permit simply does not carry those fields. Repeated down a column
+  // it makes a deep index look shallow, which is the opposite of the argument
+  // this product makes.
+  //
+  // "Never render an empty field. Omit the card." -- 03_project_record.md,
+  // slot 04. The grid reflows to however many real facts exist.
+  const isEmpty = !value || EMPTY_FACT_VALUES.has(value);
+  if (isEmpty) return null;
   return (
     <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)] p-3">
       <dt className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-gray-400)]">
         {label}
       </dt>
       <dd
-        className={`mt-1 text-sm font-medium ${mono ? "font-mono text-xs" : ""} ${
-          isEmpty ? "text-[var(--color-gray-400)] font-normal" : ""
-        }`}
+        className={`mt-1 text-sm font-medium ${mono ? "font-mono text-xs" : ""}`}
       >
         {/* Badge stacked below the value, not centered beside it -- a
             long value (e.g. "Hyundai Engineering America, Inc.")
@@ -783,7 +787,8 @@ export function ProjectDetailView({ project: initialProject }: { project: Projec
                 layout (title+score row, then a KPI strip underneath,
                 nothing else in between). */}
             <dl className="grid grid-cols-2 gap-3 border-t border-[var(--color-border)] pt-6 text-xs md:grid-cols-3 lg:grid-cols-6">
-              <Fact label="Project ID" value={project.spx_id} mono />
+              {/* Project ID card removed: the SPX id already appears under the
+                  title. "Show the SPX id once on the page" -- slot 01. */}
               <Fact label="Estimated value" value={formatUsd(project.estimated_value_usd)} />
               <Fact label="Square footage" value={formatSf(project.square_footage)} />
               <Fact label="Opened / announced" value={formatDate(project.opened_or_announced_date)} />
