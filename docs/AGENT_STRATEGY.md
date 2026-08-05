@@ -1,4 +1,10 @@
-# SpecIndex Agent Strategy (2026-07-26, updated 2026-07-31)
+# SpecIndex Agent Strategy (2026-07-26, updated 2026-08-04)
+
+> **Read the AMENDMENT at the end of this file before running the 10-step
+> process.** Steps 1-7 are tuned for breadth, which is now solved (599,860
+> permits). The moat lives in steps 8-10, which are document-type-blind and
+> need six specific changes — including a new step 11 (substitution ledger)
+> and a non-jurisdictional source track for SAM.gov / UFGS / VA TIL.
 
 **Standing data pull window (2026-07-31): since 2025-01-01, a fixed anchor
 date, not a rolling lookback.** When widening any structured source past
@@ -480,3 +486,104 @@ only ~0.3% of all US counties have a clean deterministic feed at all — full
 "all counties" coverage isn't realistic through this method; national +
 statewide + largest ~100-300 counties by population is the realistic
 scalable target.
+
+---
+
+## AMENDMENT 2026-08-04 — the process is document-type-blind, and the moat is a document type
+
+Everything above optimises for **breadth**: does a jurisdiction have a pullable
+source, and can we turn it into projects. That was the right objective and it
+worked — the corpus is at **599,860 county permit projects across all 50
+states**. Breadth is no longer the constraint.
+
+The constraint is now **which documents**, and the ten steps above cannot
+express that. Six changes, derived from the ConstructConnect teardown
+(2026-08-04) reconciled against what the corpus actually holds.
+
+**The value hierarchy the process must encode.** Ranked by how hard a
+competitor could replicate it:
+
+| rank | document | why | held 2026-08-04 |
+| :- | :- | :- | :- |
+| 1 | **Addenda / amendments** | The only public artifact naming *competitive displacement* — who was approved, who was rejected, on what date. Nobody indexes them, and on state/local portals they **come down after award**, so they cannot be backfilled. | ~14 |
+| 2 | **Project manuals (spec books)** | Where basis-of-design lives: Div 23/26 schedules name a manufacturer + model, then an "or equal" clause. Basis of design vs listed alternate vs absent is the highest-value fact for a manufacturer, and no incumbent is documented as distinguishing them. | ~13 |
+| 3 | **MEP drawing sets** | Equipment schedules carry basis-of-design too — same fact, different artifact, usually without the substitution language. A *separate* extraction problem. | ~2,121 |
+| 4 | Permit cards, receipts, inspection reports, site plans | No manufacturer names. Not the moat. | bulk |
+
+Note the inversion: **almost the entire captured corpus is rank 3**, because
+steps 8-10 were written when any document counted as a win.
+
+### The six changes
+
+**1. Step 2 (live verification) must classify document TYPE, not just
+existence.** Today it asks "are attachments public without login?". A
+jurisdiction can pass that with nothing but inspection cards and still be
+worthless to the moat. Record **which class** is reachable — addenda / spec
+book / MEP drawings / permit card. Hillsborough passes on drawings: a partial
+win, not a win.
+
+**2. Step 8 (document pull) needs priority ordering.** The step text above
+says pull "RFPs, board minutes, EIS reports, site plans" — **none of which are
+the moat**. With a per-source cap, that budget currently goes to whatever
+appears first in the attachment list. Rank **addenda > spec book > MEP
+drawings > everything else** and let the cap fall on the tail.
+`SKIP_NAME_HINTS` in `fetch-accela-documents.py` already does this crudely for
+receipts; this is the same mechanism pointed at value rather than triviality.
+
+**3. Step 9 (text extraction) must branch by document class.** Everything
+currently gets generic per-page text. A spec book needs
+`scripts/extract-spec-book.py` — division segmentation, then basis-of-design
+and approved-manufacturer extraction per MasterFormat section. Running plain
+page extraction on a project manual yields searchable text and **discards the
+structure that makes it valuable**. Fork: spec books to the spec-book
+extractor, everything else to the page extractor.
+
+**4. NEW step 11 — the substitution ledger.** The largest gap: nothing in
+steps 1-10 captures *"manufacturer X approved, manufacturer Y rejected, date
+Z"*. That is the single uncopyable asset and the process has no home for it.
+Runs on rank-1 documents; writes approved/rejected manufacturers with dates
+and page-level citations to a dedicated table.
+
+**5. Step 10 (enrichment) must output spec POSITION.** It currently produces
+executive brief, CSI scope and team. The fact a manufacturer buys is **"am I
+basis of design, a listed alternate, or absent — and who displaced me."** Add
+basis-of-design position as a first-class output, sourced from step 9's
+spec-book extraction rather than web search.
+
+**6. Phase I assumes a JURISDICTION.** "Does a live, pullable source exist for
+this jurisdiction?" cannot express the highest-yield moat sources, which are
+national and document-class-keyed rather than county-keyed:
+
+| source | access | what it yields |
+| :- | :- | :- |
+| **SAM.gov** `opportunities/{id}/resources` | free, anonymous, no API key | **Full federal project manuals AND amendments.** Verified 2026-08-04: 187 files included `SpecsAsOne.pdf` (18.9 MB) and Amendments 0001-0005. Federal amendments ARE addenda, and SAM.gov RETAINS them. |
+| **UFGS** (WBDG) | free, no login | Complete Divisions 21-28, quarterly, public domain |
+| **VA TIL** | free `.docx`, predictable URLs, on data.gov | Entire master spec library |
+| **Public university / state agency design standards** | free, permanent URLs | MasterFormat-numbered Div 23/26. Highest breadth-to-effort ratio in the entire set; nobody harvests it systematically |
+| **State/local e-procurement portals** | mostly free registration | Project manuals **plus addenda** — the only time-sensitive source, since these vanish after award |
+
+Add a **non-jurisdictional source track** that skips Phase I's
+county-discovery entirely and enters at Phase III. Without it the process
+cannot express "harvest UFGS", which is among the highest-value things to do
+next.
+
+### Sequencing note that changed
+
+The teardown treats addenda as urgent because they disappear after award.
+**True for state/local portals; NOT true for SAM.gov, which retains
+amendments.** So prove basis-of-design extraction on the federal corpus first
+— free, permanent, already wired — and treat the state/local addenda crawler
+as the genuinely time-sensitive build.
+
+Cost is not a constraint here: **98.4% of document pages carry a native text
+layer** (measured over 24,167 pages, 2026-08-04), so OCR spend does not scale
+with corpus size the way earlier planning assumed.
+
+### What is already built and merely disconnected
+
+Three components exist and were never wired together — this is the shortest
+path to the wedge, not a new build:
+
+1. **50 `sam_gov` configs** — wired, but pull award METADATA only
+2. **`scripts/fetch-sam-gov-documents.py`** — live-verified, returns spec books and amendments
+3. **`scripts/extract-spec-book.py`** — already extracts basis-of-design product and approved manufacturers by MasterFormat section, and has never had a spec book to run on

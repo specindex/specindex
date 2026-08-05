@@ -71,11 +71,41 @@ def list_attachments(notice_id: str) -> list[dict[str, Any]]:
     ]
 
 
+
+# GCS layout is {state}/{project_id}/{filename}, matching every other capture
+# script. The state directory MUST be derived from the project, not hardcoded:
+# this said "georgia" unconditionally, so NC documents landed under georgia/ and
+# every one of the 2,390 SAM.gov projects across all 50 states would have piled
+# into the same wrong folder.
+STATE_DIRS = {
+    "al": "alabama", "ak": "ak", "az": "arizona", "ar": "arkansas",
+    "ca": "california", "co": "colorado", "ct": "ct", "de": "de",
+    "fl": "florida", "ga": "georgia", "hi": "hi", "id": "idaho",
+    "il": "illinois", "in": "indiana", "ia": "iowa", "ks": "kansas",
+    "ky": "kentucky", "la": "louisiana", "me": "me", "md": "maryland",
+    "ma": "massachusetts", "mi": "michigan", "mn": "minnesota",
+    "ms": "ms", "mo": "missouri", "mt": "montana", "ne": "nebraska",
+    "nv": "nv", "nh": "nh", "nj": "new-jersey", "nm": "new-mexico",
+    "ny": "new-york", "nc": "north-carolina", "nd": "north-dakota",
+    "oh": "ohio", "ok": "oklahoma", "or": "oregon", "pa": "pennsylvania",
+    "ri": "ri", "sc": "south-carolina", "sd": "south-dakota",
+    "tn": "tennessee", "tx": "texas", "ut": "utah", "vt": "vt",
+    "va": "virginia", "wa": "washington", "wv": "west-virginia",
+    "wi": "wisconsin", "wy": "wy",
+}
+
+
+def state_dir_for(project_id: str) -> str:
+    """Derive the GCS state folder from the project id ({state}-sam-...)."""
+    code = (project_id or "").split("-", 1)[0].lower()
+    return STATE_DIRS.get(code, code or "unknown")
+
+
 def upload_attachment_to_gcs(bucket, project_id: str, attachment: dict[str, Any]) -> str:
     """Returns 'uploaded', 'skipped' (already in GCS), or 'error'."""
     resource_id = attachment["resourceId"]
     name = attachment.get("name") or f"{resource_id}.bin"
-    blob_path = f"georgia/{project_id}/{name}"
+    blob_path = f"{state_dir_for(project_id)}/{project_id}/{name}"
     blob = bucket.blob(blob_path)
     if blob.exists():
         print(f"  [skip] already in GCS: {blob_path}", file=sys.stderr)
