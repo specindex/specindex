@@ -1,0 +1,47 @@
+{
+  "updated_at": "2026-08-05T09:41:54",
+  "entries": [
+    {
+      "claim": "WBDG hosts VA PG-18-1 master specs (index page)",
+      "url": "https://www.wbdg.org/ffc/va/master-specifications-pg-18-1",
+      "verified": false,
+      "evidence": "SOFT-404: returned exactly 1359 bytes, byte-identical to the nonsense-path baseline on the same host"
+    },
+    {
+      "claim": "WBDG serves VA master spec .docx files anonymously",
+      "url": "https://www.wbdg.org/FFC/VA/VAASC/VA%2023%2064%2000.docx",
+      "verified": true,
+      "evidence": "REAL: 57,476 bytes, Content-Type application/vnd.openxmlformats-officedocument.wordprocessingml.document; 36 of 52 probed Div 21-28 sections resolved"
+    },
+    {
+      "claim": "LA County Public Works posts addenda publicly without registration",
+      "url": "http://pw.lacounty.gov/brcd/servicecontracts",
+      "verified": false,
+      "evidence": "Live render: solicitations present but ZERO addenda document links; verdict SOLICITATIONS-ONLY, not OPEN"
+    },
+    {
+      "claim": "Cook County OCPO requires registration to view addenda",
+      "url": "https://www.cookcountyil.gov/service/current-contracting-opportunities",
+      "verified": false,
+      "evidence": "Host is a SOFT-404 responder; no login wall detected and no verdict is derivable either way"
+    },
+    {
+      "claim": "Harris County Purchasing (Bonfire) requires registration for addenda",
+      "url": "https://purchasing.harriscountytx.gov/Pages/BidSolicitations.aspx",
+      "verified": false,
+      "evidence": "Host is a SOFT-404 responder; claim not supported by evidence"
+    },
+    {
+      "claim": "Maricopa County requires a BidNet account to download addenda",
+      "url": "https://www.maricopa.gov/2190/Solicitations",
+      "verified": false,
+      "evidence": "BidNet/Periscope detected but NO login wall found in rendered text; verdict SOLICITATIONS-ONLY"
+    },
+    {
+      "claim": "San Diego County BuyNet requires login to download addenda",
+      "url": "https://www.sandiegocounty.gov/content/sdc/purchasing.html",
+      "verified": false,
+      "evidence": "Ivalua detected but NO login wall found in rendered text; verdict SOLICITATIONS-ONLY"
+    }
+  ]
+}
