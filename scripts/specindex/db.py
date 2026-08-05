@@ -82,11 +82,21 @@ def stage_run(conn, stage: str, scope: str | None = None, rows_in: int | None = 
 # --- work queue -------------------------------------------------------------
 
 def enqueue(conn, kind: str, payload: dict, priority: int = 5,
-            dedupe_key: str | None = None) -> bool:
+            dedupe_key: str | None = None, domain: str | None = None) -> bool:
+    """`domain` drives per-host politeness. Without it an item is unlimited,
+    so derive it from any url in the payload rather than leaving it null --
+    an unlabelled item is one the thundering-herd guard cannot protect."""
+    if domain is None:
+        url = payload.get("url") or ""
+        if url:
+            import urllib.parse as _u  # noqa: PLC0415
+            domain = _u.urlparse(url).netloc or None
     cur = conn.cursor()
     cur.execute(
-        "INSERT INTO work_queue (kind, payload, priority, dedupe_key) VALUES (%s,%s,%s,%s) "
-        "ON CONFLICT DO NOTHING RETURNING id", (kind, json.dumps(payload), priority, dedupe_key))
+        "INSERT INTO work_queue (kind, payload, priority, dedupe_key, domain) "
+        "VALUES (%s,%s,%s,%s,%s) "
+        "ON CONFLICT DO NOTHING RETURNING id",
+        (kind, json.dumps(payload), priority, dedupe_key, domain))
     row = cur.fetchone()
     conn.commit()
     return row is not None
@@ -102,12 +112,11 @@ def claim(conn, kind: str, worker: str | None = None):
     """
     worker = worker or f"{socket.gethostname()}:{os.getpid()}"
     cur = conn.cursor()
-    cur.execute("""
-        UPDATE work_queue SET status='claimed', claimed_at=now(), claimed_by=%s,
-               attempts = attempts + 1
-        WHERE id = (SELECT id FROM work_queue WHERE kind=%s AND status='pending'
-                    ORDER BY priority, id FOR UPDATE SKIP LOCKED LIMIT 1)
-        RETURNING id, payload, attempts, max_attempts""", (worker, kind))
+    # claim_work() honours BOTH priority and per-domain leases. A priority-only
+    # claim sends every worker at whichever host is due -- 50 SAM states coming
+    # due together would mean N concurrent requests to api.sam.gov, which is how
+    # a WAF ban happens. A ban is permanent loss of a source, not a slowdown.
+    cur.execute("SELECT * FROM claim_work(%s,%s)", (kind, worker))
     row = cur.fetchone()
     conn.commit()
     if not row:
@@ -117,9 +126,10 @@ def claim(conn, kind: str, worker: str | None = None):
     try:
         yield {"id": item_id, "payload": payload, "attempts": attempts}
     except Exception as e:  # noqa: BLE001
-        status = "failed" if attempts < max_attempts else "dead"
-        cur.execute("UPDATE work_queue SET status=%s, last_error=%s, finished_at=now() "
-                    "WHERE id=%s", (status, f"{type(e).__name__}: {e}"[:2000], item_id))
+        # fail_work() applies exponential backoff (2^attempts minutes, capped
+        # at 6h). Without it a permanently-500ing url burns its whole attempt
+        # budget in seconds and keeps workers busy achieving nothing.
+        cur.execute("SELECT fail_work(%s,%s)", (item_id, f"{type(e).__name__}: {e}"))
         conn.commit()
         raise
     cur.execute("UPDATE work_queue SET status='done', finished_at=now() WHERE id=%s", (item_id,))
