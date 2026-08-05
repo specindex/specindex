@@ -111,3 +111,174 @@ def group_for_ui(tags_with_counts: list[tuple[str, int]], total_projects: int,
             rare.append((c, n))
     return {"broad": broad, "specific": specific, "rare": rare,
             "merged_from": len(tags_with_counts), "merged_to": len(merged)}
+
+
+# ---------------------------------------------------------------------------
+# GOVERNED VOCABULARY (design review, 2026-08-05)
+#
+# "Map every category to a CSI division and hold the customer-facing list to
+# roughly 30 governed values, with the raw string kept on the record for
+# provenance. A rep who sees two spellings of the same thing stops trusting
+# the count next to it."
+#
+# That last sentence is the whole argument. The cost of a messy vocabulary is
+# not ugliness, it is that the NUMBER beside each option stops being believed
+# -- and the number is what we sell.
+#
+# Two rules make this safe:
+#   1. The raw string is never destroyed. governed() maps for DISPLAY; the
+#      original stays on the record, so a mapping mistake is reversible and
+#      provenance survives.
+#   2. Anything unmapped falls through to UNGOVERNED rather than being forced
+#      into the nearest bucket. A wrong division is worse than an honest
+#      "other" -- it would put a manufacturer in a trade they do not sell into.
+# ---------------------------------------------------------------------------
+
+UNGOVERNED = ("99", "Other / ungoverned")
+
+# division code -> customer-facing label. MasterFormat divisions, which is the
+# same axis the spec-extraction wedge uses, so the filter and the product
+# finally speak one language.
+CSI_DIVISIONS: dict[str, str] = {
+    "03": "Concrete",
+    "04": "Masonry",
+    "05": "Metals",
+    "06": "Wood & Plastics",
+    "07": "Thermal & Moisture (Roofing)",
+    "08": "Openings (Doors, Glazing)",
+    "09": "Finishes",
+    "10": "Specialties",
+    "11": "Equipment",
+    "12": "Furnishings (FF&E)",
+    "13": "Special Construction",
+    "14": "Conveying (Elevators)",
+    "21": "Fire Suppression",
+    "22": "Plumbing",
+    "23": "HVAC",
+    "25": "Integrated Automation",
+    "26": "Electrical",
+    "27": "Communications",
+    "28": "Electronic Safety & Security",
+    "31": "Earthwork",
+    "32": "Exterior Improvements",
+    "33": "Utilities",
+    "34": "Transportation",
+    "40": "Process Interconnections",
+    "41": "Material Processing",
+    "48": "Electrical Power Generation",
+    UNGOVERNED[0]: UNGOVERNED[1],
+}
+
+# Substring -> division. Ordered longest-first at match time so "fire
+# suppression" is not captured by "fire".
+_TAG_TO_DIVISION: list[tuple[str, str]] = [
+    ("fire suppression", "21"), ("fire protection", "21"), ("sprinkler", "21"),
+    ("plumbing", "22"), ("medical gas", "22"), ("bathroom fixtures", "22"),
+    ("hvac", "23"), ("chiller", "23"), ("cooling", "23"), ("boiler", "23"),
+    ("air handling", "23"), ("climate control", "23"), ("ventilation", "23"),
+    ("refrigeration", "23"), ("compressed air", "23"),
+    ("building automation", "25"), ("bms", "25"), ("controls", "25"),
+    ("electrical", "26"), ("lighting", "26"), ("switchgear", "26"),
+    ("generator", "26"), ("backup power", "26"), ("ups", "26"),
+    ("battery storage", "26"), ("power distribution", "26"), ("solar", "26"),
+    ("communication", "27"), ("av", "27"), ("data center", "27"),
+    ("structured cabling", "27"), ("network", "27"),
+    ("security", "28"), ("access control", "28"), ("surveillance", "28"),
+    ("fire alarm", "28"),
+    ("elevator", "14"), ("escalator", "14"), ("conveyor", "14"), ("lift", "14"),
+    ("roofing", "07"), ("waterproofing", "07"), ("insulation", "07"),
+    ("glazing", "08"), ("curtain wall", "08"), ("doors", "08"),
+    ("windows", "08"), ("storefront", "08"), ("hardware", "08"),
+    ("flooring", "09"), ("acoustic", "09"), ("ceiling", "09"),
+    ("paint", "09"), ("coating", "09"), ("finishes", "09"), ("tile", "09"),
+    ("concrete", "03"), ("paving", "32"), ("masonry", "04"),
+    ("structural steel", "05"), ("metals", "05"),
+    ("casework", "06"), ("cabinetry", "06"), ("millwork", "06"),
+    ("ff&e", "12"), ("furniture", "12"), ("seating", "12"),
+    ("cleanroom", "13"), ("clean room", "13"), ("pool", "13"),
+    ("dock equipment", "11"), ("kitchen equipment", "11"), ("lab equipment", "11"),
+    ("laundry", "11"), ("appliance", "11"), ("bottling", "41"),
+    ("signage", "10"), ("lockers", "10"), ("partitions", "10"),
+    ("landscape", "32"), ("irrigation", "32"), ("fencing", "32"),
+    ("utilities", "33"), ("civil", "33"), ("stormwater", "33"),
+    ("accessibility", "10"), ("elevator", "14"),
+]
+
+
+def division_for(tag: str) -> tuple[str, str]:
+    """(division_code, label) for a raw tag. UNGOVERNED when nothing matches.
+
+    Longest substring first, so 'fire suppression' beats a bare 'fire' and
+    'access control' is not swallowed by 'control'.
+    """
+    c = canonical(tag)
+    if not c:
+        return UNGOVERNED
+    for needle, div in sorted(_TAG_TO_DIVISION, key=lambda kv: -len(kv[0])):
+        if needle in c:
+            return div, CSI_DIVISIONS[div]
+    return UNGOVERNED
+
+
+def governed_facets(tags_with_counts: list[tuple[str, int]]) -> list[dict]:
+    """Collapse raw tags into governed divisions with counts, for the filter UI.
+
+    The raw tag is retained in `raw_tags` so a record can still show what the
+    source actually said, and so a mapping error is traceable rather than
+    baked in.
+    """
+    agg: dict[str, dict] = {}
+    for tag, n in tags_with_counts:
+        code, label = division_for(tag)
+        e = agg.setdefault(code, {"division": code, "label": label,
+                                  "count": 0, "raw_tags": []})
+        e["count"] += n
+        e["raw_tags"].append(tag)
+    return sorted(agg.values(), key=lambda e: (e["division"] == UNGOVERNED[0], -e["count"]))
+
+
+# ---------------------------------------------------------------------------
+# Project types. 87 distinct values today, 13 of which are full DESCRIPTIONS
+# that leaked into a type field -- e.g. "Industrial / Data Center (300,000 sq
+# ft, 99 MW capacity)". Each appears exactly once and each becomes its own
+# dropdown option, which is how a filter list acquires entries that match a
+# single row.
+# ---------------------------------------------------------------------------
+
+PROJECT_TYPES = (
+    "commercial", "office", "retail", "industrial", "warehouse", "education",
+    "healthcare", "hospitality", "civic", "institutional", "residential",
+    "mixed_use", "data_center", "infrastructure", "religious", "recreation",
+    "transportation", "utility", "other",
+)
+
+_TYPE_ALIASES = {
+    "mixed use": "mixed_use", "mixed-use": "mixed_use",
+    "data centre": "data_center", "datacenter": "data_center",
+    "school": "education", "university": "education", "k-12": "education",
+    "hospital": "healthcare", "medical": "healthcare", "clinic": "healthcare",
+    "hotel": "hospitality", "restaurant": "hospitality",
+    "government": "civic", "municipal": "civic",
+    "distribution": "warehouse", "logistics": "warehouse",
+    "multifamily": "residential", "apartment": "residential",
+}
+
+
+def governed_project_type(raw: str | None) -> str:
+    """Map a raw type to the fixed list. Long free text degrades to 'other'.
+
+    A 60-character description is not a type, and letting one through creates
+    a filter option that matches exactly one project.
+    """
+    if not raw:
+        return "other"
+    t = re.sub(r"\s+", " ", raw.strip().lower())
+    if t in PROJECT_TYPES:
+        return t
+    for alias, canon in _TYPE_ALIASES.items():
+        if alias in t:
+            return canon
+    for pt in PROJECT_TYPES:
+        if pt.replace("_", " ") in t:
+            return pt
+    return "other"

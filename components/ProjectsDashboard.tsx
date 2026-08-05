@@ -26,6 +26,23 @@ type Facets = {
 
 type SortKey = "score" | "name" | "value" | "recency";
 
+// The three stages where a spec is still influenceable. Everything the product
+// claims to sell lives here; cancelled and completed are reachable but are
+// never the default, because a completed project cannot be specified into.
+//
+// Sent as a comma list, matching how `state` already passes a multi-value
+// territory to the same endpoint. VERIFY against /v1/projects before relying
+// on it -- if the API rejects multi-value status, STATUS_PRESETS below is the
+// fallback shape (one request per chip) and the default becomes "planning".
+const EARLY_STAGE = "planning,permitting,bidding";
+
+// Status as three visible chips rather than a dropdown of everything.
+const STATUS_PRESETS: { value: string; label: string }[] = [
+  { value: EARLY_STAGE, label: "Spec still open" },
+  { value: "planning,permitting", label: "Planning & permitting" },
+  { value: "all", label: "All statuses" },
+];
+
 // Mirrors compute-project-documents.py's DOCUMENT_TYPE_KEYWORDS categories.
 const DOCUMENT_TYPES: { value: string; label: string }[] = [
   { value: "specifications", label: "Specifications" },
@@ -92,11 +109,30 @@ export function ProjectsDashboard() {
   // time -- a lightweight stand-in for a saved profile until real
   // accounts exist (see docs/ROADMAP.md item 46, Phase B).
   const [territory, setTerritory] = useState<string[]>(() => readStoredList(TERRITORY_KEY));
-  const [status, setStatus] = useState("all");
+  // DEFAULTS MUST MATCH THE PITCH (design review, 2026-08-05).
+  //
+  // These defaulted to "all", which meant the page selling "the window before
+  // construction" opened on a list including CANCELLED and COMPLETED projects,
+  // sorted so the top row could be a data centre already under construction.
+  // The first row a new user saw actively contradicted the headline above it.
+  //
+  // Early-stage is now the default and cancelled/completed remain reachable
+  // but never arrive uninvited. Anyone who wants everything can still get it;
+  // the difference is that the default no longer undercuts the product.
+  const [status, setStatus] = useState(EARLY_STAGE);
   const [projectType, setProjectType] = useState("all");
   const [county, setCounty] = useState("all");
   const [category, setCategory] = useState(() => readStoredValue(CATEGORY_KEY) ?? "all");
+  // The design calls for "current year forward" as the default. NOT applied
+  // yet: `year` is sent to /v1/projects as a single year, so a range needs
+  // either a year_min param or an API change, and sending a sentinel like
+  // "recent" would be silently dropped or rejected. Left at "all" rather than
+  // shipping a default that only appears to work -- the failure would be a
+  // wrong result set, not an error, which is the worst shape available here.
+  // Status now carries most of the same benefit, since stale rows are mostly
+  // completed/cancelled.
   const [year, setYear] = useState("all");
+  const [showAdvanced, setShowAdvanced] = useState(false);
   const [hasDocuments, setHasDocuments] = useState("all"); // "all" | "yes" | "no"
   const [documentType, setDocumentType] = useState("all"); // "all" | one of DOCUMENT_TYPES below
   const [query, setQuery] = useState("");
@@ -403,25 +439,31 @@ export function ProjectsDashboard() {
           placeholder="City, owner, GC, HVAC, glazing, healthcare…"
           className="mt-4 w-full rounded-md border border-[var(--color-border)] bg-white px-4 py-3 text-base outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
         />
-        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-7">
-          <select value={status} onChange={(e) => setStatus(e.target.value)} className="rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm">
-            <option value="all">All statuses</option>
-            {facets.statuses.map((s) => (
-              <option key={s} value={s}>{s.replaceAll("_", " ")}</option>
-            ))}
-          </select>
-          <select value={projectType} onChange={(e) => setProjectType(e.target.value)} className="rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm">
-            <option value="all">All types</option>
-            {facets.project_types.map((t) => (
-              <option key={t} value={t}>{typeLabel(t)}</option>
-            ))}
-          </select>
-          <select value={county} onChange={(e) => setCounty(e.target.value)} className="rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm">
-            <option value="all">All counties</option>
-            {facets.counties.map((c) => (
-              <option key={c} value={c}>{c}</option>
-            ))}
-          </select>
+        {/* Status as three chips, not a dropdown of everything. The stage a
+            project is in is the single most consequential filter -- a
+            completed project cannot be specified into -- so it belongs in
+            front of the user rather than one of eight equal-looking selects. */}
+        <div className="mt-4 flex flex-wrap gap-1.5">
+          {STATUS_PRESETS.map((p) => (
+            <button
+              key={p.value}
+              type="button"
+              onClick={() => {
+                setStatus(p.value);
+                dismissOnboarding();
+              }}
+              className={`rounded-full border px-3 py-1.5 text-xs font-medium transition ${
+                status === p.value
+                  ? "border-[var(--color-green)] bg-[var(--color-green)] text-white"
+                  : "border-[var(--color-border)] text-[var(--color-gray-600)] hover:border-[var(--color-gray-400)]"
+              }`}
+            >
+              {p.label}
+            </button>
+          ))}
+        </div>
+
+        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           <select
             value={category}
             onChange={(e) => {
