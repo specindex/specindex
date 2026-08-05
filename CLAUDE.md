@@ -112,3 +112,28 @@
 - **No EDMS exists on any of them** (verified with soft-404 baselining), and **the six proven document tenants are saturated** — a full re-run produced 0 new documents.
 - **eTRAKiT is NOT viable**: a hard 50-record cap on every public search (50 of 9,429; 50 of 1,185 even at month granularity) and no date column. Do not build the provider despite 11 verified jurisdictions incl. Collin #35 and Denton #47.
 - **Every source that has ever produced documents is a MID-SIZE county** on Accela/EnerGov with ungated attachments, or a separate EDMS (Snohomish, rank 72, 1,087 docs). "Doc-capable provider" ≠ "doc-bearing tenant" — LA has 7 doc-capable configs and returned zero attachments from 148 records.
+
+# Strategy: the wedge is basis-of-design attribution, not lead breadth
+
+From the ConstructConnect teardown (2026-08-04), reconciled against the live system.
+
+- **Sell "who is named, on what page, on what date" — not "projects earlier."** Every incumbent complaint is about lead relevance and staleness ("too many false positives", "much of the info can be found publicly online" — a CC customer, on their own review page). Lead volume is a losing frame: we hold 599,860 permits, ConstructConnect claims 825,000, Dodge 636,000/year. **Citations and spec position are the winning frame.**
+- **The wedge:** in Division 23/26 schedules the engineer names a **basis-of-design** manufacturer, then adds an "or equal" clause. Basis of design vs listed alternate vs absent is the highest-value fact for a manufacturer, and neither Dodge SpecShare nor ConstructConnect Analyze is documented as distinguishing them. **The buyer is the independent rep agency, not manufacturer HQ** — rep commissions depend on provable spec attribution and their tools (OASIS, Repfabric) have no spec feed.
+- **The moat is the addenda ledger, and it is the only IRREVERSIBLE item.** Substitution requests are ruled on publicly and approved/rejected manufacturers are named in addenda on public bid portals. Nobody indexes them. **Addenda come down after award — every week without a crawler is data permanently lost.** Everything else on the roadmap can slip a month at no cost.
+- **What we actually hold (2026-08-04): 5,450 documents, ~2,121 drawing sets, ~101 spec-ish.** We capture DRAWINGS from permit portals, not project manuals and not addenda. MEP drawings do carry equipment schedules with basis-of-design, but that is a second extraction problem.
+- **Three built components are simply not connected:** 50 wired `sam_gov` configs (pulling award metadata only), `scripts/fetch-sam-gov-documents.py` (live-verified; SAM.gov resourceLinks are full federal project manuals, anonymous, no API key), and `scripts/extract-spec-book.py` (already extracts basis-of-design + approved manufacturers by MasterFormat). Connecting them is the shortest path to the wedge.
+
+# Legal and product constraints from the teardown — do not violate
+
+- **Never scrape ConstructConnect, Dodge, Blue Book or BuildingConnected.** Their AUP explicitly forbids scraping for AI training and for building competing services. With a former CC VP of Product as founder this is the worst available optic. **Public data only** is what keeps the company defensible.
+- **Do not build a cross-filtering chart dashboard.** Six issued iSqFt patents claim exactly that shape (multiple charts, click a segment, the others update). Use a filter sidebar driving a single results view, or read-only charts. **Never render a permit job-cost histogram** — US 9,633,012 claims it and does not require interactivity. **Lead with alerts, email digests and API**, which read on essentially nothing in the family.
+- The branch covering AI spec extraction (**US 2020/0159985 A1** — named entity recognition, MasterFormat anchoring, co-occurrence scoring) **was ABANDONED**. The technology we would build is unclaimed; keep it in a defensive file.
+- **Pay the $699/yr MasterFormat license.** We describe indexing by CSI division and extract-spec-book.py classifies by MasterFormat section — live exposure for a rounding error, and paying it becomes a talking point.
+- **Do not quote Florida project values.** Miami-Dade's value field is broken: it reports $7.86 BILLION for a beauty-salon interior alteration, and the top six FL projects are the same artifact.
+- **Do not claim brand-vs-competitor visibility.** Only 162 of 520,653 in-window projects carry any `mentioned_brands`, and those are tenants (Google, Amazon), not building-product manufacturers. `competitor_watch` is a static template tag stamped identically on ~19,600 rows each — a placeholder, not detection.
+
+# SAM.gov is the fastest path to spec books AND addenda (verified 2026-08-04)
+
+- **`scripts/fetch-sam-gov-documents.py` against already-indexed awards returns full PROJECT MANUALS and AMENDMENTS.** First 30 uploads (159 MB) included `SpecsAsOne.pdf` (18.9 MB), `Attachment 1 - Specifications.pdf`, and Amendments 0001-0005. Anonymous, no API key. This is the corpus `extract-spec-book.py` was written for and never had.
+- **Federal amendments ARE addenda**, and SAM.gov retains them — so the "addenda disappear after award" time-pressure applies to **state/local portals only**. Prove basis-of-design extraction on the federal corpus first; it is free, permanent, and already wired.
+- **Bug: NC projects land under `gs://specindex-ai-raw-documents/georgia/`.** The script is using a wrong/hardcoded state_dir. Documents are safe but mis-filed — fix before the corpus grows further.
