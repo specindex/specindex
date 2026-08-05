@@ -237,7 +237,21 @@ def main() -> int:
                 r = client.models.generate_content(
                     model=model, contents=PROMPT + s["text"],
                     config=types.GenerateContentConfig(response_mime_type="application/json"))
-                data = json.loads((r.text or "{}").strip().removeprefix("```json").removesuffix("```"))
+                raw = (r.text or "{}").strip().removeprefix("```json").removesuffix("```")
+                data = json.loads(raw)
+                # The model sometimes returns a LIST of section objects rather
+                # than the single object the schema asks for -- a long section
+                # with several manufacturer blocks invites it. Crashing on that
+                # threw away the whole run (AttributeError deep in the loop),
+                # so normalise instead: take the first entry that actually
+                # names a manufacturer, else the first.
+                if isinstance(data, list):
+                    data = next((d for d in data
+                                 if isinstance(d, dict)
+                                 and d.get("basis_of_design_manufacturer")),
+                                data[0] if data and isinstance(data[0], dict) else {})
+                if not isinstance(data, dict):
+                    continue
             except Exception as e:  # noqa: BLE001
                 print(f"      model error: {type(e).__name__}", flush=True)
                 continue
