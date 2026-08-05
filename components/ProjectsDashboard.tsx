@@ -243,6 +243,34 @@ export function ProjectsDashboard() {
     };
   }, [territory, status, projectType, county, category, year, hasDocuments, documentType, debouncedQuery, sort, newOnly, offset]);
 
+  // The year filter was a flat list of ~57 individual years, 1979 to 2091.
+  // Measured against the corpus that is badly mis-weighted: 93.7% of dated
+  // projects are 2024 or later, while 42 of those entries covered just 2.2%
+  // of the data between them. Scrolling past four decades to reach the year
+  // that holds a third of the corpus is the whole problem.
+  //
+  // Three groups, most-used first, with the long tail collapsed behind
+  // <optgroup> labels. Values are unchanged single years, so the API contract
+  // is untouched -- this is presentation only.
+  //
+  // Implausible years are also DROPPED from the list. The dropdown was
+  // offering 2091 and 2036 as selectable filters; those are data-entry typos
+  // in the source (New Jersey publishes permitdate 2925-08-15 for one permit),
+  // not real options. Offering a corrupt value as a filter invites a user to
+  // select it and see an empty or nonsensical result. The bounds match
+  // scripts/specindex/dates.py so the UI and the validator cannot disagree.
+  const yearGroups = useMemo(() => {
+    const now = new Date().getFullYear();
+    const plausible = (facets.years ?? [])
+      .filter((y) => y >= 1970 && y <= now + 6)
+      .sort((a, b) => b - a);
+    return {
+      recent: plausible.filter((y) => y <= now && y >= now - 3),
+      planned: plausible.filter((y) => y > now),
+      earlier: plausible.filter((y) => y < now - 3),
+    };
+  }, [facets.years]);
+
   const territoryLabel = useMemo(() => {
     if (territory.length === 0) return "All states";
     if (territory.length <= 3) return territory.join(", ");
@@ -368,9 +396,23 @@ export function ProjectsDashboard() {
           </select>
           <select value={year} onChange={(e) => setYear(e.target.value)} className="rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm">
             <option value="all">All years</option>
-            {facets.years.map((y) => (
+            {yearGroups.recent.map((y) => (
               <option key={y} value={y}>{y}</option>
             ))}
+            {yearGroups.planned.length > 0 && (
+              <optgroup label="Planned / future">
+                {yearGroups.planned.map((y) => (
+                  <option key={y} value={y}>{y}</option>
+                ))}
+              </optgroup>
+            )}
+            {yearGroups.earlier.length > 0 && (
+              <optgroup label="Earlier">
+                {yearGroups.earlier.map((y) => (
+                  <option key={y} value={y}>{y}</option>
+                ))}
+              </optgroup>
+            )}
           </select>
           <select value={sort} onChange={(e) => setSort(e.target.value as SortKey)} className="rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm">
             <option value="score">Sort: priority score</option>
