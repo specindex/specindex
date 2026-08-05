@@ -875,13 +875,13 @@ def enrich_one(client, settings: Settings, conn, project: dict, dry_run: bool, f
         return 0
 
     print(f"Pass 1 (discovery): {project['name']!r}")
-    discovery, d1_urls = run_discovery(client, settings.flash_model, project, conn=conn)
+    discovery, d1_urls = run_discovery(client, _step10_model(settings), project, conn=conn)
 
     claims = _team_claims(discovery)
     score = _project_score(conn, project["project_sk"])
     if claims and (score is None or score >= PASS2_SCORE_THRESHOLD):
         print(f"Pass 2 (cross-check): {len(claims)} claims (score={score})")
-        crosscheck = run_crosscheck(client, settings.flash_model, project, claims,
+        crosscheck = run_crosscheck(client, _step10_model(settings), project, claims,
                                     conn=conn, exclude_urls=d1_urls)
     else:
         print(f"  skipping Pass 2 -- score {score} below threshold {PASS2_SCORE_THRESHOLD}")
@@ -921,7 +921,7 @@ def _finish_from_discovery(
     score = _project_score(conn, project["project_sk"])
     if claims and (score is None or score >= PASS2_SCORE_THRESHOLD):
         print(f"Pass 2 (cross-check): {len(claims)} claims (score={score})")
-        crosscheck = run_crosscheck(client, settings.flash_model, project, claims,
+        crosscheck = run_crosscheck(client, _step10_model(settings), project, claims,
                                     conn=conn, exclude_urls=d1_urls)
     else:
         print(f"  skipping Pass 2 -- score {score} below threshold {PASS2_SCORE_THRESHOLD}")
@@ -985,7 +985,7 @@ def enrich_group(client, settings: Settings, conn, projects: list[dict], dry_run
         chunk_projects = [p for p, _ in chunk]
         print(f"Pass 1 (batch discovery): {len(chunk_projects)} project(s)")
         try:
-            batch_results = run_discovery_batch(client, settings.flash_model, chunk_projects, conn=conn)
+            batch_results = run_discovery_batch(client, _step10_model(settings), chunk_projects, conn=conn)
         except Exception as e:  # noqa: BLE001 -- one bad batch shouldn't kill the whole run
             print(f"  BATCH FAILED for {len(chunk_projects)} projects: {e}", file=sys.stderr)
             continue
@@ -1006,6 +1006,18 @@ def enrich_group(client, settings: Settings, conn, projects: list[dict], dry_run
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
+
+def _step10_model(settings):
+    """Step 10 is PRO. Spec position (basis of design / listed alternate /
+    absent) is the fact the customer buys and nothing downstream re-checks it.
+    Triage stays on FLASH: it only decides whether a project is worth a full
+    pass, and a wrong triage costs one skipped project, not a wrong claim."""
+    try:
+        from specindex import models as _m  # noqa: PLC0415
+        return _m.model_for_step(10, settings)
+    except Exception:  # noqa: BLE001
+        return getattr(settings, "pro_model", settings.flash_model)
+
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)

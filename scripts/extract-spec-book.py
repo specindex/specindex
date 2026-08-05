@@ -451,7 +451,15 @@ def run(pdf_path: Path, project_id: str, dry_run: bool, model: str, source_docum
     # Never hardcode a model version here. config.py already carries the repo's
     # current Flash model and is the one place to change it; pasting a literal
     # is how this file ended up on a superseded version in the first place.
-    model = model or settings.flash_model
+    # Step 9. PRO, not Flash: this parses MasterFormat divisions and decides
+    # basis-of-design vs listed alternate, and NOTHING downstream re-checks it
+    # -- the output is the product. See specindex/models.py.
+    if model is None:
+        try:
+            from specindex import models as _m  # noqa: PLC0415
+            model = _m.model_for_step(9, settings)
+        except Exception:  # noqa: BLE001 -- routing must never break extraction
+            model = getattr(settings, "pro_model", settings.flash_model)
     print(f"[spec-book] classifying with {model}", file=sys.stderr)
 
     results = []
@@ -627,7 +635,7 @@ def main() -> int:
     parser.add_argument("--project-id", required=True, help="SpecIndex project_id this spec book belongs to")
     parser.add_argument("--model", default=None,
                         help="Vertex/Gemini model for the classification pass. "
-                             "Defaults to Settings.flash_model (currently gemini-3.6-flash) "
+                             "Defaults to the step-9 model (Gemini Pro) via specindex/models.py "
                              "rather than a literal, so it tracks the repo's configured model "
                              "instead of going stale here. Flash is the right class: this is "
                              "structured extraction from text that already contains the answer, "

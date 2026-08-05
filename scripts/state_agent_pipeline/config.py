@@ -47,6 +47,12 @@ class Settings:
     google_cloud_project: str
     google_cloud_location: str
     flash_model: str
+    # Explicit Gemini Pro handle for the reasoning-heavy steps. Distinct from
+    # sonnet_model, which is a BACKEND-dependent slot that may resolve to
+    # Claude or to Gemini Pro depending on NJ_DCA_SONNET_BACKEND. Steps that
+    # genuinely need Pro must not have their model silently swapped for Claude
+    # by an unrelated backend setting.
+    pro_model: str
     sonnet_backend: str  # anthropic | vertex | gemini_pro
     sonnet_model: str
     anthropic_api_key: str | None
@@ -79,6 +85,13 @@ class Settings:
             flash_model=os.environ.get("NJ_DCA_FLASH_MODEL")
             or os.environ.get("VERTEX_GEMINI_MODEL")
             or "gemini-3.6-flash",
+            # Gemini 3.1 Pro, per Asif 2026-08-05. The PUBLISHED name on this
+            # Vertex project is "gemini-3.1-pro-preview" -- the bare
+            # "gemini-3.1-pro" returns 404 NOT_FOUND, as do gemini-3.0/3.5/3.6-pro.
+            # Probed live rather than assumed; a wrong model name here would
+            # fail only at first use, deep inside a batch run.
+            # Stable fallback if the preview is withdrawn: gemini-2.5-pro.
+            pro_model=os.environ.get("VERTEX_GEMINI_PRO_MODEL") or "gemini-3.1-pro-preview",
             sonnet_backend=backend,
             sonnet_model=sonnet_model,
             anthropic_api_key=os.environ.get("ANTHROPIC_API_KEY"),

@@ -703,3 +703,53 @@ closes it and must run after every capture batch.
 **Generalised rule: after any pipeline step, assert that the NEXT step can see
 its output.** A step that succeeds into a place nothing reads from is
 indistinguishable from a step that ran.
+
+---
+
+## AMENDMENT III — 2026-08-05: model routing across the 11 steps
+
+Flash for discovery and triage, Pro for extraction and reasoning. Implemented
+in `scripts/specindex/models.py`; steps declare a step NUMBER and are handed a
+model, so no script hard-codes one.
+
+**Models (probed live 2026-08-05, not assumed):**
+
+| slot | model | note |
+| :- | :- | :- |
+| `flash_model` | `gemini-3.6-flash` | |
+| `pro_model` | `gemini-3.1-pro-preview` | The bare `gemini-3.1-pro` returns **404 NOT_FOUND** on this Vertex project, as do `gemini-3.0/3.5/3.6-pro`. Stable fallback: `gemini-2.5-pro`. |
+
+`pro_model` is deliberately separate from `sonnet_model`, which is a
+backend-dependent slot that may resolve to Claude or to Gemini Pro depending on
+`NJ_DCA_SONNET_BACKEND`. Steps that genuinely need Pro must not have their
+model silently swapped by an unrelated backend setting.
+
+| step | tier | why |
+| :- | :- | :- |
+| 1 discovery | **Flash** | candidate portals/agency ids; step 2's live probe catches fabrications |
+| 2 verification | **Flash** | the verification is curl/Playwright, not a model |
+| 3-5, 7 | **Flash** | bookkeeping, deterministic config, dedup gate |
+| 6 research fallback | **Pro** | strict schema compliance when cross-checking facts |
+| 8 classification | **Flash — FALLBACK ONLY** | see below |
+| 9 spec-book extraction | **Pro** | MasterFormat division parsing, basis-of-design |
+| 10 spec position | **Pro** | basis of design / listed alternate / absent — the product itself |
+| 11 substitution ledger | **Pro** | dense procedural addenda language, named third parties |
+
+**The rule in one line: Flash where a verifier follows, Pro where the output
+is the product.**
+
+Flash's measured accuracy on live network facts was **1 of 7**. That sounds
+disqualifying and is not — *provided the verification gate exists*. Flash is a
+candidate generator whose errors are free because step 2 kills them. Pro is
+used exactly where nothing downstream re-checks the answer: a substitution
+ruling names a real company, and getting it wrong is commercially damaging
+with no later step to catch it.
+
+**Where this diverges from the routing as specified.** Step 8 document
+classification is Flash **only as a fallback**. The primary classifier is
+`scripts/document_classifier.py` — regex over filename plus first-page text —
+because it is free, deterministic and instant across tens of thousands of
+documents. An LLM call per document would cost real money and add latency for
+no accuracy gain on the easy majority; spending one to decide that
+`AMEND0005_...pdf` is an amendment is waste. Flash is invoked only when the
+deterministic classifier returns UNKNOWN on both filename and page text.
