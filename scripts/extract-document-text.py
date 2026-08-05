@@ -49,16 +49,55 @@ PADDLE_MIN_CONFIDENCE = float(os.environ.get("PADDLE_MIN_CONFIDENCE", "0.80"))
 USE_PADDLE = os.environ.get("USE_PADDLE", "1") not in ("0", "false", "False")
 DOCUMENT_AI_LOCATION = "us"
 
+# Counted so a run cannot skip every scanned page and still look successful.
+_SKIPPED_NO_OCR = 0
+
 USER_AGENT = "SpecIndexDocumentBot/1.0 (+https://specindex.ai; research/archival)"
+
+
+def _discover_processor_id(project: str) -> str | None:
+    """Ask the API which OCR processor exists, instead of requiring a config value.
+
+    WHY THIS EXISTS. The processor `b4fd7c567a32c0e9` was created 2026-07-29,
+    was ENABLED the whole time, and was never wired into any .env -- so every
+    scanned page was recorded as "skipped_no_docai" and nobody noticed. 471
+    pages skipped plus 672 stored near-empty. That mattered: local agency
+    addenda are frequently scanned images (verified on a real one whose text
+    layer held 3 characters and which OCR read as 9,518), so "no substitution
+    rulings found" was indistinguishable from "we could not read the documents
+    that contain them".
+
+    A required env var that lives only in a gitignored file is a setting that
+    does not survive a fresh clone. The processor id is not a secret -- it is
+    discoverable from the project itself, so discover it.
+    """
+    try:
+        from google.cloud import documentai_v1 as documentai  # noqa: PLC0415
+
+        client = documentai.DocumentProcessorServiceClient(
+            client_options={"api_endpoint": f"{DOCUMENT_AI_LOCATION}-documentai.googleapis.com"})
+        parent = f"projects/{project}/locations/{DOCUMENT_AI_LOCATION}"
+        for p in client.list_processors(parent=parent):
+            if p.type_ == "OCR_PROCESSOR" and p.state == documentai.Processor.State.ENABLED:
+                pid = p.name.rsplit("/", 1)[-1]
+                print(f"[docai] discovered enabled OCR processor {pid} "
+                      f"({p.display_name}) -- set DOCUMENT_AI_PROCESSOR_ID to pin it",
+                      file=sys.stderr)
+                return pid
+    except Exception as e:  # noqa: BLE001 -- discovery is best-effort
+        print(f"[docai] processor discovery failed ({type(e).__name__}); "
+              "set DOCUMENT_AI_PROCESSOR_ID explicitly", file=sys.stderr)
+    return None
 
 
 def _doc_ai_processor_name() -> str:
     project = os.environ.get("GOOGLE_CLOUD_PROJECT_NUMBER") or os.environ.get("GOOGLE_CLOUD_PROJECT", "specindex-ai")
-    processor_id = os.environ.get("DOCUMENT_AI_PROCESSOR_ID")
+    processor_id = os.environ.get("DOCUMENT_AI_PROCESSOR_ID") or _discover_processor_id(project)
     if not processor_id:
         raise SystemExit(
-            "DOCUMENT_AI_PROCESSOR_ID not set -- see the OCR_PROCESSOR created "
-            "2026-07-29 (specindex-ocr-comparison-test, us region) or create a new one."
+            "No Document AI OCR processor found and DOCUMENT_AI_PROCESSOR_ID is "
+            "not set. Scanned pages CANNOT be read without one -- run "
+            "scripts/verify-environment.py for the exact fix."
         )
     return f"projects/{project}/locations/{DOCUMENT_AI_LOCATION}/processors/{processor_id}"
 
@@ -240,6 +279,16 @@ def extract_document(fitz_module, client, processor_name: str, pdf_bytes: bytes)
         # and re-run once a processor id is set -- silently omitting them would
         # make the document look fully extracted when it is not.
         if client is None or not processor_name:
+            # LOUD. This previously wrote a quiet row and moved on, so a run
+            # could skip every scanned page in the corpus and still look
+            # successful. A scanned addendum skipped here is a substitution
+            # ruling we will never see.
+            global _SKIPPED_NO_OCR
+            _SKIPPED_NO_OCR += 1
+            if _SKIPPED_NO_OCR in (1, 10, 100) or _SKIPPED_NO_OCR % 500 == 0:
+                print(f"[docai] WARNING: {_SKIPPED_NO_OCR} scanned page(s) NOT READ "
+                      f"-- no OCR processor available. These pages are stored empty.",
+                      file=sys.stderr)
             pages_out.append(
                 {"page_number": page_number, "raw_text": "",
                  "ocr_engine": "skipped_no_docai", "avg_confidence": None}
