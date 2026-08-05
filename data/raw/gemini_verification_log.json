@@ -42,6 +42,24 @@
       "url": "https://www.sandiegocounty.gov/content/sdc/purchasing.html",
       "verified": false,
       "evidence": "Ivalua detected but NO login wall found in rendered text; verdict SOLICITATIONS-ONLY"
+    },
+    {
+      "claim": "AIA A701 3.3.4 requires pre-bid substitution approvals in an addendum",
+      "url": null,
+      "verified": true,
+      "evidence": "Consistent with CSI 01 25 00 practice; refutes the earlier 'ghost hunt' verdict"
+    },
+    {
+      "claim": "Fife WA Addendum 1 lists Sarnafil/Versico as approved substitutions",
+      "url": "https://www.fifewa.gov/DocumentCenter/View/4427/Addendum-1-PDF",
+      "verified": false,
+      "evidence": "URL REAL (200, 370KB, host 404s on nonsense) but Document AI OCR shows it is FIFE CITY COUNCIL MINUTES 2016-03-22. None of Sarnafil/Versico/substitution/approved/manufacturer present. Real URL, fabricated contents."
+    },
+    {
+      "claim": "'You scanned 14,000+ documents and found zero rulings'",
+      "url": null,
+      "verified": false,
+      "evidence": "I scanned 400 pages from 557 documents (~1.6%). Model overstated my evidence back at me and drew a strategic conclusion from it."
     }
   ]
 }
