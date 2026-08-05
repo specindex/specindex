@@ -509,6 +509,19 @@ function ActivityFeed({ project }: { project: Project }) {
   );
 }
 
+// Compose a location from the parts that EXIST, so a missing part cannot
+// leave its separator behind. The old inline version hardcoded the commas and
+// rendered ", Georgia" for a project with no city.
+function locationLine(project: { city?: string | null; county?: string | null; state?: string | null }): string {
+  return [
+    project.city?.trim() || null,
+    project.county?.trim() ? `${project.county.trim()} County` : null,
+    project.state?.trim() ? stateName(project.state) : null,
+  ]
+    .filter(Boolean)
+    .join(", ");
+}
+
 export function ProjectDetailView({ project: initialProject }: { project: Project }) {
   const [project, setProject] = useState(initialProject);
   const [showBreakdown, setShowBreakdown] = useState(false);
@@ -634,11 +647,17 @@ export function ProjectDetailView({ project: initialProject }: { project: Projec
                     </span>
                   )}
                 </p>
-                <p className="mt-2 text-sm text-[var(--color-gray-600)]">
-                  {project.city}
-                  {project.county ? `, ${project.county} County` : ""},{" "}
-                  {stateName(project.state)}
-                </p>
+                {/* Phase 0 item 8. This previously emitted a LEADING COMMA
+                    whenever city was empty -- the live record for B28 rendered
+                    ", Georgia". The separator was hardcoded between the parts
+                    rather than derived from which parts exist, so a missing
+                    part left its punctuation behind. Compose from the parts
+                    that are actually present and join once. */}
+                {locationLine(project) ? (
+                  <p className="mt-2 text-sm text-[var(--color-gray-600)]">
+                    {locationLine(project)}
+                  </p>
+                ) : null}
               </div>
 
               <div className="flex shrink-0 items-start gap-3">
@@ -825,7 +844,9 @@ export function ProjectDetailView({ project: initialProject }: { project: Projec
 
           {project.enrichment?.team.length ? (
             <section>
-              <h2 className="text-base font-bold">Verified construction team</h2>
+              {/* Phase 0 item 6: "Verified" sat directly above a SOURCES VARY
+                  badge on nearly every row, which undercut the page. */}
+              <h2 className="text-base font-bold">Construction team</h2>
               {/* The section title already says "Verified" -- a green
                   Confirmed pill on every single row was flagged in design
                   review as badge fatigue (every row shouting the same
@@ -848,11 +869,10 @@ export function ProjectDetailView({ project: initialProject }: { project: Projec
             </section>
           ) : null}
 
-          <div className="flex flex-wrap gap-3 pt-4">
-            <Link href="/projects/" className="btn btn-outline">
-              Back to all projects
-            </Link>
-          </div>
+          {/* Phase 0 item 7: the bottom "Back to all projects" duplicated the
+              "← All projects" link at the top of this same component. The one
+              in app/projects/view/page.tsx is NOT a duplicate -- that is the
+              "Project not found" route, where it is the only way out. */}
         </div>
 
         {/* RIGHT: workspace / lookup rail */}
