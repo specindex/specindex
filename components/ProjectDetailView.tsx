@@ -710,25 +710,46 @@ export function ProjectDetailView({ project: initialProject }: { project: Projec
                             ✕
                           </button>
                         </div>
+                        {/* Scoring v2. The maxima here were STALE -- this
+                            block still read Value/40, Recency/35, News/25
+                            after the composite changed to 30/25/45, so every
+                            number a rep audited was measured against the wrong
+                            denominator. News is gone entirely: it fired on 5
+                            projects out of 591,618.
+
+                            Spec position is shown even when it is 0, and
+                            labelled, because it is the largest component and
+                            is currently absent on ~99.7% of the corpus. A
+                            silent 0 would read as "this project scores badly
+                            on spec position" when the truth is "we have not
+                            read any documents for it." */}
                         <div className="space-y-2 text-[var(--color-gray-600)]">
                           <div className="flex items-center justify-between">
                             <span>Value</span>
                             <span className="font-mono font-bold text-[var(--color-green)]">
-                              {project.score.value}/40
+                              {project.score.value}/30
                             </span>
                           </div>
                           <div className="flex items-center justify-between">
                             <span>Recency</span>
                             <span className="font-mono font-bold text-[var(--color-green)]">
-                              {project.score.recency}/35
+                              {project.score.recency}/25
                             </span>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span>News coverage</span>
+                            <span>Spec position</span>
                             <span className="font-mono font-bold text-[var(--color-green)]">
-                              {project.score.news}/25
+                              {project.score.position ?? 0}/45
                             </span>
                           </div>
+                          {!project.score.position && (
+                            <p className="pt-1 text-xs leading-relaxed text-[var(--color-gray-400)]">
+                              No spec position yet — no manufacturer has been found in
+                              documents we hold for this project. This is the largest part
+                              of the score, so it is scored low for lack of evidence, not
+                              because the project is a poor fit.
+                            </p>
+                          )}
                         </div>
                         <div className="flex justify-between border-t border-[var(--color-border)] pt-2 font-bold text-[var(--color-ink)]">
                           <span>Total</span>

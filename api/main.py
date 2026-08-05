@@ -425,7 +425,8 @@ def fetch_enrichment(conn, sks: list[int]) -> dict[int, dict[str, Any]]:
 
     with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
         cur.execute(
-            "SELECT project_sk, score, value_score, recency_score, news_score "
+            "SELECT project_sk, score, value_score, recency_score, news_score, "
+            "coalesce(position_score, 0) AS position_score "
             "FROM project_scores WHERE project_sk = ANY(%s)",
             (sks,),
         )
@@ -434,7 +435,11 @@ def fetch_enrichment(conn, sks: list[int]) -> dict[int, dict[str, Any]]:
                 "total": r["score"],
                 "value": r["value_score"],
                 "recency": r["recency_score"],
+                # news is retained at 0 for back-compat with any older client;
+                # it was removed from the composite because it fired on 5
+                # projects out of 591,618.
                 "news": r["news_score"],
+                "position": r["position_score"],
             }
 
         cur.execute(

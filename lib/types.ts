@@ -27,7 +27,14 @@ export type ProjectScore = {
   total: number;
   value: number;
   recency: number;
+  /** Always 0. Removed from the composite -- it fired on 5 projects out of
+   *  591,618. Kept on the type only so older payloads still parse. */
   news: number;
+  /** Spec position: 0-45, the largest component and the only one that
+   *  reflects what SpecIndex sells. Currently non-zero on ~0.3% of the
+   *  corpus, so the UI must say when it is absent rather than showing a
+   *  silent low number. */
+  position?: number;
 } | null;
 
 export type ProjectTimelineEvent = {
