@@ -614,8 +614,15 @@ def _project_filter_clauses(
             clauses.append("p.state = ANY(%s)")
             params.append(codes)
     if status:
-        clauses.append("p.status = %s")
-        params.append(status)
+        # Comma-separated, mirroring `state` directly above. The UI's default
+        # is "spec still open" = planning,permitting,bidding, and with an
+        # exact-match comparison that default returned ZERO rows -- an empty
+        # landing page, which reads as a broken product rather than as a bad
+        # filter. Single values still work unchanged.
+        codes = [s.strip() for s in status.split(",") if s.strip()]
+        if codes:
+            clauses.append("p.status = ANY(%s)")
+            params.append(codes)
     if project_type:
         clauses.append("p.project_type = %s")
         params.append(project_type)
