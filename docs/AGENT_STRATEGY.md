@@ -806,3 +806,126 @@ affordable at all.
 
 Seeded 2026-08-05: 50 SAM states (hot, 24h) + 17 owner-standards institutions
 (cold, 720h).
+
+---
+
+# Reference: goals, source behaviour, and the incidents behind the rules
+
+Moved here from `CLAUDE.md` on 2026-08-05. That file is auto-loaded on every
+session, so it must carry only what an agent needs BEFORE acting. Everything
+below is real and still true — it is simply *reference*, needed when working in
+a specific area rather than on every turn.
+
+The organising rule: **CLAUDE.md holds the directive; this file holds the
+incident.** A rule is easier to follow when it is short; it is easier to trust
+when the evidence exists somewhere.
+
+## Goals and scope
+
+**Data pull window.** Standing anchor is **2025-01-01, fixed** — not a rolling
+lookback. Use `PULL_ANCHOR` / `--since-date`; never a hardcoded day-count, which
+drifts every session it is reused.
+
+**Coverage.** Maximise breadth AND depth for the top-500 US counties by
+population (`docs/us_counties_by_population.md`, real Census data). A county
+with structured data but no document path is a partial win. Paced in reviewed
+batches of five.
+
+**Documents are the moat, not permit-metadata breadth.** A discovery win
+requires BOTH structured data and a real document path, even if gated. Pure
+ArcGIS/Socrata bulk feeds are Shovels.ai's axis, not SpecIndex's.
+
+**The wedge is basis-of-design attribution.** In Division 23/26 schedules the
+engineer names a basis-of-design manufacturer, then adds "or equal". Basis of
+design vs listed alternate vs absent is the highest-value fact, and no incumbent
+is documented as distinguishing them. The buyer is the independent rep agency.
+
+**The moat is the substitution ledger.** Approvals are published in addenda by
+contractual requirement (AIA A701 §3.3.4); rejections are communicated privately.
+Addenda come down after award, so a back-file cannot be reconstructed later.
+Federal documents carry basis-of-design and substitution PROCEDURES but not
+rulings — verified 2026-08-05, 400 pages of "reject" yielded zero named rulings,
+all boilerplate.
+
+## Source-specific behaviour
+
+**Accela** had five stacked defects, all fixed 2026-08-04: dates were never ISO
+(`.replace("/","-")` produced `01-05-2026`, invisible to every windowed query —
+29,589 rows across 19 states); the date filter was never applied (a permit-type
+postback wipes the inputs, and `page.fill()` APPENDS on masked pre-filled
+fields); the watermark was a date string and a non-empty one made
+`lookback_days` a no-op; the row loop aborted at the first out-of-window row;
+and there was no date chunking. **Select the permit type FIRST, then set dates,
+via `.value` + `input`/`change`/`blur` dispatch — never `fill()`.** Searches run
+in 90-day windows; higher `max_pages` reaches further BACK, not further into the
+window.
+
+**Accela has two attachment UIs.** `lnkFileName` + `__doPostBack` is
+downloadable; a `<span>` + `ViewDocumentDetails` is metadata-only and exposes no
+download path. "Lists filenames" is not "serves documents".
+
+**eTRAKiT is NOT viable** — a hard 50-record cap on every public search and no
+date column. Do not build the provider despite 11 verified jurisdictions.
+
+**EDMS** on big-county GIS carries asset photos, not construction documents. The
+proven document sources are all MID-SIZE counties on Accela/EnerGov with ungated
+attachments, or a separate EDMS (Snohomish, rank 72).
+
+**SAM.gov** returns full federal project manuals and amendments, anonymously.
+Amendments are retained, so federal addenda are not time-sensitive; state/local
+are.
+
+**VA PG-18-1** moved to `vatilms.va.gov` behind an Okta loop. Still available
+anonymously at `wbdg.org/FFC/VA/VAASC/VA%20{section}.docx` — 36 of 52 Div 21-28
+sections verified. `wbdg.org` returns a 1,359-byte bot-wall stub for ALL HTML,
+so HTML enumeration silently yields nothing; `.docx` fetches are unaffected.
+
+**Owner design standards** (universities, state agencies) name manufacturers as
+campus standards — UW publishes a literal "Preferred manufacturers list". Four
+crawler defects each returned a FALSE ZERO: same-host-only crawling (standards
+often live on a sibling subdomain), requiring a six-digit MasterFormat number,
+requiring any number at all (files are named "Mechanical.pdf" — infer the
+division from the discipline), and BFS spending its page budget before reaching
+the library.
+
+## Measured facts with a shelf life
+
+Recorded with dates because they will age. Re-measure before relying on them.
+
+- **OCR: 98.4% of pages carry native text** (24,167 pages, 2026-08-03) — but
+  that was measured on federal CAD/Word exports. **Local agency addenda are
+  frequently scanned images**; one verified example had a 3-character text layer
+  and OCR'd to 9,518.
+- **The corpus crosses the wire twice** (2026-08-05): capture uploads to GCS,
+  extraction downloads it back. Measured 66 KB/s public HTTPS vs 125 KB/s
+  authenticated client. Parsing ~28,000 documents that way is 9-12 days. The
+  cheap fix is parsing during capture; the structural fix is running extraction
+  in-region.
+- **Index growth will exceed cache at 1M pages.** GIN 0.7 GB + HNSW 1.5-2.0 GB
+  against 2,481 MB `shared_buffers`. `maintenance_work_mem` (64 MB), NOT
+  `work_mem`, governs GIN/HNSW builds.
+- **Top-20 counties are structurally metadata-only** (2026-08-04): 14 of 20 have
+  no per-record attachment endpoint and no EDMS. They need a new source, not
+  another pull.
+
+## Commercial actions that are NOT the agent's to take
+
+- **Pay the MasterFormat licence** ($699/yr, revenue-scaled since Feb 2026)
+  before describing CSI-division indexing publicly. The EULA prohibits
+  incorporating it into commercial software without written permission, and
+  `extract-spec-book.py` classifies by MasterFormat section — live exposure for
+  a rounding error. This is Asif's action, not an agent's, which is why it lives
+  here rather than in CLAUDE.md.
+
+## Routine checks after any corpus or config change
+
+- `scripts/check-corpus-integrity.py` — duplicate ids
+- `scripts/check-config-geography.py` — configs pulling a WIDER geography than
+  their hardcoded county label (`generic_mapping` takes county as a fixed
+  per-config value)
+- `scripts/audit-county-coverage.py` — live vs corpus counts in parallel. Run
+  this instead of spawning audit agents; five were killed by the watchdog doing
+  what this does in 90 seconds.
+- `scripts/register-gcs-documents.py` — after EVERY capture batch
+- Watermarks live in `data/pipeline/nj-dca/state-{config-key}.json`. A non-zero
+  `last_processed_id` makes `--lookback-days` a complete no-op.
