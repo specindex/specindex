@@ -1,6 +1,6 @@
 # SpecIndex Agent Strategy (2026-07-26, updated 2026-08-04)
 
-> **Read the AMENDMENT at the end of this file before running the 10-step
+> **Read the AMENDMENT at the end of this file before running the 11-step
 > process.** Steps 1-7 are tuned for breadth, which is now solved (599,860
 > permits). The moat lives in steps 8-10, which are document-type-blind and
 > need six specific changes — including a new step 11 (substitution ledger)
@@ -68,7 +68,7 @@ Connect, etc.) -- see `docs/ROADMAP.md` item 98.
 
 **Looking for the current discovery/acquisition pipeline?** Skip to
 [Gemini-Assisted County/State Source Discovery](#gemini-assisted-countystate-source-discovery-implemented-2026-07-28)
-below — the 3-phase, 10-step loop is the live, actively-used process.
+below — the 4-phase, 11-step loop is the live, actively-used process.
 Everything above it (Agents 1/2/3) is the original pre-build plan, kept
 as historical record now that all three agents exist as described in the
 2026-07-29 status update directly below.
@@ -239,7 +239,7 @@ not a draft plan. This is the actual workflow used to find and wire every new
 county/state source added on 2026-07-28 (Wayne MI, Cook IL, Miami-Dade FL,
 King WA, Tarrant TX, Franklin/Cuyahoga OH, Mecklenburg/Wake NC, Fairfax VA,
 Philadelphia PA, San Diego CA, Dallas/Bexar TX, TDLR TABS statewide TX,
-Colorado Springs CO, Cleveland OH). It's now a 10-step loop, **reordered
+Colorado Springs CO, Cleveland OH). It's now an 11-step loop, **reordered
 2026-07-31 into 3 phases per an external review** (recorded in full at
 `docs/PIPELINE_REVIEW_2026-07-31.md`) — the step numbers below are not the
 order these steps were originally added in; see that doc for the history
@@ -261,6 +261,10 @@ At a glance, the three phases answer three different questions:
   candidate projects?* Forks into provider wiring (a source exists) or
   research fallback (it doesn't) — both paths converge on the same
   deduped output before Phase III starts.
+- **Phase IV — The Moat** (step 11): *What was CONTESTED?* Runs on
+  addenda/amendments and records approved and rejected substitutions with
+  dates and citations. Steps 1-10 capture what was specified; only this
+  captures who was displaced.
 - **Phase III — Project Processing & Enrichment** (steps 8-10): *For
   each new project, what do we now go pull, extract, and enrich to make
   its page useful?* Runs only on what Phase II already deduplicated, so
@@ -472,6 +476,40 @@ Runs only on the new, deduplicated projects Phase II produced.
     across the rest of the corpus is real remaining scope, same as
     step 8's GA-SAM/NJ-only coverage today.
 
+### Phase IV — The Moat (step 11)
+
+Runs on rank-1 documents (addenda / amendments) produced by step 8, after
+step 9 has extracted their text.
+
+11. **Substitution ledger (REQUIRED wherever addenda exist) — added
+    2026-08-04.** Steps 1-10 capture what was *specified*; nothing captures
+    what was *contested*. This step does. Pre-bid substitution requests are
+    ruled on publicly and the approved or rejected manufacturers are **named,
+    with dates**, in addenda posted to public bid portals and in SAM.gov
+    amendments. Extract, per addendum: the requesting party, the manufacturer
+    and model proposed, the manufacturer it would displace, the ruling
+    (approved / approved-as-noted / rejected), the date, and a page-level
+    citation. Write to a dedicated substitution table keyed to the project.
+
+    **Why this is the moat and not just another extraction.** It is the only
+    public artifact that records *competitive displacement* — who was basis of
+    design, who attacked the spec, and who won. No incumbent indexes it: Dodge
+    SpecShare and ConstructConnect Analyze report that you were specified, at
+    MasterFormat granularity, but neither is documented as reporting your
+    POSITION or who displaced you. And on state/local portals **addenda come
+    down after award**, so a competitor starting later cannot backfill it.
+    Two years of this data is an asset that cannot be bought.
+
+    **Sequencing.** SAM.gov RETAINS its amendments, so prove the extraction
+    on the federal corpus first — free, permanent, already wired. The
+    genuinely time-sensitive build is the **state/local addenda crawler**,
+    because every week it is not running is data permanently lost. A crawler
+    that only ARCHIVES the PDFs is enough to start the clock; extraction can
+    follow against a growing archive.
+
+    **Status 2026-08-04:** not built. ~14 amendments held, all from SAM.gov,
+    captured incidentally rather than deliberately.
+
 **Known real limits (be honest about these, don't oversell):** discovery
 still needs a human+Claude verification loop per lead every time — not
 unattended. New platform types cost real debugging time regardless of county
@@ -538,8 +576,8 @@ page extraction on a project manual yields searchable text and **discards the
 structure that makes it valuable**. Fork: spec books to the spec-book
 extractor, everything else to the page extractor.
 
-**4. NEW step 11 — the substitution ledger.** The largest gap: nothing in
-steps 1-10 captures *"manufacturer X approved, manufacturer Y rejected, date
+**4. Step 11 — the substitution ledger (NOW ADDED, see Phase IV above).** The largest gap: nothing in
+steps 1-10 captured *"manufacturer X approved, manufacturer Y rejected, date
 Z"*. That is the single uncopyable asset and the process has no home for it.
 Runs on rank-1 documents; writes approved/rejected manufacturers with dates
 and page-level citations to a dedicated table.
