@@ -35,6 +35,10 @@ on:
         type: boolean
         default: false
 
+permissions:
+  contents: read
+  id-token: write
+
 concurrency:
   # Never let two API deploys overlap -- Cloud Run would serve a mix of
   # revisions while both are rolling.
@@ -51,7 +55,15 @@ jobs:
       - id: auth
         uses: google-github-actions/auth@v2
         with:
-          credentials_json: ${{ secrets.GCP_SA_KEY }}
+          # Workload Identity Federation, matching every other workflow in
+          # this repo. The first version used credentials_json: GCP_SA_KEY,
+          # a secret that does not exist here -- the deploy failed on its very
+          # first run with "must specify exactly one of
+          # workload_identity_provider or credentials_json". Copying an auth
+          # pattern from documentation instead of from the repo's own
+          # working workflows is what caused it.
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
 
       - uses: google-github-actions/setup-gcloud@v2
         with:
