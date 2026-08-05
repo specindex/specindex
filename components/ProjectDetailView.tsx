@@ -250,6 +250,18 @@ function ConfidenceBadge({ confidence }: { confidence: string }) {
     reported: "Sources vary",
     unconfirmed: "Not confirmed",
   };
+  // Phase 1.4. "Sources vary" fired on 48.4% of enrichment rows -- 22 of them
+  // on a single record -- and it was never a statement about sources at all.
+  // `reported` is the DEFAULT assigned when a fact was not cross-checked
+  // (enrich-project-details.py: `_confidence_for(v) if v else "reported"`),
+  // and `agreement` is NULL on all 8,700 rows, so no row carries an actual
+  // verdict. A badge on half the page carries no signal, and sitting under a
+  // heading that said "Verified" it actively undercut the record.
+  //
+  // Inline markers are now reserved for a GENUINE conflict. Everything else
+  // moves to the Sources panel, which is where the handoff puts all confidence
+  // language. Silence means "nothing disputed", not "unknown".
+  if (confidence !== "unconfirmed") return null;
   return (
     <span className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${styles[confidence] ?? styles.unconfirmed}`}>
       {labels[confidence] ?? confidence}
@@ -278,6 +290,8 @@ function ConfidenceDot({ confidence }: { confidence: string }) {
     reported: "Sources vary",
     unconfirmed: "Not confirmed",
   };
+  // Same rule as ConfidenceBadge -- see the note there.
+  if (confidence !== "unconfirmed") return null;
   return (
     <span className={`flex shrink-0 items-center gap-1 text-[10px] font-semibold uppercase tracking-wide ${textCls[confidence] ?? textCls.unconfirmed}`}>
       <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${dotCls[confidence] ?? dotCls.unconfirmed}`} />
