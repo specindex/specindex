@@ -136,7 +136,7 @@ export function StartFreeModal({ onClose }: { onClose: () => void }) {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@company.com"
                   autoComplete="email"
-                  className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
+                  className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-green)] focus:ring-1 focus:ring-[var(--color-green)]"
                 />
               </div>
 
@@ -153,7 +153,7 @@ export function StartFreeModal({ onClose }: { onClose: () => void }) {
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="At least 10 characters"
                     autoComplete="new-password"
-                    className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 pr-16 text-sm outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
+                    className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 pr-16 text-sm outline-none focus:border-[var(--color-green)] focus:ring-1 focus:ring-[var(--color-green)]"
                   />
                   {/* A word, not an eye glyph nobody agrees on. Reps work on
                       phones and mistype constantly. */}
