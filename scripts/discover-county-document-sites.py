@@ -137,7 +137,7 @@ def probe(base: str, pause: float) -> dict:
     _, base_body, _ = get(f"{base}/zzz-specindex-not-a-real-9174")
     time.sleep(pause)
 
-    for page in candidates[:8]:
+    for page in candidates[:25]:
         time.sleep(pause)
         ps, pbody, _ = get(page)
         if ps != 200 or not pbody:
@@ -193,15 +193,27 @@ def main() -> int:
         except Exception as e:  # noqa: BLE001
             print(f"  [search-error] {c['county']}, {c['state']}: {type(e).__name__}", flush=True)
             bases = []
+        # Probe EVERY candidate, not just until the first one answers. Grounded
+        # search is not deterministic: the pilot returned manhattanbp.nyc.gov for
+        # New York County and marked it VIABLE by downloading a real PDF, then
+        # the full run returned plain nyc.gov for the same county and marked it
+        # not viable. Same county, opposite verdict, different day -- which makes
+        # "0 viable" a statement about which URL the model happened to name, not
+        # about the county. Trying all of them and keeping the best makes the
+        # verdict depend on the jurisdiction instead of on the sampling.
         best = {"base": "", "viable": False, "reason": "no candidate site found",
-                "sample_pdf": "", "event_urls": 0}
+                "sample_pdf": "", "event_urls": 0, "tried": []}
         for b in bases:
             r = probe(b, args.pause)
+            best.setdefault("tried", []).append({"base": b, "reason": r["reason"]})
             if r["viable"]:
+                r["tried"] = best["tried"]
                 best = r
                 break
             if r["event_urls"] > best["event_urls"]:
+                tried = best["tried"]
                 best = r
+                best["tried"] = tried
         rec = {**c, **best}
         results.append(rec)
         if rec["viable"]:

@@ -88,6 +88,17 @@ _ON_TOPIC_RE = re.compile(
 )
 
 
+# Title-page language of a governing standard. These are editions, not events:
+# "2013 Edition" means the edition in force, not a document that expired in 2013.
+_STANDARD_SPEC_RE = re.compile(
+    r"standard\s+specifications?|standard\s+drawings?|design\s+manual|"
+    r"construction\s+manual|master(?:format| specification)|"
+    r"specifications?\s+for\s+construction|design\s+standards?|"
+    r"technical\s+provisions",
+    re.I,
+)
+
+
 def _first_page_text(body: bytes) -> str:
     try:
         import io
@@ -114,15 +125,30 @@ def is_relevant(body: bytes, url: str, project_year: int | None) -> tuple[bool, 
     if text and _OFF_TOPIC_RE.search(text) and not _ON_TOPIC_RE.search(text):
         return False, "off-topic (federal notice)"
 
+    # A SPEC BOOK DOES NOT AGE. This carve-out exists because the stale rule
+    # rejected GDOT's Standard Specifications -- 1,610 pages, 11.5MB, the
+    # governing state spec book -- as "stale (2013 vs project 2026)". The 2013
+    # edition still governs 2026 projects, and standard specifications are
+    # precisely the document class that carries basis-of-design. A sweep on the
+    # un-carved rule would have systematically discarded spec books while
+    # keeping every low-value notice that happened to be recent, which is the
+    # exact inverse of what this pipeline is for.
+    #
+    # Recency is evidence about NOTICES -- which describe a moment -- and says
+    # nothing about STANDARDS, which describe a requirement until superseded.
+    doc_class = dc.classify(url.rsplit("/", 1)[-1], "", text)
+    timeless = doc_class in (dc.SPEC_BOOK, dc.ADDENDA) or _STANDARD_SPEC_RE.search(text[:2500])
+
     # A document predating the project by years describes something else at the
-    # same address. Only fires when a year is actually found.
-    if project_year:
+    # same address. Only fires when a year is found AND the document is not a
+    # standard/spec whose date is an edition, not an expiry.
+    if project_year and not timeless:
         years = [int(y) for y in re.findall(r"\b(19[89]\d|20[0-4]\d)\b", url + " " + text[:1200])]
         plausible = [y for y in years if 1990 <= y <= project_year + 2]
         if plausible and max(plausible) < project_year - 2:
             return False, f"stale ({max(plausible)} vs project {project_year})"
 
-    return True, dc.classify(url.rsplit("/", 1)[-1], "", text)
+    return True, doc_class
 
 GCS_BUCKET = "specindex-ai-raw-documents"
 USER_AGENT = "Mozilla/5.0 SpecIndex-DocumentBot/1.0 (+https://specindex.ai)"
