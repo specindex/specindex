@@ -158,6 +158,28 @@ def api_routes() -> set[str]:
     return {normalise(m.group(2)) for m in ROUTE_RE.finditer(main.read_text())}
 
 
+def cors_methods_cover_routes() -> list[str]:
+    """Every HTTP method the API serves must be in the CORS allow list.
+
+    A method served but absent from allow_methods is invisible from a browser
+    and perfectly healthy from curl: the preflight returns 400, the request is
+    never sent, and nothing reaches the server logs. allow_methods listed only
+    GET and POST while the app served PUT and DELETE, which is why
+    user_tracked_projects held zero rows -- PUT /v1/me/tracked-projects/{id}
+    is how a project gets tracked and no browser was ever permitted to send it.
+    """
+    main_py = (ROOT / "api" / "main.py").read_text()
+    served = {m.group(1).upper() for m in ROUTE_RE.finditer(main_py)}
+    allowed_m = re.search(r"allow_methods=\[([^\]]*)\]", main_py)
+    if not allowed_m:
+        return ["could not find allow_methods in api/main.py"]
+    allowed = {a.strip().strip("\"'").upper() for a in allowed_m.group(1).split(",") if a.strip()}
+    if "*" in allowed:
+        return []
+    missing = sorted(served - allowed)
+    return [f"served but not in CORS allow_methods: {', '.join(missing)}"] if missing else []
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--live", help="also probe this deployed base URL for 404s")
@@ -182,6 +204,15 @@ def main() -> int:
         print("The UI would show a generic error that no retry can fix.")
         return 1
     print("\nPASS: every frontend API path exists in api/main.py")
+
+    cors = cors_methods_cover_routes()
+    if cors:
+        for c in cors:
+            print(f"\nFAIL: {c}")
+        print("A browser preflight for those methods returns 400 and the "
+              "request is never sent. curl will not reproduce it.")
+        return 1
+    print("PASS: CORS allow_methods covers every method the API serves")
 
     if args.live:
         import urllib.error  # noqa: PLC0415
