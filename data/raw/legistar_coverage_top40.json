@@ -1,0 +1,326 @@
+[
+  {
+    "county": "New York",
+    "state": "NY",
+    "zero_doc_projects": 118217,
+    "legistar": null
+  },
+  {
+    "county": "Kings",
+    "state": "NY",
+    "zero_doc_projects": 44078,
+    "legistar": null
+  },
+  {
+    "county": "Cook",
+    "state": "IL",
+    "zero_doc_projects": 32307,
+    "legistar": null
+  },
+  {
+    "county": "Queens",
+    "state": "NY",
+    "zero_doc_projects": 24440,
+    "legistar": null
+  },
+  {
+    "county": "Travis",
+    "state": "TX",
+    "zero_doc_projects": 23315,
+    "legistar": null
+  },
+  {
+    "county": "Miami-Dade",
+    "state": "FL",
+    "zero_doc_projects": 20967,
+    "legistar": {
+      "slug": "miamidade",
+      "ok": true,
+      "status": 200,
+      "attachments_on_first_matter": 2,
+      "sample_link": "https://miamidade.legistar1.com/miamidade/attachments/bc5109c0-7384-453b-8df6-2897e33db105.pdf"
+    }
+  },
+  {
+    "county": "Bronx",
+    "state": "NY",
+    "zero_doc_projects": 20732,
+    "legistar": null
+  },
+  {
+    "county": "Orange",
+    "state": "FL",
+    "zero_doc_projects": 17845,
+    "legistar": null
+  },
+  {
+    "county": "Franklin",
+    "state": "OH",
+    "zero_doc_projects": 12897,
+    "legistar": {
+      "slug": "columbus",
+      "ok": true,
+      "status": 200,
+      "attachments_on_first_matter": 5,
+      "sample_link": "https://legistar3.granicus.com/Columbus/attachments/642.tif"
+    }
+  },
+  {
+    "county": "Los Angeles",
+    "state": "CA",
+    "zero_doc_projects": 10411,
+    "legistar": null
+  },
+  {
+    "county": "Tarrant",
+    "state": "TX",
+    "zero_doc_projects": 7724,
+    "legistar": null
+  },
+  {
+    "county": "Allegheny",
+    "state": "PA",
+    "zero_doc_projects": 6382,
+    "legistar": null
+  },
+  {
+    "county": "Hamilton",
+    "state": "OH",
+    "zero_doc_projects": 6220,
+    "legistar": {
+      "slug": "cincinnatioh",
+      "ok": true,
+      "status": 200,
+      "attachments_on_first_matter": 2,
+      "sample_link": "https://cincinnatioh.legistar1.com/cincinnatioh/attachments/68f24d0a-81bd-4900-92cd-4e0490185a9e.pdf"
+    }
+  },
+  {
+    "county": "Bergen",
+    "state": "NJ",
+    "zero_doc_projects": 5753,
+    "legistar": null
+  },
+  {
+    "county": "Harris",
+    "state": "TX",
+    "zero_doc_projects": 5736,
+    "legistar": {
+      "slug": "harriscountytx",
+      "ok": true,
+      "status": 200,
+      "attachments_on_first_matter": 1,
+      "sample_link": "https://harriscountytx.legistar1.com/harriscountytx/attachments/c614dcee-7ae4-42ef-ada7-f565da5877a6.pdf"
+    }
+  },
+  {
+    "county": "Clark",
+    "state": "NV",
+    "zero_doc_projects": 5570,
+    "legistar": {
+      "slug": "clark",
+      "ok": true,
+      "status": 200,
+      "attachments_on_first_matter": 2,
+      "sample_link": "https://clark.legistar1.com/clark/attachments/31538d06-f96d-4c9d-8dc6-faa9e6ed47e4.pdf"
+    }
+  },
+  {
+    "county": "Hartford",
+    "state": "CT",
+    "zero_doc_projects": 4684,
+    "legistar": null
+  },
+  {
+    "county": "Cuyahoga",
+    "state": "OH",
+    "zero_doc_projects": 4637,
+    "legistar": null
+  },
+  {
+    "county": "Collin",
+    "state": "TX",
+    "zero_doc_projects": 4472,
+    "legistar": null
+  },
+  {
+    "county": "Richmond",
+    "state": "NY",
+    "zero_doc_projects": 4370,
+    "legistar": null
+  },
+  {
+    "county": "King",
+    "state": "WA",
+    "zero_doc_projects": 4336,
+    "legistar": {
+      "slug": "kingcounty",
+      "ok": true,
+      "status": 200,
+      "attachments_on_first_matter": 4,
+      "sample_link": "https://kingcounty.legistar1.com/kingcounty/attachments/23.doc"
+    }
+  },
+  {
+    "county": "Sacramento",
+    "state": "CA",
+    "zero_doc_projects": 4333,
+    "legistar": {
+      "slug": "sacramento",
+      "ok": true,
+      "status": 200,
+      "attachments_on_first_matter": 1,
+      "sample_link": "https://sacramento.legistar1.com/sacramento/attachments/da76f457-cc85-44c9-affc-54bdb140482e.pdf"
+    }
+  },
+  {
+    "county": "Monmouth",
+    "state": "NJ",
+    "zero_doc_projects": 4112,
+    "legistar": null
+  },
+  {
+    "county": "Middlesex",
+    "state": "NJ",
+    "zero_doc_projects": 4096,
+    "legistar": null
+  },
+  {
+    "county": "Denver",
+    "state": "CO",
+    "zero_doc_projects": 4091,
+    "legistar": {
+      "slug": "denver",
+      "ok": true,
+      "status": 200,
+      "attachments_on_first_matter": 1,
+      "sample_link": "https://denver.legistar1.com/denver/attachments/1afa5f16-ed66-4949-aff3-d780c23c8657.pdf"
+    }
+  },
+  {
+    "county": "Morris",
+    "state": "NJ",
+    "zero_doc_projects": 3570,
+    "legistar": null
+  },
+  {
+    "county": "East Baton Rouge",
+    "state": "LA",
+    "zero_doc_projects": 3549,
+    "legistar": null
+  },
+  {
+    "county": "Palm Beach",
+    "state": "FL",
+    "zero_doc_projects": 3029,
+    "legistar": null
+  },
+  {
+    "county": "Essex",
+    "state": "NJ",
+    "zero_doc_projects": 2823,
+    "legistar": null
+  },
+  {
+    "county": "Riverside",
+    "state": "CA",
+    "zero_doc_projects": 2804,
+    "legistar": {
+      "slug": "riversidecountyca",
+      "ok": true,
+      "status": 200,
+      "attachments_on_first_matter": 0,
+      "sample_link": ""
+    }
+  },
+  {
+    "county": "Erie",
+    "state": "NY",
+    "zero_doc_projects": 2791,
+    "legistar": {
+      "slug": "erie",
+      "ok": true,
+      "status": 200,
+      "attachments_on_first_matter": 1,
+      "sample_link": "https://erie.legistar1.com/erie/attachments/cd4d5901-9c6b-4fee-b3e7-48f58f19e3e8.docx"
+    }
+  },
+  {
+    "county": "Suffolk",
+    "state": "MA",
+    "zero_doc_projects": 2775,
+    "legistar": null
+  },
+  {
+    "county": "Hennepin",
+    "state": "MN",
+    "zero_doc_projects": 2735,
+    "legistar": {
+      "slug": "hennepinmn",
+      "ok": true,
+      "status": 200,
+      "attachments_on_first_matter": 0,
+      "sample_link": ""
+    }
+  },
+  {
+    "county": "Mercer",
+    "state": "NJ",
+    "zero_doc_projects": 2696,
+    "legistar": null
+  },
+  {
+    "county": "Virginia Beach",
+    "state": "VA",
+    "zero_doc_projects": 2641,
+    "legistar": null
+  },
+  {
+    "county": "Ocean",
+    "state": "NJ",
+    "zero_doc_projects": 2622,
+    "legistar": null
+  },
+  {
+    "county": "Montgomery",
+    "state": "MD",
+    "zero_doc_projects": 2614,
+    "legistar": {
+      "slug": "montgomerycountymd",
+      "ok": true,
+      "status": 200,
+      "attachments_on_first_matter": 0,
+      "sample_link": ""
+    }
+  },
+  {
+    "county": "Wake",
+    "state": "NC",
+    "zero_doc_projects": 2454,
+    "legistar": {
+      "slug": "wake",
+      "ok": true,
+      "status": 200,
+      "attachments_on_first_matter": 5,
+      "sample_link": "https://wake.legistar1.com/wake/attachments/a9a8fc20-deb9-4b65-87aa-60aee2497ea1.docx"
+    }
+  },
+  {
+    "county": "Mecklenburg",
+    "state": "NC",
+    "zero_doc_projects": 2449,
+    "legistar": {
+      "slug": "mecklenburg",
+      "ok": true,
+      "status": 200,
+      "attachments_on_first_matter": 1,
+      "sample_link": "https://legistar1.granicus.com/Mecklenburg/attachments/ad718a0d-f5cd-4c7d-a656-e2c415e6f3d9.docx"
+    }
+  },
+  {
+    "county": "Burlington",
+    "state": "NJ",
+    "zero_doc_projects": 2432,
+    "legistar": null
+  }
+]
