@@ -1,23 +1,29 @@
 "use client";
 
 import { useState } from "react";
-import { sendPasswordResetEmail } from "firebase/auth";
+import { sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 
 const API_BASE = "https://specindex-api-gmm6irqe4q-uc.a.run.app";
 
-// "Start for free" signup (matches the requested reference layout: First/
-// Last name, Work email, Company, "Start your N-day free trial" CTA).
-// POST /v1/signup provisions a real Firebase account (no password) + a
-// 14-day-trial user_profiles row; sendPasswordResetEmail then fires
-// Firebase's own hosted "set your password" email -- no custom SMTP code
-// needed, Firebase delivers it. The link in that email lands on
-// app/set-password/page.tsx.
+// TWO FIELDS, OR ONE GOOGLE CLICK. This asked first name, last name, email
+// and company -- four fields -- and then could not sign anyone in, because the
+// account was created with a server-generated password and the only way in was
+// an email. On 2026-08-05 that email silently failed and every signup was
+// stranded with a real account they could not reach.
+//
+// Now the user picks their own password and is signed in immediately, so email
+// is off the critical path entirely. Name is derived from the address local
+// part and company from the domain (server-side, skipped for consumer
+// domains), which keeps note attribution working in the CRM half of the moat
+// without charging a rep two fields for it.
+//
+// The set-password email still exists for the Google-less, password-less edge
+// case; it is no longer the only door.
 export function StartFreeModal({ onClose }: { onClose: () => void }) {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [company, setCompany] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPw, setShowPw] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -30,12 +36,7 @@ export function StartFreeModal({ onClose }: { onClose: () => void }) {
       const res = await fetch(`${API_BASE}/v1/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          first_name: firstName,
-          last_name: lastName,
-          email,
-          company,
-        }),
+        body: JSON.stringify({ email: email.trim(), password }),
       });
       if (!res.ok) throw new Error(await res.text());
 
@@ -44,7 +45,19 @@ export function StartFreeModal({ onClose }: { onClose: () => void }) {
       // the request and delivering nothing to iCloud, and because it accepts
       // unconditionally the browser could never tell. `emailed` is a real
       // answer from the server rather than an assumption.
-      const data = await res.json().catch(() => ({}) as { emailed?: boolean });
+      const data = await res
+        .json()
+        .catch(() => ({}) as { emailed?: boolean; can_sign_in?: boolean });
+
+      // The user chose a password, so sign them in and let them land in the
+      // product. No inbox, no waiting, nothing that can fail silently between
+      // creating the account and using it.
+      if (data.can_sign_in && auth) {
+        await signInWithEmailAndPassword(auth, email.trim(), password);
+        onClose();
+        return;
+      }
+
       if (data.emailed) {
         setSent(true);
         return;
@@ -112,64 +125,63 @@ export function StartFreeModal({ onClose }: { onClose: () => void }) {
             </div>
 
             <form onSubmit={handleSubmit} className="mt-6 space-y-4">
-              <div className="grid grid-cols-2 gap-3">
-                <div>
-                  <label className="text-xs font-semibold uppercase tracking-wider text-[var(--color-gray-400)]">
-                    First name
-                  </label>
-                  <input
-                    required
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                    placeholder="Jane"
-                    className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
-                  />
-                </div>
-                <div>
-                  <label className="text-xs font-semibold uppercase tracking-wider text-[var(--color-gray-400)]">
-                    Last name
-                  </label>
-                  <input
-                    required
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                    placeholder="Doe"
-                    className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
-                  />
-                </div>
-              </div>
-
               <div>
                 <label className="text-xs font-semibold uppercase tracking-wider text-[var(--color-gray-400)]">
-                  Work email
+                  Work or personal email
                 </label>
                 <input
                   required
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="jane.doe@company.com"
+                  placeholder="you@company.com"
+                  autoComplete="email"
                   className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
                 />
               </div>
 
               <div>
                 <label className="text-xs font-semibold uppercase tracking-wider text-[var(--color-gray-400)]">
-                  Company name
+                  Create a password
                 </label>
-                <input
-                  required
-                  value={company}
-                  onChange={(e) => setCompany(e.target.value)}
-                  placeholder="Acme Building Products"
-                  className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
-                />
+                <div className="relative">
+                  <input
+                    required
+                    minLength={10}
+                    type={showPw ? "text" : "password"}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="At least 10 characters"
+                    autoComplete="new-password"
+                    className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 pr-16 text-sm outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
+                  />
+                  {/* A word, not an eye glyph nobody agrees on. Reps work on
+                      phones and mistype constantly. */}
+                  <button
+                    type="button"
+                    onClick={() => setShowPw((s) => !s)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 pt-1 text-xs font-semibold text-[var(--color-gray-400)]"
+                  >
+                    {showPw ? "Hide" : "Show"}
+                  </button>
+                </div>
+                {/* One rule, rendered once, satisfied or not. No meter, and no
+                    wall of red on submit. */}
+                <p
+                  className={`mt-2 text-xs ${
+                    password.length >= 10
+                      ? "text-[var(--color-green)]"
+                      : "text-[var(--color-gray-400)]"
+                  }`}
+                >
+                  {password.length >= 10 ? "✓ " : ""}At least 10 characters
+                </p>
               </div>
 
               {error && <p className="text-sm text-red-600">{error}</p>}
 
               <button type="submit" disabled={submitting} className="btn btn-demo w-full disabled:opacity-60">
-                {submitting ? "Creating account…" : "Start your 14-day free trial →"}
+                {submitting ? "Creating account…" : "Create account →"}
               </button>
 
               <p className="text-center text-xs text-[var(--color-gray-400)]">
