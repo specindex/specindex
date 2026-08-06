@@ -134,6 +134,39 @@ jobs:
             && echo "triggered a site deploy" \
             || echo "::error::could not dispatch the site deploy (needs workflow_dispatch on firebase-hosting-merge.yml)"
 
+      # MERGED IS NOT LANDED. On 2026-08-05 commit 224ba7a was pushed to a
+      # branch whose PR had ALREADY merged. The branch carried it, the merge
+      # did not, and nothing reported the difference -- the work was announced
+      # as shipped and was not on main. Found a day later by reading a file.
+      #
+      # GitHub's own UI is no help here: the PR shows merged, the branch shows
+      # the commit, and only comparing the two reveals the gap. So compare
+      # them on a schedule.
+      - name: Merged PRs whose commits never reached main
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git fetch --quiet origin main
+          missing=0
+          # Recently merged PRs only -- old ones have long since been
+          # superseded and would generate noise forever.
+          for pr in $(gh pr list --state merged --limit 15 --json number -q '.[].number'); do
+            head=$(gh pr view "$pr" --json headRefOid -q .headRefOid)
+            [ -z "$head" ] && continue
+            # A merged PR's head must be an ancestor of main. If it is not,
+            # something was pushed to that branch after the merge.
+            if ! git merge-base --is-ancestor "$head" origin/main 2>/dev/null; then
+              echo "::warning::PR #$pr merged, but its head $head is NOT on main -- work pushed after the merge"
+              echo "- PR #$pr: head not on main" >> $GITHUB_STEP_SUMMARY
+              missing=$((missing+1))
+            fi
+          done
+          if [ "$missing" -gt 0 ]; then
+            echo "::error::$missing merged PR(s) carry commits that never reached main"
+            exit 1
+          fi
+          echo "all recently merged PRs are fully on main"
+
       - name: Report
         if: always()
         run: |

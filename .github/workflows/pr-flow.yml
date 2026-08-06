@@ -51,6 +51,17 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Runs FIRST and cheaply. A workflow GitHub cannot start reports NO CHECKS
+  # rather than a failing check, so the PR sits at BLOCKED with nothing
+  # obviously wrong -- which is exactly how PR #126 lost a day. Catching it
+  # here turns an invisible startup failure into a normal red X.
+  workflows:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Workflow files must be startable
+        run: python3 scripts/check-workflows.py
+
   flow:
     runs-on: ubuntu-latest
     timeout-minutes: 15
