@@ -8,8 +8,13 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
-/coverage
+# testing -- Jest's coverage output. NOTE the name collision: coverage/docs and
+# coverage/data hold the SpecIndex coverage plan and verified source tables, and
+# must be versioned. Without these negations `git add coverage/` silently adds
+# nothing and the commit lands empty -- which looks exactly like success.
+/coverage/*
+!/coverage/docs/
+!/coverage/data/
 
 # next.js
 /.next/
@@ -35,9 +40,12 @@ yarn-error.log*
 firebase-debug.log
 firestore-debug.log
 
-# agent tooling caches (local only)
+# agent tooling caches (local only). Skills are the exception: a skill that is
+# not committed is invisible to every other machine and every future session,
+# which defeats the point of having one.
 .agents/
-.claude/
+.claude/*
+!.claude/skills/
 skills-lock.json
 
 # typescript

@@ -1,0 +1,501 @@
+rank,county,state,population,seat
+1,Los Angeles,CA,9641000,Los Angeles
+2,Cook,IL,5275541,Chicago
+3,Harris,TX,5093721,Houston
+4,Maricopa,AZ,4724969,Phoenix
+5,San Diego,CA,3276954,San Diego
+6,Orange,CA,3140987,Santa Ana
+7,Miami-Dade,FL,2791914,Miami
+8,Dallas,TX,2658781,Dallas
+9,Kings,NY,2617631,New York
+10,Riverside,CA,2560720,Riverside
+11,Clark,NV,2407226,Las Vegas
+12,King,WA,2340211,Seattle
+13,Queens,NY,2316841,New York
+14,Tarrant,TX,2266894,Fort Worth
+15,San Bernardino,CA,2229418,San Bernardino
+16,Bexar,TX,2181234,San Antonio
+17,Broward,FL,2012945,Fort Lauderdale
+18,Santa Clara,CA,1920872,San Jose
+19,Wayne,MI,1771063,Detroit
+20,Middlesex,MA,1669979,Cambridge
+21,New York,NY,1660664,New York
+22,Alameda,CA,1636636,Oakland
+23,Sacramento,CA,1627023,Sacramento
+24,Palm Beach,FL,1577304,West Palm Beach
+25,Hillsborough,FL,1577032,Tampa
+26,Philadelphia,PA,1550542,Philadelphia
+27,Suffolk,NY,1535909,Riverhead
+28,Orange,FL,1535016,Orlando
+29,Travis,TX,1404419,Austin
+30,Nassau,NY,1392438,Mineola
+31,Bronx,NY,1384724,New York
+32,Franklin,OH,1356303,Columbus
+33,Collin,TX,1340145,McKinney
+34,Oakland,MI,1325110,Pontiac
+35,Hennepin,MN,1284784,Minneapolis
+36,Cuyahoga,OH,1240594,Cleveland
+37,Allegheny,PA,1224825,Pittsburgh
+38,Salt Lake,UT,1220916,Salt Lake City
+39,Wake,NC,1190275,Raleigh
+40,Contra Costa,CA,1170606,Martinez
+41,Mecklenburg,NC,1163701,Charlotte
+42,Fairfax,VA,1160925,Fairfax
+43,Fulton,GA,1107114,Atlanta
+44,Denton,TX,1092466,Denton
+45,Pima,AZ,1075914,Tucson
+46,Montgomery,MD,1074582,Rockville
+47,Duval,FL,1071194,Jacksonville
+48,Fresno,CA,1037214,Fresno
+49,Gwinnett,GA,1026334,Lawrenceville
+50,Honolulu,HI,1016508,Honolulu
+51,Westchester,NY,1006447,White Plains
+52,Fort Bend,TX,999354,Richmond
+53,Capitol Planning Region,CT,999036,Hartford
+54,Marion,IN,992196,Indianapolis
+55,St. Louis,MO,987059,Clayton
+56,Bergen,NJ,977026,Hackensack
+57,Prince George's,MD,967201,Upper Marlboro
+58,Erie,NY,950602,Buffalo
+59,Pierce,WA,941170,Tacoma
+60,Pinellas,FL,936729,Clearwater
+61,DuPage,IL,932877,Wheaton
+62,Kern,CA,929488,Bakersfield
+63,Hidalgo,TX,929486,Edinburg
+64,Milwaukee,WI,924740,Milwaukee
+65,Shelby,TN,910530,Memphis
+66,Polk,FL,898146,Bartow
+67,Essex,NJ,896379,Newark
+68,Lee,FL,889547,Fort Myers
+69,Macomb,MI,886175,Mount Clemens
+70,Middlesex,NJ,883335,New Brunswick
+71,El Paso,TX,875822,El Paso
+72,Montgomery,PA,868742,Norristown
+73,Snohomish,WA,864113,Everett
+74,Worcester,MA,862111,Worcester
+75,Baltimore,MD,854535,Towson
+76,Hamilton,OH,837359,Cincinnati
+77,San Francisco,CA,831213,San Francisco
+78,San Joaquin,CA,830481,Stockton
+79,Ventura,CA,828271,Ventura
+80,Essex,MA,826653,Lawrence
+81,Montgomery,TX,811205,Conroe
+82,Oklahoma,OK,808866,Oklahoma City
+83,Suffolk,MA,797936,Boston
+84,Cobb,GA,797811,Marietta
+85,Multnomah,OR,789698,Portland
+86,Jefferson,KY,782969,Louisville
+87,Williamson,TX,776641,Georgetown
+88,DeKalb,GA,776204,Decatur
+89,El Paso,CO,761724,Colorado Springs
+90,Utah,UT,759859,Provo
+91,Monroe,NY,752202,Rochester
+92,San Mateo,CA,746509,Redwood City
+93,Denver,CO,739635,Denver
+94,Hudson,NJ,735033,Jersey City
+95,Jackson,MO,732994,Kansas City
+96,Davidson,TN,729505,Nashville
+97,Norfolk,MA,725981,Dedham
+98,Lake,IL,714342,Waukegan
+99,Will,IL,696355,Joliet
+100,District of Columbia,DC,693645,Washington
+101,Pasco,FL,692842,Dade City
+102,Ocean,NJ,673746,Toms River
+103,Arapahoe,CO,671880,Littleton
+104,Brevard,FL,671710,Titusville
+105,Bernalillo,NM,671586,Albuquerque
+106,Jefferson,AL,664899,Birmingham
+107,Providence,RI,660615,Providence
+108,Kent,MI,657974,Grand Rapids
+109,Monmouth,NJ,651035,Freehold Borough
+110,Tulsa,OK,650618,Tulsa
+111,Bucks,PA,645984,Doylestown
+112,Western Connecticut Planning Region,CT,643243,Stamford
+113,Volusia,FL,612039,DeLand
+114,Johnson,KS,609863,Olathe
+115,Douglas,NE,606460,Omaha
+116,Union,NJ,601863,Elizabeth
+117,Washington,OR,598865,Hillsboro
+118,New Castle,DE,590038,Wilmington
+119,Dane,WI,588347,Madison
+120,Anne Arundel,MD,588261,Annapolis
+121,Jefferson,CO,580543,Golden
+122,South Central Connecticut Planning Region,CT,579944,New Haven
+123,Bristol,MA,579200,Taunton
+124,Delaware,PA,576720,Media
+125,Baltimore City,MD,569997,Baltimore
+126,Pinal,AZ,563034,Florence
+127,Adams,CO,560079,Brighton
+128,Lancaster,PA,558589,Lancaster
+129,Stanislaus,CA,558066,Modesto
+130,Greenville,SC,558036,Greenville
+131,Spokane,WA,555947,Spokane
+132,Guilford,NC,549866,Greensboro
+133,Chester,PA,549784,West Chester
+134,Ada,ID,546141,Boise
+135,Ramsey,MN,542015,Saint Paul
+136,Montgomery,OH,537443,Dayton
+137,Summit,OH,535882,Akron
+138,Camden,NJ,535799,Camden
+139,Passaic,NJ,531624,Paterson
+140,Plymouth,MA,530819,Brockton
+141,Sedgwick,KS,528469,Wichita
+142,Clark,WA,527269,Vancouver
+143,Morris,NJ,524251,Morristown
+144,Polk,IA,516546,Des Moines
+145,Kane,IL,516522,Geneva
+146,Washoe,NV,507280,Reno
+147,Knox,TN,506748,Knoxville
+148,Lake,IN,498700,Crown Point
+149,Richmond,NY,498212,New York
+150,Osceola,FL,497560,Kissimmee
+151,Seminole,FL,494104,Sanford
+152,Sonoma,CA,487525,Santa Rosa
+153,Tulare,CA,486441,Visalia
+154,Sarasota,FL,483927,Sarasota
+155,Prince William,VA,482204,Manassas
+156,Burlington,NJ,481439,Mount Holly
+157,Manatee,FL,477444,Bradenton
+158,Onondaga,NY,469812,Syracuse
+159,Lake,FL,468682,Tavares
+160,Hampden,MA,465825,Springfield
+161,Naugatuck Valley Planning Region,CT,465218,Waterbury
+162,York,PA,464640,York
+163,Virginia Beach (city),VA,459470,Virginia Beach
+164,Marion,FL,457325,Ocala
+165,Dakota,MN,455710,Hastings
+166,Solano,CA,455676,Fairfield
+167,Placer,CA,449883,Auburn
+168,East Baton Rouge,LA,448467,Baton Rouge
+169,Madison,AL,443961,Huntsville
+170,Loudoun,VA,443380,Leesburg
+171,Santa Barbara,CA,441049,Santa Barbara
+172,Jefferson,LA,440781,Gretna
+173,Cameron,TX,434940,Brownsville
+174,Monterey,CA,434011,Salinas
+175,Berks,PA,432821,Reading
+176,Brazoria,TX,426744,Angleton
+177,Lucas,OH,426291,Toledo
+178,Richland,SC,425138,Columbia
+179,Charleston,SC,424367,Charleston
+180,Clackamas,OR,423173,Oregon City
+181,Hillsborough,NH,422937,Manchester
+182,Collier,FL,417540,Naples
+183,Waukesha,WI,417029,Waukesha
+184,St. Lucie,FL,413306,Fort Pierce
+185,Orange,NY,411767,Goshen
+186,Mobile,AL,411123,Mobile
+187,Bell,TX,407057,Belton
+188,Pulaski,AR,405828,Little Rock
+189,Douglas,CO,405741,Castle Rock
+190,St. Charles,MO,405262,St. Charles
+191,Genesee,MI,401093,Flint
+192,Butler,OH,399542,Hamilton
+193,Mercer,NJ,399289,Trenton
+194,Horry,SC,397478,Conway
+195,Forsyth,NC,392921,Winston-Salem
+196,Chesterfield,VA,389793,Chesterfield
+197,Rutherford,TN,386352,Murfreesboro
+198,Hamilton,TN,386256,Chattanooga
+199,Weld,CO,385572,Greeley
+200,Allen,IN,385410,Fort Wayne
+201,Orleans,LA,383997,New Orleans
+202,Davis,UT,381227,Farmington
+203,Lane,OR,381181,Eugene
+204,Larimer,CO,380384,Fort Collins
+205,Lehigh,PA,377754,Allentown
+206,Galveston,TX,377047,Galveston
+207,Stark,OH,373834,Canton
+208,Washtenaw,MI,372258,Ann Arbor
+209,Anoka,MN,363887,Anoka
+210,St. Johns,FL,359322,St. Augustine
+211,Spartanburg,SC,356698,Spartanburg
+212,Somerset,NJ,356486,Somerville
+213,Nueces,TX,353059,Corpus Christi
+214,Westmoreland,PA,351163,Greensburg
+215,Rockland,NY,348144,New City
+216,Hamilton,IN,347467,Noblesville
+217,Marion,OR,346741,Salem
+218,Benton,AR,343107,Bentonville
+219,Greater Bridgeport Planning Region,CT,339003,Bridgeport
+220,Henrico,VA,338696,Laurel
+221,Cumberland,NC,337890,Fayetteville
+222,Durham,NC,336892,Durham
+223,Escambia,FL,335296,Pensacola
+224,Lancaster,NE,334049,Lincoln
+225,Lubbock,TX,332675,Lubbock
+226,Howard,MD,332317,Ellicott City
+227,Fayette,KY,329437,Lexington
+228,Boulder,CO,327635,Boulder
+229,Luzerne,PA,327388,Wilkes-Barre
+230,Lorain,OH,322030,Elyria
+231,Albany,NY,319964,Albany
+232,Northampton,PA,319091,Easton
+233,McHenry,IL,317751,Woodstock
+234,Hays,TX,314441,San Marcos
+235,Rockingham,NH,314176,Brentwood
+236,Chatham,GA,314105,Savannah
+237,Gloucester,NJ,312638,Woodbury
+238,Lexington,SC,309528,Lexington
+239,Cherokee,GA,304516,Canton
+240,Cumberland,ME,303069,Portland
+241,Thurston,WA,302912,Olympia
+242,St. Louis City,MO,301578,St. Louis
+243,Cleveland,OK,301193,Norman
+244,Dutchess,NY,299963,Poughkeepsie
+245,Leon,FL,299384,Tallahassee
+246,Greene,MO,298915,Springfield
+247,York,SC,298320,York
+248,Merced,CA,297713,Merced
+249,Clayton,GA,297709,Jonesboro
+250,Ottawa,MI,296200,Grand Haven
+251,Alachua,FL,290610,Gainesville
+252,Dauphin,PA,289234,Harrisburg
+253,Anchorage,AK,286941,Anchorage
+254,Forsyth,GA,286813,Cumming
+255,Winnebago,IL,285350,Rockford
+256,Ingham,MI,284900,Mason
+257,Southeastern Connecticut Planning Region,CT,284859,Norwich
+258,Sussex,DE,283047,Georgetown
+259,San Luis Obispo,CA,282581,San Luis Obispo
+260,Webb,TX,281878,Laredo
+261,Kitsap,WA,281420,Port Orchard
+262,St. Tammany,LA,279108,Covington
+263,Atlantic,NJ,278657,Mays Landing
+264,Weber,UT,278174,Ogden
+265,Buncombe,NC,275901,Asheville
+266,Canyon,ID,275123,Caldwell
+267,Washington,AR,275056,Fayetteville
+268,Brown,WI,273909,Green Bay
+269,Baldwin,AL,273870,Bay Minette
+270,McLennan,TX,273692,Waco
+271,St. Joseph,IN,272912,South Bend
+272,Frederick,MD,271717,Frederick
+273,Cumberland,PA,270738,Carlisle
+274,Henry,GA,269872,McDonough
+275,Erie,PA,267571,Erie
+276,Washington,MN,267568,Stillwater
+277,Kalamazoo,MI,264780,Kalamazoo
+278,Madison,IL,263017,Edwardsville
+279,Harford,MD,260924,Bel Air
+280,Yakima,WA,258523,Yakima
+281,St. Clair,IL,257400,Belleville
+282,Union,NC,256452,Monroe
+283,Santa Cruz,CA,256287,Santa Cruz
+284,Smith,TX,255569,Tyler
+285,Berkeley,SC,255217,Moncks Corner
+286,Jefferson,TX,254145,Beaumont
+287,Yavapai,AZ,253908,Prescott
+288,Clay,MO,253335,Liberty
+289,Marin,CA,251684,San Rafael
+290,Brazos,TX,249803,Bryan
+291,Chesapeake (city),VA,249422,Chesapeake
+292,Ellis,TX,249280,Waxahachie
+293,Williamson,TN,247726,Franklin
+294,Warren,OH,246553,Lebanon
+295,Montgomery,TN,246025,Clarksville
+296,Johnston,NC,241955,Smithfield
+297,Clay,FL,241908,Green Cove Springs
+298,Tuscaloosa,AL,241856,Tuscaloosa
+299,Lafayette,LA,241753,Lafayette
+300,Shelby,AL,241298,Columbiana
+301,Saratoga,NY,240360,Ballston Spa
+302,Cabarrus,NC,240016,Concord
+303,Arlington,VA,239807,Arlington
+304,New Hanover,NC,238852,Wilmington
+305,Norfolk (city),VA,238005,Norfolk
+306,Delaware,OH,237966,Delaware
+307,Caddo,LA,237848,Shreveport
+308,Gaston,NC,237242,Gastonia
+309,Whatcom,WA,234954,Bellingham
+310,Barnstable,MA,232711,Barnstable
+311,Lake,OH,232360,Painesville
+312,Linn,IA,232028,Cedar Rapids
+313,Mohave,AZ,229942,Kingman
+314,Hall,GA,229591,Gainesville
+315,Oneida,NY,228347,Utica
+316,Yuma,AZ,227510,Yuma
+317,Jefferson,MO,226739,Hillsboro
+318,Richmond (city),VA,226610,Richmond
+319,Montgomery,AL,225893,Montgomery
+320,Hernando,FL,225830,Brooksville
+321,Mahoning,OH,225786,Youngstown
+322,Yolo,CA,225560,Woodland
+323,Doña Ana,NM,225210,Las Cruces
+324,Johnson,TX,224506,Cleburne
+325,Okaloosa,FL,223515,Crestview
+326,Charlotte,FL,222968,Punta Gorda
+327,Jackson,OR,220768,Medford
+328,Kaufman,TX,220460,Kaufman
+329,Benton,WA,218190,Prosser
+330,Harrison,MS,217136,Gulfport
+331,Comal,TX,216846,New Braunfels
+332,Calcasieu,LA,216785,Lake Charles
+333,Lackawanna,PA,216123,Scranton
+334,Santa Rosa,FL,214759,Milton
+335,Clermont,OH,214123,Batavia
+336,Onslow,NC,213676,Jacksonville
+337,Anderson,SC,213076,Anderson
+338,York,ME,211972,Alfred
+339,Hinds,MS,211888,Jackson
+340,Washington,PA,210232,Washington
+341,Butte,CA,209836,Oroville
+342,Niagara,NY,209570,Lockport
+343,Bay,FL,208816,Panama City
+344,Minnehaha,SD,208639,Sioux Falls
+345,Deschutes,OR,208513,Bend
+346,Elkhart,IN,207893,Goshen
+347,Richmond,GA,206574,Augusta
+348,Guadalupe,TX,206548,Seguin
+349,Champaign,IL,205865,Urbana
+350,Sarpy,NE,204828,Papillion
+351,Muscogee,GA,202270,Columbus
+352,Trumbull,OH,201335,Warren
+353,St. Louis,MN,200794,Duluth
+354,Hawaii,HI,200629,Hilo
+355,Washington,UT,200075,St. George
+356,Iredell,NC,199710,Statesville
+357,Beaufort,SC,198979,Beaufort
+358,Racine,WI,198651,Racine
+359,Butler,PA,198413,Butler
+360,Livingston,MI,197315,Howell
+361,Kent,DE,196696,Dover
+362,Broome,NY,196397,Binghamton
+363,Cass,ND,196362,Fargo
+364,Sangamon,IL,196343,Springfield
+365,Sumner,TN,196281,Gallatin
+366,Outagamie,WI,195390,Appleton
+367,Paulding,GA,194059,Dallas
+368,El Dorado,CA,192275,Placerville
+369,Lee,AL,191980,Opelika
+370,Boone,MO,191746,Columbia
+371,Midland,TX,191635,Midland
+372,Saginaw,MI,190124,Saginaw
+373,Parker,TX,189860,Weatherford
+374,Tippecanoe,IN,188792,Lafayette
+375,Newport News (city),VA,186247,Newport News
+376,DeSoto,MS,185314,Hernando
+377,Licking,OH,184898,Newark
+378,Medina,OH,184625,Medina
+379,Ulster,NY,182977,Kingston
+380,Vanderburgh,IN,181995,Evansville
+381,Shasta,CA,181904,Redding
+382,Peoria,IL,181830,Peoria
+383,Houston,GA,181524,Perry
+384,Imperial,CA,180051,El Centro
+385,Alamance,NC,179165,Graham
+386,Shawnee,KS,178909,Topeka
+387,Lower Connecticut River Valley Planning Region,CT,177575,Middletown
+388,Muskegon,MI,177428,Muskegon
+389,Aiken,SC,177130,Aiken
+390,Ector,TX,176948,Odessa
+391,Carroll,MD,176639,Westminster
+392,Canadian,OK,175829,El Reno
+393,Scott,IA,175259,Davenport
+394,Pitt,NC,175119,Greenville
+395,Kenton,KY,174862,Covington
+396,Davidson,NC,174804,Lexington
+397,Hendricks,IN,174788,Danville
+398,Indian River,FL,174038,Vero Beach
+399,Kanawha,WV,173906,Charleston
+400,Citrus,FL,173511,Inverness
+401,Winnebago,WI,173307,Oshkosh
+402,Porter,IN,173215,Valparaiso
+403,Yellowstone,MT,172692,Billings
+404,Greene,OH,172347,Xenia
+405,Kootenai,ID,171362,Coeur d'Alene
+406,Kent,RI,171278,East Greenwich
+407,Columbia,GA,171115,Evans
+408,McLean,IL,170954,Bloomington
+409,Dorchester,SC,169833,St. George
+410,Madera,CA,169722,Madera
+411,Wyandotte,KS,169245,Kansas City
+412,Kenosha,WI,168754,Kenosha
+413,Pueblo,CO,168392,Pueblo
+414,Fairfield,OH,167762,Lancaster
+415,Martin,FL,167342,Stuart
+416,Olmsted,MN,166731,Rochester
+417,Charles,MD,166617,La Plata
+418,Monroe,PA,166053,Stroudsburg
+419,Beaver,PA,165631,Beaver
+420,Rock,WI,165461,Janesville
+421,Catawba,NC,164645,Newton
+422,Mesa,CO,164290,Grand Junction
+423,Portage,OH,163839,Ravenna
+424,Hampshire,MA,162308,Northampton
+425,Coweta,GA,162302,Newnan
+426,Schenectady,NY,162261,Schenectady
+427,Johnson,IN,161765,Franklin
+428,Chittenden,VT,161382,Burlington
+429,Sumter,FL,161283,Bushnell
+430,Rensselaer,NY,160749,Troy
+431,Maui,HI,160592,Wailuku
+432,Rankin,MS,160573,Brandon
+433,St. Clair,MI,160308,Port Huron
+434,Jackson,MI,160233,Jackson
+435,Johnson,IA,160044,Iowa City
+436,Brunswick,NC,159964,Bolivia
+437,Alexandria (city),VA,159467,Alexandria
+438,Scott,MN,159017,Shakopee
+439,Ouachita,LA,158542,Monroe
+440,Stearns,MN,158292,St. Cloud
+441,Sullivan,TN,158163,Blountville
+442,Penobscot,ME,157967,Bangor
+443,Franklin,PA,157854,Chambersburg
+444,Centre,PA,157795,Bellefonte
+445,Bibb,GA,157752,Macon
+446,Wright,MN,157557,Buffalo
+447,Cumberland,NJ,157148,Bridgeton
+448,Stafford,VA,156927,Stafford
+449,Douglas,GA,156526,Douglasville
+450,Grayson,TX,156361,Sherman
+451,Santa Fe,NM,155956,Santa Fe
+452,Sandoval,NM,155936,Bernalillo
+453,Monroe,MI,154809,Monroe
+454,Washington,MD,154705,Hagerstown
+455,Kings,CA,154535,Hanford
+456,Randall,TX,154419,Canyon
+457,Merrimack,NH,153808,Concord
+458,Berrien,MI,152444,St. Joseph
+459,Taylor,TX,151764,Abilene
+460,Rowan,NC,151661,Salisbury
+461,Orange,NC,150626,Hillsborough
+462,Sussex,NJ,148063,Newton
+463,Wilson,TN,147737,Lebanon
+464,Randolph,NC,147458,Asheboro
+465,Jackson,MS,147002,Pascagoula
+466,Cache,UT,145000,Logan
+467,Rock Island,IL,144672,Rock Island
+468,Rockwall,TX,144596,Rockwall
+469,Flagler,FL,144436,Bunnell
+470,Lebanon,PA,144252,Lebanon
+471,Boone,KY,144135,Burlington
+472,Coconino,AZ,144078,Flagstaff
+473,Schuylkill,PA,143786,Pottsville
+474,Kendall,IL,143171,Yorkville
+475,Livingston,LA,142282,Livingston
+476,Blount,TN,142211,Maryville
+477,Harnett,NC,141477,Lillington
+478,Spotsylvania,VA,140032,Spotsylvania Courthouse
+479,Monroe,IN,139718,Bloomington
+480,Marathon,WI,139091,Wausau
+481,Washington,WI,138727,West Bend
+482,Florence,SC,137214,Florence
+483,Hampton (city),VA,137148,Hampton
+484,Berkeley,WV,136287,Martinsburg
+485,Faulkner,AR,135791,Conway
+486,Pickens,SC,135495,Pickens
+487,Clark,OH,134985,Springfield
+488,Saline,AR,134807,Benton
+489,Warren,KY,134554,Bowling Green
+490,Calhoun,MI,133785,Marshall
+491,Tangipahoa,LA,133157,Amite City
+492,Washington,TN,133001,Jonesborough
+493,Napa,CA,132783,Napa
+494,Skagit,WA,132736,Mount Vernon
+495,Carroll,GA,132579,Carrollton
+496,Black Hawk,IA,132348,Waterloo
+497,Wood,OH,132248,Bowling Green
+498,Hunterdon,NJ,131781,Flemington
+499,Linn,OR,131496,Albany
+500,Tazewell,IL,131343,Pekin
