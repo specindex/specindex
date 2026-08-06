@@ -22,6 +22,15 @@ incident is recorded in `docs/AGENT_STRATEGY.md`; only the directive is here.
   usually derivable from data already held. Relabelling is reversible.
 - **`git show <commit>:<file>` returns the LFS pointer, not the data.** Use
   `git checkout <commit> -- <file>` to inspect or restore real content.
+- **Zero open PRs does NOT mean zero unmerged work.** A pushed branch with no
+  PR is invisible to `gh pr list`. On 2026-08-06 a full day of document-discovery
+  work sat that way and was found by accident. Before saying merges are done,
+  check for branches holding files main lacks — not commit counts, which squash
+  merges make meaningless.
+- **Delete a branch once its PR merges.** 137 of 138 branches were dead, and that
+  pile is what made the above invisible. `.github/workflows/branch-hygiene.yml`
+  now sweeps merged branches weekly and files an issue for no-PR branches
+  carrying unique files. Never auto-delete a branch that has no PR.
 - **Confirm before merging a PR whose branch is far behind.** Read the two-dot
   diff (`git diff main <branch>`), not the three-dot. Four PRs on 2026-08-05
   looked like small additions and were reversions of newer work.
