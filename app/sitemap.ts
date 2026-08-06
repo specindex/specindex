@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getFeaturedProjectIds, getStateSample, getStates } from "@/lib/projects";
 import { DIVISIONS, getProjectsForDivision } from "@/lib/divisions";
+import { isPreviewBuild, PREVIEW_PAGE_LIMIT } from "@/lib/buildScope";
 
 export const dynamic = "force-static";
 
@@ -26,21 +27,37 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // index with numbered sub-sitemaps fed by a dedicated lightweight
   // ids-only endpoint, not this file fetching full project rows to throw
   // away everything but `.id`.
-  const projectIds = await getFeaturedProjectIds(2000);
+  // Preview builds cap this the same way every other route does. The cap
+  // landed for pages in #126 but this route was missed, and it alone then
+  // exceeded the 300s export limit, failed three retries and BLOCKED all five
+  // open PRs at once -- five identical failures from one uncapped file. A
+  // sitemap is a list of URLs; ten of them prove the route renders.
+  const projectIds = await getFeaturedProjectIds(
+    isPreviewBuild() ? PREVIEW_PAGE_LIMIT : 2000,
+  );
 
   // /projects/[state]/[trade]/ pSEO hubs (ROADMAP.md item 49, P1) -- same
   // per-state-sample reuse as that route's own generateStaticParams(), so
   // this doesn't re-fetch every state a second time.
-  const states = await getStates();
+  const allStates = await getStates();
+  const states = isPreviewBuild() ? allStates.slice(0, PREVIEW_PAGE_LIMIT) : allStates;
+
+  // Was a serial `await getStateSample(state)` inside a for-loop -- ~50 round
+  // trips end to end, which is most of why this route blew the 300s export
+  // budget. Fetching them concurrently keeps the output byte-identical on main
+  // (same states, same order) while removing the part that actually took the
+  // time. The preview cap above is the fail-safe; this is the real fix, and it
+  // is what stops the route creeping back over the limit as states are added.
+  const samples = await Promise.all(states.map((s) => getStateSample(s)));
+
   const hubRoutes: { state: string; trade: string }[] = [];
-  for (const state of states) {
-    const sample = await getStateSample(state);
+  states.forEach((state, i) => {
     for (const division of DIVISIONS) {
-      if (getProjectsForDivision(sample, division).length > 0) {
+      if (getProjectsForDivision(samples[i], division).length > 0) {
         hubRoutes.push({ state: state.toLowerCase(), trade: division.slug });
       }
     }
-  }
+  });
 
   return [
     ...staticRoutes.map((path) => ({
