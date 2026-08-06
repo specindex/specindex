@@ -1,0 +1,104 @@
+# Warn trial users before their 14 days run out.
+#
+# WHY A JOB AND NOT A REQUEST HOOK. Trial EXPIRY is enforced live inside
+# require_firebase_user, which is the right place for it -- access is removed on
+# the user's very next call with no batch job in the loop. A REMINDER is the
+# opposite shape: it has to reach someone who is not currently making a request,
+# and the people most worth reminding are exactly the ones who have gone quiet.
+# So this is scheduled.
+#
+# ONCE A DAY IS ENOUGH AND MORE IS WORSE. The window is "3 days or fewer
+# remaining", so a daily run gives every trial three chances to be caught even
+# if two runs fail outright. Running hourly would not reach anyone sooner --
+# it would only multiply the chances of a duplicate if the idempotency stamp
+# ever failed to commit.
+#
+# SAFE TO RE-RUN BY HAND. scripts/send-trial-reminders.py excludes anyone
+# already carrying trial_reminder_sent_at and stamps only after SMTP accepts
+# the message, so a manual dispatch cannot double-mail anyone and a failed send
+# is retried tomorrow rather than silently marked done.
+
+name: Trial expiry reminders
+
+on:
+  schedule:
+    # 15:00 UTC ~ 11am ET, inside the US working day. A reminder that lands at
+    # 3am is read at 9am with twenty other things on top of it.
+    - cron: "0 15 * * *"
+  workflow_dispatch:
+    inputs:
+      days_before:
+        description: "Remind when this many days or fewer remain"
+        default: "3"
+      only:
+        description: "Restrict to one email address (testing)"
+        required: false
+      dry_run:
+        description: "List who would be mailed, send nothing"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  # Two concurrent runs could both read the same not-yet-stamped rows.
+  group: trial-reminders
+  cancel-in-progress: false
+
+jobs:
+  remind:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: pip install -q psycopg2-binary
+
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+
+      - name: Start Cloud SQL proxy
+        run: |
+          curl -sSo cloud-sql-proxy \
+            https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.14.3/cloud-sql-proxy.linux.amd64
+          chmod +x cloud-sql-proxy
+          ./cloud-sql-proxy --port 5433 specindex-ai:us-central1:specindex-db &
+          for i in $(seq 1 30); do
+            (echo > /dev/tcp/127.0.0.1/5433) >/dev/null 2>&1 && break
+            sleep 1
+          done
+
+      - name: Send reminders
+        env:
+          # Built from CLOUDSQL_PASSWORD, the secret that actually exists.
+          # continuous-crawl.yml referenced a DATABASE_URL secret that was never
+          # created, so it passed an EMPTY string and every run died on
+          # "connection refused" against localhost -- the continuous crawler had
+          # never once run. Read `gh secret list` before naming a secret.
+          DATABASE_URL: postgresql://specindex:${{ secrets.CLOUDSQL_PASSWORD }}@127.0.0.1:5433/specindex
+          EMAIL_SMTP_USERNAME: ${{ secrets.EMAIL_SMTP_USERNAME }}
+          EMAIL_SMTP_PASSWORD: ${{ secrets.EMAIL_SMTP_PASSWORD }}
+        run: |
+          python3 scripts/send-trial-reminders.py \
+            --days-before "${{ inputs.days_before || '3' }}" \
+            ${{ inputs.only && format('--only {0}', inputs.only) || '' }} \
+            ${{ inputs.dry_run && '--dry-run' || '' }} \
+            | tee run.log
+          grep -q "TRIAL REMINDERS COMPLETE" run.log || {
+            echo "::error::job ended without its completion sentinel"; exit 1; }
+
+      - name: Report
+        if: always()
+        run: |
+          echo "### Trial reminders: ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+          tail -12 run.log >> $GITHUB_STEP_SUMMARY 2>/dev/null || true

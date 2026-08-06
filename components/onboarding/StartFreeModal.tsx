@@ -38,12 +38,23 @@ export function StartFreeModal({ onClose }: { onClose: () => void }) {
         }),
       });
       if (!res.ok) throw new Error(await res.text());
-      if (auth) {
-        await sendPasswordResetEmail(auth, email, {
-          url: `${window.location.origin}/set-password/`,
-          handleCodeInApp: true,
-        });
+      // NEVER claim an email was sent without sending one. `auth` is null
+      // whenever the Firebase config is missing (lib/firebase.ts returns null
+      // rather than throwing), and this used to skip the send and fall
+      // straight through to setSent(true) -- showing "Check your email" for a
+      // message that was never attempted. The account is created either way,
+      // so silently succeeding here strands the user with an account they
+      // cannot get into and no reason to suspect it.
+      if (!auth) {
+        setError(
+          "Your account was created, but we couldn't send the set-password email. Contact support@specindex.ai.",
+        );
+        return;
       }
+      await sendPasswordResetEmail(auth, email, {
+        url: `${window.location.origin}/set-password/`,
+        handleCodeInApp: true,
+      });
       setSent(true);
     } catch {
       setError("Couldn't create your account — try again in a moment.");
