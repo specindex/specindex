@@ -326,6 +326,155 @@ function ConfidenceDot({ confidence }: { confidence: string }) {
 
 const EMPTY_FACT_VALUES = new Set(["Not reported", "None found yet"]);
 
+// ABSENCE WITH A REASON IS NOT AN EMPTY CELL.
+//
+// Fact below OMITS a card when the value is empty, and that rule stays -- a
+// column of bare "Not reported" makes a deep index look shallow. But omission
+// throws away real information when the absence is itself the signal, and on
+// a permit-sourced record it usually is: ALL 2,287 Wayne County projects we
+// hold have no owner, architect or GC, because a permit feed structurally
+// cannot carry those fields. That is a fact about the source, not about the
+// project, and a rep can act on the difference.
+//
+// The strongest case is the general contractor. No GC attached means the
+// project is PRE-AWARD, which is exactly the window where specification is
+// still open to influence -- the single most valuable thing this page can
+// tell a rep, and we were rendering it as a blank.
+//
+// So: state the absence and WHY, or omit. Never "Not reported", never "N/A",
+// never a muted dash -- those read as a broken scraper and invite the reader
+// to conclude the world is empty rather than our copy of it.
+// DERIVED SCOPE, AND THE LINE IT MUST NOT CROSS.
+//
+// A permit description is often the densest field on a permit-sourced record.
+// "Medical Office (Imaging, Theranostics, & RadioPharmacy); New" tells a rep
+// more about which trades matter than the other 17 populated fields together.
+// Surfacing that is legitimate. Surfacing it as though we read a spec book is
+// not, so the tier is carried on every row and rendered.
+//
+//   TIER 1  physical necessity -- the building cannot legally or physically
+//           function without the division. A radiopharmacy requires shielding.
+//   TIER 2  declared trades -- straight from the source's own competitor_watch.
+//   TIER 3  brand, material or grade. NEVER derived. EPDM vs TPO from
+//           "roofing", Trane vs Carrier from "HVAC", lead panel vs lead-lined
+//           gypsum from "shielding" -- all fabrication, all forbidden. There is
+//           deliberately no code path here that can produce one.
+type DerivedScope = { division: string; label: string; because: string; tier: 1 | 2 };
+
+const TRADE_TO_DIVISION: Record<string, { division: string; label: string }> = {
+  hvac: { division: "23", label: "Heating, ventilating & air conditioning" },
+  roofing: { division: "07", label: "Thermal & moisture protection" },
+  lighting: { division: "26", label: "Electrical & lighting" },
+  electrical: { division: "26", label: "Electrical & lighting" },
+  flooring: { division: "09", label: "Finishes" },
+  "fire suppression": { division: "21", label: "Fire suppression" },
+  plumbing: { division: "22", label: "Plumbing" },
+  openings: { division: "08", label: "Openings" },
+};
+
+// Tier 1 only. Each entry is a requirement the named use CANNOT be built
+// without -- not a trade that is merely likely.
+const SCOPE_IMPLICATIONS: { match: RegExp; division: string; label: string; because: string }[] = [
+  {
+    match: /radiopharmac|theranostic|nuclear medicine|cyclotron/i,
+    division: "13 49 00",
+    label: "Radiation protection",
+    because: "Radiopharmacy and isotope handling require shielded assemblies",
+  },
+  {
+    match: /imaging|\bMRI\b|\bCT\b|radiolog/i,
+    division: "21 22 00",
+    label: "Clean-agent fire suppression",
+    because: "Imaging equipment cannot be protected with water-based suppression",
+  },
+  {
+    match: /cleanroom|clean room|laborator|\blab\b/i,
+    division: "23 00 00",
+    label: "Controlled-environment HVAC",
+    because: "Controlled environments require pressure regimes and filtration",
+  },
+];
+
+function deriveScope(description: string, watch: string[]): DerivedScope[] {
+  const out: DerivedScope[] = [];
+  // Dedupe on the DIVISION NUMBER, not the full code. Tier 1 emits specific
+  // section numbers ("21 22 00" clean-agent suppression) while tier 2 emits
+  // bare divisions ("21" fire suppression), so a string-equality check let the
+  // same division render twice at two levels of precision -- which reads as a
+  // bug and, worse, makes a derived row look like two independent findings.
+  // Tier 1 runs first and wins, because the specific section is the more
+  // useful claim.
+  const seen = new Set<string>();
+  const divisionOf = (code: string) => code.trim().split(/\s+/)[0];
+
+  for (const imp of SCOPE_IMPLICATIONS) {
+    const div = divisionOf(imp.division);
+    if (imp.match.test(description) && !seen.has(div)) {
+      seen.add(div);
+      out.push({ division: imp.division, label: imp.label, because: imp.because, tier: 1 });
+    }
+  }
+  for (const w of watch) {
+    const m = TRADE_TO_DIVISION[w.toLowerCase().trim()];
+    if (m && !seen.has(divisionOf(m.division))) {
+      seen.add(divisionOf(m.division));
+      out.push({ ...m, because: "Named in the source record's trade list", tier: 2 });
+    }
+  }
+  return out;
+}
+
+function DerivedScopePanel({ scope }: { scope: DerivedScope[] }) {
+  if (!scope.length) return null;
+  return (
+    <div className="mt-5 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)] p-4">
+      <p className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-gray-400)]">
+        Trades this scope requires
+      </p>
+      <ul className="mt-3 flex flex-col gap-2">
+        {scope.map((s) => (
+          <li key={s.division} className="flex flex-wrap items-baseline gap-x-2 text-sm">
+            <span className="font-mono text-xs font-semibold text-[var(--color-green)]">
+              Div {s.division}
+            </span>
+            <span className="font-medium">{s.label}</span>
+            <span className="text-xs text-[var(--color-gray-600)]">— {s.because}</span>
+          </li>
+        ))}
+      </ul>
+      {/* The whole panel is worthless without this line. It is the difference
+          between "this project needs radiation shielding" and "this project
+          specified a shielding manufacturer", and only one of those is true. */}
+      <p className="mt-3 text-[11px] leading-snug text-[var(--color-gray-600)]">
+        Requirements implied by the declared scope — not products selected on this
+        project. No manufacturer can be named without a specification document.
+      </p>
+    </div>
+  );
+}
+
+function AbsentFact({
+  label,
+  reason,
+  signal,
+}: {
+  label: string;
+  reason: string;
+  signal?: string;
+}) {
+  return (
+    <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)] p-3">
+      <dt className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-gray-400)]">
+        {label}
+      </dt>
+      <dd className="mt-1 text-sm font-medium text-[var(--color-gray-600)]">{reason}</dd>
+      {signal && (
+        <p className="mt-1.5 text-[11px] leading-snug text-[var(--color-green)]">{signal}</p>
+      )}
+    </div>
+  );
+}
+
 function Fact({
   label,
   value,
@@ -600,6 +749,14 @@ export function ProjectDetailView({ project: initialProject }: { project: Projec
         project.enrichment.contact.length ||
         project.enrichment.permit.length),
   );
+  // How many documents we actually hold for this project. Scopes every
+  // absence claim on the page: "not determinable" when we hold none,
+  // "none named in the N we hold" when we do. Never an unqualified "none".
+  const documentCount = project.document_count ?? 0;
+  const derivedScope = deriveScope(
+    project.description ?? "",
+    project.competitor_watch ?? [],
+  );
   const gcFact = !project.general_contractor ? findTeamFact(project, "general_contractor") : undefined;
   const architectFact = !project.architect ? findTeamFact(project, "architect") : undefined;
 
@@ -814,28 +971,68 @@ export function ProjectDetailView({ project: initialProject }: { project: Projec
               {/* Project ID card removed: the SPX id already appears under the
                   title. "Show the SPX id once on the page" -- slot 01. */}
               <Fact label="Estimated value" value={formatUsd(project.estimated_value_usd)} />
-              <Fact label="Square footage" value={formatSf(project.square_footage)} />
               <Fact label="Opened / announced" value={formatDate(project.opened_or_announced_date)} />
-              <Fact label="Owner" value={project.owner || "Not reported"} />
-              <Fact
-                label="General contractor"
-                value={project.general_contractor || gcFact?.value || "Not reported"}
-                confidence={gcFact?.confidence}
-              />
-              <Fact
-                label="Architect"
-                value={project.architect || architectFact?.value || "Not reported"}
-                confidence={architectFact?.confidence}
-              />
-              <Fact
-                label="Brands mentioned"
-                value={
-                  project.mentioned_brands.length
-                    ? project.mentioned_brands.join(", ")
-                    : "None found yet"
-                }
-              />
+
+              {project.square_footage ? (
+                <Fact label="Square footage" value={formatSf(project.square_footage)} />
+              ) : (
+                <AbsentFact
+                  label="Square footage"
+                  reason="Not stated in the source record"
+                  // Deliberately NOT estimated from value. A commercial
+                  // estimator spots a value-divided-by-cost-per-sf figure
+                  // immediately, and a synthetic number costs more trust than
+                  // a stated absence.
+                />
+              )}
+
+              {project.owner ? (
+                <Fact label="Owner" value={project.owner} />
+              ) : (
+                <AbsentFact label="Owner" reason="Not disclosed in the permit filing" />
+              )}
+
+              {project.general_contractor || gcFact?.value ? (
+                <Fact
+                  label="General contractor"
+                  value={project.general_contractor || gcFact!.value}
+                  confidence={gcFact?.confidence}
+                />
+              ) : (
+                <AbsentFact
+                  label="General contractor"
+                  reason="Unassigned at time of filing"
+                  signal="Pre-award — specification is still open"
+                />
+              )}
+
+              {project.architect || architectFact?.value ? (
+                <Fact
+                  label="Architect"
+                  value={project.architect || architectFact!.value}
+                  confidence={architectFact?.confidence}
+                />
+              ) : (
+                <AbsentFact label="Architect" reason="Unlisted in the source record" />
+              )}
+
+              {project.mentioned_brands.length ? (
+                <Fact label="Brands mentioned" value={project.mentioned_brands.join(", ")} />
+              ) : (
+                <AbsentFact
+                  label="Manufacturers named"
+                  // Scoped to what we HOLD. "None found" would say the
+                  // specification names nobody, which we cannot know without
+                  // reading it.
+                  reason={
+                    documentCount === 0
+                      ? "Not determinable — no documents held for this project"
+                      : `None named in the ${documentCount} document${documentCount === 1 ? "" : "s"} we hold`
+                  }
+                />
+              )}
             </dl>
+            <DerivedScopePanel scope={derivedScope} />
           </div>
         </div>
       </div>
