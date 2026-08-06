@@ -1,0 +1,157 @@
+# Keep PRs moving: auto-merge when green, keep branches fresh, flag the stale.
+#
+# WHY THIS EXISTS. On 2026-08-05 seven PRs were open, five of them 4-6 days old
+# and 260+ commits behind main. FOUR had to be closed as regressions -- their
+# content had already shipped through another path, and merging them would have
+# reverted newer work. That is not a review problem, it is a latency problem:
+# a branch that sits long enough stops being a contribution and becomes a
+# liability.
+#
+# Three causes, addressed here:
+#
+#   1. NOTHING AUTO-MERGES. Every PR waited for a human to notice checks had
+#      gone green. build_and_preview takes 5-11 minutes (a full 27K-page static
+#      export), so "wait for it" reliably meant "come back much later".
+#
+#   2. MERGING ONE PR INVALIDATES THE NEXT. main requires build_and_preview, so
+#      every merge makes the other PRs stale and each needs another 10-minute
+#      build. Done by hand this serialises badly -- #120 and #122 each needed a
+#      second manual update today.
+#
+#   3. NOBODY SEES ROT. A 6-day-old branch looks identical to a 6-hour-old one
+#      in the PR list.
+#
+# WHAT THIS DELIBERATELY DOES NOT DO: auto-merge is only ENABLED, never forced.
+# GitHub still requires every protected check to pass, so this shortens the gap
+# between "green" and "merged" without weakening the gate. A PR that fails
+# checks stays open exactly as before.
+
+name: PR flow
+
+on:
+  schedule:
+    # Every 30 minutes. The work is a handful of API calls; the cost of running
+    # often is nil and the cost of running rarely is a branch going stale.
+    - cron: "*/30 * * * *"
+  pull_request:
+    types: [opened, reopened, ready_for_review]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Report what would happen, change nothing"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: pr-flow
+  cancel-in-progress: false
+
+jobs:
+  flow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Enable auto-merge, refresh branches, flag staleness
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          set -euo pipefail
+          REPO="${{ github.repository }}"
+
+          # Behind-by threshold before a branch is refreshed. Small enough that
+          # a PR never drifts far; large enough that merging one PR does not
+          # immediately trigger a rebuild of every other one.
+          BEHIND_LIMIT=25
+          STALE_DAYS=7
+
+          prs=$(gh pr list --repo "$REPO" --state open --limit 50 \
+                  --json number,title,isDraft,createdAt,headRefName,autoMergeRequest,mergeStateStatus)
+
+          echo "$prs" | jq -r '.[] | @base64' | while read -r row; do
+            get() { echo "$row" | base64 -d | jq -r "$1"; }
+            n=$(get .number); draft=$(get .isDraft); created=$(get .createdAt)
+            am=$(get '.autoMergeRequest // "null"'); state=$(get .mergeStateStatus)
+            title=$(get .title)
+
+            echo "--- #$n [$state] $title"
+
+            if [ "$draft" = "true" ]; then
+              echo "    draft, skipping"; continue
+            fi
+
+            # 1. AUTO-MERGE. Only enabled -- GitHub still enforces every
+            #    required check, so this closes the gap between green and
+            #    merged without weakening the gate.
+            if [ "$am" = "null" ]; then
+              if [ "${DRY_RUN:-false}" = "true" ]; then
+                echo "    would enable auto-merge"
+              else
+                gh pr merge "$n" --repo "$REPO" --merge --auto 2>/dev/null \
+                  && echo "    auto-merge enabled" \
+                  || echo "    auto-merge not available (likely conflicts)"
+              fi
+            else
+              echo "    auto-merge already on"
+            fi
+
+            # 2. FRESHNESS. BEHIND means the base moved; update so its checks
+            #    reflect the code that would actually merge. Skip anything
+            #    DIRTY -- a conflicted branch needs a human, and update-branch
+            #    would fail anyway.
+            if [ "$state" = "BEHIND" ]; then
+              behind=$(gh api "repos/$REPO/compare/main...$(get .headRefName)" \
+                        --jq '.behind_by' 2>/dev/null || echo 0)
+              if [ "${behind:-0}" -gt "$BEHIND_LIMIT" ]; then
+                if [ "${DRY_RUN:-false}" = "true" ]; then
+                  echo "    would update branch ($behind behind)"
+                else
+                  gh pr update-branch "$n" --repo "$REPO" 2>/dev/null \
+                    && echo "    branch updated ($behind behind)" \
+                    || echo "    update failed -- needs manual rebase"
+                fi
+              else
+                echo "    $behind behind, under threshold"
+              fi
+            elif [ "$state" = "DIRTY" ]; then
+              echo "    CONFLICTED -- needs a human"
+            fi
+
+            # 3. STALENESS. A 6-day-old branch looks like a 6-hour-old one in
+            #    the list. Label it so rot is visible before it becomes a
+            #    regression.
+            age=$(( ( $(date +%s) - $(date -d "$created" +%s) ) / 86400 ))
+            if [ "$age" -ge "$STALE_DAYS" ]; then
+              if [ "${DRY_RUN:-false}" = "true" ]; then
+                echo "    would label stale (${age}d)"
+              else
+                gh label create stale --repo "$REPO" --color D93F0B \
+                  --description "Open 7+ days; verify it has not been superseded" 2>/dev/null || true
+                gh pr edit "$n" --repo "$REPO" --add-label stale 2>/dev/null || true
+                echo "    labelled stale (${age}d)"
+              fi
+            fi
+          done
+
+      - name: Warn on branches that have drifted far enough to be suspect
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          REPO="${{ github.repository }}"
+          # 200+ commits behind is where a branch stops being a contribution.
+          # FOUR PRs closed on 2026-08-05 were in exactly this state: their
+          # content had already shipped and the diff was pure reversion.
+          gh pr list --repo "$REPO" --state open --limit 50 --json number,headRefName \
+            | jq -r '.[] | "\(.number) \(.headRefName)"' | while read -r n br; do
+              behind=$(gh api "repos/$REPO/compare/main...$br" --jq '.behind_by' 2>/dev/null || echo 0)
+              if [ "${behind:-0}" -gt 200 ]; then
+                echo "::warning::PR #$n is $behind commits behind main. Check the TWO-DOT diff (git diff main $br) before merging -- four PRs in this state on 2026-08-05 had already shipped and would have reverted newer work."
+              fi
+            done
