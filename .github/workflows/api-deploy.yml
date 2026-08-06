@@ -75,6 +75,13 @@ jobs:
       - name: Syntax check
         run: python3 -m compileall -q api/
 
+      # Would this revision serve every route the frontend calls? The frontend
+      # deploys on every merge and the API only when api/** changes, so the
+      # live site is routinely running against an older API. Catching a removed
+      # or renamed route HERE means the deploy fails instead of the browser.
+      - name: API contract (static)
+        run: python3 scripts/check-api-contract.py
+
       # NO --set-env-vars. It REPLACES the entire environment, and this
       # service carries nine variables -- DATABASE_URL, CLERK_ISSUER,
       # MAPBOX_TOKEN, EMAIL_SMTP_*, CONTACT_NOTIFY_TO, SPECINDEX_BUILD_TOKEN,
@@ -84,10 +91,48 @@ jobs:
       # entirely makes the deploy INHERIT the existing configuration, which is
       # what a code-only deploy should do. Use --update-env-vars (merges, never
       # replaces) if a variable genuinely needs changing.
+      # BUILD HERE, NOT IN CLOUD BUILD. This used to be `--source ./api`, which
+      # looks simpler and is why it was written that way. It is not simpler: it
+      # is a managed path whose permission set is undocumented and GROWING, and
+      # you discover the set one 403 at a time. On 2026-08-05 the deploy failed
+      # all day across three separate permissions, each revealed only after
+      # granting the last:
+      #
+      #     run.services.get      -> granted role, retried
+      #     storage.buckets.get   -> granted on the staging bucket, retried
+      #     storage.buckets.list  -> PROJECT-level, cannot be bucket-scoped
+      #
+      # Granting the third would not have been the last one. --source stages a
+      # tarball into a managed GCS bucket, invokes Cloud Build, and writes build
+      # logs to another bucket -- three services and two buckets implicated in
+      # shipping a container we already have a Dockerfile for.
+      #
+      # Building in the runner deletes that entire dependency. No Cloud Build,
+      # no staging bucket, no storage permissions of any kind. The permission
+      # set becomes fixed and knowable -- run.admin, iam.serviceAccountUser,
+      # artifactregistry.writer -- all three of which the deploy SA already
+      # held, so this change required no new IAM at all.
+      #
+      # DEPLOY BY DIGEST, NOT BY TAG. A tag can be moved; a digest cannot. The
+      # digest is recorded in the step summary, so "what is actually running"
+      # is answerable after the fact and a rollback is one deploy by an older
+      # digest. Tagging by git SHA makes that history readable.
+      - name: Build and push the image
+        id: build
+        run: |
+          gcloud auth configure-docker us-central1-docker.pkg.dev --quiet
+          IMAGE=us-central1-docker.pkg.dev/specindex-ai/cloud-run-source-deploy/specindex-api
+          docker build -t "$IMAGE:${GITHUB_SHA}" -t "$IMAGE:latest" ./api
+          docker push "$IMAGE:${GITHUB_SHA}"
+          docker push "$IMAGE:latest"
+          DIGEST=$(docker inspect --format='{{index .RepoDigests 0}}' "$IMAGE:${GITHUB_SHA}")
+          echo "digest=$DIGEST" >> "$GITHUB_OUTPUT"
+          echo "built $DIGEST"
+
       - name: Deploy to Cloud Run (code only; env inherited)
         run: |
           gcloud run deploy specindex-api \
-            --source ./api \
+            --image '${{ steps.build.outputs.digest }}' \
             --region us-central1 \
             --allow-unauthenticated \
             --add-cloudsql-instances specindex-ai:us-central1:specindex-db \
@@ -140,6 +185,18 @@ jobs:
 
           exit $fail
 
+      # The content smoke test above asserts /v1/projects returns ROWS. It is a
+      # good check and it was blind to the signup outage: a MISSING route is not
+      # an empty result set on a route it tests, it is a route it never
+      # mentions. This probes the deployed revision for every path the frontend
+      # actually calls and fails on a 404.
+      - name: API contract (live)
+        if: ${{ !inputs.skip_smoke }}
+        run: |
+          URL=$(gcloud run services describe specindex-api --region us-central1 \
+                  --format='value(status.url)')
+          python3 scripts/check-api-contract.py --live "$URL"
+
       - name: Report
         if: always()
         run: |
@@ -147,3 +204,25 @@ jobs:
           echo "Revision: $(gcloud run services describe specindex-api \
             --region us-central1 --format='value(status.latestReadyRevisionName)' 2>/dev/null || echo unknown)" \
             >> $GITHUB_STEP_SUMMARY
+          echo "Image: \`${{ steps.build.outputs.digest }}\`" >> $GITHUB_STEP_SUMMARY
+
+      # A step summary is not a notification. This deploy failed three times in
+      # a row on 2026-08-05 and the only record was a summary nobody opened,
+      # so signup stayed broken in production for a full day. An open issue is
+      # visible without anyone thinking to look.
+      - name: Raise an issue if the deploy failed
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "API deploy failed on $(git rev-parse --short HEAD)" \
+            --body "The API deploy failed, so **the deployed API is older than \`main\`**.
+
+          Any frontend merged since then is live against the previous revision.
+          If that frontend calls a route this deploy would have added, users see
+          a generic error that no retry can fix.
+
+          Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            --label "deploy-failure" 2>/dev/null || \
+          echo "::error::API deploy failed AND the issue could not be created"

@@ -1,197 +1,129 @@
-# Data pull window policy
+# SpecIndex — operating rules
 
-- **Standing pull window: since 2025-01-01, fixed anchor date (not a rolling lookback).** Per Asif (2026-07-31): all bulk/historical-depth structured-source pulls (Socrata/ArcGIS/etc, widening past narrow 30-90 day incremental windows) should go back to January 1, 2025, not further, and not a shorter "last N days" window.
-- The pipeline (`scripts/state_agent_pipeline/main.py`) only supports relative `--lookback-days`, not an absolute start date, so this anchor must be recomputed each session as `(today - date(2025,1,1)).days` before running -- do not reuse a hardcoded day-count from a prior session without recomputing, since it drifts.
-- Real remaining scope: add proper absolute `--since-date` support to the pipeline so this doesn't need recomputing by hand every time.
+This file is auto-loaded into context on EVERY session. It carries only rules
+that must be known BEFORE acting. Anything explanatory, historical, or
+domain-specific belongs in `docs/AGENT_STRATEGY.md`, which is read on demand.
 
-# Known performance bottleneck: national-corpus rebuild
+Each rule below exists because it was violated and cost real data or hours. The
+incident is recorded in `docs/AGENT_STRATEGY.md`; only the directive is here.
 
-- **`scripts/merge-national-corpus.py` has an O(k^2) blowup and can hang for hours.** Its dedupe (`project_identity.dedupe_projects`) buckets records by `(state, county)` and does pairwise comparison within each bucket. Once a single bucket grows into the tens of thousands of rows (e.g. NJ after the 2025-01-01 backfill), the comparison count explodes and the script runs at ~100% CPU for hours with zero progress output (it only prints once at the end).
-- **If a data-processing script's CPU time balloons far past a sane estimate for its input size, with no progress logging: kill it and reroute, don't wait it out.** Check `ps aux` for CPU time (not just wall clock) on any backgrounded job.
-- **Stopgap in place:** `scripts/fast-merge-national-corpus.py` skips the pairwise cross-source merge entirely (relies on `load-corpus-to-postgres.py`'s `ON CONFLICT (project_id)` upsert for exact-id dedup) — rebuilds the full ~400K-row corpus in ~10 seconds instead of hours. Use it for a fast reload; `merge-national-corpus.py` remains the source of truth for real cross-source duplicate merging once the O(k^2) bug is actually fixed.
-- Real remaining scope: fix `_dedupe_bucket` in `scripts/project_identity.py` to sub-bucket by a cheap prefilter (e.g. normalized address or permit-ID hash) before doing pairwise `same_project()` comparison, so large buckets don't blow up.
+---
 
-# Top-500-counties coverage goal
+## 1. Destructive guardrails
 
-- **Standing goal (per Asif, 2026-08-02): maximize BOTH breadth and depth of coverage for the top-500 US counties by population, with all data anchored to 2025-01-01.** Breadth = how many of the top 500 have any source at all; depth = real documents per project, not just permit-metadata rows (see the "Documents are the moat" section below). A county with structured data but no document path is a partial win, not a complete one. Reference: `docs/us_counties_by_population.md` — real Census Bureau data (all 3,144 US counties, bulk CSV from `www2.census.gov`, no API key needed), with a Corpus Coverage column. Always check this file before scoping a new discovery batch; regenerate it (re-download the CSV, re-run the corpus-coverage join) periodically as the corpus grows.
-- **Do not trust ad-hoc web-scraped or pasted "complete" county population lists.** One such pasted file looked authoritative but was fabricated past rank ~18 (recycled county names like "Washington County" reused across every state with invented populations, degenerating into "Washington 2 County" filler). Spot-check any ranked dataset over ~20-30 rows against a known-authoritative source before acting on it; prefer bulk downloads from the primary source (e.g. Census Bureau CSVs) over WebFetch summaries or user-pasted tables.
-- **Pacing: batches of 5 counties at a time, with review between each batch** — explicitly chosen by Asif over larger batches or a continuous unattended run. After each batch: cherry-pick worktree commits, resolve LFS-pointer conflicts by keeping real current data (never trust the cherry-picked data diff), re-run the pipeline fresh per new source for real merged counts, then report before launching the next 5. This is an open-ended, multi-session effort.
+- **NEVER point `--output` / `--out` at `data/states/*.json`.** These flags mean
+  "write a new file", not "merge into it". State files are written ONLY by the
+  pipeline's `--merge-state` or an explicit id-deduped merge. Before running any
+  unfamiliar script, grep it for `write_text` / `json.dump`.
+- **A DECREASING corpus count is a stop-everything signal.** Print counts before
+  and after any corpus-touching operation. If a rebuild reports fewer projects
+  than the last run: do not commit, do not push, restore from git, diagnose.
+- **Never delete a mislabelled row — relabel it.** The true jurisdiction is
+  usually derivable from data already held. Relabelling is reversible.
+- **`git show <commit>:<file>` returns the LFS pointer, not the data.** Use
+  `git checkout <commit> -- <file>` to inspect or restore real content.
+- **Confirm before merging a PR whose branch is far behind.** Read the two-dot
+  diff (`git diff main <branch>`), not the three-dot. Four PRs on 2026-08-05
+  looked like small additions and were reversions of newer work.
 
-# MANDATORY: the 11-step process — a jurisdiction is NOT done at step 5
+## 2. Data integrity — every failure here returns a plausible number, not an error
 
-- **AMENDED 2026-08-04 — read the amendment at the end of `docs/AGENT_STRATEGY.md`.** Steps 1-7 are tuned for breadth, which is now solved. The moat lives in steps 8-10 and they are **document-type-blind**: they were written when any document counted as a win, and the result is that ~2,121 of our ~2,250 classifiable documents are MEP/architectural drawings (rank 3) while we hold ~13 spec books and ~14 addenda (ranks 2 and 1). Six changes are specified there — step 2 must classify document TYPE, step 8 must rank addenda > spec book > drawings > rest, step 9 must fork spec books to `extract-spec-book.py`, step 10 must output basis-of-design POSITION, **step 11** (now added as Phase IV) is the substitution ledger, and Phase I needs a **non-jurisdictional track** so national sources (SAM.gov, UFGS, VA TIL, university standards) can be expressed at all.
+- **Never hand-roll date conversion.** Use `generic_mapping._iso_date()`. A
+  non-ISO date does not error — it sorts wrong and the row vanishes from every
+  windowed query while sitting in the corpus.
+- **THE DIAGNOSTIC: total rows grow but in-window rows do not.** That divergence
+  means a date bug. A county with thousands held and a few hundred in-window is
+  a date bug until proven otherwise — never conclude "the source is thin" first.
+- **A broken filter returns MORE rows, so a row count can NEVER validate a fix.**
+  Read the control back after setting it. Check the distribution across windows,
+  not the total. Compare two different filter values — identical results mean the
+  filter is inert.
+- **Baseline every endpoint probe against a nonsense path on the same host.**
+  Government and .edu hosts answer unknown paths with HTTP 200 and their landing
+  page. Require a product-specific signature AND a body that differs from the
+  baseline. A generic word like "document" is not a signature.
+- **URL-resolves is NOT verification — check the CONTENT.** A fabricated URL
+  fails a link check instantly; a real URL with fabricated contents passes every
+  check and fails only when the document is opened.
+- **A dead source still answers queries, returning 0 rows for everything.** Query
+  `1=1&returnCountOnly=true` periodically. A live count of 0 against a non-zero
+  corpus count is the signature.
+- **Verify a value's PLAUSIBILITY, not just its presence.** Sanity-bound numbers
+  before ranking on them: Miami-Dade reports $7.86B for a beauty-salon
+  alteration. Never quote Florida project values.
+- **After any pipeline step, assert the NEXT step can see its output.** A step
+  that succeeds into a place nothing reads from is indistinguishable from a step
+  that ran.
 
-- **This has been missed repeatedly (flagged by Asif 2026-08-03). Every county-onboarding batch MUST run all applicable steps of the 11-step process in `docs/AGENT_STRATEGY.md`, not just source discovery + wiring.** Stopping at step 5 (config + `--merge-state`) adds permit-metadata rows and zero documents — which is the opposite of the actual goal.
-- The steps: **Phase I (1-4)** Gemini discovery → live verification → feedback loop → institutional memory (`docs/ROADMAP.md` entry AND a `data/jurisdiction_health_matrix.json` status line, logged *immediately* when a lead dies, not batched to the end). **Phase II (5-7)** provider wiring (path A) OR `document-research-fallback.py --county --state` (path B, fires when steps 1-4 find no structured source) → `check-corpus-integrity.py` dedup gate. **Phase III (8-10, ALL REQUIRED)** `fetch-and-store-documents.py` → `extract-document-text.py` → `enrich-project-details.py`.
-- **Step 6 is not optional for dead-end counties** — it is the entire point of a dead end. A county with no structured source still gets project-level document research; "no source found" is not a terminal state.
-- **Writing agent prompts: never hand-roll a step list.** Point the agent at `docs/AGENT_STRATEGY.md`'s 11-step section and **require it to return a per-step status table** (step | ran? | result | why skipped). Omissions then show up in the agent's own report instead of silently passing.
-- **Document-feasibility assessment is REQUIRED and belongs to step 2 (live verification) — and it does NOT replace step 8.** Both are mandatory and they answer different questions. *Feasibility (step 2):* is there a reachable document path at all — a per-record detail page, an attachments/documents API, or a separate public-records portal — and if it's gated, what exactly is the gate? Record the exact endpoint patterns either way; a gated-but-mapped path is valuable intel (that's how Duval FL's JaxEPICS document API got fully documented). *Capture (step 8):* actually pull those documents into `gs://specindex-ai-raw-documents/{state}/`. Proving a path is reachable and never pulling from it is what left the corpus at 55 PDFs while "document wins" were being reported — feasibility without capture moves nothing, and capture without feasibility work never finds the non-obvious paths (Snohomish's document repo was invisible from its permit feed).
-- **After every batch, verify before declaring done:** for each jurisdiction touched, confirm steps 8/9/10 actually ran (documents in `gs://specindex-ai-raw-documents/{state}/`, rows in `document_pages`, rows in `project_enrichment`). If they didn't, the batch is incomplete regardless of how many permit rows landed.
+## 3. Tooling invariants
 
-# Routine checks — run these after ANY corpus or config change
+- **Wait on a sentinel the producer writes, never `pgrep` a process pattern.**
+  `while pgrep -f "<pattern>"` deadlocks when the pattern appears in the waiting
+  script's own argv. Bound every wait loop with a counter so a missed sentinel
+  times out loudly.
+- **If CPU time balloons past a sane estimate with no progress output, kill and
+  reroute.** Check `ps aux` CPU time, not wall clock. Any loop over ~30s must
+  emit rate and ETA.
+- **Use the service-account key for GCS, never user ADC.** ADC expires and the
+  failure reads as "this source has no documents". Test with an object-level
+  probe (`bucket.blob(...).exists()`), never `bucket.exists()`.
+- **Parallelise small probes; cap large transfers at ~3.** Measured uplink
+  saturates there — 8 concurrent transfers produced 0 uploads and OSError 65.
+- **Rate-limit public government servers. A ban is permanent loss of a source.**
+  Per-domain concurrency caps are enforced in `work_queue`; do not bypass them.
+- **Use Playwright for gated or SPA portals** before concluding "no viable
+  source". curl cannot see through an Angular shell.
+- **Run `scripts/verify-environment.py` when anything returns unexpectedly
+  little.** It checks credentials, IAM roles and config in ten seconds.
 
-- **`scripts/check-corpus-integrity.py`** — duplicate ids across the corpus.
-- **`scripts/check-config-geography.py`** — configs that pull a WIDER geography than their hardcoded `county` label. `generic_mapping` takes `county` as a fixed per-config value, not per-row, so an unscoped `commercial_where` on a multi-jurisdiction feed stamps every row with the wrong county. Two real instances found 2026-08-03: **NY-NYC** pulled the citywide NYC DOB dataset as "New York", mislabelling 29,910 outer-borough filings *and* masking that NY-QUEENS was never registered (Queens held 1 project against 24,469 live); **TX-WILLIAMSON-PERMITS** pulled Midland's feed as Williamson (110 rows). Both were invisible until corpus counts were compared against live source counts.
-- **`scripts/audit-county-coverage.py`** — the coverage audit. Fetches live source counts for the 2025-01-01+ window **in parallel** and compares to corpus counts, verdicting each config as complete / TRUNCATED / STALE-WATERMARK / OVER-COUNT / manual-check. **Run this instead of spawning audit agents** — five agents were launched for exactly this on 2026-08-03 and all five were killed by the watchdog; the script does it in ~90 seconds and cannot stall. First run found **242,125 recoverable projects**. Two known artifacts: statewide configs with an empty `county` report a phantom gap (NJ showed 194,801 vs 0 while nj.json holds 65,993), and configs sharing a county are aggregated before verdicting (four LA-area city configs all map to Los Angeles) — keep that aggregation.
-- **Always parallelize independent work — but measure, because there are two regimes** (Asif, 2026-08-03). *Small independent requests* (live-count probes, document searches, endpoint fingerprinting): parallelize aggressively — the coverage audit does 58 live counts in ~90s at 12 workers. *Large transfers*: this inverts once uplink bandwidth is the constraint. Snohomish document capture at `--workers 8` gave **0 uploads and OSError 65 "No route to host"** in 4 minutes; at `--workers 3` it gave **8 uploads in 3.3 minutes, zero errors**, healthy 7-13 MB transfers in 16-46s. Measured uplink ~150-250 KB/s, so ~3 concurrent large transfers saturates it. Cap transfer concurrency around 3 and watch for OSError 65.
-- **Watermarks live in `data/pipeline/nj-dca/state-{config-key}.json`**, not under `data/pipeline/{feed_id}/`. A non-zero `last_processed_id` makes `--lookback-days` a complete no-op — the historical window is never fetched regardless of gap size. Resetting to `"0"` took OH-FRANKLIN from `+0` to `+10,271` and NC-WAKE from `+42` to `+1,268`. Back up before resetting.
-- **Compare corpus counts against LIVE source counts** for any county you touch — that comparison is what surfaces truncated backfills, stale watermarks, and geography mislabels. A large historical total with ~zero rows inside the 2025+ window is almost always a stale `last_processed_id` (reset it to `"0"`) or a date-mapping bug.
-- Both scripts run in CI on changes to `data/states/**` or `state_configs.py` (`.github/workflows/check-corpus-integrity.yml`).
-- **When a mislabel is found, RELABEL rather than delete** — the true jurisdiction is usually derivable from data already held (NYC's borough is encoded in the DOB job-number prefix `m`/`b`/`q`/`x`/`s`; validate against the live source before trusting it). Deleting risks loss; relabelling is reversible and lost zero rows in both cases.
+## 4. Working with Gemini
 
-# NEVER point a script's --output at data/states/*.json
+- **Gemini PROPOSES; live probing DISPOSES.** Measured accuracy on factual
+  claims: 2 of 10. It is strong on systems reasoning and unreliable on any
+  specific fact about the world. Never record a candidate it supplies without
+  verifying it live.
+- **Consult it at every wall** — a dead source, a gated portal, a bottleneck —
+  before concluding a lead is dead.
+- **ALWAYS send the verified outcome back, automatically.** Every consultation
+  ends with feedback via `scripts/gemini_feedback_loop.py`. Without the return
+  leg it keeps asserting what has already been disproven.
+- **Never accept your own numbers back in stronger form.** Given "400 pages", it
+  replied "14,000 documents" and used it to declare a strategy dead.
 
-- **A `--output`/`--out` flag means "write a new file," not "merge into it."** On 2026-08-03 running `load-research-fallback-projects.py --output data/states/ca.json` replaced the file wholesale: **CA went from 24,377 projects to 12, MI from 1,997 to 4** (~26K projects destroyed). The script's own docstring points `--output` at `data/raw/`, and it ends in `Path(args.output).write_text(...)`. Recovery: `git checkout <last-good-commit> -- data/states/ca.json data/states/mi.json`, then merge the new projects by id.
-- **State files are only ever written by the pipeline's `--merge-state`, or by an explicit id-deduped merge.** Before running any unfamiliar script that writes files, grep it for `write_text`/`json.dump` to see whether it overwrites.
-- **The national corpus total is the canary.** Print counts before and after any corpus-touching operation. If `fast-merge-national-corpus.py` reports **fewer** projects than the previous run, stop immediately — do not commit, do not push, restore from git and diagnose. That decrease is the only reason this incident was caught.
-- Note during diagnosis: `git show <commit>:data/states/x.json` returns the **git-lfs pointer**, not the data. Use `git checkout <commit> -- <file>` (which smudges through LFS) to inspect or restore real content.
-- Run `scripts/check-corpus-integrity.py` after any corpus-touching operation.
+## 5. Cost and scope
 
-# Target: ALL documents for the Jan-2025+ window, top 50 US counties
+- **Targeted file scoping.** Only inspect files named in the prompt or their
+  direct dependencies. No repo-wide sweeps unless asked.
+- **Concise output.** Diffs or the modified function, never full-file reprints.
+- **Flag `/compact` at ~15 user messages or ~70% context.**
 
-- **Standing goal (Asif, 2026-08-03, revised): capture EVERY available construction document for every project in the 2025-01-01-onward window, focused on the top 50 US counties by population** (see `docs/us_counties_by_population.md`). An earlier "100,000 documents" framing is **superseded** — that was only a proxy for scale. The objective is **completeness for the time window**; the final count is whatever exhaustive capture yields. This supersedes breadth-first top-500 county sweeps as the primary objective.
-- **Consequence:** never stop a capture because a number was reached, and never mark a source "done" until every in-window project has been attempted. The success metric is *window coverage* (what fraction of in-scope projects have had documents pulled), not a document count.
-- **Yield per source class is wildly asymmetric, and this dictates strategy.** EDMS-class sources (Snohomish WA's OpenText repo) yield 12-213 documents per project, median ~40 — one 400-project county is ~16,000 documents. Ungated-Accela sources yield 1-5 per record — the same county is ~1,200. Reaching 100K needs roughly **5 EDMS-class counties** versus **80 Accela-class ones**. Prioritize accordingly: hunt EDMS first, capture Accela opportunistically.
-- **EDMS fingerprinting is therefore the highest-value capability to build**: probe `/weblink/`, `/onbase/`, `/docpop/`, `/publicrecords/`, `/otcs/`, `/AppNet/`, `/Livelink/` on every jurisdiction's domain and subdomains, **regardless of which permit platform it runs**. Detection signatures and download URL shapes for Laserfiche WebLink, Hyland OnBase, OpenText Content Server, NextRequest and JustFOIA are in `docs/DOCUMENT_STRATEGY_REVIEW_2026-08-03.md`. Snohomish was found by luck; this finds them by rule.
-- **OCR runs as a 3-tier cascade to control cost at this scale** (Asif, 2026-08-03): PyMuPDF native text → **PaddleOCR** (bulk of OCR work) → Document AI (only what Paddle can't handle). This deliberately reverses the 2026-07-29 DocAI-only decision, which was correct at ~240K pages (~$360) and wrong at ~2M pages (~$3,000). Keep the DocAI escalation path — the original head-to-head found PaddleOCR garbled dense small print that DocAI read correctly, so a confidence threshold must decide when to escalate. **Measure the native-text hit rate on the first ~1,000 captured documents before sizing a PaddleOCR pool** — plan sets are usually CAD exports that already carry a text layer, so tier 1 may absorb far more than expected.
+## 6. Product and legal constraints — do not violate
 
-# Documents are the moat, not permit-metadata breadth
+These stay in the execution file because this agent DOES write customer-facing
+copy: on 2026-08-05 it edited the projects headline and the trust line, and it
+writes PR bodies and Drive documents. A rule about what may be claimed is an
+execution rule for anyone who writes claims.
 
-- **Standing rule (2026-08-02, per Asif — one-word correction "Moat" after a full session added ~1,200 metadata-only records and zero new documents): a county-discovery win requires BOTH structured data AND a real document path** (per-record detail page or attachments/documents API), even if currently gated. Pure ArcGIS/Socrata/CKAN bulk-feed wins (metadata only, no attachments possible) are no longer sufficient on their own — permit-metadata breadth is Shovels.ai's axis, not SpecIndex's differentiator (see `docs/product-strategy.md` / differentiation notes).
-- When scoping discovery batches, weight candidates by likelihood of a real document path, not just population rank. Accela-based systems have a consistent (if often login-gated) "Attachments" tab pattern confirmed across UT-SALTLAKE/IN-INDIANAPOLIS/Cleveland OH/Duval FL — more promising than bulk feeds even for a smaller county.
-- See `docs/ROADMAP.md` item 98 for the specific login-gated document opportunities already identified (Duval FL/JaxEPICS is the strongest lead).
+- **Never scrape ConstructConnect, Dodge, Blue Book or BuildingConnected.** Their
+  AUP forbids it, and the founder is ex-ConstructConnect. Public data only.
+- **No cross-filtering chart dashboard, and NEVER a permit job-cost histogram**
+  (iSqFt patents; US 9,633,012 does not require interactivity). Lead with alerts,
+  digests and API.
+- **Do not lead with project volume.** Competitors claim more. Sell spec position
+  and citations.
+- **Never state a claim wider than the evidence.** "No manufacturer named in the
+  N documents we hold" — never "none named".
+- **Do not claim brand-vs-competitor visibility.** 166 of 591,618 projects carry
+  any brand mention, and those are tenants, not manufacturers.
 
-# Use Playwright to verify gated/SPA portals
+---
 
-- **When a county/city permit portal is suspected login-gated or is an Angular/React SPA shell that WebFetch/curl can't see through, use Playwright (headless Chromium) to check it live** rather than concluding "no viable source" from static research alone. `python3 -m playwright install chromium` if not already installed. Capture network requests to see real backend API calls, and try clicking visible nav/search/"Guest" elements to see where they actually lead.
-- Used live 2026-08-02 to definitively confirm Duval County FL's JaxEPICS has no guest/anonymous path (no "guest" text in rendered HTML, every nav link bounces to login or 404s) — closes a real open question, not a guess.
-- Apply the same technique to future gated portals hit during county-discovery batches (SmartGov TLS blocks, OpenGov/ViewPoint SPA shells, MGO Connect, etc.) — see `docs/ROADMAP.md` item 98.
+## Read on demand — `docs/AGENT_STRATEGY.md`
 
-# Cost-optimization guardrails
-
-- **Targeted file scoping**: only inspect/edit files explicitly named in the prompt or their direct dependencies. No repo-wide `find`/`grep` sweeps unless asked.
-- **Concise output**: no full-file reprints — output diffs or the modified function only. Keep reasoning brief on standard edits/bug fixes.
-- **Proactive compacting**: when context reaches ~70% or a sub-task completes, summarize progress, drop intermediate debug logs, and compact rather than carrying it forward. At 15 user messages in a session, flag that `/compact` or `/clear` is worth running.
-
-# Dates are the #1 silent killer — validate FORMAT, not presence
-
-- **Every windowed query compares `opened_or_announced_date` as a STRING against `"2025-01-01"`, so a non-ISO value never errors — it sorts wrong and the row vanishes from coverage while sitting in the corpus.** Four separate instances have each hidden tens of thousands of rows.
-- **The biggest (2026-08-04): Accela dates were never ISO.** `to_projects()` did `r.get("date").replace("/","-")`, turning `01/05/2026` into `01-05-2026`, which sorts BELOW `2025-01-01`. **Every Accela row ever ingested was invisible** — 29,589 rows across 19 state files. Pima reported 281 in-window against 4,914 held. Fixed via `_iso_date()`; top-500 in-window went 463,852 → 492,627 (+28,775).
-- **THE DIAGNOSTIC: total rows grow but in-window doesn't.** That exact divergence — a fleet re-run added 21,877 rows while the top-500 in-window total stayed pinned at 463,852 — is what exposed it. **Always compare total growth against in-window growth.**
-- **A county with thousands held and a few hundred in-window is a date bug until proven otherwise.** Never conclude "the source is thin" first.
-- **Never hand-roll date conversion.** `generic_mapping._iso_date()` handles MM/DD/YYYY, MM-DD-YYYY, YYYY/MM/DD, epoch seconds and epoch ms. Every hand-rolled variant so far has been wrong.
-- **`--merge-state` does NOT repair existing rows** — it dedupes by id and keeps what's on disk, so a provider fix never heals stored data. Repair in place, with backups and a row-count assertion before/after each write.
-
-# A broken filter returns MORE rows — row count can never validate a fix
-
-- **The most dangerous bug class here produces a bigger number, not an error.** Three instances on 2026-08-03/04, each initially mistaken for a win: an inert Accela date filter reporting 1,075 fetched (real filtered figure: 320); `max_pages` 60→120 doubling fetch count while in-window coverage stayed flat; and 17 EDMS "discoveries" that were all soft-404s.
-- **Read the control back.** After setting a filter, read the field's value and compare. `AccelaProvider._set_date()` does this and prints `WARNING ... this search is UNFILTERED` on mismatch.
-- **Check the distribution, not the total.** Genuinely windowed data spreads across windows (320/126/89/141/134/123/56). A broken filter shows everything in window 1 then near-zero — later windows are the same records being deduped.
-- **Compare two different filter values.** If two distinct date windows return identical results, the filter is inert. Cheapest possible test.
-- **Soft-404 baseline before believing any endpoint probe.** Government sites answer unknown paths with HTTP 200 and their landing page. Require a product-specific signature AND a body that differs from `https://{host}/zzzz-nonexistent-path/`. Never a generic word like "document".
-
-# Sources can die silently
-
-- **A dead ArcGIS layer still resolves and still answers queries — returning 0 rows for everything, including `where=1=1`.** Harris TX (rank 3) read as "no commercial permits" for exactly this reason. Query `1=1&returnCountOnly=true` periodically; a live count of 0 against a non-zero corpus count is the signature. When a layer dies, enumerate the parent folder — the replacement is usually a sibling.
-- **The pipeline stamps its own default state (NJ) when a config's `state_code` doesn't take.** 750 rows were affected, including 451 Los Angeles rows, invisible to every `(county, state)` join. The stored rows were relabelled but **the root cause was never fixed** — re-check periodically that each `data/states/{code}.json` row's `state` matches its file.
-
-# Sequencing background work: never pgrep for your own command line
-
-- **`while pgrep -f "<pattern>"` deadlocks when the pattern appears in the waiting script's own argv** — background scripts are launched via a shell whose command line contains the whole script. Hit three times on 2026-08-04, stalling two chains invisibly (job shows "running", produces nothing).
-- **Wait on a sentinel the producer writes** (`grep -q "FLEET RERUN DONE" $LOG`), not on a process pattern. Bound it with `for i in {1..N}` so a missed sentinel times out loudly.
-- **Two scripts must never wait on the same "is anything running" condition** — they both fire at once and recreate the contention the queuing was meant to prevent. One script, one serial loop.
-
-# Accela specifics (five stacked defects, all fixed 2026-08-04)
-
-- Date never ISO (above) · date filter never applied (permit-type postback wipes the inputs; `page.fill()` APPENDS on masked pre-filled fields) · watermark is a DATE STRING and a non-empty one makes `lookback_days` a no-op (Dallas/Bexar had FUTURE dates) · the row loop aborted the whole pull at the first out-of-window row · no date chunking.
-- **Order matters: select the permit type FIRST, then set dates.** Set them via `.value` + `input`/`change`/`blur` dispatch, never `fill()`.
-- **Searches run in 90-day windows.** Paging deeper is not a substitute — higher `max_pages` reaches further BACK, not further into the window.
-- Standard field ids (44 of 52 configs have them): `ctl00_PlaceHolderMain_generalSearchForm_txtGSStartDate` / `...txtGSEndDate` / `...ddlGSPermitType`. The 8 without: CA-LANCASTER, FL-BREVARD, FL-BROWARD, FL-MANATEE, FL-SARASOTA, GA-GWINNETT, NC-BUNCOMBE, TX-GALVESTON.
-
-# Document reality check (2026-08-04) — the constraint is structural
-
-- **14 of the top 20 counties are METADATA-ONLY**: bulk feeds with no per-record attachment endpoint, so the 11-step process yields zero documents there no matter how often it runs. They need a new source, not another pull.
-- **No EDMS exists on any of them** (verified with soft-404 baselining), and **the six proven document tenants are saturated** — a full re-run produced 0 new documents.
-- **eTRAKiT is NOT viable**: a hard 50-record cap on every public search (50 of 9,429; 50 of 1,185 even at month granularity) and no date column. Do not build the provider despite 11 verified jurisdictions incl. Collin #35 and Denton #47.
-- **Every source that has ever produced documents is a MID-SIZE county** on Accela/EnerGov with ungated attachments, or a separate EDMS (Snohomish, rank 72, 1,087 docs). "Doc-capable provider" ≠ "doc-bearing tenant" — LA has 7 doc-capable configs and returned zero attachments from 148 records.
-
-# Strategy: the wedge is basis-of-design attribution, not lead breadth
-
-From the ConstructConnect teardown (2026-08-04), reconciled against the live system.
-
-- **Sell "who is named, on what page, on what date" — not "projects earlier."** Every incumbent complaint is about lead relevance and staleness ("too many false positives", "much of the info can be found publicly online" — a CC customer, on their own review page). Lead volume is a losing frame: we hold 599,860 permits, ConstructConnect claims 825,000, Dodge 636,000/year. **Citations and spec position are the winning frame.**
-- **The wedge:** in Division 23/26 schedules the engineer names a **basis-of-design** manufacturer, then adds an "or equal" clause. Basis of design vs listed alternate vs absent is the highest-value fact for a manufacturer, and neither Dodge SpecShare nor ConstructConnect Analyze is documented as distinguishing them. **The buyer is the independent rep agency, not manufacturer HQ** — rep commissions depend on provable spec attribution and their tools (OASIS, Repfabric) have no spec feed.
-- **The moat is the addenda ledger, and it is the only IRREVERSIBLE item.** Substitution requests are ruled on publicly and approved/rejected manufacturers are named in addenda on public bid portals. Nobody indexes them. **Addenda come down after award — every week without a crawler is data permanently lost.** Everything else on the roadmap can slip a month at no cost.
-- **What we actually hold (2026-08-04): 5,450 documents, ~2,121 drawing sets, ~101 spec-ish.** We capture DRAWINGS from permit portals, not project manuals and not addenda. MEP drawings do carry equipment schedules with basis-of-design, but that is a second extraction problem.
-- **Three built components are simply not connected:** 50 wired `sam_gov` configs (pulling award metadata only), `scripts/fetch-sam-gov-documents.py` (live-verified; SAM.gov resourceLinks are full federal project manuals, anonymous, no API key), and `scripts/extract-spec-book.py` (already extracts basis-of-design + approved manufacturers by MasterFormat). Connecting them is the shortest path to the wedge.
-
-# Legal and product constraints from the teardown — do not violate
-
-- **Never scrape ConstructConnect, Dodge, Blue Book or BuildingConnected.** Their AUP explicitly forbids scraping for AI training and for building competing services. With a former CC VP of Product as founder this is the worst available optic. **Public data only** is what keeps the company defensible.
-- **Do not build a cross-filtering chart dashboard.** Six issued iSqFt patents claim exactly that shape (multiple charts, click a segment, the others update). Use a filter sidebar driving a single results view, or read-only charts. **Never render a permit job-cost histogram** — US 9,633,012 claims it and does not require interactivity. **Lead with alerts, email digests and API**, which read on essentially nothing in the family.
-- The branch covering AI spec extraction (**US 2020/0159985 A1** — named entity recognition, MasterFormat anchoring, co-occurrence scoring) **was ABANDONED**. The technology we would build is unclaimed; keep it in a defensive file.
-- **Pay the $699/yr MasterFormat license.** We describe indexing by CSI division and extract-spec-book.py classifies by MasterFormat section — live exposure for a rounding error, and paying it becomes a talking point.
-- **Do not quote Florida project values.** Miami-Dade's value field is broken: it reports $7.86 BILLION for a beauty-salon interior alteration, and the top six FL projects are the same artifact.
-- **Do not claim brand-vs-competitor visibility.** Only 162 of 520,653 in-window projects carry any `mentioned_brands`, and those are tenants (Google, Amazon), not building-product manufacturers. `competitor_watch` is a static template tag stamped identically on ~19,600 rows each — a placeholder, not detection.
-
-# SAM.gov is the fastest path to spec books AND addenda (verified 2026-08-04)
-
-- **`scripts/fetch-sam-gov-documents.py` against already-indexed awards returns full PROJECT MANUALS and AMENDMENTS.** First 30 uploads (159 MB) included `SpecsAsOne.pdf` (18.9 MB), `Attachment 1 - Specifications.pdf`, and Amendments 0001-0005. Anonymous, no API key. This is the corpus `extract-spec-book.py` was written for and never had.
-- **Federal amendments ARE addenda**, and SAM.gov retains them — so the "addenda disappear after award" time-pressure applies to **state/local portals only**. Prove basis-of-design extraction on the federal corpus first; it is free, permanent, and already wired.
-- **Bug: NC projects land under `gs://specindex-ai-raw-documents/georgia/`.** The script is using a wrong/hardcoded state_dir. Documents are safe but mis-filed — fix before the corpus grows further.
-
-# Non-project spec sources (strategy doc Part 4, row 4) — verified 2026-08-04
-
-- **Owner design-standards libraries are the highest-value harvestable source, and better than the doc claims.** UFGS and the VA masters are TEMPLATES with bracketed choices and almost no manufacturer names — taxonomy, not spec position. Owner standards name a manufacturer as a *campus standard* (UW publishes a literal "Preferred manufacturers list"). That is basis-of-design attribution at the owner level, governing every project that owner builds for years. Harvester: `scripts/harvest-owner-standards.py`; seeds in `data/seeds/owner_standards_seeds.json` (17 institutions, each verified live; 11 of 28 candidates dropped for bot-blocks/404s/redirect stubs).
-- **A division number is NOT required — infer it from the discipline word** (Asif, 2026-08-04). Real files are `Mechanical (pdf)`, `Electrical (pdf)`, `Division 23 - HVAC.pdf`. Requiring a six-digit MasterFormat number discarded an entire library. `DISCIPLINE_DIV` maps mechanical/HVAC→23, plumbing→22, electrical→26, fire protection→21, telecom→27, electronic safety/security→28.
-- **Standards live on a SIBLING SUBDOMAIN more often than not.** UF publishes 84 MasterFormat-numbered PDFs at `pdc.ufl.edu`, not `facilities.ufl.edu`. Same-host-only crawling returns zero for exactly the institutions with the richest libraries. Scope to the registrable domain.
-- **A length-based soft-404 baseline rejects entire SPA sites**, where the catch-all shell and every real page are byte-identical (hit on `ofcc.ohio.gov`). Always exempt the seed URL — it was verified before it entered the seed file.
-- **VA PG-18-1 is no longer at cfm.va.gov.** The TIL migrated to `vatilms.va.gov`, an Angular SPA behind an Okta loop; old `/til/spec/*.docx` paths 404 for real (host returns honest 404s and still serves other PDFs). **WBDG still serves them anonymously** at `https://www.wbdg.org/FFC/VA/VAASC/VA%20{section}.docx` — 36 of 52 probed Div 21-28 sections verified real by Content-Type (`data/raw/va_master_specs_verified.json`).
-- **wbdg.org returns a 1,359-byte bot-wall stub for ALL HTML** — including `/dod/ufgs`, which the strategy doc also cites as free. HTML enumeration silently yields nothing; Playwright gets the real page. Direct `.docx` fetches are NOT blocked.
-
-# Gemini is the backup at every wall — but it proposes, live probing disposes
-
-- **Per Asif (2026-08-04): "when you hit a wall use Gemini to see other options, and that includes manually searching."** Extends the 2026-07-28 "default use gemini for search" from search to unblocking. When a source dies or a portal gates, query Gemini with search grounding BEFORE concluding the lead is dead — that is where a second search-grounded model adds the most.
-- **Verify every URL it returns.** In a single answer about the VA specs it gave an index URL that was a soft-404 (1,359 bytes, byte-identical to baseline) alongside a file path that was completely real (57 KB Word doc) — real and fabricated in one response, with equal confidence. Previously fabricated 3 of 5 URLs including a DNS-failing ArcGIS endpoint. Require a product-specific signature and a soft-404 baseline before recording any candidate.
-
-# Consult Gemini on EVERY failure, roadblock or bottleneck — with a dialogue
-
-- **Asif, 2026-08-05: "anytime you run into a failure, a roadblock or a bottleneck, send a message to Gemini, get the learnings, have a back and forth conversation."** Broadest form of the standing instruction: search (2026-07-28) → unblocking → **every** blocker, as a dialogue, closed with feedback via `scripts/gemini_feedback_loop.py`. Record outcomes in memory AND the relevant markdown.
-- **It earns the cost — it caught a real error in my own analysis.** I flagged `work_mem` (4 MB) as the index-build constraint. Wrong parameter: **`maintenance_work_mem`** governs GIN/HNSW builds and is **64 MB** here. It also produced a cheaper fix than mine (parse during capture rather than move extraction to the cloud).
-- **Give it MEASURED numbers, state your own analysis, and ask "where am I wrong / what have I not identified."** Vague questions get vague answers.
-- **Its reliability is domain-dependent: strong on systems reasoning, unreliable on facts about the world** (1-for-7 on URL/portal claims). Verify every factual claim; take the architectural reasoning seriously.
-
-# Ingestion/processing bottlenecks (measured 2026-08-05)
-
-- **THE CORPUS CROSSES THE WIRE TWICE.** Capture uploads to GCS; step 9 downloads it back to parse. Measured read-back **66 KB/s public HTTPS vs 125 KB/s authenticated GCS client (1.9x)**. Parsing ~28,000 documents (~100 GB) that way is **9-12 days**.
-  - **Cheapest fix: parse during capture** — text to Postgres, bytes to GCS, while the bytes are already in hand. Removes the second crossing with no new infrastructure.
-  - **Structural fix: run extraction in-region** (Cloud Run in `us-central1`, Eventarc on object create). In-region egress is free. Capture should follow — ~80 GB remaining at 360 KB/s is 60+ hours of pure upload.
-- **Index growth will exceed cache at 1M pages.** Measured 2,612 bytes/page heap, 723 bytes/page GIN. At 1M: heap ~2.6 GB, GIN ~0.7 GB, HNSW `vector(768)` ~1.5-2.0 GB against **`shared_buffers` 2,481 MB**. Past cache, vector search degrades to disk thrashing — a cliff, not a slope.
-- **`maintenance_work_mem` (64 MB), NOT `work_mem`, governs GIN/HNSW index builds.** Raise it for the build session only. Do not create the HNSW index until after the first bulk embedding pass.
-- **Embeddings live in `document_page_embeddings` (migration 045), never in `document_pages`.** A 3.1 KB vector per row bloats the heap and slows every non-vector query. The sidecar carries a `model` column — without it a model upgrade silently mixes incompatible vector spaces and returns plausible neighbours instead of an error.
-- **GIN write amplification**: bulk-inserting ~1M rows with the `raw_text` GIN index live means heavy WAL and lock contention. Stage unindexed, or rebuild the index after load.
-- **PDF parsing is CPU-bound** even at 98.4% native text — the next ceiling once the network stops being one.
-
-# Continuous crawling — scheduler + queue + workers (2026-08-05)
-
-- **Cadence is a property of the SOURCE, driven by volatility, because only the moat is time-sensitive.** Substitution rulings appear in addenda on OPEN solicitations and are removed after award. `hot` 24h (open solicitations/SAM.gov — content DISAPPEARS, a missed crawl is permanent loss) · `warm` 168h (permit/award feeds — content accumulates) · `cold` 720h (owner standards, UFGS, VA masters — stable and permanent; frequent crawling is waste AND raises ban risk) · `frozen` never. `retune_source_cadence()` adjusts from OBSERVED change, not the initial guess.
-- **Three separate processes, deliberately:** `schedule-crawls.py` (decides what's due, enqueues, exits — idempotent, safe on a 15-min timer) → `work_queue` (buffer, priority = moat order) → `crawl-worker.py` (drains it). **Concurrency is a worker count, not something baked into an orchestration script**, and neither script contains a wait loop — the `pgrep -f` self-match deadlock class is structurally impossible now.
-- **Isolation matters as much as scheduling.** The SAM.gov NC run uploaded 328 documents, then ONE GCS upload timed out (`RetryError`, 120s, uplink saturated) and the unhandled exception abandoned the remaining 163 opportunities. Queue items fail alone, retry to `max_attempts`, and the run continues. The worker carries a subprocess timeout so a hung source can't hold a slot forever.
-- **`vanished_at` on `project_document_files`: MARK, never delete.** A document we hold that the source no longer serves — an addendum taken down after award — is exactly the back-file nobody starting later can reconstruct. This column is the moat made queryable.
-- **Change detection (`etag`, `last_modified`, `content_sha256`) is what makes daily cadence affordable** — an unchanged source costs almost nothing to re-crawl.
-- **`source_health` flags "WENT QUIET"** — a source that used to yield and now yields nothing reads as "no new data" when it may be a dead endpoint (the Harris ArcGIS failure).
-- **Per-domain concurrency caps are mandatory (migration 047).** A priority-only queue sends EVERY worker at whichever host is due — 50 SAM states due together means N concurrent requests to one host, and **a WAF ban is permanent loss of a source, not a slowdown**. `claim_work()` skips (never blocks on) a domain at its cap. `aca-prod.accela.com` hosts many jurisdictions behind ONE name, so per-tenant limits would not protect it.
-- **Retries need exponential backoff**, or a permanently-500ing URL burns its whole attempt budget in seconds and occupies workers achieving nothing. `fail_work()`: 2^attempts minutes, capped 6h.
-- **`FOR UPDATE` cannot be applied to the nullable side of an outer join.** The natural LEFT JOIN form of a lease check is illegal alongside row locking — use scalar subqueries.
-- **SAM.gov is warm (168h), not hot.** It RETAINS opportunity attachments; municipal/state/university portals are where bid documents dead-link after award. Spend `hot` cadence there, not on federal.
-
-# ALWAYS close the loop with Gemini — automatically, every time
-
-- **Asif, 2026-08-05 (said twice): "always give feedback back to Gemini so you land on a consistent spot."** Every consultation ends with the verified outcome sent back via `scripts/gemini_feedback_loop.py`. Not when convenient, not when asked — always. Without the return leg, Gemini keeps asserting what has already been disproven and the same ground gets re-litigated each session.
-- **Measured ledger accuracy: 2 of 10 = 20%.** Three distinct failure modes, in increasing order of danger:
-  1. **Fabricated URL** — soft-404. Fails a link check instantly.
-  2. **Fabricated verdict** — 0 of 5 county-portal access claims survived live probing.
-  3. **REAL URL, FABRICATED CONTENTS** — cited `fifewa.gov/.../Addendum-1-PDF` as a 2024 roofing addendum naming "Sarnafil G410" and "Versico VersiFleece TPO" as approved substitutions. The URL is genuinely real (200, 370 KB, host 404s on nonsense paths). OCR shows it is **Fife City Council meeting minutes from 2016** containing none of those terms.
-- **Consequence: URL-resolves is NO LONGER sufficient verification.** A fabricated URL fails instantly; a real URL with invented contents passes every link check and fails only when someone opens the document. **Verify the CONTENT, not the link.**
-- **Never accept your own numbers back in stronger form.** Given "400 pages from 557 documents", Gemini replied "you've scanned 14,000+ documents" and used it to declare a strategy dead. A 1.6% sample restated as exhaustive.
-- **It is strong on systems reasoning and domain mechanics** — AIA A701 §3.3.4 (pre-bid substitution approvals must appear in an addendum) is correct, materially changed the plan, and refuted Gemini's own earlier verdict. Take the reasoning seriously; verify every fact.
+- **The 11-step process** and why a jurisdiction is NOT done at step 5
+- **Model routing** — which steps use Flash vs Pro, and why
+- **Continuous crawling** — volatility-driven cadence, the queue, the workers
+- **Data pull window** — the fixed 2025-01-01 anchor and `--since-date`
+- **Coverage goals and the moat thesis** — what counts as a win
+- **Source-specific behaviour** — Accela, EnerGov, ArcGIS, SAM.gov, EDMS
+- **Incident history** — the failures behind every rule above

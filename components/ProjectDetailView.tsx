@@ -36,6 +36,7 @@ function PipelineBox({ projectId }: { projectId: string }) {
   const [stage, setStage] = useState<TrackedStage | null>(null);
   const [note, setNote] = useState<string | null>(null);
   const [loaded, setLoaded] = useState(false);
+  const [failed, setFailed] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -53,32 +54,55 @@ function PipelineBox({ projectId }: { projectId: string }) {
     };
   }, [getToken, projectId]);
 
+  // OPTIMISTIC UPDATES MUST ROLL BACK. These three used to set state and then
+  // await the write with no catch, so a failed PUT left the UI reading
+  // "✓ Tracking" over a row that was never saved -- the user only found out on
+  // reload, by which point the cause was long gone. Tracking is half the moat;
+  // it silently losing writes is worse than refusing them loudly.
+  async function withRollback(next: TrackedStage | null, write: () => Promise<void>) {
+    const previous = stage;
+    setStage(next);
+    setFailed(false);
+    try {
+      await write();
+    } catch {
+      setStage(previous);
+      setFailed(true);
+    }
+  }
+
   async function track() {
-    setStage("watching");
-    await upsertTrackedProject(getToken, projectId, { stage: "watching", note });
+    await withRollback("watching", () =>
+      upsertTrackedProject(getToken, projectId, { stage: "watching", note }));
   }
 
   async function changeStage(next: TrackedStage) {
-    setStage(next);
-    await upsertTrackedProject(getToken, projectId, { stage: next, note });
+    await withRollback(next, () =>
+      upsertTrackedProject(getToken, projectId, { stage: next, note }));
   }
 
   async function stopTracking() {
-    setStage(null);
-    await untrackProject(getToken, projectId);
+    await withRollback(null, () => untrackProject(getToken, projectId));
   }
 
   if (!loaded) return null;
 
   if (!stage) {
     return (
-      <button
-        type="button"
-        onClick={track}
-        className="flex shrink-0 items-center gap-2 rounded-xl border border-dashed border-[var(--color-border)] p-4 text-sm font-semibold text-[var(--color-gray-600)] transition hover:border-[var(--color-green)] hover:text-[var(--color-green)]"
-      >
-        + Track this project
-      </button>
+      <div className="flex shrink-0 flex-col items-start gap-1">
+        <button
+          type="button"
+          onClick={track}
+          className="flex shrink-0 items-center gap-2 rounded-xl border border-dashed border-[var(--color-border)] p-4 text-sm font-semibold text-[var(--color-gray-600)] transition hover:border-[var(--color-green)] hover:text-[var(--color-green)]"
+        >
+          + Track this project
+        </button>
+        {failed && (
+          <span className="text-[11px] text-red-600">
+            Couldn&apos;t save — try again.
+          </span>
+        )}
+      </div>
     );
   }
 

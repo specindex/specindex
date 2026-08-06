@@ -4,6 +4,12 @@ from __future__ import annotations
 
 import json
 import os
+import re
+import secrets
+
+# PAT deploy-trigger probe: a bot-merged PR must trigger api-deploy.
+# Verified 2026-08-06. Before AUTOMERGE_TOKEN, three PRs merged to main and
+# fired zero workflows, leaving fixes undeployed with no signal.
 import smtplib
 import sys
 import time
@@ -102,13 +108,33 @@ def require_firebase_user(request: Request) -> str:
     this function. Checking is_active at this layer makes deactivation
     take effect on the very next request instead of up to an hour later.
     No row in user_profiles yet (e.g. first request before onboarding)
-    is treated as active -- there's nothing to deactivate yet."""
+    is treated as active -- there's nothing to deactivate yet.
+
+    Also enforces trial expiry (migration 042) the same way, live on every
+    request rather than a scheduled job -- a cron that flips tiers could
+    lag or silently fail to run; checking trial_ends_at directly here means
+    access is removed on the user's very next call after the 14 days pass,
+    with no batch job in the loop at all. Applies uniformly regardless of
+    how the trial started (Google "Start for free" or the email/password
+    signup form) since both just set the same subscription_tier/
+    trial_ends_at columns."""
     uid = _verify_firebase_token(request)["sub"]
     with get_conn() as conn, conn.cursor() as cur:
-        cur.execute("SELECT is_active FROM user_profiles WHERE firebase_uid = %s", (uid,))
+        cur.execute(
+            "SELECT is_active, subscription_tier = 'trial' AND trial_ends_at < now() AS trial_expired "
+            "FROM user_profiles WHERE firebase_uid = %s",
+            (uid,),
+        )
         row = cur.fetchone()
-    if row is not None and row[0] is False:
-        raise HTTPException(status_code=403, detail="Account deactivated")
+    if row is not None:
+        is_active, trial_expired = row
+        if is_active is False:
+            raise HTTPException(status_code=403, detail="Account deactivated")
+        if trial_expired:
+            raise HTTPException(
+                status_code=403,
+                detail="Your 14-day trial has ended. Email hello@specindex.ai to reactivate your account.",
+            )
     return uid
 
 
@@ -635,10 +661,19 @@ def _project_filter_clauses(
         clauses.append("p.county = %s")
         params.append(county)
     if category:
-        clauses.append(
-            "EXISTS (SELECT 1 FROM jsonb_array_elements_text(p.competitor_watch) elem WHERE elem ILIKE %s)"
-        )
-        params.append(f"%{category}%")
+        # COMMA-SEPARATED, matching the convention `status` and `state` already
+        # use. Onboarding asks for the rep's trades as a MULTI-select and the
+        # frontend was sending only categories[0], so a rep who picked
+        # Electrical, Lighting and Controls was filtered on one of the three and
+        # silently lost two thirds of their stated intent. Answering a
+        # multi-select with a single-value filter is worse than not asking.
+        cats = [c.strip() for c in category.split(",") if c.strip()]
+        if cats:
+            clauses.append(
+                "EXISTS (SELECT 1 FROM jsonb_array_elements_text(p.competitor_watch) elem "
+                "WHERE elem ILIKE ANY(%s))"
+            )
+            params.append([f"%{c}%" for c in cats])
     if year:
         clauses.append("EXTRACT(YEAR FROM p.opened_or_announced_date) = %s")
         params.append(year)
@@ -1256,21 +1291,62 @@ class OrgInviteRequest(BaseModel):
         return v
 
 
+def _smtp_send(msg) -> None:
+    """One place that knows how to talk to the mail server, so switching
+    providers is a config change. Port 465 is implicit TLS (Gmail); 587 is
+    STARTTLS (Postmark, SES, most others). Picking the wrong one fails with a
+    timeout rather than a clear error, which is why this is centralised."""
+    if EMAIL_SMTP_PORT == 465:
+        with smtplib.SMTP_SSL(EMAIL_SMTP_HOST, EMAIL_SMTP_PORT, timeout=20) as s:
+            s.login(EMAIL_SMTP_USERNAME, EMAIL_SMTP_PASSWORD)
+            s.send_message(msg)
+    else:
+        with smtplib.SMTP(EMAIL_SMTP_HOST, EMAIL_SMTP_PORT, timeout=20) as s:
+            s.starttls()
+            s.login(EMAIL_SMTP_USERNAME, EMAIL_SMTP_PASSWORD)
+            s.send_message(msg)
+
+
+def _send_set_password_email(to_email: str, first_name: str, link: str) -> str | None:
+    """Deliver the set-password link over our own SMTP. Returns None on success
+    or the error string -- never raises, because the account already exists by
+    the time this runs and a mail failure must not turn a successful signup
+    into a 500."""
+    if not EMAIL_SMTP_USERNAME or not EMAIL_SMTP_PASSWORD:
+        return "EMAIL_SMTP_USERNAME/PASSWORD not configured"
+    try:
+        msg = EmailMessage()
+        msg["Subject"] = "Set your SpecIndex password"
+        msg["From"] = EMAIL_FROM
+        msg["To"] = to_email
+        msg["Reply-To"] = CONTACT_NOTIFY_TO
+        msg.set_content(
+            f"Hi {first_name or 'there'},\n\n"
+            f"Your SpecIndex account is ready and your 14-day trial has started.\n\n"
+            f"Set your password to get in:\n{link}\n\n"
+            f"The link expires in an hour. If it does, use \"Forgot password\" on "
+            f"specindex.ai and you'll get a fresh one.\n\n"
+            f"-- SpecIndex\n"
+        )
+        _smtp_send(msg)
+        return None
+    except Exception as e:  # noqa: BLE001 -- see docstring
+        return str(e)
+
+
 def _send_org_invite_email(to_email: str, invite_token: str) -> str | None:
     if not EMAIL_SMTP_USERNAME or not EMAIL_SMTP_PASSWORD:
         return "EMAIL_SMTP_USERNAME/PASSWORD not configured"
     try:
         msg = EmailMessage()
         msg["Subject"] = "You've been invited to a SpecIndex team"
-        msg["From"] = EMAIL_SMTP_USERNAME
+        msg["From"] = EMAIL_FROM
         msg["To"] = to_email
         msg.set_content(
             "You've been invited to join a team on SpecIndex.\n\n"
             f"Accept your invite: https://specindex.ai/account/team/accept?token={invite_token}\n"
         )
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=10) as smtp:
-            smtp.login(EMAIL_SMTP_USERNAME, EMAIL_SMTP_PASSWORD)
-            smtp.send_message(msg)
+        _smtp_send(msg)
         return None
     except Exception as e:  # noqa: BLE001 -- see _send_contact_notification
         return str(e)
@@ -1425,7 +1501,7 @@ def view_as_customer(
                 """
                 SELECT firebase_uid, email, company, territory_states, categories,
                        full_name, phone, role_title, lead_source, lifecycle_stage,
-                       notes, onboarded_at, created_at, subscription_tier, is_active
+                       notes, onboarded_at, created_at, subscription_tier, is_active, trial_ends_at
                 FROM user_profiles
                 WHERE firebase_uid = %s
                 """,
@@ -1550,6 +1626,32 @@ def reactivate_customer(
                 raise HTTPException(status_code=404, detail="No profile found for this user")
         conn.commit()
     return {"reactivated": True}
+
+
+@app.post("/v1/ops/customer/{firebase_uid}/extend-trial")
+def extend_trial(
+    firebase_uid: str, _admin: str = Depends(require_role("support_admin", "super_admin"))
+):
+    """Manual admin counterpart to require_firebase_user's automatic trial-
+    expiry block -- the founder's "email hello@specindex.ai to reactivate"
+    reply lands here: grants another 14 days from now, and if the account
+    had drifted onto something other than `trial` (shouldn't happen, but
+    cheap to correct), resets it back to trial explicitly."""
+    with get_conn() as conn:
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                UPDATE user_profiles
+                SET subscription_tier = 'trial', trial_ends_at = now() + interval '14 days'
+                WHERE firebase_uid = %s
+                RETURNING firebase_uid
+                """,
+                (firebase_uid,),
+            )
+            if cur.fetchone() is None:
+                raise HTTPException(status_code=404, detail="No profile found for this user")
+        conn.commit()
+    return {"extended": True}
 
 
 def fetch_enrichment_detail(conn, sk: int) -> dict[str, Any]:
@@ -1857,7 +1959,33 @@ def ask_about_my_territory(body: AskRequest, firebase_uid: str = Depends(require
 # here as Cloud Run env vars instead. Notification is best-effort: a
 # missing/misconfigured credential must never lose a real submission, it
 # just goes unnotified (see notify_error on the row).
+# WHERE THE MAIL GOES OUT. Gmail/Workspace works and is the wrong long-term
+# answer: it caps around 2,000 recipients a day and returns NO delivery
+# webhooks, no bounce data and no complaint data, so verification drop-off is
+# undiagnosable -- and deliverability failures are silent by nature. Moving to
+# Postmark is then a pure env change (EMAIL_SMTP_HOST=smtp.postmarkapp.com,
+# port 587) with no code deploy.
+EMAIL_SMTP_HOST = os.environ.get("EMAIL_SMTP_HOST", "smtp.gmail.com")
+EMAIL_SMTP_PORT = int(os.environ.get("EMAIL_SMTP_PORT", "465"))
+# Domains where the part after the @ tells us nothing about who someone works
+# for. Everything else is treated as a company domain, which is how a rep at
+# kirkwoodlighting.com gets an agency name without being asked for one.
+CONSUMER_EMAIL_DOMAINS = {
+    "gmail.com", "googlemail.com", "yahoo.com", "hotmail.com", "outlook.com",
+    "live.com", "msn.com", "icloud.com", "me.com", "mac.com", "aol.com",
+    "protonmail.com", "proton.me", "gmx.com", "mail.com", "zoho.com",
+    "comcast.net", "verizon.net", "att.net", "sbcglobal.net", "cox.net",
+}
+SET_PASSWORD_URL = os.environ.get("SET_PASSWORD_URL", "https://specindex.ai/set-password/")
 EMAIL_SMTP_USERNAME = os.environ.get("EMAIL_SMTP_USERNAME", "")
+# WHO THE MAIL APPEARS TO COME FROM, separate from who authenticates to send it.
+# Authentication is asif@specindex.ai (a real Workspace mailbox with a password);
+# the address a signing-up stranger should see is hello@specindex.ai. Gmail will
+# only accept a From: that is the authenticated user OR a verified "Send mail as"
+# alias on that account -- so this is configurable rather than hardcoded, and
+# falls back to the authenticated address when unset so a missing alias degrades
+# to "sent from the wrong address" instead of "not sent at all".
+EMAIL_FROM = os.environ.get("EMAIL_FROM", "") or os.environ.get("EMAIL_SMTP_USERNAME", "")
 EMAIL_SMTP_PASSWORD = os.environ.get("EMAIL_SMTP_PASSWORD", "")
 CONTACT_NOTIFY_TO = os.environ.get("CONTACT_NOTIFY_TO", "hello@specindex.ai")
 
@@ -1913,7 +2041,7 @@ def _send_contact_notification(sub: ContactSubmission) -> str | None:
     try:
         msg = EmailMessage()
         msg["Subject"] = f"SpecIndex demo request: {sub.company}"
-        msg["From"] = EMAIL_SMTP_USERNAME
+        msg["From"] = EMAIL_FROM
         msg["To"] = CONTACT_NOTIFY_TO
         msg["Reply-To"] = sub.email
         msg.set_content(
@@ -1924,9 +2052,7 @@ def _send_contact_notification(sub: ContactSubmission) -> str | None:
             f"Product categories: {sub.categories or 'Not specified'}\n"
             f"Page: {sub.source_path or 'unknown'}\n"
         )
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=10) as smtp:
-            smtp.login(EMAIL_SMTP_USERNAME, EMAIL_SMTP_PASSWORD)
-            smtp.send_message(msg)
+        _smtp_send(msg)
         return None
     except Exception as e:  # noqa: BLE001 -- deliberately broad, see docstring
         return str(e)
@@ -1990,6 +2116,14 @@ class UserProfileUpdate(BaseModel):
     phone: str | None = Field(default=None, max_length=50)
     role_title: str | None = Field(default=None, max_length=200)
     lead_source: str | None = Field(default=None, max_length=200)
+    # Wizard step 2 additions (migration 043, Gemini-reviewed design):
+    # territory_refinement is optional free text below the state
+    # multi-select (a rep's real territory is often sub-state -- counties,
+    # metros). inferred_lead_source is the pathname-based guess AuthSync
+    # already computes automatically, kept as a secondary signal now that
+    # lead_source itself is an explicit wizard answer, not replaced by it.
+    territory_refinement: str | None = Field(default=None, max_length=500)
+    inferred_lead_source: str | None = Field(default=None, max_length=200)
 
     @field_validator("territory_states")
     @classmethod
@@ -2043,6 +2177,207 @@ def get_my_profile(firebase_uid: str = Depends(require_firebase_user)):
         "role_title": row["role_title"],
         "subscription_tier": row["subscription_tier"],
     }
+
+
+@app.post("/v1/me/start-trial")
+def start_trial(
+    firebase_uid_email: tuple[str, str] = Depends(require_firebase_user_with_email),
+):
+    """Backs the "Start for free" header CTA (migration 042). Grants a real
+    14-day trial -- subscription_tier had a `trial` value in its CHECK
+    constraint since migration 027 but nothing ever set it. Only upgrades a
+    user who is still on `free` and has never trialed before
+    (trial_ends_at IS NULL) -- an existing trial/pro/team account, or one
+    whose trial already ran out, is left untouched rather than reset by
+    clicking this again. Idempotent for the common case (first click),
+    a no-op for every other case."""
+    firebase_uid, email = firebase_uid_email
+    with get_conn() as conn:
+        with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+            cur.execute(
+                """
+                INSERT INTO user_profiles (firebase_uid, email, subscription_tier, trial_ends_at)
+                VALUES (%s, %s, 'trial', now() + interval '14 days')
+                ON CONFLICT (firebase_uid) DO UPDATE SET
+                    subscription_tier = 'trial',
+                    trial_ends_at = now() + interval '14 days'
+                WHERE user_profiles.subscription_tier = 'free'
+                  AND user_profiles.trial_ends_at IS NULL
+                RETURNING subscription_tier, trial_ends_at
+                """,
+                (firebase_uid, email),
+            )
+            row = cur.fetchone()
+            if row is None:
+                cur.execute(
+                    "SELECT subscription_tier, trial_ends_at FROM user_profiles WHERE firebase_uid = %s",
+                    (firebase_uid,),
+                )
+                row = cur.fetchone()
+        conn.commit()
+    return {"subscription_tier": row["subscription_tier"], "trial_ends_at": row["trial_ends_at"]}
+
+
+class SignupRequest(BaseModel):
+    # EMAIL AND PASSWORD ARE THE ONLY REQUIRED FIELDS. The P0 mock's signup
+    # screen is two fields or one Google click, and the PRD is explicit: "No
+    # first name, last name, company, phone or role field." The old form asked
+    # for four fields and still could not log anyone in.
+    #
+    # The rest stay OPTIONAL rather than being deleted so an older deployed
+    # frontend keeps working -- the two halves deploy independently and either
+    # can land first, so a required field removed on the server must not 422
+    # a client that still sends it.
+    email: str = Field(min_length=3, max_length=320)
+    # WHEN SUPPLIED, THIS TAKES EMAIL OFF THE CRITICAL PATH. The user picks a
+    # password and is signed in immediately; no inbox round trip stands between
+    # signup and the product. Deliverability failures are silent by nature
+    # (see the 2026-08-05 outage), so the fewer things that depend on an email
+    # arriving, the fewer ways a signup can strand someone.
+    password: str | None = Field(default=None, min_length=10, max_length=200)
+    first_name: str | None = Field(default=None, max_length=200)
+    last_name: str | None = Field(default=None, max_length=200)
+    company: str | None = Field(default=None, max_length=200)
+
+    @field_validator("email")
+    @classmethod
+    def email_looks_like_email(cls, v: str) -> str:
+        if "@" not in v or " " in v:
+            raise ValueError("not a valid email address")
+        return v
+
+
+@app.post("/v1/signup")
+def signup(body: SignupRequest):
+    """Backs the "Start for free" form (components/onboarding/
+    StartFreeModal.tsx) -- creates a real Firebase Auth account with no
+    password set, plus a user_profiles row on a 14-day trial. The client
+    sends the actual "set your password" email itself via Firebase's own
+    sendPasswordResetEmail (Firebase-hosted delivery, no SMTP needed here)
+    immediately after this call succeeds -- this endpoint only provisions
+    the account. Deliberately public/unauthenticated, same as /v1/contact:
+    account creation has to be reachable before anyone has a session.
+
+    A pre-existing Firebase account for this email (caught via
+    EmailAlreadyExistsError) is treated as a normal "log in instead" case,
+    not an error -- returns the same shape either way so the client can't
+    use this endpoint to enumerate which emails already have accounts."""
+    # Derived, not demanded. The signup screen no longer asks for a name, so
+    # fall back to the local part of the address -- "dana@kirkwoodlighting.com"
+    # becomes "Dana". A note in the CRM attributed to a readable name is worth
+    # more than a field that costs a signup.
+    full_name = " ".join(p for p in [body.first_name, body.last_name] if p).strip()
+    if not full_name:
+        local = body.email.split("@")[0]
+        full_name = re.sub(r"[._-]+", " ", local).title() or None
+
+    # Company from the email domain unless it is a consumer provider, in which
+    # case we simply do not know it and say nothing rather than storing junk.
+    company = body.company
+    if not company:
+        domain = body.email.split("@")[-1].lower()
+        if domain not in CONSUMER_EMAIL_DOMAINS:
+            company = re.sub(r"\.[a-z.]+$", "", domain).replace("-", " ").title() or None
+    firebase_auth = _get_firebase_admin_auth()
+
+    # THE ACCOUNT MUST HAVE A PASSWORD PROVIDER OR NO EMAIL IS EVER SENT.
+    #
+    # This used to call create_user(email=..., display_name=...) with no
+    # password, which creates an account carrying NO password provider.
+    # sendPasswordResetEmail() -- which the client fires immediately after this
+    # returns -- then answers auth/user-not-found for it. And because Firebase's
+    # Email Enumeration Protection is on by default, that error is not raised to
+    # the caller: it RESOLVES AS SUCCESS, so the browser shows "Check your
+    # email" for a message that was never sent. Confirmed 2026-08-05 against a
+    # real signup that created the profile row and the Firebase user correctly
+    # and delivered nothing.
+    #
+    # Setting an unguessable random password gives the account a password
+    # provider. Nobody ever learns it -- it exists only so the reset email has
+    # something to reset, and the reset link replaces it.
+    # The user's own password when they chose one; otherwise an unguessable
+    # placeholder that exists only so the reset email has something to reset.
+    chose_password = bool(body.password)
+    placeholder_password = body.password or secrets.token_urlsafe(32)
+    try:
+        user = firebase_auth.create_user(
+            email=body.email, display_name=full_name, email_verified=False,
+            password=placeholder_password)
+        firebase_uid = user.uid
+    except Exception as e:  # noqa: BLE001 -- covers firebase_admin's EmailAlreadyExistsError generically
+        if "EMAIL_ALREADY_EXISTS" not in str(e) and "already exists" not in str(e).lower():
+            raise HTTPException(status_code=500, detail="Couldn't create account") from e
+        existing = firebase_auth.get_user_by_email(body.email)
+        firebase_uid = existing.uid
+        # Repairs accounts created by the buggy version above, which are
+        # otherwise permanently unable to receive a set-password email: no
+        # password provider means every reset silently no-ops forever, and the
+        # user cannot get in by any route. Only touched when the provider is
+        # genuinely absent, so a real user's password is never reset by
+        # someone else submitting the signup form with their address.
+        if not any(p.provider_id == "password" for p in (existing.provider_data or [])):
+            firebase_auth.update_user(firebase_uid, password=placeholder_password)
+
+    with get_conn() as conn:
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                INSERT INTO user_profiles (firebase_uid, email, full_name, company, subscription_tier, trial_ends_at)
+                VALUES (%s, %s, %s, %s, 'trial', now() + interval '14 days')
+                ON CONFLICT (firebase_uid) DO NOTHING
+                """,
+                (firebase_uid, body.email, full_name, company),
+            )
+        conn.commit()
+
+    # SEND THE SET-PASSWORD EMAIL FROM HERE, over our own SMTP.
+    #
+    # It used to be sent by the browser via Firebase's sendPasswordResetEmail,
+    # which delivers from noreply@specindex-ai.firebaseapp.com -- a domain with
+    # no SPF/DKIM alignment to specindex.ai. Firebase reported success (verified
+    # 2026-08-05: accounts:sendOobCode returned 200 with the address echoed
+    # back) and the mail never arrived at an iCloud inbox. Two separate reasons
+    # that path cannot be trusted:
+    #
+    #   * Delivery is invisible to us. Firebase accepts, and whether anything
+    #     reached the recipient is unknowable from our side.
+    #   * Email Enumeration Protection makes a genuine failure -- an account
+    #     with no password provider -- return success too, so "accepted" says
+    #     nothing about whether an email exists to send.
+    #
+    # Our own SMTP has a measured 10-of-10 delivery record on /v1/contact and
+    # fails loudly and locally. The admin SDK still MINTS the link (only
+    # Firebase can), but we carry it. The response reports whether the send
+    # succeeded so the client stops having to guess.
+    # NO EMAIL ON THE CRITICAL PATH. When the user chose their own password
+    # they can sign in right now, so a set-password link would be noise at
+    # best and a dead end at worst. The email below exists only for the path
+    # where the server had to invent the password -- which is exactly the path
+    # that stranded every signup on 2026-08-05 when delivery failed silently.
+    if chose_password:
+        return {"email": body.email, "emailed": False, "can_sign_in": True}
+
+    emailed = False
+    try:
+        # LAND ON OUR DOMAIN, NOT firebaseapp.com. Without ActionCodeSettings
+        # the admin SDK mints a link pointing at Firebase's default action
+        # handler, so a stranger who half-trusted the email arrives on a domain
+        # they have never heard of -- on the single highest-drop-off screen in
+        # the funnel. Points at /set-password/, which exists and returns 200;
+        # the PRD names /auth/action, which 404s today, and a reset link to a
+        # 404 is worse than no link at all.
+        link = firebase_auth.generate_password_reset_link(
+            body.email,
+            firebase_auth.ActionCodeSettings(url=SET_PASSWORD_URL),
+        )
+        err = _send_set_password_email(body.email, (full_name or "").split(" ")[0], link)
+        emailed = err is None
+        if err:
+            print(f"[signup] set-password email FAILED for {body.email}: {err}", flush=True)
+    except Exception as e:  # noqa: BLE001 -- the account exists; never 500 over the email
+        print(f"[signup] could not generate reset link for {body.email}: {e}", flush=True)
+
+    return {"email": body.email, "emailed": emailed, "can_sign_in": False}
 
 
 # docs/architecture-2026/04-productization.md P1: enforces the Free-tier
@@ -2118,8 +2453,9 @@ def upsert_my_profile(
                 """
                 INSERT INTO user_profiles
                     (firebase_uid, email, company, territory_states, categories,
-                     full_name, phone, role_title, lead_source, onboarded_at, is_active)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, now(), false)
+                     full_name, phone, role_title, lead_source, territory_refinement,
+                     inferred_lead_source, onboarded_at, is_active)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, now(), true)
                 ON CONFLICT (firebase_uid) DO UPDATE SET
                     email = EXCLUDED.email,
                     company = EXCLUDED.company,
@@ -2127,23 +2463,32 @@ def upsert_my_profile(
                     categories = EXCLUDED.categories,
                     phone = EXCLUDED.phone,
                     role_title = EXCLUDED.role_title,
-                    -- is_active deliberately absent from this SET clause: a
-                    -- later "edit territory" call through this same upsert
-                    -- must never flip an already-approved user back to
-                    -- pending, nor reactivate someone an admin deactivated.
-                    -- New accounts start is_active=false (per Asif,
-                    -- 2026-08-01: gating open Google sign-in behind manual
-                    -- approval) -- only /v1/ops/customer/{uid}/reactivate
-                    -- (require_role admin) flips it to true.
-                    -- full_name/lead_source are captured once, client-side,
-                    -- from the signed-in user's own auth state/current page
-                    -- (not asked as a form field a person can leave blank on
-                    -- a later edit) -- COALESCE so a future call that omits
-                    -- them (e.g. an "edit territory" flow reusing this same
-                    -- endpoint) doesn't null out what first-sign-in already
-                    -- captured.
+                    -- POLICY CHANGE, per Asif 2026-08-05: new signups are
+                    -- AUTO-APPROVED onto a 14-day trial. This supersedes the
+                    -- 2026-08-01 decision to gate open Google sign-in behind
+                    -- manual approval, which set is_active=false on insert and
+                    -- required /v1/ops/customer/{uid}/reactivate to release an
+                    -- account. Insert now sets is_active=true; access is bounded
+                    -- by trial_ends_at (048_trial_tier) instead of by an admin
+                    -- queue, and require_firebase_user enforces trial expiry on
+                    -- every request.
+                    --
+                    -- is_active stays ABSENT from this SET clause for the
+                    -- original reason, which still holds: a later "edit
+                    -- territory" call through this same upsert must never
+                    -- reactivate someone an admin deliberately deactivated.
+                    -- Deactivation remains an admin action; only signup
+                    -- approval changed.
+                    territory_refinement = COALESCE(EXCLUDED.territory_refinement, user_profiles.territory_refinement),
+                    -- full_name/lead_source/inferred_lead_source are captured
+                    -- once, client-side, from the signed-in user's own auth
+                    -- state/wizard answers (not asked as a form field a person
+                    -- can leave blank on a later edit) -- COALESCE so a future
+                    -- call that omits them doesn't null out what first-sign-in
+                    -- already captured.
                     full_name = COALESCE(EXCLUDED.full_name, user_profiles.full_name),
                     lead_source = COALESCE(EXCLUDED.lead_source, user_profiles.lead_source),
+                    inferred_lead_source = COALESCE(EXCLUDED.inferred_lead_source, user_profiles.inferred_lead_source),
                     onboarded_at = COALESCE(user_profiles.onboarded_at, now()),
                     updated_at = now()
                 """,
@@ -2157,6 +2502,8 @@ def upsert_my_profile(
                     body.phone,
                     body.role_title,
                     body.lead_source,
+                    body.territory_refinement,
+                    body.inferred_lead_source,
                 ),
             )
         conn.commit()

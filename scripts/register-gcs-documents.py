@@ -74,11 +74,20 @@ def main() -> int:
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--limit", type=int, default=0)
     args = ap.parse_args()
-    if not args.database_url:
-        print("need --database-url or DATABASE_URL", file=sys.stderr)
-        return 2
+    # Fall back to the SHARED resolver rather than refusing. This printed
+    # "need --database-url or DATABASE_URL" and exited 2 -- which, when the
+    # script is launched in the background, looks exactly like a run that
+    # completed: exit code 0 from the wrapper, no rows registered, and 6,912
+    # freshly captured SAM.gov documents left invisible to every downstream
+    # step. Same defect extract-document-text.py carried; every script in this
+    # repo should reach the database the same way.
+    if args.database_url:
+        conn = psycopg2.connect(args.database_url, connect_timeout=30)
+    else:
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        from specindex import db as _db  # noqa: PLC0415
 
-    conn = psycopg2.connect(args.database_url, connect_timeout=30)
+        conn = _db.connect()
     cur = conn.cursor()
     cur.execute("SELECT project_id, project_sk FROM projects")
     by_id: dict[str, int] = {pid: sk for pid, sk in cur.fetchall()}

@@ -4,6 +4,8 @@ import { createContext, useContext, useEffect, useState } from "react";
 import {
   onAuthStateChanged,
   signInWithPopup,
+  signInWithEmailAndPassword,
+  sendPasswordResetEmail,
   signOut as firebaseSignOut,
   GoogleAuthProvider,
   type User,
@@ -11,6 +13,8 @@ import {
 import { auth, FIREBASE_AUTH_ENABLED } from "@/lib/firebase";
 import { AuthSync } from "@/components/onboarding/AuthSync";
 import { SignInModal } from "@/components/onboarding/SignInModal";
+import { StartFreeModal } from "@/components/onboarding/StartFreeModal";
+import { startTrial } from "@/lib/userProfile";
 
 // Replaces components/ClerkProviders.tsx. Same reasoning carries over: this
 // site is a fully static Next.js export with no Node server, so a
@@ -40,6 +44,9 @@ type FirebaseAuthContextValue = {
   user: User | null;
   getToken: GetToken;
   signIn: () => Promise<void>;
+  signInWithPassword: (email: string, password: string) => Promise<void>;
+  sendReset: (email: string) => Promise<void>;
+  openStartFree: () => void;
   signOut: () => Promise<void>;
 };
 
@@ -72,6 +79,13 @@ function FirebaseAuthInner({ children }: { children: React.ReactNode }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [user, setUser] = useState<User | null>(null);
   const [showSignInModal, setShowSignInModal] = useState(false);
+  const [showStartFreeModal, setShowStartFreeModal] = useState(false);
+  // Retained under the 2026-08-05 auto-approval policy. Signup no longer sets
+  // is_active=false, so this is not a SIGNUP gate any more -- but admin
+  // DEACTIVATION still sets is_active=false, and that account must still hit
+  // the wall rather than a blank page. Removing the flag would have compiled
+  // against the provider and broken ProjectsGate and HomePageGate, which both
+  // still read it.
   const [isPendingApproval, setIsPendingApproval] = useState(false);
 
   useEffect(() => {
@@ -105,10 +119,44 @@ function FirebaseAuthInner({ children }: { children: React.ReactNode }) {
     setShowSignInModal(true);
   }
 
+  // Email + password sign-in. The modal's Continue button was hardcoded
+  // `disabled` with the note "email sign-in has no backend today... would need
+  // Firebase's Email Link passwordless flow enabled in the Console". That
+  // reasoning was true when written and is now stale: email/password was
+  // enabled in the console on 2026-08-06, and it is simpler than the
+  // passwordless flow it was waiting on -- no action URL, no link handling.
+  //
+  // Until then a first-time user could create an account and never log in.
+  // Signup worked because the API provisions accounts server-side with the
+  // Admin SDK, which bypasses the provider setting entirely, so the door
+  // looked open from the outside and was locked from the inside.
+  async function signInWithPassword(email: string, password: string): Promise<void> {
+    if (!auth) throw new Error("auth unavailable");
+    await signInWithEmailAndPassword(auth, email, password);
+    setShowSignInModal(false);
+  }
+
+  async function sendReset(email: string): Promise<void> {
+    if (!auth) throw new Error("auth unavailable");
+    // Points at the page that EXISTS. The PRD names /auth/action, but that
+    // route 404s today, and sending a reset link to a 404 is worse than not
+    // sending one.
+    await sendPasswordResetEmail(auth, email, {
+      url: `${window.location.origin}/set-password/`,
+    });
+  }
+
   async function signInWithGoogle(): Promise<void> {
     if (!auth) return;
     setShowSignInModal(false);
     await signInWithPopup(auth, new GoogleAuthProvider());
+    // Unconditional, not tied to which button opened this modal --
+    // /v1/me/start-trial only ever upgrades a user who's still on `free`
+    // with no prior trial, so this is a safe no-op for every returning
+    // user and only actually grants anything the one time it matters: a
+    // brand-new Google sign-in, regardless of whether they clicked "Login"
+    // or "Start for free" to get here.
+    await startTrial(getToken);
   }
 
   async function signOut(): Promise<void> {
@@ -119,10 +167,16 @@ function FirebaseAuthInner({ children }: { children: React.ReactNode }) {
   const value: FirebaseAuthContextValue = {
     isLoaded,
     isSignedIn: !!user,
-    isPendingApproval,
     user,
+    // Not a signup gate under the 2026-08-05 auto-approval policy -- signup
+    // sets is_active=true. Still true for an account an admin DEACTIVATED, so
+    // ProjectsGate/HomePageGate show the wall rather than a blank page.
+    isPendingApproval,
     getToken,
     signIn,
+    signInWithPassword,
+    sendReset,
+    openStartFree: () => setShowStartFreeModal(true),
     signOut,
   };
 
@@ -131,8 +185,14 @@ function FirebaseAuthInner({ children }: { children: React.ReactNode }) {
       {children}
       <AuthSync onPendingApproval={() => setIsPendingApproval(true)} />
       {showSignInModal && (
-        <SignInModal onGoogle={signInWithGoogle} onClose={() => setShowSignInModal(false)} />
+        <SignInModal
+          onGoogle={signInWithGoogle}
+          onPassword={signInWithPassword}
+          onReset={sendReset}
+          onClose={() => setShowSignInModal(false)}
+        />
       )}
+      {showStartFreeModal && <StartFreeModal onClose={() => setShowStartFreeModal(false)} />}
     </FirebaseAuthContext.Provider>
   );
 }

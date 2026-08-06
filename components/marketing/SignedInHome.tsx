@@ -87,7 +87,19 @@ export function SignedInHome() {
     if (!profile) return;
     setFeedLoading(true);
     const territory = profile.territory_states.join(",");
-    const qs = buildQuery({ state: territory, category: profile.categories[0], sort: "score", limit: 20 });
+    // ALL the trades they picked, and only projects we actually hold documents
+    // for. Two separate defects here: categories[0] discarded every trade after
+    // the first, and without has_documents the list is dominated by permit
+    // records with nothing to read -- only 0.3% of projects carry any document,
+    // so an unfiltered territory list shows a rep a wall of empty rows and
+    // teaches them the index is empty in their patch.
+    const qs = buildQuery({
+      state: territory,
+      category: profile.categories.join(","),
+      has_documents: "true",
+      sort: "score",
+      limit: 20,
+    });
     fetch(`${API_BASE}/v1/projects?${qs}`)
       .then((r) => r.json())
       .then((data) => {

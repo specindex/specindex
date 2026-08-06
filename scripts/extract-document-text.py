@@ -222,13 +222,40 @@ def paddle_ocr_page(page, dpi: int = 200) -> tuple[str, float]:
     img = np.frombuffer(pix.samples, dtype=np.uint8).reshape(pix.height, pix.width, pix.n)
     if pix.n == 4:  # RGBA -> RGB
         img = img[:, :, :3]
-    result = _paddle().ocr(img, cls=True)
+    # SECOND HALF OF THE SAME BUG. The constructor above was fixed for
+    # PaddleOCR 3.x but this call was not, so tier 2 stayed dead in a new way:
+    # 3.x routes ocr() through predict(), which does not accept `cls`, and every
+    # page failed with "predict() got an unexpected keyword argument 'cls'" --
+    # escalating the entire document to Document AI, the tier the cascade exists
+    # to avoid paying for. Confirmed live 2026-08-05.
+    #
+    # Try the 3.x signature first, then the 2.x one. Never pass `cls` blind.
+    ocr = _paddle()
+    try:
+        result = ocr.ocr(img)
+    except (TypeError, ValueError):
+        result = ocr.ocr(img, cls=True)
+
     lines, confs = [], []
     for block in result or []:
+        # 3.x: each block is a dict carrying parallel rec_texts / rec_scores.
+        if isinstance(block, dict):
+            texts = block.get("rec_texts") or []
+            scores = block.get("rec_scores") or []
+            for j, text in enumerate(texts):
+                if not text:
+                    continue
+                lines.append(text)
+                confs.append(float(scores[j]) if j < len(scores) else 0.0)
+            continue
+        # 2.x: each block is a list of [box, (text, confidence)].
         for entry in block or []:
             if not entry or len(entry) < 2:
                 continue
-            text, conf = entry[1][0], float(entry[1][1])
+            try:
+                text, conf = entry[1][0], float(entry[1][1])
+            except (TypeError, IndexError, ValueError):
+                continue
             lines.append(text)
             confs.append(conf)
     return "\n".join(lines), (sum(confs) / len(confs) if confs else 0.0)
@@ -317,6 +344,12 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=20, help="--batch only: max documents this run")
     ap.add_argument("--state", help="--batch only: restrict to one state code, e.g. GA")
     ap.add_argument("--document-type", help="--batch only: comma-separated document_type values, e.g. specifications,drawings_plans")
+    ap.add_argument(
+        "--rank-by-class", action="store_true",
+        help="--batch only: drain addenda, then spec books, then the rest, instead "
+             "of taking the lowest ids. document_type is unusable for this -- 13,847 "
+             "of 14,011 unextracted documents are typed 'other' while 1,802 carry an "
+             "addendum or spec title.")
     ap.add_argument("--delay", type=float, default=0.5, help="--batch only: seconds between documents")
     ap.add_argument(
         "--retry-errors",
@@ -325,10 +358,13 @@ def main() -> int:
         "re-billing Document AI on a permanently-broken document every run) -- use after fixing a "
         "bug that caused a batch of transient failures",
     )
-    ap.add_argument(
-        "--database-url",
-        default=os.environ.get("DATABASE_URL", "postgresql://specindex:specindex@localhost:5432/specindex"),
-    )
+    # Shared resolver, not a private default. This script used to hardcode
+    # localhost:5432 with a placeholder password while every other script in the
+    # repo reads .env and connects through the Cloud SQL proxy on 5433, so
+    # running it without an explicit --database-url failed with "connection
+    # refused" -- which reads as "the database is down", not "this script alone
+    # is pointed at the wrong port".
+    ap.add_argument("--database-url", default=None)
     ap.add_argument("--apply-migration", action="store_true")
     ap.add_argument("--dry-run", action="store_true", help="print what would be extracted, don't touch the DB")
     args = ap.parse_args()
@@ -369,7 +405,13 @@ def main() -> int:
             client = None
             processor_name = None
 
-    conn = psycopg2.connect(args.database_url)
+    if args.database_url:
+        conn = psycopg2.connect(args.database_url)
+    else:
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        from specindex import db as _db  # noqa: PLC0415
+
+        conn = _db.connect()
     try:
         if args.apply_migration:
             with conn.cursor() as cur:
@@ -397,20 +439,61 @@ def main() -> int:
                     clauses.append("pdf.document_type = ANY(%s)")
                     params.append(types)
                 where = " AND ".join(clauses)
-                params.append(args.limit)
-                cur.execute(
-                    f"""
-                    SELECT pdf.id, pdf.url, pdf.gcs_path, pdf.title
-                    FROM project_document_files pdf
-                    JOIN projects p ON p.project_sk = pdf.project_sk
-                    LEFT JOIN document_processing_status dps ON dps.document_file_id = pdf.id
-                    WHERE {where}
-                    ORDER BY pdf.id
-                    LIMIT %s
-                    """,
-                    params,
-                )
-                candidates = cur.fetchall()
+                # --rank-by-class ranks the whole backlog in Python instead of
+                # letting SQL take the lowest ids. It exists because
+                # document_type is not usable as a priority filter: of 14,011
+                # unextracted documents, 13,847 are typed "other" and only 49
+                # are typed "specifications" -- while 1,802 carry an addendum or
+                # spec title. Filtering on the column reaches 49 of them;
+                # classifying the title reaches all 1,802.
+                #
+                # Ordering by pdf.id is ordering by capture time, which is the
+                # same mistake that made extract-spec-positions.py return zero
+                # findings on its first dry run: the documents it sampled were
+                # whatever capture happened to finish last, and none of them
+                # were specs. A partial run should drain the highest-value
+                # documents, not the oldest ones.
+                if args.rank_by_class:
+                    cur.execute(
+                        f"""
+                        SELECT pdf.id, pdf.url, pdf.gcs_path, pdf.title
+                        FROM project_document_files pdf
+                        JOIN projects p ON p.project_sk = pdf.project_sk
+                        LEFT JOIN document_processing_status dps
+                               ON dps.document_file_id = pdf.id
+                        WHERE {where}
+                        """,
+                        params,
+                    )
+                    pool = cur.fetchall()
+                    import document_classifier as _dc  # noqa: PLC0415
+
+                    ranked = sorted(
+                        pool,
+                        key=lambda r: (_dc.rank_of(_dc.classify(r["title"] or "", "", "")),
+                                       -(r["id"] or 0)),
+                    )
+                    candidates = ranked[: args.limit]
+                    if candidates:
+                        top = _dc.classify(candidates[0]["title"] or "", "", "")
+                        print(f"ranked {len(pool):,} document(s) by class; "
+                              f"highest-value first ({top})")
+                else:
+                    params.append(args.limit)
+                    cur.execute(
+                        f"""
+                        SELECT pdf.id, pdf.url, pdf.gcs_path, pdf.title
+                        FROM project_document_files pdf
+                        JOIN projects p ON p.project_sk = pdf.project_sk
+                        LEFT JOIN document_processing_status dps
+                               ON dps.document_file_id = pdf.id
+                        WHERE {where}
+                        ORDER BY pdf.id
+                        LIMIT %s
+                        """,
+                        params,
+                    )
+                    candidates = cur.fetchall()
 
         print(f"{len(candidates)} candidate document(s)\n")
 

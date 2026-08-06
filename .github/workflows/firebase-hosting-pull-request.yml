@@ -14,6 +14,14 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
+      # Cheapest possible gate on the frontend/API split. This PR's frontend
+      # may call a route the API does not serve -- the condition that put a
+      # broken signup form in production on 2026-08-05. Static, no credentials,
+      # runs before the build so it fails in seconds rather than minutes.
+      - name: API contract (static)
+        run: python3 scripts/check-api-contract.py
+
+
       # Cache node_modules AND .next/cache. The PR workflow previously had NO
       # caching at all -- `npm ci` ran cold every time and Next's build cache
       # was discarded, which for a static export throws away its most useful
@@ -38,6 +46,7 @@ jobs:
       # It is set ONLY here. main's deploy workflow does not set it, so a
       # production build always renders everything; the flag can only ever make
       # a PREVIEW smaller, never a real deploy.
+
       - run: npm ci && npm run build
         env:
           SPECINDEX_PREVIEW_BUILD: "1"

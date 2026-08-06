@@ -15,12 +15,60 @@ import { Logo } from "@/components/Logo";
 // happens rather than silently failing.
 export function SignInModal({
   onGoogle,
+  onPassword,
+  onReset,
   onClose,
 }: {
   onGoogle: () => void;
+  onPassword: (email: string, password: string) => Promise<void>;
+  onReset: (email: string) => Promise<void>;
   onClose: () => void;
 }) {
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPw, setShowPw] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [err, setErr] = useState<string | null>(null);
+  const [sent, setSent] = useState(false);
+
+  // Firebase codes must never reach a user. One map, so the same failure
+  // reads the same way everywhere.
+  function humanError(code: string): string {
+    if (code.includes("wrong-password") || code.includes("invalid-credential"))
+      return "That email and password don't match. Check caps lock.";
+    if (code.includes("user-not-found")) return "We don't have an account for that email.";
+    if (code.includes("too-many-requests")) return "Too many attempts. Try again in a few minutes.";
+    if (code.includes("user-disabled")) return "This account has been disabled. Email hello@specindex.ai.";
+    if (code.includes("network")) return "Couldn't reach SpecIndex. Check your connection.";
+    if (code.includes("invalid-email")) return "That doesn't look like an email address.";
+    return "Something went wrong. Email hello@specindex.ai and we'll sort it.";
+  }
+
+  async function submit(e: React.FormEvent) {
+    e.preventDefault();
+    setErr(null);
+    setBusy(true);
+    try {
+      await onPassword(email.trim(), password);
+    } catch (e2) {
+      setErr(humanError(String((e2 as { code?: string })?.code ?? e2)));
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function reset() {
+    if (!email.trim()) return setErr("Enter your email first, then tap Forgot.");
+    setErr(null);
+    try {
+      await onReset(email.trim());
+      setSent(true);
+    } catch {
+      // Deliberately generic: this path must not reveal whether an account
+      // exists. Reset is the higher-value target for an attacker.
+      setSent(true);
+    }
+  }
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -61,10 +109,7 @@ export function SignInModal({
           </p>
         </div>
 
-        <form
-          className="mt-6"
-          onSubmit={(e) => e.preventDefault()}
-        >
+        <form className="mt-6" onSubmit={submit}>
           <label
             htmlFor="signin-email"
             className="text-xs font-semibold uppercase tracking-wider text-[var(--color-gray-400)]"
@@ -77,15 +122,61 @@ export function SignInModal({
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="you@company.com"
+            autoComplete="email"
             className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2.5 text-sm outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
           />
+
+          {/* One form, both fields, per PRD 3.5. An email-then-password split
+              breaks password-manager autofill and adds a round trip for
+              nothing at this scale. */}
+          <div className="mt-3 flex items-center justify-between">
+            <label
+              htmlFor="signin-password"
+              className="text-xs font-semibold uppercase tracking-wider text-[var(--color-gray-400)]"
+            >
+              Password
+            </label>
+            <button
+              type="button"
+              onClick={reset}
+              className="text-xs font-semibold text-[var(--color-green)] hover:underline"
+            >
+              Forgot?
+            </button>
+          </div>
+          <div className="relative">
+            <input
+              id="signin-password"
+              type={showPw ? "text" : "password"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Your password"
+              autoComplete="current-password"
+              className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2.5 pr-16 text-sm outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
+            />
+            {/* Reps work on phones and mistype constantly. Not optional. */}
+            <button
+              type="button"
+              onClick={() => setShowPw((s) => !s)}
+              className="absolute right-3 top-1/2 -translate-y-1/2 pt-1 text-xs font-semibold text-[var(--color-gray-400)]"
+            >
+              {showPw ? "Hide" : "Show"}
+            </button>
+          </div>
+
+          {sent && (
+            <p className="mt-3 rounded-md bg-[var(--color-green-light)] px-3 py-2 text-xs text-[var(--color-green)]">
+              If an account exists for that email, a reset link is on its way.
+            </p>
+          )}
+          {err && <p className="mt-3 text-xs text-red-600">{err}</p>}
+
           <button
             type="submit"
-            disabled
-            title="Email sign-in coming soon -- use Google for now"
-            className="mt-3 w-full cursor-not-allowed rounded-md bg-[var(--color-gray-200)] px-4 py-2.5 text-sm font-semibold text-[var(--color-gray-400)]"
+            disabled={busy || !email.trim() || !password}
+            className="mt-3 w-full rounded-md bg-[var(--color-green)] px-4 py-2.5 text-sm font-semibold text-white transition disabled:cursor-not-allowed disabled:bg-[var(--color-gray-200)] disabled:text-[var(--color-gray-400)]"
           >
-            Continue
+            {busy ? "Signing in…" : "Continue"}
           </button>
         </form>
 
