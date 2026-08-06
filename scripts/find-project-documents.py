@@ -62,6 +62,67 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from specindex.db import connect  # noqa: E402
+import document_classifier as dc  # noqa: E402
+
+# Publishers whose documents are real, government, and on-topic in the loosest
+# sense while being useless as construction records. The GA sweep's first stored
+# document was a 2021 Federal Register notice for SR 400 Express Lanes: genuine,
+# verifiable, about the project -- and not a construction document. It passed
+# every check the fetcher had, because every check asked "is this a real
+# government PDF", which it is. RELEVANCE IS A SEPARATE QUESTION FROM
+# AUTHENTICITY and needs its own gate.
+_OFF_TOPIC_RE = re.compile(
+    r"federal\s+register|notice\s+of\s+intent\s+to\s+prepare|"
+    r"record\s+of\s+decision|environmental\s+impact\s+statement|"
+    r"paperwork\s+reduction\s+act|privacy\s+act\s+of\s+1974|"
+    r"request\s+for\s+public\s+comment",
+    re.I,
+)
+# Positive evidence this is a construction record. Overrides the off-topic rule,
+# because a staff report can legitimately quote Federal Register language.
+_ON_TOPIC_RE = re.compile(
+    r"staff\s+report|site\s+plan|planning\s+commission|zoning|"
+    r"specification|addend|drawing|architect|contractor|"
+    r"square\s+feet|stor(?:ey|y|ies)|building\s+permit|bid\s+package",
+    re.I,
+)
+
+
+def _first_page_text(body: bytes) -> str:
+    try:
+        import io
+        try:
+            from pypdf import PdfReader
+        except ImportError:
+            from PyPDF2 import PdfReader
+        r = PdfReader(io.BytesIO(body))
+        return (r.pages[0].extract_text() or "") if r.pages else ""
+    except Exception:  # noqa: BLE001
+        return ""
+
+
+def is_relevant(body: bytes, url: str, project_year: int | None) -> tuple[bool, str]:
+    """Two cheap gates, both of which the SR 400 Federal Register notice fails.
+
+    CONSERVATIVE BY DESIGN: rejects only on positive evidence of being off-topic
+    or stale, never on absence of evidence. Losing a real spec book costs far
+    more than storing one stray notice, so an unreadable or scanned first page
+    yields no rejection -- silence is not proof of irrelevance.
+    """
+    text = _first_page_text(body)[:4000]
+
+    if text and _OFF_TOPIC_RE.search(text) and not _ON_TOPIC_RE.search(text):
+        return False, "off-topic (federal notice)"
+
+    # A document predating the project by years describes something else at the
+    # same address. Only fires when a year is actually found.
+    if project_year:
+        years = [int(y) for y in re.findall(r"\b(19[89]\d|20[0-4]\d)\b", url + " " + text[:1200])]
+        plausible = [y for y in years if 1990 <= y <= project_year + 2]
+        if plausible and max(plausible) < project_year - 2:
+            return False, f"stale ({max(plausible)} vs project {project_year})"
+
+    return True, dc.classify(url.rsplit("/", 1)[-1], "", text)
 
 GCS_BUCKET = "specindex-ai-raw-documents"
 USER_AGENT = "Mozilla/5.0 SpecIndex-DocumentBot/1.0 (+https://specindex.ai)"
@@ -276,7 +337,8 @@ def main() -> int:
     # proxy for "a document was probably published about this", and it is the
     # cohort where a found document is worth the most.
     sql = """
-        SELECT p.project_sk, p.project_id, p.name, p.city, p.state
+        SELECT p.project_sk, p.project_id, p.name, p.city, p.state,
+               p.opened_or_announced_date
         FROM projects p
         WHERE NOT EXISTS (SELECT 1 FROM project_document_files f
                           WHERE f.project_sk = p.project_sk)
@@ -300,10 +362,11 @@ def main() -> int:
         from google.cloud import storage
         bucket = storage.Client().bucket(GCS_BUCKET)
 
-    searched = hits = stored = repaired = 0
+    searched = hits = stored = repaired = rejected = 0
     t0 = time.time()
 
-    for i, (sk, pid, name, city, state) in enumerate(rows, 1):
+    for i, (sk, pid, name, city, state, opened) in enumerate(rows, 1):
+        project_year = opened.year if opened else None
         try:
             urls = grounded_search(client, types, args.model, name, city or "", state or "")
         except Exception as e:  # noqa: BLE001 -- one bad project must not end the sweep
@@ -317,6 +380,11 @@ def main() -> int:
             if not got:
                 continue
             real_url, body = got
+            keep, why = is_relevant(body, real_url, project_year)
+            if not keep:
+                rejected += 1
+                print(f"  [reject] {why}: {real_url[:86]}", flush=True)
+                continue
             if real_url != u:
                 repaired += 1
             found_for_project += 1
@@ -357,13 +425,13 @@ def main() -> int:
             rate = i / el if el else 0
             eta = (len(rows) - i) / rate / 60 if rate else 0
             print(f"[{i}/{len(rows)}] hit-rate={hits/searched*100:4.1f}% "
-                  f"docs={stored} repaired={repaired} "
+                  f"docs={stored} repaired={repaired} rej={rejected} "
                   f"{rate*60:.1f}/min ETA {eta:.0f}m", flush=True)
 
     conn.commit()
     pct = (hits / searched * 100) if searched else 0
     print(f"\n[done] searched={searched} projects_with_docs={hits} ({pct:.1f}%) "
-          f"documents_stored={stored} path_repaired={repaired}", flush=True)
+          f"documents_stored={stored} path_repaired={repaired} rejected={rejected}", flush=True)
     print(f"[learned] path templates: {_LEARNED}", flush=True)
     if args.sentinel:
         Path(args.sentinel).write_text(f"done {stored} docs {pct:.1f}% hit\n")
