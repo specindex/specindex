@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ProjectDetailView } from "@/components/ProjectDetailView";
 import { getProject, getFeaturedProjectIds } from "@/lib/projects";
+import { scopeStaticParams } from "@/lib/buildScope";
 
 type Props = { params: Promise<{ id: string }> };
 
@@ -13,7 +14,9 @@ type Props = { params: Promise<{ id: string }> };
 // file (see firebase.json's rewrite + docs/ROADMAP.md item 44's follow-up).
 export async function generateStaticParams() {
   const ids = await getFeaturedProjectIds();
-  return ids.map((id) => ({ id }));
+  // Preview builds render a handful; main renders all. See lib/buildScope.ts --
+  // ten project pages exercise the same template as 27,000 of them.
+  return scopeStaticParams(ids.map((id) => ({ id })), "projects/[id]");
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
