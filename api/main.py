@@ -2320,9 +2320,10 @@ def signup(body: SignupRequest):
     account creation has to be reachable before anyone has a session.
 
     A pre-existing Firebase account for this email (caught via
-    EmailAlreadyExistsError) is treated as a normal "log in instead" case,
+    EmailAlreadyExistsError) now returns 409 account_exists, not 200,
     not an error -- returns the same shape either way so the client can't
-    use this endpoint to enumerate which emails already have accounts."""
+    so the modal can say so and offer sign-in. Enumeration protection stays
+    where it matters -- password reset -- and is untouched."""
     # Derived, not demanded. The signup screen no longer asks for a name, so
     # fall back to the local part of the address -- "dana@kirkwoodlighting.com"
     # becomes "Dana". A note in the CRM attributed to a readable name is worth
@@ -2370,14 +2371,56 @@ def signup(body: SignupRequest):
             raise HTTPException(status_code=500, detail="Couldn't create account") from e
         existing = firebase_auth.get_user_by_email(body.email)
         firebase_uid = existing.uid
-        # Repairs accounts created by the buggy version above, which are
-        # otherwise permanently unable to receive a set-password email: no
-        # password provider means every reset silently no-ops forever, and the
-        # user cannot get in by any route. Only touched when the provider is
-        # genuinely absent, so a real user's password is never reset by
-        # someone else submitting the signup form with their address.
-        if not any(p.provider_id == "password" for p in (existing.provider_data or [])):
+
+        providers = [p.provider_id for p in (existing.provider_data or [])]
+
+        # REPAIR BEFORE REPORTING. An account created by an older, buggy version
+        # of this endpoint can have NO auth provider at all: no password, no
+        # Google. Such an account cannot be signed into by any route, and every
+        # password reset silently no-ops forever. Telling that user to "sign in
+        # instead" would be advice they cannot follow.
+        #
+        # So give it a password provider first -- an unguessable placeholder,
+        # which only makes a reset link possible. Guarded on the provider being
+        # genuinely absent, so submitting the signup form with someone else's
+        # address can never reset a real user's password.
+        repaired = False
+        if not providers:
             firebase_auth.update_user(firebase_uid, password=placeholder_password)
+            providers = ["password"]
+            repaired = True
+
+        # THEN TELL THE USER THE ACCOUNT EXISTS, rather than returning success.
+        #
+        # This used to swallow EMAIL_ALREADY_EXISTS and return 200 so an
+        # anonymous form could not enumerate which addresses have accounts. That
+        # protection is real, but it was paid for by the legitimate user:
+        # someone who signed up months ago and forgot got a success screen, no
+        # email they could act on, and no hint that signing in was the move.
+        #
+        # And it did not even hold. The profile insert deduped only on
+        # firebase_uid, so a second UID for the same address created a SECOND
+        # CRM row -- which is exactly how asif@specindex.ai came to appear twice.
+        # The silence hid a real bug rather than preventing one.
+        #
+        # Disclosing existence at SIGNUP is the near-universal convention
+        # (Google, GitHub, Stripe) precisely because the alternative strands
+        # real users. Password RESET still discloses nothing; that is where
+        # enumeration protection actually matters, and it is untouched.
+        raise HTTPException(
+            status_code=409,
+            detail={
+                "code": "account_exists",
+                "email": body.email,
+                # Lets the modal offer the route that can actually work --
+                # "sign in with Google" when that is the only provider, rather
+                # than a password box that cannot succeed.
+                "has_password": "password" in providers,
+                "providers": providers,
+                "repaired": repaired,
+                "message": "An account already exists for this email. Sign in instead.",
+            },
+        )
 
     with get_conn() as conn:
         with conn.cursor() as cur:

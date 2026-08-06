@@ -27,17 +27,41 @@ export function StartFreeModal({ onClose }: { onClose: () => void }) {
   const [submitting, setSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // Set when the API reports the email already has an account. Kept separate
+  // from `error` so this renders as a route forward, not as a red failure.
+  const [existingAccount, setExistingAccount] = useState<
+    { hasPassword: boolean; google: boolean } | null
+  >(null);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setSubmitting(true);
     setError(null);
+    setExistingAccount(null);
     try {
       const res = await fetch(`${API_BASE}/v1/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: email.trim(), password }),
       });
+      // 409 account_exists is NOT a failure -- it is the single most likely
+      // thing to happen on a signup form, and the old code lumped it in with
+      // "try again in a moment", which is advice that can never work. The user
+      // already has an account; the only useful next action is signing in.
+      if (res.status === 409) {
+        const body = await res.json().catch(() => ({}) as Record<string, unknown>);
+        const detail = (body?.detail ?? {}) as {
+          code?: string; has_password?: boolean; providers?: string[];
+        };
+        if (detail.code === "account_exists") {
+          setExistingAccount({
+            hasPassword: detail.has_password !== false,
+            google: (detail.providers ?? []).includes("google.com"),
+          });
+          setSubmitting(false);
+          return;
+        }
+      }
       if (!res.ok) throw new Error(await res.text());
 
       // The API now sends the set-password email itself over our own SMTP and
@@ -178,6 +202,30 @@ export function StartFreeModal({ onClose }: { onClose: () => void }) {
                 </p>
               </div>
 
+              {existingAccount && (
+                <div className="rounded-lg border border-amber-300 bg-amber-50 p-3 text-sm">
+                  <p className="font-semibold text-amber-900">
+                    You already have an account
+                  </p>
+                  <p className="mt-1 text-amber-800">
+                    {existingAccount.google && !existingAccount.hasPassword
+                      ? "This email is registered with Google. Use “Continue with Google” to sign in."
+                      : "Sign in with your password, or reset it if you’ve forgotten."}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      onClose();
+                      // Global handler the header uses; opens the sign-in modal
+                      // with no page navigation, so the address stays typed.
+                      window.dispatchEvent(new CustomEvent("specindex:open-signin"));
+                    }}
+                    className="mt-2 font-semibold text-amber-900 underline"
+                  >
+                    Sign in instead
+                  </button>
+                </div>
+              )}
               {error && <p className="text-sm text-red-600">{error}</p>}
 
               <button type="submit" disabled={submitting} className="btn btn-demo w-full disabled:opacity-60">
