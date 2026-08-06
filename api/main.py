@@ -1287,7 +1287,7 @@ def _send_set_password_email(to_email: str, first_name: str, link: str) -> str |
     try:
         msg = EmailMessage()
         msg["Subject"] = "Set your SpecIndex password"
-        msg["From"] = EMAIL_SMTP_USERNAME
+        msg["From"] = EMAIL_FROM
         msg["To"] = to_email
         msg["Reply-To"] = CONTACT_NOTIFY_TO
         msg.set_content(
@@ -1312,7 +1312,7 @@ def _send_org_invite_email(to_email: str, invite_token: str) -> str | None:
     try:
         msg = EmailMessage()
         msg["Subject"] = "You've been invited to a SpecIndex team"
-        msg["From"] = EMAIL_SMTP_USERNAME
+        msg["From"] = EMAIL_FROM
         msg["To"] = to_email
         msg.set_content(
             "You've been invited to join a team on SpecIndex.\n\n"
@@ -1934,6 +1934,14 @@ def ask_about_my_territory(body: AskRequest, firebase_uid: str = Depends(require
 # missing/misconfigured credential must never lose a real submission, it
 # just goes unnotified (see notify_error on the row).
 EMAIL_SMTP_USERNAME = os.environ.get("EMAIL_SMTP_USERNAME", "")
+# WHO THE MAIL APPEARS TO COME FROM, separate from who authenticates to send it.
+# Authentication is asif@specindex.ai (a real Workspace mailbox with a password);
+# the address a signing-up stranger should see is hello@specindex.ai. Gmail will
+# only accept a From: that is the authenticated user OR a verified "Send mail as"
+# alias on that account -- so this is configurable rather than hardcoded, and
+# falls back to the authenticated address when unset so a missing alias degrades
+# to "sent from the wrong address" instead of "not sent at all".
+EMAIL_FROM = os.environ.get("EMAIL_FROM", "") or os.environ.get("EMAIL_SMTP_USERNAME", "")
 EMAIL_SMTP_PASSWORD = os.environ.get("EMAIL_SMTP_PASSWORD", "")
 CONTACT_NOTIFY_TO = os.environ.get("CONTACT_NOTIFY_TO", "hello@specindex.ai")
 
@@ -1989,7 +1997,7 @@ def _send_contact_notification(sub: ContactSubmission) -> str | None:
     try:
         msg = EmailMessage()
         msg["Subject"] = f"SpecIndex demo request: {sub.company}"
-        msg["From"] = EMAIL_SMTP_USERNAME
+        msg["From"] = EMAIL_FROM
         msg["To"] = CONTACT_NOTIFY_TO
         msg["Reply-To"] = sub.email
         msg.set_content(
