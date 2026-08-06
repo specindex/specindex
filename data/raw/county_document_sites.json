@@ -1,0 +1,1162 @@
+[
+  {
+    "county": "New York",
+    "state": "NY",
+    "zero_doc_projects": 118217,
+    "population": 1660664,
+    "base": "https://www.nyc.gov",
+    "viable": false,
+    "reason": "event pages found but no downloadable PDF",
+    "sample_pdf": "",
+    "event_urls": 76,
+    "tried": [
+      {
+        "base": "https://www.nyc.gov",
+        "reason": "event pages found but no downloadable PDF"
+      },
+      {
+        "base": "https://s-media.nyc.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Kings",
+    "state": "NY",
+    "zero_doc_projects": 44078,
+    "population": 2617631,
+    "base": "https://www.nyc.gov",
+    "viable": false,
+    "reason": "event pages found but no downloadable PDF",
+    "sample_pdf": "",
+    "event_urls": 76,
+    "tried": [
+      {
+        "base": "https://www.nyc.gov",
+        "reason": "event pages found but no downloadable PDF"
+      },
+      {
+        "base": "https://ny.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Cook",
+    "state": "IL",
+    "zero_doc_projects": 32307,
+    "population": 5182617,
+    "base": "",
+    "viable": false,
+    "reason": "no candidate site found",
+    "sample_pdf": "",
+    "event_urls": 0,
+    "tried": [
+      {
+        "base": "https://www.cookcountyil.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Queens",
+    "state": "NY",
+    "zero_doc_projects": 24440,
+    "population": 2316841,
+    "base": "https://www.nyc.gov",
+    "viable": false,
+    "reason": "event pages found but no downloadable PDF",
+    "sample_pdf": "",
+    "event_urls": 76,
+    "tried": [
+      {
+        "base": "https://www.nyc.gov",
+        "reason": "event pages found but no downloadable PDF"
+      },
+      {
+        "base": "https://www.queensbp.nyc.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Travis",
+    "state": "TX",
+    "zero_doc_projects": 23315,
+    "population": 1363767,
+    "base": "https://www.traviscountytx.gov",
+    "viable": true,
+    "reason": "verified by download",
+    "sample_pdf": "https://www.traviscountytx.gov/images/commissioners_court/Doc/2026_Comm_Ct_Calendar.pdf",
+    "event_urls": 163,
+    "tried": [
+      {
+        "base": "https://www.traviscountytx.gov",
+        "reason": "verified by download"
+      }
+    ]
+  },
+  {
+    "county": "Miami-Dade",
+    "state": "FL",
+    "zero_doc_projects": 20967,
+    "population": 2838461,
+    "base": "",
+    "viable": false,
+    "reason": "no candidate site found",
+    "sample_pdf": "",
+    "event_urls": 0,
+    "tried": [
+      {
+        "base": "https://www.miamidade.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      },
+      {
+        "base": "https://www.miamidadeclerk.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Bronx",
+    "state": "NY",
+    "zero_doc_projects": 20732,
+    "population": 1384724,
+    "base": "https://www.nyc.gov",
+    "viable": false,
+    "reason": "event pages found but no downloadable PDF",
+    "sample_pdf": "",
+    "event_urls": 76,
+    "tried": [
+      {
+        "base": "https://www.nyc.gov",
+        "reason": "event pages found but no downloadable PDF"
+      },
+      {
+        "base": "https://bronxboropres.nyc.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Orange",
+    "state": "FL",
+    "zero_doc_projects": 17845,
+    "population": 1533646,
+    "base": "",
+    "viable": false,
+    "reason": "no candidate site found",
+    "sample_pdf": "",
+    "event_urls": 0,
+    "tried": [
+      {
+        "base": "https://www.ocfl.net",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      },
+      {
+        "base": "https://www.orangecountyfl.net",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Franklin",
+    "state": "OH",
+    "zero_doc_projects": 12897,
+    "population": 1356303,
+    "base": "https://franklincountyohio.gov",
+    "viable": true,
+    "reason": "verified by download",
+    "sample_pdf": "https://franklincountyohio.gov/files/assets/public/v/1/aging/documents/news-releases/2023/newsrelease_bocappointnewdirectoratofficeonaging.pdf",
+    "event_urls": 265,
+    "tried": [
+      {
+        "base": "https://franklincountyohio.gov",
+        "reason": "verified by download"
+      }
+    ]
+  },
+  {
+    "county": "Los Angeles",
+    "state": "CA",
+    "zero_doc_projects": 10411,
+    "population": 9757179,
+    "base": "https://bos.lacounty.gov",
+    "viable": true,
+    "reason": "verified by download",
+    "sample_pdf": "https://assets-us-01.kc-usercontent.com:443/0234f496-d2b7-00b6-17a4-b43e949b70a2/0c4721a1-b505-4d85-b48c-32a71594ace9/Revised%20Rules%20of%20the%20Board%202.6.26%20final.pdf",
+    "event_urls": 36,
+    "tried": [
+      {
+        "base": "https://bos.lacounty.gov",
+        "reason": "verified by download"
+      }
+    ]
+  },
+  {
+    "county": "Tarrant",
+    "state": "TX",
+    "zero_doc_projects": 7724,
+    "population": 2230708,
+    "base": "",
+    "viable": false,
+    "reason": "no candidate site found",
+    "sample_pdf": "",
+    "event_urls": 0,
+    "tried": [
+      {
+        "base": "https://www.tarrantcountytx.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Allegheny",
+    "state": "PA",
+    "zero_doc_projects": 6382,
+    "population": 1231814,
+    "base": "https://www.alleghenycounty.us",
+    "viable": true,
+    "reason": "verified by download",
+    "sample_pdf": "https://www.alleghenycounty.us/files/assets/county/v/3/government/health/documents/board-of-health/minutes/2026/january-14-2026-board-of-health-minutes.pdf",
+    "event_urls": 27,
+    "tried": [
+      {
+        "base": "https://www.alleghenycounty.us",
+        "reason": "verified by download"
+      }
+    ]
+  },
+  {
+    "county": "Hamilton",
+    "state": "OH",
+    "zero_doc_projects": 6220,
+    "population": 837359,
+    "base": "",
+    "viable": false,
+    "reason": "no candidate site found",
+    "sample_pdf": "",
+    "event_urls": 0,
+    "tried": [
+      {
+        "base": "https://www.hamiltoncountyohio.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Bergen",
+    "state": "NJ",
+    "zero_doc_projects": 5753,
+    "population": 978641,
+    "base": "https://www.bergencountynj.gov",
+    "viable": true,
+    "reason": "verified by download",
+    "sample_pdf": "https://bergencountynj.gov/wp-content/uploads/2023/07/bergencountyoverview.pdf",
+    "event_urls": 75,
+    "tried": [
+      {
+        "base": "https://www.bergencountynj.gov",
+        "reason": "verified by download"
+      }
+    ]
+  },
+  {
+    "county": "Harris",
+    "state": "TX",
+    "zero_doc_projects": 5736,
+    "population": 5009302,
+    "base": "",
+    "viable": false,
+    "reason": "no candidate site found",
+    "sample_pdf": "",
+    "event_urls": 0,
+    "tried": [
+      {
+        "base": "https://www.harriscountytx.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      },
+      {
+        "base": "https://agenda.harriscountytx.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      },
+      {
+        "base": "https://www.hctx.net",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Clark",
+    "state": "NV",
+    "zero_doc_projects": 5570,
+    "population": 2398871,
+    "base": "https://www.clarkcountynv.gov",
+    "viable": true,
+    "reason": "verified by download",
+    "sample_pdf": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:e737f1df-01a9-454b-9209-2bfd79658217/original/as/enterprise-agenda-013019.pdf",
+    "event_urls": 421,
+    "tried": [
+      {
+        "base": "https://www.clarkcountynv.gov",
+        "reason": "verified by download"
+      }
+    ]
+  },
+  {
+    "county": "Hartford",
+    "state": "CT",
+    "zero_doc_projects": 4684,
+    "population": 0,
+    "base": "https://www.hartfordct.gov",
+    "viable": true,
+    "reason": "verified by download",
+    "sample_pdf": "https://www.hartfordct.gov/files/assets/public/v/2/development-services/housing/housing-documents/fair-rent-guide-pdf-english-2022.pdf",
+    "event_urls": 48,
+    "tried": [
+      {
+        "base": "https://www.hartfordct.gov",
+        "reason": "verified by download"
+      }
+    ]
+  },
+  {
+    "county": "Cuyahoga",
+    "state": "OH",
+    "zero_doc_projects": 4637,
+    "population": 1240594,
+    "base": "https://countyplanning.us",
+    "viable": false,
+    "reason": "event pages found but no downloadable PDF",
+    "sample_pdf": "",
+    "event_urls": 188,
+    "tried": [
+      {
+        "base": "https://countyplanning.us",
+        "reason": "event pages found but no downloadable PDF"
+      },
+      {
+        "base": "https://cuyahogacounty.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Collin",
+    "state": "TX",
+    "zero_doc_projects": 4472,
+    "population": 1254658,
+    "base": "",
+    "viable": false,
+    "reason": "no candidate site found",
+    "sample_pdf": "",
+    "event_urls": 0,
+    "tried": [
+      {
+        "base": "https://www.collincountytx.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Richmond",
+    "state": "NY",
+    "zero_doc_projects": 4370,
+    "population": 498212,
+    "base": "https://www.nyc.gov",
+    "viable": false,
+    "reason": "event pages found but no downloadable PDF",
+    "sample_pdf": "",
+    "event_urls": 76,
+    "tried": [
+      {
+        "base": "https://www.nyc.gov",
+        "reason": "event pages found but no downloadable PDF"
+      },
+      {
+        "base": "https://www.richmondny.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "King",
+    "state": "WA",
+    "zero_doc_projects": 4336,
+    "population": 2340211,
+    "base": "",
+    "viable": false,
+    "reason": "no candidate site found",
+    "sample_pdf": "",
+    "event_urls": 0,
+    "tried": [
+      {
+        "base": "https://kingcounty.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      },
+      {
+        "base": "https://www.kingcounty.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Sacramento",
+    "state": "CA",
+    "zero_doc_projects": 4333,
+    "population": 1611231,
+    "base": "",
+    "viable": false,
+    "reason": "no candidate site found",
+    "sample_pdf": "",
+    "event_urls": 0,
+    "tried": [
+      {
+        "base": "https://saccounty.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      },
+      {
+        "base": "https://bospublicmeetings.saccounty.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Monmouth",
+    "state": "NJ",
+    "zero_doc_projects": 4112,
+    "population": 647520,
+    "base": "https://www.monmouthcountyclerk.gov",
+    "viable": true,
+    "reason": "verified by download",
+    "sample_pdf": "https://www.monmouthcountyclerk.gov/wp-content/uploads/2024/04/Website-information-9-7-22.pdf",
+    "event_urls": 9,
+    "tried": [
+      {
+        "base": "https://www.monmouth.nj.us",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      },
+      {
+        "base": "https://www.visitmonmouth.com",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      },
+      {
+        "base": "https://www.monmouthcountyclerk.gov",
+        "reason": "verified by download"
+      }
+    ]
+  },
+  {
+    "county": "Middlesex",
+    "state": "NJ",
+    "zero_doc_projects": 4096,
+    "population": 890119,
+    "base": "",
+    "viable": false,
+    "reason": "no candidate site found",
+    "sample_pdf": "",
+    "event_urls": 0,
+    "tried": [
+      {
+        "base": "https://www.middlesexcountynj.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Denver",
+    "state": "CO",
+    "zero_doc_projects": 4091,
+    "population": 729019,
+    "base": "https://denvergov.org",
+    "viable": true,
+    "reason": "verified by download",
+    "sample_pdf": "https://denvergov.org/files/assets/public/v/1/civil-service-commission/documents/agenda/new-folder/2026/1-14-2026.pdf",
+    "event_urls": 789,
+    "tried": [
+      {
+        "base": "https://denvergov.org",
+        "reason": "verified by download"
+      }
+    ]
+  },
+  {
+    "county": "Morris",
+    "state": "NJ",
+    "zero_doc_projects": 3570,
+    "population": 523053,
+    "base": "https://www.morriscountynj.gov",
+    "viable": true,
+    "reason": "verified by download",
+    "sample_pdf": "https://www.morriscountynj.gov/files/sharedassets/public/v/1/departments/eng-amp-transportation/bot-agenda-2022-07-19.pdf",
+    "event_urls": 73,
+    "tried": [
+      {
+        "base": "https://www.morriscountynj.gov",
+        "reason": "verified by download"
+      }
+    ]
+  },
+  {
+    "county": "East Baton Rouge",
+    "state": "LA",
+    "zero_doc_projects": 3549,
+    "population": 0,
+    "base": "https://www.brla.gov",
+    "viable": false,
+    "reason": "event pages found but no downloadable PDF",
+    "sample_pdf": "",
+    "event_urls": 7,
+    "tried": [
+      {
+        "base": "https://www.brla.gov",
+        "reason": "event pages found but no downloadable PDF"
+      }
+    ]
+  },
+  {
+    "county": "Palm Beach",
+    "state": "FL",
+    "zero_doc_projects": 3029,
+    "population": 1582055,
+    "base": "https://pbc.gov",
+    "viable": true,
+    "reason": "verified by download",
+    "sample_pdf": "http://www.pbcgov.com/pubInf/Agenda/20260707/20260707.pdf",
+    "event_urls": 27,
+    "tried": [
+      {
+        "base": "https://pbc.gov",
+        "reason": "verified by download"
+      }
+    ]
+  },
+  {
+    "county": "Essex",
+    "state": "NJ",
+    "zero_doc_projects": 2823,
+    "population": 881527,
+    "base": "",
+    "viable": false,
+    "reason": "no candidate site found",
+    "sample_pdf": "",
+    "event_urls": 0,
+    "tried": [
+      {
+        "base": "https://essexcountynj.org",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      },
+      {
+        "base": "https://ecfnj.com",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      },
+      {
+        "base": "https://ecdpw.org",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Riverside",
+    "state": "CA",
+    "zero_doc_projects": 2804,
+    "population": 2529933,
+    "base": "https://rivco.org",
+    "viable": false,
+    "reason": "event pages found but no downloadable PDF",
+    "sample_pdf": "",
+    "event_urls": 413,
+    "tried": [
+      {
+        "base": "https://rivcocob.org",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      },
+      {
+        "base": "https://rctlma.org",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      },
+      {
+        "base": "https://rivco.org",
+        "reason": "event pages found but no downloadable PDF"
+      }
+    ]
+  },
+  {
+    "county": "Erie",
+    "state": "NY",
+    "zero_doc_projects": 2791,
+    "population": 950602,
+    "base": "",
+    "viable": false,
+    "reason": "no candidate site found",
+    "sample_pdf": "",
+    "event_urls": 0,
+    "tried": [
+      {
+        "base": "https://www.erie.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      },
+      {
+        "base": "https://www3.erie.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      },
+      {
+        "base": "https://www.ny.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Suffolk",
+    "state": "MA",
+    "zero_doc_projects": 2775,
+    "population": 793144,
+    "base": "https://www.boston.gov",
+    "viable": true,
+    "reason": "verified by download",
+    "sample_pdf": "https://www.boston.gov/sites/default/files/file/2021/03/Asbestos_Regulation.pdf",
+    "event_urls": 9,
+    "tried": [
+      {
+        "base": "https://www.boston.gov",
+        "reason": "verified by download"
+      }
+    ]
+  },
+  {
+    "county": "Hennepin",
+    "state": "MN",
+    "zero_doc_projects": 2735,
+    "population": 1273334,
+    "base": "https://www.hennepincounty.gov",
+    "viable": true,
+    "reason": "verified by download",
+    "sample_pdf": "https://www.hennepincounty.gov/-/media/Hennepin-Headless/Hennepin-Gov/government/board-meeting-calendar.pdf?rev=dcb4aee43fa04466836d849eade5848e&amp;hash=2CD64B2848C6579E1421C83ECE020BE8",
+    "event_urls": 23,
+    "tried": [
+      {
+        "base": "https://www.hennepincounty.gov",
+        "reason": "verified by download"
+      }
+    ]
+  },
+  {
+    "county": "Mercer",
+    "state": "NJ",
+    "zero_doc_projects": 2696,
+    "population": 392138,
+    "base": "",
+    "viable": false,
+    "reason": "no candidate site found",
+    "sample_pdf": "",
+    "event_urls": 0,
+    "tried": [
+      {
+        "base": "https://www.mercercounty.org",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Virginia Beach",
+    "state": "VA",
+    "zero_doc_projects": 2641,
+    "population": 0,
+    "base": "",
+    "viable": false,
+    "reason": "no candidate site found",
+    "sample_pdf": "",
+    "event_urls": 0,
+    "tried": [
+      {
+        "base": "https://virginiabeach.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      },
+      {
+        "base": "https://www.virginiabeach.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Ocean",
+    "state": "NJ",
+    "zero_doc_projects": 2622,
+    "population": 666434,
+    "base": "",
+    "viable": false,
+    "reason": "no candidate site found",
+    "sample_pdf": "",
+    "event_urls": 0,
+    "tried": [
+      {
+        "base": "https://www.ocean.nj.us",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      },
+      {
+        "base": "https://co.ocean.nj.us",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Montgomery",
+    "state": "MD",
+    "zero_doc_projects": 2614,
+    "population": 1082273,
+    "base": "https://www.montgomerycountymd.gov",
+    "viable": true,
+    "reason": "verified by download",
+    "sample_pdf": "https://apps.montgomerycountymd.gov/ccllims/DownloadFilePage?FileName=2747_1_22419_Bill_6-22_Signed_20220628.pdf",
+    "event_urls": 303,
+    "tried": [
+      {
+        "base": "https://www.montgomerycountymd.gov",
+        "reason": "verified by download"
+      }
+    ]
+  },
+  {
+    "county": "Wake",
+    "state": "NC",
+    "zero_doc_projects": 2454,
+    "population": 1232444,
+    "base": "",
+    "viable": false,
+    "reason": "no candidate site found",
+    "sample_pdf": "",
+    "event_urls": 0,
+    "tried": [
+      {
+        "base": "https://www.wake.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Mecklenburg",
+    "state": "NC",
+    "zero_doc_projects": 2449,
+    "population": 1206285,
+    "base": "https://www.charlottenc.gov",
+    "viable": true,
+    "reason": "verified by download",
+    "sample_pdf": "https://www.charlottenc.gov/files/sharedassets/city/v/1/city-government/departments/documents/clerks-office/agendas/2009-2012/agendas-2009/january-5-2009.pdf",
+    "event_urls": 7,
+    "tried": [
+      {
+        "base": "https://www.mecknc.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      },
+      {
+        "base": "https://www.charlottenc.gov",
+        "reason": "verified by download"
+      }
+    ]
+  },
+  {
+    "county": "Burlington",
+    "state": "NJ",
+    "zero_doc_projects": 2432,
+    "population": 475515,
+    "base": "https://www.burlingtoncountynj.gov",
+    "viable": false,
+    "reason": "event pages found but no downloadable PDF",
+    "sample_pdf": "",
+    "event_urls": 8,
+    "tried": [
+      {
+        "base": "https://www.burlingtoncountynj.gov",
+        "reason": "event pages found but no downloadable PDF"
+      },
+      {
+        "base": "https://www.burlington.nj.us",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Somerset",
+    "state": "NJ",
+    "zero_doc_projects": 2421,
+    "population": 357467,
+    "base": "",
+    "viable": false,
+    "reason": "no candidate site found",
+    "sample_pdf": "",
+    "event_urls": 0,
+    "tried": [
+      {
+        "base": "https://www.somersetcountynj.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      },
+      {
+        "base": "https://www.co.somerset.nj.us",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Camden",
+    "state": "NJ",
+    "zero_doc_projects": 2310,
+    "population": 533988,
+    "base": "https://www.camdencounty.com",
+    "viable": true,
+    "reason": "verified by download",
+    "sample_pdf": "https://www.nj.gov/agriculture/divisions/pi/pdf/NJResidenceSLFChecklist.pdf",
+    "event_urls": 105,
+    "tried": [
+      {
+        "base": "https://www.camdencounty.com",
+        "reason": "verified by download"
+      }
+    ]
+  },
+  {
+    "county": "Union",
+    "state": "NJ",
+    "zero_doc_projects": 2213,
+    "population": 594160,
+    "base": "https://www.uniontownship.com",
+    "viable": false,
+    "reason": "event pages found but no downloadable PDF",
+    "sample_pdf": "",
+    "event_urls": 6,
+    "tried": [
+      {
+        "base": "https://ucnj.org",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      },
+      {
+        "base": "https://www.uniontownship.com",
+        "reason": "event pages found but no downloadable PDF"
+      }
+    ]
+  },
+  {
+    "county": "Guilford",
+    "state": "NC",
+    "zero_doc_projects": 2163,
+    "population": 558816,
+    "base": "https://www.guilfordcountync.gov",
+    "viable": true,
+    "reason": "verified by download",
+    "sample_pdf": "https://s3.amazonaws.com/dl.ncsbe.gov/Candidate%20Filing/NC_Candidate_Felony_Disclosure_Fillable.pdf",
+    "event_urls": 35,
+    "tried": [
+      {
+        "base": "https://www.guilfordcountync.gov",
+        "reason": "verified by download"
+      }
+    ]
+  },
+  {
+    "county": "Fairfax",
+    "state": "VA",
+    "zero_doc_projects": 1632,
+    "population": 1160925,
+    "base": "",
+    "viable": false,
+    "reason": "no candidate site found",
+    "sample_pdf": "",
+    "event_urls": 0,
+    "tried": [
+      {
+        "base": "https://www.fairfaxcounty.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Passaic",
+    "state": "NJ",
+    "zero_doc_projects": 1479,
+    "population": 526597,
+    "base": "",
+    "viable": false,
+    "reason": "no candidate site found",
+    "sample_pdf": "",
+    "event_urls": 0,
+    "tried": [
+      {
+        "base": "https://passaiccountynj.org",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      },
+      {
+        "base": "https://nj.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Davidson",
+    "state": "TN",
+    "zero_doc_projects": 1474,
+    "population": 729505,
+    "base": "",
+    "viable": false,
+    "reason": "no candidate site found",
+    "sample_pdf": "",
+    "event_urls": 0,
+    "tried": [
+      {
+        "base": "https://www.nashville.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Minnehaha",
+    "state": "SD",
+    "zero_doc_projects": 1369,
+    "population": 208639,
+    "base": "https://www.minnehahacounty.gov",
+    "viable": true,
+    "reason": "verified by download",
+    "sample_pdf": "https://www.minnehahacounty.gov/campusMap/campusMap.pdf",
+    "event_urls": 598,
+    "tried": [
+      {
+        "base": "https://www.minnehahacounty.gov",
+        "reason": "verified by download"
+      }
+    ]
+  },
+  {
+    "county": "Yuma",
+    "state": "AZ",
+    "zero_doc_projects": 1345,
+    "population": 220310,
+    "base": "",
+    "viable": false,
+    "reason": "no candidate site found",
+    "sample_pdf": "",
+    "event_urls": 0,
+    "tried": [
+      {
+        "base": "https://www.yumacountyaz.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Gloucester",
+    "state": "NJ",
+    "zero_doc_projects": 1344,
+    "population": 311783,
+    "base": "https://www.gloucestercountynj.gov",
+    "viable": false,
+    "reason": "event pages found but no downloadable PDF",
+    "sample_pdf": "",
+    "event_urls": 9,
+    "tried": [
+      {
+        "base": "https://www.gloucestercountynj.gov",
+        "reason": "event pages found but no downloadable PDF"
+      }
+    ]
+  },
+  {
+    "county": "Philadelphia",
+    "state": "PA",
+    "zero_doc_projects": 1289,
+    "population": 1573916,
+    "base": "https://www.phila.gov",
+    "viable": true,
+    "reason": "verified by download",
+    "sample_pdf": "https://gcc02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.phila.gov%2Fmedia%2F20260727102001%2FHC-768-Aug-2026-FAQ.pdf&amp;data=05%7C02%7Ckim.chantry%40phila.gov%7Cd9811e421cf24aba8ffc08deec141d26%7C2046864f68ea497daf34a6629a6cd700%7C0%7C0%7C639207768292586069%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=%2FJZEilHDCFlL5KUU2KJLFwJZVpt5sJRjD6k6KeAzvLY%3D&amp;reserved=0",
+    "event_urls": 70,
+    "tried": [
+      {
+        "base": "https://www.phila.gov",
+        "reason": "verified by download"
+      }
+    ]
+  },
+  {
+    "county": "Hudson",
+    "state": "NJ",
+    "zero_doc_projects": 1224,
+    "population": 736185,
+    "base": "https://www.hcnj.us",
+    "viable": false,
+    "reason": "event pages found but no downloadable PDF",
+    "sample_pdf": "",
+    "event_urls": 307,
+    "tried": [
+      {
+        "base": "https://www.hcnj.us",
+        "reason": "event pages found but no downloadable PDF"
+      },
+      {
+        "base": "https://hcnj.us",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Santa Clara",
+    "state": "CA",
+    "zero_doc_projects": 1142,
+    "population": 1926325,
+    "base": "",
+    "viable": false,
+    "reason": "no candidate site found",
+    "sample_pdf": "",
+    "event_urls": 0,
+    "tried": [
+      {
+        "base": "https://santaclaracounty.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      },
+      {
+        "base": "https://sccgov.org",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Orleans",
+    "state": "LA",
+    "zero_doc_projects": 1092,
+    "population": 0,
+    "base": "",
+    "viable": false,
+    "reason": "no candidate site found",
+    "sample_pdf": "",
+    "event_urls": 0,
+    "tried": [
+      {
+        "base": "https://nola.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      },
+      {
+        "base": "https://louisiana.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      },
+      {
+        "base": "https://la.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Wayne",
+    "state": "MI",
+    "zero_doc_projects": 1030,
+    "population": 1771063,
+    "base": "https://www.waynecountymi.gov",
+    "viable": true,
+    "reason": "verified by download",
+    "sample_pdf": "https://www.waynecountymi.gov/files/assets/mainsite/v/1/boards-amp-authorities/documents/art-institute-authority/archived/draftaiamin2023-0325.pdf",
+    "event_urls": 2617,
+    "tried": [
+      {
+        "base": "https://www.waynecountymi.gov",
+        "reason": "verified by download"
+      }
+    ]
+  },
+  {
+    "county": "Milwaukee",
+    "state": "WI",
+    "zero_doc_projects": 1005,
+    "population": 924740,
+    "base": "",
+    "viable": false,
+    "reason": "no candidate site found",
+    "sample_pdf": "",
+    "event_urls": 0,
+    "tried": [
+      {
+        "base": "https://county.milwaukee.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      },
+      {
+        "base": "https://milwaukee.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Benton",
+    "state": "AR",
+    "zero_doc_projects": 1005,
+    "population": 321566,
+    "base": "",
+    "viable": false,
+    "reason": "no candidate site found",
+    "sample_pdf": "",
+    "event_urls": 0,
+    "tried": [
+      {
+        "base": "https://bentoncountyar.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      },
+      {
+        "base": "https://ar.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "McLennan",
+    "state": "TX",
+    "zero_doc_projects": 870,
+    "population": 270358,
+    "base": "https://www.mclennan.gov",
+    "viable": false,
+    "reason": "event pages found but no downloadable PDF",
+    "sample_pdf": "",
+    "event_urls": 10,
+    "tried": [
+      {
+        "base": "https://www.mclennan.gov",
+        "reason": "event pages found but no downloadable PDF"
+      },
+      {
+        "base": "https://co.mclennan.tx.us",
+        "reason": "event pages found but no downloadable PDF"
+      }
+    ]
+  },
+  {
+    "county": "DuPage",
+    "state": "IL",
+    "zero_doc_projects": 838,
+    "population": 937142,
+    "base": "",
+    "viable": false,
+    "reason": "no candidate site found",
+    "sample_pdf": "",
+    "event_urls": 0,
+    "tried": [
+      {
+        "base": "https://www.dupagecounty.gov",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  },
+  {
+    "county": "Johnson",
+    "state": "KS",
+    "zero_doc_projects": 835,
+    "population": 632276,
+    "base": "",
+    "viable": false,
+    "reason": "no candidate site found",
+    "sample_pdf": "",
+    "event_urls": 0,
+    "tried": [
+      {
+        "base": "https://www.jocogov.org",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      },
+      {
+        "base": "https://boccmeetings.jocogov.org",
+        "reason": "no sitemap or no event/agenda URLs in it"
+      }
+    ]
+  }
+]

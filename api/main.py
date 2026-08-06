@@ -1732,6 +1732,52 @@ def fetch_document_files(conn, sk: int, base_url: str) -> list[dict[str, Any]]:
     return rows
 
 
+def fetch_spec_citations(conn, project_sk: int) -> list[dict]:
+    """Manufacturers named in this project's specification, with page cites.
+
+    THE TABLE IS CALLED substitution_rulings AND THAT NAME OVERSELLS IT. All 102
+    rows carry ruling='pending' and confidence='reported' -- nobody approved or
+    rejected anything. They are basis-of-design MENTIONS extracted from spec
+    text. Surfacing them as "rulings" would claim an adjudication that did not
+    happen, so the API renames the concept at the boundary and only ships rows
+    that carry both a page number and a verbatim quote. A citation the customer
+    cannot check is not a citation.
+
+    This is a narrower claim than the division list and a much stronger one: it
+    answers "is my product specified" with the sentence that says so.
+    """
+    with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
+        cur.execute(
+            """
+            SELECT proposed_manufacturer AS manufacturer,
+                   proposed_product      AS product,
+                   csi_division, csi_section, page_number, quoted_text,
+                   source_url, ruling, confidence
+              FROM substitution_rulings
+             WHERE project_sk = %s
+               AND proposed_manufacturer IS NOT NULL
+               AND quoted_text IS NOT NULL
+               AND page_number IS NOT NULL
+             ORDER BY csi_division NULLS LAST, page_number
+            """,
+            (project_sk,),
+        )
+        rows = [dict(r) for r in cur.fetchall()]
+
+    # Case-fold duplicates: the extractor emits "Trane" and "TRANE", "Folger
+    # Adam" and "FOLGER ADAM" as separate rows. Same manufacturer on the same
+    # page is one citation, and showing it twice reads as two findings.
+    seen, out = set(), []
+    for r in rows:
+        key = ((r["manufacturer"] or "").strip().lower(), r["csi_division"], r["page_number"])
+        if key in seen:
+            continue
+        seen.add(key)
+        r["manufacturer"] = (r["manufacturer"] or "").strip()
+        out.append(r)
+    return out
+
+
 @app.get("/v1/projects/{project_id}")
 def get_project(project_id: str, request: Request):
     with get_conn() as conn:
@@ -1757,6 +1803,7 @@ def get_project(project_id: str, request: Request):
         host = request.headers.get("host", request.url.netloc)
         base_url = f"{proto}://{host}/"
         detail["documents"] = fetch_document_files(conn, row["project_sk"], base_url)
+        detail["spec_citations"] = fetch_spec_citations(conn, row["project_sk"])
 
     return detail
 

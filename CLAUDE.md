@@ -75,6 +75,41 @@ incident is recorded in `docs/AGENT_STRATEGY.md`; only the directive is here.
   that succeeds into a place nothing reads from is indistinguishable from a step
   that ran.
 
+## 2b. Delegated work — the checker is the definition of done
+
+- **Never accept an agent's self-report as evidence.** A portal adapter, a
+  capture run, a backfill: done means an independent checker passed, not that a
+  report said PASS. `scripts/check-portal-adapters.py` is the model — it imports
+  the adapter, runs discovery, downloads a document and requires CSI structure
+  in the returned bytes. It failed the FIRST reference adapter written against
+  its own contract, which had scraped the wrong page and returned an unrelated
+  PDF. Every agent task must name the checker that will judge it.
+- **Every portal adapter follows `docs/PORTAL_ADAPTER_CONTRACT.md`.** Content-
+  check never status-check; try browser UA + Referer before calling a source
+  dead; rate-limit ≥1s; emit rate and ETA; assert the next step can read the
+  output.
+
+## 2c. Run `git check-ignore -v` BEFORE committing, not after
+
+- **Two ignore rules in this repo silently swallow whole directories.** `/coverage`
+  was Jest's output directory and collides with `coverage/docs` + `coverage/data`
+  (the coverage plan and verified source tables). `.claude/` was an agent-cache
+  rule and also swallowed `.claude/skills`, so a skill could never be committed.
+- **`git add` on an ignored path adds nothing and commits clean.** It looks
+  exactly like success and produces a repo where the file does not exist for any
+  other machine or future session — the same shape as a branch pushed with no
+  PR, or a workflow that never fires.
+- **The guard is `scripts/check-gitignore-collisions.py`, not this note.** A note
+  was written here after the second incident and the third happened 20 minutes
+  later — `test-results/` fell through negations that covered only `docs/` and
+  `data/`. Notes need someone to remember at the moment of the commit, which is
+  the step that keeps failing. The script declares the paths that MUST be
+  versioned and fails if any is unreachable; it runs on every PR via
+  `.github/workflows/gitignore-guard.yml`. **Adding a new content directory means
+  adding it to `PROTECTED`.** It catches untracked files only — git ignores
+  `.gitignore` for already-tracked ones — which is the right scope, since every
+  incident was new content landing in a directory an old rule already covered.
+
 ## 3. Tooling invariants
 
 - **Wait on a sentinel the producer writes, never `pgrep` a process pattern.**
