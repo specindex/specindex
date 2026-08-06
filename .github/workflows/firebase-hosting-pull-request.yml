@@ -13,6 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      # Cheapest possible gate on the frontend/API split. This PR's frontend
+      # may call a route the API does not serve -- the condition that put a
+      # broken signup form in production on 2026-08-05. Static, no credentials,
+      # runs before the build so it fails in seconds rather than minutes.
+      - name: API contract (static)
+        run: python3 scripts/check-api-contract.py
       - run: npm ci && npm run build
         env:
           NEXT_PUBLIC_FIREBASE_API_KEY: ${{ secrets.NEXT_PUBLIC_FIREBASE_API_KEY }}
