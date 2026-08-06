@@ -317,7 +317,21 @@ app = FastAPI(title="SpecIndex API", version="0.1.0")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_methods=["GET", "POST"],
+    # EVERY WRITE METHOD THE API ACTUALLY SERVES. This listed only GET and
+    # POST, so the browser's preflight for a PUT or DELETE came back 400 and
+    # the request was never sent. Reads worked, writes did not, and the
+    # failure never reached the server -- nothing to find in the logs, and a
+    # curl test passes because curl does not enforce CORS.
+    #
+    # That is why user_tracked_projects held ZERO rows for the life of the
+    # product: PUT /v1/me/tracked-projects/{id} is how a project gets tracked,
+    # and no browser was ever allowed to issue it. Tracking is half the moat
+    # under specs-plus-CRM, and it was unreachable from the only client we
+    # have.
+    #
+    # Keep this list in step with the routes. A method served but not listed
+    # here is invisible from the browser and perfectly healthy from curl.
+    allow_methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allow_headers=["*"],
 )
 
