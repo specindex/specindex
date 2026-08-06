@@ -19,6 +19,21 @@ jobs:
       # runs before the build so it fails in seconds rather than minutes.
       - name: API contract (static)
         run: python3 scripts/check-api-contract.py
+      # Same caching as the merge build. This step gates every PR -- it was
+      # the 5m52s that held PR #135 -- so a cold npm install here is paid on
+      # every single pull request.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+      - uses: actions/cache@v4
+        with:
+          path: .next/cache
+          key: nextjs-${{ hashFiles('package-lock.json') }}-${{ hashFiles('app/**', 'components/**', 'lib/**') }}
+          restore-keys: |
+            nextjs-${{ hashFiles('package-lock.json') }}-
+            nextjs-
+
       - run: npm ci && npm run build
         env:
           NEXT_PUBLIC_FIREBASE_API_KEY: ${{ secrets.NEXT_PUBLIC_FIREBASE_API_KEY }}
