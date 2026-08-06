@@ -6,6 +6,7 @@ import { DIVISIONS, divisionBySlug, getProjectsForDivision } from "@/lib/divisio
 import { stateName, formatUsd } from "@/lib/format";
 import { isStillOpen } from "@/lib/stats";
 import { StatusPill } from "@/components/StatusPill";
+import { scopeStaticParams } from "@/lib/buildScope";
 
 type Props = { params: Promise<{ state: string; trade: string }> };
 
@@ -17,7 +18,11 @@ type Props = { params: Promise<{ state: string; trade: string }> };
 // skipped rather than emitted as thin/empty pages, which would be a real
 // SEO liability, not just wasted build time.
 export async function generateStaticParams() {
-  const states = await getStates();
+  // Truncate the STATE LIST, not the resulting params. getStateSample() is a
+  // network round-trip per state, so trimming the output afterwards would
+  // still pay the full fetch cost for all 50 -- the expensive part is the
+  // loop, not the array it produces.
+  const states = scopeStaticParams(await getStates(), "projects/[state]/[trade]");
   const params: { state: string; trade: string }[] = [];
   for (const state of states) {
     const sample = await getStateSample(state);

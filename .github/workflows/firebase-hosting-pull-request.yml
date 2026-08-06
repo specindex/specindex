@@ -13,14 +13,50 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+
       # Cheapest possible gate on the frontend/API split. This PR's frontend
       # may call a route the API does not serve -- the condition that put a
       # broken signup form in production on 2026-08-05. Static, no credentials,
       # runs before the build so it fails in seconds rather than minutes.
       - name: API contract (static)
         run: python3 scripts/check-api-contract.py
+
+
+      # Cache node_modules AND .next/cache. The PR workflow previously had NO
+      # caching at all -- `npm ci` ran cold every time and Next's build cache
+      # was discarded, which for a static export throws away its most useful
+      # optimisation.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+      - uses: actions/cache@v4
+        with:
+          path: .next/cache
+          key: next-${{ runner.os }}-${{ hashFiles('package-lock.json') }}-${{ github.sha }}
+          restore-keys: |
+            next-${{ runner.os }}-${{ hashFiles('package-lock.json') }}-
+            next-${{ runner.os }}-
+
+      # SPECINDEX_PREVIEW_BUILD=1 makes generateStaticParams emit ~10 pages per
+      # route instead of ~27,000 (see lib/buildScope.ts). Ten pages exercise the
+      # same templates, components and CSS as the full set -- a preview needs one
+      # page of each KIND, not one per database row.
+      #
+      # It is set ONLY here. main's deploy workflow does not set it, so a
+      # production build always renders everything; the flag can only ever make
+      # a PREVIEW smaller, never a real deploy.
+
       - run: npm ci && npm run build
         env:
+          # ONE env BLOCK. This step carried TWO `env:` keys -- the preview
+          # flag and the Firebase secrets each declared their own. PyYAML
+          # silently keeps the last duplicate key, which is why local
+          # validation passed, but GitHub Actions refuses to start the run at
+          # all: every build on this branch since 2026-08-05 finished as a
+          # startup failure with zero jobs, and `gh pr checks` reported "no
+          # checks" rather than a failure, so the PR simply sat there.
+          SPECINDEX_PREVIEW_BUILD: "1"
           NEXT_PUBLIC_FIREBASE_API_KEY: ${{ secrets.NEXT_PUBLIC_FIREBASE_API_KEY }}
           NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: ${{ secrets.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN }}
           NEXT_PUBLIC_FIREBASE_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_FIREBASE_PROJECT_ID }}
