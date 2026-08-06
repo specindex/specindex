@@ -103,7 +103,41 @@ def first_pages_text(body: bytes, pages: int = 3) -> str:
         return "", 0
 
 
-def find_spec_urls(client, types, model: str, state: str) -> list[str]:
+class _Timeout(Exception):
+    pass
+
+
+def _alarm(_sig, _frm):  # noqa: ANN001
+    raise _Timeout()
+
+
+def find_spec_urls(client, types, model: str, state: str, timeout_s: int = 120) -> list[str]:
+    """Grounded search for one state's spec book, HARD-BOUNDED.
+
+    The first version had no timeout on the model call and hung for 1h55m on a
+    single state -- 7.68s of CPU across 2h21 of wall clock, no output, and two
+    downstream jobs blocked forever on a sentinel that was never going to be
+    written. A hang is worse than a failure: a failure moves to the next state.
+
+    SIGALRM rather than a client-side timeout because the SDK does not expose
+    one uniformly across transports, and the failure mode being defended against
+    is precisely the one where the SDK never returns.
+    """
+    import signal
+
+    prev = signal.signal(signal.SIGALRM, _alarm)
+    signal.alarm(timeout_s)
+    try:
+        return _find_spec_urls_inner(client, types, model, state)
+    except _Timeout:
+        print(f"[{state}] TIMEOUT after {timeout_s}s -- skipping", flush=True)
+        return []
+    finally:
+        signal.alarm(0)
+        signal.signal(signal.SIGALRM, prev)
+
+
+def _find_spec_urls_inner(client, types, model: str, state: str) -> list[str]:
     prompt = (
         f"Search google for:\n"
         f"1. {state} Department of Transportation Standard Specifications for "
@@ -130,6 +164,11 @@ def main() -> int:
     ap.add_argument("--pause", type=float, default=1.5)
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--sentinel", default=None)
+    # A second pass over the states a first pass missed must NOT overwrite the
+    # first pass's manifest -- that manifest is the only handoff to
+    # registration, and clobbering it would silently discard every book already
+    # captured while looking like a successful run.
+    ap.add_argument("--manifest", default="data/raw/state_dot_specs.json")
     args = ap.parse_args()
 
     from google import genai
@@ -172,6 +211,13 @@ def main() -> int:
 
             print(f"[{state}] KEEP {pages:,}p {len(body)/1e6:.1f}MB {u[:70]}", flush=True)
             manifest.append({"state": state, "url": u, "pages": pages, "bytes": len(body)})
+            # Written after EVERY state, not once at the end. The manifest is
+            # the only handoff to registration, and a run that dies at state 40
+            # otherwise hands over nothing at all despite 39 successful captures.
+            mf = ROOT / args.manifest
+            mf.parent.mkdir(parents=True, exist_ok=True)
+            import json as _json
+            mf.write_text(_json.dumps(manifest, indent=2))
             got += 1
             stored = True
             if not args.dry_run:
@@ -185,7 +231,7 @@ def main() -> int:
         if i % 5 == 0:
             print(f"--- {i}/{len(targets)} states, {got} spec books ---", flush=True)
 
-    out = ROOT / "data" / "raw" / "state_dot_specs.json"
+    out = ROOT / args.manifest
     out.parent.mkdir(parents=True, exist_ok=True)
     import json
     out.write_text(json.dumps(manifest, indent=2))

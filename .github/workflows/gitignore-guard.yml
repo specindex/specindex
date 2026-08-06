@@ -1,0 +1,19 @@
+name: gitignore guard
+
+# Runs on every PR because the failure it catches is invisible locally: `git add`
+# on an ignored path adds nothing and `git commit` succeeds with an empty diff.
+# Three separate drops were silently dropped this way across two sessions before
+# this existed.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Protected paths must be committable
+        run: python3 scripts/check-gitignore-collisions.py

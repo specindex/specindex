@@ -1,0 +1,9 @@
+# King County WA (unincorporated). Seattle city has its own Socrata feed (A1);
+# this covers the county outside city limits, which that feed misses entirely.
+jurisdiction: King County
+state: WA
+county: King
+id_prefix: wa-kingco
+host: https://aca-prod.accela.com
+path: /kingco/Cap/CapHome.aspx?module=Building&TabName=Building
+default_city: Seattle

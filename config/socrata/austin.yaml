@@ -1,0 +1,34 @@
+# Austin Issued Construction Permits. 78 columns; the ones below are verified
+# present in the dataset metadata.
+jurisdiction: Austin
+state: TX
+county: Travis
+domain: data.austintexas.gov
+resource: 3syk-w9eu
+id_prefix: tx-austin
+commercial_filter: "permit_class_mapped='Commercial'"
+fields:
+  permit_number: permit_number
+  description: description
+  status: status_current
+  opened_date: issue_date
+  applied_date: applieddate
+  # Austin publishes NO single valuation column that is broadly populated.
+  # Measured on the 23,715 commercial permits since 2025-01-01:
+  #   total_valuation_remodel  4,773 (20%)
+  #   total_job_valuation      2,004 ( 8%)
+  #   building_valuation       1,574 ( 7%)
+  # Coalesced in that order. Even so most rows carry no value -- that is a
+  # property of the source, not a mapping bug, and it must not be presented as
+  # though the project is worth nothing.
+  value:
+    - total_valuation_remodel
+    - total_job_valuation
+    - building_valuation
+  address: original_address1
+  city: original_city
+  zip: original_zip
+  latitude: latitude
+  longitude: longitude
+  permit_class: permit_class
+  work_type: work_class
