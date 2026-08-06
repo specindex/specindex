@@ -1,0 +1,115 @@
+name: Branch hygiene
+
+# WHY THIS EXISTS. On 2026-08-06 this repo had 138 remote branches and 137 were
+# dead. That is not untidiness, it is a correctness problem: with 137 dead
+# branches, "is there unmerged work?" cannot be answered by looking, and a whole
+# day's work sat on `feat/document-discovery` with no PR ever opened while the
+# PR list showed zero open. It was found by accident.
+#
+# The same session hit that shape three times -- a commit pushed to a branch
+# after its PR merged, bot merges firing no deploys, and the branch above. Every
+# one was work that looked landed and was not, with nothing reporting the gap.
+# So this workflow both PREVENTS the pile rebuilding and REPORTS the specific
+# gap that hid.
+#
+# Deletion is restricted to branches whose PR is merged. A branch with no PR is
+# never deleted automatically -- that is exactly the case that turned out to
+# hold a day of real work, and a robot must not be the thing that decides it was
+# worthless.
+
+on:
+  schedule:
+    - cron: "0 7 * * 1"   # Mondays, 07:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: read
+  issues: write
+
+jobs:
+  hygiene:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Delete branches whose PR is merged
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -uo pipefail
+          default="${{ github.event.repository.default_branch }}"
+          deleted=0
+          # Only branches with a MERGED pr. Content is in the default branch by
+          # definition, so this cannot lose work.
+          gh pr list --state merged --limit 500 --json headRefName,headRepositoryOwner \
+            -q '.[] | select(.headRepositoryOwner.login == "${{ github.repository_owner }}") | .headRefName' \
+            | sort -u > merged.txt || true
+          while read -r b; do
+            [ -z "$b" ] && continue
+            [ "$b" = "$default" ] && continue
+            if git ls-remote --exit-code --heads origin "$b" >/dev/null 2>&1; then
+              git push origin ":refs/heads/$b" >/dev/null 2>&1 && {
+                echo "  deleted $b"; deleted=$((deleted+1)); }
+            fi
+          done < merged.txt
+          echo "deleted=$deleted" >> "$GITHUB_ENV"
+          echo "Deleted $deleted merged branches."
+
+      - name: Report branches carrying unmerged work with no PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -uo pipefail
+          default="${{ github.event.repository.default_branch }}"
+          git fetch --prune origin >/dev/null 2>&1 || true
+
+          gh pr list --state all --limit 500 --json headRefName -q '.[].headRefName' \
+            | sort -u > haspr.txt || true
+
+          : > orphans.txt
+          for ref in $(git branch -r --format='%(refname:short)' | grep '^origin/' | grep -v HEAD); do
+            b="${ref#origin/}"
+            [ "$b" = "$default" ] && continue
+            grep -qxF "$b" haspr.txt && continue
+            # Does it hold a file the default branch does not? That is the test
+            # that mattered: 28 no-PR branches were checked this way and every
+            # one held nothing unique, while feat/document-discovery held a day
+            # of work. A commit count cannot tell those apart -- squash merges
+            # leave every merged branch looking "ahead".
+            base=$(git merge-base "origin/$default" "$ref" 2>/dev/null) || continue
+            uniq=$(git diff --diff-filter=A --name-only "$base" "$ref" 2>/dev/null \
+                   | while read -r f; do
+                       git cat-file -e "origin/$default:$f" 2>/dev/null || echo "$f"
+                     done | head -20)
+            if [ -n "$uniq" ]; then
+              {
+                echo "### \`$b\`"
+                echo '```'
+                echo "$uniq"
+                echo '```'
+              } >> orphans.txt
+            fi
+          done
+
+          if [ -s orphans.txt ]; then
+            {
+              echo "These branches have **no pull request** and hold files that are not on \`$default\`."
+              echo "They are the shape that hid a full day of work on 2026-08-06 -- open a PR or delete deliberately."
+              echo
+              cat orphans.txt
+            } > body.md
+            gh issue create --title "Branch hygiene: unmerged work with no PR" --body-file body.md \
+              || cat body.md
+          else
+            echo "No orphaned work found."
+          fi
+
+      - name: Summary
+        run: |
+          n=$(git ls-remote --heads origin | wc -l | tr -d ' ')
+          echo "### Branch hygiene" >> "$GITHUB_STEP_SUMMARY"
+          echo "- deleted this run: **${deleted:-0}**" >> "$GITHUB_STEP_SUMMARY"
+          echo "- remote branches remaining: **$n**" >> "$GITHUB_STEP_SUMMARY"
