@@ -50,7 +50,18 @@ ROOT = Path(__file__).resolve().parent.parent
 # Where the frontend calls the API from. Template literals like
 # `${API_BASE}/v1/projects?limit=1` and plain "/v1/signup" both appear.
 FRONTEND_DIRS = ["app", "components", "lib"]
-FRONTEND_CALL_RE = re.compile(r"""\$\{API_BASE\}(/v1/[^`"']*)""")
+#
+# TWO forms, because matching only the first has already missed a real outage.
+# The initial version matched `${API_BASE}/v1/...` alone and reported PASS while
+# tracking was broken: lib/tracking.ts routes every call through a local
+# `authenticatedFetch(getToken, "/v1/me/tracked-projects")` helper that puts
+# API_BASE inside the helper, so the path literal never sits next to it. Six
+# endpoints -- the whole tracked-project CRM, which is half the moat -- were
+# invisible to the check that exists to catch exactly this.
+FRONTEND_CALL_RE = re.compile(
+    r"""\$\{API_BASE\}(/v1/[^`"']*)"""      # `${API_BASE}/v1/projects`
+    r"""|["'`](/v1/[^`"']*)["'`]"""          # "/v1/me/tracked-projects"
+)
 
 # FastAPI decorators in api/main.py.
 ROUTE_RE = re.compile(
@@ -132,7 +143,7 @@ def frontend_paths() -> dict[str, list[str]]:
             except (OSError, UnicodeDecodeError):
                 continue
             for m in FRONTEND_CALL_RE.finditer(text):
-                p = normalise(m.group(1))
+                p = normalise(m.group(1) or m.group(2) or "")
                 if p and p != "/":
                     found.setdefault(p, []).append(
                         str(f.relative_to(ROOT)))

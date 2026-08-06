@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import os
+import secrets
 import smtplib
 import sys
 import time
@@ -2169,14 +2170,41 @@ def signup(body: SignupRequest):
     use this endpoint to enumerate which emails already have accounts."""
     full_name = f"{body.first_name} {body.last_name}"
     firebase_auth = _get_firebase_admin_auth()
+
+    # THE ACCOUNT MUST HAVE A PASSWORD PROVIDER OR NO EMAIL IS EVER SENT.
+    #
+    # This used to call create_user(email=..., display_name=...) with no
+    # password, which creates an account carrying NO password provider.
+    # sendPasswordResetEmail() -- which the client fires immediately after this
+    # returns -- then answers auth/user-not-found for it. And because Firebase's
+    # Email Enumeration Protection is on by default, that error is not raised to
+    # the caller: it RESOLVES AS SUCCESS, so the browser shows "Check your
+    # email" for a message that was never sent. Confirmed 2026-08-05 against a
+    # real signup that created the profile row and the Firebase user correctly
+    # and delivered nothing.
+    #
+    # Setting an unguessable random password gives the account a password
+    # provider. Nobody ever learns it -- it exists only so the reset email has
+    # something to reset, and the reset link replaces it.
+    placeholder_password = secrets.token_urlsafe(32)
     try:
-        user = firebase_auth.create_user(email=body.email, display_name=full_name, email_verified=False)
+        user = firebase_auth.create_user(
+            email=body.email, display_name=full_name, email_verified=False,
+            password=placeholder_password)
         firebase_uid = user.uid
     except Exception as e:  # noqa: BLE001 -- covers firebase_admin's EmailAlreadyExistsError generically
         if "EMAIL_ALREADY_EXISTS" not in str(e) and "already exists" not in str(e).lower():
             raise HTTPException(status_code=500, detail="Couldn't create account") from e
         existing = firebase_auth.get_user_by_email(body.email)
         firebase_uid = existing.uid
+        # Repairs accounts created by the buggy version above, which are
+        # otherwise permanently unable to receive a set-password email: no
+        # password provider means every reset silently no-ops forever, and the
+        # user cannot get in by any route. Only touched when the provider is
+        # genuinely absent, so a real user's password is never reset by
+        # someone else submitting the signup form with their address.
+        if not any(p.provider_id == "password" for p in (existing.provider_data or [])):
+            firebase_auth.update_user(firebase_uid, password=placeholder_password)
 
     with get_conn() as conn:
         with conn.cursor() as cur:
