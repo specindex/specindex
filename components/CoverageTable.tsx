@@ -51,7 +51,7 @@ export function CoverageTable({ coverage }: Props) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="GA, Fulton, ArcGIS…"
-          className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-4 py-3 text-base outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
+          className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-4 py-3 text-base outline-none focus:border-[var(--color-green)] focus:ring-1 focus:ring-[var(--color-green)]"
         />
         <div className="mt-4 grid gap-3 sm:grid-cols-3">
           <select
