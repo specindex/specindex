@@ -5,6 +5,10 @@ from __future__ import annotations
 import json
 import os
 import secrets
+
+# PAT deploy-trigger probe: a bot-merged PR must trigger api-deploy.
+# Verified 2026-08-06. Before AUTOMERGE_TOKEN, three PRs merged to main and
+# fired zero workflows, leaving fixes undeployed with no signal.
 import smtplib
 import sys
 import time
