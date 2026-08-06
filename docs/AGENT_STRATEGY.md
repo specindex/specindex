@@ -552,3 +552,97 @@ git show 6df74ed:docs/AGENT_STRATEGY.md
 
 Kept as a pointer rather than 130 lines of dead text, because a strategy
 document that carries its own obsolete history trains readers to skim.
+
+---
+
+## Document discovery: search the way a user searches (added 2026-08-06)
+
+### The incident
+
+Asif googled `1326 Saint Antoine St documents` and got a City of Detroit
+Planning Commission staff report for a project whose SpecIndex record held **0
+documents, 0 rulings, no owner, no architect, no GC**. The PDF names the
+developer (Rock Economic Development Group), six storeys at 101'-6", 214,509
+GSF, and the molecular-imaging / theragnostic / radiopharmacy programme — every
+field the record renders as absent.
+
+Nothing in this repo had ever fetched it. Nothing had ever looked: `grep -r
+detroitmi` over the whole tree returned **zero hits**. Detroit reaches us
+through one pipe, the BSEED permit ArcGIS layer, which is metadata and carries
+no attachments.
+
+The strategy was not wrong — `SPECINDEX_STRATEGY.md` already named council and
+planning packets as the moat. **The crawler was never built.** The gap was
+build, not insight.
+
+### The two-part prompt (use this format verbatim)
+
+```
+Search google for:
+1. project details for <project name> project in <city, state>
+2. document links for me to download
+```
+
+Part 1 is never stored as fact. It exists to make the model resolve what the
+project *is* before it hunts for files — and a resolved project produces better
+file hits. Measured: it outperformed a documents-only query by hand.
+
+Run on **`gemini-3.6-flash`**, not Pro. Flash is correct here under the standing
+routing rule — *Flash where a verifier follows* — and a verifier does follow:
+every URL is probed live before anything is stored. (`gemini-3.5-flash` returned
+0 URLs on the control query; `gemini-2.5-flash` returned prose. Use 3.6.)
+
+### Filenames are reliable; paths are not
+
+This is the finding that makes the whole approach work, and the reason a naive
+`url_resolves()` check throws away real documents.
+
+Asked for the Detroit document, the model returned **five real filenames at five
+wrong paths**. All 404. All became real PDFs after repair. Two independent
+things go wrong, and both were observed on a single document:
+
+| | model returned | actually live |
+|---|---|---|
+| directory | `/files/2025-04/` | `/files/events/2025-04/` |
+| site root | `/sites/detroitmi.portal.gov/` | `/sites/detroitmi.localhost/` |
+
+The marker segment sits **before** the date bucket, not after — a first
+implementation appended it and repaired nothing. `find-project-documents.py`
+probes both axes with HEAD, downloads only on a hit, and **caches the shape per
+domain**, so one probe teaches the crawler that city's layout.
+
+Acceptance is always content-checked: PDF magic number, and not byte-identical
+to the host's known soft-404 body.
+
+### Crawl beats search on economics — by roughly $17,000
+
+Grounded search bills per query. 494,327 in-window projects hold zero documents.
+But documents are published per **meeting**, not per project:
+
+```
+top   25 cities cover 80.5% of in-window zero-document projects
+top  100 cities cover 90.3%
+top  300 cities cover 96.6%
+```
+
+So `crawl-municipal-events.py` is the main line and search is the long-tail
+fallback. One pass over a city's planning calendar captures staff reports for
+every project it heard, at no per-project cost, and keeps working for projects
+not yet ingested. Detroit sample: 6 event pages → 14 PDFs, all address-keyed
+(`3000 Seminole`, `479 Willis`, `1914 Edison`) and therefore matchable.
+
+**Known blocker:** 212,978 in-window zero-doc projects (43%) have a **blank
+city** and state NY. City-based crawling cannot reach them until that is
+relabelled — relabel, never delete.
+
+### Per-state fleet
+
+`scripts/run-state-document-agents.sh GA FL TX` (or `ALL`). One worker per
+state, **background bash, not Agent-tool agents** — the agent runner kills a
+subagent after 600s of no output and a state sweep is hours of deliberately
+rate-limited probing. Each worker writes `logs/state-docs/<ST>.log` and a
+sentinel on clean exit; wait on the sentinel, never `pgrep`.
+
+Capture is deliberately **not** filtered by project match. A held document with
+no project attached is an asset; a document never fetched is gone once the city
+rotates its site.
