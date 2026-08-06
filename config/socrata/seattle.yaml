@@ -1,0 +1,26 @@
+# Seattle Building Permits. Field names verified live 2026-08-06 against the
+# dataset METADATA endpoint (/api/views/<id>.json), not a sample row -- the
+# first row returned had no date fields at all because they were null, and
+# guessing from one record is how a mapping silently drops a column.
+jurisdiction: Seattle
+state: WA
+county: King
+domain: data.seattle.gov
+resource: 76t5-zqzr
+id_prefix: wa-seattle
+commercial_filter: "permitclassmapped='Non-Residential'"   # 51,743 rows, verified
+fields:
+  permit_number: permitnum
+  description: description
+  status: statuscurrent
+  opened_date: issueddate
+  applied_date: applieddate
+  value:
+    - estprojectcost
+  address: originaladdress1
+  city: originalcity
+  zip: originalzip
+  latitude: latitude
+  longitude: longitude
+  permit_class: permitclass
+  work_type: permittypedesc
