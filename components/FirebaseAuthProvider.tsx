@@ -4,6 +4,8 @@ import { createContext, useContext, useEffect, useState } from "react";
 import {
   onAuthStateChanged,
   signInWithPopup,
+  signInWithEmailAndPassword,
+  sendPasswordResetEmail,
   signOut as firebaseSignOut,
   GoogleAuthProvider,
   type User,
@@ -42,6 +44,8 @@ type FirebaseAuthContextValue = {
   user: User | null;
   getToken: GetToken;
   signIn: () => Promise<void>;
+  signInWithPassword: (email: string, password: string) => Promise<void>;
+  sendReset: (email: string) => Promise<void>;
   openStartFree: () => void;
   signOut: () => Promise<void>;
 };
@@ -115,6 +119,33 @@ function FirebaseAuthInner({ children }: { children: React.ReactNode }) {
     setShowSignInModal(true);
   }
 
+  // Email + password sign-in. The modal's Continue button was hardcoded
+  // `disabled` with the note "email sign-in has no backend today... would need
+  // Firebase's Email Link passwordless flow enabled in the Console". That
+  // reasoning was true when written and is now stale: email/password was
+  // enabled in the console on 2026-08-06, and it is simpler than the
+  // passwordless flow it was waiting on -- no action URL, no link handling.
+  //
+  // Until then a first-time user could create an account and never log in.
+  // Signup worked because the API provisions accounts server-side with the
+  // Admin SDK, which bypasses the provider setting entirely, so the door
+  // looked open from the outside and was locked from the inside.
+  async function signInWithPassword(email: string, password: string): Promise<void> {
+    if (!auth) throw new Error("auth unavailable");
+    await signInWithEmailAndPassword(auth, email, password);
+    setShowSignInModal(false);
+  }
+
+  async function sendReset(email: string): Promise<void> {
+    if (!auth) throw new Error("auth unavailable");
+    // Points at the page that EXISTS. The PRD names /auth/action, but that
+    // route 404s today, and sending a reset link to a 404 is worse than not
+    // sending one.
+    await sendPasswordResetEmail(auth, email, {
+      url: `${window.location.origin}/set-password/`,
+    });
+  }
+
   async function signInWithGoogle(): Promise<void> {
     if (!auth) return;
     setShowSignInModal(false);
@@ -143,6 +174,8 @@ function FirebaseAuthInner({ children }: { children: React.ReactNode }) {
     isPendingApproval,
     getToken,
     signIn,
+    signInWithPassword,
+    sendReset,
     openStartFree: () => setShowStartFreeModal(true),
     signOut,
   };
@@ -152,7 +185,12 @@ function FirebaseAuthInner({ children }: { children: React.ReactNode }) {
       {children}
       <AuthSync onPendingApproval={() => setIsPendingApproval(true)} />
       {showSignInModal && (
-        <SignInModal onGoogle={signInWithGoogle} onClose={() => setShowSignInModal(false)} />
+        <SignInModal
+          onGoogle={signInWithGoogle}
+          onPassword={signInWithPassword}
+          onReset={sendReset}
+          onClose={() => setShowSignInModal(false)}
+        />
       )}
       {showStartFreeModal && <StartFreeModal onClose={() => setShowStartFreeModal(false)} />}
     </FirebaseAuthContext.Provider>

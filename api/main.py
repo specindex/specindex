@@ -1281,6 +1281,22 @@ class OrgInviteRequest(BaseModel):
         return v
 
 
+def _smtp_send(msg) -> None:
+    """One place that knows how to talk to the mail server, so switching
+    providers is a config change. Port 465 is implicit TLS (Gmail); 587 is
+    STARTTLS (Postmark, SES, most others). Picking the wrong one fails with a
+    timeout rather than a clear error, which is why this is centralised."""
+    if EMAIL_SMTP_PORT == 465:
+        with smtplib.SMTP_SSL(EMAIL_SMTP_HOST, EMAIL_SMTP_PORT, timeout=20) as s:
+            s.login(EMAIL_SMTP_USERNAME, EMAIL_SMTP_PASSWORD)
+            s.send_message(msg)
+    else:
+        with smtplib.SMTP(EMAIL_SMTP_HOST, EMAIL_SMTP_PORT, timeout=20) as s:
+            s.starttls()
+            s.login(EMAIL_SMTP_USERNAME, EMAIL_SMTP_PASSWORD)
+            s.send_message(msg)
+
+
 def _send_set_password_email(to_email: str, first_name: str, link: str) -> str | None:
     """Deliver the set-password link over our own SMTP. Returns None on success
     or the error string -- never raises, because the account already exists by
@@ -1302,9 +1318,7 @@ def _send_set_password_email(to_email: str, first_name: str, link: str) -> str |
             f"specindex.ai and you'll get a fresh one.\n\n"
             f"-- SpecIndex\n"
         )
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=15) as smtp:
-            smtp.login(EMAIL_SMTP_USERNAME, EMAIL_SMTP_PASSWORD)
-            smtp.send_message(msg)
+        _smtp_send(msg)
         return None
     except Exception as e:  # noqa: BLE001 -- see docstring
         return str(e)
@@ -1322,9 +1336,7 @@ def _send_org_invite_email(to_email: str, invite_token: str) -> str | None:
             "You've been invited to join a team on SpecIndex.\n\n"
             f"Accept your invite: https://specindex.ai/account/team/accept?token={invite_token}\n"
         )
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=10) as smtp:
-            smtp.login(EMAIL_SMTP_USERNAME, EMAIL_SMTP_PASSWORD)
-            smtp.send_message(msg)
+        _smtp_send(msg)
         return None
     except Exception as e:  # noqa: BLE001 -- see _send_contact_notification
         return str(e)
@@ -1937,6 +1949,15 @@ def ask_about_my_territory(body: AskRequest, firebase_uid: str = Depends(require
 # here as Cloud Run env vars instead. Notification is best-effort: a
 # missing/misconfigured credential must never lose a real submission, it
 # just goes unnotified (see notify_error on the row).
+# WHERE THE MAIL GOES OUT. Gmail/Workspace works and is the wrong long-term
+# answer: it caps around 2,000 recipients a day and returns NO delivery
+# webhooks, no bounce data and no complaint data, so verification drop-off is
+# undiagnosable -- and deliverability failures are silent by nature. Moving to
+# Postmark is then a pure env change (EMAIL_SMTP_HOST=smtp.postmarkapp.com,
+# port 587) with no code deploy.
+EMAIL_SMTP_HOST = os.environ.get("EMAIL_SMTP_HOST", "smtp.gmail.com")
+EMAIL_SMTP_PORT = int(os.environ.get("EMAIL_SMTP_PORT", "465"))
+SET_PASSWORD_URL = os.environ.get("SET_PASSWORD_URL", "https://specindex.ai/set-password/")
 EMAIL_SMTP_USERNAME = os.environ.get("EMAIL_SMTP_USERNAME", "")
 # WHO THE MAIL APPEARS TO COME FROM, separate from who authenticates to send it.
 # Authentication is asif@specindex.ai (a real Workspace mailbox with a password);
@@ -2012,9 +2033,7 @@ def _send_contact_notification(sub: ContactSubmission) -> str | None:
             f"Product categories: {sub.categories or 'Not specified'}\n"
             f"Page: {sub.source_path or 'unknown'}\n"
         )
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=10) as smtp:
-            smtp.login(EMAIL_SMTP_USERNAME, EMAIL_SMTP_PASSWORD)
-            smtp.send_message(msg)
+        _smtp_send(msg)
         return None
     except Exception as e:  # noqa: BLE001 -- deliberately broad, see docstring
         return str(e)
@@ -2280,7 +2299,17 @@ def signup(body: SignupRequest):
     # succeeded so the client stops having to guess.
     emailed = False
     try:
-        link = firebase_auth.generate_password_reset_link(body.email)
+        # LAND ON OUR DOMAIN, NOT firebaseapp.com. Without ActionCodeSettings
+        # the admin SDK mints a link pointing at Firebase's default action
+        # handler, so a stranger who half-trusted the email arrives on a domain
+        # they have never heard of -- on the single highest-drop-off screen in
+        # the funnel. Points at /set-password/, which exists and returns 200;
+        # the PRD names /auth/action, which 404s today, and a reset link to a
+        # 404 is worse than no link at all.
+        link = firebase_auth.generate_password_reset_link(
+            body.email,
+            firebase_auth.ActionCodeSettings(url=SET_PASSWORD_URL),
+        )
         err = _send_set_password_email(body.email, body.first_name, link)
         emailed = err is None
         if err:
