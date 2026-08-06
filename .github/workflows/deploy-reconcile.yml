@@ -1,0 +1,106 @@
+# Is what's deployed the same as main? If not, deploy.
+#
+# WHY THIS HAS TO EXIST. api-deploy.yml runs on pushes to main that touch
+# api/**, which is correct and is not sufficient, because a merge can land on
+# main WITHOUT producing a push event that GitHub will act on:
+#
+#   GitHub does not trigger workflows for pushes made using GITHUB_TOKEN.
+#
+# pr-flow.yml enables auto-merge with GITHUB_TOKEN, so PRs it merges are
+# attributed to github-actions[bot] and fire NOTHING. Observed on 2026-08-05:
+# PR #129 merged to main and produced zero workflow runs for its SHA -- no API
+# deploy, no site deploy. The fix that PR carried sat in main, undeployed, and
+# the only symptom was the original bug still happening. That is the same shape
+# as the outage that started this whole thread, arriving by a different route.
+#
+# A TRIGGER IS A HOPE; A RECONCILER IS A GUARANTEE. Rather than enumerate every
+# way an event can be swallowed -- bot tokens, path filters, skipped runs,
+# cancelled concurrency -- this compares the world to the intent and corrects
+# the difference. Every image is tagged with the commit that built it
+# (api-deploy.yml), so "what is running" is directly readable and the comparison
+# is a fact rather than an inference.
+#
+# THE ALTERNATIVE, if you would rather fix the cause: give pr-flow.yml a
+# personal access token instead of GITHUB_TOKEN, so its merges are attributed
+# to a user and trigger normally. That needs a new secret and a token to
+# rotate. This needs neither, and it also catches the failures a PAT would not.
+
+name: Deploy reconcile
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+  actions: write
+
+concurrency:
+  group: deploy-reconcile
+  cancel-in-progress: false
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+
+      - uses: google-github-actions/setup-gcloud@v2
+        with:
+          project_id: specindex-ai
+
+      - name: Compare deployed image to main
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          MAIN_SHA=$(git rev-parse HEAD)
+
+          # The running image is tagged with the commit that built it.
+          IMAGE=$(gcloud run services describe specindex-api --region us-central1 \
+                    --format='value(spec.template.spec.containers[0].image)')
+          echo "main:     $MAIN_SHA"
+          echo "deployed: $IMAGE"
+
+          # Deploys are BY DIGEST, so the tag is not in the running image
+          # reference. Ask Artifact Registry which tags point at that digest.
+          DIGEST="${IMAGE##*@}"
+          TAGS=$(gcloud artifacts docker tags list \
+                   us-central1-docker.pkg.dev/specindex-ai/cloud-run-source-deploy/specindex-api \
+                   --format='value(tag,version)' 2>/dev/null \
+                 | grep "$DIGEST" | awk '{print $1}' | tr '\n' ' ')
+          echo "tags on the running digest: ${TAGS:-none}"
+
+          if echo "$TAGS" | grep -q "$MAIN_SHA"; then
+            echo "in_sync=true" >> "$GITHUB_OUTPUT"
+            echo "deployed API matches main"
+          else
+            echo "in_sync=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::deployed API does NOT match main ($MAIN_SHA) -- redeploying"
+          fi
+
+      - name: Deploy the API to match main
+        if: steps.check.outputs.in_sync != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run api-deploy.yml --ref main
+          echo "### Deploy reconcile: triggered an API deploy" >> $GITHUB_STEP_SUMMARY
+          echo "main was ahead of the deployed revision." >> $GITHUB_STEP_SUMMARY
+
+      - name: Report
+        if: always()
+        run: |
+          echo "### Deploy reconcile: ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "API in sync with main: ${{ steps.check.outputs.in_sync }}" >> $GITHUB_STEP_SUMMARY
