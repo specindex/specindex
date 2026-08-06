@@ -1277,6 +1277,35 @@ class OrgInviteRequest(BaseModel):
         return v
 
 
+def _send_set_password_email(to_email: str, first_name: str, link: str) -> str | None:
+    """Deliver the set-password link over our own SMTP. Returns None on success
+    or the error string -- never raises, because the account already exists by
+    the time this runs and a mail failure must not turn a successful signup
+    into a 500."""
+    if not EMAIL_SMTP_USERNAME or not EMAIL_SMTP_PASSWORD:
+        return "EMAIL_SMTP_USERNAME/PASSWORD not configured"
+    try:
+        msg = EmailMessage()
+        msg["Subject"] = "Set your SpecIndex password"
+        msg["From"] = EMAIL_SMTP_USERNAME
+        msg["To"] = to_email
+        msg["Reply-To"] = CONTACT_NOTIFY_TO
+        msg.set_content(
+            f"Hi {first_name or 'there'},\n\n"
+            f"Your SpecIndex account is ready and your 14-day trial has started.\n\n"
+            f"Set your password to get in:\n{link}\n\n"
+            f"The link expires in an hour. If it does, use \"Forgot password\" on "
+            f"specindex.ai and you'll get a fresh one.\n\n"
+            f"-- SpecIndex\n"
+        )
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=15) as smtp:
+            smtp.login(EMAIL_SMTP_USERNAME, EMAIL_SMTP_PASSWORD)
+            smtp.send_message(msg)
+        return None
+    except Exception as e:  # noqa: BLE001 -- see docstring
+        return str(e)
+
+
 def _send_org_invite_email(to_email: str, invite_token: str) -> str | None:
     if not EMAIL_SMTP_USERNAME or not EMAIL_SMTP_PASSWORD:
         return "EMAIL_SMTP_USERNAME/PASSWORD not configured"
@@ -2217,7 +2246,37 @@ def signup(body: SignupRequest):
                 (firebase_uid, body.email, full_name, body.company),
             )
         conn.commit()
-    return {"email": body.email}
+
+    # SEND THE SET-PASSWORD EMAIL FROM HERE, over our own SMTP.
+    #
+    # It used to be sent by the browser via Firebase's sendPasswordResetEmail,
+    # which delivers from noreply@specindex-ai.firebaseapp.com -- a domain with
+    # no SPF/DKIM alignment to specindex.ai. Firebase reported success (verified
+    # 2026-08-05: accounts:sendOobCode returned 200 with the address echoed
+    # back) and the mail never arrived at an iCloud inbox. Two separate reasons
+    # that path cannot be trusted:
+    #
+    #   * Delivery is invisible to us. Firebase accepts, and whether anything
+    #     reached the recipient is unknowable from our side.
+    #   * Email Enumeration Protection makes a genuine failure -- an account
+    #     with no password provider -- return success too, so "accepted" says
+    #     nothing about whether an email exists to send.
+    #
+    # Our own SMTP has a measured 10-of-10 delivery record on /v1/contact and
+    # fails loudly and locally. The admin SDK still MINTS the link (only
+    # Firebase can), but we carry it. The response reports whether the send
+    # succeeded so the client stops having to guess.
+    emailed = False
+    try:
+        link = firebase_auth.generate_password_reset_link(body.email)
+        err = _send_set_password_email(body.email, body.first_name, link)
+        emailed = err is None
+        if err:
+            print(f"[signup] set-password email FAILED for {body.email}: {err}", flush=True)
+    except Exception as e:  # noqa: BLE001 -- the account exists; never 500 over the email
+        print(f"[signup] could not generate reset link for {body.email}: {e}", flush=True)
+
+    return {"email": body.email, "emailed": emailed}
 
 
 # docs/architecture-2026/04-productization.md P1: enforces the Free-tier

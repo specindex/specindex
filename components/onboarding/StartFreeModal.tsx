@@ -38,16 +38,26 @@ export function StartFreeModal({ onClose }: { onClose: () => void }) {
         }),
       });
       if (!res.ok) throw new Error(await res.text());
-      // NEVER claim an email was sent without sending one. `auth` is null
-      // whenever the Firebase config is missing (lib/firebase.ts returns null
-      // rather than throwing), and this used to skip the send and fall
-      // straight through to setSent(true) -- showing "Check your email" for a
-      // message that was never attempted. The account is created either way,
-      // so silently succeeding here strands the user with an account they
-      // cannot get into and no reason to suspect it.
+
+      // The API now sends the set-password email itself over our own SMTP and
+      // reports whether it succeeded. Firebase's hosted delivery was accepting
+      // the request and delivering nothing to iCloud, and because it accepts
+      // unconditionally the browser could never tell. `emailed` is a real
+      // answer from the server rather than an assumption.
+      const data = await res.json().catch(() => ({}) as { emailed?: boolean });
+      if (data.emailed) {
+        setSent(true);
+        return;
+      }
+
+      // Fallback for the case where the server could not send. Still better
+      // than nothing, but NEVER claim success without attempting a send --
+      // `auth` is null whenever the Firebase config is missing, and this used
+      // to fall straight through to setSent(true), stranding the user with an
+      // account they cannot get into and no reason to suspect it.
       if (!auth) {
         setError(
-          "Your account was created, but we couldn't send the set-password email. Contact support@specindex.ai.",
+          "Your account was created, but we couldn't send the set-password email. Contact hello@specindex.ai.",
         );
         return;
       }
