@@ -16,6 +16,7 @@
 !/coverage/docs/
 !/coverage/data/
 !/coverage/test-results/
+!/coverage/pull-log/
 
 # next.js
 /.next/
@@ -74,3 +75,9 @@ data/documents/
 # not corpus data. See scripts/gemini_discovery_chat.py.
 data/gemini_sessions/
 data/gemini_query_cache/
+
+# Pipeline document output. PDFs live in GCS, never in git -- a spec book is
+# 300-1,000+ pages and the repo holds code and source tables only.
+*.pdf
+specs/
+!coverage/docs/*.pdf

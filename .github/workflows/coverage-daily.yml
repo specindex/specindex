@@ -1,0 +1,77 @@
+# Daily coverage pull: A1/A2/A4 APIs + a Tier 1 bid-portal delta check.
+# Section 4 of coverage/docs/coverage-plan-v2.md.
+#
+# DEGRADES INSTEAD OF FAILING. A2 (ArcGIS) is not built yet and A4 (SAM.gov)
+# needs an API key Asif has to supply, so each step is guarded on the artefact
+# existing. A red X every morning for a thing that was never built teaches
+# everyone to ignore the schedule, and this repo already learned that nine
+# workflows carried a commented-out `schedule:` and not one had ever run.
+
+name: coverage-daily
+
+on:
+  schedule:
+    - cron: "0 9 * * *"   # 09:00 UTC, after most portals post overnight
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  # Never overlap: two runs appending to the same pull log interleave rows.
+  group: coverage-daily
+  cancel-in-progress: false
+
+jobs:
+  pull:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: pip install -q pyyaml pypdf psycopg2-binary google-cloud-storage
+
+      - name: A1 Socrata permit feeds
+        run: |
+          shopt -s nullglob
+          cfgs=(config/socrata/*.yaml)
+          if [ ${#cfgs[@]} -eq 0 ]; then echo "no A1 configs yet"; exit 0; fi
+          python3 scripts/pull-socrata-permits.py "${cfgs[@]}" --since 2025-01-01 --limit 20000
+
+      - name: A2 ArcGIS feature services
+        run: |
+          if [ ! -f scripts/pull-arcgis-permits.py ]; then
+            echo "A2 not built yet -- skipping (see coverage plan section 2)"; exit 0; fi
+          shopt -s nullglob
+          cfgs=(config/arcgis/*.yaml)
+          [ ${#cfgs[@]} -eq 0 ] && { echo "no A2 configs"; exit 0; }
+          python3 scripts/pull-arcgis-permits.py "${cfgs[@]}" --since 2025-01-01
+
+      - name: A4 SAM.gov
+        env:
+          SAM_API_KEY: ${{ secrets.SAM_API_KEY }}
+        run: |
+          if [ -z "$SAM_API_KEY" ]; then
+            echo "SAM_API_KEY not set -- A4 skipped. A human registers for the key."; exit 0; fi
+          if [ ! -f scripts/pull-sam-opportunities.py ]; then
+            echo "A4 not built yet -- skipping"; exit 0; fi
+          python3 scripts/pull-sam-opportunities.py --since 2025-01-01
+
+      - name: Tier 1 bid-portal delta check
+        run: |
+          # Discovery only -- no downloads. Cheap signal that a portal has
+          # changed or died between weekly crawls.
+          python3 scripts/run-portal-capture.py --delta-only --tier 1 || \
+            echo "delta check unavailable (A3 runner not built yet)"
+
+      - name: Commit pull log
+        run: |
+          git config user.name  "specindex-bot"
+          git config user.email "bot@specindex.ai"
+          git add coverage/pull-log/ data/raw/socrata-*.json 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "coverage-daily: $(date -u +%Y-%m-%d) pull"
+          git push || echo "nothing to push"

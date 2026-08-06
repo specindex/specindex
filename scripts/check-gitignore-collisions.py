@@ -43,6 +43,7 @@ PROTECTED = [
     "coverage/docs",         # coverage plan
     "coverage/data",         # verified source tables
     "coverage/test-results", # pipeline evidence -- the diff baseline
+    "coverage/pull-log",     # append-only run logs; missed on the 4th collision
     "scripts",
     "db/migrations",
     "docs",
