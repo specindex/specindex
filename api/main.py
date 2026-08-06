@@ -660,10 +660,19 @@ def _project_filter_clauses(
         clauses.append("p.county = %s")
         params.append(county)
     if category:
-        clauses.append(
-            "EXISTS (SELECT 1 FROM jsonb_array_elements_text(p.competitor_watch) elem WHERE elem ILIKE %s)"
-        )
-        params.append(f"%{category}%")
+        # COMMA-SEPARATED, matching the convention `status` and `state` already
+        # use. Onboarding asks for the rep's trades as a MULTI-select and the
+        # frontend was sending only categories[0], so a rep who picked
+        # Electrical, Lighting and Controls was filtered on one of the three and
+        # silently lost two thirds of their stated intent. Answering a
+        # multi-select with a single-value filter is worse than not asking.
+        cats = [c.strip() for c in category.split(",") if c.strip()]
+        if cats:
+            clauses.append(
+                "EXISTS (SELECT 1 FROM jsonb_array_elements_text(p.competitor_watch) elem "
+                "WHERE elem ILIKE ANY(%s))"
+            )
+            params.append([f"%{c}%" for c in cats])
     if year:
         clauses.append("EXTRACT(YEAR FROM p.opened_or_announced_date) = %s")
         params.append(year)
