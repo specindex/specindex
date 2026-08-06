@@ -3,16 +3,15 @@
 import { useEffect, useState } from "react";
 import { Logo } from "@/components/Logo";
 
-// Matches the layout pattern requested (valuecase.io's login screen):
-// centered card, wordmark, "Welcome" heading, an email field + Continue as
-// the primary action, a divider, then provider buttons below. Only Google
-// is wired -- email sign-in has no backend today (would need Firebase's
-// Email Link passwordless flow enabled in the Console plus an action URL,
-// the same kind of manual setup Microsoft needs) and Microsoft needs the
-// OAuth provider enabled in Firebase Console + an Azure AD app
-// registration. Both render as real, visible options (not hidden) so the
-// screen matches the target design, but stay disabled until that setup
-// happens rather than silently failing.
+// Centered card, wordmark, "Welcome" heading, email + password, a divider,
+// then Google. Two working ways in and nothing else.
+//
+// A DISABLED "Continue with Microsoft" used to sit below Google, greyed out,
+// waiting on an Azure AD app registration nobody had started. A visible
+// control that cannot be used is worse than an absent one: it advertises a
+// capability we do not have, and on a sign-in screen a rep whose company runs
+// Microsoft 365 reads it as "my login is here but broken" rather than "not
+// offered". Add it back when the provider is actually configured.
 export function SignInModal({
   onGoogle,
   onPassword,
@@ -213,20 +212,6 @@ export function SignInModal({
             Continue with Google
           </button>
 
-          <button
-            type="button"
-            disabled
-            title="Coming soon -- ask your admin if you need Microsoft sign-in sooner"
-            className="flex cursor-not-allowed items-center justify-center gap-3 rounded-md border border-[var(--color-border)] bg-[var(--color-gray-100)] px-4 py-2.5 text-sm font-medium text-[var(--color-gray-400)]"
-          >
-            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-              <path fill="#F25022" d="M0 0h7.6v7.6H0z" />
-              <path fill="#7FBA00" d="M8.4 0H16v7.6H8.4z" />
-              <path fill="#00A4EF" d="M0 8.4h7.6V16H0z" />
-              <path fill="#FFB900" d="M8.4 8.4H16V16H8.4z" />
-            </svg>
-            Continue with Microsoft
-          </button>
         </div>
       </div>
     </div>
