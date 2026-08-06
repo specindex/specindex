@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import secrets
 
 # PAT deploy-trigger probe: a bot-merged PR must trigger api-deploy.
@@ -1966,6 +1967,15 @@ def ask_about_my_territory(body: AskRequest, firebase_uid: str = Depends(require
 # port 587) with no code deploy.
 EMAIL_SMTP_HOST = os.environ.get("EMAIL_SMTP_HOST", "smtp.gmail.com")
 EMAIL_SMTP_PORT = int(os.environ.get("EMAIL_SMTP_PORT", "465"))
+# Domains where the part after the @ tells us nothing about who someone works
+# for. Everything else is treated as a company domain, which is how a rep at
+# kirkwoodlighting.com gets an agency name without being asked for one.
+CONSUMER_EMAIL_DOMAINS = {
+    "gmail.com", "googlemail.com", "yahoo.com", "hotmail.com", "outlook.com",
+    "live.com", "msn.com", "icloud.com", "me.com", "mac.com", "aol.com",
+    "protonmail.com", "proton.me", "gmx.com", "mail.com", "zoho.com",
+    "comcast.net", "verizon.net", "att.net", "sbcglobal.net", "cox.net",
+}
 SET_PASSWORD_URL = os.environ.get("SET_PASSWORD_URL", "https://specindex.ai/set-password/")
 EMAIL_SMTP_USERNAME = os.environ.get("EMAIL_SMTP_USERNAME", "")
 # WHO THE MAIL APPEARS TO COME FROM, separate from who authenticates to send it.
@@ -2209,10 +2219,25 @@ def start_trial(
 
 
 class SignupRequest(BaseModel):
-    first_name: str = Field(min_length=1, max_length=200)
-    last_name: str = Field(min_length=1, max_length=200)
+    # EMAIL AND PASSWORD ARE THE ONLY REQUIRED FIELDS. The P0 mock's signup
+    # screen is two fields or one Google click, and the PRD is explicit: "No
+    # first name, last name, company, phone or role field." The old form asked
+    # for four fields and still could not log anyone in.
+    #
+    # The rest stay OPTIONAL rather than being deleted so an older deployed
+    # frontend keeps working -- the two halves deploy independently and either
+    # can land first, so a required field removed on the server must not 422
+    # a client that still sends it.
     email: str = Field(min_length=3, max_length=320)
-    company: str = Field(min_length=1, max_length=200)
+    # WHEN SUPPLIED, THIS TAKES EMAIL OFF THE CRITICAL PATH. The user picks a
+    # password and is signed in immediately; no inbox round trip stands between
+    # signup and the product. Deliverability failures are silent by nature
+    # (see the 2026-08-05 outage), so the fewer things that depend on an email
+    # arriving, the fewer ways a signup can strand someone.
+    password: str | None = Field(default=None, min_length=10, max_length=200)
+    first_name: str | None = Field(default=None, max_length=200)
+    last_name: str | None = Field(default=None, max_length=200)
+    company: str | None = Field(default=None, max_length=200)
 
     @field_validator("email")
     @classmethod
@@ -2237,7 +2262,22 @@ def signup(body: SignupRequest):
     EmailAlreadyExistsError) is treated as a normal "log in instead" case,
     not an error -- returns the same shape either way so the client can't
     use this endpoint to enumerate which emails already have accounts."""
-    full_name = f"{body.first_name} {body.last_name}"
+    # Derived, not demanded. The signup screen no longer asks for a name, so
+    # fall back to the local part of the address -- "dana@kirkwoodlighting.com"
+    # becomes "Dana". A note in the CRM attributed to a readable name is worth
+    # more than a field that costs a signup.
+    full_name = " ".join(p for p in [body.first_name, body.last_name] if p).strip()
+    if not full_name:
+        local = body.email.split("@")[0]
+        full_name = re.sub(r"[._-]+", " ", local).title() or None
+
+    # Company from the email domain unless it is a consumer provider, in which
+    # case we simply do not know it and say nothing rather than storing junk.
+    company = body.company
+    if not company:
+        domain = body.email.split("@")[-1].lower()
+        if domain not in CONSUMER_EMAIL_DOMAINS:
+            company = re.sub(r"\.[a-z.]+$", "", domain).replace("-", " ").title() or None
     firebase_auth = _get_firebase_admin_auth()
 
     # THE ACCOUNT MUST HAVE A PASSWORD PROVIDER OR NO EMAIL IS EVER SENT.
@@ -2255,7 +2295,10 @@ def signup(body: SignupRequest):
     # Setting an unguessable random password gives the account a password
     # provider. Nobody ever learns it -- it exists only so the reset email has
     # something to reset, and the reset link replaces it.
-    placeholder_password = secrets.token_urlsafe(32)
+    # The user's own password when they chose one; otherwise an unguessable
+    # placeholder that exists only so the reset email has something to reset.
+    chose_password = bool(body.password)
+    placeholder_password = body.password or secrets.token_urlsafe(32)
     try:
         user = firebase_auth.create_user(
             email=body.email, display_name=full_name, email_verified=False,
@@ -2283,7 +2326,7 @@ def signup(body: SignupRequest):
                 VALUES (%s, %s, %s, %s, 'trial', now() + interval '14 days')
                 ON CONFLICT (firebase_uid) DO NOTHING
                 """,
-                (firebase_uid, body.email, full_name, body.company),
+                (firebase_uid, body.email, full_name, company),
             )
         conn.commit()
 
@@ -2306,6 +2349,14 @@ def signup(body: SignupRequest):
     # fails loudly and locally. The admin SDK still MINTS the link (only
     # Firebase can), but we carry it. The response reports whether the send
     # succeeded so the client stops having to guess.
+    # NO EMAIL ON THE CRITICAL PATH. When the user chose their own password
+    # they can sign in right now, so a set-password link would be noise at
+    # best and a dead end at worst. The email below exists only for the path
+    # where the server had to invent the password -- which is exactly the path
+    # that stranded every signup on 2026-08-05 when delivery failed silently.
+    if chose_password:
+        return {"email": body.email, "emailed": False, "can_sign_in": True}
+
     emailed = False
     try:
         # LAND ON OUR DOMAIN, NOT firebaseapp.com. Without ActionCodeSettings
@@ -2319,14 +2370,14 @@ def signup(body: SignupRequest):
             body.email,
             firebase_auth.ActionCodeSettings(url=SET_PASSWORD_URL),
         )
-        err = _send_set_password_email(body.email, body.first_name, link)
+        err = _send_set_password_email(body.email, (full_name or "").split(" ")[0], link)
         emailed = err is None
         if err:
             print(f"[signup] set-password email FAILED for {body.email}: {err}", flush=True)
     except Exception as e:  # noqa: BLE001 -- the account exists; never 500 over the email
         print(f"[signup] could not generate reset link for {body.email}: {e}", flush=True)
 
-    return {"email": body.email, "emailed": emailed}
+    return {"email": body.email, "emailed": emailed, "can_sign_in": False}
 
 
 # docs/architecture-2026/04-productization.md P1: enforces the Free-tier
