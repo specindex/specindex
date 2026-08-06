@@ -87,7 +87,13 @@ def discover(limit: int = 50) -> list[dict]:
         href = m.group(1)
         url = href if href.startswith("http") else urllib.parse.urljoin(PORTAL["listing_url"], href)
         fname = urllib.parse.unquote(url.rsplit("/", 1)[-1])
-        num = re.search(r"\b([A-Z]\d{4}-\d{2})\b", fname)
+        # NO \b BEFORE THE LETTER. Missouri prefixes its spec files with an
+        # underscore ("_O2512-01 - Final Specs.pdf"), and `_` is a word
+        # character, so `\b[A-Z]` never matches there. Every underscored file
+        # -- which is to say every spec book -- landed under project_id
+        # "unknown" in GCS. Same failure the shared classifier documents for
+        # `\bamd\b` against "Amd_1.pdf".
+        num = re.search(r"([A-Z]\d{4}-\d{2})", fname)
         key = num.group(1) if num else fname
         e = by_project.setdefault(key, {
             "project_name": key, "project_number": num.group(1) if num else None,

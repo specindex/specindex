@@ -24,16 +24,22 @@ CHECKPOINT PER BATCH. A 34-portal crawl that writes once at the end hands over
 nothing if it dies at portal 30. That already cost a DOT run its entire manifest.
 """
 from __future__ import annotations
-import argparse, csv, datetime, importlib.util, io, re, sys, time
+import argparse, csv, datetime, importlib.util, io, re, sys, time, urllib.parse
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 ADAPTERS = ROOT / "scripts" / "portal_adapters"
 LOGDIR = ROOT / "coverage" / "pull-log"
 
+# The bucket the pipeline already writes to, confirmed with Asif 2026-08-06 and
+# probed at OBJECT level (bucket.exists() lies when credentials are stale).
+# The repo holds code and source tables only -- a spec book is 300-1,000+ pages
+# and never belongs in git.
+GCS_BUCKET = "specindex-ai-raw-documents"
+
 FIELDS = ["state", "type", "portal", "project_id", "project_name", "bid_due_date",
           "document_url", "file_name", "file_size", "spec_format", "divisions",
-          "retrieved_date", "status"]
+          "gcs_path", "retrieved_date", "status"]
 
 # Classifier, straight from the skill's rule 6. BOTH formats count.
 CSI_PARTS = re.compile(r"PART\s+[123]\s*[-–—]?\s*(GENERAL|PRODUCTS|EXECUTION)", re.I)
@@ -62,6 +68,29 @@ def classify(body: bytes) -> tuple[str, str]:
     return "", ""
 
 
+def store(bucket, body: bytes, *, state: str, project_id: str, doc_type: str,
+          filename: str, source_url: str, portal: str) -> str:
+    """gs://{bucket}/specs/{STATE}/{project_id}/{doc_type}_{filename}.pdf
+
+    Object metadata carries the provenance, so a document lifted out of the
+    bucket alone still answers where it came from and when -- skill rule 5. A
+    fact without a citation is worthless, and an object without metadata becomes
+    one the moment it is copied.
+    """
+    safe = re.sub(r"[^A-Za-z0-9._-]+", "-", filename)[:120] or "document.pdf"
+    if not safe.lower().endswith(".pdf"):
+        safe += ".pdf"
+    pid = re.sub(r"[^A-Za-z0-9._-]+", "-", project_id or "unknown")[:80]
+    path = f"specs/{(state or 'XX').upper()}/{pid}/{doc_type}_{safe}"
+    blob = bucket.blob(path)
+    if not blob.exists():
+        blob.metadata = {"source_url": source_url, "portal": portal,
+                         "doc_type": doc_type,
+                         "fetch_date": datetime.date.today().isoformat()}
+        blob.upload_from_string(body, content_type="application/pdf")
+    return f"gs://{GCS_BUCKET}/{path}"
+
+
 def load(path: Path):
     spec = importlib.util.spec_from_file_location(path.stem, path)
     mod = importlib.util.module_from_spec(spec)
@@ -78,7 +107,14 @@ def main() -> int:
     ap.add_argument("--delta-only", action="store_true",
                     help="discovery only, no downloads -- the daily cheap signal")
     ap.add_argument("--max-docs", type=int, default=3, help="documents per project")
+    ap.add_argument("--no-store", action="store_true",
+                    help="classify and log without writing to GCS")
     args = ap.parse_args()
+
+    bucket = None
+    if not (args.no_store or args.delta_only):
+        from google.cloud import storage
+        bucket = storage.Client().bucket(GCS_BUCKET)
 
     files = sorted(p for p in ADAPTERS.glob("*.py") if p.name != "__init__.py")
     mods = []
@@ -118,7 +154,8 @@ def main() -> int:
     for i, (name, m) in enumerate(mods, 1):
         P = m.PORTAL
         base = dict(state=P.get("state"), type=P.get("type"), portal=name,
-                    retrieved_date=today, bid_due_date="", divisions="", spec_format="")
+                    retrieved_date=today, bid_due_date="", divisions="",
+                    spec_format="", gcs_path="")
         try:
             found = m.discover(limit=25)
         except Exception as e:  # noqa: BLE001
@@ -156,9 +193,38 @@ def main() -> int:
                     continue
                 docs += 1
                 fmt, divs = classify(body)
+                gcs = ""
                 if fmt in ("CSI", "DOT SS/SP"):
                     specs += 1
-                    status = "verified, not stored"
+                    # Filename decides doc_type, not the CSI test. A drawing
+                    # set references divisions on its sheet index, so
+                    # "_O2512-01 - Final Plans.pdf" (22MB) classified as CSI and
+                    # was stored as a specbook. Content proves it IS a
+                    # specification document; the name says which KIND.
+                    low = urllib.parse.unquote(u).lower()
+                    if re.search(r"\bplans?\b|drawing|sheet", low):
+                        doc_type = "drawings"
+                    elif re.search(r"addend", low):
+                        doc_type = "addendum"
+                    elif fmt == "DOT SS/SP" or re.search(r"proposal", low):
+                        doc_type = "proposal"
+                    else:
+                        doc_type = "specbook"
+                    # Store ONLY confirmed spec documents. Every fetched PDF
+                    # would fill the bucket with bid tabs and notices, and the
+                    # moat is the specification, not the paperwork around it.
+                    if bucket is not None:
+                        try:
+                            gcs = store(bucket, body, state=P.get("state") or "",
+                                        project_id=proj.get("project_number") or "",
+                                        doc_type=doc_type,
+                                        filename=u.rsplit("/", 1)[-1],
+                                        source_url=u, portal=name)
+                            status = "downloaded"
+                        except Exception as e:  # noqa: BLE001
+                            status = f"verified, not stored ({type(e).__name__})"
+                    else:
+                        status = "verified, not stored"
                 elif fmt == "unreadable":
                     status = "unreadable format"
                 else:
@@ -167,7 +233,7 @@ def main() -> int:
                              "project_name": (proj.get("project_name") or "")[:200],
                              "document_url": u, "file_name": u.rsplit("/", 1)[-1][:120],
                              "file_size": len(body), "spec_format": fmt,
-                             "divisions": divs, "status": status})
+                             "divisions": divs, "gcs_path": gcs, "status": status})
                 break   # one confirmed document per project is the funnel unit
 
         if args.checkpoint and i % args.batch_size == 0:
