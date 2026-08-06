@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 import { getFeaturedProjectIds, getProject } from "@/lib/projects";
 import { formatUsd, stateName, typeLabel } from "@/lib/format";
+import { scopeStaticParams } from "@/lib/buildScope";
 
 // ROADMAP.md item 49 (P1): per-project OG images. Rendered at `next build`
 // time -- this is a static export (see next.config.ts), so this file only
@@ -14,7 +15,8 @@ export const contentType = "image/png";
 
 export async function generateStaticParams() {
   const ids = await getFeaturedProjectIds();
-  return ids.map((id) => ({ id }));
+  // OG images are rendered images, the most expensive page type per unit.
+  return scopeStaticParams(ids.map((id) => ({ id })), "projects/[id]/opengraph-image");
 }
 
 export default async function OpengraphImage({ params }: { params: Promise<{ id: string }> }) {
