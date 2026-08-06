@@ -98,10 +98,17 @@ incident is recorded in `docs/AGENT_STRATEGY.md`; only the directive is here.
 - **`git add` on an ignored path adds nothing and commits clean.** It looks
   exactly like success and produces a repo where the file does not exist for any
   other machine or future session — the same shape as a branch pushed with no
-  PR, or a workflow that never fires. The negations now in `.gitignore`
-  (`/coverage/*` + `!/coverage/docs/` + `!/coverage/data/`, and `.claude/*` +
-  `!.claude/skills/`) fix these two, but the habit is the real guard: run
-  `git check-ignore -v <sample file per new directory>` before the commit.
+  PR, or a workflow that never fires.
+- **The guard is `scripts/check-gitignore-collisions.py`, not this note.** A note
+  was written here after the second incident and the third happened 20 minutes
+  later — `test-results/` fell through negations that covered only `docs/` and
+  `data/`. Notes need someone to remember at the moment of the commit, which is
+  the step that keeps failing. The script declares the paths that MUST be
+  versioned and fails if any is unreachable; it runs on every PR via
+  `.github/workflows/gitignore-guard.yml`. **Adding a new content directory means
+  adding it to `PROTECTED`.** It catches untracked files only — git ignores
+  `.gitignore` for already-tracked ones — which is the right scope, since every
+  incident was new content landing in a directory an old rule already covered.
 
 ## 3. Tooling invariants
 
