@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SpecIndex — project record, same data presented honestly</title>
+<style>
+  :root{
+    --green:#166534; --green-mid:#2F9E5C; --green-lt:#E4F2EA;
+    --ink:#0C1524; --gray:#5B6A79; --gray-4:#8A929B; --line:#DEEAE3;
+    --bg:#F1F4F2; --card:#fff; --amber:#B26B00; --amber-lt:#FDF0D6;
+    --red:#B42318; --red-lt:#FEF3F2;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --ink:#EDEFF2; --gray:#AEB6BF; --line:#2C3238; --bg:#14181C;
+           --card:#1B2026; --green-lt:#12281F; --amber-lt:#2A1F0E; --red-lt:#2A1512; }
+  }
+  :root[data-theme="dark"]{ --ink:#EDEFF2; --gray:#AEB6BF; --line:#2C3238;
+    --bg:#14181C; --card:#1B2026; --green-lt:#12281F; --amber-lt:#2A1F0E; --red-lt:#2A1512; }
+  :root[data-theme="light"]{ --ink:#0C1524; --gray:#5B6A79; --line:#DEEAE3;
+    --bg:#F1F4F2; --card:#fff; --green-lt:#E4F2EA; --amber-lt:#FDF0D6; --red-lt:#FEF3F2; }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif}
+  .wrap{max-width:1000px;margin:0 auto;padding:28px 18px 70px}
+  h1{font-size:24px;margin:0 0 4px;letter-spacing:-.4px}
+  .sub{color:var(--gray);margin:0 0 24px;font-size:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:20px;margin-bottom:16px}
+  .eyebrow{font-size:10px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;
+    color:var(--gray-4);margin-bottom:10px}
+  .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .pill{font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+    padding:4px 9px;border-radius:99px;background:var(--green-lt);color:var(--green)}
+  .pill.amber{background:var(--amber-lt);color:var(--amber)}
+  .pill.red{background:var(--red-lt);color:var(--red)}
+  .grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+  .fact{border:1px solid var(--line);border-radius:9px;padding:12px 14px;background:var(--bg)}
+  .fact .k{font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--gray-4)}
+  .fact .v{font-size:17px;font-weight:700;margin-top:4px}
+  .fact .n{font-size:11.5px;color:var(--gray);margin-top:5px;line-height:1.45}
+  .absent .v{font-size:13.5px;font-weight:600;color:var(--gray)}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th,td{text-align:left;padding:9px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--gray-4)}
+  .scroll{overflow-x:auto}
+  .cite{font-size:11.5px;color:var(--gray);border-left:2px solid var(--line);
+    padding-left:10px;margin-top:8px;line-height:1.5}
+  .note{border-radius:9px;padding:12px 14px;font-size:13px;line-height:1.55}
+  .note.a{background:var(--amber-lt);color:var(--amber)}
+  .note.g{background:var(--green-lt);color:var(--green)}
+  code{background:var(--bg);padding:1px 5px;border-radius:4px;font-size:12px}
+  .cmp{display:grid;gap:16px;grid-template-columns:1fr 1fr}
+  @media(max-width:720px){ .cmp{grid-template-columns:1fr} }
+  .lbl{font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;
+    padding:3px 8px;border-radius:99px;display:inline-block;margin-bottom:10px}
+  .lbl.before{background:var(--red-lt);color:var(--red)}
+  .lbl.after{background:var(--green-lt);color:var(--green)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>1326 Saint Antoine St</h1>
+<p class="sub">Same database record. Nothing added, nothing invented — only what can be
+derived from what we hold, and absence stated instead of left blank.</p>
+
+<div class="note a" style="margin-bottom:20px">
+  <b>Every number on this page came from a query.</b> The record holds 18 of 38 fields,
+  0 documents, 0 spec positions and 0 enrichment rows, from a single source: Detroit's
+  BSEED building-permit ArcGIS layer.
+</div>
+
+<h2 style="font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--gray-4);margin:26px 0 12px">The three questions a rep actually has</h2>
+<div class="grid">
+  <div class="fact">
+    <div class="k">Is my product specified?</div>
+    <div class="v" style="color:var(--gray);font-size:15px">Not determinable</div>
+    <div class="n">No manufacturer named in the <b>0 documents we hold</b> for this project.
+      That is a statement about our coverage, not about the specification.</div>
+  </div>
+  <div class="fact">
+    <div class="k">When do I act?</div>
+    <div class="v" style="color:var(--green)">Now — 14 days in</div>
+    <div class="n">Permit opened 23 Jul 2026. Still in permitting, no GC attached.</div>
+  </div>
+  <div class="fact">
+    <div class="k">Who do I call?</div>
+    <div class="v" style="color:var(--gray);font-size:15px">Nobody listed yet</div>
+    <div class="n">No design or construction team appears in the permit filing.</div>
+  </div>
+</div>
+
+<div class="card" style="margin-top:16px">
+  <div class="eyebrow">Why "nobody listed yet" is the signal, not the gap</div>
+  <p style="margin:0 0 10px;font-size:14px;line-height:1.6">
+    A building permit names the applicant. It does not name the owner, architect or
+    general contractor, and this record is not unusual in lacking them —
+    <b>all 2,287 Wayne County projects we hold have no owner, architect or GC</b>,
+    because the source is a permit feed and permits do not carry that data.
+  </p>
+  <div class="note g">
+    <b>No GC assigned is a buying signal.</b> It places the project before award,
+    which is when specification is still open to influence. A page that renders this
+    as three blank cells throws that away.
+  </div>
+</div>
+
+<div class="card">
+  <div class="eyebrow">What the scope implies — derived, never specified</div>
+  <p style="margin:0 0 12px;font-size:14px">
+    The permit description reads
+    <code>Medical Office (Imaging, Theranostics, &amp; RadioPharmacy); New</code>.
+    That is unusually specific, and it carries real consequences for which trades matter.
+  </p>
+  <div class="scroll"><table>
+    <tr><th>CSI division</th><th>Why the scope implies it</th><th>Basis</th></tr>
+    <tr><td><b>13 49 00</b> Radiation protection</td>
+        <td>A radiopharmacy and imaging suite require lead-lined assemblies, shielded
+            glazing and hot-lab enclosures</td><td>Derived from description</td></tr>
+    <tr><td><b>21</b> Fire suppression</td>
+        <td>Imaging equipment needs clean-agent suppression rather than water</td>
+        <td>Description + <code>competitor_watch</code></td></tr>
+    <tr><td><b>23</b> HVAC</td>
+        <td>Negative-pressure rooms, HEPA, isotope exhaust</td>
+        <td>Description + <code>competitor_watch</code></td></tr>
+    <tr><td><b>09</b> Finishes</td>
+        <td>Seamless non-porous flooring for decontamination zones</td>
+        <td><code>competitor_watch</code></td></tr>
+    <tr><td><b>26</b> Electrical / lighting</td><td>Isolated power, redundant backup</td>
+        <td><code>competitor_watch</code></td></tr>
+    <tr><td><b>07</b> Thermal &amp; moisture</td><td>Roofing scope on new construction</td>
+        <td><code>competitor_watch</code></td></tr>
+  </table></div>
+  <div class="cite">
+    These are <b>requirements implied by the declared scope</b>, not products selected on
+    this project. No spec book is held, so no basis-of-design can be claimed either way.
+  </div>
+</div>
+
+<div class="card">
+  <div class="eyebrow">The record</div>
+  <div class="grid">
+    <div class="fact"><div class="k">Estimated value</div><div class="v">$21.5M</div>
+      <div class="n">As declared on the permit application.</div></div>
+    <div class="fact"><div class="k">Stage</div><div class="v">Permitting</div>
+      <div class="n">2 events, both permit issued.</div></div>
+    <div class="fact"><div class="k">Location</div><div class="v">Detroit, Wayne County, MI</div>
+      <div class="n">City derived from the issuing authority (Detroit BSEED).</div></div>
+    <div class="fact absent"><div class="k">Owner</div>
+      <div class="v">Not disclosed in the permit filing</div>
+      <div class="n">Detroit BSEED permits do not carry an owner field.</div></div>
+    <div class="fact absent"><div class="k">Architect</div>
+      <div class="v">Unlisted — 0 plan sets held</div>
+      <div class="n">A design firm exists; we hold no document naming it.</div></div>
+    <div class="fact absent"><div class="k">General contractor</div>
+      <div class="v">Unassigned at time of filing</div>
+      <div class="n">Consistent with a pre-award project.</div></div>
+    <div class="fact absent"><div class="k">Square footage</div>
+      <div class="v">Not stated in the permit</div>
+      <div class="n">Deliberately not estimated from value — a synthetic figure is
+        spotted instantly by an estimator and costs more trust than a blank.</div></div>
+    <div class="fact"><div class="k">Provenance</div><div class="v" style="font-size:14px">1 source</div>
+      <div class="n">Detroit BSEED building-permit ArcGIS layer, retrieved 30 Jul 2026.</div></div>
+  </div>
+</div>
+
+<h2 style="font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--gray-4);margin:26px 0 12px">The distinction the whole page rests on</h2>
+<div class="cmp">
+  <div class="card" style="margin:0">
+    <span class="lbl before">Destroys credibility</span>
+    <table>
+      <tr><td>"No brands specified on this project"</td></tr>
+      <tr><td>Architect: <i>SmithGroup</i> <span class="pill red">web-guessed</span></td></tr>
+      <tr><td>Square footage: 35,787 <span class="pill red">value ÷ $600</span></td></tr>
+      <tr><td>Owner: —</td></tr>
+    </table>
+    <div class="cite">Each reads as knowledge. Each is a guess. One wrong architect
+      and the rep never trusts the platform again.</div>
+  </div>
+  <div class="card" style="margin:0">
+    <span class="lbl after">Survives scrutiny</span>
+    <table>
+      <tr><td>"No manufacturer named in the 0 documents we hold"</td></tr>
+      <tr><td>Architect: unlisted in the permit record</td></tr>
+      <tr><td>Square footage: not stated in the permit</td></tr>
+      <tr><td>Owner: not disclosed in the filing</td></tr>
+    </table>
+    <div class="cite">Each states what we know and where it came from. A rep can act on
+      the difference between "absent from our data" and "absent from the world".</div>
+  </div>
+</div>
+
+<div class="note a" style="margin-top:20px">
+  <b>Do not run enrichment on this project.</b> Step 10 grounds on captured document
+  text; with 0 documents it degrades to open web search, which is exactly how a
+  confidently wrong architect ends up on the page. Enrichment is worth running
+  <i>after</i> documents exist, not instead of them.
+</div>
+
+<p class="sub" style="margin-top:26px">
+  SpecIndex · project record · illustrative layout, measured values · 6 Aug 2026
+</p>
+</div>
+</body>
+</html>
