@@ -1,6 +1,6 @@
 # Plan: Pull Pre-Construction Projects and Spec Documents
 
-Paste this whole document into a Claude session along with the companion spreadsheet `state_spec_document_portals.xlsx`. It tells Claude exactly what to do, in what order, and what to skip.
+This is the execution detail for the spec-pull skill. Source tables: when running as the skill, use `references/project-sources.csv` (Stage 1 discovery sources) and `references/sources.csv` (state portals) in this folder. When running standalone from the workbook, the same data lives on the "Commercial Project Sources" and "State Portals" tabs of `state_spec_document_portals.xlsx`.
 
 ## Mission
 
@@ -50,7 +50,7 @@ Do NOT create accounts. For each Tier 2 row:
 
 1. Fetch the portal and enumerate whatever is publicly visible (project titles, bid dates, agencies, ad PDFs).
 2. Log every active construction solicitation found to `pull_log.csv` with status "listed, registration required" and the registration URL.
-3. Flag the highest-value registrations in a summary: Bid Express (bidx.com) alone unlocks DOT documents in roughly 20 states with one free account, so it is the single best registration to make. Others worth noting: NY OGS (Bid Express, 7-day activation), Bonfire (UT, WA), CTsource, SIGMA (MI), NDBuys.
+3. Flag the highest-value registrations in a summary. Bid Express (bidx.com) caveat, measured Aug 2026: no anonymous read path exists and even an info account requires signing in, so treat it as a deliberate human registration decision, not a quick unlock, and note that 12+ DOT states already have working adapters without it. Others worth noting: NY OGS (Bid Express, 7-day activation), Bonfire (UT, WA), CTsource, SIGMA (MI), NDBuys.
 
 ### Phase 3: Tier 3 sources (fee, password, or offline distribution)
 

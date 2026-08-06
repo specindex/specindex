@@ -1,501 +1,501 @@
-rank,county,state,population,seat
-1,Los Angeles,CA,9641000,Los Angeles
-2,Cook,IL,5275541,Chicago
-3,Harris,TX,5093721,Houston
-4,Maricopa,AZ,4724969,Phoenix
-5,San Diego,CA,3276954,San Diego
-6,Orange,CA,3140987,Santa Ana
-7,Miami-Dade,FL,2791914,Miami
-8,Dallas,TX,2658781,Dallas
-9,Kings,NY,2617631,New York
-10,Riverside,CA,2560720,Riverside
-11,Clark,NV,2407226,Las Vegas
-12,King,WA,2340211,Seattle
-13,Queens,NY,2316841,New York
-14,Tarrant,TX,2266894,Fort Worth
-15,San Bernardino,CA,2229418,San Bernardino
-16,Bexar,TX,2181234,San Antonio
-17,Broward,FL,2012945,Fort Lauderdale
-18,Santa Clara,CA,1920872,San Jose
-19,Wayne,MI,1771063,Detroit
-20,Middlesex,MA,1669979,Cambridge
-21,New York,NY,1660664,New York
-22,Alameda,CA,1636636,Oakland
-23,Sacramento,CA,1627023,Sacramento
-24,Palm Beach,FL,1577304,West Palm Beach
-25,Hillsborough,FL,1577032,Tampa
-26,Philadelphia,PA,1550542,Philadelphia
-27,Suffolk,NY,1535909,Riverhead
-28,Orange,FL,1535016,Orlando
-29,Travis,TX,1404419,Austin
-30,Nassau,NY,1392438,Mineola
-31,Bronx,NY,1384724,New York
-32,Franklin,OH,1356303,Columbus
-33,Collin,TX,1340145,McKinney
-34,Oakland,MI,1325110,Pontiac
-35,Hennepin,MN,1284784,Minneapolis
-36,Cuyahoga,OH,1240594,Cleveland
-37,Allegheny,PA,1224825,Pittsburgh
-38,Salt Lake,UT,1220916,Salt Lake City
-39,Wake,NC,1190275,Raleigh
-40,Contra Costa,CA,1170606,Martinez
-41,Mecklenburg,NC,1163701,Charlotte
-42,Fairfax,VA,1160925,Fairfax
-43,Fulton,GA,1107114,Atlanta
-44,Denton,TX,1092466,Denton
-45,Pima,AZ,1075914,Tucson
-46,Montgomery,MD,1074582,Rockville
-47,Duval,FL,1071194,Jacksonville
-48,Fresno,CA,1037214,Fresno
-49,Gwinnett,GA,1026334,Lawrenceville
-50,Honolulu,HI,1016508,Honolulu
-51,Westchester,NY,1006447,White Plains
-52,Fort Bend,TX,999354,Richmond
-53,Capitol Planning Region,CT,999036,Hartford
-54,Marion,IN,992196,Indianapolis
-55,St. Louis,MO,987059,Clayton
-56,Bergen,NJ,977026,Hackensack
-57,Prince George's,MD,967201,Upper Marlboro
-58,Erie,NY,950602,Buffalo
-59,Pierce,WA,941170,Tacoma
-60,Pinellas,FL,936729,Clearwater
-61,DuPage,IL,932877,Wheaton
-62,Kern,CA,929488,Bakersfield
-63,Hidalgo,TX,929486,Edinburg
-64,Milwaukee,WI,924740,Milwaukee
-65,Shelby,TN,910530,Memphis
-66,Polk,FL,898146,Bartow
-67,Essex,NJ,896379,Newark
-68,Lee,FL,889547,Fort Myers
-69,Macomb,MI,886175,Mount Clemens
-70,Middlesex,NJ,883335,New Brunswick
-71,El Paso,TX,875822,El Paso
-72,Montgomery,PA,868742,Norristown
-73,Snohomish,WA,864113,Everett
-74,Worcester,MA,862111,Worcester
-75,Baltimore,MD,854535,Towson
-76,Hamilton,OH,837359,Cincinnati
-77,San Francisco,CA,831213,San Francisco
-78,San Joaquin,CA,830481,Stockton
-79,Ventura,CA,828271,Ventura
-80,Essex,MA,826653,Lawrence
-81,Montgomery,TX,811205,Conroe
-82,Oklahoma,OK,808866,Oklahoma City
-83,Suffolk,MA,797936,Boston
-84,Cobb,GA,797811,Marietta
-85,Multnomah,OR,789698,Portland
-86,Jefferson,KY,782969,Louisville
-87,Williamson,TX,776641,Georgetown
-88,DeKalb,GA,776204,Decatur
-89,El Paso,CO,761724,Colorado Springs
-90,Utah,UT,759859,Provo
-91,Monroe,NY,752202,Rochester
-92,San Mateo,CA,746509,Redwood City
-93,Denver,CO,739635,Denver
-94,Hudson,NJ,735033,Jersey City
-95,Jackson,MO,732994,Kansas City
-96,Davidson,TN,729505,Nashville
-97,Norfolk,MA,725981,Dedham
-98,Lake,IL,714342,Waukegan
-99,Will,IL,696355,Joliet
-100,District of Columbia,DC,693645,Washington
-101,Pasco,FL,692842,Dade City
-102,Ocean,NJ,673746,Toms River
-103,Arapahoe,CO,671880,Littleton
-104,Brevard,FL,671710,Titusville
-105,Bernalillo,NM,671586,Albuquerque
-106,Jefferson,AL,664899,Birmingham
-107,Providence,RI,660615,Providence
-108,Kent,MI,657974,Grand Rapids
-109,Monmouth,NJ,651035,Freehold Borough
-110,Tulsa,OK,650618,Tulsa
-111,Bucks,PA,645984,Doylestown
-112,Western Connecticut Planning Region,CT,643243,Stamford
-113,Volusia,FL,612039,DeLand
-114,Johnson,KS,609863,Olathe
-115,Douglas,NE,606460,Omaha
-116,Union,NJ,601863,Elizabeth
-117,Washington,OR,598865,Hillsboro
-118,New Castle,DE,590038,Wilmington
-119,Dane,WI,588347,Madison
-120,Anne Arundel,MD,588261,Annapolis
-121,Jefferson,CO,580543,Golden
-122,South Central Connecticut Planning Region,CT,579944,New Haven
-123,Bristol,MA,579200,Taunton
-124,Delaware,PA,576720,Media
-125,Baltimore City,MD,569997,Baltimore
-126,Pinal,AZ,563034,Florence
-127,Adams,CO,560079,Brighton
-128,Lancaster,PA,558589,Lancaster
-129,Stanislaus,CA,558066,Modesto
-130,Greenville,SC,558036,Greenville
-131,Spokane,WA,555947,Spokane
-132,Guilford,NC,549866,Greensboro
-133,Chester,PA,549784,West Chester
-134,Ada,ID,546141,Boise
-135,Ramsey,MN,542015,Saint Paul
-136,Montgomery,OH,537443,Dayton
-137,Summit,OH,535882,Akron
-138,Camden,NJ,535799,Camden
-139,Passaic,NJ,531624,Paterson
-140,Plymouth,MA,530819,Brockton
-141,Sedgwick,KS,528469,Wichita
-142,Clark,WA,527269,Vancouver
-143,Morris,NJ,524251,Morristown
-144,Polk,IA,516546,Des Moines
-145,Kane,IL,516522,Geneva
-146,Washoe,NV,507280,Reno
-147,Knox,TN,506748,Knoxville
-148,Lake,IN,498700,Crown Point
-149,Richmond,NY,498212,New York
-150,Osceola,FL,497560,Kissimmee
-151,Seminole,FL,494104,Sanford
-152,Sonoma,CA,487525,Santa Rosa
-153,Tulare,CA,486441,Visalia
-154,Sarasota,FL,483927,Sarasota
-155,Prince William,VA,482204,Manassas
-156,Burlington,NJ,481439,Mount Holly
-157,Manatee,FL,477444,Bradenton
-158,Onondaga,NY,469812,Syracuse
-159,Lake,FL,468682,Tavares
-160,Hampden,MA,465825,Springfield
-161,Naugatuck Valley Planning Region,CT,465218,Waterbury
-162,York,PA,464640,York
-163,Virginia Beach (city),VA,459470,Virginia Beach
-164,Marion,FL,457325,Ocala
-165,Dakota,MN,455710,Hastings
-166,Solano,CA,455676,Fairfield
-167,Placer,CA,449883,Auburn
-168,East Baton Rouge,LA,448467,Baton Rouge
-169,Madison,AL,443961,Huntsville
-170,Loudoun,VA,443380,Leesburg
-171,Santa Barbara,CA,441049,Santa Barbara
-172,Jefferson,LA,440781,Gretna
-173,Cameron,TX,434940,Brownsville
-174,Monterey,CA,434011,Salinas
-175,Berks,PA,432821,Reading
-176,Brazoria,TX,426744,Angleton
-177,Lucas,OH,426291,Toledo
-178,Richland,SC,425138,Columbia
-179,Charleston,SC,424367,Charleston
-180,Clackamas,OR,423173,Oregon City
-181,Hillsborough,NH,422937,Manchester
-182,Collier,FL,417540,Naples
-183,Waukesha,WI,417029,Waukesha
-184,St. Lucie,FL,413306,Fort Pierce
-185,Orange,NY,411767,Goshen
-186,Mobile,AL,411123,Mobile
-187,Bell,TX,407057,Belton
-188,Pulaski,AR,405828,Little Rock
-189,Douglas,CO,405741,Castle Rock
-190,St. Charles,MO,405262,St. Charles
-191,Genesee,MI,401093,Flint
-192,Butler,OH,399542,Hamilton
-193,Mercer,NJ,399289,Trenton
-194,Horry,SC,397478,Conway
-195,Forsyth,NC,392921,Winston-Salem
-196,Chesterfield,VA,389793,Chesterfield
-197,Rutherford,TN,386352,Murfreesboro
-198,Hamilton,TN,386256,Chattanooga
-199,Weld,CO,385572,Greeley
-200,Allen,IN,385410,Fort Wayne
-201,Orleans,LA,383997,New Orleans
-202,Davis,UT,381227,Farmington
-203,Lane,OR,381181,Eugene
-204,Larimer,CO,380384,Fort Collins
-205,Lehigh,PA,377754,Allentown
-206,Galveston,TX,377047,Galveston
-207,Stark,OH,373834,Canton
-208,Washtenaw,MI,372258,Ann Arbor
-209,Anoka,MN,363887,Anoka
-210,St. Johns,FL,359322,St. Augustine
-211,Spartanburg,SC,356698,Spartanburg
-212,Somerset,NJ,356486,Somerville
-213,Nueces,TX,353059,Corpus Christi
-214,Westmoreland,PA,351163,Greensburg
-215,Rockland,NY,348144,New City
-216,Hamilton,IN,347467,Noblesville
-217,Marion,OR,346741,Salem
-218,Benton,AR,343107,Bentonville
-219,Greater Bridgeport Planning Region,CT,339003,Bridgeport
-220,Henrico,VA,338696,Laurel
-221,Cumberland,NC,337890,Fayetteville
-222,Durham,NC,336892,Durham
-223,Escambia,FL,335296,Pensacola
-224,Lancaster,NE,334049,Lincoln
-225,Lubbock,TX,332675,Lubbock
-226,Howard,MD,332317,Ellicott City
-227,Fayette,KY,329437,Lexington
-228,Boulder,CO,327635,Boulder
-229,Luzerne,PA,327388,Wilkes-Barre
-230,Lorain,OH,322030,Elyria
-231,Albany,NY,319964,Albany
-232,Northampton,PA,319091,Easton
-233,McHenry,IL,317751,Woodstock
-234,Hays,TX,314441,San Marcos
-235,Rockingham,NH,314176,Brentwood
-236,Chatham,GA,314105,Savannah
-237,Gloucester,NJ,312638,Woodbury
-238,Lexington,SC,309528,Lexington
-239,Cherokee,GA,304516,Canton
-240,Cumberland,ME,303069,Portland
-241,Thurston,WA,302912,Olympia
-242,St. Louis City,MO,301578,St. Louis
-243,Cleveland,OK,301193,Norman
-244,Dutchess,NY,299963,Poughkeepsie
-245,Leon,FL,299384,Tallahassee
-246,Greene,MO,298915,Springfield
-247,York,SC,298320,York
-248,Merced,CA,297713,Merced
-249,Clayton,GA,297709,Jonesboro
-250,Ottawa,MI,296200,Grand Haven
-251,Alachua,FL,290610,Gainesville
-252,Dauphin,PA,289234,Harrisburg
-253,Anchorage,AK,286941,Anchorage
-254,Forsyth,GA,286813,Cumming
-255,Winnebago,IL,285350,Rockford
-256,Ingham,MI,284900,Mason
-257,Southeastern Connecticut Planning Region,CT,284859,Norwich
-258,Sussex,DE,283047,Georgetown
-259,San Luis Obispo,CA,282581,San Luis Obispo
-260,Webb,TX,281878,Laredo
-261,Kitsap,WA,281420,Port Orchard
-262,St. Tammany,LA,279108,Covington
-263,Atlantic,NJ,278657,Mays Landing
-264,Weber,UT,278174,Ogden
-265,Buncombe,NC,275901,Asheville
-266,Canyon,ID,275123,Caldwell
-267,Washington,AR,275056,Fayetteville
-268,Brown,WI,273909,Green Bay
-269,Baldwin,AL,273870,Bay Minette
-270,McLennan,TX,273692,Waco
-271,St. Joseph,IN,272912,South Bend
-272,Frederick,MD,271717,Frederick
-273,Cumberland,PA,270738,Carlisle
-274,Henry,GA,269872,McDonough
-275,Erie,PA,267571,Erie
-276,Washington,MN,267568,Stillwater
-277,Kalamazoo,MI,264780,Kalamazoo
-278,Madison,IL,263017,Edwardsville
-279,Harford,MD,260924,Bel Air
-280,Yakima,WA,258523,Yakima
-281,St. Clair,IL,257400,Belleville
-282,Union,NC,256452,Monroe
-283,Santa Cruz,CA,256287,Santa Cruz
-284,Smith,TX,255569,Tyler
-285,Berkeley,SC,255217,Moncks Corner
-286,Jefferson,TX,254145,Beaumont
-287,Yavapai,AZ,253908,Prescott
-288,Clay,MO,253335,Liberty
-289,Marin,CA,251684,San Rafael
-290,Brazos,TX,249803,Bryan
-291,Chesapeake (city),VA,249422,Chesapeake
-292,Ellis,TX,249280,Waxahachie
-293,Williamson,TN,247726,Franklin
-294,Warren,OH,246553,Lebanon
-295,Montgomery,TN,246025,Clarksville
-296,Johnston,NC,241955,Smithfield
-297,Clay,FL,241908,Green Cove Springs
-298,Tuscaloosa,AL,241856,Tuscaloosa
-299,Lafayette,LA,241753,Lafayette
-300,Shelby,AL,241298,Columbiana
-301,Saratoga,NY,240360,Ballston Spa
-302,Cabarrus,NC,240016,Concord
-303,Arlington,VA,239807,Arlington
-304,New Hanover,NC,238852,Wilmington
-305,Norfolk (city),VA,238005,Norfolk
-306,Delaware,OH,237966,Delaware
-307,Caddo,LA,237848,Shreveport
-308,Gaston,NC,237242,Gastonia
-309,Whatcom,WA,234954,Bellingham
-310,Barnstable,MA,232711,Barnstable
-311,Lake,OH,232360,Painesville
-312,Linn,IA,232028,Cedar Rapids
-313,Mohave,AZ,229942,Kingman
-314,Hall,GA,229591,Gainesville
-315,Oneida,NY,228347,Utica
-316,Yuma,AZ,227510,Yuma
-317,Jefferson,MO,226739,Hillsboro
-318,Richmond (city),VA,226610,Richmond
-319,Montgomery,AL,225893,Montgomery
-320,Hernando,FL,225830,Brooksville
-321,Mahoning,OH,225786,Youngstown
-322,Yolo,CA,225560,Woodland
-323,Doña Ana,NM,225210,Las Cruces
-324,Johnson,TX,224506,Cleburne
-325,Okaloosa,FL,223515,Crestview
-326,Charlotte,FL,222968,Punta Gorda
-327,Jackson,OR,220768,Medford
-328,Kaufman,TX,220460,Kaufman
-329,Benton,WA,218190,Prosser
-330,Harrison,MS,217136,Gulfport
-331,Comal,TX,216846,New Braunfels
-332,Calcasieu,LA,216785,Lake Charles
-333,Lackawanna,PA,216123,Scranton
-334,Santa Rosa,FL,214759,Milton
-335,Clermont,OH,214123,Batavia
-336,Onslow,NC,213676,Jacksonville
-337,Anderson,SC,213076,Anderson
-338,York,ME,211972,Alfred
-339,Hinds,MS,211888,Jackson
-340,Washington,PA,210232,Washington
-341,Butte,CA,209836,Oroville
-342,Niagara,NY,209570,Lockport
-343,Bay,FL,208816,Panama City
-344,Minnehaha,SD,208639,Sioux Falls
-345,Deschutes,OR,208513,Bend
-346,Elkhart,IN,207893,Goshen
-347,Richmond,GA,206574,Augusta
-348,Guadalupe,TX,206548,Seguin
-349,Champaign,IL,205865,Urbana
-350,Sarpy,NE,204828,Papillion
-351,Muscogee,GA,202270,Columbus
-352,Trumbull,OH,201335,Warren
-353,St. Louis,MN,200794,Duluth
-354,Hawaii,HI,200629,Hilo
-355,Washington,UT,200075,St. George
-356,Iredell,NC,199710,Statesville
-357,Beaufort,SC,198979,Beaufort
-358,Racine,WI,198651,Racine
-359,Butler,PA,198413,Butler
-360,Livingston,MI,197315,Howell
-361,Kent,DE,196696,Dover
-362,Broome,NY,196397,Binghamton
-363,Cass,ND,196362,Fargo
-364,Sangamon,IL,196343,Springfield
-365,Sumner,TN,196281,Gallatin
-366,Outagamie,WI,195390,Appleton
-367,Paulding,GA,194059,Dallas
-368,El Dorado,CA,192275,Placerville
-369,Lee,AL,191980,Opelika
-370,Boone,MO,191746,Columbia
-371,Midland,TX,191635,Midland
-372,Saginaw,MI,190124,Saginaw
-373,Parker,TX,189860,Weatherford
-374,Tippecanoe,IN,188792,Lafayette
-375,Newport News (city),VA,186247,Newport News
-376,DeSoto,MS,185314,Hernando
-377,Licking,OH,184898,Newark
-378,Medina,OH,184625,Medina
-379,Ulster,NY,182977,Kingston
-380,Vanderburgh,IN,181995,Evansville
-381,Shasta,CA,181904,Redding
-382,Peoria,IL,181830,Peoria
-383,Houston,GA,181524,Perry
-384,Imperial,CA,180051,El Centro
-385,Alamance,NC,179165,Graham
-386,Shawnee,KS,178909,Topeka
-387,Lower Connecticut River Valley Planning Region,CT,177575,Middletown
-388,Muskegon,MI,177428,Muskegon
-389,Aiken,SC,177130,Aiken
-390,Ector,TX,176948,Odessa
-391,Carroll,MD,176639,Westminster
-392,Canadian,OK,175829,El Reno
-393,Scott,IA,175259,Davenport
-394,Pitt,NC,175119,Greenville
-395,Kenton,KY,174862,Covington
-396,Davidson,NC,174804,Lexington
-397,Hendricks,IN,174788,Danville
-398,Indian River,FL,174038,Vero Beach
-399,Kanawha,WV,173906,Charleston
-400,Citrus,FL,173511,Inverness
-401,Winnebago,WI,173307,Oshkosh
-402,Porter,IN,173215,Valparaiso
-403,Yellowstone,MT,172692,Billings
-404,Greene,OH,172347,Xenia
-405,Kootenai,ID,171362,Coeur d'Alene
-406,Kent,RI,171278,East Greenwich
-407,Columbia,GA,171115,Evans
-408,McLean,IL,170954,Bloomington
-409,Dorchester,SC,169833,St. George
-410,Madera,CA,169722,Madera
-411,Wyandotte,KS,169245,Kansas City
-412,Kenosha,WI,168754,Kenosha
-413,Pueblo,CO,168392,Pueblo
-414,Fairfield,OH,167762,Lancaster
-415,Martin,FL,167342,Stuart
-416,Olmsted,MN,166731,Rochester
-417,Charles,MD,166617,La Plata
-418,Monroe,PA,166053,Stroudsburg
-419,Beaver,PA,165631,Beaver
-420,Rock,WI,165461,Janesville
-421,Catawba,NC,164645,Newton
-422,Mesa,CO,164290,Grand Junction
-423,Portage,OH,163839,Ravenna
-424,Hampshire,MA,162308,Northampton
-425,Coweta,GA,162302,Newnan
-426,Schenectady,NY,162261,Schenectady
-427,Johnson,IN,161765,Franklin
-428,Chittenden,VT,161382,Burlington
-429,Sumter,FL,161283,Bushnell
-430,Rensselaer,NY,160749,Troy
-431,Maui,HI,160592,Wailuku
-432,Rankin,MS,160573,Brandon
-433,St. Clair,MI,160308,Port Huron
-434,Jackson,MI,160233,Jackson
-435,Johnson,IA,160044,Iowa City
-436,Brunswick,NC,159964,Bolivia
-437,Alexandria (city),VA,159467,Alexandria
-438,Scott,MN,159017,Shakopee
-439,Ouachita,LA,158542,Monroe
-440,Stearns,MN,158292,St. Cloud
-441,Sullivan,TN,158163,Blountville
-442,Penobscot,ME,157967,Bangor
-443,Franklin,PA,157854,Chambersburg
-444,Centre,PA,157795,Bellefonte
-445,Bibb,GA,157752,Macon
-446,Wright,MN,157557,Buffalo
-447,Cumberland,NJ,157148,Bridgeton
-448,Stafford,VA,156927,Stafford
-449,Douglas,GA,156526,Douglasville
-450,Grayson,TX,156361,Sherman
-451,Santa Fe,NM,155956,Santa Fe
-452,Sandoval,NM,155936,Bernalillo
-453,Monroe,MI,154809,Monroe
-454,Washington,MD,154705,Hagerstown
-455,Kings,CA,154535,Hanford
-456,Randall,TX,154419,Canyon
-457,Merrimack,NH,153808,Concord
-458,Berrien,MI,152444,St. Joseph
-459,Taylor,TX,151764,Abilene
-460,Rowan,NC,151661,Salisbury
-461,Orange,NC,150626,Hillsborough
-462,Sussex,NJ,148063,Newton
-463,Wilson,TN,147737,Lebanon
-464,Randolph,NC,147458,Asheboro
-465,Jackson,MS,147002,Pascagoula
-466,Cache,UT,145000,Logan
-467,Rock Island,IL,144672,Rock Island
-468,Rockwall,TX,144596,Rockwall
-469,Flagler,FL,144436,Bunnell
-470,Lebanon,PA,144252,Lebanon
-471,Boone,KY,144135,Burlington
-472,Coconino,AZ,144078,Flagstaff
-473,Schuylkill,PA,143786,Pottsville
-474,Kendall,IL,143171,Yorkville
-475,Livingston,LA,142282,Livingston
-476,Blount,TN,142211,Maryville
-477,Harnett,NC,141477,Lillington
-478,Spotsylvania,VA,140032,Spotsylvania Courthouse
-479,Monroe,IN,139718,Bloomington
-480,Marathon,WI,139091,Wausau
-481,Washington,WI,138727,West Bend
-482,Florence,SC,137214,Florence
-483,Hampton (city),VA,137148,Hampton
-484,Berkeley,WV,136287,Martinsburg
-485,Faulkner,AR,135791,Conway
-486,Pickens,SC,135495,Pickens
-487,Clark,OH,134985,Springfield
-488,Saline,AR,134807,Benton
-489,Warren,KY,134554,Bowling Green
-490,Calhoun,MI,133785,Marshall
-491,Tangipahoa,LA,133157,Amite City
-492,Washington,TN,133001,Jonesborough
-493,Napa,CA,132783,Napa
-494,Skagit,WA,132736,Mount Vernon
-495,Carroll,GA,132579,Carrollton
-496,Black Hawk,IA,132348,Waterloo
-497,Wood,OH,132248,Bowling Green
-498,Hunterdon,NJ,131781,Flemington
-499,Linn,OR,131496,Albany
-500,Tazewell,IL,131343,Pekin
+rank,county,state,population,seat,feed_status,feed_detail
+1,Los Angeles,CA,9641000,Los Angeles,verified,LADBS Socrata + EPIC-LA ArcGIS
+2,Cook,IL,5275541,Chicago,verified,Chicago Socrata (city only)
+3,Harris,TX,5093721,Houston,portal_only,No open data; Houston Sold Permits search only
+4,Maricopa,AZ,4724969,Phoenix,portal_only,No open data; county search + Phoenix PDD app only
+5,San Diego,CA,3276954,San Diego,verified,San Diego city CSV + county Socrata
+6,Orange,CA,3140987,Santa Ana,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+7,Miami-Dade,FL,2791914,Miami,verified,County ArcGIS
+8,Dallas,TX,2658781,Dallas,partial,Socrata frozen 2020; live permits in Accela
+9,Kings,NY,2617631,New York,verified,NYC DOB Socrata
+10,Riverside,CA,2560720,Riverside,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+11,Clark,NV,2407226,Las Vegas,partial,LV city ArcGIS only; county (the Strip) has no open data
+12,King,WA,2340211,Seattle,verified,Seattle Socrata (city only)
+13,Queens,NY,2316841,New York,verified,NYC DOB Socrata
+14,Tarrant,TX,2266894,Fort Worth,verified,Fort Worth ArcGIS (city only)
+15,San Bernardino,CA,2229418,San Bernardino,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+16,Bexar,TX,2181234,San Antonio,verified,San Antonio CKAN
+17,Broward,FL,2012945,Fort Lauderdale,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+18,Santa Clara,CA,1920872,San Jose,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+19,Wayne,MI,1771063,Detroit,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+20,Middlesex,MA,1669979,Cambridge,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+21,New York,NY,1660664,New York,verified,NYC DOB Socrata
+22,Alameda,CA,1636636,Oakland,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+23,Sacramento,CA,1627023,Sacramento,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+24,Palm Beach,FL,1577304,West Palm Beach,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+25,Hillsborough,FL,1577032,Tampa,partial,"Tampa CSV (weak, irregular); county is Accela-only"
+26,Philadelphia,PA,1550542,Philadelphia,verified,Philly Carto SQL
+27,Suffolk,NY,1535909,Riverhead,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+28,Orange,FL,1535016,Orlando,verified,Orlando Socrata (city only)
+29,Travis,TX,1404419,Austin,verified,Austin Socrata
+30,Nassau,NY,1392438,Mineola,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+31,Bronx,NY,1384724,New York,verified,NYC DOB Socrata
+32,Franklin,OH,1356303,Columbus,verified,Columbus ArcGIS
+33,Collin,TX,1340145,McKinney,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+34,Oakland,MI,1325110,Pontiac,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+35,Hennepin,MN,1284784,Minneapolis,verified,Minneapolis ArcGIS (city only)
+36,Cuyahoga,OH,1240594,Cleveland,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+37,Allegheny,PA,1224825,Pittsburgh,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+38,Salt Lake,UT,1220916,Salt Lake City,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+39,Wake,NC,1190275,Raleigh,verified,Raleigh ArcGIS
+40,Contra Costa,CA,1170606,Martinez,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+41,Mecklenburg,NC,1163701,Charlotte,verified,County GIS (countywide)
+42,Fairfax,VA,1160925,Fairfax,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+43,Fulton,GA,1107114,Atlanta,partial,Atlanta static 2019-2024 snapshot only
+44,Denton,TX,1092466,Denton,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+45,Pima,AZ,1075914,Tucson,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+46,Montgomery,MD,1074582,Rockville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+47,Duval,FL,1071194,Jacksonville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+48,Fresno,CA,1037214,Fresno,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+49,Gwinnett,GA,1026334,Lawrenceville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+50,Honolulu,HI,1016508,Honolulu,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+51,Westchester,NY,1006447,White Plains,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+52,Fort Bend,TX,999354,Richmond,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+53,Capitol Planning Region,CT,999036,Hartford,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+54,Marion,IN,992196,Indianapolis,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+55,St. Louis,MO,987059,Clayton,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+56,Bergen,NJ,977026,Hackensack,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+57,Prince George's,MD,967201,Upper Marlboro,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+58,Erie,NY,950602,Buffalo,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+59,Pierce,WA,941170,Tacoma,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+60,Pinellas,FL,936729,Clearwater,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+61,DuPage,IL,932877,Wheaton,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+62,Kern,CA,929488,Bakersfield,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+63,Hidalgo,TX,929486,Edinburg,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+64,Milwaukee,WI,924740,Milwaukee,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+65,Shelby,TN,910530,Memphis,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+66,Polk,FL,898146,Bartow,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+67,Essex,NJ,896379,Newark,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+68,Lee,FL,889547,Fort Myers,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+69,Macomb,MI,886175,Mount Clemens,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+70,Middlesex,NJ,883335,New Brunswick,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+71,El Paso,TX,875822,El Paso,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+72,Montgomery,PA,868742,Norristown,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+73,Snohomish,WA,864113,Everett,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+74,Worcester,MA,862111,Worcester,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+75,Baltimore,MD,854535,Towson,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+76,Hamilton,OH,837359,Cincinnati,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+77,San Francisco,CA,831213,San Francisco,verified,SF Socrata
+78,San Joaquin,CA,830481,Stockton,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+79,Ventura,CA,828271,Ventura,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+80,Essex,MA,826653,Lawrence,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+81,Montgomery,TX,811205,Conroe,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+82,Oklahoma,OK,808866,Oklahoma City,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+83,Suffolk,MA,797936,Boston,verified,Boston CKAN (city only)
+84,Cobb,GA,797811,Marietta,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+85,Multnomah,OR,789698,Portland,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+86,Jefferson,KY,782969,Louisville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+87,Williamson,TX,776641,Georgetown,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+88,DeKalb,GA,776204,Decatur,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+89,El Paso,CO,761724,Colorado Springs,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+90,Utah,UT,759859,Provo,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+91,Monroe,NY,752202,Rochester,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+92,San Mateo,CA,746509,Redwood City,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+93,Denver,CO,739635,Denver,verified,Denver ArcGIS (commercial-only)
+94,Hudson,NJ,735033,Jersey City,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+95,Jackson,MO,732994,Kansas City,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+96,Davidson,TN,729505,Nashville,verified,Nashville ArcGIS (metro govt)
+97,Norfolk,MA,725981,Dedham,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+98,Lake,IL,714342,Waukegan,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+99,Will,IL,696355,Joliet,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+100,District of Columbia,DC,693645,Washington,verified,DC ArcGIS
+101,Pasco,FL,692842,Dade City,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+102,Ocean,NJ,673746,Toms River,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+103,Arapahoe,CO,671880,Littleton,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+104,Brevard,FL,671710,Titusville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+105,Bernalillo,NM,671586,Albuquerque,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+106,Jefferson,AL,664899,Birmingham,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+107,Providence,RI,660615,Providence,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+108,Kent,MI,657974,Grand Rapids,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+109,Monmouth,NJ,651035,Freehold Borough,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+110,Tulsa,OK,650618,Tulsa,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+111,Bucks,PA,645984,Doylestown,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+112,Western Connecticut Planning Region,CT,643243,Stamford,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+113,Volusia,FL,612039,DeLand,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+114,Johnson,KS,609863,Olathe,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+115,Douglas,NE,606460,Omaha,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+116,Union,NJ,601863,Elizabeth,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+117,Washington,OR,598865,Hillsboro,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+118,New Castle,DE,590038,Wilmington,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+119,Dane,WI,588347,Madison,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+120,Anne Arundel,MD,588261,Annapolis,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+121,Jefferson,CO,580543,Golden,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+122,South Central Connecticut Planning Region,CT,579944,New Haven,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+123,Bristol,MA,579200,Taunton,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+124,Delaware,PA,576720,Media,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+125,Baltimore City,MD,569997,Baltimore,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+126,Pinal,AZ,563034,Florence,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+127,Adams,CO,560079,Brighton,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+128,Lancaster,PA,558589,Lancaster,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+129,Stanislaus,CA,558066,Modesto,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+130,Greenville,SC,558036,Greenville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+131,Spokane,WA,555947,Spokane,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+132,Guilford,NC,549866,Greensboro,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+133,Chester,PA,549784,West Chester,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+134,Ada,ID,546141,Boise,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+135,Ramsey,MN,542015,Saint Paul,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+136,Montgomery,OH,537443,Dayton,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+137,Summit,OH,535882,Akron,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+138,Camden,NJ,535799,Camden,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+139,Passaic,NJ,531624,Paterson,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+140,Plymouth,MA,530819,Brockton,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+141,Sedgwick,KS,528469,Wichita,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+142,Clark,WA,527269,Vancouver,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+143,Morris,NJ,524251,Morristown,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+144,Polk,IA,516546,Des Moines,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+145,Kane,IL,516522,Geneva,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+146,Washoe,NV,507280,Reno,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+147,Knox,TN,506748,Knoxville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+148,Lake,IN,498700,Crown Point,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+149,Richmond,NY,498212,New York,verified,NYC DOB Socrata
+150,Osceola,FL,497560,Kissimmee,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+151,Seminole,FL,494104,Sanford,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+152,Sonoma,CA,487525,Santa Rosa,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+153,Tulare,CA,486441,Visalia,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+154,Sarasota,FL,483927,Sarasota,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+155,Prince William,VA,482204,Manassas,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+156,Burlington,NJ,481439,Mount Holly,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+157,Manatee,FL,477444,Bradenton,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+158,Onondaga,NY,469812,Syracuse,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+159,Lake,FL,468682,Tavares,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+160,Hampden,MA,465825,Springfield,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+161,Naugatuck Valley Planning Region,CT,465218,Waterbury,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+162,York,PA,464640,York,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+163,Virginia Beach (city),VA,459470,Virginia Beach,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+164,Marion,FL,457325,Ocala,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+165,Dakota,MN,455710,Hastings,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+166,Solano,CA,455676,Fairfield,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+167,Placer,CA,449883,Auburn,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+168,East Baton Rouge,LA,448467,Baton Rouge,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+169,Madison,AL,443961,Huntsville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+170,Loudoun,VA,443380,Leesburg,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+171,Santa Barbara,CA,441049,Santa Barbara,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+172,Jefferson,LA,440781,Gretna,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+173,Cameron,TX,434940,Brownsville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+174,Monterey,CA,434011,Salinas,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+175,Berks,PA,432821,Reading,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+176,Brazoria,TX,426744,Angleton,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+177,Lucas,OH,426291,Toledo,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+178,Richland,SC,425138,Columbia,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+179,Charleston,SC,424367,Charleston,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+180,Clackamas,OR,423173,Oregon City,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+181,Hillsborough,NH,422937,Manchester,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+182,Collier,FL,417540,Naples,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+183,Waukesha,WI,417029,Waukesha,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+184,St. Lucie,FL,413306,Fort Pierce,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+185,Orange,NY,411767,Goshen,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+186,Mobile,AL,411123,Mobile,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+187,Bell,TX,407057,Belton,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+188,Pulaski,AR,405828,Little Rock,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+189,Douglas,CO,405741,Castle Rock,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+190,St. Charles,MO,405262,St. Charles,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+191,Genesee,MI,401093,Flint,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+192,Butler,OH,399542,Hamilton,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+193,Mercer,NJ,399289,Trenton,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+194,Horry,SC,397478,Conway,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+195,Forsyth,NC,392921,Winston-Salem,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+196,Chesterfield,VA,389793,Chesterfield,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+197,Rutherford,TN,386352,Murfreesboro,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+198,Hamilton,TN,386256,Chattanooga,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+199,Weld,CO,385572,Greeley,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+200,Allen,IN,385410,Fort Wayne,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+201,Orleans,LA,383997,New Orleans,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+202,Davis,UT,381227,Farmington,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+203,Lane,OR,381181,Eugene,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+204,Larimer,CO,380384,Fort Collins,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+205,Lehigh,PA,377754,Allentown,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+206,Galveston,TX,377047,Galveston,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+207,Stark,OH,373834,Canton,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+208,Washtenaw,MI,372258,Ann Arbor,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+209,Anoka,MN,363887,Anoka,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+210,St. Johns,FL,359322,St. Augustine,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+211,Spartanburg,SC,356698,Spartanburg,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+212,Somerset,NJ,356486,Somerville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+213,Nueces,TX,353059,Corpus Christi,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+214,Westmoreland,PA,351163,Greensburg,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+215,Rockland,NY,348144,New City,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+216,Hamilton,IN,347467,Noblesville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+217,Marion,OR,346741,Salem,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+218,Benton,AR,343107,Bentonville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+219,Greater Bridgeport Planning Region,CT,339003,Bridgeport,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+220,Henrico,VA,338696,Laurel,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+221,Cumberland,NC,337890,Fayetteville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+222,Durham,NC,336892,Durham,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+223,Escambia,FL,335296,Pensacola,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+224,Lancaster,NE,334049,Lincoln,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+225,Lubbock,TX,332675,Lubbock,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+226,Howard,MD,332317,Ellicott City,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+227,Fayette,KY,329437,Lexington,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+228,Boulder,CO,327635,Boulder,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+229,Luzerne,PA,327388,Wilkes-Barre,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+230,Lorain,OH,322030,Elyria,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+231,Albany,NY,319964,Albany,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+232,Northampton,PA,319091,Easton,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+233,McHenry,IL,317751,Woodstock,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+234,Hays,TX,314441,San Marcos,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+235,Rockingham,NH,314176,Brentwood,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+236,Chatham,GA,314105,Savannah,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+237,Gloucester,NJ,312638,Woodbury,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+238,Lexington,SC,309528,Lexington,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+239,Cherokee,GA,304516,Canton,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+240,Cumberland,ME,303069,Portland,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+241,Thurston,WA,302912,Olympia,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+242,St. Louis City,MO,301578,St. Louis,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+243,Cleveland,OK,301193,Norman,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+244,Dutchess,NY,299963,Poughkeepsie,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+245,Leon,FL,299384,Tallahassee,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+246,Greene,MO,298915,Springfield,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+247,York,SC,298320,York,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+248,Merced,CA,297713,Merced,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+249,Clayton,GA,297709,Jonesboro,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+250,Ottawa,MI,296200,Grand Haven,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+251,Alachua,FL,290610,Gainesville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+252,Dauphin,PA,289234,Harrisburg,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+253,Anchorage,AK,286941,Anchorage,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+254,Forsyth,GA,286813,Cumming,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+255,Winnebago,IL,285350,Rockford,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+256,Ingham,MI,284900,Mason,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+257,Southeastern Connecticut Planning Region,CT,284859,Norwich,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+258,Sussex,DE,283047,Georgetown,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+259,San Luis Obispo,CA,282581,San Luis Obispo,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+260,Webb,TX,281878,Laredo,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+261,Kitsap,WA,281420,Port Orchard,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+262,St. Tammany,LA,279108,Covington,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+263,Atlantic,NJ,278657,Mays Landing,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+264,Weber,UT,278174,Ogden,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+265,Buncombe,NC,275901,Asheville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+266,Canyon,ID,275123,Caldwell,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+267,Washington,AR,275056,Fayetteville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+268,Brown,WI,273909,Green Bay,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+269,Baldwin,AL,273870,Bay Minette,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+270,McLennan,TX,273692,Waco,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+271,St. Joseph,IN,272912,South Bend,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+272,Frederick,MD,271717,Frederick,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+273,Cumberland,PA,270738,Carlisle,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+274,Henry,GA,269872,McDonough,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+275,Erie,PA,267571,Erie,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+276,Washington,MN,267568,Stillwater,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+277,Kalamazoo,MI,264780,Kalamazoo,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+278,Madison,IL,263017,Edwardsville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+279,Harford,MD,260924,Bel Air,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+280,Yakima,WA,258523,Yakima,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+281,St. Clair,IL,257400,Belleville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+282,Union,NC,256452,Monroe,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+283,Santa Cruz,CA,256287,Santa Cruz,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+284,Smith,TX,255569,Tyler,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+285,Berkeley,SC,255217,Moncks Corner,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+286,Jefferson,TX,254145,Beaumont,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+287,Yavapai,AZ,253908,Prescott,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+288,Clay,MO,253335,Liberty,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+289,Marin,CA,251684,San Rafael,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+290,Brazos,TX,249803,Bryan,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+291,Chesapeake (city),VA,249422,Chesapeake,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+292,Ellis,TX,249280,Waxahachie,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+293,Williamson,TN,247726,Franklin,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+294,Warren,OH,246553,Lebanon,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+295,Montgomery,TN,246025,Clarksville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+296,Johnston,NC,241955,Smithfield,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+297,Clay,FL,241908,Green Cove Springs,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+298,Tuscaloosa,AL,241856,Tuscaloosa,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+299,Lafayette,LA,241753,Lafayette,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+300,Shelby,AL,241298,Columbiana,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+301,Saratoga,NY,240360,Ballston Spa,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+302,Cabarrus,NC,240016,Concord,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+303,Arlington,VA,239807,Arlington,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+304,New Hanover,NC,238852,Wilmington,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+305,Norfolk (city),VA,238005,Norfolk,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+306,Delaware,OH,237966,Delaware,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+307,Caddo,LA,237848,Shreveport,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+308,Gaston,NC,237242,Gastonia,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+309,Whatcom,WA,234954,Bellingham,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+310,Barnstable,MA,232711,Barnstable,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+311,Lake,OH,232360,Painesville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+312,Linn,IA,232028,Cedar Rapids,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+313,Mohave,AZ,229942,Kingman,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+314,Hall,GA,229591,Gainesville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+315,Oneida,NY,228347,Utica,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+316,Yuma,AZ,227510,Yuma,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+317,Jefferson,MO,226739,Hillsboro,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+318,Richmond (city),VA,226610,Richmond,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+319,Montgomery,AL,225893,Montgomery,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+320,Hernando,FL,225830,Brooksville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+321,Mahoning,OH,225786,Youngstown,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+322,Yolo,CA,225560,Woodland,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+323,Doña Ana,NM,225210,Las Cruces,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+324,Johnson,TX,224506,Cleburne,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+325,Okaloosa,FL,223515,Crestview,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+326,Charlotte,FL,222968,Punta Gorda,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+327,Jackson,OR,220768,Medford,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+328,Kaufman,TX,220460,Kaufman,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+329,Benton,WA,218190,Prosser,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+330,Harrison,MS,217136,Gulfport,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+331,Comal,TX,216846,New Braunfels,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+332,Calcasieu,LA,216785,Lake Charles,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+333,Lackawanna,PA,216123,Scranton,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+334,Santa Rosa,FL,214759,Milton,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+335,Clermont,OH,214123,Batavia,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+336,Onslow,NC,213676,Jacksonville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+337,Anderson,SC,213076,Anderson,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+338,York,ME,211972,Alfred,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+339,Hinds,MS,211888,Jackson,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+340,Washington,PA,210232,Washington,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+341,Butte,CA,209836,Oroville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+342,Niagara,NY,209570,Lockport,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+343,Bay,FL,208816,Panama City,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+344,Minnehaha,SD,208639,Sioux Falls,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+345,Deschutes,OR,208513,Bend,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+346,Elkhart,IN,207893,Goshen,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+347,Richmond,GA,206574,Augusta,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+348,Guadalupe,TX,206548,Seguin,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+349,Champaign,IL,205865,Urbana,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+350,Sarpy,NE,204828,Papillion,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+351,Muscogee,GA,202270,Columbus,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+352,Trumbull,OH,201335,Warren,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+353,St. Louis,MN,200794,Duluth,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+354,Hawaii,HI,200629,Hilo,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+355,Washington,UT,200075,St. George,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+356,Iredell,NC,199710,Statesville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+357,Beaufort,SC,198979,Beaufort,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+358,Racine,WI,198651,Racine,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+359,Butler,PA,198413,Butler,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+360,Livingston,MI,197315,Howell,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+361,Kent,DE,196696,Dover,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+362,Broome,NY,196397,Binghamton,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+363,Cass,ND,196362,Fargo,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+364,Sangamon,IL,196343,Springfield,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+365,Sumner,TN,196281,Gallatin,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+366,Outagamie,WI,195390,Appleton,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+367,Paulding,GA,194059,Dallas,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+368,El Dorado,CA,192275,Placerville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+369,Lee,AL,191980,Opelika,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+370,Boone,MO,191746,Columbia,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+371,Midland,TX,191635,Midland,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+372,Saginaw,MI,190124,Saginaw,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+373,Parker,TX,189860,Weatherford,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+374,Tippecanoe,IN,188792,Lafayette,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+375,Newport News (city),VA,186247,Newport News,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+376,DeSoto,MS,185314,Hernando,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+377,Licking,OH,184898,Newark,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+378,Medina,OH,184625,Medina,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+379,Ulster,NY,182977,Kingston,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+380,Vanderburgh,IN,181995,Evansville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+381,Shasta,CA,181904,Redding,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+382,Peoria,IL,181830,Peoria,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+383,Houston,GA,181524,Perry,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+384,Imperial,CA,180051,El Centro,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+385,Alamance,NC,179165,Graham,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+386,Shawnee,KS,178909,Topeka,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+387,Lower Connecticut River Valley Planning Region,CT,177575,Middletown,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+388,Muskegon,MI,177428,Muskegon,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+389,Aiken,SC,177130,Aiken,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+390,Ector,TX,176948,Odessa,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+391,Carroll,MD,176639,Westminster,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+392,Canadian,OK,175829,El Reno,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+393,Scott,IA,175259,Davenport,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+394,Pitt,NC,175119,Greenville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+395,Kenton,KY,174862,Covington,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+396,Davidson,NC,174804,Lexington,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+397,Hendricks,IN,174788,Danville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+398,Indian River,FL,174038,Vero Beach,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+399,Kanawha,WV,173906,Charleston,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+400,Citrus,FL,173511,Inverness,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+401,Winnebago,WI,173307,Oshkosh,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+402,Porter,IN,173215,Valparaiso,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+403,Yellowstone,MT,172692,Billings,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+404,Greene,OH,172347,Xenia,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+405,Kootenai,ID,171362,Coeur d'Alene,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+406,Kent,RI,171278,East Greenwich,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+407,Columbia,GA,171115,Evans,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+408,McLean,IL,170954,Bloomington,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+409,Dorchester,SC,169833,St. George,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+410,Madera,CA,169722,Madera,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+411,Wyandotte,KS,169245,Kansas City,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+412,Kenosha,WI,168754,Kenosha,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+413,Pueblo,CO,168392,Pueblo,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+414,Fairfield,OH,167762,Lancaster,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+415,Martin,FL,167342,Stuart,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+416,Olmsted,MN,166731,Rochester,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+417,Charles,MD,166617,La Plata,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+418,Monroe,PA,166053,Stroudsburg,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+419,Beaver,PA,165631,Beaver,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+420,Rock,WI,165461,Janesville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+421,Catawba,NC,164645,Newton,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+422,Mesa,CO,164290,Grand Junction,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+423,Portage,OH,163839,Ravenna,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+424,Hampshire,MA,162308,Northampton,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+425,Coweta,GA,162302,Newnan,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+426,Schenectady,NY,162261,Schenectady,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+427,Johnson,IN,161765,Franklin,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+428,Chittenden,VT,161382,Burlington,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+429,Sumter,FL,161283,Bushnell,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+430,Rensselaer,NY,160749,Troy,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+431,Maui,HI,160592,Wailuku,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+432,Rankin,MS,160573,Brandon,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+433,St. Clair,MI,160308,Port Huron,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+434,Jackson,MI,160233,Jackson,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+435,Johnson,IA,160044,Iowa City,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+436,Brunswick,NC,159964,Bolivia,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+437,Alexandria (city),VA,159467,Alexandria,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+438,Scott,MN,159017,Shakopee,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+439,Ouachita,LA,158542,Monroe,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+440,Stearns,MN,158292,St. Cloud,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+441,Sullivan,TN,158163,Blountville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+442,Penobscot,ME,157967,Bangor,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+443,Franklin,PA,157854,Chambersburg,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+444,Centre,PA,157795,Bellefonte,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+445,Bibb,GA,157752,Macon,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+446,Wright,MN,157557,Buffalo,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+447,Cumberland,NJ,157148,Bridgeton,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+448,Stafford,VA,156927,Stafford,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+449,Douglas,GA,156526,Douglasville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+450,Grayson,TX,156361,Sherman,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+451,Santa Fe,NM,155956,Santa Fe,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+452,Sandoval,NM,155936,Bernalillo,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+453,Monroe,MI,154809,Monroe,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+454,Washington,MD,154705,Hagerstown,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+455,Kings,CA,154535,Hanford,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+456,Randall,TX,154419,Canyon,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+457,Merrimack,NH,153808,Concord,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+458,Berrien,MI,152444,St. Joseph,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+459,Taylor,TX,151764,Abilene,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+460,Rowan,NC,151661,Salisbury,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+461,Orange,NC,150626,Hillsborough,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+462,Sussex,NJ,148063,Newton,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+463,Wilson,TN,147737,Lebanon,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+464,Randolph,NC,147458,Asheboro,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+465,Jackson,MS,147002,Pascagoula,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+466,Cache,UT,145000,Logan,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+467,Rock Island,IL,144672,Rock Island,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+468,Rockwall,TX,144596,Rockwall,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+469,Flagler,FL,144436,Bunnell,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+470,Lebanon,PA,144252,Lebanon,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+471,Boone,KY,144135,Burlington,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+472,Coconino,AZ,144078,Flagstaff,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+473,Schuylkill,PA,143786,Pottsville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+474,Kendall,IL,143171,Yorkville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+475,Livingston,LA,142282,Livingston,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+476,Blount,TN,142211,Maryville,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+477,Harnett,NC,141477,Lillington,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+478,Spotsylvania,VA,140032,Spotsylvania Courthouse,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+479,Monroe,IN,139718,Bloomington,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+480,Marathon,WI,139091,Wausau,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+481,Washington,WI,138727,West Bend,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+482,Florence,SC,137214,Florence,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+483,Hampton (city),VA,137148,Hampton,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+484,Berkeley,WV,136287,Martinsburg,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+485,Faulkner,AR,135791,Conway,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+486,Pickens,SC,135495,Pickens,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+487,Clark,OH,134985,Springfield,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+488,Saline,AR,134807,Benton,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+489,Warren,KY,134554,Bowling Green,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+490,Calhoun,MI,133785,Marshall,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+491,Tangipahoa,LA,133157,Amite City,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+492,Washington,TN,133001,Jonesborough,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+493,Napa,CA,132783,Napa,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+494,Skagit,WA,132736,Mount Vernon,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+495,Carroll,GA,132579,Carrollton,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+496,Black Hawk,IA,132348,Waterloo,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+497,Wood,OH,132248,Bowling Green,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+498,Hunterdon,NJ,131781,Flemington,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+499,Linn,OR,131496,Albany,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)
+500,Tazewell,IL,131343,Pekin,tbd,Platform discovery needed (check Accela/EnerGov/eTRAKiT/SmartGov instance)

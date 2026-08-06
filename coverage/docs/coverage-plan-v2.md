@@ -34,10 +34,10 @@ The rule for splitting work: if the source is structured and stable, write an ad
 | :-: | :-: | :-: | :-: | :-: |
 | A1 | Socrata generic (SODA API, one config per dataset) | 8+ metros now: NYC, Chicago, SF, Seattle, Austin, LA, Orlando, San Antonio-adjacent | Days | One adapter, JSON in, config per resource ID. Instant county wins. |
 | A2 | ArcGIS FeatureServer generic | 10+ metros: Denver (commercial-only), DC, Columbus, Nashville, Miami-Dade, Raleigh, Fort Worth, Minneapolis, Las Vegas, Fort Worth | Days | Same shape as A1. A1+A2 together cover ~20 of the top 30 metros. |
-| A3 | Tier 1 state bid portals (30 sources, per-portal HTML) | Bid-stage projects + spec books in 21 states | 1-2 weeks | Proven live (MO, ME, DE, AR). This is the spec-book supply line. |
+| A3 | Tier 1 state bid portals (34 sources, per-portal HTML) | Bid-stage projects + spec books, no accounts | 1-2 weeks | Proven live (MO, ME, DE, AR). This is the spec-book supply line. |
 | A4 | SAM.gov API client | All federal construction (GSA, VA, USACE) | Days | Free key, documented API, direct spec attachment URLs. |
 | A5 | Accela Citizen Access | 900+ agencies incl. Houston area, Dallas, Phoenix, Clark Co, King Co | 2-3 weeks | The no-open-data metros all live here. Browser-grade headers needed. |
-| A6 | Bid Express (after one free info account) | ~20 DOT states' letting docs | 1 week | Volume play; lower priority for lighting/HVAC. |
+| A6 | Bid Express — DEPRIORITIZED (measured Aug 2026: no anonymous read path; even an info account requires sign-in) | ~20 DOT states' letting docs | 1 week + human account decision | 12+ DOT adapters already work without it, and DOT is the least valuable content for lighting/HVAC. Build last, if at all. |
 | A7 | Euna family (Bonfire portals) + OpenGov Procurement slugs | Universities, K-12, hospitals, cities | 1-2 weeks | Per-agency public portals; enumerate slugs. |
 | A8 | Carto SQL (Philadelphia) + one-offs (Boston CKAN, San Diego CSV) | Remaining verified feeds | Days | Small, config-driven. |
 
@@ -80,7 +80,7 @@ Skip: QuestCDN (pay per doc), Cloudpermit and MyGovernmentOnline (login-walled),
 | **Window** | **Ship** |
 | :-: | :-: |
 | Days 1-30 | A1, A2, A4, A8. Spec classifier agent on MO/ME/DE/AR docs. Funnel dashboard: projects → docs → spec docs → recovered. |
-| Days 31-60 | A3 all 30 Tier 1 portals. Gap-fill + dead-link agents scheduled. County scout starts (25/week). |
+| Days 31-60 | A3 all 34 Tier 1 portals. Gap-fill + dead-link agents scheduled. County scout starts (25/week). |
 | Days 61-90 | A5 Accela. A6 after Bid Express account. A7 Euna/OpenGov. Openness score v2 from classifier output. |
 
 ☐  Every adapter writes to the same project schema with source URL + fetch date

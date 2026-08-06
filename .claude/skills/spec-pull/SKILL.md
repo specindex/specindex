@@ -10,7 +10,7 @@ This skill runs the document-collection pipeline behind SpecIndex's spec-book la
 ## Standing rules (apply every run, no exceptions)
 
 1. **Public data only.** Official government portals and the open web. Never paid plan rooms, never Dodge or ConstructConnect content, never anything from a prior employer. These portals are government sources, not plan rooms, so SpecIndex's "no plan room resale" claim stays true — protect that.
-2. **Never create accounts, bypass logins, or spoof headers.** If a document needs an account, log it as "registration required" and move on. A human decides which registrations to make.
+2. **Never create accounts or bypass logins.** If a document needs an account, log it as "registration required" and move on. A human decides which registrations to make. Sending standard browser headers (User-Agent, Referer) to fetch public, unauthenticated documents is fine — some government CDNs block non-browser clients even for fully public files. The line: no faked authentication, no forged cookies or sessions, no captcha bypass, no IP rotation to evade a block. Honor robots.txt and keep request rates polite (about 1/second per host).
 3. **Never pay for anything.** QuestCDN states (ID, NV, WY) charge $15–42 per download; log and skip.
 4. **Never submit anything on any portal.** Read and download only.
 5. **Every document keeps its source URL and fetch date.** A fact without a citation is worthless to SpecIndex.
@@ -30,7 +30,7 @@ Two tables, matching the two halves of the pipeline.
 **`references/sources.csv`** — 100 rows, one per state per source type, for the document pull. Columns include the portal URL, access requirements, estimated project volume since Jan 2025, and quirks. Key fields:
 
 - **type**: `Vertical` (state building/facilities construction — where CSI-division building-product specs live; this is what matters most for SpecIndex) or `DOT` (highway lettings — volume, but roads-and-bridges specs).
-- **ease_tier**: `1` = direct free PDFs, no login (30 sources — always start here). `2` = free account needed (59; one free Bid Express info account covers ~20 DOT states). `3` = fee, password, or architect-distributed (11; log only).
+- **ease_tier**: `1` = direct free PDFs, no login (34 sources — always start here). `2` = free account needed (56). `3` = fee, password, or architect-distributed (10; log only). Bid Express caveat, measured Aug 2026: there is NO anonymous read path — even an "info" account requires signing in — so treat all ~20 Bid Express DOT states as account-gated and deprioritize them; 12+ DOT adapters verified without it.
 - **est_projects_since_jan2025**: approximate solicitation volume, ±50% on any single state. ~30K total (~8K vertical, ~21K DOT).
 
 Known quirks to expect: Delaware and Florida listings are JavaScript apps (use a browser tool to enumerate; the PDFs themselves are open — Delaware docs live on bidcondocs.delaware.gov and are Google-indexed). Missouri and Maine expose spec PDFs directly on their listing pages. URLs rot: Alabama and Wisconsin both migrated platforms within two years, so on a 404, search "[state] [agency] construction bid advertisements" and log the replacement URL.

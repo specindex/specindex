@@ -89,6 +89,20 @@ incident is recorded in `docs/AGENT_STRATEGY.md`; only the directive is here.
   dead; rate-limit ≥1s; emit rate and ETA; assert the next step can read the
   output.
 
+## 2c. Run `git check-ignore -v` BEFORE committing, not after
+
+- **Two ignore rules in this repo silently swallow whole directories.** `/coverage`
+  was Jest's output directory and collides with `coverage/docs` + `coverage/data`
+  (the coverage plan and verified source tables). `.claude/` was an agent-cache
+  rule and also swallowed `.claude/skills`, so a skill could never be committed.
+- **`git add` on an ignored path adds nothing and commits clean.** It looks
+  exactly like success and produces a repo where the file does not exist for any
+  other machine or future session — the same shape as a branch pushed with no
+  PR, or a workflow that never fires. The negations now in `.gitignore`
+  (`/coverage/*` + `!/coverage/docs/` + `!/coverage/data/`, and `.claude/*` +
+  `!.claude/skills/`) fix these two, but the habit is the real guard: run
+  `git check-ignore -v <sample file per new directory>` before the commit.
+
 ## 3. Tooling invariants
 
 - **Wait on a sentinel the producer writes, never `pgrep` a process pattern.**
