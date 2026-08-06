@@ -717,10 +717,15 @@ export function ProjectDetailView({ project: initialProject }: { project: Projec
   const [project, setProject] = useState(initialProject);
   const [showBreakdown, setShowBreakdown] = useState(false);
   const scoreRef = useRef<HTMLDivElement>(null);
-  const { isSignedIn, getToken } = useFirebaseAuthOptional() ?? {
+  const { isLoaded, isSignedIn, getToken } = useFirebaseAuthOptional() ?? {
+    isLoaded: true,
     isSignedIn: false,
     getToken: async () => null,
   };
+  // True once the signed-in refetch below has swapped the teaser for the full
+  // record. Needed because "gated" and "not yet upgraded" look identical in
+  // the data and must not look identical on screen.
+  const [upgraded, setUpgraded] = useState(false);
 
   // The static build only ever bakes in the public teaser (see
   // app/projects/[id]/page.tsx's generateStaticParams, an unauthenticated
@@ -734,7 +739,9 @@ export function ProjectDetailView({ project: initialProject }: { project: Projec
     getToken().then((token) => {
       if (!token || cancelled) return;
       fetchProjectForSignedInUser(initialProject.id, token).then((full) => {
-        if (!cancelled && full) setProject(full);
+        if (cancelled) return;
+        if (full) setProject(full);
+        setUpgraded(true);
       });
     });
     return () => {
@@ -807,7 +814,17 @@ export function ProjectDetailView({ project: initialProject }: { project: Projec
 
           {FIREBASE_AUTH_ENABLED && <TriageNav projectId={project.id} />}
 
-          {project.gated && (
+          {/* DO NOT ANNOUNCE A GATE THAT IS ABOUT TO LIFT. The static HTML is
+              built unauthenticated, so every project arrives gated. A signed-in
+              visitor therefore saw this amber "sign in to see more" panel flash
+              up and vanish a moment later, once Firebase restored the session
+              and the refetch below swapped in the full record.
+              Telling a signed-in rep to sign in, for half a second, on every
+              project they open, reads as the page breaking.
+              So it renders only when we actually KNOW the visitor is gated:
+              auth resolved, and either not signed in or the upgrade came back
+              still gated. */}
+          {project.gated && isLoaded && (!isSignedIn || upgraded) && (
             <div className="mt-5 rounded-lg border border-[var(--color-amber)] bg-[#fffbeb] p-4 text-sm text-[var(--color-ink)]">
               You&apos;re seeing the public summary. Sign in to see estimated value,
               square footage, owner, architect, general contractor, and sourced
