@@ -28,10 +28,47 @@ CSI_SECTION = re.compile(r"\b(0[0-9]|1[0-4]|2[0-8]|3[0-5])\s\d{2}\s\d{2}\b")
 CSI_PARTS = re.compile(r"PART\s+[123]\s*[-–—]?\s*(GENERAL|PRODUCTS|EXECUTION)", re.I)
 CSI_DIVISION = re.compile(r"\bDIVISION\s+\d{1,2}\b", re.I)
 
+# STATE DOT SPECIFICATIONS ARE NOT MASTERFORMAT. MasterFormat is a VERTICAL
+# building convention; highway agencies number their own way -- ADOT "Section
+# 601", WSDOT "Divisions 1-9", Iowa "Divisions 11-42". Judging a DOT adapter by
+# CSI structure fails every one of them however good the document is, which
+# would have been read as "DOT portals hold no specifications".
+#
+# So DOT adapters are judged on THEIR convention: a numbered spec section plus
+# the materials/measurement/payment skeleton every highway spec uses.
+# `\d{5}` covers MasterFormat 1995, which Utah still uses and writes UNSPACED
+# ("SECTION 00221", "SECTION 01355"). The modern spaced form ("23 05 00") is
+# matched by CSI_SECTION; without the 1995 arm a genuine CSI project manual
+# reads as having no section numbers at all.
+DOT_SECTION = re.compile(r"\bSECTION\s+\d{3,5}\b", re.I)
+# CALTRANS IS A THIRD CONVENTION. California numbers "1-1.06", "2-1.23",
+# "7-1.02K(3)" -- neither MasterFormat nor the 3-4 digit DOT section form. Its
+# own arm, deliberately, rather than loosening the others: a bare
+# `\d+-\d+\.\d+` matches version strings, dates and clause references in any
+# document, so it is required to CO-OCCUR with special-provision language.
+CALTRANS_SECTION = re.compile(r"\b\d{1,2}-\d{1,2}\.\d{2}[A-Z]?(\(\d+\))?\b")
+CALTRANS_CONTEXT = re.compile(
+    r"\b(SPECIAL\s+PROVISIONS?|STANDARD\s+SPECIFICATIONS?|"
+    r"REPLACE\s+SECTION|ADD\s+TO\s+SECTION|DELETE\s+SECTION)\b", re.I)
+
+DOT_SKELETON = re.compile(
+    r"\b(BASIS\s+OF\s+PAYMENT|METHOD\s+OF\s+MEASUREMENT|CONSTRUCTION\s+REQUIREMENTS"
+    r"|MATERIALS\s+REQUIREMENTS|DESCRIPTION\s+AND\s+SCOPE)\b", re.I)
+
 REQUIRED = ("PORTAL", "discover", "fetch")
 
 
-def pdf_text(body: bytes, pages: int = 25) -> str:
+def pdf_text(body: bytes, pages: int = 90) -> str:
+    """Read enough pages to reach the specification.
+
+    25 was too few and produced FALSE NEGATIVES on real spec books. A UDOT
+    advertisement set carries drawings, bid schedule and boilerplate up front --
+    its first measurement/payment heading is on PAGE 55. The document was
+    correct, the adapter was correct, and the checker said no.
+
+    90 is a deliberate trade: it costs a little more extraction time per
+    candidate, and it is still bounded so a 2,000-page book cannot stall a run.
+    """
     try:
         from pypdf import PdfReader
     except ImportError:
@@ -44,13 +81,43 @@ def pdf_text(body: bytes, pages: int = 25) -> str:
 
 
 def csi_evidence(text: str) -> list[str]:
+    """Structural evidence only. A bare section-number match is NOT enough.
+
+    HARDENED 2026-08-06 after the checker passed two documents that contain no
+    specification at all:
+
+      * a 37MB ADOT drawing set, whose "CSI section number" was `20 25 30`
+        lifted out of a culvert FILL HEIGHT RANGE TABLE
+      * an ADOT bid book, whose only match was the upside-down engineer's seal --
+        the date 2026-07-20 extracting as `07 20 26`
+
+    Both satisfy `\b(0[0-9]|...)\s\d{2}\s\d{2}\b`, because that pattern
+    matches ANY three space-separated number groups. Over a numeric table it
+    fires constantly. A real spec section number never appears alone: it sits
+    under a DIVISION heading or above the PART 1/2/3 skeleton.
+
+    So section numbers are now corroborating evidence, never sufficient on their
+    own. The load-bearing signals are PART 1/2/3 and DIVISION headings, which do
+    not occur by accident in a schedule or a seal.
+    """
+    parts = bool(CSI_PARTS.search(text))
+    division = bool(CSI_DIVISION.search(text))
+    section = bool(CSI_SECTION.search(text))
+    # DOT convention: a numbered section AND the measurement/payment skeleton.
+    # Both required -- "SECTION 601" alone appears in bid schedules too.
+    if DOT_SECTION.search(text) and DOT_SKELETON.search(text):
+        return ["DOT spec sections + measurement/payment"]
+    if CALTRANS_SECTION.search(text) and CALTRANS_CONTEXT.search(text):
+        return ["Caltrans section numbering + special provisions"]
+    if not (parts or division):
+        return []                      # section numbers alone prove nothing
     ev = []
-    if CSI_SECTION.search(text):
-        ev.append("section numbers")
-    if CSI_PARTS.search(text):
+    if parts:
         ev.append("PART 1/2/3")
-    if CSI_DIVISION.search(text):
+    if division:
         ev.append("division headings")
+    if section:
+        ev.append("section numbers")
     return ev
 
 
@@ -106,7 +173,8 @@ def check(path: Path, timeout_discover: int = 180) -> dict:
         time.sleep(1.0)
 
     if res["docs"]:
-        res["reason"] = f"downloaded {res['docs']} PDF(s) but none showed CSI structure (bid forms/notices only?)"
+        res["reason"] = (f"downloaded {res['docs']} PDF(s), none with PART 1/2/3 or DIVISION "
+                         f"headings (bid forms/notices/drawings only?)")
     else:
         res["reason"] = "no URL returned a real PDF (WAF block? try browser headers + Referer)"
     return res
