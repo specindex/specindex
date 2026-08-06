@@ -11,9 +11,11 @@ on:
     branches:
       - main
 concurrency:
-  # Each build is a full 27K+-page static export -- back-to-back pushes
-  # otherwise queue redundant full builds instead of the newest commit
-  # (which already contains everything the older ones do) superseding them.
+  # Back-to-back pushes otherwise queue redundant builds instead of the newest
+  # commit (which already contains everything the older ones do) superseding
+  # them. NOT a 27K-page export, despite what this comment used to say:
+  # getFeaturedProjectIds() caps static generation at 200 project pages, and
+  # has since a full build crashed at ~175K rows after four hours.
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 jobs:
@@ -21,6 +23,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+
+      # DEPENDENCY CACHE. The whole workflow was one `npm ci && npm run build`
+      # line with no setup-node, so every deploy reinstalled the entire tree
+      # from scratch. Measured 2026-08-06: the combined step took 4m57s of a
+      # 5m40s build -- 89% of the total -- while the actual Firebase deploy
+      # took 37 seconds.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      # NEXT.JS BUILD CACHE. Separate from node_modules and worth its own
+      # entry: it holds compiled output and the fetch cache, so an unchanged
+      # page does not re-render or re-fetch. Keyed on the lockfile plus source
+      # so a dependency bump or a code change still invalidates it, with
+      # restore-keys so a partial hit still beats a cold start.
+      - uses: actions/cache@v4
+        with:
+          path: .next/cache
+          key: nextjs-${{ hashFiles('package-lock.json') }}-${{ hashFiles('app/**', 'components/**', 'lib/**') }}
+          restore-keys: |
+            nextjs-${{ hashFiles('package-lock.json') }}-
+            nextjs-
+
       - run: npm ci && npm run build
         env:
           NEXT_PUBLIC_FIREBASE_API_KEY: ${{ secrets.NEXT_PUBLIC_FIREBASE_API_KEY }}
