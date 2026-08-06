@@ -144,7 +144,7 @@ export function NjPipelineDashboard() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search city, owner, permit, project…"
-          className="min-w-[220px] flex-1 rounded-md border border-[var(--color-border)] bg-white px-4 py-2.5 text-sm outline-none focus:border-[var(--color-amber)]"
+          className="min-w-[220px] flex-1 rounded-md border border-[var(--color-border)] bg-white px-4 py-2.5 text-sm outline-none focus:border-[var(--color-green)]"
         />
         <select
           value={origin}

@@ -113,17 +113,27 @@ a {
   border: none;
 }
 
+/* ONE PRIMARY CTA COLOUR, AND IT IS GREEN. This was amber, which put two
+   competing primary colours on the same header: an orange "Start for free"
+   next to a green "Book a demo", so nothing read as the main action. Green is
+   the logo mark and now the only call to action.
+
+   AMBER IS NOT DELETED, because it still MEANS something. It carries "Watch"
+   in the score tiers, "Closing" on a bidding project, and every warning
+   callout -- 49 usages that are semantic rather than decorative. Recolouring
+   those would destroy information to satisfy a style rule. Only the CTA
+   changed. */
 .btn-primary {
-  background: var(--color-amber);
-  color: var(--color-ink);
+  background: var(--color-green);
+  color: var(--color-white);
 }
 
 .btn-primary:hover {
-  background: var(--color-amber-hover);
+  background: var(--color-green-hover);
 }
 
-/* Request Demo specifically (header + homepage hero) -- same green as the
-   logo mark, distinct from .btn-primary's amber used for every other CTA. */
+/* Kept as an alias rather than removed: 19 call sites use .btn-demo, and a
+   rename would touch every one of them for no visual difference. */
 .btn-demo {
   background: var(--color-green);
   color: var(--color-white);

@@ -105,7 +105,7 @@ function CrmTable() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search name, email, company…"
-          className="w-full max-w-xs rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
+          className="w-full max-w-xs rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-green)] focus:ring-1 focus:ring-[var(--color-green)]"
         />
         <select
           value={stageFilter}
