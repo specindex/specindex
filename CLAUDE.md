@@ -48,6 +48,17 @@ incident is recorded in `docs/AGENT_STRATEGY.md`; only the directive is here.
 - **A dead source still answers queries, returning 0 rows for everything.** Query
   `1=1&returnCountOnly=true` periodically. A live count of 0 against a non-zero
   corpus count is the signature.
+- **"0 documents held" is a PROMPT TO LOOK, never a conclusion.** It states our
+  coverage, not the world. On 2026-08-06 a plain Google search found a Detroit
+  planning-commission staff report -- naming the developer, storeys and GSF --
+  for a project whose record showed 0 documents and whose page I had already
+  written an absence statement for. Before writing any "no documents" copy, run
+  the two-part search in `docs/AGENT_STRATEGY.md`.
+- **A model's FILENAMES are reliable; its PATHS are not.** Grounded search
+  returned five real Detroit filenames at five wrong paths -- all 404, all real
+  once repaired. `url_resolves()` alone would have scored 0-for-5 on a document
+  set that was 5-for-5. Always run `find-project-documents.py`'s repair step
+  before concluding a proposed document does not exist.
 - **Verify a value's PLAUSIBILITY, not just its presence.** Sanity-bound numbers
   before ranking on them: Miami-Dade reports $7.86B for a beauty-salon
   alteration. Never quote Florida project values.
