@@ -84,13 +84,13 @@ jobs:
 
       - name: Schedule due crawls
         env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DATABASE_URL: postgresql://specindex:${{ secrets.CLOUDSQL_PASSWORD }}@127.0.0.1:5433/specindex
         run: |
           python3 scripts/schedule-crawls.py ${{ inputs.retune && '--retune' || '' }}
 
       - name: Drain queue
         env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DATABASE_URL: postgresql://specindex:${{ secrets.CLOUDSQL_PASSWORD }}@127.0.0.1:5433/specindex
           GOOGLE_APPLICATION_CREDENTIALS: ${{ steps.auth.outputs.credentials_file_path }}
         run: |
           # --once so the job ends when the queue drains instead of holding a
@@ -107,7 +107,7 @@ jobs:
       - name: Seam + source health
         if: always()
         env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DATABASE_URL: postgresql://specindex:${{ secrets.CLOUDSQL_PASSWORD }}@127.0.0.1:5433/specindex
         run: |
           python3 - <<'PY'
           import os, psycopg2
