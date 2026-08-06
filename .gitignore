@@ -15,6 +15,7 @@
 /coverage/*
 !/coverage/docs/
 !/coverage/data/
+!/coverage/test-results/
 
 # next.js
 /.next/
