@@ -123,7 +123,7 @@ export function SignInModal({
             onChange={(e) => setEmail(e.target.value)}
             placeholder="you@company.com"
             autoComplete="email"
-            className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2.5 text-sm outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
+            className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2.5 text-sm outline-none focus:border-[var(--color-green)] focus:ring-1 focus:ring-[var(--color-green)]"
           />
 
           {/* One form, both fields, per PRD 3.5. An email-then-password split
@@ -152,7 +152,7 @@ export function SignInModal({
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Your password"
               autoComplete="current-password"
-              className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2.5 pr-16 text-sm outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
+              className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2.5 pr-16 text-sm outline-none focus:border-[var(--color-green)] focus:ring-1 focus:ring-[var(--color-green)]"
             />
             {/* Reps work on phones and mistype constantly. Not optional. */}
             <button

@@ -205,7 +205,7 @@ export function ProfileCaptureModal({
                   value={territoryRefinement}
                   onChange={(e) => setTerritoryRefinement(e.target.value)}
                   placeholder="Counties, metro areas, or zip codes"
-                  className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
+                  className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-green)] focus:ring-1 focus:ring-[var(--color-green)]"
                 />
               </div>
 
@@ -243,7 +243,7 @@ export function ProfileCaptureModal({
                   value={company}
                   onChange={(e) => setCompany(e.target.value)}
                   placeholder="Acme Building Products"
-                  className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
+                  className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-green)] focus:ring-1 focus:ring-[var(--color-green)]"
                 />
               </div>
 
@@ -260,7 +260,7 @@ export function ProfileCaptureModal({
                     value={roleTitle}
                     onChange={(e) => setRoleTitle(e.target.value)}
                     placeholder="Territory Manager"
-                    className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
+                    className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-green)] focus:ring-1 focus:ring-[var(--color-green)]"
                   />
                 </div>
                 <div>
@@ -277,7 +277,7 @@ export function ProfileCaptureModal({
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="(555) 555-0123"
-                    className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
+                    className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-green)] focus:ring-1 focus:ring-[var(--color-green)]"
                   />
                   <p className="mt-1 text-xs text-[var(--color-gray-400)]">
                     For account support and setup assistance only.

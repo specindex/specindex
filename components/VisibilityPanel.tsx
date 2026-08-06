@@ -125,7 +125,7 @@ export function VisibilityPanel() {
           <input
             value={brand}
             onChange={(e) => setBrand(e.target.value)}
-            className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2.5 outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
+            className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2.5 outline-none focus:border-[var(--color-green)] focus:ring-1 focus:ring-[var(--color-green)]"
             placeholder="e.g. Acuity Brands"
           />
           <p className="mt-3 text-[11px] text-[var(--color-gray-400)]">
@@ -159,7 +159,7 @@ export function VisibilityPanel() {
           <input
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-            className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2.5 outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
+            className="mt-2 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2.5 outline-none focus:border-[var(--color-green)] focus:ring-1 focus:ring-[var(--color-green)]"
             placeholder="e.g. HVAC, glazing, flooring"
           />
         </label>

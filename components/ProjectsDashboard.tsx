@@ -472,7 +472,7 @@ export function ProjectsDashboard() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="City, owner, GC, HVAC, glazing, healthcare…"
-          className="mt-4 w-full rounded-md border border-[var(--color-border)] bg-white px-4 py-3 text-base outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
+          className="mt-4 w-full rounded-md border border-[var(--color-border)] bg-white px-4 py-3 text-base outline-none focus:border-[var(--color-green)] focus:ring-1 focus:ring-[var(--color-green)]"
         />
         {/* Status as three chips, not a dropdown of everything. The stage a
             project is in is the single most consequential filter -- a

@@ -189,7 +189,7 @@ function DemoRequestModal({ persona, onClose }: { persona: DemoPersona; onClose:
                 <input
                   name="firstName"
                   required
-                  className="mt-1.5 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
+                  className="mt-1.5 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-green)] focus:ring-1 focus:ring-[var(--color-green)]"
                 />
               </label>
               <label className="block sm:col-span-1">
@@ -197,7 +197,7 @@ function DemoRequestModal({ persona, onClose }: { persona: DemoPersona; onClose:
                 <input
                   name="lastName"
                   required
-                  className="mt-1.5 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
+                  className="mt-1.5 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-green)] focus:ring-1 focus:ring-[var(--color-green)]"
                 />
               </label>
               <label className="block sm:col-span-2">
@@ -206,7 +206,7 @@ function DemoRequestModal({ persona, onClose }: { persona: DemoPersona; onClose:
                   name="email"
                   type="email"
                   required
-                  className="mt-1.5 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
+                  className="mt-1.5 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-green)] focus:ring-1 focus:ring-[var(--color-green)]"
                 />
               </label>
               <label className="block sm:col-span-2">
@@ -214,7 +214,7 @@ function DemoRequestModal({ persona, onClose }: { persona: DemoPersona; onClose:
                 <input
                   name="company"
                   required
-                  className="mt-1.5 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
+                  className="mt-1.5 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-green)] focus:ring-1 focus:ring-[var(--color-green)]"
                 />
               </label>
               <label className="block sm:col-span-2">
@@ -224,7 +224,7 @@ function DemoRequestModal({ persona, onClose }: { persona: DemoPersona; onClose:
                 <input
                   name="categories"
                   placeholder="e.g. HVAC, glazing, flooring"
-                  className="mt-1.5 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-amber)] focus:ring-1 focus:ring-[var(--color-amber)]"
+                  className="mt-1.5 w-full rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm outline-none focus:border-[var(--color-green)] focus:ring-1 focus:ring-[var(--color-green)]"
                 />
               </label>
             </div>
