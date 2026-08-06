@@ -59,7 +59,19 @@ jobs:
 
       - name: Enable auto-merge, refresh branches, flag staleness
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # PREFER A PAT. GitHub does not trigger workflows for pushes made
+          # using GITHUB_TOKEN, so a PR auto-merged with it lands on main and
+          # fires NOTHING -- no API deploy, no site deploy. Observed three times
+          # on 2026-08-05 (#129, #131 and one before): the merge succeeded, the
+          # fix sat in main undeployed, and the only symptom was the original
+          # bug still happening in production.
+          #
+          # AUTOMERGE_TOKEN is a fine-grained PAT; merges made with it are
+          # attributed to a user and trigger normally. Falls back to
+          # GITHUB_TOKEN when unset so this workflow keeps working without it --
+          # merges just go back to being silent, which deploy-reconcile.yml then
+          # catches on its next pass.
+          GH_TOKEN: ${{ secrets.AUTOMERGE_TOKEN || secrets.GITHUB_TOKEN }}
           DRY_RUN: ${{ inputs.dry_run }}
         run: |
           set -euo pipefail
@@ -141,7 +153,19 @@ jobs:
 
       - name: Warn on branches that have drifted far enough to be suspect
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # PREFER A PAT. GitHub does not trigger workflows for pushes made
+          # using GITHUB_TOKEN, so a PR auto-merged with it lands on main and
+          # fires NOTHING -- no API deploy, no site deploy. Observed three times
+          # on 2026-08-05 (#129, #131 and one before): the merge succeeded, the
+          # fix sat in main undeployed, and the only symptom was the original
+          # bug still happening in production.
+          #
+          # AUTOMERGE_TOKEN is a fine-grained PAT; merges made with it are
+          # attributed to a user and trigger normally. Falls back to
+          # GITHUB_TOKEN when unset so this workflow keeps working without it --
+          # merges just go back to being silent, which deploy-reconcile.yml then
+          # catches on its next pass.
+          GH_TOKEN: ${{ secrets.AUTOMERGE_TOKEN || secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
           REPO="${{ github.repository }}"

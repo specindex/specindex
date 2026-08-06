@@ -3,6 +3,10 @@
 
 name: Deploy to Firebase Hosting on merge
 on:
+  # Dispatchable so deploy-reconcile.yml can correct a site that drifted
+  # behind main -- bot merges fire no push event, so without this the
+  # reconciler can DETECT a stale site but not fix one.
+  workflow_dispatch:
   push:
     branches:
       - main

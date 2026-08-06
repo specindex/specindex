@@ -99,8 +99,44 @@ jobs:
           echo "### Deploy reconcile: triggered an API deploy" >> $GITHUB_STEP_SUMMARY
           echo "main was ahead of the deployed revision." >> $GITHUB_STEP_SUMMARY
 
+      # THE FRONTEND HALF. The first version of this workflow reconciled only
+      # the API, which left the same hole for the site: bot merges swallow the
+      # Firebase deploy exactly as they swallow the API deploy, and the site is
+      # where a broken signup form is actually visible to a stranger.
+      #
+      # Hosting has no image tag to read, so the question is answered from
+      # GitHub instead: what commit did the last SUCCESSFUL site deploy build?
+      # If that is not main's HEAD, the site is stale.
+      - name: Compare deployed site to main
+        id: site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          MAIN_SHA=$(git rev-parse HEAD)
+          LAST=$(gh run list --workflow=firebase-hosting-merge.yml --branch main \
+                   --status success --limit 1 --json headSha -q '.[0].headSha')
+          echo "main:            $MAIN_SHA"
+          echo "last site build: ${LAST:-none}"
+          if [ "$LAST" = "$MAIN_SHA" ]; then
+            echo "in_sync=true" >> "$GITHUB_OUTPUT"
+            echo "deployed site matches main"
+          else
+            echo "in_sync=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::deployed site does NOT match main -- redeploying"
+          fi
+
+      - name: Deploy the site to match main
+        if: steps.site.outputs.in_sync != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run firebase-hosting-merge.yml --ref main \
+            && echo "triggered a site deploy" \
+            || echo "::error::could not dispatch the site deploy (needs workflow_dispatch on firebase-hosting-merge.yml)"
+
       - name: Report
         if: always()
         run: |
           echo "### Deploy reconcile: ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
-          echo "API in sync with main: ${{ steps.check.outputs.in_sync }}" >> $GITHUB_STEP_SUMMARY
+          echo "- API in sync with main: ${{ steps.check.outputs.in_sync }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Site in sync with main: ${{ steps.site.outputs.in_sync }}" >> $GITHUB_STEP_SUMMARY
