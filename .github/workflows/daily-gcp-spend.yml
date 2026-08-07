@@ -1,0 +1,46 @@
+name: daily-gcp-spend
+
+# Daily GCP spend to asif@specindex.ai.
+#
+# GCP ONLY, deliberately. Claude Code runs on the Max plan and its usage is not
+# exposed through any API, so a "consolidated" report would silently show zero
+# for half of it. This reports the meter that is queryable and says so in the
+# body.
+
+on:
+  schedule:
+    - cron: "0 13 * * *"   # 13:00 UTC ~ 9am ET, after the prior day closes
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -q google-cloud-bigquery
+
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          # WIF, matching every other workflow here. Copying an auth pattern
+          # from documentation instead of this repo's own working workflows
+          # already broke one deploy on its first run.
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+
+      - name: Send the report
+        env:
+          EMAIL_SMTP_HOST: ${{ secrets.EMAIL_SMTP_HOST }}
+          EMAIL_SMTP_PORT: ${{ secrets.EMAIL_SMTP_PORT }}
+          EMAIL_SMTP_USERNAME: ${{ secrets.EMAIL_SMTP_USERNAME }}
+          EMAIL_SMTP_PASSWORD: ${{ secrets.EMAIL_SMTP_PASSWORD }}
+          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+        run: python3 scripts/daily-gcp-spend-report.py --to asif@specindex.ai
