@@ -54,11 +54,31 @@ def main() -> int:
     args = ap.parse_args()
 
     logdir = ROOT / "coverage" / "pull-log"
-    logpath = Path(args.log) if args.log else max(logdir.glob("pull-*.csv"),
-                                                  key=lambda p: p.stat().st_size)
-    rows = [r for r in csv.DictReader(open(logpath))
-            if r.get("spec_format") in ("CSI", "DOT SS/SP")]
-    print(f"[scope] {logpath.name}: {len(rows)} confirmed spec documents", flush=True)
+    # EVERY log, not the biggest one. The default used to be
+    # max(..., key=size), so the broad all-states log from 2026-08-06 won every
+    # time and a single-state capture could never load: a Maine run wrote 404
+    # documents to a fresh log, the loader read the older file, and the corpus
+    # moved by +0. Capture and load are separate steps, so the step that reads
+    # must not silently pick a different file than the step that wrote.
+    #
+    # Reading all of them is safe: project creation and document linking are
+    # both id-deduped, so a log processed twice adds nothing.
+    if args.log:
+        logs = [Path(args.log)]
+    else:
+        logs = sorted(logdir.glob("pull-*.csv"), key=lambda p: p.stat().st_mtime)
+    rows, seen = [], set()
+    for lp in logs:
+        for r in csv.DictReader(open(lp)):
+            if r.get("spec_format") not in ("CSI", "DOT SS/SP"):
+                continue
+            key = (r.get("document_url") or r.get("url") or "", r.get("project_id") or "")
+            if key in seen:
+                continue
+            seen.add(key)
+            rows.append(r)
+    print(f"[scope] {len(logs)} pull log(s), newest {logs[-1].name if logs else '-'}: "
+          f"{len(rows)} confirmed spec documents", flush=True)
 
     conn = connect(); cur = conn.cursor()
     cur.execute("SELECT count(*) FROM projects"); before = cur.fetchone()[0]

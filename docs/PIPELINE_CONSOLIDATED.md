@@ -105,23 +105,73 @@ Addenda still matter — a *displaced* manufacturer is only visible there — bu
 expect a low hit rate per addendum, and never read "no addenda captured" as "no
 rulings available".
 
-## 4. How they compose
+## 4. The merged model — one stage list
 
-```
-A1–A8 adapters ──▶ Stage 1 (projects)
-                   Stage 1.5 (load into index)   ← the seam that keeps breaking
-                   Stage 2 (documents)      = 11-step step 8
-                   Stage 3 (classify)       = 11-step steps 9–10
-                   Stage 4 (gap-fill)       = 11-step step 6, applied late
-                                              11-step step 11 = the ledger
-```
+The 11 steps and the 4 stages are not two processes. They are **procedure** and
+**metrics** for the same work, in two vocabularies, which is why they read as
+duplicates and why a stage's metric could drift from its step's instruction until
+one of them destroyed data (see stage **S5** below).
+
+They differ in **scope and frequency**, and that difference must survive the
+merge:
+
+- **11-steps 1–7 run ONCE per jurisdiction.** Onboarding a source.
+- **11-steps 8–11 run FOREVER, per project.** This is what the funnel measures.
+
+Flattening them into one sequence puts a one-time setup beside a continuous loop,
+and then nobody knows which to re-run. So the merge is a single stage list where
+each stage owns **exactly one metric and exactly one checker**.
+
+### Loop A — onboard a source (once per jurisdiction)
+
+| | stage | was | done when |
+|---|---|---|---|
+| **S1** | Discover + verify the source | steps 1–2 | a live probe returns a product-specific signature, baselined against a nonsense path |
+| **S2** | Feed back + record | steps 3–4 | outcome sent to Gemini; a memory note exists |
+| **S3** | Wire the provider | steps 5, 7 | `check-portal-adapters.py` **PASS** + document count matches the listing row |
+
+### Loop B — run the corpus (continuously, per project)
+
+| | stage | was | **the one metric** |
+|---|---|---|---|
+| **S4** | Enumerate + load | funnel 1 + 1.5 | **rows in `projects`** — never "records pulled" |
+| **S5** | Capture documents | step 8, funnel 2 | **% of LISTED attachments captured** — never "% with ≥1" |
+| **S6** | Extract + classify | steps 9–10, funnel 3 | divisions on a project; pages joinable **from the project** |
+| **S7** | Ledger | step 11 | **cited findings per project** |
+| **S8** | Gap-fill by search | funnel 4 (= step 6, late) | recovery rate, **only where S6 found nothing** |
+
+**S5's metric is the whole reason to do this merge.** Funnel stage 2 said "% with
+≥1 document" while step 8 said "pull every attachment". The runner implemented the
+metric, not the step — `break` after the first document — and Maine 3820 lost five
+of six documents including the addendum. One stage, one metric, no second
+vocabulary to drift from.
+
+### Where the efficiency actually is
+
+Not in fewer stages — in **fewer reads of the same PDF**. S5, S6 and S7 each
+fetch and re-parse the document today, so a 219-page spec book crosses the wire
+and through a parser three times. Merge them into **one pass per document**:
+fetch once, extract pages once, and run classification and ledger extraction off
+that single in-memory text. Everything downstream already works off
+`document_pages`; only the entry points differ.
+
+The second win is **S8 stays last**. Searching before crawling cost a 0% hit rate
+over 10 projects and would cost roughly $17,000 at corpus scale.
+
+### Chaining rule (this is what keeps breaking)
+
+**Each stage's exit check is the next stage's entry query.** Not a similar query —
+the same one. Every seam in §6 below is a stage that verified its own write in its
+own terms while the next stage read somewhere else: pages written to
+`reference_documents` and read from `project_document_files`; documents written to
+a fresh pull log and read from the biggest one.
 
 **Which to use:**
 
-- Adding a **source platform** → build an adapter, judged by the checker.
-- Adding a **jurisdiction on an existing platform** → a YAML config.
-- Asking **"is this jurisdiction done?"** → the 11 steps, and steps 8–11 decide.
-- Asking **"is the product real?"** → the funnel, measured at stage 3.
+- Adding a **source platform** → Loop A, judged by the checker.
+- Adding a **jurisdiction on an existing platform** → a YAML config, then Loop A **S3**.
+- Asking **"is this jurisdiction done?"** → Loop B, and **S5–S7** decide.
+- Asking **"is the product real?"** → **S7**. Cited findings, not projects.
 
 ## 5. Where it actually stands
 
