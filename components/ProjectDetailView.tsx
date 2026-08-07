@@ -438,13 +438,53 @@ function deriveScope(description: string, watch: string[]): DerivedScope[] {
  *  ruling would claim an adjudication that never happened. It says what the
  *  specification NAMES, which is what a rep needs and all we can support.
  */
+/** Manufacturers named in the specification, with the sentence that names them.
+ *
+ *  LEADS WITH THE TRADE, NOT THE CODE. The first version headlined "DIVISION 03"
+ *  and put "Concrete" in grey micro-text underneath. A CSI division number is
+ *  filing metadata -- nobody scans a page looking for "03". A rep scans for
+ *  their trade. So the trade name is the heading and the code is secondary,
+ *  which costs nothing and makes the panel readable by someone who has never
+ *  heard of MasterFormat.
+ *
+ *  AND IT SHOWS OPENNESS, which the first version computed and never displayed.
+ *  That is the most commercially useful field on the page:
+ *
+ *    proprietary  one product, no substitution -- a locked job. The named
+ *                 manufacturer defends it; everyone else is shut out and should
+ *                 know before spending a bid cycle.
+ *    or-equal     named product, substitution permitted -- a live opening, and
+ *                 the approved-alternates list says exactly who may bid it.
+ *    performance  requirements only, no product named -- open to anyone who
+ *                 meets the spec.
+ */
 function SpecCitationsPanel({ citations }: { citations: SpecCitation[] }) {
   if (citations.length === 0) return null;
+
+  const OPENNESS: Record<string, { label: string; hint: string; cls: string }> = {
+    proprietary: {
+      label: "Locked",
+      hint: "Named with no substitution permitted",
+      cls: "bg-amber-100 text-amber-900 dark:bg-amber-950 dark:text-amber-300",
+    },
+    "or-equal": {
+      label: "Open to equals",
+      hint: "Named, but substitution is permitted",
+      cls: "bg-green-100 text-green-900 dark:bg-green-950 dark:text-green-300",
+    },
+    performance: {
+      label: "Performance spec",
+      hint: "Requirements only — no product named",
+      cls: "bg-sky-100 text-sky-900 dark:bg-sky-950 dark:text-sky-300",
+    },
+  };
+
   const byDivision = new Map<string, SpecCitation[]>();
   for (const c of citations) {
     const k = c.csi_division || "—";
     byDivision.set(k, [...(byDivision.get(k) ?? []), c]);
   }
+
   return (
     <div className="mt-6 rounded-lg border border-green-700/30 bg-green-50/60 p-4 dark:bg-green-950/20">
       <h3 className="text-xs font-bold uppercase tracking-wider text-green-900 dark:text-green-300">
@@ -452,51 +492,81 @@ function SpecCitationsPanel({ citations }: { citations: SpecCitation[] }) {
       </h3>
       <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
         {citations.length} manufacturer{citations.length === 1 ? "" : "s"} quoted
-        from the project&rsquo;s own documents, with the page each appears on.
+        from this project&rsquo;s own documents, with the page each appears on.
       </p>
-      <div className="mt-3 space-y-3">
-        {[...byDivision.entries()].map(([div, rows]) => (
-          <div key={div}>
-            <div className="text-[11px] font-bold uppercase tracking-wide text-gray-500">
-              {div === "—" ? "Division not stated" : `Division ${div}`}
-            </div>
-            {rows.map((c, i) => (
-              <div key={i} className="mt-1.5 border-l-2 border-green-700/40 pl-3">
-                <div className="text-sm font-semibold">
-                  {c.manufacturer}
-                  {c.product ? (
-                    <span className="font-normal text-gray-600 dark:text-gray-400">
-                      {" "}&middot; {c.product}
-                    </span>
-                  ) : null}
-                </div>
-                {/* An empty quote rendered as bare "" on the two PROPRIETARY
-                    rows -- SikaGrout and Summit. There is no substitution
-                    language because none is permitted, which is the most
-                    valuable thing this panel can say. Rendering it as an empty
-                    quotation mark made the strongest rows look like the
-                    weakest. */}
-                {c.quoted_text && c.quoted_text.trim() ? (
-                  <blockquote className="mt-0.5 text-xs italic text-gray-700 dark:text-gray-300">
-                    &ldquo;{c.quoted_text}&rdquo;
-                  </blockquote>
-                ) : c.ruling === "proprietary" ? (
-                  <p className="mt-0.5 text-xs font-medium text-amber-700 dark:text-amber-500">
-                    No substitution language — specified without an &ldquo;or equal&rdquo;
-                  </p>
-                ) : null}
-                <div className="mt-0.5 text-[11px] text-gray-500">
-                  page {c.page_number}
-                  {c.csi_section ? ` · section ${c.csi_section}` : ""}
-                </div>
+
+      <div className="mt-3 space-y-4">
+        {[...byDivision.entries()].map(([div, rows]) => {
+          // The trade name is the heading. Fall back to the code only when the
+          // extractor gave us no name.
+          const trade = rows[0]?.csi_section || `Division ${div}`;
+          return (
+            <div key={div}>
+              <div className="flex items-baseline gap-2">
+                <span className="text-sm font-bold">{trade}</span>
+                {div !== "—" && (
+                  <span className="text-[10px] font-medium uppercase tracking-wide text-gray-400">
+                    CSI Division {div}
+                  </span>
+                )}
               </div>
-            ))}
-          </div>
-        ))}
+              {rows.map((c, i) => {
+                const o = c.ruling ? OPENNESS[c.ruling] : undefined;
+                return (
+                  <div key={i} className="mt-1.5 border-l-2 border-green-700/40 pl-3">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="text-sm font-semibold">{c.manufacturer}</span>
+                      {o && (
+                        <span
+                          className={`rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide ${o.cls}`}
+                          title={o.hint}
+                        >
+                          {o.label}
+                        </span>
+                      )}
+                    </div>
+                    {o && (
+                      <div className="mt-0.5 text-[11px] text-gray-600 dark:text-gray-400">
+                        {o.hint}
+                      </div>
+                    )}
+                    {c.quoted_text && c.quoted_text.trim() ? (
+                      <blockquote className="mt-1 text-xs italic text-gray-700 dark:text-gray-300">
+                        &ldquo;{c.quoted_text}&rdquo;
+                      </blockquote>
+                    ) : c.ruling === "proprietary" ? (
+                      <p className="mt-1 text-xs font-medium text-amber-700 dark:text-amber-500">
+                        No &ldquo;or equal&rdquo; language appears — this product is
+                        specified outright.
+                      </p>
+                    ) : null}
+                    <div className="mt-0.5 text-[11px] text-gray-500">
+                      page {c.page_number}
+                      {c.source_url ? (
+                        <>
+                          {" · "}
+                          <a
+                            href={c.source_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline hover:text-gray-700"
+                          >
+                            open the source document
+                          </a>
+                        </>
+                      ) : null}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          );
+        })}
       </div>
+
       <p className="mt-3 text-[11px] text-gray-500">
         Quoted from documents we hold. Being named is not an award — a
-        specification can name a product and the job can be built with another.
+        specification can name a product and the job be built with another.
       </p>
     </div>
   );
