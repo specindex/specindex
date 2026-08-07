@@ -12,21 +12,27 @@
 # North Carolina's eVP is a Power Pages app that returns zero solicitation ids to
 # a plain fetch, and Arkansas 403s everything except headless Chromium with its
 # OWN user agent left alone.
-FROM python:3.12-slim
+# OFFICIAL PLAYWRIGHT IMAGE, not python:3.12-slim.
+#
+# The first build failed exactly where pipeline/README.md predicted:
+# `playwright install --with-deps chromium` on slim tries to apt-get
+# `ttf-unifont` and `ttf-ubuntu-font-family`, which Debian trixie renamed to
+# `fonts-unifont` -- "has no installation candidate", exit 100.
+#
+# Chasing renamed Debian font packages is a maintenance treadmill that breaks
+# again on the next base bump. Microsoft's image ships Chromium and every system
+# dependency already matched to the Playwright version, so there is nothing to
+# keep in sync.
+FROM mcr.microsoft.com/playwright/python:v1.48.0-jammy
 
 ENV PYTHONUNBUFFERED=1 \
-    PIP_NO_CACHE_DIR=1 \
-    PLAYWRIGHT_BROWSERS_PATH=/opt/pw
+    PIP_NO_CACHE_DIR=1
 
 WORKDIR /app
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-        curl ca-certificates \
-    && rm -rf /var/lib/apt/lists/*
-
 COPY pipeline/requirements.txt .
-RUN pip install -r requirements.txt \
-    && python -m playwright install --with-deps chromium
+# Browsers are already present in this image; only the Python deps are needed.
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Code and source tables only. Documents live in GCS, never in the image.
 COPY scripts/  ./scripts/
