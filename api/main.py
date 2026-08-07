@@ -1735,17 +1735,25 @@ def fetch_document_files(conn, sk: int, base_url: str) -> list[dict[str, Any]]:
 def fetch_spec_citations(conn, project_sk: int) -> list[dict]:
     """Manufacturers named in this project's specification, with page cites.
 
-    THE TABLE IS CALLED substitution_rulings AND THAT NAME OVERSELLS IT. All 102
-    rows carry ruling='pending' and confidence='reported' -- nobody approved or
-    rejected anything. They are basis-of-design MENTIONS extracted from spec
-    text. Surfacing them as "rulings" would claim an adjudication that did not
-    happen, so the API renames the concept at the boundary and only ships rows
-    that carry both a page number and a verbatim quote. A citation the customer
-    cannot check is not a citation.
+    READS TWO TABLES, because the pipeline fills two:
 
-    This is a narrower claim than the division list and a much stronger one: it
-    answers "is my product specified" with the sentence that says so.
+      substitution_rulings   -- SAM.gov extractions. Despite the name, every row
+                                is ruling='pending'/confidence='reported': these
+                                are basis-of-design MENTIONS, not adjudications.
+                                Surfacing them as "rulings" would claim a decision
+                                nobody made.
+      project_csi_divisions  -- the bulk classifier's output, and where the
+                                demo-quality data actually is.
+
+    The first version read only substitution_rulings, so a Maine project with 16
+    classified divisions returned an empty panel while a table two joins away
+    held every answer. Building the reader against one table and the data against
+    another is the same seam that has bitten this pipeline four times.
+
+    Only rows carrying a page number and a verbatim quote OR a named product
+    ship. A citation the customer cannot check is not a citation.
     """
+    out: list[dict] = []
     with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
         cur.execute(
             """
@@ -1762,20 +1770,43 @@ def fetch_spec_citations(conn, project_sk: int) -> list[dict]:
             """,
             (project_sk,),
         )
-        rows = [dict(r) for r in cur.fetchall()]
+        out.extend(dict(r) for r in cur.fetchall())
 
-    # Case-fold duplicates: the extractor emits "Trane" and "TRANE", "Folger
-    # Adam" and "FOLGER ADAM" as separate rows. Same manufacturer on the same
-    # page is one citation, and showing it twice reads as two findings.
-    seen, out = set(), []
-    for r in rows:
-        key = ((r["manufacturer"] or "").strip().lower(), r["csi_division"], r["page_number"])
+        cur.execute(
+            """
+            SELECT d.basis_of_design_product AS manufacturer,
+                   NULL::text                AS product,
+                   d.division                AS csi_division,
+                   d.division_name           AS csi_section,
+                   d.page_from               AS page_number,
+                   d.substitution_language   AS quoted_text,
+                   r.url                     AS source_url,
+                   d.openness                AS ruling,
+                   d.confidence,
+                   d.approved_manufacturers,
+                   d.model_numbers
+              FROM project_csi_divisions d
+              LEFT JOIN reference_documents r ON r.id = d.source_document_id
+             WHERE d.project_sk = %s
+               AND d.basis_of_design_product IS NOT NULL
+             ORDER BY d.division, d.page_from NULLS LAST
+            """,
+            (project_sk,),
+        )
+        out.extend(dict(r) for r in cur.fetchall())
+
+    # Case-fold duplicates: the extractors emit "Trane" and "TRANE" as separate
+    # rows, and the same product can appear from both tables.
+    seen, deduped = set(), []
+    for r in out:
+        key = ((r.get("manufacturer") or "").strip().lower(),
+               r.get("csi_division"), r.get("page_number"))
         if key in seen:
             continue
         seen.add(key)
-        r["manufacturer"] = (r["manufacturer"] or "").strip()
-        out.append(r)
-    return out
+        r["manufacturer"] = (r.get("manufacturer") or "").strip()
+        deduped.append(r)
+    return deduped
 
 
 @app.get("/v1/projects/{project_id}")
