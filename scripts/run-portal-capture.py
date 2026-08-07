@@ -125,7 +125,28 @@ def main() -> int:
     ap.add_argument("--checkpoint", action="store_true")
     ap.add_argument("--delta-only", action="store_true",
                     help="discovery only, no downloads -- the daily cheap signal")
-    ap.add_argument("--max-docs", type=int, default=3, help="documents per project")
+    ap.add_argument("--max-docs", type=int, default=0,
+                    help="0 = every document on the project (default)")
+    # NO RECORD CAP BY DEFAULT. Discovery was hardcoded to 25 per adapter, so a
+    # national run and a Maine-only deep run returned the SAME 25 Maine projects
+    # -- the corpus was limited by an argument, not by what the portals publish.
+    #
+    # Replacing 25 with 200 would repeat the mistake in a larger size. A record
+    # cap silently truncates: 25 of 200 available reads exactly like "this portal
+    # has 25 projects", and nothing in the output distinguishes them. That is the
+    # failure mode this repo keeps hitting.
+    #
+    # The real constraints are runtime and politeness to government servers, so
+    # those are bounded explicitly instead -- and when a bound is hit the log
+    # SAYS SO, which a record cap never did. 0 means take everything the portal
+    # offers.
+    ap.add_argument("--discover-limit", type=int, default=0,
+                    help="0 = no cap (default). Set only to sample deliberately.")
+    # A runaway GUARD, not a cap. Set high enough that a normal portal finishes
+    # inside it; if it is ever hit the log says PARTIAL and a row records it, so
+    # an incomplete pull can never read as a complete one.
+    ap.add_argument("--max-minutes", type=float, default=240,
+                    help="per-adapter runaway guard; hitting it is logged loudly")
     ap.add_argument("--no-store", action="store_true",
                     help="classify and log without writing to GCS")
     args = ap.parse_args()
@@ -176,7 +197,9 @@ def main() -> int:
                     retrieved_date=today, bid_due_date="", divisions="",
                     spec_format="", gcs_path="")
         try:
-            found = m.discover(limit=25)
+            # A very large number rather than None: every adapter signature
+            # takes an int, and this keeps one code path.
+            found = m.discover(limit=args.discover_limit or 100_000)
         except Exception as e:  # noqa: BLE001
             rows.append({**base, "project_id": "", "project_name": "",
                          "document_url": P.get("listing_url", ""), "file_name": "",
@@ -189,7 +212,19 @@ def main() -> int:
                          "document_url": P.get("listing_url", ""), "file_name": "",
                          "file_size": "", "status": "no active solicitations"})
 
+        adapter_start = time.time()
+        truncated = False
         for proj in found:
+            if (time.time() - adapter_start) / 60 > args.max_minutes:
+                # Loud, and recorded in the log as a row, so a partial pull can
+                # never be mistaken for a complete one.
+                truncated = True
+                print(f"  [{name}] TIME BUDGET {args.max_minutes}m hit after "
+                      f"{projects} projects -- PARTIAL, rerun to continue", flush=True)
+                rows.append({**base, "project_id": "", "project_name": "",
+                             "document_url": P.get("listing_url", ""), "file_name": "",
+                             "file_size": "", "status": "partial: time budget reached"})
+                break
             projects += 1
             urls = proj.get("doc_urls") or []
             if args.delta_only:
@@ -198,7 +233,7 @@ def main() -> int:
                              "document_url": urls[0] if urls else "", "file_name": "",
                              "file_size": "", "status": "listed, not fetched (delta)"})
                 continue
-            for u in urls[:args.max_docs]:
+            for u in (urls[:args.max_docs] if args.max_docs else urls):
                 try:
                     body = m.fetch(u)
                 except Exception:  # noqa: BLE001
@@ -253,7 +288,15 @@ def main() -> int:
                              "document_url": u, "file_name": u.rsplit("/", 1)[-1][:120],
                              "file_size": len(body), "spec_format": fmt,
                              "divisions": divs, "gcs_path": gcs, "status": status})
-                break   # one confirmed document per project is the funnel unit
+                # NO BREAK. This used to stop after the first confirmed document
+                # per project, because the funnel metric counts "projects with a
+                # spec doc" and one was enough to answer it. But a project manual,
+                # its addenda and its drawings are DIFFERENT documents with
+                # different divisions -- taking only the first discards the rest,
+                # and an addendum is where substitution rulings live.
+                #
+                # The metric was shaping the capture. Capture everything; compute
+                # the metric from what is held.
 
         if args.checkpoint and i % args.batch_size == 0:
             flush()
