@@ -44,6 +44,44 @@ Full detail, naming conventions, and per-phase instructions: `references/executi
 3. **Classify.** Type each PDF (spec book, project manual, drawings, ad, addendum, bid form, bid tab) by checking for CSI structure. Record divisions present with page ranges, basis-of-design mentions, named manufacturers, "or equal" language.
 4. **Gap-fill by search.** For projects with no spec doc, targeted web search recovers copies hosted on architect sites, authority subdomains, and document hosts. Patterns: `"PROJECT NAME" specifications filetype:pdf`, `"PROJECT NAME" "project manual"`, `site:` the authority or A/E domain, project number + state. Run recovered docs through stage 3 too.
 
+## Stage 1.5: load into the index (do not skip)
+
+**An adapter that writes a JSON file has not added a project.** Measured
+2026-08-06: Austin had 2,000 records on disk and ZERO rows in `projects`;
+Raleigh 2,517 and zero. The pulls were real and the index never moved. The same
+seam left 78% of captured documents invisible downstream and kept
+`project_csi_divisions` empty while 269 documents were flagged as extracted.
+
+So every pull ends with:
+
+```
+python3 scripts/load-adapter-projects.py            # all adapter output
+python3 scripts/load-adapter-projects.py data/raw/socrata-wa-seattle.json
+```
+
+Rules the loader enforces, and any replacement must too:
+
+- **Additive and id-deduped, never a replace.** `project_id` is the natural key;
+  `ON CONFLICT UPDATE` refreshes in place. Nothing is deleted, so a rerun cannot
+  shrink the corpus.
+- **A DECREASING COUNT IS A STOP-EVERYTHING SIGNAL.** Counts print before and
+  after; the loader exits non-zero if the corpus fell.
+- **Only overwrite with non-null.** An adapter that cannot see a value column --
+  Denver publishes a permit FEE, not a project cost -- must never blank a value
+  another source supplied. `COALESCE(NULLIF(new,''), old)` throughout.
+- **`status` is NOT NULL with a controlled vocabulary**: `permitting`,
+  `completed`, `under_construction`, `planning`, `bidding`, `cancelled`. Portals
+  emit their own words ("Issued", "Finaled", "In Review"), so map them. Default
+  `permitting` -- these are permit records. Never invent a seventh status; every
+  existing filter would miss it.
+
+Documents go to GCS at
+`gs://specindex-ai-raw-documents/specs/{STATE}/{project_id}/{doc_type}_{name}.pdf`
+with `source_url`, `portal`, `doc_type`, `fetch_date` in object metadata.
+**Platform adapters serve many states** -- Bonfire reports "Utah, Washington",
+Bid Express reports "multi" -- so the state segment normalises to `MULTI` rather
+than putting a comma in an object path. The real value stays in metadata.
+
 ## Outputs (always)
 
 - `pull_log.csv` — one row per source attempted, even when nothing was found: state, type, portal, project id, project name, bid due date, document URL, file name, file size, CSI divisions spotted, retrieved date, status. Allowed statuses: `downloaded` / `verified, not stored` (content confirmed, TOC evidence captured in lieu of the binary — the normal case when the runtime can't save PDFs) / `listed, registration required` / `needs browser` / `unreadable format` (legacy .doc, scanned image, no extractable text) / `dead link` / `no active solicitations`.
