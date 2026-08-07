@@ -470,9 +470,21 @@ function SpecCitationsPanel({ citations }: { citations: SpecCitation[] }) {
                     </span>
                   ) : null}
                 </div>
-                <blockquote className="mt-0.5 text-xs italic text-gray-700 dark:text-gray-300">
-                  &ldquo;{c.quoted_text}&rdquo;
-                </blockquote>
+                {/* An empty quote rendered as bare "" on the two PROPRIETARY
+                    rows -- SikaGrout and Summit. There is no substitution
+                    language because none is permitted, which is the most
+                    valuable thing this panel can say. Rendering it as an empty
+                    quotation mark made the strongest rows look like the
+                    weakest. */}
+                {c.quoted_text && c.quoted_text.trim() ? (
+                  <blockquote className="mt-0.5 text-xs italic text-gray-700 dark:text-gray-300">
+                    &ldquo;{c.quoted_text}&rdquo;
+                  </blockquote>
+                ) : c.ruling === "proprietary" ? (
+                  <p className="mt-0.5 text-xs font-medium text-amber-700 dark:text-amber-500">
+                    No substitution language — specified without an &ldquo;or equal&rdquo;
+                  </p>
+                ) : null}
                 <div className="mt-0.5 text-[11px] text-gray-500">
                   page {c.page_number}
                   {c.csi_section ? ` · section ${c.csi_section}` : ""}
@@ -1100,7 +1112,21 @@ export function ProjectDetailView({ project: initialProject }: { project: Projec
                 <AbsentFact label="Architect" reason="Unlisted in the source record" />
               )}
 
-              {project.mentioned_brands.length ? (
+              {/* CITATIONS FIRST. This card read only `mentioned_brands`, a
+                  legacy press-mention field, so a project with NINE cited
+                  manufacturers rendered "None named in the 1 document we hold"
+                  directly above a panel listing all nine. Two readers, two
+                  tables, one page contradicting itself -- and the card is the
+                  part a prospect reads first.
+
+                  A cited manufacturer is a stronger claim than a press mention:
+                  it comes with a division, a page and a public URL. So it wins. */}
+              {citations.length ? (
+                <Fact
+                  label="Manufacturers named"
+                  value={`${citations.length} in the specification`}
+                />
+              ) : project.mentioned_brands.length ? (
                 <Fact label="Brands mentioned" value={project.mentioned_brands.join(", ")} />
               ) : (
                 <AbsentFact
