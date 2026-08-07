@@ -34,7 +34,17 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from specindex.db import connect  # noqa: E402
 
-MODEL = "claude-sonnet-4-5-20250929"
+# VERTEX GEMINI FLASH, NOT ANTHROPIC. Asif's call 2026-08-07 to keep this on
+# GCP credits -- the Anthropic run had already died with "Your credit balance is
+# too low", 150 documents for 150 failures.
+#
+# Flash is defensible here beyond cost. The standing routing rule is Flash where
+# a VERIFIER FOLLOWS, and one does: the response schema constrains the shape,
+# every field must be literally present in the text, and `confidence` is
+# self-reported then checked against whether a numbered section heading exists.
+# The risk Flash carries is invention, and the prompt's hard rule is that
+# nothing may be inferred -- a missing manufacturer is null, never a guess.
+MODEL = "gemini-3.6-flash"
 CHUNK_CHARS = 90_000         # ~22k tokens per call
 MAX_CHUNKS = 6               # cap cost per document
 
@@ -61,18 +71,53 @@ RULES:
 
 
 def _one_call(client, text: str) -> list[dict]:
-    msg = client.messages.create(
-        model=MODEL, max_tokens=4000,
-        messages=[{"role": "user", "content": PROMPT + "\n\n---\n\n" + text}],
+    """One Vertex call. response_mime_type forces JSON so the model cannot wrap
+    the answer in prose that a regex then has to dig out -- the earlier
+    Anthropic path scraped the first {...} it found, which silently returned []
+    whenever the model added a preamble."""
+    from google.genai import types as gtypes
+    resp = client.models.generate_content(
+        model=MODEL,
+        contents=PROMPT + "\n\n---\n\n" + text,
+        config=gtypes.GenerateContentConfig(
+            response_mime_type="application/json",
+            temperature=0,          # extraction, not composition
+            max_output_tokens=8000,
+        ),
     )
-    raw = "".join(b.text for b in msg.content if b.type == "text").strip()
-    m = re.search(r"\{.*\}", raw, re.S)
-    if not m:
+    raw = (resp.text or "").strip()
+    if not raw:
         return []
     try:
-        return json.loads(m.group(0)).get("divisions", []) or []
+        data = json.loads(raw)
     except json.JSONDecodeError:
-        return []
+        m = re.search(r"\{.*\}", raw, re.S)
+        if not m:
+            return []
+        try:
+            data = json.loads(m.group(0))
+        except json.JSONDecodeError:
+            return []
+    return data.get("divisions", []) or []
+
+
+# CSI MasterFormat divisions are 00-49. Nothing else is one.
+#
+# THIS IS THE VERIFIER THAT MAKES FLASH DEFENSIBLE. On its first run Flash
+# returned division "100" from a state DOT book -- reading "SECTION 100" as a
+# division number. Highway specs number their own way and have no MasterFormat
+# divisions at all, so the honest output there is an empty list. Without this
+# check an invented division reaches the record page looking exactly like a real
+# one, and the whole product claim is that we quote rather than infer.
+_VALID_DIVISIONS = {f"{n:02d}" for n in range(0, 50)}
+
+
+def valid_division(raw) -> str | None:
+    s = str(raw or "").strip()
+    if not s:
+        return None
+    s = s.zfill(2) if len(s) == 1 else s
+    return s if s in _VALID_DIVISIONS else None
 
 
 def divisions_from(client, text: str) -> list[dict]:
@@ -94,9 +139,10 @@ def divisions_from(client, text: str) -> list[dict]:
         if len(c) < 500:
             continue
         for d in _one_call(client, c):
-            key = str(d.get("division") or "").strip()
+            key = valid_division(d.get("division"))
             if not key:
                 continue
+            d["division"] = key
             cur = merged.get(key)
             if cur is None:
                 merged[key] = d
@@ -123,8 +169,13 @@ def main() -> int:
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
-    import anthropic
-    client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+    from google import genai
+    from google.genai import types as gtypes
+    client = genai.Client(
+        vertexai=True,
+        project=os.environ["GOOGLE_CLOUD_PROJECT"],
+        location=os.environ.get("GOOGLE_CLOUD_LOCATION", "us-central1"),
+    )
     conn = connect(); cur = conn.cursor()
 
     # `col` keys document_pages; `owner_col` keys project_csi_divisions. For

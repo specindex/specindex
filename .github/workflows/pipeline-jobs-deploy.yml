@@ -76,7 +76,8 @@ jobs:
               --image "$DIGEST" \
               --region "$REGION" --project "$PROJECT" \
               --set-cloudsql-instances "$INSTANCE" \
-              --set-secrets "DATABASE_URL=DATABASE_URL:latest,ANTHROPIC_API_KEY=ANTHROPIC_API_KEY:latest,SAM_API_KEY=SAM_API_KEY:latest,LEGISTAR_TOKEN_NYC=LEGISTAR_TOKEN_NYC:latest" \
+              --set-secrets "DATABASE_URL=DATABASE_URL:latest,SAM_API_KEY=SAM_API_KEY:latest,LEGISTAR_TOKEN_NYC=LEGISTAR_TOKEN_NYC:latest" \
+              --set-env-vars "GOOGLE_CLOUD_PROJECT=$PROJECT,GOOGLE_CLOUD_LOCATION=$REGION" \
               --task-timeout "$timeout" --max-retries 2 --memory 4Gi --cpu 2 \
               --args "$@" \
               --quiet
