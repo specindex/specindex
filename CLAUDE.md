@@ -183,6 +183,27 @@ incident is recorded in `docs/AGENT_STRATEGY.md`; only the directive is here.
 
 ## 6. Product and legal constraints — do not violate
 
+**READ `docs/COMPLIANCE_BRIEF.md` BEFORE WRITING CUSTOMER-FACING COPY OR ADDING
+A DATA SOURCE.** It is counsel's brief, authoritative, effective through
+2027-06-15; `docs/BUILD_COMPLIANCE_BRIEF.md` maps it onto this repo. The three
+that bind day-to-day work:
+
+- **A row without a source URL and fetch date is a COMPLIANCE defect**, not just
+  a data-quality one. The clean-room protocol requires exact public URL, access
+  date and retrieval method per source — which this pipeline already records.
+- **Never rewrite published git history, never backdate, never delete.** History
+  is the evidence of independent creation. When language needs correcting,
+  change it FORWARD and leave the prior version in place. Quarantine questionable
+  material; do not tidy it away.
+- **Never write or imply** that the idea came from ConstructConnect, that
+  SpecIndex counters or replaces it, or that we know its gaps, pricing or
+  roadmap. Approved framing is §7 of the brief.
+
+Stop and escalate if a source turns out to be ConstructConnect/Dodge/Blue
+Book/BuildingConnected content however reached, if a contact may be a restricted
+party, or if anyone proposes deleting or backdating historical material.
+
+
 These stay in the execution file because this agent DOES write customer-facing
 copy: on 2026-08-05 it edited the projects headline and the trust line, and it
 writes PR bodies and Drive documents. A rule about what may be claimed is an
