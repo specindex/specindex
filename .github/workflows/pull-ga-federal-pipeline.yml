@@ -7,7 +7,6 @@ name: GA federal sources pipeline (daily)
 # judgment -- see core/ingestion/sam_gov_provider.py /
 # usaspending_provider.py docstrings), so this runs Node 1 (Ingestion
 # Factory) straight to Node 4 (persist + merge + watermark checkpoint),
-# skipping Nodes 2-3 entirely. No ANTHROPIC_API_KEY needed.
 #
 # Two independent sources, two independent watermarks
 # (data/pipeline/state-ga-sam.json, state-ga-usaspending.json), each

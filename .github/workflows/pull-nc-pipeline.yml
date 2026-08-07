@@ -10,7 +10,6 @@ name: NC Mecklenburg pipeline (daily)
 # commit-back is what makes tomorrow's run only capture what's new).
 #
 # Needs the same repo secrets as pull-nj-dca-pipeline.yml: WIF_PROVIDER,
-# WIF_SERVICE_ACCOUNT, CLOUDSQL_PASSWORD, ANTHROPIC_API_KEY (kept for the
 # Cloud SQL proxy auth step even though this specific state doesn't call
 # the Anthropic API itself).
 
@@ -47,7 +46,6 @@ permissions:
 env:
   CLOUDSQL_INSTANCE: specindex-ai:us-central1:specindex-db
   DATABASE_URL: postgresql://specindex:${{ secrets.CLOUDSQL_PASSWORD }}@127.0.0.1:5433/specindex
-  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
   GOOGLE_CLOUD_PROJECT: specindex-ai
 
 jobs:
