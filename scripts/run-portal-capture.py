@@ -39,7 +39,12 @@ GCS_BUCKET = "specindex-ai-raw-documents"
 
 FIELDS = ["state", "type", "portal", "project_id", "project_name", "bid_due_date",
           "document_url", "file_name", "file_size", "spec_format", "divisions",
-          "gcs_path", "retrieved_date", "status"]
+          "gcs_path", "retrieved_date", "status",
+          # doc_type is decided here, from the filename, at the only moment the
+          # filename is authoritative. Downstream must not re-derive it: the
+          # loader writes the project number into `title`, so classifying from
+          # title returned "other" and skipped the spec book entirely.
+          "doc_type"]
 
 # Classifier, straight from the skill's rule 6. BOTH formats count.
 CSI_PARTS = re.compile(r"PART\s+[123]\s*[-–—]?\s*(GENERAL|PRODUCTS|EXECUTION)", re.I)
@@ -250,44 +255,69 @@ def main() -> int:
                 gcs = ""
                 if fmt in ("CSI", "DOT SS/SP"):
                     specs += 1
-                    # Filename decides doc_type, not the CSI test. A drawing
-                    # set references divisions on its sheet index, so
-                    # "_O2512-01 - Final Plans.pdf" (22MB) classified as CSI and
-                    # was stored as a specbook. Content proves it IS a
-                    # specification document; the name says which KIND.
-                    low = urllib.parse.unquote(u).lower()
-                    if re.search(r"\bplans?\b|drawing|sheet", low):
-                        doc_type = "drawings"
-                    elif re.search(r"addend", low):
-                        doc_type = "addendum"
-                    elif fmt == "DOT SS/SP" or re.search(r"proposal", low):
-                        doc_type = "proposal"
-                    else:
-                        doc_type = "specbook"
-                    # Store ONLY confirmed spec documents. Every fetched PDF
-                    # would fill the bucket with bid tabs and notices, and the
-                    # moat is the specification, not the paperwork around it.
-                    if bucket is not None:
-                        try:
-                            gcs = store(bucket, body, state=P.get("state") or "",
-                                        project_id=proj.get("project_number") or "",
-                                        doc_type=doc_type,
-                                        filename=u.rsplit("/", 1)[-1],
-                                        source_url=u, portal=name)
-                            status = "downloaded"
-                        except Exception as e:  # noqa: BLE001
-                            status = f"verified, not stored ({type(e).__name__})"
-                    else:
-                        status = "verified, not stored"
-                elif fmt == "unreadable":
-                    status = "unreadable format"
+
+                # Filename decides doc_type, not the CSI test. A drawing set
+                # references divisions on its sheet index, so
+                # "_O2512-01 - Final Plans.pdf" (22MB) classified as CSI and was
+                # stored as a specbook. Content proves it IS a specification
+                # document; the name says which KIND.
+                low = urllib.parse.unquote(u).lower()
+                if re.search(r"\bplans?\b|drawing|sheet", low):
+                    doc_type = "drawings"
+                elif re.search(r"addend", low):
+                    doc_type = "addendum"
+                elif re.search(r"tabulation|bid[_\- ]?tab", low):
+                    doc_type = "bid_tab"
+                elif re.search(r"legal[_\- ]?ad|advertis", low):
+                    doc_type = "advertisement"
+                elif re.search(r"notice", low):
+                    doc_type = "notice"
+                elif fmt == "DOT SS/SP" or re.search(r"proposal", low):
+                    doc_type = "proposal"
+                elif fmt in ("CSI", "DOT SS/SP"):
+                    doc_type = "specbook"
                 else:
-                    status = "downloaded"
+                    doc_type = "other"
+
+                if fmt == "unreadable":
+                    status = "unreadable format"
+                elif bucket is not None:
+                    # STORE EVERY FETCHED PDF, not only the spec-confirmed ones.
+                    #
+                    # This used to be gated on `fmt in (CSI, DOT SS/SP)` with the
+                    # reasoning that "the moat is the specification, not the
+                    # paperwork around it". Measured on Maine 2026-08-07: 381
+                    # documents downloaded, 74 stored -- exactly the spec-confirmed
+                    # count. The other 307 were fetched, content-checked, and
+                    # discarded, and because the pull log still said "downloaded"
+                    # they looked captured.
+                    #
+                    # The discarded set is not paperwork. It is every ADDENDUM (the
+                    # change record, and the only place a DISPLACED manufacturer is
+                    # ever visible) and every BID TABULATION (who bid, and what
+                    # they bid). A one-page addendum has no CSI structure, so the
+                    # spec test can never accept it -- the filter was structurally
+                    # incapable of keeping the documents it most needed to keep.
+                    #
+                    # A document not fetched is gone once the jurisdiction rotates
+                    # its site; storage is the cheap side of that trade.
+                    try:
+                        gcs = store(bucket, body, state=P.get("state") or "",
+                                    project_id=proj.get("project_number") or "",
+                                    doc_type=doc_type,
+                                    filename=u.rsplit("/", 1)[-1],
+                                    source_url=u, portal=name)
+                        status = "downloaded"
+                    except Exception as e:  # noqa: BLE001
+                        status = f"verified, not stored ({type(e).__name__})"
+                else:
+                    status = "verified, not stored"
                 rows.append({**base, "project_id": proj.get("project_number") or "",
                              "project_name": (proj.get("project_name") or "")[:200],
                              "document_url": u, "file_name": u.rsplit("/", 1)[-1][:120],
                              "file_size": len(body), "spec_format": fmt,
-                             "divisions": divs, "gcs_path": gcs, "status": status})
+                             "divisions": divs, "gcs_path": gcs, "status": status,
+                             "doc_type": doc_type})
                 # NO BREAK. This used to stop after the first confirmed document
                 # per project, because the funnel metric counts "projects with a
                 # spec doc" and one was enough to answer it. But a project manual,

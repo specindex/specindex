@@ -188,13 +188,17 @@ def main() -> int:
         # doc_type from the FILENAME -- the only field carrying the signal. The
         # title does not: the loader writes the project number into it.
         fn = (r.get("file_name") or url.rsplit("/", 1)[-1]).lower()
-        doc_type = ("addendum" if "addend" in fn else
+        # Prefer the type the capture runner stamped, which it decided from the
+        # filename at the moment the filename was authoritative. The fallback
+        # below only serves logs written before that column existed.
+        doc_type = (r.get("doc_type") or "").strip() or (
+                   "addendum" if "addend" in fn else
                     "drawing" if "drawing" in fn or "plan" in fn else
                     "bid_tab" if "tabulation" in fn or "bid_tab" in fn else
                     "advertisement" if "legal_ad" in fn or "advertis" in fn else
                     "notice" if "notice" in fn else
-                    "specbook" if r.get("spec_format") in ("CSI", "DOT SS/SP") else
-                    "other")
+                   "specbook" if r.get("spec_format") in ("CSI", "DOT SS/SP") else
+                   "other")
         cur.execute(
             """INSERT INTO project_document_files
                    (project_sk, title, url, content_type, gcs_path, doc_type,
