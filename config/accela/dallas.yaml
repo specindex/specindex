@@ -1,0 +1,9 @@
+# Dallas -- the open-data feed froze in Aug 2020; active permits live only in
+# Accela Citizen Access. This is exactly the case A5 exists for.
+jurisdiction: Dallas
+state: TX
+county: Dallas
+id_prefix: tx-dallas
+host: https://aca-prod.accela.com
+path: /DALLASTX/Cap/CapHome.aspx?module=Building&TabName=Building
+default_city: Dallas

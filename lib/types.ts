@@ -90,6 +90,26 @@ export type ProjectDocumentFile = {
   document_type: string;
 };
 
+/** A manufacturer named in a project's specification, with the sentence that
+ *  says so and the page it is on.
+ *
+ *  NOT a substitution ruling. The rows come from a table called
+ *  substitution_rulings, but every one carries ruling='pending' and
+ *  confidence='reported' -- nothing was adjudicated. This says what the
+ *  specification NAMES, which is a narrower claim and the only one supportable.
+ */
+export type SpecCitation = {
+  manufacturer: string;
+  product?: string | null;
+  csi_division?: string | null;
+  csi_section?: string | null;
+  page_number: number;
+  quoted_text: string;
+  source_url?: string | null;
+  ruling?: string | null;
+  confidence?: string | null;
+};
+
 export type Project = {
   id: string;
   spx_id: string;
@@ -124,6 +144,7 @@ export type Project = {
   // rows, which don't fetch this to keep list pagination cheap.
   enrichment?: ProjectEnrichment;
   documents?: ProjectDocumentFile[];
+  spec_citations?: SpecCitation[];
   // True when GET /v1/projects/{id} returned the public teaser (no signed-in
   // Firebase session) rather than the full record -- api/main.py's
   // _to_public_teaser. Value/GC/architect/owner/brands/sources/exact

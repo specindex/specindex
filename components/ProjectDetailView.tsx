@@ -7,7 +7,7 @@ import { FIREBASE_AUTH_ENABLED, useFirebaseAuth, useFirebaseAuthOptional } from 
 import { StatusPill } from "@/components/StatusPill";
 import { AskPanel } from "@/components/AskPanel";
 import { formatDate, formatSf, formatUsd, stateName, typeLabel } from "@/lib/format";
-import type { Project } from "@/lib/types";
+import type { Project, SpecCitation } from "@/lib/types";
 import {
   fetchTrackedProjects,
   upsertTrackedProject,
@@ -424,6 +424,72 @@ function deriveScope(description: string, watch: string[]): DerivedScope[] {
   return out;
 }
 
+/** Manufacturers actually named in the specification, each with the sentence
+ *  that names them and the page it is on.
+ *
+ *  THIS IS THE STRONGEST CLAIM ON THE PAGE, so it is also the most tightly
+ *  scoped. Every row carries a verbatim quote and a page number, because a
+ *  citation the reader cannot check is not a citation -- and the whole product
+ *  argument is that we cite the spec rather than infer from it.
+ *
+ *  DELIBERATELY NOT CALLED A RULING. The rows come from a table named
+ *  substitution_rulings, but all of them carry ruling='pending' and
+ *  confidence='reported': nobody approved or rejected anything. Calling this a
+ *  ruling would claim an adjudication that never happened. It says what the
+ *  specification NAMES, which is what a rep needs and all we can support.
+ */
+function SpecCitationsPanel({ citations }: { citations: SpecCitation[] }) {
+  if (citations.length === 0) return null;
+  const byDivision = new Map<string, SpecCitation[]>();
+  for (const c of citations) {
+    const k = c.csi_division || "—";
+    byDivision.set(k, [...(byDivision.get(k) ?? []), c]);
+  }
+  return (
+    <div className="mt-6 rounded-lg border border-green-700/30 bg-green-50/60 p-4 dark:bg-green-950/20">
+      <h3 className="text-xs font-bold uppercase tracking-wider text-green-900 dark:text-green-300">
+        Named in the specification
+      </h3>
+      <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
+        {citations.length} manufacturer{citations.length === 1 ? "" : "s"} quoted
+        from the project&rsquo;s own documents, with the page each appears on.
+      </p>
+      <div className="mt-3 space-y-3">
+        {[...byDivision.entries()].map(([div, rows]) => (
+          <div key={div}>
+            <div className="text-[11px] font-bold uppercase tracking-wide text-gray-500">
+              {div === "—" ? "Division not stated" : `Division ${div}`}
+            </div>
+            {rows.map((c, i) => (
+              <div key={i} className="mt-1.5 border-l-2 border-green-700/40 pl-3">
+                <div className="text-sm font-semibold">
+                  {c.manufacturer}
+                  {c.product ? (
+                    <span className="font-normal text-gray-600 dark:text-gray-400">
+                      {" "}&middot; {c.product}
+                    </span>
+                  ) : null}
+                </div>
+                <blockquote className="mt-0.5 text-xs italic text-gray-700 dark:text-gray-300">
+                  &ldquo;{c.quoted_text}&rdquo;
+                </blockquote>
+                <div className="mt-0.5 text-[11px] text-gray-500">
+                  page {c.page_number}
+                  {c.csi_section ? ` · section ${c.csi_section}` : ""}
+                </div>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+      <p className="mt-3 text-[11px] text-gray-500">
+        Quoted from documents we hold. Being named is not an award — a
+        specification can name a product and the job can be built with another.
+      </p>
+    </div>
+  );
+}
+
 function DerivedScopePanel({ scope }: { scope: DerivedScope[] }) {
   if (!scope.length) return null;
   return (
@@ -760,6 +826,7 @@ export function ProjectDetailView({ project: initialProject }: { project: Projec
   // absence claim on the page: "not determinable" when we hold none,
   // "none named in the N we hold" when we do. Never an unqualified "none".
   const documentCount = project.document_count ?? 0;
+  const citations = project.spec_citations ?? [];
   const derivedScope = deriveScope(
     project.description ?? "",
     project.competitor_watch ?? [],
@@ -1049,6 +1116,7 @@ export function ProjectDetailView({ project: initialProject }: { project: Projec
                 />
               )}
             </dl>
+            <SpecCitationsPanel citations={citations} />
             <DerivedScopePanel scope={derivedScope} />
           </div>
         </div>

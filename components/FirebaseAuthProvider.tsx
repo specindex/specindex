@@ -100,6 +100,19 @@ function FirebaseAuthInner({ children }: { children: React.ReactNode }) {
     });
   }, []);
 
+  // Lets any component ask for the sign-in modal without threading a callback
+  // through the tree. StartFreeModal fires this when signup returns 409
+  // account_exists, so "Sign in instead" is one click from the error rather
+  // than a page navigation that loses what the user typed.
+  useEffect(() => {
+    const open = () => {
+      setShowStartFreeModal(false);
+      setShowSignInModal(true);
+    };
+    window.addEventListener("specindex:open-signin", open);
+    return () => window.removeEventListener("specindex:open-signin", open);
+  }, []);
+
   // Ignores `options.template` -- Firebase ID tokens carry the email claim
   // natively, unlike Clerk, which needed a JWT Template configured in the
   // Dashboard to add one. Kept the same call signature the old Clerk-backed

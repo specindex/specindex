@@ -1,0 +1,17 @@
+# Raleigh Building Permits -- BLDS schema, same shape as Seattle's Socrata feed.
+jurisdiction: Raleigh
+state: NC
+county: Wake
+id_prefix: nc-raleigh
+service: https://services.arcgis.com/v400IkDOw1ad7Yad/arcgis/rest/services/Building_Permits/FeatureServer
+layer: 0
+commercial_filter: "permitclassmapped='Non-Residential'"   # 47,717 of 183,347, verified
+fields:
+  permit_number: permitnum
+  description: description
+  status: statuscurrent
+  opened_date: issueddate
+  value: estprojectcost
+  address: originaladdress1
+  permit_class: permitclass
+  work_type: workclass

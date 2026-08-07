@@ -1,0 +1,84 @@
+# Weekly A3 crawl: every Tier 1 state bid portal, then classify, then gap-fill.
+# Section 4 of coverage/docs/coverage-plan-v2.md.
+#
+# STANDING RULES ARE ENFORCED IN THE ADAPTERS, NOT HERE. Public data only; no
+# account is ever created by automation; nothing is paid for or submitted.
+# Blockers are LOGGED as outcomes -- "registration required", "unreadable
+# format", "dead link" -- never worked around. A run that reports a wall is
+# doing its job; a run that climbs one is a bug.
+#
+# CHECKPOINT PER STATE BATCH. A 34-portal crawl that commits only at the end
+# hands over nothing when it dies at portal 30 -- the same failure that cost a
+# DOT run its whole manifest. Batches of 10, log appended and pushed after each.
+
+name: coverage-weekly
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # Mondays 06:00 UTC
+  workflow_dispatch:
+    inputs:
+      states:
+        description: "space-separated states, or blank for all Tier 1"
+        default: ""
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: coverage-weekly
+  cancel-in-progress: false
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: |
+          pip install -q pyyaml pypdf psycopg2-binary google-cloud-storage playwright
+          python3 -m playwright install --with-deps chromium
+
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          # WIF, matching every other workflow here. Copying an auth pattern
+          # from documentation rather than from this repo's own working
+          # workflows already broke one deploy on its first run.
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+
+      - name: Verify adapters still work before crawling with them
+        run: |
+          # A portal that changed overnight makes its adapter return nothing,
+          # and a crawl on a broken adapter reports zero documents rather than
+          # an error. Cheap to check, and it is the difference between "the
+          # source is thin" and "the source moved".
+          python3 scripts/check-portal-adapters.py || \
+            echo "::warning::one or more adapters failed verification -- see log"
+
+      - name: A3 crawl, classify, gap-fill
+        env:
+          DATABASE_URL: postgresql://specindex:${{ secrets.CLOUDSQL_PASSWORD }}@127.0.0.1:5433/specindex
+        run: |
+          if [ ! -f scripts/run-portal-capture.py ]; then
+            echo "A3 runner not built yet -- adapters exist but nothing drives them"; exit 0; fi
+          python3 scripts/run-portal-capture.py \
+            --batch-size 10 --checkpoint \
+            ${{ inputs.states && format('--states {0}', inputs.states) || '--tier 1' }}
+
+      - name: Commit the appended log
+        if: always()
+        run: |
+          git config user.name  "specindex-bot"
+          git config user.email "bot@specindex.ai"
+          git pull --rebase --autostash || true
+          git add coverage/pull-log/ || true
+          git diff --cached --quiet || \
+            git commit -m "coverage-weekly: $(date -u +%Y-%m-%d) A3 crawl"
+          git push || echo "nothing to push"

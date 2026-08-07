@@ -1,0 +1,26 @@
+# Denver Commercial Construction Permits (from Accela).
+#
+# LAYER ID IS 317, NOT 0. The FeatureServer root had to be queried to find that
+# out -- assuming /0 returned an empty metadata document that looked exactly
+# like a layer with no fields. Every config here names its layer explicitly and
+# the adapter refuses to guess.
+jurisdiction: Denver
+state: CO
+county: Denver
+id_prefix: co-denver
+service: https://services1.arcgis.com/zdB7qR0BtYrg0Xpl/arcgis/rest/services/ODC_DEV_COMMERCIALCONSTPERMIT_P/FeatureServer
+layer: 317
+# The dataset is commercial-only BY DESIGN -- there is no residential row to
+# exclude, so the filter is 1=1 and the honest count is the whole layer.
+commercial_filter: "1=1"
+commercial_by_design: true
+fields:
+  permit_number: PERMIT_NUM
+  description: CLASS
+  opened_date: DATE_ISSUED
+  address: ADDRESS
+  # NO VALUE FIELD. The layer carries PERMIT_FEE, which is the fee charged --
+  # not the project's cost. Mapping it to estimated_value_usd would put a
+  # four-figure number where a seven-figure one belongs and every ranking built
+  # on value would quietly invert.
+  value: null
