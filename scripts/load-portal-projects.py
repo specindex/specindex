@@ -67,18 +67,37 @@ def main() -> int:
         logs = [Path(args.log)]
     else:
         logs = sorted(logdir.glob("pull-*.csv"), key=lambda p: p.stat().st_mtime)
-    rows, seen = [], set()
+    # TWO scopes, deliberately different.
+    #
+    # `rows` (spec documents only) drives PROJECT CREATION and division
+    # attachment -- a project earns a row because a real spec document proves it
+    # exists, and divisions come from spec structure.
+    #
+    # `all_rows` (every successfully downloaded document) drives DOCUMENT
+    # REGISTRATION. Filtering registration to CSI/DOT threw away 311 of 408
+    # documents in the 2026-08-07 Maine log: every addendum, drawing, bid
+    # tabulation and notice to contractors, because a one-page addendum has no
+    # CSI structure and so carries no spec_format. That is the same mistake as
+    # the `break` in the capture runner, one layer down -- a spec-shaped filter
+    # discarding the documents that are not spec-shaped. The addenda are the
+    # change record and the bid tabs name who won; neither is optional.
+    rows, all_rows, seen, seen_all = [], [], set(), set()
     for lp in logs:
         for r in csv.DictReader(open(lp)):
+            url = r.get("document_url") or r.get("url") or ""
+            pid = r.get("project_id") or ""
+            if r.get("status") == "downloaded" and url and (url, pid) not in seen_all:
+                seen_all.add((url, pid))
+                all_rows.append(r)
             if r.get("spec_format") not in ("CSI", "DOT SS/SP"):
                 continue
-            key = (r.get("document_url") or r.get("url") or "", r.get("project_id") or "")
-            if key in seen:
+            if (url, pid) in seen:
                 continue
-            seen.add(key)
+            seen.add((url, pid))
             rows.append(r)
     print(f"[scope] {len(logs)} pull log(s), newest {logs[-1].name if logs else '-'}: "
-          f"{len(rows)} confirmed spec documents", flush=True)
+          f"{len(rows)} confirmed spec documents, "
+          f"{len(all_rows)} documents of every kind", flush=True)
 
     conn = connect(); cur = conn.cursor()
     cur.execute("SELECT count(*) FROM projects"); before = cur.fetchone()[0]
@@ -136,9 +155,70 @@ def main() -> int:
             linked += cur.rowcount
         conn.commit()
 
+    # REGISTER EVERY DOWNLOADED DOCUMENT against its project.
+    #
+    # This pass did not exist. The loop above only ever re-scoped a
+    # reference_documents row that some earlier step had already inserted
+    # (UPDATE ... WHERE url=), so a freshly captured document had nothing to
+    # update and vanished between the pull log and the index: 404 documents
+    # captured from Maine, 28 visible on projects.
+    #
+    # Documents land directly in project_document_files, which migration 057
+    # established as the home for project-scoped material; reference_documents
+    # stays for jurisdiction-wide standards.
+    docs_registered = 0
+    for r in all_rows:
+        url = r.get("document_url") or r.get("url") or ""
+        gcs = (r.get("gcs_path") or "").strip()
+        # Compose the project_id the SAME WAY the creation loop above does. The
+        # pull log carries the portal's own number ("3843"); the index key is
+        # "me-portal-maine-vertical-3843". Looking up the raw number matched
+        # nothing and registered 0 of 909 documents without erroring -- a clean
+        # zero, which is this pipeline's standard failure signature.
+        st = STATE_ABBR.get((r.get("state") or "").strip())
+        num = (r.get("project_id") or "").strip()
+        name = (r.get("project_name") or "").strip() or num
+        if not (url and gcs and st and (num or name)):
+            continue
+        pid = f"{st.lower()}-portal-{slug(r.get('portal') or '')}-{slug(num or name)}"
+        cur.execute("SELECT project_sk FROM projects WHERE project_id = %s", (pid,))
+        got = cur.fetchone()
+        if not got:
+            continue
+        # doc_type from the FILENAME -- the only field carrying the signal. The
+        # title does not: the loader writes the project number into it.
+        fn = (r.get("file_name") or url.rsplit("/", 1)[-1]).lower()
+        doc_type = ("addendum" if "addend" in fn else
+                    "drawing" if "drawing" in fn or "plan" in fn else
+                    "bid_tab" if "tabulation" in fn or "bid_tab" in fn else
+                    "advertisement" if "legal_ad" in fn or "advertis" in fn else
+                    "notice" if "notice" in fn else
+                    "specbook" if r.get("spec_format") in ("CSI", "DOT SS/SP") else
+                    "other")
+        cur.execute(
+            """INSERT INTO project_document_files
+                   (project_sk, title, url, content_type, gcs_path, doc_type,
+                    spec_format, fetched_at, last_seen_at)
+               VALUES (%s,%s,%s,'application/pdf',%s,%s,%s,now(),now())
+               ON CONFLICT (project_sk, url) DO UPDATE SET
+                   doc_type   = COALESCE(project_document_files.doc_type, EXCLUDED.doc_type),
+                   last_seen_at = now()
+               RETURNING (xmax = 0)""",
+            (got[0], (r.get("file_name") or pid)[:500], url, gcs, doc_type,
+             r.get("spec_format") or None),
+        )
+        ins = cur.fetchone()
+        if ins and ins[0]:
+            docs_registered += 1
+    conn.commit()
+
     cur.execute("SELECT count(*) FROM projects"); after = cur.fetchone()[0]
     cur.execute("SELECT count(*) FROM project_csi_divisions WHERE project_sk IS NOT NULL")
     on_projects = cur.fetchone()[0]
+    cur.execute("SELECT count(*) FROM project_document_files")
+    docs_total = cur.fetchone()[0]
+    print(f"[detail] documents registered this run={docs_registered}; "
+          f"project_document_files holds {docs_total:,}")
     print(f"\n[after] corpus {after:,}  (+{after-before:,})")
     print(f"[detail] rows={created} divisions_attached={linked} skipped_multistate={skipped}")
     print(f"[verify] CSI divisions now ON A PROJECT: {on_projects}")
