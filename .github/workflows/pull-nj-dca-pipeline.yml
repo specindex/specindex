@@ -15,7 +15,6 @@ name: NJ DCA Flash+Sonnet pipeline (daily)
 # One-time setup beyond pull-state.yml's existing secrets
 # (WIF_PROVIDER, WIF_SERVICE_ACCOUNT, CLOUDSQL_PASSWORD,
 # EMAIL_SMTP_USERNAME, EMAIL_SMTP_PASSWORD): add repo secret
-# ANTHROPIC_API_KEY (Settings -> Secrets and variables -> Actions).
 # Without it, the Sonnet dedupe node (Node 3) will fail every run.
 
 on:
@@ -42,7 +41,6 @@ permissions:
 env:
   CLOUDSQL_INSTANCE: specindex-ai:us-central1:specindex-db
   DATABASE_URL: postgresql://specindex:${{ secrets.CLOUDSQL_PASSWORD }}@127.0.0.1:5433/specindex
-  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
   GOOGLE_CLOUD_PROJECT: specindex-ai
 
 jobs:

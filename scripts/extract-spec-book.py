@@ -21,7 +21,6 @@ Pipeline:
 Status as of 2026-07-25: built and unit-tested against a synthetic sample PDF
 (no real spec book was available in this environment). The PDF-parsing and
 section-detection layer is deterministic and verified working end-to-end. The
-LLM classification layer requires ANTHROPIC_API_KEY, which is not configured in
 this environment — it has NOT been exercised against a live API call. Run
 `python3 scripts/extract-spec-book.py --pdf <sample.pdf> --project-id <id> --dry-run`
 to test extraction/chunking without calling the API.
@@ -360,7 +359,6 @@ def classify_section(client, section: DivisionSection, model: str) -> dict:
 
     Ported from Anthropic tool-use 2026-08-04. The rest of this pipeline
     (enrich-project-details.py, gemini_discovery_chat.py) already runs on
-    Vertex, and ANTHROPIC_API_KEY was never configured here -- so this script
     was the only thing in the repo that could not run at all. One stray
     credential dependency is how a pipeline rots; there is now none.
 
