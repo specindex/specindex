@@ -145,6 +145,35 @@ incident is recorded in `docs/AGENT_STRATEGY.md`; only the directive is here.
 - **Never accept your own numbers back in stronger form.** Given "400 pages", it
   replied "14,000 documents" and used it to declare a strategy dead.
 
+## 4b. Model routing and cost — two meters, know which one you are spending
+
+- **Claude Code runs on Asif's Anthropic MAX PLAN. Vertex runs on ~$25,000 of
+  GCP credits.** These are different meters. Claude Code sessions are already
+  paid for; per-token Anthropic API calls are a SECOND bill and hit zero on
+  2026-08-07, failing a classifier run 150 documents for 150.
+- **No script in this repo may call the Anthropic API.** Enforced by
+  `scripts/check-no-anthropic.py` on every PR. `AnthropicVertex()` counts as a
+  violation too — it bills GCP but still runs Claude, and the instruction is
+  Gemini. Bulk model work goes to Vertex Gemini via `google.genai` with
+  `vertexai=True`, authenticating as the ambient service account (no key).
+- **Claude Code and Gemini work TOGETHER, and the split is by kind of work.**
+  Gemini does the bulk, mechanical, per-document work — extraction over
+  thousands of PDFs, classification, first-pass discovery — because volume on
+  GCP credits is nearly free. Claude Code does the judgment: reviewing what
+  Gemini produced, catching the invented answers, deciding what ships. Neither
+  replaces the other. Gemini PROPOSES at scale; Claude Code and live probing
+  DISPOSE. That is the same rule as §4, applied to cost.
+- **Hand Gemini's output back for review, always.** A bulk run is not finished
+  when it exits — it is finished when its output has been read. Gemini returned
+  CSI division "100" from a DOT book on its first run, which is not a division
+  at all; a validator caught it only because one was written.
+- **FLAG COST BEFORE SPENDING IT, not after.** State the estimate and the unit
+  before starting any run that is large or repeated: grounded search is roughly
+  $35/1,000 queries, so sweeping 494,327 document-less projects is a ~$17,000
+  decision, not a default. Say the number, name the cheaper path if one exists
+  (crawl once per source beats searching once per project), and let Asif choose.
+  A five-figure run that nobody was warned about is a failure even if it works.
+
 ## 5. Cost and scope
 
 - **Targeted file scoping.** Only inspect files named in the prompt or their
