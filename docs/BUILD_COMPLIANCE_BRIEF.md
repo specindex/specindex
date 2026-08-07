@@ -1,205 +1,187 @@
-# Build-time compliance — how the brief applies in this repo
+# Build-time compliance — operational mapping
 
-**Companion to `docs/COMPLIANCE_BRIEF.md`, which is authoritative.** This file
-adds nothing legal; it maps §2, §4, §5 and §7 onto concrete practice for anyone
-— human or agent — writing code and copy here. Where the two differ, the brief
-governs. Effective through **June 15, 2027**.
+**Revision 2 — screening questions clarified; pending counsel approval.**
+
+Companion to `docs/COMPLIANCE_BRIEF.md`, which is authoritative. This file adds
+no legal judgment and confers no permission; it maps the brief onto engineering
+practice in this repo. Where the two differ, the brief governs. Nothing here is
+approved.
+
+> **Heightened restrictive-covenant controls apply at least through
+> June 15, 2027. Certain confidentiality, trade-secret, IP, preservation,
+> remedial, and possible tolling obligations may continue beyond that date.**
 
 ---
 
-## §4 Clean room — what the pipeline must record
+## Development direction — no activity is categorically permitted
 
-The brief requires *"the exact public URL, access date, source owner, license or
-access terms, and retrieval method for each source"*. In this repo that is not
-paperwork, it is a schema constraint:
+**Potentially lower-risk development direction, subject to legal clearance.**
+Development activity is **not** categorically permitted merely because it is
+private, unpaid, infrastructure-focused, or manufacturer-facing. The covenant
+restricts providing, supervising or managing similar services for a competing
+business during the restricted period; it does not require revenue, customers or
+a public launch for that to apply.
 
-| requirement | where it lives |
-|---|---|
-| public URL | `source_url` on every project and document row |
-| access date | `fetched_at` / `fetch_date` (also GCS object metadata) |
-| retrieval method | the adapter name in `coverage/pull-log/*.csv` |
-| immutable retrieval log | pull logs are **append-only**, one file per run, committed |
-| raw separate from processed | documents in GCS; extractions in Postgres, keyed back |
-| transformation logic | adapters and prompts are in git, with the reasoning in commits |
+Potentially lower-risk, still subject to clearance:
 
-**A row without a source URL and fetch date is a compliance defect, not just a
-data-quality one.** The loaders already reject rows with no `project_id`; treat
-a missing citation the same way.
+- Manufacturer-focused specification and brand intelligence
+- Public permit, procurement, bid, announcement and specification sources
+  obtained lawfully
+- Source-linked project records and public citations
+- Infrastructure, security, authentication, billing, ingestion and quality
+  control developed without former-employer materials
+
+Requiring clearance before proceeding — see §3 of the brief in full:
+commercial launch or paid sales; contractor-facing project-lead products or
+features closely resembling ConstructConnect offerings; outreach to restricted
+parties; features derived from remembered internal information; hiring from
+ConstructConnect; comparison content; patent filings.
+
+## Source provenance — mandatory fields per source
+
+The brief §4 requires the exact public URL, access date, source owner, license
+or access terms, and retrieval method. The full mandatory schema:
+
+| field | status | where it lives today |
+|---|---|---|
+| public URL | required | `source_url` on project and document rows |
+| access date | required | `fetched_at` / `fetch_date`, GCS object metadata |
+| **source owner** | required | **gap — not yet a column** |
+| **applicable terms or license** | required | **gap** |
+| **access authorization** | required | **gap** |
+| **whether authentication was used** | required | **gap — adapters never authenticate, but this must be recorded, not inferred** |
+| **data classification** | required | **gap** |
+| **retention restrictions** | required | **gap** |
+| **hash / immutable identifier** | required | `content_sha256` on documents; **absent on project rows** |
+| retrieval method | required | adapter name in `coverage/pull-log/*.csv` |
+| immutable retrieval log | required | pull logs append-only, one file per run |
+| raw separate from processed | required | documents in GCS; extractions in Postgres, keyed back |
+| transformation logic, prompts, validation | required | adapters and prompts in git |
+| contributor certification | required | **gap — not yet collected** |
+
+**The gaps are real and unclosed.** A row missing a required field is a
+compliance defect, not only a data-quality one.
+
+**Customer discovery is not automatically permissible.** It may be used only
+after confirming the participant is not a covered customer, prospect or key
+relationship, and recording that determination.
 
 **Blocked sources are logged, never worked around.** `registration required`,
-`dead link`, `needs browser`, `no active solicitations` are correct outcomes.
-This matters twice over now: it is good engineering *and* it is the audit trail
-showing we stopped at every wall.
+`dead link`, `needs browser` are correct outcomes.
 
-**Quarantine, do not delete.** If a source turns out to be questionable,
-preserve it and escalate (§4, §9). Deleting is the wrong instinct.
+**Questionable material: preserve without reviewing, copying, processing or
+distributing it further.** Isolate it in access-controlled legal-hold storage,
+preserve metadata, and escalate immediately. **Do not commit the material or its
+substance to the ordinary repository.**
 
-## §5 Provenance — git history IS the evidence
+## Provenance record — repository history is one component
 
-- **Never rewrite published history.** No force-push over `main`, no rebasing
+Repository history is **one component** of the provenance record and must be
+supplemented by source logs, development chronology, device and account records,
+customer-discovery records, and contributor certifications. It does not capture
+conception, off-platform work, source licensing, devices, customer discussions or
+pre-employment activity.
+
+Engineering obligations that follow:
+
+- Never rewrite published history; no force-push over `main`, no rebasing
   published commits, no squashing that destroys authorship or dates.
-- **Never backdate** a commit, document or file timestamp.
-- **Preserve prior versions** when language is corrected. Change it forward as
-  an ordinary update; the old version stays in history (§5, §9).
-- Commit messages explaining *why* a thing was built are contemporaneous
-  evidence of independent creation. Keep writing them.
+- Never backdate a commit, document or file timestamp.
+- Preserve prior versions when language is corrected — change forward as an
+  ordinary update.
 
-## §7 Language — applies to every customer-facing surface
+## Language — customer-facing surfaces
 
 Site copy, PRDs, decks, PR bodies, Drive documents, marketing.
 
-**Never write, imply or hint** that the idea came from ConstructConnect, that
+Never write, imply or hint that the idea came from ConstructConnect, that
 SpecIndex counters or replaces it, that we know its gaps, pricing, roadmap or
-priorities, or that we exploit anything learned confidentially.
+priorities, or that we exploit anything learned confidentially. **Approved
+framing is §7 of the brief; use it as written.**
 
-**Approved framing** is in §7 of the brief. Use it as written.
+Product positioning, patent freedom-to-operate and third-party acceptable-use
+rules are **not** restrictive-covenant controls and live separately in
+`docs/PRODUCT_IP_POLICY.md`.
 
-Existing product rules point the same way and still apply:
+## Roadmap intake gate — before a feature reaches engineering
 
-- Do not lead with project volume — sell spec position and citations.
-- Never state a claim wider than the evidence: *"no manufacturer named in the N
-  documents we hold"*, never *"none named"*.
-- Do not claim brand-vs-competitor visibility.
-- No cross-filtering chart dashboard; never a permit job-cost histogram (iSqFt,
-  US 9,633,012). One-directional citation only (Buildsite, US 12,242,990).
-- Never scrape ConstructConnect, Dodge, Blue Book or BuildingConnected — their
-  AUP forbids it independently of any employment question.
+Mandatory, answered at proposal time, not per commit:
 
-## §3 Perimeter — what to build
+1. Who conceived it?
+2. When?
+3. What supporting record exists?
+4. Did it relate to work performed during employment?
+5. Did it use former-employer time, equipment, information or personnel?
 
-**Build:** manufacturer-facing specification intelligence — spec position,
-basis-of-design attribution, substitution visibility, source-linked records.
-Infrastructure, auth, billing, ingestion and QC are unrestricted provided no
-former-employer material is used.
+## Development request screening — DRAFT, pending counsel
 
-**Needs clearance first:** paid sales or commercial launch before 2027-06-15;
-contractor-facing lead generation; outreach to restricted parties; anything
-resembling a remembered internal roadmap; hiring from ConstructConnect;
-comparison content naming it; patent filings.
+§8 of the brief instructs *"before implementing a material request, answer each
+screening question"*; the questions were not supplied. These candidates derive
+from the brief's language, each citing its clause. **Counsel's wording replaces
+this section entirely.**
 
-The manufacturer wedge is the strategy on its own merits and predates this
-brief. That it is also the defensible perimeter is convenient, not the reason.
+**A. Provenance of inputs** *(§2, §4)*
 
-## §8 Development request screening — DRAFT, pending counsel
+- **A1.** State the source of the data, logic and requirements. Public URL and
+  access date for third-party or public-record inputs; or explicitly *"direct
+  customer discovery"* (screened per above) or *"original design"*. Recorded, not
+  yes/no.
+- **A2.** Did any part originate from a former-employer system, account, export,
+  email, device or private communication?
+- **A3.** Does it require reconstructing a dataset, report, metric or conclusion
+  from memory rather than a lawful source?
+- **A4.** Does it derive from a remembered internal roadmap, customer complaint,
+  pricing detail, performance metric, product gap or strategic priority?
+- **A5.** Are transformation logic, extraction prompts and validation methods
+  documented?
+- **A6.** Can every contributor certify no third-party confidential information
+  was contributed?
 
-**Status: not yet approved.** §8 of the brief instructs *"before implementing a
-material request, answer each screening question"* but the questions did not come
-through — the section is a header and an instruction. Below is a candidate list
-derived **strictly from the brief's own language**; every question cites the
-clause it comes from. **Send to counsel to confirm, correct or replace. If they
-supply wording, theirs governs and this section is deleted.**
+A2–A4 remain separate questions; a single combined attestation is skimmed.
 
-Reviewed against the brief by Gemini (2026-08-07), which found four real defects
-in the first draft. They are fixed here and recorded at the end, because the
-corrections say more about the failure modes than the questions do.
+**B. Who it serves** *(§3, §6)*
 
-### Why this gate matters more than the standing rules
+- **B1.** Who is the user? Recorded, not yes/no.
+- **B2.** Does it closely resemble a ConstructConnect offering?
+- **B3.** Does shipping it involve outreach to, or targeting of, anyone on the
+  restricted-party register? For generic capability (export, email send), this
+  concerns intended use and belongs with whoever operates it.
 
-Every other section is always-on or reactive. §8 is the only one operating at the
-moment of building, per request — and the only thing that catches **drift**. "Add
-a contractor filter", "let users export a prospect list", "show which competitor
-is weakest here" are unremarkable alone; together they move the product from
-manufacturer-facing specification intelligence toward contractor-facing lead
-generation, which §3 puts in *Requires Legal Clearance*. No standing prohibition
-sees that happening.
+**C. What it says** *(§7)* — **C1.** Does any copy name ConstructConnect,
+compare capabilities, or imply knowledge of its gaps, pricing, plans or
+priorities?
 
-A dated answer per feature is also the contemporaneous evidence §5 asks for.
+**D. Patents** *(§3)* — **D1.** Is any part intended for a patent filing, or an
+ownership representation covering a concept possibly conceived during employment?
 
-### A. Provenance of inputs *(§2, §4)*
+### Outcomes — three, not two
 
-**A1. State the source of the data, logic and requirements for this work.**
-Give the public URL and access date for third-party or public-record inputs; or
-state explicitly *"direct customer discovery"* or *"original design"* where that
-is the origin. Not a yes/no — a recorded answer.
+| Finding | Action |
+|---|---|
+| Prohibited source, confidential information, restricted solicitation, or evidence manipulation | **Stop and escalate** |
+| Competitive similarity, uncertain user category, patent/IP issue, or pre-separation conception | **Pause pending legal clearance** |
+| Complete provenance, unrestricted relationships, independently developed requirements | **Proceed subject to ordinary review** |
 
-**A2.** Did any part originate from a former-employer system, account, export,
-email, device or private communication? *(§4)*
+Uncertainty: preserve, pause, escalate (brief §12).
 
-**A3.** Does it require reconstructing a dataset, report, metric or conclusion
-**from memory** rather than from a lawful source? *(§4)*
+### Two questions deliberately outside this gate
 
-**A4.** Does it derive from a remembered internal roadmap, customer complaint,
-pricing detail, performance metric, product gap or strategic priority? *(§3)*
+**Conception date** — belongs at the roadmap intake gate above, answered by the
+founder, not inferred by an engineer. **Commercial launch** — §3 permits building
+billing systems; merging code must never itself enable paid sales. That control
+belongs in release management, outside the merge.
 
-A2–A4 stay separate on purpose. Merging them into one "does this comply?" tick
-is what gets skimmed; the friction is the point.
+## Escalation
 
-**A5.** Are the transformation logic, extraction prompts and validation methods
-documented in git? *(§4)*
+Halt and escalate if a source proves to be ConstructConnect, Dodge, Blue Book or
+BuildingConnected content however reached; a contact may be a restricted party;
+a feature resembles something known from inside; anyone proposes deleting,
+editing or backdating potentially relevant material; or a document cannot be
+traced to a lawful source.
 
-**A6.** Can every contributor certify no third-party confidential information was
-contributed? *(§4)*
+---
 
-### B. Who it serves *(§3, §6)*
+## Version history
 
-**B1.** Who is the user? *(Manufacturers and rep agencies are permitted; a
-contractor seeking project leads requires clearance.)* Answer with the user, not
-yes/no.
-
-**B2.** Does it closely resemble a ConstructConnect offering? *(§3)*
-
-**B3.** Does shipping it involve outreach to, or targeting of, anyone on the
-restricted-party register? *(§6)* — If the feature is generic (an export, an
-email send), the answer is about **how it will be used**, and belongs with
-whoever operates it.
-
-### C. What it says *(§7)*
-
-**C1.** Does any copy name ConstructConnect, compare capabilities, or imply
-knowledge of its gaps, pricing, plans or priorities?
-
-### D. Patents *(§3)*
-
-**D1.** Is any part of this intended for a patent filing, or an ownership
-representation covering a concept possibly conceived during employment?
-
-### How to answer
-
-- **A1 and B1 recorded**, and **A2, A3, A4, B2, B3, C1, D1 all "no"**, and A5/A6
-  satisfied → proceed. Note it in the commit message; that is the dated record.
-- **Any "yes"** → **stop and escalate per §9.** Do not redesign around it. A
-  feature needing clearance is not one an engineer makes clearable.
-- **Uncertain** → §12: preserve, pause, escalate.
-
-### Two questions deliberately NOT in this gate
-
-**Conception date.** §5 requires pre-2026-06-15 activity be "identified
-accurately and escalated" — but an engineer taking a ticket cannot know when an
-idea was conceived. It belongs at the **roadmap level**, asked of the founder when
-a feature is first proposed, not per commit. Cutting it entirely would drop a §5
-requirement; asking engineers would produce guesses.
-
-**Commercial launch.** §3 restricts paid sales before 2027-06-15, but it
-explicitly *permits building* billing systems. A build-time question is the wrong
-instrument: **merging code should never itself enable paid sales.** That belongs
-in release management — a flag controlled outside the merge — and if a routine
-merge could flip it, the deploy pipeline is the defect, not the checklist.
-
-### Defects found in the first draft, and why they mattered
-
-1. **A1 originally demanded every input trace to a public URL.** That narrows the
-   perimeter *beyond what counsel wrote* — §3 permits "direct customer
-   discovery", which has no URL. Inventing a stricter standard than the brief is
-   the worst failure mode for this document, because it looks like caution.
-2. **"Does this serve manufacturers or contractors?"** was compound, so answering
-   "yes, manufacturers" tripped the stop rule and halted permitted work.
-3. **A product rule was smuggled in as a legal one** — a claims-scope rule that
-   appears nowhere in the brief. It is a good rule and it lives elsewhere; mixing
-   the two blurs which is binding.
-4. **Patent filings, documented transformation logic and contributor
-   certification** were all missing, though §3 and §4 require each.
-
-## §9 Stop and escalate
-
-Halt and raise it if: a source turns out to be ConstructConnect/Dodge/Blue
-Book/BuildingConnected content however reached; a contact may be a restricted
-party; a feature resembles something known from inside; anyone proposes
-deleting, editing or backdating historical material; or a document cannot be
-traced to a public URL.
-
-## For agents working in this repo
-
-Before adding a data source, re-read §4 above. Before writing customer-facing
-copy, re-read §7. If a source is ambiguous, **log it as a blocker and stop** —
-do not route around it. That is already how the pipeline behaves; now it is also
-why.
+- **Revision 2** — screening questions clarified; pending counsel approval.
+- **Revision 1** — initial operational mapping.
