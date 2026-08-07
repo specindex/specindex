@@ -161,44 +161,22 @@ def _call_model_b(batch: list[dict[str, Any]], settings: Settings) -> str:
     last_err: Exception | None = None
     for attempt in range(settings.max_retries):
         try:
-            if settings.sonnet_backend == "gemini_pro":
-                return _call_gemini_pro(prompt, settings)
-            if settings.sonnet_backend == "vertex":
-                return _call_claude_vertex(prompt, settings)
-            return _call_claude_anthropic(prompt, settings)
+            # GEMINI ONLY. The Claude branches -- _call_claude_anthropic and
+            # _call_claude_vertex -- were deleted 2026-08-07 on Asif's
+            # instruction that every model call in this project goes to Google
+            # Gemini via Vertex. Both were violations: the first bills
+            # Anthropic, the second bills GCP but still runs Claude.
+            #
+            # sonnet_backend is no longer a switch. Honouring a stale
+            # "anthropic" value from an old config would silently route around
+            # the rule, so any value routes here.
+            return _call_gemini_pro(prompt, settings)
         except Exception as e:
             last_err = e
             wait = min(60, (2**attempt) * 4)
             print(f"[sonnet] retry {attempt + 1}: {e}; sleep {wait}s", file=sys.stderr)
             time.sleep(wait)
     raise RuntimeError(f"Model B failed: {last_err}")
-
-
-def _call_claude_anthropic(prompt: str, settings: Settings) -> str:
-    import anthropic
-
-    if not settings.anthropic_api_key:
-        raise RuntimeError("ANTHROPIC_API_KEY required for sonnet_backend=anthropic")
-    client = anthropic.Anthropic(api_key=settings.anthropic_api_key)
-    msg = client.messages.create(
-        model=settings.sonnet_model,
-        max_tokens=16000,
-        messages=[{"role": "user", "content": prompt}],
-    )
-    return "".join(getattr(b, "text", "") for b in msg.content if getattr(b, "type", None) == "text")
-
-
-def _call_claude_vertex(prompt: str, settings: Settings) -> str:
-    from anthropic import AnthropicVertex
-
-    loc = __import__("os").environ.get("VERTEX_CLAUDE_LOCATION") or "global"
-    client = AnthropicVertex(project_id=settings.google_cloud_project, region=loc)
-    msg = client.messages.create(
-        model=settings.sonnet_model,
-        max_tokens=16000,
-        messages=[{"role": "user", "content": prompt}],
-    )
-    return "".join(getattr(b, "text", "") for b in msg.content)
 
 
 def _call_gemini_pro(prompt: str, settings: Settings) -> str:

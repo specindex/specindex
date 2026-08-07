@@ -1,0 +1,99 @@
+# Build the pipeline image and deploy the Cloud Run Jobs that run the coverage
+# pipeline. Section 3 of coverage/docs/coverage-plan-v2.md: heavy crawling
+# belongs in Cloud Run Jobs, not on a laptop and not in a 6-hour Actions runner.
+#
+# COPIES THE PROVEN PATTERN from api-deploy.yml -- WIF auth, docker build in CI,
+# deploy BY DIGEST. An earlier deploy in this repo broke on its first run because
+# an auth pattern was copied from documentation instead of from the workflows
+# that already work here.
+
+name: pipeline-jobs-deploy
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "pipeline/**"
+      - "scripts/**"
+      - "config/**"
+      - ".github/workflows/pipeline-jobs-deploy.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: pipeline-jobs-deploy
+  cancel-in-progress: false
+
+env:
+  REGION: us-central1
+  PROJECT: specindex-ai
+  IMAGE: us-central1-docker.pkg.dev/specindex-ai/cloud-run-source-deploy/specindex-pipeline
+  INSTANCE: specindex-ai:us-central1:specindex-db
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+
+      - uses: google-github-actions/setup-gcloud@v2
+
+      - id: build
+        name: Build and push
+        run: |
+          gcloud auth configure-docker "$REGION-docker.pkg.dev" --quiet
+          docker build -f pipeline/Dockerfile \
+            -t "$IMAGE:${GITHUB_SHA}" -t "$IMAGE:latest" .
+          docker push "$IMAGE:${GITHUB_SHA}"
+          docker push "$IMAGE:latest"
+          # Deploy by DIGEST, not tag: a tag can move between the push and the
+          # deploy and you get a different image than you tested.
+          DIGEST=$(gcloud artifacts docker images describe "$IMAGE:${GITHUB_SHA}" \
+                    --format='value(image_summary.fully_qualified_digest)')
+          echo "digest=$DIGEST" >> "$GITHUB_OUTPUT"
+          echo "deploying $DIGEST"
+
+      - name: Deploy jobs
+        env:
+          DIGEST: ${{ steps.build.outputs.digest }}
+        run: |
+          # One image, several jobs; the args are what differ. A new job is a
+          # flag here rather than a new container.
+          deploy_job () {
+            local name="$1"; shift
+            local timeout="$1"; shift
+            gcloud run jobs deploy "$name" \
+              --image "$DIGEST" \
+              --region "$REGION" --project "$PROJECT" \
+              --set-cloudsql-instances "$INSTANCE" \
+              --set-secrets "DATABASE_URL=DATABASE_URL:latest,SAM_API_KEY=SAM_API_KEY:latest,LEGISTAR_TOKEN_NYC=LEGISTAR_TOKEN_NYC:latest" \
+              --set-env-vars "GOOGLE_CLOUD_PROJECT=$PROJECT,GOOGLE_CLOUD_LOCATION=$REGION" \
+              --task-timeout "$timeout" --max-retries 2 --memory 4Gi --cpu 2 \
+              --args "$@" \
+              --quiet
+          }
+          # Long timeouts because these are the jobs that kept dying on a laptop.
+          deploy_job specindex-pull-portals   6h  scripts/run-portal-capture.py --tier 1 --checkpoint --batch-size 10
+          deploy_job specindex-pull-socrata   1h  scripts/pull-socrata-permits.py config/socrata/austin.yaml config/socrata/seattle.yaml
+          deploy_job specindex-pull-arcgis    1h  scripts/pull-arcgis-permits.py config/arcgis/denver.yaml config/arcgis/raleigh.yaml
+          deploy_job specindex-classify       6h  scripts/classify-spec-documents.py --owner reference --limit 200
+
+      - name: Verify the jobs exist
+        run: |
+          # Assert the NEXT step can see the output -- a deploy that reports
+          # success and leaves no job is the shape this repo keeps hitting.
+          gcloud run jobs list --region "$REGION" --project "$PROJECT" \
+            --format='value(name)' | tee /tmp/jobs
+          for j in specindex-pull-portals specindex-pull-socrata specindex-pull-arcgis specindex-classify; do
+            grep -qx "$j" /tmp/jobs || { echo "::error::job $j missing after deploy"; exit 1; }
+          done

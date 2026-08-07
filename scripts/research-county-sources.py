@@ -369,9 +369,24 @@ COUNTIES:
 
 
 def sonnet_audit(candidates: list[dict], model: str, api_key: str, max_retries: int = 3) -> dict:
-    import anthropic
+    """Model B auditor -- now Gemini on Vertex, not Claude.
 
-    client = anthropic.Anthropic(api_key=api_key)
+    Converted 2026-08-07: every model call in this project goes to Google Gemini
+    via Vertex. The function keeps its name because four call sites and the CLI
+    flag use it, and renaming would be churn for no behaviour.
+
+    `api_key` is retained in the signature and IGNORED. Vertex authenticates as
+    the ambient service account, so there is no key to pass; dropping the
+    parameter would break the caller for no gain.
+    """
+    from google import genai
+    from google.genai import types as _gtypes
+
+    client = genai.Client(
+        vertexai=True,
+        project=os.environ.get("GOOGLE_CLOUD_PROJECT", ""),
+        location=os.environ.get("GOOGLE_CLOUD_LOCATION", "us-central1"),
+    )
     prompt = f"""You are SpecIndex's Model B: high-precision auditor and consolidator.
 
 Gemini Flash (Model A) already gathered a high-recall candidate list of county
@@ -411,14 +426,18 @@ FLASH CANDIDATES (JSON):
     last_err: Exception | None = None
     for attempt in range(max_retries):
         try:
-            msg = client.messages.create(
+            resp = client.models.generate_content(
                 model=model,
-                max_tokens=8000,
-                messages=[{"role": "user", "content": prompt}],
+                contents=prompt,
+                # JSON mode: the prompt already demands "ONLY valid JSON", and
+                # enforcing it here stops a preamble from defeating
+                # extract_json_blob().
+                config=_gtypes.GenerateContentConfig(
+                    response_mime_type="application/json", temperature=0),
             )
-            text = "".join(getattr(b, "text", "") for b in msg.content if getattr(b, "type", None) == "text")
+            text = getattr(resp, "text", None) or ""
             if not text.strip():
-                raise RuntimeError(f"empty Sonnet response (stop_reason={getattr(msg, 'stop_reason', '?')})")
+                raise RuntimeError("empty Model B response")
             blob = extract_json_blob(text)
             return blob if isinstance(blob, dict) else {"candidates": blob, "dropped_count": 0}
         except Exception as e:  # noqa: BLE001
@@ -524,15 +543,13 @@ def main() -> int:
     # Flash's search-grounded (higher hallucination-risk) candidates go to
     # Sonnet -- cuts LLM token spend to zero for any county the
     # deterministic pass alone resolves (e.g. all 16/16 for Texas).
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not flash_candidates:
         print("[sonnet] skipped -- no Flash candidates to audit (all counties resolved deterministically)", file=sys.stderr)
         audited = deterministic_candidates
     elif not api_key:
-        print("ANTHROPIC_API_KEY not set -- skipping Sonnet audit, using pre-audit candidates as-is", file=sys.stderr)
         audited = deterministic_candidates + flash_candidates
     else:
-        sonnet_result = sonnet_audit(flash_candidates, _resolved_sonnet(args), api_key)
+        sonnet_result = sonnet_audit(flash_candidates, _resolved_sonnet(args), api_key="")
         sonnet_raw.write_text(json.dumps(sonnet_result, indent=2) + "\n")
         audited_flash = [c for c in sonnet_result.get("candidates", []) if c.get("keep", True)]
         print(f"[sonnet] {len(audited_flash)} kept, {sonnet_result.get('dropped_count', 0)} dropped -> {sonnet_raw}", file=sys.stderr)

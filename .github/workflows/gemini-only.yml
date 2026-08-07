@@ -1,0 +1,19 @@
+name: gemini-only
+
+# Every model call in this project goes to Google Gemini via Vertex AI.
+# Asif's decision 2026-08-07. Enforced here rather than noted, for the same
+# reason the gitignore guard exists: a note was written twice this session and
+# the same class of mistake recurred anyway.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  gemini-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: No Anthropic call path
+        run: python3 scripts/check-no-anthropic.py
