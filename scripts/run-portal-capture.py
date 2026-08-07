@@ -77,15 +77,34 @@ def store(bucket, body: bytes, *, state: str, project_id: str, doc_type: str,
     fact without a citation is worthless, and an object without metadata becomes
     one the moment it is copied.
     """
+    # PLATFORM ADAPTERS SERVE MANY STATES, so PORTAL["state"] is not always one
+    # state: Bonfire reports "Utah, Washington" and Bid Express reports "multi".
+    # Those went straight into the object path and produced
+    # specs/UTAH, WASHINGTON/... -- a comma in a GCS path is legal and awful,
+    # and it makes per-state listing impossible for exactly the adapters that
+    # cover the most ground.
+    #
+    # A multi-state adapter cannot know the state from the platform alone, so
+    # the honest bucket is MULTI rather than a guess. The per-project state is
+    # carried in the object METADATA, where it can be corrected later without
+    # rewriting paths.
+    st = (state or "").strip()
+    if not st or "," in st or st.lower() in ("multi", "multiple", "various"):
+        st = "MULTI"
+    st = re.sub(r"[^A-Za-z0-9_-]+", "-", st).upper()[:24] or "MULTI"
+
     safe = re.sub(r"[^A-Za-z0-9._-]+", "-", filename)[:120] or "document.pdf"
     if not safe.lower().endswith(".pdf"):
         safe += ".pdf"
     pid = re.sub(r"[^A-Za-z0-9._-]+", "-", project_id or "unknown")[:80]
-    path = f"specs/{(state or 'XX').upper()}/{pid}/{doc_type}_{safe}"
+    path = f"specs/{st}/{pid}/{doc_type}_{safe}"
     blob = bucket.blob(path)
     if not blob.exists():
         blob.metadata = {"source_url": source_url, "portal": portal,
                          "doc_type": doc_type,
+                         # Verbatim, even when it is a list -- the path had to be
+                         # normalised, the provenance does not.
+                         "portal_state": (state or "").strip(),
                          "fetch_date": datetime.date.today().isoformat()}
         blob.upload_from_string(body, content_type="application/pdf")
     return f"gs://{GCS_BUCKET}/{path}"
