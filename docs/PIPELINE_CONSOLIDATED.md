@@ -52,7 +52,7 @@ It must download a real document containing CSI or DOT SS/SP structure.
 |---|---|---|
 | **1. Projects** | enumerate solicitations/permits | projects indexed |
 | **1.5 Load** | write into the index | **rows in `projects`** |
-| **2. Documents** | pull every attachment | % with ≥1 document |
+| **2. Documents** | pull every attachment | **% of LISTED attachments captured** |
 | **3. Classify** | detect true spec books, extract divisions | % with a confirmed spec doc |
 | **4. Gap-fill** | targeted search **only where stage 3 found nothing** | recovery rate |
 
@@ -62,6 +62,14 @@ zero rows in `projects`. An adapter that writes a file has not added a project.
 **Search is stage 4, not stage 2.** Running it early cost a 0% hit rate over 10
 projects; crawling once per source beats searching once per project by roughly
 $17,000 at 494,327 document-less projects.
+
+**Stage 2's metric changed, because the old one caused data loss.** It used to be
+"% with ≥1 document", and the capture runner carried a matching `break   # one
+confirmed document per project is the funnel unit`. Maine 3820 listed six
+documents — specification, addendum, drawings, legal ad, notice to contractors,
+bid tabulation — and we kept one. The adapter had enumerated all six correctly;
+the metric threw five away. **A metric that is satisfied by one document will be
+implemented as one document.** Measure captured-against-listed.
 
 ## 3. The 11-step process — per jurisdiction
 
@@ -79,10 +87,23 @@ The depth discipline. **A jurisdiction is not done at step 5.**
 | **III — Processing** | **8** | **Project-document pull — REQUIRED** |
 | | **9** | **Document text extraction** |
 | | **10** | **Project enrichment — REQUIRED** |
-| **IV — The moat** | **11** | **Substitution ledger — REQUIRED wherever addenda exist** |
+| **IV — The moat** | **11** | **Substitution ledger — REQUIRED wherever ANY spec document exists** |
 
 **Steps 8–11 are the ones that get skipped**, and they are the entire product.
 Steps 1–7 produce a permit row; steps 8–11 produce a cited manufacturer claim.
+
+**Step 11 no longer says "wherever addenda exist" — that was wrong.** Measured on
+Maine 3820 (2026-08-07): the addendum was one page, 563 characters of native
+text, and contained zero occurrences of *substitution*, *or equal*, *approved* or
+*rejected* — its entire content was a bid-date extension. All 8 cited findings
+came from the **base spec book**: Sika (div 03, p64/p70), Grainger and McNICHOLS
+(div 05, p73/p87), Simpson Strong-Tie + USP with an explicit "or approved equal"
+(div 06, p100), Canam Mass Timber (div 06, p108).
+
+Basis-of-design attribution is present in the base specification **at bid time**.
+Addenda still matter — a *displaced* manufacturer is only visible there — but
+expect a low hit rate per addendum, and never read "no addenda captured" as "no
+rulings available".
 
 ## 4. How they compose
 
@@ -121,8 +142,7 @@ state, not more states, is the work.
 
 ## 6. The failure mode this pipeline keeps hitting
 
-**A step succeeds into a place nothing reads from.** Four instances in one
-session:
+**A step succeeds into a place nothing reads from.** Seven instances so far:
 
 | seam | looked like | actually |
 |---|---|---|
@@ -130,6 +150,18 @@ session:
 | Capture → database | 229 books in GCS | 0 visible to the classifier |
 | Extraction → classifier | 269 docs flagged done | 0 divisions |
 | Documents → record page | "no documents held" | document existed in another table |
+| Spec book → its own pages | 219 pages extracted | 0 joinable from the project (**207 of 207 books**) |
+| Config → step 11 | "ledger is empty, need more addenda" | the step had **never run once** — `Settings.from_env()` raised on a required key nothing read |
+| Capture → extractor | spec book present and skipped | class re-derived from `title`, which the loader sets to the project *number* |
+
+**The tell is a clean zero, and often the clock.** None of these errored. The
+third was caught only because a run finished in 0.6 seconds: *0 findings from 1
+document in 0.6s* is a bug, *0 findings from 1 document in 80s* is a fact. Check
+elapsed time and input count before believing any zero.
+
+**Run the whole pipeline on one known-good project.** All three of the newest
+seams were found by taking Maine 3820 through all 11 steps — not by running one
+step across many projects, which is how they stayed hidden.
 
 **Every step now ends by reading back what it wrote.** A run is not finished when
 it exits — only when its output has been read.

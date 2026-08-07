@@ -39,6 +39,19 @@ Finish by reading back what was written. A capture that succeeds into a place
 nothing reads from is indistinguishable from one that never ran; that shape once
 left 78% of captured documents invisible downstream.
 
+**6. Enumerate EVERY document on the listing row, and stamp what each one is.**
+`doc_urls` returns all of them — specification, addenda, drawings, legal ad,
+notice to contractors, bid tabulation — never just the spec book. Maine's adapter
+did this correctly and five of six documents were still lost, because the
+*runner* stopped at the first confirmed document to satisfy a "% with ≥1
+document" metric.
+
+Each document's type is decided from its **filename** at capture time and stored
+in `doc_type`. Downstream code must not re-derive it from `title`: the portal
+loader sets title to the project NUMBER ("3820"), so `classify()` returns `other`
+and the spec book — the most valuable document on the project — is silently
+skipped by extraction.
+
 ## Required interface
 
 ```python
@@ -54,7 +67,9 @@ PORTAL = {
 
 def discover(limit: int = 50) -> list[dict]:
     """Return [{project_name, project_number, bid_date, doc_urls: [...]}].
-    Must not download the PDFs -- discovery only."""
+    Must not download the PDFs -- discovery only.
+
+    doc_urls is EVERY document link on the row, not the spec book alone."""
 
 def fetch(url: str) -> bytes | None:
     """Return PDF bytes, or None. Must content-check before returning."""
@@ -66,6 +81,12 @@ An adapter is done when `check-portal-adapters.py` reports **PASS**, which
 requires it to have downloaded **at least one real PDF containing CSI division
 structure** from that portal. Not a resolving URL. Not a listing page. A spec
 document, proven by its own content.
+
+**PASS is necessary, not sufficient — it is a single-document test.** An adapter
+that enumerates only the spec book and drops the addenda passes it. Before
+calling a portal done, open one listing row in a browser, count the document
+links, and compare against `len(doc_urls)`. Maine 3820 posts six; a checker
+looking for one CSI-structured PDF would have been satisfied by one of them.
 
 Report failures as failures. "This portal requires a login" is a useful, correct
 result. A fabricated success costs a day to discover.

@@ -1719,8 +1719,21 @@ def fetch_document_files(conn, sk: int, base_url: str) -> list[dict[str, Any]]:
     of its own -- the resolution happens here."""
     with conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor) as cur:
         cur.execute(
-            "SELECT id, title, url, content_type, document_type, gcs_path FROM project_document_files "
-            "WHERE project_sk = %s ORDER BY title",
+            # doc_type is selected because it is the only field that says what a
+            # document IS. The portal loader sets `title` to the project NUMBER
+            # ("3820"), so a record page listing six documents by title showed
+            # "3820", "3820 Addendum 1", "3820 Drawings-MSP" -- the single most
+            # important document, the 219-page spec book, rendered as a bare
+            # number. doc_type is derived from the filename at capture time and
+            # lets the UI label each row ("Specifications", "Addendum").
+            "SELECT id, title, url, content_type, document_type, doc_type, gcs_path "
+            "FROM project_document_files "
+            # Spec book first, then addenda, then everything else: the order a
+            # rep reads them in, not alphabetical -- which put "3820 Bid
+            # Tabulation" above the specification.
+            "WHERE project_sk = %s "
+            "ORDER BY CASE doc_type WHEN 'specbook' THEN 0 WHEN 'addendum' THEN 1 "
+            "         WHEN 'drawing' THEN 2 ELSE 3 END, title",
             (sk,),
         )
         rows = [dict(r) for r in cur.fetchall()]
