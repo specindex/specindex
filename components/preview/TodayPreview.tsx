@@ -169,8 +169,18 @@ export function TodayPreview({
             }}>
             <span style={{ width: 6, height: 6, borderRadius: 999, background: "#16643A" }} />
             <span style={{ fontFamily: MONO, fontSize: 10, letterSpacing: "0.07em", color: "#16643A" }}>LIVE CORPUS</span>
+            {/* Only claims the document count when the build could actually
+                see it. This page is statically exported by an UNAUTHENTICATED
+                build, so api/main.py serves _to_public_teaser and strips
+                document_count. The first production deploy therefore rendered
+                "0 with documents held" for a territory where we hold 55, which
+                reads as "we have no documents" rather than "this build could
+                not see them". Understating our own coverage on the live site is
+                worse than omitting the number. */}
             <span style={{ fontSize: 12, color: "#8A938C" }}>
-              {total} Maine records, {documented} with documents held
+              {documented > 0
+                ? `${total} Maine records, ${documented} with documents held`
+                : `${total} Maine records`}
             </span>
           </div>
 
