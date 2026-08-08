@@ -101,7 +101,7 @@ def _one_call(client, text: str) -> list[dict]:
     return data.get("divisions", []) or []
 
 
-# CSI MasterFormat divisions are 00-49. Nothing else is one.
+# CSI MasterFormat divisions are a FIXED, GAPPED LIST -- not the range 00-49.
 #
 # THIS IS THE VERIFIER THAT MAKES FLASH DEFENSIBLE. On its first run Flash
 # returned division "100" from a state DOT book -- reading "SECTION 100" as a
@@ -109,7 +109,26 @@ def _one_call(client, text: str) -> list[dict]:
 # divisions at all, so the honest output there is an empty list. Without this
 # check an invented division reaches the record page looking exactly like a real
 # one, and the whole product claim is that we quote rather than infer.
-_VALID_DIVISIONS = {f"{n:02d}" for n in range(0, 50)}
+#
+# THE RANGE CHECK WAS NOT ENOUGH. `range(0, 50)` accepted every number 00-49,
+# but MasterFormat leaves whole bands RESERVED and unassigned: 15-20, 24, 29,
+# 30, 36-39, 47, 49. Measured on a 20-document dry run 2026-08-08, Flash
+# emitted "18", "29" and "30" on two DOT-style books -- all three are reserved,
+# none is a real division, and each passed the range check and would have been
+# written as fact. At 2 bad documents in 20, the ~14,000-document backlog would
+# have put thousands of junk rows into project_csi_divisions, which is what the
+# scope matrix on the record page reads from.
+#
+# So the allowlist is the actual published list, gaps included. A reserved
+# number is not a near-miss to be rounded to a neighbour -- it is evidence the
+# model was reading some other numbering system, and the honest answer is to
+# drop it.
+_VALID_DIVISIONS = frozenset(
+    [f"{n:02d}" for n in range(0, 15)]        # 00-14 procurement, general, facility construction
+    + ["21", "22", "23", "25", "26", "27", "28"]   # facility services (24 reserved)
+    + ["31", "32", "33", "34", "35"]               # site and infrastructure
+    + ["40", "41", "42", "43", "44", "45", "46", "48"]  # process equipment (47 reserved)
+)
 
 
 def valid_division(raw) -> str | None:
