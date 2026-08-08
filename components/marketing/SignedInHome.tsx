@@ -62,6 +62,10 @@ export function SignedInHome() {
   const [feedTotal, setFeedTotal] = useState(0);
   const [newThisWeek, setNewThisWeek] = useState<number | null>(null);
   const [feedLoading, setFeedLoading] = useState(true);
+  // Distinguishes "your territory is genuinely empty" from "the request
+  // failed". Collapsing those two into one empty state is what let a 401 read
+  // as a coverage problem for a signed-in user.
+  const [feedError, setFeedError] = useState<string | null>(null);
 
   const trackedIds = useMemo(() => new Set(tracked.map((t) => t.project_id)), [tracked]);
 
@@ -100,20 +104,48 @@ export function SignedInHome() {
       sort: "score",
       limit: 20,
     });
-    fetch(`${API_BASE}/v1/projects?${qs}`)
-      .then((r) => r.json())
-      .then((data) => {
+    // SEND THE BEARER TOKEN. /v1/projects requires one, and these were the
+    // only two calls in this file issuing a bare fetch() -- every other request
+    // here goes through a getToken-taking helper in lib/tracking.ts or
+    // lib/userProfile.ts. Unauthenticated, the API answers
+    // {"detail":"Missing bearer token"}, the empty .catch() below discarded it,
+    // feedProjects stayed [] and the page rendered "0 projects in your
+    // territory" for a signed-in user whose territory holds 262 documented
+    // projects. The screenshot signature was "Tracked 4" (authed helper, works)
+    // sitting next to "0 in your territory" (bare fetch, 401) on one screen.
+    const newQs = buildQuery({ state: territory, new_since_days: 7, limit: 1 });
+    let cancelled = false;
+    (async () => {
+      const token = await getToken({ template: "fastapi_backend" });
+      const auth = { Authorization: `Bearer ${token}` };
+      try {
+        const r = await fetch(`${API_BASE}/v1/projects?${qs}`, { headers: auth });
+        // Never treat a non-2xx as "no results". An empty territory and a
+        // rejected request look identical once the body is discarded, and the
+        // one that reads as a broken product is the one we were showing.
+        if (!r.ok) throw new Error(`GET /v1/projects failed: ${r.status}`);
+        const data = await r.json();
+        if (cancelled) return;
         setFeedProjects(data.projects ?? []);
         setFeedTotal(data.total ?? 0);
-      })
-      .catch(() => {})
-      .finally(() => setFeedLoading(false));
-    const newQs = buildQuery({ state: territory, new_since_days: 7, limit: 1 });
-    fetch(`${API_BASE}/v1/projects?${newQs}`)
-      .then((r) => r.json())
-      .then((data) => setNewThisWeek(typeof data.total === "number" ? data.total : null))
-      .catch(() => {});
-  }, [profile]);
+        setFeedError(null);
+      } catch (e) {
+        if (!cancelled) setFeedError(e instanceof Error ? e.message : "Feed unavailable");
+      } finally {
+        if (!cancelled) setFeedLoading(false);
+      }
+      try {
+        const r = await fetch(`${API_BASE}/v1/projects?${newQs}`, { headers: auth });
+        if (!r.ok) return;
+        const data = await r.json();
+        if (!cancelled) setNewThisWeek(typeof data.total === "number" ? data.total : null);
+      } catch {
+        // Non-critical: this only drives a "new this week" count, and its
+        // absence is rendered as no count rather than as a zero.
+      }
+    })();
+    return () => { cancelled = true; };
+  }, [profile, getToken]);
 
   async function toggleTrack(project: Project) {
     if (trackedIds.has(project.id)) {
@@ -248,6 +280,7 @@ export function SignedInHome() {
               territoryLabel={territoryLabel}
               feedTotal={feedTotal}
               feedLoading={feedLoading}
+              feedError={feedError}
               feedProjects={feedProjects}
               trackedIds={trackedIds}
               onToggleTrack={toggleTrack}
@@ -273,6 +306,7 @@ function FeedView({
   territoryLabel,
   feedTotal,
   feedLoading,
+  feedError,
   feedProjects,
   trackedIds,
   onToggleTrack,
@@ -282,6 +316,7 @@ function FeedView({
   territoryLabel: string;
   feedTotal: number;
   feedLoading: boolean;
+  feedError: string | null;
   feedProjects: Project[];
   trackedIds: Set<string>;
   onToggleTrack: (project: Project) => void;
@@ -298,7 +333,7 @@ function FeedView({
 
       <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3">
         <div className="card p-4">
-          <p className="text-2xl font-semibold tabular-nums">{feedTotal}</p>
+          <p className="text-2xl font-semibold tabular-nums">{feedError ? "--" : feedTotal}</p>
           <p className="text-xs text-[var(--color-gray-400)]">Projects in your territory</p>
         </div>
         <div className="card p-4">
@@ -321,7 +356,13 @@ function FeedView({
 
       <div className="mt-8 flex flex-col gap-3">
         {feedLoading && <p className="text-sm text-[var(--color-gray-400)]">Loading projects…</p>}
-        {!feedLoading && feedProjects.length === 0 && (
+        {!feedLoading && feedError && (
+          <p className="text-sm text-[var(--color-amber-700,#A2601C)]">
+            We could not load your territory just now. This is a problem on our side, not an
+            empty patch. Reload, and if it persists the count above is not your coverage.
+          </p>
+        )}
+        {!feedLoading && !feedError && feedProjects.length === 0 && (
           <p className="text-sm text-[var(--color-gray-400)]">
             No projects matched your saved territory yet. Try{" "}
             <Link href="/projects/" className="text-[var(--color-green)] underline">
