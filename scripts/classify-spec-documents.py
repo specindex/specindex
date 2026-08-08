@@ -226,14 +226,30 @@ def main() -> int:
     owner_col = {"project": "project_sk", "reference": "reference_document_id",
                  "legislative": "legislative_document_id"}[args.owner]
 
-    # Documents that have text and no divisions yet. Deliberately keyed on the
-    # DIVISIONS table, not on a status flag -- the flag is what lied last time.
+    # Documents that have text and have not been classified yet.
+    #
+    # Keyed on the DIVISIONS table (not a status flag) for what a document
+    # specifies -- that part of the original design stands. But "no divisions"
+    # is NOT the same as "not yet classified": a bid form, an EIS or a budget
+    # index correctly yields zero, writes no rows, and so matched this query
+    # again on every subsequent run, forever. ~100 documents were classified
+    # 2026-08-08 and the backlog moved 2,130 -> 2,080; the remainder came back
+    # zero and stayed queued. On a daily cron that is an infinite re-send at
+    # cost, with the real backlog never draining.
+    #
+    # document_processing_status.divisions_written_at already exists for
+    # exactly this and is now stamped on EVERY attempt, including zero-result
+    # ones (see the write path below). It says "we asked", not "we found
+    # something", so it cannot disagree with project_csi_divisions the way a
+    # success flag could -- and clearing it is a safe way to force a re-run
+    # if the prompt or model changes.
     cur.execute(f"""
         SELECT p.{col}, count(*) AS pages
           FROM document_pages p
          WHERE p.{col} IS NOT NULL
            AND NOT EXISTS (SELECT 1 FROM project_csi_divisions d
                             WHERE d.source_document = %s || p.{col}::text)
+           {"AND NOT EXISTS (SELECT 1 FROM document_processing_status s WHERE s.document_file_id = p.document_file_id AND s.divisions_written_at IS NOT NULL)" if args.owner == "project" else ""}
          GROUP BY p.{col} ORDER BY pages DESC LIMIT %s""", (args.owner + ":", args.limit))
     targets = cur.fetchall()
     print(f"[scope] {len(targets)} {args.owner} documents with text and no divisions", flush=True)
@@ -250,6 +266,51 @@ def main() -> int:
                 print(f"  [{i}/{len(targets)}] doc {doc_id}: no project_sk, skipped", flush=True)
                 continue
             owner_id = r[0]
+
+        # IDENTICAL BYTES ARE IDENTICAL DIVISIONS -- copy, do not re-ask.
+        #
+        # The same document legitimately attaches to several projects: one
+        # AFMAN standard is on 3 projects, a UW EIS on 5, gao-21-372.pdf on 14.
+        # Those are real document-to-project links, NOT duplicate rows to
+        # delete. But each row is classified separately, so the same bytes were
+        # sent to Flash once per project. Measured 2026-08-08: 183 rows with
+        # text share only 41 distinct contents -- ~142 redundant runs, roughly
+        # 2.4 hours of a drain that is now on a daily cron.
+        #
+        # Reuse also makes the answer CONSISTENT. Two projects holding the same
+        # spec book could otherwise get different divisions from two
+        # nondeterministic calls, and the record pages would disagree about a
+        # document they share.
+        if args.owner == "project" and not args.dry_run:
+            cur.execute("""
+                SELECT d.source_document
+                  FROM project_document_files me
+                  JOIN project_document_files sib
+                    ON sib.content_sha256 = me.content_sha256 AND sib.id <> me.id
+                  JOIN project_csi_divisions d
+                    ON d.source_document = 'project:' || sib.id::text
+                 WHERE me.id = %s AND me.content_sha256 IS NOT NULL
+                 LIMIT 1""", (doc_id,))
+            hit = cur.fetchone()
+            if hit:
+                cur.execute(f"""
+                    INSERT INTO project_csi_divisions
+                      ({owner_col}, division, division_name, basis_of_design_product,
+                       approved_manufacturers, substitution_language, model_numbers,
+                       source_document, page, page_from, page_to, openness, confidence)
+                    SELECT %s, d.division, d.division_name, d.basis_of_design_product,
+                           d.approved_manufacturers, d.substitution_language, d.model_numbers,
+                           %s, d.page, d.page_from, d.page_to, d.openness, d.confidence
+                      FROM project_csi_divisions d
+                     WHERE d.source_document = %s
+                    ON CONFLICT DO NOTHING""",
+                    (owner_id, f"{args.owner}:{doc_id}", hit[0]))
+                n = cur.rowcount
+                conn.commit()
+                print(f"  [{i}/{len(targets)}] doc {doc_id}: reused {n} divisions from "
+                      f"{hit[0]} (identical content, no API call)", flush=True)
+                docs += 1; wrote += n
+                continue
 
         cur.execute(f"""SELECT page_number, raw_text FROM document_pages
                          WHERE {col} = %s ORDER BY page_number""", (doc_id,))
@@ -292,7 +353,24 @@ def main() -> int:
             wrote += 1
         # ONLY after rows land, and only for project documents (the status table
         # is keyed on document_file_id).
-        if args.owner == "project" and divs:
+        #
+        # RECORD THE ATTEMPT EVEN WHEN divs IS EMPTY. This was `if ... and divs`,
+        # so a document that correctly yields ZERO divisions was never stamped
+        # -- and since the selection query above looks for documents with no
+        # divisions, it matched again on the very next run. Forever.
+        #
+        # Zero is a legitimate, common answer: a bid form, a budget index, an
+        # EIS, an Air Force facility manual. All three sampled on 2026-08-08
+        # were confirmed correct at zero by an independent model. About 100
+        # documents were classified that day and the backlog moved 2,130 ->
+        # 2,080; the rest came back zero and stayed queued. On the daily cron
+        # that is the same document re-sent to Flash every day at cost, with
+        # the backlog never draining -- a job that never finishes rather than
+        # one that finishes having done nothing, but the same shape.
+        #
+        # The stamp says "we asked", not "we found something". What a document
+        # specifies still lives only in project_csi_divisions.
+        if args.owner == "project":
             cur.execute("""INSERT INTO document_processing_status (document_file_id, divisions_written_at)
                            VALUES (%s, now())
                            ON CONFLICT (document_file_id) DO UPDATE SET divisions_written_at = now()""",
