@@ -48,6 +48,19 @@ jobs:
     timeout-minutes: 330
     steps:
       - uses: actions/checkout@v4
+        with:
+          # MUST fetch LFS. `data/states/*.json` is LFS-tracked
+          # (.gitattributes), and crawl:sam handlers read those files via
+          # --state-file. Without this, checkout leaves a ~130-byte LFS
+          # POINTER in place of the JSON, and every SAM item dies on
+          # `JSONDecodeError: Expecting value: line 1 column 1 (char 0)` --
+          # the pointer's first line is "version https://git-lfs...", not
+          # JSON. Measured 2026-08-08: 44 pending + 6 dead crawl:sam items,
+          # every worker crashing on its first claim, job still green
+          # because a bare `wait` swallowed the exit codes (fixed below).
+          # Same trap CLAUDE.md flags for `git show`: an LFS pointer reads
+          # as a real file right up until something parses it.
+          lfs: true
 
       - uses: actions/setup-python@v5
         with:
@@ -97,12 +110,33 @@ jobs:
           # runner idle. The next scheduled tick picks up whatever arrived
           # since. Backgrounded workers share one queue, and per-domain caps
           # inside claim_work() keep them off each other's hosts.
+          #
+          # WAIT ON EACH PID AND CHECK IT. A bare `wait` returns 0 no matter
+          # how the background jobs exited, so every worker could crash on
+          # every item and this step still went green -- measured 2026-08-08:
+          # both workers died with JSONDecodeError on their first item, 61
+          # items sat in the queue, and the run reported success in 35s. A
+          # job that cannot fail is not a check. This is the same shape
+          # docs/INGESTION_REFERENCE.md names: "fires reliably, finishes in
+          # 34 seconds, does nothing."
           N=${{ inputs.workers || 2 }}
+          pids=""
           for i in $(seq 1 "$N"); do
             python3 scripts/crawl-worker.py --once >"worker-$i.log" 2>&1 &
+            pids="$pids $!"
           done
-          wait
+          failed=0
+          for pid in $pids; do
+            if ! wait "$pid"; then
+              failed=$((failed+1))
+            fi
+          done
           tail -n 40 worker-*.log
+          if [ "$failed" -gt 0 ]; then
+            echo "::error::$failed of $N crawl worker(s) exited non-zero -- see worker logs above"
+            exit 1
+          fi
+          echo "all $N crawl workers exited cleanly"
 
       - name: Seam + source health
         if: always()

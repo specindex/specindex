@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import { FirebaseAuthProvider } from "@/components/FirebaseAuthProvider";
 import { PostHogProvider } from "@/components/PostHogProvider";
@@ -7,17 +8,10 @@ import { DemoModalProvider } from "@/components/marketing/DemoModal";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains-mono",
-  display: "swap",
-});
+// Geist system (body/headings + data/IDs), replacing Inter/JetBrains
+// Mono/Space Grotesk site-wide -- geist/font ships as next/font/local under
+// the hood (Vercel's own package, not Google Fonts), so no `subsets` or
+// `display` config here; it's pre-optimized static font files.
 
 export const metadata: Metadata = {
   title: {
@@ -50,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body>
         {/* FirebaseAuthProvider wraps DemoModalProvider (not the reverse) so
             the demo-request modal can safely call useFirebaseAuth() to link

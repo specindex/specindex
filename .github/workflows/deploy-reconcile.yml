@@ -49,6 +49,17 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
+          # FULL history, not the default shallow depth-1 clone. The
+          # "Merged PRs whose commits never reached main" step below runs
+          # `git merge-base --is-ancestor`, which needs real history to
+          # answer at all -- in a shallow clone it exits non-zero because
+          # the objects are absent, not because the commit is missing from
+          # main, and its `2>/dev/null` hides the "not a valid object name"
+          # that would have said so. Result, measured 2026-08-08: all 14
+          # recently-merged PRs (#146-#159) flagged as missing on every run,
+          # every one a false positive (verified locally -- their heads ARE
+          # ancestors of main). The check failed daily and said nothing true.
+          fetch-depth: 0
 
       - id: auth
         uses: google-github-actions/auth@v2
@@ -150,14 +161,51 @@ jobs:
           missing=0
           # Recently merged PRs only -- old ones have long since been
           # superseded and would generate noise forever.
-          for pr in $(gh pr list --state merged --limit 15 --json number -q '.[].number'); do
+          for pr in $(gh pr list --state merged --limit 15 --json number,mergedAt,title -q '.[].number'); do
             head=$(gh pr view "$pr" --json headRefOid -q .headRefOid)
             [ -z "$head" ] && continue
+            # Fetch the PR's own ref before testing. `fetch-depth: 0` gets full
+            # history of every BRANCH, but these branches are deleted on merge
+            # (branch-hygiene.yml sweeps them), so the head commit is not
+            # reachable from any branch ref -- it survives only under
+            # refs/pull/N/head. Without this the objects are simply absent and
+            # the check cannot answer at all, which is what it spent weeks
+            # doing while reporting the absence as a missing-commit finding.
+            git fetch --quiet origin "refs/pull/$pr/head" 2>/dev/null || true
             # A merged PR's head must be an ancestor of main. If it is not,
             # something was pushed to that branch after the merge.
-            if ! git merge-base --is-ancestor "$head" origin/main 2>/dev/null; then
-              echo "::warning::PR #$pr merged, but its head $head is NOT on main -- work pushed after the merge"
-              echo "- PR #$pr: head not on main" >> $GITHUB_STEP_SUMMARY
+            #
+            # Do NOT redirect stderr away here. It used to be `2>/dev/null`,
+            # which swallowed git's own "not a valid object name" and made a
+            # shallow-clone misconfiguration (fetch-depth, fixed above) look
+            # identical to a real missing-commit finding for weeks of daily
+            # failures. An error this check cannot explain is worse than no
+            # check: distinguish "answered no" from "could not answer".
+            if ! git cat-file -e "$head^{commit}" 2>&1; then
+              echo "::error::PR #$pr head $head is not present in this clone -- cannot evaluate (clone/fetch problem, NOT a missing-commit finding)"
+              missing=$((missing+1))
+              continue
+            fi
+            # TEST THE MERGE COMMIT, NOT ONLY THE HEAD. Under a SQUASH merge
+            # the head is never an ancestor of main -- GitHub writes a new
+            # commit and the branch's own tip stays off main permanently, by
+            # design. A head-only test therefore reports every squash-merged
+            # PR as missing forever. (docs/INGESTION_REFERENCE.md recorded
+            # Gemini's "squash-merge defeats a merge-base test" as disproven;
+            # for squash specifically it was correct.) mergeCommit is what
+            # actually landed, whichever strategy was used, so check that
+            # first and fall back to the head for older rows that predate it.
+            merge_oid=$(gh pr view "$pr" --json mergeCommit -q '.mergeCommit.oid // empty')
+            if [ -n "$merge_oid" ]; then
+              git fetch --quiet origin "$merge_oid" 2>/dev/null || true
+              if git cat-file -e "${merge_oid}^{commit}" 2>/dev/null \
+                 && git merge-base --is-ancestor "$merge_oid" origin/main; then
+                continue
+              fi
+            fi
+            if ! git merge-base --is-ancestor "$head" origin/main; then
+              echo "::warning::PR #$pr merged, but neither its merge commit nor its head $head is on main -- work pushed after the merge"
+              echo "- PR #$pr: not on main" >> $GITHUB_STEP_SUMMARY
               missing=$((missing+1))
             fi
           done

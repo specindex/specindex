@@ -34,6 +34,12 @@ incident is recorded in `docs/AGENT_STRATEGY.md`; only the directive is here.
 - **Confirm before merging a PR whose branch is far behind.** Read the two-dot
   diff (`git diff main <branch>`), not the three-dot. Four PRs on 2026-08-05
   looked like small additions and were reversions of newer work.
+- **Any script with a full-table `TRUNCATE` + full-rewrite path needs a scoped
+  test path before its first production run in a session.** `compute-project-
+  scores.py`'s default (no-args) mode truncates and rescores the entire
+  `project_scores` table (~600K rows). Before running an unfamiliar pipeline
+  script against production, grep it for `TRUNCATE`/`DELETE FROM` and confirm
+  a single-row/`--project-id`-style test path exists or add one first.
 
 ## 2. Data integrity — every failure here returns a plausible number, not an error
 
@@ -128,6 +134,18 @@ incident is recorded in `docs/AGENT_STRATEGY.md`; only the directive is here.
   Per-domain concurrency caps are enforced in `work_queue`; do not bypass them.
 - **Use Playwright for gated or SPA portals** before concluding "no viable
   source". curl cannot see through an Angular shell.
+- **`scripts/setup-phase1-gcp.sh` is not just a Cloud SQL proxy starter** — it
+  also runs `load-corpus-to-postgres.py --apply-schema`, a full corpus reload.
+  Ran twice on 2026-08-07 assuming otherwise. Safe to interrupt (upsert, not
+  truncate) but wastes time. If only a bare proxy is needed, start
+  `cloud-sql-proxy` directly with the instance connection name; its default
+  port in this script is `9470`, not the `5433` used elsewhere in this repo's
+  examples.
+- **GCS/document capture landing does not mean it reached the product.**
+  `scripts/load-adapter-projects.py` loads project-discovery JSON into
+  Postgres; it does not load captured spec documents. A pull that only writes
+  GCS objects has not added anything a user can see — always state "captured"
+  and "loaded into the database" as two separate, separately-verified claims.
 - **Run `scripts/verify-environment.py` when anything returns unexpectedly
   little.** It checks credentials, IAM roles and config in ten seconds.
 
@@ -147,6 +165,17 @@ incident is recorded in `docs/AGENT_STRATEGY.md`; only the directive is here.
 
 ## 5. Cost and scope
 
+- **BILLING ACCOUNT IS `01CF1E-0D08DD-275C6A`. Never any other one.** That is
+  where the GCP credits are, and it is what `specindex-ai` is already linked
+  to. Two other accounts exist and must NOT be used: `0133C4-5804B5-B4773D`
+  (unused) and `013CD7-BFDA6A-4D8D06` (not ours — Asif has no access to it).
+  **`013CD7-BFDA6A-4D8D06` specifically is a trap:** on 2026-08-08 a GCP
+  "You need additional access" screen for it was briefly mistaken for the
+  credits account and written into this file, which is exactly the wrong
+  thing to copy from — an access-denied page proves the opposite, that the
+  account is not ours. Confirm with
+  `gcloud billing projects describe <project>` rather than trusting whichever
+  account ID is on screen.
 - **Targeted file scoping.** Only inspect files named in the prompt or their
   direct dependencies. No repo-wide sweeps unless asked.
 - **Concise output.** Diffs or the modified function, never full-file reprints.

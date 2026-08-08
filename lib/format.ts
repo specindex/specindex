@@ -1,5 +1,31 @@
 import type { Project } from "./types";
 
+// Owner/architect/GC names and project titles come out of permit/spec
+// sources stored fully uppercase -- rendered verbatim, "MAINE STATE PRISON
+// GATEHOUSE IMPROVEMENT PROJECT" reads as shouting next to every other
+// properly-cased string on the page. Title-case display-side only (never
+// touch the underlying value, and never touch quoted spec text -- citation
+// quotes must render exactly as the source document has them). Short
+// suffix/acronym tokens are preserved uppercase rather than naively
+// title-cased into "Pllc" or "Sk".
+const KEEP_UPPERCASE = new Set([
+  "LLC", "PLLC", "LLP", "INC", "CO", "CORP", "LTD", "PC", "USA", "US", "SK", "DBA",
+]);
+
+function toDisplayWord(word: string): string {
+  const bare = word.replace(/[^A-Za-z]/g, "").toUpperCase();
+  if (KEEP_UPPERCASE.has(bare)) return word;
+  return word.length ? word.charAt(0) + word.slice(1).toLowerCase() : word;
+}
+
+export function toDisplayCase(value: string): string {
+  if (!value || value !== value.toUpperCase()) return value;
+  return value
+    .split(" ")
+    .map((word) => word.split("-").map(toDisplayWord).join("-"))
+    .join(" ");
+}
+
 export function formatUsd(value: number | null | undefined): string {
   if (value == null) return "Not reported";
   if (value >= 1_000_000_000) {

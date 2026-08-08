@@ -2,14 +2,14 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ProjectDetailView } from "@/components/ProjectDetailView";
+import { ProjectDetailUpgrade } from "@/components/project-detail/ProjectDetailUpgrade";
 import { ProjectsGate } from "@/components/ProjectsGate";
 import { getProject } from "@/lib/projects";
 import type { Project } from "@/lib/types";
 
-// Fallback renderer for any /projects/{id}/ path that ISN'T one of the
+// Fallback renderer for any /project/{id}/ path that ISN'T one of the
 // statically pre-generated pages -- Firebase Hosting rewrites unmatched
-// /projects/*/ requests here (see firebase.json) while keeping the
+// /project/*/ requests here (see firebase.json) while keeping the
 // original URL in the address bar, so the real id is read from
 // window.location.pathname rather than a route param. This is what makes
 // project detail pages scale to any corpus size: this one file is built
@@ -39,9 +39,24 @@ function ProjectViewContent() {
 
   useEffect(() => {
     const segments = window.location.pathname.split("/").filter(Boolean);
-    // Expect /projects/{id}/ -- if this file is hit some other way (direct
-    // visit to /projects/view/), there's no id to resolve.
-    const id = segments[0] === "projects" && segments[1] !== "view" ? segments[1] : null;
+    // TWO WAYS IN, and only one used to be handled.
+    //
+    // 1. /project/{id}/ -- Firebase rewrites any unmatched path here while
+    //    KEEPING the original URL, so the id is readable from the path.
+    // 2. /project/view/?id={id} -- what SignedInHome's cards and TriageNav's
+    //    prev/next push to. Here the path segment is literally "view" and the
+    //    id is in the QUERY STRING.
+    //
+    // Case 2 was never read: the old condition returned null the moment it saw
+    // "view", so every one of those links rendered "Project not found" even
+    // though the id was sitting right there in the URL. Reported live
+    // 2026-08-08 after the /projects -> /project move sent more traffic
+    // through this path; the same shape existed before the rename.
+    const fromPath = segments[0] === "project" && segments[1] && segments[1] !== "view"
+      ? segments[1]
+      : null;
+    const fromQuery = new URLSearchParams(window.location.search).get("id");
+    const id = fromPath || fromQuery;
     if (!id) {
       setProject(null);
       return;
@@ -81,5 +96,5 @@ function ProjectViewContent() {
     );
   }
 
-  return <ProjectDetailView project={project} />;
+  return <ProjectDetailUpgrade initialProject={project} />;
 }

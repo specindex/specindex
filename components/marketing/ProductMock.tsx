@@ -77,7 +77,7 @@ export async function ProductMock() {
           {preview.map((p) => (
             <Link
               key={p.id}
-              href={`/projects/${p.id}/`}
+              href={`/project/${p.id}/`}
               className="mb-2 block rounded-md border border-[var(--color-border)] p-2.5 transition hover:border-[var(--color-amber)]"
             >
               <div className="flex items-start justify-between gap-2">

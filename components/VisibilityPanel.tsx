@@ -263,7 +263,7 @@ function ProjectList({
           {projects.map((p) => (
             <li key={p.id}>
               <Link
-                href={`/projects/${p.id}/`}
+                href={`/project/${p.id}/`}
                 className="flex flex-wrap items-center justify-between gap-3 px-4 py-4 hover:bg-[var(--color-gray-100)]"
               >
                 <div>
