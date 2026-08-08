@@ -125,6 +125,8 @@ service; the queue and workers are invoked by those crons. Times are UTC.
 
 | schedule | workflow | what it does | path |
 |---|---|---|---|
+| **daily 03:00** | `pipeline-jobs-run.yml` | executes **`specindex-pull-portals`** (Cloud Run Job) — `run-capture-and-load.py`, every document on every tier-1 portal | **B — the moat** |
+| on push to `pipeline/`, `scripts/` | `pipeline-jobs-deploy.yml` | builds the image, deploys 4 Cloud Run Jobs by digest | — |
 | **every 30 min** | `continuous-crawl.yml` | `schedule-crawls.py` enqueues due work, `crawl-worker.py` drains it | B |
 | every 30 min | `deploy-reconcile.yml` | catches merges that fired no deploy | — |
 | daily 07:00 | `pull-nj-dca-pipeline.yml` | NJ DCA | A |
@@ -157,13 +159,26 @@ the Detroit staff report a plain Google search found and we did not).
 - **But each run takes 34–42 seconds**, which is not enough to be capturing much.
   Firing is verified; *doing work* is not. Check what the worker actually
   claimed and wrote before treating the crawler as covering a source.
-- **Portal capture (step 2) is not on any schedule.** It is run by hand. Given
-  the capture fix landed today — every document stored, not only spec books —
-  every previously captured portal needs a re-run, and then this belongs on a
-  cron.
-- **Long ingestion should not run on the laptop.** The Cloud SQL proxy died four
-  times on 2026-08-07, every time from the machine sleeping, and the failure
-  reads as a database problem. Cloud Run Jobs; PR #150 fixes the image.
+- **Portal capture now runs in Cloud Run Jobs, on a cron** *(changed 2026-08-08
+  00:25 UTC — this bullet previously read "not on any schedule; run by hand")*.
+  `specindex-pull-portals` executes `run-capture-and-load.py` daily at 03:00 UTC
+  via `pipeline-jobs-run.yml`, capturing every document on a project rather than
+  stopping at the first confirmed spec book.
+
+  Three things had to be true and none were: the deploy workflow had failed on
+  **every** run (`--args "$@"` word-splitting, so gcloud parsed the script's
+  flags as its own) and left no jobs at all; nothing ever *executed* the jobs
+  even once deployed; and a Job's filesystem is ephemeral, so capture writing a
+  pull log and exiting would have left the loader nothing to read.
+
+  Verified by executing the job by hand rather than waiting for the cron: the
+  container boots, reads its secrets, reaches Postgres over the Cloud SQL socket
+  and starts `[scope] 27 adapters`.
+
+- **Long ingestion no longer runs on the laptop** for portal capture. The Cloud
+  SQL proxy died four times on 2026-08-07, every time from the machine sleeping,
+  and each failure read as a database problem rather than as a laptop. Other
+  ingestion still runs locally and is still exposed to this.
 
 ---
 
@@ -309,47 +324,51 @@ of the above was ever found.
 
 ## Improvements needed, ranked
 
-**1. Put portal capture on a schedule, in the cloud.** *(Promoted to #1 on
-review; the chain checker was previously here.)* Path B is the entire moat, and
-its sole acquisition mechanism is a script run **by hand, on a laptop that goes
-to sleep** — which is why the Cloud SQL proxy died four times on 2026-08-07 and
-why the addenda fix landed today with no scheduled run to apply it. A data
-product cannot depend on someone remembering. Containerise, deploy to Cloud Run
-Jobs, cron it. Monitoring the pipeline matters less than the pipeline running at
-all.
+**~~1. Put portal capture on a schedule, in the cloud.~~ DONE 2026-08-08.**
+Deployed as `specindex-pull-portals` and executing daily at 03:00 UTC. Kept here
+rather than deleted, because the reason it was #1 still governs what comes next:
+a data product cannot depend on someone remembering, and **the pipeline running
+at all matters more than monitoring it**.
 
-**2. Build an end-to-end chain checker.** No test asserts that stage N+1 can read
+**2. Verify the first unattended runs actually capture.** Now the live question,
+and the same trap as `continuous-crawl.yml` — which fires reliably and finishes
+in 34 seconds. A scheduled job that runs and does nothing is worse than one that
+never ran, because it reports success. Check the execution's own `[verify]` line
+(projects / documents / addenda) and the row count of the pull log it uploads to
+`gs://specindex-ai-raw-documents/pull-logs/`. **Firing is not working.**
+
+**3. Build an end-to-end chain checker.** No test asserts that stage N+1 can read
 stage N; that shape has failed seven times. Shape:
 `scripts/check-ingestion-chain.py --project-id <id>`, running every stage and
 failing loudly at the first whose output the next stage cannot see —
 `check-portal-adapters.py` applied to the chain rather than to one stage. Add a
 text-quality assertion so the eighth failure mode is covered too.
 
-**2. Emit `discovered_count` per project.** S5's own metric is "% of listed
+**3a. Emit `discovered_count` per project.** S5's own metric is "% of listed
 attachments captured", and it cannot be computed: the pull log records only what
 was fetched, never how many were offered.
 
-**3. Require `project_number` on every discovered project.** 94 of 381 rows in
+**4. Require `project_number` on every discovered project.** 94 of 381 rows in
 the 2026-08-07 Maine log carry an empty `project_id` and can never attach to
 anything.
 
-**4. Collapse the two document homes.** `reference_documents` and
+**5. Collapse the two document homes.** `reference_documents` and
 `project_document_files` both hold project-scoped material. Migration 057 fixed
 the *pages*; the loader still writes down both paths. Project-scoped →
 `project_document_files`; jurisdiction-wide standards stay in
 `reference_documents`.
 
-**5. Gate ledger quality before anyone quotes ledger counts.** Three known
+**6. Gate ledger quality before anyone quotes ledger counts.** Three known
 defects in the Alabama rows: case-variant duplicates (`RECTORSEAL` /
 `Rectorseal` / `RectorSeal` as three rows), evidence quotes that do not contain
 the manufacturer name, and division misattribution (Eaton and Square D tagged
 Division 23 when they are electrical). The prompt already forbids the middle two
 — assert them in code rather than asking the model twice.
 
-**6. Drain the extraction backlog.** ~14,000 registered documents are still
+**7. Drain the extraction backlog.** ~14,000 registered documents are still
 unextracted, so their divisions and rulings do not exist yet.
 
-**7. Move long ingestion off the laptop.** The Cloud SQL proxy died four times on
+**8. Move REMAINING ingestion off the laptop.** The Cloud SQL proxy died four times on
 2026-08-07, every time from the machine sleeping — the failure reads as a
 database problem and is not one. Cloud Run Jobs; PR #150 fixes the image.
 
