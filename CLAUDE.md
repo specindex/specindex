@@ -165,6 +165,17 @@ incident is recorded in `docs/AGENT_STRATEGY.md`; only the directive is here.
 
 ## 5. Cost and scope
 
+- **BILLING ACCOUNT IS `013CD7-BFDA6A-4D8D06`. Never any other one.** That is
+  where the GCP credits are, so anything linked elsewhere spends real money
+  while the credits sit unused. Two other accounts exist on this org and are
+  easy to pick by mistake: `01CF1E-0D08DD-275C6A` (what `specindex-ai` was
+  linked to previously) and `0133C4-5804B5-B4773D` (unused). When creating a
+  project, enabling an API that requires billing, or being asked which account
+  to use, it is this one. Confirm with
+  `gcloud billing projects describe <project>` rather than assuming — as of
+  2026-08-08 `asif@specindex.ai` could not even READ the credits account
+  (missing `billing.accounts.get`), so a role grant may still be outstanding
+  and a link may silently have never been made.
 - **Targeted file scoping.** Only inspect files named in the prompt or their
   direct dependencies. No repo-wide sweeps unless asked.
 - **Concise output.** Diffs or the modified function, never full-file reprints.
