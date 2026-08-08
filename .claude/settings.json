@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(*)",
+      "WebFetch",
+      "WebSearch",
+      "Bash(gcloud run services describe *)",
+      "Bash(gcloud auth application-default print-access-token*)",
+      "Bash(npx tsc *)",
+      "Bash(gh run watch *)",
+      "Bash(gcloud auth list*)",
+      "Bash(gh secret list)",
+      "Bash(gcloud alpha services quota list *)",
+      "Bash(gcloud config get-value *)",
+      "Bash(gcloud sql instances describe *)",
+      "Bash(gcloud projects describe *)",
+      "Bash(npm run build)",
+      "mcp__claude_ai_Google_Drive__search_files",
+      "mcp__claude_ai_Google_Drive__read_file_content",
+      "mcp__claude_ai_Google_Drive__get_file_metadata"
+    ]
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PROJECT_DIR:-.}/scripts/check-local-work.sh\" 2>/dev/null || true",
+            "timeout": 20,
+            "statusMessage": "Checking for local work not on the remote"
+          }
+        ]
+      }
+    ]
+  }
+}

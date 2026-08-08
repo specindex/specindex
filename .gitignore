@@ -48,6 +48,11 @@ firestore-debug.log
 .agents/
 .claude/*
 !.claude/skills/
+# settings.json carries the project's hooks and permissions. `.claude/*` was an
+# agent-cache rule and swallowed it, so the Stop guard added in this same commit
+# existed on one machine only -- the fourth instance of the collision it exists
+# to catch. Guarded by check-gitignore-collisions.py's PROTECTED list.
+!.claude/settings.json
 skills-lock.json
 
 # typescript
@@ -81,3 +86,9 @@ data/gemini_query_cache/
 *.pdf
 specs/
 !coverage/docs/*.pdf
+
+# Local pipeline run logs (328K of funnel/ and deep/ output). Not provenance --
+# the versioned run evidence is coverage/pull-log/, which is negated above.
+# Left untracked, this fires the Stop guard on every session until it is
+# ignored, and a guard that cries wolf gets switched off.
+/logs/

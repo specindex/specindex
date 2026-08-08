@@ -40,6 +40,7 @@ from pathlib import Path
 # Paths whose contents must always be committable. Extend deliberately.
 PROTECTED = [
     ".claude/skills",        # a skill nobody can commit is a skill nobody else has
+    ".claude/settings.json", # hooks + permissions; `.claude/*` swallowed it once
     "coverage/docs",         # coverage plan
     "coverage/data",         # verified source tables
     "coverage/test-results", # pipeline evidence -- the diff baseline

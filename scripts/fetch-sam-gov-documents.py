@@ -146,19 +146,77 @@ def upload_attachment_to_gcs(bucket, project_id: str, attachment: dict[str, Any]
     return "uploaded"
 
 
+def projects_from_db(limit: int = 0, only_missing: bool = True) -> list[dict[str, Any]]:
+    """Select SAM projects from Postgres, shaped like the state-file records.
+
+    WHY THIS EXISTS. The state files this script was written against have
+    drifted from the database. On 2026-08-08 the whole crawl queue drained --
+    50 of 50 crawl:sam items marked done, run reported success -- and document
+    coverage did not move at all: 44.5% before and after, 2,592 documented
+    projects before and after, 20,933 document rows before and after. Every
+    item re-walked whatever data/states/{st}.json still contained, which had
+    already been captured on 2026-08-05, found nothing new, and exited 0.
+
+    A step that reads from a place the data no longer lives, and reports
+    success either way, is the failure this repo keeps hitting. Reading from
+    the same store the product serves from removes the drift entirely.
+
+    only_missing skips projects that already hold documents. That is the whole
+    point: 1,324 SAM projects have a parseable notice id and no documents, of
+    which 946 are Solicitation or Combined Synopsis/Solicitation -- notice
+    types that publish bid documents by definition.
+    """
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from specindex import db  # noqa: PLC0415
+
+    missing = ("""
+           AND NOT EXISTS (SELECT 1 FROM project_document_files f
+                            WHERE f.project_sk = p.project_sk)""" if only_missing else "")
+    sql = f"""
+        SELECT p.project_id,
+               json_agg(json_build_object('url', s.source_url)) AS sources
+          FROM projects p
+          JOIN project_sources s ON s.project_sk = p.project_sk
+         WHERE p.project_id LIKE '%%-sam-%%'
+           AND s.source_url ~ 'sam\\.gov/workspace/contract/opp/[0-9a-f]{{32}}'
+           {missing}
+         GROUP BY p.project_id
+         ORDER BY p.project_id
+    """
+    if limit:
+        sql += f" LIMIT {int(limit)}"
+    conn = db.connect()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(sql)
+            return [{"id": pid, "sources": srcs} for pid, srcs in cur.fetchall()]
+    finally:
+        conn.close()
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--state-file", default=str(ROOT / "data" / "states" / "ga.json"))
     parser.add_argument("--id-prefix", default="ga-sam", help="Only process projects whose id starts with this")
     parser.add_argument("--limit", type=int, default=0, help="Cap projects processed, 0 = no cap")
     parser.add_argument("--dry-run", action="store_true", help="List attachments found, don't upload")
+    parser.add_argument("--from-db", action="store_true",
+                        help="Select work from Postgres instead of a state file. Preferred: the "
+                             "state files have drifted and re-walking them captures nothing.")
+    parser.add_argument("--include-with-docs", action="store_true",
+                        help="With --from-db, also re-check projects that already hold documents")
     args = parser.parse_args(argv)
 
-    data = json.loads(Path(args.state_file).read_text())
-    projects = [p for p in data["projects"] if p["id"].startswith(args.id_prefix)]
-    if args.limit:
-        projects = projects[: args.limit]
-    print(f"Processing {len(projects)} projects (prefix={args.id_prefix!r})", file=sys.stderr)
+    if args.from_db:
+        projects = projects_from_db(limit=args.limit, only_missing=not args.include_with_docs)
+        print(f"Processing {len(projects)} projects (from Postgres, "
+              f"{'missing documents only' if not args.include_with_docs else 'all'})", file=sys.stderr)
+    else:
+        data = json.loads(Path(args.state_file).read_text())
+        projects = [p for p in data["projects"] if p["id"].startswith(args.id_prefix)]
+        if args.limit:
+            projects = projects[: args.limit]
+        print(f"Processing {len(projects)} projects (prefix={args.id_prefix!r})", file=sys.stderr)
 
     bucket = None
     if not args.dry_run:
@@ -189,6 +247,31 @@ def main(argv: list[str] | None = None) -> int:
                 summary["files_skipped_existing"] += 1
 
     print(json.dumps(summary, indent=2))
+
+    # FAIL LOUDLY ON A NO-OP. This exited 0 having captured nothing, 50 times
+    # in a row, and the queue happily marked every item done -- coverage did
+    # not move and nothing said so. "Assert the next step can see the output"
+    # is a standing rule here; the cheapest version of it is refusing to call
+    # a run successful when it selected work and produced none.
+    #
+    # Zero projects selected is fine and exits 0: it means the backlog is
+    # drained, which is the goal. Selecting projects and uploading nothing new
+    # is the case worth shouting about.
+    if summary["projects_checked"] and not summary["files_uploaded"]:
+        skipped = summary["files_skipped_existing"]
+        if skipped:
+            print(f"[verify] {summary['projects_checked']} projects checked, "
+                  f"0 new files, {skipped} already held -- nothing new to capture",
+                  file=sys.stderr)
+            return 0
+        print(f"::error::checked {summary['projects_checked']} projects and captured NOTHING "
+              f"-- no new files and none already held. Either the notice ids are wrong or "
+              f"SAM is refusing the attachment endpoint; this is not a successful run.",
+              file=sys.stderr)
+        return 1
+
+    print(f"[verify] {summary['files_uploaded']} files uploaded across "
+          f"{summary['projects_with_docs']} projects", file=sys.stderr)
     return 0
 
 

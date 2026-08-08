@@ -42,9 +42,23 @@ def run_item(kind: str, payload: dict) -> None:
         raise RuntimeError(f"no handler for {kind}")
     cmd = list(base)
     if kind == "crawl:sam":
-        st = (payload.get("state") or "").lower()
-        cmd += ["--state-file", str(ROOT / "data" / "states" / f"{st}.json"),
-                "--id-prefix", f"{st}-sam"]
+        # READ FROM POSTGRES, NOT THE STATE FILES. This passed --state-file
+        # data/states/{st}.json, which has drifted from the database. On
+        # 2026-08-08 all 50 crawl:sam items completed successfully and captured
+        # ZERO documents: coverage was 44.5% before and after, 2,592 documented
+        # projects before and after. Every item re-walked a file whose contents
+        # were already captured on 08-05, found nothing, and exited 0.
+        #
+        # --from-db selects SAM projects that have a parseable notice id and no
+        # documents yet: 1,324 of them, of which 946 are Solicitation or
+        # Combined Synopsis/Solicitation, notice types that publish bid
+        # documents by definition. The fetcher now also exits non-zero when it
+        # checks projects and captures nothing, so this can never again drain
+        # the queue while achieving nothing.
+        #
+        # --limit keeps one queue item to a bounded chunk; consecutive items
+        # walk further because completed projects stop matching the selection.
+        cmd += ["--from-db", "--limit", str(payload.get("limit") or 50)]
     elif kind == "crawl:accela":
         cmd += ["--tenant", payload.get("source_key", "").split(":", 1)[-1]]
     elif kind == "crawl:owner_standards":
