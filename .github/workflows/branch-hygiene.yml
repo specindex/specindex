@@ -12,14 +12,49 @@ name: Branch hygiene
 # So this workflow both PREVENTS the pile rebuilding and REPORTS the specific
 # gap that hid.
 #
-# Deletion is restricted to branches whose PR is merged. A branch with no PR is
-# never deleted automatically -- that is exactly the case that turned out to
-# hold a day of real work, and a robot must not be the thing that decides it was
-# worthless.
+# WHY THE 2026-08-08 REWRITE. The first version could not see, and could
+# actively destroy, the very case it was written for. `ci/adapter-index-loader`
+# had PR #148 merged and then took two more commits belonging to no PR:
+#
+#   - the report step skipped any branch appearing in `gh pr list --state all`,
+#     so a merged-PR branch was never examined however much work sat on it;
+#   - the delete step deleted every merged-PR branch unconditionally, on the
+#     stated premise that "content is in the default branch by definition".
+#     That premise holds at the moment the PR merges and not one commit later.
+#     Those two post-merge commits were deletable by this workflow.
+#
+# So the tests below now run FIRST, for every branch, and both deletion and
+# reporting are gated on their result. A branch is deleted only when it is
+# demonstrably empty relative to the default branch -- never on PR state alone.
+#
+# WHY THE TEST IS TIME-BASED AND NOT CONTENT-BASED. Three candidate tests were
+# measured against this repo's 15 live branches before one was chosen:
+#
+#   - "is the branch an ancestor of main?" -- safe, but 10 of 15 MERGED branches
+#     are not ancestors, because this repo squash-merges. Deleting only
+#     ancestors lets the 138-branch pile rebuild.
+#   - "does any file's blob differ from main's?" -- flags 9 of 15, every one
+#     already landed. Main modified those same files AFTER the branch merged,
+#     and no blob comparison can separate that from real post-merge work.
+#   - "are there commits dated after the PR merged?" -- flags 2 of 15, one of
+#     them ci/adapter-index-loader itself. Precise, and independent of merge
+#     strategy, which is what defeats the other two.
+#
+# `--diff-filter=A` alone was rejected for the same reason: it sees ADDED files
+# only, so a branch that merely edits files already on main reads as empty and
+# would be deleted. The time test catches that case; the file test stays as a
+# second, independent signal.
+#
+# A branch with no PR is still never deleted automatically. That is exactly the
+# case that turned out to hold a day of real work, and a robot must not be the
+# thing that decides it was worthless.
 
 on:
   schedule:
-    - cron: "0 7 * * 1"   # Mondays, 07:00 UTC
+    # Daily. Was Mondays-only, which meant a branch created Tuesday morning was
+    # invisible for six days -- longer than the window in which any of the
+    # incidents above were survivable.
+    - cron: "0 7 * * *"
   workflow_dispatch:
 
 permissions:
@@ -35,81 +70,139 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Delete branches whose PR is merged
+      - name: Classify every remote branch by what it uniquely holds
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -uo pipefail
           default="${{ github.event.repository.default_branch }}"
-          deleted=0
-          # Only branches with a MERGED pr. Content is in the default branch by
-          # definition, so this cannot lose work.
-          gh pr list --state merged --limit 500 --json headRefName,headRepositoryOwner \
-            -q '.[] | select(.headRepositoryOwner.login == "${{ github.repository_owner }}") | .headRefName' \
-            | sort -u > merged.txt || true
-          while read -r b; do
-            [ -z "$b" ] && continue
-            [ "$b" = "$default" ] && continue
-            if git ls-remote --exit-code --heads origin "$b" >/dev/null 2>&1; then
-              git push origin ":refs/heads/$b" >/dev/null 2>&1 && {
-                echo "  deleted $b"; deleted=$((deleted+1)); }
-            fi
-          done < merged.txt
-          echo "deleted=$deleted" >> "$GITHUB_ENV"
-          echo "Deleted $deleted merged branches."
+          git fetch --prune --no-tags origin "+refs/heads/*:refs/remotes/origin/*" \
+            >/dev/null 2>&1 || true
 
-      - name: Report branches carrying unmerged work with no PR
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          set -uo pipefail
-          default="${{ github.event.repository.default_branch }}"
-          git fetch --prune origin >/dev/null 2>&1 || true
+          # An OPEN pr makes a branch visible by definition, so it is out of
+          # scope here -- nothing to delete, nothing hidden to report.
+          gh pr list --state open --limit 500 --json headRefName \
+            -q '.[].headRefName' | sort -u > openpr.txt || true
+          # headRefName -> mergedAt, so the post-merge commit test below has a
+          # timestamp to compare against.
+          gh pr list --state merged --limit 500 --json headRefName,mergedAt,headRepositoryOwner \
+            -q '.[] | select(.headRepositoryOwner.login == "${{ github.repository_owner }}") | "\(.headRefName)\t\(.mergedAt)"' \
+            | sort -u > mergedpr.tsv || true
+          cut -f1 mergedpr.tsv | sort -u > mergedpr.txt
 
-          gh pr list --state all --limit 500 --json headRefName -q '.[].headRefName' \
-            | sort -u > haspr.txt || true
+          : > deletable.txt   # merged PR, holds nothing unique -> safe to delete
+          : > stranded.txt    # merged PR, still holds unique files -> post-merge work
+          : > orphans.txt     # no PR at all, holds unique files
 
-          : > orphans.txt
           for ref in $(git branch -r --format='%(refname:short)' | grep '^origin/' | grep -v HEAD); do
             b="${ref#origin/}"
             [ "$b" = "$default" ] && continue
-            grep -qxF "$b" haspr.txt && continue
+            grep -qxF "$b" openpr.txt && continue
+
             # Does it hold a file the default branch does not? That is the test
             # that mattered: 28 no-PR branches were checked this way and every
             # one held nothing unique, while feat/document-discovery held a day
             # of work. A commit count cannot tell those apart -- squash merges
             # leave every merged branch looking "ahead".
+            #
+            # The merge-base narrowing is deliberate. Diffing the default branch
+            # directly against the ref also flags files the default DELETED on
+            # purpose -- scripts/test-nj-flash-sonnet-pipeline.py, removed with
+            # every Anthropic call path, shows up on three stale branches that
+            # simply predate the removal. Files ADDED since the merge base and
+            # still absent from the default branch are the real signal.
             base=$(git merge-base "origin/$default" "$ref" 2>/dev/null) || continue
+            # `awk NR<=20`, never `head -20`. GitHub runs `run:` steps as
+            # `bash -e {0}` and this script adds `pipefail`, so `head` closing
+            # the pipe early kills the producer with SIGPIPE and the whole step
+            # exits 141 -- verified, rc=141. awk reads its input to the end.
             uniq=$(git diff --diff-filter=A --name-only "$base" "$ref" 2>/dev/null \
                    | while read -r f; do
                        git cat-file -e "origin/$default:$f" 2>/dev/null || echo "$f"
-                     done | head -20)
-            if [ -n "$uniq" ]; then
-              {
-                echo "### \`$b\`"
-                echo '```'
-                echo "$uniq"
-                echo '```'
-              } >> orphans.txt
+                     done | awk 'NR<=20')
+
+            if grep -qxF "$b" mergedpr.txt; then
+              # LATEST merge, not the first line. A branch can be reused across
+              # many PRs -- il-batch2-kendall-lasalle-whiteside has ten -- and
+              # taking the earliest mergedAt reports every commit since as
+              # "post-merge work". ISO-8601 sorts lexically, so max is correct.
+              merged_at=$(awk -F'\t' -v b="$b" '$1==b && $2>m {m=$2} END{print m}' mergedpr.tsv)
+              after=$(git log "$ref" --since="$merged_at" \
+                        --format='%h %ad %s' --date=short 2>/dev/null | awk 'NR<=20')
+              if [ -z "$uniq" ] && [ -z "$after" ]; then
+                echo "$b" >> deletable.txt
+              else
+                { echo "### \`$b\` — PR merged $merged_at, then took more work"
+                  [ -n "$after" ] && { echo "commits after the merge:"; echo '```'; echo "$after"; echo '```'; }
+                  [ -n "$uniq" ] && { echo "files not on \`$default\`:"; echo '```'; echo "$uniq"; echo '```'; }
+                } >> stranded.txt
+              fi
+            elif [ -n "$uniq" ]; then
+              { echo "### \`$b\` — no pull request"
+                echo '```'; echo "$uniq"; echo '```'; } >> orphans.txt
             fi
           done
 
-          if [ -s orphans.txt ]; then
-            {
-              echo "These branches have **no pull request** and hold files that are not on \`$default\`."
-              echo "They are the shape that hid a full day of work on 2026-08-06 -- open a PR or delete deliberately."
+          echo "deletable: $(wc -l < deletable.txt | tr -d ' ')"
+          echo "stranded:  $(grep -c '^### ' stranded.txt || echo 0)"
+          echo "orphans:   $(grep -c '^### ' orphans.txt || echo 0)"
+
+      - name: Delete branches that hold nothing the default branch lacks
+        run: |
+          set -uo pipefail
+          deleted=0
+          while read -r b; do
+            [ -z "$b" ] && continue
+            if git ls-remote --exit-code --heads origin "$b" >/dev/null 2>&1; then
+              git push origin ":refs/heads/$b" >/dev/null 2>&1 && {
+                echo "  deleted $b"; deleted=$((deleted+1)); }
+            fi
+          done < deletable.txt
+          echo "deleted=$deleted" >> "$GITHUB_ENV"
+          echo "Deleted $deleted merged branches that held nothing unique."
+
+      - name: Report work that looks landed and is not
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -uo pipefail
+          default="${{ github.event.repository.default_branch }}"
+
+          if [ ! -s stranded.txt ] && [ ! -s orphans.txt ]; then
+            echo "No unmerged work found."
+            exit 0
+          fi
+
+          {
+            echo "Branches below hold files that are **not on \`$default\`**."
+            echo "Open a PR or delete them deliberately; neither is done automatically."
+            echo
+            if [ -s stranded.txt ]; then
+              echo "## Merged PR, work pushed afterwards"
+              echo
+              echo "The shape from \`ci/adapter-index-loader\`: PR #148 merged, two more"
+              echo "commits followed, belonging to no PR. Looks landed. Is not."
+              echo
+              cat stranded.txt
+              echo
+            fi
+            if [ -s orphans.txt ]; then
+              echo "## No pull request"
+              echo
+              echo "The shape that hid a full day of work on 2026-08-06."
               echo
               cat orphans.txt
-            } > body.md
-            gh issue create --title "Branch hygiene: unmerged work with no PR" --body-file body.md \
-              || cat body.md
-          else
-            echo "No orphaned work found."
-          fi
+            fi
+          } > body.md
+
+          gh issue create --title "Branch hygiene: unmerged work outside any open PR" \
+            --body-file body.md || cat body.md
 
       - name: Summary
         run: |
           n=$(git ls-remote --heads origin | wc -l | tr -d ' ')
           echo "### Branch hygiene" >> "$GITHUB_STEP_SUMMARY"
           echo "- deleted this run: **${deleted:-0}**" >> "$GITHUB_STEP_SUMMARY"
+          echo "- merged-PR branches still holding work: **$(grep -c '^### ' stranded.txt 2>/dev/null || echo 0)**" >> "$GITHUB_STEP_SUMMARY"
+          echo "- no-PR branches holding work: **$(grep -c '^### ' orphans.txt 2>/dev/null || echo 0)**" >> "$GITHUB_STEP_SUMMARY"
           echo "- remote branches remaining: **$n**" >> "$GITHUB_STEP_SUMMARY"
