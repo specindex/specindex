@@ -81,24 +81,28 @@ jobs:
             # and because the failure was in a deploy rather than in a pull,
             # nothing downstream reported a gap -- there were simply no jobs.
             local args; args=$(IFS=,; echo "$*")
+            # VERTEX_LOCATION IS THE VERTEX AI ENDPOINT, NOT THE CLOUD RUN
+            # REGION. It was pinned to $REGION (us-central1), where
+            # gemini-3.6-flash does not exist -- live-verified 2026-08-08:
+            # us-central1 returns 404 NOT_FOUND on every call while the
+            # identical call against "global" succeeds. Newer Gemini models
+            # publish to the global endpoint only. That env var also OVERRODE
+            # the correct "global" default in state_agent_pipeline/config.py
+            # and in classify-spec-documents.py, so it silently broke Gemini
+            # for every job deployed here, not just classification. Cloud SQL
+            # attaches by region separately via --set-cloudsql-instances;
+            # the two settings merely shared a value.
+            #
+            # NOTE: comments cannot live between the \-continued lines below.
+            # A `#` line inside a continuation breaks the command apart --
+            # that exact mistake failed this deploy once with exit 127.
+            local vertex_location="global"
             gcloud run jobs deploy "$name" \
               --image "$DIGEST" \
               --region "$REGION" --project "$PROJECT" \
               --set-cloudsql-instances "$INSTANCE" \
               --set-secrets "DATABASE_URL=DATABASE_URL:latest,SAM_API_KEY=SAM_API_KEY:latest,LEGISTAR_TOKEN_NYC=LEGISTAR_TOKEN_NYC:latest" \
-              # GOOGLE_CLOUD_LOCATION IS THE VERTEX AI ENDPOINT, NOT THE CLOUD
-              # RUN REGION. It was pinned to $REGION (us-central1), where
-              # gemini-3.6-flash does not exist -- live-verified 2026-08-08,
-              # every call returns 404 NOT_FOUND "was not found or your project
-              # does not have access to it", while the identical call against
-              # "global" succeeds. Newer Gemini models publish to the global
-              # endpoint only. This env var also OVERRODE the correct "global"
-              # default in state_agent_pipeline/config.py and in
-              # classify-spec-documents.py, so it silently broke Gemini for
-              # every job here, not just classification. Cloud SQL still
-              # attaches by region via --set-cloudsql-instances; these are
-              # unrelated settings that happened to share a value.
-              --set-env-vars "GOOGLE_CLOUD_PROJECT=$PROJECT,GOOGLE_CLOUD_LOCATION=global" \
+              --set-env-vars "GOOGLE_CLOUD_PROJECT=$PROJECT,GOOGLE_CLOUD_LOCATION=$vertex_location" \
               --task-timeout "$timeout" --max-retries 2 --memory 4Gi --cpu 2 \
               --args "$args" \
               --quiet
