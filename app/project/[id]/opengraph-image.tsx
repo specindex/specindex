@@ -1,7 +1,45 @@
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import { ImageResponse } from "next/og";
 import { getFeaturedProjectIds, getProject } from "@/lib/projects";
 import { formatUsd, stateName, typeLabel } from "@/lib/format";
 import { scopeStaticParams } from "@/lib/buildScope";
+
+// THE OG CARD IS THE ONE SURFACE THAT RENDERS IN SOMEONE ELSE'S FEED.
+// It was drawn with fontFamily "sans-serif", i.e. whatever the renderer
+// happened to default to, while every route on the site uses Geist. That is
+// backwards: a LinkedIn or Slack preview is where brand consistency is most
+// visible and least controllable, and it was the only place in the app still
+// off-brand after the 2026-08-08 migration.
+//
+// Satori (what next/og uses) cannot read CSS variables -- the page's
+// --font-geist-sans means nothing here -- so the bytes have to be handed over
+// directly. Three constraints, each learned by hitting it:
+//   - TTF, not WOFF2. Satori fails the build outright with "Unsupported
+//     OpenType signature wOF2". The geist package ships both; take the .ttf.
+//   - Static cuts, not Geist-Variable. Satori does not interpolate variable
+//     axes, so a variable file renders every weight identically.
+//   - Only the three weights this card uses (400/600/700). Loading all nine
+//     would embed ~1MB per image for no visible gain.
+//
+// Read from node_modules at BUILD time. This file only ever runs during
+// `next build` (static export, see next.config.ts), so there is no request
+// path where a missing file could 500 a live page -- it would fail the build
+// loudly instead, which is the right place for it to fail.
+const GEIST_DIR = path.join(process.cwd(), "node_modules/geist/dist/fonts/geist-sans");
+
+async function geistFonts() {
+  const [regular, semibold, bold] = await Promise.all([
+    readFile(path.join(GEIST_DIR, "Geist-Regular.ttf")),
+    readFile(path.join(GEIST_DIR, "Geist-SemiBold.ttf")),
+    readFile(path.join(GEIST_DIR, "Geist-Bold.ttf")),
+  ]);
+  return [
+    { name: "Geist", data: regular, weight: 400 as const, style: "normal" as const },
+    { name: "Geist", data: semibold, weight: 600 as const, style: "normal" as const },
+    { name: "Geist", data: bold, weight: 700 as const, style: "normal" as const },
+  ];
+}
 
 // ROADMAP.md item 49 (P1): per-project OG images. Rendered at `next build`
 // time -- this is a static export (see next.config.ts), so this file only
@@ -42,7 +80,7 @@ export default async function OpengraphImage({ params }: { params: Promise<{ id:
           padding: "64px",
           backgroundColor: "#0f1210",
           color: "#f6f4ef",
-          fontFamily: "sans-serif",
+          fontFamily: "Geist",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
@@ -92,6 +130,6 @@ export default async function OpengraphImage({ params }: { params: Promise<{ id:
         </div>
       </div>
     ),
-    { ...size },
+    { ...size, fonts: await geistFonts() },
   );
 }

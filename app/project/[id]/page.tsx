@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ProjectDetailUpgrade } from "@/components/project-detail/ProjectDetailUpgrade";
 import { getProject, getFeaturedProjectIds } from "@/lib/projects";
+import { toDisplayCase } from "@/lib/format";
 import { scopeStaticParams } from "@/lib/buildScope";
 
 type Props = { params: Promise<{ id: string }> };
@@ -28,7 +29,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = await getProject(id);
   if (!project) return { title: "Project" };
   return {
-    title: project.name,
+    // toDisplayCase here too, not just on the H1. The record page renders
+    // "Maine State Prison Gatehouse Improvement Project" while the <title>,
+    // the browser tab, the Google result and the share-card title all said
+    // "MAINE STATE PRISON GATEHOUSE IMPROVEMENT PROJECT" -- the same page
+    // shouting in every place a stranger sees it first. Source records store
+    // these fully uppercase; the formatter was applied to the visible body
+    // and missed the metadata.
+    title: toDisplayCase(project.name),
     description: project.description.slice(0, 160),
     // Absolute per-project URL so tracking params (?ref=, ?utm=) on shared
     // links don't get indexed as separate pages competing with this one.
