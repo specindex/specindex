@@ -86,7 +86,19 @@ jobs:
               --region "$REGION" --project "$PROJECT" \
               --set-cloudsql-instances "$INSTANCE" \
               --set-secrets "DATABASE_URL=DATABASE_URL:latest,SAM_API_KEY=SAM_API_KEY:latest,LEGISTAR_TOKEN_NYC=LEGISTAR_TOKEN_NYC:latest" \
-              --set-env-vars "GOOGLE_CLOUD_PROJECT=$PROJECT,GOOGLE_CLOUD_LOCATION=$REGION" \
+              # GOOGLE_CLOUD_LOCATION IS THE VERTEX AI ENDPOINT, NOT THE CLOUD
+              # RUN REGION. It was pinned to $REGION (us-central1), where
+              # gemini-3.6-flash does not exist -- live-verified 2026-08-08,
+              # every call returns 404 NOT_FOUND "was not found or your project
+              # does not have access to it", while the identical call against
+              # "global" succeeds. Newer Gemini models publish to the global
+              # endpoint only. This env var also OVERRODE the correct "global"
+              # default in state_agent_pipeline/config.py and in
+              # classify-spec-documents.py, so it silently broke Gemini for
+              # every job here, not just classification. Cloud SQL still
+              # attaches by region via --set-cloudsql-instances; these are
+              # unrelated settings that happened to share a value.
+              --set-env-vars "GOOGLE_CLOUD_PROJECT=$PROJECT,GOOGLE_CLOUD_LOCATION=global" \
               --task-timeout "$timeout" --max-retries 2 --memory 4Gi --cpu 2 \
               --args "$args" \
               --quiet
@@ -111,7 +123,22 @@ jobs:
           deploy_job specindex-pull-portals   2h  scripts/run-capture-and-load.py --tier 1 --batch-size 10
           deploy_job specindex-pull-socrata   1h  scripts/pull-socrata-permits.py config/socrata/austin.yaml config/socrata/seattle.yaml
           deploy_job specindex-pull-arcgis    1h  scripts/pull-arcgis-permits.py config/arcgis/denver.yaml config/arcgis/raleigh.yaml
-          deploy_job specindex-classify       6h  scripts/classify-spec-documents.py --owner reference --limit 200
+          # --owner project, not reference. The PROJECT-document backlog is the
+          # one with product value: project_csi_divisions is what the record
+          # page's CSI scope matrix reads from, and 2,130 project documents had
+          # text but no divisions as of 2026-08-08 while this job was pointed
+          # at reference documents instead. Reference classification still
+          # matters (jurisdiction-wide standards) but has no user-facing
+          # surface yet -- give it its own job when it does, rather than
+          # alternating one job between two backlogs.
+          #
+          # --limit 300 against a 6h timeout: measured throughput is ~1
+          # minute/document (multi-chunk Flash calls over 500-1,800 page spec
+          # books), so 300 finishes in ~5h with margin. The script selects
+          # "has text, has no divisions yet", so consecutive executions
+          # advance through the backlog on their own -- no cursor to keep and
+          # no risk of double-classifying.
+          deploy_job specindex-classify       6h  scripts/classify-spec-documents.py --owner project --limit 300
 
       - name: Verify the jobs exist
         run: |
