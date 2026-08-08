@@ -96,6 +96,28 @@ defaults its DSN to localhost — pass `--database-url` explicitly.
 
 ---
 
+## The adapters
+
+**27 portal adapters**, all tier 1 (direct free PDFs, no login): **11 Vertical**
+(state building/facilities — where CSI-division building-product specs live, and
+what SpecIndex actually sells) and **16 DOT** (highway lettings — volume, but
+roads-and-bridges specs). 4 need a browser for a JavaScript listing; 5 need real
+browser headers to get past an edge block.
+
+Every adapter is the same two functions — `discover()` returning
+`{project_name, project_number, bid_date, doc_urls}` and `fetch(url)` returning
+content-checked bytes. Contract and the six rules: `PORTAL_ADAPTER_CONTRACT.md`.
+
+**Two document classes, two spec conventions.** Vertical portals use CSI
+MasterFormat (divisions 00–49, "23 05 00", PART 1/2/3). DOT portals do not — they
+use the state's own Standard Specifications numbering ("SECTION 100", supplemental
+specs, Job Special Provisions). A MasterFormat-only test fails every DOT adapter;
+`check-portal-adapters.py` carries a separate evidence arm for each.
+
+**Bid Express is account-gated** — measured, no anonymous read path even for an
+"info" account — so ~20 DOT states behind it are deprioritised. QuestCDN states
+(ID, NV, WY) charge $15–42 per download: log and skip, never pay.
+
 ## Automation — what runs without anyone asking
 
 All scheduling is **GitHub Actions cron**. There is no separate scheduler
@@ -162,6 +184,30 @@ Recent examples, all found on one project in one day:
 - Document class re-derived from `title`, which the loader sets to the project
   *number*, so the spec book was skipped.
 
+### The eighth: a text layer that extracted "successfully" and is garbage
+
+The seven above are all *data written where nothing reads it*. This one is
+different, and the two diagnostics below **cannot detect it**.
+
+A PDF with broken font dictionaries, a custom encoding, or a scan with no OCR
+extracts without raising. `document_pages` fills with mojibake. Classification
+finds no divisions, the ledger finds no manufacturers, and both return a clean
+zero — *after* a plausible amount of time, so the elapsed-time check passes. The
+run is recorded as a document that simply named nobody.
+
+**Measured 2026-08-07** on a random 3,000-page sample: **4.1% suspect**, median
+alphabetic ratio 0.75, median common-construction-word hits 49 per page. So this
+is not the sweeping failure it could have been — but there is **no detector at
+all** today, and 4.1% of pages silently producing "no manufacturers named" is a
+direct hit on the moat.
+
+**Fix:** a text-quality gate at step 5 — alphabetic-character ratio plus a hit
+count for common construction English (`shall`, `section`, `contractor`,
+`material`). Below threshold, mark the page for OCR instead of storing it as
+readable text. Note the existing measurement that 98.4% of pages are native text
+was about *whether text exists*, not whether it is **legible** — a different
+question, and this is the gap between them.
+
 ### The two diagnostics
 
 1. **Check elapsed time and input count before believing a zero.** *0 findings
@@ -182,13 +228,102 @@ only *project creation* requires a confirmed spec document.
 
 ---
 
+## Simplification — what to remove, not add
+
+The pipeline's problem is not missing capability. It is **too many places where
+one thing is stored, named or decided twice**, and every seam has been a
+disagreement between two of them. Simplification is therefore the same work as
+correctness.
+
+**1. One home per document.** `reference_documents` and `project_document_files`
+both hold project-scoped material, and `document_pages` can hang off either — a
+CHECK enforces one owner, so the join silently returns nothing when code guesses
+wrong. That alone caused two failures in one day (207 spec books with no joinable
+pages; then `enrich-from-cover-sheet.py` scoping on the pre-057 home and
+reporting a clean zero). **Rule: project-scoped → `project_document_files`;
+jurisdiction-wide standards → `reference_documents`. Nothing writes both.**
+
+**2. One place that decides what a document is — with one legal override.**
+`doc_type` is stamped from the filename at capture. Forbid re-deriving it from
+**`title`**, which the loader sets to the project number — that is what silently
+skipped the most valuable document on a project.
+
+But do **not** forbid re-derivation from **content**. Procurement officers name
+files badly, and `Project_3820_Final.pdf` could be anything; locking in a
+filename guess forever is its own trap. So: filename is the default at capture,
+**content-based classification may override it once text exists**, and the
+override must be recorded rather than silently applied. *(Corrected after review
+— the first version of this rule banned all downstream re-derivation and would
+have frozen a low-fidelity guess.)*
+
+**3. Keep the pull-log file handoff. Fix the watermark instead.**
+*(This entry previously proposed the opposite — that capture should write
+`project_document_files` directly and demote the pull log to an audit artifact.
+That was wrong.)*
+
+The file buys two things a direct write loses:
+
+- **Decoupling from a hostile environment.** Government portals are slow and
+  unstable, and so is our own database — the Cloud SQL proxy died four times on
+  2026-08-07. A transient DB blip during a four-hour scrape would force us back
+  to the portal.
+- **Replayability.** When load logic has a bug — like the `spec_format` filter
+  that dropped every addendum — a durable log means fixing the bug and re-running
+  the load. With a direct write and the payload gone from memory, a load bug
+  means re-fetching PDFs from sources that may have rotated, vanished, or (on
+  QuestCDN) charge per download.
+
+The defect was never the CSV. It was **reading the biggest log instead of the
+unprocessed ones.** The fix is a processed-marker per log, not deleting the seam.
+
+**4. Fetch and parse once; keep the database as the seam.**
+*(Also corrected. This previously read "run classification and ledger extraction
+off that single in-memory text", which conflates deterministic I/O with
+probabilistic extraction.)*
+
+Text extraction is deterministic, CPU-heavy, and needs to happen **once per PDF**
+— its output belongs in `document_pages`. Ledger extraction is **probabilistic**,
+and every prompt improvement means re-running it across the whole corpus. Couple
+them in memory and a prompt change costs a full re-download and re-parse of every
+document.
+
+The concrete win here is not merging stages — it is that
+`extract-spec-positions.py` currently **downloads the PDF from GCS and re-parses
+it** instead of reading `document_pages`, which already holds the text. Point it
+at the database. Same for classification.
+
+**5. One vocabulary.** The 11 steps and the 4 stages described the same work
+twice, and the *metrics* drifted from the *instructions* until stage 2's "% with
+≥1 document" caused the runner to discard five of six documents.
+`PIPELINE_CONSOLIDATED.md` now carries one S1–S8 list; retire the old numbering
+in prose rather than maintaining a mapping.
+
+**6. One name field, written by one thing.** Cover-sheet enrichment and the
+loader both write `projects.name`, and the loader overwrote 70 enriched names
+with bid numbers. Either the loader stops writing `name` after insert, or
+enrichment output is stored where a bulk loader cannot reach it.
+
+**What NOT to simplify:** the per-stage checkers, the before/after corpus counts,
+and the "assert the next step can see it" endings. Those are the only reason any
+of the above was ever found.
+
 ## Improvements needed, ranked
 
-**1. Build an end-to-end chain checker.** No test asserts that stage N+1 can read
-stage N. This is the single highest-value fix and would have caught all seven
-seams. Shape: `scripts/check-ingestion-chain.py --project-id <id>`, running every
-stage and failing loudly at the first whose output the next stage cannot see —
-`check-portal-adapters.py` applied to the chain rather than to one stage.
+**1. Put portal capture on a schedule, in the cloud.** *(Promoted to #1 on
+review; the chain checker was previously here.)* Path B is the entire moat, and
+its sole acquisition mechanism is a script run **by hand, on a laptop that goes
+to sleep** — which is why the Cloud SQL proxy died four times on 2026-08-07 and
+why the addenda fix landed today with no scheduled run to apply it. A data
+product cannot depend on someone remembering. Containerise, deploy to Cloud Run
+Jobs, cron it. Monitoring the pipeline matters less than the pipeline running at
+all.
+
+**2. Build an end-to-end chain checker.** No test asserts that stage N+1 can read
+stage N; that shape has failed seven times. Shape:
+`scripts/check-ingestion-chain.py --project-id <id>`, running every stage and
+failing loudly at the first whose output the next stage cannot see —
+`check-portal-adapters.py` applied to the chain rather than to one stage. Add a
+text-quality assertion so the eighth failure mode is covered too.
 
 **2. Emit `discovered_count` per project.** S5's own metric is "% of listed
 attachments captured", and it cannot be computed: the pull log records only what
