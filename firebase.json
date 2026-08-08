@@ -24,11 +24,6 @@
         "source": "/projects/:id/",
         "destination": "/project/:id/",
         "type": 301
-      },
-      {
-        "source": "/projects/:id",
-        "destination": "/project/:id/",
-        "type": 301
       }
     ],
     "headers": [
