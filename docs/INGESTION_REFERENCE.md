@@ -22,7 +22,48 @@ seam history), `PORTAL_ADAPTER_CONTRACT.md` (the six adapter rules),
 | is it the moat | no | **yes** |
 
 Path A is breadth and competitors have more of it. **Path B is the product.**
-Everything below is Path B.
+Both are documented below; the nine numbered steps are Path B.
+
+---
+
+## Path A — permit and solicitation feeds
+
+Produces the ~597,000-project corpus. Metadata-rich, document-poor. It exists so
+a rep can find a job at all; Path B is what makes the job worth opening.
+
+| # | step | code | writes |
+|---|---|---|---|
+| A1 | **Config** — one entry per jurisdiction: endpoint, provider type, field map, date field | `STATE_CONFIGS` | — |
+| A2 | **Pull** — provider adapter queries the source with a server-side date filter | provider modules (Accela, ArcGIS, Socrata, EnerGov) | raw rows |
+| A3 | **Map** — normalise to the corpus schema | `generic_mapping` | normalised rows |
+| A4 | **Merge** — id-deduped merge into the state file | `--merge-state` | `data/states/*.json` |
+| A5 | **Load** — state files into Postgres | `scripts/load-corpus-to-postgres.py` | `projects` |
+| A6 | **Roll up** — national corpus, coverage and quality | `merge-national-corpus.py`, `compute-county-coverage.py`, `compute-state-quality.py` | coverage tables |
+
+### The four rules that keep breaking here
+
+- **Never point `--output` at `data/states/*.json`.** Those flags mean "write a
+  new file", not "merge into it". State files are written only by `--merge-state`
+  or an explicit id-deduped merge.
+- **Never hand-roll date conversion — use `generic_mapping._iso_date()`.** A
+  non-ISO date does not error. It sorts wrong and the row disappears from every
+  windowed query while sitting in the corpus. **The diagnostic: total rows grow
+  but in-window rows do not.**
+- **The window is anchored at 2025-01-01** (`--since-date`). A county with
+  thousands held and a few hundred in-window is a date bug until proven
+  otherwise — never conclude "the source is thin" first.
+- **A dead source still answers queries, returning 0 rows for everything.** Probe
+  `1=1&returnCountOnly=true` periodically; a live count of 0 against a non-zero
+  corpus count is the signature.
+
+### Provider notes
+
+| provider | watch for |
+|---|---|
+| **Accela** | had five stacked defects at once (date never ISO, filter never applied, date-string watermark, sort assumption, no chunking). Two different attachment UIs — capture handles the `lnkFileName` one; the `span + ViewDocumentDetails` variant silently yields 0 |
+| **ArcGIS** | string date columns map to NO date; `--merge-state` will not repair existing rows |
+| **EnerGov** | pick `SearchModule=Permit` to unhide Advanced search — took Lubbock from 0 to 1,937 in-window |
+| **eTRAKiT** | **not viable.** Hard 50-record search cap and no date column. Do not build the provider |
 
 ---
 
@@ -52,6 +93,55 @@ python3 scripts/enrich-project-details.py <project_sk> --database-url "$DSN"
 
 `enrich-project-details.py` takes the **`project_sk`**, not the `project_id`, and
 defaults its DSN to localhost — pass `--database-url` explicitly.
+
+---
+
+## Automation — what runs without anyone asking
+
+All scheduling is **GitHub Actions cron**. There is no separate scheduler
+service; the queue and workers are invoked by those crons. Times are UTC.
+
+| schedule | workflow | what it does | path |
+|---|---|---|---|
+| **every 30 min** | `continuous-crawl.yml` | `schedule-crawls.py` enqueues due work, `crawl-worker.py` drains it | B |
+| every 30 min | `deploy-reconcile.yml` | catches merges that fired no deploy | — |
+| daily 07:00 | `pull-nj-dca-pipeline.yml` | NJ DCA | A |
+| daily 08:00 | `pull-nc-pipeline.yml` | NC ArcGIS | A |
+| daily 09:00 | `pull-all-deterministic-sources.yml` | the deterministic feeds, then corpus load and rollup | A |
+| daily 09:00 | `pull-ga-federal-pipeline.yml` | GA DRI + federal | A |
+| daily 09:00 | `coverage-daily.yml` | county coverage + state quality | — |
+| daily 10:00 | `enrich-project-details-pipeline.yml` | step 8 enrichment | B |
+| daily 13:00 | `daily-gcp-spend.yml` | GCP spend report by email | — |
+| weekly Mon 06:00 | `coverage-weekly.yml` | full coverage rebuild | — |
+| weekly Mon 07:00 | `branch-hygiene.yml` | deletes merged branches, files an issue for no-PR branches holding unique files | — |
+| **monthly, 1st 07:00** | `pull-state.yml` | the broad state pull | A |
+
+### The crawler
+
+`schedule-crawls.py` → **`work_queue`** (67 rows) → `crawl-worker.py`. Cadence is
+volatility-driven — hot sources are revisited more often than cold ones — and
+per-domain concurrency caps live in the queue, not in the callers. `vanished_at`
+is what makes the moat queryable: a document that disappears from a portal is
+still ours, and we know when it went.
+
+Specialist crawlers: `crawl-addenda.py` (the change record) and
+`crawl-municipal-events.py` (council/planning packets — the class that produced
+the Detroit staff report a plain Google search found and we did not).
+
+### Honest status, 2026-08-07
+
+- **`continuous-crawl.yml` does fire** — three successful runs today (16:11,
+  19:40, 22:07 UTC). An older note claiming it had never run is stale.
+- **But each run takes 34–42 seconds**, which is not enough to be capturing much.
+  Firing is verified; *doing work* is not. Check what the worker actually
+  claimed and wrote before treating the crawler as covering a source.
+- **Portal capture (step 2) is not on any schedule.** It is run by hand. Given
+  the capture fix landed today — every document stored, not only spec books —
+  every previously captured portal needs a re-run, and then this belongs on a
+  cron.
+- **Long ingestion should not run on the laptop.** The Cloud SQL proxy died four
+  times on 2026-08-07, every time from the machine sleeping, and the failure
+  reads as a database problem. Cloud Run Jobs; PR #150 fixes the image.
 
 ---
 

@@ -127,7 +127,22 @@ def main() -> int:
                  first_seen_at, last_updated_at)
             VALUES (%s, %s, %s, 'bidding', %s, now(), now())
             ON CONFLICT (project_id) DO UPDATE SET
-                name = COALESCE(NULLIF(EXCLUDED.name,''), projects.name),
+                -- NEVER downgrade a real name to a bare identifier. The pull log
+                -- carries project_name = "3820" for portals that publish only a
+                -- number, and cover-sheet enrichment had already replaced that
+                -- with "MAINE STATE PRISON GATEHOUSE IMPROVEMENT PROJECT". A
+                -- plain COALESCE(NULLIF(...,'')) treats "3820" as a perfectly
+                -- good name and overwrote it -- re-running the loader silently
+                -- undid the enrichment on every portal project.
+                --
+                -- Keep the incoming name only when it is not a bare identifier,
+                -- or when what we hold is one.
+                name = CASE
+                    WHEN EXCLUDED.name ~ '^[0-9A-Za-z_.-]{1,14}$'
+                         AND projects.name !~ '^[0-9A-Za-z_.-]{1,14}$'
+                        THEN projects.name
+                    ELSE COALESCE(NULLIF(EXCLUDED.name,''), projects.name)
+                END,
                 last_updated_at = now()
             RETURNING project_sk
             """,
