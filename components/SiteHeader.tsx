@@ -179,6 +179,13 @@ function AuthAwareActions({ mobile }: { mobile?: boolean }) {
   );
 }
 
+// Routes that carry their own full-page chrome (their own sidebar, top bar and
+// account row) and must NOT also get the marketing header. A signed-in
+// workspace showing "Book a demo" and "Start for free" above its own nav reads
+// as two products stacked on one page -- and the handoff is explicit: "No
+// marketing copy on any signed-in screen."
+const OWN_CHROME = ["/preview/"];
+
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -194,6 +201,10 @@ export function SiteHeader() {
       document.body.style.overflow = "";
     };
   }, [open]);
+
+  // Hooks above, early return below -- the order matters, all hooks must run
+  // on every render regardless of which chrome the route wants.
+  if (OWN_CHROME.some((p) => pathname?.startsWith(p))) return null;
 
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--color-border)] bg-white/90 backdrop-blur-md">
