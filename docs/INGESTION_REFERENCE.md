@@ -330,12 +330,45 @@ rather than deleted, because the reason it was #1 still governs what comes next:
 a data product cannot depend on someone remembering, and **the pipeline running
 at all matters more than monitoring it**.
 
-**2. Verify the first unattended runs actually capture.** Now the live question,
-and the same trap as `continuous-crawl.yml` — which fires reliably and finishes
-in 34 seconds. A scheduled job that runs and does nothing is worse than one that
-never ran, because it reports success. Check the execution's own `[verify]` line
-(projects / documents / addenda) and the row count of the pull log it uploads to
-`gs://specindex-ai-raw-documents/pull-logs/`. **Firing is not working.**
+**2. Diagnose the stalled capture run — measured 2026-08-08 00:59 UTC.** The
+verification execution `specindex-pull-portals-jf6w7` started 00:23, and this is
+what it shows:
+
+- **capture works.** 27 adapters scoped; `[20/20]` projects at ~38/min emitting
+  rate and ETA, 2–7 documents each. Real work, not a 34-second no-op.
+- **it went silent at 00:36:59** on `[20/20] ... ETA 0s` and produced **nothing
+  for the next 22 minutes**, while Cloud Run still reported it running. 54 log
+  lines total. The load step never logged at all.
+- one adapter error: `[4/27] bonfire: discover failed`.
+
+Silence at the hand-off from capture into load is failure-mode instance 8 again
+— *"loader read the biggest pull log, not the new one; corpus moved +0"* —
+except this run does not report a wrong number, it reports nothing. **A hang is
+the one outcome that looks identical to work in progress.** Check whether load
+is blocked on the Cloud SQL socket, whether a pull log reached
+`gs://specindex-ai-raw-documents/pull-logs/` at all, and whether the corpus
+moved; print counts either side.
+
+The daily 03:00 UTC cron will reproduce this unattended and report success by
+never finishing. That is exactly the trap `continuous-crawl.yml` sets — fires
+reliably, finishes in 34 seconds, does nothing. **Firing is not working, and
+neither is running.**
+
+**2a. Bound the job's runtime and require a terminal `[verify]` line.** Nothing
+above would have been noticed by a checker, because the job has no deadline and
+no completion assertion — the only reason it surfaced is that a human looked at
+`executions list`. Any run over ~30s already owes rate and ETA; a *job* owes a
+final line stating projects / documents / addenda, and a timeout that fails
+loudly instead of hanging quietly.
+
+**2b. Send the verified outcomes back to Gemini.** Its review of the branch
+hygiene workflow scored 1 of 3 on checkable claims — right that `head -20` under
+`bash -e` + `pipefail` kills the producer with SIGPIPE (verified, rc=141), wrong
+that squash-merge defeats a merge-base test, wrong that `fetch-depth` was unset.
+Disproving the squash-merge claim is what produced the measurement that chose
+the final design. Per CLAUDE.md §4 the return leg is not optional:
+`scripts/gemini_feedback_loop.py`. Without it, it keeps asserting what has
+already been disproven.
 
 **3. Build an end-to-end chain checker.** No test asserts that stage N+1 can read
 stage N; that shape has failed seven times. Shape:
@@ -367,6 +400,13 @@ Division 23 when they are electrical). The prompt already forbids the middle two
 
 **7. Drain the extraction backlog.** ~14,000 registered documents are still
 unextracted, so their divisions and rulings do not exist yet.
+
+**7a. Build the text-quality detector.** 4.1% of pages in a random 3,000-page
+sample carry text that extracted without raising and is garbage. No detector
+exists, so those pages return a silent "no manufacturers named" — a confident
+zero that is a fact about our parse, not about the document. Gemini implied the
+problem was pervasive; measuring put it at 4.1%. Real, smaller than claimed, and
+still undetected.
 
 **8. Move REMAINING ingestion off the laptop.** The Cloud SQL proxy died four times on
 2026-08-07, every time from the machine sleeping — the failure reads as a
