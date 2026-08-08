@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-05T09:41:54",
+  "updated_at": "2026-08-07T20:03:55",
   "entries": [
     {
       "claim": "WBDG hosts VA PG-18-1 master specs (index page)",
@@ -60,6 +60,54 @@
       "url": null,
       "verified": false,
       "evidence": "I scanned 400 pages from 557 documents (~1.6%). Model overstated my evidence back at me and drew a strategic conclusion from it."
+    },
+    {
+      "claim": "Maine BGS posts only a specification PDF per project; addenda are not published on the listing page",
+      "url": "https://www.maine.gov/dafs/bgs/business-opportunities",
+      "verified": false,
+      "evidence": "Listing page for BGS #3820 carries SIX documents: Specifications, Addendum_1, Drawings, Legal_Ad, Notice_to_Contractors, Bid_Tabulation. The maine_vertical adapter already enumerated all six; the loss was downstream in the capture runner."
+    },
+    {
+      "claim": "An addendum reliably carries substitution rulings, so capturing addenda yields ledger rows",
+      "url": "https://www.maine.gov/dafs/bgs/sites/maine.gov.dafs.bgs/files/inline-files/3820_Addendum_1_DOC.pdf",
+      "verified": false,
+      "evidence": "3820 Addendum No. 1 is one page, 563 characters, native text, and contains ZERO occurrences of substitution / or equal / approved / rejected. Its entire content is a bid date extension. Addenda are a necessary but not sufficient source; the rulings on this project came from the SPEC BOOK (8 cited findings), not the addendum."
+    },
+    {
+      "claim": "Substitution rulings live predominantly in addenda rather than in the base specification",
+      "url": "https://www.maine.gov/dafs/bgs/sites/maine.gov.dafs.bgs/files/inline-files/3820_Specifications_DOC_MSP.pdf",
+      "verified": false,
+      "evidence": "All 8 cited findings for BGS #3820 came from the 219-page spec book: Sika Corporation (div 03, p64/p70), Grainger and McNICHOLS (div 05, p73/p87), Simpson Strong-Tie + USP with an explicit 'or approved equal' (div 06, p100), Canam Mass Timber (div 06, p108). Basis-of-design attribution is present in the BASE spec at bid time."
+    },
+    {
+      "claim": "Simplification #3 is wrong: capture should NOT write Postgres directly; the pull-log file handoff buys decoupling from unstable infra and replayability when load logic has a bug",
+      "url": "internal:docs/INGESTION_REFERENCE.md",
+      "verified": true,
+      "evidence": "ACCEPTED AND REVERSED. The argument is correct and matched a defect from the same day: the spec_format filter dropped 311 of 408 documents at load, and only a durable pull log made re-running the load possible without re-fetching. Diagnosis also correct that the bug was the SELECTION rule (max by file size) rather than the file itself. Doc now proposes a per-log processed-marker."
+    },
+    {
+      "claim": "Simplification #2 is dangerous: forbidding all downstream re-derivation of doc_type locks in a low-fidelity filename guess; content-based classification must be allowed to override",
+      "url": "internal:scripts/run-portal-capture.py",
+      "verified": true,
+      "evidence": "ACCEPTED WITH A REFINEMENT. The rule was over-broad. But the specific ban is still right for one field: re-deriving from `title` must stay forbidden, because the loader writes the project NUMBER into title, which returned class 'other' and skipped a 219-page spec book. Rule is now: filename is the default at capture, CONTENT may override once text exists and the override is recorded, title may never be used."
+    },
+    {
+      "claim": "Simplification #4 is wrong: coupling deterministic text extraction with probabilistic LLM extraction means a prompt improvement forces re-download and re-parse of the whole corpus; document_pages is the correct seam",
+      "url": "internal:scripts/extract-spec-positions.py",
+      "verified": true,
+      "evidence": "ACCEPTED AND REVERSED, and it exposed a live inefficiency I had not seen: extract-spec-positions.py currently calls fetch_bytes() to download the PDF from GCS and re-parses it with PyMuPDF, even though document_pages already holds the extracted text. Reading the database instead is both the correct seam and strictly faster."
+    },
+    {
+      "claim": "The eighth structural blind spot is corrupt text layers (mojibake): extraction succeeds, pages fill with garbage, ledger returns a clean zero after a plausible elapsed time, and the run is recorded as a document that named nobody",
+      "url": "internal:document_pages",
+      "verified": true,
+      "evidence": "CONFIRMED BUT SMALLER THAN IMPLIED. Measured on a random 3,000-page sample from the live corpus: 4.1% suspect (alphabetic ratio < 0.35 or fewer than 2 common construction words). Median alphabetic ratio 0.75, median common-word hits 49. So the corpus is mostly legible -- but there is NO detector at all, the elapsed-time diagnostic genuinely cannot catch it, and 4.1% silently reporting 'no manufacturers named' hits the moat directly. Added as failure mode #8 with a text-quality gate at step 5."
+    },
+    {
+      "claim": "The #1 improvement should be automating portal capture in the cloud, not building a chain checker, because the moat's sole acquisition mechanism runs by hand on a sleeping laptop",
+      "url": "internal:docs/INGESTION_REFERENCE.md",
+      "verified": true,
+      "evidence": "ACCEPTED AND RE-RANKED. Corroborated by the same day's evidence: the Cloud SQL proxy died four times from laptop sleep, and a capture fix landed with no scheduled run to apply it. Chain checker moved to #2."
     }
   ]
 }

@@ -66,20 +66,35 @@ def main() -> int:
 
     # Projects whose name is still just the bid number, and whose document we
     # have text for.
+    # READS THE SPEC BOOK VIA project_document_files, not reference_documents.
+    # Migration 057 moved page ownership for project-scoped spec books onto the
+    # project's own document row, so the old join
+    # (document_pages.reference_document_id = r.id) matched nothing and this
+    # script reported "0 portal projects with document text" -- a clean zero,
+    # from a scope query pointed at the pre-057 home.
+    #
+    # Scope is the spec book specifically: the cover sheet is page 1 of the
+    # project manual, not of a bid tabulation.
     cur.execute("""
-        SELECT p.project_sk, p.project_id, p.name, r.id
+        SELECT p.project_sk, p.project_id, p.name, f.id
           FROM projects p
-          JOIN reference_documents r ON r.scope_value = p.project_id AND r.scope='project'
+          JOIN project_document_files f ON f.project_sk = p.project_sk
+                                       AND f.doc_type = 'specbook'
          WHERE p.project_id LIKE '%%-portal-%%'
-           AND EXISTS (SELECT 1 FROM document_pages dp WHERE dp.reference_document_id = r.id)
-         LIMIT %s""", (args.limit,))
+           AND EXISTS (SELECT 1 FROM document_pages dp WHERE dp.document_file_id = f.id)
+           -- Re-runnable: a project qualifies while its name is still a bare
+           -- identifier, so a loader that clobbers a good name can be repaired
+           -- by running this again. Keying on "has no city" made the repair
+           -- impossible, because the city survived the clobbering.
+           AND p.name ~ '^[0-9A-Za-z_.-]{1,14}$'
+         LIMIT %s""", (args.limit or 100000,))
     targets = cur.fetchall()
     print(f"[scope] {len(targets)} portal projects with document text", flush=True)
 
     updated = 0
     for i, (sk, pid, name, rid) in enumerate(targets, 1):
         cur.execute("""SELECT raw_text FROM document_pages
-                        WHERE reference_document_id=%s ORDER BY page_number LIMIT 2""", (rid,))
+                        WHERE document_file_id=%s ORDER BY page_number LIMIT 2""", (rid,))
         pages = [r[0] for r in cur.fetchall() if r[0]]
         text = "\n".join(pages)[:6000]
         if len(text) < 80:

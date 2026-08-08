@@ -127,6 +127,12 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=0, help="documents to process, 0 = all")
     ap.add_argument("--max-sections", type=int, default=8, help="per document")
     ap.add_argument("--dry-run", action="store_true")
+    # Ranking drains by document CLASS, so the highest-value findings land first
+    # across the whole corpus -- correct for a batch run, useless when you need
+    # one named project extracted now (a demo record, a customer question). The
+    # backlog ahead of it can be thousands of documents deep.
+    ap.add_argument("--project-id", default=None,
+                    help="restrict to one project_id, e.g. me-portal-maine-vertical-3820")
     args = ap.parse_args()
 
     from state_agent_pipeline.config import Settings  # noqa: PLC0415
@@ -156,15 +162,28 @@ def main() -> int:
     # and spec books before everything else, so a partial run still returns the
     # highest-value findings -- the same ordering the work queue uses.
     cur.execute("""
-        SELECT f.id, f.project_sk, f.title, f.url
+        SELECT f.id, f.project_sk, f.title, f.url, f.doc_type
         FROM project_document_files f
         LEFT JOIN document_processing_status s ON s.document_file_id = f.id
+        JOIN projects p ON p.project_sk = f.project_sk
         WHERE f.url ILIKE '%%.pdf'
           AND s.structured_extraction_at IS NULL
-    """)
+          AND (%s IS NULL OR p.project_id = %s)
+    """, (args.project_id, args.project_id))
+    # TRUST THE STORED doc_type FIRST. Re-deriving the class from `title` made
+    # every portal spec book invisible here: the portal loader sets title to the
+    # project NUMBER ("3820"), so classify() saw no filename and returned
+    # `other`, and `other` is not in the set this step processes. Maine 3820's
+    # 219-page spec book -- the most valuable document on the project -- was
+    # skipped, and the run reported a clean zero rather than an error.
+    #
+    # doc_type is decided from the FILENAME at capture time, which is the field
+    # that actually carries the signal. classify() stays as the fallback for
+    # rows captured before doc_type existed.
+    _STORED = {"specbook": dc.SPEC_BOOK, "addendum": dc.ADDENDA, "addenda": dc.ADDENDA}
     scored = []
     for r in cur.fetchall():
-        cls = dc.classify(r[2] or "", "", "")
+        cls = _STORED.get((r[4] or "").lower()) or dc.classify(r[2] or "", "", "")
         if cls in (dc.SPEC_BOOK, dc.ADDENDA):
             scored.append((dc.rank_of(cls), r))
     scored.sort(key=lambda x: x[0])
@@ -176,15 +195,41 @@ def main() -> int:
     prog = Progress(len(rows), "spec-extract", every=10)
     rulings = bod = alternates = failed = 0
 
-    for fid, sk, title, url in rows:
+    for fid, sk, title, url, _doc_type in rows:
         prog.tick(note=f"rulings={rulings} bod={bod}")
-        try:
-            doc = fitz.open(stream=fetch_bytes(url), filetype="pdf")
-            pages = [doc[i].get_text() or "" for i in range(len(doc))]
-            doc.close()
-        except Exception as e:  # noqa: BLE001 -- one bad pdf must not end the run
-            failed += 1
-            continue
+
+        # READ THE TEXT WE ALREADY HAVE. This used to download the PDF from GCS
+        # and re-parse it with PyMuPDF on every run, even though step 5 had
+        # already extracted the same text into document_pages.
+        #
+        # That is not merely slow, it is the wrong seam. Text extraction is
+        # deterministic and belongs once per PDF; ledger extraction is
+        # PROBABILISTIC and gets re-run across the whole corpus every time the
+        # prompt improves. Coupling them meant every prompt change cost a full
+        # re-download and re-parse of every document. The database is the seam
+        # between the deterministic half and the probabilistic half.
+        cur.execute("""SELECT page_number, raw_text FROM document_pages
+                        WHERE document_file_id = %s ORDER BY page_number""", (fid,))
+        stored = cur.fetchall()
+        if stored:
+            # sections_with_pages() indexes positionally, so gaps (blank pages
+            # are not stored) must be filled rather than closed up -- otherwise
+            # every cited page number after the first gap is wrong, and a wrong
+            # page cite is worse than none.
+            n = stored[-1][0]
+            pages = [""] * n
+            for pno, txt in stored:
+                if 1 <= pno <= n:
+                    pages[pno - 1] = txt or ""
+        else:
+            # Fallback for documents step 5 has not reached yet.
+            try:
+                doc = fitz.open(stream=fetch_bytes(url), filetype="pdf")
+                pages = [doc[i].get_text() or "" for i in range(len(doc))]
+                doc.close()
+            except Exception:  # noqa: BLE001 -- one bad pdf must not end the run
+                failed += 1
+                continue
 
         for s in sections_with_pages(pages)[: args.max_sections]:
             try:

@@ -53,9 +53,14 @@ class Settings:
     # genuinely need Pro must not have their model silently swapped for Claude
     # by an unrelated backend setting.
     pro_model: str
-    sonnet_backend: str  # anthropic | vertex | gemini_pro
+    sonnet_backend: str  # vertex | gemini_pro
     sonnet_model: str
-    anthropic_api_key: str | None
+    # anthropic_api_key was a REQUIRED field that from_env never populated, so
+    # Settings.from_env() raised TypeError for every caller -- which is why
+    # extract-spec-positions.py (step 11, the substitution ledger) had never
+    # once run, and the moat table sat at 0 rows. Nothing read the field. It is
+    # removed rather than defaulted: this project bills Gemini on Vertex only,
+    # and a settings slot for a banned third bill invites someone to fill it.
     socrata_app_token: str | None
     flash_batch_size: int = 40
     # 60 was the original NJ-only default and worked fine in small manual
@@ -72,7 +77,10 @@ class Settings:
     @classmethod
     def from_env(cls) -> "Settings":
         load_env()
-        backend = (os.environ.get("NJ_DCA_SONNET_BACKEND") or os.environ.get("VERTEX_CLAUDE_BACKEND") or "anthropic").lower()
+        # Defaults to gemini_pro, never anthropic: the direct Anthropic API is a
+        # third bill this project does not carry (Claude Code on the Max plan,
+        # Gemini on Vertex credits), and check-no-anthropic.py fails CI on it.
+        backend = (os.environ.get("NJ_DCA_SONNET_BACKEND") or os.environ.get("VERTEX_CLAUDE_BACKEND") or "gemini_pro").lower()
         if backend == "vertex":
             sonnet_model = os.environ.get("VERTEX_CLAUDE_MODEL") or "claude-sonnet-5"
         elif backend == "gemini_pro":
