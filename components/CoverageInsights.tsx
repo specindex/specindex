@@ -165,7 +165,7 @@ export function CoverageInsights({ insights }: Props) {
                                 {projects.map((p) => (
                                   <li key={p.id} className="text-xs">
                                     <Link
-                                      href={`/projects/${p.id}/`}
+                                      href={`/project/${p.id}/`}
                                       className="font-medium text-[var(--color-ink)] hover:text-[var(--color-green)]"
                                     >
                                       {p.name}

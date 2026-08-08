@@ -11,12 +11,19 @@
     "trailingSlash": true,
     "rewrites": [
       {
-        "source": "/projects/*/",
-        "destination": "/projects/view/index.html"
+        "source": "/project/*/",
+        "destination": "/project/view/index.html"
       },
       {
-        "source": "/projects/*",
-        "destination": "/projects/view/index.html"
+        "source": "/project/*",
+        "destination": "/project/view/index.html"
+      }
+    ],
+    "redirects": [
+      {
+        "source": "/projects/:id/",
+        "destination": "/project/:id/",
+        "type": 301
       }
     ],
     "headers": [

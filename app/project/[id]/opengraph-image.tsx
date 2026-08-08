@@ -16,7 +16,7 @@ export const contentType = "image/png";
 export async function generateStaticParams() {
   const ids = await getFeaturedProjectIds();
   // OG images are rendered images, the most expensive page type per unit.
-  return scopeStaticParams(ids.map((id) => ({ id })), "projects/[id]/opengraph-image");
+  return scopeStaticParams(ids.map((id) => ({ id })), "project/[id]/opengraph-image");
 }
 
 export default async function OpengraphImage({ params }: { params: Promise<{ id: string }> }) {

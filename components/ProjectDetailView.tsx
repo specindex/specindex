@@ -1,1376 +1,317 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { FIREBASE_AUTH_ENABLED, useFirebaseAuth, useFirebaseAuthOptional } from "@/components/FirebaseAuthProvider";
 import { StatusPill } from "@/components/StatusPill";
-import { AskPanel } from "@/components/AskPanel";
-import { formatDate, formatSf, formatUsd, stateName, typeLabel } from "@/lib/format";
-import type { Project, SpecCitation } from "@/lib/types";
+import { formatDate, formatSf, formatUsd, toDisplayCase, typeLabel } from "@/lib/format";
+import type { Project } from "@/lib/types";
 import {
-  fetchTrackedProjects,
-  upsertTrackedProject,
-  untrackProject,
-  readTriageList,
-  type TrackedStage,
-} from "@/lib/tracking";
-import { askAboutProject } from "@/lib/ask";
-import { fetchProjectForSignedInUser } from "@/lib/projects";
+  ActivityFeed,
+  FIREBASE_AUTH_ENABLED,
+  GatedBanner,
+  PipelineBox,
+  ProjectAskPanel,
+  ScoreCard,
+  TabBar,
+  TriageNav,
+} from "@/components/project-detail/ClientBits";
+import { EMPTY_FACT_VALUES, buildFeedItems, deriveScope, findTeamFact, locationLine } from "@/components/project-detail/helpers";
+import {
+  AbsentFactCell,
+  BriefTab,
+  DocumentsTab,
+  Fact,
+  ScopeTab,
+  SpecificationTab,
+  TeamTab,
+} from "@/components/project-detail/Sections";
 
-const STAGE_LABELS: Record<TrackedStage, string> = {
-  watching: "Watching",
-  contacted: "Contacted",
-  quoted: "Quoted",
-  won: "Won",
-  lost: "Lost",
-};
-
-// Small, self-contained: fetches this one project's tracked state on mount
-// rather than requiring a caller to pass down the whole tracked-projects
-// list, since ProjectDetailView is reached from many different entry points
-// (static SSG pages, the client-rendered fallback, direct links) that don't
-// all have that list in scope.
-function PipelineBox({ projectId }: { projectId: string }) {
-  const { getToken } = useFirebaseAuth();
-  const [stage, setStage] = useState<TrackedStage | null>(null);
-  const [note, setNote] = useState<string | null>(null);
-  const [loaded, setLoaded] = useState(false);
-  const [failed, setFailed] = useState(false);
-
-  useEffect(() => {
-    let cancelled = false;
-    fetchTrackedProjects(getToken)
-      .then((rows) => {
-        if (cancelled) return;
-        const match = rows.find((r) => r.project_id === projectId);
-        setStage(match?.stage ?? null);
-        setNote(match?.note ?? null);
-        setLoaded(true);
-      })
-      .catch(() => setLoaded(true));
-    return () => {
-      cancelled = true;
-    };
-  }, [getToken, projectId]);
-
-  // OPTIMISTIC UPDATES MUST ROLL BACK. These three used to set state and then
-  // await the write with no catch, so a failed PUT left the UI reading
-  // "✓ Tracking" over a row that was never saved -- the user only found out on
-  // reload, by which point the cause was long gone. Tracking is half the moat;
-  // it silently losing writes is worse than refusing them loudly.
-  async function withRollback(next: TrackedStage | null, write: () => Promise<void>) {
-    const previous = stage;
-    setStage(next);
-    setFailed(false);
-    try {
-      await write();
-    } catch {
-      setStage(previous);
-      setFailed(true);
-    }
-  }
-
-  async function track() {
-    await withRollback("watching", () =>
-      upsertTrackedProject(getToken, projectId, { stage: "watching", note }));
-  }
-
-  async function changeStage(next: TrackedStage) {
-    await withRollback(next, () =>
-      upsertTrackedProject(getToken, projectId, { stage: next, note }));
-  }
-
-  async function stopTracking() {
-    await withRollback(null, () => untrackProject(getToken, projectId));
-  }
-
-  if (!loaded) return null;
-
-  if (!stage) {
-    return (
-      <div className="flex shrink-0 flex-col items-start gap-1">
-        <button
-          type="button"
-          onClick={track}
-          className="flex shrink-0 items-center gap-2 rounded-xl border border-dashed border-[var(--color-border)] p-4 text-sm font-semibold text-[var(--color-gray-600)] transition hover:border-[var(--color-green)] hover:text-[var(--color-green)]"
-        >
-          + Track this project
-        </button>
-        {failed && (
-          <span className="text-[11px] text-red-600">
-            Couldn&apos;t save — try again.
-          </span>
-        )}
-      </div>
-    );
-  }
-
-  return (
-    <div className="shrink-0 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-4">
-      <span className="text-[10px] font-bold uppercase tracking-wider text-[var(--color-gray-600)]">
-        Your pipeline
-      </span>
-      <div className="mt-2 flex items-center gap-2">
-        <span className="flex items-center gap-1.5 text-xs font-semibold text-[var(--color-green)]">
-          <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-green)]" />✓ Tracking
-        </span>
-        <select
-          value={stage}
-          onChange={(e) => changeStage(e.target.value as TrackedStage)}
-          className="rounded-full border-0 bg-[var(--color-green-light)] px-2.5 py-1 text-xs font-semibold text-[var(--color-green)]"
-        >
-          {Object.entries(STAGE_LABELS).map(([k, label]) => (
-            <option key={k} value={k}>
-              {label}
-            </option>
-          ))}
-        </select>
-      </div>
-      <button
-        type="button"
-        onClick={stopTracking}
-        className="mt-2 text-[11px] text-[var(--color-gray-400)] hover:text-red-600"
-      >
-        Untrack
-      </button>
-    </div>
-  );
-}
-
-// useFirebaseAuth() requires a <FirebaseAuthProvider> ancestor, which only
-// exists when FIREBASE_AUTH_ENABLED -- kept in its own component (only
-// mounted behind that flag, same pattern as PipelineBox above) rather than
-// called directly in ProjectDetailView's body, which renders unconditionally.
-function ProjectAskPanel({ projectId }: { projectId: string }) {
-  const { getToken } = useFirebaseAuth();
-  return (
-    <AskPanel
-      title="Ask about this project"
-      placeholder="e.g. Who's the electrical contractor?"
-      onAsk={(question) => askAboutProject(getToken, projectId, question)}
-    />
-  );
-}
-
-// Prev/Next nav across whatever list a signed-in visitor arrived from (Feed
-// or Tracked), so triaging several projects in a row doesn't require
-// bouncing back to the list view each time. Reads a sessionStorage snapshot
-// SignedInHome writes on click-through (lib/tracking.ts's
-// writeTriageList/readTriageList) -- absent entirely for anyone who didn't
-// arrive that way (direct link, search, anonymous SSG page), in which case
-// this renders nothing rather than a broken/empty nav.
-function TriageNav({ projectId }: { projectId: string }) {
-  const router = useRouter();
-  const [list, setList] = useState<{ ids: string[]; index: number } | null>(null);
-
-  useEffect(() => {
-    const stored = readTriageList();
-    if (!stored || !stored.ids.includes(projectId)) return;
-    setList({ ids: stored.ids, index: stored.ids.indexOf(projectId) });
-  }, [projectId]);
-
-  if (!list || list.ids.length < 2) return null;
-
-  const prevId = list.index > 0 ? list.ids[list.index - 1] : null;
-  const nextId = list.index < list.ids.length - 1 ? list.ids[list.index + 1] : null;
-
-  return (
-    <div className="mt-3 flex items-center gap-3 text-sm">
-      <button
-        type="button"
-        disabled={!prevId}
-        onClick={() => prevId && router.push(`/projects/view/?id=${prevId}`)}
-        className="font-medium text-[var(--color-gray-600)] hover:text-[var(--color-ink)] disabled:opacity-30"
-      >
-        ← Prev
-      </button>
-      <span className="text-xs text-[var(--color-gray-400)]">
-        Item {list.index + 1} of {list.ids.length}
-      </span>
-      <button
-        type="button"
-        disabled={!nextId}
-        onClick={() => nextId && router.push(`/projects/view/?id=${nextId}`)}
-        className="font-medium text-[var(--color-gray-600)] hover:text-[var(--color-ink)] disabled:opacity-30"
-      >
-        Next →
-      </button>
-    </div>
-  );
-}
-
-// Steps reflect what scripts/enrich-project-details.py actually does: a
-// search-grounded discovery pass, a second independent pass re-checking
-// the highest-stakes claims (see _team_claims / run_crosscheck), and a
-// real HTTP HEAD check on every cited news URL (url_resolves()) -- not a
-// fixed list of aspirational steps. Labels deliberately don't name the
-// underlying model (Gemini) -- an independent design review flagged that
-// as "AI theater" that exposes the vendor rather than reading as a
-// SpecIndex-owned verification process. Only shown when a project
-// actually has enrichment data, since the bar describes that process.
-const PIPELINE_STEPS = ["Search-grounded discovery", "Cross-verified (2nd pass)", "Links live-checked"];
-
-// scripts/enrich-project-details.py stores the model name directly in each
-// fact's `sources` text (e.g. "Gemini search grounding, Jul 2026"). Real
-// provenance, but the same vendor-exposure issue applies to displaying it
-// verbatim -- swap the label at render time without touching the stored
-// data or the underlying research method.
-function displaySource(source: string | null | undefined): string | null {
-  if (!source) return source ?? null;
-  return source.replace(/\bGemini\b/g, "SpecIndex AI");
-}
-
-function PipelineBar({ checkedAt }: { checkedAt: string | null | undefined }) {
-  return (
-    <div className="card mb-6 flex flex-wrap items-center justify-between gap-3 px-4 py-3 text-xs">
-      <div className="flex items-center gap-2">
-        <span className="h-2 w-2 shrink-0 rounded-full bg-[var(--color-green)]" />
-        <span className="text-[10px] font-bold uppercase tracking-wider text-[var(--color-gray-600)]">
-          AI grounding pipeline
-        </span>
-      </div>
-      <div className="flex flex-wrap items-center gap-1.5 font-mono text-[11px] text-[var(--color-gray-600)]">
-        {PIPELINE_STEPS.map((step, i) => (
-          <span key={step} className="flex items-center gap-1.5">
-            <span className="rounded border border-[var(--color-green)]/25 bg-[var(--color-green-light)] px-2 py-0.5 font-semibold text-[var(--color-green)]">
-              {step}
-            </span>
-            {i < PIPELINE_STEPS.length - 1 && (
-              <span className="text-[var(--color-gray-400)]">→</span>
-            )}
-          </span>
-        ))}
-      </div>
-      {/* Real timestamp from project_enrichment_checks.checked_at -- when
-          this run last happened, not a fabricated freshness claim. */}
-      {checkedAt && (
-        <span className="text-[11px] text-[var(--color-gray-400)]">
-          Page updated {formatDate(checkedAt.slice(0, 10))}
-        </span>
-      )}
-    </div>
-  );
-}
-
-// Shared render for a single project's detail view -- used by both the
-// small curated set of statically-generated pages (app/projects/[id]/page.tsx,
-// top ~200 by score, real SEO/JSON-LD) and the client-rendered fallback shell
-// (app/projects/view/page.tsx) that serves every other project at any scale.
-// One component, one visual source of truth, regardless of which path
-// fetched the data or when.
-
-// project_enrichment confidence -> the same green/amber/gray scale used
-// elsewhere for "how sure are we" -- amber specifically means two
-// independent Gemini passes disagreed, not that anything failed.
-function ConfidenceBadge({ confidence }: { confidence: string }) {
-  const styles: Record<string, string> = {
-    confirmed: "bg-[var(--color-green-light)] text-[var(--color-green)]",
-    reported: "bg-[var(--color-amber)]/10 text-[var(--color-amber)]",
-    unconfirmed: "bg-[var(--color-gray-100)] text-[var(--color-gray-400)]",
-  };
-  const labels: Record<string, string> = {
-    confirmed: "Confirmed",
-    reported: "Sources vary",
-    unconfirmed: "Not confirmed",
-  };
-  // Phase 1.4. "Sources vary" fired on 48.4% of enrichment rows -- 22 of them
-  // on a single record -- and it was never a statement about sources at all.
-  // `reported` is the DEFAULT assigned when a fact was not cross-checked
-  // (enrich-project-details.py: `_confidence_for(v) if v else "reported"`),
-  // and `agreement` is NULL on all 8,700 rows, so no row carries an actual
-  // verdict. A badge on half the page carries no signal, and sitting under a
-  // heading that said "Verified" it actively undercut the record.
-  //
-  // Inline markers are now reserved for a GENUINE conflict. Everything else
-  // moves to the Sources panel, which is where the handoff puts all confidence
-  // language. Silence means "nothing disputed", not "unknown".
-  if (confidence !== "unconfirmed") return null;
-  return (
-    <span className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${styles[confidence] ?? styles.unconfirmed}`}>
-      {labels[confidence] ?? confidence}
-    </span>
-  );
-}
-
-// Same information as ConfidenceBadge, quieter presentation -- a filled
-// pill on every row of a dense list (e.g. every contact) was flagged in
-// design review as "badge fatigue": once every item has a high-contrast
-// background, none of them read as a highlight anymore. A small dot plus
-// plain text carries the same signal without the visual weight.
-function ConfidenceDot({ confidence }: { confidence: string }) {
-  const dotCls: Record<string, string> = {
-    confirmed: "bg-[var(--color-green)]",
-    reported: "bg-[var(--color-amber)]",
-    unconfirmed: "bg-[var(--color-gray-400)]",
-  };
-  const textCls: Record<string, string> = {
-    confirmed: "text-[var(--color-green)]",
-    reported: "text-[var(--color-amber)]",
-    unconfirmed: "text-[var(--color-gray-400)]",
-  };
-  const labels: Record<string, string> = {
-    confirmed: "Confirmed",
-    reported: "Sources vary",
-    unconfirmed: "Not confirmed",
-  };
-  // Same rule as ConfidenceBadge -- see the note there.
-  if (confidence !== "unconfirmed") return null;
-  return (
-    <span className={`flex shrink-0 items-center gap-1 text-[10px] font-semibold uppercase tracking-wide ${textCls[confidence] ?? textCls.unconfirmed}`}>
-      <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${dotCls[confidence] ?? dotCls.unconfirmed}`} />
-      {labels[confidence] ?? confidence}
-    </span>
-  );
-}
-
-const EMPTY_FACT_VALUES = new Set(["Not reported", "None found yet"]);
-
-// ABSENCE WITH A REASON IS NOT AN EMPTY CELL.
+// Shared render for a single project's detail record -- used by both the
+// statically-generated pages (app/projects/[id]/page.tsx, top ~200 by score,
+// real SEO/JSON-LD) and the client-rendered fallback (app/projects/view/page.tsx)
+// that serves every other project at any scale. Server-rendered: everything
+// except tracking, the ask panel, the score breakdown popover, prev/next nav
+// and the tab switcher itself lives in the initial HTML, so a crawler or
+// curl sees the full record, not an empty shell.
 //
-// Fact below OMITS a card when the value is empty, and that rule stays -- a
-// column of bare "Not reported" makes a deep index look shallow. But omission
-// throws away real information when the absence is itself the signal, and on
-// a permit-sourced record it usually is: ALL 2,287 Wayne County projects we
-// hold have no owner, architect or GC, because a permit feed structurally
-// cannot carry those fields. That is a fact about the source, not about the
-// project, and a rep can act on the difference.
-//
-// The strongest case is the general contractor. No GC attached means the
-// project is PRE-AWARD, which is exactly the window where specification is
-// still open to influence -- the single most valuable thing this page can
-// tell a rep, and we were rendering it as a blank.
-//
-// So: state the absence and WHY, or omit. Never "Not reported", never "N/A",
-// never a muted dash -- those read as a broken scraper and invite the reader
-// to conclude the world is empty rather than our copy of it.
-// DERIVED SCOPE, AND THE LINE IT MUST NOT CROSS.
-//
-// A permit description is often the densest field on a permit-sourced record.
-// "Medical Office (Imaging, Theranostics, & RadioPharmacy); New" tells a rep
-// more about which trades matter than the other 17 populated fields together.
-// Surfacing that is legitimate. Surfacing it as though we read a spec book is
-// not, so the tier is carried on every row and rendered.
-//
-//   TIER 1  physical necessity -- the building cannot legally or physically
-//           function without the division. A radiopharmacy requires shielding.
-//   TIER 2  declared trades -- straight from the source's own competitor_watch.
-//   TIER 3  brand, material or grade. NEVER derived. EPDM vs TPO from
-//           "roofing", Trane vs Carrier from "HVAC", lead panel vs lead-lined
-//           gypsum from "shielding" -- all fabrication, all forbidden. There is
-//           deliberately no code path here that can produce one.
-type DerivedScope = { division: string; label: string; because: string; tier: 1 | 2 };
-
-const TRADE_TO_DIVISION: Record<string, { division: string; label: string }> = {
-  hvac: { division: "23", label: "Heating, ventilating & air conditioning" },
-  roofing: { division: "07", label: "Thermal & moisture protection" },
-  lighting: { division: "26", label: "Electrical & lighting" },
-  electrical: { division: "26", label: "Electrical & lighting" },
-  flooring: { division: "09", label: "Finishes" },
-  "fire suppression": { division: "21", label: "Fire suppression" },
-  plumbing: { division: "22", label: "Plumbing" },
-  openings: { division: "08", label: "Openings" },
-};
-
-// Tier 1 only. Each entry is a requirement the named use CANNOT be built
-// without -- not a trade that is merely likely.
-const SCOPE_IMPLICATIONS: { match: RegExp; division: string; label: string; because: string }[] = [
-  {
-    match: /radiopharmac|theranostic|nuclear medicine|cyclotron/i,
-    division: "13 49 00",
-    label: "Radiation protection",
-    because: "Radiopharmacy and isotope handling require shielded assemblies",
-  },
-  {
-    match: /imaging|\bMRI\b|\bCT\b|radiolog/i,
-    division: "21 22 00",
-    label: "Clean-agent fire suppression",
-    because: "Imaging equipment cannot be protected with water-based suppression",
-  },
-  {
-    match: /cleanroom|clean room|laborator|\blab\b/i,
-    division: "23 00 00",
-    label: "Controlled-environment HVAC",
-    because: "Controlled environments require pressure regimes and filtration",
-  },
-];
-
-function deriveScope(description: string, watch: string[]): DerivedScope[] {
-  const out: DerivedScope[] = [];
-  // Dedupe on the DIVISION NUMBER, not the full code. Tier 1 emits specific
-  // section numbers ("21 22 00" clean-agent suppression) while tier 2 emits
-  // bare divisions ("21" fire suppression), so a string-equality check let the
-  // same division render twice at two levels of precision -- which reads as a
-  // bug and, worse, makes a derived row look like two independent findings.
-  // Tier 1 runs first and wins, because the specific section is the more
-  // useful claim.
-  const seen = new Set<string>();
-  const divisionOf = (code: string) => code.trim().split(/\s+/)[0];
-
-  for (const imp of SCOPE_IMPLICATIONS) {
-    const div = divisionOf(imp.division);
-    if (imp.match.test(description) && !seen.has(div)) {
-      seen.add(div);
-      out.push({ division: imp.division, label: imp.label, because: imp.because, tier: 1 });
-    }
-  }
-  for (const w of watch) {
-    const m = TRADE_TO_DIVISION[w.toLowerCase().trim()];
-    if (m && !seen.has(divisionOf(m.division))) {
-      seen.add(divisionOf(m.division));
-      out.push({ ...m, because: "Named in the source record's trade list", tier: 2 });
-    }
-  }
-  return out;
-}
-
-/** Manufacturers actually named in the specification, each with the sentence
- *  that names them and the page it is on.
- *
- *  THIS IS THE STRONGEST CLAIM ON THE PAGE, so it is also the most tightly
- *  scoped. Every row carries a verbatim quote and a page number, because a
- *  citation the reader cannot check is not a citation -- and the whole product
- *  argument is that we cite the spec rather than infer from it.
- *
- *  DELIBERATELY NOT CALLED A RULING. The rows come from a table named
- *  substitution_rulings, but all of them carry ruling='pending' and
- *  confidence='reported': nobody approved or rejected anything. Calling this a
- *  ruling would claim an adjudication that never happened. It says what the
- *  specification NAMES, which is what a rep needs and all we can support.
- */
-/** Manufacturers named in the specification, with the sentence that names them.
- *
- *  LEADS WITH THE TRADE, NOT THE CODE. The first version headlined "DIVISION 03"
- *  and put "Concrete" in grey micro-text underneath. A CSI division number is
- *  filing metadata -- nobody scans a page looking for "03". A rep scans for
- *  their trade. So the trade name is the heading and the code is secondary,
- *  which costs nothing and makes the panel readable by someone who has never
- *  heard of MasterFormat.
- *
- *  AND IT SHOWS OPENNESS, which the first version computed and never displayed.
- *  That is the most commercially useful field on the page:
- *
- *    proprietary  one product, no substitution -- a locked job. The named
- *                 manufacturer defends it; everyone else is shut out and should
- *                 know before spending a bid cycle.
- *    or-equal     named product, substitution permitted -- a live opening, and
- *                 the approved-alternates list says exactly who may bid it.
- *    performance  requirements only, no product named -- open to anyone who
- *                 meets the spec.
- */
-function SpecCitationsPanel({ citations }: { citations: SpecCitation[] }) {
-  if (citations.length === 0) return null;
-
-  const OPENNESS: Record<string, { label: string; hint: string; cls: string }> = {
-    proprietary: {
-      label: "Locked",
-      hint: "Named with no substitution permitted",
-      cls: "bg-amber-100 text-amber-900 dark:bg-amber-950 dark:text-amber-300",
-    },
-    "or-equal": {
-      label: "Open to equals",
-      hint: "Named, but substitution is permitted",
-      cls: "bg-green-100 text-green-900 dark:bg-green-950 dark:text-green-300",
-    },
-    performance: {
-      label: "Performance spec",
-      hint: "Requirements only — no product named",
-      cls: "bg-sky-100 text-sky-900 dark:bg-sky-950 dark:text-sky-300",
-    },
-  };
-
-  const byDivision = new Map<string, SpecCitation[]>();
-  for (const c of citations) {
-    const k = c.csi_division || "—";
-    byDivision.set(k, [...(byDivision.get(k) ?? []), c]);
-  }
-
-  return (
-    <div className="mt-6 rounded-lg border border-green-700/30 bg-green-50/60 p-4 dark:bg-green-950/20">
-      <h3 className="text-xs font-bold uppercase tracking-wider text-green-900 dark:text-green-300">
-        Named in the specification
-      </h3>
-      <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
-        {citations.length} manufacturer{citations.length === 1 ? "" : "s"} quoted
-        from this project&rsquo;s own documents, with the page each appears on.
-      </p>
-
-      <div className="mt-3 space-y-4">
-        {[...byDivision.entries()].map(([div, rows]) => {
-          // The trade name is the heading. Fall back to the code only when the
-          // extractor gave us no name.
-          const trade = rows[0]?.csi_section || `Division ${div}`;
-          return (
-            <div key={div}>
-              <div className="flex items-baseline gap-2">
-                <span className="text-sm font-bold">{trade}</span>
-                {div !== "—" && (
-                  <span className="text-[10px] font-medium uppercase tracking-wide text-gray-400">
-                    CSI Division {div}
-                  </span>
-                )}
-              </div>
-              {rows.map((c, i) => {
-                const o = c.ruling ? OPENNESS[c.ruling] : undefined;
-                return (
-                  <div key={i} className="mt-1.5 border-l-2 border-green-700/40 pl-3">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span className="text-sm font-semibold">{c.manufacturer}</span>
-                      {o && (
-                        <span
-                          className={`rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide ${o.cls}`}
-                          title={o.hint}
-                        >
-                          {o.label}
-                        </span>
-                      )}
-                    </div>
-                    {o && (
-                      <div className="mt-0.5 text-[11px] text-gray-600 dark:text-gray-400">
-                        {o.hint}
-                      </div>
-                    )}
-                    {c.quoted_text && c.quoted_text.trim() ? (
-                      <blockquote className="mt-1 text-xs italic text-gray-700 dark:text-gray-300">
-                        &ldquo;{c.quoted_text}&rdquo;
-                      </blockquote>
-                    ) : c.ruling === "proprietary" ? (
-                      <p className="mt-1 text-xs font-medium text-amber-700 dark:text-amber-500">
-                        No &ldquo;or equal&rdquo; language appears — this product is
-                        specified outright.
-                      </p>
-                    ) : null}
-                    <div className="mt-0.5 text-[11px] text-gray-500">
-                      page {c.page_number}
-                      {c.source_url ? (
-                        <>
-                          {" · "}
-                          <a
-                            href={c.source_url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="underline hover:text-gray-700"
-                          >
-                            open the source document
-                          </a>
-                        </>
-                      ) : null}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          );
-        })}
-      </div>
-
-      <p className="mt-3 text-[11px] text-gray-500">
-        Quoted from documents we hold. Being named is not an award — a
-        specification can name a product and the job be built with another.
-      </p>
-    </div>
-  );
-}
-
-function DerivedScopePanel({ scope }: { scope: DerivedScope[] }) {
-  if (!scope.length) return null;
-  return (
-    <div className="mt-5 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)] p-4">
-      <p className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-gray-400)]">
-        Trades this scope requires
-      </p>
-      <ul className="mt-3 flex flex-col gap-2">
-        {scope.map((s) => (
-          <li key={s.division} className="flex flex-wrap items-baseline gap-x-2 text-sm">
-            <span className="font-mono text-xs font-semibold text-[var(--color-green)]">
-              Div {s.division}
-            </span>
-            <span className="font-medium">{s.label}</span>
-            <span className="text-xs text-[var(--color-gray-600)]">— {s.because}</span>
-          </li>
-        ))}
-      </ul>
-      {/* The whole panel is worthless without this line. It is the difference
-          between "this project needs radiation shielding" and "this project
-          specified a shielding manufacturer", and only one of those is true. */}
-      <p className="mt-3 text-[11px] leading-snug text-[var(--color-gray-600)]">
-        Requirements implied by the declared scope — not products selected on this
-        project. No manufacturer can be named without a specification document.
-      </p>
-    </div>
-  );
-}
-
-function AbsentFact({
-  label,
-  reason,
-  signal,
-}: {
-  label: string;
-  reason: string;
-  signal?: string;
-}) {
-  return (
-    <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)] p-3">
-      <dt className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-gray-400)]">
-        {label}
-      </dt>
-      <dd className="mt-1 text-sm font-medium text-[var(--color-gray-600)]">{reason}</dd>
-      {signal && (
-        <p className="mt-1.5 text-[11px] leading-snug text-[var(--color-green)]">{signal}</p>
-      )}
-    </div>
-  );
-}
-
-function Fact({
-  label,
-  value,
-  mono,
-  confidence,
-}: {
-  label: string;
-  value: string;
-  mono?: boolean;
-  confidence?: string;
-}) {
-  // OMIT the card, do not mute it. An earlier pass greyed empty values on the
-  // theory that keeping the cell preserved the layout. It does not preserve
-  // anything worth having: a record with "Not reported" under Square footage,
-  // Architect and Brands mentioned reads as a THIN record, when the truth is
-  // that a permit simply does not carry those fields. Repeated down a column
-  // it makes a deep index look shallow, which is the opposite of the argument
-  // this product makes.
-  //
-  // "Never render an empty field. Omit the card." -- 03_project_record.md,
-  // slot 04. The grid reflows to however many real facts exist.
-  const isEmpty = !value || EMPTY_FACT_VALUES.has(value);
-  if (isEmpty) return null;
-  return (
-    <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)] p-3">
-      <dt className="text-[10px] font-semibold uppercase tracking-wider text-[var(--color-gray-400)]">
-        {label}
-      </dt>
-      <dd
-        className={`mt-1 text-sm font-medium ${mono ? "font-mono text-xs" : ""}`}
-      >
-        {/* Badge stacked below the value, not centered beside it -- a
-            long value (e.g. "Hyundai Engineering America, Inc.")
-            wraps to several lines in these narrow KPI cells, and
-            items-center was vertically centering the badge against
-            that whole wrapped block instead of sitting cleanly with
-            it. Stacking keeps the badge inside the box regardless of
-            how many lines the value wraps to. */}
-        <span className="break-words">{value}</span>
-        {confidence && (
-          <span className="mt-1.5 block w-fit">
-            <ConfidenceBadge confidence={confidence} />
-          </span>
-        )}
-      </dd>
-    </div>
-  );
-}
-
-// Same green/amber/gray tier scale ProjectScoreBadge used before the score
-// moved into the hero card -- shared so the sticky bar (visible from the
-// moment the page loads) and the hero's own score box never disagree on
-// what color a given score means, which an independent design review
-// flagged as exactly this kind of mismatch.
-function scoreTier(total: number) {
-  if (total >= 70) {
-    return {
-      label: "High priority",
-      textCls: "text-[var(--color-green)]",
-      dotCls: "bg-[var(--color-green)]",
-      chipCls: "bg-[var(--color-green-light)] text-[var(--color-green)]",
-    };
-  }
-  if (total >= 40) {
-    return {
-      label: "Watch",
-      textCls: "text-[var(--color-amber)]",
-      dotCls: "bg-[var(--color-amber)]",
-      chipCls: "bg-[var(--color-amber)]/10 text-[var(--color-amber)]",
-    };
-  }
-  return {
-    label: "Low signal",
-    textCls: "text-[var(--color-gray-600)]",
-    dotCls: "bg-[var(--color-gray-400)]",
-    chipCls: "bg-[var(--color-gray-100)] text-[var(--color-gray-600)]",
-  };
-}
-
-// The base corpus row for owner/architect/GC can lag behind the enrichment
-// pipeline's confirmed team data -- this project is a real example: the
-// base row has architect/general_contractor as empty strings while
-// enrichment.team has both confirmed. Rather than show "Not reported"
-// right above a "Confirmed" answer for the same field further down the
-// same page (caught in design review), fall back to the matching team
-// fact and show its confidence badge so it's clear where the value came
-// from.
-function findTeamFact(project: Project, keyPrefix: string) {
-  return project.enrichment?.team.find(
-    (f) => f.field_key === keyPrefix || f.field_key.startsWith(`${keyPrefix}_`),
-  );
-}
-
-const TIMELINE_EVENT_LABELS: Record<string, string> = {
-  Announced: "Announced",
-  Design_Started: "Design started",
-  Permit_Issued: "Permit issued",
-  Bid_Opened: "Bid opened",
-  Awarded: "Awarded",
-  Groundbroken: "Groundbroken",
-};
-
-type FeedItem = {
-  id: string;
-  type: "AI_SIGNAL" | "NEWS";
-  source: string;
-  time: string;
-  title: string;
-  url?: string | null;
-  body?: string | null;
-};
-
-// The artifact's "Workspace & Activity Feed" mixes two real, already-
-// fetched sources into one filterable timeline rather than each living in
-// its own disconnected section: project.timeline (permit/bid/award
-// milestones, real dates) and enrichment.permit (filings without dates)
-// become AI_SIGNAL entries; project.news becomes NEWS entries. This is
-// the same content previously split across a standalone Timeline section
-// and a standalone "Related news" sidebar card -- merged here to match
-// the artifact's exact section list instead of carrying both old and new
-// versions of the same information.
-function buildFeedItems(project: Project): FeedItem[] {
-  const signals: FeedItem[] = [
-    ...project.timeline.map((t, i) => ({
-      id: `timeline-${i}-${t.event_type}`,
-      type: "AI_SIGNAL" as const,
-      source: t.source_name,
-      time: formatDate(t.event_date ?? undefined),
-      title: TIMELINE_EVENT_LABELS[t.event_type] ?? t.event_type,
-      url: t.source_url,
-      body: null,
-    })),
-    ...(project.enrichment?.permit ?? []).map((f) => ({
-      id: `permit-${f.field_key}`,
-      type: "AI_SIGNAL" as const,
-      source: "Permit filing",
-      time: "",
-      title: f.label,
-      url: null,
-      body: f.value,
-    })),
-  ];
-  const news: FeedItem[] = project.news.map((n) => ({
-    id: `news-${n.url}`,
-    type: "NEWS" as const,
-    source: n.source_name ?? "News",
-    time: n.published_at ? formatDate(n.published_at.slice(0, 10)) : "",
-    title: n.title,
-    url: n.url,
-    body: null,
-  }));
-  return [...signals, ...news];
-}
-
-function ActivityFeed({ project }: { project: Project }) {
-  const [filter, setFilter] = useState<"ALL" | "AI_SIGNAL" | "NEWS">("ALL");
-  const items = buildFeedItems(project);
-  if (items.length === 0) return null;
-  const filtered = items.filter((item) => filter === "ALL" || item.type === filter);
-
-  return (
-    <div className="card p-5">
-      <div className="flex items-center justify-between gap-2 border-b border-[var(--color-border)] pb-3">
-        <h3 className="text-xs font-semibold uppercase tracking-wide text-[var(--color-gray-400)]">
-          Workspace &amp; activity feed
-        </h3>
-        <div className="flex items-center gap-0.5 rounded-lg bg-[var(--color-gray-100)] p-0.5 text-[10px] font-semibold">
-          {(["ALL", "AI_SIGNAL", "NEWS"] as const).map((f) => (
-            <button
-              key={f}
-              type="button"
-              onClick={() => setFilter(f)}
-              aria-pressed={filter === f}
-              className={`rounded-md px-2 py-1 transition ${
-                filter === f ? "bg-white text-[var(--color-ink)] shadow-sm" : "text-[var(--color-gray-600)]"
-              }`}
-            >
-              {f === "ALL" ? "All" : f === "AI_SIGNAL" ? "AI Signals" : "News"}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <div className="mt-3 space-y-3">
-        {filtered.map((item) => (
-          <div
-            key={item.id}
-            className={`rounded-lg border p-3 text-xs ${
-              item.type === "AI_SIGNAL"
-                ? "border-[var(--color-green)]/20 bg-[var(--color-green-light)]/30"
-                : "border-[var(--color-border)] bg-[var(--color-bg)]"
-            }`}
-          >
-            <div className="flex items-center justify-between gap-2">
-              <span className="font-semibold text-[var(--color-ink)]">{item.source}</span>
-              {item.time && (
-                <span className="shrink-0 font-mono text-[10px] text-[var(--color-gray-400)]">{item.time}</span>
-              )}
-            </div>
-            {item.url ? (
-              <a
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-1 flex items-start gap-1 text-xs font-medium leading-snug text-blue-600 hover:text-blue-700 hover:underline"
-              >
-                {item.title}
-                <span className="shrink-0 text-[var(--color-gray-400)]">↗</span>
-              </a>
-            ) : (
-              <p className="mt-1 text-xs font-medium leading-snug text-[var(--color-ink)]">{item.title}</p>
-            )}
-            {item.body && (
-              <p className="mt-1 text-xs leading-relaxed text-[var(--color-gray-600)]">{item.body}</p>
-            )}
-          </div>
-        ))}
-        {filtered.length === 0 && (
-          <p className="py-4 text-center text-xs text-[var(--color-gray-400)]">Nothing in this filter yet.</p>
-        )}
-      </div>
-    </div>
-  );
-}
-
-// Compose a location from the parts that EXIST, so a missing part cannot
-// leave its separator behind. The old inline version hardcoded the commas and
-// rendered ", Georgia" for a project with no city.
-function locationLine(project: { city?: string | null; county?: string | null; state?: string | null }): string {
-  return [
-    project.city?.trim() || null,
-    project.county?.trim() ? `${project.county.trim()} County` : null,
-    project.state?.trim() ? stateName(project.state) : null,
-  ]
-    .filter(Boolean)
-    .join(", ");
-}
-
-export function ProjectDetailView({ project: initialProject }: { project: Project }) {
-  const [project, setProject] = useState(initialProject);
-  const [showBreakdown, setShowBreakdown] = useState(false);
-  const scoreRef = useRef<HTMLDivElement>(null);
-  const { isLoaded, isSignedIn, getToken } = useFirebaseAuthOptional() ?? {
-    isLoaded: true,
-    isSignedIn: false,
-    getToken: async () => null,
-  };
-  // True once the signed-in refetch below has swapped the teaser for the full
-  // record. Needed because "gated" and "not yet upgraded" look identical in
-  // the data and must not look identical on screen.
-  const [upgraded, setUpgraded] = useState(false);
-
-  // The static build only ever bakes in the public teaser (see
-  // app/projects/[id]/page.tsx's generateStaticParams, an unauthenticated
-  // build-time fetch) -- a signed-in visitor's session has no effect on
-  // that HTML. Re-fetch with the real bearer token once one is available
-  // and swap in the full record, same pattern PipelineBox already uses for
-  // tracked-project state.
-  useEffect(() => {
-    if (!initialProject.gated || !isSignedIn) return;
-    let cancelled = false;
-    getToken().then((token) => {
-      if (!token || cancelled) return;
-      fetchProjectForSignedInUser(initialProject.id, token).then((full) => {
-        if (cancelled) return;
-        if (full) setProject(full);
-        setUpgraded(true);
-      });
-    });
-    return () => {
-      cancelled = true;
-    };
-  }, [initialProject.gated, initialProject.id, isSignedIn, getToken]);
-  const hasEnrichment = Boolean(
-    project.enrichment &&
-      (project.enrichment.executive_brief.length ||
-        project.enrichment.csi_scope.length ||
-        project.enrichment.team.length ||
-        project.enrichment.contact.length ||
-        project.enrichment.permit.length),
-  );
-  // How many documents we actually hold for this project. Scopes every
-  // absence claim on the page: "not determinable" when we hold none,
-  // "none named in the N we hold" when we do. Never an unqualified "none".
+// One template renders both a "deep" record (documents + citations) and a
+// "shallow" one (zero documents) -- every section below has a written empty
+// state for the shallow case rather than a blank card.
+export function ProjectDetailView({ project }: { project: Project }) {
   const documentCount = project.document_count ?? 0;
   const citations = project.spec_citations ?? [];
-  const derivedScope = deriveScope(
-    project.description ?? "",
-    project.competitor_watch ?? [],
-  );
+  const derivedScope = deriveScope(project.description ?? "", project.competitor_watch ?? []);
   const gcFact = !project.general_contractor ? findTeamFact(project, "general_contractor") : undefined;
   const architectFact = !project.architect ? findTeamFact(project, "architect") : undefined;
+  const feedItems = buildFeedItems(project);
+  const hasDocuments = documentCount > 0 && citations.length > 0;
 
-  useEffect(() => {
-    function onPointerDown(e: MouseEvent) {
-      if (scoreRef.current && !scoreRef.current.contains(e.target as Node)) {
-        setShowBreakdown(false);
-      }
-    }
-    function onKeyDown(e: KeyboardEvent) {
-      if (e.key === "Escape") setShowBreakdown(false);
-    }
-    document.addEventListener("mousedown", onPointerDown);
-    document.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.removeEventListener("mousedown", onPointerDown);
-      document.removeEventListener("keydown", onKeyDown);
-    };
-  }, []);
+  // The "read" panel inverts styling by record depth: a record with nothing
+  // cited does not get the dark hero treatment, or every record looks
+  // equally authoritative and none of them are trusted.
+  const readHeadline = hasDocuments
+    ? `${citations.length} manufacturer${citations.length === 1 ? "" : "s"} named across this project's own specification documents.`
+    : `A discovered project. No specification document has been read yet, so no manufacturer can be named.`;
+  const readStats: { num: string; text: string }[] = hasDocuments
+    ? [
+        { num: String(citations.length), text: "manufacturers cited" },
+        { num: String(documentCount), text: `document${documentCount === 1 ? "" : "s"} held` },
+        { num: String(derivedScope.length + (project.enrichment?.csi_scope.length ?? 0)), text: "divisions in scope" },
+      ]
+    : [
+        { num: project.general_contractor || gcFact?.value ? "1" : "0", text: "general contractor known" },
+        { num: String(derivedScope.length), text: "trades implied by scope" },
+        { num: String(project.mentioned_brands.length), text: "brands mentioned" },
+      ];
+  // A row of three "0" stat tiles right above the facts grid below (which
+  // already states the same absences in "Unassigned, pre-award" style text)
+  // repeats one piece of information twice in two different visual systems
+  // within ~150px of each other. When there's genuinely nothing to point to,
+  // skip the tiles entirely rather than give zero weight the same prominent
+  // elevated-card treatment as a real number.
+  const readStatsAllZero = readStats.every((s) => s.num === "0");
+
+  const facts: { label: string; value: string; mono?: boolean }[] = [
+    { label: "Estimated value", value: formatUsd(project.estimated_value_usd) },
+    { label: "Opened / announced", value: formatDate(project.opened_or_announced_date), mono: true },
+  ].filter((f) => f.value && !EMPTY_FACT_VALUES.has(f.value));
+
+  const teamCount = project.enrichment?.team.length ?? 0;
+  const tabCounts = {
+    brief: 1,
+    scope: derivedScope.length + (project.enrichment?.csi_scope.length ?? 0),
+    spec: citations.length,
+    team: teamCount,
+    documents: project.documents?.length ?? 0,
+  };
 
   return (
-    <article className="bg-[var(--color-bg)]">
-      {/* Sticky title+score bar -- stays visible while scrolling the long
-          write-up below, so the score and identity don't disappear the
-          moment someone starts reading (per docs/ROADMAP.md item 52). */}
-      <div className="sticky top-14 z-40 border-b border-[var(--color-border)] bg-white/95 backdrop-blur-sm">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-2.5 md:px-8">
-          <p className="truncate text-sm font-medium text-[var(--color-ink)]">{project.name}</p>
-          {project.score && (
-            <span
-              className={`flex shrink-0 items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold ${scoreTier(project.score.total).chipCls}`}
-            >
-              <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${scoreTier(project.score.total).dotCls}`} />
-              {project.score.total}/100
-            </span>
-          )}
-        </div>
-      </div>
-
-      <div className="border-b border-[var(--color-border)] bg-[var(--color-bg)]">
-        <div className="mx-auto max-w-6xl px-5 py-8 md:px-8 md:py-10">
-          <Link
-            href="/projects/"
-            className="text-sm font-medium text-[var(--color-gray-600)] hover:text-[var(--color-ink)]"
-          >
+    <article style={{ background: "var(--sx-page-bg)" }}>
+      <div style={{ maxWidth: 1320, margin: "0 auto", padding: "20px 32px 80px" }}>
+        {/* Grounding strip */}
+        <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "12px 20px", marginBottom: 16 }}>
+          <Link href="/projects/" style={{ fontSize: 13.5, color: "var(--sx-muted)" }}>
             ← All projects
           </Link>
-
           {FIREBASE_AUTH_ENABLED && <TriageNav projectId={project.id} />}
-
-          {/* DO NOT ANNOUNCE A GATE THAT IS ABOUT TO LIFT. The static HTML is
-              built unauthenticated, so every project arrives gated. A signed-in
-              visitor therefore saw this amber "sign in to see more" panel flash
-              up and vanish a moment later, once Firebase restored the session
-              and the refetch below swapped in the full record.
-              Telling a signed-in rep to sign in, for half a second, on every
-              project they open, reads as the page breaking.
-              So it renders only when we actually KNOW the visitor is gated:
-              auth resolved, and either not signed in or the upgrade came back
-              still gated. */}
-          {project.gated && isLoaded && (!isSignedIn || upgraded) && (
-            <div className="mt-5 rounded-lg border border-[var(--color-amber)] bg-[#fffbeb] p-4 text-sm text-[var(--color-ink)]">
-              You&apos;re seeing the public summary. Sign in to see estimated value,
-              square footage, owner, architect, general contractor, and sourced
-              documents for this project.
+          {project.enrichment?.checked_at && (
+            <div style={{ marginLeft: "auto", display: "flex", flexWrap: "wrap", alignItems: "center", gap: 8, fontFamily: "var(--font-mono)", fontSize: 11 }}>
+              <span style={{ color: "var(--sx-muted)", letterSpacing: 0.5 }}>AI GROUNDING</span>
+              {["search-grounded discovery", "cross-verified, 2nd pass", "links live-checked"].map((step, i, arr) => (
+                <span key={step} style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                  <span style={{ background: "var(--sx-chip)", color: "var(--sx-forest)", padding: "4px 9px", borderRadius: 5 }}>{step}</span>
+                  {i < arr.length - 1 && <span style={{ color: "var(--sx-muted-light)" }}>→</span>}
+                </span>
+              ))}
+              <span style={{ color: "var(--sx-muted)", marginLeft: 4 }}>{formatDate(project.enrichment.checked_at.slice(0, 10))}</span>
             </div>
           )}
+        </div>
 
-          {hasEnrichment && (
-            <div className="mt-5">
-              <PipelineBar checkedAt={project.enrichment?.checked_at} />
-            </div>
-          )}
+        {project.gated && <GatedBanner />}
 
-          <div className="card mt-5 space-y-6 p-6 md:p-8">
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
-              <div>
-                <div className="flex flex-wrap items-center gap-3">
-                  <StatusPill status={project.status} />
-                  <span className="text-sm text-[var(--color-gray-600)]">
-                    {typeLabel(project.project_type)}
-                  </span>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 26, alignItems: "flex-start" }}>
+          <main style={{ flex: "1 1 660px", minWidth: 0, display: "flex", flexDirection: "column", gap: 16 }}>
+            {/* Hero */}
+            <section style={{ background: "#fff", border: "1px solid var(--sx-line)", borderRadius: 16, padding: "28px 30px 26px" }}>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 20, alignItems: "flex-start", marginBottom: 22 }}>
+                <div style={{ flex: "1 1 340px", minWidth: 0 }}>
+                  <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 10, marginBottom: 12 }}>
+                    <StatusPill status={project.status} />
+                    <span style={{ fontSize: 13.5, color: "var(--sx-muted)" }}>{typeLabel(project.project_type)}</span>
+                  </div>
+                  <h1
+                    style={{
+                      fontFamily: "var(--font-display)",
+                      fontSize: 35,
+                      lineHeight: 1.09,
+                      letterSpacing: -1.1,
+                      fontWeight: 700,
+                      margin: "0 0 10px",
+                    }}
+                  >
+                    {toDisplayCase(project.name)}
+                  </h1>
+                  <div style={{ fontFamily: "var(--font-mono)", fontSize: 12.5, color: "var(--sx-muted)", marginBottom: 7 }}>
+                    {project.spx_id}
+                    {project.first_seen_at && <span> · Source data pulled {formatDate(project.first_seen_at.slice(0, 10))}</span>}
+                  </div>
+                  {locationLine(project) && <div style={{ fontSize: 14.5 }}>{locationLine(project)}</div>}
                 </div>
-                <h1 className="mt-3 text-2xl font-bold tracking-tight text-[var(--color-ink)] sm:text-3xl">
-                  {project.name}
-                </h1>
-                <p className="mt-2 font-mono text-xs text-[var(--color-gray-400)]">
-                  {project.spx_id}
-                  {/* Real project_sources ingestion date -- when SpecIndex
-                      last pulled/re-loaded this project's record from its
-                      original public source, distinct from the AI
-                      enrichment pipeline's own "page updated" timestamp
-                      shown above in PipelineBar. */}
-                  {project.first_seen_at && (
-                    <span className="ml-2 text-[var(--color-gray-400)]">
-                      · Source data pulled {formatDate(project.first_seen_at.slice(0, 10))}
-                    </span>
-                  )}
-                </p>
-                {/* Phase 0 item 8. This previously emitted a LEADING COMMA
-                    whenever city was empty -- the live record for B28 rendered
-                    ", Georgia". The separator was hardcoded between the parts
-                    rather than derived from which parts exist, so a missing
-                    part left its punctuation behind. Compose from the parts
-                    that are actually present and join once. */}
-                {locationLine(project) ? (
-                  <p className="mt-2 text-sm text-[var(--color-gray-600)]">
-                    {locationLine(project)}
-                  </p>
-                ) : null}
+
+                <div style={{ flex: "0 0 auto", display: "flex", flexWrap: "wrap", gap: 10, alignItems: "flex-start" }}>
+                  <ScoreCard score={project.score} />
+                  {FIREBASE_AUTH_ENABLED && <PipelineBox projectId={project.id} />}
+                </div>
               </div>
 
-              <div className="flex shrink-0 items-start gap-3">
-              {project.score && (() => {
-                const tier = scoreTier(project.score.total);
-                return (
-                  <div className="relative shrink-0" ref={scoreRef}>
+              {/* The read panel */}
+              <div
+                style={{
+                  background: hasDocuments ? "var(--sx-forest)" : "var(--sx-page-bg)",
+                  border: hasDocuments ? "none" : "1px solid var(--sx-line)",
+                  borderRadius: 14,
+                  padding: "22px 24px",
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: 11,
+                    fontWeight: 700,
+                    letterSpacing: 2.2,
+                    textTransform: "uppercase",
+                    color: hasDocuments ? "var(--sx-muted-light)" : "var(--sx-green)",
+                    marginBottom: 11,
+                  }}
+                >
+                  The read
+                </div>
+                <p
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    fontSize: 21,
+                    lineHeight: 1.36,
+                    fontWeight: 600,
+                    letterSpacing: -0.4,
+                    color: hasDocuments ? "#fff" : "var(--sx-ink)",
+                    margin: "0 0 15px",
+                  }}
+                >
+                  {readHeadline}
+                </p>
+                <div style={{ display: readStatsAllZero ? "none" : "flex", flexWrap: "wrap", gap: 10 }}>
+                  {readStats.map((s) => (
                     <div
-                      onClick={() => setShowBreakdown((v) => !v)}
-                      onKeyDown={(e) => {
-                        if (e.key === "Enter" || e.key === " ") {
-                          e.preventDefault();
-                          setShowBreakdown((v) => !v);
-                        }
+                      key={s.text}
+                      style={{
+                        flex: "1 1 172px",
+                        background: hasDocuments ? "rgba(255,255,255,0.09)" : "#fff",
+                        borderRadius: 10,
+                        padding: "14px 16px",
                       }}
-                      role="button"
-                      tabIndex={0}
-                      aria-haspopup="true"
-                      aria-expanded={showBreakdown}
-                      className="flex cursor-pointer items-center gap-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-4 shadow-sm transition hover:bg-[var(--color-gray-100)] focus:outline-none focus:ring-2 focus:ring-[var(--color-green)]"
                     >
-                      <div className="text-center">
-                        <div className={`font-mono text-3xl font-black tracking-tight ${tier.textCls}`}>
-                          {project.score.total}
-                          <span className="text-xs font-normal text-[var(--color-gray-400)]">/100</span>
-                        </div>
-                        <span className="text-[10px] font-bold uppercase tracking-wider text-[var(--color-gray-600)]">
-                          Priority score
-                        </span>
+                      <div
+                        style={{
+                          fontFamily: "var(--font-display)",
+                          fontSize: 27,
+                          fontWeight: 700,
+                          letterSpacing: -1,
+                          lineHeight: 1,
+                          color: s.num === "0" ? (hasDocuments ? "var(--sx-muted-light)" : "var(--sx-faint)") : hasDocuments ? "#fff" : "var(--sx-forest)",
+                        }}
+                      >
+                        {s.num}
                       </div>
-                      <div className="h-10 w-px bg-[var(--color-border)]" />
-                      <div className="space-y-1 text-xs">
-                        <div className={`flex items-center gap-1.5 font-semibold ${tier.textCls}`}>
-                          <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${tier.dotCls}`} />
-                          {tier.label}
-                        </div>
-                        <div className="text-[11px] text-[var(--color-gray-400)]">Click for breakdown</div>
+                      <div style={{ fontSize: 12.5, lineHeight: 1.45, color: hasDocuments ? "var(--sx-on-forest)" : "var(--sx-muted)", marginTop: 5 }}>
+                        {s.text}
                       </div>
                     </div>
-
-                    {showBreakdown && (
-                      <div className="absolute right-0 top-full z-50 mt-2 w-64 space-y-3 rounded-xl border border-[var(--color-border)] bg-white p-4 text-xs shadow-xl">
-                        <div className="flex items-center justify-between border-b border-[var(--color-border)] pb-2">
-                          <strong className="font-bold text-[var(--color-ink)]">Score breakdown</strong>
-                          <button
-                            onClick={() => setShowBreakdown(false)}
-                            aria-label="Close score breakdown"
-                            className="text-[var(--color-gray-400)] hover:text-[var(--color-ink)]"
-                          >
-                            ✕
-                          </button>
-                        </div>
-                        {/* Scoring v2. The maxima here were STALE -- this
-                            block still read Value/40, Recency/35, News/25
-                            after the composite changed to 30/25/45, so every
-                            number a rep audited was measured against the wrong
-                            denominator. News is gone entirely: it fired on 5
-                            projects out of 591,618.
-
-                            Spec position is shown even when it is 0, and
-                            labelled, because it is the largest component and
-                            is currently absent on ~99.7% of the corpus. A
-                            silent 0 would read as "this project scores badly
-                            on spec position" when the truth is "we have not
-                            read any documents for it." */}
-                        <div className="space-y-2 text-[var(--color-gray-600)]">
-                          <div className="flex items-center justify-between">
-                            <span>Value</span>
-                            <span className="font-mono font-bold text-[var(--color-green)]">
-                              {project.score.value}/30
-                            </span>
-                          </div>
-                          <div className="flex items-center justify-between">
-                            <span>Recency</span>
-                            <span className="font-mono font-bold text-[var(--color-green)]">
-                              {project.score.recency}/25
-                            </span>
-                          </div>
-                          <div className="flex items-center justify-between">
-                            <span>Spec position</span>
-                            <span className="font-mono font-bold text-[var(--color-green)]">
-                              {project.score.position ?? 0}/45
-                            </span>
-                          </div>
-                          {!project.score.position && (
-                            <p className="pt-1 text-xs leading-relaxed text-[var(--color-gray-400)]">
-                              No spec position yet — no manufacturer has been found in
-                              documents we hold for this project. This is the largest part
-                              of the score, so it is scored low for lack of evidence, not
-                              because the project is a poor fit.
-                            </p>
-                          )}
-                        </div>
-                        <div className="flex justify-between border-t border-[var(--color-border)] pt-2 font-bold text-[var(--color-ink)]">
-                          <span>Total</span>
-                          <span className="font-mono text-[var(--color-green)]">{project.score.total} / 100</span>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                );
-              })()}
-              {FIREBASE_AUTH_ENABLED && <PipelineBox projectId={project.id} />}
-              </div>
-            </div>
-
-            {/* KPI grid -- moved in from a standalone "Fact grid" section
-                to live inside the hero card, matching the artifact's exact
-                layout (title+score row, then a KPI strip underneath,
-                nothing else in between). */}
-            <dl className="grid grid-cols-2 gap-3 border-t border-[var(--color-border)] pt-6 text-xs md:grid-cols-3 lg:grid-cols-6">
-              {/* Project ID card removed: the SPX id already appears under the
-                  title. "Show the SPX id once on the page" -- slot 01. */}
-              <Fact label="Estimated value" value={formatUsd(project.estimated_value_usd)} />
-              <Fact label="Opened / announced" value={formatDate(project.opened_or_announced_date)} />
-
-              {project.square_footage ? (
-                <Fact label="Square footage" value={formatSf(project.square_footage)} />
-              ) : (
-                <AbsentFact
-                  label="Square footage"
-                  reason="Not stated in the source record"
-                  // Deliberately NOT estimated from value. A commercial
-                  // estimator spots a value-divided-by-cost-per-sf figure
-                  // immediately, and a synthetic number costs more trust than
-                  // a stated absence.
-                />
-              )}
-
-              {project.owner ? (
-                <Fact label="Owner" value={project.owner} />
-              ) : (
-                <AbsentFact label="Owner" reason="Not disclosed in the permit filing" />
-              )}
-
-              {project.general_contractor || gcFact?.value ? (
-                <Fact
-                  label="General contractor"
-                  value={project.general_contractor || gcFact!.value}
-                  confidence={gcFact?.confidence}
-                />
-              ) : (
-                <AbsentFact
-                  label="General contractor"
-                  reason="Unassigned at time of filing"
-                  signal="Pre-award — specification is still open"
-                />
-              )}
-
-              {project.architect || architectFact?.value ? (
-                <Fact
-                  label="Architect"
-                  value={project.architect || architectFact!.value}
-                  confidence={architectFact?.confidence}
-                />
-              ) : (
-                <AbsentFact label="Architect" reason="Unlisted in the source record" />
-              )}
-
-              {/* CITATIONS FIRST. This card read only `mentioned_brands`, a
-                  legacy press-mention field, so a project with NINE cited
-                  manufacturers rendered "None named in the 1 document we hold"
-                  directly above a panel listing all nine. Two readers, two
-                  tables, one page contradicting itself -- and the card is the
-                  part a prospect reads first.
-
-                  A cited manufacturer is a stronger claim than a press mention:
-                  it comes with a division, a page and a public URL. So it wins. */}
-              {citations.length ? (
-                <Fact
-                  label="Manufacturers named"
-                  value={`${citations.length} in the specification`}
-                />
-              ) : project.mentioned_brands.length ? (
-                <Fact label="Brands mentioned" value={project.mentioned_brands.join(", ")} />
-              ) : (
-                <AbsentFact
-                  label="Manufacturers named"
-                  // Scoped to what we HOLD. "None found" would say the
-                  // specification names nobody, which we cannot know without
-                  // reading it.
-                  reason={
-                    documentCount === 0
-                      ? "Not determinable — no documents held for this project"
-                      : `None named in the ${documentCount} document${documentCount === 1 ? "" : "s"} we hold`
-                  }
-                />
-              )}
-            </dl>
-            <SpecCitationsPanel citations={citations} />
-            <DerivedScopePanel scope={derivedScope} />
-          </div>
-        </div>
-      </div>
-
-      {/* Two-column workspace layout -- left carries the narrative
-          (executive brief, CSI scope, team), right is the lookup rail
-          (activity feed, permits, contacts). 7/5 split matches the
-          ProjectDetailLight design artifact exactly, rather than the
-          8/4-ish "content column + sidebar" split this page used before. */}
-      <div className="mx-auto grid max-w-6xl gap-8 px-5 py-10 md:px-8 md:py-12 lg:grid-cols-12">
-        {/* LEFT: narrative */}
-        <div className="lg:col-span-7 space-y-8">
-          {/* Raw corpus description/key-specs only stand in for the
-              enrichment pipeline's executive brief when that hasn't run
-              yet for this project -- once it has, the two would say the
-              same thing twice, and the artifact this page matches doesn't
-              carry both. */}
-          {!project.enrichment?.executive_brief.length && (
-            <section>
-              <h2 className="text-base font-bold">Project overview</h2>
-              <p className="mt-3 text-xs leading-relaxed text-[var(--color-gray-600)]">
-                {project.description}
-              </p>
-              {project.key_specs.length > 0 && (
-                <ul className="mt-4 list-disc space-y-2 pl-5 text-xs text-[var(--color-gray-600)]">
-                  {project.key_specs.map((spec) => (
-                    <li key={spec}>{spec}</li>
                   ))}
-                </ul>
-              )}
-            </section>
-          )}
-
-          {project.enrichment?.executive_brief.length ? (
-            <section>
-              <div className="flex flex-wrap items-center gap-2">
-                <h2 className="text-base font-bold">Executive brief</h2>
-                <ConfidenceBadge confidence={project.enrichment.executive_brief[0].confidence} />
+                </div>
               </div>
-              <p className="mt-3 text-xs leading-relaxed text-[var(--color-gray-600)]">
-                {project.enrichment.executive_brief[0].value}
-              </p>
-              {project.enrichment.executive_brief[0].sources && (
-                <p className="mt-2 text-xs text-[var(--color-gray-400)]">
-                  {displaySource(project.enrichment.executive_brief[0].sources)}
-                </p>
-              )}
-            </section>
-          ) : null}
 
-          {project.enrichment?.csi_scope.length ? (
-            <section>
-              <h2 className="text-base font-bold">CSI scope matrix</h2>
-              <div className="mt-4 space-y-3">
-                {project.enrichment.csi_scope.map((fact) => (
-                  <div key={fact.field_key} className="card p-4">
-                    <div className="flex items-start justify-between gap-3">
-                      <p className="text-xs font-semibold">{fact.label}</p>
-                      <ConfidenceBadge confidence={fact.confidence} />
-                    </div>
-                    <p className="mt-1.5 text-xs leading-relaxed text-[var(--color-gray-600)]">{fact.value}</p>
-                    {fact.sources && (
-                      <p className="mt-1.5 text-xs text-[var(--color-gray-400)]">{displaySource(fact.sources)}</p>
-                    )}
-                  </div>
+              {/* Facts grid. Flex-wrap, not CSS grid: with a variable fact
+                  count the last row is rarely full, and grid reserves that
+                  row's remaining column tracks as real (if empty) space --
+                  the row above's own bottom hairline plus the container's
+                  right/bottom border then frame that empty space as a
+                  hollow box. Flex items claim no space beyond their own
+                  content, so an incomplete last row simply ends with
+                  nothing to outline. Cells draw their own hairlines via
+                  box-shadow. See Fact/AbsentFactCell. */}
+              <div
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  background: "#fff",
+                  border: "1px solid var(--sx-line)",
+                  borderRadius: 12,
+                  overflow: "hidden",
+                  marginTop: 20,
+                }}
+              >
+                {facts.map((f) => (
+                  <Fact key={f.label} label={f.label} value={f.value} mono={f.mono} />
                 ))}
+                {project.square_footage ? (
+                  <Fact label="Square footage" value={formatSf(project.square_footage)} />
+                ) : (
+                  <AbsentFactCell label="Square footage" reason="Not stated in the source record" />
+                )}
+                {project.owner ? (
+                  <Fact label="Owner" value={toDisplayCase(project.owner)} />
+                ) : (
+                  <AbsentFactCell label="Owner" reason="Not disclosed in the source record" />
+                )}
+                {project.general_contractor || gcFact?.value ? (
+                  <Fact label="General contractor" value={toDisplayCase(project.general_contractor || gcFact!.value)} />
+                ) : (
+                  <AbsentFactCell label="General contractor" reason="Unassigned, pre-award" />
+                )}
+                {project.architect || architectFact?.value ? (
+                  <Fact label="Architect" value={toDisplayCase(project.architect || architectFact!.value)} />
+                ) : (
+                  <AbsentFactCell label="Architect" reason="Unlisted in the source record" />
+                )}
               </div>
             </section>
-          ) : null}
 
-          {project.enrichment?.team.length ? (
-            <section>
-              {/* Phase 0 item 6: "Verified" sat directly above a SOURCES VARY
-                  badge on nearly every row, which undercut the page. */}
-              <h2 className="text-base font-bold">Construction team</h2>
-              {/* The section title already says "Verified" -- a green
-                  Confirmed pill on every single row was flagged in design
-                  review as badge fatigue (every row shouting the same
-                  thing the header already said). Only show a badge when
-                  a row is the exception to that header, i.e. NOT
-                  confirmed -- that's the case actually worth flagging. */}
-              <dl className="card mt-4 divide-y divide-[var(--color-border)] p-0">
-                {project.enrichment.team.map((fact) => (
-                  <div key={fact.field_key} className="flex items-start justify-between gap-3 p-4">
-                    <div>
-                      <dt className="text-xs font-semibold uppercase tracking-wide text-[var(--color-gray-400)]">
-                        {fact.label}
-                      </dt>
-                      <dd className="mt-1 text-xs">{fact.value}</dd>
-                    </div>
-                    {fact.confidence !== "confirmed" && <ConfidenceBadge confidence={fact.confidence} />}
-                  </div>
-                ))}
-              </dl>
+            {/* Tabs */}
+            <section style={{ background: "#fff", border: "1px solid var(--sx-line)", borderRadius: 16, overflow: "hidden" }}>
+              <TabBar counts={tabCounts} />
+
+              <div id="tab-panel-brief" style={{ padding: "24px 28px" }}>
+                <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: 19, margin: "0 0 12px" }}>Executive brief</h2>
+                <BriefTab project={project} />
+              </div>
+
+              <div id="tab-panel-scope" style={{ padding: "24px 28px", display: "none" }}>
+                <ScopeTab csiScope={project.enrichment?.csi_scope} citations={citations} derivedScope={derivedScope} />
+              </div>
+
+              <div id="tab-panel-spec" style={{ padding: "24px 28px", display: "none" }}>
+                <SpecificationTab
+                  citations={citations}
+                  governingRule={project.enrichment?.governing_rule}
+                  documentCount={documentCount}
+                  hasTeam={teamCount > 0}
+                  hasScope={derivedScope.length > 0 || (project.enrichment?.csi_scope.length ?? 0) > 0}
+                />
+              </div>
+
+              <div id="tab-panel-team" style={{ padding: "24px 28px", display: "none" }}>
+                <TeamTab team={project.enrichment?.team} contacts={project.enrichment?.contact} />
+              </div>
+
+              <div id="tab-panel-documents" style={{ padding: "24px 28px", display: "none" }}>
+                <DocumentsTab documents={project.documents} />
+              </div>
             </section>
-          ) : null}
+          </main>
 
-          {/* Phase 0 item 7: the bottom "Back to all projects" duplicated the
-              "← All projects" link at the top of this same component. The one
-              in app/projects/view/page.tsx is NOT a duplicate -- that is the
-              "Project not found" route, where it is the only way out. */}
-        </div>
+          {/* Right rail */}
+          <aside style={{ flex: "1 1 300px", position: "sticky", top: 86, display: "flex", flexDirection: "column", gap: 16 }}>
+            {FIREBASE_AUTH_ENABLED && <ProjectAskPanel projectId={project.id} />}
 
-        {/* RIGHT: workspace / lookup rail */}
-        <div className="lg:col-span-5 space-y-6">
-          {FIREBASE_AUTH_ENABLED && <ProjectAskPanel projectId={project.id} />}
+            <ActivityFeed items={feedItems} />
 
-          <ActivityFeed project={project} />
-
-          {/* Permits used to have their own standalone card here too --
-              removed after design review pointed out it repeated the same
-              permit facts word-for-word that ActivityFeed already surfaces
-              as AI_SIGNAL entries a few dozen pixels above it. */}
-
-          {project.enrichment?.contact.length ? (
-            <div className="card p-5">
-              <h3 className="text-xs font-semibold uppercase tracking-wide text-[var(--color-gray-400)]">
-                Contacts
-              </h3>
-              <dl className="mt-3 space-y-3">
-                {project.enrichment.contact.map((fact) => (
-                  <div key={fact.field_key} className="flex items-start justify-between gap-2">
-                    <div className="min-w-0">
-                      <dt className="text-[10px] font-semibold uppercase tracking-wide text-[var(--color-gray-400)]">
-                        {fact.label}
-                      </dt>
-                      <dd className="mt-0.5 text-xs break-words">{fact.value}</dd>
+            {project.enrichment?.contact.length ? (
+              <div className="card p-5">
+                <h3 className="text-xs font-semibold uppercase tracking-wide text-[var(--color-gray-400)]">Contacts</h3>
+                <dl className="mt-3 space-y-3">
+                  {project.enrichment.contact.map((fact) => (
+                    <div key={fact.field_key} className="flex items-start justify-between gap-2">
+                      <div className="min-w-0">
+                        <dt className="text-[10px] font-semibold uppercase tracking-wide text-[var(--color-gray-400)]">{fact.label}</dt>
+                        <dd className="mt-0.5 text-xs break-words">{fact.value}</dd>
+                      </div>
                     </div>
-                    <ConfidenceDot confidence={fact.confidence} />
-                  </div>
-                ))}
-              </dl>
-            </div>
-          ) : null}
+                  ))}
+                </dl>
+              </div>
+            ) : null}
 
-          {project.documents && project.documents.length > 0 && (
-            <div className="card p-5">
-              <h3 className="text-xs font-semibold uppercase tracking-wide text-[var(--color-gray-400)]">
-                Documents ({project.documents.length})
-              </h3>
-              <ul className="mt-3 space-y-2">
-                {project.documents.map((doc) => (
-                  <li key={doc.url}>
-                    <a
-                      href={doc.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-start gap-2 text-xs text-[var(--color-green)] hover:underline"
-                    >
-                      <span aria-hidden="true">📄</span>
-                      <span className="break-words">{doc.title}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
+            <div style={{ background: "var(--sx-panel)", border: "1px solid var(--sx-line)", borderRadius: 12, padding: 16, fontSize: 12.5, color: "var(--sx-muted)", lineHeight: 1.5 }}>
+              A finding cannot exist in SpecIndex without a source behind it.
             </div>
-          )}
+          </aside>
         </div>
       </div>
     </article>

@@ -130,6 +130,12 @@ def main() -> int:
         ),
     )
     ap.add_argument("--apply-migration", action="store_true")
+    ap.add_argument(
+        "--project-id", default=None,
+        help="restrict to one project_id (e.g. me-portal-maine-vertical-3820) and "
+             "upsert it alone, instead of truncating and rescoring the whole corpus. "
+             "Matches the --project-id convention in extract-spec-positions.py.",
+    )
     args = ap.parse_args()
 
     conn = psycopg2.connect(args.database_url)
@@ -166,9 +172,14 @@ def main() -> int:
                     WHERE document_file_id IS NOT NULL
                     GROUP BY project_sk
                 ) b ON b.project_sk = p.project_sk
-                """
+                WHERE (%s IS NULL OR p.project_id = %s)
+                """,
+                (args.project_id, args.project_id),
             )
             projects = cur.fetchall()
+            if args.project_id and not projects:
+                print(f"no project found with project_id={args.project_id!r}")
+                return 1
 
         rows = []
         for p in projects:
@@ -183,14 +194,30 @@ def main() -> int:
         with conn.cursor() as cur:
             cur.execute("ALTER TABLE project_scores ADD COLUMN IF NOT EXISTS position_score INTEGER NOT NULL DEFAULT 0")
             conn.commit()
-            cur.execute("TRUNCATE project_scores")
-            execute_values(
-                cur,
-                "INSERT INTO project_scores (project_sk, score, value_score, recency_score, "
-                "news_score, position_score) VALUES %s",
-                rows,
-                page_size=500,
-            )
+            if args.project_id:
+                # Scoped run: upsert this one row, leave the rest of
+                # project_scores untouched. TRUNCATE is only safe/intended
+                # for the full-corpus path below.
+                execute_values(
+                    cur,
+                    "INSERT INTO project_scores (project_sk, score, value_score, recency_score, "
+                    "news_score, position_score) VALUES %s "
+                    "ON CONFLICT (project_sk) DO UPDATE SET "
+                    "score = EXCLUDED.score, value_score = EXCLUDED.value_score, "
+                    "recency_score = EXCLUDED.recency_score, news_score = EXCLUDED.news_score, "
+                    "position_score = EXCLUDED.position_score, computed_at = now()",
+                    rows,
+                    page_size=500,
+                )
+            else:
+                cur.execute("TRUNCATE project_scores")
+                execute_values(
+                    cur,
+                    "INSERT INTO project_scores (project_sk, score, value_score, recency_score, "
+                    "news_score, position_score) VALUES %s",
+                    rows,
+                    page_size=500,
+                )
         conn.commit()
         scored = len(rows)
         with_pos = sum(1 for r in rows if r[5] > 0)
