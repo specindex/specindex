@@ -23,6 +23,15 @@ on:
     # being crawled, which is both politer and less likely to contend with
     # whatever else is hitting them.
     - cron: "0 3 * * *"
+    # 16:00 UTC daily -- specindex-classify. Deliberately 13h after the capture
+    # cron: pull-portals has a 2h task timeout, so it is long finished, and the
+    # two never contend for the Cloud SQL connection or the Vertex quota.
+    # Classification is a 6h job doing ~1 min/document at --limit 300, so one
+    # execution a day walks ~300 of the backlog. The script selects "has text,
+    # no divisions yet", so consecutive days advance on their own with no
+    # cursor and no double-classification -- the 2,130-document backlog as of
+    # 2026-08-08 drains in about a week unattended.
+    - cron: "0 16 * * *"
   workflow_dispatch:
     inputs:
       job:
@@ -66,8 +75,24 @@ jobs:
       - name: Execute
         run: |
           set -euo pipefail
-          # Scheduled runs do the capture; manual runs do whatever was chosen.
-          JOB="${{ github.event.inputs.job || 'specindex-pull-portals' }}"
+          # Which job runs depends on HOW this fired:
+          #   manual dispatch -> whatever was chosen in the dropdown
+          #   16:00 cron      -> classification
+          #   03:00 cron      -> portal capture (the default, unchanged)
+          #
+          # github.event.schedule carries the cron expression that fired, which
+          # is the only way to tell two schedules apart in one workflow. It is
+          # empty for workflow_dispatch, so the manual branch is checked first.
+          MANUAL="${{ github.event.inputs.job }}"
+          FIRED="${{ github.event.schedule }}"
+          if [ -n "$MANUAL" ]; then
+            JOB="$MANUAL"
+          elif [ "$FIRED" = "0 16 * * *" ]; then
+            JOB="specindex-classify"
+          else
+            JOB="specindex-pull-portals"
+          fi
+          echo "trigger=${FIRED:-manual} -> job=$JOB"
 
           # A job that does not exist must fail loudly here rather than being
           # reported as a successful no-op -- the deploy workflow failed on every
