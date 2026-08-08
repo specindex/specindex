@@ -199,7 +199,7 @@ export function CustomerDetail() {
                 {tracked.map((t) => (
                   <li key={t.project_id} className="flex flex-wrap items-center justify-between gap-2 py-3">
                     <div>
-                      <Link href={`/projects/${t.project_id}/`} className="font-medium text-[var(--color-green)] hover:underline">
+                      <Link href={`/project/${t.project_id}/`} className="font-medium text-[var(--color-green)] hover:underline">
                         {t.name}
                       </Link>
                       <p className="text-xs text-[var(--color-gray-400)]">{t.state} · {t.status}</p>

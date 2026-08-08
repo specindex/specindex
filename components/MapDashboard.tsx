@@ -155,7 +155,7 @@ export function MapDashboard() {
         new mapboxgl.Popup()
           .setLngLat([lng, lat])
           .setHTML(
-            `<a href="/projects/${f.properties?.id}/" style="font-weight:600">${f.properties?.name}</a>`,
+            `<a href="/project/${f.properties?.id}/" style="font-weight:600">${f.properties?.name}</a>`,
           )
           .addTo(map);
       });

@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Hyundai-SK Battery Plant, Bartow County — SpecIndex record</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin: 0; padding: 0; background: #F6FAF7; }
+  body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #0C1524; -webkit-font-smoothing: antialiased; }
+  a { color: #166534; text-decoration: none; }
+  a:hover { color: #2F9E5C; text-decoration: underline; }
+  button, input { font-family: inherit; }
+  * { box-sizing: border-box; }
+</style>
+</helmet>
+
+<div style="background:#F6FAF7; min-height:100vh">
+
+  <header style="background:#FFFFFF; border-bottom:1px solid #DEEAE3; position:sticky; top:0; z-index:60">
+    <div style="max-width:1320px; margin:0 auto; padding:0 32px; height:62px; display:flex; align-items:center; gap:40px">
+      <a href="#" style="display:flex; align-items:center; gap:9px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:19px; letter-spacing:-0.4px; color:#0C1524; text-decoration:none">
+        <span style="width:22px; height:22px; border-radius:6px; background:#166534; display:block"></span>
+        <span>Spec<span style="color:#2F9E5C">Index</span></span>
+      </a>
+      <nav style="display:flex; gap:26px; font-size:14.5px; color:#5B6A79">
+        <a href="#" style="color:#5B6A79">Product</a>
+        <a href="#" style="color:#5B6A79">Visibility</a>
+        <a href="#" style="color:#5B6A79">Reporting</a>
+        <a href="#" style="color:#0C1524; font-weight:600">Projects</a>
+        <a href="#" style="color:#5B6A79">About</a>
+      </nav>
+      <div style="margin-left:auto; display:flex; align-items:center; gap:14px">
+        <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#166534; font-weight:600"><span style="width:7px; height:7px; border-radius:999px; background:#2F9E5C; display:block"></span>Signed in</span>
+        <a href="#" style="font-size:14.5px; font-weight:600; color:#FFFFFF; background:#166534; padding:9px 18px; border-radius:8px; text-decoration:none" style-hover="background:#2F9E5C; text-decoration:none">Book a demo</a>
+      </div>
+    </div>
+  </header>
+
+  <div style="max-width:1320px; margin:0 auto; padding:20px 32px 80px">
+
+    <div style="display:flex; flex-wrap:wrap; align-items:center; gap:12px 20px; margin-bottom:16px">
+      <a href="#" style="font-size:13.5px; color:#5B6A79">← All projects</a>
+      <div style="margin-left:auto; display:flex; flex-wrap:wrap; align-items:center; gap:8px; font-family:SFMono-Regular,Menlo,monospace; font-size:11px">
+        <span style="color:#5B6A79; letter-spacing:0.5px">AI GROUNDING</span>
+        <span style="background:#E4F2EA; color:#166534; padding:4px 9px; border-radius:5px">search-grounded discovery</span>
+        <span style="color:#A6BBAF">→</span>
+        <span style="background:#E4F2EA; color:#166534; padding:4px 9px; border-radius:5px">cross-verified, 2nd pass</span>
+        <span style="color:#A6BBAF">→</span>
+        <span style="background:#E4F2EA; color:#166534; padding:4px 9px; border-radius:5px">links live-checked</span>
+        <span style="color:#5B6A79; margin-left:4px">{{ rec.updated }}</span>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-wrap:wrap; gap:26px; align-items:flex-start">
+
+      <main style="flex:1 1 660px; min-width:0; display:flex; flex-direction:column; gap:16px">
+
+        <section style="background:#FFFFFF; border:1px solid #DEEAE3; border-radius:16px; padding:28px 30px 26px">
+          <div style="display:flex; flex-wrap:wrap; gap:20px; align-items:flex-start; margin-bottom:22px">
+            <div style="flex:1 1 340px; min-width:0">
+              <div style="display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-bottom:12px">
+                <span style="{{ rec.statusStyle }}">{{ rec.status }}</span>
+                <span style="font-size:13.5px; color:#5B6A79">{{ rec.sector }}</span>
+              </div>
+              <h1 style="font-family:'Space Grotesk',sans-serif; font-size:35px; line-height:1.09; letter-spacing:-1.1px; font-weight:700; margin:0 0 10px; text-wrap:pretty">{{ rec.title }}</h1>
+              <div style="font-family:SFMono-Regular,Menlo,monospace; font-size:12.5px; color:#5B6A79; margin-bottom:7px">{{ rec.idLine }}</div>
+              <div style="font-size:14.5px">{{ rec.location }}</div>
+            </div>
+
+            <div style="flex:0 0 auto; display:flex; flex-wrap:wrap; gap:10px; align-items:flex-start">
+              <button onClick="{{ toggleScore }}" style="{{ rec.scoreCardStyle }}">
+                <div style="display:flex; align-items:baseline; gap:3px">
+                  <span style="font-family:'Space Grotesk',sans-serif; font-size:31px; font-weight:700; letter-spacing:-1.4px; line-height:1; color:{{ rec.scoreColor }}">{{ rec.score }}</span>
+                  <span style="font-family:SFMono-Regular,Menlo,monospace; font-size:12px; color:#5B6A79">/100</span>
+                </div>
+                <div style="font-size:10.5px; font-weight:700; letter-spacing:1.3px; text-transform:uppercase; color:#5B6A79; margin-top:7px">Priority score</div>
+                <div style="display:flex; align-items:center; gap:6px; margin-top:8px">
+                  <span style="width:7px; height:7px; border-radius:999px; background:{{ rec.scoreColor }}; display:block"></span>
+                  <span style="font-size:12.5px; color:#0C1524">{{ rec.signal }}</span>
+                </div>
+                <div style="font-size:11.5px; color:#5B6A79; margin-top:5px">{{ rec.scoreToggleLabel }}</div>
+                <sc-if value="{{ rec.scorePlaceholder }}" hint-placeholder-val="{{ false }}">
+                  <div style="font-size:10.5px; font-weight:700; letter-spacing:0.9px; text-transform:uppercase; color:#8A9AA8; margin-top:9px; padding-top:8px; border-top:1px dashed #C3D8CB">Template placeholder</div>
+                </sc-if>
+              </button>
+              <a href="#" style="font-size:14px; font-weight:600; color:#0C1524; border:1px solid #DEEAE3; background:#FFFFFF; padding:12px 17px; border-radius:9px; text-decoration:none; white-space:nowrap" style-hover="border-color:#2F9E5C; color:#166534; text-decoration:none">+ Track this project</a>
+            </div>
+          </div>
+
+          <sc-if value="{{ scoreOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="border:1px solid #DEEAE3; background:#F6FAF7; border-radius:12px; padding:20px 22px; margin-bottom:20px">
+              <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:baseline; justify-content:space-between; margin-bottom:14px">
+                <div style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#5B6A79">What drives this score</div>
+                <div style="font-size:13px; color:#5B6A79">Signal you can act on, not project size</div>
+              </div>
+              <div style="display:flex; flex-direction:column">
+                <sc-for list="{{ rec.scoreFactors }}" as="k" hint-placeholder-count="5">
+                  <div style="display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:11px 0; border-top:1px solid #DEEAE3">
+                    <div style="flex:1 1 210px; min-width:0">
+                      <div style="font-size:14.5px; font-weight:600; margin-bottom:2px">{{ k.label }}</div>
+                      <div style="font-size:13px; color:#5B6A79; line-height:1.45">{{ k.detail }}</div>
+                    </div>
+                    <div style="flex:0 0 128px; height:6px; border-radius:999px; background:#DEEAE3; overflow:hidden">
+                      <div style="{{ k.barStyle }}"></div>
+                    </div>
+                    <div style="flex:0 0 54px; text-align:right; font-family:SFMono-Regular,Menlo,monospace; font-size:12.5px; color:{{ k.valueColor }}">{{ k.value }}</div>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="margin-top:14px; font-size:13px; line-height:1.55; color:#5B6A79">{{ rec.scoreNote }}</div>
+              <div style="margin-top:12px; border:1px dashed #C3D8CB; border-radius:9px; padding:12px 14px; font-size:12.5px; line-height:1.55; color:#5B6A79"><strong style="color:#0C1524; font-weight:700">Template placeholder.</strong> These five factors and their weights are a layout stand-in, not the live scoring model. Wire them to the real scoring inputs before this goes in front of a customer.</div>
+            </div>
+          </sc-if>
+
+          <div style="{{ rec.readStyle }}">
+            <div style="font-size:11px; font-weight:700; letter-spacing:2.2px; text-transform:uppercase; color:{{ rec.readEyebrowColor }}; margin-bottom:11px">The read</div>
+            <p style="font-family:'Space Grotesk',sans-serif; font-size:21px; line-height:1.36; font-weight:600; letter-spacing:-0.4px; color:{{ rec.readTitleColor }}; margin:0 0 15px; text-wrap:pretty">{{ rec.read }}</p>
+            <div style="display:flex; flex-wrap:wrap; gap:10px">
+              <sc-for list="{{ rec.readStats }}" as="s" hint-placeholder-count="3">
+                <div style="{{ s.style }}">
+                  <div style="font-family:'Space Grotesk',sans-serif; font-size:27px; font-weight:700; letter-spacing:-1px; color:{{ s.numColor }}; line-height:1">{{ s.num }}</div>
+                  <div style="font-size:12.5px; line-height:1.45; color:{{ s.textColor }}; margin-top:5px">{{ s.text }}</div>
+                </div>
+              </sc-for>
+            </div>
+            <sc-if value="{{ rec.readFooter }}" hint-placeholder-val="{{ false }}">
+              <div style="{{ rec.readFooterStyle }}">{{ rec.readFooter }}</div>
+            </sc-if>
+          </div>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(165px,1fr)); gap:1px; background:#DEEAE3; border:1px solid #DEEAE3; border-radius:12px; overflow:hidden; margin-top:20px">
+            <sc-for list="{{ rec.facts }}" as="f" hint-placeholder-count="6">
+              <div style="background:#FFFFFF; padding:14px 16px">
+                <div style="font-size:10.5px; font-weight:700; letter-spacing:1.3px; text-transform:uppercase; color:#5B6A79; margin-bottom:6px">{{ f.label }}</div>
+                <div style="{{ f.valueStyle }}">{{ f.value }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+
+        <section style="background:#FFFFFF; border:1px solid #DEEAE3; border-radius:16px; overflow:hidden">
+          <div style="display:flex; flex-wrap:wrap; gap:2px; padding:0 18px; border-bottom:1px solid #DEEAE3">
+            <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="5">
+              <button onClick="{{ t.onClick }}" style="{{ t.style }}">
+                <span>{{ t.label }}</span>
+                <span style="{{ t.countStyle }}">{{ t.count }}</span>
+              </button>
+            </sc-for>
+          </div>
+
+          <sc-if value="{{ showSpec }}" hint-placeholder-val="{{ true }}">
+          <div style="padding:24px 30px 30px">
+            <sc-if value="{{ hasSpec }}" hint-placeholder-val="{{ true }}">
+              <p style="font-size:14.5px; line-height:1.6; color:#5B6A79; margin:0 0 16px; max-width:76ch">Every citation carries its page number, so you can check us. Being named is a position, not an award.</p>
+              <sc-if value="{{ specRule }}" hint-placeholder-val="{{ false }}">
+                <div style="background:#EDF5F0; border:1px solid #2F9E5C; border-radius:12px; padding:17px 19px; margin-bottom:20px">
+                  <div style="font-size:11px; font-weight:700; letter-spacing:1.8px; text-transform:uppercase; color:#166534; margin-bottom:7px">The rule that governs this whole list</div>
+                  <div style="font-size:14px; line-height:1.6; color:#0C1524">{{ specRule }}</div>
+                </div>
+              </sc-if>
+              <div style="border:1px solid #DEEAE3; border-radius:12px; margin-bottom:18px; overflow:hidden">
+                <button onClick="{{ toggleLegend }}" style="{{ legendBtnStyle }}">
+                  <span style="font-size:13.5px; font-weight:600">How to read a position</span>
+                  <span style="font-size:12.5px; color:#5B6A79">{{ legendToggleLabel }}</span>
+                </button>
+                <sc-if value="{{ legendOpen }}" hint-placeholder-val="{{ false }}">
+                  <div style="padding:0 17px 17px">
+                    <div style="font-size:13.5px; line-height:1.55; color:#5B6A79; margin-bottom:14px; max-width:76ch">Each badge is the position the document itself uses, not our interpretation of it. Green marks a position where the section states a substitution outright.</div>
+                    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:12px">
+                      <sc-for list="{{ legend }}" as="l" hint-placeholder-count="6">
+                        <div style="{{ l.cardStyle }}">
+                          <div style="{{ l.badgeStyle }}">{{ l.term }}</div>
+                          <div style="font-size:13.5px; line-height:1.55; color:#5B6A79">{{ l.def }}</div>
+                        </div>
+                      </sc-for>
+                    </div>
+                  </div>
+                </sc-if>
+              </div>
+              <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:6px">
+                <sc-for list="{{ filters }}" as="f" hint-placeholder-count="4">
+                  <button onClick="{{ f.onClick }}" style="{{ f.style }}">{{ f.label }}</button>
+                </sc-for>
+              </div>
+              <div style="display:flex; flex-direction:column">
+                <sc-for list="{{ citations }}" as="c" hint-placeholder-count="7">
+                  <div style="display:flex; flex-wrap:wrap; gap:8px 18px; align-items:flex-start; padding:17px 0; border-top:1px solid #DEEAE3">
+                    <div style="flex:1 1 320px; min-width:0">
+                      <div style="display:flex; flex-wrap:wrap; align-items:center; gap:9px; margin-bottom:5px">
+                        <span style="font-size:16px; font-weight:600; line-height:1.3">{{ c.name }}</span>
+                        <span style="{{ c.badgeStyle }}">{{ c.position }}</span>
+                      </div>
+                      <sc-if value="{{ c.product }}" hint-placeholder-val="{{ false }}">
+                        <div style="font-size:14px; line-height:1.45; margin-bottom:4px">{{ c.product }}</div>
+                      </sc-if>
+                      <div style="font-size:13px; line-height:1.5; color:#5B6A79">{{ c.division }}</div>
+                      <sc-if value="{{ c.quote }}" hint-placeholder-val="{{ false }}">
+                        <div style="font-size:14px; line-height:1.55; font-style:italic; margin-top:7px; padding-left:12px; border-left:2px solid #2F9E5C">{{ c.quote }}</div>
+                      </sc-if>
+                    </div>
+                    <a href="#" style="flex:0 0 auto; font-family:SFMono-Regular,Menlo,monospace; font-size:12px; color:#5B6A79; white-space:nowrap; padding-top:3px" style-hover="color:#166534">{{ c.cite }}</a>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ noSpec }}" hint-placeholder-val="{{ false }}">
+              <div style="border:1px dashed #C3D8CB; border-radius:13px; padding:30px 28px; background:#F6FAF7">
+                <div style="font-family:'Space Grotesk',sans-serif; font-size:20px; font-weight:700; letter-spacing:-0.4px; margin-bottom:9px">No specification document has been published for this project</div>
+                <p style="font-size:14.5px; line-height:1.6; color:#5B6A79; margin:0 0 20px; max-width:68ch">This is a discovered project, not a bid record. We hold the scope, the team and the permit trail, but no spec book, so there is nothing to cite and we will not guess at one. A manufacturer cannot be named here without a document behind it.</p>
+                <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:22px">
+                  <a href="#" style="font-size:14px; font-weight:600; color:#FFFFFF; background:#166534; padding:11px 19px; border-radius:8px; text-decoration:none" style-hover="background:#2F9E5C; text-decoration:none">Alert me if a spec publishes</a>
+                  <a href="#" style="font-size:14px; font-weight:600; color:#0C1524; border:1px solid #DEEAE3; background:#FFFFFF; padding:11px 19px; border-radius:8px; text-decoration:none" style-hover="border-color:#2F9E5C; color:#166534; text-decoration:none">See the scope instead</a>
+                </div>
+                <div style="border-top:1px solid #DEEAE3; padding-top:18px">
+                  <div style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#5B6A79; margin-bottom:12px">What you can act on today</div>
+                  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); gap:12px">
+                    <div style="background:#FFFFFF; border:1px solid #DEEAE3; border-radius:11px; padding:15px 17px">
+                      <div style="font-size:14.5px; font-weight:600; margin-bottom:4px">The architect is known</div>
+                      <div style="font-size:13px; line-height:1.5; color:#5B6A79">Gansam USA writes the spec when it is written. That call can happen now.</div>
+                    </div>
+                    <div style="background:#FFFFFF; border:1px solid #DEEAE3; border-radius:11px; padding:15px 17px">
+                      <div style="font-size:14.5px; font-weight:600; margin-bottom:4px">The subs are known</div>
+                      <div style="font-size:13px; line-height:1.5; color:#5B6A79">SYSCON and National Link are already placed on steel, envelope and concrete.</div>
+                    </div>
+                    <div style="background:#FFFFFF; border:1px solid #DEEAE3; border-radius:11px; padding:15px 17px">
+                      <div style="font-size:14.5px; font-weight:600; margin-bottom:4px">The scope is declared</div>
+                      <div style="font-size:13px; line-height:1.5; color:#5B6A79">Four divisions with described work, sourced to project records.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </sc-if>
+          </div>
+          </sc-if>
+
+          <sc-if value="{{ showScope }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:24px 30px 30px">
+            <p style="font-size:14.5px; line-height:1.6; color:#5B6A79; margin:0 0 20px; max-width:76ch">{{ rec.scopeIntro }}</p>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:10px">
+              <sc-for list="{{ rec.scope }}" as="v" hint-placeholder-count="4">
+                <div style="{{ v.cardStyle }}">
+                  <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-bottom:5px">
+                    <span style="font-family:SFMono-Regular,Menlo,monospace; font-size:12px; color:#5B6A79">{{ v.code }}</span>
+                    <span style="{{ v.tagStyle }}">{{ v.tag }}</span>
+                  </div>
+                  <div style="font-family:'Space Grotesk',sans-serif; font-size:15.5px; font-weight:700; letter-spacing:-0.2px; margin-bottom:6px">{{ v.name }}</div>
+                  <div style="font-size:13.5px; line-height:1.5; color:#5B6A79">{{ v.detail }}</div>
+                  <sc-if value="{{ v.source }}" hint-placeholder-val="{{ false }}">
+                    <div style="font-size:12px; color:#8A9AA8; margin-top:7px">{{ v.source }}</div>
+                  </sc-if>
+                </div>
+              </sc-for>
+            </div>
+            <div style="margin-top:18px; background:#F6FAF7; border:1px solid #DEEAE3; border-radius:10px; padding:15px 18px; font-size:13.5px; line-height:1.55; color:#5B6A79">{{ rec.scopeNote }}</div>
+          </div>
+          </sc-if>
+
+          <sc-if value="{{ showDocs }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:24px 30px 30px">
+            <sc-if value="{{ hasDocs }}" hint-placeholder-val="{{ true }}">
+              <p style="font-size:14.5px; line-height:1.6; color:#5B6A79; margin:0 0 18px; max-width:76ch">The actual bid documents, pulled from the issuing portal on the day they posted. Not a summary of them.</p>
+              <div style="display:flex; flex-direction:column; gap:9px">
+                <sc-for list="{{ rec.docs }}" as="d" hint-placeholder-count="6">
+                  <a href="#" style="display:flex; flex-wrap:wrap; gap:8px 18px; align-items:center; justify-content:space-between; border:1px solid #DEEAE3; border-radius:11px; padding:16px 18px; text-decoration:none; color:#0C1524" style-hover="border-color:#2F9E5C; background:#F6FAF7; text-decoration:none; color:#0C1524">
+                    <div style="min-width:0; flex:1 1 260px">
+                      <div style="display:flex; flex-wrap:wrap; align-items:center; gap:9px; margin-bottom:4px">
+                        <span style="font-size:15.5px; font-weight:600">{{ d.title }}</span>
+                        <sc-if value="{{ d.pages }}" hint-placeholder-val="{{ false }}"><span style="font-family:SFMono-Regular,Menlo,monospace; font-size:11px; color:#166534; background:#E4F2EA; padding:3px 8px; border-radius:999px">{{ d.pages }}</span></sc-if>
+                      </div>
+                      <div style="font-size:13.5px; color:#5B6A79">{{ d.detail }}</div>
+                    </div>
+                    <span style="font-size:13px; font-weight:600; color:#166534; white-space:nowrap">Open document →</span>
+                  </a>
+                </sc-for>
+              </div>
+            </sc-if>
+            <sc-if value="{{ noDocs }}" hint-placeholder-val="{{ false }}">
+              <div style="border:1px dashed #C3D8CB; border-radius:13px; padding:28px; background:#F6FAF7">
+                <div style="font-family:'Space Grotesk',sans-serif; font-size:19px; font-weight:700; letter-spacing:-0.3px; margin-bottom:8px">No documents held for this project</div>
+                <p style="font-size:14.5px; line-height:1.6; color:#5B6A79; margin:0 0 8px; max-width:68ch">This record was assembled from search-grounded discovery and cross-verified public reporting. Nothing here came from a bid portal, because this project has not gone through one.</p>
+                <p style="font-size:14.5px; line-height:1.6; color:#5B6A79; margin:0; max-width:68ch">The sources behind every field are in the activity feed, each one live-checked.</p>
+              </div>
+            </sc-if>
+            <div style="margin-top:18px; background:#F6FAF7; border:1px solid #DEEAE3; border-radius:10px; padding:15px 18px; font-size:13.5px; line-height:1.55; color:#5B6A79">Public government sources and public reporting only. Every source keeps its URL and fetch date. No plan-room content.</div>
+          </div>
+          </sc-if>
+
+          <sc-if value="{{ showTeam }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:24px 30px 30px">
+            <p style="font-size:14.5px; line-height:1.6; color:#5B6A79; margin:0 0 6px; max-width:76ch">{{ rec.teamIntro }}</p>
+            <div style="display:flex; flex-direction:column">
+              <sc-for list="{{ rec.team }}" as="t" hint-placeholder-count="5">
+                <div style="display:flex; flex-wrap:wrap; gap:8px 20px; align-items:flex-start; padding:16px 0; border-top:1px solid #DEEAE3">
+                  <div style="flex:0 0 190px; font-size:11.5px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; color:#5B6A79; padding-top:3px; line-height:1.35">{{ t.role }}</div>
+                  <div style="flex:1 1 230px; min-width:0">
+                    <div style="{{ t.nameStyle }}">{{ t.name }}</div>
+                    <sc-if value="{{ t.detail }}" hint-placeholder-val="{{ false }}">
+                      <div style="font-size:13.5px; line-height:1.5; color:#5B6A79; margin-top:3px">{{ t.detail }}</div>
+                    </sc-if>
+                  </div>
+                  <div style="flex:0 0 auto"><span style="{{ t.tagStyle }}">{{ t.tag }}</span></div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          </sc-if>
+
+          <sc-if value="{{ showBrief }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:24px 30px 30px">
+            <div style="font-family:'Space Grotesk',sans-serif; font-size:19px; font-weight:700; letter-spacing:-0.4px; margin-bottom:14px">Executive brief</div>
+            <sc-for list="{{ rec.brief }}" as="p" hint-placeholder-count="3">
+              <p style="font-size:16px; line-height:1.7; margin:0 0 16px; max-width:76ch; text-wrap:pretty">{{ p.text }}</p>
+            </sc-for>
+            <div style="font-family:SFMono-Regular,Menlo,monospace; font-size:12px; color:#5B6A79; padding-top:14px; border-top:1px solid #DEEAE3">{{ rec.briefSource }}</div>
+          </div>
+          </sc-if>
+
+        </section>
+
+      </main>
+
+      <aside style="flex:1 1 300px; position:sticky; top:86px; display:flex; flex-direction:column; gap:14px">
+
+        <div style="background:#EDF5F0; border:1px solid #2F9E5C; border-radius:14px; padding:19px">
+          <div style="font-size:11px; font-weight:700; letter-spacing:1.6px; text-transform:uppercase; color:#166534; margin-bottom:11px">✦ Ask about this project</div>
+          <div style="display:flex; gap:8px; margin-bottom:11px">
+            <input type="text" value="whos the contractor" style="flex:1; min-width:0; border:1px solid #DEEAE3; background:#FFFFFF; border-radius:8px; padding:10px 12px; font-size:13.5px; color:#0C1524" />
+            <button style="flex:0 0 auto; background:#166534; border:none; color:#FFFFFF; font-size:13.5px; font-weight:600; padding:10px 16px; border-radius:8px; cursor:pointer" style-hover="background:#2F9E5C">Ask</button>
+          </div>
+          <div style="font-size:13.5px; line-height:1.55; color:#0C1524">{{ rec.askAnswer }}</div>
+          <div style="font-size:11.5px; line-height:1.5; color:#5B6A79; margin-top:9px">{{ rec.askScope }}</div>
+        </div>
+
+        <div style="background:#FFFFFF; border:1px solid #DEEAE3; border-radius:14px; padding:19px">
+          <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:space-between; margin-bottom:14px">
+            <div style="font-size:11px; font-weight:700; letter-spacing:1.6px; text-transform:uppercase; color:#5B6A79">Workspace &amp; activity feed</div>
+            <div style="display:flex; gap:3px">
+              <sc-for list="{{ feedTabs }}" as="ft" hint-placeholder-count="3">
+                <button onClick="{{ ft.onClick }}" style="{{ ft.style }}">{{ ft.label }}</button>
+              </sc-for>
+            </div>
+          </div>
+          <sc-if value="{{ feedEmpty }}" hint-placeholder-val="{{ false }}">
+            <div style="border:1px dashed #C3D8CB; border-radius:10px; padding:14px; font-size:13px; line-height:1.5; color:#5B6A79">{{ feedEmptyNote }}</div>
+          </sc-if>
+          <div style="display:flex; flex-direction:column; gap:9px">
+            <sc-for list="{{ feed }}" as="e" hint-placeholder-count="5">
+              <div style="{{ e.cardStyle }}">
+                <div style="display:flex; flex-wrap:wrap; gap:6px 12px; align-items:baseline; justify-content:space-between; margin-bottom:3px">
+                  <span style="font-size:13px; font-weight:600">{{ e.source }}</span>
+                  <span style="font-family:SFMono-Regular,Menlo,monospace; font-size:11px; color:#8A9AA8">{{ e.date }}</span>
+                </div>
+                <div style="font-size:13.5px; line-height:1.45; color:#0C1524">{{ e.title }}</div>
+                <sc-if value="{{ e.detail }}" hint-placeholder-val="{{ false }}">
+                  <div style="font-size:12.5px; line-height:1.5; color:#5B6A79; margin-top:5px">{{ e.detail }}</div>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="background:#FFFFFF; border:1px solid #DEEAE3; border-radius:14px; padding:19px">
+          <div style="font-size:11px; font-weight:700; letter-spacing:1.6px; text-transform:uppercase; color:#5B6A79; margin-bottom:14px">Contacts</div>
+          <div style="display:flex; flex-direction:column; gap:14px">
+            <sc-for list="{{ rec.contacts }}" as="c" hint-placeholder-count="4">
+              <div>
+                <div style="font-size:10.5px; font-weight:700; letter-spacing:1.1px; text-transform:uppercase; color:#5B6A79; margin-bottom:4px; line-height:1.4">{{ c.org }}</div>
+                <div style="font-size:14px; font-weight:600; line-height:1.4">{{ c.name }}</div>
+                <sc-if value="{{ c.contact }}" hint-placeholder-val="{{ false }}">
+                  <a href="#" style="font-family:SFMono-Regular,Menlo,monospace; font-size:12px">{{ c.contact }}</a>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="background:#FFFFFF; border:1px solid #DEEAE3; border-radius:14px; padding:19px">
+          <div style="font-size:13px; line-height:1.6; color:#5B6A79">A finding cannot exist in SpecIndex without a source behind it. If it is on this page, you can open what it came from and read it yourself.</div>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+
+  <footer style="background:#FFFFFF; border-top:1px solid #DEEAE3; padding:34px 32px">
+    <div style="max-width:1320px; margin:0 auto; display:flex; flex-wrap:wrap; gap:18px; align-items:center; justify-content:space-between; font-size:13px; color:#5B6A79">
+      <span>© 2026 SpecIndex. Verify before bidding or specifying.</span>
+      <span style="display:inline-flex; align-items:center; gap:8px"><span style="width:8px; height:8px; border-radius:999px; background:#2F9E5C; display:block"></span>Pipeline live · No plan-room resale</span>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;record&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Maine, has documents&quot;,&quot;Bartow, no documents&quot;],&quot;default&quot;:&quot;Maine, has documents&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+const B = {
+  amber: "font-size:10.5px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#0C1524; background:#FDF0D6; border:1px solid #F59E0B; padding:3px 9px; border-radius:999px; white-space:nowrap",
+  green: "font-size:10.5px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#166534; background:#E4F2EA; padding:3px 9px; border-radius:999px; white-space:nowrap",
+  grey: "font-size:10.5px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#5B6A79; background:#F6FAF7; border:1px solid #DEEAE3; padding:3px 9px; border-radius:999px; white-space:nowrap"
+};
+const STATUS = {
+  bidding: "display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:700; letter-spacing:1.3px; text-transform:uppercase; white-space:nowrap; color:#0C1524; background:#FDF0D6; border:1px solid #F59E0B; padding:5px 11px; border-radius:999px",
+  building: "display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:700; letter-spacing:1.3px; text-transform:uppercase; white-space:nowrap; color:#5B6A79; background:#F6FAF7; border:1px solid #DEEAE3; padding:5px 11px; border-radius:999px"
+};
+const DARK = {
+  read: "background:#166534; border-radius:14px; padding:22px 24px",
+  eyebrow: "#A6BBAF", title: "#FFFFFF",
+  stat: "flex:1 1 172px; background:rgba(255,255,255,0.09); border-radius:10px; padding:13px 15px",
+  statNum: "#FFFFFF", statText: "#D2E7DB",
+  footer: "margin-top:15px; padding-top:13px; border-top:1px solid rgba(255,255,255,0.16); font-size:13.5px; line-height:1.55; color:#D2E7DB"
+};
+const LIGHT = {
+  read: "background:#F6FAF7; border:1px solid #DEEAE3; border-radius:14px; padding:22px 24px",
+  eyebrow: "#5B6A79", title: "#0C1524",
+  stat: "flex:1 1 172px; background:#FFFFFF; border:1px solid #DEEAE3; border-radius:10px; padding:13px 15px",
+  statNum: "#166534", statText: "#5B6A79",
+  footer: "margin-top:15px; padding-top:13px; border-top:1px solid #DEEAE3; font-size:13.5px; line-height:1.55; color:#5B6A79"
+};
+
+function readBlock(t, read, stats, footer) {
+  return {
+    readStyle: t.read, readEyebrowColor: t.eyebrow, readTitleColor: t.title,
+    read, readFooter: footer || null, readFooterStyle: t.footer,
+    readStats: stats.map(s => ({ num: s[0], text: s[1], style: t.stat, numColor: s[2] || t.statNum, textColor: t.statText }))
+  };
+}
+
+const FACT = "font-size:14.5px; font-weight:600; line-height:1.35";
+const FACT_EMPTY = "font-size:14.5px; font-weight:600; line-height:1.35; color:#5B6A79";
+
+const MAINE = {
+  key: "maine",
+  title: "Maine State Prison Gatehouse Improvement Project",
+  status: "Bidding", statusStyle: STATUS.bidding, sector: "Institutional · Corrections",
+  idLine: "BGS #3820 · source data pulled Aug 7, 2026",
+  location: "Warren, Knox County, Maine",
+  updated: "page updated Aug 7, 2026",
+  score: "--", signal: "Not pulled", scoreColor: "#8A9AA8", scorePlaceholder: true,
+  scoreFactors: [
+    { label: "Specification in hand", detail: "219 page project manual, held in full", value: "high", pct: 100 },
+    { label: "Named positions", detail: "20 manufacturer citations, all page-cited", value: "high", pct: 95 },
+    { label: "Timing", detail: "Bids closed Jun 29, 2026. Award not yet published", value: "med", pct: 55 },
+    { label: "Decision maker reachable", detail: "Architect and bid administrator both named", value: "high", pct: 90 },
+    { label: "Scope breadth", detail: "16 divisions in scope, 8 name nobody", value: "high", pct: 75 }
+  ],
+  scoreNote: "Score reflects how much you can act on, not how big the job is. A small job with a spec book outranks a large one without.",
+  facts: [
+    { label: "Estimated value", value: "Not stated in the source record", empty: true },
+    { label: "Square footage", value: "Not stated in the source record", empty: true },
+    { label: "Bids due", value: "Jun 29, 2026" },
+    { label: "Substantial completion", value: "Mar 15, 2027" },
+    { label: "Owner", value: "Maine Department of Corrections" },
+    { label: "Procuring agency", value: "Bureau of General Services" },
+    { label: "Architect", value: "Paul Designs Project PLLC" },
+    { label: "General contractor", value: "Not announced", empty: true },
+    { label: "Manufacturers cited", value: "20 across 8 divisions" },
+    { label: "Bid documents dated", value: "May 28, 2026" }
+  ],
+  scopeIntro: "All 16 divisions from the project manual's table of contents. Eight carry a manufacturer citation. Eight name nobody, and those are listed first.",
+  scopeNote: "Read from the table of contents of the 219 page project manual dated 28 May 2026. A division shown as naming nobody has no manufacturer anywhere in the document we hold.",
+  scope: [
+    { code: "Div 22", name: "Plumbing", detail: "22 00 00 Plumbing \u00b7 22 05 00 General Plumbing. No manufacturer named anywhere in the manual.", open: true },
+    { code: "Div 23", name: "HVAC", detail: "23 00 00 HVAC \u00b7 23 05 00 General Mechanical \u00b7 23 05 93 Testing and Balancing \u00b7 23 07 00 Insulation \u00b7 23 30 00 Duct. No manufacturer named.", open: true },
+    { code: "Div 26", name: "Electrical", detail: "Eleven sections including 26 09 24 Lighting Control Devices, 26 27 13 Electricity Metering, 26 47 00 Panelboards, 26 51 00 Interior Lighting. No manufacturer named.", open: true },
+    { code: "Div 31", name: "Earthwork", detail: "31 10 00 Site Clearing \u00b7 31 20 00 Earth Moving \u00b7 31 23 19 Dewatering \u00b7 31 25 13 Erosion Controls. No manufacturer named.", open: true },
+    { code: "Div 32", name: "Exterior Improvements", detail: "32 31 13 High Security Chain Link Fencing. No manufacturer named.", open: true },
+    { code: "Div 02", name: "Existing Conditions", detail: "02 20 00 Assessment \u00b7 02 40 00 Demolition \u00b7 02 50 00 Site Remediation \u00b7 02 60 00 Contaminated Site Material Removal \u00b7 02 80 00 Facility Remediation. No manufacturer named.", open: true },
+    { code: "Div 01", name: "General Requirements", detail: "01 70 00.01 Site Permit Requirements \u00b7 01 71 23.13 Layout of Work. No manufacturer named.", open: true },
+    { code: "Div 00", name: "Procurement & Contracting", detail: "Notice to Contractors, Instructions to Bidders, General Conditions, Wage Determination. Contract documents, not a trade.", open: true, muted: true },
+    { code: "Div 03", name: "Concrete", detail: "03 30 00 Concrete \u00b7 03 62 13 Non-Shrink Grout. Sika Corporation, 1 citation.", cited: true },
+    { code: "Div 05", name: "Metals", detail: "05 10 00 Structural Metal Framing \u00b7 05 58 13 Column Covers. Grainger, Cotterman, McNICHOLS, 3 citations.", cited: true },
+    { code: "Div 06", name: "Wood, Plastics & Composites", detail: "Six sections including 06 17 19 Cross-Laminated Timber. Simpson Strong-Tie, USP, Canam, 3 citations.", cited: true },
+    { code: "Div 07", name: "Thermal & Moisture Protection", detail: "Six sections including 07 42 29 Terracotta Wall Panels. Owens Corning, Carlisle, Elevate, Johns Manville, GAF, 5 citations.", cited: true },
+    { code: "Div 08", name: "Openings", detail: "08 10 00 Entry Doors \u00b7 08 11 00 Metal Doors and Frames \u00b7 08 41 00 Entrances and Storefronts \u00b7 08 71 00 Door Hardware. Bilco, 1 citation.", cited: true },
+    { code: "Div 09", name: "Finishes", detail: "09 29 00 Gypsum Board \u00b7 09 60 00 Flooring \u00b7 09 70 00 Wall Finishes \u00b7 09 90 00 Paints and Coatings. Sherwin-Williams, PPG, 2 citations.", cited: true },
+    { code: "Div 10", name: "Specialties", detail: "10 28 00 Washroom Accessories, plus appliances. Spacesaver, Summit, LG, 3 citations.", cited: true },
+    { code: "Div 27", name: "Communications", detail: "27 15 00 Communications Horizontal Cabling. APC, Chatsworth, Middle Atlantic, 1 citation.", cited: true }
+  ],
+  docs: [
+    { title: "Specifications", pages: "219 pages", detail: "The project manual. Every citation on this record points into it." },
+    { title: "Addendum", detail: "The change record. Captured the day it posted." },
+    { title: "Drawings", pages: "37 pages", detail: "The drawing set." },
+    { title: "Bid Tabulation", detail: "Who bid, and what they bid." },
+    { title: "Legal Ad", detail: "The public advertisement." },
+    { title: "Notice to Contractors", detail: "Instructions to bidders." }
+  ],
+  teamIntro: "At this stage the architect authors the specification. The contractor is not selected.",
+  team: [
+    { role: "Owner", name: "Maine Department of Corrections", detail: "State agency, facility owner", tag: "Owner" },
+    { role: "Procuring agency", name: "Bureau of General Services", detail: "Publishes the bid documents and the addenda", tag: "Runs the bid" },
+    { role: "Architect", name: "Paul Designs Project PLLC", detail: "Portland, Maine. Authors the specification.", tag: "Writes the spec", emphasize: true },
+    { role: "General contractor", name: "Not announced", detail: "Bidding closed Jun 29, 2026. No award published.", tag: "Unknown", empty: true }
+  ],
+  contacts: [
+    { org: "Bureau of General Services", name: "Kristen Haskell, Bid Administrator", contact: "BGS.Architect@Maine.gov" },
+    { org: "Paul Designs Project PLLC", name: "Paul Bryant", contact: "Paul@pauldesignsproject.com" }
+  ],
+  feed: [
+    { source: "Bureau of General Services", date: "Jun 29, 2026", title: "Bids due", detail: "Bid tabulation captured after close.", kind: "signal" },
+    { source: "Bureau of General Services", date: "Jun 2026", title: "Addendum posted", detail: "Captured the day it posted.", kind: "signal" },
+    { source: "maine.gov portal", date: "Jun 2026", title: "Bid documents published", detail: "Six documents pulled, including the 219 page project manual.", kind: "signal" }
+  ],
+  brief: [
+    { text: "The Maine State Prison Gatehouse Improvement Project (BGS Project #3820) in Warren, Maine, involves the demolition of the existing officers' enclosure and the construction of a new mass-timber replacement while maintaining ongoing sally port operations." },
+    { text: "Coordinated by the Maine Department of Corrections and the Bureau of General Services, the scope includes removing the current sally port roof structure, insulation, and membrane, and replacing it with a modern glulam deck and roofing system." },
+    { text: "Designed by Portland-based Paul Designs Project PLLC, the project features heavily phased construction to ensure uninterrupted facility security, targeting substantial completion by March 15, 2027. Bidding closed on June 29, 2026, though a contract award has not yet been publicly announced." }
+  ],
+  briefSource: "SpecIndex AI search grounding. Specification findings read from the 219 page project manual dated 28 May 2026.",
+  askAnswer: "The specification is authored by Paul Designs Project PLLC (Paul Bryant). No general contractor has been announced. Bids were opened 22 June 2026.",
+  askScope: "Answers cite the six source documents only.",
+  specRule: "General Conditions 17.1, p. 36: \u201cthe term \u2018or approved equal\u2019 shall be implied, if it is not included in the text.\u201d Every named product on this project is substitutable with written approval by the Consultant. Nothing here is locked.",
+  hasSpec: true, hasDocs: true
+};
+
+const BARTOW = {
+  key: "bartow",
+  title: "Hyundai-SK Battery Plant, Bartow County",
+  status: "Under construction", statusStyle: STATUS.building, sector: "Industrial",
+  idLine: "SPX-000157 · source data pulled Jul 25, 2026",
+  location: "Adairsville area, Bartow County, Georgia",
+  updated: "page updated Jul 29, 2026",
+  score: 15, signal: "Low signal", scoreColor: "#8A9AA8",
+  scoreFactors: [
+    { label: "Specification in hand", detail: "No project manual or spec book published", value: "none", pct: 0 },
+    { label: "Named positions", detail: "No manufacturer citation is possible without a document", value: "none", pct: 0 },
+    { label: "Timing", detail: "Commercial production began Jun 2026. Envelope and structure are built.", value: "low", pct: 15 },
+    { label: "Decision maker reachable", detail: "Architect, EPC, subs and four contacts all named", value: "high", pct: 90 },
+    { label: "Scope breadth", detail: "4 divisions described, sourced to project records", value: "med", pct: 45 }
+  ],
+  scoreNote: "Low does not mean unimportant. It means there is no specification to influence yet. The team here is fully mapped, which is why the contact route scores high.",
+  facts: [
+    { label: "Estimated value", value: "$5B" },
+    { label: "Opened / announced", value: "Jun 1, 2026" },
+    { label: "Square footage", value: "3.3M sq ft on a 107+ acre site" },
+    { label: "Owner", value: "Hyundai-SK Battery Manufacturing America" },
+    { label: "General contractor", value: "Hyundai Engineering America, Inc." },
+    { label: "Architect", value: "Gansam USA" },
+    { label: "Brands mentioned", value: "Hyundai, SK On" },
+    { label: "Documents held", value: "None published", empty: true }
+  ],
+  scopeIntro: "Four divisions are described in the source record, each with the work stated and the record it came from.",
+  scopeNote: "Requirements implied by the declared scope, not products selected on this project. No manufacturer can be named without a specification document.",
+  scope: [
+    { code: "Div 03", name: "Concrete", detail: "Placement and slab finishing of over 32,000 cubic yards of concrete.", source: "SYSCON, LLC Project Records" },
+    { code: "Div 05", name: "Metals", detail: "Turnkey structural steel frameworks, main plant superstructure, mezzanines, and equipment platforms built to AISC standards.", source: "SYSCON, LLC / National Link Construction" },
+    { code: "Div 07", name: "Thermal and Moisture Protection", detail: "Installation of 3-inch insulated metal wall panel systems and TPO membrane roofing systems.", source: "SYSCON, LLC / National Link Construction" },
+    { code: "Div 21", name: "Fire suppression", detail: "Named in the source record's trade list.", source: "Declared scope" }
+  ],
+  docs: [],
+  teamIntro: "The full construction team is mapped. This is the route onto the job while no specification exists.",
+  team: [
+    { role: "General contractor / EPC", name: "Hyundai Engineering America, Inc.", tag: "Builds it" },
+    { role: "Architect", name: "Gansam USA", detail: "Writes the specification when one is written", tag: "Writes the spec", emphasize: true },
+    { role: "Main subcontractor", name: "SYSCON, LLC", tag: "Placed" },
+    { role: "Steel & envelope subcontractor", name: "National Link Construction", tag: "Placed" },
+    { role: "Utility partner", name: "City of Cartersville Electric Department", tag: "Utility" }
+  ],
+  contacts: [
+    { org: "Georgia Department of Economic Development", name: "Marie Gordon, Director of Communications", contact: "mgordon@georgia.org" },
+    { org: "Cartersville-Bartow County Dept. of Economic Development", name: "Melinda Lemmon, Executive Director" },
+    { org: "Bartow County Government", name: "Steve Taylor, Sole Commissioner" },
+    { org: "Hyundai-SK Battery Manufacturing America (HSBMA LLC)", name: "5059 HWY 411, Kingston, GA 30145", contact: "hsbma.com" }
+  ],
+  feed: [
+    { source: "Prior research", date: "Jun 1, 2026", title: "Permit issued", kind: "signal" },
+    { source: "Hyundai, local source", date: "Jun 1, 2026", title: "Permit issued", kind: "signal" },
+    { source: "Permit filing", date: "", title: "Industrial Site Authorization", detail: "Bartow Centre Industrial site zoning and development along US Highway 411.", kind: "signal" },
+    { source: "Permit filing", date: "", title: "City Utility Connection Permits", detail: "Cartersville/Bartow County utility main extension and connection permits, specific permit numbers not publicly confirmed.", highlight: true, kind: "signal" },
+    { source: "FOX 5 Atlanta", date: "Dec 8, 2022", title: "Hyundai, SK building new battery plant to Bartow County, bringing 3,500 new jobs", kind: "news" },
+    { source: "Hyundai Newsroom", date: "", title: "HSBMA Begins EV Battery Cell Production in Georgia", kind: "news" },
+    { source: "Batteries News", date: "", title: "SK On and Hyundai battery joint venture begins US production", kind: "news" }
+  ],
+  brief: [
+    { text: "The Hyundai-SK Battery Plant, officially operated under the joint venture Hyundai-SK Battery Manufacturing America (HSBMA LLC), is a $5 billion, 35 GWh electric vehicle battery cell manufacturing facility located on Highway 411 in Bartow County, Georgia." },
+    { text: "The 3.3 million square foot facility spans a 107+ acre site and is a 50/50 joint venture between Hyundai Motor Group and SK On. Creating over 3,500 jobs, commercial production began in June 2026 to supply battery cells for Hyundai, Kia, and Genesis EVs manufactured at Hyundai Motor Group Metaplant America and other U.S. plants." }
+  ],
+  briefSource: "SpecIndex AI search grounding. Cross-verified on a second pass, links live-checked.",
+  askAnswer: "The General Contractor / EPC for the Hyundai-SK Battery Plant (Bartow County) is Hyundai Engineering America, Inc.",
+  askScope: "Answers cite the sources in the activity feed only.",
+  hasSpec: false, hasDocs: false
+};
+
+const CITATIONS = [
+  { name: "Sika Corporation", product: "SikaGrout\u00ae 212 non-shrink grout", division: "Concrete (03) \u00b7 03 62 13", position: "Basis of design", tone: "grey", cite: "p. 69\u201371" },
+  { name: "Grainger", product: "L-Hook anchor bolts, ASTM A307 Gr. 55", division: "Metals (05) \u00b7 05 05 19", position: "Approved vendor", tone: "green", quote: "\u201cOr approved equal meeting this specification\u201d", cite: "p. 73" },
+  { name: "Cotterman", product: "Series F wall-mount ladder", division: "Metals (05)", position: "Named", tone: "green", quote: "\u201cApproved equal\u201d", cite: "p. 84" },
+  { name: "McNICHOLS", product: "Perforated metal", division: "Metals (05) \u00b7 05 51 00", position: "Named", tone: "green", quote: "\u201cOr approved equal\u201d", cite: "p. 87" },
+  { name: "Simpson Strong-Tie", product: "SDWS22 structural wood screws", division: "Wood, Plastics & Composites (06) \u00b7 06 05 23", position: "Basis of design", tone: "green", quote: "\u201cOr approved equal meeting all performance requirements.\u201d", cite: "p. 95\u201396" },
+  { name: "Simpson Strong-Tie, USP", product: "Connectors and hangers", division: "Wood, Plastics & Composites (06)", position: "Open to equals", tone: "green", quote: "\u201cSimpson Strong-Tie, USP, or approved equal\u201d", cite: "p. 101" },
+  { name: "Canam Mass Timber Hybrid Structures", product: "Glulam / CLT fabrication, with Element5", division: "Wood, Plastics & Composites (06) \u00b7 06 17 19", position: "Fabricator", tone: "amber", cite: "p. 104\u2013110" },
+  { name: "Owens Corning", product: "FOAMULAR\u00ae F-400 XPS under-slab insulation", division: "Thermal & Moisture Protection (07) \u00b7 07 21 00", position: "Basis of design", tone: "grey", cite: "p. 131\u2013132" },
+  { name: "Elevate (Firestone)", product: "ISO 95+ tapered polyiso, ISOGARD HD, STRUCTODEK HD", division: "Thermal & Moisture Protection (07)", position: "Acceptable manufacturer", tone: "green", quote: "\u201cAcceptable manufacturers include: \u2026 Or approved equal\u201d", cite: "p. 139" },
+  { name: "Carlisle SynTec Systems", product: "Mechanically fastened EPDM roofing system", division: "Thermal & Moisture Protection (07)", position: "Basis of design", tone: "grey", cite: "p. 151\u2013158" },
+  { name: "Johns Manville", product: "Roof insulation", division: "Thermal & Moisture Protection (07)", position: "Acceptable manufacturer", tone: "green", cite: "p. 139" },
+  { name: "GAF", product: "Roof insulation", division: "Thermal & Moisture Protection (07)", position: "Acceptable manufacturer", tone: "green", cite: "p. 139" },
+  { name: "Bilco", product: "Type J-Channel floor access door", division: "Openings (08)", position: "Named", tone: "green", quote: "\u201cOr approved equal meeting all requirements.\u201d", cite: "p. 165" },
+  { name: "Sherwin-Williams", product: "Pro Industrial Pro-Cryl primer, Acrylic Dryfall, Urethane Alkyd", division: "Finishes (09) \u00b7 09 90 00", position: "Basis of design", tone: "green", quote: "\u201cOr approved equal meeting all performance requirements.\u201d", cite: "p. 178\u2013181" },
+  { name: "PPG Protective Coatings", product: "Protective and marine coatings", division: "Finishes (09)", position: "Acceptable manufacturer", tone: "green", cite: "p. 183" },
+  { name: "Spacesaver Corporation", product: "Wall-mounted gun and rifle lockers", division: "Specialties (10)", position: "Basis of design", tone: "green", quote: "\u201cOr approved equal meeting all requirements.\u201d", cite: "p. 188\u2013189" },
+  { name: "Summit Appliance", product: "FF1532BIF undercounter refrigerator", division: "Specialties (10) \u00b7 appliances", position: "Named", tone: "grey", cite: "p. 192\u2013193" },
+  { name: "LG", product: "MSER0990S microwave", division: "Specialties (10) \u00b7 appliances", position: "Named", tone: "grey", cite: "p. 192" },
+  { name: "Corian\u00ae by DuPont", product: "Solid-surface countertop with integral sink", division: "Furnishings (12)", position: "Basis of design", tone: "green", quote: "\u201cOr approved equal meeting all performance requirements.\u201d", cite: "p. 197\u2013200" },
+  { name: "APC, Chatsworth, Middle Atlantic", product: "Communications racks and enclosures", division: "Communications (27) \u00b7 27 15 00", position: "Open to equals", tone: "green", quote: "\u201cAPC, Chatsworth, Middle Atlantic, or approved equal\u201d", cite: "p. 207" }
+];
+
+const LEGEND = [
+  { term: "Open to equals", tone: "green", def: "The section names alternates and says \u201cor approved equal\u201d outright." },
+  { term: "Basis of design", tone: "grey", def: "The product the section was drawn around. On this project an equal is still permitted, per General Conditions 17.1." },
+  { term: "Acceptable manufacturer", tone: "green", def: "One of several named on an approved list. The list is explicitly not closed." },
+  { term: "Named", tone: "grey", def: "The manufacturer appears in the section. The page cite is where." },
+  { term: "Approved vendor", tone: "grey", def: "Named as a source to buy through, not as the manufacturer of record." },
+  { term: "Fabricator", tone: "amber", def: "Named to fabricate the assembly. Hardest position to displace, because the award is to a shop, not a product." }
+];
+
+const FILTERS = [
+  { key: "all", label: "All 20" },
+  { key: "open", label: "Substitution stated (14)" },
+  { key: "bod", label: "Basis of design (6)" },
+  { key: "07", label: "Div 07 (5)" }
+];
+
+const SCORE_VALUE_COLOR = { high: "#166534", med: "#5B6A79", low: "#5B6A79", none: "#8A9AA8" };
+
+class Component extends DCLogic {
+  state = { tab: "brief", filter: "all", scoreOpen: false, feed: "All", pick: "bartow", legendOpen: false };
+
+  renderVals() {
+    const fromProp = (this.props.record ?? "Maine, has documents") === "Maine, has documents" ? "maine" : "bartow";
+    const key = this.state.pick || fromProp;
+    const rec = key === "maine" ? MAINE : BARTOW;
+    const tab = this.state.tab;
+
+    const tabDefs = [
+      { key: "brief", label: "Executive brief", count: null },
+      { key: "scope", label: "Scope", count: rec.scope.length },
+      { key: "spec", label: "Specification", count: rec.hasSpec ? CITATIONS.length : 0 },
+      { key: "team", label: "Team", count: rec.team.length },
+      { key: "docs", label: "Documents", count: rec.docs.length }
+    ];
+
+    let citations = CITATIONS;
+    if (this.state.filter === "open") citations = CITATIONS.filter(c => c.tone === "green");
+    else if (this.state.filter === "bod") citations = CITATIONS.filter(c => c.position === "Basis of design");
+    else if (this.state.filter === "07") citations = CITATIONS.filter(c => c.division.indexOf("(07)") > -1);
+
+    const feedKind = this.state.feed === "AI Signals" ? "signal" : this.state.feed === "News" ? "news" : null;
+    const feedList = feedKind ? rec.feed.filter(e => e.kind === feedKind) : rec.feed;
+
+    const t = rec.hasSpec ? DARK : LIGHT;
+    const read = rec.hasSpec
+      ? readBlock(t,
+          "Twenty manufacturers are named across 219 pages, but the General Conditions make every one of them substitutable. Plumbing, HVAC and electrical name nobody at all.",
+          [["20", "manufacturer citations, each with a page number"],
+           ["8", "of 16 divisions carry a citation. Eight name nobody"],
+           ["0", "products barred from substitution", "#FFFFFF"]],
+          "General Conditions 17.1: \u201cthe term \u2018or approved equal\u2019 shall be implied, if it is not included in the text.\u201d On this project nothing is locked.")
+      : readBlock(t,
+          "No specification exists for this project yet, so nobody is named and nobody is locked out. What you get here is the team, mapped end to end.",
+          [["0", "specification documents published", "#8A9AA8"],
+           ["5", "firms placed on the job, including the architect"],
+           ["4", "divisions with described scope"]],
+          "The architect, the EPC and both subcontractors are known by name. That is the route onto this job while the spec does not exist.");
+
+    return {
+      rec: {
+        ...rec, ...read,
+        scoreToggleLabel: this.state.scoreOpen ? "Hide breakdown" : "Click for breakdown",
+        scoreCardStyle: "cursor:pointer; text-align:left; background:#FFFFFF; border:1px solid " + (this.state.scoreOpen ? "#2F9E5C" : "#DEEAE3") + "; border-radius:12px; padding:14px 18px; min-width:158px",
+        scoreFactors: rec.scoreFactors.map(k => ({
+          ...k,
+          valueColor: SCORE_VALUE_COLOR[k.value],
+          barStyle: "width:" + k.pct + "%; height:100%; border-radius:999px; background:" + (k.pct === 0 ? "#C3D8CB" : k.pct >= 70 ? "#2F9E5C" : "#A6BBAF")
+        })),
+        facts: rec.facts.map(f => ({ ...f, valueStyle: f.empty ? FACT_EMPTY : FACT })),
+        scope: rec.scope.map(v => ({
+          ...v, source: v.source || null,
+          tag: v.muted ? "Contract docs" : v.open ? "Names nobody" : "Cited",
+          tagStyle: v.muted ? B.grey : v.open ? B.green : B.grey,
+          cardStyle: "border:1px solid " + (v.open && !v.muted ? "#2F9E5C" : "#DEEAE3") + "; background:" + (v.open && !v.muted ? "#EDF5F0" : "#FFFFFF") + "; border-radius:12px; padding:16px 18px" + (v.muted ? "; opacity:0.75" : "")
+        })),
+        docs: rec.docs.map(d => ({ ...d, pages: d.pages || null })),
+        team: rec.team.map(m => ({
+          ...m, detail: m.detail || null,
+          nameStyle: "font-size:16px; font-weight:600; line-height:1.35" + (m.empty ? "; color:#5B6A79" : ""),
+          tagStyle: m.emphasize ? B.green : B.grey
+        })),
+        contacts: rec.contacts.map(c => ({ ...c, contact: c.contact || null }))
+      },
+      tabs: tabDefs.map(d => ({
+        label: d.label,
+        count: d.count === null ? "" : d.count,
+        onClick: () => this.setState({ tab: d.key }),
+        style: "position:relative; background:none; border:none; cursor:pointer; padding:16px 13px; font-size:14.5px; font-weight:600; display:flex; align-items:center; gap:8px; color:" +
+          (tab === d.key ? "#0C1524" : "#5B6A79") + (tab === d.key ? "; box-shadow:inset 0 -2px 0 #166534" : ""),
+        countStyle: d.count === null ? "display:none"
+          : "font-family:SFMono-Regular,Menlo,monospace; font-size:11px; padding:2px 7px; border-radius:999px; " +
+            (d.count === 0 ? "color:#8A9AA8; background:#F6FAF7; border:1px solid #DEEAE3"
+             : tab === d.key ? "color:#166534; background:#E4F2EA"
+             : "color:#5B6A79; background:#F6FAF7; border:1px solid #DEEAE3")
+      })),
+      recordSwitch: [
+        { k: "maine", label: "Maine, with spec" },
+        { k: "bartow", label: "Hyundai-SK, no spec" }
+      ].map(r => ({
+        label: r.label,
+        onClick: () => this.setState({ pick: r.k, tab: "brief", scoreOpen: false, filter: "all" }),
+        style: "cursor:pointer; white-space:nowrap; font-size:12.5px; font-weight:600; padding:7px 16px; border-radius:999px; border:1px solid " +
+          (key === r.k ? "#166534; background:#166534; color:#FFFFFF" : "transparent; background:transparent; color:#5B6A79")
+      })),
+      scoreOpen: this.state.scoreOpen,
+      toggleScore: () => this.setState(s => ({ scoreOpen: !s.scoreOpen })),
+      showSpec: tab === "spec", showScope: tab === "scope", showDocs: tab === "docs",
+      showTeam: tab === "team", showBrief: tab === "brief",
+      hasSpec: rec.hasSpec, noSpec: !rec.hasSpec, specRule: rec.specRule || null,
+      hasDocs: rec.hasDocs, noDocs: !rec.hasDocs,
+      filters: FILTERS.map(f => ({
+        label: f.label,
+        onClick: () => this.setState({ filter: f.key }),
+        style: "cursor:pointer; font-size:13px; font-weight:600; padding:8px 14px; border-radius:999px; " +
+          (this.state.filter === f.key ? "background:#166534; color:#FFFFFF; border:1px solid #166534"
+            : "background:#FFFFFF; color:#5B6A79; border:1px solid #DEEAE3")
+      })),
+      citations: citations.map(c => ({ ...c, badgeStyle: B[c.tone], quote: c.quote || null, product: c.product || null })),
+      legendOpen: this.state.legendOpen,
+      toggleLegend: () => this.setState(x => ({ legendOpen: !x.legendOpen })),
+      legendToggleLabel: this.state.legendOpen ? "Hide" : "Show the 6 badges",
+      legendBtnStyle: "width:100%; display:flex; align-items:center; justify-content:space-between; gap:12px; cursor:pointer; background:#F6FAF7; border:none; text-align:left; padding:14px 17px",
+      legend: LEGEND.map(l => ({
+        term: l.term, def: l.def,
+        cardStyle: "border:1px solid " + (l.tone === "green" ? "#2F9E5C" : "#DEEAE3") + "; background:" + (l.tone === "green" ? "#EDF5F0" : "#FFFFFF") + "; border-radius:11px; padding:15px 17px",
+        badgeStyle: B[l.tone] + "; display:inline-block; margin-bottom:9px"
+      })),
+      feedTabs: ["All", "AI Signals", "News"].map(f => ({
+        label: f,
+        onClick: () => this.setState({ feed: f }),
+        style: "cursor:pointer; font-size:11.5px; font-weight:600; padding:5px 10px; border-radius:7px; border:1px solid " +
+          (this.state.feed === f ? "#2F9E5C; background:#E4F2EA; color:#166534" : "#DEEAE3; background:#FFFFFF; color:#5B6A79")
+      })),
+      feedEmpty: feedList.length === 0,
+      feedEmptyNote: "No " + (this.state.feed === "News" ? "news" : "signal") + " entries on this record.",
+      feed: feedList.map(e => ({
+        ...e, detail: e.detail || null,
+        cardStyle: "border:1px solid " + (e.highlight ? "#2F9E5C" : "#DEEAE3") + "; background:" + (e.highlight ? "#EDF5F0" : "#FFFFFF") + "; border-radius:10px; padding:12px 14px"
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -19,8 +19,8 @@ export const colors = {
 } as const;
 
 export const fonts = {
-  sans: "var(--font-inter)",
-  mono: "var(--font-jetbrains-mono)",
+  sans: "var(--font-geist-sans)",
+  mono: "var(--font-geist-mono)",
 } as const;
 
 export const radii = {

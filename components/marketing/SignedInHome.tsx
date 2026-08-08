@@ -338,7 +338,7 @@ function FeedView({
               <div className="min-w-0 flex-1">
                 <div className="flex items-center gap-2">
                   <Link
-                    href={`/projects/view/?id=${p.id}`}
+                    href={`/project/view/?id=${p.id}`}
                     className="truncate font-semibold hover:underline"
                     onClick={() => writeTriageList(feedProjects.map((fp) => fp.id), p.id)}
                   >
@@ -429,7 +429,7 @@ function TrackedView({
                 <tr key={t.project_id} className="border-b border-[var(--color-border)] last:border-0">
                   <td className="px-3 py-3">
                     <Link
-                      href={`/projects/view/?id=${t.project_id}`}
+                      href={`/project/view/?id=${t.project_id}`}
                       className="font-semibold hover:underline"
                       onClick={() => writeTriageList(tracked.map((tp) => tp.project_id), t.project_id)}
                     >

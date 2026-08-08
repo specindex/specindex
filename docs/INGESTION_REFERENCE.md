@@ -67,7 +67,7 @@ a rep can find a job at all; Path B is what makes the job worth opening.
 
 ---
 
-## The nine steps
+## The ten steps
 
 | # | step | code | writes | how to tell it worked |
 |---|---|---|---|---|
@@ -78,8 +78,21 @@ a rep can find a job at all; Path B is what makes the job worth opening.
 | 5 | **Extract** — native page text (98.4% of pages need no OCR) | registration scripts | `document_pages` | pages joinable **via `document_file_id`**, not only `reference_document_id` |
 | 6 | **Classify** — CSI divisions per document | `scripts/classify-spec-documents.py` | `project_csi_divisions` | divisions with `project_sk IS NOT NULL` |
 | 7 | **Ledger** — basis of design, alternates, "or equal" | `scripts/extract-spec-positions.py` | `substitution_rulings` | cited findings, each with a page number |
-| 8 | **Enrich** — two-pass grounded search (discovery, then independent cross-check) | `scripts/enrich-project-details.py` | `project_enrichment` | fact count; `confirmed` vs `reported` |
-| 9 | **Serve** | `api/main.py` `/v1/projects/{id}` | — | signed **in**; signed out returns a teaser |
+| 8 | **Score** — value (0-30, sanity-bounded) + recency (0-25) + spec position (0-45, reads step 7's `substitution_rulings` and step 3/4's `project_document_files`, **not** step 9's enrichment) | `scripts/compute-project-scores.py` | `project_scores` | non-`NULL` `score` on any project with cited findings; breakdown columns (`value_score`/`recency_score`/`position_score`) sum to `score` |
+| 9 | **Enrich** — two-pass grounded search (discovery, then independent cross-check) | `scripts/enrich-project-details.py` | `project_enrichment` | fact count; `confirmed` vs `reported` |
+| 10 | **Serve** | `api/main.py` `/v1/projects/{id}` | — | signed **in**; signed out returns a teaser |
+
+**Step 8 got its scheduled workflow 2026-08-07** —
+`compute-project-scores-pipeline.yml`, daily 10:00 UTC (same slot
+`enrich-project-details-pipeline.yml` uses, though that one's own schedule is
+still commented out from the 2026-07-28 repo-wide cron disable). Until this
+ran, nothing in `.github/workflows/` executed `compute-project-scores.py`
+except by hand, which is why most of the corpus — including reference
+records used for design/QA work — showed an unpulled `--/100` score on the
+project page. `scripts/compute-project-scores.py` also gained a
+`--project-id` flag the same day, so a single project can be scored (upsert)
+without truncating and rescoring the other ~600K rows, the way the
+full-corpus default path does.
 
 ### Running it end to end for one project
 
@@ -88,6 +101,7 @@ python3 scripts/run-portal-capture.py --states Maine --max-docs 0 --checkpoint
 python3 scripts/load-portal-projects.py
 python3 scripts/link-portal-documents-to-projects.py
 python3 scripts/extract-spec-positions.py --project-id me-portal-maine-vertical-3820
+python3 scripts/compute-project-scores.py --database-url "$DSN"
 python3 scripts/enrich-project-details.py <project_sk> --database-url "$DSN"
 ```
 
@@ -134,7 +148,8 @@ service; the queue and workers are invoked by those crons. Times are UTC.
 | daily 09:00 | `pull-all-deterministic-sources.yml` | the deterministic feeds, then corpus load and rollup | A |
 | daily 09:00 | `pull-ga-federal-pipeline.yml` | GA DRI + federal | A |
 | daily 09:00 | `coverage-daily.yml` | county coverage + state quality | — |
-| daily 10:00 | `enrich-project-details-pipeline.yml` | step 8 enrichment | B |
+| daily 10:00 | `enrich-project-details-pipeline.yml` | step 9 enrichment | B |
+| daily 10:00 | `compute-project-scores-pipeline.yml` | step 8 scoring — see note above | — |
 | daily 13:00 | `daily-gcp-spend.yml` | GCP spend report by email | — |
 | weekly Mon 06:00 | `coverage-weekly.yml` | full coverage rebuild | — |
 | weekly Mon 07:00 | `branch-hygiene.yml` | deletes merged branches, files an issue for no-PR branches holding unique files | — |
@@ -330,12 +345,63 @@ rather than deleted, because the reason it was #1 still governs what comes next:
 a data product cannot depend on someone remembering, and **the pipeline running
 at all matters more than monitoring it**.
 
-**2. Verify the first unattended runs actually capture.** Now the live question,
-and the same trap as `continuous-crawl.yml` — which fires reliably and finishes
-in 34 seconds. A scheduled job that runs and does nothing is worse than one that
-never ran, because it reports success. Check the execution's own `[verify]` line
-(projects / documents / addenda) and the row count of the pull log it uploads to
-`gs://specindex-ai-raw-documents/pull-logs/`. **Firing is not working.**
+**2. Diagnose the stalled capture run — measured 2026-08-08 00:59 UTC.** The
+verification execution `specindex-pull-portals-jf6w7` started 00:23, and this is
+what it shows:
+
+- **capture works.** 27 adapters scoped; `[20/20]` projects at ~38/min emitting
+  rate and ETA, 2–7 documents each. Real work, not a 34-second no-op.
+- **it went silent at 00:36:59** on `[20/20] ... ETA 0s` and produced **nothing
+  for the next 22 minutes**, while Cloud Run still reported it running. 54 log
+  lines total. The load step never logged at all.
+- one adapter error: `[4/27] bonfire: discover failed`.
+
+Silence at the hand-off from capture into load is failure-mode instance 8 again
+— *"loader read the biggest pull log, not the new one; corpus moved +0"* —
+except this run does not report a wrong number, it reports nothing. **A hang is
+the one outcome that looks identical to work in progress.** Check whether load
+is blocked on the Cloud SQL socket, whether a pull log reached
+`gs://specindex-ai-raw-documents/pull-logs/` at all, and whether the corpus
+moved; print counts either side.
+
+The daily 03:00 UTC cron will reproduce this unattended and report success by
+never finishing. That is exactly the trap `continuous-crawl.yml` sets — fires
+reliably, finishes in 34 seconds, does nothing. **Firing is not working, and
+neither is running.**
+
+**2a. Bound the job's runtime and require a terminal `[verify]` line.** Nothing
+above would have been noticed by a checker, because the job has no deadline and
+no completion assertion — the only reason it surfaced is that a human looked at
+`executions list`. Any run over ~30s already owes rate and ETA; a *job* owes a
+final line stating projects / documents / addenda, and a timeout that fails
+loudly instead of hanging quietly.
+
+**2b. Send the verified outcomes back to Gemini.** Its review of the branch
+hygiene workflow scored 1 of 3 on checkable claims — right that `head -20` under
+`bash -e` + `pipefail` kills the producer with SIGPIPE (verified, rc=141), wrong
+that squash-merge defeats a merge-base test, wrong that `fetch-depth` was unset.
+Disproving the squash-merge claim is what produced the measurement that chose
+the final design. Per CLAUDE.md §4 the return leg is not optional:
+`scripts/gemini_feedback_loop.py`. Without it, it keeps asserting what has
+already been disproven.
+
+> **Correction, 2026-08-08: the `fetch-depth` claim was scored wrong and was
+> actually RIGHT — in `deploy-reconcile.yml`, not the branch-hygiene workflow
+> the review was aimed at.** That job's `actions/checkout@v4` specified only
+> `ref: main` with no `fetch-depth`, so it took the default depth-1 shallow
+> clone, and its `git merge-base --is-ancestor` check could never resolve
+> history. It failed daily, flagging all 14 recently-merged PRs (#146–#159) as
+> "commits never reached main" — every one a false positive, confirmed by
+> running the same check locally against a full clone. A `2>/dev/null` on the
+> merge-base call hid git's own "not a valid object name" and made the
+> misconfiguration indistinguishable from a real finding. Both fixed
+> (`fetch-depth: 0`, stderr no longer suppressed, and an explicit
+> "cannot evaluate" branch that names a clone problem as a clone problem).
+> **The lesson cuts both ways:** the return leg exists to correct Gemini, but a
+> scorecard is itself a claim, and this one shipped a wrong "wrong" that then
+> sat in the doc as settled while the real bug failed a workflow every day.
+> Re-verify a disproof before recording it, especially one that closes off a
+> correct lead.
 
 **3. Build an end-to-end chain checker.** No test asserts that stage N+1 can read
 stage N; that shape has failed seven times. Shape:
@@ -367,6 +433,13 @@ Division 23 when they are electrical). The prompt already forbids the middle two
 
 **7. Drain the extraction backlog.** ~14,000 registered documents are still
 unextracted, so their divisions and rulings do not exist yet.
+
+**7a. Build the text-quality detector.** 4.1% of pages in a random 3,000-page
+sample carry text that extracted without raising and is garbage. No detector
+exists, so those pages return a silent "no manufacturers named" — a confident
+zero that is a fact about our parse, not about the document. Gemini implied the
+problem was pervasive; measuring put it at 4.1%. Real, smaller than claimed, and
+still undetected.
 
 **8. Move REMAINING ingestion off the laptop.** The Cloud SQL proxy died four times on
 2026-08-07, every time from the machine sleeping — the failure reads as a
