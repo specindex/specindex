@@ -17,8 +17,35 @@
   --color-gray-700: #44403c;
   --color-border: #e7e5e4;
 
-  --font-sans: var(--font-inter), "Inter", system-ui, -apple-system, sans-serif;
-  --font-mono: var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, monospace;
+  /* Geist system site-wide (see docs/design-system.md) -- one family for
+     body/headings, one mono family for data/IDs. Loaded via the `geist`
+     package in app/layout.tsx (next/font/local under the hood, not Google
+     Fonts -- Geist isn't distributed there). --font-display is an alias,
+     not a second family: the project record page's headings/scores use
+     the same Geist Sans at heavier weight/tighter tracking, not a
+     different typeface. */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
+  --font-display: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+
+  /* Scoped to the project record page (docs/handoff_project_record_template,
+     docs/design-system.md#project-record-page). Deliberately namespaced
+     --sx-* rather than reusing --color-*, so this palette doesn't bleed
+     into the rest of the site. */
+  --sx-green: #2f9e5c;
+  --sx-forest: #166534;
+  --sx-amber: #f59e0b;
+  --sx-amber-tint: #fdf0d6;
+  --sx-ink: #0c1524;
+  --sx-muted: #5b6a79;
+  --sx-faint: #8a9aa8;
+  --sx-on-forest: #d2e7db;
+  --sx-muted-light: #a6bbaf;
+  --sx-chip: #e4f2ea;
+  --sx-panel: #edf5f0;
+  --sx-line: #deeae3;
+  --sx-dashed: #c3d8cb;
+  --sx-page-bg: #f6faf7;
 }
 
 @theme inline {

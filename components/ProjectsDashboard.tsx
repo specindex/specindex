@@ -624,7 +624,7 @@ export function ProjectsDashboard() {
         {projects.map((project) => (
           <li key={project.id}>
             <Link
-              href={`/projects/${project.id}/`}
+              href={`/project/${project.id}/`}
               className="group block px-4 py-5 transition hover:bg-[var(--color-gray-100)] md:px-5"
             >
               <div className="flex flex-wrap items-start justify-between gap-3">

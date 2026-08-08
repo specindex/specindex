@@ -81,6 +81,11 @@ export type ProjectEnrichment = {
   // project_enrichment_checks.checked_at, not a fabricated freshness
   // claim) -- null if it's never been checked.
   checked_at: string | null;
+  // Blanket substitution clause parsed from the project manual's General
+  // Conditions (e.g. "the term 'or approved equal' shall be implied"), when
+  // the pipeline has extracted one. Absent on most records today -- render
+  // the governing-rule banner only when present, never fabricate one.
+  governing_rule?: { text: string; cite: string } | null;
 };
 
 export type ProjectDocumentFile = {

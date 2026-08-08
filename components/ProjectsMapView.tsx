@@ -139,7 +139,7 @@ export function ProjectsMapView({ filters }: Props) {
         marker.bindPopup(
           `<strong>${escapeHtml(p.name)}</strong><br/>${escapeHtml(p.city)}, ${escapeHtml(p.state)}` +
             `<br/>${p.estimated_value_usd ? escapeHtml(formatUsd(p.estimated_value_usd)) : ""}` +
-            `<br/><a href="/projects/${encodeURIComponent(p.id)}/">View project →</a>`
+            `<br/><a href="/project/${encodeURIComponent(p.id)}/">View project →</a>`
         );
         group.addLayer(marker);
       }

@@ -67,7 +67,7 @@ a rep can find a job at all; Path B is what makes the job worth opening.
 
 ---
 
-## The nine steps
+## The ten steps
 
 | # | step | code | writes | how to tell it worked |
 |---|---|---|---|---|
@@ -78,8 +78,21 @@ a rep can find a job at all; Path B is what makes the job worth opening.
 | 5 | **Extract** — native page text (98.4% of pages need no OCR) | registration scripts | `document_pages` | pages joinable **via `document_file_id`**, not only `reference_document_id` |
 | 6 | **Classify** — CSI divisions per document | `scripts/classify-spec-documents.py` | `project_csi_divisions` | divisions with `project_sk IS NOT NULL` |
 | 7 | **Ledger** — basis of design, alternates, "or equal" | `scripts/extract-spec-positions.py` | `substitution_rulings` | cited findings, each with a page number |
-| 8 | **Enrich** — two-pass grounded search (discovery, then independent cross-check) | `scripts/enrich-project-details.py` | `project_enrichment` | fact count; `confirmed` vs `reported` |
-| 9 | **Serve** | `api/main.py` `/v1/projects/{id}` | — | signed **in**; signed out returns a teaser |
+| 8 | **Score** — value (0-30, sanity-bounded) + recency (0-25) + spec position (0-45, reads step 7's `substitution_rulings` and step 3/4's `project_document_files`, **not** step 9's enrichment) | `scripts/compute-project-scores.py` | `project_scores` | non-`NULL` `score` on any project with cited findings; breakdown columns (`value_score`/`recency_score`/`position_score`) sum to `score` |
+| 9 | **Enrich** — two-pass grounded search (discovery, then independent cross-check) | `scripts/enrich-project-details.py` | `project_enrichment` | fact count; `confirmed` vs `reported` |
+| 10 | **Serve** | `api/main.py` `/v1/projects/{id}` | — | signed **in**; signed out returns a teaser |
+
+**Step 8 got its scheduled workflow 2026-08-07** —
+`compute-project-scores-pipeline.yml`, daily 10:00 UTC (same slot
+`enrich-project-details-pipeline.yml` uses, though that one's own schedule is
+still commented out from the 2026-07-28 repo-wide cron disable). Until this
+ran, nothing in `.github/workflows/` executed `compute-project-scores.py`
+except by hand, which is why most of the corpus — including reference
+records used for design/QA work — showed an unpulled `--/100` score on the
+project page. `scripts/compute-project-scores.py` also gained a
+`--project-id` flag the same day, so a single project can be scored (upsert)
+without truncating and rescoring the other ~600K rows, the way the
+full-corpus default path does.
 
 ### Running it end to end for one project
 
@@ -88,6 +101,7 @@ python3 scripts/run-portal-capture.py --states Maine --max-docs 0 --checkpoint
 python3 scripts/load-portal-projects.py
 python3 scripts/link-portal-documents-to-projects.py
 python3 scripts/extract-spec-positions.py --project-id me-portal-maine-vertical-3820
+python3 scripts/compute-project-scores.py --database-url "$DSN"
 python3 scripts/enrich-project-details.py <project_sk> --database-url "$DSN"
 ```
 
@@ -134,7 +148,8 @@ service; the queue and workers are invoked by those crons. Times are UTC.
 | daily 09:00 | `pull-all-deterministic-sources.yml` | the deterministic feeds, then corpus load and rollup | A |
 | daily 09:00 | `pull-ga-federal-pipeline.yml` | GA DRI + federal | A |
 | daily 09:00 | `coverage-daily.yml` | county coverage + state quality | — |
-| daily 10:00 | `enrich-project-details-pipeline.yml` | step 8 enrichment | B |
+| daily 10:00 | `enrich-project-details-pipeline.yml` | step 9 enrichment | B |
+| daily 10:00 | `compute-project-scores-pipeline.yml` | step 8 scoring — see note above | — |
 | daily 13:00 | `daily-gcp-spend.yml` | GCP spend report by email | — |
 | weekly Mon 06:00 | `coverage-weekly.yml` | full coverage rebuild | — |
 | weekly Mon 07:00 | `branch-hygiene.yml` | deletes merged branches, files an issue for no-PR branches holding unique files | — |

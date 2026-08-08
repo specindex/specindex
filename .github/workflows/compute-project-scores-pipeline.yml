@@ -1,0 +1,88 @@
+name: Project priority scoring
+
+# Runs scripts/compute-project-scores.py: populates project_scores (value +
+# recency + spec-position, 0-100) for the whole corpus. Every other pipeline
+# step (Capture, Load, Link, Classify, Ledger, Enrich) has its own workflow;
+# this one was missing entirely until docs/ROADMAP.md item 100 (2026-08-07) --
+# found while redesigning the project record page, most projects (including
+# reference/QA records) were showing an unpulled "--/100" score not because
+# scoring is broken, but because nothing had ever run it except by hand.
+#
+# Full-corpus mode (no project_id input) TRUNCATEs and rescores all
+# project_scores rows in one run -- cheap (single SQL query plus a bulk
+# insert, no LLM calls, unlike enrichment), so this is safe to run daily
+# without a cooldown/limit the way enrich-project-details-pipeline.yml needs
+# one. A scoped project_id input is also exposed for testing a single
+# project without touching the rest of the table (same --project-id flag
+# added 2026-08-07 alongside this workflow, upserts instead of truncating).
+
+on:
+  # Enabled 2026-08-07, same 10:00 UTC slot as
+  # enrich-project-details-pipeline.yml's schedule -- NOTE that workflow's
+  # own schedule is still commented out (repo-wide cron disable, 2026-07-28,
+  # never fully re-enabled), so this runs alone at 10:00 unless Enrich also
+  # gets turned back on. Fine either way: Score doesn't read Enrich's
+  # output, only step 7's substitution_rulings + step 3/4's
+  # project_document_files, so there's no real ordering dependency between
+  # the two, only a shared time-slot convention.
+  schedule:
+    - cron: "0 10 * * *"
+  workflow_dispatch:
+    inputs:
+      project_id:
+        description: "Restrict to one project_id (blank = rescore whole corpus)"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+  id-token: write
+
+env:
+  CLOUDSQL_INSTANCE: specindex-ai:us-central1:specindex-db
+  DATABASE_URL: postgresql://specindex:${{ secrets.CLOUDSQL_PASSWORD }}@127.0.0.1:5433/specindex
+  GOOGLE_CLOUD_PROJECT: specindex-ai
+
+jobs:
+  compute_project_scores:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements-db.txt
+
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+
+      - name: Start Cloud SQL Auth Proxy
+        run: |
+          curl -sL -o cloud-sql-proxy \
+            https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.14.0/cloud-sql-proxy.linux.amd64
+          chmod +x cloud-sql-proxy
+          ./cloud-sql-proxy --port 5433 "$CLOUDSQL_INSTANCE" &
+          for i in $(seq 1 15); do
+            (echo > /dev/tcp/127.0.0.1/5433) >/dev/null 2>&1 && break
+            sleep 1
+          done
+
+      - name: Compute scores (applies migration first, idempotent)
+        run: |
+          python3 scripts/compute-project-scores.py \
+            --apply-migration \
+            ${{ github.event.inputs.project_id && format('--project-id {0}', github.event.inputs.project_id) || '' }}
+
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo "### Project priority scoring — results"
+            echo "Scope: ${{ github.event.inputs.project_id || 'whole corpus' }}"
+            echo "See step logs above for scored count and position-signal count."
+          } >> "$GITHUB_STEP_SUMMARY"
