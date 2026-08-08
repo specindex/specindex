@@ -171,10 +171,16 @@ def main() -> int:
 
     from google import genai
     from google.genai import types as gtypes
+    # "global", not a regional endpoint -- found 2026-08-08. Newer Gemini
+    # models (this script uses gemini-3.6-flash) are only published under
+    # Vertex AI's global endpoint; us-central1 returned a 404 NOT_FOUND on
+    # every single call, live-verified before and after this fix. Matches
+    # the default in state_agent_pipeline/config.py, which this standalone
+    # script duplicates rather than imports.
     client = genai.Client(
         vertexai=True,
         project=os.environ["GOOGLE_CLOUD_PROJECT"],
-        location=os.environ.get("GOOGLE_CLOUD_LOCATION", "us-central1"),
+        location=os.environ.get("GOOGLE_CLOUD_LOCATION", "global"),
     )
     conn = connect(); cur = conn.cursor()
 
@@ -225,7 +231,11 @@ def main() -> int:
         try:
             divs = divisions_from(client, text)
         except Exception as e:  # noqa: BLE001
-            print(f"  [{i}/{len(targets)}] doc {doc_id}: API {type(e).__name__}", flush=True)
+            # Printing only type(e).__name__ here ("API ClientError") hid a
+            # real, fixable location-config bug (2026-08-08) behind an
+            # opaque label for every single call in a 20-document dry run.
+            # str(e) carries the actual API error body -- always print it.
+            print(f"  [{i}/{len(targets)}] doc {doc_id}: API {type(e).__name__}: {e}", flush=True)
             continue
 
         if args.dry_run:

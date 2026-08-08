@@ -385,6 +385,24 @@ the final design. Per CLAUDE.md §4 the return leg is not optional:
 `scripts/gemini_feedback_loop.py`. Without it, it keeps asserting what has
 already been disproven.
 
+> **Correction, 2026-08-08: the `fetch-depth` claim was scored wrong and was
+> actually RIGHT — in `deploy-reconcile.yml`, not the branch-hygiene workflow
+> the review was aimed at.** That job's `actions/checkout@v4` specified only
+> `ref: main` with no `fetch-depth`, so it took the default depth-1 shallow
+> clone, and its `git merge-base --is-ancestor` check could never resolve
+> history. It failed daily, flagging all 14 recently-merged PRs (#146–#159) as
+> "commits never reached main" — every one a false positive, confirmed by
+> running the same check locally against a full clone. A `2>/dev/null` on the
+> merge-base call hid git's own "not a valid object name" and made the
+> misconfiguration indistinguishable from a real finding. Both fixed
+> (`fetch-depth: 0`, stderr no longer suppressed, and an explicit
+> "cannot evaluate" branch that names a clone problem as a clone problem).
+> **The lesson cuts both ways:** the return leg exists to correct Gemini, but a
+> scorecard is itself a claim, and this one shipped a wrong "wrong" that then
+> sat in the doc as settled while the real bug failed a workflow every day.
+> Re-verify a disproof before recording it, especially one that closes off a
+> correct lead.
+
 **3. Build an end-to-end chain checker.** No test asserts that stage N+1 can read
 stage N; that shape has failed seven times. Shape:
 `scripts/check-ingestion-chain.py --project-id <id>`, running every stage and

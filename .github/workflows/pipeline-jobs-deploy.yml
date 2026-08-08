@@ -96,7 +96,19 @@ jobs:
           # ephemeral, so a capture that writes its pull log and exits leaves the
           # loader nothing to read -- the documents would sit in GCS with nothing
           # pointing at them, and the run would look like a success.
-          deploy_job specindex-pull-portals   6h  scripts/run-capture-and-load.py --tier 1 --batch-size 10
+          #
+          # 6h -> 2h on pull-portals, 2026-08-08. With --max-retries 2 a 6h
+          # timeout means an execution can burn EIGHTEEN hours before it
+          # reports failure, against a cron that fires every 24h -- so a hang
+          # never surfaces as a failure before the next one starts, and they
+          # stack. Measured that day: TWO executions simultaneously stuck in
+          # RUNNING/0-of-1, one of them 8h old (the same stall
+          # docs/INGESTION_REFERENCE.md item 2 documents), both still
+          # consuming a task slot. Real observed throughput is ~38 projects/
+          # min, so tier-1 capture has no legitimate reason to exceed 2h;
+          # anything past that IS the hang, and should fail loudly while
+          # there is still a human awake to read it.
+          deploy_job specindex-pull-portals   2h  scripts/run-capture-and-load.py --tier 1 --batch-size 10
           deploy_job specindex-pull-socrata   1h  scripts/pull-socrata-permits.py config/socrata/austin.yaml config/socrata/seattle.yaml
           deploy_job specindex-pull-arcgis    1h  scripts/pull-arcgis-permits.py config/arcgis/denver.yaml config/arcgis/raleigh.yaml
           deploy_job specindex-classify       6h  scripts/classify-spec-documents.py --owner reference --limit 200

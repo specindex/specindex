@@ -143,6 +143,21 @@ class SamGovProvider(BaseIngestionProvider):
         out = []
         for row in rows:
             notice_id = row["NoticeId"]
+            # SAM.gov mints a NEW NoticeId every time a solicitation is
+            # amended or reposted, while Sol# (the actual solicitation
+            # number) stays constant across those amendments -- keying the
+            # project id on notice_id alone made every amendment a brand
+            # new project row. Found 2026-08-07/08: one VA solicitation
+            # (Y1DZ Building 9A EHRM, Dublin GA) had 7 separate project
+            # rows, one per amendment, each with a different partial
+            # document set. Sol# is not always present on every row, so
+            # fall back to notice_id only when it's genuinely missing --
+            # that subset still duplicates on amendment, but the majority
+            # (this one included) now dedupe correctly. A one-time cleanup
+            # of ALREADY-duplicated rows created before this fix is a
+            # separate, deliberately deferred step (see docs/ROADMAP.md) --
+            # this only stops NEW duplicates from forming.
+            dedup_key = (row.get("Sol#") or "").strip() or notice_id
             naics = row.get("NaicsCode", "")
             project_type = self.naics_codes.get(naics, "commercial")
             notice_type = row.get("Type", "")
@@ -167,7 +182,7 @@ class SamGovProvider(BaseIngestionProvider):
 
             out.append(
                 {
-                    "id": f"{self.state_code.lower()}-sam-{notice_id[:16]}-{slug}",
+                    "id": f"{self.state_code.lower()}-sam-{slugify(dedup_key)[:24]}-{slug}",
                     "name": (row.get("Title") or "Untitled")[:120],
                     "city": city,
                     "county": "",
