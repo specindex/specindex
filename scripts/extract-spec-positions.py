@@ -197,13 +197,39 @@ def main() -> int:
 
     for fid, sk, title, url, _doc_type in rows:
         prog.tick(note=f"rulings={rulings} bod={bod}")
-        try:
-            doc = fitz.open(stream=fetch_bytes(url), filetype="pdf")
-            pages = [doc[i].get_text() or "" for i in range(len(doc))]
-            doc.close()
-        except Exception as e:  # noqa: BLE001 -- one bad pdf must not end the run
-            failed += 1
-            continue
+
+        # READ THE TEXT WE ALREADY HAVE. This used to download the PDF from GCS
+        # and re-parse it with PyMuPDF on every run, even though step 5 had
+        # already extracted the same text into document_pages.
+        #
+        # That is not merely slow, it is the wrong seam. Text extraction is
+        # deterministic and belongs once per PDF; ledger extraction is
+        # PROBABILISTIC and gets re-run across the whole corpus every time the
+        # prompt improves. Coupling them meant every prompt change cost a full
+        # re-download and re-parse of every document. The database is the seam
+        # between the deterministic half and the probabilistic half.
+        cur.execute("""SELECT page_number, raw_text FROM document_pages
+                        WHERE document_file_id = %s ORDER BY page_number""", (fid,))
+        stored = cur.fetchall()
+        if stored:
+            # sections_with_pages() indexes positionally, so gaps (blank pages
+            # are not stored) must be filled rather than closed up -- otherwise
+            # every cited page number after the first gap is wrong, and a wrong
+            # page cite is worse than none.
+            n = stored[-1][0]
+            pages = [""] * n
+            for pno, txt in stored:
+                if 1 <= pno <= n:
+                    pages[pno - 1] = txt or ""
+        else:
+            # Fallback for documents step 5 has not reached yet.
+            try:
+                doc = fitz.open(stream=fetch_bytes(url), filetype="pdf")
+                pages = [doc[i].get_text() or "" for i in range(len(doc))]
+                doc.close()
+            except Exception:  # noqa: BLE001 -- one bad pdf must not end the run
+                failed += 1
+                continue
 
         for s in sections_with_pages(pages)[: args.max_sections]:
             try:
