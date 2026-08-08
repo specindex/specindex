@@ -17,6 +17,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import re
 import subprocess
 import sys
 import time
@@ -46,6 +47,18 @@ def run_item(kind: str, payload: dict) -> None:
                 "--id-prefix", f"{st}-sam"]
     elif kind == "crawl:accela":
         cmd += ["--tenant", payload.get("source_key", "").split(":", 1)[-1]]
+    elif kind == "crawl:owner_standards":
+        # harvest-owner-standards.py REQUIRES --seeds and --out. There was no
+        # branch here at all, so it was invoked bare and every item died on
+        # `rc=2: usage:` -- 17 queued items, none of which could ever run.
+        # Hidden until 2026-08-08 because continuous-crawl.yml's bare `wait`
+        # swallowed worker exit codes; the queue just grew. Paths follow the
+        # usage in the script's own docstring. --out is per-item so concurrent
+        # workers cannot half-write each other's manifest.
+        seeds = payload.get("seeds") or "data/seeds/owner_standards_seeds.json"
+        slug = re.sub(r"[^a-z0-9]+", "-", str(payload.get("source_key") or "all").lower()).strip("-")
+        cmd += ["--seeds", str(ROOT / seeds),
+                "--out", str(ROOT / "data" / "raw" / f"owner_standards_manifest_{slug}.json")]
     # timeout so a hung source cannot hold a worker forever -- the failure
     # mode that makes "running" and "stalled" indistinguishable.
     r = subprocess.run(cmd, cwd=str(ROOT), capture_output=True, text=True, timeout=7200)
