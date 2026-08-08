@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import type { Project } from "@/lib/types";
+import { FIREBASE_AUTH_ENABLED } from "@/components/FirebaseAuthProvider";
+import { ProjectNotes } from "@/components/preview/ProjectNotes";
 import { formatDate, formatUsd, toDisplayCase } from "@/lib/format";
 
 // Logged-in workspace preview -- the project record screen (screen 4 of the
@@ -18,22 +20,9 @@ const STAGES = [
   { key: "closed", label: "Closed out", dot: "#5B655E" },
 ] as const;
 
-type Note = { id: string; kind: string; who: string; when: string; text: string };
-
 export function WorkspacePreview({ project }: { project: Project | null }) {
   const [stage, setStage] = useState<string>("watching");
-  const [tracked, setTracked] = useState(true);
-  const [draft, setDraft] = useState("");
-  // Kind is the whole CRM surface for now, deliberately. A rep logging "CALL"
-  // vs "EMAIL" is the difference between a notes field and an activity log,
-  // and it costs one enum rather than a contacts model.
-  const [kind, setKind] = useState("NOTE");
-  const [notes, setNotes] = useState<Note[]>([
-    {
-      id: "n1", kind: "NOTE", who: "AH", when: "Aug 7",
-      text: "Discovery record, no spec yet. This is the whole point of tracking early: when the project manual publishes, we are the first call the specifier gets, not the last.",
-    },
-  ]);
+  const [tracked, setTracked] = useState(false);
 
   if (!project) {
     return <div style={{ padding: 40, fontFamily: "var(--font-sans)" }}>Could not load the demo record.</div>;
@@ -47,15 +36,6 @@ export function WorkspacePreview({ project }: { project: Project | null }) {
   // conclusion -- a dark "success" panel wrapped around zeros makes every
   // record look equally authoritative, so none of them is trusted.
   const hasDepth = documents.length > 0 && citations.length > 0;
-
-  function saveNote() {
-    const text = draft.trim();
-    if (!text) return;                       // whitespace-only is ignored
-    setNotes([{ id: String(Date.now()), kind, who: "AH", when: "now", text }, ...notes]);
-    setDraft("");
-    setKind("NOTE");
-    setTracked(true);                        // first note also starts tracking
-  }
 
   const shell: React.CSSProperties = {
     fontFamily: "var(--font-sans)", background: "#F5F6F4",
@@ -201,62 +181,24 @@ export function WorkspacePreview({ project }: { project: Project | null }) {
                 </div>
               </section>
 
-              {/* notes -- above the tabs, deliberately */}
-              <section style={{
-                background: "#fff", border: "1px solid #C6DDCF", borderRadius: 12,
-                padding: "18px 20px", boxShadow: "0 1px 2px rgba(17,21,18,0.04)", marginBottom: 16,
-              }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
-                  <span style={{ fontSize: 15, fontWeight: 700 }}>Log what happened</span>
-                  <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "#8A938C" }}>{notes.length}</span>
-                  <span style={{ marginLeft: "auto", fontSize: 12, color: "#9AA39D" }}>Private to your territory licence</span>
-                </div>
-
-                <div style={{ background: "#FBFCFB", border: "1px solid #E4E7E3", borderRadius: 10, padding: 12 }}>
-                  <textarea
-                    value={draft}
-                    onChange={(e) => setDraft(e.target.value)}
-                    onKeyDown={(e) => { if ((e.metaKey || e.ctrlKey) && e.key === "Enter") saveNote(); }}
-                    placeholder="What happened on the call, who you spoke to, what to do next"
-                    style={{
-                      width: "100%", minHeight: 62, border: "none", outline: "none", resize: "vertical",
-                      background: "transparent", fontFamily: "var(--font-sans)", fontSize: 13.5, color: "#111512",
-                    }}
-                  />
-                  <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 8 }}>
-                    {["NOTE", "CALL", "EMAIL"].map((k) => (
-                      <button key={k} onClick={() => setKind(k)} style={{
-                        fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.06em",
-                        padding: "3px 8px", borderRadius: 5, cursor: "pointer",
-                        border: `1px solid ${kind === k ? "#16643A" : "#E4E7E3"}`,
-                        background: kind === k ? "#EFF6F1" : "#fff",
-                        color: kind === k ? "#16643A" : "#8A938C",
-                      }}>{k}</button>
-                    ))}
-                    <span style={{ marginLeft: 6, fontFamily: "var(--font-mono)", fontSize: 11, color: "#9AA39D" }}>⌘ + Enter to save</span>
-                    <button onClick={saveNote} style={{
-                      marginLeft: "auto", background: "#16643A", color: "#fff", border: "none",
-                      borderRadius: 8, padding: "7px 14px", fontSize: 13, fontWeight: 600, cursor: "pointer",
-                    }}>Save note</button>
-                  </div>
-                </div>
-
-                <div style={{ marginTop: 14 }}>
-                  {notes.map((n) => (
-                    <div key={n.id} style={{ borderLeft: "2px solid #E4E7E3", paddingLeft: 13, marginBottom: 14 }}>
-                      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
-                        <span style={{
-                          fontFamily: "var(--font-mono)", fontSize: 10, background: "#F0F2EF",
-                          padding: "2px 6px", borderRadius: 5, color: "#5B655E",
-                        }}>{n.kind}</span>
-                        <span style={{ fontSize: 12, color: "#8A938C" }}>{n.who}</span>
-                        <span style={{ marginLeft: "auto", fontFamily: "var(--font-mono)", fontSize: 11, color: "#9AA39D" }}>{n.when}</span>
-                      </div>
-                      <p style={{ fontSize: 13.5, color: "#4B554E", lineHeight: 1.6, margin: 0 }}>{n.text}</p>
-                    </div>
-                  ))}
-                </div>
-              </section>
+              {/* Notes: real, persisted, uid-scoped. See ProjectNotes. Rendered
+                  only when Firebase auth is configured, because useFirebaseAuth
+                  throws without a provider ancestor, so the whole auth-aware
+                  subtree must not mount rather than mount and error. */}
+              {FIREBASE_AUTH_ENABLED ? (
+                <ProjectNotes projectId={project.id} onTracked={() => setTracked(true)} />
+              ) : (
+                <section style={{
+                  background: "#fff", border: "1px solid #E4E7E3", borderRadius: 12,
+                  padding: "18px 20px", marginBottom: 16,
+                }}>
+                  <div style={{ fontSize: 15, fontWeight: 700, marginBottom: 6 }}>Log what happened</div>
+                  <p style={{ fontSize: 13, color: "#8A938C", margin: 0, lineHeight: 1.55 }}>
+                    Sign in to keep notes on this project. What you learn on a call stays attached to
+                    the record and is private to your licence.
+                  </p>
+                </section>
+              )}
             </div>
 
             {/* ---------------- right rail ---------------- */}
