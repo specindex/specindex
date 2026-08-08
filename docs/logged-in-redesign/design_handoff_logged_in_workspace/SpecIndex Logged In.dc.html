@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin: 0; padding: 0; background: #F5F6F4; }
+  body { font-family: Geist, system-ui, sans-serif; color: #111512; -webkit-font-smoothing: antialiased; }
+  a { color: #16643A; text-decoration: none; }
+  a:hover { color: #0E4227; text-decoration: underline; }
+  ::selection { background: #D8EADF; }
+</style>
+</helmet>
+
+<div style="display: grid; grid-template-columns: 232px minmax(0, 1fr); min-height: 100vh; background: #F5F6F4;">
+
+  <div style="border-right: 1px solid #E4E7E3; background: #FBFCFB; display: flex; flex-direction: column; position: sticky; top: 0; height: 100vh;">
+    <div style="padding: 17px 16px 13px; display: flex; align-items: center; gap: 9px;">
+      <div style="width: 18px; display: grid; gap: 3px;">
+        <div style="height: 3px; background: #16643A; border-radius: 2px;"></div>
+        <div style="height: 3px; background: #16643A; border-radius: 2px; margin-left: 4px;"></div>
+        <div style="height: 3px; background: #6FA987; border-radius: 2px;"></div>
+      </div>
+      <div style="font-family: Geist, sans-serif; font-weight: 800; font-size: 16px; letter-spacing: -0.02em;">Spec<span style="font-weight: 600; color: #3D4A42;">Index</span></div>
+    </div>
+
+    <div style="padding: 0 11px 13px;">
+      <button onClick="{{ toggleTerritory }}" style="width: 100%; background: #FFFFFF; border: 1px solid #E4E7E3; border-radius: 9px; padding: 8px 11px; cursor: pointer; font-family: Geist, sans-serif; display: flex; align-items: center; gap: 9px;" style-hover="border-color: #C9D3CD;">
+        <div style="width: 7px; height: 7px; border-radius: 50%; background: #16643A; flex-shrink: 0;"></div>
+        <div style="flex: 1; min-width: 0; text-align: left;">
+          <div style="font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #8A938C; font-family: 'Geist Mono', monospace;">Territory</div>
+          <div style="margin-top: 2px; font-size: 13px; font-weight: 600;">{{ territoryLabel }}</div>
+        </div>
+        <div style="font-size: 9px; color: #9AA39D;">{{ caret }}</div>
+      </button>
+      <sc-if value="{{ territoryOpen }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top: 7px; background: #FFFFFF; border: 1px solid #E4E7E3; border-radius: 9px; padding: 10px;">
+          <div style="font-size: 11.5px; color: #8A938C; margin-bottom: 8px; line-height: 1.45;">Your licensed states. Set once, every screen inherits it.</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+            <sc-for list="{{ states }}" as="s" hint-placeholder-count="6">
+              <button onClick="{{ s.toggle }}" style="{{ s.style }}">{{ s.code }}</button>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+
+    <div style="padding: 0 11px; display: grid; gap: 2px;">
+      <sc-for list="{{ nav }}" as="n" hint-placeholder-count="4">
+        <button onClick="{{ n.go }}" style="{{ n.style }}" style-hover="background: #EFF1EE;">
+          <div style="flex: 1; text-align: left;">{{ n.label }}</div>
+          <div style="{{ n.countStyle }}">{{ n.count }}</div>
+        </button>
+      </sc-for>
+    </div>
+
+    <div style="margin-top: 20px; padding: 0 11px; flex: 1; min-height: 0; overflow: auto;">
+      <div style="display: flex; align-items: center; gap: 8px; padding: 0 10px 8px;">
+        <div style="font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.09em; text-transform: uppercase; color: #9AA39D; flex: 1;">Saved views</div>
+        <button onClick="{{ startView }}" style="width: 20px; height: 20px; border-radius: 5px; border: 1px solid #E4E7E3; background: #FFFFFF; color: #5B655E; font-size: 12px; line-height: 1; cursor: pointer;" style-hover="border-color: #16643A; color: #16643A;">+</button>
+      </div>
+      <div style="display: grid; gap: 1px;">
+        <sc-for list="{{ views }}" as="v" hint-placeholder-count="4">
+          <button onClick="{{ v.go }}" style="{{ v.style }}" style-hover="background: #EFF1EE;">
+            <div style="flex: 1; text-align: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ v.name }}</div>
+            <div style="{{ v.badgeStyle }}">{{ v.badge }}</div>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="border-top: 1px solid #E9ECE8; padding: 11px; display: flex; align-items: center; gap: 10px;">
+      <div style="width: 28px; height: 28px; border-radius: 50%; background: #16643A; color: #FFFFFF; display: grid; place-items: center; font-family: Geist, sans-serif; font-weight: 700; font-size: 11.5px;">AH</div>
+      <div style="flex: 1; min-width: 0;">
+        <div style="font-size: 12.5px; font-weight: 600;">Asif Hussain</div>
+        <div style="font-size: 11px; color: #8A938C;">Territory licence</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="min-width: 0;">
+    <div style="position: sticky; top: 0; z-index: 30; background: rgba(245,246,244,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid #E4E7E3;">
+      <div style="max-width: 1180px; margin: 0 auto; padding: 0 30px; height: 56px; display: flex; align-items: center; gap: 18px;">
+        <div style="font-family: Geist, sans-serif; font-weight: 700; font-size: 15px; letter-spacing: -0.015em; white-space: nowrap;">{{ pageTitle }}</div>
+        <div style="flex: 1; display: flex; justify-content: center;">
+          <div style="display: flex; align-items: center; gap: 8px; width: 100%; max-width: 380px; height: 32px; padding: 0 11px; border: 1px solid #E4E7E3; border-radius: 8px; background: #FFFFFF; color: #8A938C; font-size: 13px;">
+            <div style="width: 11px; height: 11px; border: 1.6px solid #A6AEA9; border-radius: 50%; flex-shrink: 0;"></div>
+            <div style="flex: 1;">Search projects, owners, brands</div>
+            <div style="font-family: 'Geist Mono', monospace; font-size: 11px; color: #A6AEA9; border: 1px solid #E9ECE8; border-radius: 4px; padding: 0 5px;">/</div>
+          </div>
+        </div>
+        <button onClick="{{ goPipeline }}" style="height: 31px; padding: 0 12px; border-radius: 999px; border: 1px solid #C6DDCF; background: #EFF6F1; color: #16643A; font-family: Geist, sans-serif; font-size: 12.5px; font-weight: 600; cursor: pointer; white-space: nowrap;" style-hover="background: #E3EFE8;">Pipeline · {{ trackedCount }}</button>
+      </div>
+    </div>
+
+    <sc-if value="{{ isToday }}" hint-placeholder-val="{{ true }}">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 28px 30px 80px;">
+      <div style="margin-bottom: 20px;">
+        <div style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #16643A;">{{ todayStamp }}</div>
+        <div style="margin-top: 8px; font-family: Geist, sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.03em;">{{ greeting }}</div>
+        <div style="margin-top: 7px; font-size: 14px; color: #5B655E; max-width: 580px; line-height: 1.55;">Three things changed on projects you track, and four in Maine are early enough to still influence. Not a browse-everything list.</div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 24px; align-items: start;">
+        <div style="display: grid; gap: 24px;">
+
+          <div>
+            <div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 11px;">
+              <div style="font-family: Geist, sans-serif; font-weight: 700; font-size: 16px; letter-spacing: -0.02em;">Changed on your tracked projects</div>
+              <button onClick="{{ goPipeline }}" style="border: 0; background: transparent; color: #16643A; font-family: Geist, sans-serif; font-size: 13px; cursor: pointer; padding: 0;" style-hover="text-decoration: underline;">View pipeline</button>
+            </div>
+            <div style="border: 1px solid #E4E7E3; border-radius: 12px; background: #FFFFFF; overflow: hidden;">
+              <sc-for list="{{ changes }}" as="c" hint-placeholder-count="3">
+                <div onClick="{{ c.open }}" style="padding: 14px 17px; border-bottom: 1px solid #F2F4F1; display: flex; gap: 13px; align-items: flex-start; cursor: pointer;" style-hover="background: #FAFBFA;">
+                  <div style="{{ c.tagStyle }}">{{ c.tag }}</div>
+                  <div style="flex: 1; min-width: 0;">
+                    <div style="font-size: 14px; font-weight: 600; line-height: 1.4;">{{ c.headline }}</div>
+                    <div style="margin-top: 5px; font-size: 12.5px; color: #7A857E;">{{ c.project }}</div>
+                  </div>
+                  <div style="font-family: 'Geist Mono', monospace; font-size: 11.5px; color: #9AA39D; white-space: nowrap;">{{ c.when }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 11px;">
+              <div style="font-family: Geist, sans-serif; font-weight: 700; font-size: 16px; letter-spacing: -0.02em;">New in Maine, spec still open</div>
+              <div style="display: flex; align-items: center; gap: 9px;">
+                <div style="display: flex; gap: 2px; padding: 3px; background: #EBEEE9; border-radius: 8px;">
+                  <sc-for list="{{ filters }}" as="f" hint-placeholder-count="3">
+                    <button onClick="{{ f.go }}" style="{{ f.style }}">{{ f.label }}</button>
+                  </sc-for>
+                </div>
+                <sc-if value="{{ notCreatingView }}" hint-placeholder-val="{{ true }}">
+                  <button onClick="{{ startView }}" style="height: 30px; padding: 0 11px; border-radius: 7px; border: 1px solid #E4E7E3; background: #FFFFFF; color: #3D4A42; font-family: Geist, sans-serif; font-size: 12.5px; font-weight: 500; cursor: pointer; white-space: nowrap;" style-hover="border-color: #16643A; color: #16643A;">Save this view</button>
+                </sc-if>
+              </div>
+            </div>
+
+            <sc-if value="{{ creatingView }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-bottom: 11px; border: 1px solid #C6DDCF; background: #F3F8F5; border-radius: 10px; padding: 12px 14px;">
+                <div style="font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #16643A;">Save as a view</div>
+                <div style="margin-top: 9px; display: flex; align-items: center; gap: 8px;">
+                  <input value="{{ viewDraft }}" onChange="{{ setViewDraft }}" onKeyDown="{{ viewKey }}" placeholder="Name this view" style="flex: 1; height: 33px; padding: 0 11px; border: 1px solid #E4E7E3; border-radius: 8px; background: #FFFFFF; font-family: Geist, sans-serif; font-size: 13px; color: #111512; outline: none;" />
+                  <button onClick="{{ saveView }}" style="height: 33px; padding: 0 14px; border-radius: 8px; border: 1px solid #16643A; background: #16643A; color: #FFFFFF; font-family: Geist, sans-serif; font-size: 12.5px; font-weight: 600; cursor: pointer;" style-hover="background: #0E4227;">Save view</button>
+                  <button onClick="{{ cancelView }}" style="height: 33px; padding: 0 11px; border-radius: 8px; border: 1px solid #E4E7E3; background: #FFFFFF; color: #7A857E; font-family: Geist, sans-serif; font-size: 12.5px; cursor: pointer;" style-hover="color: #111512;">Cancel</button>
+                </div>
+                <div style="margin-top: 8px; font-size: 12px; color: #5B655E;">Saves the current territory and filter. It appears in the sidebar and re-runs every time you open it.</div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ hasJustSaved }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-bottom: 11px; display: flex; align-items: center; gap: 9px; border: 1px solid #C6DDCF; background: #F3F8F5; border-radius: 9px; padding: 9px 13px; font-size: 12.5px; color: #0E4227;">
+                <div style="width: 6px; height: 6px; border-radius: 50%; background: #16643A;"></div>
+                Saved. "{{ justSaved }}" is in your sidebar.
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ hasSelection }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-bottom: 11px; display: flex; align-items: center; gap: 12px; border: 1px solid #16643A; background: #FFFFFF; border-radius: 9px; padding: 9px 13px;">
+                <div style="font-size: 13px; font-weight: 600; flex: 1;">{{ selectedCount }} selected</div>
+                <button onClick="{{ clearSelection }}" style="height: 29px; padding: 0 11px; border-radius: 7px; border: 1px solid #E4E7E3; background: #FFFFFF; color: #7A857E; font-family: Geist, sans-serif; font-size: 12.5px; cursor: pointer;" style-hover="color: #111512;">Clear</button>
+                <button onClick="{{ trackSelected }}" style="height: 29px; padding: 0 13px; border-radius: 7px; border: 1px solid #16643A; background: #16643A; color: #FFFFFF; font-family: Geist, sans-serif; font-size: 12.5px; font-weight: 600; cursor: pointer;" style-hover="background: #0E4227;">Track {{ selectedCount }} projects</button>
+              </div>
+            </sc-if>
+            <div style="display: grid; gap: 10px;">
+              <sc-for list="{{ projects }}" as="p" hint-placeholder-count="4">
+                <div style="border: 1px solid #E4E7E3; border-radius: 12px; background: #FFFFFF; padding: 15px 17px; display: flex; gap: 16px; align-items: flex-start;" style-hover="border-color: #C9D3CD;">
+                  <button onClick="{{ p.toggleSelect }}" style="{{ p.boxStyle }}">{{ p.boxMark }}</button>
+                  <div style="width: 44px; flex-shrink: 0; text-align: center;">
+                    <div style="{{ p.scoreStyle }}">{{ p.score }}</div>
+                    <div style="font-family: 'Geist Mono', monospace; font-size: 9px; color: #9AA39D; margin-top: 4px; letter-spacing: 0.05em;">SCORE</div>
+                  </div>
+                  <div style="flex: 1; min-width: 0;">
+                    <div onClick="{{ p.open }}" style="font-family: Geist, sans-serif; font-weight: 700; font-size: 15px; letter-spacing: -0.015em; line-height: 1.35; cursor: pointer;" style-hover="color: #16643A;">{{ p.name }}</div>
+                    <div style="margin-top: 6px; font-size: 12.5px; color: #6B756E;">{{ p.meta }}</div>
+                    <div style="margin-top: 10px; display: flex; gap: 6px; flex-wrap: wrap;">
+                      <sc-for list="{{ p.divisions }}" as="d" hint-placeholder-count="3">
+                        <div style="font-family: 'Geist Mono', monospace; font-size: 11px; color: #3D4A42; background: #F2F4F1; border-radius: 5px; padding: 3px 7px;">{{ d }}</div>
+                      </sc-for>
+                    </div>
+                    <div style="margin-top: 10px; font-size: 12.5px; color: #8A938C;">{{ p.source }}</div>
+                  </div>
+                  <div style="width: 128px; flex-shrink: 0; text-align: right;">
+                    <div style="{{ p.clockStyle }}">{{ p.clock }}</div>
+                    <div style="margin-top: 6px; font-family: 'Geist Mono', monospace; font-size: 13px;">{{ p.value }}</div>
+                    <div style="margin-top: 12px; display: flex; gap: 6px; justify-content: flex-end;">
+                      <button onClick="{{ p.track }}" style="{{ p.trackStyle }}">{{ p.trackLabel }}</button>
+                    </div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+            <div style="margin-top: 12px; font-size: 13px; color: #8A938C;">{{ queueNote }}</div>
+          </div>
+        </div>
+
+        <div style="display: grid; gap: 18px;">
+          <div style="border: 1px solid #C6DDCF; border-radius: 12px; background: #FFFFFF; overflow: hidden;">
+            <div style="padding: 14px 16px 11px; border-bottom: 1px solid #EFF1EE; display: flex; align-items: baseline; gap: 8px;">
+              <div style="font-family: Geist, sans-serif; font-weight: 700; font-size: 14.5px; letter-spacing: -0.015em;">Your notes</div>
+              <div style="font-family: 'Geist Mono', monospace; font-size: 11px; color: #9AA39D;">{{ totalNotes }}</div>
+            </div>
+            <sc-for list="{{ recentNotes }}" as="n" hint-placeholder-count="3">
+              <div onClick="{{ n.open }}" style="padding: 12px 16px; border-bottom: 1px solid #F2F4F1; cursor: pointer;" style-hover="background: #FAFBFA;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <div style="{{ n.kindStyle }}">{{ n.kind }}</div>
+                  <div style="margin-left: auto; font-family: 'Geist Mono', monospace; font-size: 10.5px; color: #9AA39D;">{{ n.when }}</div>
+                </div>
+                <div style="margin-top: 6px; font-size: 12.5px; color: #4B554E; line-height: 1.5;">{{ n.text }}</div>
+                <div style="margin-top: 5px; font-size: 11.5px; color: #9AA39D;">{{ n.project }}</div>
+              </div>
+            </sc-for>
+            <div style="padding: 11px 16px; font-size: 12px; color: #8A938C; line-height: 1.5;">What you know about a job lives here, not in a CRM nobody opens.</div>
+          </div>
+
+          <div style="border: 1px solid #E4E7E3; border-radius: 12px; background: #FFFFFF; padding: 16px;">
+            <div style="font-family: Geist, sans-serif; font-weight: 700; font-size: 14.5px; letter-spacing: -0.015em;">Your pipeline</div>
+            <div style="display: grid; gap: 9px; margin-top: 13px;">
+              <sc-for list="{{ stageSummary }}" as="s" hint-placeholder-count="4">
+                <button onClick="{{ s.go }}" style="display: flex; align-items: center; gap: 10px; width: 100%; background: transparent; border: 0; padding: 6px 0; cursor: pointer; font-family: Geist, sans-serif;" style-hover="opacity: 0.72;">
+                  <div style="{{ s.dotStyle }}"></div>
+                  <div style="flex: 1; text-align: left; font-size: 13px; color: #3D4A42;">{{ s.label }}</div>
+                  <div style="font-family: 'Geist Mono', monospace; font-size: 13px; font-weight: 500;">{{ s.count }}</div>
+                </button>
+              </sc-for>
+            </div>
+            <div style="margin-top: 12px; padding-top: 12px; border-top: 1px solid #F2F4F1; font-size: 12.5px; color: #8A938C; line-height: 1.5;">Cards move when you say so, not when a crawler guesses.</div>
+          </div>
+
+          <div style="border: 1px solid #E4E7E3; border-radius: 12px; background: #FFFFFF; overflow: hidden;">
+            <div style="padding: 14px 16px 11px; border-bottom: 1px solid #EFF1EE;">
+              <div style="font-family: Geist, sans-serif; font-weight: 700; font-size: 14.5px; letter-spacing: -0.015em;">Brand mentions</div>
+              <div style="margin-top: 4px; font-size: 12.5px; color: #8A938C;">Where your brand or a rival got named.</div>
+            </div>
+            <sc-for list="{{ mentions }}" as="m" hint-placeholder-count="3">
+              <div style="padding: 12px 16px; border-bottom: 1px solid #F2F4F1;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <div style="{{ m.dotStyle }}"></div>
+                  <div style="font-weight: 600; font-size: 13px;">{{ m.brand }}</div>
+                  <div style="margin-left: auto; font-family: 'Geist Mono', monospace; font-size: 11px; color: #9AA39D;">{{ m.when }}</div>
+                </div>
+                <div style="margin-top: 5px; font-size: 12.5px; color: #5B655E; line-height: 1.5;">{{ m.text }}</div>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="border: 1px solid #E4E7E3; border-radius: 12px; background: #FFFFFF; padding: 16px;">
+            <div style="font-family: Geist, sans-serif; font-weight: 700; font-size: 14.5px; letter-spacing: -0.015em;">Data freshness</div>
+            <div style="display: grid; gap: 11px; margin-top: 13px;">
+              <sc-for list="{{ freshness }}" as="f" hint-placeholder-count="3">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: baseline; font-size: 12.5px;">
+                    <div style="color: #3D4A42;">{{ f.label }}</div>
+                    <div style="font-family: 'Geist Mono', monospace; font-size: 11.5px; color: #6B756E;">{{ f.when }}</div>
+                  </div>
+                  <div style="margin-top: 6px; height: 3px; background: #EDF0EC; border-radius: 2px; overflow: hidden;">
+                    <div style="{{ f.barStyle }}"></div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </sc-if>
+
+    <sc-if value="{{ isPipeline }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 28px 30px 80px;">
+      <div style="margin-bottom: 20px;">
+        <div style="font-family: Geist, sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.03em;">Pipeline</div>
+        <div style="margin-top: 7px; font-size: 14px; color: #5B655E; max-width: 620px; line-height: 1.55;">Everything you track, by where it sits in the spec window. Move a card when the situation changes; the project page and Today both follow it.</div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; align-items: start;">
+        <sc-for list="{{ board }}" as="col" hint-placeholder-count="4">
+          <div style="background: #EFF1EE; border-radius: 12px; padding: 11px;">
+            <div style="display: flex; align-items: center; gap: 8px; padding: 2px 4px 11px;">
+              <div style="{{ col.dotStyle }}"></div>
+              <div style="font-size: 13px; font-weight: 600; flex: 1;">{{ col.label }}</div>
+              <div style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #6B756E;">{{ col.count }}</div>
+            </div>
+            <div style="display: grid; gap: 8px;">
+              <sc-for list="{{ col.cards }}" as="c" hint-placeholder-count="2">
+                <div style="background: #FFFFFF; border: 1px solid #E4E7E3; border-radius: 10px; padding: 12px;" style-hover="border-color: #C9D3CD;">
+                  <div onClick="{{ c.open }}" style="font-family: Geist, sans-serif; font-weight: 700; font-size: 13.5px; line-height: 1.35; letter-spacing: -0.01em; cursor: pointer;" style-hover="color: #16643A;">{{ c.name }}</div>
+                  <div style="margin-top: 7px; font-size: 12px; color: #7A857E;">{{ c.meta }}</div>
+                  <div style="margin-top: 10px; display: flex; align-items: center; gap: 8px;">
+                    <div style="{{ c.scoreStyle }}">{{ c.score }}</div>
+                    <div style="font-family: 'Geist Mono', monospace; font-size: 11.5px; color: #8A938C;">{{ c.value }}</div>
+                    <div style="{{ c.noteStyle }}">{{ c.notes }} notes</div>
+                  </div>
+                  <div style="{{ c.alertStyle }}">{{ c.alert }}</div>
+                  <div style="margin-top: 10px; display: flex; gap: 5px;">
+                    <button onClick="{{ c.back }}" style="{{ c.moveStyle }}">←</button>
+                    <button onClick="{{ c.fwd }}" style="{{ c.moveStyle }}">→</button>
+                    <button onClick="{{ c.addNote }}" style="{{ c.noteBtnStyle }}">Add note</button>
+                    <button onClick="{{ c.untrack }}" style="{{ c.untrackStyle }}">×</button>
+                  </div>
+                </div>
+              </sc-for>
+              <sc-if value="{{ col.empty }}" hint-placeholder-val="{{ false }}">
+                <div style="border: 1px dashed #D6DBD5; border-radius: 10px; padding: 16px 12px; font-size: 12.5px; color: #8A938C; text-align: center; line-height: 1.5;">{{ col.emptyText }}</div>
+              </sc-if>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    </sc-if>
+
+    <sc-if value="{{ isProject }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 22px 30px 80px;">
+      <button onClick="{{ goBack }}" style="border: 0; background: transparent; padding: 0 0 16px; color: #16643A; font-family: Geist, sans-serif; font-size: 13.5px; cursor: pointer;" style-hover="text-decoration: underline;">{{ backLabel }}</button>
+
+      <div style="display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 24px; align-items: start;">
+        <div style="display: grid; gap: 16px;">
+          <div style="border: 1px solid #E4E7E3; border-radius: 12px; background: #FFFFFF; padding: 20px 22px;">
+            <div style="display: flex; align-items: center; gap: 9px;">
+              <div style="font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.07em; text-transform: uppercase; color: #A2601C; background: #FBF2E6; border-radius: 5px; padding: 3px 7px;">{{ detailStatus }}</div>
+              <div style="font-size: 12.5px; color: #7A857E;">{{ detailSector }}</div>
+            </div>
+            <div style="margin-top: 12px; font-family: Geist, sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -0.025em; line-height: 1.22; max-width: 620px;">{{ detailName }}</div>
+            <div style="margin-top: 9px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #8A938C;">{{ detailId }} · source pulled {{ detailPulled }}</div>
+            <div style="margin-top: 4px; font-size: 13.5px; color: #4B554E;">{{ detailLocation }}</div>
+
+            <div style="margin-top: 18px; background: #16643A; border-radius: 12px; padding: 18px 20px; color: #FFFFFF;">
+              <div style="font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.09em; text-transform: uppercase; color: #A8CDB8;">The read</div>
+              <div style="margin-top: 9px; font-family: Geist, sans-serif; font-weight: 700; font-size: 18px; letter-spacing: -0.02em; line-height: 1.35; max-width: 540px;">{{ detailRead }}</div>
+              <div style="margin-top: 16px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+                <sc-for list="{{ readStats }}" as="r" hint-placeholder-count="3">
+                  <div style="background: rgba(255,255,255,0.09); border-radius: 9px; padding: 12px 14px;">
+                    <div style="font-family: Geist, sans-serif; font-weight: 800; font-size: 22px; letter-spacing: -0.02em;">{{ r.value }}</div>
+                    <div style="margin-top: 3px; font-size: 12px; color: #C4DDCF;">{{ r.label }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+
+            <div style="margin-top: 16px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;">
+              <sc-for list="{{ facts }}" as="f" hint-placeholder-count="4">
+                <div>
+                  <div style="font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.07em; text-transform: uppercase; color: #8A938C;">{{ f.label }}</div>
+                  <div style="{{ f.valueStyle }}">{{ f.value }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="border: 1px solid #C6DDCF; border-radius: 12px; background: #FFFFFF; padding: 18px 20px; box-shadow: 0 1px 2px rgba(17,21,18,0.04);">
+            <div style="display: flex; align-items: baseline; gap: 9px;">
+              <div style="font-family: Geist, sans-serif; font-weight: 700; font-size: 15px; letter-spacing: -0.015em;">Log what happened</div>
+              <div style="font-family: 'Geist Mono', monospace; font-size: 11.5px; color: #9AA39D;">{{ noteCount }} notes</div>
+              <div style="margin-left: auto; font-size: 12px; color: #9AA39D;">Private to your territory licence</div>
+            </div>
+
+            <div style="margin-top: 12px; border: 1px solid #E4E7E3; border-radius: 10px; background: #FBFCFB; padding: 10px 12px;">
+              <textarea value="{{ draft }}" onChange="{{ setDraft }}" onKeyDown="{{ noteKey }}" placeholder="What happened on the call, who you spoke to, what to do next" style="width: 100%; min-height: 62px; border: 0; background: transparent; resize: vertical; outline: none; font-family: Geist, sans-serif; font-size: 13.5px; line-height: 1.55; color: #111512;"></textarea>
+              <div style="display: flex; align-items: center; gap: 10px; margin-top: 6px;">
+                <div style="font-family: 'Geist Mono', monospace; font-size: 11px; color: #A6AEA9;">⌘ + Enter to save</div>
+                <button onClick="{{ submitNote }}" style="margin-left: auto; height: 30px; padding: 0 14px; border-radius: 7px; border: 1px solid #16643A; background: #16643A; color: #FFFFFF; font-family: Geist, sans-serif; font-size: 12.5px; font-weight: 600; cursor: pointer; white-space: nowrap;" style-hover="background: #0E4227;">Save note</button>
+              </div>
+            </div>
+
+            <div style="margin-top: 14px; display: grid; gap: 10px;">
+              <sc-for list="{{ notes }}" as="n" hint-placeholder-count="2">
+                <div style="border-left: 2px solid #E4E7E3; padding: 2px 0 2px 13px;">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <div style="{{ n.kindStyle }}">{{ n.kind }}</div>
+                    <div style="font-size: 12.5px; font-weight: 600; color: #3D4A42;">{{ n.who }}</div>
+                    <div style="margin-left: auto; font-family: 'Geist Mono', monospace; font-size: 11px; color: #9AA39D;">{{ n.when }}</div>
+                  </div>
+                  <div style="margin-top: 6px; font-size: 13.5px; color: #4B554E; line-height: 1.6;">{{ n.text }}</div>
+                </div>
+              </sc-for>
+              <sc-if value="{{ noNotes }}" hint-placeholder-val="{{ true }}">
+                <div style="font-size: 13px; color: #8A938C; line-height: 1.55;">No notes yet. The first one also starts tracking, so the project lands in your pipeline.</div>
+              </sc-if>
+            </div>
+          </div>
+
+          <div style="border: 1px solid #E4E7E3; border-radius: 12px; background: #FFFFFF; overflow: hidden;">
+            <div style="display: flex; gap: 4px; padding: 6px 8px; border-bottom: 1px solid #EFF1EE;">
+              <sc-for list="{{ detailTabs }}" as="t" hint-placeholder-count="5">
+                <button onClick="{{ t.go }}" style="{{ t.style }}">{{ t.label }}<span style="{{ t.badgeStyle }}">{{ t.count }}</span></button>
+              </sc-for>
+            </div>
+            <div style="padding: 20px 22px;">
+              <div style="font-family: Geist, sans-serif; font-weight: 700; font-size: 15px; letter-spacing: -0.015em;">{{ tabTitle }}</div>
+              <div style="margin-top: 9px; font-size: 13.5px; color: #4B554E; line-height: 1.6; max-width: 620px;">{{ tabBody }}</div>
+              <div style="margin-top: 16px; display: grid; gap: 8px;">
+                <sc-for list="{{ tabRows }}" as="r" hint-placeholder-count="4">
+                  <div style="display: flex; align-items: center; gap: 12px; padding: 11px 13px; border: 1px solid #EDF0EC; border-radius: 9px;" style-hover="border-color: #D6DBD5;">
+                    <div style="flex: 1; min-width: 0; font-size: 13.5px; font-weight: 500;">{{ r.left }}</div>
+                    <div style="font-size: 12.5px; color: #7A857E;">{{ r.right }}</div>
+                    <div style="{{ r.tagStyle }}">{{ r.tag }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="display: grid; gap: 16px; position: sticky; top: 74px;">
+          <div style="{{ trackCardStyle }}">
+            <div style="font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #16643A;">{{ trackCardTag }}</div>
+            <sc-if value="{{ detailTracked }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top: 11px; font-size: 13px; color: #3D4A42;">Stage</div>
+              <div style="margin-top: 8px; display: grid; gap: 5px;">
+                <sc-for list="{{ stageOptions }}" as="s" hint-placeholder-count="4">
+                  <button onClick="{{ s.go }}" style="{{ s.style }}">
+                    <div style="{{ s.dotStyle }}"></div>
+                    <div style="flex: 1; text-align: left;">{{ s.label }}</div>
+                  </button>
+                </sc-for>
+              </div>
+              <div style="margin-top: 13px; display: flex; gap: 8px; align-items: center;">
+                <button onClick="{{ goPipeline }}" style="flex: 1; height: 32px; border-radius: 8px; border: 1px solid #16643A; background: #16643A; color: #FFFFFF; font-family: Geist, sans-serif; font-size: 12.5px; font-weight: 600; cursor: pointer;" style-hover="background: #0E4227;">Back to pipeline</button>
+                <button onClick="{{ untrackDetail }}" style="height: 32px; padding: 0 11px; border-radius: 8px; border: 1px solid #E4E7E3; background: #FFFFFF; color: #7A857E; font-family: Geist, sans-serif; font-size: 12.5px; cursor: pointer;" style-hover="color: #111512;">Untrack</button>
+              </div>
+            </sc-if>
+            <sc-if value="{{ detailUntracked }}" hint-placeholder-val="{{ true }}">
+              <div style="margin-top: 10px; font-size: 13px; color: #3D4A42; line-height: 1.55;">Track it and it lands in your pipeline, with every source change pushed to Today.</div>
+              <button onClick="{{ trackDetail }}" style="margin-top: 12px; width: 100%; height: 34px; border-radius: 8px; border: 1px solid #16643A; background: #16643A; color: #FFFFFF; font-family: Geist, sans-serif; font-size: 13px; font-weight: 600; cursor: pointer;" style-hover="background: #0E4227;">Track this project</button>
+            </sc-if>
+          </div>
+
+          <div style="border: 1px solid #E4E7E3; border-radius: 12px; background: #FFFFFF; padding: 16px;">
+            <div style="display: flex; align-items: baseline; gap: 8px;">
+              <div style="{{ detailScoreStyle }}">{{ detailScore }}</div>
+              <div style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #8A938C;">/100</div>
+            </div>
+            <div style="margin-top: 3px; font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #8A938C;">Priority score</div>
+            <div style="margin-top: 12px; display: grid; gap: 9px;">
+              <sc-for list="{{ scoreParts }}" as="s" hint-placeholder-count="3">
+                <div>
+                  <div style="display: flex; justify-content: space-between; font-size: 12px; color: #4B554E;">
+                    <div>{{ s.label }}</div>
+                    <div style="font-family: 'Geist Mono', monospace; color: #7A857E;">{{ s.value }}</div>
+                  </div>
+                  <div style="margin-top: 5px; height: 3px; background: #EDF0EC; border-radius: 2px; overflow: hidden;">
+                    <div style="{{ s.barStyle }}"></div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="border: 1px solid #E4E7E3; border-radius: 12px; background: #FFFFFF; overflow: hidden;">
+            <div style="padding: 13px 15px 10px; border-bottom: 1px solid #EFF1EE; font-family: Geist, sans-serif; font-weight: 700; font-size: 14px; letter-spacing: -0.015em;">Activity</div>
+            <sc-for list="{{ activity }}" as="a" hint-placeholder-count="3">
+              <div style="padding: 11px 15px; border-bottom: 1px solid #F2F4F1;">
+                <div style="display: flex; align-items: baseline; gap: 8px;">
+                  <div style="font-size: 12.5px; font-weight: 600; flex: 1;">{{ a.title }}</div>
+                  <div style="font-family: 'Geist Mono', monospace; font-size: 10.5px; color: #9AA39D;">{{ a.when }}</div>
+                </div>
+                <div style="margin-top: 4px; font-size: 12px; color: #7A857E;">{{ a.source }}</div>
+              </div>
+            </sc-for>
+            <div style="padding: 11px 15px; font-size: 12px; color: #8A938C; line-height: 1.5;">Every line links to the public record it came from.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </sc-if>
+
+    <sc-if value="{{ isDiscover }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 28px 30px 80px;">
+      <div style="margin-bottom: 18px;">
+        <div style="font-family: Geist, sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.03em;">Everything in Maine</div>
+        <div style="margin-top: 7px; font-size: 14px; color: #5B655E; max-width: 620px; line-height: 1.55;">412 commercial projects your licence covers, every one of them cited. Filter, select, and track in bulk, or save the filter as a view that re-runs itself.</div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 9px; margin-bottom: 14px; flex-wrap: wrap;">
+        <div style="display: flex; gap: 2px; padding: 3px; background: #EBEEE9; border-radius: 8px;">
+          <sc-for list="{{ discoverFilters }}" as="f" hint-placeholder-count="4">
+            <button onClick="{{ f.go }}" style="{{ f.style }}">{{ f.label }}</button>
+          </sc-for>
+        </div>
+        <sc-if value="{{ notCreatingView }}" hint-placeholder-val="{{ true }}">
+          <button onClick="{{ startView }}" style="height: 30px; padding: 0 11px; border-radius: 7px; border: 1px solid #E4E7E3; background: #FFFFFF; color: #3D4A42; font-family: Geist, sans-serif; font-size: 12.5px; font-weight: 500; cursor: pointer;" style-hover="border-color: #16643A; color: #16643A;">Save this view</button>
+        </sc-if>
+      </div>
+
+      <sc-if value="{{ creatingView }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-bottom: 11px; border: 1px solid #C6DDCF; background: #F3F8F5; border-radius: 10px; padding: 12px 14px;">
+          <div style="font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #16643A;">Save as a view</div>
+          <div style="margin-top: 9px; display: flex; align-items: center; gap: 8px;">
+            <input value="{{ viewDraft }}" onChange="{{ setViewDraft }}" onKeyDown="{{ viewKey }}" placeholder="Name this view" style="flex: 1; height: 33px; padding: 0 11px; border: 1px solid #E4E7E3; border-radius: 8px; background: #FFFFFF; font-family: Geist, sans-serif; font-size: 13px; color: #111512; outline: none;" />
+            <button onClick="{{ saveView }}" style="height: 33px; padding: 0 14px; border-radius: 8px; border: 1px solid #16643A; background: #16643A; color: #FFFFFF; font-family: Geist, sans-serif; font-size: 12.5px; font-weight: 600; cursor: pointer;" style-hover="background: #0E4227;">Save view</button>
+            <button onClick="{{ cancelView }}" style="height: 33px; padding: 0 11px; border-radius: 8px; border: 1px solid #E4E7E3; background: #FFFFFF; color: #7A857E; font-family: Geist, sans-serif; font-size: 12.5px; cursor: pointer;" style-hover="color: #111512;">Cancel</button>
+          </div>
+          <div style="margin-top: 8px; font-size: 12px; color: #5B655E;">Saves the current territory and filter. It appears in the sidebar and re-runs every time you open it.</div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ hasJustSaved }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-bottom: 11px; display: flex; align-items: center; gap: 9px; border: 1px solid #C6DDCF; background: #F3F8F5; border-radius: 9px; padding: 9px 13px; font-size: 12.5px; color: #0E4227;">
+          <div style="width: 6px; height: 6px; border-radius: 50%; background: #16643A;"></div>
+          Saved. "{{ justSaved }}" is in your sidebar.
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ hasSelection }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-bottom: 11px; display: flex; align-items: center; gap: 12px; border: 1px solid #16643A; background: #FFFFFF; border-radius: 9px; padding: 9px 13px;">
+          <div style="font-size: 13px; font-weight: 600; flex: 1;">{{ selectedCount }} selected</div>
+          <button onClick="{{ clearSelection }}" style="height: 29px; padding: 0 11px; border-radius: 7px; border: 1px solid #E4E7E3; background: #FFFFFF; color: #7A857E; font-family: Geist, sans-serif; font-size: 12.5px; cursor: pointer;" style-hover="color: #111512;">Clear</button>
+          <button onClick="{{ trackSelected }}" style="height: 29px; padding: 0 13px; border-radius: 7px; border: 1px solid #16643A; background: #16643A; color: #FFFFFF; font-family: Geist, sans-serif; font-size: 12.5px; font-weight: 600; cursor: pointer;" style-hover="background: #0E4227;">Track {{ selectedCount }} projects</button>
+        </div>
+      </sc-if>
+
+      <div style="border: 1px solid #E4E7E3; border-radius: 12px; background: #FFFFFF; overflow: hidden;">
+        <div style="display: grid; grid-template-columns: 17px 34px minmax(0, 1fr) 120px 92px 92px; gap: 14px; align-items: center; padding: 10px 16px; background: #F7F8F6; border-bottom: 1px solid #E4E7E3; font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: #7A857E;">
+          <div></div>
+          <div style="text-align: center;">Score</div>
+          <div>Project</div>
+          <div>Stage</div>
+          <div style="text-align: right;">Value</div>
+          <div></div>
+        </div>
+        <sc-for list="{{ discoverRows }}" as="r" hint-placeholder-count="8">
+          <div style="display: grid; grid-template-columns: 17px 34px minmax(0, 1fr) 120px 92px 92px; gap: 14px; align-items: center; padding: 12px 16px; border-bottom: 1px solid #F2F4F1;" style-hover="background: #FAFBFA;">
+            <button onClick="{{ r.toggleSelect }}" style="{{ r.boxStyle }}">{{ r.boxMark }}</button>
+            <div style="{{ r.scoreStyle }}">{{ r.score }}</div>
+            <div style="min-width: 0;">
+              <div onClick="{{ r.open }}" style="font-size: 13.5px; font-weight: 600; line-height: 1.35; cursor: pointer;" style-hover="color: #16643A;">{{ r.name }}</div>
+              <div style="margin-top: 3px; font-size: 12px; color: #8A938C;">{{ r.meta }}</div>
+            </div>
+            <div><span style="{{ r.statusStyle }}">{{ r.status }}</span></div>
+            <div style="text-align: right; font-family: 'Geist Mono', monospace; font-size: 12.5px; color: #4B554E;">{{ r.value }}</div>
+            <div style="text-align: right;"><button onClick="{{ r.track }}" style="{{ r.trackStyle }}">{{ r.trackLabel }}</button></div>
+          </div>
+        </sc-for>
+        <div style="padding: 13px 16px; font-size: 12.5px; color: #8A938C;">Showing 8 of 412. Scroll loads the rest.</div>
+      </div>
+    </div>
+    </sc-if>
+
+    <sc-if value="{{ isStub }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 80px 30px; text-align: center;">
+      <div style="font-family: Geist, sans-serif; font-weight: 700; font-size: 19px;">{{ pageTitle }}</div>
+      <div style="margin-top: 8px; font-size: 13.5px; color: #8A938C;">Out of scope for this pass. Today, Discover, Pipeline, and the project page are the screens redesigned here.</div>
+    </div>
+    </sc-if>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:980}}">
+const STAGES = [
+  { key: "watching", label: "Watching", color: "#8A938C" },
+  { key: "engaged", label: "Specifier engaged", color: "#C0631A" },
+  { key: "specified", label: "Spec named", color: "#16643A" },
+  { key: "closed", label: "Closed out", color: "#5B655E" }
+];
+
+const PROJECTS = [
+  {
+    id: "SPX-6700284", name: "Maine State Prison Gatehouse Improvement Project",
+    meta: "Warren, ME · Institutional · no documents held yet", score: null, value: "Not pulled",
+    clock: "Discovered Aug 6", urgent: true, discovered: true,
+    divisions: ["Scope not read yet"],
+    source: "Search-grounded discovery, State of Maine",
+    status: "Bidding", sector: "Institutional · State", owner: "Not disclosed in the source record",
+    gc: "Unassigned, pre-award", opened: "Aug 6, 2026", pulled: "Not pulled", sqft: "Not stated in the source record",
+    docs: 0, mfrs: 0, divCount: 0, mine: 0,
+    read: "A discovered project. No specification document has been read yet, so no manufacturer can be named.",
+    brief: "Specifications for the Maine State Prison Gatehouse Improvement Project located in Warren, Maine. This record came from search-grounded discovery rather than a bid portal, which is the earliest point at which a project can exist in the index. Track it and the spec publish is the alert.",
+    briefRows: [
+      { left: "What you can act on today", right: "Track it to be alerted if a spec publishes", tag: "Upcoming" },
+      { left: "Division breakdown", right: "None until a specification is read", tag: "Gap" },
+      { left: "Record type", right: "Discovery, not a bid record", tag: "" }
+    ],
+    scoreParts: [["Spec openness", "not scored", 0], ["Divisions you sell", "not scored", 0], ["Timing", "not scored", 0]],
+    activity: [
+      { title: "Project discovered", when: "Aug 6", source: "Search-grounded discovery" },
+      { title: "Announcement indexed", when: "Aug 6", source: "State of Maine capital record" }
+    ]
+  },
+  {
+    id: "SPX-358768", name: "Portland Jetport concourse improvements",
+    meta: "Portland, ME · City of Portland · 41 documents parsed", score: 71, value: "$18.4M",
+    clock: "Design phase", urgent: false,
+    divisions: ["26 50 00 Lighting", "23 00 00 HVAC"],
+    source: "City capital plan, Jul 2026",
+    status: "Design", sector: "Commercial · Municipal", owner: "City of Portland",
+    gc: "Not yet procured", opened: "Jun 02, 2026", pulled: "Aug 05, 2026", sqft: "82,000 sq ft",
+    docs: 41, mfrs: 4, divCount: 3, mine: 0,
+    read: "Acuity is basis of design for lighting. An or-equal window is still open, and the addendum deadline is the moment to use it.",
+    brief: "City capital plan item CP-2411, concourse improvements and fueling facility. Schematic design complete, design development under way with the city's on-call architect. Lighting and HVAC packages both carry a named basis of design already.",
+    briefRows: [
+      { left: "Design development complete", right: "2026-09-15", tag: "Upcoming" },
+      { left: "Substitution request window", right: "Opens at 90% CD", tag: "" },
+      { left: "Funding", right: "Municipal bond, approved", tag: "Cited" }
+    ],
+    scoreParts: [["Spec openness", "41 / 60", 68], ["Divisions you sell", "18 / 20", 90], ["Timing", "12 / 20", 60]],
+    activity: [
+      { title: "Acuity named basis of design", when: "2h ago", source: "Design development set, division 26 50 00" },
+      { title: "Design development started", when: "Jul 21", source: "City of Portland capital plan" },
+      { title: "Project added to capital plan", when: "Jun 02", source: "City council minutes" }
+    ]
+  },
+  {
+    id: "SPX-114902", name: "Northern Light Health ambulatory expansion",
+    meta: "Bangor, ME · Northern Light Health · 63 documents parsed", score: 68, value: "$54M",
+    clock: "Basis of design open", urgent: true,
+    divisions: ["26 50 00 Lighting", "22 00 00 Plumbing", "23 00 00 HVAC"],
+    source: "Permit filing, City of Bangor",
+    status: "Permitting", sector: "Commercial · Healthcare", owner: "Northern Light Health",
+    gc: "Consigli Construction", opened: "Feb 09, 2026", pulled: "Aug 07, 2026", sqft: "146,000 sq ft",
+    docs: 63, mfrs: 8, divCount: 6, mine: 1,
+    read: "You are listed as an approved equal on the lighting package. No basis of design is named yet, so the specifier call still decides it.",
+    brief: "City of Bangor permit filing for a four-storey ambulatory expansion on the Northern Light campus. Amendment 0004 moved the response deadline to May 22. Lighting is out to an approved-equal list with no basis of design, which is the rarest and most winnable position in the index.",
+    briefRows: [
+      { left: "Response deadline", right: "2026-05-22", tag: "Extended" },
+      { left: "Approved-equal list", right: "4 manufacturers, you included", tag: "Cited" },
+      { left: "Permit status", right: "Under review, City of Atlanta", tag: "" }
+    ],
+    scoreParts: [["Spec openness", "52 / 60", 87], ["Divisions you sell", "14 / 20", 70], ["Timing", "2 / 20", 10]],
+    activity: [
+      { title: "Amendment 0004 posted", when: "Yesterday", source: "Northern Light procurement portal" },
+      { title: "Approved-equal list published", when: "Jul 30", source: "Division 26 specification, section 26 50 00" },
+      { title: "Building permit filed", when: "Feb 09", source: "City of Bangor permit record" }
+    ]
+  },
+  {
+    id: "SPX-220117", name: "Auburn cold-storage distribution center, phase 2",
+    meta: "Auburn, ME · Androscoggin Logistics · 22 documents parsed", score: 62, value: "$31M",
+    clock: "Permitting", urgent: false,
+    divisions: ["26 50 00 Lighting", "13 00 00 Special construction"],
+    source: "Androscoggin County permit record",
+    status: "Permitting", sector: "Commercial · Industrial", owner: "Androscoggin Logistics",
+    gc: "Consigli Construction", opened: "May 19, 2026", pulled: "Aug 06, 2026", sqft: "410,000 sq ft",
+    docs: 22, mfrs: 3, divCount: 2, mine: 1,
+    read: "Your high-bay fixture is the named basis of design. The job now is holding it through value engineering.",
+    brief: "Androscoggin County permit record for phase 2 of the Auburn cold-storage park. General contractor awarded to Consigli two days ago, which starts the value-engineering window where named products get swapped for cost.",
+    briefRows: [
+      { left: "GC awarded", right: "2026-08-06", tag: "Cited" },
+      { left: "Value engineering", right: "Expected Sep 2026", tag: "Upcoming" },
+      { left: "Permit status", right: "Issued", tag: "Cited" }
+    ],
+    scoreParts: [["Spec openness", "22 / 60", 37], ["Divisions you sell", "20 / 20", 100], ["Timing", "16 / 20", 80]],
+    activity: [
+      { title: "General contractor awarded", when: "2 days ago", source: "Androscoggin County permit record" },
+      { title: "Site permit issued", when: "Jul 11", source: "Androscoggin County permit record" },
+      { title: "Phase 2 announced", when: "May 19", source: "Androscoggin Logistics press release" }
+    ]
+  }
+];
+
+const MORE = [
+  { id: "SPX-441002", name: "Bath Iron Works fabrication hall relighting", meta: "Bath, ME · General Dynamics · 12 documents parsed", score: 74, value: "$8.6M", clock: "Bid opens in 21 days", urgent: true, divisions: ["26 50 00 Lighting"], source: "Maine state bid portal", status: "Bidding", sector: "Industrial · Federal", owner: "General Dynamics", gc: "Not yet procured", opened: "Jul 02, 2026", pulled: "Aug 04, 2026", sqft: "220,000 sq ft", docs: 12, mfrs: 2, divCount: 2, mine: 0, read: "Lighting is the whole scope and no manufacturer is named yet. This is the cleanest open spec in the territory.", brief: "Maine state bid portal listing for a fabrication hall relighting package at Bath Iron Works. Lighting is the primary division, which makes the whole job addressable.", briefRows: [{ left: "Bid opens", right: "2026-08-29", tag: "Upcoming" }, { left: "Delivery method", right: "Design-bid-build", tag: "" }], scoreParts: [["Spec openness", "50 / 60", 83], ["Divisions you sell", "20 / 20", 100], ["Timing", "4 / 20", 20]], activity: [{ title: "Solicitation posted", when: "Jul 02", source: "Maine state bid portal" }] },
+  { id: "SPX-441088", name: "University of Maine science building renewal", meta: "Orono, ME · University of Maine System · 34 documents parsed", score: 66, value: "$72M", clock: "Design phase", urgent: false, divisions: ["26 50 00 Lighting", "23 00 00 HVAC"], source: "UMS capital plan", status: "Design", sector: "Institutional · State", owner: "University of Maine System", gc: "Not yet procured", opened: "Mar 18, 2026", pulled: "Aug 01, 2026", sqft: "160,000 sq ft", docs: 34, mfrs: 6, divCount: 5, mine: 0, read: "Six manufacturers named across mechanical. Lighting has not been specified yet.", brief: "University of Maine System capital plan renewal of the Orono science building. Design development under way; the lighting package has not been written.", briefRows: [{ left: "Design development", right: "In progress", tag: "" }, { left: "Funding", right: "State bond, approved", tag: "Cited" }], scoreParts: [["Spec openness", "40 / 60", 67], ["Divisions you sell", "14 / 20", 70], ["Timing", "12 / 20", 60]], activity: [{ title: "Capital plan published", when: "Mar 18", source: "University of Maine System" }] },
+  { id: "SPX-4411the", name: "Lewiston mixed-use redevelopment, block C", meta: "Lewiston, ME · Bates Development · 6 documents parsed", score: 58, value: "$26M", clock: "Permitting", urgent: false, divisions: ["26 50 00 Lighting"], source: "City of Lewiston permit record", status: "Permitting", sector: "Commercial · Mixed-use", owner: "Bates Development", gc: "Unassigned, pre-award", opened: "Jun 27, 2026", pulled: "Aug 03, 2026", sqft: "98,000 sq ft", docs: 6, mfrs: 0, divCount: 1, mine: 0, read: "Permitted but thinly documented. No specification has been filed with the permit set.", brief: "City of Lewiston permit record for block C of the downtown mixed-use redevelopment. Only the permit set is public so far.", briefRows: [{ left: "Permit status", right: "Under review", tag: "" }, { left: "Specification", right: "Not filed", tag: "Gap" }], scoreParts: [["Spec openness", "34 / 60", 57], ["Divisions you sell", "16 / 20", 80], ["Timing", "8 / 20", 40]], activity: [{ title: "Permit filed", when: "Jun 27", source: "City of Lewiston permit record" }] },
+  { id: "SPX-4412Q1", name: "Portland public safety building, phase 1", meta: "Portland, ME · City of Portland · no documents held yet", score: null, value: "Not pulled", clock: "Discovered Aug 3", urgent: false, discovered: true, divisions: ["Scope not read yet"], source: "Search-grounded discovery", status: "Announced", sector: "Institutional · Municipal", owner: "Not disclosed in the source record", gc: "Unassigned, pre-award", opened: "Aug 3, 2026", pulled: "Not pulled", sqft: "Not stated in the source record", docs: 0, mfrs: 0, divCount: 0, mine: 0, read: "A discovered project. No specification document has been read yet, so no manufacturer can be named.", brief: "Announcement-stage record for phase 1 of the Portland public safety building. Discovered through search grounding before any bid portal listed it.", briefRows: [{ left: "What you can act on today", right: "Track it to be alerted if a spec publishes", tag: "Upcoming" }], scoreParts: [["Spec openness", "not scored", 0], ["Divisions you sell", "not scored", 0], ["Timing", "not scored", 0]], activity: [{ title: "Project discovered", when: "Aug 3", source: "Search-grounded discovery" }] }
+];
+
+const TAG_GREEN = "font-family: 'Geist Mono', monospace; font-size: 10.5px; color: #16643A; background: #E7EFE9; border-radius: 5px; padding: 2px 7px;";
+const TAG_AMBER = "font-family: 'Geist Mono', monospace; font-size: 10.5px; color: #A2601C; background: #FBF2E6; border-radius: 5px; padding: 2px 7px;";
+const TAG_GREY = "font-family: 'Geist Mono', monospace; font-size: 10.5px; color: #7A857E; background: #F0F2EF; border-radius: 5px; padding: 2px 7px;";
+const TAG_NONE = "display: none;";
+
+function tagStyleFor(tag) {
+  if (!tag) return TAG_NONE;
+  if (tag === "Cited" || tag === "Yours" || tag === "Parsed") return TAG_GREEN;
+  if (tag === "Extended" || tag === "Rival" || tag === "Upcoming") return TAG_AMBER;
+  return TAG_GREY;
+}
+
+function buildBodies(p) {
+  if (p.discovered) {
+    return {
+      "Executive brief": {
+        title: "Executive brief",
+        body: p.brief,
+        rows: p.briefRows.map(r => ({ left: r.left, right: r.right, tag: r.tag, tagStyle: tagStyleFor(r.tag) }))
+      },
+      "Scope": {
+        title: "Scope has not been read from a specification yet",
+        body: "No division-by-division breakdown exists until a specification document is published and read.",
+        rows: [{ left: "Track this project", right: "Alerts you the day a spec publishes", tag: "Upcoming", tagStyle: TAG_AMBER }]
+      },
+      "Specification": {
+        title: "No specification document has been published",
+        body: "This is a discovered project rather than a bid record. A manufacturer cannot be named without a document behind it.",
+        rows: [{ left: "Manufacturers named", right: "0", tag: "Gap", tagStyle: TAG_GREY }]
+      },
+      "Team": {
+        title: "No construction team identified yet",
+        body: "The owner, architect, and general contractor all sit behind records that have not been filed.",
+        rows: [
+          { left: "Owner", right: p.owner, tag: "Gap", tagStyle: TAG_GREY },
+          { left: "General contractor", right: p.gc, tag: "Gap", tagStyle: TAG_GREY },
+          { left: "Architect", right: "Unlisted in the source record", tag: "Gap", tagStyle: TAG_GREY }
+        ]
+      },
+      "Documents": {
+        title: "No documents held for this project",
+        body: "This record came from search-grounded discovery rather than a bid portal. The activity feed carries the sources behind it.",
+        rows: [{ left: "Documents held", right: "0", tag: "Gap", tagStyle: TAG_GREY }]
+      }
+    };
+  }
+  return {
+    "Executive brief": {
+      title: "Executive brief",
+      body: p.brief,
+      rows: p.briefRows.map(r => ({ left: r.left, right: r.right, tag: r.tag, tagStyle: tagStyleFor(r.tag) }))
+    },
+    "Scope": {
+      title: "Divisions in scope",
+      body: p.divCount + " CSI divisions appear in the source set. " + p.divisions.length + " of them are yours.",
+      rows: p.divisions.map((d, i) => ({ left: d, right: (7 + i * 11) + " references", tag: "Yours", tagStyle: TAG_GREEN }))
+    },
+    "Specification": {
+      title: "Manufacturers named",
+      body: "Pulled from the project's own spec documents. A name here means a basis of design already exists, which changes the call you make.",
+      rows: p.mine > 0
+        ? [{ left: "Your brand", right: "26 50 00 · " + (p.mine > 0 && p.score < 65 ? "basis of design" : "approved equal"), tag: "Yours", tagStyle: TAG_GREEN },
+           { left: p.mfrs - 1 + " other manufacturers", right: "across " + p.divCount + " divisions", tag: "", tagStyle: TAG_NONE }]
+        : [{ left: "Acuity Brands", right: "26 50 00 · basis of design", tag: "Rival", tagStyle: TAG_AMBER },
+           { left: p.mfrs - 1 + " other manufacturers", right: "across " + p.divCount + " divisions", tag: "", tagStyle: TAG_NONE }]
+    },
+    "Team": {
+      title: "Who is on it",
+      body: "The public record names an owner reliably and an architect rarely. This is what we hold, not an inference.",
+      rows: [
+        { left: "Owner", right: p.owner, tag: "Cited", tagStyle: TAG_GREEN },
+        { left: "General contractor", right: p.gc, tag: p.gc.indexOf("Unassigned") === 0 || p.gc.indexOf("Not yet") === 0 ? "" : "Cited", tagStyle: tagStyleFor(p.gc.indexOf("Unassigned") === 0 || p.gc.indexOf("Not yet") === 0 ? "" : "Cited") },
+        { left: "Architect", right: "Not stated in the source record", tag: "Gap", tagStyle: TAG_GREY }
+      ]
+    },
+    "Documents": {
+      title: p.docs + " documents held",
+      body: "Every file is the public original, dated and linked. Nothing is paraphrased into the record.",
+      rows: [
+        { left: "Project manual, vol. 2", right: "PDF · 412 pages · " + p.pulled, tag: "Parsed", tagStyle: TAG_GREEN },
+        { left: "Latest amendment", right: "PDF · 9 pages · " + p.pulled, tag: "Parsed", tagStyle: TAG_GREEN },
+        { left: "Drawing set, mechanical", right: "PDF · 88 sheets · " + p.opened, tag: "Parsed", tagStyle: TAG_GREEN }
+      ]
+    }
+  };
+}
+
+class Component extends DCLogic {
+  state = {
+    tab: "Today",
+    filter: "Spec still open",
+    discoverFilter: "All 412",
+    territoryOpen: false,
+    detailTab: "Executive brief",
+    openId: "SPX-6700284",
+    from: "Today",
+    tracked: { "SPX-6700284": "watching", "SPX-358768": "engaged", "SPX-114902": "watching", "SPX-220117": "specified" },
+    draft: "",
+    selected: {},
+    creatingView: false,
+    viewDraft: "",
+    justSaved: "",
+    savedViews: [
+      { name: "Healthcare, lighting open", badge: "12" },
+      { name: "Discovered, no spec yet", badge: "8" },
+      { name: "Rival named, still or-equal", badge: "6" },
+      { name: "Bid opens in 30 days", badge: "9" }
+    ],
+    nextAction: {},
+    notes: {
+      "SPX-6700284": [
+        { id: 0, who: "AH", when: "Aug 7", kind: "Note", text: "Discovery record, no spec yet. This is the whole point of tracking early: when the project manual publishes, we are the first call the specifier gets, not the last." }
+      ],
+      "SPX-358768": [
+        { id: 1, who: "AH", when: "Aug 6", kind: "Call", text: "Talked to the city project manager. Acuity got in through the on-call architect's standard template, not a preference. He is open to an or-equal at 90% CD." },
+        { id: 2, who: "AH", when: "Jul 28", kind: "Note", text: "Rep agency covering Cumberland County is Coastal. Loop them in before the substitution window." }
+      ],
+      "SPX-114902": [
+        { id: 3, who: "AH", when: "Aug 7", kind: "Email", text: "Sent the lighting cut sheets to the Emory facilities lead. She asked for a mockup in the third-floor corridor." }
+      ]
+    }
+  };
+
+  navBtn(active) {
+    return "display: flex; align-items: center; gap: 9px; width: 100%; height: 33px; padding: 0 10px; border: 0; border-radius: 8px; cursor: pointer; font-family: Geist, sans-serif; font-size: 13.5px; font-weight: " +
+      (active ? "600" : "500") + "; background: " + (active ? "#E7EFE9" : "transparent") + "; color: " + (active ? "#0E4227" : "#4B554E") + ";";
+  }
+  pill(active) {
+    return "height: 26px; padding: 0 10px; border: 0; border-radius: 6px; cursor: pointer; font-family: Geist, sans-serif; font-size: 12.5px; font-weight: " +
+      (active ? "600" : "500") + "; background: " + (active ? "#FFFFFF" : "transparent") + "; color: " + (active ? "#111512" : "#6B756E") +
+      (active ? "; box-shadow: 0 1px 2px rgba(17,21,18,0.09);" : ";");
+  }
+  dot(color) { return "width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; background: " + color + ";"; }
+  scoreStyle(n) {
+    const c = n === null ? "#9AA39D" : n >= 70 ? "#16643A" : n >= 60 ? "#C0631A" : "#5B655E";
+    const bg = n === null ? "#F0F2EF" : n >= 70 ? "#E7EFE9" : n >= 60 ? "#FBF2E6" : "#F0F2EF";
+    return "font-family: Geist, sans-serif; font-weight: 800; font-size: 17px; letter-spacing: -0.02em; color: " + c + "; background: " + bg + "; border-radius: 8px; padding: 6px 0;";
+  }
+  setStage(id, key) { this.setState(s => { const t = Object.assign({}, s.tracked); t[id] = key; return { tracked: t }; }); }
+  addNote(id) {
+    const text = (this.state.draft || "").trim();
+    if (!text) return;
+    this.setState(s => {
+      const n = Object.assign({}, s.notes);
+      n[id] = [{ id: Date.now(), who: "AH", when: "Just now", kind: "Note", text }].concat(n[id] || []);
+      const t = Object.assign({}, s.tracked);
+      if (!t[id]) t[id] = "watching";
+      return { notes: n, tracked: t, draft: "" };
+    });
+  }
+  noteCount(id) { return (this.state.notes[id] || []).length; }
+  suggestedViewName() { return "Maine · " + (this.state.tab === "Discover" ? this.state.discoverFilter : this.state.filter); }
+  startView() {
+    const onList = this.state.tab === "Today" || this.state.tab === "Discover";
+    this.setState({ creatingView: true, viewDraft: this.suggestedViewName(), tab: onList ? this.state.tab : "Discover" });
+  }
+  saveView() {
+    const name = (this.state.viewDraft || "").trim() || this.suggestedViewName();
+    this.setState(s => ({
+      savedViews: [{ name, badge: String(PROJECTS.length) }].concat(s.savedViews),
+      creatingView: false, viewDraft: "", justSaved: name
+    }));
+    setTimeout(() => this.setState({ justSaved: "" }), 3200);
+  }
+  toggleSelect(id) {
+    this.setState(s => {
+      const sel = Object.assign({}, s.selected);
+      if (sel[id]) delete sel[id]; else sel[id] = true;
+      return { selected: sel };
+    });
+  }
+  trackSelected() {
+    this.setState(s => {
+      const t = Object.assign({}, s.tracked);
+      Object.keys(s.selected).forEach(id => { if (!t[id]) t[id] = "watching"; });
+      return { tracked: t, selected: {} };
+    });
+  }
+  untrack(id) { this.setState(s => { const t = Object.assign({}, s.tracked); delete t[id]; return { tracked: t }; }); }
+  open(id, from) { this.setState({ tab: "Project", openId: id, from: from, detailTab: "Executive brief" }); }
+
+  renderVals() {
+    const st = this.state;
+    const trackedIds = Object.keys(st.tracked);
+    const goPipeline = () => this.setState({ tab: "Pipeline" });
+    const ALL = PROJECTS.concat(MORE);
+    const p = ALL.find(x => x.id === st.openId) || PROJECTS[0];
+    const stage = st.tracked[p.id];
+    const bodies = buildBodies(p);
+    const body = bodies[st.detailTab] || bodies["Executive brief"];
+
+    const board = STAGES.map((s, i) => {
+      const cards = PROJECTS.filter(pr => st.tracked[pr.id] === s.key).map(pr => ({
+        name: pr.name,
+        meta: pr.meta.split(" · ").slice(0, 2).join(" · "),
+        value: pr.value,
+        score: pr.score === null ? "--" : pr.score,
+        notes: (st.notes[pr.id] || []).length,
+        noteStyle: (st.notes[pr.id] || []).length ? "font-family: 'Geist Mono', monospace; font-size: 11px; color: #5B655E; background: #F0F2EF; border-radius: 5px; padding: 2px 6px;" : "display: none;",
+        scoreStyle: "font-family: 'Geist Mono', monospace; font-size: 11.5px; font-weight: 500; color: " + (pr.score === null ? "#7A857E" : pr.score >= 70 ? "#16643A" : "#C0631A") + "; background: " + (pr.score === null ? "#F0F2EF" : pr.score >= 70 ? "#E7EFE9" : "#FBF2E6") + "; border-radius: 5px; padding: 2px 6px;",
+        alert: pr.urgent ? pr.clock : "",
+        alertStyle: pr.urgent ? "margin-top: 9px; font-size: 11.5px; color: #A2601C; background: #FBF2E6; border-radius: 6px; padding: 5px 8px;" : "display: none;",
+        moveStyle: "width: 28px; height: 26px; border-radius: 6px; border: 1px solid #E4E7E3; background: #FFFFFF; color: #5B655E; font-size: 12px; cursor: pointer;",
+        untrackStyle: "height: 26px; padding: 0 8px; border-radius: 6px; border: 1px solid #E4E7E3; background: #FFFFFF; color: #8A938C; font-family: Geist, sans-serif; font-size: 11.5px; cursor: pointer;",
+        noteBtnStyle: "flex: 1; height: 26px; border-radius: 6px; border: 1px solid #C6DDCF; background: #EFF6F1; color: #16643A; font-family: Geist, sans-serif; font-size: 11.5px; font-weight: 600; cursor: pointer;",
+        addNote: () => this.open(pr.id, "Pipeline"),
+        open: () => this.open(pr.id, "Pipeline"),
+        back: () => this.setStage(pr.id, STAGES[Math.max(0, i - 1)].key),
+        fwd: () => this.setStage(pr.id, STAGES[Math.min(STAGES.length - 1, i + 1)].key),
+        untrack: () => this.untrack(pr.id)
+      }));
+      return {
+        label: s.label, count: cards.length, dotStyle: this.dot(s.color), cards,
+        empty: cards.length === 0,
+        emptyText: s.key === "watching" ? "Track a project from Today and it starts here." : "Nothing at this stage."
+      };
+    });
+
+    return {
+      territoryLabel: "Maine",
+      caret: st.territoryOpen ? "▲" : "▼",
+      territoryOpen: st.territoryOpen,
+      toggleTerritory: () => this.setState(s => ({ territoryOpen: !s.territoryOpen })),
+      states: ["CT", "MA", "ME", "NH", "RI", "VT"].map(code => ({
+        code,
+        toggle: () => {},
+        style: "height: 24px; padding: 0 8px; border-radius: 999px; cursor: pointer; font-family: 'Geist Mono', monospace; font-size: 11px; border: 1px solid " +
+          (code === "ME" ? "#16643A" : "#E4E7E3") + "; background: " + (code === "ME" ? "#E7EFE9" : "#FFFFFF") + "; color: " + (code === "ME" ? "#0E4227" : "#6B756E") + ";"
+      })),
+
+      nav: [
+        { label: "Today", count: 7 },
+        { label: "Pipeline", count: trackedIds.length },
+        { label: "Discover", count: 412 }
+      ].map(n => ({
+        label: n.label, count: n.count,
+        style: this.navBtn(st.tab === n.label),
+        countStyle: "font-family: 'Geist Mono', monospace; font-size: 11.5px; color: " + (st.tab === n.label ? "#16643A" : "#9AA39D") + ";",
+        go: () => this.setState({ tab: n.label })
+      })),
+
+      views: st.savedViews.map(v => ({
+        name: v.name, badge: v.badge,
+        badgeStyle: "font-family: 'Geist Mono', monospace; font-size: 11px; color: #9AA39D;",
+        style: "display: flex; align-items: center; gap: 8px; width: 100%; height: 30px; padding: 0 10px; border: 0; border-radius: 7px; cursor: pointer; font-family: Geist, sans-serif; font-size: 12.5px; background: transparent; color: #4B554E;",
+        go: () => this.setState({ tab: "Discover" })
+      })),
+
+      pageTitle: st.tab === "Project" ? "Project" : st.tab,
+      isToday: st.tab === "Today",
+      isPipeline: st.tab === "Pipeline",
+      isProject: st.tab === "Project",
+      isDiscover: st.tab === "Discover",
+      isStub: false,
+
+      discoverFilters: ["All 412", "Spec still open", "Discovered, no spec", "Bid opens soon"].map(label => ({
+        label, style: this.pill(st.discoverFilter === label), go: () => this.setState({ discoverFilter: label })
+      })),
+      discoverRows: ALL.map(pr => {
+        const tracked = !!st.tracked[pr.id];
+        return {
+          name: pr.name,
+          meta: pr.meta.split(" · ").slice(0, 2).join(" · "),
+          score: pr.score === null ? "--" : pr.score,
+          scoreStyle: "font-family: 'Geist Mono', monospace; font-size: 12.5px; font-weight: 500; width: 34px; text-align: center; border-radius: 5px; padding: 3px 0; color: " +
+            (pr.score === null ? "#7A857E" : pr.score >= 70 ? "#16643A" : pr.score >= 60 ? "#C0631A" : "#5B655E") + "; background: " +
+            (pr.score === null ? "#F0F2EF" : pr.score >= 70 ? "#E7EFE9" : pr.score >= 60 ? "#FBF2E6" : "#F0F2EF") + ";",
+          status: pr.status,
+          statusStyle: "font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 5px; padding: 2px 7px; color: " +
+            (pr.discovered ? "#5B655E" : "#A2601C") + "; background: " + (pr.discovered ? "#F0F2EF" : "#FBF2E6") + ";",
+          value: pr.value,
+          trackLabel: tracked ? "Tracking" : "Track",
+          trackStyle: "height: 27px; padding: 0 11px; border-radius: 7px; cursor: pointer; font-family: Geist, sans-serif; font-size: 12px; font-weight: 600; border: 1px solid " +
+            (tracked ? "#C6DDCF" : "#16643A") + "; background: " + (tracked ? "#EFF6F1" : "#16643A") + "; color: " + (tracked ? "#16643A" : "#FFFFFF") + ";",
+          track: () => tracked ? this.untrack(pr.id) : this.setStage(pr.id, "watching"),
+          open: () => this.open(pr.id, "Discover"),
+          toggleSelect: () => this.toggleSelect(pr.id),
+          boxStyle: "width: 17px; height: 17px; border-radius: 5px; cursor: pointer; flex-shrink: 0; display: grid; place-items: center; font-size: 10px; color: #FFFFFF; border: 1px solid " +
+            (st.selected[pr.id] ? "#16643A" : "#D6DBD5") + "; background: " + (st.selected[pr.id] ? "#16643A" : "#FFFFFF") + ";",
+          boxMark: st.selected[pr.id] ? "✓" : ""
+        };
+      }),
+      trackedCount: trackedIds.length,
+      goPipeline,
+
+      todayStamp: "Saturday, August 8",
+      greeting: "Good morning, Asif.",
+      queueNote: "Showing 4 of 26 matches. Scored on how much of the spec is still winnable, not on how new the project is.",
+
+      changes: [
+        { tag: "New", tagStyle: "font-family: 'Geist Mono', monospace; font-size: 10.5px; color: #A2601C; background: #FBF2E6; border-radius: 5px; padding: 3px 7px; white-space: nowrap;", headline: "Discovered before any bid portal listed it, no spec published yet", project: "Maine State Prison Gatehouse Improvement Project", when: "2 days ago", open: () => this.open("SPX-6700284", "Today") },
+        { tag: "Doc", tagStyle: "font-family: 'Geist Mono', monospace; font-size: 10.5px; color: #16643A; background: #E7EFE9; border-radius: 5px; padding: 3px 7px; white-space: nowrap;", headline: "Amendment 0004 posted, response deadline moved to May 22", project: "Northern Light Health ambulatory expansion", when: "Yesterday", open: () => this.open("SPX-114902", "Today") },
+        { tag: "Team", tagStyle: "font-family: 'Geist Mono', monospace; font-size: 10.5px; color: #5B655E; background: #F0F2EF; border-radius: 5px; padding: 3px 7px; white-space: nowrap;", headline: "General contractor awarded, Consigli Construction", project: "Auburn cold-storage distribution center", when: "2 days ago", open: () => this.open("SPX-220117", "Today") }
+      ],
+
+      filters: ["Spec still open", "Bid opens soon", "Rival named"].map(label => ({
+        label, style: this.pill(st.filter === label), go: () => this.setState({ filter: label })
+      })),
+
+      creatingView: st.creatingView,
+      notCreatingView: !st.creatingView,
+      viewDraft: st.viewDraft,
+      setViewDraft: e => this.setState({ viewDraft: e.target.value }),
+      viewKey: e => { if (e.key === "Enter") this.saveView(); if (e.key === "Escape") this.setState({ creatingView: false }); },
+      startView: () => this.startView(),
+      saveView: () => this.saveView(),
+      cancelView: () => this.setState({ creatingView: false, viewDraft: "" }),
+      justSaved: st.justSaved,
+      hasJustSaved: !!st.justSaved,
+
+      selectedCount: Object.keys(st.selected).length,
+      hasSelection: Object.keys(st.selected).length > 0,
+      trackSelected: () => this.trackSelected(),
+      clearSelection: () => this.setState({ selected: {} }),
+
+      projects: PROJECTS.map(pr => {
+        const tracked = !!st.tracked[pr.id];
+        return {
+          name: pr.name, meta: pr.meta, divisions: pr.divisions, source: pr.source, value: pr.value,
+          score: pr.score === null ? "--" : pr.score,
+          scoreStyle: this.scoreStyle(pr.score),
+          clock: pr.clock,
+          clockStyle: "font-size: 12px; font-weight: 500; color: " + (pr.urgent ? "#A2601C" : "#7A857E") + ";",
+          trackLabel: tracked ? "Tracking" : "Track",
+          trackStyle: "height: 29px; padding: 0 12px; border-radius: 7px; cursor: pointer; font-family: Geist, sans-serif; font-size: 12.5px; font-weight: 600; border: 1px solid " +
+            (tracked ? "#C6DDCF" : "#16643A") + "; background: " + (tracked ? "#EFF6F1" : "#16643A") + "; color: " + (tracked ? "#16643A" : "#FFFFFF") + ";",
+          track: () => tracked ? this.untrack(pr.id) : this.setStage(pr.id, "watching"),
+          open: () => this.open(pr.id, "Today"),
+          toggleSelect: () => this.toggleSelect(pr.id),
+          boxStyle: "width: 17px; height: 17px; border-radius: 5px; cursor: pointer; flex-shrink: 0; display: grid; place-items: center; font-size: 10px; color: #FFFFFF; border: 1px solid " +
+            (st.selected[pr.id] ? "#16643A" : "#D6DBD5") + "; background: " + (st.selected[pr.id] ? "#16643A" : "#FFFFFF") + ";",
+          boxMark: st.selected[pr.id] ? "✓" : ""
+        };
+      }),
+
+      stageSummary: STAGES.map(s => ({
+        label: s.label,
+        count: trackedIds.filter(id => st.tracked[id] === s.key).length,
+        dotStyle: this.dot(s.color),
+        go: goPipeline
+      })),
+      board,
+
+      recentNotes: ALL.reduce((acc, pr) => acc.concat((st.notes[pr.id] || []).slice(0, 1).map(n => ({
+        project: pr.name, when: n.when, kind: n.kind, text: n.text,
+        kindStyle: "font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: #5B655E; background: #F0F2EF; border-radius: 4px; padding: 2px 6px;",
+        open: () => this.open(pr.id, "Today")
+      }))), []).slice(0, 3),
+      totalNotes: Object.keys(st.notes).reduce((n, k) => n + st.notes[k].length, 0),
+
+      mentions: [
+        { brand: "Acuity Brands", when: "2h", text: "Named basis of design, Portland Jetport concourse, division 26 50 00.", dotStyle: this.dot("#C0631A") },
+        { brand: "Your brand", when: "1d", text: "Listed as an approved equal on the Northern Light package.", dotStyle: this.dot("#16643A") },
+        { brand: "Your brand", when: "3d", text: "Basis of design held through phase 2 at Auburn cold storage.", dotStyle: this.dot("#16643A") }
+      ],
+
+      freshness: [
+        { label: "Maine permits and portals", when: "6h ago", barStyle: "width: 96%; height: 100%; background: #16643A;" },
+        { label: "SAM.gov solicitations", when: "12h ago", barStyle: "width: 88%; height: 100%; background: #16643A;" },
+        { label: "Spec document parsing", when: "2d ago", barStyle: "width: 54%; height: 100%; background: #C0631A;" }
+      ],
+
+      detailName: p.name,
+      detailId: p.id,
+      detailLocation: p.meta.split(" · ")[0],
+      detailStatus: p.status,
+      detailSector: p.sector,
+      detailPulled: p.pulled,
+      detailRead: p.read,
+      detailScore: p.score === null ? "--" : p.score,
+      detailScoreStyle: "font-family: Geist, sans-serif; font-weight: 800; font-size: 28px; letter-spacing: -0.03em; color: " + (p.score === null ? "#9AA39D" : p.score >= 70 ? "#16643A" : "#C0631A") + ";",
+      readStats: [
+        { value: String(p.mfrs), label: "manufacturers cited" },
+        { value: String(p.docs), label: "documents held" },
+        { value: String(p.divCount), label: "divisions in scope" }
+      ],
+      facts: [
+        { label: "Opened", value: p.opened, valueStyle: "margin-top: 5px; font-family: 'Geist Mono', monospace; font-size: 13px; color: #111512;" },
+        { label: "Square footage", value: p.sqft, valueStyle: "margin-top: 5px; font-size: 13px; color: " + (p.sqft.indexOf("Not stated") === 0 ? "#9AA39D" : "#111512") + "; line-height: 1.4;" },
+        { label: "Owner", value: p.owner, valueStyle: "margin-top: 5px; font-size: 13px; font-weight: 600; line-height: 1.4;" },
+        { label: "General contractor", value: p.gc, valueStyle: "margin-top: 5px; font-size: 13px; color: " + (p.gc.indexOf("Unassigned") === 0 || p.gc.indexOf("Not yet") === 0 ? "#9AA39D" : "#111512") + "; line-height: 1.4;" }
+      ],
+
+      notes: (st.notes[p.id] || []).map(n => ({
+        who: n.who, when: n.when, kind: n.kind, text: n.text,
+        kindStyle: "font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: #5B655E; background: #F0F2EF; border-radius: 4px; padding: 2px 6px;"
+      })),
+      noteCount: (st.notes[p.id] || []).length,
+      noNotes: (st.notes[p.id] || []).length === 0,
+      draft: st.draft,
+      setDraft: e => this.setState({ draft: e.target.value }),
+      submitNote: () => this.addNote(p.id),
+      noteKey: e => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) this.addNote(p.id); },
+      detailTabs: ["Executive brief", "Scope", "Specification", "Team", "Documents"].map(label => {
+        const active = st.detailTab === label;
+        const counts = { "Executive brief": "1", "Scope": "5", "Specification": "12", "Team": "3", "Documents": "77" };
+        return {
+          label, count: counts[label],
+          style: "height: 34px; padding: 0 12px; border: 0; border-radius: 8px; cursor: pointer; font-family: Geist, sans-serif; font-size: 13px; display: inline-flex; align-items: center; gap: 7px; font-weight: " +
+            (active ? "600" : "500") + "; background: " + (active ? "#EFF1EE" : "transparent") + "; color: " + (active ? "#111512" : "#6B756E") + ";",
+          badgeStyle: "font-family: 'Geist Mono', monospace; font-size: 10.5px; color: " + (active ? "#16643A" : "#9AA39D") + ";",
+          go: () => this.setState({ detailTab: label })
+        };
+      }),
+      tabTitle: body.title,
+      tabBody: body.body,
+      tabRows: body.rows,
+
+      backLabel: st.from === "Pipeline" ? "← Back to pipeline" : "← Back to today",
+      goBack: () => this.setState({ tab: st.from === "Pipeline" ? "Pipeline" : "Today" }),
+
+      detailTracked: !!stage,
+      detailUntracked: !stage,
+      trackCardTag: stage ? "In your pipeline" : "Not tracked",
+      trackCardStyle: "border: 1px solid " + (stage ? "#C6DDCF" : "#E4E7E3") + "; border-radius: 12px; background: " + (stage ? "#F3F8F5" : "#FFFFFF") + "; padding: 16px;",
+      stageOptions: STAGES.map(s => ({
+        label: s.label,
+        dotStyle: this.dot(s.color),
+        style: "display: flex; align-items: center; gap: 9px; width: 100%; height: 31px; padding: 0 10px; border-radius: 7px; cursor: pointer; font-family: Geist, sans-serif; font-size: 12.5px; border: 1px solid " +
+          (stage === s.key ? "#16643A" : "#E4E7E3") + "; background: #FFFFFF; font-weight: " + (stage === s.key ? "600" : "400") + "; color: #3D4A42;",
+        go: () => this.setStage(p.id, s.key)
+      })),
+      trackDetail: () => this.setStage(p.id, "watching"),
+      untrackDetail: () => this.untrack(p.id),
+
+      scoreParts: p.scoreParts.map(sp => ({
+        label: sp[0], value: sp[1],
+        barStyle: "width: " + sp[2] + "%; height: 100%; background: " + (sp[2] >= 70 ? "#16643A" : sp[2] > 0 ? "#C0631A" : "#D6DBD5") + ";"
+      })),
+      activity: p.activity
+    };
+  }
+}
+</script>
+</body>
+</html>

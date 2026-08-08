@@ -1,3 +1,6 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
 
@@ -11,7 +14,13 @@ const product = [
 
 const company = [{ href: "/about/", label: "About" }];
 
+// Same rule as SiteHeader: routes with their own chrome get no marketing
+// footer. See the comment there.
+const OWN_CHROME = ["/preview/"];
+
 export function SiteFooter() {
+  const pathname = usePathname();
+  if (OWN_CHROME.some((p) => pathname?.startsWith(p))) return null;
   return (
     <footer className="border-t border-[var(--color-border)] bg-white">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-4 md:px-8">

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  doc-page:not(:defined) { visibility: hidden; }
+  body { font-family: Geist, system-ui, sans-serif; color: #111512; -webkit-font-smoothing: antialiased; }
+  a { color: #16643A; text-decoration: none; }
+  a:hover { color: #0E4227; text-decoration: underline; }
+</style>
+<script src="./doc-page.js"></script>
+</helmet>
+
+<doc-page margin="0.85in">
+
+  <div style="margin-bottom: 30px;">
+    <div style="font-family: Geist, sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #16643A;">SpecIndex</div>
+    <div style="margin-top: 10px; font-family: Geist, sans-serif; font-weight: 800; font-size: 34px; letter-spacing: -0.03em; line-height: 1.1;">Product Requirements: the logged-in workspace</div>
+    <div style="margin-top: 12px; font-family: Geist, sans-serif; font-weight: 600; font-size: 17px; color: #3D4A42; line-height: 1.4; max-width: 30em;">The index is the free half. The paid half is where the rep works the job, and the notes they write there are the thing a competitor cannot copy.</div>
+  </div>
+
+  <table style="width: 100%; border-collapse: collapse; font-size: 12.5px; margin-bottom: 26px;">
+    <tbody>
+      <tr style="background: #F5F6F4;"><td style="padding: 8px 12px; border: 1px solid #E4E7E3; font-weight: 600; width: 30%;">Document ID</td><td style="padding: 8px 12px; border: 1px solid #E4E7E3;">SPX-PRD-APP-001</td></tr>
+      <tr><td style="padding: 8px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Version</td><td style="padding: 8px 12px; border: 1px solid #E4E7E3;">1.0</td></tr>
+      <tr style="background: #F5F6F4;"><td style="padding: 8px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Date</td><td style="padding: 8px 12px; border: 1px solid #E4E7E3;">August 8, 2026</td></tr>
+      <tr><td style="padding: 8px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Author</td><td style="padding: 8px 12px; border: 1px solid #E4E7E3;">Asif Hussain, Founder and CEO</td></tr>
+      <tr style="background: #F5F6F4;"><td style="padding: 8px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Buyer</td><td style="padding: 8px 12px; border: 1px solid #E4E7E3;">Building product manufacturers and their rep agencies, territory licence</td></tr>
+      <tr><td style="padding: 8px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Scope</td><td style="padding: 8px 12px; border: 1px solid #E4E7E3;">Signed-in web app: Today, Pipeline, Project record</td></tr>
+      <tr style="background: #F5F6F4;"><td style="padding: 8px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Companion</td><td style="padding: 8px 12px; border: 1px solid #E4E7E3;">Design file: SpecIndex Logged In.dc.html</td></tr>
+      <tr><td style="padding: 8px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Demo record</td><td style="padding: 8px 12px; border: 1px solid #E4E7E3;">SPX-6700284, Maine State Prison Gatehouse Improvement Project</td></tr>
+    </tbody>
+  </table>
+
+  <div style="border: 1px solid #C6DDCF; background: #F3F8F5; border-radius: 10px; padding: 16px 18px; margin-bottom: 30px; break-inside: avoid;">
+    <div style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: #16643A;">What this document is</div>
+    <div style="margin-top: 8px; font-size: 13.5px; line-height: 1.6;">The requirements for what a licensed user sees after they sign in. It covers the three screens, the tracking model, and notes. It does not cover the public index pages, pricing and checkout, the ingestion pipeline, or the brand-visibility product. Numbers in the design file are illustrative except the Maine State Prison record, which is live data from specindex.ai.</div>
+  </div>
+
+  <h1 style="font-family: Geist, sans-serif; font-weight: 800; font-size: 21px; letter-spacing: -0.02em; margin: 0 0 10px; padding-bottom: 7px; border-bottom: 2px solid #111512;">1. The problem</h1>
+  <p style="font-size: 13.5px; line-height: 1.65; margin: 0 0 12px;">Signing in changes almost nothing today. The user lands on the same marketing page with a filter block bolted to the top: a hero headline, a paragraph of positioning, 50 state chips, a search field, and six dropdowns before a single project appears. Then, once they track a project, tracking goes nowhere. There is no screen that lists what they track, no stage, no history, and no way to write down what they learned on a call. The most valuable thing a rep knows about a project is what somebody told them on the phone, and today the product has nowhere to put it.</p>
+
+  <div style="border: 1px solid #E9DDCD; background: #FCF8F2; border-radius: 10px; padding: 16px 18px; margin: 18px 0 20px; break-inside: avoid;">
+    <div style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: #A2601C;">The rule</div>
+    <div style="margin-top: 8px; font-size: 13.5px; line-height: 1.6;">The logged-out index sells. The logged-in app works. Nothing that exists to persuade a visitor belongs on a screen a licensed user opens every morning.</div>
+  </div>
+
+  <div style="border: 1px solid #C6DDCF; background: #F3F8F5; border-radius: 10px; padding: 16px 18px; margin-bottom: 26px; break-inside: avoid;">
+    <div style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: #16643A;">Notes are the moat</div>
+    <div style="margin-top: 8px; font-size: 13.5px; line-height: 1.6;">Public data can be matched by anyone with a crawler. What cannot be matched is a year of a rep's own account of who said what on which job, sitting on top of that data. Notes are the primary call to action in the signed-in app, and the reason the licence renews. Every screen should push toward writing one, and no screen should bury the composer.</div>
+  </div>
+
+  <h1 style="font-family: Geist, sans-serif; font-weight: 800; font-size: 21px; letter-spacing: -0.02em; margin: 0 0 10px; padding-bottom: 7px; border-bottom: 2px solid #111512;">2. Scope</h1>
+  <table style="width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 26px;">
+    <thead>
+      <tr style="background: #F5F6F4;"><th style="padding: 9px 12px; border: 1px solid #E4E7E3; text-align: left; width: 14%;">Status</th><th style="padding: 9px 12px; border: 1px solid #E4E7E3; text-align: left;">Item</th></tr>
+    </thead>
+    <tbody>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600; color: #16643A;">IN</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">Persistent app shell: sidebar, territory control, saved views, global search</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600; color: #16643A;">IN</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">Today, the default landing screen after sign-in</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600; color: #16643A;">IN</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">Pipeline: a four-stage board of everything the user tracks</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600; color: #16643A;">IN</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">Project record with tabs, stage control, activity feed, and notes</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600; color: #16643A;">IN</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">Honest empty states for discovered projects with no specification yet</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600; color: #A2601C;">OUT</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">Team accounts, assignment, and shared notes (territory licence is unlimited seats, so this is next, not now)</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600; color: #A2601C;">OUT</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">CRM sync to Salesforce or HubSpot, email integration, mobile app</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600; color: #A2601C;">OUT</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">Map view, exports, and the ask-about-this-project assistant</td></tr>
+    </tbody>
+  </table>
+
+  <h1 style="font-family: Geist, sans-serif; font-weight: 800; font-size: 21px; letter-spacing: -0.02em; margin: 0 0 10px; padding-bottom: 7px; border-bottom: 2px solid #111512;">3. Information architecture</h1>
+  <p style="font-size: 13.5px; line-height: 1.65; margin: 0 0 14px;">Territory is set once in the sidebar and every screen inherits it. That single move removes the 50-state chip grid from the top of the projects list, which was the largest source of visual noise on the first screen.</p>
+  <table style="width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 26px;">
+    <thead>
+      <tr style="background: #F5F6F4;"><th style="padding: 9px 12px; border: 1px solid #E4E7E3; text-align: left; width: 22%;">Surface</th><th style="padding: 9px 12px; border: 1px solid #E4E7E3; text-align: left;">Answers</th></tr>
+    </thead>
+    <tbody>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Today</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">What changed since I last looked, and what is new and early enough to influence</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Pipeline</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">What am I chasing, and where does each one stand</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Project</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">What do we hold on this job, what is missing, and what did I do about it</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Discover</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">Everything my licence covers, in one dense list I can filter, select, and track in bulk</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Reporting</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">Coverage on my territory, counted directly and never projected</td></tr>
+    </tbody>
+  </table>
+
+  <h1 style="font-family: Geist, sans-serif; font-weight: 800; font-size: 21px; letter-spacing: -0.02em; margin: 0 0 10px; padding-bottom: 7px; border-bottom: 2px solid #111512;">4. Today</h1>
+  <p style="font-size: 13.5px; line-height: 1.65; margin: 0 0 12px;">Today is the first screen after sign-in. It opens with what changed on tracked projects, because a change on something the user already chose is worth more than any new record. Below that sits a short scored list of new projects in territory. No hero, no positioning copy, no filter wall.</p>
+  <table style="width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 20px;">
+    <thead>
+      <tr style="background: #F5F6F4;"><th style="padding: 9px 12px; border: 1px solid #E4E7E3; text-align: left; width: 30%;">Requirement</th><th style="padding: 9px 12px; border: 1px solid #E4E7E3; text-align: left;">Detail</th></tr>
+    </thead>
+    <tbody>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Change feed</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">Typed entries (Spec, Doc, Team, New) on tracked projects only, most recent first, each opening the project record</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Scored list</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">At most six projects, ranked by how much of the spec is still winnable, not by recency. Track is a one-click action on the row</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Pipeline summary</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">Count per stage, each row jumping to the board</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Data freshness</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">Last-run time per source class. A stale bar is a feature, not a bug to hide</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Empty state</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">A user with nothing tracked sees the scored list first and a single line explaining what tracking does</td></tr>
+    </tbody>
+  </table>
+
+  <div style="border: 1px solid #C6DDCF; background: #F3F8F5; border-radius: 10px; padding: 16px 18px; margin-bottom: 26px; break-inside: avoid;">
+    <div style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: #16643A;">If you ship one thing</div>
+    <div style="margin-top: 8px; font-size: 13.5px; line-height: 1.6;">Ship the change feed. It is the only screen in the product that gives a reason to open it tomorrow. Everything else can be reached by search.</div>
+  </div>
+
+  <h1 style="font-family: Geist, sans-serif; font-weight: 800; font-size: 21px; letter-spacing: -0.02em; margin: 0 0 10px; padding-bottom: 7px; border-bottom: 2px solid #111512;">4.1 Discover: everything the licence covers</h1>
+  <p style="font-size: 13.5px; line-height: 1.65; margin: 0 0 14px;">Today is deliberately short. Discover is the answer to "show me everything I am entitled to", and it has to be a dense list rather than a card wall: one row per project, sortable, with the same select-and-track and save-a-view controls as Today.</p>
+  <table style="width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 26px;">
+    <thead>
+      <tr style="background: #F5F6F4;"><th style="padding: 9px 12px; border: 1px solid #E4E7E3; text-align: left; width: 30%;">Requirement</th><th style="padding: 9px 12px; border: 1px solid #E4E7E3; text-align: left;">Detail</th></tr>
+    </thead>
+    <tbody>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Entitlement is the frame</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">Header states the count the licence covers ("412 commercial projects your licence covers"). No upsell, no locked rows</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Row density</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">Checkbox, score, name and meta, stage, value, track. Roughly 44px per row, header row sticky in production</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Filters</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">One segmented control: All, Spec still open, Discovered with no spec, Bid opens soon. Deeper filtering lives behind search, not a dropdown wall</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Same two actions</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">Save this view and select-and-track behave identically to Today. One mental model, two screens</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Paging</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">Infinite scroll with a visible "showing N of 412". Sort defaults to priority score</td></tr>
+    </tbody>
+  </table>
+
+  <h1 style="font-family: Geist, sans-serif; font-weight: 800; font-size: 21px; letter-spacing: -0.02em; margin: 0 0 10px; padding-bottom: 7px; border-bottom: 2px solid #111512;">4.2 Saving a view and tracking in bulk</h1>
+  <p style="font-size: 13.5px; line-height: 1.65; margin: 0 0 14px;">Two actions carry the whole workspace: saving a search so it re-runs itself, and tracking a project so changes come to you. Both have to cost one click. Neither gets a settings page.</p>
+  <table style="width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 20px;">
+    <thead>
+      <tr style="background: #F5F6F4;"><th style="padding: 9px 12px; border: 1px solid #E4E7E3; text-align: left; width: 30%;">Requirement</th><th style="padding: 9px 12px; border: 1px solid #E4E7E3; text-align: left;">Detail</th></tr>
+    </thead>
+    <tbody>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Save this view</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">A button next to the filter row on any list. It saves the current territory and filter, nothing more to configure</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Pre-filled name</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">The name field opens with a generated name ("Maine · Spec still open"), so Enter alone finishes the job. Escape cancels</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Where it lands</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">Top of the sidebar Saved views list with a live result count, plus a confirmation line that names it</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Sidebar plus button</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">Same flow, started from the Saved views header</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Select and track</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">A checkbox on every project row. Selecting any row raises a bar with the count, Clear, and "Track N projects", all landing at Watching</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Single track</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">The row button stays. Clicking it again untracks, with no confirmation dialog</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Phase 2</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">Email digest per saved view, and "track everything in this view" as a standing rule</td></tr>
+    </tbody>
+  </table>
+
+  <h1 style="font-family: Geist, sans-serif; font-weight: 800; font-size: 21px; letter-spacing: -0.02em; margin: 0 0 10px; padding-bottom: 7px; border-bottom: 2px solid #111512;">5. Pipeline</h1>
+  <p style="font-size: 13.5px; line-height: 1.65; margin: 0 0 12px;">Tracking has to arrive somewhere. Pipeline is a four-stage board over everything the user tracks, reachable from the sidebar, the top bar count, and the Today summary.</p>
+  <table style="width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 20px;">
+    <thead>
+      <tr style="background: #F5F6F4;"><th style="padding: 9px 12px; border: 1px solid #E4E7E3; text-align: left; width: 26%;">Stage</th><th style="padding: 9px 12px; border: 1px solid #E4E7E3; text-align: left;">Means</th></tr>
+    </thead>
+    <tbody>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Watching</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">Tracked, no contact yet. Default on first track</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Specifier engaged</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">A person has been reached: architect, engineer, owner, or contractor</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Spec named</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">Your brand appears in a document, as basis of design or approved equal</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Closed out</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">Won, lost, or dead. Kept for the record, not for the queue</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size: 13.5px; line-height: 1.65; margin: 0 0 26px;">Stage is set by the user and never by the pipeline. Automated data changes the project record; it does not move a card. Each card shows the score, the value, the note count, and one urgency line when a date is close.</p>
+
+  <h1 style="font-family: Geist, sans-serif; font-weight: 800; font-size: 21px; letter-spacing: -0.02em; margin: 0 0 10px; padding-bottom: 7px; border-bottom: 2px solid #111512;">6. Project record and notes</h1>
+  <p style="font-size: 13.5px; line-height: 1.65; margin: 0 0 14px;">The project record keeps the existing structure (the read, facts, tabs, activity) and adds two things: a stage control in the right rail so tracking state is changeable where it is read, and a notes panel under the tabs.</p>
+  <table style="width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 20px;">
+    <thead>
+      <tr style="background: #F5F6F4;"><th style="padding: 9px 12px; border: 1px solid #E4E7E3; text-align: left; width: 30%;">Requirement</th><th style="padding: 9px 12px; border: 1px solid #E4E7E3; text-align: left;">Detail</th></tr>
+    </thead>
+    <tbody>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Placement</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">"Log what happened" sits directly under the header card, above the document tabs. It is the first thing below the fold, never the last</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Note entry</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">Free text, always visible, saved on click or Cmd plus Enter. No modal and no required fields</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Entry points</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">"Add note" on every pipeline card, and a Your notes card at the top of the Today rail showing the three most recent across projects</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Auto-track</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">Saving the first note tracks the project at Watching. Writing something down is the intent</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Note kinds</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">Note, Call, Email, Meeting. Defaults to Note, changed after the fact, never blocking the write</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Separation</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">Notes render in their own panel, visually distinct from the sourced activity feed. A user must never wonder whether a line came from the public record or from a colleague</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Privacy</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">Notes belong to the territory licence, never to the public project page, and never to model training</td></tr>
+      <tr><td style="padding: 9px 12px; border: 1px solid #E4E7E3; font-weight: 600;">Next action</td><td style="padding: 9px 12px; border: 1px solid #E4E7E3;">Phase 2: an optional date on a note, surfaced on Today as a due item</td></tr>
+    </tbody>
+  </table>
+
+  <div style="border: 1px solid #E9DDCD; background: #FCF8F2; border-radius: 10px; padding: 16px 18px; margin-bottom: 26px; break-inside: avoid;">
+    <div style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: #A2601C;">This is the P0 risk</div>
+    <div style="margin-top: 8px; font-size: 13.5px; line-height: 1.6;">Reps already have a CRM they are told to use and do not. We win by being the place the data already lives, so the note costs four seconds and no context switch. The moment notes require a form, a stage, and a required field, we have built the thing they avoid.</div>
+  </div>
+
+  <h1 style="font-family: Geist, sans-serif; font-weight: 800; font-size: 21px; letter-spacing: -0.02em; margin: 0 0 10px; padding-bottom: 7px; border-bottom: 2px solid #111512;">7. Discovery states</h1>
+  <p style="font-size: 13.5px; line-height: 1.65; margin: 0 0 14px;">SPX-6700284, the Maine State Prison Gatehouse Improvement Project, is the demo record because it is the earliest state we hold: discovered through search grounding before any bid portal listed it. Priority score reads two dashes, not a number. Manufacturers, documents, and divisions all read zero. Every tab says plainly what is missing and why.</p>
+  <p style="font-size: 13.5px; line-height: 1.65; margin: 0 0 26px;">That is the demonstration, not an apology for thin data. A discovered project with no spec is the whole argument: the index knew about the job before the documents existed, and tracking converts that head start into an alert the day the specification publishes.</p>
+
+  <h1 style="font-family: Geist, sans-serif; font-weight: 800; font-size: 21px; letter-spacing: -0.02em; margin: 0 0 10px; padding-bottom: 7px; border-bottom: 2px solid #111512;">8. Definition of done</h1>
+  <div style="font-size: 13.5px; line-height: 1.9; margin-bottom: 26px;">
+    <div>☐&nbsp; Sign-in lands on Today. No marketing copy on any signed-in screen.</div>
+    <div>☐&nbsp; Territory is set once and every screen inherits it.</div>
+    <div>☐&nbsp; Tracking a project from any surface puts it on the Pipeline board at Watching.</div>
+    <div>☐&nbsp; A search can be saved in two clicks, with a name already filled in.</div>
+    <div>☐&nbsp; Several projects can be selected and tracked in one action.</div>
+    <div>☐&nbsp; Pipeline is reachable in one click from every screen, and stage changes persist.</div>
+    <div>☐&nbsp; A note can be written and saved in under ten seconds, with no required field.</div>
+    <div>☐&nbsp; Saving the first note tracks the project.</div>
+    <div>☐&nbsp; Notes are visually separate from sourced activity on the project record.</div>
+    <div>☐&nbsp; A discovered project with zero documents renders without a single fabricated number.</div>
+    <div>☐&nbsp; Back from a project returns to the screen it was opened from.</div>
+  </div>
+
+  <div style="border: 1px solid #C6DDCF; background: #F3F8F5; border-radius: 10px; padding: 16px 18px; break-inside: avoid;">
+    <div style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: #16643A;">In one line</div>
+    <div style="margin-top: 8px; font-size: 13.5px; line-height: 1.6;">Free index, paid workspace: SpecIndex finds the project early, and the logged-in app is where the rep keeps working it until the spec is named.</div>
+  </div>
+
+</doc-page>
+
+</x-dc>
+</body>
+</html>
