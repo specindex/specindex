@@ -98,7 +98,18 @@ def _one_call(client, text: str) -> list[dict]:
             data = json.loads(m.group(0))
         except json.JSONDecodeError:
             return []
-    return data.get("divisions", []) or []
+    # THE MODEL SOMETIMES RETURNS THE BARE ARRAY. The prompt asks for
+    # {"divisions": [...]} and usually gets it, but Flash occasionally answers
+    # with the top-level list instead. `data.get(...)` then raises
+    # AttributeError: 'list' object has no attribute 'get', the caller counts
+    # it as an API failure, and the document is skipped -- observed on a real
+    # Cloud Run execution 2026-08-08 (doc 553). The content was fine; only the
+    # envelope differed, so dropping it discards a good answer.
+    if isinstance(data, list):
+        return data
+    if isinstance(data, dict):
+        return data.get("divisions", []) or []
+    return []
 
 
 # CSI MasterFormat divisions are a FIXED, GAPPED LIST -- not the range 00-49.
