@@ -18,7 +18,7 @@ const useCases = [
     label: "Available now",
     title: "Read the project record",
     body: "One page per project: owner, architect, contractor, value, square footage, the scopes that matter, the categories still in play, and links to every source behind it.",
-    href: "/projects/ga-georgia-pacific-center-conversion/",
+    href: "/project/ga-georgia-pacific-center-conversion/",
     cta: "View a sample record",
   },
   {
