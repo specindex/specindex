@@ -1,0 +1,87 @@
+# Execute the Cloud Run Jobs on a schedule.
+#
+# WHY THIS IS SEPARATE FROM THE DEPLOY. pipeline-jobs-deploy.yml builds the image
+# and creates the jobs; nothing ever RAN them. A deployed job that is never
+# executed is indistinguishable from a job that does not exist, and that is
+# exactly what the state was: portal capture -- the acquisition mechanism for the
+# entire moat -- ran only when someone remembered, by hand, on a laptop that
+# sleeps. The Cloud SQL proxy died four times on 2026-08-07 for that reason
+# alone, and each death read as a database failure rather than as a laptop.
+#
+# EXECUTION IS ASYNC (no --wait). Portal capture runs up to 6 hours; a GitHub
+# Actions runner blocking on that burns minutes to watch a progress bar, and the
+# job's own logs are the real record. The verify step below asserts the execution
+# was ACCEPTED, which is what this workflow is responsible for -- whether the
+# capture found documents is the job's business, and it says so in its own
+# [verify] line.
+
+name: pipeline-jobs-run
+
+on:
+  schedule:
+    # 03:00 UTC daily -- outside US business hours for the government portals
+    # being crawled, which is both politer and less likely to contend with
+    # whatever else is hitting them.
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+    inputs:
+      job:
+        description: "Which job to execute"
+        required: true
+        default: specindex-pull-portals
+        type: choice
+        options:
+          - specindex-pull-portals
+          - specindex-pull-socrata
+          - specindex-pull-arcgis
+          - specindex-classify
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  # Never start a second capture while one is running: these hit the same
+  # government hosts, and the per-domain rate limits are per-process.
+  group: pipeline-jobs-run
+  cancel-in-progress: false
+
+env:
+  REGION: us-central1
+  PROJECT: specindex-ai
+
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+
+      - uses: google-github-actions/setup-gcloud@v2
+
+      - name: Execute
+        run: |
+          set -euo pipefail
+          # Scheduled runs do the capture; manual runs do whatever was chosen.
+          JOB="${{ github.event.inputs.job || 'specindex-pull-portals' }}"
+
+          # A job that does not exist must fail loudly here rather than being
+          # reported as a successful no-op -- the deploy workflow failed on every
+          # run for a week and left no jobs at all, with nothing reporting it.
+          if ! gcloud run jobs describe "$JOB" --region "$REGION" --project "$PROJECT" >/dev/null 2>&1; then
+            echo "::error::job $JOB does not exist -- run pipeline-jobs-deploy first"
+            exit 1
+          fi
+
+          gcloud run jobs execute "$JOB" \
+            --region "$REGION" --project "$PROJECT" --async
+
+          echo "### Executed \`$JOB\`" >> "$GITHUB_STEP_SUMMARY"
+          gcloud run jobs executions list --job "$JOB" \
+            --region "$REGION" --project "$PROJECT" --limit 3 \
+            --format='table(name, createTime, status.runningCount, status.succeededCount)' \
+            | tee -a "$GITHUB_STEP_SUMMARY"
