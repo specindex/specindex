@@ -1,18 +1,22 @@
-import { getProject } from "@/lib/projects";
+import { getStateSample } from "@/lib/projects";
 import { TodayPreview } from "@/components/preview/TodayPreview";
 
-// PREVIEW ONLY -- unlinked, noindex. Screen 1 of docs/logged-in-redesign/.
+// Screen 1 of the logged-in workspace redesign, rendered against the real
+// Maine territory. noindex and unlinked: this is a work-in-progress workspace
+// shipped to production so it can be reviewed on the live site, and it must not
+// enter the sitemap or compete with /project/* for indexing.
 //
-// Mixes the ONE real Maine record with the handoff's illustrative projects so
-// the layout can be judged with both a sparse and a rich row in the same list.
-// The banner on the page names which is which; see lib/previewSeed.ts for why
-// the seed data is quarantined.
+// No seed data. lib/previewSeed.ts is deleted; see TodayPreview for why.
 export const metadata = {
-  title: "Today preview",
+  title: "Today",
   robots: { index: false, follow: false },
 };
 
 export default async function TodayPreviewPage() {
-  const realProject = await getProject("me-portal-maine-vertical-3820");
-  return <TodayPreview realProject={realProject ?? null} />;
+  const all = await getStateSample("ME", 300);
+  // "with documents held" is a claim about our coverage, so it counts what we
+  // actually hold rather than has_documents, which can be set from a portal
+  // listing that advertised an attachment we never retrieved.
+  const documented = all.filter((p) => (p.document_count ?? 0) > 0).length;
+  return <TodayPreview projects={all} total={all.length} documented={documented} />;
 }

@@ -2,15 +2,30 @@
 
 import { useState } from "react";
 import type { Project } from "@/lib/types";
-import { toDisplayCase } from "@/lib/format";
-import {
-  SEED_PROJECTS, SEED_NOTES, SEED_CHANGES, SEED_STAGES, SEED_MENTIONS, SEED_FRESHNESS,
-} from "@/lib/previewSeed";
+import { formatUsd, toDisplayCase } from "@/lib/format";
 
-// Today (screen 1). Mixes the ONE real Maine record with the handoff's
-// illustrative ones so the layout can be judged both ways: a sparse record
-// and a rich record sitting in the same list. Everything except the Maine
-// record is sample data and the banner says so.
+// Today (screen 1), rendered entirely against the real corpus.
+//
+// This screen previously mixed one real record with three illustrative ones
+// from lib/previewSeed.ts. That seed is gone and the file is deleted. Three
+// reasons, in ascending order of importance:
+//
+//   1. Two of the three screens (Discover, Workspace) were already 100% real,
+//      so Today was the only thing standing between this design and a
+//      production deploy.
+//   2. A demo that has to be captioned "1 live record, 3 illustrative" spends
+//      the viewer's attention on working out which is which.
+//   3. The Brand mentions panel was a compliance defect. CLAUDE.md is explicit:
+//      "Do not claim brand-vs-competitor visibility. 166 of 591,618 projects
+//      carry any brand mention, and those are tenants, not manufacturers."
+//      The panel showed "Acuity Brands, rival" against a fabricated citation.
+//      It is REMOVED rather than emptied, because the honest empty state for a
+//      claim we may not make is no panel at all.
+//
+// Where a panel has no backing table yet (notes, pipeline stages), it renders a
+// written empty state saying so. The handoff's rule is that an empty state is
+// explained, never blank, and it is better to show a rep an honest "not built
+// yet" than a number nobody can trace to a document.
 
 const MONO = "var(--font-mono)";
 const SANS = "var(--font-sans)";
@@ -22,53 +37,40 @@ function scoreStyle(total: number | null) {
   return { bg: "#F0F2EF", fg: "#5B655E", label: String(total) };
 }
 
-const TAG_TONE: Record<string, { bg: string; fg: string }> = {
-  amber: { bg: "#FBF2E6", fg: "#A2601C" },
-  green: { bg: "#E7EFE9", fg: "#16643A" },
-  grey: { bg: "#F0F2EF", fg: "#5B655E" },
-};
-
-export function TodayPreview({ realProject }: { realProject: Project | null }) {
-  const [tracked, setTracked] = useState<Record<string, boolean>>(
-    Object.fromEntries(SEED_PROJECTS.filter((p) => p.tracked).map((p) => [p.id, true])),
+// Written empty state. Takes a reason, not just a title: "no data" is a fact
+// about us, and the user is owed which of the two it is -- nothing happened, or
+// we have not built it.
+function EmptyPanel({ title, body }: { title: string; body: string }) {
+  return (
+    <div style={{ padding: "4px 0 2px" }}>
+      <div style={{ fontSize: 12.5, fontWeight: 600, color: "#4B554E", marginBottom: 4 }}>{title}</div>
+      <p style={{ fontSize: 12, color: "#8A938C", lineHeight: 1.55, margin: 0 }}>{body}</p>
+    </div>
   );
+}
+
+export function TodayPreview({
+  projects,
+  total,
+  documented,
+}: {
+  projects: Project[];
+  total: number;
+  documented: number;
+}) {
+  const [tracked, setTracked] = useState<Record<string, boolean>>({});
   const [selected, setSelected] = useState<Record<string, boolean>>({});
   const [filter, setFilter] = useState("open");
 
   const selectedCount = Object.values(selected).filter(Boolean).length;
   const trackedCount = Object.values(tracked).filter(Boolean).length;
 
-  // The real record, shaped like a seed row so one renderer handles both.
-  const realRow = realProject && {
-    id: realProject.id,
-    name: toDisplayCase(realProject.name),
-    city: toDisplayCase(realProject.city || ""),
-    state: realProject.state ?? "ME",
-    owner: "State of Maine",
-    score: realProject.score?.total ?? null,
-    value: null as string | null,
-    docCount: realProject.document_count ?? 0,
-    divisions: [] as { code: string; label: string }[],
-    urgency: "Discovered Aug 6",
-    urgent: false,
-    source: "Search-grounded discovery, State of Maine",
-    real: true,
-  };
-
-  // Priority score desc, nulls last. This is the handoff's own stated default
-  // sort, and it also stops the sparsest record leading the screen -- an
-  // unscored row at the top reads as "the product has nothing" before anyone
-  // scrolls. Sorting by actionable density is not hiding the record; it is
-  // still in the list, one row down, labelled honestly.
-  const rows = [
-    ...(realRow ? [realRow] : []),
-    ...SEED_PROJECTS.map((p) => ({
-      id: p.id, name: p.name, city: p.city, state: p.state, owner: p.owner,
-      score: p.score, value: p.value as string | null, docCount: p.docCount,
-      divisions: p.divisions, urgency: p.urgency, urgent: p.urgent,
-      source: p.source, real: false,
-    })),
-  ].sort((a, b) => (b.score ?? -1) - (a.score ?? -1));
+  // Priority score desc, nulls last. The handoff's stated default, and it also
+  // stops the sparsest record leading the screen: an unscored row at the top
+  // reads as "the product has nothing" before anyone scrolls.
+  const rows = [...projects]
+    .sort((a, b) => (b.score?.total ?? -1) - (a.score?.total ?? -1))
+    .slice(0, 8);
 
   const card: React.CSSProperties = {
     background: "#fff", border: "1px solid #E4E7E3", borderRadius: 12,
@@ -93,8 +95,12 @@ export function TodayPreview({ realProject }: { realProject: Project | null }) {
             </div>
             <div style={{ fontSize: 13, fontWeight: 600, marginTop: 2 }}>Maine</div>
           </div>
-          {[["Today", "7", true], ["Pipeline", String(trackedCount), false], ["Discover", "138", false]].map(([label, n, active]) => (
-            <a key={String(label)} href={label === "Discover" ? "/preview/discover/" : undefined} style={{
+          {([
+            ["Today", String(rows.length), true],
+            ["Pipeline", String(trackedCount), false],
+            ["Discover", String(total), false],
+          ] as [string, string, boolean][]).map(([label, n, active]) => (
+            <a key={label} href={label === "Discover" ? "/preview/discover/" : undefined} style={{
               height: 33, display: "flex", alignItems: "center", justifyContent: "space-between",
               padding: "0 10px", borderRadius: 8, fontSize: 13.5, textDecoration: "none",
               background: active ? "#E7EFE9" : "transparent",
@@ -105,6 +111,10 @@ export function TodayPreview({ realProject }: { realProject: Project | null }) {
             </a>
           ))}
 
+          {/* Saved views had four invented view names with invented counts.
+              user_saved_views exists as a table but holds nothing for this
+              user, so the honest render is the empty state, not four rows of
+              plausible-looking filters. */}
           <div style={{ marginTop: 20, marginBottom: 6, display: "flex", alignItems: "center" }}>
             <span style={{ fontFamily: MONO, fontSize: 9.5, letterSpacing: "0.09em", color: "#8A938C" }}>SAVED VIEWS</span>
             <span style={{
@@ -112,16 +122,9 @@ export function TodayPreview({ realProject }: { realProject: Project | null }) {
               display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, color: "#8A938C",
             }}>+</span>
           </div>
-          {[["Healthcare, lighting open", "12"], ["Discovered, no spec yet", "8"],
-            ["Rival named, still or-equal", "6"], ["Bid opens in 30 days", "9"]].map(([v, n]) => (
-            <div key={v} style={{
-              height: 30, display: "flex", alignItems: "center", justifyContent: "space-between",
-              padding: "0 10px", fontSize: 12.5, color: "#4B554E",
-            }}>
-              <span>{v}</span>
-              <span style={{ fontFamily: MONO, fontSize: 11, color: "#9AA39D" }}>{n}</span>
-            </div>
-          ))}
+          <p style={{ fontSize: 11.5, color: "#8A938C", lineHeight: 1.5, margin: "2px 2px 0" }}>
+            No saved views yet. Filter Discover, then save it here to get it as a daily digest.
+          </p>
 
           <div style={{ marginTop: "auto", borderTop: "1px solid #E4E7E3", paddingTop: 12, display: "flex", gap: 9, alignItems: "center" }}>
             <div style={{
@@ -154,31 +157,29 @@ export function TodayPreview({ realProject }: { realProject: Project | null }) {
             }}>Pipeline · {trackedCount}</span>
           </div>
 
-          {/* Disclosure, not apology. Gemini's read was that a paragraph of
-              caveat in the page body sounds defensive to an investor who
-              already assumes a demo contains sample data. Same information,
-              stated as a product affordance and hoverable for the detail. */}
+          {/* Replaces the DEMO DATA chip. Every row on this screen is a real
+              corpus record now, so the disclosure that matters is the opposite
+              one: how much of the territory we can actually read. */}
           <div
-            title="Maine State Prison is a live record from the corpus. The other projects, notes, brand mentions and freshness bars are illustrative, shown at the coverage we are building toward."
+            title="Every project on this screen is a live record from the corpus. Coverage counts documents we hold and have parsed, not documents that exist."
             style={{
               display: "inline-flex", gap: 7, alignItems: "center", background: "#fff",
-              border: "1px solid #E4E7E3", borderRadius: 999, padding: "5px 12px", marginBottom: 18,
+              border: "1px solid #C6DDCF", borderRadius: 999, padding: "5px 12px", marginBottom: 18,
               cursor: "default",
             }}>
-            <span style={{ width: 6, height: 6, borderRadius: 999, background: "#C0631A" }} />
-            <span style={{ fontFamily: MONO, fontSize: 10, letterSpacing: "0.07em", color: "#A2601C" }}>DEMO DATA</span>
-            <span style={{ fontSize: 12, color: "#8A938C" }}>1 live record, 3 illustrative</span>
+            <span style={{ width: 6, height: 6, borderRadius: 999, background: "#16643A" }} />
+            <span style={{ fontFamily: MONO, fontSize: 10, letterSpacing: "0.07em", color: "#16643A" }}>LIVE CORPUS</span>
+            <span style={{ fontSize: 12, color: "#8A938C" }}>
+              {total} Maine records, {documented} with documents held
+            </span>
           </div>
 
-          <div style={{ fontFamily: MONO, fontSize: 10.5, letterSpacing: "0.09em", color: "#16643A", marginBottom: 8 }}>
-            SATURDAY, AUGUST 8
-          </div>
           <h1 style={{ fontSize: 26, fontWeight: 800, letterSpacing: "-0.03em", margin: "0 0 8px" }}>
             Good morning, Asif.
           </h1>
           <p style={{ fontSize: 14, color: "#5B655E", maxWidth: 580, margin: "0 0 26px" }}>
-            Three things changed on projects you track, and four in Maine are early enough to still
-            influence. Not a browse-everything list.
+            The {rows.length} Maine projects most worth your attention, ranked by how much of the
+            spec is still winnable. Not a browse-everything list.
           </p>
 
           <div style={{ display: "grid", gridTemplateColumns: "minmax(0,1fr) 320px", gap: 24, alignItems: "start" }}>
@@ -188,29 +189,18 @@ export function TodayPreview({ realProject }: { realProject: Project | null }) {
                 <h2 style={{ fontSize: 16, fontWeight: 700, letterSpacing: "-0.02em", margin: 0 }}>
                   Changed on your tracked projects
                 </h2>
-                <span style={{ fontSize: 12.5, color: "#16643A", cursor: "pointer" }}>View pipeline</span>
               </div>
 
-              <div style={{ ...card, marginBottom: 26 }}>
-                {SEED_CHANGES.map((c, i) => {
-                  const t = TAG_TONE[c.tone];
-                  return (
-                    <div key={c.headline} style={{
-                      display: "flex", gap: 12, padding: "13px 16px", alignItems: "flex-start",
-                      borderTop: i === 0 ? "none" : "1px solid #F2F4F1",
-                    }}>
-                      <span style={{
-                        fontFamily: MONO, fontSize: 10, background: t.bg, color: t.fg,
-                        padding: "2px 7px", borderRadius: 5, marginTop: 1,
-                      }}>{c.tag}</span>
-                      <div style={{ minWidth: 0, flex: 1 }}>
-                        <div style={{ fontSize: 14, fontWeight: 600 }}>{c.headline}</div>
-                        <div style={{ fontSize: 12.5, color: "#7A857E", marginTop: 2 }}>{c.project}</div>
-                      </div>
-                      <span style={{ fontFamily: MONO, fontSize: 11, color: "#9AA39D", whiteSpace: "nowrap" }}>{c.when}</span>
-                    </div>
-                  );
-                })}
+              {/* The change feed was three fabricated events. Change detection
+                  against tracked projects is real work that does not exist
+                  yet: it needs a per-user tracking table joined to a diff of
+                  the nightly capture. Saying so is more useful than three
+                  headlines nobody can click through to. */}
+              <div style={{ ...card, marginBottom: 26, padding: 16 }}>
+                <EmptyPanel
+                  title="Nothing to report yet"
+                  body="Track a project below and changes to it show up here: a new addendum, a bid date moving, a general contractor being named. Overnight change detection runs against projects you track, so this stays empty until you track your first one."
+                />
               </div>
 
               <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
@@ -218,7 +208,7 @@ export function TodayPreview({ realProject }: { realProject: Project | null }) {
                   New in Maine, spec still open
                 </h2>
                 <div style={{ marginLeft: "auto", display: "flex", background: "#EBEEE9", borderRadius: 8, padding: 3, gap: 2 }}>
-                  {[["open", "Spec still open"], ["soon", "Bid opens soon"], ["rival", "Rival named"]].map(([k, l]) => (
+                  {[["open", "Spec still open"], ["soon", "Bid opens soon"]].map(([k, l]) => (
                     <button key={k} onClick={() => setFilter(k)} style={{
                       border: "none", cursor: "pointer", borderRadius: 6, padding: "6px 11px", fontSize: 12.5,
                       fontFamily: SANS,
@@ -252,8 +242,11 @@ export function TodayPreview({ realProject }: { realProject: Project | null }) {
 
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                 {rows.map((p) => {
-                  const s = scoreStyle(p.score);
+                  const s = scoreStyle(p.score?.total ?? null);
                   const isTracked = !!tracked[p.id];
+                  const docCount = p.document_count ?? 0;
+                  const value = p.estimated_value_usd;
+                  const specs = (p.key_specs ?? []).slice(0, 3);
                   return (
                     <div key={p.id} style={{ ...card, padding: "15px 17px", display: "flex", gap: 16 }}>
                       <input type="checkbox" checked={!!selected[p.id]}
@@ -266,23 +259,24 @@ export function TodayPreview({ realProject }: { realProject: Project | null }) {
                           fontSize: 15, fontWeight: 700,
                         }}>{s.label}</div>
                         <div style={{ fontFamily: MONO, fontSize: 9, color: "#9AA39D", marginTop: 3 }}>
-                          {p.score == null ? "EARLY" : "SCORE"}
+                          {p.score?.total == null ? "EARLY" : "SCORE"}
                         </div>
                       </div>
 
                       <div style={{ flex: 1, minWidth: 0 }}>
-                        <a href={p.real ? `/preview/logged-in/` : undefined} style={{
+                        <a href={`/project/${p.id}/`} style={{
                           fontSize: 15, fontWeight: 700, color: "#111512", textDecoration: "none", display: "block",
-                        }}>{p.name}</a>
+                        }}>{toDisplayCase(p.name)}</a>
                         <div style={{ fontSize: 12.5, color: "#6B756E", marginTop: 3 }}>
-                          {[p.city && `${p.city}, ${p.state}`, p.owner].filter(Boolean).join(" · ")}
-                          {p.docCount > 0 ? ` · ${p.docCount} documents parsed` : " · no documents held yet"}
+                          {[p.city && `${toDisplayCase(p.city)}, ${p.state ?? "ME"}`, p.owner && toDisplayCase(p.owner)]
+                            .filter(Boolean).join(" · ")}
+                          {docCount > 0 ? ` · ${docCount} document${docCount === 1 ? "" : "s"} held` : " · no documents held yet"}
                         </div>
                         <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginTop: 8 }}>
-                          {p.divisions.length > 0 ? p.divisions.map((d) => (
-                            <span key={d.code} style={{
+                          {specs.length > 0 ? specs.map((k) => (
+                            <span key={k} style={{
                               fontFamily: MONO, fontSize: 11, background: "#F2F4F1", borderRadius: 5, padding: "3px 7px", color: "#4B554E",
-                            }}>{d.code} {d.label}</span>
+                            }}>{k}</span>
                           )) : (
                             <span style={{
                               fontFamily: MONO, fontSize: 11, background: "#F2F4F1", borderRadius: 5,
@@ -290,13 +284,14 @@ export function TodayPreview({ realProject }: { realProject: Project | null }) {
                             }}>Scope not read yet</span>
                           )}
                         </div>
-                        <div style={{ fontSize: 12.5, color: "#8A938C", marginTop: 8 }}>{p.source}</div>
                       </div>
 
                       <div style={{ width: 128, flexShrink: 0, textAlign: "right" }}>
-                        <div style={{ fontSize: 12.5, color: p.urgent ? "#A2601C" : "#7A857E" }}>{p.urgency}</div>
-                        <div style={{ fontFamily: MONO, fontSize: 13, marginTop: 4, color: p.value ? "#111512" : "#9AA39D" }}>
-                          {p.value ?? "Not pulled"}
+                        <div style={{ fontSize: 12.5, color: "#7A857E" }}>
+                          {toDisplayCase(String(p.status ?? ""))}
+                        </div>
+                        <div style={{ fontFamily: MONO, fontSize: 13, marginTop: 4, color: value ? "#111512" : "#9AA39D" }}>
+                          {value ? formatUsd(value) : "Not pulled"}
                         </div>
                         <button onClick={() => setTracked({ ...tracked, [p.id]: !isTracked })} style={{
                           marginTop: 10, width: "100%", height: 30, borderRadius: 7, fontSize: 12.5,
@@ -312,82 +307,50 @@ export function TodayPreview({ realProject }: { realProject: Project | null }) {
               </div>
 
               <p style={{ fontSize: 12.5, color: "#8A938C", marginTop: 14 }}>
-                Showing {rows.length} of 26 matches. Scored on how much of the spec is still winnable,
-                not on how new the project is.
+                Showing {rows.length} of {total} Maine records. Scored on how much of the spec is
+                still winnable, not on how new the project is.
               </p>
             </div>
 
             {/* right rail */}
             <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+              {/* Notes has no backing table. project_notes does not exist, so
+                  there is nothing to read and nothing to write. The panel stays
+                  because it is the one CRM affordance in scope, and an empty
+                  panel that says what it will hold is a design decision the
+                  next migration can fill in. */}
               <div style={{ ...card, border: "1px solid #C6DDCF", padding: 16 }}>
-                <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 12 }}>
+                <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 10 }}>
                   <span style={railTitle}>Your notes</span>
-                  <span style={{ fontFamily: MONO, fontSize: 11, color: "#8A938C" }}>{SEED_NOTES.length}</span>
+                  <span style={{ fontFamily: MONO, fontSize: 11, color: "#8A938C" }}>0</span>
                 </div>
-                {SEED_NOTES.map((n) => (
-                  <div key={n.id} style={{ marginBottom: 14 }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
-                      <span style={{
-                        fontFamily: MONO, fontSize: 9.5, background: "#F0F2EF", color: "#5B655E",
-                        padding: "2px 6px", borderRadius: 5,
-                      }}>{n.kind}</span>
-                      <span style={{ marginLeft: "auto", fontFamily: MONO, fontSize: 10.5, color: "#9AA39D" }}>{n.when}</span>
-                    </div>
-                    <p style={{ fontSize: 12.5, color: "#4B554E", lineHeight: 1.55, margin: "0 0 4px" }}>{n.text}</p>
-                    <div style={{ fontSize: 11.5, color: "#8A938C" }}>{n.project}</div>
-                  </div>
-                ))}
-                <div style={{ fontSize: 11.5, color: "#8A938C", borderTop: "1px solid #F2F4F1", paddingTop: 10 }}>
-                  What you know about a job lives here, not in a CRM nobody opens.
-                </div>
+                <EmptyPanel
+                  title="No notes yet"
+                  body="Add what you learn on a call and it stays attached to the project record: who specified what, and whether an or-equal is still open. What you know about a job lives here."
+                />
               </div>
 
               <div style={{ ...card, padding: 16 }}>
                 <div style={{ ...railTitle, marginBottom: 10 }}>Your pipeline</div>
-                {SEED_STAGES.map((s) => (
-                  <div key={s.key} style={{ display: "flex", alignItems: "center", gap: 9, padding: "6px 0" }}>
-                    <span style={{ width: 7, height: 7, borderRadius: 999, background: s.dot }} />
-                    <span style={{ fontSize: 12.5 }}>{s.label}</span>
-                    <span style={{ marginLeft: "auto", fontFamily: MONO, fontSize: 11.5, color: "#5B655E" }}>{s.count}</span>
+                {trackedCount > 0 ? (
+                  <div style={{ display: "flex", alignItems: "center", gap: 9, padding: "6px 0" }}>
+                    <span style={{ width: 7, height: 7, borderRadius: 999, background: "#8A938C" }} />
+                    <span style={{ fontSize: 12.5 }}>Watching</span>
+                    <span style={{ marginLeft: "auto", fontFamily: MONO, fontSize: 11.5, color: "#5B655E" }}>{trackedCount}</span>
                   </div>
-                ))}
-                <div style={{ fontSize: 11.5, color: "#8A938C", borderTop: "1px solid #F2F4F1", paddingTop: 10, marginTop: 8 }}>
-                  Cards move when you say so, not when a crawler guesses.
-                </div>
+                ) : (
+                  <EmptyPanel
+                    title="Nothing tracked yet"
+                    body="Track a project and it lands here. Stages are yours to set, so a card moves when you say so."
+                  />
+                )}
               </div>
 
-              <div style={{ ...card, padding: 16 }}>
-                <div style={{ ...railTitle }}>Brand mentions</div>
-                <div style={{ fontSize: 11.5, color: "#8A938C", marginBottom: 10 }}>Where your brand or a rival got named.</div>
-                {SEED_MENTIONS.map((m, i) => (
-                  <div key={i} style={{ marginBottom: 12 }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: 7 }}>
-                      <span style={{ width: 7, height: 7, borderRadius: 999, background: m.rival ? "#C0631A" : "#16643A" }} />
-                      <span style={{ fontSize: 13, fontWeight: 600 }}>{m.brand}</span>
-                      <span style={{ marginLeft: "auto", fontFamily: MONO, fontSize: 10.5, color: "#9AA39D" }}>{m.when}</span>
-                    </div>
-                    <p style={{ fontSize: 12, color: "#5B655E", margin: "3px 0 0", lineHeight: 1.5 }}>{m.text}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div style={{ ...card, padding: 16 }}>
-                <div style={{ ...railTitle, marginBottom: 12 }}>Data freshness</div>
-                {SEED_FRESHNESS.map((f) => (
-                  <div key={f.label} style={{ marginBottom: 12 }}>
-                    <div style={{ display: "flex", alignItems: "baseline" }}>
-                      <span style={{ fontSize: 12.5 }}>{f.label}</span>
-                      <span style={{ marginLeft: "auto", fontFamily: MONO, fontSize: 10.5, color: "#9AA39D" }}>{f.when}</span>
-                    </div>
-                    <div style={{ height: 3, background: "#EDF0EC", borderRadius: 999, marginTop: 6 }}>
-                      <div style={{
-                        width: `${f.pct}%`, height: "100%", borderRadius: 999,
-                        background: f.stale ? "#C0631A" : "#16643A",
-                      }} />
-                    </div>
-                  </div>
-                ))}
-              </div>
+              {/* Data freshness removed alongside Brand mentions. The three
+                  bars were seeded percentages. v_pipeline_health holds exactly
+                  one workflow row and it is 13 days stale, which is not enough
+                  to build a territory freshness panel on without inventing the
+                  other two. It returns when the telemetry does. */}
             </div>
           </div>
         </main>
