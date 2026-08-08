@@ -48,6 +48,11 @@ firestore-debug.log
 .agents/
 .claude/*
 !.claude/skills/
+# settings.json carries the project's hooks and permissions. `.claude/*` was an
+# agent-cache rule and swallowed it, so the Stop guard added in this same commit
+# existed on one machine only -- the fourth instance of the collision it exists
+# to catch. Guarded by check-gitignore-collisions.py's PROTECTED list.
+!.claude/settings.json
 skills-lock.json
 
 # typescript
