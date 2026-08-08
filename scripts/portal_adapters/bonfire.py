@@ -42,10 +42,26 @@ import json, re, time, urllib.error, urllib.parse, urllib.request
 TENANTS = [
     ("utah", "Utah Division of Facilities Construction & Management"),
     ("deswa", "Washington State Department of Enterprise Services"),
+    # PennBid: Euna hosts it for ~1,900 Pennsylvania public agencies, so this
+    # single line reaches boroughs, townships and authorities that have no
+    # portal of their own -- the leverage argument for a platform adapter,
+    # at its largest so far. Verified live 2026-08-08 with no account:
+    # getOpenPublicOpportunitiesSectionData returned 205 open opportunities
+    # (Carnegie Borough sewer rehabilitation, Marysville Lions Club park
+    # improvements, Pennsburg liquid fuels road program, Mount Joy Township).
+    #
+    # Worth recording because it was nearly missed: probing the PORTAL page
+    # first suggests this tenant is unusable -- /opportunities/<id> serves a
+    # Cloudflare "Performing security verification" interstitial. That is the
+    # detail page only, exactly as documented above; the JSON list endpoint
+    # has no challenge and the documents are downloadUnauthenticated. Judging
+    # the tenant by the detail page alone would have discarded 205 live
+    # solicitations in the one state whose portals are otherwise fragmented.
+    ("pennbid", "PennBid (Pennsylvania public agencies, ~1,900 via Euna)"),
 ]
 
 PORTAL = {
-    "state": "Utah, Washington",          # platform adapter: many states
+    "state": "Utah, Washington, Pennsylvania",  # platform adapter: many states
     "type": "Vertical",
     "tier": 1,                            # demoted from T2: no account needed
     "agency": "Bonfire (Euna Solutions) hosted procurement portals",
