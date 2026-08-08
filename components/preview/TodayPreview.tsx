@@ -139,7 +139,7 @@ export function TodayPreview({
         </aside>
 
         {/* main */}
-        <main style={{ maxWidth: 1180, margin: "0 auto", padding: "0 30px 60px", width: "100%" }}>
+        <main style={{ maxWidth: 1180, padding: "0 34px 60px", width: "100%" }}>
           <div style={{
             position: "sticky", top: 0, zIndex: 5, height: 56, display: "flex", alignItems: "center", gap: 16,
             background: "rgba(245,246,244,0.94)", backdropFilter: "blur(8px)",
