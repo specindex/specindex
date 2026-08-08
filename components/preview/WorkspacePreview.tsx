@@ -24,6 +24,10 @@ export function WorkspacePreview({ project }: { project: Project | null }) {
   const [stage, setStage] = useState<string>("watching");
   const [tracked, setTracked] = useState(true);
   const [draft, setDraft] = useState("");
+  // Kind is the whole CRM surface for now, deliberately. A rep logging "CALL"
+  // vs "EMAIL" is the difference between a notes field and an activity log,
+  // and it costs one enum rather than a contacts model.
+  const [kind, setKind] = useState("NOTE");
   const [notes, setNotes] = useState<Note[]>([
     {
       id: "n1", kind: "NOTE", who: "AH", when: "Aug 7",
@@ -47,8 +51,9 @@ export function WorkspacePreview({ project }: { project: Project | null }) {
   function saveNote() {
     const text = draft.trim();
     if (!text) return;                       // whitespace-only is ignored
-    setNotes([{ id: String(Date.now()), kind: "NOTE", who: "AH", when: "now", text }, ...notes]);
+    setNotes([{ id: String(Date.now()), kind, who: "AH", when: "now", text }, ...notes]);
     setDraft("");
+    setKind("NOTE");
     setTracked(true);                        // first note also starts tracking
   }
 
@@ -218,8 +223,17 @@ export function WorkspacePreview({ project }: { project: Project | null }) {
                       background: "transparent", fontFamily: "var(--font-sans)", fontSize: 13.5, color: "#111512",
                     }}
                   />
-                  <div style={{ display: "flex", alignItems: "center", marginTop: 8 }}>
-                    <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "#9AA39D" }}>⌘ + Enter to save</span>
+                  <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 8 }}>
+                    {["NOTE", "CALL", "EMAIL"].map((k) => (
+                      <button key={k} onClick={() => setKind(k)} style={{
+                        fontFamily: "var(--font-mono)", fontSize: 10, letterSpacing: "0.06em",
+                        padding: "3px 8px", borderRadius: 5, cursor: "pointer",
+                        border: `1px solid ${kind === k ? "#16643A" : "#E4E7E3"}`,
+                        background: kind === k ? "#EFF6F1" : "#fff",
+                        color: kind === k ? "#16643A" : "#8A938C",
+                      }}>{k}</button>
+                    ))}
+                    <span style={{ marginLeft: 6, fontFamily: "var(--font-mono)", fontSize: 11, color: "#9AA39D" }}>⌘ + Enter to save</span>
                     <button onClick={saveNote} style={{
                       marginLeft: "auto", background: "#16643A", color: "#fff", border: "none",
                       borderRadius: 8, padding: "7px 14px", fontSize: 13, fontWeight: 600, cursor: "pointer",
